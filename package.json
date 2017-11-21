@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc --declaration",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "tsc generator/generator.ts --lib es2015,es2016.array.include && node generator/generator.js"
   },
   "keywords": [
     "cloudformation",
@@ -19,5 +19,8 @@
     "@types/node": "^8.0.53",
     "json-pretty": "0.0.1",
     "typescript": "^2.6.1"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.4"
   }
 }

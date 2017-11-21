@@ -1,7 +1,8 @@
-import {ResourceBase, ResourceTag} from "../resource"
-import {Value} from "../internal"
+import {ResourceBase, ResourceTag} from '../resource'
+import {Value} from '../internal'
 
-export type InstanceTenancy = 'default' | 'dedicated'
+
+export type InstanceTenancy = "default" | "dedicated"
 
 export interface VPCProperties {
     CidrBlock: Value<string>
@@ -12,7 +13,7 @@ export interface VPCProperties {
 }
 
 export default class VPC extends ResourceBase {
-    constructor(properties: VPCProperties) {
-        super('AWS::EC2::VPC', properties)
+    constructor(properties: VPCProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::VPC', properties, dependsOn)
     }
 }

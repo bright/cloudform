@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ResourceBase {
-    constructor(Type, Properties) {
+    constructor(Type, Properties, DependsOn) {
         this.Type = Type;
         this.Properties = Properties;
+        this.DependsOn = DependsOn;
     }
 }
 exports.ResourceBase = ResourceBase;

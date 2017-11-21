@@ -1,7 +1,7 @@
 import cloudform, {Fn, Refs} from "../index"
 import {StringParameter} from "../types/parameter"
 import EC2 from "../types/ec2"
-import {ResourceTag} from "../types/resource";
+import {ResourceTag} from "../types/resource"
 
 cloudform({
     Description: 'My template',

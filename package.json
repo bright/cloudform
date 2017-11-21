@@ -2,13 +2,21 @@
   "name": "cloudform",
   "version": "0.0.1",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "cloudformation",
     "aws"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "cloudform": "./dist/cli/cloudform.js"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.53",
+    "typescript": "^2.6.1"
+  }
 }

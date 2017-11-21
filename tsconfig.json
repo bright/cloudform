@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "watch": false,
+    "outDir": "./dist/",
+    "rootDir": "./",
+    "types": [
+      "node"
+    ],
+    "noUnusedLocals": true,
+    "lib": [
+      "es2015",
+      "es2016.array.include"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "example"
+  ]
+}

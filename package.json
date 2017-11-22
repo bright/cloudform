@@ -21,6 +21,7 @@
     "typescript": "^2.6.1"
   },
   "devDependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.3"
   }
 }

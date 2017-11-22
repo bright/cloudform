@@ -1,129 +1,101 @@
 import * as fs from 'fs'
-import {camelCase, filter, uniq} from 'lodash'
+import {camelCase, forEach, pickBy, filter, uniq, map} from 'lodash'
 
-const schema = JSON.parse(fs.readFileSync('./generator/CloudFormationV1.schema', 'utf8'))
-const resources = schema['root-schema-object'].properties.Resources['child-schemas']
+const fetch = require('node-fetch')
+
+const url = 'https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
 
 function adjustedCamelCase(input) {
     return input === 'IoT' ? 'iot' : camelCase(input)
 }
 
-function trySingular(property, name) {
-    if (property['array-type'] === 'Object' && name[name.length - 1] === 's') {
-        return name.substr(0, name.length - 1)
+function determineTypeScriptType(property, propertyName, typeSuffix) {
+    if (property[typeSuffix] === 'List') {
+        return determineTypeScriptType(property, propertyName, 'ItemType') + '[]'
     }
-    return name
-}
-
-function getLocalTypeNameFromRef(ref) {
-    return ref.split('::')[2]
-}
-
-function getRefLocalTypeNameIfAvailable(property) {
-    let refTypes = property['resource-ref-type']
-
-    if (refTypes) {
-        if (typeof(refTypes) === 'string') {
-            return getLocalTypeNameFromRef(refTypes)
-        }
-
-        return '(' + refTypes.map(refType => getLocalTypeNameFromRef(refType)).join(' | ') + ')'
+    if (property[typeSuffix] === 'Map') {
+        return `{[key: string]: ${determineTypeScriptType(property, propertyName, 'ItemType')}}`
     }
-}
+    if (property[typeSuffix]) {
+        return property[typeSuffix]
+    }
 
-function determineTypeScriptType(property, propertyName, schemaType) {
-    if (schemaType === 'Json' || schemaType === 'Policy') {
+    let primitiveType = property['Primitive' + typeSuffix].toLowerCase()
+    if (primitiveType === 'json') {
         return 'any'
     }
-    if (schemaType === 'Reference') {
-        return 'Value<string>'
+    if (['integer', 'double', 'long'].includes(primitiveType)) {
+        primitiveType = 'number'
     }
-    if (property['allowed-values']) {
-        return `Value<${propertyName}>`
+    if (primitiveType === 'timestamp') {
+        primitiveType = 'string' // TODO consider Date.toISOString()
     }
-    if (schemaType === 'Array') {
-        return determineTypeScriptType(property, propertyName, property['array-type']) + '[]'
-    }
-    if (schemaType === 'Object') {
-        return getRefLocalTypeNameIfAvailable(property) || trySingular(property, propertyName)
-    }
-    if (schemaType === 'Named-Array') {
-        return `{[key: string]: any}`
-    }
-    return `Value<${schemaType.toLowerCase()}>`
+    return `Value<${primitiveType}>`
 }
 
-function isNestedType(name, property) {
-    return !!property.properties && name !== 'Tags' && !property['resource-ref-type']
-}
+function generateClass(namespace, name, properties, isDefault = false) {
+    const propertiesEntries = map(properties, (property, propertyName) => {
+        if (propertyName === 'Tags') {
+            return `Tags?: ResourceTag[]`
+        }
 
-function generateFile(namespace, resource, properties) {
-    const nestedProperties = Object.keys(properties).filter(name => isNestedType(name, properties[name]))
+        return `${propertyName}${property.Required ? '' : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
+    })
 
-    const nestedImportNames = []
-    for (let nestedResource of nestedProperties) {
-        let emittedName = trySingular(properties[nestedResource], nestedResource)
-        nestedImportNames.push(emittedName)
-        generateFile(namespace, emittedName, properties[nestedResource].properties)
-    }
-
-    const resourceImports = ['ResourceBase']
-    if (Object.keys(properties).includes('Tags')) {
-        resourceImports.push('ResourceTag')
-    }
-
-    const resourceRefTypes = filter(properties, property => property.type === 'Object' || property['array-type'] === 'Object')
-        .map(property => getRefLocalTypeNameIfAvailable(property))
-        .filter(refType => !!refType)
-
-    const localImports = uniq(nestedImportNames.concat(resourceRefTypes))
-        .map(name => `import ${name} from './${camelCase(name)}'`)
-
-    const enums = Object.keys(properties)
-        .filter(name => properties[name]['allowed-values'])
-        .map(name => {
-            const values = properties[name]['allowed-values']
-            return `export type ${name} = ${values.map(JSON.stringify).join(' | ')}`
-        })
-
-    const propertiesEntries = Object.keys(properties)
-        .map(propertyName => {
-            const property = properties[propertyName] as any
-
-            if (propertyName === 'Tags') {
-                return `Tags?: ResourceTag[]`
-            }
-
-            return `${propertyName}${property.required ? '' : '?'}: ${determineTypeScriptType(property, propertyName, property.type)}`
-        })
-
-    const template = `import {${resourceImports.join(', ')}} from '../resource'
-import {Value} from '../internal'
-${localImports.join('\n')}
-
-${enums.join('\n')}
-
-export interface ${resource}Properties {
+    return `export interface ${name}Properties {
 ${propertiesEntries.map(e => `    ${e}`).join('\n')}
 }
 
-export default class ${resource} extends ResourceBase {
-    constructor(properties: ${resource}Properties, dependsOn?: Value<string>) {
-        super('AWS::${namespace}::${resource}', properties, dependsOn)
+export ${isDefault ? 'default ' : ''}class ${name} extends ResourceBase {
+    constructor(properties: ${name}Properties, dependsOn?: Value<string>) {
+        super('AWS::${namespace}::${name}', properties, dependsOn)
     }
 }`
+}
+
+function hasTags(properties) {
+    return Object.keys(properties).includes('Tags')
+}
+
+function generateFile(schema, namespace, resourceName, properties, innerTypes) {
+    let innerHasTags = false
+    const innerTypesTemplates = map(innerTypes, (innerType, innerTypeFullName) => {
+        const [, innerTypeName] = innerTypeFullName.split('.')
+        innerHasTags = innerHasTags || hasTags(innerType.Properties)
+        return generateClass(namespace, innerTypeName, innerType.Properties)
+    })
+
+    const resourceImports = ['ResourceBase']
+    if (innerHasTags || hasTags(properties)) {
+        resourceImports.push('ResourceTag')
+    }
+
+    const generatedClass = generateClass(namespace, resourceName, properties, true)
+
+    const template = `/* Generated from ${url}, version ${schema.ResourceSpecificationVersion} */
+   
+import {${resourceImports.join(', ')}} from '../resource'
+import {Value} from '../internal'
+
+${innerTypesTemplates.join('\n\n')}
+
+${generatedClass}`
 
     if (!fs.existsSync(`./types/${adjustedCamelCase(namespace)}`)) {
         fs.mkdirSync(`./types/${adjustedCamelCase(namespace)}`)
     }
 
-    fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/${camelCase(resource)}.ts`, template, {encoding: 'utf8'})
+    fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/${camelCase(resourceName)}.ts`, template, {encoding: 'utf8'})
 }
 
-for (let key of Object.keys(resources)) {
-    const value = resources[key]
-    const [, namespace, resource] = key.split('::')
-    const properties = value.properties.Properties.properties || []
+fetch(url)
+    .then(res => res.json())
+    .then(schema => {
+        forEach(schema.ResourceTypes, (resource, resourceFullName) => {
+            const [, namespace, resourceName] = resourceFullName.split('::')
+            const properties = resource.Properties || {}
+            const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType, propertyFullName) => propertyFullName.startsWith(resourceFullName + '.'))
 
-    generateFile(namespace, resource, properties)
-}
+            generateFile(schema, namespace, resourceName, properties, resourcePropertyTypes)
+        })
+    })

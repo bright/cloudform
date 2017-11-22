@@ -1,13 +1,26 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import Trigger from './trigger'
 
+export interface RepositoryTriggerProperties {
+    Events?: Value<string>[]
+    Branches?: Value<string>[]
+    CustomData?: Value<string>
+    DestinationArn?: Value<string>
+    Name?: Value<string>
+}
 
+export class RepositoryTrigger extends ResourceBase {
+    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string>) {
+        super('AWS::CodeCommit::RepositoryTrigger', properties, dependsOn)
+    }
+}
 
 export interface RepositoryProperties {
+    RepositoryName: Value<string>
+    Triggers?: RepositoryTrigger[]
     RepositoryDescription?: Value<string>
-    RepositoryName?: Value<string>
-    Triggers?: Trigger[]
 }
 
 export default class Repository extends ResourceBase {

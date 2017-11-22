@@ -1,10 +1,24 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import HadoopJarStep from './hadoopJarStep';
-export declare type ActionOnFailure = "*" | "CONTINUE" | "CONTINUE_AND_WAIT";
+export interface HadoopJarStepConfigProperties {
+    Args?: Value<string>[];
+    Jar: Value<string>;
+    MainClass?: Value<string>;
+    StepProperties?: KeyValue[];
+}
+export declare class HadoopJarStepConfig extends ResourceBase {
+    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string>);
+}
+export interface KeyValueProperties {
+    Key?: Value<string>;
+    Value?: Value<string>;
+}
+export declare class KeyValue extends ResourceBase {
+    constructor(properties: KeyValueProperties, dependsOn?: Value<string>);
+}
 export interface StepProperties {
-    ActionOnFailure: Value<ActionOnFailure>;
-    HadoopJarStep: HadoopJarStep;
+    ActionOnFailure: Value<string>;
+    HadoopJarStep: HadoopJarStepConfig;
     JobFlowId: Value<string>;
     Name: Value<string>;
 }

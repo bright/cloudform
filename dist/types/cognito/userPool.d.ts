@@ -1,32 +1,114 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import AdminCreateUserConfig from './adminCreateUserConfig';
-import DeviceConfiguration from './deviceConfiguration';
-import EmailConfiguration from './emailConfiguration';
-import LambdaConfig from './lambdaConfig';
-import Policies from './policies';
-import Schema from './schema';
-import SmsConfiguration from './smsConfiguration';
-export declare type AliasAttributes = "*" | "phone_number" | "email" | "preferred_username";
-export declare type AutoVerifiedAttributes = "*" | "phone_number" | "email";
-export declare type MfaConfiguration = "*" | "OFF" | "ON" | "OPTIONAL";
+export interface PasswordPolicyProperties {
+    RequireNumbers?: Value<boolean>;
+    MinimumLength?: Value<number>;
+    RequireUppercase?: Value<boolean>;
+    RequireLowercase?: Value<boolean>;
+    RequireSymbols?: Value<boolean>;
+}
+export declare class PasswordPolicy extends ResourceBase {
+    constructor(properties: PasswordPolicyProperties, dependsOn?: Value<string>);
+}
+export interface PoliciesProperties {
+    PasswordPolicy?: PasswordPolicy;
+}
+export declare class Policies extends ResourceBase {
+    constructor(properties: PoliciesProperties, dependsOn?: Value<string>);
+}
+export interface EmailConfigurationProperties {
+    ReplyToEmailAddress?: Value<string>;
+    SourceArn?: Value<string>;
+}
+export declare class EmailConfiguration extends ResourceBase {
+    constructor(properties: EmailConfigurationProperties, dependsOn?: Value<string>);
+}
+export interface LambdaConfigProperties {
+    CreateAuthChallenge?: Value<string>;
+    PreAuthentication?: Value<string>;
+    DefineAuthChallenge?: Value<string>;
+    PreSignUp?: Value<string>;
+    PostAuthentication?: Value<string>;
+    PostConfirmation?: Value<string>;
+    CustomMessage?: Value<string>;
+    VerifyAuthChallengeResponse?: Value<string>;
+}
+export declare class LambdaConfig extends ResourceBase {
+    constructor(properties: LambdaConfigProperties, dependsOn?: Value<string>);
+}
+export interface AdminCreateUserConfigProperties {
+    InviteMessageTemplate?: InviteMessageTemplate;
+    UnusedAccountValidityDays?: Value<number>;
+    AllowAdminCreateUserOnly?: Value<boolean>;
+}
+export declare class AdminCreateUserConfig extends ResourceBase {
+    constructor(properties: AdminCreateUserConfigProperties, dependsOn?: Value<string>);
+}
+export interface SchemaAttributeProperties {
+    DeveloperOnlyAttribute?: Value<boolean>;
+    Mutable?: Value<boolean>;
+    AttributeDataType?: Value<string>;
+    StringAttributeConstraints?: StringAttributeConstraints;
+    Required?: Value<boolean>;
+    NumberAttributeConstraints?: NumberAttributeConstraints;
+    Name?: Value<string>;
+}
+export declare class SchemaAttribute extends ResourceBase {
+    constructor(properties: SchemaAttributeProperties, dependsOn?: Value<string>);
+}
+export interface NumberAttributeConstraintsProperties {
+    MinValue?: Value<string>;
+    MaxValue?: Value<string>;
+}
+export declare class NumberAttributeConstraints extends ResourceBase {
+    constructor(properties: NumberAttributeConstraintsProperties, dependsOn?: Value<string>);
+}
+export interface SmsConfigurationProperties {
+    ExternalId?: Value<string>;
+    SnsCallerArn?: Value<string>;
+}
+export declare class SmsConfiguration extends ResourceBase {
+    constructor(properties: SmsConfigurationProperties, dependsOn?: Value<string>);
+}
+export interface DeviceConfigurationProperties {
+    DeviceOnlyRememberedOnUserPrompt?: Value<boolean>;
+    ChallengeRequiredOnNewDevice?: Value<boolean>;
+}
+export declare class DeviceConfiguration extends ResourceBase {
+    constructor(properties: DeviceConfigurationProperties, dependsOn?: Value<string>);
+}
+export interface InviteMessageTemplateProperties {
+    EmailMessage?: Value<string>;
+    SMSMessage?: Value<string>;
+    EmailSubject?: Value<string>;
+}
+export declare class InviteMessageTemplate extends ResourceBase {
+    constructor(properties: InviteMessageTemplateProperties, dependsOn?: Value<string>);
+}
+export interface StringAttributeConstraintsProperties {
+    MinLength?: Value<string>;
+    MaxLength?: Value<string>;
+}
+export declare class StringAttributeConstraints extends ResourceBase {
+    constructor(properties: StringAttributeConstraintsProperties, dependsOn?: Value<string>);
+}
 export interface UserPoolProperties {
+    UserPoolTags?: any;
+    Policies?: Policies;
+    MfaConfiguration?: Value<string>;
+    Schema?: SchemaAttribute[];
     AdminCreateUserConfig?: AdminCreateUserConfig;
-    AliasAttributes?: Value<AliasAttributes>;
-    AutoVerifiedAttributes?: Value<AutoVerifiedAttributes>;
-    DeviceConfiguration?: DeviceConfiguration;
+    SmsAuthenticationMessage?: Value<string>;
+    UserPoolName?: Value<string>;
+    SmsVerificationMessage?: Value<string>;
     EmailConfiguration?: EmailConfiguration;
-    EmailVerificationMessage?: Value<string>;
+    SmsConfiguration?: SmsConfiguration;
+    AliasAttributes?: Value<string>[];
     EmailVerificationSubject?: Value<string>;
     LambdaConfig?: LambdaConfig;
-    MfaConfiguration?: Value<MfaConfiguration>;
-    Policies?: Policies;
-    UserPoolName?: Value<string>;
-    Schema?: Schema[];
-    SmsAuthenticationMessage?: Value<string>;
-    SmsConfiguration?: SmsConfiguration;
-    SmsVerificationMessage?: Value<string>;
-    UserPoolTags?: any;
+    AutoVerifiedAttributes?: Value<string>[];
+    DeviceConfiguration?: DeviceConfiguration;
+    EmailVerificationMessage?: Value<string>;
 }
 export default class UserPool extends ResourceBase {
     constructor(properties: UserPoolProperties, dependsOn?: Value<string>);

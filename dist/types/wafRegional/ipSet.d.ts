@@ -1,8 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import IPSetDescriptors from './ipSetDescriptors';
+export interface IPSetDescriptorProperties {
+    Type: Value<string>;
+    Value: Value<string>;
+}
+export declare class IPSetDescriptor extends ResourceBase {
+    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string>);
+}
 export interface IPSetProperties {
-    IPSetDescriptors?: IPSetDescriptors;
+    IPSetDescriptors?: IPSetDescriptor[];
     Name: Value<string>;
 }
 export default class IPSet extends ResourceBase {

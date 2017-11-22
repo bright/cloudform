@@ -1,16 +1,56 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import HostedZoneConfig from './hostedZoneConfig'
-import VPC from './vpc'
-import HostedZoneTag from './hostedZoneTag'
 
+export interface HostedZoneTagProperties {
+    Key: Value<string>
+    Value: Value<string>
+}
 
+export class HostedZoneTag extends ResourceBase {
+    constructor(properties: HostedZoneTagProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::HostedZoneTag', properties, dependsOn)
+    }
+}
+
+export interface HostedZoneConfigProperties {
+    Comment?: Value<string>
+}
+
+export class HostedZoneConfig extends ResourceBase {
+    constructor(properties: HostedZoneConfigProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::HostedZoneConfig', properties, dependsOn)
+    }
+}
+
+export interface QueryLoggingConfigProperties {
+    CloudWatchLogsLogGroupArn: Value<string>
+}
+
+export class QueryLoggingConfig extends ResourceBase {
+    constructor(properties: QueryLoggingConfigProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::QueryLoggingConfig', properties, dependsOn)
+    }
+}
+
+export interface VPCProperties {
+    VPCId: Value<string>
+    VPCRegion: Value<string>
+}
+
+export class VPC extends ResourceBase {
+    constructor(properties: VPCProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::VPC', properties, dependsOn)
+    }
+}
 
 export interface HostedZoneProperties {
     HostedZoneConfig?: HostedZoneConfig
-    Name: Value<string>
-    VPCs?: VPC[]
     HostedZoneTags?: HostedZoneTag[]
+    Name: Value<string>
+    QueryLoggingConfig?: QueryLoggingConfig
+    VPCs?: VPC[]
 }
 
 export default class HostedZone extends ResourceBase {

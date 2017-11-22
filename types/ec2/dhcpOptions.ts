@@ -1,16 +1,16 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
 
 
-export type DomainNameServers = "AmazonProvidedDNS" | "*"
-export type NetbiosNodeType = 1 | 2 | 4 | 8 | "*"
 
 export interface DHCPOptionsProperties {
-    DomainName: Value<string>
-    DomainNameServers: Value<DomainNameServers>
-    NtpServers: Value<string>[]
-    NetbiosNameServers: Value<string>[]
-    NetbiosNodeType: Value<NetbiosNodeType>
+    DomainName?: Value<string>
+    DomainNameServers?: Value<string>[]
+    NetbiosNameServers?: Value<string>[]
+    NetbiosNodeType?: Value<number>
+    NtpServers?: Value<string>[]
     Tags?: ResourceTag[]
 }
 

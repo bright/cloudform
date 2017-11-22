@@ -1,22 +1,52 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-import MetricsCollection from './metricsCollection';
-import NotificationConfiguration from './notificationConfiguration';
-export declare type AvailabilityZones = "us-east-1b" | "us-east-1c" | "us-east-1d" | "us-east-1e" | "us-west-1b" | "us-west-1c" | "us-west-2a" | "us-west-2b" | "us-west-2c" | "ap-northeast-1a" | "ap-northeast-1c" | "ap-northeast-2a" | "ap-northeast-2c" | "ap-south-1a" | "ap-south-1b" | "ap-southeast-1a" | "ap-southeast-1b" | "ap-southeast-2a" | "ap-southeast-2b" | "ap-southeast-2c" | "sa-east-1a" | "sa-east-1b" | "sa-east-1c" | "eu-west-1a" | "eu-west-1b" | "eu-west-1c" | "eu-central-1a" | "eu-central-1b";
-export declare type HealthCheckType = "EC2" | "ELB";
+export interface LifecycleHookSpecificationProperties {
+    DefaultResult?: Value<string>;
+    HeartbeatTimeout?: Value<number>;
+    LifecycleHookName: Value<string>;
+    LifecycleTransition: Value<string>;
+    NotificationMetadata?: Value<string>;
+    NotificationTargetARN?: Value<string>;
+    RoleARN?: Value<string>;
+}
+export declare class LifecycleHookSpecification extends ResourceBase {
+    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string>);
+}
+export interface NotificationConfigurationProperties {
+    NotificationTypes?: Value<string>[];
+    TopicARN: Value<string>;
+}
+export declare class NotificationConfiguration extends ResourceBase {
+    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string>);
+}
+export interface MetricsCollectionProperties {
+    Granularity: Value<string>;
+    Metrics?: Value<string>[];
+}
+export declare class MetricsCollection extends ResourceBase {
+    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string>);
+}
+export interface TagPropertyProperties {
+    Key: Value<string>;
+    PropagateAtLaunch: Value<boolean>;
+    Value: Value<string>;
+}
+export declare class TagProperty extends ResourceBase {
+    constructor(properties: TagPropertyProperties, dependsOn?: Value<string>);
+}
 export interface AutoScalingGroupProperties {
-    AvailabilityZones: Value<AvailabilityZones>;
+    AvailabilityZones?: Value<string>[];
     Cooldown?: Value<string>;
     DesiredCapacity?: Value<string>;
     HealthCheckGracePeriod?: Value<number>;
-    HealthCheckType?: Value<HealthCheckType>;
+    HealthCheckType?: Value<string>;
     InstanceId?: Value<string>;
     LaunchConfigurationName?: Value<string>;
+    LifecycleHookSpecificationList?: LifecycleHookSpecification[];
     LoadBalancerNames?: Value<string>[];
     MaxSize: Value<string>;
     MetricsCollection?: MetricsCollection[];
     MinSize: Value<string>;
-    NotificationConfiguration?: NotificationConfiguration;
     NotificationConfigurations?: NotificationConfiguration[];
     PlacementGroup?: Value<string>;
     Tags?: ResourceTag[];

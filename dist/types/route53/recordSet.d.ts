@@ -1,14 +1,27 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import AliasTarget from './aliasTarget';
-import GeoLocation from './geoLocation';
-export declare type Failover = "PRIMARY" | "SECONDARY";
-export declare type Type = "A" | "AAAA" | "CNAME" | "MX" | "NS" | "PTR" | "SOA" | "SPF" | "SRV" | "TXT";
+export interface GeoLocationProperties {
+    ContinentCode?: Value<string>;
+    CountryCode?: Value<string>;
+    SubdivisionCode?: Value<string>;
+}
+export declare class GeoLocation extends ResourceBase {
+    constructor(properties: GeoLocationProperties, dependsOn?: Value<string>);
+}
+export interface AliasTargetProperties {
+    DNSName: Value<string>;
+    EvaluateTargetHealth?: Value<boolean>;
+    HostedZoneId: Value<string>;
+}
+export declare class AliasTarget extends ResourceBase {
+    constructor(properties: AliasTargetProperties, dependsOn?: Value<string>);
+}
 export interface RecordSetProperties {
     AliasTarget?: AliasTarget;
     Comment?: Value<string>;
-    Failover?: Value<Failover>;
+    Failover?: Value<string>;
     GeoLocation?: GeoLocation;
+    HealthCheckId?: Value<string>;
     HostedZoneId?: Value<string>;
     HostedZoneName?: Value<string>;
     Name: Value<string>;
@@ -16,7 +29,7 @@ export interface RecordSetProperties {
     ResourceRecords?: Value<string>[];
     SetIdentifier?: Value<string>;
     TTL?: Value<string>;
-    Type: Value<Type>;
+    Type: Value<string>;
     Weight?: Value<number>;
 }
 export default class RecordSet extends ResourceBase {

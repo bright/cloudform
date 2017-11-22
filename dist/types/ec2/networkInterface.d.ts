@@ -1,20 +1,30 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-import Ipv6Addresse from './ipv6Addresse';
-import PrivateIpAddresse from './privateIpAddresse';
+export interface InstanceIpv6AddressProperties {
+    Ipv6Address: Value<string>;
+}
+export declare class InstanceIpv6Address extends ResourceBase {
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>);
+}
+export interface PrivateIpAddressSpecificationProperties {
+    Primary: Value<boolean>;
+    PrivateIpAddress: Value<string>;
+}
+export declare class PrivateIpAddressSpecification extends ResourceBase {
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>);
+}
 export interface NetworkInterfaceProperties {
-    AssociatePublicIpAddress?: Value<boolean>;
-    DeleteOnTermination?: Value<boolean>;
     Description?: Value<string>;
-    DeviceIndex: Value<string>;
-    Groups?: Value<string>[];
+    GroupSet?: Value<string>[];
+    InterfaceType?: Value<string>;
     Ipv6AddressCount?: Value<number>;
-    Ipv6Addresses?: Ipv6Addresse[];
-    NetworkInterfaceId: Value<string>;
+    Ipv6Addresses?: InstanceIpv6Address;
     PrivateIpAddress?: Value<string>;
-    PrivateIpAddresses?: PrivateIpAddresse[];
+    PrivateIpAddresses?: PrivateIpAddressSpecification[];
     SecondaryPrivateIpAddressCount?: Value<number>;
-    SubnetId?: Value<string>;
+    SourceDestCheck?: Value<boolean>;
+    SubnetId: Value<string>;
+    Tags?: ResourceTag[];
 }
 export default class NetworkInterface extends ResourceBase {
     constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>);

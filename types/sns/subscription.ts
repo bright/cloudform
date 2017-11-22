@@ -1,12 +1,14 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
 
 
-export type Protocol = "http" | "https" | "email" | "email-json" | "sqs" | "sms" | "application" | "lambda"
 
 export interface SubscriptionProperties {
-    Endpoint: Value<string>
-    Protocol: Value<Protocol>
+    Endpoint?: Value<string>
+    Protocol?: Value<string>
+    TopicArn?: Value<string>
 }
 
 export default class Subscription extends ResourceBase {

@@ -1,11 +1,13 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
 export interface SubnetProperties {
+    AssignIpv6AddressOnCreation?: Value<boolean>;
     AvailabilityZone?: Value<string>;
     CidrBlock: Value<string>;
+    Ipv6CidrBlock?: Value<string>;
     MapPublicIpOnLaunch?: Value<boolean>;
-    VpcId: Value<string>;
     Tags?: ResourceTag[];
+    VpcId: Value<string>;
 }
 export default class Subnet extends ResourceBase {
     constructor(properties: SubnetProperties, dependsOn?: Value<string>);

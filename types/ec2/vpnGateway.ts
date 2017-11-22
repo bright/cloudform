@@ -1,12 +1,14 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
 
 
-export type Type = "ipsec.1"
 
 export interface VPNGatewayProperties {
-    Type: Value<Type>
+    AmazonSideAsn?: Value<number>
     Tags?: ResourceTag[]
+    Type: Value<string>
 }
 
 export default class VPNGateway extends ResourceBase {

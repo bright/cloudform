@@ -1,11 +1,25 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import Target from './target';
+export interface TargetProperties {
+    Key: Value<string>;
+    Values: Value<string>[];
+}
+export declare class Target extends ResourceBase {
+    constructor(properties: TargetProperties, dependsOn?: Value<string>);
+}
+export interface ParameterValuesProperties {
+    ParameterValues: Value<string>[];
+}
+export declare class ParameterValues extends ResourceBase {
+    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string>);
+}
 export interface AssociationProperties {
     DocumentVersion?: Value<string>;
     InstanceId?: Value<string>;
     Name: Value<string>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: ParameterValues;
+    };
     ScheduleExpression?: Value<string>;
     Targets?: Target[];
 }

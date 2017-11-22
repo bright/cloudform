@@ -1,29 +1,120 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
-import AccessLoggingPolicy from './accessLoggingPolicy'
-import AppCookieStickinessPolicy from './appCookieStickinessPolicy'
-import ConnectionDrainingPolicy from './connectionDrainingPolicy'
-import ConnectionSettings from './connectionSettings'
-import HealthCheck from './healthCheck'
-import LBCookieStickinessPolicy from './lbCookieStickinessPolicy'
-import Listener from './listener'
-import Policie from './policie'
 
-export type AvailabilityZones = "us-east-1b" | "us-east-1c" | "us-east-1d" | "us-east-1e" | "us-west-1b" | "us-west-1c" | "us-west-2a" | "us-west-2b" | "us-west-2c" | "ap-northeast-1a" | "ap-northeast-1c" | "ap-northeast-2a" | "ap-northeast-2c" | "ap-south-1a" | "ap-south-1b" | "ap-southeast-1a" | "ap-southeast-1b" | "ap-southeast-2a" | "ap-southeast-2b" | "ap-southeast-2c" | "sa-east-1a" | "sa-east-1b" | "sa-east-1c" | "eu-west-1a" | "eu-west-1b" | "eu-west-1c" | "eu-central-1a" | "eu-central-1b"
+export interface HealthCheckProperties {
+    HealthyThreshold: Value<string>
+    Interval: Value<string>
+    Target: Value<string>
+    Timeout: Value<string>
+    UnhealthyThreshold: Value<string>
+}
+
+export class HealthCheck extends ResourceBase {
+    constructor(properties: HealthCheckProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::HealthCheck', properties, dependsOn)
+    }
+}
+
+export interface AccessLoggingPolicyProperties {
+    EmitInterval?: Value<number>
+    Enabled: Value<boolean>
+    S3BucketName: Value<string>
+    S3BucketPrefix?: Value<string>
+}
+
+export class AccessLoggingPolicy extends ResourceBase {
+    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::AccessLoggingPolicy', properties, dependsOn)
+    }
+}
+
+export interface ConnectionSettingsProperties {
+    IdleTimeout: Value<number>
+}
+
+export class ConnectionSettings extends ResourceBase {
+    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::ConnectionSettings', properties, dependsOn)
+    }
+}
+
+export interface LBCookieStickinessPolicyProperties {
+    CookieExpirationPeriod?: Value<string>
+    PolicyName?: Value<string>
+}
+
+export class LBCookieStickinessPolicy extends ResourceBase {
+    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::LBCookieStickinessPolicy', properties, dependsOn)
+    }
+}
+
+export interface ConnectionDrainingPolicyProperties {
+    Enabled: Value<boolean>
+    Timeout?: Value<number>
+}
+
+export class ConnectionDrainingPolicy extends ResourceBase {
+    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::ConnectionDrainingPolicy', properties, dependsOn)
+    }
+}
+
+export interface ListenersProperties {
+    InstancePort: Value<string>
+    InstanceProtocol?: Value<string>
+    LoadBalancerPort: Value<string>
+    PolicyNames?: Value<string>[]
+    Protocol: Value<string>
+    SSLCertificateId?: Value<string>
+}
+
+export class Listeners extends ResourceBase {
+    constructor(properties: ListenersProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::Listeners', properties, dependsOn)
+    }
+}
+
+export interface PoliciesProperties {
+    Attributes: any[]
+    InstancePorts?: Value<string>[]
+    LoadBalancerPorts?: Value<string>[]
+    PolicyName: Value<string>
+    PolicyType: Value<string>
+}
+
+export class Policies extends ResourceBase {
+    constructor(properties: PoliciesProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::Policies', properties, dependsOn)
+    }
+}
+
+export interface AppCookieStickinessPolicyProperties {
+    CookieName: Value<string>
+    PolicyName: Value<string>
+}
+
+export class AppCookieStickinessPolicy extends ResourceBase {
+    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancing::AppCookieStickinessPolicy', properties, dependsOn)
+    }
+}
 
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy
     AppCookieStickinessPolicy?: AppCookieStickinessPolicy[]
-    AvailabilityZones?: Value<AvailabilityZones>
+    AvailabilityZones?: Value<string>[]
     ConnectionDrainingPolicy?: ConnectionDrainingPolicy
     ConnectionSettings?: ConnectionSettings
     CrossZone?: Value<boolean>
     HealthCheck?: HealthCheck
     Instances?: Value<string>[]
-    LoadBalancerName?: Value<string>
     LBCookieStickinessPolicy?: LBCookieStickinessPolicy[]
-    Listeners: Listener[]
-    Policies?: Policie[]
+    Listeners: Listeners[]
+    LoadBalancerName?: Value<string>
+    Policies?: Policies[]
     Scheme?: Value<string>
     SecurityGroups?: Value<string>[]
     Subnets?: Value<string>[]

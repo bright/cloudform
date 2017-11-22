@@ -1,22 +1,55 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import AppSource from './appSource';
-import DataSource from './dataSource';
-import Environment from './environment';
-import SslConfiguration from './sslConfiguration';
+export interface DataSourceProperties {
+    Arn?: Value<string>;
+    DatabaseName?: Value<string>;
+    Type?: Value<string>;
+}
+export declare class DataSource extends ResourceBase {
+    constructor(properties: DataSourceProperties, dependsOn?: Value<string>);
+}
+export interface EnvironmentVariableProperties {
+    Key: Value<string>;
+    Secure?: Value<boolean>;
+    Value: Value<string>;
+}
+export declare class EnvironmentVariable extends ResourceBase {
+    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string>);
+}
+export interface SslConfigurationProperties {
+    Certificate?: Value<string>;
+    Chain?: Value<string>;
+    PrivateKey?: Value<string>;
+}
+export declare class SslConfiguration extends ResourceBase {
+    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string>);
+}
+export interface SourceProperties {
+    Password?: Value<string>;
+    Revision?: Value<string>;
+    SshKey?: Value<string>;
+    Type?: Value<string>;
+    Url?: Value<string>;
+    Username?: Value<string>;
+}
+export declare class Source extends ResourceBase {
+    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+}
 export interface AppProperties {
-    AppSource?: AppSource;
-    Attributes?: any;
-    Description?: Value<string>;
+    AppSource?: Source;
+    Attributes?: {
+        [key: string]: Value<string>;
+    };
     DataSources?: DataSource[];
+    Description?: Value<string>;
     Domains?: Value<string>[];
     EnableSsl?: Value<boolean>;
-    Environment?: Environment;
-    Name?: Value<string>;
+    Environment?: EnvironmentVariable[];
+    Name: Value<string>;
     Shortname?: Value<string>;
     SslConfiguration?: SslConfiguration;
     StackId: Value<string>;
-    Type?: Value<string>;
+    Type: Value<string>;
 }
 export default class App extends ResourceBase {
     constructor(properties: AppProperties, dependsOn?: Value<string>);

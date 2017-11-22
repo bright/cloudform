@@ -1,9 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-export declare type KeyType = "API_KEY";
 export interface UsagePlanKeyProperties {
     KeyId: Value<string>;
-    KeyType: Value<KeyType>;
+    KeyType: Value<string>;
     UsagePlanId: Value<string>;
 }
 export default class UsagePlanKey extends ResourceBase {

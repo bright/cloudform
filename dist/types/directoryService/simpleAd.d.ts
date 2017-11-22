@@ -1,7 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import VpcSettings from './vpcSettings';
-export declare type Size = "Large" | "Small" | "*";
+export interface VpcSettingsProperties {
+    SubnetIds: Value<string>[];
+    VpcId: Value<string>;
+}
+export declare class VpcSettings extends ResourceBase {
+    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string>);
+}
 export interface SimpleADProperties {
     CreateAlias?: Value<boolean>;
     Description?: Value<string>;
@@ -9,7 +14,7 @@ export interface SimpleADProperties {
     Name: Value<string>;
     Password: Value<string>;
     ShortName?: Value<string>;
-    Size: Value<Size>;
+    Size: Value<string>;
     VpcSettings: VpcSettings;
 }
 export default class SimpleAD extends ResourceBase {

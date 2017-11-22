@@ -1,17 +1,18 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-
 
 
 
 export interface ManagedPolicyProperties {
     Description?: Value<string>
     Groups?: Value<string>[]
+    ManagedPolicyName?: Value<string>
     Path?: Value<string>
     PolicyDocument: any
     Roles?: Value<string>[]
     Users?: Value<string>[]
-    ManagedPolicyName?: Value<string>
 }
 
 export default class ManagedPolicy extends ResourceBase {

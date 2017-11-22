@@ -1,22 +1,108 @@
-import {ResourceBase} from '../resource'
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
+import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
-import AttributeDefinition from './attributeDefinition'
-import GlobalSecondaryIndexe from './globalSecondaryIndexe'
-import KeySchema from './keySchema'
-import LocalSecondaryIndexe from './localSecondaryIndexe'
-import ProvisionedThroughput from './provisionedThroughput'
-import StreamSpecification from './streamSpecification'
 
+export interface TimeToLiveSpecificationProperties {
+    AttributeName: Value<string>
+    Enabled: Value<boolean>
+}
 
+export class TimeToLiveSpecification extends ResourceBase {
+    constructor(properties: TimeToLiveSpecificationProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::TimeToLiveSpecification', properties, dependsOn)
+    }
+}
+
+export interface AttributeDefinitionProperties {
+    AttributeName: Value<string>
+    AttributeType: Value<string>
+}
+
+export class AttributeDefinition extends ResourceBase {
+    constructor(properties: AttributeDefinitionProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::AttributeDefinition', properties, dependsOn)
+    }
+}
+
+export interface LocalSecondaryIndexProperties {
+    IndexName: Value<string>
+    KeySchema: KeySchema[]
+    Projection: Projection
+}
+
+export class LocalSecondaryIndex extends ResourceBase {
+    constructor(properties: LocalSecondaryIndexProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::LocalSecondaryIndex', properties, dependsOn)
+    }
+}
+
+export interface ProvisionedThroughputProperties {
+    ReadCapacityUnits: Value<number>
+    WriteCapacityUnits: Value<number>
+}
+
+export class ProvisionedThroughput extends ResourceBase {
+    constructor(properties: ProvisionedThroughputProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::ProvisionedThroughput', properties, dependsOn)
+    }
+}
+
+export interface GlobalSecondaryIndexProperties {
+    IndexName: Value<string>
+    KeySchema: KeySchema[]
+    Projection: Projection
+    ProvisionedThroughput: ProvisionedThroughput
+}
+
+export class GlobalSecondaryIndex extends ResourceBase {
+    constructor(properties: GlobalSecondaryIndexProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::GlobalSecondaryIndex', properties, dependsOn)
+    }
+}
+
+export interface KeySchemaProperties {
+    AttributeName: Value<string>
+    KeyType: Value<string>
+}
+
+export class KeySchema extends ResourceBase {
+    constructor(properties: KeySchemaProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::KeySchema', properties, dependsOn)
+    }
+}
+
+export interface ProjectionProperties {
+    NonKeyAttributes?: Value<string>[]
+    ProjectionType?: Value<string>
+}
+
+export class Projection extends ResourceBase {
+    constructor(properties: ProjectionProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::Projection', properties, dependsOn)
+    }
+}
+
+export interface StreamSpecificationProperties {
+    StreamViewType: Value<string>
+}
+
+export class StreamSpecification extends ResourceBase {
+    constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string>) {
+        super('AWS::DynamoDB::StreamSpecification', properties, dependsOn)
+    }
+}
 
 export interface TableProperties {
-    AttributeDefinitions: AttributeDefinition[]
-    GlobalSecondaryIndexes?: GlobalSecondaryIndexe[]
+    AttributeDefinitions?: AttributeDefinition[]
+    GlobalSecondaryIndexes?: GlobalSecondaryIndex[]
     KeySchema: KeySchema[]
-    LocalSecondaryIndexes?: LocalSecondaryIndexe[]
+    LocalSecondaryIndexes?: LocalSecondaryIndex[]
     ProvisionedThroughput: ProvisionedThroughput
     StreamSpecification?: StreamSpecification
     TableName?: Value<string>
+    Tags?: ResourceTag[]
+    TimeToLiveSpecification?: TimeToLiveSpecification
 }
 
 export default class Table extends ResourceBase {

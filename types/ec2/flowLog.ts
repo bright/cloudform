@@ -1,16 +1,16 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
 
 
-export type ResourceType = "*" | "VPC" | "Subnet" | "NetworkInterface"
-export type TrafficType = "*" | "ACCEPT" | "REJECT" | "ALL"
 
 export interface FlowLogProperties {
     DeliverLogsPermissionArn: Value<string>
     LogGroupName: Value<string>
     ResourceId: Value<string>
-    ResourceType: Value<ResourceType>
-    TrafficType: Value<TrafficType>
+    ResourceType: Value<string>
+    TrafficType: Value<string>
 }
 
 export default class FlowLog extends ResourceBase {

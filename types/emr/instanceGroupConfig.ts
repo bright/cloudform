@@ -1,17 +1,161 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import EbsConfiguration from './ebsConfiguration'
 
-export type InstanceType = "*" | "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "c1.medium" | "c1.xlarge" | "cr1.8xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "cg1.4xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "hi1.4xlarge" | "hs1.8xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" | "i2.8xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "x1.32xlarge"
-export type Market = "ON_DEMAND" | "SPOT"
+export interface EbsBlockDeviceConfigProperties {
+    VolumeSpecification: VolumeSpecification
+    VolumesPerInstance?: Value<number>
+}
+
+export class EbsBlockDeviceConfig extends ResourceBase {
+    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn)
+    }
+}
+
+export interface ConfigurationProperties {
+    Classification?: Value<string>
+    ConfigurationProperties?: {[key: string]: Value<string>}
+    Configurations?: Configuration[]
+}
+
+export class Configuration extends ResourceBase {
+    constructor(properties: ConfigurationProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::Configuration', properties, dependsOn)
+    }
+}
+
+export interface MetricDimensionProperties {
+    Key: Value<string>
+    Value: Value<string>
+}
+
+export class MetricDimension extends ResourceBase {
+    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::MetricDimension', properties, dependsOn)
+    }
+}
+
+export interface SimpleScalingPolicyConfigurationProperties {
+    AdjustmentType?: Value<string>
+    CoolDown?: Value<number>
+    ScalingAdjustment: Value<number>
+}
+
+export class SimpleScalingPolicyConfiguration extends ResourceBase {
+    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::SimpleScalingPolicyConfiguration', properties, dependsOn)
+    }
+}
+
+export interface ScalingRuleProperties {
+    Action: ScalingAction
+    Description?: Value<string>
+    Name: Value<string>
+    Trigger: ScalingTrigger
+}
+
+export class ScalingRule extends ResourceBase {
+    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::ScalingRule', properties, dependsOn)
+    }
+}
+
+export interface ScalingActionProperties {
+    Market?: Value<string>
+    SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration
+}
+
+export class ScalingAction extends ResourceBase {
+    constructor(properties: ScalingActionProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::ScalingAction', properties, dependsOn)
+    }
+}
+
+export interface ScalingTriggerProperties {
+    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
+}
+
+export class ScalingTrigger extends ResourceBase {
+    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::ScalingTrigger', properties, dependsOn)
+    }
+}
+
+export interface ScalingConstraintsProperties {
+    MaxCapacity: Value<number>
+    MinCapacity: Value<number>
+}
+
+export class ScalingConstraints extends ResourceBase {
+    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::ScalingConstraints', properties, dependsOn)
+    }
+}
+
+export interface CloudWatchAlarmDefinitionProperties {
+    ComparisonOperator: Value<string>
+    Dimensions?: MetricDimension[]
+    EvaluationPeriods?: Value<number>
+    MetricName: Value<string>
+    Namespace?: Value<string>
+    Period: Value<number>
+    Statistic?: Value<string>
+    Threshold: Value<number>
+    Unit?: Value<string>
+}
+
+export class CloudWatchAlarmDefinition extends ResourceBase {
+    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::CloudWatchAlarmDefinition', properties, dependsOn)
+    }
+}
+
+export interface VolumeSpecificationProperties {
+    Iops?: Value<number>
+    SizeInGB: Value<number>
+    VolumeType: Value<string>
+}
+
+export class VolumeSpecification extends ResourceBase {
+    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::VolumeSpecification', properties, dependsOn)
+    }
+}
+
+export interface AutoScalingPolicyProperties {
+    Constraints: ScalingConstraints
+    Rules: ScalingRule[]
+}
+
+export class AutoScalingPolicy extends ResourceBase {
+    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::AutoScalingPolicy', properties, dependsOn)
+    }
+}
+
+export interface EbsConfigurationProperties {
+    EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[]
+    EbsOptimized?: Value<boolean>
+}
+
+export class EbsConfiguration extends ResourceBase {
+    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string>) {
+        super('AWS::EMR::EbsConfiguration', properties, dependsOn)
+    }
+}
 
 export interface InstanceGroupConfigProperties {
+    AutoScalingPolicy?: AutoScalingPolicy
     BidPrice?: Value<string>
-    Configurations?: any[]
+    Configurations?: Configuration[]
     EbsConfiguration?: EbsConfiguration
     InstanceCount: Value<number>
-    InstanceType: Value<InstanceType>
-    Market?: Value<Market>
+    InstanceRole: Value<string>
+    InstanceType: Value<string>
+    JobFlowId: Value<string>
+    Market?: Value<string>
     Name?: Value<string>
 }
 

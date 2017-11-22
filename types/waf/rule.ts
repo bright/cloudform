@@ -1,13 +1,24 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
 
+export interface PredicateProperties {
+    DataId: Value<string>
+    Negated: Value<boolean>
+    Type: Value<string>
+}
 
-export type Action = "ALLOW" | "BLOCK" | "COUNT" | "*"
+export class Predicate extends ResourceBase {
+    constructor(properties: PredicateProperties, dependsOn?: Value<string>) {
+        super('AWS::WAF::Predicate', properties, dependsOn)
+    }
+}
 
 export interface RuleProperties {
-    Action: Value<Action>
-    Priority: Value<number>
-    RuleId: Value<string>
+    MetricName: Value<string>
+    Name: Value<string>
+    Predicates?: Predicate[]
 }
 
 export default class Rule extends ResourceBase {

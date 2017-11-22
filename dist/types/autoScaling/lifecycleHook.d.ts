@@ -7,8 +7,8 @@ export interface LifecycleHookProperties {
     LifecycleHookName?: Value<string>;
     LifecycleTransition: Value<string>;
     NotificationMetadata?: Value<string>;
-    NotificationTargetARN: Value<string>;
-    RoleARN: Value<string>;
+    NotificationTargetARN?: Value<string>;
+    RoleARN?: Value<string>;
 }
 export default class LifecycleHook extends ResourceBase {
     constructor(properties: LifecycleHookProperties, dependsOn?: Value<string>);

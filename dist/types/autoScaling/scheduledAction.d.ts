@@ -2,7 +2,7 @@ import { ResourceBase } from '../resource';
 import { Value } from '../internal';
 export interface ScheduledActionProperties {
     AutoScalingGroupName: Value<string>;
-    DesiredCapacity?: Value<string>;
+    DesiredCapacity?: Value<number>;
     EndTime?: Value<string>;
     MaxSize?: Value<number>;
     MinSize?: Value<number>;

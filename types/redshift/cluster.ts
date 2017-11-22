@@ -1,18 +1,27 @@
-import {ResourceBase} from '../resource'
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
+import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
 
+export interface LoggingPropertiesProperties {
+    BucketName: Value<string>
+    S3KeyPrefix?: Value<string>
+}
 
-export type ClusterType = "single-node" | "multi-node"
-export type NodeType = "dw.hs1.xlarge" | "dw.hs1.8xlarge" | "*"
+export class LoggingProperties extends ResourceBase {
+    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string>) {
+        super('AWS::Redshift::LoggingProperties', properties, dependsOn)
+    }
+}
 
 export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>
     AutomatedSnapshotRetentionPeriod?: Value<number>
     AvailabilityZone?: Value<string>
     ClusterParameterGroupName?: Value<string>
-    ClusterSecurityGroups?: Value<string>
+    ClusterSecurityGroups?: Value<string>[]
     ClusterSubnetGroupName?: Value<string>
-    ClusterType: Value<ClusterType>
+    ClusterType: Value<string>
     ClusterVersion?: Value<string>
     DBName: Value<string>
     ElasticIp?: Value<string>
@@ -20,10 +29,11 @@ export interface ClusterProperties {
     HsmClientCertificateIdentifier?: Value<string>
     HsmConfigurationIdentifier?: Value<string>
     IamRoles?: Value<string>[]
-    KmsKeyId: Value<string>
-    MasterUsername: Value<string>
+    KmsKeyId?: Value<string>
+    LoggingProperties?: LoggingProperties
     MasterUserPassword: Value<string>
-    NodeType: Value<NodeType>
+    MasterUsername: Value<string>
+    NodeType: Value<string>
     NumberOfNodes?: Value<number>
     OwnerAccount?: Value<string>
     Port?: Value<number>
@@ -31,7 +41,8 @@ export interface ClusterProperties {
     PubliclyAccessible?: Value<boolean>
     SnapshotClusterIdentifier?: Value<string>
     SnapshotIdentifier?: Value<string>
-    VpcSecurityGroupIds?: Value<string>
+    Tags?: ResourceTag[]
+    VpcSecurityGroupIds?: Value<string>[]
 }
 
 export default class Cluster extends ResourceBase {

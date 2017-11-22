@@ -1,35 +1,72 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import BlockDeviceMapping from './blockDeviceMapping'
-import TimeBasedAutoScaling from './timeBasedAutoScaling'
 
-export type AutoScalingType = "*" | "load" | "timer"
-export type InstanceType = "*" | "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "c1.medium" | "c1.xlarge" | "cr1.8xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "cg1.4xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "hi1.4xlarge" | "hs1.8xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" | "i2.8xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "x1.32xlarge"
-export type RootDeviceType = "*" | "ebs" | "instance-store"
-export type Tenancy = "*" | "dedicated" | "default" | "host"
-export type VirtualizationType = "*" | "paravirtual" | "hvm"
+export interface BlockDeviceMappingProperties {
+    DeviceName?: Value<string>
+    Ebs?: EbsBlockDevice
+    NoDevice?: Value<string>
+    VirtualName?: Value<string>
+}
+
+export class BlockDeviceMapping extends ResourceBase {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::BlockDeviceMapping', properties, dependsOn)
+    }
+}
+
+export interface EbsBlockDeviceProperties {
+    DeleteOnTermination?: Value<boolean>
+    Iops?: Value<number>
+    SnapshotId?: Value<string>
+    VolumeSize?: Value<number>
+    VolumeType?: Value<string>
+}
+
+export class EbsBlockDevice extends ResourceBase {
+    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::EbsBlockDevice', properties, dependsOn)
+    }
+}
+
+export interface TimeBasedAutoScalingProperties {
+    Friday?: {[key: string]: Value<string>}
+    Monday?: {[key: string]: Value<string>}
+    Saturday?: {[key: string]: Value<string>}
+    Sunday?: {[key: string]: Value<string>}
+    Thursday?: {[key: string]: Value<string>}
+    Tuesday?: {[key: string]: Value<string>}
+    Wednesday?: {[key: string]: Value<string>}
+}
+
+export class TimeBasedAutoScaling extends ResourceBase {
+    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::TimeBasedAutoScaling', properties, dependsOn)
+    }
+}
 
 export interface InstanceProperties {
     AgentVersion?: Value<string>
     AmiId?: Value<string>
     Architecture?: Value<string>
-    AutoScalingType?: Value<AutoScalingType>
+    AutoScalingType?: Value<string>
     AvailabilityZone?: Value<string>
     BlockDeviceMappings?: BlockDeviceMapping[]
     EbsOptimized?: Value<boolean>
     ElasticIps?: Value<string>[]
     Hostname?: Value<string>
     InstallUpdatesOnBoot?: Value<boolean>
-    InstanceType: Value<InstanceType>
+    InstanceType: Value<string>
     LayerIds: Value<string>[]
     Os?: Value<string>
-    RootDeviceType?: Value<RootDeviceType>
+    RootDeviceType?: Value<string>
     SshKeyName?: Value<string>
     StackId: Value<string>
     SubnetId?: Value<string>
-    Tenancy?: Value<Tenancy>
+    Tenancy?: Value<string>
     TimeBasedAutoScaling?: TimeBasedAutoScaling
-    VirtualizationType?: Value<VirtualizationType>
+    VirtualizationType?: Value<string>
     Volumes?: Value<string>[]
 }
 

@@ -1,14 +1,38 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import ConfigurationPropertie from './configurationPropertie';
-import InputArtifactDetails from './inputArtifactDetails';
-import OutputArtifactDetails from './outputArtifactDetails';
-import Settings from './settings';
+export interface SettingsProperties {
+    EntityUrlTemplate?: Value<string>;
+    ExecutionUrlTemplate?: Value<string>;
+    RevisionUrlTemplate?: Value<string>;
+    ThirdPartyConfigurationUrl?: Value<string>;
+}
+export declare class Settings extends ResourceBase {
+    constructor(properties: SettingsProperties, dependsOn?: Value<string>);
+}
+export interface ArtifactDetailsProperties {
+    MaximumCount: Value<number>;
+    MinimumCount: Value<number>;
+}
+export declare class ArtifactDetails extends ResourceBase {
+    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string>);
+}
+export interface ConfigurationPropertiesProperties {
+    Description?: Value<string>;
+    Key: Value<boolean>;
+    Name: Value<string>;
+    Queryable?: Value<boolean>;
+    Required: Value<boolean>;
+    Secret: Value<boolean>;
+    Type?: Value<string>;
+}
+export declare class ConfigurationProperties extends ResourceBase {
+    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string>);
+}
 export interface CustomActionTypeProperties {
     Category: Value<string>;
-    ConfigurationProperties?: ConfigurationPropertie[];
-    InputArtifactDetails: InputArtifactDetails;
-    OutputArtifactDetails: OutputArtifactDetails;
+    ConfigurationProperties?: ConfigurationProperties[];
+    InputArtifactDetails: ArtifactDetails;
+    OutputArtifactDetails: ArtifactDetails;
     Provider: Value<string>;
     Settings?: Settings;
     Version?: Value<string>;

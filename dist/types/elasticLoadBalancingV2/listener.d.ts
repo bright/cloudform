@@ -1,14 +1,24 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import Certificates from './certificates';
-import DefaultActions from './defaultActions';
-export declare type Protocol = "*" | "HTTP" | "HTTPS";
+export interface ActionProperties {
+    TargetGroupArn: Value<string>;
+    Type: Value<string>;
+}
+export declare class Action extends ResourceBase {
+    constructor(properties: ActionProperties, dependsOn?: Value<string>);
+}
+export interface CertificateProperties {
+    CertificateArn?: Value<string>;
+}
+export declare class Certificate extends ResourceBase {
+    constructor(properties: CertificateProperties, dependsOn?: Value<string>);
+}
 export interface ListenerProperties {
-    Certificates?: Certificates;
-    DefaultActions: DefaultActions;
+    Certificates?: Certificate[];
+    DefaultActions: Action[];
     LoadBalancerArn: Value<string>;
     Port: Value<number>;
-    Protocol: Value<Protocol>;
+    Protocol: Value<string>;
     SslPolicy?: Value<string>;
 }
 export default class Listener extends ResourceBase {

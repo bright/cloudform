@@ -1,10 +1,17 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import FileSystemTag from './fileSystemTag';
-export declare type PerformanceMode = "*" | "generalPurpose" | "maxIO";
+export interface ElasticFileSystemTagProperties {
+    Key: Value<string>;
+    Value: Value<string>;
+}
+export declare class ElasticFileSystemTag extends ResourceBase {
+    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string>);
+}
 export interface FileSystemProperties {
-    PerformanceMode?: Value<PerformanceMode>;
-    FileSystemTags?: FileSystemTag[];
+    Encrypted?: Value<boolean>;
+    FileSystemTags?: ElasticFileSystemTag[];
+    KmsKeyId?: Value<string>;
+    PerformanceMode?: Value<string>;
 }
 export default class FileSystem extends ResourceBase {
     constructor(properties: FileSystemProperties, dependsOn?: Value<string>);

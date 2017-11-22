@@ -1,13 +1,37 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import Scope from './scope';
-export declare type MaximumExecutionFrequency = "*" | "One_Hour" | "Three_Hours" | "Six_Hours" | "Twelve_Hours" | "TwentyFour_Hours";
+export interface ScopeProperties {
+    ComplianceResourceId?: Value<string>;
+    ComplianceResourceTypes?: Value<string>[];
+    TagKey?: Value<string>;
+    TagValue?: Value<string>;
+}
+export declare class Scope extends ResourceBase {
+    constructor(properties: ScopeProperties, dependsOn?: Value<string>);
+}
+export interface SourceProperties {
+    Owner: Value<string>;
+    SourceDetails?: SourceDetail[];
+    SourceIdentifier: Value<string>;
+}
+export declare class Source extends ResourceBase {
+    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+}
+export interface SourceDetailProperties {
+    EventSource: Value<string>;
+    MaximumExecutionFrequency?: Value<string>;
+    MessageType: Value<string>;
+}
+export declare class SourceDetail extends ResourceBase {
+    constructor(properties: SourceDetailProperties, dependsOn?: Value<string>);
+}
 export interface ConfigRuleProperties {
     ConfigRuleName?: Value<string>;
     Description?: Value<string>;
     InputParameters?: any;
-    MaximumExecutionFrequency?: Value<MaximumExecutionFrequency>;
+    MaximumExecutionFrequency?: Value<string>;
     Scope?: Scope;
+    Source: Source;
 }
 export default class ConfigRule extends ResourceBase {
     constructor(properties: ConfigRuleProperties, dependsOn?: Value<string>);

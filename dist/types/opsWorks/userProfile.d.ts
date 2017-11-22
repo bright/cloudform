@@ -2,7 +2,7 @@ import { ResourceBase } from '../resource';
 import { Value } from '../internal';
 export interface UserProfileProperties {
     AllowSelfManagement?: Value<boolean>;
-    IamUserArn?: Value<string>;
+    IamUserArn: Value<string>;
     SshPublicKey?: Value<string>;
     SshUsername?: Value<string>;
 }

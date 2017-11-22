@@ -1,11 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-export declare type Type = "String" | "StringList";
 export interface ParameterProperties {
-    Name?: Value<string>;
+    Type: Value<string>;
     Description?: Value<string>;
-    Type: Value<Type>;
+    AllowedPattern?: Value<string>;
     Value: Value<string>;
+    Name?: Value<string>;
 }
 export default class Parameter extends ResourceBase {
     constructor(properties: ParameterProperties, dependsOn?: Value<string>);

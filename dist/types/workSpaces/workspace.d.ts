@@ -6,7 +6,7 @@ export interface WorkspaceProperties {
     RootVolumeEncryptionEnabled?: Value<boolean>;
     UserName: Value<string>;
     UserVolumeEncryptionEnabled?: Value<boolean>;
-    VolumeEncryptionKey: Value<string>;
+    VolumeEncryptionKey?: Value<string>;
 }
 export default class Workspace extends ResourceBase {
     constructor(properties: WorkspaceProperties, dependsOn?: Value<string>);

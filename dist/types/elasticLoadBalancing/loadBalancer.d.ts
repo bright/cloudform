@@ -1,27 +1,85 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-import AccessLoggingPolicy from './accessLoggingPolicy';
-import AppCookieStickinessPolicy from './appCookieStickinessPolicy';
-import ConnectionDrainingPolicy from './connectionDrainingPolicy';
-import ConnectionSettings from './connectionSettings';
-import HealthCheck from './healthCheck';
-import LBCookieStickinessPolicy from './lbCookieStickinessPolicy';
-import Listener from './listener';
-import Policie from './policie';
-export declare type AvailabilityZones = "us-east-1b" | "us-east-1c" | "us-east-1d" | "us-east-1e" | "us-west-1b" | "us-west-1c" | "us-west-2a" | "us-west-2b" | "us-west-2c" | "ap-northeast-1a" | "ap-northeast-1c" | "ap-northeast-2a" | "ap-northeast-2c" | "ap-south-1a" | "ap-south-1b" | "ap-southeast-1a" | "ap-southeast-1b" | "ap-southeast-2a" | "ap-southeast-2b" | "ap-southeast-2c" | "sa-east-1a" | "sa-east-1b" | "sa-east-1c" | "eu-west-1a" | "eu-west-1b" | "eu-west-1c" | "eu-central-1a" | "eu-central-1b";
+export interface HealthCheckProperties {
+    HealthyThreshold: Value<string>;
+    Interval: Value<string>;
+    Target: Value<string>;
+    Timeout: Value<string>;
+    UnhealthyThreshold: Value<string>;
+}
+export declare class HealthCheck extends ResourceBase {
+    constructor(properties: HealthCheckProperties, dependsOn?: Value<string>);
+}
+export interface AccessLoggingPolicyProperties {
+    EmitInterval?: Value<number>;
+    Enabled: Value<boolean>;
+    S3BucketName: Value<string>;
+    S3BucketPrefix?: Value<string>;
+}
+export declare class AccessLoggingPolicy extends ResourceBase {
+    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string>);
+}
+export interface ConnectionSettingsProperties {
+    IdleTimeout: Value<number>;
+}
+export declare class ConnectionSettings extends ResourceBase {
+    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string>);
+}
+export interface LBCookieStickinessPolicyProperties {
+    CookieExpirationPeriod?: Value<string>;
+    PolicyName?: Value<string>;
+}
+export declare class LBCookieStickinessPolicy extends ResourceBase {
+    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string>);
+}
+export interface ConnectionDrainingPolicyProperties {
+    Enabled: Value<boolean>;
+    Timeout?: Value<number>;
+}
+export declare class ConnectionDrainingPolicy extends ResourceBase {
+    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string>);
+}
+export interface ListenersProperties {
+    InstancePort: Value<string>;
+    InstanceProtocol?: Value<string>;
+    LoadBalancerPort: Value<string>;
+    PolicyNames?: Value<string>[];
+    Protocol: Value<string>;
+    SSLCertificateId?: Value<string>;
+}
+export declare class Listeners extends ResourceBase {
+    constructor(properties: ListenersProperties, dependsOn?: Value<string>);
+}
+export interface PoliciesProperties {
+    Attributes: any[];
+    InstancePorts?: Value<string>[];
+    LoadBalancerPorts?: Value<string>[];
+    PolicyName: Value<string>;
+    PolicyType: Value<string>;
+}
+export declare class Policies extends ResourceBase {
+    constructor(properties: PoliciesProperties, dependsOn?: Value<string>);
+}
+export interface AppCookieStickinessPolicyProperties {
+    CookieName: Value<string>;
+    PolicyName: Value<string>;
+}
+export declare class AppCookieStickinessPolicy extends ResourceBase {
+    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string>);
+}
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy;
     AppCookieStickinessPolicy?: AppCookieStickinessPolicy[];
-    AvailabilityZones?: Value<AvailabilityZones>;
+    AvailabilityZones?: Value<string>[];
     ConnectionDrainingPolicy?: ConnectionDrainingPolicy;
     ConnectionSettings?: ConnectionSettings;
     CrossZone?: Value<boolean>;
     HealthCheck?: HealthCheck;
     Instances?: Value<string>[];
-    LoadBalancerName?: Value<string>;
     LBCookieStickinessPolicy?: LBCookieStickinessPolicy[];
-    Listeners: Listener[];
-    Policies?: Policie[];
+    Listeners: Listeners[];
+    LoadBalancerName?: Value<string>;
+    Policies?: Policies[];
     Scheme?: Value<string>;
     SecurityGroups?: Value<string>[];
     Subnets?: Value<string>[];

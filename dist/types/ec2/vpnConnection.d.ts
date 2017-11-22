@@ -1,11 +1,19 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
+export interface VpnTunnelOptionsSpecificationProperties {
+    PreSharedKey?: Value<string>;
+    TunnelInsideCidr?: Value<string>;
+}
+export declare class VpnTunnelOptionsSpecification extends ResourceBase {
+    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string>);
+}
 export interface VPNConnectionProperties {
-    Type: Value<string>;
     CustomerGatewayId: Value<string>;
     StaticRoutesOnly?: Value<boolean>;
-    VpnGatewayId: Value<string>;
     Tags?: ResourceTag[];
+    Type: Value<string>;
+    VpnGatewayId: Value<string>;
+    VpnTunnelOptionsSpecifications?: VpnTunnelOptionsSpecification[];
 }
 export default class VPNConnection extends ResourceBase {
     constructor(properties: VPNConnectionProperties, dependsOn?: Value<string>);

@@ -1,16 +1,38 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import AliasTarget from './aliasTarget'
-import GeoLocation from './geoLocation'
 
-export type Failover = "PRIMARY" | "SECONDARY"
-export type Type = "A" | "AAAA" | "CNAME" | "MX" | "NS" | "PTR" | "SOA" | "SPF" | "SRV" | "TXT"
+export interface GeoLocationProperties {
+    ContinentCode?: Value<string>
+    CountryCode?: Value<string>
+    SubdivisionCode?: Value<string>
+}
+
+export class GeoLocation extends ResourceBase {
+    constructor(properties: GeoLocationProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::GeoLocation', properties, dependsOn)
+    }
+}
+
+export interface AliasTargetProperties {
+    DNSName: Value<string>
+    EvaluateTargetHealth?: Value<boolean>
+    HostedZoneId: Value<string>
+}
+
+export class AliasTarget extends ResourceBase {
+    constructor(properties: AliasTargetProperties, dependsOn?: Value<string>) {
+        super('AWS::Route53::AliasTarget', properties, dependsOn)
+    }
+}
 
 export interface RecordSetProperties {
     AliasTarget?: AliasTarget
     Comment?: Value<string>
-    Failover?: Value<Failover>
+    Failover?: Value<string>
     GeoLocation?: GeoLocation
+    HealthCheckId?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
     Name: Value<string>
@@ -18,7 +40,7 @@ export interface RecordSetProperties {
     ResourceRecords?: Value<string>[]
     SetIdentifier?: Value<string>
     TTL?: Value<string>
-    Type: Value<Type>
+    Type: Value<string>
     Weight?: Value<number>
 }
 

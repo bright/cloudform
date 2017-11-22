@@ -1,9 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-export declare type Status = "Active" | "Inactive";
 export interface AccessKeyProperties {
-    Serial?: Value<string>;
-    Status: Value<Status>;
+    Serial?: Value<number>;
+    Status?: Value<string>;
     UserName: Value<string>;
 }
 export default class AccessKey extends ResourceBase {

@@ -1,8 +1,15 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
-import MetricTransformation from './metricTransformation';
+export interface MetricTransformationProperties {
+    MetricName: Value<string>;
+    MetricNamespace: Value<string>;
+    MetricValue: Value<string>;
+}
+export declare class MetricTransformation extends ResourceBase {
+    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string>);
+}
 export interface MetricFilterProperties {
-    FilterPattern: Value<string>[];
+    FilterPattern: Value<string>;
     LogGroupName: Value<string>;
     MetricTransformations: MetricTransformation[];
 }

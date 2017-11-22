@@ -1,21 +1,76 @@
-import {ResourceBase} from '../resource'
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
+import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
-import ChefConfiguration from './chefConfiguration'
-import ConfigurationManager from './configurationManager'
-import CustomCookbooksSource from './customCookbooksSource'
-import ElasticIp from './elasticIp'
-import RdsDbInstance from './rdsDbInstance'
 
+export interface SourceProperties {
+    Password?: Value<string>
+    Revision?: Value<string>
+    SshKey?: Value<string>
+    Type?: Value<string>
+    Url?: Value<string>
+    Username?: Value<string>
+}
 
+export class Source extends ResourceBase {
+    constructor(properties: SourceProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::Source', properties, dependsOn)
+    }
+}
+
+export interface ChefConfigurationProperties {
+    BerkshelfVersion?: Value<string>
+    ManageBerkshelf?: Value<boolean>
+}
+
+export class ChefConfiguration extends ResourceBase {
+    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::ChefConfiguration', properties, dependsOn)
+    }
+}
+
+export interface StackConfigurationManagerProperties {
+    Name?: Value<string>
+    Version?: Value<string>
+}
+
+export class StackConfigurationManager extends ResourceBase {
+    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::StackConfigurationManager', properties, dependsOn)
+    }
+}
+
+export interface RdsDbInstanceProperties {
+    DbPassword: Value<string>
+    DbUser: Value<string>
+    RdsDbInstanceArn: Value<string>
+}
+
+export class RdsDbInstance extends ResourceBase {
+    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::RdsDbInstance', properties, dependsOn)
+    }
+}
+
+export interface ElasticIpProperties {
+    Ip: Value<string>
+    Name?: Value<string>
+}
+
+export class ElasticIp extends ResourceBase {
+    constructor(properties: ElasticIpProperties, dependsOn?: Value<string>) {
+        super('AWS::OpsWorks::ElasticIp', properties, dependsOn)
+    }
+}
 
 export interface StackProperties {
     AgentVersion?: Value<string>
-    Attributes?: any
+    Attributes?: {[key: string]: Value<string>}
     ChefConfiguration?: ChefConfiguration
     CloneAppIds?: Value<string>[]
     ClonePermissions?: Value<boolean>
-    ConfigurationManager?: ConfigurationManager
-    CustomCookbooksSource?: CustomCookbooksSource
+    ConfigurationManager?: StackConfigurationManager
+    CustomCookbooksSource?: Source
     CustomJson?: any
     DefaultAvailabilityZone?: Value<string>
     DefaultInstanceProfileArn: Value<string>
@@ -29,7 +84,8 @@ export interface StackProperties {
     Name: Value<string>
     RdsDbInstances?: RdsDbInstance[]
     ServiceRoleArn: Value<string>
-    SourceStackId: Value<string>
+    SourceStackId?: Value<string>
+    Tags?: ResourceTag[]
     UseCustomCookbooks?: Value<boolean>
     UseOpsworksSecurityGroups?: Value<boolean>
     VpcId?: Value<string>

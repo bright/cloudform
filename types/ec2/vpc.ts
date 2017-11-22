@@ -1,14 +1,15 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
 
 
-export type InstanceTenancy = "default" | "dedicated"
 
 export interface VPCProperties {
     CidrBlock: Value<string>
-    EnableDnsSupport?: Value<boolean>
     EnableDnsHostnames?: Value<boolean>
-    InstanceTenancy?: Value<InstanceTenancy>
+    EnableDnsSupport?: Value<boolean>
+    InstanceTenancy?: Value<string>
     Tags?: ResourceTag[]
 }
 

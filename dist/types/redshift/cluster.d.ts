@@ -1,15 +1,20 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-export declare type ClusterType = "single-node" | "multi-node";
-export declare type NodeType = "dw.hs1.xlarge" | "dw.hs1.8xlarge" | "*";
+export interface LoggingPropertiesProperties {
+    BucketName: Value<string>;
+    S3KeyPrefix?: Value<string>;
+}
+export declare class LoggingProperties extends ResourceBase {
+    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string>);
+}
 export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>;
     AutomatedSnapshotRetentionPeriod?: Value<number>;
     AvailabilityZone?: Value<string>;
     ClusterParameterGroupName?: Value<string>;
-    ClusterSecurityGroups?: Value<string>;
+    ClusterSecurityGroups?: Value<string>[];
     ClusterSubnetGroupName?: Value<string>;
-    ClusterType: Value<ClusterType>;
+    ClusterType: Value<string>;
     ClusterVersion?: Value<string>;
     DBName: Value<string>;
     ElasticIp?: Value<string>;
@@ -17,10 +22,11 @@ export interface ClusterProperties {
     HsmClientCertificateIdentifier?: Value<string>;
     HsmConfigurationIdentifier?: Value<string>;
     IamRoles?: Value<string>[];
-    KmsKeyId: Value<string>;
-    MasterUsername: Value<string>;
+    KmsKeyId?: Value<string>;
+    LoggingProperties?: LoggingProperties;
     MasterUserPassword: Value<string>;
-    NodeType: Value<NodeType>;
+    MasterUsername: Value<string>;
+    NodeType: Value<string>;
     NumberOfNodes?: Value<number>;
     OwnerAccount?: Value<string>;
     Port?: Value<number>;
@@ -28,7 +34,8 @@ export interface ClusterProperties {
     PubliclyAccessible?: Value<boolean>;
     SnapshotClusterIdentifier?: Value<string>;
     SnapshotIdentifier?: Value<string>;
-    VpcSecurityGroupIds?: Value<string>;
+    Tags?: ResourceTag[];
+    VpcSecurityGroupIds?: Value<string>[];
 }
 export default class Cluster extends ResourceBase {
     constructor(properties: ClusterProperties, dependsOn?: Value<string>);

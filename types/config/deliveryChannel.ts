@@ -1,8 +1,17 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import ConfigSnapshotDeliveryProperties from './configSnapshotDeliveryProperties'
 
+export interface ConfigSnapshotDeliveryPropertiesProperties {
+    DeliveryFrequency?: Value<string>
+}
 
+export class ConfigSnapshotDeliveryProperties extends ResourceBase {
+    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string>) {
+        super('AWS::Config::ConfigSnapshotDeliveryProperties', properties, dependsOn)
+    }
+}
 
 export interface DeliveryChannelProperties {
     ConfigSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties

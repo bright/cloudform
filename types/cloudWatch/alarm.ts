@@ -1,27 +1,38 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import Dimension from './dimension'
 
-export type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold"
-export type Statistic = "SampleCount" | "Average" | "Sum" | "Minimum" | "Maximum"
-export type Unit = "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Count" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second" | "None"
+export interface DimensionProperties {
+    Name: Value<string>
+    Value: Value<string>
+}
+
+export class Dimension extends ResourceBase {
+    constructor(properties: DimensionProperties, dependsOn?: Value<string>) {
+        super('AWS::CloudWatch::Dimension', properties, dependsOn)
+    }
+}
 
 export interface AlarmProperties {
-    ActionsEnabled?: Value<string>
+    ActionsEnabled?: Value<boolean>
     AlarmActions?: Value<string>[]
     AlarmDescription?: Value<string>
     AlarmName?: Value<string>
-    ComparisonOperator: Value<ComparisonOperator>
+    ComparisonOperator: Value<string>
     Dimensions?: Dimension[]
-    EvaluationPeriods: Value<string>
+    EvaluateLowSampleCountPercentile?: Value<string>
+    EvaluationPeriods: Value<number>
+    ExtendedStatistic?: Value<string>
     InsufficientDataActions?: Value<string>[]
     MetricName: Value<string>
     Namespace: Value<string>
     OKActions?: Value<string>[]
-    Period: Value<string>
-    Statistic: Value<Statistic>
-    Threshold: Value<string>
-    Unit?: Value<Unit>
+    Period: Value<number>
+    Statistic?: Value<string>
+    Threshold: Value<number>
+    TreatMissingData?: Value<string>
+    Unit?: Value<string>
 }
 
 export default class Alarm extends ResourceBase {

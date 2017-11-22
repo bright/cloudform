@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../internal';
 export interface ClusterSecurityGroupIngressProperties {
-    ClusterSecurityGroupName: Value<string>;
     CIDRIP?: Value<string>;
+    ClusterSecurityGroupName: Value<string>;
     EC2SecurityGroupName?: Value<string>;
     EC2SecurityGroupOwnerId?: Value<string>;
 }

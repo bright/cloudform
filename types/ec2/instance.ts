@@ -1,27 +1,146 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
-import BlockDeviceMapping from './blockDeviceMapping'
-import Ipv6Addresse from './ipv6Addresse'
-import NetworkInterface from './networkInterface'
-import SsmAssociations from './ssmAssociations'
-import Volume from './volume'
 
-export type AvailabilityZone = "us-east-1b" | "us-east-1c" | "us-east-1d" | "us-east-1e" | "us-west-1b" | "us-west-1c" | "us-west-2a" | "us-west-2b" | "us-west-2c" | "ap-northeast-1a" | "ap-northeast-1c" | "ap-northeast-2a" | "ap-northeast-2c" | "ap-south-1a" | "ap-south-1b" | "ap-southeast-1a" | "ap-southeast-1b" | "ap-southeast-2a" | "ap-southeast-2b" | "ap-southeast-2c" | "sa-east-1a" | "sa-east-1b" | "sa-east-1c" | "eu-west-1a" | "eu-west-1b" | "eu-west-1c" | "eu-central-1a" | "eu-central-1b"
-export type InstanceType = "*" | "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "c1.medium" | "c1.xlarge" | "cr1.8xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "cg1.4xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "hi1.4xlarge" | "hs1.8xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" | "i2.8xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "x1.32xlarge"
+export interface ElasticGpuSpecificationProperties {
+    Type: Value<string>
+}
+
+export class ElasticGpuSpecification extends ResourceBase {
+    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::ElasticGpuSpecification', properties, dependsOn)
+    }
+}
+
+export interface NetworkInterfaceProperties {
+    AssociatePublicIpAddress?: Value<boolean>
+    DeleteOnTermination?: Value<boolean>
+    Description?: Value<string>
+    DeviceIndex: Value<string>
+    GroupSet?: Value<string>[]
+    Ipv6AddressCount?: Value<number>
+    Ipv6Addresses?: InstanceIpv6Address[]
+    NetworkInterfaceId?: Value<string>
+    PrivateIpAddress?: Value<string>
+    PrivateIpAddresses?: PrivateIpAddressSpecification[]
+    SecondaryPrivateIpAddressCount?: Value<number>
+    SubnetId?: Value<string>
+}
+
+export class NetworkInterface extends ResourceBase {
+    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::NetworkInterface', properties, dependsOn)
+    }
+}
+
+export interface InstanceIpv6AddressProperties {
+    Ipv6Address: Value<string>
+}
+
+export class InstanceIpv6Address extends ResourceBase {
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
+    }
+}
+
+export interface VolumeProperties {
+    Device: Value<string>
+    VolumeId: Value<string>
+}
+
+export class Volume extends ResourceBase {
+    constructor(properties: VolumeProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::Volume', properties, dependsOn)
+    }
+}
+
+export interface AssociationParameterProperties {
+    Key: Value<string>
+    Value: Value<string>[]
+}
+
+export class AssociationParameter extends ResourceBase {
+    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::AssociationParameter', properties, dependsOn)
+    }
+}
+
+export interface EbsProperties {
+    DeleteOnTermination?: Value<boolean>
+    Encrypted?: Value<boolean>
+    Iops?: Value<number>
+    SnapshotId?: Value<string>
+    VolumeSize?: Value<number>
+    VolumeType?: Value<string>
+}
+
+export class Ebs extends ResourceBase {
+    constructor(properties: EbsProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::Ebs', properties, dependsOn)
+    }
+}
+
+export interface NoDeviceProperties {
+
+}
+
+export class NoDevice extends ResourceBase {
+    constructor(properties: NoDeviceProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::NoDevice', properties, dependsOn)
+    }
+}
+
+export interface SsmAssociationProperties {
+    AssociationParameters?: AssociationParameter[]
+    DocumentName: Value<string>
+}
+
+export class SsmAssociation extends ResourceBase {
+    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::SsmAssociation', properties, dependsOn)
+    }
+}
+
+export interface BlockDeviceMappingProperties {
+    DeviceName: Value<string>
+    Ebs?: Ebs
+    NoDevice?: NoDevice
+    VirtualName?: Value<string>
+}
+
+export class BlockDeviceMapping extends ResourceBase {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::BlockDeviceMapping', properties, dependsOn)
+    }
+}
+
+export interface PrivateIpAddressSpecificationProperties {
+    Primary: Value<boolean>
+    PrivateIpAddress: Value<string>
+}
+
+export class PrivateIpAddressSpecification extends ResourceBase {
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>) {
+        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
+    }
+}
 
 export interface InstanceProperties {
+    AdditionalInfo?: Value<string>
     Affinity?: Value<string>
-    AvailabilityZone?: Value<AvailabilityZone>
+    AvailabilityZone?: Value<string>
     BlockDeviceMappings?: BlockDeviceMapping[]
     DisableApiTermination?: Value<boolean>
     EbsOptimized?: Value<boolean>
+    ElasticGpuSpecifications?: ElasticGpuSpecification[]
     HostId?: Value<string>
     IamInstanceProfile?: Value<string>
     ImageId: Value<string>
     InstanceInitiatedShutdownBehavior?: Value<string>
-    InstanceType: Value<InstanceType>
+    InstanceType?: Value<string>
     Ipv6AddressCount?: Value<number>
-    Ipv6Addresses?: Ipv6Addresse[]
+    Ipv6Addresses?: InstanceIpv6Address[]
     KernelId?: Value<string>
     KeyName?: Value<string>
     Monitoring?: Value<boolean>
@@ -32,12 +151,12 @@ export interface InstanceProperties {
     SecurityGroupIds?: Value<string>[]
     SecurityGroups?: Value<string>[]
     SourceDestCheck?: Value<boolean>
-    SsmAssociations?: SsmAssociations
+    SsmAssociations?: SsmAssociation[]
     SubnetId?: Value<string>
+    Tags?: ResourceTag[]
     Tenancy?: Value<string>
     UserData?: Value<string>
     Volumes?: Volume[]
-    Tags?: ResourceTag[]
 }
 
 export default class Instance extends ResourceBase {

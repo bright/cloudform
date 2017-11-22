@@ -1,12 +1,28 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-import OptionConfigurations from './optionConfigurations';
-export declare type EngineName = "MySQL" | "mariadb" | "oracle-se1" | "oracle-se" | "oracle-ee" | "sqlserver-ee" | "sqlserver-se" | "sqlserver-ex" | "sqlserver-web" | "postgres" | "aurora" | "*";
+export interface OptionSettingProperties {
+    Name?: Value<string>;
+    Value?: Value<string>;
+}
+export declare class OptionSetting extends ResourceBase {
+    constructor(properties: OptionSettingProperties, dependsOn?: Value<string>);
+}
+export interface OptionConfigurationProperties {
+    DBSecurityGroupMemberships?: Value<string>[];
+    OptionName: Value<string>;
+    OptionSettings?: OptionSetting;
+    OptionVersion?: Value<string>;
+    Port?: Value<number>;
+    VpcSecurityGroupMemberships?: Value<string>[];
+}
+export declare class OptionConfiguration extends ResourceBase {
+    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string>);
+}
 export interface OptionGroupProperties {
-    EngineName: Value<EngineName>;
+    EngineName: Value<string>;
     MajorEngineVersion: Value<string>;
+    OptionConfigurations: OptionConfiguration[];
     OptionGroupDescription: Value<string>;
-    OptionConfigurations: OptionConfigurations;
     Tags?: ResourceTag[];
 }
 export default class OptionGroup extends ResourceBase {

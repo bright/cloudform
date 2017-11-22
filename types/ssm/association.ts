@@ -1,14 +1,34 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import Target from './target'
 
+export interface TargetProperties {
+    Key: Value<string>
+    Values: Value<string>[]
+}
 
+export class Target extends ResourceBase {
+    constructor(properties: TargetProperties, dependsOn?: Value<string>) {
+        super('AWS::SSM::Target', properties, dependsOn)
+    }
+}
+
+export interface ParameterValuesProperties {
+    ParameterValues: Value<string>[]
+}
+
+export class ParameterValues extends ResourceBase {
+    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string>) {
+        super('AWS::SSM::ParameterValues', properties, dependsOn)
+    }
+}
 
 export interface AssociationProperties {
     DocumentVersion?: Value<string>
     InstanceId?: Value<string>
     Name: Value<string>
-    Parameters?: any
+    Parameters?: {[key: string]: ParameterValues}
     ScheduleExpression?: Value<string>
     Targets?: Target[]
 }

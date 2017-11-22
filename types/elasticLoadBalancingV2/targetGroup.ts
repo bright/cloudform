@@ -1,30 +1,58 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value} from '../internal'
-import Matcher from './matcher'
-import TargetGroupAttribute from './targetGroupAttribute'
-import Target from './target'
 
-export type HealthCheckPort = "*" | "traffic-port"
-export type HealthCheckProtocol = "*" | "HTTP" | "HTTPS"
-export type Protocol = "*" | "HTTP" | "HTTPS"
+export interface TargetGroupAttributeProperties {
+    Key?: Value<string>
+    Value?: Value<string>
+}
+
+export class TargetGroupAttribute extends ResourceBase {
+    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancingV2::TargetGroupAttribute', properties, dependsOn)
+    }
+}
+
+export interface MatcherProperties {
+    HttpCode: Value<string>
+}
+
+export class Matcher extends ResourceBase {
+    constructor(properties: MatcherProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancingV2::Matcher', properties, dependsOn)
+    }
+}
+
+export interface TargetDescriptionProperties {
+    AvailabilityZone?: Value<string>
+    Id: Value<string>
+    Port?: Value<number>
+}
+
+export class TargetDescription extends ResourceBase {
+    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string>) {
+        super('AWS::ElasticLoadBalancingV2::TargetDescription', properties, dependsOn)
+    }
+}
 
 export interface TargetGroupProperties {
     HealthCheckIntervalSeconds?: Value<number>
     HealthCheckPath?: Value<string>
-    HealthCheckPort?: Value<HealthCheckPort>
-    HealthCheckProtocol?: Value<HealthCheckProtocol>
+    HealthCheckPort?: Value<string>
+    HealthCheckProtocol?: Value<string>
     HealthCheckTimeoutSeconds?: Value<number>
     HealthyThresholdCount?: Value<number>
     Matcher?: Matcher
     Name?: Value<string>
     Port: Value<number>
-    Protocol: Value<Protocol>
-    TargetGroupAttributes: TargetGroupAttribute[]
-    TargetGroupFullName?: Value<string>
-    Targets: Target[]
-    UnhealthyThresholdCount?: Value<number>
-    VpcId: Value<number>
+    Protocol: Value<string>
     Tags?: ResourceTag[]
+    TargetGroupAttributes?: TargetGroupAttribute[]
+    TargetType?: Value<string>
+    Targets?: TargetDescription[]
+    UnhealthyThresholdCount?: Value<number>
+    VpcId: Value<string>
 }
 
 export default class TargetGroup extends ResourceBase {

@@ -1,22 +1,54 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import CognitoIdentityProvider from './cognitoIdentityProvider'
-import CognitoStreams from './cognitoStreams'
-import PushSync from './pushSync'
 
+export interface PushSyncProperties {
+    ApplicationArns?: Value<string>[]
+    RoleArn?: Value<string>
+}
 
+export class PushSync extends ResourceBase {
+    constructor(properties: PushSyncProperties, dependsOn?: Value<string>) {
+        super('AWS::Cognito::PushSync', properties, dependsOn)
+    }
+}
+
+export interface CognitoIdentityProviderProperties {
+    ServerSideTokenCheck?: Value<boolean>
+    ProviderName?: Value<string>
+    ClientId?: Value<string>
+}
+
+export class CognitoIdentityProvider extends ResourceBase {
+    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string>) {
+        super('AWS::Cognito::CognitoIdentityProvider', properties, dependsOn)
+    }
+}
+
+export interface CognitoStreamsProperties {
+    StreamingStatus?: Value<string>
+    StreamName?: Value<string>
+    RoleArn?: Value<string>
+}
+
+export class CognitoStreams extends ResourceBase {
+    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string>) {
+        super('AWS::Cognito::CognitoStreams', properties, dependsOn)
+    }
+}
 
 export interface IdentityPoolProperties {
+    PushSync?: PushSync
+    CognitoIdentityProviders?: CognitoIdentityProvider[]
+    CognitoEvents?: any
+    DeveloperProviderName?: Value<string>
+    CognitoStreams?: CognitoStreams
     IdentityPoolName?: Value<string>
     AllowUnauthenticatedIdentities: Value<boolean>
-    DeveloperProviderName?: Value<string>
     SupportedLoginProviders?: any
-    CognitoIdentityProviders?: CognitoIdentityProvider[]
     SamlProviderARNs?: Value<string>[]
     OpenIdConnectProviderARNs?: Value<string>[]
-    CognitoStreams?: CognitoStreams
-    PushSync?: PushSync
-    CognitoEvents?: any
 }
 
 export default class IdentityPool extends ResourceBase {

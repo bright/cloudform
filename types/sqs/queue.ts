@@ -1,6 +1,7 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import RedrivePolicy from './redrivePolicy'
 
 
 
@@ -8,11 +9,13 @@ export interface QueueProperties {
     ContentBasedDeduplication?: Value<boolean>
     DelaySeconds?: Value<number>
     FifoQueue?: Value<boolean>
+    KmsDataKeyReusePeriodSeconds?: Value<number>
+    KmsMasterKeyId?: Value<string>
     MaximumMessageSize?: Value<number>
     MessageRetentionPeriod?: Value<number>
     QueueName?: Value<string>
     ReceiveMessageWaitTimeSeconds?: Value<number>
-    RedrivePolicy?: RedrivePolicy
+    RedrivePolicy?: any
     VisibilityTimeout?: Value<number>
 }
 

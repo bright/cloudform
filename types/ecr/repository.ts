@@ -1,10 +1,21 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
 
+export interface LifecyclePolicyProperties {
+    LifecyclePolicyText?: Value<string>
+    RegistryId?: Value<string>
+}
 
-
+export class LifecyclePolicy extends ResourceBase {
+    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::ECR::LifecyclePolicy', properties, dependsOn)
+    }
+}
 
 export interface RepositoryProperties {
+    LifecyclePolicy?: LifecyclePolicy
     RepositoryName?: Value<string>
     RepositoryPolicyText?: any
 }

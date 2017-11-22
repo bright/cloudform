@@ -1,15 +1,36 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-import LoginProfile from './loginProfile'
 
+export interface LoginProfileProperties {
+    Password: Value<string>
+    PasswordResetRequired?: Value<boolean>
+}
 
+export class LoginProfile extends ResourceBase {
+    constructor(properties: LoginProfileProperties, dependsOn?: Value<string>) {
+        super('AWS::IAM::LoginProfile', properties, dependsOn)
+    }
+}
+
+export interface PolicyProperties {
+    PolicyDocument: any
+    PolicyName: Value<string>
+}
+
+export class Policy extends ResourceBase {
+    constructor(properties: PolicyProperties, dependsOn?: Value<string>) {
+        super('AWS::IAM::Policy', properties, dependsOn)
+    }
+}
 
 export interface UserProperties {
-    Path?: Value<string>
     Groups?: Value<string>[]
     LoginProfile?: LoginProfile
     ManagedPolicyArns?: Value<string>[]
-    Policies?: any[]
+    Path?: Value<string>
+    Policies?: Policy[]
     UserName?: Value<string>
 }
 

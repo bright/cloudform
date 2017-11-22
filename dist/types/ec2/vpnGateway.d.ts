@@ -1,9 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../internal';
-export declare type Type = "ipsec.1";
 export interface VPNGatewayProperties {
-    Type: Value<Type>;
+    AmazonSideAsn?: Value<number>;
     Tags?: ResourceTag[];
+    Type: Value<string>;
 }
 export default class VPNGateway extends ResourceBase {
     constructor(properties: VPNGatewayProperties, dependsOn?: Value<string>);

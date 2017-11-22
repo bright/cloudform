@@ -1,6 +1,7 @@
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+   
 import {ResourceBase} from '../resource'
 import {Value} from '../internal'
-
 
 
 
@@ -10,7 +11,7 @@ export interface WorkspaceProperties {
     RootVolumeEncryptionEnabled?: Value<boolean>
     UserName: Value<string>
     UserVolumeEncryptionEnabled?: Value<boolean>
-    VolumeEncryptionKey: Value<string>
+    VolumeEncryptionKey?: Value<string>
 }
 
 export default class Workspace extends ResourceBase {

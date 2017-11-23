@@ -5,7 +5,7 @@ export interface VpcSettingsProperties {
     VpcId: Value<string>;
 }
 export declare class VpcSettings extends ResourceBase {
-    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SimpleADProperties {
     CreateAlias?: Value<boolean>;
@@ -18,5 +18,5 @@ export interface SimpleADProperties {
     VpcSettings: VpcSettings;
 }
 export default class SimpleAD extends ResourceBase {
-    constructor(properties: SimpleADProperties, dependsOn?: Value<string>);
+    constructor(properties: SimpleADProperties, dependsOn?: Value<string> | Value<string>[]);
 }

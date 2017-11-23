@@ -9,7 +9,7 @@ export interface DimensionProperties {
 }
 
 export class Dimension extends ResourceBase {
-    constructor(properties: DimensionProperties, dependsOn?: Value<string>) {
+    constructor(properties: DimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudWatch::Dimension', properties, dependsOn)
     }
 }
@@ -36,7 +36,7 @@ export interface AlarmProperties {
 }
 
 export default class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties, dependsOn?: Value<string>) {
+    constructor(properties: AlarmProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudWatch::Alarm', properties, dependsOn)
     }
 }

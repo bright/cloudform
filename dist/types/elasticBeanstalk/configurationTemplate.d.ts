@@ -5,7 +5,7 @@ export interface SourceConfigurationProperties {
     TemplateName: Value<string>;
 }
 export declare class SourceConfiguration extends ResourceBase {
-    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigurationOptionSettingProperties {
     Namespace: Value<string>;
@@ -14,7 +14,7 @@ export interface ConfigurationOptionSettingProperties {
     Value?: Value<string>;
 }
 export declare class ConfigurationOptionSetting extends ResourceBase {
-    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigurationTemplateProperties {
     ApplicationName: Value<string>;
@@ -26,5 +26,5 @@ export interface ConfigurationTemplateProperties {
     SourceConfiguration?: SourceConfiguration;
 }
 export default class ConfigurationTemplate extends ResourceBase {
-    constructor(properties: ConfigurationTemplateProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigurationTemplateProperties, dependsOn?: Value<string> | Value<string>[]);
 }

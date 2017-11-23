@@ -34,7 +34,7 @@ export interface ContainerDefinitionProperties {
 }
 
 export class ContainerDefinition extends ResourceBase {
-    constructor(properties: ContainerDefinitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ContainerDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::ContainerDefinition', properties, dependsOn)
     }
 }
@@ -45,7 +45,7 @@ export interface LogConfigurationProperties {
 }
 
 export class LogConfiguration extends ResourceBase {
-    constructor(properties: LogConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LogConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::LogConfiguration', properties, dependsOn)
     }
 }
@@ -57,7 +57,7 @@ export interface DeviceProperties {
 }
 
 export class Device extends ResourceBase {
-    constructor(properties: DeviceProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::Device', properties, dependsOn)
     }
 }
@@ -68,7 +68,7 @@ export interface KeyValuePairProperties {
 }
 
 export class KeyValuePair extends ResourceBase {
-    constructor(properties: KeyValuePairProperties, dependsOn?: Value<string>) {
+    constructor(properties: KeyValuePairProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::KeyValuePair', properties, dependsOn)
     }
 }
@@ -80,7 +80,7 @@ export interface MountPointProperties {
 }
 
 export class MountPoint extends ResourceBase {
-    constructor(properties: MountPointProperties, dependsOn?: Value<string>) {
+    constructor(properties: MountPointProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::MountPoint', properties, dependsOn)
     }
 }
@@ -91,7 +91,7 @@ export interface VolumeFromProperties {
 }
 
 export class VolumeFrom extends ResourceBase {
-    constructor(properties: VolumeFromProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeFromProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::VolumeFrom', properties, dependsOn)
     }
 }
@@ -102,7 +102,7 @@ export interface HostEntryProperties {
 }
 
 export class HostEntry extends ResourceBase {
-    constructor(properties: HostEntryProperties, dependsOn?: Value<string>) {
+    constructor(properties: HostEntryProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::HostEntry', properties, dependsOn)
     }
 }
@@ -113,7 +113,7 @@ export interface KernelCapabilitiesProperties {
 }
 
 export class KernelCapabilities extends ResourceBase {
-    constructor(properties: KernelCapabilitiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: KernelCapabilitiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::KernelCapabilities', properties, dependsOn)
     }
 }
@@ -124,7 +124,7 @@ export interface TaskDefinitionPlacementConstraintProperties {
 }
 
 export class TaskDefinitionPlacementConstraint extends ResourceBase {
-    constructor(properties: TaskDefinitionPlacementConstraintProperties, dependsOn?: Value<string>) {
+    constructor(properties: TaskDefinitionPlacementConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::TaskDefinitionPlacementConstraint', properties, dependsOn)
     }
 }
@@ -135,7 +135,7 @@ export interface VolumeProperties {
 }
 
 export class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::Volume', properties, dependsOn)
     }
 }
@@ -147,7 +147,7 @@ export interface PortMappingProperties {
 }
 
 export class PortMapping extends ResourceBase {
-    constructor(properties: PortMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: PortMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::PortMapping', properties, dependsOn)
     }
 }
@@ -159,7 +159,7 @@ export interface UlimitProperties {
 }
 
 export class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string>) {
+    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::Ulimit', properties, dependsOn)
     }
 }
@@ -171,7 +171,7 @@ export interface LinuxParametersProperties {
 }
 
 export class LinuxParameters extends ResourceBase {
-    constructor(properties: LinuxParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: LinuxParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::LinuxParameters', properties, dependsOn)
     }
 }
@@ -181,7 +181,7 @@ export interface HostVolumePropertiesProperties {
 }
 
 export class HostVolumeProperties extends ResourceBase {
-    constructor(properties: HostVolumePropertiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: HostVolumePropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::HostVolumeProperties', properties, dependsOn)
     }
 }
@@ -196,7 +196,7 @@ export interface TaskDefinitionProperties {
 }
 
 export default class TaskDefinition extends ResourceBase {
-    constructor(properties: TaskDefinitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: TaskDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::TaskDefinition', properties, dependsOn)
     }
 }

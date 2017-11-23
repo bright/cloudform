@@ -5,14 +5,14 @@ export interface LoginProfileProperties {
     PasswordResetRequired?: Value<boolean>;
 }
 export declare class LoginProfile extends ResourceBase {
-    constructor(properties: LoginProfileProperties, dependsOn?: Value<string>);
+    constructor(properties: LoginProfileProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PolicyProperties {
     PolicyDocument: any;
     PolicyName: Value<string>;
 }
 export declare class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UserProperties {
     Groups?: Value<string>[];
@@ -23,5 +23,5 @@ export interface UserProperties {
     UserName?: Value<string>;
 }
 export default class User extends ResourceBase {
-    constructor(properties: UserProperties, dependsOn?: Value<string>);
+    constructor(properties: UserProperties, dependsOn?: Value<string> | Value<string>[]);
 }

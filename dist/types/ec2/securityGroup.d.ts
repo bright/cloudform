@@ -12,7 +12,7 @@ export interface IngressProperties {
     ToPort?: Value<number>;
 }
 export declare class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string>);
+    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EgressProperties {
     CidrIp?: Value<string>;
@@ -25,7 +25,7 @@ export interface EgressProperties {
     ToPort?: Value<number>;
 }
 export declare class Egress extends ResourceBase {
-    constructor(properties: EgressProperties, dependsOn?: Value<string>);
+    constructor(properties: EgressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SecurityGroupProperties {
     GroupDescription: Value<string>;
@@ -36,5 +36,5 @@ export interface SecurityGroupProperties {
     VpcId?: Value<string>;
 }
 export default class SecurityGroup extends ResourceBase {
-    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

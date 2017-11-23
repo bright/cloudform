@@ -21,7 +21,7 @@ export interface ClusterProperties {
 }
 
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties, dependsOn?: Value<string>) {
+    constructor(properties: ClusterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DAX::Cluster', properties, dependsOn)
     }
 }

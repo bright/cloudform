@@ -5,7 +5,7 @@ export interface OptionSettingProperties {
     Value?: Value<string>;
 }
 export declare class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string>);
+    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OptionConfigurationProperties {
     DBSecurityGroupMemberships?: Value<string>[];
@@ -16,7 +16,7 @@ export interface OptionConfigurationProperties {
     VpcSecurityGroupMemberships?: Value<string>[];
 }
 export declare class OptionConfiguration extends ResourceBase {
-    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OptionGroupProperties {
     EngineName: Value<string>;
@@ -26,5 +26,5 @@ export interface OptionGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class OptionGroup extends ResourceBase {
-    constructor(properties: OptionGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: OptionGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -7,7 +7,7 @@ export interface ScopeProperties {
     TagValue?: Value<string>;
 }
 export declare class Scope extends ResourceBase {
-    constructor(properties: ScopeProperties, dependsOn?: Value<string>);
+    constructor(properties: ScopeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SourceProperties {
     Owner: Value<string>;
@@ -15,7 +15,7 @@ export interface SourceProperties {
     SourceIdentifier: Value<string>;
 }
 export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SourceDetailProperties {
     EventSource: Value<string>;
@@ -23,7 +23,7 @@ export interface SourceDetailProperties {
     MessageType: Value<string>;
 }
 export declare class SourceDetail extends ResourceBase {
-    constructor(properties: SourceDetailProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceDetailProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigRuleProperties {
     ConfigRuleName?: Value<string>;
@@ -34,5 +34,5 @@ export interface ConfigRuleProperties {
     Source: Source;
 }
 export default class ConfigRule extends ResourceBase {
-    constructor(properties: ConfigRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }

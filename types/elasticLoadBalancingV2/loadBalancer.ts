@@ -9,7 +9,7 @@ export interface LoadBalancerAttributeProperties {
 }
 
 export class LoadBalancerAttribute extends ResourceBase {
-    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::LoadBalancerAttribute', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface SubnetMappingProperties {
 }
 
 export class SubnetMapping extends ResourceBase {
-    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::SubnetMapping', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface LoadBalancerProperties {
 }
 
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::LoadBalancer', properties, dependsOn)
     }
 }

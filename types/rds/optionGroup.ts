@@ -9,7 +9,7 @@ export interface OptionSettingProperties {
 }
 
 export class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string>) {
+    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::RDS::OptionSetting', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface OptionConfigurationProperties {
 }
 
 export class OptionConfiguration extends ResourceBase {
-    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::RDS::OptionConfiguration', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface OptionGroupProperties {
 }
 
 export default class OptionGroup extends ResourceBase {
-    constructor(properties: OptionGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: OptionGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::RDS::OptionGroup', properties, dependsOn)
     }
 }

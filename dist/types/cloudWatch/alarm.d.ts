@@ -5,7 +5,7 @@ export interface DimensionProperties {
     Value: Value<string>;
 }
 export declare class Dimension extends ResourceBase {
-    constructor(properties: DimensionProperties, dependsOn?: Value<string>);
+    constructor(properties: DimensionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AlarmProperties {
     ActionsEnabled?: Value<boolean>;
@@ -28,5 +28,5 @@ export interface AlarmProperties {
     Unit?: Value<string>;
 }
 export default class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties, dependsOn?: Value<string>);
+    constructor(properties: AlarmProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -9,7 +9,7 @@ export interface VpnTunnelOptionsSpecificationProperties {
 }
 
 export class VpnTunnelOptionsSpecification extends ResourceBase {
-    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::VpnTunnelOptionsSpecification', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface VPNConnectionProperties {
 }
 
 export default class VPNConnection extends ResourceBase {
-    constructor(properties: VPNConnectionProperties, dependsOn?: Value<string>) {
+    constructor(properties: VPNConnectionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::VPNConnection', properties, dependsOn)
     }
 }

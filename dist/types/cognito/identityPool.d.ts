@@ -5,7 +5,7 @@ export interface PushSyncProperties {
     RoleArn?: Value<string>;
 }
 export declare class PushSync extends ResourceBase {
-    constructor(properties: PushSyncProperties, dependsOn?: Value<string>);
+    constructor(properties: PushSyncProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CognitoIdentityProviderProperties {
     ServerSideTokenCheck?: Value<boolean>;
@@ -13,7 +13,7 @@ export interface CognitoIdentityProviderProperties {
     ClientId?: Value<string>;
 }
 export declare class CognitoIdentityProvider extends ResourceBase {
-    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string>);
+    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CognitoStreamsProperties {
     StreamingStatus?: Value<string>;
@@ -21,7 +21,7 @@ export interface CognitoStreamsProperties {
     RoleArn?: Value<string>;
 }
 export declare class CognitoStreams extends ResourceBase {
-    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string>);
+    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IdentityPoolProperties {
     PushSync?: PushSync;
@@ -36,5 +36,5 @@ export interface IdentityPoolProperties {
     OpenIdConnectProviderARNs?: Value<string>[];
 }
 export default class IdentityPool extends ResourceBase {
-    constructor(properties: IdentityPoolProperties, dependsOn?: Value<string>);
+    constructor(properties: IdentityPoolProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -7,7 +7,7 @@ export interface BlockDeviceMappingProperties {
     VirtualName?: Value<string>;
 }
 export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BlockDeviceProperties {
     DeleteOnTermination?: Value<boolean>;
@@ -18,7 +18,7 @@ export interface BlockDeviceProperties {
     VolumeType?: Value<string>;
 }
 export declare class BlockDevice extends ResourceBase {
-    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string>);
+    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LaunchConfigurationProperties {
     AssociatePublicIpAddress?: Value<boolean>;
@@ -40,5 +40,5 @@ export interface LaunchConfigurationProperties {
     UserData?: Value<string>;
 }
 export default class LaunchConfiguration extends ResourceBase {
-    constructor(properties: LaunchConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: LaunchConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

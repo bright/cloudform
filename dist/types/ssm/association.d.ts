@@ -5,13 +5,13 @@ export interface TargetProperties {
     Values: Value<string>[];
 }
 export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ParameterValuesProperties {
     ParameterValues: Value<string>[];
 }
 export declare class ParameterValues extends ResourceBase {
-    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AssociationProperties {
     DocumentVersion?: Value<string>;
@@ -24,5 +24,5 @@ export interface AssociationProperties {
     Targets?: Target[];
 }
 export default class Association extends ResourceBase {
-    constructor(properties: AssociationProperties, dependsOn?: Value<string>);
+    constructor(properties: AssociationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -12,7 +12,7 @@ export interface StepScalingPolicyConfigurationProperties {
 }
 
 export class StepScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::StepScalingPolicyConfiguration', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface MetricDimensionProperties {
 }
 
 export class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::MetricDimension', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface StepAdjustmentProperties {
 }
 
 export class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::StepAdjustment', properties, dependsOn)
     }
 }
@@ -46,7 +46,7 @@ export interface PredefinedMetricSpecificationProperties {
 }
 
 export class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::PredefinedMetricSpecification', properties, dependsOn)
     }
 }
@@ -60,7 +60,7 @@ export interface CustomizedMetricSpecificationProperties {
 }
 
 export class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::CustomizedMetricSpecification', properties, dependsOn)
     }
 }
@@ -74,7 +74,7 @@ export interface TargetTrackingScalingPolicyConfigurationProperties {
 }
 
 export class TargetTrackingScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingScalingPolicyConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetTrackingScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::TargetTrackingScalingPolicyConfiguration', properties, dependsOn)
     }
 }
@@ -91,7 +91,7 @@ export interface ScalingPolicyProperties {
 }
 
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::ScalingPolicy', properties, dependsOn)
     }
 }

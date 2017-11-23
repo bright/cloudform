@@ -17,7 +17,7 @@ export interface RecordSetProperties {
     Weight?: Value<number>;
 }
 export declare class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties, dependsOn?: Value<string>);
+    constructor(properties: RecordSetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface GeoLocationProperties {
     ContinentCode?: Value<string>;
@@ -25,7 +25,7 @@ export interface GeoLocationProperties {
     SubdivisionCode?: Value<string>;
 }
 export declare class GeoLocation extends ResourceBase {
-    constructor(properties: GeoLocationProperties, dependsOn?: Value<string>);
+    constructor(properties: GeoLocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AliasTargetProperties {
     DNSName: Value<string>;
@@ -33,7 +33,7 @@ export interface AliasTargetProperties {
     HostedZoneId: Value<string>;
 }
 export declare class AliasTarget extends ResourceBase {
-    constructor(properties: AliasTargetProperties, dependsOn?: Value<string>);
+    constructor(properties: AliasTargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RecordSetGroupProperties {
     Comment?: Value<string>;
@@ -42,5 +42,5 @@ export interface RecordSetGroupProperties {
     RecordSets?: RecordSet[];
 }
 export default class RecordSetGroup extends ResourceBase {
-    constructor(properties: RecordSetGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: RecordSetGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

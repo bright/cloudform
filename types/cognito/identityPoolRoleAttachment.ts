@@ -8,7 +8,7 @@ export interface RulesConfigurationTypeProperties {
 }
 
 export class RulesConfigurationType extends ResourceBase {
-    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string>) {
+    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::RulesConfigurationType', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface RoleMappingProperties {
 }
 
 export class RoleMapping extends ResourceBase {
-    constructor(properties: RoleMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: RoleMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::RoleMapping', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface MappingRuleProperties {
 }
 
 export class MappingRule extends ResourceBase {
-    constructor(properties: MappingRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: MappingRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::MappingRule', properties, dependsOn)
     }
 }
@@ -45,7 +45,7 @@ export interface IdentityPoolRoleAttachmentProperties {
 }
 
 export default class IdentityPoolRoleAttachment extends ResourceBase {
-    constructor(properties: IdentityPoolRoleAttachmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: IdentityPoolRoleAttachmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::IdentityPoolRoleAttachment', properties, dependsOn)
     }
 }

@@ -5,7 +5,7 @@ export interface VpnTunnelOptionsSpecificationProperties {
     TunnelInsideCidr?: Value<string>;
 }
 export declare class VpnTunnelOptionsSpecification extends ResourceBase {
-    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface VPNConnectionProperties {
     CustomerGatewayId: Value<string>;
@@ -16,5 +16,5 @@ export interface VPNConnectionProperties {
     VpnTunnelOptionsSpecifications?: VpnTunnelOptionsSpecification[];
 }
 export default class VPNConnection extends ResourceBase {
-    constructor(properties: VPNConnectionProperties, dependsOn?: Value<string>);
+    constructor(properties: VPNConnectionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

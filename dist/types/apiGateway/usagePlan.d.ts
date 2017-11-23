@@ -5,14 +5,14 @@ export interface ApiStageProperties {
     Stage?: Value<string>;
 }
 export declare class ApiStage extends ResourceBase {
-    constructor(properties: ApiStageProperties, dependsOn?: Value<string>);
+    constructor(properties: ApiStageProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ThrottleSettingsProperties {
     BurstLimit?: Value<number>;
     RateLimit?: Value<number>;
 }
 export declare class ThrottleSettings extends ResourceBase {
-    constructor(properties: ThrottleSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: ThrottleSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface QuotaSettingsProperties {
     Limit?: Value<number>;
@@ -20,7 +20,7 @@ export interface QuotaSettingsProperties {
     Period?: Value<string>;
 }
 export declare class QuotaSettings extends ResourceBase {
-    constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UsagePlanProperties {
     ApiStages?: ApiStage[];
@@ -30,5 +30,5 @@ export interface UsagePlanProperties {
     UsagePlanName?: Value<string>;
 }
 export default class UsagePlan extends ResourceBase {
-    constructor(properties: UsagePlanProperties, dependsOn?: Value<string>);
+    constructor(properties: UsagePlanProperties, dependsOn?: Value<string> | Value<string>[]);
 }

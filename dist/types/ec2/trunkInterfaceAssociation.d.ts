@@ -7,5 +7,5 @@ export interface TrunkInterfaceAssociationProperties {
     VLANId?: Value<number>;
 }
 export default class TrunkInterfaceAssociation extends ResourceBase {
-    constructor(properties: TrunkInterfaceAssociationProperties, dependsOn?: Value<string>);
+    constructor(properties: TrunkInterfaceAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

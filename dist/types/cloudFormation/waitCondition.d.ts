@@ -6,5 +6,5 @@ export interface WaitConditionProperties {
     Timeout: Value<string>;
 }
 export default class WaitCondition extends ResourceBase {
-    constructor(properties: WaitConditionProperties, dependsOn?: Value<string>);
+    constructor(properties: WaitConditionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

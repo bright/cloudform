@@ -13,7 +13,7 @@ export interface MethodSettingProperties {
     ThrottlingRateLimit?: Value<number>;
 }
 export declare class MethodSetting extends ResourceBase {
-    constructor(properties: MethodSettingProperties, dependsOn?: Value<string>);
+    constructor(properties: MethodSettingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StageProperties {
     CacheClusterEnabled?: Value<boolean>;
@@ -30,5 +30,5 @@ export interface StageProperties {
     };
 }
 export default class Stage extends ResourceBase {
-    constructor(properties: StageProperties, dependsOn?: Value<string>);
+    constructor(properties: StageProperties, dependsOn?: Value<string> | Value<string>[]);
 }

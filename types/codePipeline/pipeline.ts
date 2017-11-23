@@ -8,7 +8,7 @@ export interface InputArtifactProperties {
 }
 
 export class InputArtifact extends ResourceBase {
-    constructor(properties: InputArtifactProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputArtifactProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::InputArtifact', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface ActionDeclarationProperties {
 }
 
 export class ActionDeclaration extends ResourceBase {
-    constructor(properties: ActionDeclarationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ActionDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::ActionDeclaration', properties, dependsOn)
     }
 }
@@ -36,7 +36,7 @@ export interface StageDeclarationProperties {
 }
 
 export class StageDeclaration extends ResourceBase {
-    constructor(properties: StageDeclarationProperties, dependsOn?: Value<string>) {
+    constructor(properties: StageDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::StageDeclaration', properties, dependsOn)
     }
 }
@@ -47,7 +47,7 @@ export interface BlockerDeclarationProperties {
 }
 
 export class BlockerDeclaration extends ResourceBase {
-    constructor(properties: BlockerDeclarationProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockerDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::BlockerDeclaration', properties, dependsOn)
     }
 }
@@ -58,7 +58,7 @@ export interface StageTransitionProperties {
 }
 
 export class StageTransition extends ResourceBase {
-    constructor(properties: StageTransitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: StageTransitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::StageTransition', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface ArtifactStoreProperties {
 }
 
 export class ArtifactStore extends ResourceBase {
-    constructor(properties: ArtifactStoreProperties, dependsOn?: Value<string>) {
+    constructor(properties: ArtifactStoreProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::ArtifactStore', properties, dependsOn)
     }
 }
@@ -83,7 +83,7 @@ export interface ActionTypeIdProperties {
 }
 
 export class ActionTypeId extends ResourceBase {
-    constructor(properties: ActionTypeIdProperties, dependsOn?: Value<string>) {
+    constructor(properties: ActionTypeIdProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::ActionTypeId', properties, dependsOn)
     }
 }
@@ -93,7 +93,7 @@ export interface OutputArtifactProperties {
 }
 
 export class OutputArtifact extends ResourceBase {
-    constructor(properties: OutputArtifactProperties, dependsOn?: Value<string>) {
+    constructor(properties: OutputArtifactProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::OutputArtifact', properties, dependsOn)
     }
 }
@@ -104,7 +104,7 @@ export interface EncryptionKeyProperties {
 }
 
 export class EncryptionKey extends ResourceBase {
-    constructor(properties: EncryptionKeyProperties, dependsOn?: Value<string>) {
+    constructor(properties: EncryptionKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::EncryptionKey', properties, dependsOn)
     }
 }
@@ -119,7 +119,7 @@ export interface PipelineProperties {
 }
 
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties, dependsOn?: Value<string>) {
+    constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::Pipeline', properties, dependsOn)
     }
 }

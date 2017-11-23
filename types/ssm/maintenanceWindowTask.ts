@@ -10,7 +10,7 @@ export interface MaintenanceWindowLambdaParametersProperties {
 }
 
 export class MaintenanceWindowLambdaParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::MaintenanceWindowLambdaParameters', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface NotificationConfigProperties {
 }
 
 export class NotificationConfig extends ResourceBase {
-    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::NotificationConfig', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface MaintenanceWindowAutomationParametersProperties {
 }
 
 export class MaintenanceWindowAutomationParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::MaintenanceWindowAutomationParameters', properties, dependsOn)
     }
 }
@@ -46,7 +46,7 @@ export interface TaskInvocationParametersProperties {
 }
 
 export class TaskInvocationParameters extends ResourceBase {
-    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::TaskInvocationParameters', properties, dependsOn)
     }
 }
@@ -58,7 +58,7 @@ export interface LoggingInfoProperties {
 }
 
 export class LoggingInfo extends ResourceBase {
-    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::LoggingInfo', properties, dependsOn)
     }
 }
@@ -69,7 +69,7 @@ export interface TargetProperties {
 }
 
 export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::Target', properties, dependsOn)
     }
 }
@@ -80,7 +80,7 @@ export interface MaintenanceWindowStepFunctionsParametersProperties {
 }
 
 export class MaintenanceWindowStepFunctionsParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::MaintenanceWindowStepFunctionsParameters', properties, dependsOn)
     }
 }
@@ -98,7 +98,7 @@ export interface MaintenanceWindowRunCommandParametersProperties {
 }
 
 export class MaintenanceWindowRunCommandParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::MaintenanceWindowRunCommandParameters', properties, dependsOn)
     }
 }
@@ -120,7 +120,7 @@ export interface MaintenanceWindowTaskProperties {
 }
 
 export default class MaintenanceWindowTask extends ResourceBase {
-    constructor(properties: MaintenanceWindowTaskProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaintenanceWindowTaskProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::MaintenanceWindowTask', properties, dependsOn)
     }
 }

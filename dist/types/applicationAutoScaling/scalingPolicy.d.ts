@@ -8,14 +8,14 @@ export interface StepScalingPolicyConfigurationProperties {
     StepAdjustments?: StepAdjustment[];
 }
 export declare class StepScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MetricDimensionProperties {
     Name: Value<string>;
     Value: Value<string>;
 }
 export declare class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string>);
+    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StepAdjustmentProperties {
     MetricIntervalLowerBound?: Value<number>;
@@ -23,14 +23,14 @@ export interface StepAdjustmentProperties {
     ScalingAdjustment: Value<number>;
 }
 export declare class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string>);
+    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PredefinedMetricSpecificationProperties {
     PredefinedMetricType: Value<string>;
     ResourceLabel?: Value<string>;
 }
 export declare class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomizedMetricSpecificationProperties {
     Dimensions?: MetricDimension[];
@@ -40,7 +40,7 @@ export interface CustomizedMetricSpecificationProperties {
     Unit?: Value<string>;
 }
 export declare class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetTrackingScalingPolicyConfigurationProperties {
     CustomizedMetricSpecification?: CustomizedMetricSpecification;
@@ -50,7 +50,7 @@ export interface TargetTrackingScalingPolicyConfigurationProperties {
     TargetValue: Value<number>;
 }
 export declare class TargetTrackingScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingScalingPolicyConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetTrackingScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ScalingPolicyProperties {
     PolicyName: Value<string>;
@@ -63,5 +63,5 @@ export interface ScalingPolicyProperties {
     TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }

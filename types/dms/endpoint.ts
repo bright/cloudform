@@ -14,7 +14,7 @@ export interface S3SettingsProperties {
 }
 
 export class S3Settings extends ResourceBase {
-    constructor(properties: S3SettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3SettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DMS::S3Settings', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface MongoDbSettingsProperties {
 }
 
 export class MongoDbSettings extends ResourceBase {
-    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DMS::MongoDbSettings', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface DynamoDbSettingsProperties {
 }
 
 export class DynamoDbSettings extends ResourceBase {
-    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DMS::DynamoDbSettings', properties, dependsOn)
     }
 }
@@ -69,7 +69,7 @@ export interface EndpointProperties {
 }
 
 export default class Endpoint extends ResourceBase {
-    constructor(properties: EndpointProperties, dependsOn?: Value<string>) {
+    constructor(properties: EndpointProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DMS::Endpoint', properties, dependsOn)
     }
 }

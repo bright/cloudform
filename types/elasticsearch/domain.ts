@@ -9,7 +9,7 @@ export interface VPCOptionsProperties {
 }
 
 export class VPCOptions extends ResourceBase {
-    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Elasticsearch::VPCOptions', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface ElasticsearchClusterConfigProperties {
 }
 
 export class ElasticsearchClusterConfig extends ResourceBase {
-    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Elasticsearch::ElasticsearchClusterConfig', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface SnapshotOptionsProperties {
 }
 
 export class SnapshotOptions extends ResourceBase {
-    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Elasticsearch::SnapshotOptions', properties, dependsOn)
     }
 }
@@ -47,7 +47,7 @@ export interface EBSOptionsProperties {
 }
 
 export class EBSOptions extends ResourceBase {
-    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Elasticsearch::EBSOptions', properties, dependsOn)
     }
 }
@@ -65,7 +65,7 @@ export interface DomainProperties {
 }
 
 export default class Domain extends ResourceBase {
-    constructor(properties: DomainProperties, dependsOn?: Value<string>) {
+    constructor(properties: DomainProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Elasticsearch::Domain', properties, dependsOn)
     }
 }

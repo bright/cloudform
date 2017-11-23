@@ -11,7 +11,7 @@ export interface ScopeProperties {
 }
 
 export class Scope extends ResourceBase {
-    constructor(properties: ScopeProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScopeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::Scope', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface SourceProperties {
 }
 
 export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::Source', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface SourceDetailProperties {
 }
 
 export class SourceDetail extends ResourceBase {
-    constructor(properties: SourceDetailProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceDetailProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::SourceDetail', properties, dependsOn)
     }
 }
@@ -50,7 +50,7 @@ export interface ConfigRuleProperties {
 }
 
 export default class ConfigRule extends ResourceBase {
-    constructor(properties: ConfigRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::ConfigRule', properties, dependsOn)
     }
 }

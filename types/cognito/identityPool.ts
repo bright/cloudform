@@ -9,7 +9,7 @@ export interface PushSyncProperties {
 }
 
 export class PushSync extends ResourceBase {
-    constructor(properties: PushSyncProperties, dependsOn?: Value<string>) {
+    constructor(properties: PushSyncProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::PushSync', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface CognitoIdentityProviderProperties {
 }
 
 export class CognitoIdentityProvider extends ResourceBase {
-    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string>) {
+    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::CognitoIdentityProvider', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface CognitoStreamsProperties {
 }
 
 export class CognitoStreams extends ResourceBase {
-    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string>) {
+    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::CognitoStreams', properties, dependsOn)
     }
 }
@@ -52,7 +52,7 @@ export interface IdentityPoolProperties {
 }
 
 export default class IdentityPool extends ResourceBase {
-    constructor(properties: IdentityPoolProperties, dependsOn?: Value<string>) {
+    constructor(properties: IdentityPoolProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::IdentityPool', properties, dependsOn)
     }
 }

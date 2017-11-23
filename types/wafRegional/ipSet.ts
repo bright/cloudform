@@ -9,7 +9,7 @@ export interface IPSetDescriptorProperties {
 }
 
 export class IPSetDescriptor extends ResourceBase {
-    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string>) {
+    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::IPSetDescriptor', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface IPSetProperties {
 }
 
 export default class IPSet extends ResourceBase {
-    constructor(properties: IPSetProperties, dependsOn?: Value<string>) {
+    constructor(properties: IPSetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::IPSet', properties, dependsOn)
     }
 }

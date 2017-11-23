@@ -8,7 +8,7 @@ export interface ConfigSnapshotDeliveryPropertiesProperties {
 }
 
 export class ConfigSnapshotDeliveryProperties extends ResourceBase {
-    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::ConfigSnapshotDeliveryProperties', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface DeliveryChannelProperties {
 }
 
 export default class DeliveryChannel extends ResourceBase {
-    constructor(properties: DeliveryChannelProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeliveryChannelProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::DeliveryChannel', properties, dependsOn)
     }
 }

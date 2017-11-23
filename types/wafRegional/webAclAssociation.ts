@@ -11,7 +11,7 @@ export interface WebACLAssociationProperties {
 }
 
 export default class WebACLAssociation extends ResourceBase {
-    constructor(properties: WebACLAssociationProperties, dependsOn?: Value<string>) {
+    constructor(properties: WebACLAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::WebACLAssociation', properties, dependsOn)
     }
 }

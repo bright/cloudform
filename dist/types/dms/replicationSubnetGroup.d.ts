@@ -7,5 +7,5 @@ export interface ReplicationSubnetGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class ReplicationSubnetGroup extends ResourceBase {
-    constructor(properties: ReplicationSubnetGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: ReplicationSubnetGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

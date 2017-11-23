@@ -4,7 +4,7 @@ export interface EndpointConfigurationProperties {
     Types?: Value<string>[];
 }
 export declare class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DomainNameProperties {
     CertificateArn?: Value<string>;
@@ -13,5 +13,5 @@ export interface DomainNameProperties {
     RegionalCertificateArn?: Value<string>;
 }
 export default class DomainName extends ResourceBase {
-    constructor(properties: DomainNameProperties, dependsOn?: Value<string>);
+    constructor(properties: DomainNameProperties, dependsOn?: Value<string> | Value<string>[]);
 }

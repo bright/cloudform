@@ -9,7 +9,7 @@ export interface ActionProperties {
 }
 
 export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::Action', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface RuleConditionProperties {
 }
 
 export class RuleCondition extends ResourceBase {
-    constructor(properties: RuleConditionProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleConditionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::RuleCondition', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface ListenerRuleProperties {
 }
 
 export default class ListenerRule extends ResourceBase {
-    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::ListenerRule', properties, dependsOn)
     }
 }

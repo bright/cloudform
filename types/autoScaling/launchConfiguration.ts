@@ -11,7 +11,7 @@ export interface BlockDeviceMappingProperties {
 }
 
 export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::BlockDeviceMapping', properties, dependsOn)
     }
 }
@@ -26,7 +26,7 @@ export interface BlockDeviceProperties {
 }
 
 export class BlockDevice extends ResourceBase {
-    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::BlockDevice', properties, dependsOn)
     }
 }
@@ -52,7 +52,7 @@ export interface LaunchConfigurationProperties {
 }
 
 export default class LaunchConfiguration extends ResourceBase {
-    constructor(properties: LaunchConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LaunchConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::LaunchConfiguration', properties, dependsOn)
     }
 }

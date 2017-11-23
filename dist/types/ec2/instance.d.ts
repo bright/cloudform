@@ -4,7 +4,7 @@ export interface ElasticGpuSpecificationProperties {
     Type: Value<string>;
 }
 export declare class ElasticGpuSpecification extends ResourceBase {
-    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NetworkInterfaceProperties {
     AssociatePublicIpAddress?: Value<boolean>;
@@ -21,27 +21,27 @@ export interface NetworkInterfaceProperties {
     SubnetId?: Value<string>;
 }
 export declare class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>);
+    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceIpv6AddressProperties {
     Ipv6Address: Value<string>;
 }
 export declare class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface VolumeProperties {
     Device: Value<string>;
     VolumeId: Value<string>;
 }
 export declare class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AssociationParameterProperties {
     Key: Value<string>;
     Value: Value<string>[];
 }
 export declare class AssociationParameter extends ResourceBase {
-    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string>);
+    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsProperties {
     DeleteOnTermination?: Value<boolean>;
@@ -52,19 +52,19 @@ export interface EbsProperties {
     VolumeType?: Value<string>;
 }
 export declare class Ebs extends ResourceBase {
-    constructor(properties: EbsProperties, dependsOn?: Value<string>);
+    constructor(properties: EbsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NoDeviceProperties {
 }
 export declare class NoDevice extends ResourceBase {
-    constructor(properties: NoDeviceProperties, dependsOn?: Value<string>);
+    constructor(properties: NoDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SsmAssociationProperties {
     AssociationParameters?: AssociationParameter[];
     DocumentName: Value<string>;
 }
 export declare class SsmAssociation extends ResourceBase {
-    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string>);
+    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BlockDeviceMappingProperties {
     DeviceName: Value<string>;
@@ -73,14 +73,14 @@ export interface BlockDeviceMappingProperties {
     VirtualName?: Value<string>;
 }
 export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PrivateIpAddressSpecificationProperties {
     Primary: Value<boolean>;
     PrivateIpAddress: Value<string>;
 }
 export declare class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceProperties {
     AdditionalInfo?: Value<string>;
@@ -115,5 +115,5 @@ export interface InstanceProperties {
     Volumes?: Volume[];
 }
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -7,14 +7,14 @@ export interface HadoopJarStepConfigProperties {
     StepProperties?: KeyValue[];
 }
 export declare class HadoopJarStepConfig extends ResourceBase {
-    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface KeyValueProperties {
     Key?: Value<string>;
     Value?: Value<string>;
 }
 export declare class KeyValue extends ResourceBase {
-    constructor(properties: KeyValueProperties, dependsOn?: Value<string>);
+    constructor(properties: KeyValueProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StepProperties {
     ActionOnFailure: Value<string>;
@@ -23,5 +23,5 @@ export interface StepProperties {
     Name: Value<string>;
 }
 export default class Step extends ResourceBase {
-    constructor(properties: StepProperties, dependsOn?: Value<string>);
+    constructor(properties: StepProperties, dependsOn?: Value<string> | Value<string>[]);
 }

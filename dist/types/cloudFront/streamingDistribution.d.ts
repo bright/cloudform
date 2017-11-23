@@ -5,14 +5,14 @@ export interface TrustedSignersProperties {
     AwsAccountNumbers?: Value<string>[];
 }
 export declare class TrustedSigners extends ResourceBase {
-    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string>);
+    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface S3OriginProperties {
     DomainName: Value<string>;
     OriginAccessIdentity: Value<string>;
 }
 export declare class S3Origin extends ResourceBase {
-    constructor(properties: S3OriginProperties, dependsOn?: Value<string>);
+    constructor(properties: S3OriginProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoggingProperties {
     Bucket: Value<string>;
@@ -20,7 +20,7 @@ export interface LoggingProperties {
     Prefix: Value<string>;
 }
 export declare class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string>);
+    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StreamingDistributionConfigProperties {
     Logging?: Logging;
@@ -32,12 +32,12 @@ export interface StreamingDistributionConfigProperties {
     TrustedSigners: TrustedSigners;
 }
 export declare class StreamingDistributionConfig extends ResourceBase {
-    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StreamingDistributionProperties {
     StreamingDistributionConfig: StreamingDistributionConfig;
     Tags?: ResourceTag[];
 }
 export default class StreamingDistribution extends ResourceBase {
-    constructor(properties: StreamingDistributionProperties, dependsOn?: Value<string>);
+    constructor(properties: StreamingDistributionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

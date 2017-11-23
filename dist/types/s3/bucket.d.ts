@@ -4,20 +4,20 @@ export interface NotificationFilterProperties {
     S3Key: S3KeyFilter;
 }
 export declare class NotificationFilter extends ResourceBase {
-    constructor(properties: NotificationFilterProperties, dependsOn?: Value<string>);
+    constructor(properties: NotificationFilterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RoutingRuleConditionProperties {
     HttpErrorCodeReturnedEquals?: Value<string>;
     KeyPrefixEquals?: Value<string>;
 }
 export declare class RoutingRuleCondition extends ResourceBase {
-    constructor(properties: RoutingRuleConditionProperties, dependsOn?: Value<string>);
+    constructor(properties: RoutingRuleConditionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LifecycleConfigurationProperties {
     Rules: Rule[];
 }
 export declare class LifecycleConfiguration extends ResourceBase {
-    constructor(properties: LifecycleConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: LifecycleConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LambdaConfigurationProperties {
     Event: Value<string>;
@@ -25,7 +25,7 @@ export interface LambdaConfigurationProperties {
     Function: Value<string>;
 }
 export declare class LambdaConfiguration extends ResourceBase {
-    constructor(properties: LambdaConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: LambdaConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ReplicationRuleProperties {
     Destination: ReplicationDestination;
@@ -34,7 +34,7 @@ export interface ReplicationRuleProperties {
     Status: Value<string>;
 }
 export declare class ReplicationRule extends ResourceBase {
-    constructor(properties: ReplicationRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: ReplicationRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CorsRuleProperties {
     AllowedHeaders?: Value<string>[];
@@ -45,7 +45,7 @@ export interface CorsRuleProperties {
     MaxAge?: Value<number>;
 }
 export declare class CorsRule extends ResourceBase {
-    constructor(properties: CorsRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: CorsRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DestinationProperties {
     BucketAccountId?: Value<string>;
@@ -54,7 +54,7 @@ export interface DestinationProperties {
     Prefix?: Value<string>;
 }
 export declare class Destination extends ResourceBase {
-    constructor(properties: DestinationProperties, dependsOn?: Value<string>);
+    constructor(properties: DestinationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AnalyticsConfigurationProperties {
     Id: Value<string>;
@@ -63,33 +63,33 @@ export interface AnalyticsConfigurationProperties {
     TagFilters?: TagFilter[];
 }
 export declare class AnalyticsConfiguration extends ResourceBase {
-    constructor(properties: AnalyticsConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: AnalyticsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoggingConfigurationProperties {
     DestinationBucketName?: Value<string>;
     LogFilePrefix?: Value<string>;
 }
 export declare class LoggingConfiguration extends ResourceBase {
-    constructor(properties: LoggingConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: LoggingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StorageClassAnalysisProperties {
     DataExport?: DataExport;
 }
 export declare class StorageClassAnalysis extends ResourceBase {
-    constructor(properties: StorageClassAnalysisProperties, dependsOn?: Value<string>);
+    constructor(properties: StorageClassAnalysisProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RoutingRuleProperties {
     RedirectRule: RedirectRule;
     RoutingRuleCondition?: RoutingRuleCondition;
 }
 export declare class RoutingRule extends ResourceBase {
-    constructor(properties: RoutingRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RoutingRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface VersioningConfigurationProperties {
     Status: Value<string>;
 }
 export declare class VersioningConfiguration extends ResourceBase {
-    constructor(properties: VersioningConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: VersioningConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NotificationConfigurationProperties {
     LambdaConfigurations?: LambdaConfiguration[];
@@ -97,7 +97,7 @@ export interface NotificationConfigurationProperties {
     TopicConfigurations?: TopicConfiguration[];
 }
 export declare class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RedirectRuleProperties {
     HostName?: Value<string>;
@@ -107,20 +107,20 @@ export interface RedirectRuleProperties {
     ReplaceKeyWith?: Value<string>;
 }
 export declare class RedirectRule extends ResourceBase {
-    constructor(properties: RedirectRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RedirectRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RedirectAllRequestsToProperties {
     HostName: Value<string>;
     Protocol?: Value<string>;
 }
 export declare class RedirectAllRequestsTo extends ResourceBase {
-    constructor(properties: RedirectAllRequestsToProperties, dependsOn?: Value<string>);
+    constructor(properties: RedirectAllRequestsToProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface S3KeyFilterProperties {
     Rules: FilterRule[];
 }
 export declare class S3KeyFilter extends ResourceBase {
-    constructor(properties: S3KeyFilterProperties, dependsOn?: Value<string>);
+    constructor(properties: S3KeyFilterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InventoryConfigurationProperties {
     Destination: Destination;
@@ -132,7 +132,7 @@ export interface InventoryConfigurationProperties {
     ScheduleFrequency: Value<string>;
 }
 export declare class InventoryConfiguration extends ResourceBase {
-    constructor(properties: InventoryConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: InventoryConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface WebsiteConfigurationProperties {
     ErrorDocument?: Value<string>;
@@ -141,14 +141,14 @@ export interface WebsiteConfigurationProperties {
     RoutingRules?: RoutingRule[];
 }
 export declare class WebsiteConfiguration extends ResourceBase {
-    constructor(properties: WebsiteConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: WebsiteConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ReplicationConfigurationProperties {
     Role: Value<string>;
     Rules: ReplicationRule[];
 }
 export declare class ReplicationConfiguration extends ResourceBase {
-    constructor(properties: ReplicationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ReplicationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RuleProperties {
     AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
@@ -165,7 +165,7 @@ export interface RuleProperties {
     Transitions?: Transition[];
 }
 export declare class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface QueueConfigurationProperties {
     Event: Value<string>;
@@ -173,7 +173,7 @@ export interface QueueConfigurationProperties {
     Queue: Value<string>;
 }
 export declare class QueueConfiguration extends ResourceBase {
-    constructor(properties: QueueConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: QueueConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TopicConfigurationProperties {
     Event: Value<string>;
@@ -181,7 +181,7 @@ export interface TopicConfigurationProperties {
     Topic: Value<string>;
 }
 export declare class TopicConfiguration extends ResourceBase {
-    constructor(properties: TopicConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: TopicConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MetricsConfigurationProperties {
     Id: Value<string>;
@@ -189,14 +189,14 @@ export interface MetricsConfigurationProperties {
     TagFilters?: TagFilter[];
 }
 export declare class MetricsConfiguration extends ResourceBase {
-    constructor(properties: MetricsConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: MetricsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TagFilterProperties {
     Key: Value<string>;
     Value: Value<string>;
 }
 export declare class TagFilter extends ResourceBase {
-    constructor(properties: TagFilterProperties, dependsOn?: Value<string>);
+    constructor(properties: TagFilterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TransitionProperties {
     StorageClass: Value<string>;
@@ -204,53 +204,53 @@ export interface TransitionProperties {
     TransitionInDays?: Value<number>;
 }
 export declare class Transition extends ResourceBase {
-    constructor(properties: TransitionProperties, dependsOn?: Value<string>);
+    constructor(properties: TransitionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DataExportProperties {
     Destination: Destination;
     OutputSchemaVersion: Value<string>;
 }
 export declare class DataExport extends ResourceBase {
-    constructor(properties: DataExportProperties, dependsOn?: Value<string>);
+    constructor(properties: DataExportProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CorsConfigurationProperties {
     CorsRules: CorsRule[];
 }
 export declare class CorsConfiguration extends ResourceBase {
-    constructor(properties: CorsConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: CorsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ReplicationDestinationProperties {
     Bucket: Value<string>;
     StorageClass?: Value<string>;
 }
 export declare class ReplicationDestination extends ResourceBase {
-    constructor(properties: ReplicationDestinationProperties, dependsOn?: Value<string>);
+    constructor(properties: ReplicationDestinationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AccelerateConfigurationProperties {
     AccelerationStatus: Value<string>;
 }
 export declare class AccelerateConfiguration extends ResourceBase {
-    constructor(properties: AccelerateConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: AccelerateConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NoncurrentVersionTransitionProperties {
     StorageClass: Value<string>;
     TransitionInDays: Value<number>;
 }
 export declare class NoncurrentVersionTransition extends ResourceBase {
-    constructor(properties: NoncurrentVersionTransitionProperties, dependsOn?: Value<string>);
+    constructor(properties: NoncurrentVersionTransitionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AbortIncompleteMultipartUploadProperties {
     DaysAfterInitiation: Value<number>;
 }
 export declare class AbortIncompleteMultipartUpload extends ResourceBase {
-    constructor(properties: AbortIncompleteMultipartUploadProperties, dependsOn?: Value<string>);
+    constructor(properties: AbortIncompleteMultipartUploadProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FilterRuleProperties {
     Name: Value<string>;
     Value: Value<string>;
 }
 export declare class FilterRule extends ResourceBase {
-    constructor(properties: FilterRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: FilterRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration;
@@ -269,5 +269,5 @@ export interface BucketProperties {
     WebsiteConfiguration?: WebsiteConfiguration;
 }
 export default class Bucket extends ResourceBase {
-    constructor(properties: BucketProperties, dependsOn?: Value<string>);
+    constructor(properties: BucketProperties, dependsOn?: Value<string> | Value<string>[]);
 }

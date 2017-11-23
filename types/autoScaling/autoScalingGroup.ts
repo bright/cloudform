@@ -14,7 +14,7 @@ export interface LifecycleHookSpecificationProperties {
 }
 
 export class LifecycleHookSpecification extends ResourceBase {
-    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::LifecycleHookSpecification', properties, dependsOn)
     }
 }
@@ -25,7 +25,7 @@ export interface NotificationConfigurationProperties {
 }
 
 export class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::NotificationConfiguration', properties, dependsOn)
     }
 }
@@ -36,7 +36,7 @@ export interface MetricsCollectionProperties {
 }
 
 export class MetricsCollection extends ResourceBase {
-    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::MetricsCollection', properties, dependsOn)
     }
 }
@@ -48,7 +48,7 @@ export interface TagPropertyProperties {
 }
 
 export class TagProperty extends ResourceBase {
-    constructor(properties: TagPropertyProperties, dependsOn?: Value<string>) {
+    constructor(properties: TagPropertyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::TagProperty', properties, dependsOn)
     }
 }
@@ -75,7 +75,7 @@ export interface AutoScalingGroupProperties {
 }
 
 export default class AutoScalingGroup extends ResourceBase {
-    constructor(properties: AutoScalingGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: AutoScalingGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::AutoScalingGroup', properties, dependsOn)
     }
 }

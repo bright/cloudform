@@ -9,7 +9,7 @@ export interface ElasticFileSystemTagProperties {
 }
 
 export class ElasticFileSystemTag extends ResourceBase {
-    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EFS::ElasticFileSystemTag', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface FileSystemProperties {
 }
 
 export default class FileSystem extends ResourceBase {
-    constructor(properties: FileSystemProperties, dependsOn?: Value<string>) {
+    constructor(properties: FileSystemProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EFS::FileSystem', properties, dependsOn)
     }
 }

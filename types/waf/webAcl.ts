@@ -8,7 +8,7 @@ export interface WafActionProperties {
 }
 
 export class WafAction extends ResourceBase {
-    constructor(properties: WafActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: WafActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::WafAction', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface ActivatedRuleProperties {
 }
 
 export class ActivatedRule extends ResourceBase {
-    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::ActivatedRule', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface WebACLProperties {
 }
 
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties, dependsOn?: Value<string>) {
+    constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::WebACL', properties, dependsOn)
     }
 }

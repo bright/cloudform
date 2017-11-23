@@ -5,7 +5,7 @@ export interface StageKeyProperties {
     StageName?: Value<string>;
 }
 export declare class StageKey extends ResourceBase {
-    constructor(properties: StageKeyProperties, dependsOn?: Value<string>);
+    constructor(properties: StageKeyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ApiKeyProperties {
     CustomerId?: Value<string>;
@@ -16,5 +16,5 @@ export interface ApiKeyProperties {
     StageKeys?: StageKey[];
 }
 export default class ApiKey extends ResourceBase {
-    constructor(properties: ApiKeyProperties, dependsOn?: Value<string>);
+    constructor(properties: ApiKeyProperties, dependsOn?: Value<string> | Value<string>[]);
 }

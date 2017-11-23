@@ -9,7 +9,7 @@ export interface ApplicationResourceLifecycleConfigProperties {
 }
 
 export class ApplicationResourceLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::ApplicationResourceLifecycleConfig', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface ApplicationVersionLifecycleConfigProperties {
 }
 
 export class ApplicationVersionLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::ApplicationVersionLifecycleConfig', properties, dependsOn)
     }
 }
@@ -32,7 +32,7 @@ export interface MaxCountRuleProperties {
 }
 
 export class MaxCountRule extends ResourceBase {
-    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::MaxCountRule', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface MaxAgeRuleProperties {
 }
 
 export class MaxAgeRule extends ResourceBase {
-    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::MaxAgeRule', properties, dependsOn)
     }
 }
@@ -56,7 +56,7 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::Application', properties, dependsOn)
     }
 }

@@ -20,7 +20,7 @@ export interface QueueProperties {
 }
 
 export default class Queue extends ResourceBase {
-    constructor(properties: QueueProperties, dependsOn?: Value<string>) {
+    constructor(properties: QueueProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SQS::Queue', properties, dependsOn)
     }
 }

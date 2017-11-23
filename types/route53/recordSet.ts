@@ -10,7 +10,7 @@ export interface GeoLocationProperties {
 }
 
 export class GeoLocation extends ResourceBase {
-    constructor(properties: GeoLocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: GeoLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::GeoLocation', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface AliasTargetProperties {
 }
 
 export class AliasTarget extends ResourceBase {
-    constructor(properties: AliasTargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: AliasTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::AliasTarget', properties, dependsOn)
     }
 }
@@ -45,7 +45,7 @@ export interface RecordSetProperties {
 }
 
 export default class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordSetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::RecordSet', properties, dependsOn)
     }
 }

@@ -5,14 +5,14 @@ export interface IcmpProperties {
     Type?: Value<number>;
 }
 export declare class Icmp extends ResourceBase {
-    constructor(properties: IcmpProperties, dependsOn?: Value<string>);
+    constructor(properties: IcmpProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PortRangeProperties {
     From?: Value<number>;
     To?: Value<number>;
 }
 export declare class PortRange extends ResourceBase {
-    constructor(properties: PortRangeProperties, dependsOn?: Value<string>);
+    constructor(properties: PortRangeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NetworkAclEntryProperties {
     CidrBlock: Value<string>;
@@ -26,5 +26,5 @@ export interface NetworkAclEntryProperties {
     RuleNumber: Value<number>;
 }
 export default class NetworkAclEntry extends ResourceBase {
-    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string>);
+    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string> | Value<string>[]);
 }

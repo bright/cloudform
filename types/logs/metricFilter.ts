@@ -10,7 +10,7 @@ export interface MetricTransformationProperties {
 }
 
 export class MetricTransformation extends ResourceBase {
-    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Logs::MetricTransformation', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface MetricFilterProperties {
 }
 
 export default class MetricFilter extends ResourceBase {
-    constructor(properties: MetricFilterProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Logs::MetricFilter', properties, dependsOn)
     }
 }

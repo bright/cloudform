@@ -7,5 +7,5 @@ export interface BasePathMappingProperties {
     Stage?: Value<string>;
 }
 export default class BasePathMapping extends ResourceBase {
-    constructor(properties: BasePathMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: BasePathMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }

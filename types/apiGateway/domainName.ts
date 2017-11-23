@@ -8,7 +8,7 @@ export interface EndpointConfigurationProperties {
 }
 
 export class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::EndpointConfiguration', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface DomainNameProperties {
 }
 
 export default class DomainName extends ResourceBase {
-    constructor(properties: DomainNameProperties, dependsOn?: Value<string>) {
+    constructor(properties: DomainNameProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::DomainName', properties, dependsOn)
     }
 }

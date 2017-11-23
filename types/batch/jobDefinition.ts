@@ -9,7 +9,7 @@ export interface VolumesProperties {
 }
 
 export class Volumes extends ResourceBase {
-    constructor(properties: VolumesProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::Volumes', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface RetryStrategyProperties {
 }
 
 export class RetryStrategy extends ResourceBase {
-    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string>) {
+    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::RetryStrategy', properties, dependsOn)
     }
 }
@@ -40,7 +40,7 @@ export interface ContainerPropertiesProperties {
 }
 
 export class ContainerProperties extends ResourceBase {
-    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::ContainerProperties', properties, dependsOn)
     }
 }
@@ -52,7 +52,7 @@ export interface MountPointsProperties {
 }
 
 export class MountPoints extends ResourceBase {
-    constructor(properties: MountPointsProperties, dependsOn?: Value<string>) {
+    constructor(properties: MountPointsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::MountPoints', properties, dependsOn)
     }
 }
@@ -63,7 +63,7 @@ export interface EnvironmentProperties {
 }
 
 export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::Environment', properties, dependsOn)
     }
 }
@@ -75,7 +75,7 @@ export interface UlimitProperties {
 }
 
 export class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string>) {
+    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::Ulimit', properties, dependsOn)
     }
 }
@@ -85,7 +85,7 @@ export interface VolumesHostProperties {
 }
 
 export class VolumesHost extends ResourceBase {
-    constructor(properties: VolumesHostProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumesHostProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::VolumesHost', properties, dependsOn)
     }
 }
@@ -99,7 +99,7 @@ export interface JobDefinitionProperties {
 }
 
 export default class JobDefinition extends ResourceBase {
-    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::JobDefinition', properties, dependsOn)
     }
 }

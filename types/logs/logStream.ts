@@ -11,7 +11,7 @@ export interface LogStreamProperties {
 }
 
 export default class LogStream extends ResourceBase {
-    constructor(properties: LogStreamProperties, dependsOn?: Value<string>) {
+    constructor(properties: LogStreamProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Logs::LogStream', properties, dependsOn)
     }
 }

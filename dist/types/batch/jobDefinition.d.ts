@@ -5,13 +5,13 @@ export interface VolumesProperties {
     Name?: Value<string>;
 }
 export declare class Volumes extends ResourceBase {
-    constructor(properties: VolumesProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RetryStrategyProperties {
     Attempts?: Value<number>;
 }
 export declare class RetryStrategy extends ResourceBase {
-    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string>);
+    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ContainerPropertiesProperties {
     MountPoints?: MountPoints[];
@@ -28,7 +28,7 @@ export interface ContainerPropertiesProperties {
     Image: Value<string>;
 }
 export declare class ContainerProperties extends ResourceBase {
-    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string>);
+    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MountPointsProperties {
     ReadOnly?: Value<boolean>;
@@ -36,14 +36,14 @@ export interface MountPointsProperties {
     ContainerPath?: Value<string>;
 }
 export declare class MountPoints extends ResourceBase {
-    constructor(properties: MountPointsProperties, dependsOn?: Value<string>);
+    constructor(properties: MountPointsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EnvironmentProperties {
     Value?: Value<string>;
     Name?: Value<string>;
 }
 export declare class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>);
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UlimitProperties {
     SoftLimit: Value<number>;
@@ -51,13 +51,13 @@ export interface UlimitProperties {
     Name: Value<string>;
 }
 export declare class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string>);
+    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface VolumesHostProperties {
     SourcePath?: Value<string>;
 }
 export declare class VolumesHost extends ResourceBase {
-    constructor(properties: VolumesHostProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumesHostProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface JobDefinitionProperties {
     Type: Value<string>;
@@ -67,5 +67,5 @@ export interface JobDefinitionProperties {
     RetryStrategy?: RetryStrategy;
 }
 export default class JobDefinition extends ResourceBase {
-    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string>);
+    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

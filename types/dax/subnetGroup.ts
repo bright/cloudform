@@ -12,7 +12,7 @@ export interface SubnetGroupProperties {
 }
 
 export default class SubnetGroup extends ResourceBase {
-    constructor(properties: SubnetGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubnetGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DAX::SubnetGroup', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface VolumeSpecificationProperties {
 }
 
 export class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::VolumeSpecification', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface SpotProvisioningSpecificationProperties {
 }
 
 export class SpotProvisioningSpecification extends ResourceBase {
-    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::SpotProvisioningSpecification', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface ConfigurationProperties {
 }
 
 export class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::Configuration', properties, dependsOn)
     }
 }
@@ -45,7 +45,7 @@ export interface EbsConfigurationProperties {
 }
 
 export class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::EbsConfiguration', properties, dependsOn)
     }
 }
@@ -60,7 +60,7 @@ export interface InstanceTypeConfigProperties {
 }
 
 export class InstanceTypeConfig extends ResourceBase {
-    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::InstanceTypeConfig', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface InstanceFleetProvisioningSpecificationsProperties {
 }
 
 export class InstanceFleetProvisioningSpecifications extends ResourceBase {
-    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::InstanceFleetProvisioningSpecifications', properties, dependsOn)
     }
 }
@@ -81,7 +81,7 @@ export interface EbsBlockDeviceConfigProperties {
 }
 
 export class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn)
     }
 }
@@ -97,7 +97,7 @@ export interface InstanceFleetConfigProperties {
 }
 
 export default class InstanceFleetConfig extends ResourceBase {
-    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::InstanceFleetConfig', properties, dependsOn)
     }
 }

@@ -12,7 +12,7 @@ export interface ClusterSubnetGroupProperties {
 }
 
 export default class ClusterSubnetGroup extends ResourceBase {
-    constructor(properties: ClusterSubnetGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: ClusterSubnetGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Redshift::ClusterSubnetGroup', properties, dependsOn)
     }
 }

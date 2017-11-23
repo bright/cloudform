@@ -11,7 +11,7 @@ export interface NodeGroupConfigurationProperties {
 }
 
 export class NodeGroupConfiguration extends ResourceBase {
-    constructor(properties: NodeGroupConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: NodeGroupConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElastiCache::NodeGroupConfiguration', properties, dependsOn)
     }
 }
@@ -49,7 +49,7 @@ export interface ReplicationGroupProperties {
 }
 
 export default class ReplicationGroup extends ResourceBase {
-    constructor(properties: ReplicationGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: ReplicationGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElastiCache::ReplicationGroup', properties, dependsOn)
     }
 }

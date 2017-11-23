@@ -5,14 +5,14 @@ export interface LoadBalancerAttributeProperties {
     Value?: Value<string>;
 }
 export declare class LoadBalancerAttribute extends ResourceBase {
-    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string>);
+    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SubnetMappingProperties {
     AllocationId: Value<string>;
     SubnetId: Value<string>;
 }
 export declare class SubnetMapping extends ResourceBase {
-    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoadBalancerProperties {
     IpAddressType?: Value<string>;
@@ -26,5 +26,5 @@ export interface LoadBalancerProperties {
     Type?: Value<string>;
 }
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string>);
+    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]);
 }

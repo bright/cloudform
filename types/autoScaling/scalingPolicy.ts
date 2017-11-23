@@ -9,7 +9,7 @@ export interface MetricDimensionProperties {
 }
 
 export class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::MetricDimension', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface CustomizedMetricSpecificationProperties {
 }
 
 export class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::CustomizedMetricSpecification', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface PredefinedMetricSpecificationProperties {
 }
 
 export class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::PredefinedMetricSpecification', properties, dependsOn)
     }
 }
@@ -47,7 +47,7 @@ export interface TargetTrackingConfigurationProperties {
 }
 
 export class TargetTrackingConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetTrackingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::TargetTrackingConfiguration', properties, dependsOn)
     }
 }
@@ -59,7 +59,7 @@ export interface StepAdjustmentProperties {
 }
 
 export class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::StepAdjustment', properties, dependsOn)
     }
 }
@@ -78,7 +78,7 @@ export interface ScalingPolicyProperties {
 }
 
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::ScalingPolicy', properties, dependsOn)
     }
 }

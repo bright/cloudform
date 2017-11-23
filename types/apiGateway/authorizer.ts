@@ -19,7 +19,7 @@ export interface AuthorizerProperties {
 }
 
 export default class Authorizer extends ResourceBase {
-    constructor(properties: AuthorizerProperties, dependsOn?: Value<string>) {
+    constructor(properties: AuthorizerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Authorizer', properties, dependsOn)
     }
 }

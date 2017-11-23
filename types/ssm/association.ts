@@ -9,7 +9,7 @@ export interface TargetProperties {
 }
 
 export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::Target', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface ParameterValuesProperties {
 }
 
 export class ParameterValues extends ResourceBase {
-    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::ParameterValues', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface AssociationProperties {
 }
 
 export default class Association extends ResourceBase {
-    constructor(properties: AssociationProperties, dependsOn?: Value<string>) {
+    constructor(properties: AssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::Association', properties, dependsOn)
     }
 }

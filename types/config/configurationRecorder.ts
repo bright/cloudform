@@ -10,7 +10,7 @@ export interface RecordingGroupProperties {
 }
 
 export class RecordingGroup extends ResourceBase {
-    constructor(properties: RecordingGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordingGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::RecordingGroup', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface ConfigurationRecorderProperties {
 }
 
 export default class ConfigurationRecorder extends ResourceBase {
-    constructor(properties: ConfigurationRecorderProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationRecorderProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Config::ConfigurationRecorder', properties, dependsOn)
     }
 }

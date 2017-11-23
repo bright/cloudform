@@ -9,7 +9,7 @@ export interface TargetGroupAttributeProperties {
 }
 
 export class TargetGroupAttribute extends ResourceBase {
-    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::TargetGroupAttribute', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface MatcherProperties {
 }
 
 export class Matcher extends ResourceBase {
-    constructor(properties: MatcherProperties, dependsOn?: Value<string>) {
+    constructor(properties: MatcherProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::Matcher', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface TargetDescriptionProperties {
 }
 
 export class TargetDescription extends ResourceBase {
-    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::TargetDescription', properties, dependsOn)
     }
 }
@@ -56,7 +56,7 @@ export interface TargetGroupProperties {
 }
 
 export default class TargetGroup extends ResourceBase {
-    constructor(properties: TargetGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticLoadBalancingV2::TargetGroup', properties, dependsOn)
     }
 }

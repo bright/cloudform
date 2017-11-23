@@ -8,19 +8,19 @@ export interface ByteMatchTupleProperties {
     FieldToMatch: FieldToMatch;
 }
 export declare class ByteMatchTuple extends ResourceBase {
-    constructor(properties: ByteMatchTupleProperties, dependsOn?: Value<string>);
+    constructor(properties: ByteMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FieldToMatchProperties {
     Type: Value<string>;
     Data?: Value<string>;
 }
 export declare class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>);
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ByteMatchSetProperties {
     ByteMatchTuples?: ByteMatchTuple[];
     Name: Value<string>;
 }
 export default class ByteMatchSet extends ResourceBase {
-    constructor(properties: ByteMatchSetProperties, dependsOn?: Value<string>);
+    constructor(properties: ByteMatchSetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -6,14 +6,14 @@ export interface EventSelectorProperties {
     ReadWriteType?: Value<string>;
 }
 export declare class EventSelector extends ResourceBase {
-    constructor(properties: EventSelectorProperties, dependsOn?: Value<string>);
+    constructor(properties: EventSelectorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DataResourceProperties {
     Type: Value<string>;
     Values?: Value<string>[];
 }
 export declare class DataResource extends ResourceBase {
-    constructor(properties: DataResourceProperties, dependsOn?: Value<string>);
+    constructor(properties: DataResourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TrailProperties {
     CloudWatchLogsLogGroupArn?: Value<string>;
@@ -31,5 +31,5 @@ export interface TrailProperties {
     TrailName?: Value<string>;
 }
 export default class Trail extends ResourceBase {
-    constructor(properties: TrailProperties, dependsOn?: Value<string>);
+    constructor(properties: TrailProperties, dependsOn?: Value<string> | Value<string>[]);
 }

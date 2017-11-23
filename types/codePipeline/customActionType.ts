@@ -11,7 +11,7 @@ export interface SettingsProperties {
 }
 
 export class Settings extends ResourceBase {
-    constructor(properties: SettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: SettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::Settings', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface ArtifactDetailsProperties {
 }
 
 export class ArtifactDetails extends ResourceBase {
-    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::ArtifactDetails', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface ConfigurationPropertiesProperties {
 }
 
 export class ConfigurationProperties extends ResourceBase {
-    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::ConfigurationProperties', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface CustomActionTypeProperties {
 }
 
 export default class CustomActionType extends ResourceBase {
-    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodePipeline::CustomActionType', properties, dependsOn)
     }
 }

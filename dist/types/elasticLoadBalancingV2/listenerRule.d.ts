@@ -5,14 +5,14 @@ export interface ActionProperties {
     Type: Value<string>;
 }
 export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string>);
+    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RuleConditionProperties {
     Field?: Value<string>;
     Values?: Value<string>[];
 }
 export declare class RuleCondition extends ResourceBase {
-    constructor(properties: RuleConditionProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleConditionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenerRuleProperties {
     Actions: Action[];
@@ -21,5 +21,5 @@ export interface ListenerRuleProperties {
     Priority: Value<number>;
 }
 export default class ListenerRule extends ResourceBase {
-    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }

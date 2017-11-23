@@ -9,7 +9,7 @@ export interface LoginProfileProperties {
 }
 
 export class LoginProfile extends ResourceBase {
-    constructor(properties: LoginProfileProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoginProfileProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::LoginProfile', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface PolicyProperties {
 }
 
 export class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::Policy', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface UserProperties {
 }
 
 export default class User extends ResourceBase {
-    constructor(properties: UserProperties, dependsOn?: Value<string>) {
+    constructor(properties: UserProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::User', properties, dependsOn)
     }
 }

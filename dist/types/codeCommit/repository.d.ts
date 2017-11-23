@@ -8,7 +8,7 @@ export interface RepositoryTriggerProperties {
     Name?: Value<string>;
 }
 export declare class RepositoryTrigger extends ResourceBase {
-    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string>);
+    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RepositoryProperties {
     RepositoryName: Value<string>;
@@ -16,5 +16,5 @@ export interface RepositoryProperties {
     RepositoryDescription?: Value<string>;
 }
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties, dependsOn?: Value<string>);
+    constructor(properties: RepositoryProperties, dependsOn?: Value<string> | Value<string>[]);
 }

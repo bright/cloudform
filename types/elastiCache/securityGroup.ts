@@ -10,7 +10,7 @@ export interface SecurityGroupProperties {
 }
 
 export default class SecurityGroup extends ResourceBase {
-    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElastiCache::SecurityGroup', properties, dependsOn)
     }
 }

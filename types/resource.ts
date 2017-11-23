@@ -3,11 +3,11 @@ import {Value} from "./dataTypes"
 export default interface Resource {
     Type: string
     Properties?: { [key: string]: any },
-    DependsOn?: Value<string>
+    DependsOn?: Value<string> | Value<string>[]
 }
 
 export class ResourceBase {
-    constructor(public Type: string, public Properties?: { [key: string]: any }, public DependsOn?: Value<string>) {
+    constructor(public Type: string, public Properties?: { [key: string]: any }, public DependsOn?: Value<string> | Value<string>[]) {
     }
 }
 

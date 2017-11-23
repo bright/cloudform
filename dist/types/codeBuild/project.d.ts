@@ -9,14 +9,14 @@ export interface ArtifactsProperties {
     NamespaceType?: Value<string>;
 }
 export declare class Artifacts extends ResourceBase {
-    constructor(properties: ArtifactsProperties, dependsOn?: Value<string>);
+    constructor(properties: ArtifactsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SourceAuthProperties {
     Type: Value<string>;
     Resource?: Value<string>;
 }
 export declare class SourceAuth extends ResourceBase {
-    constructor(properties: SourceAuthProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceAuthProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EnvironmentProperties {
     Type: Value<string>;
@@ -26,7 +26,7 @@ export interface EnvironmentProperties {
     ComputeType: Value<string>;
 }
 export declare class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>);
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EnvironmentVariableProperties {
     Type?: Value<string>;
@@ -34,7 +34,7 @@ export interface EnvironmentVariableProperties {
     Name: Value<string>;
 }
 export declare class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string>);
+    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SourceProperties {
     Type: Value<string>;
@@ -43,7 +43,7 @@ export interface SourceProperties {
     Location?: Value<string>;
 }
 export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProjectProperties {
     Artifacts: Artifacts;
@@ -57,5 +57,5 @@ export interface ProjectProperties {
     TimeoutInMinutes?: Value<number>;
 }
 export default class Project extends ResourceBase {
-    constructor(properties: ProjectProperties, dependsOn?: Value<string>);
+    constructor(properties: ProjectProperties, dependsOn?: Value<string> | Value<string>[]);
 }

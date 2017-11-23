@@ -5,12 +5,12 @@ export interface MinimumHealthyHostsProperties {
     Value: Value<number>;
 }
 export declare class MinimumHealthyHosts extends ResourceBase {
-    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string>);
+    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DeploymentConfigProperties {
     DeploymentConfigName?: Value<string>;
     MinimumHealthyHosts?: MinimumHealthyHosts;
 }
 export default class DeploymentConfig extends ResourceBase {
-    constructor(properties: DeploymentConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: DeploymentConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }

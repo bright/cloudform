@@ -9,7 +9,7 @@ export interface TimeToLiveSpecificationProperties {
 }
 
 export class TimeToLiveSpecification extends ResourceBase {
-    constructor(properties: TimeToLiveSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: TimeToLiveSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::TimeToLiveSpecification', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface AttributeDefinitionProperties {
 }
 
 export class AttributeDefinition extends ResourceBase {
-    constructor(properties: AttributeDefinitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: AttributeDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::AttributeDefinition', properties, dependsOn)
     }
 }
@@ -32,7 +32,7 @@ export interface LocalSecondaryIndexProperties {
 }
 
 export class LocalSecondaryIndex extends ResourceBase {
-    constructor(properties: LocalSecondaryIndexProperties, dependsOn?: Value<string>) {
+    constructor(properties: LocalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::LocalSecondaryIndex', properties, dependsOn)
     }
 }
@@ -43,7 +43,7 @@ export interface ProvisionedThroughputProperties {
 }
 
 export class ProvisionedThroughput extends ResourceBase {
-    constructor(properties: ProvisionedThroughputProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProvisionedThroughputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::ProvisionedThroughput', properties, dependsOn)
     }
 }
@@ -56,7 +56,7 @@ export interface GlobalSecondaryIndexProperties {
 }
 
 export class GlobalSecondaryIndex extends ResourceBase {
-    constructor(properties: GlobalSecondaryIndexProperties, dependsOn?: Value<string>) {
+    constructor(properties: GlobalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::GlobalSecondaryIndex', properties, dependsOn)
     }
 }
@@ -67,7 +67,7 @@ export interface KeySchemaProperties {
 }
 
 export class KeySchema extends ResourceBase {
-    constructor(properties: KeySchemaProperties, dependsOn?: Value<string>) {
+    constructor(properties: KeySchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::KeySchema', properties, dependsOn)
     }
 }
@@ -78,7 +78,7 @@ export interface ProjectionProperties {
 }
 
 export class Projection extends ResourceBase {
-    constructor(properties: ProjectionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProjectionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::Projection', properties, dependsOn)
     }
 }
@@ -88,7 +88,7 @@ export interface StreamSpecificationProperties {
 }
 
 export class StreamSpecification extends ResourceBase {
-    constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::StreamSpecification', properties, dependsOn)
     }
 }
@@ -106,7 +106,7 @@ export interface TableProperties {
 }
 
 export default class Table extends ResourceBase {
-    constructor(properties: TableProperties, dependsOn?: Value<string>) {
+    constructor(properties: TableProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DynamoDB::Table', properties, dependsOn)
     }
 }

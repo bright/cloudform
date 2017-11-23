@@ -13,7 +13,7 @@ export interface DBClusterParameterGroupProperties {
 }
 
 export default class DBClusterParameterGroup extends ResourceBase {
-    constructor(properties: DBClusterParameterGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: DBClusterParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::RDS::DBClusterParameterGroup', properties, dependsOn)
     }
 }

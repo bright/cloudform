@@ -4,7 +4,7 @@ export interface IamInstanceProfileSpecificationProperties {
     Arn?: Value<string>;
 }
 export declare class IamInstanceProfileSpecification extends ResourceBase {
-    constructor(properties: IamInstanceProfileSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: IamInstanceProfileSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceNetworkInterfaceSpecificationProperties {
     AssociatePublicIpAddress?: Value<boolean>;
@@ -20,14 +20,14 @@ export interface InstanceNetworkInterfaceSpecificationProperties {
     SubnetId?: Value<string>;
 }
 export declare class InstanceNetworkInterfaceSpecification extends ResourceBase {
-    constructor(properties: InstanceNetworkInterfaceSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceNetworkInterfaceSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PrivateIpAddressSpecificationProperties {
     Primary?: Value<boolean>;
     PrivateIpAddress: Value<string>;
 }
 export declare class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotFleetLaunchSpecificationProperties {
     BlockDeviceMappings?: BlockDeviceMapping[];
@@ -48,14 +48,14 @@ export interface SpotFleetLaunchSpecificationProperties {
     WeightedCapacity?: Value<number>;
 }
 export declare class SpotFleetLaunchSpecification extends ResourceBase {
-    constructor(properties: SpotFleetLaunchSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotFleetLaunchSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotPlacementProperties {
     AvailabilityZone?: Value<string>;
     GroupName?: Value<string>;
 }
 export declare class SpotPlacement extends ResourceBase {
-    constructor(properties: SpotPlacementProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotPlacementProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotFleetRequestConfigDataProperties {
     AllocationStrategy?: Value<string>;
@@ -71,7 +71,7 @@ export interface SpotFleetRequestConfigDataProperties {
     ValidUntil?: Value<string>;
 }
 export declare class SpotFleetRequestConfigData extends ResourceBase {
-    constructor(properties: SpotFleetRequestConfigDataProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotFleetRequestConfigDataProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsBlockDeviceProperties {
     DeleteOnTermination?: Value<boolean>;
@@ -82,25 +82,25 @@ export interface EbsBlockDeviceProperties {
     VolumeType?: Value<string>;
 }
 export declare class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string>);
+    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceIpv6AddressProperties {
     Ipv6Address: Value<string>;
 }
 export declare class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface GroupIdentifierProperties {
     GroupId: Value<string>;
 }
 export declare class GroupIdentifier extends ResourceBase {
-    constructor(properties: GroupIdentifierProperties, dependsOn?: Value<string>);
+    constructor(properties: GroupIdentifierProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotFleetMonitoringProperties {
     Enabled?: Value<boolean>;
 }
 export declare class SpotFleetMonitoring extends ResourceBase {
-    constructor(properties: SpotFleetMonitoringProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotFleetMonitoringProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BlockDeviceMappingProperties {
     DeviceName: Value<string>;
@@ -109,11 +109,11 @@ export interface BlockDeviceMappingProperties {
     VirtualName?: Value<string>;
 }
 export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData;
 }
 export default class SpotFleet extends ResourceBase {
-    constructor(properties: SpotFleetProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotFleetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

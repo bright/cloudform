@@ -5,12 +5,12 @@ export interface IPSetDescriptorProperties {
     Value: Value<string>;
 }
 export declare class IPSetDescriptor extends ResourceBase {
-    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string>);
+    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IPSetProperties {
     IPSetDescriptors?: IPSetDescriptor[];
     Name: Value<string>;
 }
 export default class IPSet extends ResourceBase {
-    constructor(properties: IPSetProperties, dependsOn?: Value<string>);
+    constructor(properties: IPSetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

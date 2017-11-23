@@ -9,7 +9,7 @@ export interface EbsBlockDeviceConfigProperties {
 }
 
 export class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface ConfigurationProperties {
 }
 
 export class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::Configuration', properties, dependsOn)
     }
 }
@@ -32,7 +32,7 @@ export interface MetricDimensionProperties {
 }
 
 export class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string>) {
+    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::MetricDimension', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface SimpleScalingPolicyConfigurationProperties {
 }
 
 export class SimpleScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::SimpleScalingPolicyConfiguration', properties, dependsOn)
     }
 }
@@ -57,7 +57,7 @@ export interface ScalingRuleProperties {
 }
 
 export class ScalingRule extends ResourceBase {
-    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::ScalingRule', properties, dependsOn)
     }
 }
@@ -68,7 +68,7 @@ export interface ScalingActionProperties {
 }
 
 export class ScalingAction extends ResourceBase {
-    constructor(properties: ScalingActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::ScalingAction', properties, dependsOn)
     }
 }
@@ -78,7 +78,7 @@ export interface ScalingTriggerProperties {
 }
 
 export class ScalingTrigger extends ResourceBase {
-    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::ScalingTrigger', properties, dependsOn)
     }
 }
@@ -89,7 +89,7 @@ export interface ScalingConstraintsProperties {
 }
 
 export class ScalingConstraints extends ResourceBase {
-    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::ScalingConstraints', properties, dependsOn)
     }
 }
@@ -107,7 +107,7 @@ export interface CloudWatchAlarmDefinitionProperties {
 }
 
 export class CloudWatchAlarmDefinition extends ResourceBase {
-    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string>) {
+    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::CloudWatchAlarmDefinition', properties, dependsOn)
     }
 }
@@ -119,7 +119,7 @@ export interface VolumeSpecificationProperties {
 }
 
 export class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::VolumeSpecification', properties, dependsOn)
     }
 }
@@ -130,7 +130,7 @@ export interface AutoScalingPolicyProperties {
 }
 
 export class AutoScalingPolicy extends ResourceBase {
-    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::AutoScalingPolicy', properties, dependsOn)
     }
 }
@@ -141,7 +141,7 @@ export interface EbsConfigurationProperties {
 }
 
 export class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::EbsConfiguration', properties, dependsOn)
     }
 }
@@ -160,7 +160,7 @@ export interface InstanceGroupConfigProperties {
 }
 
 export default class InstanceGroupConfig extends ResourceBase {
-    constructor(properties: InstanceGroupConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceGroupConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::InstanceGroupConfig', properties, dependsOn)
     }
 }

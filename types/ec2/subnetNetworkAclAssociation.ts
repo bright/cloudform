@@ -11,7 +11,7 @@ export interface SubnetNetworkAclAssociationProperties {
 }
 
 export default class SubnetNetworkAclAssociation extends ResourceBase {
-    constructor(properties: SubnetNetworkAclAssociationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubnetNetworkAclAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SubnetNetworkAclAssociation', properties, dependsOn)
     }
 }

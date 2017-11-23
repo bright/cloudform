@@ -7,14 +7,14 @@ export interface SettingsProperties {
     ThirdPartyConfigurationUrl?: Value<string>;
 }
 export declare class Settings extends ResourceBase {
-    constructor(properties: SettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: SettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ArtifactDetailsProperties {
     MaximumCount: Value<number>;
     MinimumCount: Value<number>;
 }
 export declare class ArtifactDetails extends ResourceBase {
-    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string>);
+    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigurationPropertiesProperties {
     Description?: Value<string>;
@@ -26,7 +26,7 @@ export interface ConfigurationPropertiesProperties {
     Type?: Value<string>;
 }
 export declare class ConfigurationProperties extends ResourceBase {
-    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomActionTypeProperties {
     Category: Value<string>;
@@ -38,5 +38,5 @@ export interface CustomActionTypeProperties {
     Version?: Value<string>;
 }
 export default class CustomActionType extends ResourceBase {
-    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string>);
+    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string> | Value<string>[]);
 }

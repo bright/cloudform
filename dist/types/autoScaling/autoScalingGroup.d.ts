@@ -10,21 +10,21 @@ export interface LifecycleHookSpecificationProperties {
     RoleARN?: Value<string>;
 }
 export declare class LifecycleHookSpecification extends ResourceBase {
-    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NotificationConfigurationProperties {
     NotificationTypes?: Value<string>[];
     TopicARN: Value<string>;
 }
 export declare class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MetricsCollectionProperties {
     Granularity: Value<string>;
     Metrics?: Value<string>[];
 }
 export declare class MetricsCollection extends ResourceBase {
-    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string>);
+    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TagPropertyProperties {
     Key: Value<string>;
@@ -32,7 +32,7 @@ export interface TagPropertyProperties {
     Value: Value<string>;
 }
 export declare class TagProperty extends ResourceBase {
-    constructor(properties: TagPropertyProperties, dependsOn?: Value<string>);
+    constructor(properties: TagPropertyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AutoScalingGroupProperties {
     AvailabilityZones?: Value<string>[];
@@ -55,5 +55,5 @@ export interface AutoScalingGroupProperties {
     VPCZoneIdentifier?: Value<string>[];
 }
 export default class AutoScalingGroup extends ResourceBase {
-    constructor(properties: AutoScalingGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: AutoScalingGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

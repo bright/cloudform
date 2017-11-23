@@ -6,7 +6,7 @@ export interface MaintenanceWindowLambdaParametersProperties {
     Payload?: Value<string>;
 }
 export declare class MaintenanceWindowLambdaParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NotificationConfigProperties {
     NotificationArn?: Value<string>;
@@ -14,14 +14,14 @@ export interface NotificationConfigProperties {
     NotificationEvents?: Value<string>[];
 }
 export declare class NotificationConfig extends ResourceBase {
-    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaintenanceWindowAutomationParametersProperties {
     Parameters?: any;
     DocumentVersion?: Value<string>;
 }
 export declare class MaintenanceWindowAutomationParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TaskInvocationParametersProperties {
     MaintenanceWindowRunCommandParameters?: MaintenanceWindowRunCommandParameters;
@@ -30,7 +30,7 @@ export interface TaskInvocationParametersProperties {
     MaintenanceWindowLambdaParameters?: MaintenanceWindowLambdaParameters;
 }
 export declare class TaskInvocationParameters extends ResourceBase {
-    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoggingInfoProperties {
     S3Bucket: Value<string>;
@@ -38,21 +38,21 @@ export interface LoggingInfoProperties {
     S3Prefix?: Value<string>;
 }
 export declare class LoggingInfo extends ResourceBase {
-    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string>);
+    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetProperties {
     Values?: Value<string>[];
     Key: Value<string>;
 }
 export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaintenanceWindowStepFunctionsParametersProperties {
     Input?: Value<string>;
     Name?: Value<string>;
 }
 export declare class MaintenanceWindowStepFunctionsParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaintenanceWindowRunCommandParametersProperties {
     TimeoutSeconds?: Value<number>;
@@ -66,7 +66,7 @@ export interface MaintenanceWindowRunCommandParametersProperties {
     DocumentHash?: Value<string>;
 }
 export declare class MaintenanceWindowRunCommandParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaintenanceWindowTaskProperties {
     MaxErrors: Value<string>;
@@ -84,5 +84,5 @@ export interface MaintenanceWindowTaskProperties {
     LoggingInfo?: LoggingInfo;
 }
 export default class MaintenanceWindowTask extends ResourceBase {
-    constructor(properties: MaintenanceWindowTaskProperties, dependsOn?: Value<string>);
+    constructor(properties: MaintenanceWindowTaskProperties, dependsOn?: Value<string> | Value<string>[]);
 }

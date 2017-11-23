@@ -5,7 +5,7 @@ export interface ElasticFileSystemTagProperties {
     Value: Value<string>;
 }
 export declare class ElasticFileSystemTag extends ResourceBase {
-    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>;
@@ -14,5 +14,5 @@ export interface FileSystemProperties {
     PerformanceMode?: Value<string>;
 }
 export default class FileSystem extends ResourceBase {
-    constructor(properties: FileSystemProperties, dependsOn?: Value<string>);
+    constructor(properties: FileSystemProperties, dependsOn?: Value<string> | Value<string>[]);
 }

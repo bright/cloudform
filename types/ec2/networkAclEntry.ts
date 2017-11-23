@@ -9,7 +9,7 @@ export interface IcmpProperties {
 }
 
 export class Icmp extends ResourceBase {
-    constructor(properties: IcmpProperties, dependsOn?: Value<string>) {
+    constructor(properties: IcmpProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Icmp', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface PortRangeProperties {
 }
 
 export class PortRange extends ResourceBase {
-    constructor(properties: PortRangeProperties, dependsOn?: Value<string>) {
+    constructor(properties: PortRangeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::PortRange', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface NetworkAclEntryProperties {
 }
 
 export default class NetworkAclEntry extends ResourceBase {
-    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string>) {
+    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::NetworkAclEntry', properties, dependsOn)
     }
 }

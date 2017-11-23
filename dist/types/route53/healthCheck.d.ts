@@ -18,26 +18,26 @@ export interface HealthCheckConfigProperties {
     Type: Value<string>;
 }
 export declare class HealthCheckConfig extends ResourceBase {
-    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface HealthCheckTagProperties {
     Key: Value<string>;
     Value: Value<string>;
 }
 export declare class HealthCheckTag extends ResourceBase {
-    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string>);
+    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AlarmIdentifierProperties {
     Name: Value<string>;
     Region: Value<string>;
 }
 export declare class AlarmIdentifier extends ResourceBase {
-    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string>);
+    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface HealthCheckProperties {
     HealthCheckConfig: HealthCheckConfig;
     HealthCheckTags?: HealthCheckTag[];
 }
 export default class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string>);
+    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -9,7 +9,7 @@ export interface HostedZoneTagProperties {
 }
 
 export class HostedZoneTag extends ResourceBase {
-    constructor(properties: HostedZoneTagProperties, dependsOn?: Value<string>) {
+    constructor(properties: HostedZoneTagProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HostedZoneTag', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface HostedZoneConfigProperties {
 }
 
 export class HostedZoneConfig extends ResourceBase {
-    constructor(properties: HostedZoneConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: HostedZoneConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HostedZoneConfig', properties, dependsOn)
     }
 }
@@ -29,7 +29,7 @@ export interface QueryLoggingConfigProperties {
 }
 
 export class QueryLoggingConfig extends ResourceBase {
-    constructor(properties: QueryLoggingConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: QueryLoggingConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::QueryLoggingConfig', properties, dependsOn)
     }
 }
@@ -40,7 +40,7 @@ export interface VPCProperties {
 }
 
 export class VPC extends ResourceBase {
-    constructor(properties: VPCProperties, dependsOn?: Value<string>) {
+    constructor(properties: VPCProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::VPC', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface HostedZoneProperties {
 }
 
 export default class HostedZone extends ResourceBase {
-    constructor(properties: HostedZoneProperties, dependsOn?: Value<string>) {
+    constructor(properties: HostedZoneProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HostedZone', properties, dependsOn)
     }
 }

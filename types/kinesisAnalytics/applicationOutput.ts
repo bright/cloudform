@@ -9,7 +9,7 @@ export interface KinesisFirehoseOutputProperties {
 }
 
 export class KinesisFirehoseOutput extends ResourceBase {
-    constructor(properties: KinesisFirehoseOutputProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisFirehoseOutputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::KinesisFirehoseOutput', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface KinesisStreamsOutputProperties {
 }
 
 export class KinesisStreamsOutput extends ResourceBase {
-    constructor(properties: KinesisStreamsOutputProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisStreamsOutputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::KinesisStreamsOutput', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface OutputProperties {
 }
 
 export class Output extends ResourceBase {
-    constructor(properties: OutputProperties, dependsOn?: Value<string>) {
+    constructor(properties: OutputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::Output', properties, dependsOn)
     }
 }
@@ -43,7 +43,7 @@ export interface DestinationSchemaProperties {
 }
 
 export class DestinationSchema extends ResourceBase {
-    constructor(properties: DestinationSchemaProperties, dependsOn?: Value<string>) {
+    constructor(properties: DestinationSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::DestinationSchema', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface ApplicationOutputProperties {
 }
 
 export default class ApplicationOutput extends ResourceBase {
-    constructor(properties: ApplicationOutputProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationOutputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::ApplicationOutput', properties, dependsOn)
     }
 }

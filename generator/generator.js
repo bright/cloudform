@@ -37,7 +37,7 @@ function generateClass(namespace, name, properties, isDefault) {
         }
         return "" + propertyName + (property.Required ? '' : '?') + ": " + determineTypeScriptType(property, propertyName, 'Type');
     });
-    return "export interface " + name + "Properties {\n" + propertiesEntries.map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport " + (isDefault ? 'default ' : '') + "class " + name + " extends ResourceBase {\n    constructor(properties: " + name + "Properties, dependsOn?: Value<string>) {\n        super('AWS::" + namespace + "::" + name + "', properties, dependsOn)\n    }\n}";
+    return "export interface " + name + "Properties {\n" + propertiesEntries.map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport " + (isDefault ? 'default ' : '') + "class " + name + " extends ResourceBase {\n    constructor(properties: " + name + "Properties, dependsOn?: Value<string> | Value<string>[]) {\n        super('AWS::" + namespace + "::" + name + "', properties, dependsOn)\n    }\n}";
 }
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags');

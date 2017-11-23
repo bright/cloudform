@@ -5,5 +5,5 @@ export interface SubnetNetworkAclAssociationProperties {
     SubnetId: Value<string>;
 }
 export default class SubnetNetworkAclAssociation extends ResourceBase {
-    constructor(properties: SubnetNetworkAclAssociationProperties, dependsOn?: Value<string>);
+    constructor(properties: SubnetNetworkAclAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

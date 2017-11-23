@@ -8,7 +8,7 @@ export interface LocationProperties {
     Type?: Value<string>;
 }
 export declare class Location extends ResourceBase {
-    constructor(properties: LocationProperties, dependsOn?: Value<string>);
+    constructor(properties: LocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DocumentationPartProperties {
     Location: Location;
@@ -16,5 +16,5 @@ export interface DocumentationPartProperties {
     RestApiId: Value<string>;
 }
 export default class DocumentationPart extends ResourceBase {
-    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string>);
+    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string> | Value<string>[]);
 }

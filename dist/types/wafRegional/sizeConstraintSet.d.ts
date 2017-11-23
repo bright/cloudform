@@ -7,19 +7,19 @@ export interface SizeConstraintProperties {
     FieldToMatch: FieldToMatch;
 }
 export declare class SizeConstraint extends ResourceBase {
-    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string>);
+    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FieldToMatchProperties {
     Type: Value<string>;
     Data?: Value<string>;
 }
 export declare class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>);
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SizeConstraintSetProperties {
     SizeConstraints?: SizeConstraint[];
     Name: Value<string>;
 }
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string>);
+    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

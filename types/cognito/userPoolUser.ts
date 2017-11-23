@@ -9,7 +9,7 @@ export interface AttributeTypeProperties {
 }
 
 export class AttributeType extends ResourceBase {
-    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string>) {
+    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::AttributeType', properties, dependsOn)
     }
 }
@@ -25,7 +25,7 @@ export interface UserPoolUserProperties {
 }
 
 export default class UserPoolUser extends ResourceBase {
-    constructor(properties: UserPoolUserProperties, dependsOn?: Value<string>) {
+    constructor(properties: UserPoolUserProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Cognito::UserPoolUser', properties, dependsOn)
     }
 }

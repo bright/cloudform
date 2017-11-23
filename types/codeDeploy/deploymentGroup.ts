@@ -9,7 +9,7 @@ export interface LoadBalancerInfoProperties {
 }
 
 export class LoadBalancerInfo extends ResourceBase {
-    constructor(properties: LoadBalancerInfoProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoadBalancerInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::LoadBalancerInfo', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface RevisionLocationProperties {
 }
 
 export class RevisionLocation extends ResourceBase {
-    constructor(properties: RevisionLocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: RevisionLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::RevisionLocation', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface S3LocationProperties {
 }
 
 export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::S3Location', properties, dependsOn)
     }
 }
@@ -47,7 +47,7 @@ export interface TriggerConfigProperties {
 }
 
 export class TriggerConfig extends ResourceBase {
-    constructor(properties: TriggerConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: TriggerConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::TriggerConfig', properties, dependsOn)
     }
 }
@@ -59,7 +59,7 @@ export interface TagFilterProperties {
 }
 
 export class TagFilter extends ResourceBase {
-    constructor(properties: TagFilterProperties, dependsOn?: Value<string>) {
+    constructor(properties: TagFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::TagFilter', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface GitHubLocationProperties {
 }
 
 export class GitHubLocation extends ResourceBase {
-    constructor(properties: GitHubLocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: GitHubLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::GitHubLocation', properties, dependsOn)
     }
 }
@@ -80,7 +80,7 @@ export interface TargetGroupInfoProperties {
 }
 
 export class TargetGroupInfo extends ResourceBase {
-    constructor(properties: TargetGroupInfoProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetGroupInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::TargetGroupInfo', properties, dependsOn)
     }
 }
@@ -90,7 +90,7 @@ export interface ELBInfoProperties {
 }
 
 export class ELBInfo extends ResourceBase {
-    constructor(properties: ELBInfoProperties, dependsOn?: Value<string>) {
+    constructor(properties: ELBInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::ELBInfo', properties, dependsOn)
     }
 }
@@ -102,7 +102,7 @@ export interface AlarmConfigurationProperties {
 }
 
 export class AlarmConfiguration extends ResourceBase {
-    constructor(properties: AlarmConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: AlarmConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::AlarmConfiguration', properties, dependsOn)
     }
 }
@@ -112,7 +112,7 @@ export interface DeploymentStyleProperties {
 }
 
 export class DeploymentStyle extends ResourceBase {
-    constructor(properties: DeploymentStyleProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentStyleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::DeploymentStyle', properties, dependsOn)
     }
 }
@@ -122,7 +122,7 @@ export interface AlarmProperties {
 }
 
 export class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties, dependsOn?: Value<string>) {
+    constructor(properties: AlarmProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::Alarm', properties, dependsOn)
     }
 }
@@ -134,7 +134,7 @@ export interface EC2TagFilterProperties {
 }
 
 export class EC2TagFilter extends ResourceBase {
-    constructor(properties: EC2TagFilterProperties, dependsOn?: Value<string>) {
+    constructor(properties: EC2TagFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::EC2TagFilter', properties, dependsOn)
     }
 }
@@ -145,7 +145,7 @@ export interface AutoRollbackConfigurationProperties {
 }
 
 export class AutoRollbackConfiguration extends ResourceBase {
-    constructor(properties: AutoRollbackConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: AutoRollbackConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::AutoRollbackConfiguration', properties, dependsOn)
     }
 }
@@ -157,7 +157,7 @@ export interface DeploymentProperties {
 }
 
 export class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::Deployment', properties, dependsOn)
     }
 }
@@ -179,7 +179,7 @@ export interface DeploymentGroupProperties {
 }
 
 export default class DeploymentGroup extends ResourceBase {
-    constructor(properties: DeploymentGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::DeploymentGroup', properties, dependsOn)
     }
 }

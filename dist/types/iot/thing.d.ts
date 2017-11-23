@@ -6,12 +6,12 @@ export interface AttributePayloadProperties {
     };
 }
 export declare class AttributePayload extends ResourceBase {
-    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string>);
+    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ThingProperties {
     AttributePayload?: AttributePayload;
     ThingName?: Value<string>;
 }
 export default class Thing extends ResourceBase {
-    constructor(properties: ThingProperties, dependsOn?: Value<string>);
+    constructor(properties: ThingProperties, dependsOn?: Value<string> | Value<string>[]);
 }

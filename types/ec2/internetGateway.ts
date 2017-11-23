@@ -10,7 +10,7 @@ export interface InternetGatewayProperties {
 }
 
 export default class InternetGateway extends ResourceBase {
-    constructor(properties: InternetGatewayProperties, dependsOn?: Value<string>) {
+    constructor(properties: InternetGatewayProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::InternetGateway', properties, dependsOn)
     }
 }

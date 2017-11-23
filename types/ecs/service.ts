@@ -11,7 +11,7 @@ export interface LoadBalancerProperties {
 }
 
 export class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::LoadBalancer', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface PlacementStrategyProperties {
 }
 
 export class PlacementStrategy extends ResourceBase {
-    constructor(properties: PlacementStrategyProperties, dependsOn?: Value<string>) {
+    constructor(properties: PlacementStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::PlacementStrategy', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface DeploymentConfigurationProperties {
 }
 
 export class DeploymentConfiguration extends ResourceBase {
-    constructor(properties: DeploymentConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::DeploymentConfiguration', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface PlacementConstraintProperties {
 }
 
 export class PlacementConstraint extends ResourceBase {
-    constructor(properties: PlacementConstraintProperties, dependsOn?: Value<string>) {
+    constructor(properties: PlacementConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::PlacementConstraint', properties, dependsOn)
     }
 }
@@ -62,7 +62,7 @@ export interface ServiceProperties {
 }
 
 export default class Service extends ResourceBase {
-    constructor(properties: ServiceProperties, dependsOn?: Value<string>) {
+    constructor(properties: ServiceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECS::Service', properties, dependsOn)
     }
 }

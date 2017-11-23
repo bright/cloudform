@@ -15,7 +15,7 @@ export interface DHCPOptionsProperties {
 }
 
 export default class DHCPOptions extends ResourceBase {
-    constructor(properties: DHCPOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: DHCPOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::DHCPOptions', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface PredicateProperties {
 }
 
 export class Predicate extends ResourceBase {
-    constructor(properties: PredicateProperties, dependsOn?: Value<string>) {
+    constructor(properties: PredicateProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::Predicate', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface RuleProperties {
 }
 
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::Rule', properties, dependsOn)
     }
 }

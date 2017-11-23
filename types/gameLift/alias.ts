@@ -10,7 +10,7 @@ export interface RoutingStrategyProperties {
 }
 
 export class RoutingStrategy extends ResourceBase {
-    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string>) {
+    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::RoutingStrategy', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface AliasProperties {
 }
 
 export default class Alias extends ResourceBase {
-    constructor(properties: AliasProperties, dependsOn?: Value<string>) {
+    constructor(properties: AliasProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::Alias', properties, dependsOn)
     }
 }

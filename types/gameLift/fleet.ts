@@ -11,7 +11,7 @@ export interface IpPermissionProperties {
 }
 
 export class IpPermission extends ResourceBase {
-    constructor(properties: IpPermissionProperties, dependsOn?: Value<string>) {
+    constructor(properties: IpPermissionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::IpPermission', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface FleetProperties {
 }
 
 export default class Fleet extends ResourceBase {
-    constructor(properties: FleetProperties, dependsOn?: Value<string>) {
+    constructor(properties: FleetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::Fleet', properties, dependsOn)
     }
 }

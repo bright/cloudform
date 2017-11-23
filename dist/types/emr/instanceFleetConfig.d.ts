@@ -6,7 +6,7 @@ export interface VolumeSpecificationProperties {
     VolumeType: Value<string>;
 }
 export declare class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SpotProvisioningSpecificationProperties {
     BlockDurationMinutes?: Value<number>;
@@ -14,7 +14,7 @@ export interface SpotProvisioningSpecificationProperties {
     TimeoutDurationMinutes: Value<number>;
 }
 export declare class SpotProvisioningSpecification extends ResourceBase {
-    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigurationProperties {
     Classification?: Value<string>;
@@ -24,14 +24,14 @@ export interface ConfigurationProperties {
     Configurations?: Configuration[];
 }
 export declare class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsConfigurationProperties {
     EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[];
     EbsOptimized?: Value<boolean>;
 }
 export declare class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceTypeConfigProperties {
     BidPrice?: Value<string>;
@@ -42,20 +42,20 @@ export interface InstanceTypeConfigProperties {
     WeightedCapacity?: Value<number>;
 }
 export declare class InstanceTypeConfig extends ResourceBase {
-    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceFleetProvisioningSpecificationsProperties {
     SpotSpecification: SpotProvisioningSpecification;
 }
 export declare class InstanceFleetProvisioningSpecifications extends ResourceBase {
-    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsBlockDeviceConfigProperties {
     VolumeSpecification: VolumeSpecification;
     VolumesPerInstance?: Value<number>;
 }
 export declare class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceFleetConfigProperties {
     ClusterId: Value<string>;
@@ -67,5 +67,5 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>;
 }
 export default class InstanceFleetConfig extends ResourceBase {
-    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -4,7 +4,7 @@ export interface ConfigSnapshotDeliveryPropertiesProperties {
     DeliveryFrequency?: Value<string>;
 }
 export declare class ConfigSnapshotDeliveryProperties extends ResourceBase {
-    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DeliveryChannelProperties {
     ConfigSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties;
@@ -14,5 +14,5 @@ export interface DeliveryChannelProperties {
     SnsTopicARN?: Value<string>;
 }
 export default class DeliveryChannel extends ResourceBase {
-    constructor(properties: DeliveryChannelProperties, dependsOn?: Value<string>);
+    constructor(properties: DeliveryChannelProperties, dependsOn?: Value<string> | Value<string>[]);
 }

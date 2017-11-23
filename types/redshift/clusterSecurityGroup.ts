@@ -11,7 +11,7 @@ export interface ClusterSecurityGroupProperties {
 }
 
 export default class ClusterSecurityGroup extends ResourceBase {
-    constructor(properties: ClusterSecurityGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: ClusterSecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Redshift::ClusterSecurityGroup', properties, dependsOn)
     }
 }

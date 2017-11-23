@@ -22,7 +22,7 @@ export interface HealthCheckConfigProperties {
 }
 
 export class HealthCheckConfig extends ResourceBase {
-    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HealthCheckConfig', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface HealthCheckTagProperties {
 }
 
 export class HealthCheckTag extends ResourceBase {
-    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string>) {
+    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HealthCheckTag', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface AlarmIdentifierProperties {
 }
 
 export class AlarmIdentifier extends ResourceBase {
-    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string>) {
+    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::AlarmIdentifier', properties, dependsOn)
     }
 }
@@ -55,7 +55,7 @@ export interface HealthCheckProperties {
 }
 
 export default class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string>) {
+    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Route53::HealthCheck', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface S3ReferenceDataSourceProperties {
 }
 
 export class S3ReferenceDataSource extends ResourceBase {
-    constructor(properties: S3ReferenceDataSourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::S3ReferenceDataSource', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface MappingParametersProperties {
 }
 
 export class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::MappingParameters', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface JSONMappingParametersProperties {
 }
 
 export class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::JSONMappingParameters', properties, dependsOn)
     }
 }
@@ -42,7 +42,7 @@ export interface RecordFormatProperties {
 }
 
 export class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::RecordFormat', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface RecordColumnProperties {
 }
 
 export class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::RecordColumn', properties, dependsOn)
     }
 }
@@ -65,7 +65,7 @@ export interface CSVMappingParametersProperties {
 }
 
 export class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::CSVMappingParameters', properties, dependsOn)
     }
 }
@@ -77,7 +77,7 @@ export interface ReferenceSchemaProperties {
 }
 
 export class ReferenceSchema extends ResourceBase {
-    constructor(properties: ReferenceSchemaProperties, dependsOn?: Value<string>) {
+    constructor(properties: ReferenceSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::ReferenceSchema', properties, dependsOn)
     }
 }
@@ -89,7 +89,7 @@ export interface ReferenceDataSourceProperties {
 }
 
 export class ReferenceDataSource extends ResourceBase {
-    constructor(properties: ReferenceDataSourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::ReferenceDataSource', properties, dependsOn)
     }
 }
@@ -100,7 +100,7 @@ export interface ApplicationReferenceDataSourceProperties {
 }
 
 export default class ApplicationReferenceDataSource extends ResourceBase {
-    constructor(properties: ApplicationReferenceDataSourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties, dependsOn)
     }
 }

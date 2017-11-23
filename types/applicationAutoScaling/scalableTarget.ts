@@ -12,7 +12,7 @@ export interface ScheduledActionProperties {
 }
 
 export class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::ScheduledAction', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface ScalableTargetActionProperties {
 }
 
 export class ScalableTargetAction extends ResourceBase {
-    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::ScalableTargetAction', properties, dependsOn)
     }
 }
@@ -39,7 +39,7 @@ export interface ScalableTargetProperties {
 }
 
 export default class ScalableTarget extends ResourceBase {
-    constructor(properties: ScalableTargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScalableTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApplicationAutoScaling::ScalableTarget', properties, dependsOn)
     }
 }

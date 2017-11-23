@@ -7,7 +7,7 @@ export interface IpPermissionProperties {
     ToPort: Value<number>;
 }
 export declare class IpPermission extends ResourceBase {
-    constructor(properties: IpPermissionProperties, dependsOn?: Value<string>);
+    constructor(properties: IpPermissionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FleetProperties {
     BuildId: Value<string>;
@@ -23,5 +23,5 @@ export interface FleetProperties {
     ServerLaunchPath: Value<string>;
 }
 export default class Fleet extends ResourceBase {
-    constructor(properties: FleetProperties, dependsOn?: Value<string>);
+    constructor(properties: FleetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

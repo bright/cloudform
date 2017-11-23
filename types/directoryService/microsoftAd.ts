@@ -9,7 +9,7 @@ export interface VpcSettingsProperties {
 }
 
 export class VpcSettings extends ResourceBase {
-    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DirectoryService::VpcSettings', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface MicrosoftADProperties {
 }
 
 export default class MicrosoftAD extends ResourceBase {
-    constructor(properties: MicrosoftADProperties, dependsOn?: Value<string>) {
+    constructor(properties: MicrosoftADProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DirectoryService::MicrosoftAD', properties, dependsOn)
     }
 }

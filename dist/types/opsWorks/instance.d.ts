@@ -7,7 +7,7 @@ export interface BlockDeviceMappingProperties {
     VirtualName?: Value<string>;
 }
 export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsBlockDeviceProperties {
     DeleteOnTermination?: Value<boolean>;
@@ -17,7 +17,7 @@ export interface EbsBlockDeviceProperties {
     VolumeType?: Value<string>;
 }
 export declare class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string>);
+    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TimeBasedAutoScalingProperties {
     Friday?: {
@@ -43,7 +43,7 @@ export interface TimeBasedAutoScalingProperties {
     };
 }
 export declare class TimeBasedAutoScaling extends ResourceBase {
-    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string>);
+    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceProperties {
     AgentVersion?: Value<string>;
@@ -69,5 +69,5 @@ export interface InstanceProperties {
     Volumes?: Value<string>[];
 }
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceProperties, dependsOn?: Value<string> | Value<string>[]);
 }

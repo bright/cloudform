@@ -9,7 +9,7 @@ export interface CookiesProperties {
 }
 
 export class Cookies extends ResourceBase {
-    constructor(properties: CookiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: CookiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Cookies', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface LambdaFunctionAssociationProperties {
 }
 
 export class LambdaFunctionAssociation extends ResourceBase {
-    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::LambdaFunctionAssociation', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface CustomOriginConfigProperties {
 }
 
 export class CustomOriginConfig extends ResourceBase {
-    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::CustomOriginConfig', properties, dependsOn)
     }
 }
@@ -48,7 +48,7 @@ export interface ForwardedValuesProperties {
 }
 
 export class ForwardedValues extends ResourceBase {
-    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::ForwardedValues', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface CacheBehaviorProperties {
 }
 
 export class CacheBehavior extends ResourceBase {
-    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string>) {
+    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::CacheBehavior', properties, dependsOn)
     }
 }
@@ -84,7 +84,7 @@ export interface LegacyCustomOriginProperties {
 }
 
 export class LegacyCustomOrigin extends ResourceBase {
-    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string>) {
+    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::LegacyCustomOrigin', properties, dependsOn)
     }
 }
@@ -105,7 +105,7 @@ export interface DefaultCacheBehaviorProperties {
 }
 
 export class DefaultCacheBehavior extends ResourceBase {
-    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string>) {
+    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::DefaultCacheBehavior', properties, dependsOn)
     }
 }
@@ -115,7 +115,7 @@ export interface RestrictionsProperties {
 }
 
 export class Restrictions extends ResourceBase {
-    constructor(properties: RestrictionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: RestrictionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Restrictions', properties, dependsOn)
     }
 }
@@ -130,7 +130,7 @@ export interface OriginProperties {
 }
 
 export class Origin extends ResourceBase {
-    constructor(properties: OriginProperties, dependsOn?: Value<string>) {
+    constructor(properties: OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Origin', properties, dependsOn)
     }
 }
@@ -141,7 +141,7 @@ export interface GeoRestrictionProperties {
 }
 
 export class GeoRestriction extends ResourceBase {
-    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string>) {
+    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::GeoRestriction', properties, dependsOn)
     }
 }
@@ -155,7 +155,7 @@ export interface ViewerCertificateProperties {
 }
 
 export class ViewerCertificate extends ResourceBase {
-    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string>) {
+    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::ViewerCertificate', properties, dependsOn)
     }
 }
@@ -165,7 +165,7 @@ export interface S3OriginConfigProperties {
 }
 
 export class S3OriginConfig extends ResourceBase {
-    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::S3OriginConfig', properties, dependsOn)
     }
 }
@@ -178,7 +178,7 @@ export interface CustomErrorResponseProperties {
 }
 
 export class CustomErrorResponse extends ResourceBase {
-    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::CustomErrorResponse', properties, dependsOn)
     }
 }
@@ -190,7 +190,7 @@ export interface LoggingProperties {
 }
 
 export class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Logging', properties, dependsOn)
     }
 }
@@ -217,7 +217,7 @@ export interface DistributionConfigProperties {
 }
 
 export class DistributionConfig extends ResourceBase {
-    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::DistributionConfig', properties, dependsOn)
     }
 }
@@ -228,7 +228,7 @@ export interface LegacyS3OriginProperties {
 }
 
 export class LegacyS3Origin extends ResourceBase {
-    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string>) {
+    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::LegacyS3Origin', properties, dependsOn)
     }
 }
@@ -239,7 +239,7 @@ export interface OriginCustomHeaderProperties {
 }
 
 export class OriginCustomHeader extends ResourceBase {
-    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string>) {
+    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::OriginCustomHeader', properties, dependsOn)
     }
 }
@@ -250,7 +250,7 @@ export interface DistributionProperties {
 }
 
 export default class Distribution extends ResourceBase {
-    constructor(properties: DistributionProperties, dependsOn?: Value<string>) {
+    constructor(properties: DistributionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Distribution', properties, dependsOn)
     }
 }

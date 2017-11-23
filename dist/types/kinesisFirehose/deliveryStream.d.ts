@@ -14,21 +14,21 @@ export interface ElasticsearchDestinationConfigurationProperties {
     TypeName: Value<string>;
 }
 export declare class ElasticsearchDestinationConfiguration extends ResourceBase {
-    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ElasticsearchBufferingHintsProperties {
     IntervalInSeconds: Value<number>;
     SizeInMBs: Value<number>;
 }
 export declare class ElasticsearchBufferingHints extends ResourceBase {
-    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EncryptionConfigurationProperties {
     KMSEncryptionConfig?: KMSEncryptionConfig;
     NoEncryptionConfig?: Value<string>;
 }
 export declare class EncryptionConfiguration extends ResourceBase {
-    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CloudWatchLoggingOptionsProperties {
     Enabled?: Value<boolean>;
@@ -36,42 +36,42 @@ export interface CloudWatchLoggingOptionsProperties {
     LogStreamName?: Value<string>;
 }
 export declare class CloudWatchLoggingOptions extends ResourceBase {
-    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProcessingConfigurationProperties {
     Enabled: Value<boolean>;
     Processors: Processor[];
 }
 export declare class ProcessingConfiguration extends ResourceBase {
-    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BufferingHintsProperties {
     IntervalInSeconds: Value<number>;
     SizeInMBs: Value<number>;
 }
 export declare class BufferingHints extends ResourceBase {
-    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string>);
+    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface KinesisStreamSourceConfigurationProperties {
     KinesisStreamARN: Value<string>;
     RoleARN: Value<string>;
 }
 export declare class KinesisStreamSourceConfiguration extends ResourceBase {
-    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProcessorParameterProperties {
     ParameterName: Value<string>;
     ParameterValue: Value<string>;
 }
 export declare class ProcessorParameter extends ResourceBase {
-    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string>);
+    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProcessorProperties {
     Parameters: ProcessorParameter[];
     Type: Value<string>;
 }
 export declare class Processor extends ResourceBase {
-    constructor(properties: ProcessorProperties, dependsOn?: Value<string>);
+    constructor(properties: ProcessorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CopyCommandProperties {
     CopyOptions?: Value<string>;
@@ -79,7 +79,7 @@ export interface CopyCommandProperties {
     DataTableName: Value<string>;
 }
 export declare class CopyCommand extends ResourceBase {
-    constructor(properties: CopyCommandProperties, dependsOn?: Value<string>);
+    constructor(properties: CopyCommandProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface S3DestinationConfigurationProperties {
     BucketARN: Value<string>;
@@ -91,19 +91,19 @@ export interface S3DestinationConfigurationProperties {
     RoleARN: Value<string>;
 }
 export declare class S3DestinationConfiguration extends ResourceBase {
-    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ElasticsearchRetryOptionsProperties {
     DurationInSeconds: Value<number>;
 }
 export declare class ElasticsearchRetryOptions extends ResourceBase {
-    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface KMSEncryptionConfigProperties {
     AWSKMSKeyARN: Value<string>;
 }
 export declare class KMSEncryptionConfig extends ResourceBase {
-    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ExtendedS3DestinationConfigurationProperties {
     BucketARN: Value<string>;
@@ -118,7 +118,7 @@ export interface ExtendedS3DestinationConfigurationProperties {
     S3BackupMode?: Value<string>;
 }
 export declare class ExtendedS3DestinationConfiguration extends ResourceBase {
-    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RedshiftDestinationConfigurationProperties {
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
@@ -131,7 +131,7 @@ export interface RedshiftDestinationConfigurationProperties {
     Username: Value<string>;
 }
 export declare class RedshiftDestinationConfiguration extends ResourceBase {
-    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DeliveryStreamProperties {
     DeliveryStreamName?: Value<string>;
@@ -143,5 +143,5 @@ export interface DeliveryStreamProperties {
     S3DestinationConfiguration?: S3DestinationConfiguration;
 }
 export default class DeliveryStream extends ResourceBase {
-    constructor(properties: DeliveryStreamProperties, dependsOn?: Value<string>);
+    constructor(properties: DeliveryStreamProperties, dependsOn?: Value<string> | Value<string>[]);
 }

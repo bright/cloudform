@@ -16,7 +16,7 @@ export interface ComputeResourcesProperties {
     DesiredvCpus?: Value<number>;
 }
 export declare class ComputeResources extends ResourceBase {
-    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string>);
+    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ComputeEnvironmentProperties {
     Type: Value<string>;
@@ -26,5 +26,5 @@ export interface ComputeEnvironmentProperties {
     State?: Value<string>;
 }
 export default class ComputeEnvironment extends ResourceBase {
-    constructor(properties: ComputeEnvironmentProperties, dependsOn?: Value<string>);
+    constructor(properties: ComputeEnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -6,7 +6,7 @@ export interface DataSourceProperties {
     Type?: Value<string>;
 }
 export declare class DataSource extends ResourceBase {
-    constructor(properties: DataSourceProperties, dependsOn?: Value<string>);
+    constructor(properties: DataSourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EnvironmentVariableProperties {
     Key: Value<string>;
@@ -14,7 +14,7 @@ export interface EnvironmentVariableProperties {
     Value: Value<string>;
 }
 export declare class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string>);
+    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SslConfigurationProperties {
     Certificate?: Value<string>;
@@ -22,7 +22,7 @@ export interface SslConfigurationProperties {
     PrivateKey?: Value<string>;
 }
 export declare class SslConfiguration extends ResourceBase {
-    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SourceProperties {
     Password?: Value<string>;
@@ -33,7 +33,7 @@ export interface SourceProperties {
     Username?: Value<string>;
 }
 export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AppProperties {
     AppSource?: Source;
@@ -52,5 +52,5 @@ export interface AppProperties {
     Type: Value<string>;
 }
 export default class App extends ResourceBase {
-    constructor(properties: AppProperties, dependsOn?: Value<string>);
+    constructor(properties: AppProperties, dependsOn?: Value<string> | Value<string>[]);
 }

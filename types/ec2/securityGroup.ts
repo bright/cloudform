@@ -16,7 +16,7 @@ export interface IngressProperties {
 }
 
 export class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string>) {
+    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Ingress', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface EgressProperties {
 }
 
 export class Egress extends ResourceBase {
-    constructor(properties: EgressProperties, dependsOn?: Value<string>) {
+    constructor(properties: EgressProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Egress', properties, dependsOn)
     }
 }
@@ -48,7 +48,7 @@ export interface SecurityGroupProperties {
 }
 
 export default class SecurityGroup extends ResourceBase {
-    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SecurityGroup', properties, dependsOn)
     }
 }

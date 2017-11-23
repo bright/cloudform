@@ -16,7 +16,7 @@ export interface SubnetProperties {
 }
 
 export default class Subnet extends ResourceBase {
-    constructor(properties: SubnetProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubnetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Subnet', properties, dependsOn)
     }
 }

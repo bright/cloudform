@@ -5,7 +5,7 @@ export interface FieldToMatchProperties {
     Type: Value<string>;
 }
 export declare class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>);
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SizeConstraintProperties {
     ComparisonOperator: Value<string>;
@@ -14,12 +14,12 @@ export interface SizeConstraintProperties {
     TextTransformation: Value<string>;
 }
 export declare class SizeConstraint extends ResourceBase {
-    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string>);
+    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SizeConstraintSetProperties {
     Name: Value<string>;
     SizeConstraints: SizeConstraint[];
 }
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string>);
+    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

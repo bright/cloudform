@@ -7,5 +7,5 @@ export interface MountTargetProperties {
     SubnetId: Value<string>;
 }
 export default class MountTarget extends ResourceBase {
-    constructor(properties: MountTargetProperties, dependsOn?: Value<string>);
+    constructor(properties: MountTargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

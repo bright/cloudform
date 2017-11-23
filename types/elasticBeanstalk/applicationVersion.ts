@@ -9,7 +9,7 @@ export interface SourceBundleProperties {
 }
 
 export class SourceBundle extends ResourceBase {
-    constructor(properties: SourceBundleProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceBundleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::SourceBundle', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface ApplicationVersionProperties {
 }
 
 export default class ApplicationVersion extends ResourceBase {
-    constructor(properties: ApplicationVersionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationVersionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::ApplicationVersion', properties, dependsOn)
     }
 }

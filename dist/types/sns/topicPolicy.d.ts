@@ -5,5 +5,5 @@ export interface TopicPolicyProperties {
     Topics: Value<string>[];
 }
 export default class TopicPolicy extends ResourceBase {
-    constructor(properties: TopicPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: TopicPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }

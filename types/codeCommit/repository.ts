@@ -12,7 +12,7 @@ export interface RepositoryTriggerProperties {
 }
 
 export class RepositoryTrigger extends ResourceBase {
-    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string>) {
+    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeCommit::RepositoryTrigger', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface RepositoryProperties {
 }
 
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties, dependsOn?: Value<string>) {
+    constructor(properties: RepositoryProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeCommit::Repository', properties, dependsOn)
     }
 }

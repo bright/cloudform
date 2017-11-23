@@ -9,5 +9,5 @@ export interface DHCPOptionsProperties {
     Tags?: ResourceTag[];
 }
 export default class DHCPOptions extends ResourceBase {
-    constructor(properties: DHCPOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: DHCPOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }

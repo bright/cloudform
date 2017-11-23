@@ -5,5 +5,5 @@ export interface QueuePolicyProperties {
     Queues: Value<string>[];
 }
 export default class QueuePolicy extends ResourceBase {
-    constructor(properties: QueuePolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: QueuePolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }

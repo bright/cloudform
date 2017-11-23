@@ -5,7 +5,7 @@ export interface VpcSettingsProperties {
     VpcId: Value<string>;
 }
 export declare class VpcSettings extends ResourceBase {
-    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MicrosoftADProperties {
     CreateAlias?: Value<boolean>;
@@ -16,5 +16,5 @@ export interface MicrosoftADProperties {
     VpcSettings: VpcSettings;
 }
 export default class MicrosoftAD extends ResourceBase {
-    constructor(properties: MicrosoftADProperties, dependsOn?: Value<string>);
+    constructor(properties: MicrosoftADProperties, dependsOn?: Value<string> | Value<string>[]);
 }

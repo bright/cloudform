@@ -9,7 +9,7 @@ export interface StageKeyProperties {
 }
 
 export class StageKey extends ResourceBase {
-    constructor(properties: StageKeyProperties, dependsOn?: Value<string>) {
+    constructor(properties: StageKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::StageKey', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface ApiKeyProperties {
 }
 
 export default class ApiKey extends ResourceBase {
-    constructor(properties: ApiKeyProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApiKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::ApiKey', properties, dependsOn)
     }
 }

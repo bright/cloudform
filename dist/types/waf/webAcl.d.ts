@@ -4,7 +4,7 @@ export interface WafActionProperties {
     Type: Value<string>;
 }
 export declare class WafAction extends ResourceBase {
-    constructor(properties: WafActionProperties, dependsOn?: Value<string>);
+    constructor(properties: WafActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ActivatedRuleProperties {
     Action: WafAction;
@@ -12,7 +12,7 @@ export interface ActivatedRuleProperties {
     RuleId: Value<string>;
 }
 export declare class ActivatedRule extends ResourceBase {
-    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface WebACLProperties {
     DefaultAction: WafAction;
@@ -21,5 +21,5 @@ export interface WebACLProperties {
     Rules?: ActivatedRule[];
 }
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties, dependsOn?: Value<string>);
+    constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]);
 }

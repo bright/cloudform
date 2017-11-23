@@ -13,7 +13,7 @@ export interface ArtifactsProperties {
 }
 
 export class Artifacts extends ResourceBase {
-    constructor(properties: ArtifactsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ArtifactsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::Artifacts', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface SourceAuthProperties {
 }
 
 export class SourceAuth extends ResourceBase {
-    constructor(properties: SourceAuthProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceAuthProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::SourceAuth', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface EnvironmentProperties {
 }
 
 export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::Environment', properties, dependsOn)
     }
 }
@@ -50,7 +50,7 @@ export interface EnvironmentVariableProperties {
 }
 
 export class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::EnvironmentVariable', properties, dependsOn)
     }
 }
@@ -63,7 +63,7 @@ export interface SourceProperties {
 }
 
 export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::Source', properties, dependsOn)
     }
 }
@@ -81,7 +81,7 @@ export interface ProjectProperties {
 }
 
 export default class Project extends ResourceBase {
-    constructor(properties: ProjectProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProjectProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeBuild::Project', properties, dependsOn)
     }
 }

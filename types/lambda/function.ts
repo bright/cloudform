@@ -9,7 +9,7 @@ export interface VpcConfigProperties {
 }
 
 export class VpcConfig extends ResourceBase {
-    constructor(properties: VpcConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: VpcConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::VpcConfig', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface DeadLetterConfigProperties {
 }
 
 export class DeadLetterConfig extends ResourceBase {
-    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::DeadLetterConfig', properties, dependsOn)
     }
 }
@@ -29,7 +29,7 @@ export interface TracingConfigProperties {
 }
 
 export class TracingConfig extends ResourceBase {
-    constructor(properties: TracingConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: TracingConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::TracingConfig', properties, dependsOn)
     }
 }
@@ -42,7 +42,7 @@ export interface CodeProperties {
 }
 
 export class Code extends ResourceBase {
-    constructor(properties: CodeProperties, dependsOn?: Value<string>) {
+    constructor(properties: CodeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::Code', properties, dependsOn)
     }
 }
@@ -52,7 +52,7 @@ export interface EnvironmentProperties {
 }
 
 export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::Environment', properties, dependsOn)
     }
 }
@@ -75,7 +75,7 @@ export interface FunctionProperties {
 }
 
 export default class Function extends ResourceBase {
-    constructor(properties: FunctionProperties, dependsOn?: Value<string>) {
+    constructor(properties: FunctionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::Function', properties, dependsOn)
     }
 }

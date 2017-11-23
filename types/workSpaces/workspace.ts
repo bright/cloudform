@@ -15,7 +15,7 @@ export interface WorkspaceProperties {
 }
 
 export default class Workspace extends ResourceBase {
-    constructor(properties: WorkspaceProperties, dependsOn?: Value<string>) {
+    constructor(properties: WorkspaceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WorkSpaces::Workspace', properties, dependsOn)
     }
 }

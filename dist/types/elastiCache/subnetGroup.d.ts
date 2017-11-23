@@ -6,5 +6,5 @@ export interface SubnetGroupProperties {
     SubnetIds: Value<string>[];
 }
 export default class SubnetGroup extends ResourceBase {
-    constructor(properties: SubnetGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: SubnetGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

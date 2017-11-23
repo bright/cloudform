@@ -7,13 +7,13 @@ export interface S3LocationProperties {
     Version?: Value<string>;
 }
 export declare class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string>);
+    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EndpointConfigurationProperties {
     Types?: Value<string>[];
 }
 export declare class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RestApiProperties {
     BinaryMediaTypes?: Value<string>[];
@@ -30,5 +30,5 @@ export interface RestApiProperties {
     };
 }
 export default class RestApi extends ResourceBase {
-    constructor(properties: RestApiProperties, dependsOn?: Value<string>);
+    constructor(properties: RestApiProperties, dependsOn?: Value<string> | Value<string>[]);
 }

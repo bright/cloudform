@@ -17,7 +17,7 @@ export interface MethodSettingProperties {
 }
 
 export class MethodSetting extends ResourceBase {
-    constructor(properties: MethodSettingProperties, dependsOn?: Value<string>) {
+    constructor(properties: MethodSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::MethodSetting', properties, dependsOn)
     }
 }
@@ -41,7 +41,7 @@ export interface StageDescriptionProperties {
 }
 
 export class StageDescription extends ResourceBase {
-    constructor(properties: StageDescriptionProperties, dependsOn?: Value<string>) {
+    constructor(properties: StageDescriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::StageDescription', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface DeploymentProperties {
 }
 
 export default class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Deployment', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface S3SettingsProperties {
     CompressionType?: Value<string>;
 }
 export declare class S3Settings extends ResourceBase {
-    constructor(properties: S3SettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: S3SettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MongoDbSettingsProperties {
     AuthSource?: Value<string>;
@@ -26,13 +26,13 @@ export interface MongoDbSettingsProperties {
     NestingLevel?: Value<string>;
 }
 export declare class MongoDbSettings extends ResourceBase {
-    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DynamoDbSettingsProperties {
     ServiceAccessRoleArn?: Value<string>;
 }
 export declare class DynamoDbSettings extends ResourceBase {
-    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EndpointProperties {
     KmsKeyId?: Value<string>;
@@ -53,5 +53,5 @@ export interface EndpointProperties {
     MongoDbSettings?: MongoDbSettings;
 }
 export default class Endpoint extends ResourceBase {
-    constructor(properties: EndpointProperties, dependsOn?: Value<string>);
+    constructor(properties: EndpointProperties, dependsOn?: Value<string> | Value<string>[]);
 }

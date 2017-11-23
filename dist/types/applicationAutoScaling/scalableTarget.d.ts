@@ -8,14 +8,14 @@ export interface ScheduledActionProperties {
     StartTime?: Value<string>;
 }
 export declare class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string>);
+    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ScalableTargetActionProperties {
     MaxCapacity?: Value<number>;
     MinCapacity?: Value<number>;
 }
 export declare class ScalableTargetAction extends ResourceBase {
-    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string>);
+    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ScalableTargetProperties {
     MaxCapacity: Value<number>;
@@ -27,5 +27,5 @@ export interface ScalableTargetProperties {
     ServiceNamespace: Value<string>;
 }
 export default class ScalableTarget extends ResourceBase {
-    constructor(properties: ScalableTargetProperties, dependsOn?: Value<string>);
+    constructor(properties: ScalableTargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }

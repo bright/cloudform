@@ -9,7 +9,7 @@ export interface TrustedSignersProperties {
 }
 
 export class TrustedSigners extends ResourceBase {
-    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string>) {
+    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::TrustedSigners', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface S3OriginProperties {
 }
 
 export class S3Origin extends ResourceBase {
-    constructor(properties: S3OriginProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::S3Origin', properties, dependsOn)
     }
 }
@@ -32,7 +32,7 @@ export interface LoggingProperties {
 }
 
 export class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::Logging', properties, dependsOn)
     }
 }
@@ -48,7 +48,7 @@ export interface StreamingDistributionConfigProperties {
 }
 
 export class StreamingDistributionConfig extends ResourceBase {
-    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::StreamingDistributionConfig', properties, dependsOn)
     }
 }
@@ -59,7 +59,7 @@ export interface StreamingDistributionProperties {
 }
 
 export default class StreamingDistribution extends ResourceBase {
-    constructor(properties: StreamingDistributionProperties, dependsOn?: Value<string>) {
+    constructor(properties: StreamingDistributionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::StreamingDistribution', properties, dependsOn)
     }
 }

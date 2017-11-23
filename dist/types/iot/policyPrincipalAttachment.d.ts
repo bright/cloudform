@@ -5,5 +5,5 @@ export interface PolicyPrincipalAttachmentProperties {
     Principal: Value<string>;
 }
 export default class PolicyPrincipalAttachment extends ResourceBase {
-    constructor(properties: PolicyPrincipalAttachmentProperties, dependsOn?: Value<string>);
+    constructor(properties: PolicyPrincipalAttachmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -9,7 +9,7 @@ export interface LoggingPropertiesProperties {
 }
 
 export class LoggingProperties extends ResourceBase {
-    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Redshift::LoggingProperties', properties, dependsOn)
     }
 }
@@ -46,7 +46,7 @@ export interface ClusterProperties {
 }
 
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties, dependsOn?: Value<string>) {
+    constructor(properties: ClusterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Redshift::Cluster', properties, dependsOn)
     }
 }

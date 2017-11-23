@@ -9,7 +9,7 @@ export interface FieldToMatchProperties {
 }
 
 export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>) {
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::FieldToMatch', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface SqlInjectionMatchTupleProperties {
 }
 
 export class SqlInjectionMatchTuple extends ResourceBase {
-    constructor(properties: SqlInjectionMatchTupleProperties, dependsOn?: Value<string>) {
+    constructor(properties: SqlInjectionMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::SqlInjectionMatchTuple', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface SqlInjectionMatchSetProperties {
 }
 
 export default class SqlInjectionMatchSet extends ResourceBase {
-    constructor(properties: SqlInjectionMatchSetProperties, dependsOn?: Value<string>) {
+    constructor(properties: SqlInjectionMatchSetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::SqlInjectionMatchSet', properties, dependsOn)
     }
 }

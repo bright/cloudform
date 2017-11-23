@@ -11,7 +11,7 @@ export interface BlockDeviceMappingProperties {
 }
 
 export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::BlockDeviceMapping', properties, dependsOn)
     }
 }
@@ -25,7 +25,7 @@ export interface EbsBlockDeviceProperties {
 }
 
 export class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::EbsBlockDevice', properties, dependsOn)
     }
 }
@@ -41,7 +41,7 @@ export interface TimeBasedAutoScalingProperties {
 }
 
 export class TimeBasedAutoScaling extends ResourceBase {
-    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string>) {
+    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::TimeBasedAutoScaling', properties, dependsOn)
     }
 }
@@ -71,7 +71,7 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Instance', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface DataSourceProperties {
 }
 
 export class DataSource extends ResourceBase {
-    constructor(properties: DataSourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: DataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::DataSource', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface EnvironmentVariableProperties {
 }
 
 export class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::EnvironmentVariable', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface SslConfigurationProperties {
 }
 
 export class SslConfiguration extends ResourceBase {
-    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::SslConfiguration', properties, dependsOn)
     }
 }
@@ -49,7 +49,7 @@ export interface SourceProperties {
 }
 
 export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Source', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface AppProperties {
 }
 
 export default class App extends ResourceBase {
-    constructor(properties: AppProperties, dependsOn?: Value<string>) {
+    constructor(properties: AppProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::App', properties, dependsOn)
     }
 }

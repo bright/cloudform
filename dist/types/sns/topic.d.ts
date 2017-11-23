@@ -5,7 +5,7 @@ export interface SubscriptionProperties {
     Protocol: Value<string>;
 }
 export declare class Subscription extends ResourceBase {
-    constructor(properties: SubscriptionProperties, dependsOn?: Value<string>);
+    constructor(properties: SubscriptionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TopicProperties {
     DisplayName?: Value<string>;
@@ -13,5 +13,5 @@ export interface TopicProperties {
     TopicName?: Value<string>;
 }
 export default class Topic extends ResourceBase {
-    constructor(properties: TopicProperties, dependsOn?: Value<string>);
+    constructor(properties: TopicProperties, dependsOn?: Value<string> | Value<string>[]);
 }

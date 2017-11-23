@@ -9,7 +9,7 @@ export interface ParameterAttributeProperties {
 }
 
 export class ParameterAttribute extends ResourceBase {
-    constructor(properties: ParameterAttributeProperties, dependsOn?: Value<string>) {
+    constructor(properties: ParameterAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::ParameterAttribute', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface PipelineTagProperties {
 }
 
 export class PipelineTag extends ResourceBase {
-    constructor(properties: PipelineTagProperties, dependsOn?: Value<string>) {
+    constructor(properties: PipelineTagProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::PipelineTag', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface ParameterObjectProperties {
 }
 
 export class ParameterObject extends ResourceBase {
-    constructor(properties: ParameterObjectProperties, dependsOn?: Value<string>) {
+    constructor(properties: ParameterObjectProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::ParameterObject', properties, dependsOn)
     }
 }
@@ -43,7 +43,7 @@ export interface PipelineObjectProperties {
 }
 
 export class PipelineObject extends ResourceBase {
-    constructor(properties: PipelineObjectProperties, dependsOn?: Value<string>) {
+    constructor(properties: PipelineObjectProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::PipelineObject', properties, dependsOn)
     }
 }
@@ -54,7 +54,7 @@ export interface ParameterValueProperties {
 }
 
 export class ParameterValue extends ResourceBase {
-    constructor(properties: ParameterValueProperties, dependsOn?: Value<string>) {
+    constructor(properties: ParameterValueProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::ParameterValue', properties, dependsOn)
     }
 }
@@ -66,7 +66,7 @@ export interface FieldProperties {
 }
 
 export class Field extends ResourceBase {
-    constructor(properties: FieldProperties, dependsOn?: Value<string>) {
+    constructor(properties: FieldProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::Field', properties, dependsOn)
     }
 }
@@ -82,7 +82,7 @@ export interface PipelineProperties {
 }
 
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties, dependsOn?: Value<string>) {
+    constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DataPipeline::Pipeline', properties, dependsOn)
     }
 }

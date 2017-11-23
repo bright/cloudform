@@ -5,7 +5,7 @@ export interface ShutdownEventConfigurationProperties {
     ExecutionTimeout?: Value<number>;
 }
 export declare class ShutdownEventConfiguration extends ResourceBase {
-    constructor(properties: ShutdownEventConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ShutdownEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface VolumeConfigurationProperties {
     Iops?: Value<number>;
@@ -16,7 +16,7 @@ export interface VolumeConfigurationProperties {
     VolumeType?: Value<string>;
 }
 export declare class VolumeConfiguration extends ResourceBase {
-    constructor(properties: VolumeConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumeConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AutoScalingThresholdsProperties {
     CpuThreshold?: Value<number>;
@@ -27,7 +27,7 @@ export interface AutoScalingThresholdsProperties {
     ThresholdsWaitTime?: Value<number>;
 }
 export declare class AutoScalingThresholds extends ResourceBase {
-    constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string>);
+    constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RecipesProperties {
     Configure?: Value<string>[];
@@ -37,13 +37,13 @@ export interface RecipesProperties {
     Undeploy?: Value<string>[];
 }
 export declare class Recipes extends ResourceBase {
-    constructor(properties: RecipesProperties, dependsOn?: Value<string>);
+    constructor(properties: RecipesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LifecycleEventConfigurationProperties {
     ShutdownEventConfiguration?: ShutdownEventConfiguration;
 }
 export declare class LifecycleEventConfiguration extends ResourceBase {
-    constructor(properties: LifecycleEventConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: LifecycleEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoadBasedAutoScalingProperties {
     DownScaling?: AutoScalingThresholds;
@@ -51,7 +51,7 @@ export interface LoadBasedAutoScalingProperties {
     UpScaling?: AutoScalingThresholds;
 }
 export declare class LoadBasedAutoScaling extends ResourceBase {
-    constructor(properties: LoadBasedAutoScalingProperties, dependsOn?: Value<string>);
+    constructor(properties: LoadBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LayerProperties {
     Attributes?: {
@@ -77,5 +77,5 @@ export interface LayerProperties {
     VolumeConfigurations?: VolumeConfiguration[];
 }
 export default class Layer extends ResourceBase {
-    constructor(properties: LayerProperties, dependsOn?: Value<string>);
+    constructor(properties: LayerProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -9,7 +9,7 @@ export interface MinimumHealthyHostsProperties {
 }
 
 export class MinimumHealthyHosts extends ResourceBase {
-    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string>) {
+    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::MinimumHealthyHosts', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface DeploymentConfigProperties {
 }
 
 export default class DeploymentConfig extends ResourceBase {
-    constructor(properties: DeploymentConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeploymentConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CodeDeploy::DeploymentConfig', properties, dependsOn)
     }
 }

@@ -8,7 +8,7 @@ export interface RuleGroupProperties {
 }
 
 export class RuleGroup extends ResourceBase {
-    constructor(properties: RuleGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::RuleGroup', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface PatchFilterProperties {
 }
 
 export class PatchFilter extends ResourceBase {
-    constructor(properties: PatchFilterProperties, dependsOn?: Value<string>) {
+    constructor(properties: PatchFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::PatchFilter', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface RuleProperties {
 }
 
 export class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::Rule', properties, dependsOn)
     }
 }
@@ -41,7 +41,7 @@ export interface PatchFilterGroupProperties {
 }
 
 export class PatchFilterGroup extends ResourceBase {
-    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string>) {
+    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::PatchFilterGroup', properties, dependsOn)
     }
 }
@@ -59,7 +59,7 @@ export interface PatchBaselineProperties {
 }
 
 export default class PatchBaseline extends ResourceBase {
-    constructor(properties: PatchBaselineProperties, dependsOn?: Value<string>) {
+    constructor(properties: PatchBaselineProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::PatchBaseline', properties, dependsOn)
     }
 }

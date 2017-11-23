@@ -5,7 +5,7 @@ export interface PolicyProperties {
     PolicyName: Value<string>;
 }
 export declare class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RoleProperties {
     AssumeRolePolicyDocument: any;
@@ -15,5 +15,5 @@ export interface RoleProperties {
     RoleName?: Value<string>;
 }
 export default class Role extends ResourceBase {
-    constructor(properties: RoleProperties, dependsOn?: Value<string>);
+    constructor(properties: RoleProperties, dependsOn?: Value<string> | Value<string>[]);
 }

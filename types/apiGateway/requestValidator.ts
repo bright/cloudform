@@ -13,7 +13,7 @@ export interface RequestValidatorProperties {
 }
 
 export default class RequestValidator extends ResourceBase {
-    constructor(properties: RequestValidatorProperties, dependsOn?: Value<string>) {
+    constructor(properties: RequestValidatorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::RequestValidator', properties, dependsOn)
     }
 }

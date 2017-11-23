@@ -10,7 +10,7 @@ export interface MethodResponseProperties {
     StatusCode: Value<string>;
 }
 export declare class MethodResponse extends ResourceBase {
-    constructor(properties: MethodResponseProperties, dependsOn?: Value<string>);
+    constructor(properties: MethodResponseProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IntegrationProperties {
     CacheKeyParameters?: Value<string>[];
@@ -30,7 +30,7 @@ export interface IntegrationProperties {
     Uri?: Value<string>;
 }
 export declare class Integration extends ResourceBase {
-    constructor(properties: IntegrationProperties, dependsOn?: Value<string>);
+    constructor(properties: IntegrationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IntegrationResponseProperties {
     ContentHandling?: Value<string>;
@@ -44,7 +44,7 @@ export interface IntegrationResponseProperties {
     StatusCode: Value<string>;
 }
 export declare class IntegrationResponse extends ResourceBase {
-    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string>);
+    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MethodProperties {
     ApiKeyRequired?: Value<boolean>;
@@ -65,5 +65,5 @@ export interface MethodProperties {
     RestApiId: Value<string>;
 }
 export default class Method extends ResourceBase {
-    constructor(properties: MethodProperties, dependsOn?: Value<string>);
+    constructor(properties: MethodProperties, dependsOn?: Value<string> | Value<string>[]);
 }

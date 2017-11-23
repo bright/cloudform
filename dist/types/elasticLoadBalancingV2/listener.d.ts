@@ -5,13 +5,13 @@ export interface ActionProperties {
     Type: Value<string>;
 }
 export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string>);
+    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CertificateProperties {
     CertificateArn?: Value<string>;
 }
 export declare class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string>);
+    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenerProperties {
     Certificates?: Certificate[];
@@ -22,5 +22,5 @@ export interface ListenerProperties {
     SslPolicy?: Value<string>;
 }
 export default class Listener extends ResourceBase {
-    constructor(properties: ListenerProperties, dependsOn?: Value<string>);
+    constructor(properties: ListenerProperties, dependsOn?: Value<string> | Value<string>[]);
 }

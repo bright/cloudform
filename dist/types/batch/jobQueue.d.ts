@@ -5,7 +5,7 @@ export interface ComputeEnvironmentOrderProperties {
     Order: Value<number>;
 }
 export declare class ComputeEnvironmentOrder extends ResourceBase {
-    constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string>);
+    constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface JobQueueProperties {
     ComputeEnvironmentOrder: ComputeEnvironmentOrder[];
@@ -14,5 +14,5 @@ export interface JobQueueProperties {
     JobQueueName?: Value<string>;
 }
 export default class JobQueue extends ResourceBase {
-    constructor(properties: JobQueueProperties, dependsOn?: Value<string>);
+    constructor(properties: JobQueueProperties, dependsOn?: Value<string> | Value<string>[]);
 }

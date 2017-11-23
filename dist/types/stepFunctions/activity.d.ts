@@ -4,5 +4,5 @@ export interface ActivityProperties {
     Name: Value<string>;
 }
 export default class Activity extends ResourceBase {
-    constructor(properties: ActivityProperties, dependsOn?: Value<string>);
+    constructor(properties: ActivityProperties, dependsOn?: Value<string> | Value<string>[]);
 }

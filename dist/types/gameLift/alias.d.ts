@@ -6,7 +6,7 @@ export interface RoutingStrategyProperties {
     Type: Value<string>;
 }
 export declare class RoutingStrategy extends ResourceBase {
-    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string>);
+    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AliasProperties {
     Description?: Value<string>;
@@ -14,5 +14,5 @@ export interface AliasProperties {
     RoutingStrategy: RoutingStrategy;
 }
 export default class Alias extends ResourceBase {
-    constructor(properties: AliasProperties, dependsOn?: Value<string>);
+    constructor(properties: AliasProperties, dependsOn?: Value<string> | Value<string>[]);
 }

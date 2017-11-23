@@ -13,7 +13,7 @@ export interface SourceProperties {
 }
 
 export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Source', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface ChefConfigurationProperties {
 }
 
 export class ChefConfiguration extends ResourceBase {
-    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::ChefConfiguration', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface StackConfigurationManagerProperties {
 }
 
 export class StackConfigurationManager extends ResourceBase {
-    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string>) {
+    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::StackConfigurationManager', properties, dependsOn)
     }
 }
@@ -47,7 +47,7 @@ export interface RdsDbInstanceProperties {
 }
 
 export class RdsDbInstance extends ResourceBase {
-    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string>) {
+    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::RdsDbInstance', properties, dependsOn)
     }
 }
@@ -58,7 +58,7 @@ export interface ElasticIpProperties {
 }
 
 export class ElasticIp extends ResourceBase {
-    constructor(properties: ElasticIpProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticIpProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::ElasticIp', properties, dependsOn)
     }
 }
@@ -92,7 +92,7 @@ export interface StackProperties {
 }
 
 export default class Stack extends ResourceBase {
-    constructor(properties: StackProperties, dependsOn?: Value<string>) {
+    constructor(properties: StackProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Stack', properties, dependsOn)
     }
 }

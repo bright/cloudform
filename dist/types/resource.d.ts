@@ -4,17 +4,17 @@ export default interface Resource {
     Properties?: {
         [key: string]: any;
     };
-    DependsOn?: Value<string>;
+    DependsOn?: Value<string> | Value<string>[];
 }
 export declare class ResourceBase {
     Type: string;
     Properties: {
         [key: string]: any;
     };
-    DependsOn: Value<string>;
+    DependsOn: Value<string> | Value<string>[];
     constructor(Type: string, Properties?: {
         [key: string]: any;
-    }, DependsOn?: Value<string>);
+    }, DependsOn?: Value<string> | Value<string>[]);
 }
 export declare class ResourceTag {
     Key: Value<string>;

@@ -8,7 +8,7 @@ export interface IamInstanceProfileSpecificationProperties {
 }
 
 export class IamInstanceProfileSpecification extends ResourceBase {
-    constructor(properties: IamInstanceProfileSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: IamInstanceProfileSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::IamInstanceProfileSpecification', properties, dependsOn)
     }
 }
@@ -28,7 +28,7 @@ export interface InstanceNetworkInterfaceSpecificationProperties {
 }
 
 export class InstanceNetworkInterfaceSpecification extends ResourceBase {
-    constructor(properties: InstanceNetworkInterfaceSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceNetworkInterfaceSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::InstanceNetworkInterfaceSpecification', properties, dependsOn)
     }
 }
@@ -39,7 +39,7 @@ export interface PrivateIpAddressSpecificationProperties {
 }
 
 export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
     }
 }
@@ -64,7 +64,7 @@ export interface SpotFleetLaunchSpecificationProperties {
 }
 
 export class SpotFleetLaunchSpecification extends ResourceBase {
-    constructor(properties: SpotFleetLaunchSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotFleetLaunchSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SpotFleetLaunchSpecification', properties, dependsOn)
     }
 }
@@ -75,7 +75,7 @@ export interface SpotPlacementProperties {
 }
 
 export class SpotPlacement extends ResourceBase {
-    constructor(properties: SpotPlacementProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotPlacementProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SpotPlacement', properties, dependsOn)
     }
 }
@@ -95,7 +95,7 @@ export interface SpotFleetRequestConfigDataProperties {
 }
 
 export class SpotFleetRequestConfigData extends ResourceBase {
-    constructor(properties: SpotFleetRequestConfigDataProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotFleetRequestConfigDataProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SpotFleetRequestConfigData', properties, dependsOn)
     }
 }
@@ -110,7 +110,7 @@ export interface EbsBlockDeviceProperties {
 }
 
 export class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::EbsBlockDevice', properties, dependsOn)
     }
 }
@@ -120,7 +120,7 @@ export interface InstanceIpv6AddressProperties {
 }
 
 export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
     }
 }
@@ -130,7 +130,7 @@ export interface GroupIdentifierProperties {
 }
 
 export class GroupIdentifier extends ResourceBase {
-    constructor(properties: GroupIdentifierProperties, dependsOn?: Value<string>) {
+    constructor(properties: GroupIdentifierProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::GroupIdentifier', properties, dependsOn)
     }
 }
@@ -140,7 +140,7 @@ export interface SpotFleetMonitoringProperties {
 }
 
 export class SpotFleetMonitoring extends ResourceBase {
-    constructor(properties: SpotFleetMonitoringProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotFleetMonitoringProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SpotFleetMonitoring', properties, dependsOn)
     }
 }
@@ -153,7 +153,7 @@ export interface BlockDeviceMappingProperties {
 }
 
 export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::BlockDeviceMapping', properties, dependsOn)
     }
 }
@@ -163,7 +163,7 @@ export interface SpotFleetProperties {
 }
 
 export default class SpotFleet extends ResourceBase {
-    constructor(properties: SpotFleetProperties, dependsOn?: Value<string>) {
+    constructor(properties: SpotFleetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SpotFleet', properties, dependsOn)
     }
 }

@@ -5,19 +5,19 @@ export interface VpcConfigProperties {
     SubnetIds: Value<string>[];
 }
 export declare class VpcConfig extends ResourceBase {
-    constructor(properties: VpcConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: VpcConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DeadLetterConfigProperties {
     TargetArn?: Value<string>;
 }
 export declare class DeadLetterConfig extends ResourceBase {
-    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TracingConfigProperties {
     Mode?: Value<string>;
 }
 export declare class TracingConfig extends ResourceBase {
-    constructor(properties: TracingConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: TracingConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CodeProperties {
     S3Bucket?: Value<string>;
@@ -26,7 +26,7 @@ export interface CodeProperties {
     ZipFile?: Value<string>;
 }
 export declare class Code extends ResourceBase {
-    constructor(properties: CodeProperties, dependsOn?: Value<string>);
+    constructor(properties: CodeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EnvironmentProperties {
     Variables?: {
@@ -34,7 +34,7 @@ export interface EnvironmentProperties {
     };
 }
 export declare class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>);
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FunctionProperties {
     Code: Code;
@@ -53,5 +53,5 @@ export interface FunctionProperties {
     VpcConfig?: VpcConfig;
 }
 export default class Function extends ResourceBase {
-    constructor(properties: FunctionProperties, dependsOn?: Value<string>);
+    constructor(properties: FunctionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -9,7 +9,7 @@ export interface LifecyclePolicyProperties {
 }
 
 export class LifecyclePolicy extends ResourceBase {
-    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECR::LifecyclePolicy', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface RepositoryProperties {
 }
 
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties, dependsOn?: Value<string>) {
+    constructor(properties: RepositoryProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ECR::Repository', properties, dependsOn)
     }
 }

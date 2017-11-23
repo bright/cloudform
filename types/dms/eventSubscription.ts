@@ -16,7 +16,7 @@ export interface EventSubscriptionProperties {
 }
 
 export default class EventSubscription extends ResourceBase {
-    constructor(properties: EventSubscriptionProperties, dependsOn?: Value<string>) {
+    constructor(properties: EventSubscriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::DMS::EventSubscription', properties, dependsOn)
     }
 }

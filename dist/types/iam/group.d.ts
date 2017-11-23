@@ -5,7 +5,7 @@ export interface PolicyProperties {
     PolicyName: Value<string>;
 }
 export declare class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface GroupProperties {
     GroupName?: Value<string>;
@@ -14,5 +14,5 @@ export interface GroupProperties {
     Policies?: Policy[];
 }
 export default class Group extends ResourceBase {
-    constructor(properties: GroupProperties, dependsOn?: Value<string>);
+    constructor(properties: GroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

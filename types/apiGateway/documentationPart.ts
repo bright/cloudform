@@ -12,7 +12,7 @@ export interface LocationProperties {
 }
 
 export class Location extends ResourceBase {
-    constructor(properties: LocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Location', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface DocumentationPartProperties {
 }
 
 export default class DocumentationPart extends ResourceBase {
-    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string>) {
+    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::DocumentationPart', properties, dependsOn)
     }
 }

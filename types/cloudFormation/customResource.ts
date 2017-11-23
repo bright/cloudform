@@ -10,7 +10,7 @@ export interface CustomResourceProperties {
 }
 
 export default class CustomResource extends ResourceBase {
-    constructor(properties: CustomResourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: CustomResourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFormation::CustomResource', properties, dependsOn)
     }
 }

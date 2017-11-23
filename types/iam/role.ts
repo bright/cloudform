@@ -9,7 +9,7 @@ export interface PolicyProperties {
 }
 
 export class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string>) {
+    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::Policy', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface RoleProperties {
 }
 
 export default class Role extends ResourceBase {
-    constructor(properties: RoleProperties, dependsOn?: Value<string>) {
+    constructor(properties: RoleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::Role', properties, dependsOn)
     }
 }

@@ -11,7 +11,7 @@ export interface SubnetCidrBlockProperties {
 }
 
 export default class SubnetCidrBlock extends ResourceBase {
-    constructor(properties: SubnetCidrBlockProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubnetCidrBlockProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SubnetCidrBlock', properties, dependsOn)
     }
 }

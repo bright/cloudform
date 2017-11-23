@@ -10,7 +10,7 @@ export interface MethodResponseProperties {
 }
 
 export class MethodResponse extends ResourceBase {
-    constructor(properties: MethodResponseProperties, dependsOn?: Value<string>) {
+    constructor(properties: MethodResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::MethodResponse', properties, dependsOn)
     }
 }
@@ -30,7 +30,7 @@ export interface IntegrationProperties {
 }
 
 export class Integration extends ResourceBase {
-    constructor(properties: IntegrationProperties, dependsOn?: Value<string>) {
+    constructor(properties: IntegrationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Integration', properties, dependsOn)
     }
 }
@@ -44,7 +44,7 @@ export interface IntegrationResponseProperties {
 }
 
 export class IntegrationResponse extends ResourceBase {
-    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string>) {
+    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::IntegrationResponse', properties, dependsOn)
     }
 }
@@ -65,7 +65,7 @@ export interface MethodProperties {
 }
 
 export default class Method extends ResourceBase {
-    constructor(properties: MethodProperties, dependsOn?: Value<string>) {
+    constructor(properties: MethodProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Method', properties, dependsOn)
     }
 }

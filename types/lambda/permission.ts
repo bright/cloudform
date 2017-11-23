@@ -15,7 +15,7 @@ export interface PermissionProperties {
 }
 
 export default class Permission extends ResourceBase {
-    constructor(properties: PermissionProperties, dependsOn?: Value<string>) {
+    constructor(properties: PermissionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Lambda::Permission', properties, dependsOn)
     }
 }

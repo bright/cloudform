@@ -9,7 +9,7 @@ export interface ApiStageProperties {
 }
 
 export class ApiStage extends ResourceBase {
-    constructor(properties: ApiStageProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApiStageProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::ApiStage', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface ThrottleSettingsProperties {
 }
 
 export class ThrottleSettings extends ResourceBase {
-    constructor(properties: ThrottleSettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ThrottleSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::ThrottleSettings', properties, dependsOn)
     }
 }
@@ -32,7 +32,7 @@ export interface QuotaSettingsProperties {
 }
 
 export class QuotaSettings extends ResourceBase {
-    constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string>) {
+    constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::QuotaSettings', properties, dependsOn)
     }
 }
@@ -46,7 +46,7 @@ export interface UsagePlanProperties {
 }
 
 export default class UsagePlan extends ResourceBase {
-    constructor(properties: UsagePlanProperties, dependsOn?: Value<string>) {
+    constructor(properties: UsagePlanProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::UsagePlan', properties, dependsOn)
     }
 }

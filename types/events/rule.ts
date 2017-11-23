@@ -8,7 +8,7 @@ export interface RunCommandParametersProperties {
 }
 
 export class RunCommandParameters extends ResourceBase {
-    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::RunCommandParameters', properties, dependsOn)
     }
 }
@@ -26,7 +26,7 @@ export interface TargetProperties {
 }
 
 export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::Target', properties, dependsOn)
     }
 }
@@ -37,7 +37,7 @@ export interface RunCommandTargetProperties {
 }
 
 export class RunCommandTarget extends ResourceBase {
-    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string>) {
+    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::RunCommandTarget', properties, dependsOn)
     }
 }
@@ -48,7 +48,7 @@ export interface InputTransformerProperties {
 }
 
 export class InputTransformer extends ResourceBase {
-    constructor(properties: InputTransformerProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputTransformerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::InputTransformer', properties, dependsOn)
     }
 }
@@ -58,7 +58,7 @@ export interface KinesisParametersProperties {
 }
 
 export class KinesisParameters extends ResourceBase {
-    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::KinesisParameters', properties, dependsOn)
     }
 }
@@ -69,7 +69,7 @@ export interface EcsParametersProperties {
 }
 
 export class EcsParameters extends ResourceBase {
-    constructor(properties: EcsParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: EcsParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::EcsParameters', properties, dependsOn)
     }
 }
@@ -85,7 +85,7 @@ export interface RuleProperties {
 }
 
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Events::Rule', properties, dependsOn)
     }
 }

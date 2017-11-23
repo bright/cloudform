@@ -11,7 +11,7 @@ export interface HadoopJarStepConfigProperties {
 }
 
 export class HadoopJarStepConfig extends ResourceBase {
-    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::HadoopJarStepConfig', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface KeyValueProperties {
 }
 
 export class KeyValue extends ResourceBase {
-    constructor(properties: KeyValueProperties, dependsOn?: Value<string>) {
+    constructor(properties: KeyValueProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::KeyValue', properties, dependsOn)
     }
 }
@@ -35,7 +35,7 @@ export interface StepProperties {
 }
 
 export default class Step extends ResourceBase {
-    constructor(properties: StepProperties, dependsOn?: Value<string>) {
+    constructor(properties: StepProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EMR::Step', properties, dependsOn)
     }
 }

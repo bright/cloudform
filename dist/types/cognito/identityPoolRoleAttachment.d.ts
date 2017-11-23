@@ -4,7 +4,7 @@ export interface RulesConfigurationTypeProperties {
     Rules: MappingRule[];
 }
 export declare class RulesConfigurationType extends ResourceBase {
-    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string>);
+    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RoleMappingProperties {
     Type: Value<string>;
@@ -12,7 +12,7 @@ export interface RoleMappingProperties {
     RulesConfiguration?: RulesConfigurationType;
 }
 export declare class RoleMapping extends ResourceBase {
-    constructor(properties: RoleMappingProperties, dependsOn?: Value<string>);
+    constructor(properties: RoleMappingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MappingRuleProperties {
     MatchType: Value<string>;
@@ -21,7 +21,7 @@ export interface MappingRuleProperties {
     RoleARN: Value<string>;
 }
 export declare class MappingRule extends ResourceBase {
-    constructor(properties: MappingRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: MappingRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IdentityPoolRoleAttachmentProperties {
     RoleMappings?: any;
@@ -29,5 +29,5 @@ export interface IdentityPoolRoleAttachmentProperties {
     Roles?: any;
 }
 export default class IdentityPoolRoleAttachment extends ResourceBase {
-    constructor(properties: IdentityPoolRoleAttachmentProperties, dependsOn?: Value<string>);
+    constructor(properties: IdentityPoolRoleAttachmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }

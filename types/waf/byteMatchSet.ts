@@ -12,7 +12,7 @@ export interface ByteMatchTupleProperties {
 }
 
 export class ByteMatchTuple extends ResourceBase {
-    constructor(properties: ByteMatchTupleProperties, dependsOn?: Value<string>) {
+    constructor(properties: ByteMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::ByteMatchTuple', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface FieldToMatchProperties {
 }
 
 export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>) {
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::FieldToMatch', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface ByteMatchSetProperties {
 }
 
 export default class ByteMatchSet extends ResourceBase {
-    constructor(properties: ByteMatchSetProperties, dependsOn?: Value<string>) {
+    constructor(properties: ByteMatchSetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAF::ByteMatchSet', properties, dependsOn)
     }
 }

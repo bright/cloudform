@@ -5,7 +5,7 @@ export interface AttributeTypeProperties {
     Name?: Value<string>;
 }
 export declare class AttributeType extends ResourceBase {
-    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string>);
+    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UserPoolUserProperties {
     ValidationData?: AttributeType[];
@@ -17,5 +17,5 @@ export interface UserPoolUserProperties {
     UserAttributes?: AttributeType[];
 }
 export default class UserPoolUser extends ResourceBase {
-    constructor(properties: UserPoolUserProperties, dependsOn?: Value<string>);
+    constructor(properties: UserPoolUserProperties, dependsOn?: Value<string> | Value<string>[]);
 }

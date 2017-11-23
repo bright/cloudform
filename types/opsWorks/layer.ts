@@ -9,7 +9,7 @@ export interface ShutdownEventConfigurationProperties {
 }
 
 export class ShutdownEventConfiguration extends ResourceBase {
-    constructor(properties: ShutdownEventConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ShutdownEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::ShutdownEventConfiguration', properties, dependsOn)
     }
 }
@@ -24,7 +24,7 @@ export interface VolumeConfigurationProperties {
 }
 
 export class VolumeConfiguration extends ResourceBase {
-    constructor(properties: VolumeConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::VolumeConfiguration', properties, dependsOn)
     }
 }
@@ -39,7 +39,7 @@ export interface AutoScalingThresholdsProperties {
 }
 
 export class AutoScalingThresholds extends ResourceBase {
-    constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string>) {
+    constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::AutoScalingThresholds', properties, dependsOn)
     }
 }
@@ -53,7 +53,7 @@ export interface RecipesProperties {
 }
 
 export class Recipes extends ResourceBase {
-    constructor(properties: RecipesProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecipesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Recipes', properties, dependsOn)
     }
 }
@@ -63,7 +63,7 @@ export interface LifecycleEventConfigurationProperties {
 }
 
 export class LifecycleEventConfiguration extends ResourceBase {
-    constructor(properties: LifecycleEventConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: LifecycleEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::LifecycleEventConfiguration', properties, dependsOn)
     }
 }
@@ -75,7 +75,7 @@ export interface LoadBasedAutoScalingProperties {
 }
 
 export class LoadBasedAutoScaling extends ResourceBase {
-    constructor(properties: LoadBasedAutoScalingProperties, dependsOn?: Value<string>) {
+    constructor(properties: LoadBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::LoadBasedAutoScaling', properties, dependsOn)
     }
 }
@@ -103,7 +103,7 @@ export interface LayerProperties {
 }
 
 export default class Layer extends ResourceBase {
-    constructor(properties: LayerProperties, dependsOn?: Value<string>) {
+    constructor(properties: LayerProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::OpsWorks::Layer', properties, dependsOn)
     }
 }

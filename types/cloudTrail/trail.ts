@@ -10,7 +10,7 @@ export interface EventSelectorProperties {
 }
 
 export class EventSelector extends ResourceBase {
-    constructor(properties: EventSelectorProperties, dependsOn?: Value<string>) {
+    constructor(properties: EventSelectorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudTrail::EventSelector', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface DataResourceProperties {
 }
 
 export class DataResource extends ResourceBase {
-    constructor(properties: DataResourceProperties, dependsOn?: Value<string>) {
+    constructor(properties: DataResourceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudTrail::DataResource', properties, dependsOn)
     }
 }
@@ -43,7 +43,7 @@ export interface TrailProperties {
 }
 
 export default class Trail extends ResourceBase {
-    constructor(properties: TrailProperties, dependsOn?: Value<string>) {
+    constructor(properties: TrailProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudTrail::Trail', properties, dependsOn)
     }
 }

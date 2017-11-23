@@ -4,7 +4,7 @@ export interface RunCommandParametersProperties {
     RunCommandTargets: RunCommandTarget[];
 }
 export declare class RunCommandParameters extends ResourceBase {
-    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetProperties {
     Arn: Value<string>;
@@ -18,14 +18,14 @@ export interface TargetProperties {
     RunCommandParameters?: RunCommandParameters;
 }
 export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RunCommandTargetProperties {
     Key: Value<string>;
     Values: Value<string>[];
 }
 export declare class RunCommandTarget extends ResourceBase {
-    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string>);
+    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InputTransformerProperties {
     InputPathsMap?: {
@@ -34,20 +34,20 @@ export interface InputTransformerProperties {
     InputTemplate: Value<string>;
 }
 export declare class InputTransformer extends ResourceBase {
-    constructor(properties: InputTransformerProperties, dependsOn?: Value<string>);
+    constructor(properties: InputTransformerProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface KinesisParametersProperties {
     PartitionKeyPath: Value<string>;
 }
 export declare class KinesisParameters extends ResourceBase {
-    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EcsParametersProperties {
     TaskCount?: Value<number>;
     TaskDefinitionArn: Value<string>;
 }
 export declare class EcsParameters extends ResourceBase {
-    constructor(properties: EcsParametersProperties, dependsOn?: Value<string>);
+    constructor(properties: EcsParametersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RuleProperties {
     Description?: Value<string>;
@@ -59,5 +59,5 @@ export interface RuleProperties {
     Targets?: Target[];
 }
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }

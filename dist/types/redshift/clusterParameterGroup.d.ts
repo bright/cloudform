@@ -5,7 +5,7 @@ export interface ParameterProperties {
     ParameterValue: Value<string>;
 }
 export declare class Parameter extends ResourceBase {
-    constructor(properties: ParameterProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ClusterParameterGroupProperties {
     Description: Value<string>;
@@ -14,5 +14,5 @@ export interface ClusterParameterGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class ClusterParameterGroup extends ResourceBase {
-    constructor(properties: ClusterParameterGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: ClusterParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -18,7 +18,7 @@ export interface ElasticsearchDestinationConfigurationProperties {
 }
 
 export class ElasticsearchDestinationConfiguration extends ResourceBase {
-    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ElasticsearchDestinationConfiguration', properties, dependsOn)
     }
 }
@@ -29,7 +29,7 @@ export interface ElasticsearchBufferingHintsProperties {
 }
 
 export class ElasticsearchBufferingHints extends ResourceBase {
-    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ElasticsearchBufferingHints', properties, dependsOn)
     }
 }
@@ -40,7 +40,7 @@ export interface EncryptionConfigurationProperties {
 }
 
 export class EncryptionConfiguration extends ResourceBase {
-    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::EncryptionConfiguration', properties, dependsOn)
     }
 }
@@ -52,7 +52,7 @@ export interface CloudWatchLoggingOptionsProperties {
 }
 
 export class CloudWatchLoggingOptions extends ResourceBase {
-    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::CloudWatchLoggingOptions', properties, dependsOn)
     }
 }
@@ -63,7 +63,7 @@ export interface ProcessingConfigurationProperties {
 }
 
 export class ProcessingConfiguration extends ResourceBase {
-    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ProcessingConfiguration', properties, dependsOn)
     }
 }
@@ -74,7 +74,7 @@ export interface BufferingHintsProperties {
 }
 
 export class BufferingHints extends ResourceBase {
-    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string>) {
+    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::BufferingHints', properties, dependsOn)
     }
 }
@@ -85,7 +85,7 @@ export interface KinesisStreamSourceConfigurationProperties {
 }
 
 export class KinesisStreamSourceConfiguration extends ResourceBase {
-    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::KinesisStreamSourceConfiguration', properties, dependsOn)
     }
 }
@@ -96,7 +96,7 @@ export interface ProcessorParameterProperties {
 }
 
 export class ProcessorParameter extends ResourceBase {
-    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ProcessorParameter', properties, dependsOn)
     }
 }
@@ -107,7 +107,7 @@ export interface ProcessorProperties {
 }
 
 export class Processor extends ResourceBase {
-    constructor(properties: ProcessorProperties, dependsOn?: Value<string>) {
+    constructor(properties: ProcessorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::Processor', properties, dependsOn)
     }
 }
@@ -119,7 +119,7 @@ export interface CopyCommandProperties {
 }
 
 export class CopyCommand extends ResourceBase {
-    constructor(properties: CopyCommandProperties, dependsOn?: Value<string>) {
+    constructor(properties: CopyCommandProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::CopyCommand', properties, dependsOn)
     }
 }
@@ -135,7 +135,7 @@ export interface S3DestinationConfigurationProperties {
 }
 
 export class S3DestinationConfiguration extends ResourceBase {
-    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::S3DestinationConfiguration', properties, dependsOn)
     }
 }
@@ -145,7 +145,7 @@ export interface ElasticsearchRetryOptionsProperties {
 }
 
 export class ElasticsearchRetryOptions extends ResourceBase {
-    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ElasticsearchRetryOptions', properties, dependsOn)
     }
 }
@@ -155,7 +155,7 @@ export interface KMSEncryptionConfigProperties {
 }
 
 export class KMSEncryptionConfig extends ResourceBase {
-    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::KMSEncryptionConfig', properties, dependsOn)
     }
 }
@@ -174,7 +174,7 @@ export interface ExtendedS3DestinationConfigurationProperties {
 }
 
 export class ExtendedS3DestinationConfiguration extends ResourceBase {
-    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::ExtendedS3DestinationConfiguration', properties, dependsOn)
     }
 }
@@ -191,7 +191,7 @@ export interface RedshiftDestinationConfigurationProperties {
 }
 
 export class RedshiftDestinationConfiguration extends ResourceBase {
-    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::RedshiftDestinationConfiguration', properties, dependsOn)
     }
 }
@@ -207,7 +207,7 @@ export interface DeliveryStreamProperties {
 }
 
 export default class DeliveryStream extends ResourceBase {
-    constructor(properties: DeliveryStreamProperties, dependsOn?: Value<string>) {
+    constructor(properties: DeliveryStreamProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisFirehose::DeliveryStream', properties, dependsOn)
     }
 }

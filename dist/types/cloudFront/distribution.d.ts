@@ -5,14 +5,14 @@ export interface CookiesProperties {
     Forward: Value<string>;
 }
 export declare class Cookies extends ResourceBase {
-    constructor(properties: CookiesProperties, dependsOn?: Value<string>);
+    constructor(properties: CookiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LambdaFunctionAssociationProperties {
     EventType?: Value<string>;
     LambdaFunctionARN?: Value<string>;
 }
 export declare class LambdaFunctionAssociation extends ResourceBase {
-    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string>);
+    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomOriginConfigProperties {
     OriginReadTimeout?: Value<number>;
@@ -23,7 +23,7 @@ export interface CustomOriginConfigProperties {
     OriginProtocolPolicy: Value<string>;
 }
 export declare class CustomOriginConfig extends ResourceBase {
-    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ForwardedValuesProperties {
     Cookies?: Cookies;
@@ -32,7 +32,7 @@ export interface ForwardedValuesProperties {
     QueryStringCacheKeys?: Value<string>[];
 }
 export declare class ForwardedValues extends ResourceBase {
-    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string>);
+    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CacheBehaviorProperties {
     Compress?: Value<boolean>;
@@ -50,7 +50,7 @@ export interface CacheBehaviorProperties {
     MaxTTL?: Value<number>;
 }
 export declare class CacheBehavior extends ResourceBase {
-    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string>);
+    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LegacyCustomOriginProperties {
     HTTPSPort?: Value<number>;
@@ -60,7 +60,7 @@ export interface LegacyCustomOriginProperties {
     OriginProtocolPolicy: Value<string>;
 }
 export declare class LegacyCustomOrigin extends ResourceBase {
-    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string>);
+    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DefaultCacheBehaviorProperties {
     Compress?: Value<boolean>;
@@ -77,13 +77,13 @@ export interface DefaultCacheBehaviorProperties {
     DefaultTTL?: Value<number>;
 }
 export declare class DefaultCacheBehavior extends ResourceBase {
-    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string>);
+    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RestrictionsProperties {
     GeoRestriction: GeoRestriction;
 }
 export declare class Restrictions extends ResourceBase {
-    constructor(properties: RestrictionsProperties, dependsOn?: Value<string>);
+    constructor(properties: RestrictionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OriginProperties {
     OriginCustomHeaders?: OriginCustomHeader[];
@@ -94,14 +94,14 @@ export interface OriginProperties {
     CustomOriginConfig?: CustomOriginConfig;
 }
 export declare class Origin extends ResourceBase {
-    constructor(properties: OriginProperties, dependsOn?: Value<string>);
+    constructor(properties: OriginProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface GeoRestrictionProperties {
     Locations?: Value<string>[];
     RestrictionType: Value<string>;
 }
 export declare class GeoRestriction extends ResourceBase {
-    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string>);
+    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ViewerCertificateProperties {
     IamCertificateId?: Value<string>;
@@ -111,13 +111,13 @@ export interface ViewerCertificateProperties {
     AcmCertificateArn?: Value<string>;
 }
 export declare class ViewerCertificate extends ResourceBase {
-    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string>);
+    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface S3OriginConfigProperties {
     OriginAccessIdentity?: Value<string>;
 }
 export declare class S3OriginConfig extends ResourceBase {
-    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomErrorResponseProperties {
     ResponseCode?: Value<number>;
@@ -126,7 +126,7 @@ export interface CustomErrorResponseProperties {
     ResponsePagePath?: Value<string>;
 }
 export declare class CustomErrorResponse extends ResourceBase {
-    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string>);
+    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoggingProperties {
     IncludeCookies?: Value<boolean>;
@@ -134,7 +134,7 @@ export interface LoggingProperties {
     Prefix?: Value<string>;
 }
 export declare class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string>);
+    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DistributionConfigProperties {
     Logging?: Logging;
@@ -157,26 +157,26 @@ export interface DistributionConfigProperties {
     CacheBehaviors?: CacheBehavior[];
 }
 export declare class DistributionConfig extends ResourceBase {
-    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LegacyS3OriginProperties {
     OriginAccessIdentity?: Value<string>;
     DNSName: Value<string>;
 }
 export declare class LegacyS3Origin extends ResourceBase {
-    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string>);
+    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OriginCustomHeaderProperties {
     HeaderValue: Value<string>;
     HeaderName: Value<string>;
 }
 export declare class OriginCustomHeader extends ResourceBase {
-    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string>);
+    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DistributionProperties {
     DistributionConfig: DistributionConfig;
     Tags?: ResourceTag[];
 }
 export default class Distribution extends ResourceBase {
-    constructor(properties: DistributionProperties, dependsOn?: Value<string>);
+    constructor(properties: DistributionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

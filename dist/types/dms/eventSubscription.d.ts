@@ -10,5 +10,5 @@ export interface EventSubscriptionProperties {
     Tags?: ResourceTag[];
 }
 export default class EventSubscription extends ResourceBase {
-    constructor(properties: EventSubscriptionProperties, dependsOn?: Value<string>);
+    constructor(properties: EventSubscriptionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

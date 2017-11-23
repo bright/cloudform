@@ -9,7 +9,7 @@ export interface MappingParametersProperties {
 }
 
 export class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::MappingParameters', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface CSVMappingParametersProperties {
 }
 
 export class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::CSVMappingParameters', properties, dependsOn)
     }
 }
@@ -31,7 +31,7 @@ export interface KinesisStreamsInputProperties {
 }
 
 export class KinesisStreamsInput extends ResourceBase {
-    constructor(properties: KinesisStreamsInputProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisStreamsInputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::KinesisStreamsInput', properties, dependsOn)
     }
 }
@@ -46,7 +46,7 @@ export interface InputProperties {
 }
 
 export class Input extends ResourceBase {
-    constructor(properties: InputProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::Input', properties, dependsOn)
     }
 }
@@ -58,7 +58,7 @@ export interface InputSchemaProperties {
 }
 
 export class InputSchema extends ResourceBase {
-    constructor(properties: InputSchemaProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::InputSchema', properties, dependsOn)
     }
 }
@@ -70,7 +70,7 @@ export interface RecordColumnProperties {
 }
 
 export class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::RecordColumn', properties, dependsOn)
     }
 }
@@ -81,7 +81,7 @@ export interface RecordFormatProperties {
 }
 
 export class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string>) {
+    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::RecordFormat', properties, dependsOn)
     }
 }
@@ -92,7 +92,7 @@ export interface KinesisFirehoseInputProperties {
 }
 
 export class KinesisFirehoseInput extends ResourceBase {
-    constructor(properties: KinesisFirehoseInputProperties, dependsOn?: Value<string>) {
+    constructor(properties: KinesisFirehoseInputProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::KinesisFirehoseInput', properties, dependsOn)
     }
 }
@@ -102,7 +102,7 @@ export interface InputParallelismProperties {
 }
 
 export class InputParallelism extends ResourceBase {
-    constructor(properties: InputParallelismProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputParallelismProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::InputParallelism', properties, dependsOn)
     }
 }
@@ -112,7 +112,7 @@ export interface InputProcessingConfigurationProperties {
 }
 
 export class InputProcessingConfiguration extends ResourceBase {
-    constructor(properties: InputProcessingConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::InputProcessingConfiguration', properties, dependsOn)
     }
 }
@@ -122,7 +122,7 @@ export interface JSONMappingParametersProperties {
 }
 
 export class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string>) {
+    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::JSONMappingParameters', properties, dependsOn)
     }
 }
@@ -133,7 +133,7 @@ export interface InputLambdaProcessorProperties {
 }
 
 export class InputLambdaProcessor extends ResourceBase {
-    constructor(properties: InputLambdaProcessorProperties, dependsOn?: Value<string>) {
+    constructor(properties: InputLambdaProcessorProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::InputLambdaProcessor', properties, dependsOn)
     }
 }
@@ -146,7 +146,7 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::KinesisAnalytics::Application', properties, dependsOn)
     }
 }

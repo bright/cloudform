@@ -8,7 +8,7 @@ export interface InstanceIpv6AddressProperties {
 }
 
 export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface PrivateIpAddressSpecificationProperties {
 }
 
 export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
     }
 }
@@ -39,7 +39,7 @@ export interface NetworkInterfaceProperties {
 }
 
 export default class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>) {
+    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::NetworkInterface', properties, dependsOn)
     }
 }

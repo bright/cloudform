@@ -5,5 +5,5 @@ export interface EIPProperties {
     InstanceId?: Value<string>;
 }
 export default class EIP extends ResourceBase {
-    constructor(properties: EIPProperties, dependsOn?: Value<string>);
+    constructor(properties: EIPProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -10,7 +10,7 @@ export interface DomainProperties {
 }
 
 export default class Domain extends ResourceBase {
-    constructor(properties: DomainProperties, dependsOn?: Value<string>) {
+    constructor(properties: DomainProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SDB::Domain', properties, dependsOn)
     }
 }

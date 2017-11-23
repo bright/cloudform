@@ -6,7 +6,7 @@ export interface PredicateProperties {
     Negated: Value<boolean>;
 }
 export declare class Predicate extends ResourceBase {
-    constructor(properties: PredicateProperties, dependsOn?: Value<string>);
+    constructor(properties: PredicateProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RuleProperties {
     MetricName: Value<string>;
@@ -14,5 +14,5 @@ export interface RuleProperties {
     Name: Value<string>;
 }
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }

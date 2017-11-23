@@ -6,7 +6,7 @@ export interface RecordingGroupProperties {
     ResourceTypes?: Value<string>[];
 }
 export declare class RecordingGroup extends ResourceBase {
-    constructor(properties: RecordingGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: RecordingGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConfigurationRecorderProperties {
     Name?: Value<string>;
@@ -14,5 +14,5 @@ export interface ConfigurationRecorderProperties {
     RoleARN: Value<string>;
 }
 export default class ConfigurationRecorder extends ResourceBase {
-    constructor(properties: ConfigurationRecorderProperties, dependsOn?: Value<string>);
+    constructor(properties: ConfigurationRecorderProperties, dependsOn?: Value<string> | Value<string>[]);
 }

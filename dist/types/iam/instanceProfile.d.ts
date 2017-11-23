@@ -6,5 +6,5 @@ export interface InstanceProfileProperties {
     Roles: Value<string>[];
 }
 export default class InstanceProfile extends ResourceBase {
-    constructor(properties: InstanceProfileProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceProfileProperties, dependsOn?: Value<string> | Value<string>[]);
 }

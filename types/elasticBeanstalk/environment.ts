@@ -11,7 +11,7 @@ export interface OptionSettingProperties {
 }
 
 export class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string>) {
+    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::OptionSetting', properties, dependsOn)
     }
 }
@@ -23,7 +23,7 @@ export interface TierProperties {
 }
 
 export class Tier extends ResourceBase {
-    constructor(properties: TierProperties, dependsOn?: Value<string>) {
+    constructor(properties: TierProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::Tier', properties, dependsOn)
     }
 }
@@ -43,7 +43,7 @@ export interface EnvironmentProperties {
 }
 
 export default class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::Environment', properties, dependsOn)
     }
 }

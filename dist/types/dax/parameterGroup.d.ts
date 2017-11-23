@@ -6,5 +6,5 @@ export interface ParameterGroupProperties {
     ParameterGroupName?: Value<string>;
 }
 export default class ParameterGroup extends ResourceBase {
-    constructor(properties: ParameterGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

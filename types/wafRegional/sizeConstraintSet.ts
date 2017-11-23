@@ -11,7 +11,7 @@ export interface SizeConstraintProperties {
 }
 
 export class SizeConstraint extends ResourceBase {
-    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string>) {
+    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::SizeConstraint', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface FieldToMatchProperties {
 }
 
 export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string>) {
+    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::FieldToMatch', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface SizeConstraintSetProperties {
 }
 
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string>) {
+    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::SizeConstraintSet', properties, dependsOn)
     }
 }

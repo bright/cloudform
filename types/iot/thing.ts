@@ -8,7 +8,7 @@ export interface AttributePayloadProperties {
 }
 
 export class AttributePayload extends ResourceBase {
-    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string>) {
+    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IoT::AttributePayload', properties, dependsOn)
     }
 }
@@ -19,7 +19,7 @@ export interface ThingProperties {
 }
 
 export default class Thing extends ResourceBase {
-    constructor(properties: ThingProperties, dependsOn?: Value<string>) {
+    constructor(properties: ThingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IoT::Thing', properties, dependsOn)
     }
 }

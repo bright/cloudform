@@ -6,7 +6,7 @@ export interface MetricTransformationProperties {
     MetricValue: Value<string>;
 }
 export declare class MetricTransformation extends ResourceBase {
-    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string>);
+    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MetricFilterProperties {
     FilterPattern: Value<string>;
@@ -14,5 +14,5 @@ export interface MetricFilterProperties {
     MetricTransformations: MetricTransformation[];
 }
 export default class MetricFilter extends ResourceBase {
-    constructor(properties: MetricFilterProperties, dependsOn?: Value<string>);
+    constructor(properties: MetricFilterProperties, dependsOn?: Value<string> | Value<string>[]);
 }

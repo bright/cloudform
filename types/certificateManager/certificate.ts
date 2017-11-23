@@ -9,7 +9,7 @@ export interface DomainValidationOptionProperties {
 }
 
 export class DomainValidationOption extends ResourceBase {
-    constructor(properties: DomainValidationOptionProperties, dependsOn?: Value<string>) {
+    constructor(properties: DomainValidationOptionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CertificateManager::DomainValidationOption', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface CertificateProperties {
 }
 
 export default class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string>) {
+    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CertificateManager::Certificate', properties, dependsOn)
     }
 }

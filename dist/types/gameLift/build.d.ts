@@ -6,7 +6,7 @@ export interface S3LocationProperties {
     RoleArn: Value<string>;
 }
 export declare class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string>);
+    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface BuildProperties {
     Name?: Value<string>;
@@ -14,5 +14,5 @@ export interface BuildProperties {
     Version?: Value<string>;
 }
 export default class Build extends ResourceBase {
-    constructor(properties: BuildProperties, dependsOn?: Value<string>);
+    constructor(properties: BuildProperties, dependsOn?: Value<string> | Value<string>[]);
 }

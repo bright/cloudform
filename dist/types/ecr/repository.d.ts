@@ -5,7 +5,7 @@ export interface LifecyclePolicyProperties {
     RegistryId?: Value<string>;
 }
 export declare class LifecyclePolicy extends ResourceBase {
-    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RepositoryProperties {
     LifecyclePolicy?: LifecyclePolicy;
@@ -13,5 +13,5 @@ export interface RepositoryProperties {
     RepositoryPolicyText?: any;
 }
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties, dependsOn?: Value<string>);
+    constructor(properties: RepositoryProperties, dependsOn?: Value<string> | Value<string>[]);
 }

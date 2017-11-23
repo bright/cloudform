@@ -6,13 +6,13 @@ export interface RuleProperties {
     RuleId: Value<string>;
 }
 export declare class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ActionProperties {
     Type: Value<string>;
 }
 export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string>);
+    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface WebACLProperties {
     MetricName: Value<string>;
@@ -21,5 +21,5 @@ export interface WebACLProperties {
     Name: Value<string>;
 }
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties, dependsOn?: Value<string>);
+    constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]);
 }

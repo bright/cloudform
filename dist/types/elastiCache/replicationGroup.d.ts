@@ -7,7 +7,7 @@ export interface NodeGroupConfigurationProperties {
     Slots?: Value<string>;
 }
 export declare class NodeGroupConfiguration extends ResourceBase {
-    constructor(properties: NodeGroupConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: NodeGroupConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ReplicationGroupProperties {
     AtRestEncryptionEnabled?: Value<boolean>;
@@ -41,5 +41,5 @@ export interface ReplicationGroupProperties {
     TransitEncryptionEnabled?: Value<boolean>;
 }
 export default class ReplicationGroup extends ResourceBase {
-    constructor(properties: ReplicationGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: ReplicationGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

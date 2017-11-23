@@ -16,7 +16,7 @@ export interface ScheduledActionProperties {
 }
 
 export default class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::AutoScaling::ScheduledAction', properties, dependsOn)
     }
 }

@@ -10,7 +10,7 @@ export interface AccountProperties {
 }
 
 export default class Account extends ResourceBase {
-    constructor(properties: AccountProperties, dependsOn?: Value<string>) {
+    constructor(properties: AccountProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::Account', properties, dependsOn)
     }
 }

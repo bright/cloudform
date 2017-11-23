@@ -9,7 +9,7 @@ export interface ComputeEnvironmentOrderProperties {
 }
 
 export class ComputeEnvironmentOrder extends ResourceBase {
-    constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string>) {
+    constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::ComputeEnvironmentOrder', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface JobQueueProperties {
 }
 
 export default class JobQueue extends ResourceBase {
-    constructor(properties: JobQueueProperties, dependsOn?: Value<string>) {
+    constructor(properties: JobQueueProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::JobQueue', properties, dependsOn)
     }
 }

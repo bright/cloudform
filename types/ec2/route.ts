@@ -18,7 +18,7 @@ export interface RouteProperties {
 }
 
 export default class Route extends ResourceBase {
-    constructor(properties: RouteProperties, dependsOn?: Value<string>) {
+    constructor(properties: RouteProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Route', properties, dependsOn)
     }
 }

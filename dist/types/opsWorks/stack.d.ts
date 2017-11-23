@@ -9,21 +9,21 @@ export interface SourceProperties {
     Username?: Value<string>;
 }
 export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ChefConfigurationProperties {
     BerkshelfVersion?: Value<string>;
     ManageBerkshelf?: Value<boolean>;
 }
 export declare class ChefConfiguration extends ResourceBase {
-    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string>);
+    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StackConfigurationManagerProperties {
     Name?: Value<string>;
     Version?: Value<string>;
 }
 export declare class StackConfigurationManager extends ResourceBase {
-    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string>);
+    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RdsDbInstanceProperties {
     DbPassword: Value<string>;
@@ -31,14 +31,14 @@ export interface RdsDbInstanceProperties {
     RdsDbInstanceArn: Value<string>;
 }
 export declare class RdsDbInstance extends ResourceBase {
-    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string>);
+    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ElasticIpProperties {
     Ip: Value<string>;
     Name?: Value<string>;
 }
 export declare class ElasticIp extends ResourceBase {
-    constructor(properties: ElasticIpProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticIpProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StackProperties {
     AgentVersion?: Value<string>;
@@ -70,5 +70,5 @@ export interface StackProperties {
     VpcId?: Value<string>;
 }
 export default class Stack extends ResourceBase {
-    constructor(properties: StackProperties, dependsOn?: Value<string>);
+    constructor(properties: StackProperties, dependsOn?: Value<string> | Value<string>[]);
 }

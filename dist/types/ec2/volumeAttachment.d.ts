@@ -6,5 +6,5 @@ export interface VolumeAttachmentProperties {
     VolumeId: Value<string>;
 }
 export default class VolumeAttachment extends ResourceBase {
-    constructor(properties: VolumeAttachmentProperties, dependsOn?: Value<string>);
+    constructor(properties: VolumeAttachmentProperties, dependsOn?: Value<string> | Value<string>[]);
 }

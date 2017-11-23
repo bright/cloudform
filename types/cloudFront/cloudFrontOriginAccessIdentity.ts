@@ -8,7 +8,7 @@ export interface CloudFrontOriginAccessIdentityConfigProperties {
 }
 
 export class CloudFrontOriginAccessIdentityConfig extends ResourceBase {
-    constructor(properties: CloudFrontOriginAccessIdentityConfigProperties, dependsOn?: Value<string>) {
+    constructor(properties: CloudFrontOriginAccessIdentityConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::CloudFrontOriginAccessIdentityConfig', properties, dependsOn)
     }
 }
@@ -18,7 +18,7 @@ export interface CloudFrontOriginAccessIdentityProperties {
 }
 
 export default class CloudFrontOriginAccessIdentity extends ResourceBase {
-    constructor(properties: CloudFrontOriginAccessIdentityProperties, dependsOn?: Value<string>) {
+    constructor(properties: CloudFrontOriginAccessIdentityProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::CloudFront::CloudFrontOriginAccessIdentity', properties, dependsOn)
     }
 }

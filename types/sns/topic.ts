@@ -9,7 +9,7 @@ export interface SubscriptionProperties {
 }
 
 export class Subscription extends ResourceBase {
-    constructor(properties: SubscriptionProperties, dependsOn?: Value<string>) {
+    constructor(properties: SubscriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SNS::Subscription', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface TopicProperties {
 }
 
 export default class Topic extends ResourceBase {
-    constructor(properties: TopicProperties, dependsOn?: Value<string>) {
+    constructor(properties: TopicProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SNS::Topic', properties, dependsOn)
     }
 }

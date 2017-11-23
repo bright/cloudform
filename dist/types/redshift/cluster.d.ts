@@ -5,7 +5,7 @@ export interface LoggingPropertiesProperties {
     S3KeyPrefix?: Value<string>;
 }
 export declare class LoggingProperties extends ResourceBase {
-    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string>);
+    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>;
@@ -38,5 +38,5 @@ export interface ClusterProperties {
     VpcSecurityGroupIds?: Value<string>[];
 }
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties, dependsOn?: Value<string>);
+    constructor(properties: ClusterProperties, dependsOn?: Value<string> | Value<string>[]);
 }

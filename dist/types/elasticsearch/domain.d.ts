@@ -5,7 +5,7 @@ export interface VPCOptionsProperties {
     SubnetIds?: Value<string>[];
 }
 export declare class VPCOptions extends ResourceBase {
-    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ElasticsearchClusterConfigProperties {
     DedicatedMasterCount?: Value<number>;
@@ -16,13 +16,13 @@ export interface ElasticsearchClusterConfigProperties {
     ZoneAwarenessEnabled?: Value<boolean>;
 }
 export declare class ElasticsearchClusterConfig extends ResourceBase {
-    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SnapshotOptionsProperties {
     AutomatedSnapshotStartHour?: Value<number>;
 }
 export declare class SnapshotOptions extends ResourceBase {
-    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EBSOptionsProperties {
     EBSEnabled?: Value<boolean>;
@@ -31,7 +31,7 @@ export interface EBSOptionsProperties {
     VolumeType?: Value<string>;
 }
 export declare class EBSOptions extends ResourceBase {
-    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string>);
+    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DomainProperties {
     AccessPolicies?: any;
@@ -47,5 +47,5 @@ export interface DomainProperties {
     VPCOptions?: VPCOptions;
 }
 export default class Domain extends ResourceBase {
-    constructor(properties: DomainProperties, dependsOn?: Value<string>);
+    constructor(properties: DomainProperties, dependsOn?: Value<string> | Value<string>[]);
 }

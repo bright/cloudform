@@ -10,7 +10,7 @@ export interface RuleProperties {
 }
 
 export class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>) {
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::Rule', properties, dependsOn)
     }
 }
@@ -20,7 +20,7 @@ export interface ActionProperties {
 }
 
 export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string>) {
+    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::Action', properties, dependsOn)
     }
 }
@@ -33,7 +33,7 @@ export interface WebACLProperties {
 }
 
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties, dependsOn?: Value<string>) {
+    constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::WAFRegional::WebACL', properties, dependsOn)
     }
 }

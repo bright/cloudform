@@ -8,7 +8,7 @@ export interface HealthCheckProperties {
     UnhealthyThreshold: Value<string>;
 }
 export declare class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string>);
+    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AccessLoggingPolicyProperties {
     EmitInterval?: Value<number>;
@@ -17,27 +17,27 @@ export interface AccessLoggingPolicyProperties {
     S3BucketPrefix?: Value<string>;
 }
 export declare class AccessLoggingPolicy extends ResourceBase {
-    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConnectionSettingsProperties {
     IdleTimeout: Value<number>;
 }
 export declare class ConnectionSettings extends ResourceBase {
-    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string>);
+    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LBCookieStickinessPolicyProperties {
     CookieExpirationPeriod?: Value<string>;
     PolicyName?: Value<string>;
 }
 export declare class LBCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ConnectionDrainingPolicyProperties {
     Enabled: Value<boolean>;
     Timeout?: Value<number>;
 }
 export declare class ConnectionDrainingPolicy extends ResourceBase {
-    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenersProperties {
     InstancePort: Value<string>;
@@ -48,7 +48,7 @@ export interface ListenersProperties {
     SSLCertificateId?: Value<string>;
 }
 export declare class Listeners extends ResourceBase {
-    constructor(properties: ListenersProperties, dependsOn?: Value<string>);
+    constructor(properties: ListenersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PoliciesProperties {
     Attributes: any[];
@@ -58,14 +58,14 @@ export interface PoliciesProperties {
     PolicyType: Value<string>;
 }
 export declare class Policies extends ResourceBase {
-    constructor(properties: PoliciesProperties, dependsOn?: Value<string>);
+    constructor(properties: PoliciesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AppCookieStickinessPolicyProperties {
     CookieName: Value<string>;
     PolicyName: Value<string>;
 }
 export declare class AppCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string>);
+    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy;
@@ -86,5 +86,5 @@ export interface LoadBalancerProperties {
     Tags?: ResourceTag[];
 }
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string>);
+    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]);
 }

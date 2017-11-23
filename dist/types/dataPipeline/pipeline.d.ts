@@ -5,21 +5,21 @@ export interface ParameterAttributeProperties {
     StringValue: Value<string>;
 }
 export declare class ParameterAttribute extends ResourceBase {
-    constructor(properties: ParameterAttributeProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterAttributeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PipelineTagProperties {
     Key: Value<string>;
     Value: Value<string>;
 }
 export declare class PipelineTag extends ResourceBase {
-    constructor(properties: PipelineTagProperties, dependsOn?: Value<string>);
+    constructor(properties: PipelineTagProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ParameterObjectProperties {
     Attributes: ParameterAttribute[];
     Id: Value<string>;
 }
 export declare class ParameterObject extends ResourceBase {
-    constructor(properties: ParameterObjectProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterObjectProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PipelineObjectProperties {
     Fields: Field[];
@@ -27,14 +27,14 @@ export interface PipelineObjectProperties {
     Name: Value<string>;
 }
 export declare class PipelineObject extends ResourceBase {
-    constructor(properties: PipelineObjectProperties, dependsOn?: Value<string>);
+    constructor(properties: PipelineObjectProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ParameterValueProperties {
     Id: Value<string>;
     StringValue: Value<string>;
 }
 export declare class ParameterValue extends ResourceBase {
-    constructor(properties: ParameterValueProperties, dependsOn?: Value<string>);
+    constructor(properties: ParameterValueProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface FieldProperties {
     Key: Value<string>;
@@ -42,7 +42,7 @@ export interface FieldProperties {
     StringValue?: Value<string>;
 }
 export declare class Field extends ResourceBase {
-    constructor(properties: FieldProperties, dependsOn?: Value<string>);
+    constructor(properties: FieldProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PipelineProperties {
     Activate?: Value<boolean>;
@@ -54,5 +54,5 @@ export interface PipelineProperties {
     PipelineTags?: PipelineTag[];
 }
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties, dependsOn?: Value<string>);
+    constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]);
 }

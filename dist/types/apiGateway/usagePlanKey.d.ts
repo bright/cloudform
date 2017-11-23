@@ -6,5 +6,5 @@ export interface UsagePlanKeyProperties {
     UsagePlanId: Value<string>;
 }
 export default class UsagePlanKey extends ResourceBase {
-    constructor(properties: UsagePlanKeyProperties, dependsOn?: Value<string>);
+    constructor(properties: UsagePlanKeyProperties, dependsOn?: Value<string> | Value<string>[]);
 }

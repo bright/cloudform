@@ -12,7 +12,7 @@ export interface AccessKeyProperties {
 }
 
 export default class AccessKey extends ResourceBase {
-    constructor(properties: AccessKeyProperties, dependsOn?: Value<string>) {
+    constructor(properties: AccessKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::AccessKey', properties, dependsOn)
     }
 }

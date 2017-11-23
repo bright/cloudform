@@ -7,5 +7,5 @@ export interface StreamProperties {
     Tags?: ResourceTag[];
 }
 export default class Stream extends ResourceBase {
-    constructor(properties: StreamProperties, dependsOn?: Value<string>);
+    constructor(properties: StreamProperties, dependsOn?: Value<string> | Value<string>[]);
 }

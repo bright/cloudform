@@ -20,7 +20,7 @@ export interface ComputeResourcesProperties {
 }
 
 export class ComputeResources extends ResourceBase {
-    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string>) {
+    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::ComputeResources', properties, dependsOn)
     }
 }
@@ -34,7 +34,7 @@ export interface ComputeEnvironmentProperties {
 }
 
 export default class ComputeEnvironment extends ResourceBase {
-    constructor(properties: ComputeEnvironmentProperties, dependsOn?: Value<string>) {
+    constructor(properties: ComputeEnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::Batch::ComputeEnvironment', properties, dependsOn)
     }
 }

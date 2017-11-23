@@ -7,5 +7,5 @@ export interface DestinationProperties {
     TargetArn: Value<string>;
 }
 export default class Destination extends ResourceBase {
-    constructor(properties: DestinationProperties, dependsOn?: Value<string>);
+    constructor(properties: DestinationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

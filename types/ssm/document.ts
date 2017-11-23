@@ -11,7 +11,7 @@ export interface DocumentProperties {
 }
 
 export default class Document extends ResourceBase {
-    constructor(properties: DocumentProperties, dependsOn?: Value<string>) {
+    constructor(properties: DocumentProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::SSM::Document', properties, dependsOn)
     }
 }

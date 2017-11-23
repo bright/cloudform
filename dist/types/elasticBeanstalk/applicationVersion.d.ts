@@ -5,7 +5,7 @@ export interface SourceBundleProperties {
     S3Key: Value<string>;
 }
 export declare class SourceBundle extends ResourceBase {
-    constructor(properties: SourceBundleProperties, dependsOn?: Value<string>);
+    constructor(properties: SourceBundleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ApplicationVersionProperties {
     ApplicationName: Value<string>;
@@ -13,5 +13,5 @@ export interface ApplicationVersionProperties {
     SourceBundle: SourceBundle;
 }
 export default class ApplicationVersion extends ResourceBase {
-    constructor(properties: ApplicationVersionProperties, dependsOn?: Value<string>);
+    constructor(properties: ApplicationVersionProperties, dependsOn?: Value<string> | Value<string>[]);
 }

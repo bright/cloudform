@@ -9,7 +9,7 @@ export interface SourceConfigurationProperties {
 }
 
 export class SourceConfiguration extends ResourceBase {
-    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::SourceConfiguration', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface ConfigurationOptionSettingProperties {
 }
 
 export class ConfigurationOptionSetting extends ResourceBase {
-    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::ConfigurationOptionSetting', properties, dependsOn)
     }
 }
@@ -38,7 +38,7 @@ export interface ConfigurationTemplateProperties {
 }
 
 export default class ConfigurationTemplate extends ResourceBase {
-    constructor(properties: ConfigurationTemplateProperties, dependsOn?: Value<string>) {
+    constructor(properties: ConfigurationTemplateProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ElasticBeanstalk::ConfigurationTemplate', properties, dependsOn)
     }
 }

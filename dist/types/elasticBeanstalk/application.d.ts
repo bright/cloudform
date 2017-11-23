@@ -5,14 +5,14 @@ export interface ApplicationResourceLifecycleConfigProperties {
     VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
 }
 export declare class ApplicationResourceLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ApplicationVersionLifecycleConfigProperties {
     MaxAgeRule?: MaxAgeRule;
     MaxCountRule?: MaxCountRule;
 }
 export declare class ApplicationVersionLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string>);
+    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaxCountRuleProperties {
     DeleteSourceFromS3?: Value<boolean>;
@@ -20,7 +20,7 @@ export interface MaxCountRuleProperties {
     MaxCount?: Value<number>;
 }
 export declare class MaxCountRule extends ResourceBase {
-    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MaxAgeRuleProperties {
     DeleteSourceFromS3?: Value<boolean>;
@@ -28,7 +28,7 @@ export interface MaxAgeRuleProperties {
     MaxAgeInDays?: Value<number>;
 }
 export declare class MaxAgeRule extends ResourceBase {
-    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string>);
+    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ApplicationProperties {
     ApplicationName?: Value<string>;
@@ -36,5 +36,5 @@ export interface ApplicationProperties {
     ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
 }
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string>);
+    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]);
 }

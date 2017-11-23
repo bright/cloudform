@@ -10,7 +10,7 @@ export interface S3LocationProperties {
 }
 
 export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::S3Location', properties, dependsOn)
     }
 }
@@ -22,7 +22,7 @@ export interface BuildProperties {
 }
 
 export default class Build extends ResourceBase {
-    constructor(properties: BuildProperties, dependsOn?: Value<string>) {
+    constructor(properties: BuildProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::GameLift::Build', properties, dependsOn)
     }
 }

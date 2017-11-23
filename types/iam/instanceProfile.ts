@@ -12,7 +12,7 @@ export interface InstanceProfileProperties {
 }
 
 export default class InstanceProfile extends ResourceBase {
-    constructor(properties: InstanceProfileProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceProfileProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::IAM::InstanceProfile', properties, dependsOn)
     }
 }

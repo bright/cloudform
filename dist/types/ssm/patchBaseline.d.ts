@@ -4,14 +4,14 @@ export interface RuleGroupProperties {
     PatchRules?: Rule[];
 }
 export declare class RuleGroup extends ResourceBase {
-    constructor(properties: RuleGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PatchFilterProperties {
     Values?: Value<string>[];
     Key?: Value<string>;
 }
 export declare class PatchFilter extends ResourceBase {
-    constructor(properties: PatchFilterProperties, dependsOn?: Value<string>);
+    constructor(properties: PatchFilterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RuleProperties {
     PatchFilterGroup?: PatchFilterGroup;
@@ -19,13 +19,13 @@ export interface RuleProperties {
     ComplianceLevel?: Value<string>;
 }
 export declare class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string>);
+    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PatchFilterGroupProperties {
     PatchFilters?: PatchFilter[];
 }
 export declare class PatchFilterGroup extends ResourceBase {
-    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>;
@@ -39,5 +39,5 @@ export interface PatchBaselineProperties {
     RejectedPatches?: Value<string>[];
 }
 export default class PatchBaseline extends ResourceBase {
-    constructor(properties: PatchBaselineProperties, dependsOn?: Value<string>);
+    constructor(properties: PatchBaselineProperties, dependsOn?: Value<string> | Value<string>[]);
 }

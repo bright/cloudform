@@ -4,14 +4,14 @@ export interface InstanceIpv6AddressProperties {
     Ipv6Address: Value<string>;
 }
 export declare class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>);
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PrivateIpAddressSpecificationProperties {
     Primary: Value<boolean>;
     PrivateIpAddress: Value<string>;
 }
 export declare class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>);
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface NetworkInterfaceProperties {
     Description?: Value<string>;
@@ -27,5 +27,5 @@ export interface NetworkInterfaceProperties {
     Tags?: ResourceTag[];
 }
 export default class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>);
+    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]);
 }

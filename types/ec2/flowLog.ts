@@ -14,7 +14,7 @@ export interface FlowLogProperties {
 }
 
 export default class FlowLog extends ResourceBase {
-    constructor(properties: FlowLogProperties, dependsOn?: Value<string>) {
+    constructor(properties: FlowLogProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::FlowLog', properties, dependsOn)
     }
 }

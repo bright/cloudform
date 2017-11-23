@@ -7,7 +7,7 @@ export interface IngressProperties {
     EC2SecurityGroupOwnerId?: Value<string>;
 }
 export declare class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string>);
+    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DBSecurityGroupProperties {
     DBSecurityGroupIngress: Ingress[];
@@ -16,5 +16,5 @@ export interface DBSecurityGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class DBSecurityGroup extends ResourceBase {
-    constructor(properties: DBSecurityGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: DBSecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

@@ -8,7 +8,7 @@ export interface ElasticGpuSpecificationProperties {
 }
 
 export class ElasticGpuSpecification extends ResourceBase {
-    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::ElasticGpuSpecification', properties, dependsOn)
     }
 }
@@ -29,7 +29,7 @@ export interface NetworkInterfaceProperties {
 }
 
 export class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string>) {
+    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::NetworkInterface', properties, dependsOn)
     }
 }
@@ -39,7 +39,7 @@ export interface InstanceIpv6AddressProperties {
 }
 
 export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
     }
 }
@@ -50,7 +50,7 @@ export interface VolumeProperties {
 }
 
 export class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string>) {
+    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Volume', properties, dependsOn)
     }
 }
@@ -61,7 +61,7 @@ export interface AssociationParameterProperties {
 }
 
 export class AssociationParameter extends ResourceBase {
-    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string>) {
+    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::AssociationParameter', properties, dependsOn)
     }
 }
@@ -76,7 +76,7 @@ export interface EbsProperties {
 }
 
 export class Ebs extends ResourceBase {
-    constructor(properties: EbsProperties, dependsOn?: Value<string>) {
+    constructor(properties: EbsProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Ebs', properties, dependsOn)
     }
 }
@@ -86,7 +86,7 @@ export interface NoDeviceProperties {
 }
 
 export class NoDevice extends ResourceBase {
-    constructor(properties: NoDeviceProperties, dependsOn?: Value<string>) {
+    constructor(properties: NoDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::NoDevice', properties, dependsOn)
     }
 }
@@ -97,7 +97,7 @@ export interface SsmAssociationProperties {
 }
 
 export class SsmAssociation extends ResourceBase {
-    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string>) {
+    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::SsmAssociation', properties, dependsOn)
     }
 }
@@ -110,7 +110,7 @@ export interface BlockDeviceMappingProperties {
 }
 
 export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string>) {
+    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::BlockDeviceMapping', properties, dependsOn)
     }
 }
@@ -121,7 +121,7 @@ export interface PrivateIpAddressSpecificationProperties {
 }
 
 export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string>) {
+    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
     }
 }
@@ -160,7 +160,7 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties, dependsOn?: Value<string>) {
+    constructor(properties: InstanceProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::EC2::Instance', properties, dependsOn)
     }
 }

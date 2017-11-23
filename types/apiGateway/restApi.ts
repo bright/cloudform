@@ -11,7 +11,7 @@ export interface S3LocationProperties {
 }
 
 export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string>) {
+    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::S3Location', properties, dependsOn)
     }
 }
@@ -21,7 +21,7 @@ export interface EndpointConfigurationProperties {
 }
 
 export class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string>) {
+    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::EndpointConfiguration', properties, dependsOn)
     }
 }
@@ -40,7 +40,7 @@ export interface RestApiProperties {
 }
 
 export default class RestApi extends ResourceBase {
-    constructor(properties: RestApiProperties, dependsOn?: Value<string>) {
+    constructor(properties: RestApiProperties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::ApiGateway::RestApi', properties, dependsOn)
     }
 }

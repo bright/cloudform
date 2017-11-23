@@ -5,13 +5,13 @@ export interface TargetGroupAttributeProperties {
     Value?: Value<string>;
 }
 export declare class TargetGroupAttribute extends ResourceBase {
-    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface MatcherProperties {
     HttpCode: Value<string>;
 }
 export declare class Matcher extends ResourceBase {
-    constructor(properties: MatcherProperties, dependsOn?: Value<string>);
+    constructor(properties: MatcherProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetDescriptionProperties {
     AvailabilityZone?: Value<string>;
@@ -19,7 +19,7 @@ export interface TargetDescriptionProperties {
     Port?: Value<number>;
 }
 export declare class TargetDescription extends ResourceBase {
-    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetGroupProperties {
     HealthCheckIntervalSeconds?: Value<number>;
@@ -40,5 +40,5 @@ export interface TargetGroupProperties {
     VpcId: Value<string>;
 }
 export default class TargetGroup extends ResourceBase {
-    constructor(properties: TargetGroupProperties, dependsOn?: Value<string>);
+    constructor(properties: TargetGroupProperties, dependsOn?: Value<string> | Value<string>[]);
 }

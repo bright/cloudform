@@ -8,5 +8,5 @@ export interface ModelProperties {
     Schema?: any;
 }
 export default class Model extends ResourceBase {
-    constructor(properties: ModelProperties, dependsOn?: Value<string>);
+    constructor(properties: ModelProperties, dependsOn?: Value<string> | Value<string>[]);
 }

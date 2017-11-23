@@ -9,6 +9,11 @@ export interface CreationPolicy {
     };
 }
 export declare type DeletionPolicy = 'Delete' | 'Retain' | 'Snapshot';
+export declare class DeletionPolicies {
+    static Delete: DeletionPolicy;
+    static Retain: DeletionPolicy;
+    static Snapshot: DeletionPolicy;
+}
 export interface UpdatePolicy {
     AutoScalingReplacingUpdate?: {
         WillReplace?: Value<boolean>;
@@ -18,7 +23,7 @@ export interface UpdatePolicy {
         MinInstancesInService?: Value<number>;
         MinSuccessfulInstancesPercent?: Value<number>;
         PauseTime?: Value<string>;
-        SuspendProcesses?: Value<string>[];
+        SuspendProcesses?: List<string>;
         WaitOnResourceSignals?: Value<boolean>;
     };
     AutoScalingScheduledAction?: {
@@ -27,7 +32,7 @@ export interface UpdatePolicy {
 }
 export default interface Resource {
     Type: string;
-    DependsOn?: Value<string> | Value<string>[];
+    DependsOn?: Value<string> | List<string>;
     Properties?: {
         [key: string]: any;
     };
@@ -40,7 +45,7 @@ export default interface Resource {
 }
 export declare abstract class ResourceBase implements Resource {
     Type: string;
-    DependsOn?: Value<string> | Value<string>[];
+    DependsOn?: Value<string> | List<string>;
     Properties?: {
         [key: string]: any;
     };

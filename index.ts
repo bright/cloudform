@@ -7,6 +7,7 @@ import * as _Refs from './types/refs'
 export const Refs = _Refs
 
 export * from './types'
+export * from './types/dataTypes'
 export * from './types/resource'
 export * from './types/parameter'
 

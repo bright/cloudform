@@ -8,6 +8,7 @@ exports.Fn = _Fn;
 const _Refs = require("./types/refs");
 exports.Refs = _Refs;
 __export(require("./types"));
+__export(require("./types/dataTypes"));
 __export(require("./types/resource"));
 __export(require("./types/parameter"));
 function cloudform(template) {

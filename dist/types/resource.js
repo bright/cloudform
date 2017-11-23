@@ -1,5 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+class DeletionPolicies {
+}
+DeletionPolicies.Delete = 'Delete';
+DeletionPolicies.Retain = 'Retain';
+DeletionPolicies.Snapshot = 'Snapshot';
+exports.DeletionPolicies = DeletionPolicies;
 class ResourceBase {
     constructor(type, properties) {
         this.Type = type;

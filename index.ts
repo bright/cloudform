@@ -7,6 +7,7 @@ import * as _Refs from './types/refs'
 export const Refs = _Refs
 
 export * from './types'
+export * from './types/resource'
 
 export default function cloudform(template: Template) {
     return JSON.stringify(template, undefined, 2)

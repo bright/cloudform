@@ -1,4 +1,4 @@
-import {CFFunction, Value} from "./dataTypes"
+import {CFFunction, Value, List} from "./dataTypes"
 
 export function Base64(value: Value<string>) {
     return new CFFunction('Fn::Base64', value)
@@ -20,11 +20,11 @@ export function ImportValue(sharedValueToImport: Value<any>) {
     return new CFFunction('Fn::ImportValue', sharedValueToImport)
 }
 
-export function Join(delimiter: Value<string>, values: Value<any>[]) {
+export function Join(delimiter: Value<string>, values: List<any>) {
     return new CFFunction('Fn::Join', [delimiter, values])
 }
 
-export function Select(index: Value<number>, listOfObjects: Value<any>[]) {
+export function Select(index: Value<number>, listOfObjects: List<any>) {
     return new CFFunction('Fn::Select', [index, listOfObjects])
 }
 

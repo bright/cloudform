@@ -120,7 +120,8 @@ function generateGrandIndexFile(fileHeader, indexContent) {
     const imports = []
 
     forEach(indexContent, (dependentResourceNames, namespace) => {
-        imports.push(`import ${namespace} from './${adjustedCamelCase(namespace)}'`)
+        imports.push('\n' + `import ${namespace}_ from './${adjustedCamelCase(namespace)}'`)
+        imports.push(`export const ${namespace} = ${namespace}_` + '\n')
         dependentResourceNames.forEach(resourceName => imports.push(`import ${namespace}${resourceName} from './${adjustedCamelCase(namespace)}/${camelCase(resourceName)}'`))
     })
 

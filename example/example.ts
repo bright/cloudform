@@ -1,6 +1,5 @@
-import cloudform, {Fn, Refs} from "../index"
+import cloudform, {Fn, Refs, EC2} from "../index"
 import {StringParameter} from "../types/parameter"
-import EC2 from "../types/ec2"
 import {ResourceTag} from "../types/resource"
 
 cloudform({

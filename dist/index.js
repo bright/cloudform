@@ -9,6 +9,7 @@ const _Refs = require("./types/refs");
 exports.Refs = _Refs;
 __export(require("./types"));
 __export(require("./types/resource"));
+__export(require("./types/parameter"));
 function cloudform(template) {
     return JSON.stringify(template, undefined, 2);
 }

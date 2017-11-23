@@ -72,7 +72,8 @@ function generateIndexFile(fileHeader, namespace, resourceNames) {
 function generateGrandIndexFile(fileHeader, indexContent) {
     var imports = [];
     lodash_1.forEach(indexContent, function (dependentResourceNames, namespace) {
-        imports.push("import " + namespace + " from './" + adjustedCamelCase(namespace) + "'");
+        imports.push('\n' + ("import " + namespace + "_ from './" + adjustedCamelCase(namespace) + "'"));
+        imports.push("export const " + namespace + " = " + namespace + "_" + '\n');
         dependentResourceNames.forEach(function (resourceName) { return imports.push("import " + namespace + resourceName + " from './" + adjustedCamelCase(namespace) + "/" + lodash_1.camelCase(resourceName) + "'"); });
     });
     var template = fileHeader + "\n   \n" + imports.join('\n') + " \n\nexport default {\n" + Object.keys(indexContent).map(function (t) { return "  " + t; }).join(',\n') + "\n}\n";

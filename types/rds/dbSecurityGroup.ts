@@ -22,7 +22,7 @@ export interface DBSecurityGroupProperties {
 }
 
 export default class DBSecurityGroup extends ResourceBase {
-    constructor(properties: DBSecurityGroupProperties) {
+    constructor(properties?: DBSecurityGroupProperties) {
         super('AWS::RDS::DBSecurityGroup', properties)
     }
 }

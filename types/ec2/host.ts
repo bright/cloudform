@@ -12,7 +12,7 @@ export interface HostProperties {
 }
 
 export default class Host extends ResourceBase {
-    constructor(properties: HostProperties) {
+    constructor(properties?: HostProperties) {
         super('AWS::EC2::Host', properties)
     }
 }

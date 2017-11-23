@@ -12,7 +12,7 @@ export interface VPCGatewayAttachmentProperties {
 }
 
 export default class VPCGatewayAttachment extends ResourceBase {
-    constructor(properties: VPCGatewayAttachmentProperties) {
+    constructor(properties?: VPCGatewayAttachmentProperties) {
         super('AWS::EC2::VPCGatewayAttachment', properties)
     }
 }

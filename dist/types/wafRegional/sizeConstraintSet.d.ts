@@ -17,5 +17,5 @@ export interface SizeConstraintSetProperties {
     Name: Value<string>;
 }
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties);
+    constructor(properties?: SizeConstraintSetProperties);
 }

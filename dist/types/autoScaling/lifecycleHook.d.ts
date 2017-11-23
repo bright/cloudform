@@ -11,5 +11,5 @@ export interface LifecycleHookProperties {
     RoleARN?: Value<string>;
 }
 export default class LifecycleHook extends ResourceBase {
-    constructor(properties: LifecycleHookProperties);
+    constructor(properties?: LifecycleHookProperties);
 }

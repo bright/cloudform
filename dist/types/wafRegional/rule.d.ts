@@ -12,5 +12,5 @@ export interface RuleProperties {
     Name: Value<string>;
 }
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties);
+    constructor(properties?: RuleProperties);
 }

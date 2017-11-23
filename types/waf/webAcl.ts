@@ -29,7 +29,7 @@ export interface WebACLProperties {
 }
 
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties) {
+    constructor(properties?: WebACLProperties) {
         super('AWS::WAF::WebACL', properties)
     }
 }

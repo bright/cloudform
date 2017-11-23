@@ -42,5 +42,5 @@ export interface PipelineProperties {
     PipelineTags?: List<PipelineTag>;
 }
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties);
+    constructor(properties?: PipelineProperties);
 }

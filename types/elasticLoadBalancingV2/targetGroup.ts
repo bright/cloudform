@@ -50,7 +50,7 @@ export interface TargetGroupProperties {
 }
 
 export default class TargetGroup extends ResourceBase {
-    constructor(properties: TargetGroupProperties) {
+    constructor(properties?: TargetGroupProperties) {
         super('AWS::ElasticLoadBalancingV2::TargetGroup', properties)
     }
 }

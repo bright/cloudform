@@ -8,5 +8,5 @@ export interface EventSubscriptionProperties {
     SourceType?: Value<string>;
 }
 export default class EventSubscription extends ResourceBase {
-    constructor(properties: EventSubscriptionProperties);
+    constructor(properties?: EventSubscriptionProperties);
 }

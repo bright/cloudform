@@ -14,5 +14,5 @@ export interface SecurityGroupIngressProperties {
     ToPort?: Value<number>;
 }
 export default class SecurityGroupIngress extends ResourceBase {
-    constructor(properties: SecurityGroupIngressProperties);
+    constructor(properties?: SecurityGroupIngressProperties);
 }

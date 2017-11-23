@@ -8,5 +8,5 @@ export interface EIPAssociationProperties {
     PrivateIpAddress?: Value<string>;
 }
 export default class EIPAssociation extends ResourceBase {
-    constructor(properties: EIPAssociationProperties);
+    constructor(properties?: EIPAssociationProperties);
 }

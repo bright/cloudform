@@ -6,5 +6,5 @@ export interface DocumentationVersionProperties {
     RestApiId: Value<string>;
 }
 export default class DocumentationVersion extends ResourceBase {
-    constructor(properties: DocumentationVersionProperties);
+    constructor(properties?: DocumentationVersionProperties);
 }

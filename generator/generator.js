@@ -41,7 +41,7 @@ function generateInnerClass(name, properties) {
     return "export class " + name + " {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n\n    constructor(properties: " + name + ") {\n        Object.assign(this, properties)\n    }\n}";
 }
 function generateTopLevelClass(namespace, name, properties) {
-    return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n    constructor(properties: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
+    return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n    constructor(properties?: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
 }
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags');

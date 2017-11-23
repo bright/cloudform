@@ -17,7 +17,7 @@ export interface ThingProperties {
 }
 
 export default class Thing extends ResourceBase {
-    constructor(properties: ThingProperties) {
+    constructor(properties?: ThingProperties) {
         super('AWS::IoT::Thing', properties)
     }
 }

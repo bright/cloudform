@@ -168,7 +168,7 @@ export interface TaskDefinitionProperties {
 }
 
 export default class TaskDefinition extends ResourceBase {
-    constructor(properties: TaskDefinitionProperties) {
+    constructor(properties?: TaskDefinitionProperties) {
         super('AWS::ECS::TaskDefinition', properties)
     }
 }

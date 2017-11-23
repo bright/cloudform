@@ -51,5 +51,5 @@ export interface ScalingPolicyProperties {
     TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties);
+    constructor(properties?: ScalingPolicyProperties);
 }

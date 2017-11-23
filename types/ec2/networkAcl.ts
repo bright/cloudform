@@ -11,7 +11,7 @@ export interface NetworkAclProperties {
 }
 
 export default class NetworkAcl extends ResourceBase {
-    constructor(properties: NetworkAclProperties) {
+    constructor(properties?: NetworkAclProperties) {
         super('AWS::EC2::NetworkAcl', properties)
     }
 }

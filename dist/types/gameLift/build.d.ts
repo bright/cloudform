@@ -12,5 +12,5 @@ export interface BuildProperties {
     Version?: Value<string>;
 }
 export default class Build extends ResourceBase {
-    constructor(properties: BuildProperties);
+    constructor(properties?: BuildProperties);
 }

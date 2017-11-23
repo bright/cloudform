@@ -19,7 +19,7 @@ export interface RepositoryProperties {
 }
 
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties) {
+    constructor(properties?: RepositoryProperties) {
         super('AWS::ECR::Repository', properties)
     }
 }

@@ -18,7 +18,7 @@ export interface DeploymentConfigProperties {
 }
 
 export default class DeploymentConfig extends ResourceBase {
-    constructor(properties: DeploymentConfigProperties) {
+    constructor(properties?: DeploymentConfigProperties) {
         super('AWS::CodeDeploy::DeploymentConfig', properties)
     }
 }

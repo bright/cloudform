@@ -20,7 +20,7 @@ export interface AliasProperties {
 }
 
 export default class Alias extends ResourceBase {
-    constructor(properties: AliasProperties) {
+    constructor(properties?: AliasProperties) {
         super('AWS::GameLift::Alias', properties)
     }
 }

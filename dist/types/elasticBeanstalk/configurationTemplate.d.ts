@@ -22,5 +22,5 @@ export interface ConfigurationTemplateProperties {
     SourceConfiguration?: SourceConfiguration;
 }
 export default class ConfigurationTemplate extends ResourceBase {
-    constructor(properties: ConfigurationTemplateProperties);
+    constructor(properties?: ConfigurationTemplateProperties);
 }

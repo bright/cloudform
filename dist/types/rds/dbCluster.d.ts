@@ -21,5 +21,5 @@ export interface DBClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class DBCluster extends ResourceBase {
-    constructor(properties: DBClusterProperties);
+    constructor(properties?: DBClusterProperties);
 }

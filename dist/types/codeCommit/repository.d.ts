@@ -14,5 +14,5 @@ export interface RepositoryProperties {
     RepositoryDescription?: Value<string>;
 }
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties);
+    constructor(properties?: RepositoryProperties);
 }

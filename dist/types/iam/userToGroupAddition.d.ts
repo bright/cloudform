@@ -5,5 +5,5 @@ export interface UserToGroupAdditionProperties {
     Users: List<Value<string>>;
 }
 export default class UserToGroupAddition extends ResourceBase {
-    constructor(properties: UserToGroupAdditionProperties);
+    constructor(properties?: UserToGroupAdditionProperties);
 }

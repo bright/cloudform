@@ -12,5 +12,5 @@ export interface JobQueueProperties {
     JobQueueName?: Value<string>;
 }
 export default class JobQueue extends ResourceBase {
-    constructor(properties: JobQueueProperties);
+    constructor(properties?: JobQueueProperties);
 }

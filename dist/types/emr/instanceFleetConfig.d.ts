@@ -53,5 +53,5 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>;
 }
 export default class InstanceFleetConfig extends ResourceBase {
-    constructor(properties: InstanceFleetConfigProperties);
+    constructor(properties?: InstanceFleetConfigProperties);
 }

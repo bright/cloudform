@@ -259,7 +259,7 @@ export interface ClusterProperties {
 }
 
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties) {
+    constructor(properties?: ClusterProperties) {
         super('AWS::EMR::Cluster', properties)
     }
 }

@@ -171,5 +171,5 @@ export interface ClusterProperties {
     VisibleToAllUsers?: Value<boolean>;
 }
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties);
+    constructor(properties?: ClusterProperties);
 }

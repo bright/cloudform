@@ -20,7 +20,7 @@ export interface GroupProperties {
 }
 
 export default class Group extends ResourceBase {
-    constructor(properties: GroupProperties) {
+    constructor(properties?: GroupProperties) {
         super('AWS::IAM::Group', properties)
     }
 }

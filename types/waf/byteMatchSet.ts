@@ -30,7 +30,7 @@ export interface ByteMatchSetProperties {
 }
 
 export default class ByteMatchSet extends ResourceBase {
-    constructor(properties: ByteMatchSetProperties) {
+    constructor(properties?: ByteMatchSetProperties) {
         super('AWS::WAF::ByteMatchSet', properties)
     }
 }

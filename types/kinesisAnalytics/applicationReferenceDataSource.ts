@@ -84,7 +84,7 @@ export interface ApplicationReferenceDataSourceProperties {
 }
 
 export default class ApplicationReferenceDataSource extends ResourceBase {
-    constructor(properties: ApplicationReferenceDataSourceProperties) {
+    constructor(properties?: ApplicationReferenceDataSourceProperties) {
         super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties)
     }
 }

@@ -7,5 +7,5 @@ export interface DBClusterParameterGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class DBClusterParameterGroup extends ResourceBase {
-    constructor(properties: DBClusterParameterGroupProperties);
+    constructor(properties?: DBClusterParameterGroupProperties);
 }

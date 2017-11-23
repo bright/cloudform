@@ -12,7 +12,7 @@ export interface StateMachineProperties {
 }
 
 export default class StateMachine extends ResourceBase {
-    constructor(properties: StateMachineProperties) {
+    constructor(properties?: StateMachineProperties) {
         super('AWS::StepFunctions::StateMachine', properties)
     }
 }

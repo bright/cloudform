@@ -34,7 +34,7 @@ export interface AlarmProperties {
 }
 
 export default class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties) {
+    constructor(properties?: AlarmProperties) {
         super('AWS::CloudWatch::Alarm', properties)
     }
 }

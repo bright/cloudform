@@ -6,5 +6,5 @@ export interface HostProperties {
     InstanceType: Value<string>;
 }
 export default class Host extends ResourceBase {
-    constructor(properties: HostProperties);
+    constructor(properties?: HostProperties);
 }

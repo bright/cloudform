@@ -31,5 +31,5 @@ export interface StreamingDistributionProperties {
     Tags?: ResourceTag[];
 }
 export default class StreamingDistribution extends ResourceBase {
-    constructor(properties: StreamingDistributionProperties);
+    constructor(properties?: StreamingDistributionProperties);
 }

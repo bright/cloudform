@@ -12,7 +12,7 @@ export interface VolumeAttachmentProperties {
 }
 
 export default class VolumeAttachment extends ResourceBase {
-    constructor(properties: VolumeAttachmentProperties) {
+    constructor(properties?: VolumeAttachmentProperties) {
         super('AWS::EC2::VolumeAttachment', properties)
     }
 }

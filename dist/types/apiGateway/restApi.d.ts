@@ -26,5 +26,5 @@ export interface RestApiProperties {
     };
 }
 export default class RestApi extends ResourceBase {
-    constructor(properties: RestApiProperties);
+    constructor(properties?: RestApiProperties);
 }

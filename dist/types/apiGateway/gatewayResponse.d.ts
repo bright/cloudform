@@ -12,5 +12,5 @@ export interface GatewayResponseProperties {
     StatusCode?: Value<string>;
 }
 export default class GatewayResponse extends ResourceBase {
-    constructor(properties: GatewayResponseProperties);
+    constructor(properties?: GatewayResponseProperties);
 }

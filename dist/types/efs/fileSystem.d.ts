@@ -12,5 +12,5 @@ export interface FileSystemProperties {
     PerformanceMode?: Value<string>;
 }
 export default class FileSystem extends ResourceBase {
-    constructor(properties: FileSystemProperties);
+    constructor(properties?: FileSystemProperties);
 }

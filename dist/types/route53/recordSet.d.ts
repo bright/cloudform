@@ -29,5 +29,5 @@ export interface RecordSetProperties {
     Weight?: Value<number>;
 }
 export default class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties);
+    constructor(properties?: RecordSetProperties);
 }

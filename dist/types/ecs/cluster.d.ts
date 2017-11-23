@@ -4,5 +4,5 @@ export interface ClusterProperties {
     ClusterName?: Value<string>;
 }
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties);
+    constructor(properties?: ClusterProperties);
 }

@@ -18,5 +18,5 @@ export interface ByteMatchSetProperties {
     Name: Value<string>;
 }
 export default class ByteMatchSet extends ResourceBase {
-    constructor(properties: ByteMatchSetProperties);
+    constructor(properties?: ByteMatchSetProperties);
 }

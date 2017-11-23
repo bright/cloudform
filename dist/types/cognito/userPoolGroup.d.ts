@@ -8,5 +8,5 @@ export interface UserPoolGroupProperties {
     RoleArn?: Value<string>;
 }
 export default class UserPoolGroup extends ResourceBase {
-    constructor(properties: UserPoolGroupProperties);
+    constructor(properties?: UserPoolGroupProperties);
 }

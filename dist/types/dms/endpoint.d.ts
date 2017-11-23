@@ -47,5 +47,5 @@ export interface EndpointProperties {
     MongoDbSettings?: MongoDbSettings;
 }
 export default class Endpoint extends ResourceBase {
-    constructor(properties: EndpointProperties);
+    constructor(properties?: EndpointProperties);
 }

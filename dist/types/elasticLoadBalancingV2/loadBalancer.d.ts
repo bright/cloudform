@@ -22,5 +22,5 @@ export interface LoadBalancerProperties {
     Type?: Value<string>;
 }
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties);
+    constructor(properties?: LoadBalancerProperties);
 }

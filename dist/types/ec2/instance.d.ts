@@ -95,5 +95,5 @@ export interface InstanceProperties {
     Volumes?: List<Volume>;
 }
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties);
+    constructor(properties?: InstanceProperties);
 }

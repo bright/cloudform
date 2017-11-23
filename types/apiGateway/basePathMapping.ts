@@ -13,7 +13,7 @@ export interface BasePathMappingProperties {
 }
 
 export default class BasePathMapping extends ResourceBase {
-    constructor(properties: BasePathMappingProperties) {
+    constructor(properties?: BasePathMappingProperties) {
         super('AWS::ApiGateway::BasePathMapping', properties)
     }
 }

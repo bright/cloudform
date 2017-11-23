@@ -36,5 +36,5 @@ export interface RecordSetGroupProperties {
     RecordSets?: List<RecordSet>;
 }
 export default class RecordSetGroup extends ResourceBase {
-    constructor(properties: RecordSetGroupProperties);
+    constructor(properties?: RecordSetGroupProperties);
 }

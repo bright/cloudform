@@ -12,7 +12,7 @@ export interface VPCCidrBlockProperties {
 }
 
 export default class VPCCidrBlock extends ResourceBase {
-    constructor(properties: VPCCidrBlockProperties) {
+    constructor(properties?: VPCCidrBlockProperties) {
         super('AWS::EC2::VPCCidrBlock', properties)
     }
 }

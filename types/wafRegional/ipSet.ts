@@ -18,7 +18,7 @@ export interface IPSetProperties {
 }
 
 export default class IPSet extends ResourceBase {
-    constructor(properties: IPSetProperties) {
+    constructor(properties?: IPSetProperties) {
         super('AWS::WAFRegional::IPSet', properties)
     }
 }

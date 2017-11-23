@@ -28,5 +28,5 @@ export interface ApplicationProperties {
     ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
 }
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties);
+    constructor(properties?: ApplicationProperties);
 }

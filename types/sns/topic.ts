@@ -19,7 +19,7 @@ export interface TopicProperties {
 }
 
 export default class Topic extends ResourceBase {
-    constructor(properties: TopicProperties) {
+    constructor(properties?: TopicProperties) {
         super('AWS::SNS::Topic', properties)
     }
 }

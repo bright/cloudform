@@ -13,7 +13,7 @@ export interface SubscriptionFilterProperties {
 }
 
 export default class SubscriptionFilter extends ResourceBase {
-    constructor(properties: SubscriptionFilterProperties) {
+    constructor(properties?: SubscriptionFilterProperties) {
         super('AWS::Logs::SubscriptionFilter', properties)
     }
 }

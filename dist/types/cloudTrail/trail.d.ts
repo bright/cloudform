@@ -27,5 +27,5 @@ export interface TrailProperties {
     TrailName?: Value<string>;
 }
 export default class Trail extends ResourceBase {
-    constructor(properties: TrailProperties);
+    constructor(properties?: TrailProperties);
 }

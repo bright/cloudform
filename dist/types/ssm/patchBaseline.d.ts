@@ -31,5 +31,5 @@ export interface PatchBaselineProperties {
     RejectedPatches?: List<Value<string>>;
 }
 export default class PatchBaseline extends ResourceBase {
-    constructor(properties: PatchBaselineProperties);
+    constructor(properties?: PatchBaselineProperties);
 }

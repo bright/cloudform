@@ -113,5 +113,5 @@ export interface DeliveryStreamProperties {
     S3DestinationConfiguration?: S3DestinationConfiguration;
 }
 export default class DeliveryStream extends ResourceBase {
-    constructor(properties: DeliveryStreamProperties);
+    constructor(properties?: DeliveryStreamProperties);
 }

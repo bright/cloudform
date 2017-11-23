@@ -11,7 +11,7 @@ export interface TopicPolicyProperties {
 }
 
 export default class TopicPolicy extends ResourceBase {
-    constructor(properties: TopicPolicyProperties) {
+    constructor(properties?: TopicPolicyProperties) {
         super('AWS::SNS::TopicPolicy', properties)
     }
 }

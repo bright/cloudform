@@ -18,7 +18,7 @@ export interface ReplicationTaskProperties {
 }
 
 export default class ReplicationTask extends ResourceBase {
-    constructor(properties: ReplicationTaskProperties) {
+    constructor(properties?: ReplicationTaskProperties) {
         super('AWS::DMS::ReplicationTask', properties)
     }
 }

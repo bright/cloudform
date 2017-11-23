@@ -5,5 +5,5 @@ export interface ElasticLoadBalancerAttachmentProperties {
     LayerId: Value<string>;
 }
 export default class ElasticLoadBalancerAttachment extends ResourceBase {
-    constructor(properties: ElasticLoadBalancerAttachmentProperties);
+    constructor(properties?: ElasticLoadBalancerAttachmentProperties);
 }

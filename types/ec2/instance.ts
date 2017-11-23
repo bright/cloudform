@@ -140,7 +140,7 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties) {
+    constructor(properties?: InstanceProperties) {
         super('AWS::EC2::Instance', properties)
     }
 }

@@ -46,7 +46,7 @@ export interface IdentityPoolProperties {
 }
 
 export default class IdentityPool extends ResourceBase {
-    constructor(properties: IdentityPoolProperties) {
+    constructor(properties?: IdentityPoolProperties) {
         super('AWS::Cognito::IdentityPool', properties)
     }
 }

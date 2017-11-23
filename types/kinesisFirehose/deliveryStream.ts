@@ -177,7 +177,7 @@ export interface DeliveryStreamProperties {
 }
 
 export default class DeliveryStream extends ResourceBase {
-    constructor(properties: DeliveryStreamProperties) {
+    constructor(properties?: DeliveryStreamProperties) {
         super('AWS::KinesisFirehose::DeliveryStream', properties)
     }
 }

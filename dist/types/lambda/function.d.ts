@@ -43,5 +43,5 @@ export interface FunctionProperties {
     VpcConfig?: VpcConfig;
 }
 export default class Function extends ResourceBase {
-    constructor(properties: FunctionProperties);
+    constructor(properties?: FunctionProperties);
 }

@@ -7,5 +7,5 @@ export interface NetworkInterfaceAttachmentProperties {
     NetworkInterfaceId: Value<string>;
 }
 export default class NetworkInterfaceAttachment extends ResourceBase {
-    constructor(properties: NetworkInterfaceAttachmentProperties);
+    constructor(properties?: NetworkInterfaceAttachmentProperties);
 }

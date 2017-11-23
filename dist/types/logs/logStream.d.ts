@@ -5,5 +5,5 @@ export interface LogStreamProperties {
     LogStreamName?: Value<string>;
 }
 export default class LogStream extends ResourceBase {
-    constructor(properties: LogStreamProperties);
+    constructor(properties?: LogStreamProperties);
 }

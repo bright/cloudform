@@ -112,5 +112,5 @@ export interface TopicRuleProperties {
     TopicRulePayload: TopicRulePayload;
 }
 export default class TopicRule extends ResourceBase {
-    constructor(properties: TopicRuleProperties);
+    constructor(properties?: TopicRuleProperties);
 }

@@ -22,7 +22,7 @@ export interface MicrosoftADProperties {
 }
 
 export default class MicrosoftAD extends ResourceBase {
-    constructor(properties: MicrosoftADProperties) {
+    constructor(properties?: MicrosoftADProperties) {
         super('AWS::DirectoryService::MicrosoftAD', properties)
     }
 }

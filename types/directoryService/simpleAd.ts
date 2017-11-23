@@ -24,7 +24,7 @@ export interface SimpleADProperties {
 }
 
 export default class SimpleAD extends ResourceBase {
-    constructor(properties: SimpleADProperties) {
+    constructor(properties?: SimpleADProperties) {
         super('AWS::DirectoryService::SimpleAD', properties)
     }
 }

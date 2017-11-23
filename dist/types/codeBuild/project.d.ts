@@ -47,5 +47,5 @@ export interface ProjectProperties {
     TimeoutInMinutes?: Value<number>;
 }
 export default class Project extends ResourceBase {
-    constructor(properties: ProjectProperties);
+    constructor(properties?: ProjectProperties);
 }

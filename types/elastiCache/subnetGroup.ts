@@ -12,7 +12,7 @@ export interface SubnetGroupProperties {
 }
 
 export default class SubnetGroup extends ResourceBase {
-    constructor(properties: SubnetGroupProperties) {
+    constructor(properties?: SubnetGroupProperties) {
         super('AWS::ElastiCache::SubnetGroup', properties)
     }
 }

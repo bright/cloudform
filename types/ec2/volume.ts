@@ -18,7 +18,7 @@ export interface VolumeProperties {
 }
 
 export default class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties) {
+    constructor(properties?: VolumeProperties) {
         super('AWS::EC2::Volume', properties)
     }
 }

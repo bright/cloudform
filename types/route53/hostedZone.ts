@@ -46,7 +46,7 @@ export interface HostedZoneProperties {
 }
 
 export default class HostedZone extends ResourceBase {
-    constructor(properties: HostedZoneProperties) {
+    constructor(properties?: HostedZoneProperties) {
         super('AWS::Route53::HostedZone', properties)
     }
 }

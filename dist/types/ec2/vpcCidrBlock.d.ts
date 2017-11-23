@@ -6,5 +6,5 @@ export interface VPCCidrBlockProperties {
     VpcId: Value<string>;
 }
 export default class VPCCidrBlock extends ResourceBase {
-    constructor(properties: VPCCidrBlockProperties);
+    constructor(properties?: VPCCidrBlockProperties);
 }

@@ -11,7 +11,7 @@ export interface EIPProperties {
 }
 
 export default class EIP extends ResourceBase {
-    constructor(properties: EIPProperties) {
+    constructor(properties?: EIPProperties) {
         super('AWS::EC2::EIP', properties)
     }
 }

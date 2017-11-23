@@ -12,5 +12,5 @@ export interface CertificateProperties {
     Tags?: ResourceTag[];
 }
 export default class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties);
+    constructor(properties?: CertificateProperties);
 }

@@ -65,7 +65,7 @@ export interface FunctionProperties {
 }
 
 export default class Function extends ResourceBase {
-    constructor(properties: FunctionProperties) {
+    constructor(properties?: FunctionProperties) {
         super('AWS::Lambda::Function', properties)
     }
 }

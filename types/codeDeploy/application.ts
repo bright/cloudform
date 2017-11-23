@@ -10,7 +10,7 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties) {
+    constructor(properties?: ApplicationProperties) {
         super('AWS::CodeDeploy::Application', properties)
     }
 }

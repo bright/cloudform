@@ -12,5 +12,5 @@ export interface GroupProperties {
     Policies?: List<Policy>;
 }
 export default class Group extends ResourceBase {
-    constructor(properties: GroupProperties);
+    constructor(properties?: GroupProperties);
 }

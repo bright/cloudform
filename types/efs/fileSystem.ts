@@ -20,7 +20,7 @@ export interface FileSystemProperties {
 }
 
 export default class FileSystem extends ResourceBase {
-    constructor(properties: FileSystemProperties) {
+    constructor(properties?: FileSystemProperties) {
         super('AWS::EFS::FileSystem', properties)
     }
 }

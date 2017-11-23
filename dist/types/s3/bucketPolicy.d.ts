@@ -5,5 +5,5 @@ export interface BucketPolicyProperties {
     PolicyDocument: any;
 }
 export default class BucketPolicy extends ResourceBase {
-    constructor(properties: BucketPolicyProperties);
+    constructor(properties?: BucketPolicyProperties);
 }

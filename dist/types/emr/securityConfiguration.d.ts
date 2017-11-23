@@ -5,5 +5,5 @@ export interface SecurityConfigurationProperties {
     SecurityConfiguration: any;
 }
 export default class SecurityConfiguration extends ResourceBase {
-    constructor(properties: SecurityConfigurationProperties);
+    constructor(properties?: SecurityConfigurationProperties);
 }

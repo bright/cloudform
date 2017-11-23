@@ -30,5 +30,5 @@ export interface IdentityPoolProperties {
     OpenIdConnectProviderARNs?: List<Value<string>>;
 }
 export default class IdentityPool extends ResourceBase {
-    constructor(properties: IdentityPoolProperties);
+    constructor(properties?: IdentityPoolProperties);
 }

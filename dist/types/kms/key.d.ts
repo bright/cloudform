@@ -9,5 +9,5 @@ export interface KeyProperties {
     Tags?: ResourceTag[];
 }
 export default class Key extends ResourceBase {
-    constructor(properties: KeyProperties);
+    constructor(properties?: KeyProperties);
 }

@@ -11,7 +11,7 @@ export interface CertificateProperties {
 }
 
 export default class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties) {
+    constructor(properties?: CertificateProperties) {
         super('AWS::IoT::Certificate', properties)
     }
 }

@@ -13,7 +13,7 @@ export interface TrunkInterfaceAssociationProperties {
 }
 
 export default class TrunkInterfaceAssociation extends ResourceBase {
-    constructor(properties: TrunkInterfaceAssociationProperties) {
+    constructor(properties?: TrunkInterfaceAssociationProperties) {
         super('AWS::EC2::TrunkInterfaceAssociation', properties)
     }
 }

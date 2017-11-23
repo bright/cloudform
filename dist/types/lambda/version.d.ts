@@ -6,5 +6,5 @@ export interface VersionProperties {
     FunctionName: Value<string>;
 }
 export default class Version extends ResourceBase {
-    constructor(properties: VersionProperties);
+    constructor(properties?: VersionProperties);
 }

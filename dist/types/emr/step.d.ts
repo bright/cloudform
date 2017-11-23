@@ -19,5 +19,5 @@ export interface StepProperties {
     Name: Value<string>;
 }
 export default class Step extends ResourceBase {
-    constructor(properties: StepProperties);
+    constructor(properties?: StepProperties);
 }

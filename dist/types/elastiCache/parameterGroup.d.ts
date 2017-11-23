@@ -8,5 +8,5 @@ export interface ParameterGroupProperties {
     };
 }
 export default class ParameterGroup extends ResourceBase {
-    constructor(properties: ParameterGroupProperties);
+    constructor(properties?: ParameterGroupProperties);
 }

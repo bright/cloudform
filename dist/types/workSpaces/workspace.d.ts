@@ -9,5 +9,5 @@ export interface WorkspaceProperties {
     VolumeEncryptionKey?: Value<string>;
 }
 export default class Workspace extends ResourceBase {
-    constructor(properties: WorkspaceProperties);
+    constructor(properties?: WorkspaceProperties);
 }

@@ -10,5 +10,5 @@ export interface IPSetProperties {
     Name: Value<string>;
 }
 export default class IPSet extends ResourceBase {
-    constructor(properties: IPSetProperties);
+    constructor(properties?: IPSetProperties);
 }

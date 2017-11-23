@@ -5,5 +5,5 @@ export interface ClusterSecurityGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class ClusterSecurityGroup extends ResourceBase {
-    constructor(properties: ClusterSecurityGroupProperties);
+    constructor(properties?: ClusterSecurityGroupProperties);
 }

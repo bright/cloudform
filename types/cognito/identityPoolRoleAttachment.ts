@@ -39,7 +39,7 @@ export interface IdentityPoolRoleAttachmentProperties {
 }
 
 export default class IdentityPoolRoleAttachment extends ResourceBase {
-    constructor(properties: IdentityPoolRoleAttachmentProperties) {
+    constructor(properties?: IdentityPoolRoleAttachmentProperties) {
         super('AWS::Cognito::IdentityPoolRoleAttachment', properties)
     }
 }

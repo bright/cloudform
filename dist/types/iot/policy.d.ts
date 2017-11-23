@@ -5,5 +5,5 @@ export interface PolicyProperties {
     PolicyName?: Value<string>;
 }
 export default class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties);
+    constructor(properties?: PolicyProperties);
 }

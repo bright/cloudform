@@ -11,7 +11,7 @@ export interface VPCDHCPOptionsAssociationProperties {
 }
 
 export default class VPCDHCPOptionsAssociation extends ResourceBase {
-    constructor(properties: VPCDHCPOptionsAssociationProperties) {
+    constructor(properties?: VPCDHCPOptionsAssociationProperties) {
         super('AWS::EC2::VPCDHCPOptionsAssociation', properties)
     }
 }

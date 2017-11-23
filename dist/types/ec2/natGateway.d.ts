@@ -6,5 +6,5 @@ export interface NatGatewayProperties {
     Tags?: ResourceTag[];
 }
 export default class NatGateway extends ResourceBase {
-    constructor(properties: NatGatewayProperties);
+    constructor(properties?: NatGatewayProperties);
 }

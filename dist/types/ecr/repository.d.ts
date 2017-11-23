@@ -11,5 +11,5 @@ export interface RepositoryProperties {
     RepositoryPolicyText?: any;
 }
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties);
+    constructor(properties?: RepositoryProperties);
 }

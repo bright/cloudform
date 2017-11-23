@@ -12,5 +12,5 @@ export interface RuleProperties {
     Predicates?: List<Predicate>;
 }
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties);
+    constructor(properties?: RuleProperties);
 }

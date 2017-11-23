@@ -24,5 +24,5 @@ export interface UsagePlanProperties {
     UsagePlanName?: Value<string>;
 }
 export default class UsagePlan extends ResourceBase {
-    constructor(properties: UsagePlanProperties);
+    constructor(properties?: UsagePlanProperties);
 }

@@ -46,7 +46,7 @@ export interface ApplicationOutputProperties {
 }
 
 export default class ApplicationOutput extends ResourceBase {
-    constructor(properties: ApplicationOutputProperties) {
+    constructor(properties?: ApplicationOutputProperties) {
         super('AWS::KinesisAnalytics::ApplicationOutput', properties)
     }
 }

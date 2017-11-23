@@ -86,5 +86,5 @@ export interface InstanceGroupConfigProperties {
     Name?: Value<string>;
 }
 export default class InstanceGroupConfig extends ResourceBase {
-    constructor(properties: InstanceGroupConfigProperties);
+    constructor(properties?: InstanceGroupConfigProperties);
 }

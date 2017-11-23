@@ -27,7 +27,7 @@ export interface DBClusterProperties {
 }
 
 export default class DBCluster extends ResourceBase {
-    constructor(properties: DBClusterProperties) {
+    constructor(properties?: DBClusterProperties) {
         super('AWS::RDS::DBCluster', properties)
     }
 }

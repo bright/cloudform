@@ -47,5 +47,5 @@ export interface AutoScalingGroupProperties {
     VPCZoneIdentifier?: List<Value<string>>;
 }
 export default class AutoScalingGroup extends ResourceBase {
-    constructor(properties: AutoScalingGroupProperties);
+    constructor(properties?: AutoScalingGroupProperties);
 }

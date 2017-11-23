@@ -5,5 +5,5 @@ export interface DocumentProperties {
     DocumentType?: Value<string>;
 }
 export default class Document extends ResourceBase {
-    constructor(properties: DocumentProperties);
+    constructor(properties?: DocumentProperties);
 }

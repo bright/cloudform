@@ -60,5 +60,5 @@ export interface StackProperties {
     VpcId?: Value<string>;
 }
 export default class Stack extends ResourceBase {
-    constructor(properties: StackProperties);
+    constructor(properties?: StackProperties);
 }

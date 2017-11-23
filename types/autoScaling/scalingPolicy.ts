@@ -68,7 +68,7 @@ export interface ScalingPolicyProperties {
 }
 
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties) {
+    constructor(properties?: ScalingPolicyProperties) {
         super('AWS::AutoScaling::ScalingPolicy', properties)
     }
 }

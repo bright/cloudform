@@ -36,5 +36,5 @@ export interface LaunchConfigurationProperties {
     UserData?: Value<string>;
 }
 export default class LaunchConfiguration extends ResourceBase {
-    constructor(properties: LaunchConfigurationProperties);
+    constructor(properties?: LaunchConfigurationProperties);
 }

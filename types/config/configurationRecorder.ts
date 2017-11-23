@@ -20,7 +20,7 @@ export interface ConfigurationRecorderProperties {
 }
 
 export default class ConfigurationRecorder extends ResourceBase {
-    constructor(properties: ConfigurationRecorderProperties) {
+    constructor(properties?: ConfigurationRecorderProperties) {
         super('AWS::Config::ConfigurationRecorder', properties)
     }
 }

@@ -15,5 +15,5 @@ export interface UserPoolUserProperties {
     UserAttributes?: List<AttributeType>;
 }
 export default class UserPoolUser extends ResourceBase {
-    constructor(properties: UserPoolUserProperties);
+    constructor(properties?: UserPoolUserProperties);
 }

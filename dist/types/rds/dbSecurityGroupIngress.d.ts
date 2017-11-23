@@ -8,5 +8,5 @@ export interface DBSecurityGroupIngressProperties {
     EC2SecurityGroupOwnerId?: Value<string>;
 }
 export default class DBSecurityGroupIngress extends ResourceBase {
-    constructor(properties: DBSecurityGroupIngressProperties);
+    constructor(properties?: DBSecurityGroupIngressProperties);
 }

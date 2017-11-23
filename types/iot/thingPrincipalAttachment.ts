@@ -11,7 +11,7 @@ export interface ThingPrincipalAttachmentProperties {
 }
 
 export default class ThingPrincipalAttachment extends ResourceBase {
-    constructor(properties: ThingPrincipalAttachmentProperties) {
+    constructor(properties?: ThingPrincipalAttachmentProperties) {
         super('AWS::IoT::ThingPrincipalAttachment', properties)
     }
 }

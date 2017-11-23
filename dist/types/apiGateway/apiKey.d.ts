@@ -14,5 +14,5 @@ export interface ApiKeyProperties {
     StageKeys?: List<StageKey>;
 }
 export default class ApiKey extends ResourceBase {
-    constructor(properties: ApiKeyProperties);
+    constructor(properties?: ApiKeyProperties);
 }

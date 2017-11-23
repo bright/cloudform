@@ -27,5 +27,5 @@ export interface EnvironmentProperties {
     VersionLabel?: Value<string>;
 }
 export default class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties);
+    constructor(properties?: EnvironmentProperties);
 }

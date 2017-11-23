@@ -31,7 +31,7 @@ export interface StepProperties {
 }
 
 export default class Step extends ResourceBase {
-    constructor(properties: StepProperties) {
+    constructor(properties?: StepProperties) {
         super('AWS::EMR::Step', properties)
     }
 }

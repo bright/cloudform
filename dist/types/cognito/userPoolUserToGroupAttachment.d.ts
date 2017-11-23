@@ -6,5 +6,5 @@ export interface UserPoolUserToGroupAttachmentProperties {
     Username: Value<string>;
 }
 export default class UserPoolUserToGroupAttachment extends ResourceBase {
-    constructor(properties: UserPoolUserToGroupAttachmentProperties);
+    constructor(properties?: UserPoolUserToGroupAttachmentProperties);
 }

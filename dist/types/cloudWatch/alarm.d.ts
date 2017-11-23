@@ -26,5 +26,5 @@ export interface AlarmProperties {
     Unit?: Value<string>;
 }
 export default class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties);
+    constructor(properties?: AlarmProperties);
 }

@@ -32,7 +32,7 @@ export interface ComputeEnvironmentProperties {
 }
 
 export default class ComputeEnvironment extends ResourceBase {
-    constructor(properties: ComputeEnvironmentProperties) {
+    constructor(properties?: ComputeEnvironmentProperties) {
         super('AWS::Batch::ComputeEnvironment', properties)
     }
 }

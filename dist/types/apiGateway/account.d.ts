@@ -4,5 +4,5 @@ export interface AccountProperties {
     CloudWatchRoleArn?: Value<string>;
 }
 export default class Account extends ResourceBase {
-    constructor(properties: AccountProperties);
+    constructor(properties?: AccountProperties);
 }

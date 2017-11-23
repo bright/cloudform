@@ -12,7 +12,7 @@ export interface NatGatewayProperties {
 }
 
 export default class NatGateway extends ResourceBase {
-    constructor(properties: NatGatewayProperties) {
+    constructor(properties?: NatGatewayProperties) {
         super('AWS::EC2::NatGateway', properties)
     }
 }

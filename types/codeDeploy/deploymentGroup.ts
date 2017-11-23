@@ -151,7 +151,7 @@ export interface DeploymentGroupProperties {
 }
 
 export default class DeploymentGroup extends ResourceBase {
-    constructor(properties: DeploymentGroupProperties) {
+    constructor(properties?: DeploymentGroupProperties) {
         super('AWS::CodeDeploy::DeploymentGroup', properties)
     }
 }

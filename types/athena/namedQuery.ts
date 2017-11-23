@@ -13,7 +13,7 @@ export interface NamedQueryProperties {
 }
 
 export default class NamedQuery extends ResourceBase {
-    constructor(properties: NamedQueryProperties) {
+    constructor(properties?: NamedQueryProperties) {
         super('AWS::Athena::NamedQuery', properties)
     }
 }

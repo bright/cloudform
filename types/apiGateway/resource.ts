@@ -12,7 +12,7 @@ export interface ResourceProperties {
 }
 
 export default class Resource extends ResourceBase {
-    constructor(properties: ResourceProperties) {
+    constructor(properties?: ResourceProperties) {
         super('AWS::ApiGateway::Resource', properties)
     }
 }

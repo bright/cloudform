@@ -19,7 +19,7 @@ export interface DomainNameProperties {
 }
 
 export default class DomainName extends ResourceBase {
-    constructor(properties: DomainNameProperties) {
+    constructor(properties?: DomainNameProperties) {
         super('AWS::ApiGateway::DomainName', properties)
     }
 }

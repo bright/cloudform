@@ -12,5 +12,5 @@ export interface DeliveryChannelProperties {
     SnsTopicARN?: Value<string>;
 }
 export default class DeliveryChannel extends ResourceBase {
-    constructor(properties: DeliveryChannelProperties);
+    constructor(properties?: DeliveryChannelProperties);
 }

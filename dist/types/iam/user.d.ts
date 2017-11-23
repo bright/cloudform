@@ -19,5 +19,5 @@ export interface UserProperties {
     UserName?: Value<string>;
 }
 export default class User extends ResourceBase {
-    constructor(properties: UserProperties);
+    constructor(properties?: UserProperties);
 }

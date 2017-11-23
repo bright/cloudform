@@ -12,5 +12,5 @@ export interface ClusterParameterGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class ClusterParameterGroup extends ResourceBase {
-    constructor(properties: ClusterParameterGroupProperties);
+    constructor(properties?: ClusterParameterGroupProperties);
 }

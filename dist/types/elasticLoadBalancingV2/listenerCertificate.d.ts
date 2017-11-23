@@ -9,5 +9,5 @@ export interface ListenerCertificateProperties {
     ListenerArn: Value<string>;
 }
 export default class ListenerCertificate extends ResourceBase {
-    constructor(properties: ListenerCertificateProperties);
+    constructor(properties?: ListenerCertificateProperties);
 }

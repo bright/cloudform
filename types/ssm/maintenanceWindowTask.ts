@@ -104,7 +104,7 @@ export interface MaintenanceWindowTaskProperties {
 }
 
 export default class MaintenanceWindowTask extends ResourceBase {
-    constructor(properties: MaintenanceWindowTaskProperties) {
+    constructor(properties?: MaintenanceWindowTaskProperties) {
         super('AWS::SSM::MaintenanceWindowTask', properties)
     }
 }

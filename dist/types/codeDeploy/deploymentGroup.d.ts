@@ -91,5 +91,5 @@ export interface DeploymentGroupProperties {
     TriggerConfigurations?: List<TriggerConfig>;
 }
 export default class DeploymentGroup extends ResourceBase {
-    constructor(properties: DeploymentGroupProperties);
+    constructor(properties?: DeploymentGroupProperties);
 }

@@ -11,7 +11,7 @@ export interface BucketPolicyProperties {
 }
 
 export default class BucketPolicy extends ResourceBase {
-    constructor(properties: BucketPolicyProperties) {
+    constructor(properties?: BucketPolicyProperties) {
         super('AWS::S3::BucketPolicy', properties)
     }
 }

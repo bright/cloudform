@@ -73,7 +73,7 @@ export interface RuleProperties {
 }
 
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties) {
+    constructor(properties?: RuleProperties) {
         super('AWS::Events::Rule', properties)
     }
 }

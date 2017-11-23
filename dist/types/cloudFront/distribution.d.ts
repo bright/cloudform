@@ -144,5 +144,5 @@ export interface DistributionProperties {
     Tags?: ResourceTag[];
 }
 export default class Distribution extends ResourceBase {
-    constructor(properties: DistributionProperties);
+    constructor(properties?: DistributionProperties);
 }

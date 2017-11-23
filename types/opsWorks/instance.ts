@@ -65,7 +65,7 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
-    constructor(properties: InstanceProperties) {
+    constructor(properties?: InstanceProperties) {
         super('AWS::OpsWorks::Instance', properties)
     }
 }

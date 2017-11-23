@@ -12,7 +12,7 @@ export interface VPNGatewayProperties {
 }
 
 export default class VPNGateway extends ResourceBase {
-    constructor(properties: VPNGatewayProperties) {
+    constructor(properties?: VPNGatewayProperties) {
         super('AWS::EC2::VPNGateway', properties)
     }
 }

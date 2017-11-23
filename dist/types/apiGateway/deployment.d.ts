@@ -40,5 +40,5 @@ export interface DeploymentProperties {
     StageName?: Value<string>;
 }
 export default class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties);
+    constructor(properties?: DeploymentProperties);
 }

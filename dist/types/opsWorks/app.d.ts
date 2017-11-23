@@ -44,5 +44,5 @@ export interface AppProperties {
     Type: Value<string>;
 }
 export default class App extends ResourceBase {
-    constructor(properties: AppProperties);
+    constructor(properties?: AppProperties);
 }

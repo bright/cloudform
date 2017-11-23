@@ -5,5 +5,5 @@ export interface NetworkAclProperties {
     VpcId: Value<string>;
 }
 export default class NetworkAcl extends ResourceBase {
-    constructor(properties: NetworkAclProperties);
+    constructor(properties?: NetworkAclProperties);
 }

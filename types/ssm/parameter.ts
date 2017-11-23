@@ -14,7 +14,7 @@ export interface ParameterProperties {
 }
 
 export default class Parameter extends ResourceBase {
-    constructor(properties: ParameterProperties) {
+    constructor(properties?: ParameterProperties) {
         super('AWS::SSM::Parameter', properties)
     }
 }

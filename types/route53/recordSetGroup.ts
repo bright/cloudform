@@ -52,7 +52,7 @@ export interface RecordSetGroupProperties {
 }
 
 export default class RecordSetGroup extends ResourceBase {
-    constructor(properties: RecordSetGroupProperties) {
+    constructor(properties?: RecordSetGroupProperties) {
         super('AWS::Route53::RecordSetGroup', properties)
     }
 }

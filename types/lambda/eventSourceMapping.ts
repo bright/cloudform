@@ -14,7 +14,7 @@ export interface EventSourceMappingProperties {
 }
 
 export default class EventSourceMapping extends ResourceBase {
-    constructor(properties: EventSourceMappingProperties) {
+    constructor(properties?: EventSourceMappingProperties) {
         super('AWS::Lambda::EventSourceMapping', properties)
     }
 }

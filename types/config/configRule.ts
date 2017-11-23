@@ -44,7 +44,7 @@ export interface ConfigRuleProperties {
 }
 
 export default class ConfigRule extends ResourceBase {
-    constructor(properties: ConfigRuleProperties) {
+    constructor(properties?: ConfigRuleProperties) {
         super('AWS::Config::ConfigRule', properties)
     }
 }

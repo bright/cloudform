@@ -63,7 +63,7 @@ export interface EndpointProperties {
 }
 
 export default class Endpoint extends ResourceBase {
-    constructor(properties: EndpointProperties) {
+    constructor(properties?: EndpointProperties) {
         super('AWS::DMS::Endpoint', properties)
     }
 }

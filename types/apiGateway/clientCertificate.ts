@@ -10,7 +10,7 @@ export interface ClientCertificateProperties {
 }
 
 export default class ClientCertificate extends ResourceBase {
-    constructor(properties: ClientCertificateProperties) {
+    constructor(properties?: ClientCertificateProperties) {
         super('AWS::ApiGateway::ClientCertificate', properties)
     }
 }

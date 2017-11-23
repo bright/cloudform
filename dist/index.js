@@ -8,7 +8,7 @@ const _Fn = require("./types/functions");
 exports.Fn = _Fn;
 const _Refs = require("./types/refs");
 exports.Refs = _Refs;
-__export(require("./types/index"));
+__export(require("./types"));
 function cloudform(template) {
     return jsonStringify(template);
 }

@@ -39,7 +39,7 @@ export interface TrailProperties {
 }
 
 export default class Trail extends ResourceBase {
-    constructor(properties: TrailProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudTrail::Trail', properties, dependsOn)
+    constructor(properties: TrailProperties) {
+        super('AWS::CloudTrail::Trail', properties)
     }
 }

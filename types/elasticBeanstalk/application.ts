@@ -48,7 +48,7 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::Application', properties, dependsOn)
+    constructor(properties: ApplicationProperties) {
+        super('AWS::ElasticBeanstalk::Application', properties)
     }
 }

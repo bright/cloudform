@@ -22,7 +22,7 @@ export interface ApiKeyProperties {
 }
 
 export default class ApiKey extends ResourceBase {
-    constructor(properties: ApiKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::ApiKey', properties, dependsOn)
+    constructor(properties: ApiKeyProperties) {
+        super('AWS::ApiGateway::ApiKey', properties)
     }
 }

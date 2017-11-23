@@ -61,5 +61,5 @@ export interface PipelineProperties {
     Stages: List<StageDeclaration>;
 }
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PipelineProperties);
 }

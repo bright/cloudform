@@ -9,8 +9,8 @@ class Ingress {
 }
 exports.Ingress = Ingress;
 class DBSecurityGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::RDS::DBSecurityGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::RDS::DBSecurityGroup', properties);
     }
 }
 exports.default = DBSecurityGroup;

@@ -9,8 +9,8 @@ class ComputeEnvironmentOrder {
 }
 exports.ComputeEnvironmentOrder = ComputeEnvironmentOrder;
 class JobQueue extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::JobQueue', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Batch::JobQueue', properties);
     }
 }
 exports.default = JobQueue;

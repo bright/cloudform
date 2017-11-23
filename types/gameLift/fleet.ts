@@ -29,7 +29,7 @@ export interface FleetProperties {
 }
 
 export default class Fleet extends ResourceBase {
-    constructor(properties: FleetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::GameLift::Fleet', properties, dependsOn)
+    constructor(properties: FleetProperties) {
+        super('AWS::GameLift::Fleet', properties)
     }
 }

@@ -75,8 +75,8 @@ class EbsConfiguration {
 }
 exports.EbsConfiguration = EbsConfiguration;
 class InstanceGroupConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceGroupConfig', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EMR::InstanceGroupConfig', properties);
     }
 }
 exports.default = InstanceGroupConfig;

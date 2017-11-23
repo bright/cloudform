@@ -39,8 +39,8 @@ class Field {
 }
 exports.Field = Field;
 class Pipeline extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::Pipeline', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::DataPipeline::Pipeline', properties);
     }
 }
 exports.default = Pipeline;

@@ -29,7 +29,7 @@ export interface SizeConstraintSetProperties {
 }
 
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::SizeConstraintSet', properties, dependsOn)
+    constructor(properties: SizeConstraintSetProperties) {
+        super('AWS::WAFRegional::SizeConstraintSet', properties)
     }
 }

@@ -15,8 +15,8 @@ class BlockDevice {
 }
 exports.BlockDevice = BlockDevice;
 class LaunchConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::LaunchConfiguration', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::AutoScaling::LaunchConfiguration', properties);
     }
 }
 exports.default = LaunchConfiguration;

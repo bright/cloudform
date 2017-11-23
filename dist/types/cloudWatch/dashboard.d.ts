@@ -5,5 +5,5 @@ export interface DashboardProperties {
     DashboardBody: Value<string>;
 }
 export default class Dashboard extends ResourceBase {
-    constructor(properties: DashboardProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DashboardProperties);
 }

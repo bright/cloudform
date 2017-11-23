@@ -9,8 +9,8 @@ class RecordingGroup {
 }
 exports.RecordingGroup = RecordingGroup;
 class ConfigurationRecorder extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::ConfigurationRecorder', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Config::ConfigurationRecorder', properties);
     }
 }
 exports.default = ConfigurationRecorder;

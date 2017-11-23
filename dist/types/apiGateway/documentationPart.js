@@ -9,8 +9,8 @@ class Location {
 }
 exports.Location = Location;
 class DocumentationPart extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::DocumentationPart', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::DocumentationPart', properties);
     }
 }
 exports.default = DocumentationPart;

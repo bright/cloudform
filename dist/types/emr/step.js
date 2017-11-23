@@ -15,8 +15,8 @@ class KeyValue {
 }
 exports.KeyValue = KeyValue;
 class Step extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Step', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EMR::Step', properties);
     }
 }
 exports.default = Step;

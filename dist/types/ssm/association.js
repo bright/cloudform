@@ -15,8 +15,8 @@ class ParameterValues {
 }
 exports.ParameterValues = ParameterValues;
 class Association extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::Association', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::SSM::Association', properties);
     }
 }
 exports.default = Association;

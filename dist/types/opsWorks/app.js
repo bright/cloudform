@@ -27,8 +27,8 @@ class Source {
 }
 exports.Source = Source;
 class App extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::OpsWorks::App', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::OpsWorks::App', properties);
     }
 }
 exports.default = App;

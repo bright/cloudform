@@ -22,7 +22,7 @@ export interface VPNConnectionProperties {
 }
 
 export default class VPNConnection extends ResourceBase {
-    constructor(properties: VPNConnectionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::VPNConnection', properties, dependsOn)
+    constructor(properties: VPNConnectionProperties) {
+        super('AWS::EC2::VPNConnection', properties)
     }
 }

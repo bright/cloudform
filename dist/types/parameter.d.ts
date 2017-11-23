@@ -23,6 +23,7 @@ export interface StringParameterProperties {
     NoEcho?: boolean;
 }
 export declare class StringParameter implements Parameter {
+    Type: DataType;
     AllowedPattern?: string;
     AllowedValues?: string[];
     ConstraintDescription?: string;
@@ -32,7 +33,6 @@ export declare class StringParameter implements Parameter {
     MinLength?: number;
     NoEcho?: boolean;
     constructor(properties?: StringParameterProperties);
-    readonly Type: DataType;
 }
 export interface NumberParameterProperties {
     AllowedValues?: number[];
@@ -44,6 +44,7 @@ export interface NumberParameterProperties {
     NoEcho?: boolean;
 }
 export declare class NumberParameter implements Parameter {
+    Type: DataType;
     AllowedValues?: number[];
     ConstraintDescription?: string;
     Default?: number;
@@ -52,5 +53,4 @@ export declare class NumberParameter implements Parameter {
     MinValue?: number;
     NoEcho?: boolean;
     constructor(properties?: NumberParameterProperties);
-    readonly Type: DataType;
 }

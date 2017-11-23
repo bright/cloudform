@@ -49,7 +49,7 @@ export interface HealthCheckProperties {
 }
 
 export default class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::HealthCheck', properties, dependsOn)
+    constructor(properties: HealthCheckProperties) {
+        super('AWS::Route53::HealthCheck', properties)
     }
 }

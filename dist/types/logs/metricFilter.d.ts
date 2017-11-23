@@ -12,5 +12,5 @@ export interface MetricFilterProperties {
     MetricTransformations: List<MetricTransformation>;
 }
 export default class MetricFilter extends ResourceBase {
-    constructor(properties: MetricFilterProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MetricFilterProperties);
 }

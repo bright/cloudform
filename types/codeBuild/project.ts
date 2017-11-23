@@ -71,7 +71,7 @@ export interface ProjectProperties {
 }
 
 export default class Project extends ResourceBase {
-    constructor(properties: ProjectProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::Project', properties, dependsOn)
+    constructor(properties: ProjectProperties) {
+        super('AWS::CodeBuild::Project', properties)
     }
 }

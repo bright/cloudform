@@ -15,5 +15,5 @@ export interface ClusterProperties {
     Tags?: ResourceTag[];
 }
 export default class Cluster extends ResourceBase {
-    constructor(properties: ClusterProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ClusterProperties);
 }

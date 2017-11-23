@@ -82,7 +82,7 @@ export interface StackProperties {
 }
 
 export default class Stack extends ResourceBase {
-    constructor(properties: StackProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::Stack', properties, dependsOn)
+    constructor(properties: StackProperties) {
+        super('AWS::OpsWorks::Stack', properties)
     }
 }

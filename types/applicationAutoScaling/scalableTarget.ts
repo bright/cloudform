@@ -35,7 +35,7 @@ export interface ScalableTargetProperties {
 }
 
 export default class ScalableTarget extends ResourceBase {
-    constructor(properties: ScalableTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApplicationAutoScaling::ScalableTarget', properties, dependsOn)
+    constructor(properties: ScalableTargetProperties) {
+        super('AWS::ApplicationAutoScaling::ScalableTarget', properties)
     }
 }

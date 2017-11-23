@@ -15,8 +15,8 @@ class Egress {
 }
 exports.Egress = Egress;
 class SecurityGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SecurityGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::SecurityGroup', properties);
     }
 }
 exports.default = SecurityGroup;

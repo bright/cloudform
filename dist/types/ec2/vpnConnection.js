@@ -9,8 +9,8 @@ class VpnTunnelOptionsSpecification {
 }
 exports.VpnTunnelOptionsSpecification = VpnTunnelOptionsSpecification;
 class VPNConnection extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::VPNConnection', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::VPNConnection', properties);
     }
 }
 exports.default = VPNConnection;

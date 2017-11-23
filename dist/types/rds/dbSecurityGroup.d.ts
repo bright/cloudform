@@ -14,5 +14,5 @@ export interface DBSecurityGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class DBSecurityGroup extends ResourceBase {
-    constructor(properties: DBSecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DBSecurityGroupProperties);
 }

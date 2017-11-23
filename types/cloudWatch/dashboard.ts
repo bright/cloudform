@@ -11,7 +11,7 @@ export interface DashboardProperties {
 }
 
 export default class Dashboard extends ResourceBase {
-    constructor(properties: DashboardProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudWatch::Dashboard', properties, dependsOn)
+    constructor(properties: DashboardProperties) {
+        super('AWS::CloudWatch::Dashboard', properties)
     }
 }

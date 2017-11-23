@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class PolicyPrincipalAttachment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::PolicyPrincipalAttachment', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::IoT::PolicyPrincipalAttachment', properties);
     }
 }
 exports.default = PolicyPrincipalAttachment;

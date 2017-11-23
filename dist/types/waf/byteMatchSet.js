@@ -15,8 +15,8 @@ class FieldToMatch {
 }
 exports.FieldToMatch = FieldToMatch;
 class ByteMatchSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAF::ByteMatchSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAF::ByteMatchSet', properties);
     }
 }
 exports.default = ByteMatchSet;

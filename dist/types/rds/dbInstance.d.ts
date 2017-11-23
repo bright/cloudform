@@ -42,5 +42,5 @@ export interface DBInstanceProperties {
     VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase {
-    constructor(properties: DBInstanceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DBInstanceProperties);
 }

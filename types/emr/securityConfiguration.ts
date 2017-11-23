@@ -11,7 +11,7 @@ export interface SecurityConfigurationProperties {
 }
 
 export default class SecurityConfiguration extends ResourceBase {
-    constructor(properties: SecurityConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::SecurityConfiguration', properties, dependsOn)
+    constructor(properties: SecurityConfigurationProperties) {
+        super('AWS::EMR::SecurityConfiguration', properties)
     }
 }

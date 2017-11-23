@@ -8,5 +8,5 @@ export interface FlowLogProperties {
     TrafficType: Value<string>;
 }
 export default class FlowLog extends ResourceBase {
-    constructor(properties: FlowLogProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: FlowLogProperties);
 }

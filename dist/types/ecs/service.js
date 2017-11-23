@@ -27,8 +27,8 @@ class PlacementConstraint {
 }
 exports.PlacementConstraint = PlacementConstraint;
 class Service extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::Service', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ECS::Service', properties);
     }
 }
 exports.default = Service;

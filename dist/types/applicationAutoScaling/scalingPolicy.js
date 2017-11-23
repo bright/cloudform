@@ -39,8 +39,8 @@ class TargetTrackingScalingPolicyConfiguration {
 }
 exports.TargetTrackingScalingPolicyConfiguration = TargetTrackingScalingPolicyConfiguration;
 class ScalingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApplicationAutoScaling::ScalingPolicy', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApplicationAutoScaling::ScalingPolicy', properties);
     }
 }
 exports.default = ScalingPolicy;

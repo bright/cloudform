@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class Route extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::Route', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::Route', properties);
     }
 }
 exports.default = Route;

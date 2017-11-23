@@ -205,5 +205,5 @@ export interface BucketProperties {
     WebsiteConfiguration?: WebsiteConfiguration;
 }
 export default class Bucket extends ResourceBase {
-    constructor(properties: BucketProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: BucketProperties);
 }

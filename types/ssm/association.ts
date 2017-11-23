@@ -30,7 +30,7 @@ export interface AssociationProperties {
 }
 
 export default class Association extends ResourceBase {
-    constructor(properties: AssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::Association', properties, dependsOn)
+    constructor(properties: AssociationProperties) {
+        super('AWS::SSM::Association', properties)
     }
 }

@@ -45,8 +45,8 @@ class EbsBlockDeviceConfig {
 }
 exports.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
 class InstanceFleetConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceFleetConfig', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EMR::InstanceFleetConfig', properties);
     }
 }
 exports.default = InstanceFleetConfig;

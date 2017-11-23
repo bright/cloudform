@@ -21,5 +21,5 @@ export interface FleetProperties {
     ServerLaunchPath: Value<string>;
 }
 export default class Fleet extends ResourceBase {
-    constructor(properties: FleetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: FleetProperties);
 }

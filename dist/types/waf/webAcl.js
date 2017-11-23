@@ -15,8 +15,8 @@ class ActivatedRule {
 }
 exports.ActivatedRule = ActivatedRule;
 class WebACL extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAF::WebACL', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAF::WebACL', properties);
     }
 }
 exports.default = WebACL;

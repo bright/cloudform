@@ -54,7 +54,7 @@ export interface ServiceProperties {
 }
 
 export default class Service extends ResourceBase {
-    constructor(properties: ServiceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::Service', properties, dependsOn)
+    constructor(properties: ServiceProperties) {
+        super('AWS::ECS::Service', properties)
     }
 }

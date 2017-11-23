@@ -9,8 +9,8 @@ class VpcSettings {
 }
 exports.VpcSettings = VpcSettings;
 class SimpleAD extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DirectoryService::SimpleAD', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::DirectoryService::SimpleAD', properties);
     }
 }
 exports.default = SimpleAD;

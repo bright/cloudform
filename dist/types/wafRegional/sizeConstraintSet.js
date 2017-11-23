@@ -15,8 +15,8 @@ class FieldToMatch {
 }
 exports.FieldToMatch = FieldToMatch;
 class SizeConstraintSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::SizeConstraintSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::SizeConstraintSet', properties);
     }
 }
 exports.default = SizeConstraintSet;

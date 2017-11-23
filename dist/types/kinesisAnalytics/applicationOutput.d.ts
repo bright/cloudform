@@ -26,5 +26,5 @@ export interface ApplicationOutputProperties {
     Output: Output;
 }
 export default class ApplicationOutput extends ResourceBase {
-    constructor(properties: ApplicationOutputProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ApplicationOutputProperties);
 }

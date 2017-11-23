@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class Dashboard extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudWatch::Dashboard', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudWatch::Dashboard', properties);
     }
 }
 exports.default = Dashboard;

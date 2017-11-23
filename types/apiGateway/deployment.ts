@@ -50,7 +50,7 @@ export interface DeploymentProperties {
 }
 
 export default class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::Deployment', properties, dependsOn)
+    constructor(properties: DeploymentProperties) {
+        super('AWS::ApiGateway::Deployment', properties)
     }
 }

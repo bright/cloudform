@@ -62,7 +62,7 @@ export interface AppProperties {
 }
 
 export default class App extends ResourceBase {
-    constructor(properties: AppProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::App', properties, dependsOn)
+    constructor(properties: AppProperties) {
+        super('AWS::OpsWorks::App', properties)
     }
 }

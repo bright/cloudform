@@ -15,7 +15,7 @@ export interface KeyProperties {
 }
 
 export default class Key extends ResourceBase {
-    constructor(properties: KeyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KMS::Key', properties, dependsOn)
+    constructor(properties: KeyProperties) {
+        super('AWS::KMS::Key', properties)
     }
 }

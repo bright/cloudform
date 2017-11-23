@@ -9,8 +9,8 @@ class SourceBundle {
 }
 exports.SourceBundle = SourceBundle;
 class ApplicationVersion extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::ApplicationVersion', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticBeanstalk::ApplicationVersion', properties);
     }
 }
 exports.default = ApplicationVersion;

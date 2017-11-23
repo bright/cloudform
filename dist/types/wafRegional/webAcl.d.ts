@@ -17,5 +17,5 @@ export interface WebACLProperties {
     Name: Value<string>;
 }
 export default class WebACL extends ResourceBase {
-    constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: WebACLProperties);
 }

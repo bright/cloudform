@@ -70,5 +70,5 @@ export interface ApplicationProperties {
     ApplicationCode?: Value<string>;
 }
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ApplicationProperties);
 }

@@ -21,8 +21,8 @@ class MappingRule {
 }
 exports.MappingRule = MappingRule;
 class IdentityPoolRoleAttachment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::IdentityPoolRoleAttachment', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Cognito::IdentityPoolRoleAttachment', properties);
     }
 }
 exports.default = IdentityPoolRoleAttachment;

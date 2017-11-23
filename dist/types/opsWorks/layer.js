@@ -39,8 +39,8 @@ class LoadBasedAutoScaling {
 }
 exports.LoadBasedAutoScaling = LoadBasedAutoScaling;
 class Layer extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::OpsWorks::Layer', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::OpsWorks::Layer', properties);
     }
 }
 exports.default = Layer;

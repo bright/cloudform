@@ -87,8 +87,8 @@ class Deployment {
 }
 exports.Deployment = Deployment;
 class DeploymentGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::DeploymentGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodeDeploy::DeploymentGroup', properties);
     }
 }
 exports.default = DeploymentGroup;

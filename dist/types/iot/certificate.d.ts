@@ -5,5 +5,5 @@ export interface CertificateProperties {
     Status: Value<string>;
 }
 export default class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: CertificateProperties);
 }

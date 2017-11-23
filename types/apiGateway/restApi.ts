@@ -36,7 +36,7 @@ export interface RestApiProperties {
 }
 
 export default class RestApi extends ResourceBase {
-    constructor(properties: RestApiProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::RestApi', properties, dependsOn)
+    constructor(properties: RestApiProperties) {
+        super('AWS::ApiGateway::RestApi', properties)
     }
 }

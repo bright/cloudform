@@ -9,8 +9,8 @@ class Predicate {
 }
 exports.Predicate = Predicate;
 class Rule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::Rule', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::Rule', properties);
     }
 }
 exports.default = Rule;

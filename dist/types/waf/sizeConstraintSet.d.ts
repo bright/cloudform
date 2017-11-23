@@ -17,5 +17,5 @@ export interface SizeConstraintSetProperties {
     SizeConstraints: List<SizeConstraint>;
 }
 export default class SizeConstraintSet extends ResourceBase {
-    constructor(properties: SizeConstraintSetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SizeConstraintSetProperties);
 }

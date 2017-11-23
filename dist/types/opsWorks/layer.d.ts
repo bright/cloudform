@@ -65,5 +65,5 @@ export interface LayerProperties {
     VolumeConfigurations?: List<VolumeConfiguration>;
 }
 export default class Layer extends ResourceBase {
-    constructor(properties: LayerProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: LayerProperties);
 }

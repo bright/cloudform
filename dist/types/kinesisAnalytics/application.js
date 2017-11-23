@@ -75,8 +75,8 @@ class InputLambdaProcessor {
 }
 exports.InputLambdaProcessor = InputLambdaProcessor;
 class Application extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::Application', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::KinesisAnalytics::Application', properties);
     }
 }
 exports.default = Application;

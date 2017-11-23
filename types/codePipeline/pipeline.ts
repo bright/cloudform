@@ -101,7 +101,7 @@ export interface PipelineProperties {
 }
 
 export default class Pipeline extends ResourceBase {
-    constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::Pipeline', properties, dependsOn)
+    constructor(properties: PipelineProperties) {
+        super('AWS::CodePipeline::Pipeline', properties)
     }
 }

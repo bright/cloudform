@@ -13,7 +13,7 @@ export interface DestinationProperties {
 }
 
 export default class Destination extends ResourceBase {
-    constructor(properties: DestinationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Logs::Destination', properties, dependsOn)
+    constructor(properties: DestinationProperties) {
+        super('AWS::Logs::Destination', properties)
     }
 }

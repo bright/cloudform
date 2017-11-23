@@ -28,5 +28,5 @@ export interface StageProperties {
     };
 }
 export default class Stage extends ResourceBase {
-    constructor(properties: StageProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StageProperties);
 }

@@ -1,4 +1,4 @@
-import { Value } from "./dataTypes";
+import { List, Value } from "./dataTypes";
 export interface CreationPolicy {
     AutoScalingCreationPolicy?: {
         MinSuccessfulInstancesPercent?: Value<number>;
@@ -27,10 +27,10 @@ export interface UpdatePolicy {
 }
 export default interface Resource {
     Type: string;
+    DependsOn?: Value<string> | Value<string>[];
     Properties?: {
         [key: string]: any;
     };
-    DependsOn?: Value<string> | Value<string>[];
     Metadata?: {
         [key: string]: any;
     };
@@ -38,15 +38,28 @@ export default interface Resource {
     DeletionPolicy?: DeletionPolicy;
     UpdatePolicy?: UpdatePolicy;
 }
-export declare class ResourceBase {
+export declare abstract class ResourceBase implements Resource {
     Type: string;
-    Properties: {
+    DependsOn?: Value<string> | Value<string>[];
+    Properties?: {
         [key: string]: any;
     };
-    DependsOn: Value<string> | Value<string>[];
-    constructor(Type: string, Properties?: {
+    Metadata?: {
         [key: string]: any;
-    }, DependsOn?: Value<string> | Value<string>[]);
+    };
+    CreationPolicy?: CreationPolicy;
+    DeletionPolicy?: DeletionPolicy;
+    UpdatePolicy?: UpdatePolicy;
+    constructor(type: string, properties?: {
+        [key: string]: any;
+    });
+    dependsOn(dependencies: Value<string> | List<string>): this;
+    metadata(metadata: {
+        [key: string]: any;
+    }): this;
+    creationPolicy(policy: CreationPolicy): this;
+    deletionPolicy(policy: DeletionPolicy): this;
+    updatePolicy(policy: UpdatePolicy): this;
 }
 export declare class ResourceTag {
     Key: Value<string>;

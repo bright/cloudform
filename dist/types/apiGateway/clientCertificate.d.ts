@@ -4,5 +4,5 @@ export interface ClientCertificateProperties {
     Description?: Value<string>;
 }
 export default class ClientCertificate extends ResourceBase {
-    constructor(properties: ClientCertificateProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ClientCertificateProperties);
 }

@@ -34,7 +34,7 @@ export interface OptionGroupProperties {
 }
 
 export default class OptionGroup extends ResourceBase {
-    constructor(properties: OptionGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::RDS::OptionGroup', properties, dependsOn)
+    constructor(properties: OptionGroupProperties) {
+        super('AWS::RDS::OptionGroup', properties)
     }
 }

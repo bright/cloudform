@@ -21,7 +21,7 @@ export interface RoleProperties {
 }
 
 export default class Role extends ResourceBase {
-    constructor(properties: RoleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IAM::Role', properties, dependsOn)
+    constructor(properties: RoleProperties) {
+        super('AWS::IAM::Role', properties)
     }
 }

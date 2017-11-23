@@ -112,5 +112,5 @@ export interface TaskDefinitionProperties {
     Volumes?: List<Volume>;
 }
 export default class TaskDefinition extends ResourceBase {
-    constructor(properties: TaskDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TaskDefinitionProperties);
 }

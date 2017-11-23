@@ -15,8 +15,8 @@ class Certificate {
 }
 exports.Certificate = Certificate;
 class Listener extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancingV2::Listener', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticLoadBalancingV2::Listener', properties);
     }
 }
 exports.default = Listener;

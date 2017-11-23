@@ -23,5 +23,5 @@ export interface NetworkInterfaceProperties {
     Tags?: ResourceTag[];
 }
 export default class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: NetworkInterfaceProperties);
 }

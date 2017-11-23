@@ -141,7 +141,7 @@ export interface SpotFleetProperties {
 }
 
 export default class SpotFleet extends ResourceBase {
-    constructor(properties: SpotFleetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SpotFleet', properties, dependsOn)
+    constructor(properties: SpotFleetProperties) {
+        super('AWS::EC2::SpotFleet', properties)
     }
 }

@@ -15,8 +15,8 @@ class DataResource {
 }
 exports.DataResource = DataResource;
 class Trail extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudTrail::Trail', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudTrail::Trail', properties);
     }
 }
 exports.default = Trail;

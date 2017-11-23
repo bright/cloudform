@@ -27,8 +27,8 @@ class VPC {
 }
 exports.VPC = VPC;
 class HostedZone extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Route53::HostedZone', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Route53::HostedZone', properties);
     }
 }
 exports.default = HostedZone;

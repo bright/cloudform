@@ -10,5 +10,5 @@ export interface ScheduledActionProperties {
     StartTime?: Value<string>;
 }
 export default class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ScheduledActionProperties);
 }

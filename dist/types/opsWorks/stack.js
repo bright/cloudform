@@ -33,8 +33,8 @@ class ElasticIp {
 }
 exports.ElasticIp = ElasticIp;
 class Stack extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::OpsWorks::Stack', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::OpsWorks::Stack', properties);
     }
 }
 exports.default = Stack;

@@ -9,8 +9,8 @@ class Parameter {
 }
 exports.Parameter = Parameter;
 class ClusterParameterGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Redshift::ClusterParameterGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Redshift::ClusterParameterGroup', properties);
     }
 }
 exports.default = ClusterParameterGroup;

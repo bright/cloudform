@@ -27,8 +27,8 @@ class DestinationSchema {
 }
 exports.DestinationSchema = DestinationSchema;
 class ApplicationOutput extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::ApplicationOutput', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::KinesisAnalytics::ApplicationOutput', properties);
     }
 }
 exports.default = ApplicationOutput;

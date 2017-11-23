@@ -51,8 +51,8 @@ class AppCookieStickinessPolicy {
 }
 exports.AppCookieStickinessPolicy = AppCookieStickinessPolicy;
 class LoadBalancer extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::LoadBalancer', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticLoadBalancing::LoadBalancer', properties);
     }
 }
 exports.default = LoadBalancer;

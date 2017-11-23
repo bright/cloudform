@@ -7,5 +7,5 @@ export interface NamedQueryProperties {
     Name?: Value<string>;
 }
 export default class NamedQuery extends ResourceBase {
-    constructor(properties: NamedQueryProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: NamedQueryProperties);
 }

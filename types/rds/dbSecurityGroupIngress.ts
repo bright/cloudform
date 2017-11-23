@@ -14,7 +14,7 @@ export interface DBSecurityGroupIngressProperties {
 }
 
 export default class DBSecurityGroupIngress extends ResourceBase {
-    constructor(properties: DBSecurityGroupIngressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::RDS::DBSecurityGroupIngress', properties, dependsOn)
+    constructor(properties: DBSecurityGroupIngressProperties) {
+        super('AWS::RDS::DBSecurityGroupIngress', properties)
     }
 }

@@ -9,8 +9,8 @@ class IpPermission {
 }
 exports.IpPermission = IpPermission;
 class Fleet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::GameLift::Fleet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::GameLift::Fleet', properties);
     }
 }
 exports.default = Fleet;

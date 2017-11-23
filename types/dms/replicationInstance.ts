@@ -23,7 +23,7 @@ export interface ReplicationInstanceProperties {
 }
 
 export default class ReplicationInstance extends ResourceBase {
-    constructor(properties: ReplicationInstanceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::ReplicationInstance', properties, dependsOn)
+    constructor(properties: ReplicationInstanceProperties) {
+        super('AWS::DMS::ReplicationInstance', properties)
     }
 }

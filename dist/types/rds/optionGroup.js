@@ -15,8 +15,8 @@ class OptionConfiguration {
 }
 exports.OptionConfiguration = OptionConfiguration;
 class OptionGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::RDS::OptionGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::RDS::OptionGroup', properties);
     }
 }
 exports.default = OptionGroup;

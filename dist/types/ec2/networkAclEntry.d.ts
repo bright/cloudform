@@ -22,5 +22,5 @@ export interface NetworkAclEntryProperties {
     RuleNumber: Value<number>;
 }
 export default class NetworkAclEntry extends ResourceBase {
-    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: NetworkAclEntryProperties);
 }

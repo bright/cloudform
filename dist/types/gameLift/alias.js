@@ -9,8 +9,8 @@ class RoutingStrategy {
 }
 exports.RoutingStrategy = RoutingStrategy;
 class Alias extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::GameLift::Alias', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::GameLift::Alias', properties);
     }
 }
 exports.default = Alias;

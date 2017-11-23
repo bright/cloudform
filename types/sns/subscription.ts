@@ -12,7 +12,7 @@ export interface SubscriptionProperties {
 }
 
 export default class Subscription extends ResourceBase {
-    constructor(properties: SubscriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SNS::Subscription', properties, dependsOn)
+    constructor(properties: SubscriptionProperties) {
+        super('AWS::SNS::Subscription', properties)
     }
 }

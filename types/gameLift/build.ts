@@ -20,7 +20,7 @@ export interface BuildProperties {
 }
 
 export default class Build extends ResourceBase {
-    constructor(properties: BuildProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::GameLift::Build', properties, dependsOn)
+    constructor(properties: BuildProperties) {
+        super('AWS::GameLift::Build', properties)
     }
 }

@@ -27,8 +27,8 @@ class StreamingDistributionConfig {
 }
 exports.StreamingDistributionConfig = StreamingDistributionConfig;
 class StreamingDistribution extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudFront::StreamingDistribution', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudFront::StreamingDistribution', properties);
     }
 }
 exports.default = StreamingDistribution;

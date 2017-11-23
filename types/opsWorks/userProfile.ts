@@ -13,7 +13,7 @@ export interface UserProfileProperties {
 }
 
 export default class UserProfile extends ResourceBase {
-    constructor(properties: UserProfileProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::UserProfile', properties, dependsOn)
+    constructor(properties: UserProfileProperties) {
+        super('AWS::OpsWorks::UserProfile', properties)
     }
 }

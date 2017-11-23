@@ -93,8 +93,8 @@ class RedshiftDestinationConfiguration {
 }
 exports.RedshiftDestinationConfiguration = RedshiftDestinationConfiguration;
 class DeliveryStream extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::DeliveryStream', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::KinesisFirehose::DeliveryStream', properties);
     }
 }
 exports.default = DeliveryStream;

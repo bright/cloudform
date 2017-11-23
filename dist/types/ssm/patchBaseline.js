@@ -27,8 +27,8 @@ class PatchFilterGroup {
 }
 exports.PatchFilterGroup = PatchFilterGroup;
 class PatchBaseline extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::PatchBaseline', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::SSM::PatchBaseline', properties);
     }
 }
 exports.default = PatchBaseline;

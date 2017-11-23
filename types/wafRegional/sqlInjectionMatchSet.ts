@@ -27,7 +27,7 @@ export interface SqlInjectionMatchSetProperties {
 }
 
 export default class SqlInjectionMatchSet extends ResourceBase {
-    constructor(properties: SqlInjectionMatchSetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::SqlInjectionMatchSet', properties, dependsOn)
+    constructor(properties: SqlInjectionMatchSetProperties) {
+        super('AWS::WAFRegional::SqlInjectionMatchSet', properties)
     }
 }

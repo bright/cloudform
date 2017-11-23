@@ -15,8 +15,8 @@ class PortRange {
 }
 exports.PortRange = PortRange;
 class NetworkAclEntry extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::NetworkAclEntry', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::NetworkAclEntry', properties);
     }
 }
 exports.default = NetworkAclEntry;

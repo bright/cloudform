@@ -93,5 +93,5 @@ export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData;
 }
 export default class SpotFleet extends ResourceBase {
-    constructor(properties: SpotFleetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SpotFleetProperties);
 }

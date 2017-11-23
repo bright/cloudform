@@ -27,8 +27,8 @@ class EBSOptions {
 }
 exports.EBSOptions = EBSOptions;
 class Domain extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Elasticsearch::Domain', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Elasticsearch::Domain', properties);
     }
 }
 exports.default = Domain;

@@ -10,7 +10,7 @@ export interface PlacementGroupProperties {
 }
 
 export default class PlacementGroup extends ResourceBase {
-    constructor(properties: PlacementGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::PlacementGroup', properties, dependsOn)
+    constructor(properties: PlacementGroupProperties) {
+        super('AWS::EC2::PlacementGroup', properties)
     }
 }

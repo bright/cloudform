@@ -15,8 +15,8 @@ class EndpointConfiguration {
 }
 exports.EndpointConfiguration = EndpointConfiguration;
 class RestApi extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::RestApi', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::RestApi', properties);
     }
 }
 exports.default = RestApi;

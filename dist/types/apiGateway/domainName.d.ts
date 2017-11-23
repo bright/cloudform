@@ -11,5 +11,5 @@ export interface DomainNameProperties {
     RegionalCertificateArn?: Value<string>;
 }
 export default class DomainName extends ResourceBase {
-    constructor(properties: DomainNameProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DomainNameProperties);
 }

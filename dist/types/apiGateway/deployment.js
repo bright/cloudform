@@ -15,8 +15,8 @@ class StageDescription {
 }
 exports.StageDescription = StageDescription;
 class Deployment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::Deployment', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::Deployment', properties);
     }
 }
 exports.default = Deployment;

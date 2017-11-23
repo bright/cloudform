@@ -57,8 +57,8 @@ class EncryptionKey {
 }
 exports.EncryptionKey = EncryptionKey;
 class Pipeline extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::Pipeline', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodePipeline::Pipeline', properties);
     }
 }
 exports.default = Pipeline;

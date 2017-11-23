@@ -195,8 +195,8 @@ class FilterRule {
 }
 exports.FilterRule = FilterRule;
 class Bucket extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::Bucket', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::S3::Bucket', properties);
     }
 }
 exports.default = Bucket;

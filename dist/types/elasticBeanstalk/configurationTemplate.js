@@ -15,8 +15,8 @@ class ConfigurationOptionSetting {
 }
 exports.ConfigurationOptionSetting = ConfigurationOptionSetting;
 class ConfigurationTemplate extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::ConfigurationTemplate', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticBeanstalk::ConfigurationTemplate', properties);
     }
 }
 exports.default = ConfigurationTemplate;

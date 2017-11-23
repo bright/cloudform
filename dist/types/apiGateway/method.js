@@ -21,8 +21,8 @@ class IntegrationResponse {
 }
 exports.IntegrationResponse = IntegrationResponse;
 class Method extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::Method', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::Method', properties);
     }
 }
 exports.default = Method;

@@ -9,8 +9,8 @@ class Subscription {
 }
 exports.Subscription = Subscription;
 class Topic extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SNS::Topic', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::SNS::Topic', properties);
     }
 }
 exports.default = Topic;

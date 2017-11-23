@@ -45,8 +45,8 @@ class VolumesHost {
 }
 exports.VolumesHost = VolumesHost;
 class JobDefinition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::JobDefinition', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Batch::JobDefinition', properties);
     }
 }
 exports.default = JobDefinition;

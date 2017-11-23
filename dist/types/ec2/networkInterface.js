@@ -15,8 +15,8 @@ class PrivateIpAddressSpecification {
 }
 exports.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
 class NetworkInterface extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::NetworkInterface', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::NetworkInterface', properties);
     }
 }
 exports.default = NetworkInterface;

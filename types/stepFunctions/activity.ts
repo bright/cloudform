@@ -10,7 +10,7 @@ export interface ActivityProperties {
 }
 
 export default class Activity extends ResourceBase {
-    constructor(properties: ActivityProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::StepFunctions::Activity', properties, dependsOn)
+    constructor(properties: ActivityProperties) {
+        super('AWS::StepFunctions::Activity', properties)
     }
 }

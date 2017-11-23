@@ -3,19 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dataTypes_1 = require("./dataTypes");
 class StringParameter {
     constructor(properties) {
+        this.Type = dataTypes_1.default.String;
         Object.assign(this, properties);
-    }
-    get Type() {
-        return dataTypes_1.default.String;
     }
 }
 exports.StringParameter = StringParameter;
 class NumberParameter {
     constructor(properties) {
+        this.Type = dataTypes_1.default.Number;
         Object.assign(this, properties);
-    }
-    get Type() {
-        return dataTypes_1.default.Number;
     }
 }
 exports.NumberParameter = NumberParameter;

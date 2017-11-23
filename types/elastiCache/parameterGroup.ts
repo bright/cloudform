@@ -12,7 +12,7 @@ export interface ParameterGroupProperties {
 }
 
 export default class ParameterGroup extends ResourceBase {
-    constructor(properties: ParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElastiCache::ParameterGroup', properties, dependsOn)
+    constructor(properties: ParameterGroupProperties) {
+        super('AWS::ElastiCache::ParameterGroup', properties)
     }
 }

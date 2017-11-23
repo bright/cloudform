@@ -1,4 +1,4 @@
-import {Value} from "./dataTypes"
+import {List, Value} from "./dataTypes"
 
 export interface CreationPolicy {
     AutoScalingCreationPolicy?: {
@@ -31,19 +31,51 @@ export interface UpdatePolicy {
 
 export default interface Resource {
     Type: string
-
-    Properties?: { [key: string]: any }
     DependsOn?: Value<string> | Value<string>[]
-
+    Properties?: { [key: string]: any }
     Metadata?: { [key: string]: any }
-
     CreationPolicy?: CreationPolicy
     DeletionPolicy?: DeletionPolicy
     UpdatePolicy?: UpdatePolicy
 }
 
-export class ResourceBase {
-    constructor(public Type: string, public Properties?: { [key: string]: any }, public DependsOn?: Value<string> | Value<string>[]) {
+export abstract class ResourceBase implements Resource {
+    Type: string
+    DependsOn?: Value<string> | Value<string>[]
+    Properties?: { [key: string]: any }
+    Metadata?: { [key: string]: any }
+    CreationPolicy?: CreationPolicy
+    DeletionPolicy?: DeletionPolicy
+    UpdatePolicy?: UpdatePolicy
+
+    constructor(type: string, properties?: { [key: string]: any }) {
+        this.Type = type
+        this.Properties = properties
+    }
+
+    dependsOn(dependencies: Value<string> | List<string>) {
+        this.DependsOn = dependencies
+        return this
+    }
+
+    metadata(metadata: { [key: string]: any }) {
+        this.Metadata = metadata
+        return this
+    }
+
+    creationPolicy(policy: CreationPolicy) {
+        this.CreationPolicy = policy
+        return this
+    }
+
+    deletionPolicy(policy: DeletionPolicy) {
+        this.DeletionPolicy = policy
+        return this
+    }
+
+    updatePolicy(policy: UpdatePolicy) {
+        this.UpdatePolicy = policy
+        return this
     }
 }
 

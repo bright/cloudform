@@ -15,5 +15,5 @@ export interface SqlInjectionMatchSetProperties {
     Name: Value<string>;
 }
 export default class SqlInjectionMatchSet extends ResourceBase {
-    constructor(properties: SqlInjectionMatchSetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SqlInjectionMatchSetProperties);
 }

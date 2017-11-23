@@ -9,8 +9,8 @@ class S3Location {
 }
 exports.S3Location = S3Location;
 class Build extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::GameLift::Build', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::GameLift::Build', properties);
     }
 }
 exports.default = Build;

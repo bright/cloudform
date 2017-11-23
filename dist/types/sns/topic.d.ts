@@ -11,5 +11,5 @@ export interface TopicProperties {
     TopicName?: Value<string>;
 }
 export default class Topic extends ResourceBase {
-    constructor(properties: TopicProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TopicProperties);
 }

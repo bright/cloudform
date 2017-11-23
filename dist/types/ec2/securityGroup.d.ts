@@ -32,5 +32,5 @@ export interface SecurityGroupProperties {
     VpcId?: Value<string>;
 }
 export default class SecurityGroup extends ResourceBase {
-    constructor(properties: SecurityGroupProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SecurityGroupProperties);
 }

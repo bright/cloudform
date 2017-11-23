@@ -20,5 +20,5 @@ export interface AssociationProperties {
     Targets?: List<Target>;
 }
 export default class Association extends ResourceBase {
-    constructor(properties: AssociationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AssociationProperties);
 }

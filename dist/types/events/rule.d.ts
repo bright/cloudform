@@ -47,5 +47,5 @@ export interface RuleProperties {
     Targets?: List<Target>;
 }
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: RuleProperties);
 }

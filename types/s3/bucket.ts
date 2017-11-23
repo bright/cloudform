@@ -337,7 +337,7 @@ export interface BucketProperties {
 }
 
 export default class Bucket extends ResourceBase {
-    constructor(properties: BucketProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::Bucket', properties, dependsOn)
+    constructor(properties: BucketProperties) {
+        super('AWS::S3::Bucket', properties)
     }
 }

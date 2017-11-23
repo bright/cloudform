@@ -59,7 +59,7 @@ export interface MethodProperties {
 }
 
 export default class Method extends ResourceBase {
-    constructor(properties: MethodProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::Method', properties, dependsOn)
+    constructor(properties: MethodProperties) {
+        super('AWS::ApiGateway::Method', properties)
     }
 }

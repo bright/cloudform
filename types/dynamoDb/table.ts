@@ -90,7 +90,7 @@ export interface TableProperties {
 }
 
 export default class Table extends ResourceBase {
-    constructor(properties: TableProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::Table', properties, dependsOn)
+    constructor(properties: TableProperties) {
+        super('AWS::DynamoDB::Table', properties)
     }
 }

@@ -27,8 +27,8 @@ class TagProperty {
 }
 exports.TagProperty = TagProperty;
 class AutoScalingGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::AutoScalingGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::AutoScaling::AutoScalingGroup', properties);
     }
 }
 exports.default = AutoScalingGroup;

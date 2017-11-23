@@ -9,8 +9,8 @@ class IPSetDescriptor {
 }
 exports.IPSetDescriptor = IPSetDescriptor;
 class IPSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::IPSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::IPSet', properties);
     }
 }
 exports.default = IPSet;

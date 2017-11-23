@@ -39,5 +39,5 @@ export interface DomainProperties {
     VPCOptions?: VPCOptions;
 }
 export default class Domain extends ResourceBase {
-    constructor(properties: DomainProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DomainProperties);
 }

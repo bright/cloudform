@@ -15,8 +15,8 @@ class AliasTarget {
 }
 exports.AliasTarget = AliasTarget;
 class RecordSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Route53::RecordSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Route53::RecordSet', properties);
     }
 }
 exports.default = RecordSet;

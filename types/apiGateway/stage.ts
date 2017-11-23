@@ -34,7 +34,7 @@ export interface StageProperties {
 }
 
 export default class Stage extends ResourceBase {
-    constructor(properties: StageProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::Stage', properties, dependsOn)
+    constructor(properties: StageProperties) {
+        super('AWS::ApiGateway::Stage', properties)
     }
 }

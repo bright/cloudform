@@ -15,8 +15,8 @@ class XssMatchTuple {
 }
 exports.XssMatchTuple = XssMatchTuple;
 class XssMatchSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAF::XssMatchSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAF::XssMatchSet', properties);
     }
 }
 exports.default = XssMatchSet;

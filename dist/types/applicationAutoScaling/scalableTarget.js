@@ -15,8 +15,8 @@ class ScalableTargetAction {
 }
 exports.ScalableTargetAction = ScalableTargetAction;
 class ScalableTarget extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApplicationAutoScaling::ScalableTarget', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApplicationAutoScaling::ScalableTarget', properties);
     }
 }
 exports.default = ScalableTarget;

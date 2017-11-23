@@ -53,5 +53,5 @@ export interface JobDefinitionProperties {
     RetryStrategy?: RetryStrategy;
 }
 export default class JobDefinition extends ResourceBase {
-    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: JobDefinitionProperties);
 }

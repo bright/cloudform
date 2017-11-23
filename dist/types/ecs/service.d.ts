@@ -34,5 +34,5 @@ export interface ServiceProperties {
     TaskDefinition: Value<string>;
 }
 export default class Service extends ResourceBase {
-    constructor(properties: ServiceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ServiceProperties);
 }

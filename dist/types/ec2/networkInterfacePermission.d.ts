@@ -6,5 +6,5 @@ export interface NetworkInterfacePermissionProperties {
     Permission: Value<string>;
 }
 export default class NetworkInterfacePermission extends ResourceBase {
-    constructor(properties: NetworkInterfacePermissionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: NetworkInterfacePermissionProperties);
 }

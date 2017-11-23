@@ -20,7 +20,7 @@ export interface ClusterParameterGroupProperties {
 }
 
 export default class ClusterParameterGroup extends ResourceBase {
-    constructor(properties: ClusterParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Redshift::ClusterParameterGroup', properties, dependsOn)
+    constructor(properties: ClusterParameterGroupProperties) {
+        super('AWS::Redshift::ClusterParameterGroup', properties)
     }
 }

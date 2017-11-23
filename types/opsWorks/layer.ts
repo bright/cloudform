@@ -91,7 +91,7 @@ export interface LayerProperties {
 }
 
 export default class Layer extends ResourceBase {
-    constructor(properties: LayerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::Layer', properties, dependsOn)
+    constructor(properties: LayerProperties) {
+        super('AWS::OpsWorks::Layer', properties)
     }
 }

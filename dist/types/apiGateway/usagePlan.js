@@ -21,8 +21,8 @@ class QuotaSettings {
 }
 exports.QuotaSettings = QuotaSettings;
 class UsagePlan extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::UsagePlan', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::UsagePlan', properties);
     }
 }
 exports.default = UsagePlan;

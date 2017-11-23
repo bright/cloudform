@@ -10,7 +10,7 @@ export interface WaitConditionHandleProperties {
 }
 
 export default class WaitConditionHandle extends ResourceBase {
-    constructor(properties: WaitConditionHandleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFormation::WaitConditionHandle', properties, dependsOn)
+    constructor(properties: WaitConditionHandleProperties) {
+        super('AWS::CloudFormation::WaitConditionHandle', properties)
     }
 }

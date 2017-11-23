@@ -6,5 +6,5 @@ export interface StateMachineProperties {
     RoleArn: Value<string>;
 }
 export default class StateMachine extends ResourceBase {
-    constructor(properties: StateMachineProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StateMachineProperties);
 }

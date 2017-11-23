@@ -11,5 +11,5 @@ export interface ThingProperties {
     ThingName?: Value<string>;
 }
 export default class Thing extends ResourceBase {
-    constructor(properties: ThingProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ThingProperties);
 }

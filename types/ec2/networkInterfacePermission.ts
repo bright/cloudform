@@ -12,7 +12,7 @@ export interface NetworkInterfacePermissionProperties {
 }
 
 export default class NetworkInterfacePermission extends ResourceBase {
-    constructor(properties: NetworkInterfacePermissionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NetworkInterfacePermission', properties, dependsOn)
+    constructor(properties: NetworkInterfacePermissionProperties) {
+        super('AWS::EC2::NetworkInterfacePermission', properties)
     }
 }

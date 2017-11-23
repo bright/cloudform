@@ -40,7 +40,7 @@ export interface UsagePlanProperties {
 }
 
 export default class UsagePlan extends ResourceBase {
-    constructor(properties: UsagePlanProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::UsagePlan', properties, dependsOn)
+    constructor(properties: UsagePlanProperties) {
+        super('AWS::ApiGateway::UsagePlan', properties)
     }
 }

@@ -20,7 +20,7 @@ export interface RuleProperties {
 }
 
 export default class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::Rule', properties, dependsOn)
+    constructor(properties: RuleProperties) {
+        super('AWS::WAFRegional::Rule', properties)
     }
 }

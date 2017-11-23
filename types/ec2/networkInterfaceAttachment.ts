@@ -13,7 +13,7 @@ export interface NetworkInterfaceAttachmentProperties {
 }
 
 export default class NetworkInterfaceAttachment extends ResourceBase {
-    constructor(properties: NetworkInterfaceAttachmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NetworkInterfaceAttachment', properties, dependsOn)
+    constructor(properties: NetworkInterfaceAttachmentProperties) {
+        super('AWS::EC2::NetworkInterfaceAttachment', properties)
     }
 }

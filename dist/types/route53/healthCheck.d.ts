@@ -33,5 +33,5 @@ export interface HealthCheckProperties {
     HealthCheckTags?: List<HealthCheckTag>;
 }
 export default class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: HealthCheckProperties);
 }

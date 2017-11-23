@@ -7,5 +7,5 @@ export interface ClusterSecurityGroupIngressProperties {
     EC2SecurityGroupOwnerId?: Value<string>;
 }
 export default class ClusterSecurityGroupIngress extends ResourceBase {
-    constructor(properties: ClusterSecurityGroupIngressProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ClusterSecurityGroupIngressProperties);
 }

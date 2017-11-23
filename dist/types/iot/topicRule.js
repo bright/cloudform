@@ -93,8 +93,8 @@ class CloudwatchMetricAction {
 }
 exports.CloudwatchMetricAction = CloudwatchMetricAction;
 class TopicRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::TopicRule', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::IoT::TopicRule', properties);
     }
 }
 exports.default = TopicRule;

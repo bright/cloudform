@@ -33,8 +33,8 @@ class Source {
 }
 exports.Source = Source;
 class Project extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::Project', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodeBuild::Project', properties);
     }
 }
 exports.default = Project;

@@ -15,8 +15,8 @@ class Action {
 }
 exports.Action = Action;
 class WebACL extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::WebACL', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::WebACL', properties);
     }
 }
 exports.default = WebACL;

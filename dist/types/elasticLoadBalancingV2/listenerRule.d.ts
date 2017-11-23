@@ -17,5 +17,5 @@ export interface ListenerRuleProperties {
     Priority: Value<number>;
 }
 export default class ListenerRule extends ResourceBase {
-    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ListenerRuleProperties);
 }

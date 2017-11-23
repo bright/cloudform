@@ -10,5 +10,5 @@ export interface StackProperties {
     TimeoutInMinutes?: Value<number>;
 }
 export default class Stack extends ResourceBase {
-    constructor(properties: StackProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StackProperties);
 }

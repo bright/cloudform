@@ -31,7 +31,7 @@ export interface UserProperties {
 }
 
 export default class User extends ResourceBase {
-    constructor(properties: UserProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IAM::User', properties, dependsOn)
+    constructor(properties: UserProperties) {
+        super('AWS::IAM::User', properties)
     }
 }

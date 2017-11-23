@@ -10,5 +10,5 @@ export interface SubnetProperties {
     VpcId: Value<string>;
 }
 export default class Subnet extends ResourceBase {
-    constructor(properties: SubnetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SubnetProperties);
 }

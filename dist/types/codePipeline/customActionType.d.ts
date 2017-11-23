@@ -32,5 +32,5 @@ export interface CustomActionTypeProperties {
     Version?: Value<string>;
 }
 export default class CustomActionType extends ResourceBase {
-    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: CustomActionTypeProperties);
 }

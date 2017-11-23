@@ -9,8 +9,8 @@ class DomainValidationOption {
 }
 exports.DomainValidationOption = DomainValidationOption;
 class Certificate extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CertificateManager::Certificate', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CertificateManager::Certificate', properties);
     }
 }
 exports.default = Certificate;

@@ -15,8 +15,8 @@ class FieldToMatch {
 }
 exports.FieldToMatch = FieldToMatch;
 class XssMatchSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::XssMatchSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::XssMatchSet', properties);
     }
 }
 exports.default = XssMatchSet;

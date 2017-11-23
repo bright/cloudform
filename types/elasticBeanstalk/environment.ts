@@ -39,7 +39,7 @@ export interface EnvironmentProperties {
 }
 
 export default class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::Environment', properties, dependsOn)
+    constructor(properties: EnvironmentProperties) {
+        super('AWS::ElasticBeanstalk::Environment', properties)
     }
 }

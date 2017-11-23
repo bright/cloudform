@@ -9,8 +9,8 @@ class LoggingProperties {
 }
 exports.LoggingProperties = LoggingProperties;
 class Cluster extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Redshift::Cluster', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Redshift::Cluster', properties);
     }
 }
 exports.default = Cluster;

@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class QueuePolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SQS::QueuePolicy', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::SQS::QueuePolicy', properties);
     }
 }
 exports.default = QueuePolicy;

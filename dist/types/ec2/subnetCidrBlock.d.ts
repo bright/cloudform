@@ -5,5 +5,5 @@ export interface SubnetCidrBlockProperties {
     SubnetId: Value<string>;
 }
 export default class SubnetCidrBlock extends ResourceBase {
-    constructor(properties: SubnetCidrBlockProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SubnetCidrBlockProperties);
 }

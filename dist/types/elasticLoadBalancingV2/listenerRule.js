@@ -15,8 +15,8 @@ class RuleCondition {
 }
 exports.RuleCondition = RuleCondition;
 class ListenerRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancingV2::ListenerRule', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticLoadBalancingV2::ListenerRule', properties);
     }
 }
 exports.default = ListenerRule;

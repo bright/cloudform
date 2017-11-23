@@ -59,8 +59,8 @@ ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
 
 export default class ${name} extends ResourceBase {
-    constructor(properties: ${name}Properties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::${namespace}::${name}', properties, dependsOn)
+    constructor(properties: ${name}Properties) {
+        super('AWS::${namespace}::${name}', properties)
     }
 }`
 }

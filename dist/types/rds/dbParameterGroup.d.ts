@@ -9,5 +9,5 @@ export interface DBParameterGroupProperties {
     Tags?: ResourceTag[];
 }
 export default class DBParameterGroup extends ResourceBase {
-    constructor(properties: DBParameterGroupProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DBParameterGroupProperties);
 }

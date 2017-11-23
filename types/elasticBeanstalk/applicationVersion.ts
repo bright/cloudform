@@ -19,7 +19,7 @@ export interface ApplicationVersionProperties {
 }
 
 export default class ApplicationVersion extends ResourceBase {
-    constructor(properties: ApplicationVersionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::ApplicationVersion', properties, dependsOn)
+    constructor(properties: ApplicationVersionProperties) {
+        super('AWS::ElasticBeanstalk::ApplicationVersion', properties)
     }
 }

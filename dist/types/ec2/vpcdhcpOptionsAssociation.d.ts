@@ -5,5 +5,5 @@ export interface VPCDHCPOptionsAssociationProperties {
     VpcId: Value<string>;
 }
 export default class VPCDHCPOptionsAssociation extends ResourceBase {
-    constructor(properties: VPCDHCPOptionsAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: VPCDHCPOptionsAssociationProperties);
 }

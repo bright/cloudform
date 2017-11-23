@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class UserToGroupAddition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IAM::UserToGroupAddition', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::IAM::UserToGroupAddition', properties);
     }
 }
 exports.default = UserToGroupAddition;

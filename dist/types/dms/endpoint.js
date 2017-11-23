@@ -21,8 +21,8 @@ class DynamoDbSettings {
 }
 exports.DynamoDbSettings = DynamoDbSettings;
 class Endpoint extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DMS::Endpoint', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::DMS::Endpoint', properties);
     }
 }
 exports.default = Endpoint;

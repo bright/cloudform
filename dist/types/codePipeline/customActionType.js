@@ -21,8 +21,8 @@ class ConfigurationProperties {
 }
 exports.ConfigurationProperties = ConfigurationProperties;
 class CustomActionType extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::CustomActionType', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodePipeline::CustomActionType', properties);
     }
 }
 exports.default = CustomActionType;

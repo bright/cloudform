@@ -122,7 +122,7 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::Application', properties, dependsOn)
+    constructor(properties: ApplicationProperties) {
+        super('AWS::KinesisAnalytics::Application', properties)
     }
 }

@@ -20,7 +20,7 @@ export interface DeliveryChannelProperties {
 }
 
 export default class DeliveryChannel extends ResourceBase {
-    constructor(properties: DeliveryChannelProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Config::DeliveryChannel', properties, dependsOn)
+    constructor(properties: DeliveryChannelProperties) {
+        super('AWS::Config::DeliveryChannel', properties)
     }
 }

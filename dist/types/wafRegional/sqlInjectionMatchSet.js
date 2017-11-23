@@ -15,8 +15,8 @@ class SqlInjectionMatchTuple {
 }
 exports.SqlInjectionMatchTuple = SqlInjectionMatchTuple;
 class SqlInjectionMatchSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAFRegional::SqlInjectionMatchSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAFRegional::SqlInjectionMatchSet', properties);
     }
 }
 exports.default = SqlInjectionMatchSet;

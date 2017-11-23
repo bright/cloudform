@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class ParameterGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElastiCache::ParameterGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElastiCache::ParameterGroup', properties);
     }
 }
 exports.default = ParameterGroup;

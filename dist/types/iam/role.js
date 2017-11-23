@@ -9,8 +9,8 @@ class Policy {
 }
 exports.Policy = Policy;
 class Role extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IAM::Role', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::IAM::Role', properties);
     }
 }
 exports.default = Role;

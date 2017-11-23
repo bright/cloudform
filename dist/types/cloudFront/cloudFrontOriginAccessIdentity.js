@@ -9,8 +9,8 @@ class CloudFrontOriginAccessIdentityConfig {
 }
 exports.CloudFrontOriginAccessIdentityConfig = CloudFrontOriginAccessIdentityConfig;
 class CloudFrontOriginAccessIdentity extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudFront::CloudFrontOriginAccessIdentity', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudFront::CloudFrontOriginAccessIdentity', properties);
     }
 }
 exports.default = CloudFrontOriginAccessIdentity;

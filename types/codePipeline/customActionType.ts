@@ -48,7 +48,7 @@ export interface CustomActionTypeProperties {
 }
 
 export default class CustomActionType extends ResourceBase {
-    constructor(properties: CustomActionTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::CustomActionType', properties, dependsOn)
+    constructor(properties: CustomActionTypeProperties) {
+        super('AWS::CodePipeline::CustomActionType', properties)
     }
 }

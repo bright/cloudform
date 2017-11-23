@@ -23,5 +23,5 @@ export interface IdentityPoolRoleAttachmentProperties {
     Roles?: any;
 }
 export default class IdentityPoolRoleAttachment extends ResourceBase {
-    constructor(properties: IdentityPoolRoleAttachmentProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: IdentityPoolRoleAttachmentProperties);
 }

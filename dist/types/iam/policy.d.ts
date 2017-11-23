@@ -8,5 +8,5 @@ export interface PolicyProperties {
     Users?: List<Value<string>>;
 }
 export default class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PolicyProperties);
 }

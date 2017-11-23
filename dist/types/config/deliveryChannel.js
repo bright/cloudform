@@ -9,8 +9,8 @@ class ConfigSnapshotDeliveryProperties {
 }
 exports.ConfigSnapshotDeliveryProperties = ConfigSnapshotDeliveryProperties;
 class DeliveryChannel extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::DeliveryChannel', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Config::DeliveryChannel', properties);
     }
 }
 exports.default = DeliveryChannel;

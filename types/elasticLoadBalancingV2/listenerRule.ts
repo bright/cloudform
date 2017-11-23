@@ -29,7 +29,7 @@ export interface ListenerRuleProperties {
 }
 
 export default class ListenerRule extends ResourceBase {
-    constructor(properties: ListenerRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::ListenerRule', properties, dependsOn)
+    constructor(properties: ListenerRuleProperties) {
+        super('AWS::ElasticLoadBalancingV2::ListenerRule', properties)
     }
 }

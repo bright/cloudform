@@ -7,5 +7,5 @@ export interface SubscriptionFilterProperties {
     RoleArn?: Value<string>;
 }
 export default class SubscriptionFilter extends ResourceBase {
-    constructor(properties: SubscriptionFilterProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SubscriptionFilterProperties);
 }

@@ -12,7 +12,7 @@ export interface SecurityGroupIngressProperties {
 }
 
 export default class SecurityGroupIngress extends ResourceBase {
-    constructor(properties: SecurityGroupIngressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElastiCache::SecurityGroupIngress', properties, dependsOn)
+    constructor(properties: SecurityGroupIngressProperties) {
+        super('AWS::ElastiCache::SecurityGroupIngress', properties)
     }
 }

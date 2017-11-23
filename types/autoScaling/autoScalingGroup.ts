@@ -67,7 +67,7 @@ export interface AutoScalingGroupProperties {
 }
 
 export default class AutoScalingGroup extends ResourceBase {
-    constructor(properties: AutoScalingGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::AutoScalingGroup', properties, dependsOn)
+    constructor(properties: AutoScalingGroupProperties) {
+        super('AWS::AutoScaling::AutoScalingGroup', properties)
     }
 }

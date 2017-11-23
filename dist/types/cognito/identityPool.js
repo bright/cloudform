@@ -21,8 +21,8 @@ class CognitoStreams {
 }
 exports.CognitoStreams = CognitoStreams;
 class IdentityPool extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::IdentityPool', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Cognito::IdentityPool', properties);
     }
 }
 exports.default = IdentityPool;

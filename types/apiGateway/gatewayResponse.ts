@@ -14,7 +14,7 @@ export interface GatewayResponseProperties {
 }
 
 export default class GatewayResponse extends ResourceBase {
-    constructor(properties: GatewayResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::GatewayResponse', properties, dependsOn)
+    constructor(properties: GatewayResponseProperties) {
+        super('AWS::ApiGateway::GatewayResponse', properties)
     }
 }

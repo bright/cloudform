@@ -41,7 +41,7 @@ export interface RecordSetProperties {
 }
 
 export default class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::RecordSet', properties, dependsOn)
+    constructor(properties: RecordSetProperties) {
+        super('AWS::Route53::RecordSet', properties)
     }
 }

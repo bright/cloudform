@@ -9,8 +9,8 @@ class VpcSettings {
 }
 exports.VpcSettings = VpcSettings;
 class MicrosoftAD extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DirectoryService::MicrosoftAD', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::DirectoryService::MicrosoftAD', properties);
     }
 }
 exports.default = MicrosoftAD;

@@ -39,8 +39,8 @@ class EcsParameters {
 }
 exports.EcsParameters = EcsParameters;
 class Rule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::Rule', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Events::Rule', properties);
     }
 }
 exports.default = Rule;

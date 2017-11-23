@@ -21,8 +21,8 @@ class TimeBasedAutoScaling {
 }
 exports.TimeBasedAutoScaling = TimeBasedAutoScaling;
 class Instance extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::OpsWorks::Instance', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::OpsWorks::Instance', properties);
     }
 }
 exports.default = Instance;

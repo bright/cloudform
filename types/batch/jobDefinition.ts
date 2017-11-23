@@ -85,7 +85,7 @@ export interface JobDefinitionProperties {
 }
 
 export default class JobDefinition extends ResourceBase {
-    constructor(properties: JobDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::JobDefinition', properties, dependsOn)
+    constructor(properties: JobDefinitionProperties) {
+        super('AWS::Batch::JobDefinition', properties)
     }
 }

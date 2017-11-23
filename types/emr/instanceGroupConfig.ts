@@ -136,7 +136,7 @@ export interface InstanceGroupConfigProperties {
 }
 
 export default class InstanceGroupConfig extends ResourceBase {
-    constructor(properties: InstanceGroupConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::InstanceGroupConfig', properties, dependsOn)
+    constructor(properties: InstanceGroupConfigProperties) {
+        super('AWS::EMR::InstanceGroupConfig', properties)
     }
 }

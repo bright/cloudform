@@ -13,7 +13,7 @@ export interface CustomerGatewayProperties {
 }
 
 export default class CustomerGateway extends ResourceBase {
-    constructor(properties: CustomerGatewayProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::CustomerGateway', properties, dependsOn)
+    constructor(properties: CustomerGatewayProperties) {
+        super('AWS::EC2::CustomerGateway', properties)
     }
 }

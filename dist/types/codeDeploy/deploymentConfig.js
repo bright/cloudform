@@ -9,8 +9,8 @@ class MinimumHealthyHosts {
 }
 exports.MinimumHealthyHosts = MinimumHealthyHosts;
 class DeploymentConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::DeploymentConfig', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodeDeploy::DeploymentConfig', properties);
     }
 }
 exports.default = DeploymentConfig;

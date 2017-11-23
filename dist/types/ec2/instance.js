@@ -63,8 +63,8 @@ class PrivateIpAddressSpecification {
 }
 exports.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
 class Instance extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::Instance', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::Instance', properties);
     }
 }
 exports.default = Instance;

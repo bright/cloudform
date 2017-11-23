@@ -12,7 +12,7 @@ export interface CertificateProperties {
 }
 
 export default class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::Certificate', properties, dependsOn)
+    constructor(properties: CertificateProperties) {
+        super('AWS::DMS::Certificate', properties)
     }
 }

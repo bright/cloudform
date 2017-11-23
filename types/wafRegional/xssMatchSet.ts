@@ -27,7 +27,7 @@ export interface XssMatchSetProperties {
 }
 
 export default class XssMatchSet extends ResourceBase {
-    constructor(properties: XssMatchSetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::XssMatchSet', properties, dependsOn)
+    constructor(properties: XssMatchSetProperties) {
+        super('AWS::WAFRegional::XssMatchSet', properties)
     }
 }

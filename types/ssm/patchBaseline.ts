@@ -51,7 +51,7 @@ export interface PatchBaselineProperties {
 }
 
 export default class PatchBaseline extends ResourceBase {
-    constructor(properties: PatchBaselineProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::PatchBaseline', properties, dependsOn)
+    constructor(properties: PatchBaselineProperties) {
+        super('AWS::SSM::PatchBaseline', properties)
     }
 }

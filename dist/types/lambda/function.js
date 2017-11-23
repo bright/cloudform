@@ -33,8 +33,8 @@ class Environment {
 }
 exports.Environment = Environment;
 class Function extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::Function', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Lambda::Function', properties);
     }
 }
 exports.default = Function;

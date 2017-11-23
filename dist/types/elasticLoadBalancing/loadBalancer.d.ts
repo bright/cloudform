@@ -70,5 +70,5 @@ export interface LoadBalancerProperties {
     Tags?: ResourceTag[];
 }
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: LoadBalancerProperties);
 }

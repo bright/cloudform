@@ -11,7 +11,7 @@ export interface PolicyProperties {
 }
 
 export default class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::Policy', properties, dependsOn)
+    constructor(properties: PolicyProperties) {
+        super('AWS::IoT::Policy', properties)
     }
 }

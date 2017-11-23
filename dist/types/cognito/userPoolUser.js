@@ -9,8 +9,8 @@ class AttributeType {
 }
 exports.AttributeType = AttributeType;
 class UserPoolUser extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::UserPoolUser', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Cognito::UserPoolUser', properties);
     }
 }
 exports.default = UserPoolUser;

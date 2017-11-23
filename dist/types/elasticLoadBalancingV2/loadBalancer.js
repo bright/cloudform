@@ -15,8 +15,8 @@ class SubnetMapping {
 }
 exports.SubnetMapping = SubnetMapping;
 class LoadBalancer extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancingV2::LoadBalancer', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticLoadBalancingV2::LoadBalancer', properties);
     }
 }
 exports.default = LoadBalancer;

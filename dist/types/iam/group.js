@@ -9,8 +9,8 @@ class Policy {
 }
 exports.Policy = Policy;
 class Group extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IAM::Group', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::IAM::Group', properties);
     }
 }
 exports.default = Group;

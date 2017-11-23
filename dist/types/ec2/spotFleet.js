@@ -69,8 +69,8 @@ class BlockDeviceMapping {
 }
 exports.BlockDeviceMapping = BlockDeviceMapping;
 class SpotFleet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SpotFleet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EC2::SpotFleet', properties);
     }
 }
 exports.default = SpotFleet;

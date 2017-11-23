@@ -9,8 +9,8 @@ class ComputeResources {
 }
 exports.ComputeResources = ComputeResources;
 class ComputeEnvironment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::ComputeEnvironment', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Batch::ComputeEnvironment', properties);
     }
 }
 exports.default = ComputeEnvironment;

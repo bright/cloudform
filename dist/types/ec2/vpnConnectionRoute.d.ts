@@ -5,5 +5,5 @@ export interface VPNConnectionRouteProperties {
     VpnConnectionId: Value<string>;
 }
 export default class VPNConnectionRoute extends ResourceBase {
-    constructor(properties: VPNConnectionRouteProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: VPNConnectionRouteProperties);
 }

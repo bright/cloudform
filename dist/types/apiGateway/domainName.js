@@ -9,8 +9,8 @@ class EndpointConfiguration {
 }
 exports.EndpointConfiguration = EndpointConfiguration;
 class DomainName extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::DomainName', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::DomainName', properties);
     }
 }
 exports.default = DomainName;

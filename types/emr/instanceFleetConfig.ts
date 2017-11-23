@@ -83,7 +83,7 @@ export interface InstanceFleetConfigProperties {
 }
 
 export default class InstanceFleetConfig extends ResourceBase {
-    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::InstanceFleetConfig', properties, dependsOn)
+    constructor(properties: InstanceFleetConfigProperties) {
+        super('AWS::EMR::InstanceFleetConfig', properties)
     }
 }

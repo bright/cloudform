@@ -5,5 +5,5 @@ export interface WebACLAssociationProperties {
     WebACLId: Value<string>;
 }
 export default class WebACLAssociation extends ResourceBase {
-    constructor(properties: WebACLAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: WebACLAssociationProperties);
 }

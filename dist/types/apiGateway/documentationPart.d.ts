@@ -14,5 +14,5 @@ export interface DocumentationPartProperties {
     RestApiId: Value<string>;
 }
 export default class DocumentationPart extends ResourceBase {
-    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DocumentationPartProperties);
 }

@@ -15,8 +15,8 @@ class SizeConstraint {
 }
 exports.SizeConstraint = SizeConstraint;
 class SizeConstraintSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAF::SizeConstraintSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAF::SizeConstraintSet', properties);
     }
 }
 exports.default = SizeConstraintSet;

@@ -26,6 +26,8 @@ export interface StringParameterProperties {
 }
 
 export class StringParameter implements Parameter {
+    Type = DataTypes.String
+
     AllowedPattern?: string
     AllowedValues?: string[]
     ConstraintDescription?: string
@@ -37,10 +39,6 @@ export class StringParameter implements Parameter {
 
     constructor(properties?: StringParameterProperties) {
         Object.assign(this, properties)
-    }
-
-    get Type() {
-        return DataTypes.String
     }
 }
 
@@ -55,6 +53,8 @@ export interface NumberParameterProperties {
 }
 
 export class NumberParameter implements Parameter {
+    Type = DataTypes.Number
+
     AllowedValues?: number[]
     ConstraintDescription?: string
     Default?: number
@@ -65,10 +65,6 @@ export class NumberParameter implements Parameter {
 
     constructor(properties?: NumberParameterProperties) {
         Object.assign(this, properties)
-    }
-
-    get Type() {
-        return DataTypes.Number
     }
 }
 

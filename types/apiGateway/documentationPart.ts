@@ -22,7 +22,7 @@ export interface DocumentationPartProperties {
 }
 
 export default class DocumentationPart extends ResourceBase {
-    constructor(properties: DocumentationPartProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::DocumentationPart', properties, dependsOn)
+    constructor(properties: DocumentationPartProperties) {
+        super('AWS::ApiGateway::DocumentationPart', properties)
     }
 }

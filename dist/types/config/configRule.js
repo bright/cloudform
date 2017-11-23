@@ -21,8 +21,8 @@ class SourceDetail {
 }
 exports.SourceDetail = SourceDetail;
 class ConfigRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::ConfigRule', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Config::ConfigRule', properties);
     }
 }
 exports.default = ConfigRule;

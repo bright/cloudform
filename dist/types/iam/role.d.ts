@@ -13,5 +13,5 @@ export interface RoleProperties {
     RoleName?: Value<string>;
 }
 export default class Role extends ResourceBase {
-    constructor(properties: RoleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: RoleProperties);
 }

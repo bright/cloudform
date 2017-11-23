@@ -89,5 +89,5 @@ export interface UserPoolProperties {
     EmailVerificationMessage?: Value<string>;
 }
 export default class UserPool extends ResourceBase {
-    constructor(properties: UserPoolProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: UserPoolProperties);
 }

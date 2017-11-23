@@ -51,8 +51,8 @@ class MaintenanceWindowRunCommandParameters {
 }
 exports.MaintenanceWindowRunCommandParameters = MaintenanceWindowRunCommandParameters;
 class MaintenanceWindowTask extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::MaintenanceWindowTask', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::SSM::MaintenanceWindowTask', properties);
     }
 }
 exports.default = MaintenanceWindowTask;

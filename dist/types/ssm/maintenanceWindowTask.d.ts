@@ -68,5 +68,5 @@ export interface MaintenanceWindowTaskProperties {
     LoggingInfo?: LoggingInfo;
 }
 export default class MaintenanceWindowTask extends ResourceBase {
-    constructor(properties: MaintenanceWindowTaskProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MaintenanceWindowTaskProperties);
 }

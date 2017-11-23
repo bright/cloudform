@@ -21,8 +21,8 @@ class AlarmIdentifier {
 }
 exports.AlarmIdentifier = AlarmIdentifier;
 class HealthCheck extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Route53::HealthCheck', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Route53::HealthCheck', properties);
     }
 }
 exports.default = HealthCheck;

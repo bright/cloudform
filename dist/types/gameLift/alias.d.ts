@@ -12,5 +12,5 @@ export interface AliasProperties {
     RoutingStrategy: RoutingStrategy;
 }
 export default class Alias extends ResourceBase {
-    constructor(properties: AliasProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AliasProperties);
 }

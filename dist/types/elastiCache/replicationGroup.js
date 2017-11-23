@@ -9,8 +9,8 @@ class NodeGroupConfiguration {
 }
 exports.NodeGroupConfiguration = NodeGroupConfiguration;
 class ReplicationGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElastiCache::ReplicationGroup', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElastiCache::ReplicationGroup', properties);
     }
 }
 exports.default = ReplicationGroup;

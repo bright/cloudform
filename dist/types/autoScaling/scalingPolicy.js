@@ -33,8 +33,8 @@ class StepAdjustment {
 }
 exports.StepAdjustment = StepAdjustment;
 class ScalingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::ScalingPolicy', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::AutoScaling::ScalingPolicy', properties);
     }
 }
 exports.default = ScalingPolicy;

@@ -35,7 +35,7 @@ export interface NetworkInterfaceProperties {
 }
 
 export default class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NetworkInterface', properties, dependsOn)
+    constructor(properties: NetworkInterfaceProperties) {
+        super('AWS::EC2::NetworkInterface', properties)
     }
 }

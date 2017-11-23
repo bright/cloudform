@@ -216,7 +216,7 @@ export interface DistributionProperties {
 }
 
 export default class Distribution extends ResourceBase {
-    constructor(properties: DistributionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Distribution', properties, dependsOn)
+    constructor(properties: DistributionProperties) {
+        super('AWS::CloudFront::Distribution', properties)
     }
 }

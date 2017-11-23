@@ -44,5 +44,5 @@ export interface ScalingPolicyProperties {
     TargetTrackingConfiguration?: TargetTrackingConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase {
-    constructor(properties: ScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ScalingPolicyProperties);
 }

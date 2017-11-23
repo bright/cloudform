@@ -59,5 +59,5 @@ export interface MethodProperties {
     RestApiId: Value<string>;
 }
 export default class Method extends ResourceBase {
-    constructor(properties: MethodProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MethodProperties);
 }

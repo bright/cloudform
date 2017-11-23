@@ -9,8 +9,8 @@ class MethodSetting {
 }
 exports.MethodSetting = MethodSetting;
 class Stage extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ApiGateway::Stage', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ApiGateway::Stage', properties);
     }
 }
 exports.default = Stage;

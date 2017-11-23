@@ -6,5 +6,5 @@ export interface SecurityGroupIngressProperties {
     EC2SecurityGroupOwnerId?: Value<string>;
 }
 export default class SecurityGroupIngress extends ResourceBase {
-    constructor(properties: SecurityGroupIngressProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SecurityGroupIngressProperties);
 }

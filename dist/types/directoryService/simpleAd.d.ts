@@ -16,5 +16,5 @@ export interface SimpleADProperties {
     VpcSettings: VpcSettings;
 }
 export default class SimpleAD extends ResourceBase {
-    constructor(properties: SimpleADProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SimpleADProperties);
 }

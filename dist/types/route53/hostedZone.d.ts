@@ -26,5 +26,5 @@ export interface HostedZoneProperties {
     VPCs?: List<VPC>;
 }
 export default class HostedZone extends ResourceBase {
-    constructor(properties: HostedZoneProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: HostedZoneProperties);
 }

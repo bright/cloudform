@@ -9,8 +9,8 @@ class RepositoryTrigger {
 }
 exports.RepositoryTrigger = RepositoryTrigger;
 class Repository extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeCommit::Repository', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CodeCommit::Repository', properties);
     }
 }
 exports.default = Repository;

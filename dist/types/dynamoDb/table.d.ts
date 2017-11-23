@@ -54,5 +54,5 @@ export interface TableProperties {
     TimeToLiveSpecification?: TimeToLiveSpecification;
 }
 export default class Table extends ResourceBase {
-    constructor(properties: TableProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TableProperties);
 }

@@ -69,8 +69,8 @@ class StringAttributeConstraints {
 }
 exports.StringAttributeConstraints = StringAttributeConstraints;
 class UserPool extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::UserPool', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Cognito::UserPool', properties);
     }
 }
 exports.default = UserPool;

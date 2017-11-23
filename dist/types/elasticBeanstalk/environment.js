@@ -15,8 +15,8 @@ class Tier {
 }
 exports.Tier = Tier;
 class Environment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::Environment', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ElasticBeanstalk::Environment', properties);
     }
 }
 exports.default = Environment;

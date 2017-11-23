@@ -4,5 +4,5 @@ export interface DomainProperties {
     Description?: Value<string>;
 }
 export default class Domain extends ResourceBase {
-    constructor(properties: DomainProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DomainProperties);
 }

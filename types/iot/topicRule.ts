@@ -176,7 +176,7 @@ export interface TopicRuleProperties {
 }
 
 export default class TopicRule extends ResourceBase {
-    constructor(properties: TopicRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::TopicRule', properties, dependsOn)
+    constructor(properties: TopicRuleProperties) {
+        super('AWS::IoT::TopicRule', properties)
     }
 }

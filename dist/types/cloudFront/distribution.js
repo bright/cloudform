@@ -105,8 +105,8 @@ class OriginCustomHeader {
 }
 exports.OriginCustomHeader = OriginCustomHeader;
 class Distribution extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudFront::Distribution', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudFront::Distribution', properties);
     }
 }
 exports.default = Distribution;

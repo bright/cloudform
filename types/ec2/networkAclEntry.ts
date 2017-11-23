@@ -34,7 +34,7 @@ export interface NetworkAclEntryProperties {
 }
 
 export default class NetworkAclEntry extends ResourceBase {
-    constructor(properties: NetworkAclEntryProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NetworkAclEntry', properties, dependsOn)
+    constructor(properties: NetworkAclEntryProperties) {
+        super('AWS::EC2::NetworkAclEntry', properties)
     }
 }

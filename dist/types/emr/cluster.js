@@ -135,8 +135,8 @@ class ScalingTrigger {
 }
 exports.ScalingTrigger = ScalingTrigger;
 class Cluster extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Cluster', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::EMR::Cluster', properties);
     }
 }
 exports.default = Cluster;

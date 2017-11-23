@@ -106,7 +106,7 @@ export interface LoadBalancerProperties {
 }
 
 export default class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::LoadBalancer', properties, dependsOn)
+    constructor(properties: LoadBalancerProperties) {
+        super('AWS::ElasticLoadBalancing::LoadBalancer', properties)
     }
 }

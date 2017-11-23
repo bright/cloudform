@@ -4,5 +4,5 @@ export interface ApplicationProperties {
     ApplicationName?: Value<string>;
 }
 export default class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ApplicationProperties);
 }

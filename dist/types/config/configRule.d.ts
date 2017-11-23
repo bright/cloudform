@@ -28,5 +28,5 @@ export interface ConfigRuleProperties {
     Source: Source;
 }
 export default class ConfigRule extends ResourceBase {
-    constructor(properties: ConfigRuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ConfigRuleProperties);
 }

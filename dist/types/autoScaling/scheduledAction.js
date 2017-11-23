@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class ScheduledAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::ScheduledAction', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::AutoScaling::ScheduledAction', properties);
     }
 }
 exports.default = ScheduledAction;

@@ -9,8 +9,8 @@ class Dimension {
 }
 exports.Dimension = Dimension;
 class Alarm extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CloudWatch::Alarm', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::CloudWatch::Alarm', properties);
     }
 }
 exports.default = Alarm;

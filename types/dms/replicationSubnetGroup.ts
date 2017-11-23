@@ -13,7 +13,7 @@ export interface ReplicationSubnetGroupProperties {
 }
 
 export default class ReplicationSubnetGroup extends ResourceBase {
-    constructor(properties: ReplicationSubnetGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::ReplicationSubnetGroup', properties, dependsOn)
+    constructor(properties: ReplicationSubnetGroupProperties) {
+        super('AWS::DMS::ReplicationSubnetGroup', properties)
     }
 }

@@ -6,5 +6,5 @@ export interface ResourceProperties {
     RestApiId: Value<string>;
 }
 export default class Resource extends ResourceBase {
-    constructor(properties: ResourceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ResourceProperties);
 }

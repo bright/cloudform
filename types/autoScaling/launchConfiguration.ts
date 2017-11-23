@@ -48,7 +48,7 @@ export interface LaunchConfigurationProperties {
 }
 
 export default class LaunchConfiguration extends ResourceBase {
-    constructor(properties: LaunchConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::LaunchConfiguration', properties, dependsOn)
+    constructor(properties: LaunchConfigurationProperties) {
+        super('AWS::AutoScaling::LaunchConfiguration', properties)
     }
 }

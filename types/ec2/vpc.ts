@@ -14,7 +14,7 @@ export interface VPCProperties {
 }
 
 export default class VPC extends ResourceBase {
-    constructor(properties: VPCProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::VPC', properties, dependsOn)
+    constructor(properties: VPCProperties) {
+        super('AWS::EC2::VPC', properties)
     }
 }

@@ -9,8 +9,8 @@ class MetricTransformation {
 }
 exports.MetricTransformation = MetricTransformation;
 class MetricFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Logs::MetricFilter', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::Logs::MetricFilter', properties);
     }
 }
 exports.default = MetricFilter;

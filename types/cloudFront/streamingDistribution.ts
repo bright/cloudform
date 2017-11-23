@@ -51,7 +51,7 @@ export interface StreamingDistributionProperties {
 }
 
 export default class StreamingDistribution extends ResourceBase {
-    constructor(properties: StreamingDistributionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::StreamingDistribution', properties, dependsOn)
+    constructor(properties: StreamingDistributionProperties) {
+        super('AWS::CloudFront::StreamingDistribution', properties)
     }
 }

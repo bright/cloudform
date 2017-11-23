@@ -87,8 +87,8 @@ class HostVolumeProperties {
 }
 exports.HostVolumeProperties = HostVolumeProperties;
 class TaskDefinition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::TaskDefinition', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::ECS::TaskDefinition', properties);
     }
 }
 exports.default = TaskDefinition;

@@ -4,5 +4,5 @@ export interface PlacementGroupProperties {
     Strategy?: Value<string>;
 }
 export default class PlacementGroup extends ResourceBase {
-    constructor(properties: PlacementGroupProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PlacementGroupProperties);
 }

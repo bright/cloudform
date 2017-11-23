@@ -22,7 +22,7 @@ export interface RepositoryProperties {
 }
 
 export default class Repository extends ResourceBase {
-    constructor(properties: RepositoryProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeCommit::Repository', properties, dependsOn)
+    constructor(properties: RepositoryProperties) {
+        super('AWS::CodeCommit::Repository', properties)
     }
 }

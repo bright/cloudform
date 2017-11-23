@@ -15,8 +15,8 @@ class FieldToMatch {
 }
 exports.FieldToMatch = FieldToMatch;
 class SqlInjectionMatchSet extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::WAF::SqlInjectionMatchSet', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::WAF::SqlInjectionMatchSet', properties);
     }
 }
 exports.default = SqlInjectionMatchSet;

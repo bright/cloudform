@@ -48,5 +48,5 @@ export interface ApplicationReferenceDataSourceProperties {
     ReferenceDataSource: ReferenceDataSource;
 }
 export default class ApplicationReferenceDataSource extends ResourceBase {
-    constructor(properties: ApplicationReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ApplicationReferenceDataSourceProperties);
 }

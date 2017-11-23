@@ -51,8 +51,8 @@ class StreamSpecification {
 }
 exports.StreamSpecification = StreamSpecification;
 class Table extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DynamoDB::Table', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::DynamoDB::Table', properties);
     }
 }
 exports.default = Table;

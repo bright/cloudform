@@ -7,5 +7,5 @@ export interface UserProfileProperties {
     SshUsername?: Value<string>;
 }
 export default class UserProfile extends ResourceBase {
-    constructor(properties: UserProfileProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: UserProfileProperties);
 }

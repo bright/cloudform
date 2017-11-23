@@ -51,8 +51,8 @@ class ReferenceDataSource {
 }
 exports.ReferenceDataSource = ReferenceDataSource;
 class ApplicationReferenceDataSource extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties, dependsOn);
+    constructor(properties) {
+        super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties);
     }
 }
 exports.default = ApplicationReferenceDataSource;

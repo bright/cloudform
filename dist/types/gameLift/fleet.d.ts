@@ -1,13 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface IpPermissionProperties {
+export declare class IpPermission {
     FromPort: Value<number>;
     IpRange: Value<string>;
     Protocol: Value<string>;
     ToPort: Value<number>;
-}
-export declare class IpPermission extends ResourceBase {
-    constructor(properties: IpPermissionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: IpPermission);
 }
 export interface FleetProperties {
     BuildId: Value<string>;

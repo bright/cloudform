@@ -29,15 +29,19 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
     }
     return "Value<" + primitiveType + ">";
 }
-function generateClass(namespace, name, properties, isDefault) {
-    if (isDefault === void 0) { isDefault = false; }
-    var propertiesEntries = lodash_1.map(properties, function (property, propertyName) {
+function propertiesEntries(properties) {
+    return lodash_1.map(properties, function (property, propertyName) {
         if (propertyName === 'Tags') {
             return "Tags?: ResourceTag[]";
         }
         return "" + propertyName + (property.Required ? '' : '?') + ": " + determineTypeScriptType(property, propertyName, 'Type');
     });
-    return "export interface " + name + "Properties {\n" + propertiesEntries.map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport " + (isDefault ? 'default ' : '') + "class " + name + " extends ResourceBase {\n    constructor(properties: " + name + "Properties, dependsOn?: Value<string> | Value<string>[]) {\n        super('AWS::" + namespace + "::" + name + "', properties, dependsOn)\n    }\n}";
+}
+function generateInnerClass(name, properties) {
+    return "export class " + name + " {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n\n    constructor(properties: " + name + ") {\n        Object.assign(this, properties)\n    }\n}";
+}
+function generateTopLevelClass(namespace, name, properties) {
+    return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n    constructor(properties: " + name + "Properties, dependsOn?: Value<string> | Value<string>[]) {\n        super('AWS::" + namespace + "::" + name + "', properties, dependsOn)\n    }\n}";
 }
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags');
@@ -47,13 +51,13 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
     var innerTypesTemplates = lodash_1.map(innerTypes, function (innerType, innerTypeFullName) {
         var _a = innerTypeFullName.split('.'), innerTypeName = _a[1];
         innerHasTags = innerHasTags || hasTags(innerType.Properties);
-        return generateClass(namespace, innerTypeName, innerType.Properties);
+        return generateInnerClass(innerTypeName, innerType.Properties);
     });
     var resourceImports = ['ResourceBase'];
     if (innerHasTags || hasTags(properties)) {
         resourceImports.push('ResourceTag');
     }
-    var generatedClass = generateClass(namespace, resourceName, properties, true);
+    var generatedClass = generateTopLevelClass(namespace, resourceName, properties);
     var template = fileHeader + "\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value, List} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass + "\n";
     if (!fs.existsSync("./types/" + adjustedCamelCase(namespace))) {
         fs.mkdirSync("./types/" + adjustedCamelCase(namespace));

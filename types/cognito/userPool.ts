@@ -3,42 +3,36 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface PasswordPolicyProperties {
+export class PasswordPolicy {
     RequireNumbers?: Value<boolean>
     MinimumLength?: Value<number>
     RequireUppercase?: Value<boolean>
     RequireLowercase?: Value<boolean>
     RequireSymbols?: Value<boolean>
-}
 
-export class PasswordPolicy extends ResourceBase {
-    constructor(properties: PasswordPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::PasswordPolicy', properties, dependsOn)
+    constructor(properties: PasswordPolicy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PoliciesProperties {
+export class Policies {
     PasswordPolicy?: PasswordPolicy
-}
 
-export class Policies extends ResourceBase {
-    constructor(properties: PoliciesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::Policies', properties, dependsOn)
+    constructor(properties: Policies) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EmailConfigurationProperties {
+export class EmailConfiguration {
     ReplyToEmailAddress?: Value<string>
     SourceArn?: Value<string>
-}
 
-export class EmailConfiguration extends ResourceBase {
-    constructor(properties: EmailConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::EmailConfiguration', properties, dependsOn)
+    constructor(properties: EmailConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LambdaConfigProperties {
+export class LambdaConfig {
     CreateAuthChallenge?: Value<string>
     PreAuthentication?: Value<string>
     DefineAuthChallenge?: Value<string>
@@ -47,27 +41,23 @@ export interface LambdaConfigProperties {
     PostConfirmation?: Value<string>
     CustomMessage?: Value<string>
     VerifyAuthChallengeResponse?: Value<string>
-}
 
-export class LambdaConfig extends ResourceBase {
-    constructor(properties: LambdaConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::LambdaConfig', properties, dependsOn)
+    constructor(properties: LambdaConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AdminCreateUserConfigProperties {
+export class AdminCreateUserConfig {
     InviteMessageTemplate?: InviteMessageTemplate
     UnusedAccountValidityDays?: Value<number>
     AllowAdminCreateUserOnly?: Value<boolean>
-}
 
-export class AdminCreateUserConfig extends ResourceBase {
-    constructor(properties: AdminCreateUserConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::AdminCreateUserConfig', properties, dependsOn)
+    constructor(properties: AdminCreateUserConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SchemaAttributeProperties {
+export class SchemaAttribute {
     DeveloperOnlyAttribute?: Value<boolean>
     Mutable?: Value<boolean>
     AttributeDataType?: Value<string>
@@ -75,67 +65,55 @@ export interface SchemaAttributeProperties {
     Required?: Value<boolean>
     NumberAttributeConstraints?: NumberAttributeConstraints
     Name?: Value<string>
-}
 
-export class SchemaAttribute extends ResourceBase {
-    constructor(properties: SchemaAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::SchemaAttribute', properties, dependsOn)
+    constructor(properties: SchemaAttribute) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NumberAttributeConstraintsProperties {
+export class NumberAttributeConstraints {
     MinValue?: Value<string>
     MaxValue?: Value<string>
-}
 
-export class NumberAttributeConstraints extends ResourceBase {
-    constructor(properties: NumberAttributeConstraintsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::NumberAttributeConstraints', properties, dependsOn)
+    constructor(properties: NumberAttributeConstraints) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SmsConfigurationProperties {
+export class SmsConfiguration {
     ExternalId?: Value<string>
     SnsCallerArn?: Value<string>
-}
 
-export class SmsConfiguration extends ResourceBase {
-    constructor(properties: SmsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::SmsConfiguration', properties, dependsOn)
+    constructor(properties: SmsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeviceConfigurationProperties {
+export class DeviceConfiguration {
     DeviceOnlyRememberedOnUserPrompt?: Value<boolean>
     ChallengeRequiredOnNewDevice?: Value<boolean>
-}
 
-export class DeviceConfiguration extends ResourceBase {
-    constructor(properties: DeviceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::DeviceConfiguration', properties, dependsOn)
+    constructor(properties: DeviceConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InviteMessageTemplateProperties {
+export class InviteMessageTemplate {
     EmailMessage?: Value<string>
     SMSMessage?: Value<string>
     EmailSubject?: Value<string>
-}
 
-export class InviteMessageTemplate extends ResourceBase {
-    constructor(properties: InviteMessageTemplateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::InviteMessageTemplate', properties, dependsOn)
+    constructor(properties: InviteMessageTemplate) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StringAttributeConstraintsProperties {
+export class StringAttributeConstraints {
     MinLength?: Value<string>
     MaxLength?: Value<string>
-}
 
-export class StringAttributeConstraints extends ResourceBase {
-    constructor(properties: StringAttributeConstraintsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::StringAttributeConstraints', properties, dependsOn)
+    constructor(properties: StringAttributeConstraints) {
+        Object.assign(this, properties)
     }
 }
 

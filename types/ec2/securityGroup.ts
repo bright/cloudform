@@ -3,7 +3,7 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IngressProperties {
+export class Ingress {
     CidrIp?: Value<string>
     CidrIpv6?: Value<string>
     Description?: Value<string>
@@ -13,15 +13,13 @@ export interface IngressProperties {
     SourceSecurityGroupName?: Value<string>
     SourceSecurityGroupOwnerId?: Value<string>
     ToPort?: Value<number>
-}
 
-export class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::Ingress', properties, dependsOn)
+    constructor(properties: Ingress) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EgressProperties {
+export class Egress {
     CidrIp?: Value<string>
     CidrIpv6?: Value<string>
     Description?: Value<string>
@@ -30,11 +28,9 @@ export interface EgressProperties {
     FromPort?: Value<number>
     IpProtocol: Value<string>
     ToPort?: Value<number>
-}
 
-export class Egress extends ResourceBase {
-    constructor(properties: EgressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::Egress', properties, dependsOn)
+    constructor(properties: Egress) {
+        Object.assign(this, properties)
     }
 }
 

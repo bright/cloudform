@@ -3,57 +3,49 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface CookiesProperties {
+export class Cookies {
     WhitelistedNames?: List<Value<string>>
     Forward: Value<string>
-}
 
-export class Cookies extends ResourceBase {
-    constructor(properties: CookiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Cookies', properties, dependsOn)
+    constructor(properties: Cookies) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LambdaFunctionAssociationProperties {
+export class LambdaFunctionAssociation {
     EventType?: Value<string>
     LambdaFunctionARN?: Value<string>
-}
 
-export class LambdaFunctionAssociation extends ResourceBase {
-    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::LambdaFunctionAssociation', properties, dependsOn)
+    constructor(properties: LambdaFunctionAssociation) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CustomOriginConfigProperties {
+export class CustomOriginConfig {
     OriginReadTimeout?: Value<number>
     HTTPSPort?: Value<number>
     OriginKeepaliveTimeout?: Value<number>
     OriginSSLProtocols?: List<Value<string>>
     HTTPPort?: Value<number>
     OriginProtocolPolicy: Value<string>
-}
 
-export class CustomOriginConfig extends ResourceBase {
-    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::CustomOriginConfig', properties, dependsOn)
+    constructor(properties: CustomOriginConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ForwardedValuesProperties {
+export class ForwardedValues {
     Cookies?: Cookies
     Headers?: List<Value<string>>
     QueryString: Value<boolean>
     QueryStringCacheKeys?: List<Value<string>>
-}
 
-export class ForwardedValues extends ResourceBase {
-    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::ForwardedValues', properties, dependsOn)
+    constructor(properties: ForwardedValues) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CacheBehaviorProperties {
+export class CacheBehavior {
     Compress?: Value<boolean>
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
     TargetOriginId: Value<string>
@@ -67,29 +59,25 @@ export interface CacheBehaviorProperties {
     ForwardedValues: ForwardedValues
     MinTTL?: Value<number>
     MaxTTL?: Value<number>
-}
 
-export class CacheBehavior extends ResourceBase {
-    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::CacheBehavior', properties, dependsOn)
+    constructor(properties: CacheBehavior) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LegacyCustomOriginProperties {
+export class LegacyCustomOrigin {
     HTTPSPort?: Value<number>
     OriginSSLProtocols?: List<Value<string>>
     DNSName: Value<string>
     HTTPPort?: Value<number>
     OriginProtocolPolicy: Value<string>
-}
 
-export class LegacyCustomOrigin extends ResourceBase {
-    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::LegacyCustomOrigin', properties, dependsOn)
+    constructor(properties: LegacyCustomOrigin) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DefaultCacheBehaviorProperties {
+export class DefaultCacheBehavior {
     Compress?: Value<boolean>
     AllowedMethods?: List<Value<string>>
     CachedMethods?: List<Value<string>>
@@ -102,100 +90,84 @@ export interface DefaultCacheBehaviorProperties {
     MaxTTL?: Value<number>
     TrustedSigners?: List<Value<string>>
     DefaultTTL?: Value<number>
-}
 
-export class DefaultCacheBehavior extends ResourceBase {
-    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::DefaultCacheBehavior', properties, dependsOn)
+    constructor(properties: DefaultCacheBehavior) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RestrictionsProperties {
+export class Restrictions {
     GeoRestriction: GeoRestriction
-}
 
-export class Restrictions extends ResourceBase {
-    constructor(properties: RestrictionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Restrictions', properties, dependsOn)
+    constructor(properties: Restrictions) {
+        Object.assign(this, properties)
     }
 }
 
-export interface OriginProperties {
+export class Origin {
     OriginCustomHeaders?: List<OriginCustomHeader>
     DomainName: Value<string>
     S3OriginConfig?: S3OriginConfig
     OriginPath?: Value<string>
     Id: Value<string>
     CustomOriginConfig?: CustomOriginConfig
-}
 
-export class Origin extends ResourceBase {
-    constructor(properties: OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Origin', properties, dependsOn)
+    constructor(properties: Origin) {
+        Object.assign(this, properties)
     }
 }
 
-export interface GeoRestrictionProperties {
+export class GeoRestriction {
     Locations?: List<Value<string>>
     RestrictionType: Value<string>
-}
 
-export class GeoRestriction extends ResourceBase {
-    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::GeoRestriction', properties, dependsOn)
+    constructor(properties: GeoRestriction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ViewerCertificateProperties {
+export class ViewerCertificate {
     IamCertificateId?: Value<string>
     SslSupportMethod?: Value<string>
     MinimumProtocolVersion?: Value<string>
     CloudFrontDefaultCertificate?: Value<boolean>
     AcmCertificateArn?: Value<string>
-}
 
-export class ViewerCertificate extends ResourceBase {
-    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::ViewerCertificate', properties, dependsOn)
+    constructor(properties: ViewerCertificate) {
+        Object.assign(this, properties)
     }
 }
 
-export interface S3OriginConfigProperties {
+export class S3OriginConfig {
     OriginAccessIdentity?: Value<string>
-}
 
-export class S3OriginConfig extends ResourceBase {
-    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::S3OriginConfig', properties, dependsOn)
+    constructor(properties: S3OriginConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CustomErrorResponseProperties {
+export class CustomErrorResponse {
     ResponseCode?: Value<number>
     ErrorCachingMinTTL?: Value<number>
     ErrorCode: Value<number>
     ResponsePagePath?: Value<string>
-}
 
-export class CustomErrorResponse extends ResourceBase {
-    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::CustomErrorResponse', properties, dependsOn)
+    constructor(properties: CustomErrorResponse) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LoggingProperties {
+export class Logging {
     IncludeCookies?: Value<boolean>
     Bucket: Value<string>
     Prefix?: Value<string>
-}
 
-export class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Logging', properties, dependsOn)
+    constructor(properties: Logging) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DistributionConfigProperties {
+export class DistributionConfig {
     Logging?: Logging
     Comment?: Value<string>
     DefaultRootObject?: Value<string>
@@ -214,33 +186,27 @@ export interface DistributionConfigProperties {
     HttpVersion?: Value<string>
     Restrictions?: Restrictions
     CacheBehaviors?: List<CacheBehavior>
-}
 
-export class DistributionConfig extends ResourceBase {
-    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::DistributionConfig', properties, dependsOn)
+    constructor(properties: DistributionConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LegacyS3OriginProperties {
+export class LegacyS3Origin {
     OriginAccessIdentity?: Value<string>
     DNSName: Value<string>
-}
 
-export class LegacyS3Origin extends ResourceBase {
-    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::LegacyS3Origin', properties, dependsOn)
+    constructor(properties: LegacyS3Origin) {
+        Object.assign(this, properties)
     }
 }
 
-export interface OriginCustomHeaderProperties {
+export class OriginCustomHeader {
     HeaderValue: Value<string>
     HeaderName: Value<string>
-}
 
-export class OriginCustomHeader extends ResourceBase {
-    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::OriginCustomHeader', properties, dependsOn)
+    constructor(properties: OriginCustomHeader) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,52 +3,44 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VPCOptionsProperties {
+export class VPCOptions {
     SecurityGroupIds?: List<Value<string>>
     SubnetIds?: List<Value<string>>
-}
 
-export class VPCOptions extends ResourceBase {
-    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Elasticsearch::VPCOptions', properties, dependsOn)
+    constructor(properties: VPCOptions) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ElasticsearchClusterConfigProperties {
+export class ElasticsearchClusterConfig {
     DedicatedMasterCount?: Value<number>
     DedicatedMasterEnabled?: Value<boolean>
     DedicatedMasterType?: Value<string>
     InstanceCount?: Value<number>
     InstanceType?: Value<string>
     ZoneAwarenessEnabled?: Value<boolean>
-}
 
-export class ElasticsearchClusterConfig extends ResourceBase {
-    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Elasticsearch::ElasticsearchClusterConfig', properties, dependsOn)
+    constructor(properties: ElasticsearchClusterConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SnapshotOptionsProperties {
+export class SnapshotOptions {
     AutomatedSnapshotStartHour?: Value<number>
-}
 
-export class SnapshotOptions extends ResourceBase {
-    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Elasticsearch::SnapshotOptions', properties, dependsOn)
+    constructor(properties: SnapshotOptions) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EBSOptionsProperties {
+export class EBSOptions {
     EBSEnabled?: Value<boolean>
     Iops?: Value<number>
     VolumeSize?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class EBSOptions extends ResourceBase {
-    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Elasticsearch::EBSOptions', properties, dependsOn)
+    constructor(properties: EBSOptions) {
+        Object.assign(this, properties)
     }
 }
 

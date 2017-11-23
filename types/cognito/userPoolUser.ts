@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface AttributeTypeProperties {
+export class AttributeType {
     Value?: Value<string>
     Name?: Value<string>
-}
 
-export class AttributeType extends ResourceBase {
-    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::AttributeType', properties, dependsOn)
+    constructor(properties: AttributeType) {
+        Object.assign(this, properties)
     }
 }
 

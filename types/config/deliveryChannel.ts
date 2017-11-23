@@ -3,13 +3,11 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ConfigSnapshotDeliveryPropertiesProperties {
+export class ConfigSnapshotDeliveryProperties {
     DeliveryFrequency?: Value<string>
-}
 
-export class ConfigSnapshotDeliveryProperties extends ResourceBase {
-    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Config::ConfigSnapshotDeliveryProperties', properties, dependsOn)
+    constructor(properties: ConfigSnapshotDeliveryProperties) {
+        Object.assign(this, properties)
     }
 }
 

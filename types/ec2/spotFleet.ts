@@ -3,17 +3,15 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IamInstanceProfileSpecificationProperties {
+export class IamInstanceProfileSpecification {
     Arn?: Value<string>
-}
 
-export class IamInstanceProfileSpecification extends ResourceBase {
-    constructor(properties: IamInstanceProfileSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::IamInstanceProfileSpecification', properties, dependsOn)
+    constructor(properties: IamInstanceProfileSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InstanceNetworkInterfaceSpecificationProperties {
+export class InstanceNetworkInterfaceSpecification {
     AssociatePublicIpAddress?: Value<boolean>
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
@@ -25,26 +23,22 @@ export interface InstanceNetworkInterfaceSpecificationProperties {
     PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SubnetId?: Value<string>
-}
 
-export class InstanceNetworkInterfaceSpecification extends ResourceBase {
-    constructor(properties: InstanceNetworkInterfaceSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::InstanceNetworkInterfaceSpecification', properties, dependsOn)
+    constructor(properties: InstanceNetworkInterfaceSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PrivateIpAddressSpecificationProperties {
+export class PrivateIpAddressSpecification {
     Primary?: Value<boolean>
     PrivateIpAddress: Value<string>
-}
 
-export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
+    constructor(properties: PrivateIpAddressSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SpotFleetLaunchSpecificationProperties {
+export class SpotFleetLaunchSpecification {
     BlockDeviceMappings?: List<BlockDeviceMapping>
     EbsOptimized?: Value<boolean>
     IamInstanceProfile?: IamInstanceProfileSpecification
@@ -61,26 +55,22 @@ export interface SpotFleetLaunchSpecificationProperties {
     SubnetId?: Value<string>
     UserData?: Value<string>
     WeightedCapacity?: Value<number>
-}
 
-export class SpotFleetLaunchSpecification extends ResourceBase {
-    constructor(properties: SpotFleetLaunchSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SpotFleetLaunchSpecification', properties, dependsOn)
+    constructor(properties: SpotFleetLaunchSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SpotPlacementProperties {
+export class SpotPlacement {
     AvailabilityZone?: Value<string>
     GroupName?: Value<string>
-}
 
-export class SpotPlacement extends ResourceBase {
-    constructor(properties: SpotPlacementProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SpotPlacement', properties, dependsOn)
+    constructor(properties: SpotPlacement) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SpotFleetRequestConfigDataProperties {
+export class SpotFleetRequestConfigData {
     AllocationStrategy?: Value<string>
     ExcessCapacityTerminationPolicy?: Value<string>
     IamFleetRole: Value<string>
@@ -92,69 +82,57 @@ export interface SpotFleetRequestConfigDataProperties {
     Type?: Value<string>
     ValidFrom?: Value<string>
     ValidUntil?: Value<string>
-}
 
-export class SpotFleetRequestConfigData extends ResourceBase {
-    constructor(properties: SpotFleetRequestConfigDataProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SpotFleetRequestConfigData', properties, dependsOn)
+    constructor(properties: SpotFleetRequestConfigData) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsBlockDeviceProperties {
+export class EbsBlockDevice {
     DeleteOnTermination?: Value<boolean>
     Encrypted?: Value<boolean>
     Iops?: Value<number>
     SnapshotId?: Value<string>
     VolumeSize?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::EbsBlockDevice', properties, dependsOn)
+    constructor(properties: EbsBlockDevice) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InstanceIpv6AddressProperties {
+export class InstanceIpv6Address {
     Ipv6Address: Value<string>
-}
 
-export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
+    constructor(properties: InstanceIpv6Address) {
+        Object.assign(this, properties)
     }
 }
 
-export interface GroupIdentifierProperties {
+export class GroupIdentifier {
     GroupId: Value<string>
-}
 
-export class GroupIdentifier extends ResourceBase {
-    constructor(properties: GroupIdentifierProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::GroupIdentifier', properties, dependsOn)
+    constructor(properties: GroupIdentifier) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SpotFleetMonitoringProperties {
+export class SpotFleetMonitoring {
     Enabled?: Value<boolean>
-}
 
-export class SpotFleetMonitoring extends ResourceBase {
-    constructor(properties: SpotFleetMonitoringProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SpotFleetMonitoring', properties, dependsOn)
+    constructor(properties: SpotFleetMonitoring) {
+        Object.assign(this, properties)
     }
 }
 
-export interface BlockDeviceMappingProperties {
+export class BlockDeviceMapping {
     DeviceName: Value<string>
     Ebs?: EbsBlockDevice
     NoDevice?: Value<string>
     VirtualName?: Value<string>
-}
 
-export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::BlockDeviceMapping', properties, dependsOn)
+    constructor(properties: BlockDeviceMapping) {
+        Object.assign(this, properties)
     }
 }
 

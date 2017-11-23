@@ -1,67 +1,51 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface EbsBlockDeviceConfigProperties {
+export declare class EbsBlockDeviceConfig {
     VolumeSpecification: VolumeSpecification;
     VolumesPerInstance?: Value<number>;
+    constructor(properties: EbsBlockDeviceConfig);
 }
-export declare class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConfigurationProperties {
+export declare class Configuration {
     Classification?: Value<string>;
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
     Configurations?: List<Configuration>;
+    constructor(properties: Configuration);
 }
-export declare class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MetricDimensionProperties {
+export declare class MetricDimension {
     Key: Value<string>;
     Value: Value<string>;
+    constructor(properties: MetricDimension);
 }
-export declare class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SimpleScalingPolicyConfigurationProperties {
+export declare class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>;
     CoolDown?: Value<number>;
     ScalingAdjustment: Value<number>;
+    constructor(properties: SimpleScalingPolicyConfiguration);
 }
-export declare class SimpleScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingRuleProperties {
+export declare class ScalingRule {
     Action: ScalingAction;
     Description?: Value<string>;
     Name: Value<string>;
     Trigger: ScalingTrigger;
+    constructor(properties: ScalingRule);
 }
-export declare class ScalingRule extends ResourceBase {
-    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingActionProperties {
+export declare class ScalingAction {
     Market?: Value<string>;
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
+    constructor(properties: ScalingAction);
 }
-export declare class ScalingAction extends ResourceBase {
-    constructor(properties: ScalingActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingTriggerProperties {
+export declare class ScalingTrigger {
     CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
+    constructor(properties: ScalingTrigger);
 }
-export declare class ScalingTrigger extends ResourceBase {
-    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingConstraintsProperties {
+export declare class ScalingConstraints {
     MaxCapacity: Value<number>;
     MinCapacity: Value<number>;
+    constructor(properties: ScalingConstraints);
 }
-export declare class ScalingConstraints extends ResourceBase {
-    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CloudWatchAlarmDefinitionProperties {
+export declare class CloudWatchAlarmDefinition {
     ComparisonOperator: Value<string>;
     Dimensions?: List<MetricDimension>;
     EvaluationPeriods?: Value<number>;
@@ -71,31 +55,23 @@ export interface CloudWatchAlarmDefinitionProperties {
     Statistic?: Value<string>;
     Threshold: Value<number>;
     Unit?: Value<string>;
+    constructor(properties: CloudWatchAlarmDefinition);
 }
-export declare class CloudWatchAlarmDefinition extends ResourceBase {
-    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumeSpecificationProperties {
+export declare class VolumeSpecification {
     Iops?: Value<number>;
     SizeInGB: Value<number>;
     VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
 }
-export declare class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AutoScalingPolicyProperties {
+export declare class AutoScalingPolicy {
     Constraints: ScalingConstraints;
     Rules: List<ScalingRule>;
+    constructor(properties: AutoScalingPolicy);
 }
-export declare class AutoScalingPolicy extends ResourceBase {
-    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsConfigurationProperties {
+export declare class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
-}
-export declare class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EbsConfiguration);
 }
 export interface InstanceGroupConfigProperties {
     AutoScalingPolicy?: AutoScalingPolicy;

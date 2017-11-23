@@ -3,13 +3,11 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface CloudFrontOriginAccessIdentityConfigProperties {
+export class CloudFrontOriginAccessIdentityConfig {
     Comment: Value<string>
-}
 
-export class CloudFrontOriginAccessIdentityConfig extends ResourceBase {
-    constructor(properties: CloudFrontOriginAccessIdentityConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::CloudFrontOriginAccessIdentityConfig', properties, dependsOn)
+    constructor(properties: CloudFrontOriginAccessIdentityConfig) {
+        Object.assign(this, properties)
     }
 }
 

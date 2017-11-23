@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ActionProperties {
+export declare class Action {
     TargetGroupArn: Value<string>;
     Type: Value<string>;
+    constructor(properties: Action);
 }
-export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RuleConditionProperties {
+export declare class RuleCondition {
     Field?: Value<string>;
     Values?: List<Value<string>>;
-}
-export declare class RuleCondition extends ResourceBase {
-    constructor(properties: RuleConditionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: RuleCondition);
 }
 export interface ListenerRuleProperties {
     Actions: List<Action>;

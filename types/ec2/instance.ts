@@ -3,17 +3,15 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ElasticGpuSpecificationProperties {
+export class ElasticGpuSpecification {
     Type: Value<string>
-}
 
-export class ElasticGpuSpecification extends ResourceBase {
-    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::ElasticGpuSpecification', properties, dependsOn)
+    constructor(properties: ElasticGpuSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NetworkInterfaceProperties {
+export class NetworkInterface {
     AssociatePublicIpAddress?: Value<boolean>
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
@@ -26,103 +24,85 @@ export interface NetworkInterfaceProperties {
     PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SubnetId?: Value<string>
-}
 
-export class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NetworkInterface', properties, dependsOn)
+    constructor(properties: NetworkInterface) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InstanceIpv6AddressProperties {
+export class InstanceIpv6Address {
     Ipv6Address: Value<string>
-}
 
-export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
+    constructor(properties: InstanceIpv6Address) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumeProperties {
+export class Volume {
     Device: Value<string>
     VolumeId: Value<string>
-}
 
-export class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::Volume', properties, dependsOn)
+    constructor(properties: Volume) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AssociationParameterProperties {
+export class AssociationParameter {
     Key: Value<string>
     Value: List<Value<string>>
-}
 
-export class AssociationParameter extends ResourceBase {
-    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::AssociationParameter', properties, dependsOn)
+    constructor(properties: AssociationParameter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsProperties {
+export class Ebs {
     DeleteOnTermination?: Value<boolean>
     Encrypted?: Value<boolean>
     Iops?: Value<number>
     SnapshotId?: Value<string>
     VolumeSize?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class Ebs extends ResourceBase {
-    constructor(properties: EbsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::Ebs', properties, dependsOn)
+    constructor(properties: Ebs) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NoDeviceProperties {
+export class NoDevice {
 
-}
 
-export class NoDevice extends ResourceBase {
-    constructor(properties: NoDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::NoDevice', properties, dependsOn)
+    constructor(properties: NoDevice) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SsmAssociationProperties {
+export class SsmAssociation {
     AssociationParameters?: List<AssociationParameter>
     DocumentName: Value<string>
-}
 
-export class SsmAssociation extends ResourceBase {
-    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::SsmAssociation', properties, dependsOn)
+    constructor(properties: SsmAssociation) {
+        Object.assign(this, properties)
     }
 }
 
-export interface BlockDeviceMappingProperties {
+export class BlockDeviceMapping {
     DeviceName: Value<string>
     Ebs?: Ebs
     NoDevice?: NoDevice
     VirtualName?: Value<string>
-}
 
-export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::BlockDeviceMapping', properties, dependsOn)
+    constructor(properties: BlockDeviceMapping) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PrivateIpAddressSpecificationProperties {
+export class PrivateIpAddressSpecification {
     Primary: Value<boolean>
     PrivateIpAddress: Value<string>
-}
 
-export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
+    constructor(properties: PrivateIpAddressSpecification) {
+        Object.assign(this, properties)
     }
 }
 

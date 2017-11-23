@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LifecyclePolicyProperties {
+export class LifecyclePolicy {
     LifecyclePolicyText?: Value<string>
     RegistryId?: Value<string>
-}
 
-export class LifecyclePolicy extends ResourceBase {
-    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECR::LifecyclePolicy', properties, dependsOn)
+    constructor(properties: LifecyclePolicy) {
+        Object.assign(this, properties)
     }
 }
 

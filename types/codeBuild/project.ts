@@ -3,68 +3,58 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ArtifactsProperties {
+export class Artifacts {
     Path?: Value<string>
     Type: Value<string>
     Packaging?: Value<string>
     Location?: Value<string>
     Name?: Value<string>
     NamespaceType?: Value<string>
-}
 
-export class Artifacts extends ResourceBase {
-    constructor(properties: ArtifactsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::Artifacts', properties, dependsOn)
+    constructor(properties: Artifacts) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SourceAuthProperties {
+export class SourceAuth {
     Type: Value<string>
     Resource?: Value<string>
-}
 
-export class SourceAuth extends ResourceBase {
-    constructor(properties: SourceAuthProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::SourceAuth', properties, dependsOn)
+    constructor(properties: SourceAuth) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EnvironmentProperties {
+export class Environment {
     Type: Value<string>
     EnvironmentVariables?: List<EnvironmentVariable>
     PrivilegedMode?: Value<boolean>
     Image: Value<string>
     ComputeType: Value<string>
-}
 
-export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::Environment', properties, dependsOn)
+    constructor(properties: Environment) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EnvironmentVariableProperties {
+export class EnvironmentVariable {
     Type?: Value<string>
     Value: Value<string>
     Name: Value<string>
-}
 
-export class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::EnvironmentVariable', properties, dependsOn)
+    constructor(properties: EnvironmentVariable) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SourceProperties {
+export class Source {
     Type: Value<string>
     Auth?: SourceAuth
     BuildSpec?: Value<string>
     Location?: Value<string>
-}
 
-export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeBuild::Source', properties, dependsOn)
+    constructor(properties: Source) {
+        Object.assign(this, properties)
     }
 }
 

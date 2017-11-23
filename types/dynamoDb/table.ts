@@ -3,93 +3,77 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface TimeToLiveSpecificationProperties {
+export class TimeToLiveSpecification {
     AttributeName: Value<string>
     Enabled: Value<boolean>
-}
 
-export class TimeToLiveSpecification extends ResourceBase {
-    constructor(properties: TimeToLiveSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::TimeToLiveSpecification', properties, dependsOn)
+    constructor(properties: TimeToLiveSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AttributeDefinitionProperties {
+export class AttributeDefinition {
     AttributeName: Value<string>
     AttributeType: Value<string>
-}
 
-export class AttributeDefinition extends ResourceBase {
-    constructor(properties: AttributeDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::AttributeDefinition', properties, dependsOn)
+    constructor(properties: AttributeDefinition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LocalSecondaryIndexProperties {
+export class LocalSecondaryIndex {
     IndexName: Value<string>
     KeySchema: List<KeySchema>
     Projection: Projection
-}
 
-export class LocalSecondaryIndex extends ResourceBase {
-    constructor(properties: LocalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::LocalSecondaryIndex', properties, dependsOn)
+    constructor(properties: LocalSecondaryIndex) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ProvisionedThroughputProperties {
+export class ProvisionedThroughput {
     ReadCapacityUnits: Value<number>
     WriteCapacityUnits: Value<number>
-}
 
-export class ProvisionedThroughput extends ResourceBase {
-    constructor(properties: ProvisionedThroughputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::ProvisionedThroughput', properties, dependsOn)
+    constructor(properties: ProvisionedThroughput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface GlobalSecondaryIndexProperties {
+export class GlobalSecondaryIndex {
     IndexName: Value<string>
     KeySchema: List<KeySchema>
     Projection: Projection
     ProvisionedThroughput: ProvisionedThroughput
-}
 
-export class GlobalSecondaryIndex extends ResourceBase {
-    constructor(properties: GlobalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::GlobalSecondaryIndex', properties, dependsOn)
+    constructor(properties: GlobalSecondaryIndex) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KeySchemaProperties {
+export class KeySchema {
     AttributeName: Value<string>
     KeyType: Value<string>
-}
 
-export class KeySchema extends ResourceBase {
-    constructor(properties: KeySchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::KeySchema', properties, dependsOn)
+    constructor(properties: KeySchema) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ProjectionProperties {
+export class Projection {
     NonKeyAttributes?: List<Value<string>>
     ProjectionType?: Value<string>
-}
 
-export class Projection extends ResourceBase {
-    constructor(properties: ProjectionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::Projection', properties, dependsOn)
+    constructor(properties: Projection) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StreamSpecificationProperties {
+export class StreamSpecification {
     StreamViewType: Value<string>
-}
 
-export class StreamSpecification extends ResourceBase {
-    constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DynamoDB::StreamSpecification', properties, dependsOn)
+    constructor(properties: StreamSpecification) {
+        Object.assign(this, properties)
     }
 }
 

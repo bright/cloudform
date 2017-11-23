@@ -1,91 +1,67 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MappingParametersProperties {
+export declare class MappingParameters {
     JSONMappingParameters?: JSONMappingParameters;
     CSVMappingParameters?: CSVMappingParameters;
+    constructor(properties: MappingParameters);
 }
-export declare class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CSVMappingParametersProperties {
+export declare class CSVMappingParameters {
     RecordRowDelimiter: Value<string>;
     RecordColumnDelimiter: Value<string>;
+    constructor(properties: CSVMappingParameters);
 }
-export declare class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisStreamsInputProperties {
+export declare class KinesisStreamsInput {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: KinesisStreamsInput);
 }
-export declare class KinesisStreamsInput extends ResourceBase {
-    constructor(properties: KinesisStreamsInputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputProperties {
+export declare class Input {
     NamePrefix: Value<string>;
     InputSchema: InputSchema;
     KinesisStreamsInput?: KinesisStreamsInput;
     KinesisFirehoseInput?: KinesisFirehoseInput;
     InputProcessingConfiguration?: InputProcessingConfiguration;
     InputParallelism?: InputParallelism;
+    constructor(properties: Input);
 }
-export declare class Input extends ResourceBase {
-    constructor(properties: InputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputSchemaProperties {
+export declare class InputSchema {
     RecordEncoding?: Value<string>;
     RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
+    constructor(properties: InputSchema);
 }
-export declare class InputSchema extends ResourceBase {
-    constructor(properties: InputSchemaProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RecordColumnProperties {
+export declare class RecordColumn {
     Mapping?: Value<string>;
     SqlType: Value<string>;
     Name: Value<string>;
+    constructor(properties: RecordColumn);
 }
-export declare class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RecordFormatProperties {
+export declare class RecordFormat {
     MappingParameters?: MappingParameters;
     RecordFormatType: Value<string>;
+    constructor(properties: RecordFormat);
 }
-export declare class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisFirehoseInputProperties {
+export declare class KinesisFirehoseInput {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: KinesisFirehoseInput);
 }
-export declare class KinesisFirehoseInput extends ResourceBase {
-    constructor(properties: KinesisFirehoseInputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputParallelismProperties {
+export declare class InputParallelism {
     Count?: Value<number>;
+    constructor(properties: InputParallelism);
 }
-export declare class InputParallelism extends ResourceBase {
-    constructor(properties: InputParallelismProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputProcessingConfigurationProperties {
+export declare class InputProcessingConfiguration {
     InputLambdaProcessor?: InputLambdaProcessor;
+    constructor(properties: InputProcessingConfiguration);
 }
-export declare class InputProcessingConfiguration extends ResourceBase {
-    constructor(properties: InputProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface JSONMappingParametersProperties {
+export declare class JSONMappingParameters {
     RecordRowPath: Value<string>;
+    constructor(properties: JSONMappingParameters);
 }
-export declare class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputLambdaProcessorProperties {
+export declare class InputLambdaProcessor {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
-}
-export declare class InputLambdaProcessor extends ResourceBase {
-    constructor(properties: InputLambdaProcessorProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: InputLambdaProcessor);
 }
 export interface ApplicationProperties {
     ApplicationName?: Value<string>;

@@ -3,54 +3,46 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface DataSourceProperties {
+export class DataSource {
     Arn?: Value<string>
     DatabaseName?: Value<string>
     Type?: Value<string>
-}
 
-export class DataSource extends ResourceBase {
-    constructor(properties: DataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::DataSource', properties, dependsOn)
+    constructor(properties: DataSource) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EnvironmentVariableProperties {
+export class EnvironmentVariable {
     Key: Value<string>
     Secure?: Value<boolean>
     Value: Value<string>
-}
 
-export class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::EnvironmentVariable', properties, dependsOn)
+    constructor(properties: EnvironmentVariable) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SslConfigurationProperties {
+export class SslConfiguration {
     Certificate?: Value<string>
     Chain?: Value<string>
     PrivateKey?: Value<string>
-}
 
-export class SslConfiguration extends ResourceBase {
-    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::SslConfiguration', properties, dependsOn)
+    constructor(properties: SslConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SourceProperties {
+export class Source {
     Password?: Value<string>
     Revision?: Value<string>
     SshKey?: Value<string>
     Type?: Value<string>
     Url?: Value<string>
     Username?: Value<string>
-}
 
-export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::Source', properties, dependsOn)
+    constructor(properties: Source) {
+        Object.assign(this, properties)
     }
 }
 

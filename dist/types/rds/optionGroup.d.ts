@@ -1,22 +1,18 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface OptionSettingProperties {
+export declare class OptionSetting {
     Name?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: OptionSetting);
 }
-export declare class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface OptionConfigurationProperties {
+export declare class OptionConfiguration {
     DBSecurityGroupMemberships?: List<Value<string>>;
     OptionName: Value<string>;
     OptionSettings?: OptionSetting;
     OptionVersion?: Value<string>;
     Port?: Value<number>;
     VpcSecurityGroupMemberships?: List<Value<string>>;
-}
-export declare class OptionConfiguration extends ResourceBase {
-    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: OptionConfiguration);
 }
 export interface OptionGroupProperties {
     EngineName: Value<string>;

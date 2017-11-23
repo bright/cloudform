@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LoginProfileProperties {
+export class LoginProfile {
     Password: Value<string>
     PasswordResetRequired?: Value<boolean>
-}
 
-export class LoginProfile extends ResourceBase {
-    constructor(properties: LoginProfileProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IAM::LoginProfile', properties, dependsOn)
+    constructor(properties: LoginProfile) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PolicyProperties {
+export class Policy {
     PolicyDocument: any
     PolicyName: Value<string>
-}
 
-export class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IAM::Policy', properties, dependsOn)
+    constructor(properties: Policy) {
+        Object.assign(this, properties)
     }
 }
 

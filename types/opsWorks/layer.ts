@@ -3,80 +3,68 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ShutdownEventConfigurationProperties {
+export class ShutdownEventConfiguration {
     DelayUntilElbConnectionsDrained?: Value<boolean>
     ExecutionTimeout?: Value<number>
-}
 
-export class ShutdownEventConfiguration extends ResourceBase {
-    constructor(properties: ShutdownEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::ShutdownEventConfiguration', properties, dependsOn)
+    constructor(properties: ShutdownEventConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumeConfigurationProperties {
+export class VolumeConfiguration {
     Iops?: Value<number>
     MountPoint?: Value<string>
     NumberOfDisks?: Value<number>
     RaidLevel?: Value<number>
     Size?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class VolumeConfiguration extends ResourceBase {
-    constructor(properties: VolumeConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::VolumeConfiguration', properties, dependsOn)
+    constructor(properties: VolumeConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AutoScalingThresholdsProperties {
+export class AutoScalingThresholds {
     CpuThreshold?: Value<number>
     IgnoreMetricsTime?: Value<number>
     InstanceCount?: Value<number>
     LoadThreshold?: Value<number>
     MemoryThreshold?: Value<number>
     ThresholdsWaitTime?: Value<number>
-}
 
-export class AutoScalingThresholds extends ResourceBase {
-    constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::AutoScalingThresholds', properties, dependsOn)
+    constructor(properties: AutoScalingThresholds) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RecipesProperties {
+export class Recipes {
     Configure?: List<Value<string>>
     Deploy?: List<Value<string>>
     Setup?: List<Value<string>>
     Shutdown?: List<Value<string>>
     Undeploy?: List<Value<string>>
-}
 
-export class Recipes extends ResourceBase {
-    constructor(properties: RecipesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::Recipes', properties, dependsOn)
+    constructor(properties: Recipes) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LifecycleEventConfigurationProperties {
+export class LifecycleEventConfiguration {
     ShutdownEventConfiguration?: ShutdownEventConfiguration
-}
 
-export class LifecycleEventConfiguration extends ResourceBase {
-    constructor(properties: LifecycleEventConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::LifecycleEventConfiguration', properties, dependsOn)
+    constructor(properties: LifecycleEventConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LoadBasedAutoScalingProperties {
+export class LoadBasedAutoScaling {
     DownScaling?: AutoScalingThresholds
     Enable?: Value<boolean>
     UpScaling?: AutoScalingThresholds
-}
 
-export class LoadBasedAutoScaling extends ResourceBase {
-    constructor(properties: LoadBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::LoadBasedAutoScaling', properties, dependsOn)
+    constructor(properties: LoadBasedAutoScaling) {
+        Object.assign(this, properties)
     }
 }
 

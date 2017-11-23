@@ -3,28 +3,24 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface OptionSettingProperties {
+export class OptionSetting {
     Namespace: Value<string>
     OptionName: Value<string>
     ResourceName?: Value<string>
     Value?: Value<string>
-}
 
-export class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::OptionSetting', properties, dependsOn)
+    constructor(properties: OptionSetting) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TierProperties {
+export class Tier {
     Name?: Value<string>
     Type?: Value<string>
     Version?: Value<string>
-}
 
-export class Tier extends ResourceBase {
-    constructor(properties: TierProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::Tier', properties, dependsOn)
+    constructor(properties: Tier) {
+        Object.assign(this, properties)
     }
 }
 

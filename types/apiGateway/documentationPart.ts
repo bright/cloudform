@@ -3,17 +3,15 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LocationProperties {
+export class Location {
     Method?: Value<string>
     Name?: Value<string>
     Path?: Value<string>
     StatusCode?: Value<string>
     Type?: Value<string>
-}
 
-export class Location extends ResourceBase {
-    constructor(properties: LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::Location', properties, dependsOn)
+    constructor(properties: Location) {
+        Object.assign(this, properties)
     }
 }
 

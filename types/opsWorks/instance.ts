@@ -3,34 +3,30 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface BlockDeviceMappingProperties {
+export class BlockDeviceMapping {
     DeviceName?: Value<string>
     Ebs?: EbsBlockDevice
     NoDevice?: Value<string>
     VirtualName?: Value<string>
-}
 
-export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::BlockDeviceMapping', properties, dependsOn)
+    constructor(properties: BlockDeviceMapping) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsBlockDeviceProperties {
+export class EbsBlockDevice {
     DeleteOnTermination?: Value<boolean>
     Iops?: Value<number>
     SnapshotId?: Value<string>
     VolumeSize?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::EbsBlockDevice', properties, dependsOn)
+    constructor(properties: EbsBlockDevice) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TimeBasedAutoScalingProperties {
+export class TimeBasedAutoScaling {
     Friday?: {[key: string]: Value<string>}
     Monday?: {[key: string]: Value<string>}
     Saturday?: {[key: string]: Value<string>}
@@ -38,11 +34,9 @@ export interface TimeBasedAutoScalingProperties {
     Thursday?: {[key: string]: Value<string>}
     Tuesday?: {[key: string]: Value<string>}
     Wednesday?: {[key: string]: Value<string>}
-}
 
-export class TimeBasedAutoScaling extends ResourceBase {
-    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::TimeBasedAutoScaling', properties, dependsOn)
+    constructor(properties: TimeBasedAutoScaling) {
+        Object.assign(this, properties)
     }
 }
 

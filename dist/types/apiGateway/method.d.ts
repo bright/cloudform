@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MethodResponseProperties {
+export declare class MethodResponse {
     ResponseModels?: {
         [key: string]: Value<string>;
     };
@@ -8,11 +8,9 @@ export interface MethodResponseProperties {
         [key: string]: Value<boolean>;
     };
     StatusCode: Value<string>;
+    constructor(properties: MethodResponse);
 }
-export declare class MethodResponse extends ResourceBase {
-    constructor(properties: MethodResponseProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface IntegrationProperties {
+export declare class Integration {
     CacheKeyParameters?: List<Value<string>>;
     CacheNamespace?: Value<string>;
     ContentHandling?: Value<string>;
@@ -28,11 +26,9 @@ export interface IntegrationProperties {
     };
     Type?: Value<string>;
     Uri?: Value<string>;
+    constructor(properties: Integration);
 }
-export declare class Integration extends ResourceBase {
-    constructor(properties: IntegrationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface IntegrationResponseProperties {
+export declare class IntegrationResponse {
     ContentHandling?: Value<string>;
     ResponseParameters?: {
         [key: string]: Value<string>;
@@ -42,9 +38,7 @@ export interface IntegrationResponseProperties {
     };
     SelectionPattern?: Value<string>;
     StatusCode: Value<string>;
-}
-export declare class IntegrationResponse extends ResourceBase {
-    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: IntegrationResponse);
 }
 export interface MethodProperties {
     ApiKeyRequired?: Value<boolean>;

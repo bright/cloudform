@@ -3,193 +3,161 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface NotificationFilterProperties {
+export class NotificationFilter {
     S3Key: S3KeyFilter
-}
 
-export class NotificationFilter extends ResourceBase {
-    constructor(properties: NotificationFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::NotificationFilter', properties, dependsOn)
+    constructor(properties: NotificationFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RoutingRuleConditionProperties {
+export class RoutingRuleCondition {
     HttpErrorCodeReturnedEquals?: Value<string>
     KeyPrefixEquals?: Value<string>
-}
 
-export class RoutingRuleCondition extends ResourceBase {
-    constructor(properties: RoutingRuleConditionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::RoutingRuleCondition', properties, dependsOn)
+    constructor(properties: RoutingRuleCondition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LifecycleConfigurationProperties {
+export class LifecycleConfiguration {
     Rules: List<Rule>
-}
 
-export class LifecycleConfiguration extends ResourceBase {
-    constructor(properties: LifecycleConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::LifecycleConfiguration', properties, dependsOn)
+    constructor(properties: LifecycleConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LambdaConfigurationProperties {
+export class LambdaConfiguration {
     Event: Value<string>
     Filter?: NotificationFilter
     Function: Value<string>
-}
 
-export class LambdaConfiguration extends ResourceBase {
-    constructor(properties: LambdaConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::LambdaConfiguration', properties, dependsOn)
+    constructor(properties: LambdaConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ReplicationRuleProperties {
+export class ReplicationRule {
     Destination: ReplicationDestination
     Id?: Value<string>
     Prefix: Value<string>
     Status: Value<string>
-}
 
-export class ReplicationRule extends ResourceBase {
-    constructor(properties: ReplicationRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::ReplicationRule', properties, dependsOn)
+    constructor(properties: ReplicationRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CorsRuleProperties {
+export class CorsRule {
     AllowedHeaders?: List<Value<string>>
     AllowedMethods: List<Value<string>>
     AllowedOrigins: List<Value<string>>
     ExposedHeaders?: List<Value<string>>
     Id?: Value<string>
     MaxAge?: Value<number>
-}
 
-export class CorsRule extends ResourceBase {
-    constructor(properties: CorsRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::CorsRule', properties, dependsOn)
+    constructor(properties: CorsRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DestinationProperties {
+export class Destination {
     BucketAccountId?: Value<string>
     BucketArn: Value<string>
     Format: Value<string>
     Prefix?: Value<string>
-}
 
-export class Destination extends ResourceBase {
-    constructor(properties: DestinationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::Destination', properties, dependsOn)
+    constructor(properties: Destination) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AnalyticsConfigurationProperties {
+export class AnalyticsConfiguration {
     Id: Value<string>
     Prefix?: Value<string>
     StorageClassAnalysis: StorageClassAnalysis
     TagFilters?: List<TagFilter>
-}
 
-export class AnalyticsConfiguration extends ResourceBase {
-    constructor(properties: AnalyticsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::AnalyticsConfiguration', properties, dependsOn)
+    constructor(properties: AnalyticsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LoggingConfigurationProperties {
+export class LoggingConfiguration {
     DestinationBucketName?: Value<string>
     LogFilePrefix?: Value<string>
-}
 
-export class LoggingConfiguration extends ResourceBase {
-    constructor(properties: LoggingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::LoggingConfiguration', properties, dependsOn)
+    constructor(properties: LoggingConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StorageClassAnalysisProperties {
+export class StorageClassAnalysis {
     DataExport?: DataExport
-}
 
-export class StorageClassAnalysis extends ResourceBase {
-    constructor(properties: StorageClassAnalysisProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::StorageClassAnalysis', properties, dependsOn)
+    constructor(properties: StorageClassAnalysis) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RoutingRuleProperties {
+export class RoutingRule {
     RedirectRule: RedirectRule
     RoutingRuleCondition?: RoutingRuleCondition
-}
 
-export class RoutingRule extends ResourceBase {
-    constructor(properties: RoutingRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::RoutingRule', properties, dependsOn)
+    constructor(properties: RoutingRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VersioningConfigurationProperties {
+export class VersioningConfiguration {
     Status: Value<string>
-}
 
-export class VersioningConfiguration extends ResourceBase {
-    constructor(properties: VersioningConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::VersioningConfiguration', properties, dependsOn)
+    constructor(properties: VersioningConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NotificationConfigurationProperties {
+export class NotificationConfiguration {
     LambdaConfigurations?: List<LambdaConfiguration>
     QueueConfigurations?: List<QueueConfiguration>
     TopicConfigurations?: List<TopicConfiguration>
-}
 
-export class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::NotificationConfiguration', properties, dependsOn)
+    constructor(properties: NotificationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RedirectRuleProperties {
+export class RedirectRule {
     HostName?: Value<string>
     HttpRedirectCode?: Value<string>
     Protocol?: Value<string>
     ReplaceKeyPrefixWith?: Value<string>
     ReplaceKeyWith?: Value<string>
-}
 
-export class RedirectRule extends ResourceBase {
-    constructor(properties: RedirectRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::RedirectRule', properties, dependsOn)
+    constructor(properties: RedirectRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RedirectAllRequestsToProperties {
+export class RedirectAllRequestsTo {
     HostName: Value<string>
     Protocol?: Value<string>
-}
 
-export class RedirectAllRequestsTo extends ResourceBase {
-    constructor(properties: RedirectAllRequestsToProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::RedirectAllRequestsTo', properties, dependsOn)
+    constructor(properties: RedirectAllRequestsTo) {
+        Object.assign(this, properties)
     }
 }
 
-export interface S3KeyFilterProperties {
+export class S3KeyFilter {
     Rules: List<FilterRule>
-}
 
-export class S3KeyFilter extends ResourceBase {
-    constructor(properties: S3KeyFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::S3KeyFilter', properties, dependsOn)
+    constructor(properties: S3KeyFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InventoryConfigurationProperties {
+export class InventoryConfiguration {
     Destination: Destination
     Enabled: Value<boolean>
     Id: Value<string>
@@ -197,39 +165,33 @@ export interface InventoryConfigurationProperties {
     OptionalFields?: List<Value<string>>
     Prefix?: Value<string>
     ScheduleFrequency: Value<string>
-}
 
-export class InventoryConfiguration extends ResourceBase {
-    constructor(properties: InventoryConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::InventoryConfiguration', properties, dependsOn)
+    constructor(properties: InventoryConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface WebsiteConfigurationProperties {
+export class WebsiteConfiguration {
     ErrorDocument?: Value<string>
     IndexDocument?: Value<string>
     RedirectAllRequestsTo?: RedirectAllRequestsTo
     RoutingRules?: List<RoutingRule>
-}
 
-export class WebsiteConfiguration extends ResourceBase {
-    constructor(properties: WebsiteConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::WebsiteConfiguration', properties, dependsOn)
+    constructor(properties: WebsiteConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ReplicationConfigurationProperties {
+export class ReplicationConfiguration {
     Role: Value<string>
     Rules: List<ReplicationRule>
-}
 
-export class ReplicationConfiguration extends ResourceBase {
-    constructor(properties: ReplicationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::ReplicationConfiguration', properties, dependsOn)
+    constructor(properties: ReplicationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RuleProperties {
+export class Rule {
     AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload
     ExpirationDate?: Value<string>
     ExpirationInDays?: Value<number>
@@ -242,144 +204,118 @@ export interface RuleProperties {
     TagFilters?: List<TagFilter>
     Transition?: Transition
     Transitions?: List<Transition>
-}
 
-export class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::Rule', properties, dependsOn)
+    constructor(properties: Rule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface QueueConfigurationProperties {
+export class QueueConfiguration {
     Event: Value<string>
     Filter?: NotificationFilter
     Queue: Value<string>
-}
 
-export class QueueConfiguration extends ResourceBase {
-    constructor(properties: QueueConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::QueueConfiguration', properties, dependsOn)
+    constructor(properties: QueueConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TopicConfigurationProperties {
+export class TopicConfiguration {
     Event: Value<string>
     Filter?: NotificationFilter
     Topic: Value<string>
-}
 
-export class TopicConfiguration extends ResourceBase {
-    constructor(properties: TopicConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::TopicConfiguration', properties, dependsOn)
+    constructor(properties: TopicConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MetricsConfigurationProperties {
+export class MetricsConfiguration {
     Id: Value<string>
     Prefix?: Value<string>
     TagFilters?: List<TagFilter>
-}
 
-export class MetricsConfiguration extends ResourceBase {
-    constructor(properties: MetricsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::MetricsConfiguration', properties, dependsOn)
+    constructor(properties: MetricsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TagFilterProperties {
+export class TagFilter {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class TagFilter extends ResourceBase {
-    constructor(properties: TagFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::TagFilter', properties, dependsOn)
+    constructor(properties: TagFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TransitionProperties {
+export class Transition {
     StorageClass: Value<string>
     TransitionDate?: Value<string>
     TransitionInDays?: Value<number>
-}
 
-export class Transition extends ResourceBase {
-    constructor(properties: TransitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::Transition', properties, dependsOn)
+    constructor(properties: Transition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DataExportProperties {
+export class DataExport {
     Destination: Destination
     OutputSchemaVersion: Value<string>
-}
 
-export class DataExport extends ResourceBase {
-    constructor(properties: DataExportProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::DataExport', properties, dependsOn)
+    constructor(properties: DataExport) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CorsConfigurationProperties {
+export class CorsConfiguration {
     CorsRules: List<CorsRule>
-}
 
-export class CorsConfiguration extends ResourceBase {
-    constructor(properties: CorsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::CorsConfiguration', properties, dependsOn)
+    constructor(properties: CorsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ReplicationDestinationProperties {
+export class ReplicationDestination {
     Bucket: Value<string>
     StorageClass?: Value<string>
-}
 
-export class ReplicationDestination extends ResourceBase {
-    constructor(properties: ReplicationDestinationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::ReplicationDestination', properties, dependsOn)
+    constructor(properties: ReplicationDestination) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AccelerateConfigurationProperties {
+export class AccelerateConfiguration {
     AccelerationStatus: Value<string>
-}
 
-export class AccelerateConfiguration extends ResourceBase {
-    constructor(properties: AccelerateConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::AccelerateConfiguration', properties, dependsOn)
+    constructor(properties: AccelerateConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NoncurrentVersionTransitionProperties {
+export class NoncurrentVersionTransition {
     StorageClass: Value<string>
     TransitionInDays: Value<number>
-}
 
-export class NoncurrentVersionTransition extends ResourceBase {
-    constructor(properties: NoncurrentVersionTransitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::NoncurrentVersionTransition', properties, dependsOn)
+    constructor(properties: NoncurrentVersionTransition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AbortIncompleteMultipartUploadProperties {
+export class AbortIncompleteMultipartUpload {
     DaysAfterInitiation: Value<number>
-}
 
-export class AbortIncompleteMultipartUpload extends ResourceBase {
-    constructor(properties: AbortIncompleteMultipartUploadProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::AbortIncompleteMultipartUpload', properties, dependsOn)
+    constructor(properties: AbortIncompleteMultipartUpload) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FilterRuleProperties {
+export class FilterRule {
     Name: Value<string>
     Value: Value<string>
-}
 
-export class FilterRule extends ResourceBase {
-    constructor(properties: FilterRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::S3::FilterRule', properties, dependsOn)
+    constructor(properties: FilterRule) {
+        Object.assign(this, properties)
     }
 }
 

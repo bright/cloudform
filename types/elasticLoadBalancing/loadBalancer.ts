@@ -3,102 +3,86 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface HealthCheckProperties {
+export class HealthCheck {
     HealthyThreshold: Value<string>
     Interval: Value<string>
     Target: Value<string>
     Timeout: Value<string>
     UnhealthyThreshold: Value<string>
-}
 
-export class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::HealthCheck', properties, dependsOn)
+    constructor(properties: HealthCheck) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AccessLoggingPolicyProperties {
+export class AccessLoggingPolicy {
     EmitInterval?: Value<number>
     Enabled: Value<boolean>
     S3BucketName: Value<string>
     S3BucketPrefix?: Value<string>
-}
 
-export class AccessLoggingPolicy extends ResourceBase {
-    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::AccessLoggingPolicy', properties, dependsOn)
+    constructor(properties: AccessLoggingPolicy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConnectionSettingsProperties {
+export class ConnectionSettings {
     IdleTimeout: Value<number>
-}
 
-export class ConnectionSettings extends ResourceBase {
-    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::ConnectionSettings', properties, dependsOn)
+    constructor(properties: ConnectionSettings) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LBCookieStickinessPolicyProperties {
+export class LBCookieStickinessPolicy {
     CookieExpirationPeriod?: Value<string>
     PolicyName?: Value<string>
-}
 
-export class LBCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::LBCookieStickinessPolicy', properties, dependsOn)
+    constructor(properties: LBCookieStickinessPolicy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConnectionDrainingPolicyProperties {
+export class ConnectionDrainingPolicy {
     Enabled: Value<boolean>
     Timeout?: Value<number>
-}
 
-export class ConnectionDrainingPolicy extends ResourceBase {
-    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::ConnectionDrainingPolicy', properties, dependsOn)
+    constructor(properties: ConnectionDrainingPolicy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ListenersProperties {
+export class Listeners {
     InstancePort: Value<string>
     InstanceProtocol?: Value<string>
     LoadBalancerPort: Value<string>
     PolicyNames?: List<Value<string>>
     Protocol: Value<string>
     SSLCertificateId?: Value<string>
-}
 
-export class Listeners extends ResourceBase {
-    constructor(properties: ListenersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::Listeners', properties, dependsOn)
+    constructor(properties: Listeners) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PoliciesProperties {
+export class Policies {
     Attributes: List<any>
     InstancePorts?: List<Value<string>>
     LoadBalancerPorts?: List<Value<string>>
     PolicyName: Value<string>
     PolicyType: Value<string>
-}
 
-export class Policies extends ResourceBase {
-    constructor(properties: PoliciesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::Policies', properties, dependsOn)
+    constructor(properties: Policies) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AppCookieStickinessPolicyProperties {
+export class AppCookieStickinessPolicy {
     CookieName: Value<string>
     PolicyName: Value<string>
-}
 
-export class AppCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancing::AppCookieStickinessPolicy', properties, dependsOn)
+    constructor(properties: AppCookieStickinessPolicy) {
+        Object.assign(this, properties)
     }
 }
 

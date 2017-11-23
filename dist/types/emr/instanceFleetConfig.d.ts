@@ -1,61 +1,47 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface VolumeSpecificationProperties {
+export declare class VolumeSpecification {
     Iops?: Value<number>;
     SizeInGB: Value<number>;
     VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
 }
-export declare class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SpotProvisioningSpecificationProperties {
+export declare class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>;
     TimeoutAction: Value<string>;
     TimeoutDurationMinutes: Value<number>;
+    constructor(properties: SpotProvisioningSpecification);
 }
-export declare class SpotProvisioningSpecification extends ResourceBase {
-    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConfigurationProperties {
+export declare class Configuration {
     Classification?: Value<string>;
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
     Configurations?: List<Configuration>;
+    constructor(properties: Configuration);
 }
-export declare class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsConfigurationProperties {
+export declare class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
 }
-export declare class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceTypeConfigProperties {
+export declare class InstanceTypeConfig {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
     Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceType: Value<string>;
     WeightedCapacity?: Value<number>;
+    constructor(properties: InstanceTypeConfig);
 }
-export declare class InstanceTypeConfig extends ResourceBase {
-    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceFleetProvisioningSpecificationsProperties {
+export declare class InstanceFleetProvisioningSpecifications {
     SpotSpecification: SpotProvisioningSpecification;
+    constructor(properties: InstanceFleetProvisioningSpecifications);
 }
-export declare class InstanceFleetProvisioningSpecifications extends ResourceBase {
-    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsBlockDeviceConfigProperties {
+export declare class EbsBlockDeviceConfig {
     VolumeSpecification: VolumeSpecification;
     VolumesPerInstance?: Value<number>;
-}
-export declare class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EbsBlockDeviceConfig);
 }
 export interface InstanceFleetConfigProperties {
     ClusterId: Value<string>;

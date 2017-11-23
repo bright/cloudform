@@ -3,14 +3,12 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ParameterProperties {
+export class Parameter {
     ParameterName: Value<string>
     ParameterValue: Value<string>
-}
 
-export class Parameter extends ResourceBase {
-    constructor(properties: ParameterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Redshift::Parameter', properties, dependsOn)
+    constructor(properties: Parameter) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,28 +1,22 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface TrustedSignersProperties {
+export declare class TrustedSigners {
     Enabled: Value<boolean>;
     AwsAccountNumbers?: List<Value<string>>;
+    constructor(properties: TrustedSigners);
 }
-export declare class TrustedSigners extends ResourceBase {
-    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface S3OriginProperties {
+export declare class S3Origin {
     DomainName: Value<string>;
     OriginAccessIdentity: Value<string>;
+    constructor(properties: S3Origin);
 }
-export declare class S3Origin extends ResourceBase {
-    constructor(properties: S3OriginProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LoggingProperties {
+export declare class Logging {
     Bucket: Value<string>;
     Enabled: Value<boolean>;
     Prefix: Value<string>;
+    constructor(properties: Logging);
 }
-export declare class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StreamingDistributionConfigProperties {
+export declare class StreamingDistributionConfig {
     Logging?: Logging;
     Comment: Value<string>;
     PriceClass?: Value<string>;
@@ -30,9 +24,7 @@ export interface StreamingDistributionConfigProperties {
     Enabled: Value<boolean>;
     Aliases?: List<Value<string>>;
     TrustedSigners: TrustedSigners;
-}
-export declare class StreamingDistributionConfig extends ResourceBase {
-    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StreamingDistributionConfig);
 }
 export interface StreamingDistributionProperties {
     StreamingDistributionConfig: StreamingDistributionConfig;

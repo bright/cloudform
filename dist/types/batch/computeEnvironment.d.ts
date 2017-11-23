@@ -1,6 +1,6 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ComputeResourcesProperties {
+export declare class ComputeResources {
     SpotIamFleetRole?: Value<string>;
     MaxvCpus: Value<number>;
     BidPercentage?: Value<number>;
@@ -14,9 +14,7 @@ export interface ComputeResourcesProperties {
     Ec2KeyPair?: Value<string>;
     Tags?: ResourceTag[];
     DesiredvCpus?: Value<number>;
-}
-export declare class ComputeResources extends ResourceBase {
-    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ComputeResources);
 }
 export interface ComputeEnvironmentProperties {
     Type: Value<string>;

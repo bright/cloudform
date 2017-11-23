@@ -1,39 +1,31 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface DataSourceProperties {
+export declare class DataSource {
     Arn?: Value<string>;
     DatabaseName?: Value<string>;
     Type?: Value<string>;
+    constructor(properties: DataSource);
 }
-export declare class DataSource extends ResourceBase {
-    constructor(properties: DataSourceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EnvironmentVariableProperties {
+export declare class EnvironmentVariable {
     Key: Value<string>;
     Secure?: Value<boolean>;
     Value: Value<string>;
+    constructor(properties: EnvironmentVariable);
 }
-export declare class EnvironmentVariable extends ResourceBase {
-    constructor(properties: EnvironmentVariableProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SslConfigurationProperties {
+export declare class SslConfiguration {
     Certificate?: Value<string>;
     Chain?: Value<string>;
     PrivateKey?: Value<string>;
+    constructor(properties: SslConfiguration);
 }
-export declare class SslConfiguration extends ResourceBase {
-    constructor(properties: SslConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SourceProperties {
+export declare class Source {
     Password?: Value<string>;
     Revision?: Value<string>;
     SshKey?: Value<string>;
     Type?: Value<string>;
     Url?: Value<string>;
     Username?: Value<string>;
-}
-export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Source);
 }
 export interface AppProperties {
     AppSource?: Source;

@@ -3,17 +3,15 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface InputArtifactProperties {
+export class InputArtifact {
     Name: Value<string>
-}
 
-export class InputArtifact extends ResourceBase {
-    constructor(properties: InputArtifactProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::InputArtifact', properties, dependsOn)
+    constructor(properties: InputArtifact) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ActionDeclarationProperties {
+export class ActionDeclaration {
     ActionTypeId: ActionTypeId
     Configuration?: any
     InputArtifacts?: List<InputArtifact>
@@ -21,91 +19,75 @@ export interface ActionDeclarationProperties {
     OutputArtifacts?: List<OutputArtifact>
     RoleArn?: Value<string>
     RunOrder?: Value<number>
-}
 
-export class ActionDeclaration extends ResourceBase {
-    constructor(properties: ActionDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::ActionDeclaration', properties, dependsOn)
+    constructor(properties: ActionDeclaration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StageDeclarationProperties {
+export class StageDeclaration {
     Actions: List<ActionDeclaration>
     Blockers?: List<BlockerDeclaration>
     Name: Value<string>
-}
 
-export class StageDeclaration extends ResourceBase {
-    constructor(properties: StageDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::StageDeclaration', properties, dependsOn)
+    constructor(properties: StageDeclaration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface BlockerDeclarationProperties {
+export class BlockerDeclaration {
     Name: Value<string>
     Type: Value<string>
-}
 
-export class BlockerDeclaration extends ResourceBase {
-    constructor(properties: BlockerDeclarationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::BlockerDeclaration', properties, dependsOn)
+    constructor(properties: BlockerDeclaration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StageTransitionProperties {
+export class StageTransition {
     Reason: Value<string>
     StageName: Value<string>
-}
 
-export class StageTransition extends ResourceBase {
-    constructor(properties: StageTransitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::StageTransition', properties, dependsOn)
+    constructor(properties: StageTransition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ArtifactStoreProperties {
+export class ArtifactStore {
     EncryptionKey?: EncryptionKey
     Location: Value<string>
     Type: Value<string>
-}
 
-export class ArtifactStore extends ResourceBase {
-    constructor(properties: ArtifactStoreProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::ArtifactStore', properties, dependsOn)
+    constructor(properties: ArtifactStore) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ActionTypeIdProperties {
+export class ActionTypeId {
     Category: Value<string>
     Owner: Value<string>
     Provider: Value<string>
     Version: Value<string>
-}
 
-export class ActionTypeId extends ResourceBase {
-    constructor(properties: ActionTypeIdProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::ActionTypeId', properties, dependsOn)
+    constructor(properties: ActionTypeId) {
+        Object.assign(this, properties)
     }
 }
 
-export interface OutputArtifactProperties {
+export class OutputArtifact {
     Name: Value<string>
-}
 
-export class OutputArtifact extends ResourceBase {
-    constructor(properties: OutputArtifactProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::OutputArtifact', properties, dependsOn)
+    constructor(properties: OutputArtifact) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EncryptionKeyProperties {
+export class EncryptionKey {
     Id: Value<string>
     Type: Value<string>
-}
 
-export class EncryptionKey extends ResourceBase {
-    constructor(properties: EncryptionKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::EncryptionKey', properties, dependsOn)
+    constructor(properties: EncryptionKey) {
+        Object.assign(this, properties)
     }
 }
 

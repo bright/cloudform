@@ -2,39 +2,39 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class RunCommandParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::RunCommandParameters', properties, dependsOn);
+class RunCommandParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RunCommandParameters = RunCommandParameters;
-class Target extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::Target', properties, dependsOn);
+class Target {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Target = Target;
-class RunCommandTarget extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::RunCommandTarget', properties, dependsOn);
+class RunCommandTarget {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RunCommandTarget = RunCommandTarget;
-class InputTransformer extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::InputTransformer', properties, dependsOn);
+class InputTransformer {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputTransformer = InputTransformer;
-class KinesisParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::KinesisParameters', properties, dependsOn);
+class KinesisParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KinesisParameters = KinesisParameters;
-class EcsParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Events::EcsParameters', properties, dependsOn);
+class EcsParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EcsParameters = EcsParameters;

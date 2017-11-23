@@ -3,25 +3,21 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LoadBalancerAttributeProperties {
+export class LoadBalancerAttribute {
     Key?: Value<string>
     Value?: Value<string>
-}
 
-export class LoadBalancerAttribute extends ResourceBase {
-    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::LoadBalancerAttribute', properties, dependsOn)
+    constructor(properties: LoadBalancerAttribute) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SubnetMappingProperties {
+export class SubnetMapping {
     AllocationId: Value<string>
     SubnetId: Value<string>
-}
 
-export class SubnetMapping extends ResourceBase {
-    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::SubnetMapping', properties, dependsOn)
+    constructor(properties: SubnetMapping) {
+        Object.assign(this, properties)
     }
 }
 

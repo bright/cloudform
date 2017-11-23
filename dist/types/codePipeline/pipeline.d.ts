@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface InputArtifactProperties {
+export declare class InputArtifact {
     Name: Value<string>;
+    constructor(properties: InputArtifact);
 }
-export declare class InputArtifact extends ResourceBase {
-    constructor(properties: InputArtifactProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ActionDeclarationProperties {
+export declare class ActionDeclaration {
     ActionTypeId: ActionTypeId;
     Configuration?: any;
     InputArtifacts?: List<InputArtifact>;
@@ -14,61 +12,45 @@ export interface ActionDeclarationProperties {
     OutputArtifacts?: List<OutputArtifact>;
     RoleArn?: Value<string>;
     RunOrder?: Value<number>;
+    constructor(properties: ActionDeclaration);
 }
-export declare class ActionDeclaration extends ResourceBase {
-    constructor(properties: ActionDeclarationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StageDeclarationProperties {
+export declare class StageDeclaration {
     Actions: List<ActionDeclaration>;
     Blockers?: List<BlockerDeclaration>;
     Name: Value<string>;
+    constructor(properties: StageDeclaration);
 }
-export declare class StageDeclaration extends ResourceBase {
-    constructor(properties: StageDeclarationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface BlockerDeclarationProperties {
+export declare class BlockerDeclaration {
     Name: Value<string>;
     Type: Value<string>;
+    constructor(properties: BlockerDeclaration);
 }
-export declare class BlockerDeclaration extends ResourceBase {
-    constructor(properties: BlockerDeclarationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StageTransitionProperties {
+export declare class StageTransition {
     Reason: Value<string>;
     StageName: Value<string>;
+    constructor(properties: StageTransition);
 }
-export declare class StageTransition extends ResourceBase {
-    constructor(properties: StageTransitionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ArtifactStoreProperties {
+export declare class ArtifactStore {
     EncryptionKey?: EncryptionKey;
     Location: Value<string>;
     Type: Value<string>;
+    constructor(properties: ArtifactStore);
 }
-export declare class ArtifactStore extends ResourceBase {
-    constructor(properties: ArtifactStoreProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ActionTypeIdProperties {
+export declare class ActionTypeId {
     Category: Value<string>;
     Owner: Value<string>;
     Provider: Value<string>;
     Version: Value<string>;
+    constructor(properties: ActionTypeId);
 }
-export declare class ActionTypeId extends ResourceBase {
-    constructor(properties: ActionTypeIdProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface OutputArtifactProperties {
+export declare class OutputArtifact {
     Name: Value<string>;
+    constructor(properties: OutputArtifact);
 }
-export declare class OutputArtifact extends ResourceBase {
-    constructor(properties: OutputArtifactProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EncryptionKeyProperties {
+export declare class EncryptionKey {
     Id: Value<string>;
     Type: Value<string>;
-}
-export declare class EncryptionKey extends ResourceBase {
-    constructor(properties: EncryptionKeyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EncryptionKey);
 }
 export interface PipelineProperties {
     ArtifactStore: ArtifactStore;

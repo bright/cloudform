@@ -3,162 +3,134 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LoadBalancerInfoProperties {
+export class LoadBalancerInfo {
     ElbInfoList?: List<ELBInfo>
     TargetGroupInfoList?: List<TargetGroupInfo>
-}
 
-export class LoadBalancerInfo extends ResourceBase {
-    constructor(properties: LoadBalancerInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::LoadBalancerInfo', properties, dependsOn)
+    constructor(properties: LoadBalancerInfo) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RevisionLocationProperties {
+export class RevisionLocation {
     GitHubLocation?: GitHubLocation
     RevisionType?: Value<string>
     S3Location?: S3Location
-}
 
-export class RevisionLocation extends ResourceBase {
-    constructor(properties: RevisionLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::RevisionLocation', properties, dependsOn)
+    constructor(properties: RevisionLocation) {
+        Object.assign(this, properties)
     }
 }
 
-export interface S3LocationProperties {
+export class S3Location {
     Bucket: Value<string>
     BundleType?: Value<string>
     ETag?: Value<string>
     Key: Value<string>
     Version?: Value<string>
-}
 
-export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::S3Location', properties, dependsOn)
+    constructor(properties: S3Location) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TriggerConfigProperties {
+export class TriggerConfig {
     TriggerEvents?: List<Value<string>>
     TriggerName?: Value<string>
     TriggerTargetArn?: Value<string>
-}
 
-export class TriggerConfig extends ResourceBase {
-    constructor(properties: TriggerConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::TriggerConfig', properties, dependsOn)
+    constructor(properties: TriggerConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TagFilterProperties {
+export class TagFilter {
     Key?: Value<string>
     Type?: Value<string>
     Value?: Value<string>
-}
 
-export class TagFilter extends ResourceBase {
-    constructor(properties: TagFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::TagFilter', properties, dependsOn)
+    constructor(properties: TagFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface GitHubLocationProperties {
+export class GitHubLocation {
     CommitId: Value<string>
     Repository: Value<string>
-}
 
-export class GitHubLocation extends ResourceBase {
-    constructor(properties: GitHubLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::GitHubLocation', properties, dependsOn)
+    constructor(properties: GitHubLocation) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TargetGroupInfoProperties {
+export class TargetGroupInfo {
     Name?: Value<string>
-}
 
-export class TargetGroupInfo extends ResourceBase {
-    constructor(properties: TargetGroupInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::TargetGroupInfo', properties, dependsOn)
+    constructor(properties: TargetGroupInfo) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ELBInfoProperties {
+export class ELBInfo {
     Name?: Value<string>
-}
 
-export class ELBInfo extends ResourceBase {
-    constructor(properties: ELBInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::ELBInfo', properties, dependsOn)
+    constructor(properties: ELBInfo) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AlarmConfigurationProperties {
+export class AlarmConfiguration {
     Alarms?: List<Alarm>
     Enabled?: Value<boolean>
     IgnorePollAlarmFailure?: Value<boolean>
-}
 
-export class AlarmConfiguration extends ResourceBase {
-    constructor(properties: AlarmConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::AlarmConfiguration', properties, dependsOn)
+    constructor(properties: AlarmConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeploymentStyleProperties {
+export class DeploymentStyle {
     DeploymentOption?: Value<string>
-}
 
-export class DeploymentStyle extends ResourceBase {
-    constructor(properties: DeploymentStyleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::DeploymentStyle', properties, dependsOn)
+    constructor(properties: DeploymentStyle) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AlarmProperties {
+export class Alarm {
     Name?: Value<string>
-}
 
-export class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::Alarm', properties, dependsOn)
+    constructor(properties: Alarm) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EC2TagFilterProperties {
+export class EC2TagFilter {
     Key?: Value<string>
     Type?: Value<string>
     Value?: Value<string>
-}
 
-export class EC2TagFilter extends ResourceBase {
-    constructor(properties: EC2TagFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::EC2TagFilter', properties, dependsOn)
+    constructor(properties: EC2TagFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AutoRollbackConfigurationProperties {
+export class AutoRollbackConfiguration {
     Enabled?: Value<boolean>
     Events?: List<Value<string>>
-}
 
-export class AutoRollbackConfiguration extends ResourceBase {
-    constructor(properties: AutoRollbackConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::AutoRollbackConfiguration', properties, dependsOn)
+    constructor(properties: AutoRollbackConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeploymentProperties {
+export class Deployment {
     Description?: Value<string>
     IgnoreApplicationStopFailures?: Value<boolean>
     Revision: RevisionLocation
-}
 
-export class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::Deployment', properties, dependsOn)
+    constructor(properties: Deployment) {
+        Object.assign(this, properties)
     }
 }
 

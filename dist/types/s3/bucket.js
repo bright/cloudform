@@ -2,195 +2,195 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class NotificationFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::NotificationFilter', properties, dependsOn);
+class NotificationFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NotificationFilter = NotificationFilter;
-class RoutingRuleCondition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::RoutingRuleCondition', properties, dependsOn);
+class RoutingRuleCondition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RoutingRuleCondition = RoutingRuleCondition;
-class LifecycleConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::LifecycleConfiguration', properties, dependsOn);
+class LifecycleConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LifecycleConfiguration = LifecycleConfiguration;
-class LambdaConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::LambdaConfiguration', properties, dependsOn);
+class LambdaConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LambdaConfiguration = LambdaConfiguration;
-class ReplicationRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::ReplicationRule', properties, dependsOn);
+class ReplicationRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ReplicationRule = ReplicationRule;
-class CorsRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::CorsRule', properties, dependsOn);
+class CorsRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CorsRule = CorsRule;
-class Destination extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::Destination', properties, dependsOn);
+class Destination {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Destination = Destination;
-class AnalyticsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::AnalyticsConfiguration', properties, dependsOn);
+class AnalyticsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AnalyticsConfiguration = AnalyticsConfiguration;
-class LoggingConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::LoggingConfiguration', properties, dependsOn);
+class LoggingConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LoggingConfiguration = LoggingConfiguration;
-class StorageClassAnalysis extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::StorageClassAnalysis', properties, dependsOn);
+class StorageClassAnalysis {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.StorageClassAnalysis = StorageClassAnalysis;
-class RoutingRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::RoutingRule', properties, dependsOn);
+class RoutingRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RoutingRule = RoutingRule;
-class VersioningConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::VersioningConfiguration', properties, dependsOn);
+class VersioningConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VersioningConfiguration = VersioningConfiguration;
-class NotificationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::NotificationConfiguration', properties, dependsOn);
+class NotificationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NotificationConfiguration = NotificationConfiguration;
-class RedirectRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::RedirectRule', properties, dependsOn);
+class RedirectRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RedirectRule = RedirectRule;
-class RedirectAllRequestsTo extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::RedirectAllRequestsTo', properties, dependsOn);
+class RedirectAllRequestsTo {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RedirectAllRequestsTo = RedirectAllRequestsTo;
-class S3KeyFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::S3KeyFilter', properties, dependsOn);
+class S3KeyFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.S3KeyFilter = S3KeyFilter;
-class InventoryConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::InventoryConfiguration', properties, dependsOn);
+class InventoryConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InventoryConfiguration = InventoryConfiguration;
-class WebsiteConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::WebsiteConfiguration', properties, dependsOn);
+class WebsiteConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.WebsiteConfiguration = WebsiteConfiguration;
-class ReplicationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::ReplicationConfiguration', properties, dependsOn);
+class ReplicationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ReplicationConfiguration = ReplicationConfiguration;
-class Rule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::Rule', properties, dependsOn);
+class Rule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Rule = Rule;
-class QueueConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::QueueConfiguration', properties, dependsOn);
+class QueueConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.QueueConfiguration = QueueConfiguration;
-class TopicConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::TopicConfiguration', properties, dependsOn);
+class TopicConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TopicConfiguration = TopicConfiguration;
-class MetricsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::MetricsConfiguration', properties, dependsOn);
+class MetricsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MetricsConfiguration = MetricsConfiguration;
-class TagFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::TagFilter', properties, dependsOn);
+class TagFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TagFilter = TagFilter;
-class Transition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::Transition', properties, dependsOn);
+class Transition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Transition = Transition;
-class DataExport extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::DataExport', properties, dependsOn);
+class DataExport {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.DataExport = DataExport;
-class CorsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::CorsConfiguration', properties, dependsOn);
+class CorsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CorsConfiguration = CorsConfiguration;
-class ReplicationDestination extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::ReplicationDestination', properties, dependsOn);
+class ReplicationDestination {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ReplicationDestination = ReplicationDestination;
-class AccelerateConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::AccelerateConfiguration', properties, dependsOn);
+class AccelerateConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AccelerateConfiguration = AccelerateConfiguration;
-class NoncurrentVersionTransition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::NoncurrentVersionTransition', properties, dependsOn);
+class NoncurrentVersionTransition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NoncurrentVersionTransition = NoncurrentVersionTransition;
-class AbortIncompleteMultipartUpload extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::AbortIncompleteMultipartUpload', properties, dependsOn);
+class AbortIncompleteMultipartUpload {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload;
-class FilterRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::S3::FilterRule', properties, dependsOn);
+class FilterRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.FilterRule = FilterRule;

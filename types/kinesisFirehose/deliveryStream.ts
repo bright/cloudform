@@ -3,7 +3,7 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ElasticsearchDestinationConfigurationProperties {
+export class ElasticsearchDestinationConfiguration {
     BufferingHints: ElasticsearchBufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     DomainARN: Value<string>
@@ -15,116 +15,96 @@ export interface ElasticsearchDestinationConfigurationProperties {
     S3BackupMode: Value<string>
     S3Configuration: S3DestinationConfiguration
     TypeName: Value<string>
-}
 
-export class ElasticsearchDestinationConfiguration extends ResourceBase {
-    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ElasticsearchDestinationConfiguration', properties, dependsOn)
+    constructor(properties: ElasticsearchDestinationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ElasticsearchBufferingHintsProperties {
+export class ElasticsearchBufferingHints {
     IntervalInSeconds: Value<number>
     SizeInMBs: Value<number>
-}
 
-export class ElasticsearchBufferingHints extends ResourceBase {
-    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ElasticsearchBufferingHints', properties, dependsOn)
+    constructor(properties: ElasticsearchBufferingHints) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EncryptionConfigurationProperties {
+export class EncryptionConfiguration {
     KMSEncryptionConfig?: KMSEncryptionConfig
     NoEncryptionConfig?: Value<string>
-}
 
-export class EncryptionConfiguration extends ResourceBase {
-    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::EncryptionConfiguration', properties, dependsOn)
+    constructor(properties: EncryptionConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CloudWatchLoggingOptionsProperties {
+export class CloudWatchLoggingOptions {
     Enabled?: Value<boolean>
     LogGroupName?: Value<string>
     LogStreamName?: Value<string>
-}
 
-export class CloudWatchLoggingOptions extends ResourceBase {
-    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::CloudWatchLoggingOptions', properties, dependsOn)
+    constructor(properties: CloudWatchLoggingOptions) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ProcessingConfigurationProperties {
+export class ProcessingConfiguration {
     Enabled: Value<boolean>
     Processors: List<Processor>
-}
 
-export class ProcessingConfiguration extends ResourceBase {
-    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ProcessingConfiguration', properties, dependsOn)
+    constructor(properties: ProcessingConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface BufferingHintsProperties {
+export class BufferingHints {
     IntervalInSeconds: Value<number>
     SizeInMBs: Value<number>
-}
 
-export class BufferingHints extends ResourceBase {
-    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::BufferingHints', properties, dependsOn)
+    constructor(properties: BufferingHints) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisStreamSourceConfigurationProperties {
+export class KinesisStreamSourceConfiguration {
     KinesisStreamARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class KinesisStreamSourceConfiguration extends ResourceBase {
-    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::KinesisStreamSourceConfiguration', properties, dependsOn)
+    constructor(properties: KinesisStreamSourceConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ProcessorParameterProperties {
+export class ProcessorParameter {
     ParameterName: Value<string>
     ParameterValue: Value<string>
-}
 
-export class ProcessorParameter extends ResourceBase {
-    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ProcessorParameter', properties, dependsOn)
+    constructor(properties: ProcessorParameter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ProcessorProperties {
+export class Processor {
     Parameters: List<ProcessorParameter>
     Type: Value<string>
-}
 
-export class Processor extends ResourceBase {
-    constructor(properties: ProcessorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::Processor', properties, dependsOn)
+    constructor(properties: Processor) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CopyCommandProperties {
+export class CopyCommand {
     CopyOptions?: Value<string>
     DataTableColumns?: Value<string>
     DataTableName: Value<string>
-}
 
-export class CopyCommand extends ResourceBase {
-    constructor(properties: CopyCommandProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::CopyCommand', properties, dependsOn)
+    constructor(properties: CopyCommand) {
+        Object.assign(this, properties)
     }
 }
 
-export interface S3DestinationConfigurationProperties {
+export class S3DestinationConfiguration {
     BucketARN: Value<string>
     BufferingHints: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
@@ -132,35 +112,29 @@ export interface S3DestinationConfigurationProperties {
     EncryptionConfiguration?: EncryptionConfiguration
     Prefix?: Value<string>
     RoleARN: Value<string>
-}
 
-export class S3DestinationConfiguration extends ResourceBase {
-    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::S3DestinationConfiguration', properties, dependsOn)
+    constructor(properties: S3DestinationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ElasticsearchRetryOptionsProperties {
+export class ElasticsearchRetryOptions {
     DurationInSeconds: Value<number>
-}
 
-export class ElasticsearchRetryOptions extends ResourceBase {
-    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ElasticsearchRetryOptions', properties, dependsOn)
+    constructor(properties: ElasticsearchRetryOptions) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KMSEncryptionConfigProperties {
+export class KMSEncryptionConfig {
     AWSKMSKeyARN: Value<string>
-}
 
-export class KMSEncryptionConfig extends ResourceBase {
-    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::KMSEncryptionConfig', properties, dependsOn)
+    constructor(properties: KMSEncryptionConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ExtendedS3DestinationConfigurationProperties {
+export class ExtendedS3DestinationConfiguration {
     BucketARN: Value<string>
     BufferingHints: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
@@ -171,15 +145,13 @@ export interface ExtendedS3DestinationConfigurationProperties {
     RoleARN: Value<string>
     S3BackupConfiguration?: S3DestinationConfiguration
     S3BackupMode?: Value<string>
-}
 
-export class ExtendedS3DestinationConfiguration extends ResourceBase {
-    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::ExtendedS3DestinationConfiguration', properties, dependsOn)
+    constructor(properties: ExtendedS3DestinationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RedshiftDestinationConfigurationProperties {
+export class RedshiftDestinationConfiguration {
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     ClusterJDBCURL: Value<string>
     CopyCommand: CopyCommand
@@ -188,11 +160,9 @@ export interface RedshiftDestinationConfigurationProperties {
     RoleARN: Value<string>
     S3Configuration: S3DestinationConfiguration
     Username: Value<string>
-}
 
-export class RedshiftDestinationConfiguration extends ResourceBase {
-    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisFirehose::RedshiftDestinationConfiguration', properties, dependsOn)
+    constructor(properties: RedshiftDestinationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

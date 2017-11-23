@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface RunCommandParametersProperties {
+export declare class RunCommandParameters {
     RunCommandTargets: List<RunCommandTarget>;
+    constructor(properties: RunCommandParameters);
 }
-export declare class RunCommandParameters extends ResourceBase {
-    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetProperties {
+export declare class Target {
     Arn: Value<string>;
     EcsParameters?: EcsParameters;
     Id: Value<string>;
@@ -16,38 +14,28 @@ export interface TargetProperties {
     KinesisParameters?: KinesisParameters;
     RoleArn?: Value<string>;
     RunCommandParameters?: RunCommandParameters;
+    constructor(properties: Target);
 }
-export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RunCommandTargetProperties {
+export declare class RunCommandTarget {
     Key: Value<string>;
     Values: List<Value<string>>;
+    constructor(properties: RunCommandTarget);
 }
-export declare class RunCommandTarget extends ResourceBase {
-    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InputTransformerProperties {
+export declare class InputTransformer {
     InputPathsMap?: {
         [key: string]: Value<string>;
     };
     InputTemplate: Value<string>;
+    constructor(properties: InputTransformer);
 }
-export declare class InputTransformer extends ResourceBase {
-    constructor(properties: InputTransformerProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisParametersProperties {
+export declare class KinesisParameters {
     PartitionKeyPath: Value<string>;
+    constructor(properties: KinesisParameters);
 }
-export declare class KinesisParameters extends ResourceBase {
-    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EcsParametersProperties {
+export declare class EcsParameters {
     TaskCount?: Value<number>;
     TaskDefinitionArn: Value<string>;
-}
-export declare class EcsParameters extends ResourceBase {
-    constructor(properties: EcsParametersProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EcsParameters);
 }
 export interface RuleProperties {
     Description?: Value<string>;

@@ -3,19 +3,17 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MethodResponseProperties {
+export class MethodResponse {
     ResponseModels?: {[key: string]: Value<string>}
     ResponseParameters?: {[key: string]: Value<boolean>}
     StatusCode: Value<string>
-}
 
-export class MethodResponse extends ResourceBase {
-    constructor(properties: MethodResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::MethodResponse', properties, dependsOn)
+    constructor(properties: MethodResponse) {
+        Object.assign(this, properties)
     }
 }
 
-export interface IntegrationProperties {
+export class Integration {
     CacheKeyParameters?: List<Value<string>>
     CacheNamespace?: Value<string>
     ContentHandling?: Value<string>
@@ -27,25 +25,21 @@ export interface IntegrationProperties {
     RequestTemplates?: {[key: string]: Value<string>}
     Type?: Value<string>
     Uri?: Value<string>
-}
 
-export class Integration extends ResourceBase {
-    constructor(properties: IntegrationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::Integration', properties, dependsOn)
+    constructor(properties: Integration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface IntegrationResponseProperties {
+export class IntegrationResponse {
     ContentHandling?: Value<string>
     ResponseParameters?: {[key: string]: Value<string>}
     ResponseTemplates?: {[key: string]: Value<string>}
     SelectionPattern?: Value<string>
     StatusCode: Value<string>
-}
 
-export class IntegrationResponse extends ResourceBase {
-    constructor(properties: IntegrationResponseProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::IntegrationResponse', properties, dependsOn)
+    constructor(properties: IntegrationResponse) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,38 +3,32 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RulesConfigurationTypeProperties {
+export class RulesConfigurationType {
     Rules: List<MappingRule>
-}
 
-export class RulesConfigurationType extends ResourceBase {
-    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::RulesConfigurationType', properties, dependsOn)
+    constructor(properties: RulesConfigurationType) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RoleMappingProperties {
+export class RoleMapping {
     Type: Value<string>
     AmbiguousRoleResolution?: Value<string>
     RulesConfiguration?: RulesConfigurationType
-}
 
-export class RoleMapping extends ResourceBase {
-    constructor(properties: RoleMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::RoleMapping', properties, dependsOn)
+    constructor(properties: RoleMapping) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MappingRuleProperties {
+export class MappingRule {
     MatchType: Value<string>
     Value: Value<string>
     Claim: Value<string>
     RoleARN: Value<string>
-}
 
-export class MappingRule extends ResourceBase {
-    constructor(properties: MappingRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::MappingRule', properties, dependsOn)
+    constructor(properties: MappingRule) {
+        Object.assign(this, properties)
     }
 }
 

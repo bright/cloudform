@@ -3,40 +3,34 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ScopeProperties {
+export class Scope {
     ComplianceResourceId?: Value<string>
     ComplianceResourceTypes?: List<Value<string>>
     TagKey?: Value<string>
     TagValue?: Value<string>
-}
 
-export class Scope extends ResourceBase {
-    constructor(properties: ScopeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Config::Scope', properties, dependsOn)
+    constructor(properties: Scope) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SourceProperties {
+export class Source {
     Owner: Value<string>
     SourceDetails?: List<SourceDetail>
     SourceIdentifier: Value<string>
-}
 
-export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Config::Source', properties, dependsOn)
+    constructor(properties: Source) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SourceDetailProperties {
+export class SourceDetail {
     EventSource: Value<string>
     MaximumExecutionFrequency?: Value<string>
     MessageType: Value<string>
-}
 
-export class SourceDetail extends ResourceBase {
-    constructor(properties: SourceDetailProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Config::SourceDetail', properties, dependsOn)
+    constructor(properties: SourceDetail) {
+        Object.assign(this, properties)
     }
 }
 

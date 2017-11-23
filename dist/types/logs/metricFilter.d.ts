@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MetricTransformationProperties {
+export declare class MetricTransformation {
     MetricName: Value<string>;
     MetricNamespace: Value<string>;
     MetricValue: Value<string>;
-}
-export declare class MetricTransformation extends ResourceBase {
-    constructor(properties: MetricTransformationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MetricTransformation);
 }
 export interface MetricFilterProperties {
     FilterPattern: Value<string>;

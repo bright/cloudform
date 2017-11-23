@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface DimensionProperties {
+export class Dimension {
     Name: Value<string>
     Value: Value<string>
-}
 
-export class Dimension extends ResourceBase {
-    constructor(properties: DimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudWatch::Dimension', properties, dependsOn)
+    constructor(properties: Dimension) {
+        Object.assign(this, properties)
     }
 }
 

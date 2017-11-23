@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ContainerDefinitionProperties {
+export declare class ContainerDefinition {
     Command?: List<Value<string>>;
     Cpu?: Value<number>;
     DisableNetworking?: Value<boolean>;
@@ -30,106 +30,78 @@ export interface ContainerDefinitionProperties {
     User?: Value<string>;
     VolumesFrom?: List<VolumeFrom>;
     WorkingDirectory?: Value<string>;
+    constructor(properties: ContainerDefinition);
 }
-export declare class ContainerDefinition extends ResourceBase {
-    constructor(properties: ContainerDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LogConfigurationProperties {
+export declare class LogConfiguration {
     LogDriver: Value<string>;
     Options?: {
         [key: string]: Value<string>;
     };
+    constructor(properties: LogConfiguration);
 }
-export declare class LogConfiguration extends ResourceBase {
-    constructor(properties: LogConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DeviceProperties {
+export declare class Device {
     ContainerPath?: Value<string>;
     HostPath: Value<string>;
     Permissions?: List<Value<string>>;
+    constructor(properties: Device);
 }
-export declare class Device extends ResourceBase {
-    constructor(properties: DeviceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KeyValuePairProperties {
+export declare class KeyValuePair {
     Name?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: KeyValuePair);
 }
-export declare class KeyValuePair extends ResourceBase {
-    constructor(properties: KeyValuePairProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MountPointProperties {
+export declare class MountPoint {
     ContainerPath?: Value<string>;
     ReadOnly?: Value<boolean>;
     SourceVolume?: Value<string>;
+    constructor(properties: MountPoint);
 }
-export declare class MountPoint extends ResourceBase {
-    constructor(properties: MountPointProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumeFromProperties {
+export declare class VolumeFrom {
     ReadOnly?: Value<boolean>;
     SourceContainer?: Value<string>;
+    constructor(properties: VolumeFrom);
 }
-export declare class VolumeFrom extends ResourceBase {
-    constructor(properties: VolumeFromProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface HostEntryProperties {
+export declare class HostEntry {
     Hostname: Value<string>;
     IpAddress: Value<string>;
+    constructor(properties: HostEntry);
 }
-export declare class HostEntry extends ResourceBase {
-    constructor(properties: HostEntryProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KernelCapabilitiesProperties {
+export declare class KernelCapabilities {
     Add?: List<Value<string>>;
     Drop?: List<Value<string>>;
+    constructor(properties: KernelCapabilities);
 }
-export declare class KernelCapabilities extends ResourceBase {
-    constructor(properties: KernelCapabilitiesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TaskDefinitionPlacementConstraintProperties {
+export declare class TaskDefinitionPlacementConstraint {
     Expression?: Value<string>;
     Type: Value<string>;
+    constructor(properties: TaskDefinitionPlacementConstraint);
 }
-export declare class TaskDefinitionPlacementConstraint extends ResourceBase {
-    constructor(properties: TaskDefinitionPlacementConstraintProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumeProperties {
+export declare class Volume {
     Host?: HostVolumeProperties;
     Name?: Value<string>;
+    constructor(properties: Volume);
 }
-export declare class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PortMappingProperties {
+export declare class PortMapping {
     ContainerPort?: Value<number>;
     HostPort?: Value<number>;
     Protocol?: Value<string>;
+    constructor(properties: PortMapping);
 }
-export declare class PortMapping extends ResourceBase {
-    constructor(properties: PortMappingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface UlimitProperties {
+export declare class Ulimit {
     HardLimit: Value<number>;
     Name: Value<string>;
     SoftLimit: Value<number>;
+    constructor(properties: Ulimit);
 }
-export declare class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LinuxParametersProperties {
+export declare class LinuxParameters {
     Capabilities?: KernelCapabilities;
     Devices?: List<Device>;
     InitProcessEnabled?: Value<boolean>;
+    constructor(properties: LinuxParameters);
 }
-export declare class LinuxParameters extends ResourceBase {
-    constructor(properties: LinuxParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface HostVolumePropertiesProperties {
+export declare class HostVolumeProperties {
     SourcePath?: Value<string>;
-}
-export declare class HostVolumeProperties extends ResourceBase {
-    constructor(properties: HostVolumePropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: HostVolumeProperties);
 }
 export interface TaskDefinitionProperties {
     ContainerDefinitions?: List<ContainerDefinition>;

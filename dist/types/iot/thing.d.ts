@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface AttributePayloadProperties {
+export declare class AttributePayload {
     Attributes?: {
         [key: string]: Value<string>;
     };
-}
-export declare class AttributePayload extends ResourceBase {
-    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AttributePayload);
 }
 export interface ThingProperties {
     AttributePayload?: AttributePayload;

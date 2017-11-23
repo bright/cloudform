@@ -2,75 +2,75 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class EbsBlockDeviceConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn);
+class EbsBlockDeviceConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
-class Configuration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Configuration', properties, dependsOn);
+class Configuration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Configuration = Configuration;
-class MetricDimension extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::MetricDimension', properties, dependsOn);
+class MetricDimension {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MetricDimension = MetricDimension;
-class SimpleScalingPolicyConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::SimpleScalingPolicyConfiguration', properties, dependsOn);
+class SimpleScalingPolicyConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration;
-class ScalingRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingRule', properties, dependsOn);
+class ScalingRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingRule = ScalingRule;
-class ScalingAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingAction', properties, dependsOn);
+class ScalingAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingAction = ScalingAction;
-class ScalingTrigger extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingTrigger', properties, dependsOn);
+class ScalingTrigger {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingTrigger = ScalingTrigger;
-class ScalingConstraints extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingConstraints', properties, dependsOn);
+class ScalingConstraints {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingConstraints = ScalingConstraints;
-class CloudWatchAlarmDefinition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::CloudWatchAlarmDefinition', properties, dependsOn);
+class CloudWatchAlarmDefinition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CloudWatchAlarmDefinition = CloudWatchAlarmDefinition;
-class VolumeSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::VolumeSpecification', properties, dependsOn);
+class VolumeSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VolumeSpecification = VolumeSpecification;
-class AutoScalingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::AutoScalingPolicy', properties, dependsOn);
+class AutoScalingPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AutoScalingPolicy = AutoScalingPolicy;
-class EbsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsConfiguration', properties, dependsOn);
+class EbsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsConfiguration = EbsConfiguration;

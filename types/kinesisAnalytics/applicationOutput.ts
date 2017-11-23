@@ -3,48 +3,40 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface KinesisFirehoseOutputProperties {
+export class KinesisFirehoseOutput {
     ResourceARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class KinesisFirehoseOutput extends ResourceBase {
-    constructor(properties: KinesisFirehoseOutputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::KinesisFirehoseOutput', properties, dependsOn)
+    constructor(properties: KinesisFirehoseOutput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisStreamsOutputProperties {
+export class KinesisStreamsOutput {
     ResourceARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class KinesisStreamsOutput extends ResourceBase {
-    constructor(properties: KinesisStreamsOutputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::KinesisStreamsOutput', properties, dependsOn)
+    constructor(properties: KinesisStreamsOutput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface OutputProperties {
+export class Output {
     DestinationSchema: DestinationSchema
     KinesisFirehoseOutput?: KinesisFirehoseOutput
     KinesisStreamsOutput?: KinesisStreamsOutput
     Name?: Value<string>
-}
 
-export class Output extends ResourceBase {
-    constructor(properties: OutputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::Output', properties, dependsOn)
+    constructor(properties: Output) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DestinationSchemaProperties {
+export class DestinationSchema {
     RecordFormatType?: Value<string>
-}
 
-export class DestinationSchema extends ResourceBase {
-    constructor(properties: DestinationSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::DestinationSchema', properties, dependsOn)
+    constructor(properties: DestinationSchema) {
+        Object.assign(this, properties)
     }
 }
 

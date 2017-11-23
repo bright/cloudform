@@ -1,17 +1,13 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface InstanceIpv6AddressProperties {
+export declare class InstanceIpv6Address {
     Ipv6Address: Value<string>;
+    constructor(properties: InstanceIpv6Address);
 }
-export declare class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PrivateIpAddressSpecificationProperties {
+export declare class PrivateIpAddressSpecification {
     Primary: Value<boolean>;
     PrivateIpAddress: Value<string>;
-}
-export declare class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PrivateIpAddressSpecification);
 }
 export interface NetworkInterfaceProperties {
     Description?: Value<string>;

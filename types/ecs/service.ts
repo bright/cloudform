@@ -3,49 +3,41 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LoadBalancerProperties {
+export class LoadBalancer {
     ContainerName?: Value<string>
     ContainerPort: Value<number>
     LoadBalancerName?: Value<string>
     TargetGroupArn?: Value<string>
-}
 
-export class LoadBalancer extends ResourceBase {
-    constructor(properties: LoadBalancerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::LoadBalancer', properties, dependsOn)
+    constructor(properties: LoadBalancer) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PlacementStrategyProperties {
+export class PlacementStrategy {
     Field?: Value<string>
     Type: Value<string>
-}
 
-export class PlacementStrategy extends ResourceBase {
-    constructor(properties: PlacementStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::PlacementStrategy', properties, dependsOn)
+    constructor(properties: PlacementStrategy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeploymentConfigurationProperties {
+export class DeploymentConfiguration {
     MaximumPercent?: Value<number>
     MinimumHealthyPercent?: Value<number>
-}
 
-export class DeploymentConfiguration extends ResourceBase {
-    constructor(properties: DeploymentConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::DeploymentConfiguration', properties, dependsOn)
+    constructor(properties: DeploymentConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PlacementConstraintProperties {
+export class PlacementConstraint {
     Expression?: Value<string>
     Type: Value<string>
-}
 
-export class PlacementConstraint extends ResourceBase {
-    constructor(properties: PlacementConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::PlacementConstraint', properties, dependsOn)
+    constructor(properties: PlacementConstraint) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,6 +1,6 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface IngressProperties {
+export declare class Ingress {
     CidrIp?: Value<string>;
     CidrIpv6?: Value<string>;
     Description?: Value<string>;
@@ -10,11 +10,9 @@ export interface IngressProperties {
     SourceSecurityGroupName?: Value<string>;
     SourceSecurityGroupOwnerId?: Value<string>;
     ToPort?: Value<number>;
+    constructor(properties: Ingress);
 }
-export declare class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EgressProperties {
+export declare class Egress {
     CidrIp?: Value<string>;
     CidrIpv6?: Value<string>;
     Description?: Value<string>;
@@ -23,9 +21,7 @@ export interface EgressProperties {
     FromPort?: Value<number>;
     IpProtocol: Value<string>;
     ToPort?: Value<number>;
-}
-export declare class Egress extends ResourceBase {
-    constructor(properties: EgressProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Egress);
 }
 export interface SecurityGroupProperties {
     GroupDescription: Value<string>;

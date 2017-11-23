@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ElasticFileSystemTagProperties {
+export declare class ElasticFileSystemTag {
     Key: Value<string>;
     Value: Value<string>;
-}
-export declare class ElasticFileSystemTag extends ResourceBase {
-    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ElasticFileSystemTag);
 }
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>;

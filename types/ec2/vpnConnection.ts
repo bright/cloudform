@@ -3,14 +3,12 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VpnTunnelOptionsSpecificationProperties {
+export class VpnTunnelOptionsSpecification {
     PreSharedKey?: Value<string>
     TunnelInsideCidr?: Value<string>
-}
 
-export class VpnTunnelOptionsSpecification extends ResourceBase {
-    constructor(properties: VpnTunnelOptionsSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::VpnTunnelOptionsSpecification', properties, dependsOn)
+    constructor(properties: VpnTunnelOptionsSpecification) {
+        Object.assign(this, properties)
     }
 }
 

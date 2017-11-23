@@ -3,7 +3,7 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ComputeResourcesProperties {
+export class ComputeResources {
     SpotIamFleetRole?: Value<string>
     MaxvCpus: Value<number>
     BidPercentage?: Value<number>
@@ -17,11 +17,9 @@ export interface ComputeResourcesProperties {
     Ec2KeyPair?: Value<string>
     Tags?: ResourceTag[]
     DesiredvCpus?: Value<number>
-}
 
-export class ComputeResources extends ResourceBase {
-    constructor(properties: ComputeResourcesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::ComputeResources', properties, dependsOn)
+    constructor(properties: ComputeResources) {
+        Object.assign(this, properties)
     }
 }
 

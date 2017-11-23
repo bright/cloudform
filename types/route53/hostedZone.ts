@@ -3,45 +3,37 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface HostedZoneTagProperties {
+export class HostedZoneTag {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class HostedZoneTag extends ResourceBase {
-    constructor(properties: HostedZoneTagProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::HostedZoneTag', properties, dependsOn)
+    constructor(properties: HostedZoneTag) {
+        Object.assign(this, properties)
     }
 }
 
-export interface HostedZoneConfigProperties {
+export class HostedZoneConfig {
     Comment?: Value<string>
-}
 
-export class HostedZoneConfig extends ResourceBase {
-    constructor(properties: HostedZoneConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::HostedZoneConfig', properties, dependsOn)
+    constructor(properties: HostedZoneConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface QueryLoggingConfigProperties {
+export class QueryLoggingConfig {
     CloudWatchLogsLogGroupArn: Value<string>
-}
 
-export class QueryLoggingConfig extends ResourceBase {
-    constructor(properties: QueryLoggingConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::QueryLoggingConfig', properties, dependsOn)
+    constructor(properties: QueryLoggingConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VPCProperties {
+export class VPC {
     VPCId: Value<string>
     VPCRegion: Value<string>
-}
 
-export class VPC extends ResourceBase {
-    constructor(properties: VPCProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::VPC', properties, dependsOn)
+    constructor(properties: VPC) {
+        Object.assign(this, properties)
     }
 }
 

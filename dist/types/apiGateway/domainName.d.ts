@@ -1,10 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface EndpointConfigurationProperties {
+export declare class EndpointConfiguration {
     Types?: List<Value<string>>;
-}
-export declare class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EndpointConfiguration);
 }
 export interface DomainNameProperties {
     CertificateArn?: Value<string>;

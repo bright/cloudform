@@ -2,27 +2,27 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class ApplicationResourceLifecycleConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::ApplicationResourceLifecycleConfig', properties, dependsOn);
+class ApplicationResourceLifecycleConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ApplicationResourceLifecycleConfig = ApplicationResourceLifecycleConfig;
-class ApplicationVersionLifecycleConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::ApplicationVersionLifecycleConfig', properties, dependsOn);
+class ApplicationVersionLifecycleConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ApplicationVersionLifecycleConfig = ApplicationVersionLifecycleConfig;
-class MaxCountRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::MaxCountRule', properties, dependsOn);
+class MaxCountRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MaxCountRule = MaxCountRule;
-class MaxAgeRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticBeanstalk::MaxAgeRule', properties, dependsOn);
+class MaxAgeRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MaxAgeRule = MaxAgeRule;

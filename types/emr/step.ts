@@ -3,27 +3,23 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface HadoopJarStepConfigProperties {
+export class HadoopJarStepConfig {
     Args?: List<Value<string>>
     Jar: Value<string>
     MainClass?: Value<string>
     StepProperties?: List<KeyValue>
-}
 
-export class HadoopJarStepConfig extends ResourceBase {
-    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::HadoopJarStepConfig', properties, dependsOn)
+    constructor(properties: HadoopJarStepConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KeyValueProperties {
+export class KeyValue {
     Key?: Value<string>
     Value?: Value<string>
-}
 
-export class KeyValue extends ResourceBase {
-    constructor(properties: KeyValueProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::KeyValue', properties, dependsOn)
+    constructor(properties: KeyValue) {
+        Object.assign(this, properties)
     }
 }
 

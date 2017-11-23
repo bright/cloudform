@@ -3,138 +3,114 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MappingParametersProperties {
+export class MappingParameters {
     JSONMappingParameters?: JSONMappingParameters
     CSVMappingParameters?: CSVMappingParameters
-}
 
-export class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::MappingParameters', properties, dependsOn)
+    constructor(properties: MappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CSVMappingParametersProperties {
+export class CSVMappingParameters {
     RecordRowDelimiter: Value<string>
     RecordColumnDelimiter: Value<string>
-}
 
-export class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::CSVMappingParameters', properties, dependsOn)
+    constructor(properties: CSVMappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisStreamsInputProperties {
+export class KinesisStreamsInput {
     ResourceARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class KinesisStreamsInput extends ResourceBase {
-    constructor(properties: KinesisStreamsInputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::KinesisStreamsInput', properties, dependsOn)
+    constructor(properties: KinesisStreamsInput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputProperties {
+export class Input {
     NamePrefix: Value<string>
     InputSchema: InputSchema
     KinesisStreamsInput?: KinesisStreamsInput
     KinesisFirehoseInput?: KinesisFirehoseInput
     InputProcessingConfiguration?: InputProcessingConfiguration
     InputParallelism?: InputParallelism
-}
 
-export class Input extends ResourceBase {
-    constructor(properties: InputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::Input', properties, dependsOn)
+    constructor(properties: Input) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputSchemaProperties {
+export class InputSchema {
     RecordEncoding?: Value<string>
     RecordColumns: List<RecordColumn>
     RecordFormat: RecordFormat
-}
 
-export class InputSchema extends ResourceBase {
-    constructor(properties: InputSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::InputSchema', properties, dependsOn)
+    constructor(properties: InputSchema) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RecordColumnProperties {
+export class RecordColumn {
     Mapping?: Value<string>
     SqlType: Value<string>
     Name: Value<string>
-}
 
-export class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::RecordColumn', properties, dependsOn)
+    constructor(properties: RecordColumn) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RecordFormatProperties {
+export class RecordFormat {
     MappingParameters?: MappingParameters
     RecordFormatType: Value<string>
-}
 
-export class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::RecordFormat', properties, dependsOn)
+    constructor(properties: RecordFormat) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisFirehoseInputProperties {
+export class KinesisFirehoseInput {
     ResourceARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class KinesisFirehoseInput extends ResourceBase {
-    constructor(properties: KinesisFirehoseInputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::KinesisFirehoseInput', properties, dependsOn)
+    constructor(properties: KinesisFirehoseInput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputParallelismProperties {
+export class InputParallelism {
     Count?: Value<number>
-}
 
-export class InputParallelism extends ResourceBase {
-    constructor(properties: InputParallelismProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::InputParallelism', properties, dependsOn)
+    constructor(properties: InputParallelism) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputProcessingConfigurationProperties {
+export class InputProcessingConfiguration {
     InputLambdaProcessor?: InputLambdaProcessor
-}
 
-export class InputProcessingConfiguration extends ResourceBase {
-    constructor(properties: InputProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::InputProcessingConfiguration', properties, dependsOn)
+    constructor(properties: InputProcessingConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface JSONMappingParametersProperties {
+export class JSONMappingParameters {
     RecordRowPath: Value<string>
-}
 
-export class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::JSONMappingParameters', properties, dependsOn)
+    constructor(properties: JSONMappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputLambdaProcessorProperties {
+export class InputLambdaProcessor {
     ResourceARN: Value<string>
     RoleARN: Value<string>
-}
 
-export class InputLambdaProcessor extends ResourceBase {
-    constructor(properties: InputLambdaProcessorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::InputLambdaProcessor', properties, dependsOn)
+    constructor(properties: InputLambdaProcessor) {
+        Object.assign(this, properties)
     }
 }
 

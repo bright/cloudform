@@ -2,87 +2,87 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class ContainerDefinition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::ContainerDefinition', properties, dependsOn);
+class ContainerDefinition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ContainerDefinition = ContainerDefinition;
-class LogConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::LogConfiguration', properties, dependsOn);
+class LogConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LogConfiguration = LogConfiguration;
-class Device extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::Device', properties, dependsOn);
+class Device {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Device = Device;
-class KeyValuePair extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::KeyValuePair', properties, dependsOn);
+class KeyValuePair {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KeyValuePair = KeyValuePair;
-class MountPoint extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::MountPoint', properties, dependsOn);
+class MountPoint {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MountPoint = MountPoint;
-class VolumeFrom extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::VolumeFrom', properties, dependsOn);
+class VolumeFrom {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VolumeFrom = VolumeFrom;
-class HostEntry extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::HostEntry', properties, dependsOn);
+class HostEntry {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.HostEntry = HostEntry;
-class KernelCapabilities extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::KernelCapabilities', properties, dependsOn);
+class KernelCapabilities {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KernelCapabilities = KernelCapabilities;
-class TaskDefinitionPlacementConstraint extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::TaskDefinitionPlacementConstraint', properties, dependsOn);
+class TaskDefinitionPlacementConstraint {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TaskDefinitionPlacementConstraint = TaskDefinitionPlacementConstraint;
-class Volume extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::Volume', properties, dependsOn);
+class Volume {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Volume = Volume;
-class PortMapping extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::PortMapping', properties, dependsOn);
+class PortMapping {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PortMapping = PortMapping;
-class Ulimit extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::Ulimit', properties, dependsOn);
+class Ulimit {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Ulimit = Ulimit;
-class LinuxParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::LinuxParameters', properties, dependsOn);
+class LinuxParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LinuxParameters = LinuxParameters;
-class HostVolumeProperties extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ECS::HostVolumeProperties', properties, dependsOn);
+class HostVolumeProperties {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.HostVolumeProperties = HostVolumeProperties;

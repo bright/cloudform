@@ -3,17 +3,15 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RepositoryTriggerProperties {
+export class RepositoryTrigger {
     Events?: List<Value<string>>
     Branches?: List<Value<string>>
     CustomData?: Value<string>
     DestinationArn?: Value<string>
     Name?: Value<string>
-}
 
-export class RepositoryTrigger extends ResourceBase {
-    constructor(properties: RepositoryTriggerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeCommit::RepositoryTrigger', properties, dependsOn)
+    constructor(properties: RepositoryTrigger) {
+        Object.assign(this, properties)
     }
 }
 

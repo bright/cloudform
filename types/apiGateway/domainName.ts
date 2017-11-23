@@ -3,13 +3,11 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface EndpointConfigurationProperties {
+export class EndpointConfiguration {
     Types?: List<Value<string>>
-}
 
-export class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::EndpointConfiguration', properties, dependsOn)
+    constructor(properties: EndpointConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,15 +3,13 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface S3LocationProperties {
+export class S3Location {
     Bucket: Value<string>
     Key: Value<string>
     RoleArn: Value<string>
-}
 
-export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::GameLift::S3Location', properties, dependsOn)
+    constructor(properties: S3Location) {
+        Object.assign(this, properties)
     }
 }
 

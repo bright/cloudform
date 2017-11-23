@@ -3,94 +3,78 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface S3ReferenceDataSourceProperties {
+export class S3ReferenceDataSource {
     BucketARN: Value<string>
     FileKey: Value<string>
     ReferenceRoleARN: Value<string>
-}
 
-export class S3ReferenceDataSource extends ResourceBase {
-    constructor(properties: S3ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::S3ReferenceDataSource', properties, dependsOn)
+    constructor(properties: S3ReferenceDataSource) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MappingParametersProperties {
+export class MappingParameters {
     JSONMappingParameters?: JSONMappingParameters
     CSVMappingParameters?: CSVMappingParameters
-}
 
-export class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::MappingParameters', properties, dependsOn)
+    constructor(properties: MappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface JSONMappingParametersProperties {
+export class JSONMappingParameters {
     RecordRowPath: Value<string>
-}
 
-export class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::JSONMappingParameters', properties, dependsOn)
+    constructor(properties: JSONMappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RecordFormatProperties {
+export class RecordFormat {
     MappingParameters?: MappingParameters
     RecordFormatType: Value<string>
-}
 
-export class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::RecordFormat', properties, dependsOn)
+    constructor(properties: RecordFormat) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RecordColumnProperties {
+export class RecordColumn {
     Mapping?: Value<string>
     SqlType: Value<string>
     Name: Value<string>
-}
 
-export class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::RecordColumn', properties, dependsOn)
+    constructor(properties: RecordColumn) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CSVMappingParametersProperties {
+export class CSVMappingParameters {
     RecordRowDelimiter: Value<string>
     RecordColumnDelimiter: Value<string>
-}
 
-export class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::CSVMappingParameters', properties, dependsOn)
+    constructor(properties: CSVMappingParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ReferenceSchemaProperties {
+export class ReferenceSchema {
     RecordEncoding?: Value<string>
     RecordColumns: List<RecordColumn>
     RecordFormat: RecordFormat
-}
 
-export class ReferenceSchema extends ResourceBase {
-    constructor(properties: ReferenceSchemaProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::ReferenceSchema', properties, dependsOn)
+    constructor(properties: ReferenceSchema) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ReferenceDataSourceProperties {
+export class ReferenceDataSource {
     ReferenceSchema: ReferenceSchema
     TableName?: Value<string>
     S3ReferenceDataSource?: S3ReferenceDataSource
-}
 
-export class ReferenceDataSource extends ResourceBase {
-    constructor(properties: ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::KinesisAnalytics::ReferenceDataSource', properties, dependsOn)
+    constructor(properties: ReferenceDataSource) {
+        Object.assign(this, properties)
     }
 }
 

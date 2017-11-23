@@ -1,30 +1,22 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface HostedZoneTagProperties {
+export declare class HostedZoneTag {
     Key: Value<string>;
     Value: Value<string>;
+    constructor(properties: HostedZoneTag);
 }
-export declare class HostedZoneTag extends ResourceBase {
-    constructor(properties: HostedZoneTagProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface HostedZoneConfigProperties {
+export declare class HostedZoneConfig {
     Comment?: Value<string>;
+    constructor(properties: HostedZoneConfig);
 }
-export declare class HostedZoneConfig extends ResourceBase {
-    constructor(properties: HostedZoneConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface QueryLoggingConfigProperties {
+export declare class QueryLoggingConfig {
     CloudWatchLogsLogGroupArn: Value<string>;
+    constructor(properties: QueryLoggingConfig);
 }
-export declare class QueryLoggingConfig extends ResourceBase {
-    constructor(properties: QueryLoggingConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VPCProperties {
+export declare class VPC {
     VPCId: Value<string>;
     VPCRegion: Value<string>;
-}
-export declare class VPC extends ResourceBase {
-    constructor(properties: VPCProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: VPC);
 }
 export interface HostedZoneProperties {
     HostedZoneConfig?: HostedZoneConfig;

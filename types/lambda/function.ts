@@ -3,57 +3,47 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VpcConfigProperties {
+export class VpcConfig {
     SecurityGroupIds: List<Value<string>>
     SubnetIds: List<Value<string>>
-}
 
-export class VpcConfig extends ResourceBase {
-    constructor(properties: VpcConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Lambda::VpcConfig', properties, dependsOn)
+    constructor(properties: VpcConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeadLetterConfigProperties {
+export class DeadLetterConfig {
     TargetArn?: Value<string>
-}
 
-export class DeadLetterConfig extends ResourceBase {
-    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Lambda::DeadLetterConfig', properties, dependsOn)
+    constructor(properties: DeadLetterConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TracingConfigProperties {
+export class TracingConfig {
     Mode?: Value<string>
-}
 
-export class TracingConfig extends ResourceBase {
-    constructor(properties: TracingConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Lambda::TracingConfig', properties, dependsOn)
+    constructor(properties: TracingConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CodeProperties {
+export class Code {
     S3Bucket?: Value<string>
     S3Key?: Value<string>
     S3ObjectVersion?: Value<string>
     ZipFile?: Value<string>
-}
 
-export class Code extends ResourceBase {
-    constructor(properties: CodeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Lambda::Code', properties, dependsOn)
+    constructor(properties: Code) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EnvironmentProperties {
+export class Environment {
     Variables?: {[key: string]: Value<string>}
-}
 
-export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Lambda::Environment', properties, dependsOn)
+    constructor(properties: Environment) {
+        Object.assign(this, properties)
     }
 }
 

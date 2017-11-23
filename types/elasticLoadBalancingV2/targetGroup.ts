@@ -3,36 +3,30 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface TargetGroupAttributeProperties {
+export class TargetGroupAttribute {
     Key?: Value<string>
     Value?: Value<string>
-}
 
-export class TargetGroupAttribute extends ResourceBase {
-    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::TargetGroupAttribute', properties, dependsOn)
+    constructor(properties: TargetGroupAttribute) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MatcherProperties {
+export class Matcher {
     HttpCode: Value<string>
-}
 
-export class Matcher extends ResourceBase {
-    constructor(properties: MatcherProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::Matcher', properties, dependsOn)
+    constructor(properties: Matcher) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TargetDescriptionProperties {
+export class TargetDescription {
     AvailabilityZone?: Value<string>
     Id: Value<string>
     Port?: Value<number>
-}
 
-export class TargetDescription extends ResourceBase {
-    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::TargetDescription', properties, dependsOn)
+    constructor(properties: TargetDescription) {
+        Object.assign(this, properties)
     }
 }
 

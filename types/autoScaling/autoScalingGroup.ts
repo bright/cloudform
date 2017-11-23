@@ -3,7 +3,7 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LifecycleHookSpecificationProperties {
+export class LifecycleHookSpecification {
     DefaultResult?: Value<string>
     HeartbeatTimeout?: Value<number>
     LifecycleHookName: Value<string>
@@ -11,45 +11,37 @@ export interface LifecycleHookSpecificationProperties {
     NotificationMetadata?: Value<string>
     NotificationTargetARN?: Value<string>
     RoleARN?: Value<string>
-}
 
-export class LifecycleHookSpecification extends ResourceBase {
-    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::LifecycleHookSpecification', properties, dependsOn)
+    constructor(properties: LifecycleHookSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NotificationConfigurationProperties {
+export class NotificationConfiguration {
     NotificationTypes?: List<Value<string>>
     TopicARN: Value<string>
-}
 
-export class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::NotificationConfiguration', properties, dependsOn)
+    constructor(properties: NotificationConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MetricsCollectionProperties {
+export class MetricsCollection {
     Granularity: Value<string>
     Metrics?: List<Value<string>>
-}
 
-export class MetricsCollection extends ResourceBase {
-    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::MetricsCollection', properties, dependsOn)
+    constructor(properties: MetricsCollection) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TagPropertyProperties {
+export class TagProperty {
     Key: Value<string>
     PropagateAtLaunch: Value<boolean>
     Value: Value<string>
-}
 
-export class TagProperty extends ResourceBase {
-    constructor(properties: TagPropertyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::TagProperty', properties, dependsOn)
+    constructor(properties: TagProperty) {
+        Object.assign(this, properties)
     }
 }
 

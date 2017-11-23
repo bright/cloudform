@@ -1,62 +1,46 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface TimeToLiveSpecificationProperties {
+export declare class TimeToLiveSpecification {
     AttributeName: Value<string>;
     Enabled: Value<boolean>;
+    constructor(properties: TimeToLiveSpecification);
 }
-export declare class TimeToLiveSpecification extends ResourceBase {
-    constructor(properties: TimeToLiveSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AttributeDefinitionProperties {
+export declare class AttributeDefinition {
     AttributeName: Value<string>;
     AttributeType: Value<string>;
+    constructor(properties: AttributeDefinition);
 }
-export declare class AttributeDefinition extends ResourceBase {
-    constructor(properties: AttributeDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LocalSecondaryIndexProperties {
+export declare class LocalSecondaryIndex {
     IndexName: Value<string>;
     KeySchema: List<KeySchema>;
     Projection: Projection;
+    constructor(properties: LocalSecondaryIndex);
 }
-export declare class LocalSecondaryIndex extends ResourceBase {
-    constructor(properties: LocalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ProvisionedThroughputProperties {
+export declare class ProvisionedThroughput {
     ReadCapacityUnits: Value<number>;
     WriteCapacityUnits: Value<number>;
+    constructor(properties: ProvisionedThroughput);
 }
-export declare class ProvisionedThroughput extends ResourceBase {
-    constructor(properties: ProvisionedThroughputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface GlobalSecondaryIndexProperties {
+export declare class GlobalSecondaryIndex {
     IndexName: Value<string>;
     KeySchema: List<KeySchema>;
     Projection: Projection;
     ProvisionedThroughput: ProvisionedThroughput;
+    constructor(properties: GlobalSecondaryIndex);
 }
-export declare class GlobalSecondaryIndex extends ResourceBase {
-    constructor(properties: GlobalSecondaryIndexProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KeySchemaProperties {
+export declare class KeySchema {
     AttributeName: Value<string>;
     KeyType: Value<string>;
+    constructor(properties: KeySchema);
 }
-export declare class KeySchema extends ResourceBase {
-    constructor(properties: KeySchemaProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ProjectionProperties {
+export declare class Projection {
     NonKeyAttributes?: List<Value<string>>;
     ProjectionType?: Value<string>;
+    constructor(properties: Projection);
 }
-export declare class Projection extends ResourceBase {
-    constructor(properties: ProjectionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StreamSpecificationProperties {
+export declare class StreamSpecification {
     StreamViewType: Value<string>;
-}
-export declare class StreamSpecification extends ResourceBase {
-    constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StreamSpecification);
 }
 export interface TableProperties {
     AttributeDefinitions?: List<AttributeDefinition>;

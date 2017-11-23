@@ -1,20 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface SourceConfigurationProperties {
+export declare class SourceConfiguration {
     ApplicationName: Value<string>;
     TemplateName: Value<string>;
+    constructor(properties: SourceConfiguration);
 }
-export declare class SourceConfiguration extends ResourceBase {
-    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConfigurationOptionSettingProperties {
+export declare class ConfigurationOptionSetting {
     Namespace: Value<string>;
     OptionName: Value<string>;
     ResourceName?: Value<string>;
     Value?: Value<string>;
-}
-export declare class ConfigurationOptionSetting extends ResourceBase {
-    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ConfigurationOptionSetting);
 }
 export interface ConfigurationTemplateProperties {
     ApplicationName: Value<string>;

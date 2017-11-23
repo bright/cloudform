@@ -2,69 +2,69 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class IamInstanceProfileSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::IamInstanceProfileSpecification', properties, dependsOn);
+class IamInstanceProfileSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.IamInstanceProfileSpecification = IamInstanceProfileSpecification;
-class InstanceNetworkInterfaceSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::InstanceNetworkInterfaceSpecification', properties, dependsOn);
+class InstanceNetworkInterfaceSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification;
-class PrivateIpAddressSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn);
+class PrivateIpAddressSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
-class SpotFleetLaunchSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SpotFleetLaunchSpecification', properties, dependsOn);
+class SpotFleetLaunchSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotFleetLaunchSpecification = SpotFleetLaunchSpecification;
-class SpotPlacement extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SpotPlacement', properties, dependsOn);
+class SpotPlacement {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotPlacement = SpotPlacement;
-class SpotFleetRequestConfigData extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SpotFleetRequestConfigData', properties, dependsOn);
+class SpotFleetRequestConfigData {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotFleetRequestConfigData = SpotFleetRequestConfigData;
-class EbsBlockDevice extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::EbsBlockDevice', properties, dependsOn);
+class EbsBlockDevice {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsBlockDevice = EbsBlockDevice;
-class InstanceIpv6Address extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn);
+class InstanceIpv6Address {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceIpv6Address = InstanceIpv6Address;
-class GroupIdentifier extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::GroupIdentifier', properties, dependsOn);
+class GroupIdentifier {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.GroupIdentifier = GroupIdentifier;
-class SpotFleetMonitoring extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SpotFleetMonitoring', properties, dependsOn);
+class SpotFleetMonitoring {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotFleetMonitoring = SpotFleetMonitoring;
-class BlockDeviceMapping extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::BlockDeviceMapping', properties, dependsOn);
+class BlockDeviceMapping {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.BlockDeviceMapping = BlockDeviceMapping;

@@ -1,11 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface LoggingPropertiesProperties {
+export declare class LoggingProperties {
     BucketName: Value<string>;
     S3KeyPrefix?: Value<string>;
-}
-export declare class LoggingProperties extends ResourceBase {
-    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: LoggingProperties);
 }
 export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>;

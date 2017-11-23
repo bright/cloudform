@@ -1,33 +1,25 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface KinesisFirehoseOutputProperties {
+export declare class KinesisFirehoseOutput {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: KinesisFirehoseOutput);
 }
-export declare class KinesisFirehoseOutput extends ResourceBase {
-    constructor(properties: KinesisFirehoseOutputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisStreamsOutputProperties {
+export declare class KinesisStreamsOutput {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: KinesisStreamsOutput);
 }
-export declare class KinesisStreamsOutput extends ResourceBase {
-    constructor(properties: KinesisStreamsOutputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface OutputProperties {
+export declare class Output {
     DestinationSchema: DestinationSchema;
     KinesisFirehoseOutput?: KinesisFirehoseOutput;
     KinesisStreamsOutput?: KinesisStreamsOutput;
     Name?: Value<string>;
+    constructor(properties: Output);
 }
-export declare class Output extends ResourceBase {
-    constructor(properties: OutputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DestinationSchemaProperties {
+export declare class DestinationSchema {
     RecordFormatType?: Value<string>;
-}
-export declare class DestinationSchema extends ResourceBase {
-    constructor(properties: DestinationSchemaProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DestinationSchema);
 }
 export interface ApplicationOutputProperties {
     ApplicationName: Value<string>;

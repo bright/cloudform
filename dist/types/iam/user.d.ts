@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface LoginProfileProperties {
+export declare class LoginProfile {
     Password: Value<string>;
     PasswordResetRequired?: Value<boolean>;
+    constructor(properties: LoginProfile);
 }
-export declare class LoginProfile extends ResourceBase {
-    constructor(properties: LoginProfileProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PolicyProperties {
+export declare class Policy {
     PolicyDocument: any;
     PolicyName: Value<string>;
-}
-export declare class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Policy);
 }
 export interface UserProperties {
     Groups?: List<Value<string>>;

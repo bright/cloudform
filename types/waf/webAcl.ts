@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface WafActionProperties {
+export class WafAction {
     Type: Value<string>
-}
 
-export class WafAction extends ResourceBase {
-    constructor(properties: WafActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::WafAction', properties, dependsOn)
+    constructor(properties: WafAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ActivatedRuleProperties {
+export class ActivatedRule {
     Action: WafAction
     Priority: Value<number>
     RuleId: Value<string>
-}
 
-export class ActivatedRule extends ResourceBase {
-    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::ActivatedRule', properties, dependsOn)
+    constructor(properties: ActivatedRule) {
+        Object.assign(this, properties)
     }
 }
 

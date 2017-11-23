@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ElasticFileSystemTagProperties {
+export class ElasticFileSystemTag {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class ElasticFileSystemTag extends ResourceBase {
-    constructor(properties: ElasticFileSystemTagProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EFS::ElasticFileSystemTag', properties, dependsOn)
+    constructor(properties: ElasticFileSystemTag) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,11 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface DomainValidationOptionProperties {
+export declare class DomainValidationOption {
     DomainName: Value<string>;
     ValidationDomain: Value<string>;
-}
-export declare class DomainValidationOption extends ResourceBase {
-    constructor(properties: DomainValidationOptionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DomainValidationOption);
 }
 export interface CertificateProperties {
     DomainName: Value<string>;

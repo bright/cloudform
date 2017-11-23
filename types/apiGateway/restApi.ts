@@ -3,26 +3,22 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface S3LocationProperties {
+export class S3Location {
     Bucket?: Value<string>
     ETag?: Value<string>
     Key?: Value<string>
     Version?: Value<string>
-}
 
-export class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::S3Location', properties, dependsOn)
+    constructor(properties: S3Location) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EndpointConfigurationProperties {
+export class EndpointConfiguration {
     Types?: List<Value<string>>
-}
 
-export class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::EndpointConfiguration', properties, dependsOn)
+    constructor(properties: EndpointConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface StageKeyProperties {
+export declare class StageKey {
     RestApiId?: Value<string>;
     StageName?: Value<string>;
-}
-export declare class StageKey extends ResourceBase {
-    constructor(properties: StageKeyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StageKey);
 }
 export interface ApiKeyProperties {
     CustomerId?: Value<string>;

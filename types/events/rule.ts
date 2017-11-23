@@ -3,17 +3,15 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RunCommandParametersProperties {
+export class RunCommandParameters {
     RunCommandTargets: List<RunCommandTarget>
-}
 
-export class RunCommandParameters extends ResourceBase {
-    constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::RunCommandParameters', properties, dependsOn)
+    constructor(properties: RunCommandParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TargetProperties {
+export class Target {
     Arn: Value<string>
     EcsParameters?: EcsParameters
     Id: Value<string>
@@ -23,54 +21,44 @@ export interface TargetProperties {
     KinesisParameters?: KinesisParameters
     RoleArn?: Value<string>
     RunCommandParameters?: RunCommandParameters
-}
 
-export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::Target', properties, dependsOn)
+    constructor(properties: Target) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RunCommandTargetProperties {
+export class RunCommandTarget {
     Key: Value<string>
     Values: List<Value<string>>
-}
 
-export class RunCommandTarget extends ResourceBase {
-    constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::RunCommandTarget', properties, dependsOn)
+    constructor(properties: RunCommandTarget) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InputTransformerProperties {
+export class InputTransformer {
     InputPathsMap?: {[key: string]: Value<string>}
     InputTemplate: Value<string>
-}
 
-export class InputTransformer extends ResourceBase {
-    constructor(properties: InputTransformerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::InputTransformer', properties, dependsOn)
+    constructor(properties: InputTransformer) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisParametersProperties {
+export class KinesisParameters {
     PartitionKeyPath: Value<string>
-}
 
-export class KinesisParameters extends ResourceBase {
-    constructor(properties: KinesisParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::KinesisParameters', properties, dependsOn)
+    constructor(properties: KinesisParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EcsParametersProperties {
+export class EcsParameters {
     TaskCount?: Value<number>
     TaskDefinitionArn: Value<string>
-}
 
-export class EcsParameters extends ResourceBase {
-    constructor(properties: EcsParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Events::EcsParameters', properties, dependsOn)
+    constructor(properties: EcsParameters) {
+        Object.assign(this, properties)
     }
 }
 

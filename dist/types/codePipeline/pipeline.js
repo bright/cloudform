@@ -2,57 +2,57 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class InputArtifact extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::InputArtifact', properties, dependsOn);
+class InputArtifact {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputArtifact = InputArtifact;
-class ActionDeclaration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::ActionDeclaration', properties, dependsOn);
+class ActionDeclaration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ActionDeclaration = ActionDeclaration;
-class StageDeclaration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::StageDeclaration', properties, dependsOn);
+class StageDeclaration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.StageDeclaration = StageDeclaration;
-class BlockerDeclaration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::BlockerDeclaration', properties, dependsOn);
+class BlockerDeclaration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.BlockerDeclaration = BlockerDeclaration;
-class StageTransition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::StageTransition', properties, dependsOn);
+class StageTransition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.StageTransition = StageTransition;
-class ArtifactStore extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::ArtifactStore', properties, dependsOn);
+class ArtifactStore {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ArtifactStore = ArtifactStore;
-class ActionTypeId extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::ActionTypeId', properties, dependsOn);
+class ActionTypeId {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ActionTypeId = ActionTypeId;
-class OutputArtifact extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::OutputArtifact', properties, dependsOn);
+class OutputArtifact {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.OutputArtifact = OutputArtifact;
-class EncryptionKey extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::EncryptionKey', properties, dependsOn);
+class EncryptionKey {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EncryptionKey = EncryptionKey;

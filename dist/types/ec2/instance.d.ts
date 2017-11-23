@@ -1,12 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ElasticGpuSpecificationProperties {
+export declare class ElasticGpuSpecification {
     Type: Value<string>;
+    constructor(properties: ElasticGpuSpecification);
 }
-export declare class ElasticGpuSpecification extends ResourceBase {
-    constructor(properties: ElasticGpuSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface NetworkInterfaceProperties {
+export declare class NetworkInterface {
     AssociatePublicIpAddress?: Value<boolean>;
     DeleteOnTermination?: Value<boolean>;
     Description?: Value<string>;
@@ -19,68 +17,50 @@ export interface NetworkInterfaceProperties {
     PrivateIpAddresses?: List<PrivateIpAddressSpecification>;
     SecondaryPrivateIpAddressCount?: Value<number>;
     SubnetId?: Value<string>;
+    constructor(properties: NetworkInterface);
 }
-export declare class NetworkInterface extends ResourceBase {
-    constructor(properties: NetworkInterfaceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceIpv6AddressProperties {
+export declare class InstanceIpv6Address {
     Ipv6Address: Value<string>;
+    constructor(properties: InstanceIpv6Address);
 }
-export declare class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumeProperties {
+export declare class Volume {
     Device: Value<string>;
     VolumeId: Value<string>;
+    constructor(properties: Volume);
 }
-export declare class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AssociationParameterProperties {
+export declare class AssociationParameter {
     Key: Value<string>;
     Value: List<Value<string>>;
+    constructor(properties: AssociationParameter);
 }
-export declare class AssociationParameter extends ResourceBase {
-    constructor(properties: AssociationParameterProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsProperties {
+export declare class Ebs {
     DeleteOnTermination?: Value<boolean>;
     Encrypted?: Value<boolean>;
     Iops?: Value<number>;
     SnapshotId?: Value<string>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
+    constructor(properties: Ebs);
 }
-export declare class Ebs extends ResourceBase {
-    constructor(properties: EbsProperties, dependsOn?: Value<string> | Value<string>[]);
+export declare class NoDevice {
+    constructor(properties: NoDevice);
 }
-export interface NoDeviceProperties {
-}
-export declare class NoDevice extends ResourceBase {
-    constructor(properties: NoDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SsmAssociationProperties {
+export declare class SsmAssociation {
     AssociationParameters?: List<AssociationParameter>;
     DocumentName: Value<string>;
+    constructor(properties: SsmAssociation);
 }
-export declare class SsmAssociation extends ResourceBase {
-    constructor(properties: SsmAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface BlockDeviceMappingProperties {
+export declare class BlockDeviceMapping {
     DeviceName: Value<string>;
     Ebs?: Ebs;
     NoDevice?: NoDevice;
     VirtualName?: Value<string>;
+    constructor(properties: BlockDeviceMapping);
 }
-export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PrivateIpAddressSpecificationProperties {
+export declare class PrivateIpAddressSpecification {
     Primary: Value<boolean>;
     PrivateIpAddress: Value<string>;
-}
-export declare class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PrivateIpAddressSpecification);
 }
 export interface InstanceProperties {
     AdditionalInfo?: Value<string>;

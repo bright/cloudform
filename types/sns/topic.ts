@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SubscriptionProperties {
+export class Subscription {
     Endpoint: Value<string>
     Protocol: Value<string>
-}
 
-export class Subscription extends ResourceBase {
-    constructor(properties: SubscriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SNS::Subscription', properties, dependsOn)
+    constructor(properties: Subscription) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,27 +3,23 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SourceConfigurationProperties {
+export class SourceConfiguration {
     ApplicationName: Value<string>
     TemplateName: Value<string>
-}
 
-export class SourceConfiguration extends ResourceBase {
-    constructor(properties: SourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::SourceConfiguration', properties, dependsOn)
+    constructor(properties: SourceConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConfigurationOptionSettingProperties {
+export class ConfigurationOptionSetting {
     Namespace: Value<string>
     OptionName: Value<string>
     ResourceName?: Value<string>
     Value?: Value<string>
-}
 
-export class ConfigurationOptionSetting extends ResourceBase {
-    constructor(properties: ConfigurationOptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::ConfigurationOptionSetting', properties, dependsOn)
+    constructor(properties: ConfigurationOptionSetting) {
+        Object.assign(this, properties)
     }
 }
 

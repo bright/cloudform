@@ -2,45 +2,45 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class Volumes extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::Volumes', properties, dependsOn);
+class Volumes {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Volumes = Volumes;
-class RetryStrategy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::RetryStrategy', properties, dependsOn);
+class RetryStrategy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RetryStrategy = RetryStrategy;
-class ContainerProperties extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::ContainerProperties', properties, dependsOn);
+class ContainerProperties {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ContainerProperties = ContainerProperties;
-class MountPoints extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::MountPoints', properties, dependsOn);
+class MountPoints {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MountPoints = MountPoints;
-class Environment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::Environment', properties, dependsOn);
+class Environment {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Environment = Environment;
-class Ulimit extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::Ulimit', properties, dependsOn);
+class Ulimit {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Ulimit = Ulimit;
-class VolumesHost extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Batch::VolumesHost', properties, dependsOn);
+class VolumesHost {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VolumesHost = VolumesHost;

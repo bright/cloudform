@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface PolicyProperties {
+export class Policy {
     PolicyDocument: any
     PolicyName: Value<string>
-}
 
-export class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IAM::Policy', properties, dependsOn)
+    constructor(properties: Policy) {
+        Object.assign(this, properties)
     }
 }
 

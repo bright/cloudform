@@ -2,33 +2,33 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class Artifacts extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::Artifacts', properties, dependsOn);
+class Artifacts {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Artifacts = Artifacts;
-class SourceAuth extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::SourceAuth', properties, dependsOn);
+class SourceAuth {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SourceAuth = SourceAuth;
-class Environment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::Environment', properties, dependsOn);
+class Environment {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Environment = Environment;
-class EnvironmentVariable extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::EnvironmentVariable', properties, dependsOn);
+class EnvironmentVariable {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EnvironmentVariable = EnvironmentVariable;
-class Source extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeBuild::Source', properties, dependsOn);
+class Source {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Source = Source;

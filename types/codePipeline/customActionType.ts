@@ -3,31 +3,27 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SettingsProperties {
+export class Settings {
     EntityUrlTemplate?: Value<string>
     ExecutionUrlTemplate?: Value<string>
     RevisionUrlTemplate?: Value<string>
     ThirdPartyConfigurationUrl?: Value<string>
-}
 
-export class Settings extends ResourceBase {
-    constructor(properties: SettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::Settings', properties, dependsOn)
+    constructor(properties: Settings) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ArtifactDetailsProperties {
+export class ArtifactDetails {
     MaximumCount: Value<number>
     MinimumCount: Value<number>
-}
 
-export class ArtifactDetails extends ResourceBase {
-    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::ArtifactDetails', properties, dependsOn)
+    constructor(properties: ArtifactDetails) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConfigurationPropertiesProperties {
+export class ConfigurationProperties {
     Description?: Value<string>
     Key: Value<boolean>
     Name: Value<string>
@@ -35,11 +31,9 @@ export interface ConfigurationPropertiesProperties {
     Required: Value<boolean>
     Secret: Value<boolean>
     Type?: Value<string>
-}
 
-export class ConfigurationProperties extends ResourceBase {
-    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodePipeline::ConfigurationProperties', properties, dependsOn)
+    constructor(properties: ConfigurationProperties) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,125 +3,105 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface S3ActionProperties {
+export class S3Action {
     BucketName: Value<string>
     Key: Value<string>
     RoleArn: Value<string>
-}
 
-export class S3Action extends ResourceBase {
-    constructor(properties: S3ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::S3Action', properties, dependsOn)
+    constructor(properties: S3Action) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SqsActionProperties {
+export class SqsAction {
     QueueUrl: Value<string>
     RoleArn: Value<string>
     UseBase64?: Value<boolean>
-}
 
-export class SqsAction extends ResourceBase {
-    constructor(properties: SqsActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::SqsAction', properties, dependsOn)
+    constructor(properties: SqsAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PutItemInputProperties {
+export class PutItemInput {
     TableName: Value<string>
-}
 
-export class PutItemInput extends ResourceBase {
-    constructor(properties: PutItemInputProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::PutItemInput', properties, dependsOn)
+    constructor(properties: PutItemInput) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RepublishActionProperties {
+export class RepublishAction {
     RoleArn: Value<string>
     Topic: Value<string>
-}
 
-export class RepublishAction extends ResourceBase {
-    constructor(properties: RepublishActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::RepublishAction', properties, dependsOn)
+    constructor(properties: RepublishAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SnsActionProperties {
+export class SnsAction {
     MessageFormat?: Value<string>
     RoleArn: Value<string>
     TargetArn: Value<string>
-}
 
-export class SnsAction extends ResourceBase {
-    constructor(properties: SnsActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::SnsAction', properties, dependsOn)
+    constructor(properties: SnsAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FirehoseActionProperties {
+export class FirehoseAction {
     DeliveryStreamName: Value<string>
     RoleArn: Value<string>
     Separator?: Value<string>
-}
 
-export class FirehoseAction extends ResourceBase {
-    constructor(properties: FirehoseActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::FirehoseAction', properties, dependsOn)
+    constructor(properties: FirehoseAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TopicRulePayloadProperties {
+export class TopicRulePayload {
     Actions: List<Action>
     AwsIotSqlVersion?: Value<string>
     Description?: Value<string>
     RuleDisabled: Value<boolean>
     Sql: Value<string>
-}
 
-export class TopicRulePayload extends ResourceBase {
-    constructor(properties: TopicRulePayloadProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::TopicRulePayload', properties, dependsOn)
+    constructor(properties: TopicRulePayload) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LambdaActionProperties {
+export class LambdaAction {
     FunctionArn?: Value<string>
-}
 
-export class LambdaAction extends ResourceBase {
-    constructor(properties: LambdaActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::LambdaAction', properties, dependsOn)
+    constructor(properties: LambdaAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DynamoDBv2ActionProperties {
+export class DynamoDBv2Action {
     PutItem?: PutItemInput
     RoleArn?: Value<string>
-}
 
-export class DynamoDBv2Action extends ResourceBase {
-    constructor(properties: DynamoDBv2ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::DynamoDBv2Action', properties, dependsOn)
+    constructor(properties: DynamoDBv2Action) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ElasticsearchActionProperties {
+export class ElasticsearchAction {
     Endpoint: Value<string>
     Id: Value<string>
     Index: Value<string>
     RoleArn: Value<string>
     Type: Value<string>
-}
 
-export class ElasticsearchAction extends ResourceBase {
-    constructor(properties: ElasticsearchActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::ElasticsearchAction', properties, dependsOn)
+    constructor(properties: ElasticsearchAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DynamoDBActionProperties {
+export class DynamoDBAction {
     HashKeyField: Value<string>
     HashKeyType?: Value<string>
     HashKeyValue: Value<string>
@@ -131,40 +111,34 @@ export interface DynamoDBActionProperties {
     RangeKeyValue: Value<string>
     RoleArn: Value<string>
     TableName: Value<string>
-}
 
-export class DynamoDBAction extends ResourceBase {
-    constructor(properties: DynamoDBActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::DynamoDBAction', properties, dependsOn)
+    constructor(properties: DynamoDBAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KinesisActionProperties {
+export class KinesisAction {
     PartitionKey?: Value<string>
     RoleArn: Value<string>
     StreamName: Value<string>
-}
 
-export class KinesisAction extends ResourceBase {
-    constructor(properties: KinesisActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::KinesisAction', properties, dependsOn)
+    constructor(properties: KinesisAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CloudwatchAlarmActionProperties {
+export class CloudwatchAlarmAction {
     AlarmName: Value<string>
     RoleArn: Value<string>
     StateReason: Value<string>
     StateValue: Value<string>
-}
 
-export class CloudwatchAlarmAction extends ResourceBase {
-    constructor(properties: CloudwatchAlarmActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::CloudwatchAlarmAction', properties, dependsOn)
+    constructor(properties: CloudwatchAlarmAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ActionProperties {
+export class Action {
     CloudwatchAlarm?: CloudwatchAlarmAction
     CloudwatchMetric?: CloudwatchMetricAction
     DynamoDB?: DynamoDBAction
@@ -177,26 +151,22 @@ export interface ActionProperties {
     S3?: S3Action
     Sns?: SnsAction
     Sqs?: SqsAction
-}
 
-export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::Action', properties, dependsOn)
+    constructor(properties: Action) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CloudwatchMetricActionProperties {
+export class CloudwatchMetricAction {
     MetricName: Value<string>
     MetricNamespace: Value<string>
     MetricTimestamp?: Value<string>
     MetricUnit: Value<string>
     MetricValue: Value<string>
     RoleArn: Value<string>
-}
 
-export class CloudwatchMetricAction extends ResourceBase {
-    constructor(properties: CloudwatchMetricActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::CloudwatchMetricAction', properties, dependsOn)
+    constructor(properties: CloudwatchMetricAction) {
+        Object.assign(this, properties)
     }
 }
 

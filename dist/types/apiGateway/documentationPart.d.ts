@@ -1,14 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface LocationProperties {
+export declare class Location {
     Method?: Value<string>;
     Name?: Value<string>;
     Path?: Value<string>;
     StatusCode?: Value<string>;
     Type?: Value<string>;
-}
-export declare class Location extends ResourceBase {
-    constructor(properties: LocationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Location);
 }
 export interface DocumentationPartProperties {
     Location: Location;

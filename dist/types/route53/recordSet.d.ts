@@ -1,20 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface GeoLocationProperties {
+export declare class GeoLocation {
     ContinentCode?: Value<string>;
     CountryCode?: Value<string>;
     SubdivisionCode?: Value<string>;
+    constructor(properties: GeoLocation);
 }
-export declare class GeoLocation extends ResourceBase {
-    constructor(properties: GeoLocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AliasTargetProperties {
+export declare class AliasTarget {
     DNSName: Value<string>;
     EvaluateTargetHealth?: Value<boolean>;
     HostedZoneId: Value<string>;
-}
-export declare class AliasTarget extends ResourceBase {
-    constructor(properties: AliasTargetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AliasTarget);
 }
 export interface RecordSetProperties {
     AliasTarget?: AliasTarget;

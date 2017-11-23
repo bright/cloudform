@@ -3,41 +3,35 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface TrustedSignersProperties {
+export class TrustedSigners {
     Enabled: Value<boolean>
     AwsAccountNumbers?: List<Value<string>>
-}
 
-export class TrustedSigners extends ResourceBase {
-    constructor(properties: TrustedSignersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::TrustedSigners', properties, dependsOn)
+    constructor(properties: TrustedSigners) {
+        Object.assign(this, properties)
     }
 }
 
-export interface S3OriginProperties {
+export class S3Origin {
     DomainName: Value<string>
     OriginAccessIdentity: Value<string>
-}
 
-export class S3Origin extends ResourceBase {
-    constructor(properties: S3OriginProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::S3Origin', properties, dependsOn)
+    constructor(properties: S3Origin) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LoggingProperties {
+export class Logging {
     Bucket: Value<string>
     Enabled: Value<boolean>
     Prefix: Value<string>
-}
 
-export class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::Logging', properties, dependsOn)
+    constructor(properties: Logging) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StreamingDistributionConfigProperties {
+export class StreamingDistributionConfig {
     Logging?: Logging
     Comment: Value<string>
     PriceClass?: Value<string>
@@ -45,11 +39,9 @@ export interface StreamingDistributionConfigProperties {
     Enabled: Value<boolean>
     Aliases?: List<Value<string>>
     TrustedSigners: TrustedSigners
-}
 
-export class StreamingDistributionConfig extends ResourceBase {
-    constructor(properties: StreamingDistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudFront::StreamingDistributionConfig', properties, dependsOn)
+    constructor(properties: StreamingDistributionConfig) {
+        Object.assign(this, properties)
     }
 }
 

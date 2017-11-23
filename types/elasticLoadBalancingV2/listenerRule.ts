@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ActionProperties {
+export class Action {
     TargetGroupArn: Value<string>
     Type: Value<string>
-}
 
-export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::Action', properties, dependsOn)
+    constructor(properties: Action) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RuleConditionProperties {
+export class RuleCondition {
     Field?: Value<string>
     Values?: List<Value<string>>
-}
 
-export class RuleCondition extends ResourceBase {
-    constructor(properties: RuleConditionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::RuleCondition', properties, dependsOn)
+    constructor(properties: RuleCondition) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,20 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface HadoopJarStepConfigProperties {
+export declare class HadoopJarStepConfig {
     Args?: List<Value<string>>;
     Jar: Value<string>;
     MainClass?: Value<string>;
     StepProperties?: List<KeyValue>;
+    constructor(properties: HadoopJarStepConfig);
 }
-export declare class HadoopJarStepConfig extends ResourceBase {
-    constructor(properties: HadoopJarStepConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KeyValueProperties {
+export declare class KeyValue {
     Key?: Value<string>;
     Value?: Value<string>;
-}
-export declare class KeyValue extends ResourceBase {
-    constructor(properties: KeyValueProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: KeyValue);
 }
 export interface StepProperties {
     ActionOnFailure: Value<string>;

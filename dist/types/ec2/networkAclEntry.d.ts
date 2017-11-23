@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface IcmpProperties {
+export declare class Icmp {
     Code?: Value<number>;
     Type?: Value<number>;
+    constructor(properties: Icmp);
 }
-export declare class Icmp extends ResourceBase {
-    constructor(properties: IcmpProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PortRangeProperties {
+export declare class PortRange {
     From?: Value<number>;
     To?: Value<number>;
-}
-export declare class PortRange extends ResourceBase {
-    constructor(properties: PortRangeProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PortRange);
 }
 export interface NetworkAclEntryProperties {
     CidrBlock: Value<string>;

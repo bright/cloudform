@@ -3,16 +3,14 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface NodeGroupConfigurationProperties {
+export class NodeGroupConfiguration {
     PrimaryAvailabilityZone?: Value<string>
     ReplicaAvailabilityZones?: List<Value<string>>
     ReplicaCount?: Value<number>
     Slots?: Value<string>
-}
 
-export class NodeGroupConfiguration extends ResourceBase {
-    constructor(properties: NodeGroupConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElastiCache::NodeGroupConfiguration', properties, dependsOn)
+    constructor(properties: NodeGroupConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RuleProperties {
+export class Rule {
     Action: Action
     Priority: Value<number>
     RuleId: Value<string>
-}
 
-export class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::Rule', properties, dependsOn)
+    constructor(properties: Rule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ActionProperties {
+export class Action {
     Type: Value<string>
-}
 
-export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::Action', properties, dependsOn)
+    constructor(properties: Action) {
+        Object.assign(this, properties)
     }
 }
 

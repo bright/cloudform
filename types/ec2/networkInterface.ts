@@ -3,24 +3,20 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface InstanceIpv6AddressProperties {
+export class InstanceIpv6Address {
     Ipv6Address: Value<string>
-}
 
-export class InstanceIpv6Address extends ResourceBase {
-    constructor(properties: InstanceIpv6AddressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn)
+    constructor(properties: InstanceIpv6Address) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PrivateIpAddressSpecificationProperties {
+export class PrivateIpAddressSpecification {
     Primary: Value<boolean>
     PrivateIpAddress: Value<string>
-}
 
-export class PrivateIpAddressSpecification extends ResourceBase {
-    constructor(properties: PrivateIpAddressSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn)
+    constructor(properties: PrivateIpAddressSpecification) {
+        Object.assign(this, properties)
     }
 }
 

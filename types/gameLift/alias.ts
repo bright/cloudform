@@ -3,15 +3,13 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RoutingStrategyProperties {
+export class RoutingStrategy {
     FleetId?: Value<string>
     Message?: Value<string>
     Type: Value<string>
-}
 
-export class RoutingStrategy extends ResourceBase {
-    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::GameLift::RoutingStrategy', properties, dependsOn)
+    constructor(properties: RoutingStrategy) {
+        Object.assign(this, properties)
     }
 }
 

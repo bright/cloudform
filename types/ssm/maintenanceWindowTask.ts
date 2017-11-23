@@ -3,89 +3,75 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MaintenanceWindowLambdaParametersProperties {
+export class MaintenanceWindowLambdaParameters {
     ClientContext?: Value<string>
     Qualifier?: Value<string>
     Payload?: Value<string>
-}
 
-export class MaintenanceWindowLambdaParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::MaintenanceWindowLambdaParameters', properties, dependsOn)
+    constructor(properties: MaintenanceWindowLambdaParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface NotificationConfigProperties {
+export class NotificationConfig {
     NotificationArn?: Value<string>
     NotificationType?: Value<string>
     NotificationEvents?: List<Value<string>>
-}
 
-export class NotificationConfig extends ResourceBase {
-    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::NotificationConfig', properties, dependsOn)
+    constructor(properties: NotificationConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MaintenanceWindowAutomationParametersProperties {
+export class MaintenanceWindowAutomationParameters {
     Parameters?: any
     DocumentVersion?: Value<string>
-}
 
-export class MaintenanceWindowAutomationParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::MaintenanceWindowAutomationParameters', properties, dependsOn)
+    constructor(properties: MaintenanceWindowAutomationParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TaskInvocationParametersProperties {
+export class TaskInvocationParameters {
     MaintenanceWindowRunCommandParameters?: MaintenanceWindowRunCommandParameters
     MaintenanceWindowAutomationParameters?: MaintenanceWindowAutomationParameters
     MaintenanceWindowStepFunctionsParameters?: MaintenanceWindowStepFunctionsParameters
     MaintenanceWindowLambdaParameters?: MaintenanceWindowLambdaParameters
-}
 
-export class TaskInvocationParameters extends ResourceBase {
-    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::TaskInvocationParameters', properties, dependsOn)
+    constructor(properties: TaskInvocationParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LoggingInfoProperties {
+export class LoggingInfo {
     S3Bucket: Value<string>
     Region: Value<string>
     S3Prefix?: Value<string>
-}
 
-export class LoggingInfo extends ResourceBase {
-    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::LoggingInfo', properties, dependsOn)
+    constructor(properties: LoggingInfo) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TargetProperties {
+export class Target {
     Values?: List<Value<string>>
     Key: Value<string>
-}
 
-export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::Target', properties, dependsOn)
+    constructor(properties: Target) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MaintenanceWindowStepFunctionsParametersProperties {
+export class MaintenanceWindowStepFunctionsParameters {
     Input?: Value<string>
     Name?: Value<string>
-}
 
-export class MaintenanceWindowStepFunctionsParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::MaintenanceWindowStepFunctionsParameters', properties, dependsOn)
+    constructor(properties: MaintenanceWindowStepFunctionsParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MaintenanceWindowRunCommandParametersProperties {
+export class MaintenanceWindowRunCommandParameters {
     TimeoutSeconds?: Value<number>
     Comment?: Value<string>
     OutputS3KeyPrefix?: Value<string>
@@ -95,11 +81,9 @@ export interface MaintenanceWindowRunCommandParametersProperties {
     NotificationConfig?: NotificationConfig
     OutputS3BucketName?: Value<string>
     DocumentHash?: Value<string>
-}
 
-export class MaintenanceWindowRunCommandParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::MaintenanceWindowRunCommandParameters', properties, dependsOn)
+    constructor(properties: MaintenanceWindowRunCommandParameters) {
+        Object.assign(this, properties)
     }
 }
 

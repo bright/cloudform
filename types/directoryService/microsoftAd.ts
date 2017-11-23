@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VpcSettingsProperties {
+export class VpcSettings {
     SubnetIds: List<Value<string>>
     VpcId: Value<string>
-}
 
-export class VpcSettings extends ResourceBase {
-    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DirectoryService::VpcSettings', properties, dependsOn)
+    constructor(properties: VpcSettings) {
+        Object.assign(this, properties)
     }
 }
 

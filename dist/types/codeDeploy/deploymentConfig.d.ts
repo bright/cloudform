@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface MinimumHealthyHostsProperties {
+export declare class MinimumHealthyHosts {
     Type: Value<string>;
     Value: Value<number>;
-}
-export declare class MinimumHealthyHosts extends ResourceBase {
-    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MinimumHealthyHosts);
 }
 export interface DeploymentConfigProperties {
     DeploymentConfigName?: Value<string>;

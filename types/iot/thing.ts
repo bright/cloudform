@@ -3,13 +3,11 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface AttributePayloadProperties {
+export class AttributePayload {
     Attributes?: {[key: string]: Value<string>}
-}
 
-export class AttributePayload extends ResourceBase {
-    constructor(properties: AttributePayloadProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::IoT::AttributePayload', properties, dependsOn)
+    constructor(properties: AttributePayload) {
+        Object.assign(this, properties)
     }
 }
 

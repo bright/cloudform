@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface RecordSetProperties {
+export declare class RecordSet {
     AliasTarget?: AliasTarget;
     Comment?: Value<string>;
     Failover?: Value<string>;
@@ -15,25 +15,19 @@ export interface RecordSetProperties {
     TTL?: Value<string>;
     Type: Value<string>;
     Weight?: Value<number>;
+    constructor(properties: RecordSet);
 }
-export declare class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface GeoLocationProperties {
+export declare class GeoLocation {
     ContinentCode?: Value<string>;
     CountryCode?: Value<string>;
     SubdivisionCode?: Value<string>;
+    constructor(properties: GeoLocation);
 }
-export declare class GeoLocation extends ResourceBase {
-    constructor(properties: GeoLocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AliasTargetProperties {
+export declare class AliasTarget {
     DNSName: Value<string>;
     EvaluateTargetHealth?: Value<boolean>;
     HostedZoneId: Value<string>;
-}
-export declare class AliasTarget extends ResourceBase {
-    constructor(properties: AliasTargetProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AliasTarget);
 }
 export interface RecordSetGroupProperties {
     Comment?: Value<string>;

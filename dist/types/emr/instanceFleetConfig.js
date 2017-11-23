@@ -2,45 +2,45 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class VolumeSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::VolumeSpecification', properties, dependsOn);
+class VolumeSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VolumeSpecification = VolumeSpecification;
-class SpotProvisioningSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::SpotProvisioningSpecification', properties, dependsOn);
+class SpotProvisioningSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotProvisioningSpecification = SpotProvisioningSpecification;
-class Configuration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Configuration', properties, dependsOn);
+class Configuration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Configuration = Configuration;
-class EbsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsConfiguration', properties, dependsOn);
+class EbsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsConfiguration = EbsConfiguration;
-class InstanceTypeConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceTypeConfig', properties, dependsOn);
+class InstanceTypeConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceTypeConfig = InstanceTypeConfig;
-class InstanceFleetProvisioningSpecifications extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceFleetProvisioningSpecifications', properties, dependsOn);
+class InstanceFleetProvisioningSpecifications {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications;
-class EbsBlockDeviceConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn);
+class EbsBlockDeviceConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsBlockDeviceConfig = EbsBlockDeviceConfig;

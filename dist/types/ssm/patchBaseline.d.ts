@@ -1,31 +1,23 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface RuleGroupProperties {
+export declare class RuleGroup {
     PatchRules?: List<Rule>;
+    constructor(properties: RuleGroup);
 }
-export declare class RuleGroup extends ResourceBase {
-    constructor(properties: RuleGroupProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PatchFilterProperties {
+export declare class PatchFilter {
     Values?: List<Value<string>>;
     Key?: Value<string>;
+    constructor(properties: PatchFilter);
 }
-export declare class PatchFilter extends ResourceBase {
-    constructor(properties: PatchFilterProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RuleProperties {
+export declare class Rule {
     PatchFilterGroup?: PatchFilterGroup;
     ApproveAfterDays?: Value<number>;
     ComplianceLevel?: Value<string>;
+    constructor(properties: Rule);
 }
-export declare class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PatchFilterGroupProperties {
+export declare class PatchFilterGroup {
     PatchFilters?: List<PatchFilter>;
-}
-export declare class PatchFilterGroup extends ResourceBase {
-    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: PatchFilterGroup);
 }
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>;

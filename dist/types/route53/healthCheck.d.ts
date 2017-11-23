@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface HealthCheckConfigProperties {
+export declare class HealthCheckConfig {
     AlarmIdentifier?: AlarmIdentifier;
     ChildHealthChecks?: List<Value<string>>;
     EnableSNI?: Value<boolean>;
@@ -16,23 +16,17 @@ export interface HealthCheckConfigProperties {
     ResourcePath?: Value<string>;
     SearchString?: Value<string>;
     Type: Value<string>;
+    constructor(properties: HealthCheckConfig);
 }
-export declare class HealthCheckConfig extends ResourceBase {
-    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface HealthCheckTagProperties {
+export declare class HealthCheckTag {
     Key: Value<string>;
     Value: Value<string>;
+    constructor(properties: HealthCheckTag);
 }
-export declare class HealthCheckTag extends ResourceBase {
-    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AlarmIdentifierProperties {
+export declare class AlarmIdentifier {
     Name: Value<string>;
     Region: Value<string>;
-}
-export declare class AlarmIdentifier extends ResourceBase {
-    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AlarmIdentifier);
 }
 export interface HealthCheckProperties {
     HealthCheckConfig: HealthCheckConfig;

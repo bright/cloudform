@@ -1,25 +1,19 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface TargetGroupAttributeProperties {
+export declare class TargetGroupAttribute {
     Key?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: TargetGroupAttribute);
 }
-export declare class TargetGroupAttribute extends ResourceBase {
-    constructor(properties: TargetGroupAttributeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MatcherProperties {
+export declare class Matcher {
     HttpCode: Value<string>;
+    constructor(properties: Matcher);
 }
-export declare class Matcher extends ResourceBase {
-    constructor(properties: MatcherProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetDescriptionProperties {
+export declare class TargetDescription {
     AvailabilityZone?: Value<string>;
     Id: Value<string>;
     Port?: Value<number>;
-}
-export declare class TargetDescription extends ResourceBase {
-    constructor(properties: TargetDescriptionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TargetDescription);
 }
 export interface TargetGroupProperties {
     HealthCheckIntervalSeconds?: Value<number>;

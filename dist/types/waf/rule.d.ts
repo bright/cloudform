@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface PredicateProperties {
+export declare class Predicate {
     DataId: Value<string>;
     Negated: Value<boolean>;
     Type: Value<string>;
-}
-export declare class Predicate extends ResourceBase {
-    constructor(properties: PredicateProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Predicate);
 }
 export interface RuleProperties {
     MetricName: Value<string>;

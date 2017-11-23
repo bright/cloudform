@@ -1,21 +1,17 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface OptionSettingProperties {
+export declare class OptionSetting {
     Namespace: Value<string>;
     OptionName: Value<string>;
     ResourceName?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: OptionSetting);
 }
-export declare class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TierProperties {
+export declare class Tier {
     Name?: Value<string>;
     Type?: Value<string>;
     Version?: Value<string>;
-}
-export declare class Tier extends ResourceBase {
-    constructor(properties: TierProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Tier);
 }
 export interface EnvironmentProperties {
     ApplicationName: Value<string>;

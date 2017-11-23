@@ -33,20 +33,32 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
     return `Value<${primitiveType}>`
 }
 
-function generateClass(namespace, name, properties, isDefault = false) {
-    const propertiesEntries = map(properties, (property, propertyName) => {
+function propertiesEntries(properties) {
+    return map(properties, (property, propertyName) => {
         if (propertyName === 'Tags') {
             return `Tags?: ResourceTag[]`
         }
 
         return `${propertyName}${property.Required ? '' : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
     })
-
-    return `export interface ${name}Properties {
-${propertiesEntries.map(e => `    ${e}`).join('\n')}
 }
 
-export ${isDefault ? 'default ' : ''}class ${name} extends ResourceBase {
+function generateInnerClass(name, properties) {
+    return `export class ${name} {
+${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
+
+    constructor(properties: ${name}) {
+        Object.assign(this, properties)
+    }
+}`
+}
+
+function generateTopLevelClass(namespace, name, properties) {
+    return `export interface ${name}Properties {
+${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
+}
+
+export default class ${name} extends ResourceBase {
     constructor(properties: ${name}Properties, dependsOn?: Value<string> | Value<string>[]) {
         super('AWS::${namespace}::${name}', properties, dependsOn)
     }
@@ -62,7 +74,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
     const innerTypesTemplates = map(innerTypes, (innerType, innerTypeFullName) => {
         const [, innerTypeName] = innerTypeFullName.split('.')
         innerHasTags = innerHasTags || hasTags(innerType.Properties)
-        return generateClass(namespace, innerTypeName, innerType.Properties)
+        return generateInnerClass(innerTypeName, innerType.Properties)
     })
 
     const resourceImports = ['ResourceBase']
@@ -70,7 +82,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
         resourceImports.push('ResourceTag')
     }
 
-    const generatedClass = generateClass(namespace, resourceName, properties, true)
+    const generatedClass = generateTopLevelClass(namespace, resourceName, properties)
 
     const template = `${fileHeader}
    

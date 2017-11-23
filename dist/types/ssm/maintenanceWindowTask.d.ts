@@ -1,60 +1,46 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MaintenanceWindowLambdaParametersProperties {
+export declare class MaintenanceWindowLambdaParameters {
     ClientContext?: Value<string>;
     Qualifier?: Value<string>;
     Payload?: Value<string>;
+    constructor(properties: MaintenanceWindowLambdaParameters);
 }
-export declare class MaintenanceWindowLambdaParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowLambdaParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface NotificationConfigProperties {
+export declare class NotificationConfig {
     NotificationArn?: Value<string>;
     NotificationType?: Value<string>;
     NotificationEvents?: List<Value<string>>;
+    constructor(properties: NotificationConfig);
 }
-export declare class NotificationConfig extends ResourceBase {
-    constructor(properties: NotificationConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MaintenanceWindowAutomationParametersProperties {
+export declare class MaintenanceWindowAutomationParameters {
     Parameters?: any;
     DocumentVersion?: Value<string>;
+    constructor(properties: MaintenanceWindowAutomationParameters);
 }
-export declare class MaintenanceWindowAutomationParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowAutomationParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TaskInvocationParametersProperties {
+export declare class TaskInvocationParameters {
     MaintenanceWindowRunCommandParameters?: MaintenanceWindowRunCommandParameters;
     MaintenanceWindowAutomationParameters?: MaintenanceWindowAutomationParameters;
     MaintenanceWindowStepFunctionsParameters?: MaintenanceWindowStepFunctionsParameters;
     MaintenanceWindowLambdaParameters?: MaintenanceWindowLambdaParameters;
+    constructor(properties: TaskInvocationParameters);
 }
-export declare class TaskInvocationParameters extends ResourceBase {
-    constructor(properties: TaskInvocationParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LoggingInfoProperties {
+export declare class LoggingInfo {
     S3Bucket: Value<string>;
     Region: Value<string>;
     S3Prefix?: Value<string>;
+    constructor(properties: LoggingInfo);
 }
-export declare class LoggingInfo extends ResourceBase {
-    constructor(properties: LoggingInfoProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetProperties {
+export declare class Target {
     Values?: List<Value<string>>;
     Key: Value<string>;
+    constructor(properties: Target);
 }
-export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MaintenanceWindowStepFunctionsParametersProperties {
+export declare class MaintenanceWindowStepFunctionsParameters {
     Input?: Value<string>;
     Name?: Value<string>;
+    constructor(properties: MaintenanceWindowStepFunctionsParameters);
 }
-export declare class MaintenanceWindowStepFunctionsParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowStepFunctionsParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MaintenanceWindowRunCommandParametersProperties {
+export declare class MaintenanceWindowRunCommandParameters {
     TimeoutSeconds?: Value<number>;
     Comment?: Value<string>;
     OutputS3KeyPrefix?: Value<string>;
@@ -64,9 +50,7 @@ export interface MaintenanceWindowRunCommandParametersProperties {
     NotificationConfig?: NotificationConfig;
     OutputS3BucketName?: Value<string>;
     DocumentHash?: Value<string>;
-}
-export declare class MaintenanceWindowRunCommandParameters extends ResourceBase {
-    constructor(properties: MaintenanceWindowRunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MaintenanceWindowRunCommandParameters);
 }
 export interface MaintenanceWindowTaskProperties {
     MaxErrors: Value<string>;

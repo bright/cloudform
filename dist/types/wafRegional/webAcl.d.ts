@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface RuleProperties {
+export declare class Rule {
     Action: Action;
     Priority: Value<number>;
     RuleId: Value<string>;
+    constructor(properties: Rule);
 }
-export declare class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ActionProperties {
+export declare class Action {
     Type: Value<string>;
-}
-export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Action);
 }
 export interface WebACLProperties {
     MetricName: Value<string>;

@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface StageKeyProperties {
+export class StageKey {
     RestApiId?: Value<string>
     StageName?: Value<string>
-}
 
-export class StageKey extends ResourceBase {
-    constructor(properties: StageKeyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::StageKey', properties, dependsOn)
+    constructor(properties: StageKey) {
+        Object.assign(this, properties)
     }
 }
 

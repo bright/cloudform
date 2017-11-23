@@ -1,34 +1,26 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface ApplicationResourceLifecycleConfigProperties {
+export declare class ApplicationResourceLifecycleConfig {
     ServiceRole?: Value<string>;
     VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+    constructor(properties: ApplicationResourceLifecycleConfig);
 }
-export declare class ApplicationResourceLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ApplicationVersionLifecycleConfigProperties {
+export declare class ApplicationVersionLifecycleConfig {
     MaxAgeRule?: MaxAgeRule;
     MaxCountRule?: MaxCountRule;
+    constructor(properties: ApplicationVersionLifecycleConfig);
 }
-export declare class ApplicationVersionLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MaxCountRuleProperties {
+export declare class MaxCountRule {
     DeleteSourceFromS3?: Value<boolean>;
     Enabled?: Value<boolean>;
     MaxCount?: Value<number>;
+    constructor(properties: MaxCountRule);
 }
-export declare class MaxCountRule extends ResourceBase {
-    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MaxAgeRuleProperties {
+export declare class MaxAgeRule {
     DeleteSourceFromS3?: Value<boolean>;
     Enabled?: Value<boolean>;
     MaxAgeInDays?: Value<number>;
-}
-export declare class MaxAgeRule extends ResourceBase {
-    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MaxAgeRule);
 }
 export interface ApplicationProperties {
     ApplicationName?: Value<string>;

@@ -1,17 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface TargetProperties {
+export declare class Target {
     Key: Value<string>;
     Values: List<Value<string>>;
+    constructor(properties: Target);
 }
-export declare class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ParameterValuesProperties {
+export declare class ParameterValues {
     ParameterValues: List<Value<string>>;
-}
-export declare class ParameterValues extends ResourceBase {
-    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ParameterValues);
 }
 export interface AssociationProperties {
     DocumentVersion?: Value<string>;

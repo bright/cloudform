@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SourceBundleProperties {
+export class SourceBundle {
     S3Bucket: Value<string>
     S3Key: Value<string>
-}
 
-export class SourceBundle extends ResourceBase {
-    constructor(properties: SourceBundleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::SourceBundle', properties, dependsOn)
+    constructor(properties: SourceBundle) {
+        Object.assign(this, properties)
     }
 }
 

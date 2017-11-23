@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface SubscriptionProperties {
+export declare class Subscription {
     Endpoint: Value<string>;
     Protocol: Value<string>;
-}
-export declare class Subscription extends ResourceBase {
-    constructor(properties: SubscriptionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Subscription);
 }
 export interface TopicProperties {
     DisplayName?: Value<string>;

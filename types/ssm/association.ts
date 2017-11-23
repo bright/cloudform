@@ -3,24 +3,20 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface TargetProperties {
+export class Target {
     Key: Value<string>
     Values: List<Value<string>>
-}
 
-export class Target extends ResourceBase {
-    constructor(properties: TargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::Target', properties, dependsOn)
+    constructor(properties: Target) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ParameterValuesProperties {
+export class ParameterValues {
     ParameterValues: List<Value<string>>
-}
 
-export class ParameterValues extends ResourceBase {
-    constructor(properties: ParameterValuesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::ParameterValues', properties, dependsOn)
+    constructor(properties: ParameterValues) {
+        Object.assign(this, properties)
     }
 }
 

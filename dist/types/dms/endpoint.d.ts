@@ -1,6 +1,6 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../dataTypes';
-export interface S3SettingsProperties {
+export declare class S3Settings {
     ExternalTableDefinition?: Value<string>;
     BucketName?: Value<string>;
     BucketFolder?: Value<string>;
@@ -8,11 +8,9 @@ export interface S3SettingsProperties {
     CsvDelimiter?: Value<string>;
     ServiceAccessRoleArn?: Value<string>;
     CompressionType?: Value<string>;
+    constructor(properties: S3Settings);
 }
-export declare class S3Settings extends ResourceBase {
-    constructor(properties: S3SettingsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MongoDbSettingsProperties {
+export declare class MongoDbSettings {
     AuthSource?: Value<string>;
     AuthMechanism?: Value<string>;
     Username?: Value<string>;
@@ -24,15 +22,11 @@ export interface MongoDbSettingsProperties {
     AuthType?: Value<string>;
     Password?: Value<string>;
     NestingLevel?: Value<string>;
+    constructor(properties: MongoDbSettings);
 }
-export declare class MongoDbSettings extends ResourceBase {
-    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DynamoDbSettingsProperties {
+export declare class DynamoDbSettings {
     ServiceAccessRoleArn?: Value<string>;
-}
-export declare class DynamoDbSettings extends ResourceBase {
-    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DynamoDbSettings);
 }
 export interface EndpointProperties {
     KmsKeyId?: Value<string>;

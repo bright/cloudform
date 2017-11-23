@@ -3,7 +3,7 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface S3SettingsProperties {
+export class S3Settings {
     ExternalTableDefinition?: Value<string>
     BucketName?: Value<string>
     BucketFolder?: Value<string>
@@ -11,15 +11,13 @@ export interface S3SettingsProperties {
     CsvDelimiter?: Value<string>
     ServiceAccessRoleArn?: Value<string>
     CompressionType?: Value<string>
-}
 
-export class S3Settings extends ResourceBase {
-    constructor(properties: S3SettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::S3Settings', properties, dependsOn)
+    constructor(properties: S3Settings) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MongoDbSettingsProperties {
+export class MongoDbSettings {
     AuthSource?: Value<string>
     AuthMechanism?: Value<string>
     Username?: Value<string>
@@ -31,21 +29,17 @@ export interface MongoDbSettingsProperties {
     AuthType?: Value<string>
     Password?: Value<string>
     NestingLevel?: Value<string>
-}
 
-export class MongoDbSettings extends ResourceBase {
-    constructor(properties: MongoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::MongoDbSettings', properties, dependsOn)
+    constructor(properties: MongoDbSettings) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DynamoDbSettingsProperties {
+export class DynamoDbSettings {
     ServiceAccessRoleArn?: Value<string>
-}
 
-export class DynamoDbSettings extends ResourceBase {
-    constructor(properties: DynamoDbSettingsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DMS::DynamoDbSettings', properties, dependsOn)
+    constructor(properties: DynamoDbSettings) {
+        Object.assign(this, properties)
     }
 }
 

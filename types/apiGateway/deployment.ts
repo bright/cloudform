@@ -3,7 +3,7 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MethodSettingProperties {
+export class MethodSetting {
     CacheDataEncrypted?: Value<boolean>
     CacheTtlInSeconds?: Value<number>
     CachingEnabled?: Value<boolean>
@@ -14,15 +14,13 @@ export interface MethodSettingProperties {
     ResourcePath?: Value<string>
     ThrottlingBurstLimit?: Value<number>
     ThrottlingRateLimit?: Value<number>
-}
 
-export class MethodSetting extends ResourceBase {
-    constructor(properties: MethodSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::MethodSetting', properties, dependsOn)
+    constructor(properties: MethodSetting) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StageDescriptionProperties {
+export class StageDescription {
     CacheClusterEnabled?: Value<boolean>
     CacheClusterSize?: Value<string>
     CacheDataEncrypted?: Value<boolean>
@@ -38,11 +36,9 @@ export interface StageDescriptionProperties {
     ThrottlingBurstLimit?: Value<number>
     ThrottlingRateLimit?: Value<number>
     Variables?: {[key: string]: Value<string>}
-}
 
-export class StageDescription extends ResourceBase {
-    constructor(properties: StageDescriptionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApiGateway::StageDescription', properties, dependsOn)
+    constructor(properties: StageDescription) {
+        Object.assign(this, properties)
     }
 }
 

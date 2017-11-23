@@ -1,45 +1,35 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MetricDimensionProperties {
+export declare class MetricDimension {
     Name: Value<string>;
     Value: Value<string>;
+    constructor(properties: MetricDimension);
 }
-export declare class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CustomizedMetricSpecificationProperties {
+export declare class CustomizedMetricSpecification {
     Dimensions?: List<MetricDimension>;
     MetricName: Value<string>;
     Namespace: Value<string>;
     Statistic: Value<string>;
     Unit?: Value<string>;
+    constructor(properties: CustomizedMetricSpecification);
 }
-export declare class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PredefinedMetricSpecificationProperties {
+export declare class PredefinedMetricSpecification {
     PredefinedMetricType: Value<string>;
     ResourceLabel?: Value<string>;
+    constructor(properties: PredefinedMetricSpecification);
 }
-export declare class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetTrackingConfigurationProperties {
+export declare class TargetTrackingConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification;
     DisableScaleIn?: Value<boolean>;
     PredefinedMetricSpecification?: PredefinedMetricSpecification;
     TargetValue: Value<number>;
+    constructor(properties: TargetTrackingConfiguration);
 }
-export declare class TargetTrackingConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StepAdjustmentProperties {
+export declare class StepAdjustment {
     MetricIntervalLowerBound?: Value<number>;
     MetricIntervalUpperBound?: Value<number>;
     ScalingAdjustment: Value<number>;
-}
-export declare class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StepAdjustment);
 }
 export interface ScalingPolicyProperties {
     AdjustmentType?: Value<string>;

@@ -2,27 +2,27 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class LifecycleHookSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::LifecycleHookSpecification', properties, dependsOn);
+class LifecycleHookSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LifecycleHookSpecification = LifecycleHookSpecification;
-class NotificationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::NotificationConfiguration', properties, dependsOn);
+class NotificationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NotificationConfiguration = NotificationConfiguration;
-class MetricsCollection extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::MetricsCollection', properties, dependsOn);
+class MetricsCollection {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MetricsCollection = MetricsCollection;
-class TagProperty extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::AutoScaling::TagProperty', properties, dependsOn);
+class TagProperty {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TagProperty = TagProperty;

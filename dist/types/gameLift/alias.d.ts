@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface RoutingStrategyProperties {
+export declare class RoutingStrategy {
     FleetId?: Value<string>;
     Message?: Value<string>;
     Type: Value<string>;
-}
-export declare class RoutingStrategy extends ResourceBase {
-    constructor(properties: RoutingStrategyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: RoutingStrategy);
 }
 export interface AliasProperties {
     Description?: Value<string>;

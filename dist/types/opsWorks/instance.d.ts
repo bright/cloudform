@@ -1,25 +1,21 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface BlockDeviceMappingProperties {
+export declare class BlockDeviceMapping {
     DeviceName?: Value<string>;
     Ebs?: EbsBlockDevice;
     NoDevice?: Value<string>;
     VirtualName?: Value<string>;
+    constructor(properties: BlockDeviceMapping);
 }
-export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsBlockDeviceProperties {
+export declare class EbsBlockDevice {
     DeleteOnTermination?: Value<boolean>;
     Iops?: Value<number>;
     SnapshotId?: Value<string>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
+    constructor(properties: EbsBlockDevice);
 }
-export declare class EbsBlockDevice extends ResourceBase {
-    constructor(properties: EbsBlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TimeBasedAutoScalingProperties {
+export declare class TimeBasedAutoScaling {
     Friday?: {
         [key: string]: Value<string>;
     };
@@ -41,9 +37,7 @@ export interface TimeBasedAutoScalingProperties {
     Wednesday?: {
         [key: string]: Value<string>;
     };
-}
-export declare class TimeBasedAutoScaling extends ResourceBase {
-    constructor(properties: TimeBasedAutoScalingProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TimeBasedAutoScaling);
 }
 export interface InstanceProperties {
     AgentVersion?: Value<string>;

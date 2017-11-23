@@ -1,40 +1,30 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface VpcConfigProperties {
+export declare class VpcConfig {
     SecurityGroupIds: List<Value<string>>;
     SubnetIds: List<Value<string>>;
+    constructor(properties: VpcConfig);
 }
-export declare class VpcConfig extends ResourceBase {
-    constructor(properties: VpcConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DeadLetterConfigProperties {
+export declare class DeadLetterConfig {
     TargetArn?: Value<string>;
+    constructor(properties: DeadLetterConfig);
 }
-export declare class DeadLetterConfig extends ResourceBase {
-    constructor(properties: DeadLetterConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TracingConfigProperties {
+export declare class TracingConfig {
     Mode?: Value<string>;
+    constructor(properties: TracingConfig);
 }
-export declare class TracingConfig extends ResourceBase {
-    constructor(properties: TracingConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CodeProperties {
+export declare class Code {
     S3Bucket?: Value<string>;
     S3Key?: Value<string>;
     S3ObjectVersion?: Value<string>;
     ZipFile?: Value<string>;
+    constructor(properties: Code);
 }
-export declare class Code extends ResourceBase {
-    constructor(properties: CodeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EnvironmentProperties {
+export declare class Environment {
     Variables?: {
         [key: string]: Value<string>;
     };
-}
-export declare class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Environment);
 }
 export interface FunctionProperties {
     Code: Code;

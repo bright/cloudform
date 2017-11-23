@@ -1,63 +1,47 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface S3ReferenceDataSourceProperties {
+export declare class S3ReferenceDataSource {
     BucketARN: Value<string>;
     FileKey: Value<string>;
     ReferenceRoleARN: Value<string>;
+    constructor(properties: S3ReferenceDataSource);
 }
-export declare class S3ReferenceDataSource extends ResourceBase {
-    constructor(properties: S3ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MappingParametersProperties {
+export declare class MappingParameters {
     JSONMappingParameters?: JSONMappingParameters;
     CSVMappingParameters?: CSVMappingParameters;
+    constructor(properties: MappingParameters);
 }
-export declare class MappingParameters extends ResourceBase {
-    constructor(properties: MappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface JSONMappingParametersProperties {
+export declare class JSONMappingParameters {
     RecordRowPath: Value<string>;
+    constructor(properties: JSONMappingParameters);
 }
-export declare class JSONMappingParameters extends ResourceBase {
-    constructor(properties: JSONMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RecordFormatProperties {
+export declare class RecordFormat {
     MappingParameters?: MappingParameters;
     RecordFormatType: Value<string>;
+    constructor(properties: RecordFormat);
 }
-export declare class RecordFormat extends ResourceBase {
-    constructor(properties: RecordFormatProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RecordColumnProperties {
+export declare class RecordColumn {
     Mapping?: Value<string>;
     SqlType: Value<string>;
     Name: Value<string>;
+    constructor(properties: RecordColumn);
 }
-export declare class RecordColumn extends ResourceBase {
-    constructor(properties: RecordColumnProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CSVMappingParametersProperties {
+export declare class CSVMappingParameters {
     RecordRowDelimiter: Value<string>;
     RecordColumnDelimiter: Value<string>;
+    constructor(properties: CSVMappingParameters);
 }
-export declare class CSVMappingParameters extends ResourceBase {
-    constructor(properties: CSVMappingParametersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ReferenceSchemaProperties {
+export declare class ReferenceSchema {
     RecordEncoding?: Value<string>;
     RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
+    constructor(properties: ReferenceSchema);
 }
-export declare class ReferenceSchema extends ResourceBase {
-    constructor(properties: ReferenceSchemaProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ReferenceDataSourceProperties {
+export declare class ReferenceDataSource {
     ReferenceSchema: ReferenceSchema;
     TableName?: Value<string>;
     S3ReferenceDataSource?: S3ReferenceDataSource;
-}
-export declare class ReferenceDataSource extends ResourceBase {
-    constructor(properties: ReferenceDataSourceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ReferenceDataSource);
 }
 export interface ApplicationReferenceDataSourceProperties {
     ApplicationName: Value<string>;

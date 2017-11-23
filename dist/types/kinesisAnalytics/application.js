@@ -2,75 +2,75 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class MappingParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::MappingParameters', properties, dependsOn);
+class MappingParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MappingParameters = MappingParameters;
-class CSVMappingParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::CSVMappingParameters', properties, dependsOn);
+class CSVMappingParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CSVMappingParameters = CSVMappingParameters;
-class KinesisStreamsInput extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::KinesisStreamsInput', properties, dependsOn);
+class KinesisStreamsInput {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KinesisStreamsInput = KinesisStreamsInput;
-class Input extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::Input', properties, dependsOn);
+class Input {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Input = Input;
-class InputSchema extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::InputSchema', properties, dependsOn);
+class InputSchema {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputSchema = InputSchema;
-class RecordColumn extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::RecordColumn', properties, dependsOn);
+class RecordColumn {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RecordColumn = RecordColumn;
-class RecordFormat extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::RecordFormat', properties, dependsOn);
+class RecordFormat {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RecordFormat = RecordFormat;
-class KinesisFirehoseInput extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::KinesisFirehoseInput', properties, dependsOn);
+class KinesisFirehoseInput {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KinesisFirehoseInput = KinesisFirehoseInput;
-class InputParallelism extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::InputParallelism', properties, dependsOn);
+class InputParallelism {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputParallelism = InputParallelism;
-class InputProcessingConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::InputProcessingConfiguration', properties, dependsOn);
+class InputProcessingConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputProcessingConfiguration = InputProcessingConfiguration;
-class JSONMappingParameters extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::JSONMappingParameters', properties, dependsOn);
+class JSONMappingParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.JSONMappingParameters = JSONMappingParameters;
-class InputLambdaProcessor extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisAnalytics::InputLambdaProcessor', properties, dependsOn);
+class InputLambdaProcessor {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InputLambdaProcessor = InputLambdaProcessor;

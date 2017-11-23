@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface LifecyclePolicyProperties {
+export declare class LifecyclePolicy {
     LifecyclePolicyText?: Value<string>;
     RegistryId?: Value<string>;
-}
-export declare class LifecyclePolicy extends ResourceBase {
-    constructor(properties: LifecyclePolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: LifecyclePolicy);
 }
 export interface RepositoryProperties {
     LifecyclePolicy?: LifecyclePolicy;

@@ -2,63 +2,63 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class ElasticGpuSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::ElasticGpuSpecification', properties, dependsOn);
+class ElasticGpuSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ElasticGpuSpecification = ElasticGpuSpecification;
-class NetworkInterface extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::NetworkInterface', properties, dependsOn);
+class NetworkInterface {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NetworkInterface = NetworkInterface;
-class InstanceIpv6Address extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::InstanceIpv6Address', properties, dependsOn);
+class InstanceIpv6Address {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceIpv6Address = InstanceIpv6Address;
-class Volume extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::Volume', properties, dependsOn);
+class Volume {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Volume = Volume;
-class AssociationParameter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::AssociationParameter', properties, dependsOn);
+class AssociationParameter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AssociationParameter = AssociationParameter;
-class Ebs extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::Ebs', properties, dependsOn);
+class Ebs {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Ebs = Ebs;
-class NoDevice extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::NoDevice', properties, dependsOn);
+class NoDevice {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.NoDevice = NoDevice;
-class SsmAssociation extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::SsmAssociation', properties, dependsOn);
+class SsmAssociation {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SsmAssociation = SsmAssociation;
-class BlockDeviceMapping extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::BlockDeviceMapping', properties, dependsOn);
+class BlockDeviceMapping {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.BlockDeviceMapping = BlockDeviceMapping;
-class PrivateIpAddressSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EC2::PrivateIpAddressSpecification', properties, dependsOn);
+class PrivateIpAddressSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PrivateIpAddressSpecification = PrivateIpAddressSpecification;

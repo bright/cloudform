@@ -3,14 +3,12 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface LoggingPropertiesProperties {
+export class LoggingProperties {
     BucketName: Value<string>
     S3KeyPrefix?: Value<string>
-}
 
-export class LoggingProperties extends ResourceBase {
-    constructor(properties: LoggingPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Redshift::LoggingProperties', properties, dependsOn)
+    constructor(properties: LoggingProperties) {
+        Object.assign(this, properties)
     }
 }
 

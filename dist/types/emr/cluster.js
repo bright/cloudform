@@ -2,135 +2,135 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class InstanceGroupConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceGroupConfig', properties, dependsOn);
+class InstanceGroupConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceGroupConfig = InstanceGroupConfig;
-class SpotProvisioningSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::SpotProvisioningSpecification', properties, dependsOn);
+class SpotProvisioningSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SpotProvisioningSpecification = SpotProvisioningSpecification;
-class BootstrapActionConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::BootstrapActionConfig', properties, dependsOn);
+class BootstrapActionConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.BootstrapActionConfig = BootstrapActionConfig;
-class ScalingConstraints extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingConstraints', properties, dependsOn);
+class ScalingConstraints {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingConstraints = ScalingConstraints;
-class InstanceFleetConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceFleetConfig', properties, dependsOn);
+class InstanceFleetConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceFleetConfig = InstanceFleetConfig;
-class JobFlowInstancesConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::JobFlowInstancesConfig', properties, dependsOn);
+class JobFlowInstancesConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.JobFlowInstancesConfig = JobFlowInstancesConfig;
-class ScalingAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingAction', properties, dependsOn);
+class ScalingAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingAction = ScalingAction;
-class SimpleScalingPolicyConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::SimpleScalingPolicyConfiguration', properties, dependsOn);
+class SimpleScalingPolicyConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration;
-class Application extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Application', properties, dependsOn);
+class Application {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Application = Application;
-class EbsBlockDeviceConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn);
+class EbsBlockDeviceConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
-class PlacementType extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::PlacementType', properties, dependsOn);
+class PlacementType {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PlacementType = PlacementType;
-class Configuration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::Configuration', properties, dependsOn);
+class Configuration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Configuration = Configuration;
-class ScriptBootstrapActionConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScriptBootstrapActionConfig', properties, dependsOn);
+class ScriptBootstrapActionConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScriptBootstrapActionConfig = ScriptBootstrapActionConfig;
-class CloudWatchAlarmDefinition extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::CloudWatchAlarmDefinition', properties, dependsOn);
+class CloudWatchAlarmDefinition {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CloudWatchAlarmDefinition = CloudWatchAlarmDefinition;
-class EbsConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::EbsConfiguration', properties, dependsOn);
+class EbsConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EbsConfiguration = EbsConfiguration;
-class ScalingRule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingRule', properties, dependsOn);
+class ScalingRule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingRule = ScalingRule;
-class InstanceTypeConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceTypeConfig', properties, dependsOn);
+class InstanceTypeConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceTypeConfig = InstanceTypeConfig;
-class MetricDimension extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::MetricDimension', properties, dependsOn);
+class MetricDimension {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.MetricDimension = MetricDimension;
-class VolumeSpecification extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::VolumeSpecification', properties, dependsOn);
+class VolumeSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VolumeSpecification = VolumeSpecification;
-class AutoScalingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::AutoScalingPolicy', properties, dependsOn);
+class AutoScalingPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AutoScalingPolicy = AutoScalingPolicy;
-class InstanceFleetProvisioningSpecifications extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::InstanceFleetProvisioningSpecifications', properties, dependsOn);
+class InstanceFleetProvisioningSpecifications {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications;
-class ScalingTrigger extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::EMR::ScalingTrigger', properties, dependsOn);
+class ScalingTrigger {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ScalingTrigger = ScalingTrigger;

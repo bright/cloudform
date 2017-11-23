@@ -3,28 +3,24 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ByteMatchTupleProperties {
+export class ByteMatchTuple {
     TargetString?: Value<string>
     TargetStringBase64?: Value<string>
     PositionalConstraint: Value<string>
     TextTransformation: Value<string>
     FieldToMatch: FieldToMatch
-}
 
-export class ByteMatchTuple extends ResourceBase {
-    constructor(properties: ByteMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::ByteMatchTuple', properties, dependsOn)
+    constructor(properties: ByteMatchTuple) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FieldToMatchProperties {
+export class FieldToMatch {
     Type: Value<string>
     Data?: Value<string>
-}
 
-export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::FieldToMatch', properties, dependsOn)
+    constructor(properties: FieldToMatch) {
+        Object.assign(this, properties)
     }
 }
 

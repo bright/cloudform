@@ -1,37 +1,29 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface VPCOptionsProperties {
+export declare class VPCOptions {
     SecurityGroupIds?: List<Value<string>>;
     SubnetIds?: List<Value<string>>;
+    constructor(properties: VPCOptions);
 }
-export declare class VPCOptions extends ResourceBase {
-    constructor(properties: VPCOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ElasticsearchClusterConfigProperties {
+export declare class ElasticsearchClusterConfig {
     DedicatedMasterCount?: Value<number>;
     DedicatedMasterEnabled?: Value<boolean>;
     DedicatedMasterType?: Value<string>;
     InstanceCount?: Value<number>;
     InstanceType?: Value<string>;
     ZoneAwarenessEnabled?: Value<boolean>;
+    constructor(properties: ElasticsearchClusterConfig);
 }
-export declare class ElasticsearchClusterConfig extends ResourceBase {
-    constructor(properties: ElasticsearchClusterConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SnapshotOptionsProperties {
+export declare class SnapshotOptions {
     AutomatedSnapshotStartHour?: Value<number>;
+    constructor(properties: SnapshotOptions);
 }
-export declare class SnapshotOptions extends ResourceBase {
-    constructor(properties: SnapshotOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EBSOptionsProperties {
+export declare class EBSOptions {
     EBSEnabled?: Value<boolean>;
     Iops?: Value<number>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
-}
-export declare class EBSOptions extends ResourceBase {
-    constructor(properties: EBSOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EBSOptions);
 }
 export interface DomainProperties {
     AccessPolicies?: any;

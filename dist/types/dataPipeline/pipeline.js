@@ -2,39 +2,39 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class ParameterAttribute extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::ParameterAttribute', properties, dependsOn);
+class ParameterAttribute {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ParameterAttribute = ParameterAttribute;
-class PipelineTag extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::PipelineTag', properties, dependsOn);
+class PipelineTag {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PipelineTag = PipelineTag;
-class ParameterObject extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::ParameterObject', properties, dependsOn);
+class ParameterObject {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ParameterObject = ParameterObject;
-class PipelineObject extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::PipelineObject', properties, dependsOn);
+class PipelineObject {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PipelineObject = PipelineObject;
-class ParameterValue extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::ParameterValue', properties, dependsOn);
+class ParameterValue {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ParameterValue = ParameterValue;
-class Field extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::DataPipeline::Field', properties, dependsOn);
+class Field {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Field = Field;

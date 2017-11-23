@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ComputeEnvironmentOrderProperties {
+export class ComputeEnvironmentOrder {
     ComputeEnvironment: Value<string>
     Order: Value<number>
-}
 
-export class ComputeEnvironmentOrder extends ResourceBase {
-    constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::ComputeEnvironmentOrder', properties, dependsOn)
+    constructor(properties: ComputeEnvironmentOrder) {
+        Object.assign(this, properties)
     }
 }
 

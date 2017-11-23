@@ -1,27 +1,21 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface RulesConfigurationTypeProperties {
+export declare class RulesConfigurationType {
     Rules: List<MappingRule>;
+    constructor(properties: RulesConfigurationType);
 }
-export declare class RulesConfigurationType extends ResourceBase {
-    constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RoleMappingProperties {
+export declare class RoleMapping {
     Type: Value<string>;
     AmbiguousRoleResolution?: Value<string>;
     RulesConfiguration?: RulesConfigurationType;
+    constructor(properties: RoleMapping);
 }
-export declare class RoleMapping extends ResourceBase {
-    constructor(properties: RoleMappingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MappingRuleProperties {
+export declare class MappingRule {
     MatchType: Value<string>;
     Value: Value<string>;
     Claim: Value<string>;
     RoleARN: Value<string>;
-}
-export declare class MappingRule extends ResourceBase {
-    constructor(properties: MappingRuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: MappingRule);
 }
 export interface IdentityPoolRoleAttachmentProperties {
     RoleMappings?: any;

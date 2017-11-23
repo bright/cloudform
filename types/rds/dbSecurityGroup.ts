@@ -3,16 +3,14 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IngressProperties {
+export class Ingress {
     CIDRIP?: Value<string>
     EC2SecurityGroupId?: Value<string>
     EC2SecurityGroupName?: Value<string>
     EC2SecurityGroupOwnerId?: Value<string>
-}
 
-export class Ingress extends ResourceBase {
-    constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::RDS::Ingress', properties, dependsOn)
+    constructor(properties: Ingress) {
+        Object.assign(this, properties)
     }
 }
 

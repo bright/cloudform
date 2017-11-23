@@ -1,10 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface CloudFrontOriginAccessIdentityConfigProperties {
+export declare class CloudFrontOriginAccessIdentityConfig {
     Comment: Value<string>;
-}
-export declare class CloudFrontOriginAccessIdentityConfig extends ResourceBase {
-    constructor(properties: CloudFrontOriginAccessIdentityConfigProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: CloudFrontOriginAccessIdentityConfig);
 }
 export interface CloudFrontOriginAccessIdentityProperties {
     CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;

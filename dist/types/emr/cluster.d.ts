@@ -1,6 +1,6 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface InstanceGroupConfigProperties {
+export declare class InstanceGroupConfig {
     AutoScalingPolicy?: AutoScalingPolicy;
     BidPrice?: Value<string>;
     Configurations?: List<Configuration>;
@@ -9,43 +9,33 @@ export interface InstanceGroupConfigProperties {
     InstanceType: Value<string>;
     Market?: Value<string>;
     Name?: Value<string>;
+    constructor(properties: InstanceGroupConfig);
 }
-export declare class InstanceGroupConfig extends ResourceBase {
-    constructor(properties: InstanceGroupConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SpotProvisioningSpecificationProperties {
+export declare class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>;
     TimeoutAction: Value<string>;
     TimeoutDurationMinutes: Value<number>;
+    constructor(properties: SpotProvisioningSpecification);
 }
-export declare class SpotProvisioningSpecification extends ResourceBase {
-    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface BootstrapActionConfigProperties {
+export declare class BootstrapActionConfig {
     Name: Value<string>;
     ScriptBootstrapAction: ScriptBootstrapActionConfig;
+    constructor(properties: BootstrapActionConfig);
 }
-export declare class BootstrapActionConfig extends ResourceBase {
-    constructor(properties: BootstrapActionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingConstraintsProperties {
+export declare class ScalingConstraints {
     MaxCapacity: Value<number>;
     MinCapacity: Value<number>;
+    constructor(properties: ScalingConstraints);
 }
-export declare class ScalingConstraints extends ResourceBase {
-    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceFleetConfigProperties {
+export declare class InstanceFleetConfig {
     InstanceTypeConfigs?: List<InstanceTypeConfig>;
     LaunchSpecifications?: InstanceFleetProvisioningSpecifications;
     Name?: Value<string>;
     TargetOnDemandCapacity?: Value<number>;
     TargetSpotCapacity?: Value<number>;
+    constructor(properties: InstanceFleetConfig);
 }
-export declare class InstanceFleetConfig extends ResourceBase {
-    constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface JobFlowInstancesConfigProperties {
+export declare class JobFlowInstancesConfig {
     AdditionalMasterSecurityGroups?: List<Value<string>>;
     AdditionalSlaveSecurityGroups?: List<Value<string>>;
     CoreInstanceFleet?: InstanceFleetConfig;
@@ -60,67 +50,51 @@ export interface JobFlowInstancesConfigProperties {
     Placement?: PlacementType;
     ServiceAccessSecurityGroup?: Value<string>;
     TerminationProtected?: Value<boolean>;
+    constructor(properties: JobFlowInstancesConfig);
 }
-export declare class JobFlowInstancesConfig extends ResourceBase {
-    constructor(properties: JobFlowInstancesConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingActionProperties {
+export declare class ScalingAction {
     Market?: Value<string>;
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
+    constructor(properties: ScalingAction);
 }
-export declare class ScalingAction extends ResourceBase {
-    constructor(properties: ScalingActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SimpleScalingPolicyConfigurationProperties {
+export declare class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>;
     CoolDown?: Value<number>;
     ScalingAdjustment: Value<number>;
+    constructor(properties: SimpleScalingPolicyConfiguration);
 }
-export declare class SimpleScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ApplicationProperties {
+export declare class Application {
     AdditionalInfo?: {
         [key: string]: Value<string>;
     };
     Args?: List<Value<string>>;
     Name?: Value<string>;
     Version?: Value<string>;
+    constructor(properties: Application);
 }
-export declare class Application extends ResourceBase {
-    constructor(properties: ApplicationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsBlockDeviceConfigProperties {
+export declare class EbsBlockDeviceConfig {
     VolumeSpecification: VolumeSpecification;
     VolumesPerInstance?: Value<number>;
+    constructor(properties: EbsBlockDeviceConfig);
 }
-export declare class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PlacementTypeProperties {
+export declare class PlacementType {
     AvailabilityZone: Value<string>;
+    constructor(properties: PlacementType);
 }
-export declare class PlacementType extends ResourceBase {
-    constructor(properties: PlacementTypeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConfigurationProperties {
+export declare class Configuration {
     Classification?: Value<string>;
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
     Configurations?: List<Configuration>;
+    constructor(properties: Configuration);
 }
-export declare class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScriptBootstrapActionConfigProperties {
+export declare class ScriptBootstrapActionConfig {
     Args?: List<Value<string>>;
     Path: Value<string>;
+    constructor(properties: ScriptBootstrapActionConfig);
 }
-export declare class ScriptBootstrapActionConfig extends ResourceBase {
-    constructor(properties: ScriptBootstrapActionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CloudWatchAlarmDefinitionProperties {
+export declare class CloudWatchAlarmDefinition {
     ComparisonOperator: Value<string>;
     Dimensions?: List<MetricDimension>;
     EvaluationPeriods?: Value<number>;
@@ -130,70 +104,52 @@ export interface CloudWatchAlarmDefinitionProperties {
     Statistic?: Value<string>;
     Threshold: Value<number>;
     Unit?: Value<string>;
+    constructor(properties: CloudWatchAlarmDefinition);
 }
-export declare class CloudWatchAlarmDefinition extends ResourceBase {
-    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EbsConfigurationProperties {
+export declare class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
 }
-export declare class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingRuleProperties {
+export declare class ScalingRule {
     Action: ScalingAction;
     Description?: Value<string>;
     Name: Value<string>;
     Trigger: ScalingTrigger;
+    constructor(properties: ScalingRule);
 }
-export declare class ScalingRule extends ResourceBase {
-    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceTypeConfigProperties {
+export declare class InstanceTypeConfig {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
     Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceType: Value<string>;
     WeightedCapacity?: Value<number>;
+    constructor(properties: InstanceTypeConfig);
 }
-export declare class InstanceTypeConfig extends ResourceBase {
-    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MetricDimensionProperties {
+export declare class MetricDimension {
     Key: Value<string>;
     Value: Value<string>;
+    constructor(properties: MetricDimension);
 }
-export declare class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumeSpecificationProperties {
+export declare class VolumeSpecification {
     Iops?: Value<number>;
     SizeInGB: Value<number>;
     VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
 }
-export declare class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AutoScalingPolicyProperties {
+export declare class AutoScalingPolicy {
     Constraints: ScalingConstraints;
     Rules: List<ScalingRule>;
+    constructor(properties: AutoScalingPolicy);
 }
-export declare class AutoScalingPolicy extends ResourceBase {
-    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface InstanceFleetProvisioningSpecificationsProperties {
+export declare class InstanceFleetProvisioningSpecifications {
     SpotSpecification: SpotProvisioningSpecification;
+    constructor(properties: InstanceFleetProvisioningSpecifications);
 }
-export declare class InstanceFleetProvisioningSpecifications extends ResourceBase {
-    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalingTriggerProperties {
+export declare class ScalingTrigger {
     CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
-}
-export declare class ScalingTrigger extends ResourceBase {
-    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ScalingTrigger);
 }
 export interface ClusterProperties {
     AdditionalInfo?: any;

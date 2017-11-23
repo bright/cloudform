@@ -2,21 +2,21 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class Settings extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::Settings', properties, dependsOn);
+class Settings {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Settings = Settings;
-class ArtifactDetails extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::ArtifactDetails', properties, dependsOn);
+class ArtifactDetails {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ArtifactDetails = ArtifactDetails;
-class ConfigurationProperties extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodePipeline::ConfigurationProperties', properties, dependsOn);
+class ConfigurationProperties {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ConfigurationProperties = ConfigurationProperties;

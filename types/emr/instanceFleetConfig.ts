@@ -3,86 +3,72 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VolumeSpecificationProperties {
+export class VolumeSpecification {
     Iops?: Value<number>
     SizeInGB: Value<number>
     VolumeType: Value<string>
-}
 
-export class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::VolumeSpecification', properties, dependsOn)
+    constructor(properties: VolumeSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SpotProvisioningSpecificationProperties {
+export class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>
     TimeoutAction: Value<string>
     TimeoutDurationMinutes: Value<number>
-}
 
-export class SpotProvisioningSpecification extends ResourceBase {
-    constructor(properties: SpotProvisioningSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::SpotProvisioningSpecification', properties, dependsOn)
+    constructor(properties: SpotProvisioningSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConfigurationProperties {
+export class Configuration {
     Classification?: Value<string>
     ConfigurationProperties?: {[key: string]: Value<string>}
     Configurations?: List<Configuration>
-}
 
-export class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::Configuration', properties, dependsOn)
+    constructor(properties: Configuration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsConfigurationProperties {
+export class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
-}
 
-export class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::EbsConfiguration', properties, dependsOn)
+    constructor(properties: EbsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InstanceTypeConfigProperties {
+export class InstanceTypeConfig {
     BidPrice?: Value<string>
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
     Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
     InstanceType: Value<string>
     WeightedCapacity?: Value<number>
-}
 
-export class InstanceTypeConfig extends ResourceBase {
-    constructor(properties: InstanceTypeConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::InstanceTypeConfig', properties, dependsOn)
+    constructor(properties: InstanceTypeConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface InstanceFleetProvisioningSpecificationsProperties {
+export class InstanceFleetProvisioningSpecifications {
     SpotSpecification: SpotProvisioningSpecification
-}
 
-export class InstanceFleetProvisioningSpecifications extends ResourceBase {
-    constructor(properties: InstanceFleetProvisioningSpecificationsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::InstanceFleetProvisioningSpecifications', properties, dependsOn)
+    constructor(properties: InstanceFleetProvisioningSpecifications) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsBlockDeviceConfigProperties {
+export class EbsBlockDeviceConfig {
     VolumeSpecification: VolumeSpecification
     VolumesPerInstance?: Value<number>
-}
 
-export class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn)
+    constructor(properties: EbsBlockDeviceConfig) {
+        Object.assign(this, properties)
     }
 }
 

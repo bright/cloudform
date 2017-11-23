@@ -2,33 +2,33 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class VpcConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::VpcConfig', properties, dependsOn);
+class VpcConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.VpcConfig = VpcConfig;
-class DeadLetterConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::DeadLetterConfig', properties, dependsOn);
+class DeadLetterConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.DeadLetterConfig = DeadLetterConfig;
-class TracingConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::TracingConfig', properties, dependsOn);
+class TracingConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TracingConfig = TracingConfig;
-class Code extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::Code', properties, dependsOn);
+class Code {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Code = Code;
-class Environment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Lambda::Environment', properties, dependsOn);
+class Environment {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Environment = Environment;

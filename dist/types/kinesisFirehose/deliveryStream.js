@@ -2,93 +2,93 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class ElasticsearchDestinationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ElasticsearchDestinationConfiguration', properties, dependsOn);
+class ElasticsearchDestinationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration;
-class ElasticsearchBufferingHints extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ElasticsearchBufferingHints', properties, dependsOn);
+class ElasticsearchBufferingHints {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ElasticsearchBufferingHints = ElasticsearchBufferingHints;
-class EncryptionConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::EncryptionConfiguration', properties, dependsOn);
+class EncryptionConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EncryptionConfiguration = EncryptionConfiguration;
-class CloudWatchLoggingOptions extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::CloudWatchLoggingOptions', properties, dependsOn);
+class CloudWatchLoggingOptions {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CloudWatchLoggingOptions = CloudWatchLoggingOptions;
-class ProcessingConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ProcessingConfiguration', properties, dependsOn);
+class ProcessingConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ProcessingConfiguration = ProcessingConfiguration;
-class BufferingHints extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::BufferingHints', properties, dependsOn);
+class BufferingHints {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.BufferingHints = BufferingHints;
-class KinesisStreamSourceConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::KinesisStreamSourceConfiguration', properties, dependsOn);
+class KinesisStreamSourceConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration;
-class ProcessorParameter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ProcessorParameter', properties, dependsOn);
+class ProcessorParameter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ProcessorParameter = ProcessorParameter;
-class Processor extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::Processor', properties, dependsOn);
+class Processor {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Processor = Processor;
-class CopyCommand extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::CopyCommand', properties, dependsOn);
+class CopyCommand {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CopyCommand = CopyCommand;
-class S3DestinationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::S3DestinationConfiguration', properties, dependsOn);
+class S3DestinationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.S3DestinationConfiguration = S3DestinationConfiguration;
-class ElasticsearchRetryOptions extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ElasticsearchRetryOptions', properties, dependsOn);
+class ElasticsearchRetryOptions {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ElasticsearchRetryOptions = ElasticsearchRetryOptions;
-class KMSEncryptionConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::KMSEncryptionConfig', properties, dependsOn);
+class KMSEncryptionConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KMSEncryptionConfig = KMSEncryptionConfig;
-class ExtendedS3DestinationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::ExtendedS3DestinationConfiguration', properties, dependsOn);
+class ExtendedS3DestinationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration;
-class RedshiftDestinationConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::KinesisFirehose::RedshiftDestinationConfiguration', properties, dependsOn);
+class RedshiftDestinationConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RedshiftDestinationConfiguration = RedshiftDestinationConfiguration;

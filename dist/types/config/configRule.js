@@ -2,21 +2,21 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class Scope extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::Scope', properties, dependsOn);
+class Scope {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Scope = Scope;
-class Source extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::Source', properties, dependsOn);
+class Source {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Source = Source;
-class SourceDetail extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Config::SourceDetail', properties, dependsOn);
+class SourceDetail {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SourceDetail = SourceDetail;

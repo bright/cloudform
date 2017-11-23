@@ -1,40 +1,32 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface CookiesProperties {
+export declare class Cookies {
     WhitelistedNames?: List<Value<string>>;
     Forward: Value<string>;
+    constructor(properties: Cookies);
 }
-export declare class Cookies extends ResourceBase {
-    constructor(properties: CookiesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LambdaFunctionAssociationProperties {
+export declare class LambdaFunctionAssociation {
     EventType?: Value<string>;
     LambdaFunctionARN?: Value<string>;
+    constructor(properties: LambdaFunctionAssociation);
 }
-export declare class LambdaFunctionAssociation extends ResourceBase {
-    constructor(properties: LambdaFunctionAssociationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CustomOriginConfigProperties {
+export declare class CustomOriginConfig {
     OriginReadTimeout?: Value<number>;
     HTTPSPort?: Value<number>;
     OriginKeepaliveTimeout?: Value<number>;
     OriginSSLProtocols?: List<Value<string>>;
     HTTPPort?: Value<number>;
     OriginProtocolPolicy: Value<string>;
+    constructor(properties: CustomOriginConfig);
 }
-export declare class CustomOriginConfig extends ResourceBase {
-    constructor(properties: CustomOriginConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ForwardedValuesProperties {
+export declare class ForwardedValues {
     Cookies?: Cookies;
     Headers?: List<Value<string>>;
     QueryString: Value<boolean>;
     QueryStringCacheKeys?: List<Value<string>>;
+    constructor(properties: ForwardedValues);
 }
-export declare class ForwardedValues extends ResourceBase {
-    constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CacheBehaviorProperties {
+export declare class CacheBehavior {
     Compress?: Value<boolean>;
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>;
     TargetOriginId: Value<string>;
@@ -48,21 +40,17 @@ export interface CacheBehaviorProperties {
     ForwardedValues: ForwardedValues;
     MinTTL?: Value<number>;
     MaxTTL?: Value<number>;
+    constructor(properties: CacheBehavior);
 }
-export declare class CacheBehavior extends ResourceBase {
-    constructor(properties: CacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LegacyCustomOriginProperties {
+export declare class LegacyCustomOrigin {
     HTTPSPort?: Value<number>;
     OriginSSLProtocols?: List<Value<string>>;
     DNSName: Value<string>;
     HTTPPort?: Value<number>;
     OriginProtocolPolicy: Value<string>;
+    constructor(properties: LegacyCustomOrigin);
 }
-export declare class LegacyCustomOrigin extends ResourceBase {
-    constructor(properties: LegacyCustomOriginProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DefaultCacheBehaviorProperties {
+export declare class DefaultCacheBehavior {
     Compress?: Value<boolean>;
     AllowedMethods?: List<Value<string>>;
     CachedMethods?: List<Value<string>>;
@@ -75,68 +63,52 @@ export interface DefaultCacheBehaviorProperties {
     MaxTTL?: Value<number>;
     TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
+    constructor(properties: DefaultCacheBehavior);
 }
-export declare class DefaultCacheBehavior extends ResourceBase {
-    constructor(properties: DefaultCacheBehaviorProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RestrictionsProperties {
+export declare class Restrictions {
     GeoRestriction: GeoRestriction;
+    constructor(properties: Restrictions);
 }
-export declare class Restrictions extends ResourceBase {
-    constructor(properties: RestrictionsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface OriginProperties {
+export declare class Origin {
     OriginCustomHeaders?: List<OriginCustomHeader>;
     DomainName: Value<string>;
     S3OriginConfig?: S3OriginConfig;
     OriginPath?: Value<string>;
     Id: Value<string>;
     CustomOriginConfig?: CustomOriginConfig;
+    constructor(properties: Origin);
 }
-export declare class Origin extends ResourceBase {
-    constructor(properties: OriginProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface GeoRestrictionProperties {
+export declare class GeoRestriction {
     Locations?: List<Value<string>>;
     RestrictionType: Value<string>;
+    constructor(properties: GeoRestriction);
 }
-export declare class GeoRestriction extends ResourceBase {
-    constructor(properties: GeoRestrictionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ViewerCertificateProperties {
+export declare class ViewerCertificate {
     IamCertificateId?: Value<string>;
     SslSupportMethod?: Value<string>;
     MinimumProtocolVersion?: Value<string>;
     CloudFrontDefaultCertificate?: Value<boolean>;
     AcmCertificateArn?: Value<string>;
+    constructor(properties: ViewerCertificate);
 }
-export declare class ViewerCertificate extends ResourceBase {
-    constructor(properties: ViewerCertificateProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface S3OriginConfigProperties {
+export declare class S3OriginConfig {
     OriginAccessIdentity?: Value<string>;
+    constructor(properties: S3OriginConfig);
 }
-export declare class S3OriginConfig extends ResourceBase {
-    constructor(properties: S3OriginConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CustomErrorResponseProperties {
+export declare class CustomErrorResponse {
     ResponseCode?: Value<number>;
     ErrorCachingMinTTL?: Value<number>;
     ErrorCode: Value<number>;
     ResponsePagePath?: Value<string>;
+    constructor(properties: CustomErrorResponse);
 }
-export declare class CustomErrorResponse extends ResourceBase {
-    constructor(properties: CustomErrorResponseProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LoggingProperties {
+export declare class Logging {
     IncludeCookies?: Value<boolean>;
     Bucket: Value<string>;
     Prefix?: Value<string>;
+    constructor(properties: Logging);
 }
-export declare class Logging extends ResourceBase {
-    constructor(properties: LoggingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DistributionConfigProperties {
+export declare class DistributionConfig {
     Logging?: Logging;
     Comment?: Value<string>;
     DefaultRootObject?: Value<string>;
@@ -155,23 +127,17 @@ export interface DistributionConfigProperties {
     HttpVersion?: Value<string>;
     Restrictions?: Restrictions;
     CacheBehaviors?: List<CacheBehavior>;
+    constructor(properties: DistributionConfig);
 }
-export declare class DistributionConfig extends ResourceBase {
-    constructor(properties: DistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LegacyS3OriginProperties {
+export declare class LegacyS3Origin {
     OriginAccessIdentity?: Value<string>;
     DNSName: Value<string>;
+    constructor(properties: LegacyS3Origin);
 }
-export declare class LegacyS3Origin extends ResourceBase {
-    constructor(properties: LegacyS3OriginProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface OriginCustomHeaderProperties {
+export declare class OriginCustomHeader {
     HeaderValue: Value<string>;
     HeaderName: Value<string>;
-}
-export declare class OriginCustomHeader extends ResourceBase {
-    constructor(properties: OriginCustomHeaderProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: OriginCustomHeader);
 }
 export interface DistributionProperties {
     DistributionConfig: DistributionConfig;

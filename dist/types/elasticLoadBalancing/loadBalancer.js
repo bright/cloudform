@@ -2,51 +2,51 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class HealthCheck extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::HealthCheck', properties, dependsOn);
+class HealthCheck {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.HealthCheck = HealthCheck;
-class AccessLoggingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::AccessLoggingPolicy', properties, dependsOn);
+class AccessLoggingPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AccessLoggingPolicy = AccessLoggingPolicy;
-class ConnectionSettings extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::ConnectionSettings', properties, dependsOn);
+class ConnectionSettings {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ConnectionSettings = ConnectionSettings;
-class LBCookieStickinessPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::LBCookieStickinessPolicy', properties, dependsOn);
+class LBCookieStickinessPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LBCookieStickinessPolicy = LBCookieStickinessPolicy;
-class ConnectionDrainingPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::ConnectionDrainingPolicy', properties, dependsOn);
+class ConnectionDrainingPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ConnectionDrainingPolicy = ConnectionDrainingPolicy;
-class Listeners extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::Listeners', properties, dependsOn);
+class Listeners {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Listeners = Listeners;
-class Policies extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::Policies', properties, dependsOn);
+class Policies {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Policies = Policies;
-class AppCookieStickinessPolicy extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::ElasticLoadBalancing::AppCookieStickinessPolicy', properties, dependsOn);
+class AppCookieStickinessPolicy {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AppCookieStickinessPolicy = AppCookieStickinessPolicy;

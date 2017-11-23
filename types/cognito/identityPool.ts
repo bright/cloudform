@@ -3,38 +3,32 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface PushSyncProperties {
+export class PushSync {
     ApplicationArns?: List<Value<string>>
     RoleArn?: Value<string>
-}
 
-export class PushSync extends ResourceBase {
-    constructor(properties: PushSyncProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::PushSync', properties, dependsOn)
+    constructor(properties: PushSync) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CognitoIdentityProviderProperties {
+export class CognitoIdentityProvider {
     ServerSideTokenCheck?: Value<boolean>
     ProviderName?: Value<string>
     ClientId?: Value<string>
-}
 
-export class CognitoIdentityProvider extends ResourceBase {
-    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::CognitoIdentityProvider', properties, dependsOn)
+    constructor(properties: CognitoIdentityProvider) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CognitoStreamsProperties {
+export class CognitoStreams {
     StreamingStatus?: Value<string>
     StreamName?: Value<string>
     RoleArn?: Value<string>
-}
 
-export class CognitoStreams extends ResourceBase {
-    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Cognito::CognitoStreams', properties, dependsOn)
+    constructor(properties: CognitoStreams) {
+        Object.assign(this, properties)
     }
 }
 

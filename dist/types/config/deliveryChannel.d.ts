@@ -1,10 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface ConfigSnapshotDeliveryPropertiesProperties {
+export declare class ConfigSnapshotDeliveryProperties {
     DeliveryFrequency?: Value<string>;
-}
-export declare class ConfigSnapshotDeliveryProperties extends ResourceBase {
-    constructor(properties: ConfigSnapshotDeliveryPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ConfigSnapshotDeliveryProperties);
 }
 export interface DeliveryChannelProperties {
     ConfigSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties;

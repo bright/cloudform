@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface MethodSettingProperties {
+export declare class MethodSetting {
     CacheDataEncrypted?: Value<boolean>;
     CacheTtlInSeconds?: Value<number>;
     CachingEnabled?: Value<boolean>;
@@ -11,11 +11,9 @@ export interface MethodSettingProperties {
     ResourcePath?: Value<string>;
     ThrottlingBurstLimit?: Value<number>;
     ThrottlingRateLimit?: Value<number>;
+    constructor(properties: MethodSetting);
 }
-export declare class MethodSetting extends ResourceBase {
-    constructor(properties: MethodSettingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StageDescriptionProperties {
+export declare class StageDescription {
     CacheClusterEnabled?: Value<boolean>;
     CacheClusterSize?: Value<string>;
     CacheDataEncrypted?: Value<boolean>;
@@ -33,9 +31,7 @@ export interface StageDescriptionProperties {
     Variables?: {
         [key: string]: Value<string>;
     };
-}
-export declare class StageDescription extends ResourceBase {
-    constructor(properties: StageDescriptionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: StageDescription);
 }
 export interface DeploymentProperties {
     Description?: Value<string>;

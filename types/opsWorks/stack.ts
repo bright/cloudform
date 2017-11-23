@@ -3,63 +3,53 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SourceProperties {
+export class Source {
     Password?: Value<string>
     Revision?: Value<string>
     SshKey?: Value<string>
     Type?: Value<string>
     Url?: Value<string>
     Username?: Value<string>
-}
 
-export class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::Source', properties, dependsOn)
+    constructor(properties: Source) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ChefConfigurationProperties {
+export class ChefConfiguration {
     BerkshelfVersion?: Value<string>
     ManageBerkshelf?: Value<boolean>
-}
 
-export class ChefConfiguration extends ResourceBase {
-    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::ChefConfiguration', properties, dependsOn)
+    constructor(properties: ChefConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StackConfigurationManagerProperties {
+export class StackConfigurationManager {
     Name?: Value<string>
     Version?: Value<string>
-}
 
-export class StackConfigurationManager extends ResourceBase {
-    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::StackConfigurationManager', properties, dependsOn)
+    constructor(properties: StackConfigurationManager) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RdsDbInstanceProperties {
+export class RdsDbInstance {
     DbPassword: Value<string>
     DbUser: Value<string>
     RdsDbInstanceArn: Value<string>
-}
 
-export class RdsDbInstance extends ResourceBase {
-    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::RdsDbInstance', properties, dependsOn)
+    constructor(properties: RdsDbInstance) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ElasticIpProperties {
+export class ElasticIp {
     Ip: Value<string>
     Name?: Value<string>
-}
 
-export class ElasticIp extends ResourceBase {
-    constructor(properties: ElasticIpProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::OpsWorks::ElasticIp', properties, dependsOn)
+    constructor(properties: ElasticIp) {
+        Object.assign(this, properties)
     }
 }
 

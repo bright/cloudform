@@ -3,26 +3,22 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface EventSelectorProperties {
+export class EventSelector {
     DataResources?: List<DataResource>
     IncludeManagementEvents?: Value<boolean>
     ReadWriteType?: Value<string>
-}
 
-export class EventSelector extends ResourceBase {
-    constructor(properties: EventSelectorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudTrail::EventSelector', properties, dependsOn)
+    constructor(properties: EventSelector) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DataResourceProperties {
+export class DataResource {
     Type: Value<string>
     Values?: List<Value<string>>
-}
 
-export class DataResource extends ResourceBase {
-    constructor(properties: DataResourceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CloudTrail::DataResource', properties, dependsOn)
+    constructor(properties: DataResource) {
+        Object.assign(this, properties)
     }
 }
 

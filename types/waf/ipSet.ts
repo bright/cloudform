@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IPSetDescriptorProperties {
+export class IPSetDescriptor {
     Type: Value<string>
     Value: Value<string>
-}
 
-export class IPSetDescriptor extends ResourceBase {
-    constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::IPSetDescriptor', properties, dependsOn)
+    constructor(properties: IPSetDescriptor) {
+        Object.assign(this, properties)
     }
 }
 

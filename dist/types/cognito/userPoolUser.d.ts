@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface AttributeTypeProperties {
+export declare class AttributeType {
     Value?: Value<string>;
     Name?: Value<string>;
-}
-export declare class AttributeType extends ResourceBase {
-    constructor(properties: AttributeTypeProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AttributeType);
 }
 export interface UserPoolUserProperties {
     ValidationData?: List<AttributeType>;

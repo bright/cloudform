@@ -3,64 +3,54 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MetricDimensionProperties {
+export class MetricDimension {
     Name: Value<string>
     Value: Value<string>
-}
 
-export class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::MetricDimension', properties, dependsOn)
+    constructor(properties: MetricDimension) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CustomizedMetricSpecificationProperties {
+export class CustomizedMetricSpecification {
     Dimensions?: List<MetricDimension>
     MetricName: Value<string>
     Namespace: Value<string>
     Statistic: Value<string>
     Unit?: Value<string>
-}
 
-export class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::CustomizedMetricSpecification', properties, dependsOn)
+    constructor(properties: CustomizedMetricSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PredefinedMetricSpecificationProperties {
+export class PredefinedMetricSpecification {
     PredefinedMetricType: Value<string>
     ResourceLabel?: Value<string>
-}
 
-export class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::PredefinedMetricSpecification', properties, dependsOn)
+    constructor(properties: PredefinedMetricSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TargetTrackingConfigurationProperties {
+export class TargetTrackingConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification
     DisableScaleIn?: Value<boolean>
     PredefinedMetricSpecification?: PredefinedMetricSpecification
     TargetValue: Value<number>
-}
 
-export class TargetTrackingConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::TargetTrackingConfiguration', properties, dependsOn)
+    constructor(properties: TargetTrackingConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface StepAdjustmentProperties {
+export class StepAdjustment {
     MetricIntervalLowerBound?: Value<number>
     MetricIntervalUpperBound?: Value<number>
     ScalingAdjustment: Value<number>
-}
 
-export class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::StepAdjustment', properties, dependsOn)
+    constructor(properties: StepAdjustment) {
+        Object.assign(this, properties)
     }
 }
 

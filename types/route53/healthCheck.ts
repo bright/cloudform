@@ -3,7 +3,7 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface HealthCheckConfigProperties {
+export class HealthCheckConfig {
     AlarmIdentifier?: AlarmIdentifier
     ChildHealthChecks?: List<Value<string>>
     EnableSNI?: Value<boolean>
@@ -19,33 +19,27 @@ export interface HealthCheckConfigProperties {
     ResourcePath?: Value<string>
     SearchString?: Value<string>
     Type: Value<string>
-}
 
-export class HealthCheckConfig extends ResourceBase {
-    constructor(properties: HealthCheckConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::HealthCheckConfig', properties, dependsOn)
+    constructor(properties: HealthCheckConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface HealthCheckTagProperties {
+export class HealthCheckTag {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class HealthCheckTag extends ResourceBase {
-    constructor(properties: HealthCheckTagProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::HealthCheckTag', properties, dependsOn)
+    constructor(properties: HealthCheckTag) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AlarmIdentifierProperties {
+export class AlarmIdentifier {
     Name: Value<string>
     Region: Value<string>
-}
 
-export class AlarmIdentifier extends ResourceBase {
-    constructor(properties: AlarmIdentifierProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::AlarmIdentifier', properties, dependsOn)
+    constructor(properties: AlarmIdentifier) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,16 +3,14 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IpPermissionProperties {
+export class IpPermission {
     FromPort: Value<number>
     IpRange: Value<string>
     Protocol: Value<string>
     ToPort: Value<number>
-}
 
-export class IpPermission extends ResourceBase {
-    constructor(properties: IpPermissionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::GameLift::IpPermission', properties, dependsOn)
+    constructor(properties: IpPermission) {
+        Object.assign(this, properties)
     }
 }
 

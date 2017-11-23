@@ -1,19 +1,15 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface EventSelectorProperties {
+export declare class EventSelector {
     DataResources?: List<DataResource>;
     IncludeManagementEvents?: Value<boolean>;
     ReadWriteType?: Value<string>;
+    constructor(properties: EventSelector);
 }
-export declare class EventSelector extends ResourceBase {
-    constructor(properties: EventSelectorProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DataResourceProperties {
+export declare class DataResource {
     Type: Value<string>;
     Values?: List<Value<string>>;
-}
-export declare class DataResource extends ResourceBase {
-    constructor(properties: DataResourceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: DataResource);
 }
 export interface TrailProperties {
     CloudWatchLogsLogGroupArn?: Value<string>;

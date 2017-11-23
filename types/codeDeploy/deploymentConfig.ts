@@ -3,14 +3,12 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface MinimumHealthyHostsProperties {
+export class MinimumHealthyHosts {
     Type: Value<string>
     Value: Value<number>
-}
 
-export class MinimumHealthyHosts extends ResourceBase {
-    constructor(properties: MinimumHealthyHostsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CodeDeploy::MinimumHealthyHosts', properties, dependsOn)
+    constructor(properties: MinimumHealthyHosts) {
+        Object.assign(this, properties)
     }
 }
 

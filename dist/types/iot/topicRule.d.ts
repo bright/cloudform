@@ -1,84 +1,64 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface S3ActionProperties {
+export declare class S3Action {
     BucketName: Value<string>;
     Key: Value<string>;
     RoleArn: Value<string>;
+    constructor(properties: S3Action);
 }
-export declare class S3Action extends ResourceBase {
-    constructor(properties: S3ActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SqsActionProperties {
+export declare class SqsAction {
     QueueUrl: Value<string>;
     RoleArn: Value<string>;
     UseBase64?: Value<boolean>;
+    constructor(properties: SqsAction);
 }
-export declare class SqsAction extends ResourceBase {
-    constructor(properties: SqsActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PutItemInputProperties {
+export declare class PutItemInput {
     TableName: Value<string>;
+    constructor(properties: PutItemInput);
 }
-export declare class PutItemInput extends ResourceBase {
-    constructor(properties: PutItemInputProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RepublishActionProperties {
+export declare class RepublishAction {
     RoleArn: Value<string>;
     Topic: Value<string>;
+    constructor(properties: RepublishAction);
 }
-export declare class RepublishAction extends ResourceBase {
-    constructor(properties: RepublishActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SnsActionProperties {
+export declare class SnsAction {
     MessageFormat?: Value<string>;
     RoleArn: Value<string>;
     TargetArn: Value<string>;
+    constructor(properties: SnsAction);
 }
-export declare class SnsAction extends ResourceBase {
-    constructor(properties: SnsActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface FirehoseActionProperties {
+export declare class FirehoseAction {
     DeliveryStreamName: Value<string>;
     RoleArn: Value<string>;
     Separator?: Value<string>;
+    constructor(properties: FirehoseAction);
 }
-export declare class FirehoseAction extends ResourceBase {
-    constructor(properties: FirehoseActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TopicRulePayloadProperties {
+export declare class TopicRulePayload {
     Actions: List<Action>;
     AwsIotSqlVersion?: Value<string>;
     Description?: Value<string>;
     RuleDisabled: Value<boolean>;
     Sql: Value<string>;
+    constructor(properties: TopicRulePayload);
 }
-export declare class TopicRulePayload extends ResourceBase {
-    constructor(properties: TopicRulePayloadProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LambdaActionProperties {
+export declare class LambdaAction {
     FunctionArn?: Value<string>;
+    constructor(properties: LambdaAction);
 }
-export declare class LambdaAction extends ResourceBase {
-    constructor(properties: LambdaActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DynamoDBv2ActionProperties {
+export declare class DynamoDBv2Action {
     PutItem?: PutItemInput;
     RoleArn?: Value<string>;
+    constructor(properties: DynamoDBv2Action);
 }
-export declare class DynamoDBv2Action extends ResourceBase {
-    constructor(properties: DynamoDBv2ActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ElasticsearchActionProperties {
+export declare class ElasticsearchAction {
     Endpoint: Value<string>;
     Id: Value<string>;
     Index: Value<string>;
     RoleArn: Value<string>;
     Type: Value<string>;
+    constructor(properties: ElasticsearchAction);
 }
-export declare class ElasticsearchAction extends ResourceBase {
-    constructor(properties: ElasticsearchActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DynamoDBActionProperties {
+export declare class DynamoDBAction {
     HashKeyField: Value<string>;
     HashKeyType?: Value<string>;
     HashKeyValue: Value<string>;
@@ -88,28 +68,22 @@ export interface DynamoDBActionProperties {
     RangeKeyValue: Value<string>;
     RoleArn: Value<string>;
     TableName: Value<string>;
+    constructor(properties: DynamoDBAction);
 }
-export declare class DynamoDBAction extends ResourceBase {
-    constructor(properties: DynamoDBActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisActionProperties {
+export declare class KinesisAction {
     PartitionKey?: Value<string>;
     RoleArn: Value<string>;
     StreamName: Value<string>;
+    constructor(properties: KinesisAction);
 }
-export declare class KinesisAction extends ResourceBase {
-    constructor(properties: KinesisActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CloudwatchAlarmActionProperties {
+export declare class CloudwatchAlarmAction {
     AlarmName: Value<string>;
     RoleArn: Value<string>;
     StateReason: Value<string>;
     StateValue: Value<string>;
+    constructor(properties: CloudwatchAlarmAction);
 }
-export declare class CloudwatchAlarmAction extends ResourceBase {
-    constructor(properties: CloudwatchAlarmActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ActionProperties {
+export declare class Action {
     CloudwatchAlarm?: CloudwatchAlarmAction;
     CloudwatchMetric?: CloudwatchMetricAction;
     DynamoDB?: DynamoDBAction;
@@ -122,20 +96,16 @@ export interface ActionProperties {
     S3?: S3Action;
     Sns?: SnsAction;
     Sqs?: SqsAction;
+    constructor(properties: Action);
 }
-export declare class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CloudwatchMetricActionProperties {
+export declare class CloudwatchMetricAction {
     MetricName: Value<string>;
     MetricNamespace: Value<string>;
     MetricTimestamp?: Value<string>;
     MetricUnit: Value<string>;
     MetricValue: Value<string>;
     RoleArn: Value<string>;
-}
-export declare class CloudwatchMetricAction extends ResourceBase {
-    constructor(properties: CloudwatchMetricActionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: CloudwatchMetricAction);
 }
 export interface TopicRuleProperties {
     RuleName?: Value<string>;

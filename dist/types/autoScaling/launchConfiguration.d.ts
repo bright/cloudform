@@ -1,24 +1,20 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface BlockDeviceMappingProperties {
+export declare class BlockDeviceMapping {
     DeviceName: Value<string>;
     Ebs?: BlockDevice;
     NoDevice?: Value<boolean>;
     VirtualName?: Value<string>;
+    constructor(properties: BlockDeviceMapping);
 }
-export declare class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface BlockDeviceProperties {
+export declare class BlockDevice {
     DeleteOnTermination?: Value<boolean>;
     Encrypted?: Value<boolean>;
     Iops?: Value<number>;
     SnapshotId?: Value<string>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
-}
-export declare class BlockDevice extends ResourceBase {
-    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: BlockDevice);
 }
 export interface LaunchConfigurationProperties {
     AssociatePublicIpAddress?: Value<boolean>;

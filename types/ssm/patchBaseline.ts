@@ -3,46 +3,38 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RuleGroupProperties {
+export class RuleGroup {
     PatchRules?: List<Rule>
-}
 
-export class RuleGroup extends ResourceBase {
-    constructor(properties: RuleGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::RuleGroup', properties, dependsOn)
+    constructor(properties: RuleGroup) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PatchFilterProperties {
+export class PatchFilter {
     Values?: List<Value<string>>
     Key?: Value<string>
-}
 
-export class PatchFilter extends ResourceBase {
-    constructor(properties: PatchFilterProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::PatchFilter', properties, dependsOn)
+    constructor(properties: PatchFilter) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RuleProperties {
+export class Rule {
     PatchFilterGroup?: PatchFilterGroup
     ApproveAfterDays?: Value<number>
     ComplianceLevel?: Value<string>
-}
 
-export class Rule extends ResourceBase {
-    constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::Rule', properties, dependsOn)
+    constructor(properties: Rule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PatchFilterGroupProperties {
+export class PatchFilterGroup {
     PatchFilters?: List<PatchFilter>
-}
 
-export class PatchFilterGroup extends ResourceBase {
-    constructor(properties: PatchFilterGroupProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::SSM::PatchFilterGroup', properties, dependsOn)
+    constructor(properties: PatchFilterGroup) {
+        Object.assign(this, properties)
     }
 }
 

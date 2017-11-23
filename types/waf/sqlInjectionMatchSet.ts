@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SqlInjectionMatchTupleProperties {
+export class SqlInjectionMatchTuple {
     FieldToMatch: FieldToMatch
     TextTransformation: Value<string>
-}
 
-export class SqlInjectionMatchTuple extends ResourceBase {
-    constructor(properties: SqlInjectionMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::SqlInjectionMatchTuple', properties, dependsOn)
+    constructor(properties: SqlInjectionMatchTuple) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FieldToMatchProperties {
+export class FieldToMatch {
     Data?: Value<string>
     Type: Value<string>
-}
 
-export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::FieldToMatch', properties, dependsOn)
+    constructor(properties: FieldToMatch) {
+        Object.assign(this, properties)
     }
 }
 

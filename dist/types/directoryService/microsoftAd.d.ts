@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface VpcSettingsProperties {
+export declare class VpcSettings {
     SubnetIds: List<Value<string>>;
     VpcId: Value<string>;
-}
-export declare class VpcSettings extends ResourceBase {
-    constructor(properties: VpcSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: VpcSettings);
 }
 export interface MicrosoftADProperties {
     CreateAlias?: Value<boolean>;

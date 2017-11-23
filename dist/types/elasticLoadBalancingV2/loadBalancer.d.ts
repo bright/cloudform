@@ -1,18 +1,14 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface LoadBalancerAttributeProperties {
+export declare class LoadBalancerAttribute {
     Key?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: LoadBalancerAttribute);
 }
-export declare class LoadBalancerAttribute extends ResourceBase {
-    constructor(properties: LoadBalancerAttributeProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface SubnetMappingProperties {
+export declare class SubnetMapping {
     AllocationId: Value<string>;
     SubnetId: Value<string>;
-}
-export declare class SubnetMapping extends ResourceBase {
-    constructor(properties: SubnetMappingProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SubnetMapping);
 }
 export interface LoadBalancerProperties {
     IpAddressType?: Value<string>;

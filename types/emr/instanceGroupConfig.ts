@@ -3,98 +3,82 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface EbsBlockDeviceConfigProperties {
+export class EbsBlockDeviceConfig {
     VolumeSpecification: VolumeSpecification
     VolumesPerInstance?: Value<number>
-}
 
-export class EbsBlockDeviceConfig extends ResourceBase {
-    constructor(properties: EbsBlockDeviceConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::EbsBlockDeviceConfig', properties, dependsOn)
+    constructor(properties: EbsBlockDeviceConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ConfigurationProperties {
+export class Configuration {
     Classification?: Value<string>
     ConfigurationProperties?: {[key: string]: Value<string>}
     Configurations?: List<Configuration>
-}
 
-export class Configuration extends ResourceBase {
-    constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::Configuration', properties, dependsOn)
+    constructor(properties: Configuration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MetricDimensionProperties {
+export class MetricDimension {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::MetricDimension', properties, dependsOn)
+    constructor(properties: MetricDimension) {
+        Object.assign(this, properties)
     }
 }
 
-export interface SimpleScalingPolicyConfigurationProperties {
+export class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>
     CoolDown?: Value<number>
     ScalingAdjustment: Value<number>
-}
 
-export class SimpleScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: SimpleScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::SimpleScalingPolicyConfiguration', properties, dependsOn)
+    constructor(properties: SimpleScalingPolicyConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ScalingRuleProperties {
+export class ScalingRule {
     Action: ScalingAction
     Description?: Value<string>
     Name: Value<string>
     Trigger: ScalingTrigger
-}
 
-export class ScalingRule extends ResourceBase {
-    constructor(properties: ScalingRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::ScalingRule', properties, dependsOn)
+    constructor(properties: ScalingRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ScalingActionProperties {
+export class ScalingAction {
     Market?: Value<string>
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration
-}
 
-export class ScalingAction extends ResourceBase {
-    constructor(properties: ScalingActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::ScalingAction', properties, dependsOn)
+    constructor(properties: ScalingAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ScalingTriggerProperties {
+export class ScalingTrigger {
     CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
-}
 
-export class ScalingTrigger extends ResourceBase {
-    constructor(properties: ScalingTriggerProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::ScalingTrigger', properties, dependsOn)
+    constructor(properties: ScalingTrigger) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ScalingConstraintsProperties {
+export class ScalingConstraints {
     MaxCapacity: Value<number>
     MinCapacity: Value<number>
-}
 
-export class ScalingConstraints extends ResourceBase {
-    constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::ScalingConstraints', properties, dependsOn)
+    constructor(properties: ScalingConstraints) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CloudWatchAlarmDefinitionProperties {
+export class CloudWatchAlarmDefinition {
     ComparisonOperator: Value<string>
     Dimensions?: List<MetricDimension>
     EvaluationPeriods?: Value<number>
@@ -104,45 +88,37 @@ export interface CloudWatchAlarmDefinitionProperties {
     Statistic?: Value<string>
     Threshold: Value<number>
     Unit?: Value<string>
-}
 
-export class CloudWatchAlarmDefinition extends ResourceBase {
-    constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::CloudWatchAlarmDefinition', properties, dependsOn)
+    constructor(properties: CloudWatchAlarmDefinition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumeSpecificationProperties {
+export class VolumeSpecification {
     Iops?: Value<number>
     SizeInGB: Value<number>
     VolumeType: Value<string>
-}
 
-export class VolumeSpecification extends ResourceBase {
-    constructor(properties: VolumeSpecificationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::VolumeSpecification', properties, dependsOn)
+    constructor(properties: VolumeSpecification) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AutoScalingPolicyProperties {
+export class AutoScalingPolicy {
     Constraints: ScalingConstraints
     Rules: List<ScalingRule>
-}
 
-export class AutoScalingPolicy extends ResourceBase {
-    constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::AutoScalingPolicy', properties, dependsOn)
+    constructor(properties: AutoScalingPolicy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EbsConfigurationProperties {
+export class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
-}
 
-export class EbsConfiguration extends ResourceBase {
-    constructor(properties: EbsConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EMR::EbsConfiguration', properties, dependsOn)
+    constructor(properties: EbsConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

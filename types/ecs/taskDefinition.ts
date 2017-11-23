@@ -3,7 +3,7 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ContainerDefinitionProperties {
+export class ContainerDefinition {
     Command?: List<Value<string>>
     Cpu?: Value<number>
     DisableNetworking?: Value<boolean>
@@ -31,158 +31,130 @@ export interface ContainerDefinitionProperties {
     User?: Value<string>
     VolumesFrom?: List<VolumeFrom>
     WorkingDirectory?: Value<string>
-}
 
-export class ContainerDefinition extends ResourceBase {
-    constructor(properties: ContainerDefinitionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::ContainerDefinition', properties, dependsOn)
+    constructor(properties: ContainerDefinition) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LogConfigurationProperties {
+export class LogConfiguration {
     LogDriver: Value<string>
     Options?: {[key: string]: Value<string>}
-}
 
-export class LogConfiguration extends ResourceBase {
-    constructor(properties: LogConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::LogConfiguration', properties, dependsOn)
+    constructor(properties: LogConfiguration) {
+        Object.assign(this, properties)
     }
 }
 
-export interface DeviceProperties {
+export class Device {
     ContainerPath?: Value<string>
     HostPath: Value<string>
     Permissions?: List<Value<string>>
-}
 
-export class Device extends ResourceBase {
-    constructor(properties: DeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::Device', properties, dependsOn)
+    constructor(properties: Device) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KeyValuePairProperties {
+export class KeyValuePair {
     Name?: Value<string>
     Value?: Value<string>
-}
 
-export class KeyValuePair extends ResourceBase {
-    constructor(properties: KeyValuePairProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::KeyValuePair', properties, dependsOn)
+    constructor(properties: KeyValuePair) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MountPointProperties {
+export class MountPoint {
     ContainerPath?: Value<string>
     ReadOnly?: Value<boolean>
     SourceVolume?: Value<string>
-}
 
-export class MountPoint extends ResourceBase {
-    constructor(properties: MountPointProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::MountPoint', properties, dependsOn)
+    constructor(properties: MountPoint) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumeFromProperties {
+export class VolumeFrom {
     ReadOnly?: Value<boolean>
     SourceContainer?: Value<string>
-}
 
-export class VolumeFrom extends ResourceBase {
-    constructor(properties: VolumeFromProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::VolumeFrom', properties, dependsOn)
+    constructor(properties: VolumeFrom) {
+        Object.assign(this, properties)
     }
 }
 
-export interface HostEntryProperties {
+export class HostEntry {
     Hostname: Value<string>
     IpAddress: Value<string>
-}
 
-export class HostEntry extends ResourceBase {
-    constructor(properties: HostEntryProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::HostEntry', properties, dependsOn)
+    constructor(properties: HostEntry) {
+        Object.assign(this, properties)
     }
 }
 
-export interface KernelCapabilitiesProperties {
+export class KernelCapabilities {
     Add?: List<Value<string>>
     Drop?: List<Value<string>>
-}
 
-export class KernelCapabilities extends ResourceBase {
-    constructor(properties: KernelCapabilitiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::KernelCapabilities', properties, dependsOn)
+    constructor(properties: KernelCapabilities) {
+        Object.assign(this, properties)
     }
 }
 
-export interface TaskDefinitionPlacementConstraintProperties {
+export class TaskDefinitionPlacementConstraint {
     Expression?: Value<string>
     Type: Value<string>
-}
 
-export class TaskDefinitionPlacementConstraint extends ResourceBase {
-    constructor(properties: TaskDefinitionPlacementConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::TaskDefinitionPlacementConstraint', properties, dependsOn)
+    constructor(properties: TaskDefinitionPlacementConstraint) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumeProperties {
+export class Volume {
     Host?: HostVolumeProperties
     Name?: Value<string>
-}
 
-export class Volume extends ResourceBase {
-    constructor(properties: VolumeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::Volume', properties, dependsOn)
+    constructor(properties: Volume) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PortMappingProperties {
+export class PortMapping {
     ContainerPort?: Value<number>
     HostPort?: Value<number>
     Protocol?: Value<string>
-}
 
-export class PortMapping extends ResourceBase {
-    constructor(properties: PortMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::PortMapping', properties, dependsOn)
+    constructor(properties: PortMapping) {
+        Object.assign(this, properties)
     }
 }
 
-export interface UlimitProperties {
+export class Ulimit {
     HardLimit: Value<number>
     Name: Value<string>
     SoftLimit: Value<number>
-}
 
-export class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::Ulimit', properties, dependsOn)
+    constructor(properties: Ulimit) {
+        Object.assign(this, properties)
     }
 }
 
-export interface LinuxParametersProperties {
+export class LinuxParameters {
     Capabilities?: KernelCapabilities
     Devices?: List<Device>
     InitProcessEnabled?: Value<boolean>
-}
 
-export class LinuxParameters extends ResourceBase {
-    constructor(properties: LinuxParametersProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::LinuxParameters', properties, dependsOn)
+    constructor(properties: LinuxParameters) {
+        Object.assign(this, properties)
     }
 }
 
-export interface HostVolumePropertiesProperties {
+export class HostVolumeProperties {
     SourcePath?: Value<string>
-}
 
-export class HostVolumeProperties extends ResourceBase {
-    constructor(properties: HostVolumePropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ECS::HostVolumeProperties', properties, dependsOn)
+    constructor(properties: HostVolumeProperties) {
+        Object.assign(this, properties)
     }
 }
 

@@ -3,29 +3,25 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface OptionSettingProperties {
+export class OptionSetting {
     Name?: Value<string>
     Value?: Value<string>
-}
 
-export class OptionSetting extends ResourceBase {
-    constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::RDS::OptionSetting', properties, dependsOn)
+    constructor(properties: OptionSetting) {
+        Object.assign(this, properties)
     }
 }
 
-export interface OptionConfigurationProperties {
+export class OptionConfiguration {
     DBSecurityGroupMemberships?: List<Value<string>>
     OptionName: Value<string>
     OptionSettings?: OptionSetting
     OptionVersion?: Value<string>
     Port?: Value<number>
     VpcSecurityGroupMemberships?: List<Value<string>>
-}
 
-export class OptionConfiguration extends ResourceBase {
-    constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::RDS::OptionConfiguration', properties, dependsOn)
+    constructor(properties: OptionConfiguration) {
+        Object.assign(this, properties)
     }
 }
 

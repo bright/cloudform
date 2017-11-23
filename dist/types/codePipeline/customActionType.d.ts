@@ -1,22 +1,18 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface SettingsProperties {
+export declare class Settings {
     EntityUrlTemplate?: Value<string>;
     ExecutionUrlTemplate?: Value<string>;
     RevisionUrlTemplate?: Value<string>;
     ThirdPartyConfigurationUrl?: Value<string>;
+    constructor(properties: Settings);
 }
-export declare class Settings extends ResourceBase {
-    constructor(properties: SettingsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ArtifactDetailsProperties {
+export declare class ArtifactDetails {
     MaximumCount: Value<number>;
     MinimumCount: Value<number>;
+    constructor(properties: ArtifactDetails);
 }
-export declare class ArtifactDetails extends ResourceBase {
-    constructor(properties: ArtifactDetailsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConfigurationPropertiesProperties {
+export declare class ConfigurationProperties {
     Description?: Value<string>;
     Key: Value<boolean>;
     Name: Value<string>;
@@ -24,9 +20,7 @@ export interface ConfigurationPropertiesProperties {
     Required: Value<boolean>;
     Secret: Value<boolean>;
     Type?: Value<string>;
-}
-export declare class ConfigurationProperties extends ResourceBase {
-    constructor(properties: ConfigurationPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ConfigurationProperties);
 }
 export interface CustomActionTypeProperties {
     Category: Value<string>;

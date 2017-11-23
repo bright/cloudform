@@ -1,107 +1,79 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface LoadBalancerInfoProperties {
+export declare class LoadBalancerInfo {
     ElbInfoList?: List<ELBInfo>;
     TargetGroupInfoList?: List<TargetGroupInfo>;
+    constructor(properties: LoadBalancerInfo);
 }
-export declare class LoadBalancerInfo extends ResourceBase {
-    constructor(properties: LoadBalancerInfoProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RevisionLocationProperties {
+export declare class RevisionLocation {
     GitHubLocation?: GitHubLocation;
     RevisionType?: Value<string>;
     S3Location?: S3Location;
+    constructor(properties: RevisionLocation);
 }
-export declare class RevisionLocation extends ResourceBase {
-    constructor(properties: RevisionLocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface S3LocationProperties {
+export declare class S3Location {
     Bucket: Value<string>;
     BundleType?: Value<string>;
     ETag?: Value<string>;
     Key: Value<string>;
     Version?: Value<string>;
+    constructor(properties: S3Location);
 }
-export declare class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TriggerConfigProperties {
+export declare class TriggerConfig {
     TriggerEvents?: List<Value<string>>;
     TriggerName?: Value<string>;
     TriggerTargetArn?: Value<string>;
+    constructor(properties: TriggerConfig);
 }
-export declare class TriggerConfig extends ResourceBase {
-    constructor(properties: TriggerConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TagFilterProperties {
+export declare class TagFilter {
     Key?: Value<string>;
     Type?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: TagFilter);
 }
-export declare class TagFilter extends ResourceBase {
-    constructor(properties: TagFilterProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface GitHubLocationProperties {
+export declare class GitHubLocation {
     CommitId: Value<string>;
     Repository: Value<string>;
+    constructor(properties: GitHubLocation);
 }
-export declare class GitHubLocation extends ResourceBase {
-    constructor(properties: GitHubLocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetGroupInfoProperties {
+export declare class TargetGroupInfo {
     Name?: Value<string>;
+    constructor(properties: TargetGroupInfo);
 }
-export declare class TargetGroupInfo extends ResourceBase {
-    constructor(properties: TargetGroupInfoProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ELBInfoProperties {
+export declare class ELBInfo {
     Name?: Value<string>;
+    constructor(properties: ELBInfo);
 }
-export declare class ELBInfo extends ResourceBase {
-    constructor(properties: ELBInfoProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AlarmConfigurationProperties {
+export declare class AlarmConfiguration {
     Alarms?: List<Alarm>;
     Enabled?: Value<boolean>;
     IgnorePollAlarmFailure?: Value<boolean>;
+    constructor(properties: AlarmConfiguration);
 }
-export declare class AlarmConfiguration extends ResourceBase {
-    constructor(properties: AlarmConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DeploymentStyleProperties {
+export declare class DeploymentStyle {
     DeploymentOption?: Value<string>;
+    constructor(properties: DeploymentStyle);
 }
-export declare class DeploymentStyle extends ResourceBase {
-    constructor(properties: DeploymentStyleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AlarmProperties {
+export declare class Alarm {
     Name?: Value<string>;
+    constructor(properties: Alarm);
 }
-export declare class Alarm extends ResourceBase {
-    constructor(properties: AlarmProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EC2TagFilterProperties {
+export declare class EC2TagFilter {
     Key?: Value<string>;
     Type?: Value<string>;
     Value?: Value<string>;
+    constructor(properties: EC2TagFilter);
 }
-export declare class EC2TagFilter extends ResourceBase {
-    constructor(properties: EC2TagFilterProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AutoRollbackConfigurationProperties {
+export declare class AutoRollbackConfiguration {
     Enabled?: Value<boolean>;
     Events?: List<Value<string>>;
+    constructor(properties: AutoRollbackConfiguration);
 }
-export declare class AutoRollbackConfiguration extends ResourceBase {
-    constructor(properties: AutoRollbackConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface DeploymentProperties {
+export declare class Deployment {
     Description?: Value<string>;
     IgnoreApplicationStopFailures?: Value<boolean>;
     Revision: RevisionLocation;
-}
-export declare class Deployment extends ResourceBase {
-    constructor(properties: DeploymentProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Deployment);
 }
 export interface DeploymentGroupProperties {
     AlarmConfiguration?: AlarmConfiguration;

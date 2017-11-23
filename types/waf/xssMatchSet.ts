@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface FieldToMatchProperties {
+export class FieldToMatch {
     Data?: Value<string>
     Type: Value<string>
-}
 
-export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::FieldToMatch', properties, dependsOn)
+    constructor(properties: FieldToMatch) {
+        Object.assign(this, properties)
     }
 }
 
-export interface XssMatchTupleProperties {
+export class XssMatchTuple {
     FieldToMatch: FieldToMatch
     TextTransformation: Value<string>
-}
 
-export class XssMatchTuple extends ResourceBase {
-    constructor(properties: XssMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::XssMatchTuple', properties, dependsOn)
+    constructor(properties: XssMatchTuple) {
+        Object.assign(this, properties)
     }
 }
 

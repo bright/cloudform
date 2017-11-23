@@ -1,21 +1,17 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ScheduledActionProperties {
+export declare class ScheduledAction {
     EndTime?: Value<string>;
     ScalableTargetAction?: ScalableTargetAction;
     Schedule: Value<string>;
     ScheduledActionName: Value<string>;
     StartTime?: Value<string>;
+    constructor(properties: ScheduledAction);
 }
-export declare class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ScalableTargetActionProperties {
+export declare class ScalableTargetAction {
     MaxCapacity?: Value<number>;
     MinCapacity?: Value<number>;
-}
-export declare class ScalableTargetAction extends ResourceBase {
-    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ScalableTargetAction);
 }
 export interface ScalableTargetProperties {
     MaxCapacity: Value<number>;

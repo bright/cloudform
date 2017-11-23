@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface DimensionProperties {
+export declare class Dimension {
     Name: Value<string>;
     Value: Value<string>;
-}
-export declare class Dimension extends ResourceBase {
-    constructor(properties: DimensionProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Dimension);
 }
 export interface AlarmProperties {
     ActionsEnabled?: Value<boolean>;

@@ -1,19 +1,15 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface S3LocationProperties {
+export declare class S3Location {
     Bucket?: Value<string>;
     ETag?: Value<string>;
     Key?: Value<string>;
     Version?: Value<string>;
+    constructor(properties: S3Location);
 }
-export declare class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EndpointConfigurationProperties {
+export declare class EndpointConfiguration {
     Types?: List<Value<string>>;
-}
-export declare class EndpointConfiguration extends ResourceBase {
-    constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: EndpointConfiguration);
 }
 export interface RestApiProperties {
     BinaryMediaTypes?: List<Value<string>>;

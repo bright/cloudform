@@ -1,44 +1,34 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface SourceProperties {
+export declare class Source {
     Password?: Value<string>;
     Revision?: Value<string>;
     SshKey?: Value<string>;
     Type?: Value<string>;
     Url?: Value<string>;
     Username?: Value<string>;
+    constructor(properties: Source);
 }
-export declare class Source extends ResourceBase {
-    constructor(properties: SourceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ChefConfigurationProperties {
+export declare class ChefConfiguration {
     BerkshelfVersion?: Value<string>;
     ManageBerkshelf?: Value<boolean>;
+    constructor(properties: ChefConfiguration);
 }
-export declare class ChefConfiguration extends ResourceBase {
-    constructor(properties: ChefConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StackConfigurationManagerProperties {
+export declare class StackConfigurationManager {
     Name?: Value<string>;
     Version?: Value<string>;
+    constructor(properties: StackConfigurationManager);
 }
-export declare class StackConfigurationManager extends ResourceBase {
-    constructor(properties: StackConfigurationManagerProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RdsDbInstanceProperties {
+export declare class RdsDbInstance {
     DbPassword: Value<string>;
     DbUser: Value<string>;
     RdsDbInstanceArn: Value<string>;
+    constructor(properties: RdsDbInstance);
 }
-export declare class RdsDbInstance extends ResourceBase {
-    constructor(properties: RdsDbInstanceProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ElasticIpProperties {
+export declare class ElasticIp {
     Ip: Value<string>;
     Name?: Value<string>;
-}
-export declare class ElasticIp extends ResourceBase {
-    constructor(properties: ElasticIpProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ElasticIp);
 }
 export interface StackProperties {
     AgentVersion?: Value<string>;

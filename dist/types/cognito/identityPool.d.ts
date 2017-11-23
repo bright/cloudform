@@ -1,27 +1,21 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface PushSyncProperties {
+export declare class PushSync {
     ApplicationArns?: List<Value<string>>;
     RoleArn?: Value<string>;
+    constructor(properties: PushSync);
 }
-export declare class PushSync extends ResourceBase {
-    constructor(properties: PushSyncProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CognitoIdentityProviderProperties {
+export declare class CognitoIdentityProvider {
     ServerSideTokenCheck?: Value<boolean>;
     ProviderName?: Value<string>;
     ClientId?: Value<string>;
+    constructor(properties: CognitoIdentityProvider);
 }
-export declare class CognitoIdentityProvider extends ResourceBase {
-    constructor(properties: CognitoIdentityProviderProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CognitoStreamsProperties {
+export declare class CognitoStreams {
     StreamingStatus?: Value<string>;
     StreamName?: Value<string>;
     RoleArn?: Value<string>;
-}
-export declare class CognitoStreams extends ResourceBase {
-    constructor(properties: CognitoStreamsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: CognitoStreams);
 }
 export interface IdentityPoolProperties {
     PushSync?: PushSync;

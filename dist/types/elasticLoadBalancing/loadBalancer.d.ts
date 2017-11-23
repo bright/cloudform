@@ -1,71 +1,55 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface HealthCheckProperties {
+export declare class HealthCheck {
     HealthyThreshold: Value<string>;
     Interval: Value<string>;
     Target: Value<string>;
     Timeout: Value<string>;
     UnhealthyThreshold: Value<string>;
+    constructor(properties: HealthCheck);
 }
-export declare class HealthCheck extends ResourceBase {
-    constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AccessLoggingPolicyProperties {
+export declare class AccessLoggingPolicy {
     EmitInterval?: Value<number>;
     Enabled: Value<boolean>;
     S3BucketName: Value<string>;
     S3BucketPrefix?: Value<string>;
+    constructor(properties: AccessLoggingPolicy);
 }
-export declare class AccessLoggingPolicy extends ResourceBase {
-    constructor(properties: AccessLoggingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConnectionSettingsProperties {
+export declare class ConnectionSettings {
     IdleTimeout: Value<number>;
+    constructor(properties: ConnectionSettings);
 }
-export declare class ConnectionSettings extends ResourceBase {
-    constructor(properties: ConnectionSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface LBCookieStickinessPolicyProperties {
+export declare class LBCookieStickinessPolicy {
     CookieExpirationPeriod?: Value<string>;
     PolicyName?: Value<string>;
+    constructor(properties: LBCookieStickinessPolicy);
 }
-export declare class LBCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: LBCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ConnectionDrainingPolicyProperties {
+export declare class ConnectionDrainingPolicy {
     Enabled: Value<boolean>;
     Timeout?: Value<number>;
+    constructor(properties: ConnectionDrainingPolicy);
 }
-export declare class ConnectionDrainingPolicy extends ResourceBase {
-    constructor(properties: ConnectionDrainingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ListenersProperties {
+export declare class Listeners {
     InstancePort: Value<string>;
     InstanceProtocol?: Value<string>;
     LoadBalancerPort: Value<string>;
     PolicyNames?: List<Value<string>>;
     Protocol: Value<string>;
     SSLCertificateId?: Value<string>;
+    constructor(properties: Listeners);
 }
-export declare class Listeners extends ResourceBase {
-    constructor(properties: ListenersProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PoliciesProperties {
+export declare class Policies {
     Attributes: List<any>;
     InstancePorts?: List<Value<string>>;
     LoadBalancerPorts?: List<Value<string>>;
     PolicyName: Value<string>;
     PolicyType: Value<string>;
+    constructor(properties: Policies);
 }
-export declare class Policies extends ResourceBase {
-    constructor(properties: PoliciesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface AppCookieStickinessPolicyProperties {
+export declare class AppCookieStickinessPolicy {
     CookieName: Value<string>;
     PolicyName: Value<string>;
-}
-export declare class AppCookieStickinessPolicy extends ResourceBase {
-    constructor(properties: AppCookieStickinessPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: AppCookieStickinessPolicy);
 }
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy;

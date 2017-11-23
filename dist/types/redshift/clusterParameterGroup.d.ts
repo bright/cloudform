@@ -1,11 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ParameterProperties {
+export declare class Parameter {
     ParameterName: Value<string>;
     ParameterValue: Value<string>;
-}
-export declare class Parameter extends ResourceBase {
-    constructor(properties: ParameterProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Parameter);
 }
 export interface ClusterParameterGroupProperties {
     Description: Value<string>;

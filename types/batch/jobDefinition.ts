@@ -3,28 +3,24 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface VolumesProperties {
+export class Volumes {
     Host?: VolumesHost
     Name?: Value<string>
-}
 
-export class Volumes extends ResourceBase {
-    constructor(properties: VolumesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::Volumes', properties, dependsOn)
+    constructor(properties: Volumes) {
+        Object.assign(this, properties)
     }
 }
 
-export interface RetryStrategyProperties {
+export class RetryStrategy {
     Attempts?: Value<number>
-}
 
-export class RetryStrategy extends ResourceBase {
-    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::RetryStrategy', properties, dependsOn)
+    constructor(properties: RetryStrategy) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ContainerPropertiesProperties {
+export class ContainerProperties {
     MountPoints?: List<MountPoints>
     User?: Value<string>
     Volumes?: List<Volumes>
@@ -37,56 +33,46 @@ export interface ContainerPropertiesProperties {
     Ulimits?: List<Ulimit>
     Vcpus: Value<number>
     Image: Value<string>
-}
 
-export class ContainerProperties extends ResourceBase {
-    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::ContainerProperties', properties, dependsOn)
+    constructor(properties: ContainerProperties) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MountPointsProperties {
+export class MountPoints {
     ReadOnly?: Value<boolean>
     SourceVolume?: Value<string>
     ContainerPath?: Value<string>
-}
 
-export class MountPoints extends ResourceBase {
-    constructor(properties: MountPointsProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::MountPoints', properties, dependsOn)
+    constructor(properties: MountPoints) {
+        Object.assign(this, properties)
     }
 }
 
-export interface EnvironmentProperties {
+export class Environment {
     Value?: Value<string>
     Name?: Value<string>
-}
 
-export class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::Environment', properties, dependsOn)
+    constructor(properties: Environment) {
+        Object.assign(this, properties)
     }
 }
 
-export interface UlimitProperties {
+export class Ulimit {
     SoftLimit: Value<number>
     HardLimit: Value<number>
     Name: Value<string>
-}
 
-export class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::Ulimit', properties, dependsOn)
+    constructor(properties: Ulimit) {
+        Object.assign(this, properties)
     }
 }
 
-export interface VolumesHostProperties {
+export class VolumesHost {
     SourcePath?: Value<string>
-}
 
-export class VolumesHost extends ResourceBase {
-    constructor(properties: VolumesHostProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Batch::VolumesHost', properties, dependsOn)
+    constructor(properties: VolumesHost) {
+        Object.assign(this, properties)
     }
 }
 

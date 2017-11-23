@@ -3,15 +3,13 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface PredicateProperties {
+export class Predicate {
     DataId: Value<string>
     Negated: Value<boolean>
     Type: Value<string>
-}
 
-export class Predicate extends ResourceBase {
-    constructor(properties: PredicateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAF::Predicate', properties, dependsOn)
+    constructor(properties: Predicate) {
+        Object.assign(this, properties)
     }
 }
 

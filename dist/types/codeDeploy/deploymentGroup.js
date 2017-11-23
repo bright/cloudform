@@ -2,87 +2,87 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class LoadBalancerInfo extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::LoadBalancerInfo', properties, dependsOn);
+class LoadBalancerInfo {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LoadBalancerInfo = LoadBalancerInfo;
-class RevisionLocation extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::RevisionLocation', properties, dependsOn);
+class RevisionLocation {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RevisionLocation = RevisionLocation;
-class S3Location extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::S3Location', properties, dependsOn);
+class S3Location {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.S3Location = S3Location;
-class TriggerConfig extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::TriggerConfig', properties, dependsOn);
+class TriggerConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TriggerConfig = TriggerConfig;
-class TagFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::TagFilter', properties, dependsOn);
+class TagFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TagFilter = TagFilter;
-class GitHubLocation extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::GitHubLocation', properties, dependsOn);
+class GitHubLocation {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.GitHubLocation = GitHubLocation;
-class TargetGroupInfo extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::TargetGroupInfo', properties, dependsOn);
+class TargetGroupInfo {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TargetGroupInfo = TargetGroupInfo;
-class ELBInfo extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::ELBInfo', properties, dependsOn);
+class ELBInfo {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ELBInfo = ELBInfo;
-class AlarmConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::AlarmConfiguration', properties, dependsOn);
+class AlarmConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AlarmConfiguration = AlarmConfiguration;
-class DeploymentStyle extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::DeploymentStyle', properties, dependsOn);
+class DeploymentStyle {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.DeploymentStyle = DeploymentStyle;
-class Alarm extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::Alarm', properties, dependsOn);
+class Alarm {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Alarm = Alarm;
-class EC2TagFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::EC2TagFilter', properties, dependsOn);
+class EC2TagFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.EC2TagFilter = EC2TagFilter;
-class AutoRollbackConfiguration extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::AutoRollbackConfiguration', properties, dependsOn);
+class AutoRollbackConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.AutoRollbackConfiguration = AutoRollbackConfiguration;
-class Deployment extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::CodeDeploy::Deployment', properties, dependsOn);
+class Deployment {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Deployment = Deployment;

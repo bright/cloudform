@@ -2,93 +2,93 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class S3Action extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::S3Action', properties, dependsOn);
+class S3Action {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.S3Action = S3Action;
-class SqsAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::SqsAction', properties, dependsOn);
+class SqsAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SqsAction = SqsAction;
-class PutItemInput extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::PutItemInput', properties, dependsOn);
+class PutItemInput {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PutItemInput = PutItemInput;
-class RepublishAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::RepublishAction', properties, dependsOn);
+class RepublishAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RepublishAction = RepublishAction;
-class SnsAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::SnsAction', properties, dependsOn);
+class SnsAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.SnsAction = SnsAction;
-class FirehoseAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::FirehoseAction', properties, dependsOn);
+class FirehoseAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.FirehoseAction = FirehoseAction;
-class TopicRulePayload extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::TopicRulePayload', properties, dependsOn);
+class TopicRulePayload {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.TopicRulePayload = TopicRulePayload;
-class LambdaAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::LambdaAction', properties, dependsOn);
+class LambdaAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.LambdaAction = LambdaAction;
-class DynamoDBv2Action extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::DynamoDBv2Action', properties, dependsOn);
+class DynamoDBv2Action {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.DynamoDBv2Action = DynamoDBv2Action;
-class ElasticsearchAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::ElasticsearchAction', properties, dependsOn);
+class ElasticsearchAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.ElasticsearchAction = ElasticsearchAction;
-class DynamoDBAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::DynamoDBAction', properties, dependsOn);
+class DynamoDBAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.DynamoDBAction = DynamoDBAction;
-class KinesisAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::KinesisAction', properties, dependsOn);
+class KinesisAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.KinesisAction = KinesisAction;
-class CloudwatchAlarmAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::CloudwatchAlarmAction', properties, dependsOn);
+class CloudwatchAlarmAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CloudwatchAlarmAction = CloudwatchAlarmAction;
-class Action extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::Action', properties, dependsOn);
+class Action {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Action = Action;
-class CloudwatchMetricAction extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::IoT::CloudwatchMetricAction', properties, dependsOn);
+class CloudwatchMetricAction {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CloudwatchMetricAction = CloudwatchMetricAction;

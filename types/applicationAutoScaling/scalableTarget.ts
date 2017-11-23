@@ -3,28 +3,24 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ScheduledActionProperties {
+export class ScheduledAction {
     EndTime?: Value<string>
     ScalableTargetAction?: ScalableTargetAction
     Schedule: Value<string>
     ScheduledActionName: Value<string>
     StartTime?: Value<string>
-}
 
-export class ScheduledAction extends ResourceBase {
-    constructor(properties: ScheduledActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApplicationAutoScaling::ScheduledAction', properties, dependsOn)
+    constructor(properties: ScheduledAction) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ScalableTargetActionProperties {
+export class ScalableTargetAction {
     MaxCapacity?: Value<number>
     MinCapacity?: Value<number>
-}
 
-export class ScalableTargetAction extends ResourceBase {
-    constructor(properties: ScalableTargetActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ApplicationAutoScaling::ScalableTargetAction', properties, dependsOn)
+    constructor(properties: ScalableTargetAction) {
+        Object.assign(this, properties)
     }
 }
 

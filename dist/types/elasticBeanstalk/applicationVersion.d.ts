@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface SourceBundleProperties {
+export declare class SourceBundle {
     S3Bucket: Value<string>;
     S3Key: Value<string>;
-}
-export declare class SourceBundle extends ResourceBase {
-    constructor(properties: SourceBundleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: SourceBundle);
 }
 export interface ApplicationVersionProperties {
     ApplicationName: Value<string>;

@@ -3,13 +3,11 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface CertificateProperties {
+export class Certificate {
     CertificateArn?: Value<string>
-}
 
-export class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::Certificate', properties, dependsOn)
+    constructor(properties: Certificate) {
+        Object.assign(this, properties)
     }
 }
 

@@ -2,27 +2,27 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class RuleGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::RuleGroup', properties, dependsOn);
+class RuleGroup {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.RuleGroup = RuleGroup;
-class PatchFilter extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::PatchFilter', properties, dependsOn);
+class PatchFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PatchFilter = PatchFilter;
-class Rule extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::Rule', properties, dependsOn);
+class Rule {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.Rule = Rule;
-class PatchFilterGroup extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::SSM::PatchFilterGroup', properties, dependsOn);
+class PatchFilterGroup {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PatchFilterGroup = PatchFilterGroup;

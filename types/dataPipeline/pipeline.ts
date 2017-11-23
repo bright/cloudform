@@ -3,71 +3,59 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ParameterAttributeProperties {
+export class ParameterAttribute {
     Key: Value<string>
     StringValue: Value<string>
-}
 
-export class ParameterAttribute extends ResourceBase {
-    constructor(properties: ParameterAttributeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::ParameterAttribute', properties, dependsOn)
+    constructor(properties: ParameterAttribute) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PipelineTagProperties {
+export class PipelineTag {
     Key: Value<string>
     Value: Value<string>
-}
 
-export class PipelineTag extends ResourceBase {
-    constructor(properties: PipelineTagProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::PipelineTag', properties, dependsOn)
+    constructor(properties: PipelineTag) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ParameterObjectProperties {
+export class ParameterObject {
     Attributes: List<ParameterAttribute>
     Id: Value<string>
-}
 
-export class ParameterObject extends ResourceBase {
-    constructor(properties: ParameterObjectProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::ParameterObject', properties, dependsOn)
+    constructor(properties: ParameterObject) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PipelineObjectProperties {
+export class PipelineObject {
     Fields: List<Field>
     Id: Value<string>
     Name: Value<string>
-}
 
-export class PipelineObject extends ResourceBase {
-    constructor(properties: PipelineObjectProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::PipelineObject', properties, dependsOn)
+    constructor(properties: PipelineObject) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ParameterValueProperties {
+export class ParameterValue {
     Id: Value<string>
     StringValue: Value<string>
-}
 
-export class ParameterValue extends ResourceBase {
-    constructor(properties: ParameterValueProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::ParameterValue', properties, dependsOn)
+    constructor(properties: ParameterValue) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FieldProperties {
+export class Field {
     Key: Value<string>
     RefValue?: Value<string>
     StringValue?: Value<string>
-}
 
-export class Field extends ResourceBase {
-    constructor(properties: FieldProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::DataPipeline::Field', properties, dependsOn)
+    constructor(properties: Field) {
+        Object.assign(this, properties)
     }
 }
 

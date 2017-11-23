@@ -3,27 +3,23 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface SizeConstraintProperties {
+export class SizeConstraint {
     ComparisonOperator: Value<string>
     Size: Value<number>
     TextTransformation: Value<string>
     FieldToMatch: FieldToMatch
-}
 
-export class SizeConstraint extends ResourceBase {
-    constructor(properties: SizeConstraintProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::SizeConstraint', properties, dependsOn)
+    constructor(properties: SizeConstraint) {
+        Object.assign(this, properties)
     }
 }
 
-export interface FieldToMatchProperties {
+export class FieldToMatch {
     Type: Value<string>
     Data?: Value<string>
-}
 
-export class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::WAFRegional::FieldToMatch', properties, dependsOn)
+    constructor(properties: FieldToMatch) {
+        Object.assign(this, properties)
     }
 }
 

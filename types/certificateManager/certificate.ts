@@ -3,14 +3,12 @@
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface DomainValidationOptionProperties {
+export class DomainValidationOption {
     DomainName: Value<string>
     ValidationDomain: Value<string>
-}
 
-export class DomainValidationOption extends ResourceBase {
-    constructor(properties: DomainValidationOptionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::CertificateManager::DomainValidationOption', properties, dependsOn)
+    constructor(properties: DomainValidationOption) {
+        Object.assign(this, properties)
     }
 }
 

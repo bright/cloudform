@@ -2,21 +2,21 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class PushSync extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::PushSync', properties, dependsOn);
+class PushSync {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.PushSync = PushSync;
-class CognitoIdentityProvider extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::CognitoIdentityProvider', properties, dependsOn);
+class CognitoIdentityProvider {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CognitoIdentityProvider = CognitoIdentityProvider;
-class CognitoStreams extends resource_1.ResourceBase {
-    constructor(properties, dependsOn) {
-        super('AWS::Cognito::CognitoStreams', properties, dependsOn);
+class CognitoStreams {
+    constructor(properties) {
+        Object.assign(this, properties);
     }
 }
 exports.CognitoStreams = CognitoStreams;

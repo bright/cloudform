@@ -1,26 +1,20 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ApiStageProperties {
+export declare class ApiStage {
     ApiId?: Value<string>;
     Stage?: Value<string>;
+    constructor(properties: ApiStage);
 }
-export declare class ApiStage extends ResourceBase {
-    constructor(properties: ApiStageProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ThrottleSettingsProperties {
+export declare class ThrottleSettings {
     BurstLimit?: Value<number>;
     RateLimit?: Value<number>;
+    constructor(properties: ThrottleSettings);
 }
-export declare class ThrottleSettings extends ResourceBase {
-    constructor(properties: ThrottleSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface QuotaSettingsProperties {
+export declare class QuotaSettings {
     Limit?: Value<number>;
     Offset?: Value<number>;
     Period?: Value<string>;
-}
-export declare class QuotaSettings extends ResourceBase {
-    constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: QuotaSettings);
 }
 export interface UsagePlanProperties {
     ApiStages?: List<ApiStage>;

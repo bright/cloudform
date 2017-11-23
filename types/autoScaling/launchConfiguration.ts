@@ -3,31 +3,27 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface BlockDeviceMappingProperties {
+export class BlockDeviceMapping {
     DeviceName: Value<string>
     Ebs?: BlockDevice
     NoDevice?: Value<boolean>
     VirtualName?: Value<string>
-}
 
-export class BlockDeviceMapping extends ResourceBase {
-    constructor(properties: BlockDeviceMappingProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::BlockDeviceMapping', properties, dependsOn)
+    constructor(properties: BlockDeviceMapping) {
+        Object.assign(this, properties)
     }
 }
 
-export interface BlockDeviceProperties {
+export class BlockDevice {
     DeleteOnTermination?: Value<boolean>
     Encrypted?: Value<boolean>
     Iops?: Value<number>
     SnapshotId?: Value<string>
     VolumeSize?: Value<number>
     VolumeType?: Value<string>
-}
 
-export class BlockDevice extends ResourceBase {
-    constructor(properties: BlockDeviceProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::AutoScaling::BlockDevice', properties, dependsOn)
+    constructor(properties: BlockDevice) {
+        Object.assign(this, properties)
     }
 }
 

@@ -1,19 +1,15 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface VolumesProperties {
+export declare class Volumes {
     Host?: VolumesHost;
     Name?: Value<string>;
+    constructor(properties: Volumes);
 }
-export declare class Volumes extends ResourceBase {
-    constructor(properties: VolumesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RetryStrategyProperties {
+export declare class RetryStrategy {
     Attempts?: Value<number>;
+    constructor(properties: RetryStrategy);
 }
-export declare class RetryStrategy extends ResourceBase {
-    constructor(properties: RetryStrategyProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ContainerPropertiesProperties {
+export declare class ContainerProperties {
     MountPoints?: List<MountPoints>;
     User?: Value<string>;
     Volumes?: List<Volumes>;
@@ -26,38 +22,28 @@ export interface ContainerPropertiesProperties {
     Ulimits?: List<Ulimit>;
     Vcpus: Value<number>;
     Image: Value<string>;
+    constructor(properties: ContainerProperties);
 }
-export declare class ContainerProperties extends ResourceBase {
-    constructor(properties: ContainerPropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MountPointsProperties {
+export declare class MountPoints {
     ReadOnly?: Value<boolean>;
     SourceVolume?: Value<string>;
     ContainerPath?: Value<string>;
+    constructor(properties: MountPoints);
 }
-export declare class MountPoints extends ResourceBase {
-    constructor(properties: MountPointsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EnvironmentProperties {
+export declare class Environment {
     Value?: Value<string>;
     Name?: Value<string>;
+    constructor(properties: Environment);
 }
-export declare class Environment extends ResourceBase {
-    constructor(properties: EnvironmentProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface UlimitProperties {
+export declare class Ulimit {
     SoftLimit: Value<number>;
     HardLimit: Value<number>;
     Name: Value<string>;
+    constructor(properties: Ulimit);
 }
-export declare class Ulimit extends ResourceBase {
-    constructor(properties: UlimitProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface VolumesHostProperties {
+export declare class VolumesHost {
     SourcePath?: Value<string>;
-}
-export declare class VolumesHost extends ResourceBase {
-    constructor(properties: VolumesHostProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: VolumesHost);
 }
 export interface JobDefinitionProperties {
     Type: Value<string>;

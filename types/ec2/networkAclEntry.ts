@@ -3,25 +3,21 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface IcmpProperties {
+export class Icmp {
     Code?: Value<number>
     Type?: Value<number>
-}
 
-export class Icmp extends ResourceBase {
-    constructor(properties: IcmpProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::Icmp', properties, dependsOn)
+    constructor(properties: Icmp) {
+        Object.assign(this, properties)
     }
 }
 
-export interface PortRangeProperties {
+export class PortRange {
     From?: Value<number>
     To?: Value<number>
-}
 
-export class PortRange extends ResourceBase {
-    constructor(properties: PortRangeProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::EC2::PortRange', properties, dependsOn)
+    constructor(properties: PortRange) {
+        Object.assign(this, properties)
     }
 }
 

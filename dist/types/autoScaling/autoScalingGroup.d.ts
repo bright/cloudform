@@ -1,6 +1,6 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface LifecycleHookSpecificationProperties {
+export declare class LifecycleHookSpecification {
     DefaultResult?: Value<string>;
     HeartbeatTimeout?: Value<number>;
     LifecycleHookName: Value<string>;
@@ -8,31 +8,23 @@ export interface LifecycleHookSpecificationProperties {
     NotificationMetadata?: Value<string>;
     NotificationTargetARN?: Value<string>;
     RoleARN?: Value<string>;
+    constructor(properties: LifecycleHookSpecification);
 }
-export declare class LifecycleHookSpecification extends ResourceBase {
-    constructor(properties: LifecycleHookSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface NotificationConfigurationProperties {
+export declare class NotificationConfiguration {
     NotificationTypes?: List<Value<string>>;
     TopicARN: Value<string>;
+    constructor(properties: NotificationConfiguration);
 }
-export declare class NotificationConfiguration extends ResourceBase {
-    constructor(properties: NotificationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MetricsCollectionProperties {
+export declare class MetricsCollection {
     Granularity: Value<string>;
     Metrics?: List<Value<string>>;
+    constructor(properties: MetricsCollection);
 }
-export declare class MetricsCollection extends ResourceBase {
-    constructor(properties: MetricsCollectionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TagPropertyProperties {
+export declare class TagProperty {
     Key: Value<string>;
     PropagateAtLaunch: Value<boolean>;
     Value: Value<string>;
-}
-export declare class TagProperty extends ResourceBase {
-    constructor(properties: TagPropertyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TagProperty);
 }
 export interface AutoScalingGroupProperties {
     AvailabilityZones?: List<Value<string>>;

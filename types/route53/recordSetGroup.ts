@@ -3,7 +3,7 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface RecordSetProperties {
+export class RecordSet {
     AliasTarget?: AliasTarget
     Comment?: Value<string>
     Failover?: Value<string>
@@ -18,35 +18,29 @@ export interface RecordSetProperties {
     TTL?: Value<string>
     Type: Value<string>
     Weight?: Value<number>
-}
 
-export class RecordSet extends ResourceBase {
-    constructor(properties: RecordSetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::RecordSet', properties, dependsOn)
+    constructor(properties: RecordSet) {
+        Object.assign(this, properties)
     }
 }
 
-export interface GeoLocationProperties {
+export class GeoLocation {
     ContinentCode?: Value<string>
     CountryCode?: Value<string>
     SubdivisionCode?: Value<string>
-}
 
-export class GeoLocation extends ResourceBase {
-    constructor(properties: GeoLocationProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::GeoLocation', properties, dependsOn)
+    constructor(properties: GeoLocation) {
+        Object.assign(this, properties)
     }
 }
 
-export interface AliasTargetProperties {
+export class AliasTarget {
     DNSName: Value<string>
     EvaluateTargetHealth?: Value<boolean>
     HostedZoneId: Value<string>
-}
 
-export class AliasTarget extends ResourceBase {
-    constructor(properties: AliasTargetProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::Route53::AliasTarget', properties, dependsOn)
+    constructor(properties: AliasTarget) {
+        Object.assign(this, properties)
     }
 }
 

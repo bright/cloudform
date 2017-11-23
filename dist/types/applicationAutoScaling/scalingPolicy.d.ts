@@ -1,56 +1,44 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface StepScalingPolicyConfigurationProperties {
+export declare class StepScalingPolicyConfiguration {
     AdjustmentType?: Value<string>;
     Cooldown?: Value<number>;
     MetricAggregationType?: Value<string>;
     MinAdjustmentMagnitude?: Value<number>;
     StepAdjustments?: List<StepAdjustment>;
+    constructor(properties: StepScalingPolicyConfiguration);
 }
-export declare class StepScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface MetricDimensionProperties {
+export declare class MetricDimension {
     Name: Value<string>;
     Value: Value<string>;
+    constructor(properties: MetricDimension);
 }
-export declare class MetricDimension extends ResourceBase {
-    constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface StepAdjustmentProperties {
+export declare class StepAdjustment {
     MetricIntervalLowerBound?: Value<number>;
     MetricIntervalUpperBound?: Value<number>;
     ScalingAdjustment: Value<number>;
+    constructor(properties: StepAdjustment);
 }
-export declare class StepAdjustment extends ResourceBase {
-    constructor(properties: StepAdjustmentProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface PredefinedMetricSpecificationProperties {
+export declare class PredefinedMetricSpecification {
     PredefinedMetricType: Value<string>;
     ResourceLabel?: Value<string>;
+    constructor(properties: PredefinedMetricSpecification);
 }
-export declare class PredefinedMetricSpecification extends ResourceBase {
-    constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CustomizedMetricSpecificationProperties {
+export declare class CustomizedMetricSpecification {
     Dimensions?: List<MetricDimension>;
     MetricName: Value<string>;
     Namespace: Value<string>;
     Statistic: Value<string>;
     Unit?: Value<string>;
+    constructor(properties: CustomizedMetricSpecification);
 }
-export declare class CustomizedMetricSpecification extends ResourceBase {
-    constructor(properties: CustomizedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface TargetTrackingScalingPolicyConfigurationProperties {
+export declare class TargetTrackingScalingPolicyConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification;
     PredefinedMetricSpecification?: PredefinedMetricSpecification;
     ScaleInCooldown?: Value<number>;
     ScaleOutCooldown?: Value<number>;
     TargetValue: Value<number>;
-}
-export declare class TargetTrackingScalingPolicyConfiguration extends ResourceBase {
-    constructor(properties: TargetTrackingScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: TargetTrackingScalingPolicyConfiguration);
 }
 export interface ScalingPolicyProperties {
     PolicyName: Value<string>;

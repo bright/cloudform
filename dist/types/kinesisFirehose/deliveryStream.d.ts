@@ -1,6 +1,6 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface ElasticsearchDestinationConfigurationProperties {
+export declare class ElasticsearchDestinationConfiguration {
     BufferingHints: ElasticsearchBufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
     DomainARN: Value<string>;
@@ -12,76 +12,56 @@ export interface ElasticsearchDestinationConfigurationProperties {
     S3BackupMode: Value<string>;
     S3Configuration: S3DestinationConfiguration;
     TypeName: Value<string>;
+    constructor(properties: ElasticsearchDestinationConfiguration);
 }
-export declare class ElasticsearchDestinationConfiguration extends ResourceBase {
-    constructor(properties: ElasticsearchDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ElasticsearchBufferingHintsProperties {
+export declare class ElasticsearchBufferingHints {
     IntervalInSeconds: Value<number>;
     SizeInMBs: Value<number>;
+    constructor(properties: ElasticsearchBufferingHints);
 }
-export declare class ElasticsearchBufferingHints extends ResourceBase {
-    constructor(properties: ElasticsearchBufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface EncryptionConfigurationProperties {
+export declare class EncryptionConfiguration {
     KMSEncryptionConfig?: KMSEncryptionConfig;
     NoEncryptionConfig?: Value<string>;
+    constructor(properties: EncryptionConfiguration);
 }
-export declare class EncryptionConfiguration extends ResourceBase {
-    constructor(properties: EncryptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CloudWatchLoggingOptionsProperties {
+export declare class CloudWatchLoggingOptions {
     Enabled?: Value<boolean>;
     LogGroupName?: Value<string>;
     LogStreamName?: Value<string>;
+    constructor(properties: CloudWatchLoggingOptions);
 }
-export declare class CloudWatchLoggingOptions extends ResourceBase {
-    constructor(properties: CloudWatchLoggingOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ProcessingConfigurationProperties {
+export declare class ProcessingConfiguration {
     Enabled: Value<boolean>;
     Processors: List<Processor>;
+    constructor(properties: ProcessingConfiguration);
 }
-export declare class ProcessingConfiguration extends ResourceBase {
-    constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface BufferingHintsProperties {
+export declare class BufferingHints {
     IntervalInSeconds: Value<number>;
     SizeInMBs: Value<number>;
+    constructor(properties: BufferingHints);
 }
-export declare class BufferingHints extends ResourceBase {
-    constructor(properties: BufferingHintsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KinesisStreamSourceConfigurationProperties {
+export declare class KinesisStreamSourceConfiguration {
     KinesisStreamARN: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: KinesisStreamSourceConfiguration);
 }
-export declare class KinesisStreamSourceConfiguration extends ResourceBase {
-    constructor(properties: KinesisStreamSourceConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ProcessorParameterProperties {
+export declare class ProcessorParameter {
     ParameterName: Value<string>;
     ParameterValue: Value<string>;
+    constructor(properties: ProcessorParameter);
 }
-export declare class ProcessorParameter extends ResourceBase {
-    constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ProcessorProperties {
+export declare class Processor {
     Parameters: List<ProcessorParameter>;
     Type: Value<string>;
+    constructor(properties: Processor);
 }
-export declare class Processor extends ResourceBase {
-    constructor(properties: ProcessorProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface CopyCommandProperties {
+export declare class CopyCommand {
     CopyOptions?: Value<string>;
     DataTableColumns?: Value<string>;
     DataTableName: Value<string>;
+    constructor(properties: CopyCommand);
 }
-export declare class CopyCommand extends ResourceBase {
-    constructor(properties: CopyCommandProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface S3DestinationConfigurationProperties {
+export declare class S3DestinationConfiguration {
     BucketARN: Value<string>;
     BufferingHints: BufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
@@ -89,23 +69,17 @@ export interface S3DestinationConfigurationProperties {
     EncryptionConfiguration?: EncryptionConfiguration;
     Prefix?: Value<string>;
     RoleARN: Value<string>;
+    constructor(properties: S3DestinationConfiguration);
 }
-export declare class S3DestinationConfiguration extends ResourceBase {
-    constructor(properties: S3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ElasticsearchRetryOptionsProperties {
+export declare class ElasticsearchRetryOptions {
     DurationInSeconds: Value<number>;
+    constructor(properties: ElasticsearchRetryOptions);
 }
-export declare class ElasticsearchRetryOptions extends ResourceBase {
-    constructor(properties: ElasticsearchRetryOptionsProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface KMSEncryptionConfigProperties {
+export declare class KMSEncryptionConfig {
     AWSKMSKeyARN: Value<string>;
+    constructor(properties: KMSEncryptionConfig);
 }
-export declare class KMSEncryptionConfig extends ResourceBase {
-    constructor(properties: KMSEncryptionConfigProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ExtendedS3DestinationConfigurationProperties {
+export declare class ExtendedS3DestinationConfiguration {
     BucketARN: Value<string>;
     BufferingHints: BufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
@@ -116,11 +90,9 @@ export interface ExtendedS3DestinationConfigurationProperties {
     RoleARN: Value<string>;
     S3BackupConfiguration?: S3DestinationConfiguration;
     S3BackupMode?: Value<string>;
+    constructor(properties: ExtendedS3DestinationConfiguration);
 }
-export declare class ExtendedS3DestinationConfiguration extends ResourceBase {
-    constructor(properties: ExtendedS3DestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface RedshiftDestinationConfigurationProperties {
+export declare class RedshiftDestinationConfiguration {
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
     ClusterJDBCURL: Value<string>;
     CopyCommand: CopyCommand;
@@ -129,9 +101,7 @@ export interface RedshiftDestinationConfigurationProperties {
     RoleARN: Value<string>;
     S3Configuration: S3DestinationConfiguration;
     Username: Value<string>;
-}
-export declare class RedshiftDestinationConfiguration extends ResourceBase {
-    constructor(properties: RedshiftDestinationConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: RedshiftDestinationConfiguration);
 }
 export interface DeliveryStreamProperties {
     DeliveryStreamName?: Value<string>;

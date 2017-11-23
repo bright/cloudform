@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface SqlInjectionMatchTupleProperties {
+export declare class SqlInjectionMatchTuple {
     FieldToMatch: FieldToMatch;
     TextTransformation: Value<string>;
+    constructor(properties: SqlInjectionMatchTuple);
 }
-export declare class SqlInjectionMatchTuple extends ResourceBase {
-    constructor(properties: SqlInjectionMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface FieldToMatchProperties {
+export declare class FieldToMatch {
     Data?: Value<string>;
     Type: Value<string>;
-}
-export declare class FieldToMatch extends ResourceBase {
-    constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: FieldToMatch);
 }
 export interface SqlInjectionMatchSetProperties {
     Name: Value<string>;

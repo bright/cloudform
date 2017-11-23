@@ -1,11 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface PolicyProperties {
+export declare class Policy {
     PolicyDocument: any;
     PolicyName: Value<string>;
-}
-export declare class Policy extends ResourceBase {
-    constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: Policy);
 }
 export interface RoleProperties {
     AssumeRolePolicyDocument: any;

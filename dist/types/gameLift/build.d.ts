@@ -1,12 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export interface S3LocationProperties {
+export declare class S3Location {
     Bucket: Value<string>;
     Key: Value<string>;
     RoleArn: Value<string>;
-}
-export declare class S3Location extends ResourceBase {
-    constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: S3Location);
 }
 export interface BuildProperties {
     Name?: Value<string>;

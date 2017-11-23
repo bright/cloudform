@@ -1,18 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export interface WafActionProperties {
+export declare class WafAction {
     Type: Value<string>;
+    constructor(properties: WafAction);
 }
-export declare class WafAction extends ResourceBase {
-    constructor(properties: WafActionProperties, dependsOn?: Value<string> | Value<string>[]);
-}
-export interface ActivatedRuleProperties {
+export declare class ActivatedRule {
     Action: WafAction;
     Priority: Value<number>;
     RuleId: Value<string>;
-}
-export declare class ActivatedRule extends ResourceBase {
-    constructor(properties: ActivatedRuleProperties, dependsOn?: Value<string> | Value<string>[]);
+    constructor(properties: ActivatedRule);
 }
 export interface WebACLProperties {
     DefaultAction: WafAction;

@@ -3,24 +3,20 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ActionProperties {
+export class Action {
     TargetGroupArn: Value<string>
     Type: Value<string>
-}
 
-export class Action extends ResourceBase {
-    constructor(properties: ActionProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::Action', properties, dependsOn)
+    constructor(properties: Action) {
+        Object.assign(this, properties)
     }
 }
 
-export interface CertificateProperties {
+export class Certificate {
     CertificateArn?: Value<string>
-}
 
-export class Certificate extends ResourceBase {
-    constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticLoadBalancingV2::Certificate', properties, dependsOn)
+    constructor(properties: Certificate) {
+        Object.assign(this, properties)
     }
 }
 

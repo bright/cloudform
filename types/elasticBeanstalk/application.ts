@@ -3,49 +3,41 @@
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export interface ApplicationResourceLifecycleConfigProperties {
+export class ApplicationResourceLifecycleConfig {
     ServiceRole?: Value<string>
     VersionLifecycleConfig?: ApplicationVersionLifecycleConfig
-}
 
-export class ApplicationResourceLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationResourceLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::ApplicationResourceLifecycleConfig', properties, dependsOn)
+    constructor(properties: ApplicationResourceLifecycleConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface ApplicationVersionLifecycleConfigProperties {
+export class ApplicationVersionLifecycleConfig {
     MaxAgeRule?: MaxAgeRule
     MaxCountRule?: MaxCountRule
-}
 
-export class ApplicationVersionLifecycleConfig extends ResourceBase {
-    constructor(properties: ApplicationVersionLifecycleConfigProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::ApplicationVersionLifecycleConfig', properties, dependsOn)
+    constructor(properties: ApplicationVersionLifecycleConfig) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MaxCountRuleProperties {
+export class MaxCountRule {
     DeleteSourceFromS3?: Value<boolean>
     Enabled?: Value<boolean>
     MaxCount?: Value<number>
-}
 
-export class MaxCountRule extends ResourceBase {
-    constructor(properties: MaxCountRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::MaxCountRule', properties, dependsOn)
+    constructor(properties: MaxCountRule) {
+        Object.assign(this, properties)
     }
 }
 
-export interface MaxAgeRuleProperties {
+export class MaxAgeRule {
     DeleteSourceFromS3?: Value<boolean>
     Enabled?: Value<boolean>
     MaxAgeInDays?: Value<number>
-}
 
-export class MaxAgeRule extends ResourceBase {
-    constructor(properties: MaxAgeRuleProperties, dependsOn?: Value<string> | Value<string>[]) {
-        super('AWS::ElasticBeanstalk::MaxAgeRule', properties, dependsOn)
+    constructor(properties: MaxAgeRule) {
+        Object.assign(this, properties)
     }
 }
 

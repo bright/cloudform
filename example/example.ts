@@ -1,6 +1,6 @@
 import cloudform, {Fn, Refs} from "../index"
 import {StringParameter} from "../types/parameter"
-import VPC from "../types/ec2/vpc"
+import EC2 from "../types/ec2"
 import {ResourceTag} from "../types/resource"
 
 cloudform({
@@ -19,7 +19,7 @@ cloudform({
         }
     },
     Resources: {
-        VPC: new VPC({
+        VPC: new EC2.VPC({
             CidrBlock: Fn.FindInMap('SubnetConfig', 'VPC', 'CIDR'),
             EnableDnsHostnames: true,
             Tags: [

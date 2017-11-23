@@ -42,7 +42,7 @@ function generateClass(namespace, name, properties, isDefault) {
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags');
 }
-function generateFile(schema, namespace, resourceName, properties, innerTypes) {
+function generateFile(fileHeader, namespace, resourceName, properties, innerTypes) {
     var innerHasTags = false;
     var innerTypesTemplates = lodash_1.map(innerTypes, function (innerType, innerTypeFullName) {
         var _a = innerTypeFullName.split('.'), innerTypeName = _a[1];
@@ -54,19 +54,41 @@ function generateFile(schema, namespace, resourceName, properties, innerTypes) {
         resourceImports.push('ResourceTag');
     }
     var generatedClass = generateClass(namespace, resourceName, properties, true);
-    var template = "/* Generated from " + url + ", version " + schema.ResourceSpecificationVersion + " */\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass;
+    var template = fileHeader + "\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass + "\n";
     if (!fs.existsSync("./types/" + adjustedCamelCase(namespace))) {
         fs.mkdirSync("./types/" + adjustedCamelCase(namespace));
     }
     fs.writeFileSync("./types/" + adjustedCamelCase(namespace) + "/" + lodash_1.camelCase(resourceName) + ".ts", template, { encoding: 'utf8' });
 }
+function generateIndexFile(fileHeader, namespace, resourceNames) {
+    var imports = resourceNames.map(function (resourceName) { return "import " + resourceName + " from './" + lodash_1.camelCase(resourceName) + "'"; });
+    var template = fileHeader + "\n   \n" + imports.join('\n') + " \n\nexport default {\n" + resourceNames.map(function (t) { return "  " + t; }).join(',\n') + "\n}\n";
+    fs.writeFileSync("./types/" + adjustedCamelCase(namespace) + "/index.ts", template, { encoding: 'utf8' });
+}
+function generateGrandIndexFile(fileHeader, indexContent) {
+    var imports = [];
+    lodash_1.forEach(indexContent, function (dependentResourceNames, namespace) {
+        imports.push("import " + namespace + " from './" + adjustedCamelCase(namespace) + "'");
+        dependentResourceNames.forEach(function (resourceName) { return imports.push("import " + namespace + resourceName + " from './" + adjustedCamelCase(namespace) + "/" + lodash_1.camelCase(resourceName) + "'"); });
+    });
+    var template = fileHeader + "\n   \n" + imports.join('\n') + " \n\nexport default {\n" + Object.keys(indexContent).map(function (t) { return "  " + t; }).join(',\n') + "\n}\n";
+    fs.writeFileSync('./types/index.ts', template, { encoding: 'utf8' });
+}
 fetch(url)
     .then(function (res) { return res.json(); })
     .then(function (schema) {
+    var fileHeader = "/* Generated from " + url + ", version " + schema.ResourceSpecificationVersion + " */";
+    var indexContent = {};
     lodash_1.forEach(schema.ResourceTypes, function (resource, resourceFullName) {
         var _a = resourceFullName.split('::'), namespace = _a[1], resourceName = _a[2];
         var properties = resource.Properties || {};
         var resourcePropertyTypes = lodash_1.pickBy(schema.PropertyTypes, function (propertyType, propertyFullName) { return propertyFullName.startsWith(resourceFullName + '.'); });
-        generateFile(schema, namespace, resourceName, properties, resourcePropertyTypes);
+        indexContent[namespace] = indexContent[namespace] || [];
+        indexContent[namespace].push(resourceName);
+        generateFile(fileHeader, namespace, resourceName, properties, resourcePropertyTypes);
     });
+    lodash_1.forEach(indexContent, function (resourceNames, namespace) {
+        generateIndexFile(fileHeader, namespace, resourceNames);
+    });
+    generateGrandIndexFile(fileHeader, indexContent);
 });

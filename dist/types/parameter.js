@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const common_1 = require("./common");
+const dataTypes_1 = require("./dataTypes");
 class StringParameter {
     constructor(properties) {
         Object.assign(this, properties);
     }
     get Type() {
-        return common_1.DataTypes.String;
+        return dataTypes_1.default.String;
     }
 }
 exports.StringParameter = StringParameter;
@@ -15,7 +15,7 @@ class NumberParameter {
         Object.assign(this, properties);
     }
     get Type() {
-        return common_1.DataTypes.Number;
+        return dataTypes_1.default.Number;
     }
 }
 exports.NumberParameter = NumberParameter;

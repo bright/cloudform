@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface IngressProperties {
     CIDRIP?: Value<string>;
     EC2SecurityGroupId?: Value<string>;

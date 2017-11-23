@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface KeyProperties {
     Description?: Value<string>;
     EnableKeyRotation?: Value<boolean>;

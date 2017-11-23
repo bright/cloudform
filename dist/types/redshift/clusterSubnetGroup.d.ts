@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface ClusterSubnetGroupProperties {
     Description: Value<string>;
     SubnetIds: Value<string>[];

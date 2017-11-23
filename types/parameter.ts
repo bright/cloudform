@@ -1,4 +1,4 @@
-import {DataType, DataTypes} from "./common"
+import DataTypes, {DataType} from "./dataTypes"
 
 export default interface Parameter {
     AllowedPattern?: string

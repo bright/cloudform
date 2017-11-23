@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface SourceBundleProperties {
     S3Bucket: Value<string>;
     S3Key: Value<string>;

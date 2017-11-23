@@ -1,4 +1,4 @@
-import {CFFunction, Value} from "./internal"
+import {CFFunction, Value} from "./dataTypes"
 
 export function Base64(value: Value<string>) {
     return new CFFunction('Fn::Base64', value)

@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface ByteMatchTupleProperties {
     TargetString?: Value<string>;
     TargetStringBase64?: Value<string>;

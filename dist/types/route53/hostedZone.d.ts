@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface HostedZoneTagProperties {
     Key: Value<string>;
     Value: Value<string>;

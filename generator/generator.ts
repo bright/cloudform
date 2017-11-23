@@ -75,7 +75,7 @@ function generateFile(schema, namespace, resourceName, properties, innerTypes) {
     const template = `/* Generated from ${url}, version ${schema.ResourceSpecificationVersion} */
    
 import {${resourceImports.join(', ')}} from '../resource'
-import {Value} from '../internal'
+import {Value} from '../dataTypes'
 
 ${innerTypesTemplates.join('\n\n')}
 

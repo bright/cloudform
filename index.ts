@@ -1,6 +1,6 @@
 const jsonStringify = require('json-pretty')
 
-import {CloudformTemplate} from "./types/internal"
+import Template from "./types/template"
 
 import * as _Fn from './types/functions'
 export const Fn = _Fn
@@ -8,6 +8,6 @@ export const Fn = _Fn
 import * as _Refs from './types/refs'
 export const Refs = _Refs
 
-export default function cloudform(template: CloudformTemplate) {
+export default function cloudform(template: Template) {
     return jsonStringify(template)
 }

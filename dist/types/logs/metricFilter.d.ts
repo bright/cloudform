@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface MetricTransformationProperties {
     MetricName: Value<string>;
     MetricNamespace: Value<string>;

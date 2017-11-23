@@ -54,7 +54,7 @@ function generateFile(schema, namespace, resourceName, properties, innerTypes) {
         resourceImports.push('ResourceTag');
     }
     var generatedClass = generateClass(namespace, resourceName, properties, true);
-    var template = "/* Generated from " + url + ", version " + schema.ResourceSpecificationVersion + " */\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value} from '../internal'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass;
+    var template = "/* Generated from " + url + ", version " + schema.ResourceSpecificationVersion + " */\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass;
     if (!fs.existsSync("./types/" + adjustedCamelCase(namespace))) {
         fs.mkdirSync("./types/" + adjustedCamelCase(namespace));
     }

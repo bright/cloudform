@@ -1,5 +1,5 @@
 import {Ref} from "./functions"
-import {CFFunction} from "./internal"
+import {CFFunction} from "./dataTypes"
 
 export const AccountId: CFFunction = Ref('AWS::AccountId')
 export const NotificationARNs: CFFunction = Ref("AWS::NotificationARNs")

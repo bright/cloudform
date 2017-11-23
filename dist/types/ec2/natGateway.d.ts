@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface NatGatewayProperties {
     AllocationId: Value<string>;
     SubnetId: Value<string>;

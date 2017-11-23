@@ -1,4 +1,4 @@
-import { DataType } from "./common";
+import { DataType } from "./dataTypes";
 export default interface Parameter {
     AllowedPattern?: string;
     AllowedValues?: any[];

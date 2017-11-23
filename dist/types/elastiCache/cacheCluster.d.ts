@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface CacheClusterProperties {
     AZMode?: Value<string>;
     AutoMinorVersionUpgrade?: Value<boolean>;

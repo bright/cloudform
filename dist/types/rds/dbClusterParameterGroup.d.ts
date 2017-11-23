@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../internal';
+import { Value } from '../dataTypes';
 export interface DBClusterParameterGroupProperties {
     Description: Value<string>;
     Family: Value<string>;

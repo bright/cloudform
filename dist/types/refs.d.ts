@@ -1,4 +1,4 @@
-import { CFFunction } from "./internal";
+import { CFFunction } from "./dataTypes";
 export declare const AccountId: CFFunction;
 export declare const NotificationARNs: CFFunction;
 export declare const NoValue: CFFunction;

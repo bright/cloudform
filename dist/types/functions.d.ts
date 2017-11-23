@@ -1,4 +1,4 @@
-import { CFFunction, Value } from "./internal";
+import { CFFunction, Value } from "./dataTypes";
 export declare function Base64(value: Value<string>): CFFunction;
 export declare function FindInMap(mapName: Value<string>, topLevelKey: Value<string>, secondLevelKey: Value<string>): CFFunction;
 export declare function GetAtt(logicalNameOfResource: Value<string>, attributeName: Value<string>): CFFunction;

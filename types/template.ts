@@ -1,7 +1,7 @@
 import Parameter from "./parameter"
 import Resource from "./resource"
 
-export interface CloudformTemplate {
+export default interface Template {
     Description?: string
     // TODO Metadata?: any
     Parameters?: { [key: string]: Parameter }
@@ -11,14 +11,3 @@ export interface CloudformTemplate {
     Resources?: { [key: string]: Resource }
     // TODO Outputs?: any
 }
-
-export class CFFunction {
-    constructor(private name: string, private payload: any) {
-    }
-
-    toJSON() {
-        return {[this.name]: this.payload}
-    }
-}
-
-export type Value<T> = T | CFFunction

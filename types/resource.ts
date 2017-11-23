@@ -1,4 +1,4 @@
-import {Value} from "./internal"
+import {Value} from "./dataTypes"
 
 export default interface Resource {
     Type: string

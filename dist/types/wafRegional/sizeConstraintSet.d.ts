@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface SizeConstraintProperties {
     ComparisonOperator: Value<string>;
     Size: Value<number>;
@@ -17,7 +17,7 @@ export declare class FieldToMatch extends ResourceBase {
     constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SizeConstraintSetProperties {
-    SizeConstraints?: SizeConstraint[];
+    SizeConstraints?: List<SizeConstraint>;
     Name: Value<string>;
 }
 export default class SizeConstraintSet extends ResourceBase {

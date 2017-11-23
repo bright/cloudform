@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ShutdownEventConfigurationProperties {
     DelayUntilElbConnectionsDrained?: Value<boolean>;
     ExecutionTimeout?: Value<number>;
@@ -30,11 +30,11 @@ export declare class AutoScalingThresholds extends ResourceBase {
     constructor(properties: AutoScalingThresholdsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RecipesProperties {
-    Configure?: Value<string>[];
-    Deploy?: Value<string>[];
-    Setup?: Value<string>[];
-    Shutdown?: Value<string>[];
-    Undeploy?: Value<string>[];
+    Configure?: List<Value<string>>;
+    Deploy?: List<Value<string>>;
+    Setup?: List<Value<string>>;
+    Shutdown?: List<Value<string>>;
+    Undeploy?: List<Value<string>>;
 }
 export declare class Recipes extends ResourceBase {
     constructor(properties: RecipesProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -62,19 +62,19 @@ export interface LayerProperties {
     CustomInstanceProfileArn?: Value<string>;
     CustomJson?: any;
     CustomRecipes?: Recipes;
-    CustomSecurityGroupIds?: Value<string>[];
+    CustomSecurityGroupIds?: List<Value<string>>;
     EnableAutoHealing: Value<boolean>;
     InstallUpdatesOnBoot?: Value<boolean>;
     LifecycleEventConfiguration?: LifecycleEventConfiguration;
     LoadBasedAutoScaling?: LoadBasedAutoScaling;
     Name: Value<string>;
-    Packages?: Value<string>[];
+    Packages?: List<Value<string>>;
     Shortname: Value<string>;
     StackId: Value<string>;
     Tags?: ResourceTag[];
     Type: Value<string>;
     UseEbsOptimizedInstances?: Value<boolean>;
-    VolumeConfigurations?: VolumeConfiguration[];
+    VolumeConfigurations?: List<VolumeConfiguration>;
 }
 export default class Layer extends ResourceBase {
     constructor(properties: LayerProperties, dependsOn?: Value<string> | Value<string>[]);

@@ -1,35 +1,35 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ContainerDefinitionProperties {
-    Command?: Value<string>[]
+    Command?: List<Value<string>>
     Cpu?: Value<number>
     DisableNetworking?: Value<boolean>
-    DnsSearchDomains?: Value<string>[]
-    DnsServers?: Value<string>[]
+    DnsSearchDomains?: List<Value<string>>
+    DnsServers?: List<Value<string>>
     DockerLabels?: {[key: string]: Value<string>}
-    DockerSecurityOptions?: Value<string>[]
-    EntryPoint?: Value<string>[]
-    Environment?: KeyValuePair[]
+    DockerSecurityOptions?: List<Value<string>>
+    EntryPoint?: List<Value<string>>
+    Environment?: List<KeyValuePair>
     Essential?: Value<boolean>
-    ExtraHosts?: HostEntry[]
+    ExtraHosts?: List<HostEntry>
     Hostname?: Value<string>
     Image?: Value<string>
-    Links?: Value<string>[]
+    Links?: List<Value<string>>
     LinuxParameters?: LinuxParameters
     LogConfiguration?: LogConfiguration
     Memory?: Value<number>
     MemoryReservation?: Value<number>
-    MountPoints?: MountPoint[]
+    MountPoints?: List<MountPoint>
     Name?: Value<string>
-    PortMappings?: PortMapping[]
+    PortMappings?: List<PortMapping>
     Privileged?: Value<boolean>
     ReadonlyRootFilesystem?: Value<boolean>
-    Ulimits?: Ulimit[]
+    Ulimits?: List<Ulimit>
     User?: Value<string>
-    VolumesFrom?: VolumeFrom[]
+    VolumesFrom?: List<VolumeFrom>
     WorkingDirectory?: Value<string>
 }
 
@@ -53,7 +53,7 @@ export class LogConfiguration extends ResourceBase {
 export interface DeviceProperties {
     ContainerPath?: Value<string>
     HostPath: Value<string>
-    Permissions?: Value<string>[]
+    Permissions?: List<Value<string>>
 }
 
 export class Device extends ResourceBase {
@@ -108,8 +108,8 @@ export class HostEntry extends ResourceBase {
 }
 
 export interface KernelCapabilitiesProperties {
-    Add?: Value<string>[]
-    Drop?: Value<string>[]
+    Add?: List<Value<string>>
+    Drop?: List<Value<string>>
 }
 
 export class KernelCapabilities extends ResourceBase {
@@ -166,7 +166,7 @@ export class Ulimit extends ResourceBase {
 
 export interface LinuxParametersProperties {
     Capabilities?: KernelCapabilities
-    Devices?: Device[]
+    Devices?: List<Device>
     InitProcessEnabled?: Value<boolean>
 }
 
@@ -187,12 +187,12 @@ export class HostVolumeProperties extends ResourceBase {
 }
 
 export interface TaskDefinitionProperties {
-    ContainerDefinitions?: ContainerDefinition[]
+    ContainerDefinitions?: List<ContainerDefinition>
     Family?: Value<string>
     NetworkMode?: Value<string>
-    PlacementConstraints?: TaskDefinitionPlacementConstraint[]
+    PlacementConstraints?: List<TaskDefinitionPlacementConstraint>
     TaskRoleArn?: Value<string>
-    Volumes?: Volume[]
+    Volumes?: List<Volume>
 }
 
 export default class TaskDefinition extends ResourceBase {

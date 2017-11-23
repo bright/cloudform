@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface S3ReferenceDataSourceProperties {
     BucketARN: Value<string>;
     FileKey: Value<string>;
@@ -45,7 +45,7 @@ export declare class CSVMappingParameters extends ResourceBase {
 }
 export interface ReferenceSchemaProperties {
     RecordEncoding?: Value<string>;
-    RecordColumns: RecordColumn[];
+    RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
 }
 export declare class ReferenceSchema extends ResourceBase {

@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MaintenanceWindowLambdaParametersProperties {
     ClientContext?: Value<string>;
     Qualifier?: Value<string>;
@@ -11,7 +11,7 @@ export declare class MaintenanceWindowLambdaParameters extends ResourceBase {
 export interface NotificationConfigProperties {
     NotificationArn?: Value<string>;
     NotificationType?: Value<string>;
-    NotificationEvents?: Value<string>[];
+    NotificationEvents?: List<Value<string>>;
 }
 export declare class NotificationConfig extends ResourceBase {
     constructor(properties: NotificationConfigProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -41,7 +41,7 @@ export declare class LoggingInfo extends ResourceBase {
     constructor(properties: LoggingInfoProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TargetProperties {
-    Values?: Value<string>[];
+    Values?: List<Value<string>>;
     Key: Value<string>;
 }
 export declare class Target extends ResourceBase {
@@ -74,7 +74,7 @@ export interface MaintenanceWindowTaskProperties {
     ServiceRoleArn: Value<string>;
     Priority: Value<number>;
     MaxConcurrency: Value<string>;
-    Targets: Target[];
+    Targets: List<Target>;
     Name?: Value<string>;
     TaskArn: Value<string>;
     TaskInvocationParameters?: TaskInvocationParameters;

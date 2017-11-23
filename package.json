@@ -1,6 +1,6 @@
 {
   "name": "cloudform",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
   "main": "dist/index.js",
   "scripts": {

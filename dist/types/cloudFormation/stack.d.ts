@@ -1,7 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface StackProperties {
-    NotificationARNs?: Value<string>[];
+    NotificationARNs?: List<Value<string>>;
     Parameters?: {
         [key: string]: Value<string>;
     };

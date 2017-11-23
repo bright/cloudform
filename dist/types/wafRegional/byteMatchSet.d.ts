@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ByteMatchTupleProperties {
     TargetString?: Value<string>;
     TargetStringBase64?: Value<string>;
@@ -18,7 +18,7 @@ export declare class FieldToMatch extends ResourceBase {
     constructor(properties: FieldToMatchProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ByteMatchSetProperties {
-    ByteMatchTuples?: ByteMatchTuple[];
+    ByteMatchTuples?: List<ByteMatchTuple>;
     Name: Value<string>;
 }
 export default class ByteMatchSet extends ResourceBase {

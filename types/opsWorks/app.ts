@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface DataSourceProperties {
     Arn?: Value<string>
@@ -57,11 +57,11 @@ export class Source extends ResourceBase {
 export interface AppProperties {
     AppSource?: Source
     Attributes?: {[key: string]: Value<string>}
-    DataSources?: DataSource[]
+    DataSources?: List<DataSource>
     Description?: Value<string>
-    Domains?: Value<string>[]
+    Domains?: List<Value<string>>
     EnableSsl?: Value<boolean>
-    Environment?: EnvironmentVariable[]
+    Environment?: List<EnvironmentVariable>
     Name: Value<string>
     Shortname?: Value<string>
     SslConfiguration?: SslConfiguration

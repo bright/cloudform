@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface EndpointConfigurationProperties {
-    Types?: Value<string>[];
+    Types?: List<Value<string>>;
 }
 export declare class EndpointConfiguration extends ResourceBase {
     constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);

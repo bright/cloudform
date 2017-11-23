@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VolumeSpecificationProperties {
     Iops?: Value<number>;
     SizeInGB: Value<number>;
@@ -21,13 +21,13 @@ export interface ConfigurationProperties {
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
 }
 export declare class Configuration extends ResourceBase {
     constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsConfigurationProperties {
-    EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[];
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
 }
 export declare class EbsConfiguration extends ResourceBase {
@@ -36,7 +36,7 @@ export declare class EbsConfiguration extends ResourceBase {
 export interface InstanceTypeConfigProperties {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceType: Value<string>;
     WeightedCapacity?: Value<number>;
@@ -60,7 +60,7 @@ export declare class EbsBlockDeviceConfig extends ResourceBase {
 export interface InstanceFleetConfigProperties {
     ClusterId: Value<string>;
     InstanceFleetType: Value<string>;
-    InstanceTypeConfigs?: InstanceTypeConfig[];
+    InstanceTypeConfigs?: List<InstanceTypeConfig>;
     LaunchSpecifications?: InstanceFleetProvisioningSpecifications;
     Name?: Value<string>;
     TargetOnDemandCapacity?: Value<number>;

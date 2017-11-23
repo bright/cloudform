@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface IamInstanceProfileSpecificationProperties {
     Arn?: Value<string>
@@ -18,11 +18,11 @@ export interface InstanceNetworkInterfaceSpecificationProperties {
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
     DeviceIndex?: Value<number>
-    Groups?: Value<string>[]
+    Groups?: List<Value<string>>
     Ipv6AddressCount?: Value<number>
-    Ipv6Addresses?: InstanceIpv6Address[]
+    Ipv6Addresses?: List<InstanceIpv6Address>
     NetworkInterfaceId?: Value<string>
-    PrivateIpAddresses?: PrivateIpAddressSpecification[]
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SubnetId?: Value<string>
 }
@@ -45,7 +45,7 @@ export class PrivateIpAddressSpecification extends ResourceBase {
 }
 
 export interface SpotFleetLaunchSpecificationProperties {
-    BlockDeviceMappings?: BlockDeviceMapping[]
+    BlockDeviceMappings?: List<BlockDeviceMapping>
     EbsOptimized?: Value<boolean>
     IamInstanceProfile?: IamInstanceProfileSpecification
     ImageId: Value<string>
@@ -53,10 +53,10 @@ export interface SpotFleetLaunchSpecificationProperties {
     KernelId?: Value<string>
     KeyName?: Value<string>
     Monitoring?: SpotFleetMonitoring
-    NetworkInterfaces?: InstanceNetworkInterfaceSpecification[]
+    NetworkInterfaces?: List<InstanceNetworkInterfaceSpecification>
     Placement?: SpotPlacement
     RamdiskId?: Value<string>
-    SecurityGroups?: GroupIdentifier[]
+    SecurityGroups?: List<GroupIdentifier>
     SpotPrice?: Value<string>
     SubnetId?: Value<string>
     UserData?: Value<string>
@@ -84,7 +84,7 @@ export interface SpotFleetRequestConfigDataProperties {
     AllocationStrategy?: Value<string>
     ExcessCapacityTerminationPolicy?: Value<string>
     IamFleetRole: Value<string>
-    LaunchSpecifications: SpotFleetLaunchSpecification[]
+    LaunchSpecifications: List<SpotFleetLaunchSpecification>
     ReplaceUnhealthyInstances?: Value<boolean>
     SpotPrice: Value<string>
     TargetCapacity: Value<number>

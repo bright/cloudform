@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface CertificateProperties {
     CertificateArn?: Value<string>;
 }
@@ -7,7 +7,7 @@ export declare class Certificate extends ResourceBase {
     constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenerCertificateProperties {
-    Certificates: Certificate[];
+    Certificates: List<Certificate>;
     ListenerArn: Value<string>;
 }
 export default class ListenerCertificate extends ResourceBase {

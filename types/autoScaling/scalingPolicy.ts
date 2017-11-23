@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface MetricDimensionProperties {
     Name: Value<string>
@@ -15,7 +15,7 @@ export class MetricDimension extends ResourceBase {
 }
 
 export interface CustomizedMetricSpecificationProperties {
-    Dimensions?: MetricDimension[]
+    Dimensions?: List<MetricDimension>
     MetricName: Value<string>
     Namespace: Value<string>
     Statistic: Value<string>
@@ -73,7 +73,7 @@ export interface ScalingPolicyProperties {
     MinAdjustmentMagnitude?: Value<number>
     PolicyType?: Value<string>
     ScalingAdjustment?: Value<number>
-    StepAdjustments?: StepAdjustment[]
+    StepAdjustments?: List<StepAdjustment>
     TargetTrackingConfiguration?: TargetTrackingConfiguration
 }
 

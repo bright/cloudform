@@ -12,7 +12,7 @@ export function GetAtt(logicalNameOfResource: Value<string>, attributeName: Valu
     return new CFFunction('Fn::GetAtt', [logicalNameOfResource, attributeName])
 }
 
-export function GetAZs(region: Value<string>) {
+export function GetAZs(region: Value<string> = '') {
     return new CFFunction('Fn::GetAZs', region)
 }
 

@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ActionProperties {
     TargetGroupArn: Value<string>
@@ -16,7 +16,7 @@ export class Action extends ResourceBase {
 
 export interface RuleConditionProperties {
     Field?: Value<string>
-    Values?: Value<string>[]
+    Values?: List<Value<string>>
 }
 
 export class RuleCondition extends ResourceBase {
@@ -26,8 +26,8 @@ export class RuleCondition extends ResourceBase {
 }
 
 export interface ListenerRuleProperties {
-    Actions: Action[]
-    Conditions: RuleCondition[]
+    Actions: List<Action>
+    Conditions: List<RuleCondition>
     ListenerArn: Value<string>
     Priority: Value<number>
 }

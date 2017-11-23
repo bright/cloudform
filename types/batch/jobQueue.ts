@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ComputeEnvironmentOrderProperties {
     ComputeEnvironment: Value<string>
@@ -15,7 +15,7 @@ export class ComputeEnvironmentOrder extends ResourceBase {
 }
 
 export interface JobQueueProperties {
-    ComputeEnvironmentOrder: ComputeEnvironmentOrder[]
+    ComputeEnvironmentOrder: List<ComputeEnvironmentOrder>
     Priority: Value<number>
     State?: Value<string>
     JobQueueName?: Value<string>

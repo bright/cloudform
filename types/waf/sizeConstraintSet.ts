@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface FieldToMatchProperties {
     Data?: Value<string>
@@ -29,7 +29,7 @@ export class SizeConstraint extends ResourceBase {
 
 export interface SizeConstraintSetProperties {
     Name: Value<string>
-    SizeConstraints: SizeConstraint[]
+    SizeConstraints: List<SizeConstraint>
 }
 
 export default class SizeConstraintSet extends ResourceBase {

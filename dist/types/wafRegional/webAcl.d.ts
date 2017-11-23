@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RuleProperties {
     Action: Action;
     Priority: Value<number>;
@@ -17,7 +17,7 @@ export declare class Action extends ResourceBase {
 export interface WebACLProperties {
     MetricName: Value<string>;
     DefaultAction: Action;
-    Rules?: Rule[];
+    Rules?: List<Rule>;
     Name: Value<string>;
 }
 export default class WebACL extends ResourceBase {

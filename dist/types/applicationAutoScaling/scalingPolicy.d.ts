@@ -1,11 +1,11 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface StepScalingPolicyConfigurationProperties {
     AdjustmentType?: Value<string>;
     Cooldown?: Value<number>;
     MetricAggregationType?: Value<string>;
     MinAdjustmentMagnitude?: Value<number>;
-    StepAdjustments?: StepAdjustment[];
+    StepAdjustments?: List<StepAdjustment>;
 }
 export declare class StepScalingPolicyConfiguration extends ResourceBase {
     constructor(properties: StepScalingPolicyConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -33,7 +33,7 @@ export declare class PredefinedMetricSpecification extends ResourceBase {
     constructor(properties: PredefinedMetricSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomizedMetricSpecificationProperties {
-    Dimensions?: MetricDimension[];
+    Dimensions?: List<MetricDimension>;
     MetricName: Value<string>;
     Namespace: Value<string>;
     Statistic: Value<string>;

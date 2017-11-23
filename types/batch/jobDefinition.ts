@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface VolumesProperties {
     Host?: VolumesHost
@@ -25,16 +25,16 @@ export class RetryStrategy extends ResourceBase {
 }
 
 export interface ContainerPropertiesProperties {
-    MountPoints?: MountPoints[]
+    MountPoints?: List<MountPoints>
     User?: Value<string>
-    Volumes?: Volumes[]
-    Command?: Value<string>[]
+    Volumes?: List<Volumes>
+    Command?: List<Value<string>>
     Memory: Value<number>
     Privileged?: Value<boolean>
-    Environment?: Environment[]
+    Environment?: List<Environment>
     JobRoleArn?: Value<string>
     ReadonlyRootFilesystem?: Value<boolean>
-    Ulimits?: Ulimit[]
+    Ulimits?: List<Ulimit>
     Vcpus: Value<number>
     Image: Value<string>
 }

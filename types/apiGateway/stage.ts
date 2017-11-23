@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface MethodSettingProperties {
     CacheDataEncrypted?: Value<boolean>
@@ -29,7 +29,7 @@ export interface StageProperties {
     DeploymentId?: Value<string>
     Description?: Value<string>
     DocumentationVersion?: Value<string>
-    MethodSettings?: MethodSetting[]
+    MethodSettings?: List<MethodSetting>
     RestApiId: Value<string>
     StageName?: Value<string>
     Variables?: {[key: string]: Value<string>}

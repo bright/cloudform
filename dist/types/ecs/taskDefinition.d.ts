@@ -1,34 +1,34 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ContainerDefinitionProperties {
-    Command?: Value<string>[];
+    Command?: List<Value<string>>;
     Cpu?: Value<number>;
     DisableNetworking?: Value<boolean>;
-    DnsSearchDomains?: Value<string>[];
-    DnsServers?: Value<string>[];
+    DnsSearchDomains?: List<Value<string>>;
+    DnsServers?: List<Value<string>>;
     DockerLabels?: {
         [key: string]: Value<string>;
     };
-    DockerSecurityOptions?: Value<string>[];
-    EntryPoint?: Value<string>[];
-    Environment?: KeyValuePair[];
+    DockerSecurityOptions?: List<Value<string>>;
+    EntryPoint?: List<Value<string>>;
+    Environment?: List<KeyValuePair>;
     Essential?: Value<boolean>;
-    ExtraHosts?: HostEntry[];
+    ExtraHosts?: List<HostEntry>;
     Hostname?: Value<string>;
     Image?: Value<string>;
-    Links?: Value<string>[];
+    Links?: List<Value<string>>;
     LinuxParameters?: LinuxParameters;
     LogConfiguration?: LogConfiguration;
     Memory?: Value<number>;
     MemoryReservation?: Value<number>;
-    MountPoints?: MountPoint[];
+    MountPoints?: List<MountPoint>;
     Name?: Value<string>;
-    PortMappings?: PortMapping[];
+    PortMappings?: List<PortMapping>;
     Privileged?: Value<boolean>;
     ReadonlyRootFilesystem?: Value<boolean>;
-    Ulimits?: Ulimit[];
+    Ulimits?: List<Ulimit>;
     User?: Value<string>;
-    VolumesFrom?: VolumeFrom[];
+    VolumesFrom?: List<VolumeFrom>;
     WorkingDirectory?: Value<string>;
 }
 export declare class ContainerDefinition extends ResourceBase {
@@ -46,7 +46,7 @@ export declare class LogConfiguration extends ResourceBase {
 export interface DeviceProperties {
     ContainerPath?: Value<string>;
     HostPath: Value<string>;
-    Permissions?: Value<string>[];
+    Permissions?: List<Value<string>>;
 }
 export declare class Device extends ResourceBase {
     constructor(properties: DeviceProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -81,8 +81,8 @@ export declare class HostEntry extends ResourceBase {
     constructor(properties: HostEntryProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface KernelCapabilitiesProperties {
-    Add?: Value<string>[];
-    Drop?: Value<string>[];
+    Add?: List<Value<string>>;
+    Drop?: List<Value<string>>;
 }
 export declare class KernelCapabilities extends ResourceBase {
     constructor(properties: KernelCapabilitiesProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -119,7 +119,7 @@ export declare class Ulimit extends ResourceBase {
 }
 export interface LinuxParametersProperties {
     Capabilities?: KernelCapabilities;
-    Devices?: Device[];
+    Devices?: List<Device>;
     InitProcessEnabled?: Value<boolean>;
 }
 export declare class LinuxParameters extends ResourceBase {
@@ -132,12 +132,12 @@ export declare class HostVolumeProperties extends ResourceBase {
     constructor(properties: HostVolumePropertiesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TaskDefinitionProperties {
-    ContainerDefinitions?: ContainerDefinition[];
+    ContainerDefinitions?: List<ContainerDefinition>;
     Family?: Value<string>;
     NetworkMode?: Value<string>;
-    PlacementConstraints?: TaskDefinitionPlacementConstraint[];
+    PlacementConstraints?: List<TaskDefinitionPlacementConstraint>;
     TaskRoleArn?: Value<string>;
-    Volumes?: Volume[];
+    Volumes?: List<Volume>;
 }
 export default class TaskDefinition extends ResourceBase {
     constructor(properties: TaskDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);

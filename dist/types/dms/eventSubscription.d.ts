@@ -1,12 +1,12 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface EventSubscriptionProperties {
     SourceType?: Value<string>;
-    EventCategories?: Value<string>[];
+    EventCategories?: List<Value<string>>;
     Enabled?: Value<boolean>;
     SubscriptionName?: Value<string>;
     SnsTopicArn: Value<string>;
-    SourceIds?: Value<string>[];
+    SourceIds?: List<Value<string>>;
     Tags?: ResourceTag[];
 }
 export default class EventSubscription extends ResourceBase {

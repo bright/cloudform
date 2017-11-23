@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface TrustedSignersProperties {
     Enabled: Value<boolean>
-    AwsAccountNumbers?: Value<string>[]
+    AwsAccountNumbers?: List<Value<string>>
 }
 
 export class TrustedSigners extends ResourceBase {
@@ -43,7 +43,7 @@ export interface StreamingDistributionConfigProperties {
     PriceClass?: Value<string>
     S3Origin: S3Origin
     Enabled: Value<boolean>
-    Aliases?: Value<string>[]
+    Aliases?: List<Value<string>>
     TrustedSigners: TrustedSigners
 }
 

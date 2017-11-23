@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface OptionSettingProperties {
     Namespace: Value<string>;
     OptionName: Value<string>;
@@ -22,7 +22,7 @@ export interface EnvironmentProperties {
     CNAMEPrefix?: Value<string>;
     Description?: Value<string>;
     EnvironmentName?: Value<string>;
-    OptionSettings?: OptionSetting[];
+    OptionSettings?: List<OptionSetting>;
     PlatformArn?: Value<string>;
     SolutionStackName?: Value<string>;
     Tags?: ResourceTag[];

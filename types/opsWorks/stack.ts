@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface SourceProperties {
     Password?: Value<string>
@@ -67,7 +67,7 @@ export interface StackProperties {
     AgentVersion?: Value<string>
     Attributes?: {[key: string]: Value<string>}
     ChefConfiguration?: ChefConfiguration
-    CloneAppIds?: Value<string>[]
+    CloneAppIds?: List<Value<string>>
     ClonePermissions?: Value<boolean>
     ConfigurationManager?: StackConfigurationManager
     CustomCookbooksSource?: Source
@@ -79,10 +79,10 @@ export interface StackProperties {
     DefaultSshKeyName?: Value<string>
     DefaultSubnetId?: Value<string>
     EcsClusterArn?: Value<string>
-    ElasticIps?: ElasticIp[]
+    ElasticIps?: List<ElasticIp>
     HostnameTheme?: Value<string>
     Name: Value<string>
-    RdsDbInstances?: RdsDbInstance[]
+    RdsDbInstances?: List<RdsDbInstance>
     ServiceRoleArn: Value<string>
     SourceStackId?: Value<string>
     Tags?: ResourceTag[]

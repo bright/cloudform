@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface RecordSetProperties {
     AliasTarget?: AliasTarget
@@ -13,7 +13,7 @@ export interface RecordSetProperties {
     HostedZoneName?: Value<string>
     Name: Value<string>
     Region?: Value<string>
-    ResourceRecords?: Value<string>[]
+    ResourceRecords?: List<Value<string>>
     SetIdentifier?: Value<string>
     TTL?: Value<string>
     Type: Value<string>
@@ -54,7 +54,7 @@ export interface RecordSetGroupProperties {
     Comment?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
-    RecordSets?: RecordSet[]
+    RecordSets?: List<RecordSet>
 }
 
 export default class RecordSetGroup extends ResourceBase {

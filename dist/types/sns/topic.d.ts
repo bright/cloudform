@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface SubscriptionProperties {
     Endpoint: Value<string>;
     Protocol: Value<string>;
@@ -9,7 +9,7 @@ export declare class Subscription extends ResourceBase {
 }
 export interface TopicProperties {
     DisplayName?: Value<string>;
-    Subscription?: Subscription[];
+    Subscription?: List<Subscription>;
     TopicName?: Value<string>;
 }
 export default class Topic extends ResourceBase {

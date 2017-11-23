@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface OptionSettingProperties {
     Name?: Value<string>;
     Value?: Value<string>;
@@ -8,12 +8,12 @@ export declare class OptionSetting extends ResourceBase {
     constructor(properties: OptionSettingProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OptionConfigurationProperties {
-    DBSecurityGroupMemberships?: Value<string>[];
+    DBSecurityGroupMemberships?: List<Value<string>>;
     OptionName: Value<string>;
     OptionSettings?: OptionSetting;
     OptionVersion?: Value<string>;
     Port?: Value<number>;
-    VpcSecurityGroupMemberships?: Value<string>[];
+    VpcSecurityGroupMemberships?: List<Value<string>>;
 }
 export declare class OptionConfiguration extends ResourceBase {
     constructor(properties: OptionConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -21,7 +21,7 @@ export declare class OptionConfiguration extends ResourceBase {
 export interface OptionGroupProperties {
     EngineName: Value<string>;
     MajorEngineVersion: Value<string>;
-    OptionConfigurations: OptionConfiguration[];
+    OptionConfigurations: List<OptionConfiguration>;
     OptionGroupDescription: Value<string>;
     Tags?: ResourceTag[];
 }

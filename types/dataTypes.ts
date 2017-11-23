@@ -17,3 +17,4 @@ export class CFFunction {
 }
 
 export type Value<T> = T | CFFunction
+export type List<T> = T[] | CFFunction

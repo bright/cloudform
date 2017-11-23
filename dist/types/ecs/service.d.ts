@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface LoadBalancerProperties {
     ContainerName?: Value<string>;
     ContainerPort: Value<number>;
@@ -34,9 +34,9 @@ export interface ServiceProperties {
     Cluster?: Value<string>;
     DeploymentConfiguration?: DeploymentConfiguration;
     DesiredCount?: Value<number>;
-    LoadBalancers?: LoadBalancer[];
-    PlacementConstraints?: PlacementConstraint[];
-    PlacementStrategies?: PlacementStrategy[];
+    LoadBalancers?: List<LoadBalancer>;
+    PlacementConstraints?: List<PlacementConstraint>;
+    PlacementStrategies?: List<PlacementStrategy>;
     Role?: Value<string>;
     ServiceName?: Value<string>;
     TaskDefinition: Value<string>;

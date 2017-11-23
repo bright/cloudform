@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface PolicyProperties {
     PolicyDocument: any;
     PolicyName: Value<string>;
@@ -9,9 +9,9 @@ export declare class Policy extends ResourceBase {
 }
 export interface GroupProperties {
     GroupName?: Value<string>;
-    ManagedPolicyArns?: Value<string>[];
+    ManagedPolicyArns?: List<Value<string>>;
     Path?: Value<string>;
-    Policies?: Policy[];
+    Policies?: List<Policy>;
 }
 export default class Group extends ResourceBase {
     constructor(properties: GroupProperties, dependsOn?: Value<string> | Value<string>[]);

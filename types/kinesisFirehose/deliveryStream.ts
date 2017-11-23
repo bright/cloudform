@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ElasticsearchDestinationConfigurationProperties {
     BufferingHints: ElasticsearchBufferingHints
@@ -59,7 +59,7 @@ export class CloudWatchLoggingOptions extends ResourceBase {
 
 export interface ProcessingConfigurationProperties {
     Enabled: Value<boolean>
-    Processors: Processor[]
+    Processors: List<Processor>
 }
 
 export class ProcessingConfiguration extends ResourceBase {
@@ -102,7 +102,7 @@ export class ProcessorParameter extends ResourceBase {
 }
 
 export interface ProcessorProperties {
-    Parameters: ProcessorParameter[]
+    Parameters: List<ProcessorParameter>
     Type: Value<string>
 }
 

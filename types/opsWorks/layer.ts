@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ShutdownEventConfigurationProperties {
     DelayUntilElbConnectionsDrained?: Value<boolean>
@@ -45,11 +45,11 @@ export class AutoScalingThresholds extends ResourceBase {
 }
 
 export interface RecipesProperties {
-    Configure?: Value<string>[]
-    Deploy?: Value<string>[]
-    Setup?: Value<string>[]
-    Shutdown?: Value<string>[]
-    Undeploy?: Value<string>[]
+    Configure?: List<Value<string>>
+    Deploy?: List<Value<string>>
+    Setup?: List<Value<string>>
+    Shutdown?: List<Value<string>>
+    Undeploy?: List<Value<string>>
 }
 
 export class Recipes extends ResourceBase {
@@ -87,19 +87,19 @@ export interface LayerProperties {
     CustomInstanceProfileArn?: Value<string>
     CustomJson?: any
     CustomRecipes?: Recipes
-    CustomSecurityGroupIds?: Value<string>[]
+    CustomSecurityGroupIds?: List<Value<string>>
     EnableAutoHealing: Value<boolean>
     InstallUpdatesOnBoot?: Value<boolean>
     LifecycleEventConfiguration?: LifecycleEventConfiguration
     LoadBasedAutoScaling?: LoadBasedAutoScaling
     Name: Value<string>
-    Packages?: Value<string>[]
+    Packages?: List<Value<string>>
     Shortname: Value<string>
     StackId: Value<string>
     Tags?: ResourceTag[]
     Type: Value<string>
     UseEbsOptimizedInstances?: Value<boolean>
-    VolumeConfigurations?: VolumeConfiguration[]
+    VolumeConfigurations?: List<VolumeConfiguration>
 }
 
 export default class Layer extends ResourceBase {

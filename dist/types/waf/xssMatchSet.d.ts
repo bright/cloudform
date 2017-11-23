@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface FieldToMatchProperties {
     Data?: Value<string>;
     Type: Value<string>;
@@ -16,7 +16,7 @@ export declare class XssMatchTuple extends ResourceBase {
 }
 export interface XssMatchSetProperties {
     Name: Value<string>;
-    XssMatchTuples: XssMatchTuple[];
+    XssMatchTuples: List<XssMatchTuple>;
 }
 export default class XssMatchSet extends ResourceBase {
     constructor(properties: XssMatchSetProperties, dependsOn?: Value<string> | Value<string>[]);

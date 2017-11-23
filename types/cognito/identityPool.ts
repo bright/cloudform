@@ -1,10 +1,10 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface PushSyncProperties {
-    ApplicationArns?: Value<string>[]
+    ApplicationArns?: List<Value<string>>
     RoleArn?: Value<string>
 }
 
@@ -40,15 +40,15 @@ export class CognitoStreams extends ResourceBase {
 
 export interface IdentityPoolProperties {
     PushSync?: PushSync
-    CognitoIdentityProviders?: CognitoIdentityProvider[]
+    CognitoIdentityProviders?: List<CognitoIdentityProvider>
     CognitoEvents?: any
     DeveloperProviderName?: Value<string>
     CognitoStreams?: CognitoStreams
     IdentityPoolName?: Value<string>
     AllowUnauthenticatedIdentities: Value<boolean>
     SupportedLoginProviders?: any
-    SamlProviderARNs?: Value<string>[]
-    OpenIdConnectProviderARNs?: Value<string>[]
+    SamlProviderARNs?: List<Value<string>>
+    OpenIdConnectProviderARNs?: List<Value<string>>
 }
 
 export default class IdentityPool extends ResourceBase {

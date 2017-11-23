@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MetricDimensionProperties {
     Name: Value<string>;
     Value: Value<string>;
@@ -8,7 +8,7 @@ export declare class MetricDimension extends ResourceBase {
     constructor(properties: MetricDimensionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CustomizedMetricSpecificationProperties {
-    Dimensions?: MetricDimension[];
+    Dimensions?: List<MetricDimension>;
     MetricName: Value<string>;
     Namespace: Value<string>;
     Statistic: Value<string>;
@@ -50,7 +50,7 @@ export interface ScalingPolicyProperties {
     MinAdjustmentMagnitude?: Value<number>;
     PolicyType?: Value<string>;
     ScalingAdjustment?: Value<number>;
-    StepAdjustments?: StepAdjustment[];
+    StepAdjustments?: List<StepAdjustment>;
     TargetTrackingConfiguration?: TargetTrackingConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase {

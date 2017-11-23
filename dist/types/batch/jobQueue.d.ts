@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ComputeEnvironmentOrderProperties {
     ComputeEnvironment: Value<string>;
     Order: Value<number>;
@@ -8,7 +8,7 @@ export declare class ComputeEnvironmentOrder extends ResourceBase {
     constructor(properties: ComputeEnvironmentOrderProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface JobQueueProperties {
-    ComputeEnvironmentOrder: ComputeEnvironmentOrder[];
+    ComputeEnvironmentOrder: List<ComputeEnvironmentOrder>;
     Priority: Value<number>;
     State?: Value<string>;
     JobQueueName?: Value<string>;

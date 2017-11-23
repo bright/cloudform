@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface WafActionProperties {
     Type: Value<string>;
 }
@@ -18,7 +18,7 @@ export interface WebACLProperties {
     DefaultAction: WafAction;
     MetricName: Value<string>;
     Name: Value<string>;
-    Rules?: ActivatedRule[];
+    Rules?: List<ActivatedRule>;
 }
 export default class WebACL extends ResourceBase {
     constructor(properties: WebACLProperties, dependsOn?: Value<string> | Value<string>[]);

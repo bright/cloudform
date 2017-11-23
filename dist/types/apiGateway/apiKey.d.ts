@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface StageKeyProperties {
     RestApiId?: Value<string>;
     StageName?: Value<string>;
@@ -13,7 +13,7 @@ export interface ApiKeyProperties {
     Enabled?: Value<boolean>;
     GenerateDistinctId?: Value<boolean>;
     Name?: Value<string>;
-    StageKeys?: StageKey[];
+    StageKeys?: List<StageKey>;
 }
 export default class ApiKey extends ResourceBase {
     constructor(properties: ApiKeyProperties, dependsOn?: Value<string> | Value<string>[]);

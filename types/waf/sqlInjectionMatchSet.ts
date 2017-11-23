@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface SqlInjectionMatchTupleProperties {
     FieldToMatch: FieldToMatch
@@ -27,7 +27,7 @@ export class FieldToMatch extends ResourceBase {
 
 export interface SqlInjectionMatchSetProperties {
     Name: Value<string>
-    SqlInjectionMatchTuples?: SqlInjectionMatchTuple[]
+    SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>
 }
 
 export default class SqlInjectionMatchSet extends ResourceBase {

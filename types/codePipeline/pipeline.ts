@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface InputArtifactProperties {
     Name: Value<string>
@@ -16,9 +16,9 @@ export class InputArtifact extends ResourceBase {
 export interface ActionDeclarationProperties {
     ActionTypeId: ActionTypeId
     Configuration?: any
-    InputArtifacts?: InputArtifact[]
+    InputArtifacts?: List<InputArtifact>
     Name: Value<string>
-    OutputArtifacts?: OutputArtifact[]
+    OutputArtifacts?: List<OutputArtifact>
     RoleArn?: Value<string>
     RunOrder?: Value<number>
 }
@@ -30,8 +30,8 @@ export class ActionDeclaration extends ResourceBase {
 }
 
 export interface StageDeclarationProperties {
-    Actions: ActionDeclaration[]
-    Blockers?: BlockerDeclaration[]
+    Actions: List<ActionDeclaration>
+    Blockers?: List<BlockerDeclaration>
     Name: Value<string>
 }
 
@@ -111,11 +111,11 @@ export class EncryptionKey extends ResourceBase {
 
 export interface PipelineProperties {
     ArtifactStore: ArtifactStore
-    DisableInboundStageTransitions?: StageTransition[]
+    DisableInboundStageTransitions?: List<StageTransition>
     Name?: Value<string>
     RestartExecutionOnUpdate?: Value<boolean>
     RoleArn: Value<string>
-    Stages: StageDeclaration[]
+    Stages: List<StageDeclaration>
 }
 
 export default class Pipeline extends ResourceBase {

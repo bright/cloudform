@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface LoginProfileProperties {
     Password: Value<string>;
     PasswordResetRequired?: Value<boolean>;
@@ -15,11 +15,11 @@ export declare class Policy extends ResourceBase {
     constructor(properties: PolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UserProperties {
-    Groups?: Value<string>[];
+    Groups?: List<Value<string>>;
     LoginProfile?: LoginProfile;
-    ManagedPolicyArns?: Value<string>[];
+    ManagedPolicyArns?: List<Value<string>>;
     Path?: Value<string>;
-    Policies?: Policy[];
+    Policies?: List<Policy>;
     UserName?: Value<string>;
 }
 export default class User extends ResourceBase {

@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface IngressProperties {
     CidrIp?: Value<string>;
     CidrIpv6?: Value<string>;
@@ -30,8 +30,8 @@ export declare class Egress extends ResourceBase {
 export interface SecurityGroupProperties {
     GroupDescription: Value<string>;
     GroupName?: Value<string>;
-    SecurityGroupEgress?: Egress[];
-    SecurityGroupIngress?: Ingress[];
+    SecurityGroupEgress?: List<Egress>;
+    SecurityGroupIngress?: List<Ingress>;
     Tags?: ResourceTag[];
     VpcId?: Value<string>;
 }

@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 
 
@@ -14,7 +14,7 @@ export interface ReplicationInstanceProperties {
     AutoMinorVersionUpgrade?: Value<boolean>
     ReplicationSubnetGroupIdentifier?: Value<string>
     AllocatedStorage?: Value<number>
-    VpcSecurityGroupIds?: Value<string>[]
+    VpcSecurityGroupIds?: List<Value<string>>
     AllowMajorVersionUpgrade?: Value<boolean>
     ReplicationInstanceClass: Value<string>
     PubliclyAccessible?: Value<boolean>

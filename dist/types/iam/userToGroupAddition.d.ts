@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface UserToGroupAdditionProperties {
     GroupName: Value<string>;
-    Users: Value<string>[];
+    Users: List<Value<string>>;
 }
 export default class UserToGroupAddition extends ResourceBase {
     constructor(properties: UserToGroupAdditionProperties, dependsOn?: Value<string> | Value<string>[]);

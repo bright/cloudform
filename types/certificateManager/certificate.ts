@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface DomainValidationOptionProperties {
     DomainName: Value<string>
@@ -16,8 +16,8 @@ export class DomainValidationOption extends ResourceBase {
 
 export interface CertificateProperties {
     DomainName: Value<string>
-    DomainValidationOptions?: DomainValidationOption[]
-    SubjectAlternativeNames?: Value<string>[]
+    DomainValidationOptions?: List<DomainValidationOption>
+    SubjectAlternativeNames?: List<Value<string>>
     Tags?: ResourceTag[]
 }
 

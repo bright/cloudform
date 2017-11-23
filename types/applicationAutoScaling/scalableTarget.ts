@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ScheduledActionProperties {
     EndTime?: Value<string>
@@ -34,7 +34,7 @@ export interface ScalableTargetProperties {
     ResourceId: Value<string>
     RoleARN: Value<string>
     ScalableDimension: Value<string>
-    ScheduledActions?: ScheduledAction[]
+    ScheduledActions?: List<ScheduledAction>
     ServiceNamespace: Value<string>
 }
 

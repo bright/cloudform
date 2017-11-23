@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 
 
@@ -18,7 +18,7 @@ export interface DBInstanceProperties {
     DBInstanceIdentifier?: Value<string>
     DBName?: Value<string>
     DBParameterGroupName?: Value<string>
-    DBSecurityGroups?: Value<string>[]
+    DBSecurityGroups?: List<Value<string>>
     DBSnapshotIdentifier?: Value<string>
     DBSubnetGroupName?: Value<string>
     Domain?: Value<string>
@@ -44,7 +44,7 @@ export interface DBInstanceProperties {
     StorageType?: Value<string>
     Tags?: ResourceTag[]
     Timezone?: Value<string>
-    VPCSecurityGroups?: Value<string>[]
+    VPCSecurityGroups?: List<Value<string>>
 }
 
 export default class DBInstance extends ResourceBase {

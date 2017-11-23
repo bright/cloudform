@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ArtifactsProperties {
     Path?: Value<string>;
     Type: Value<string>;
@@ -20,7 +20,7 @@ export declare class SourceAuth extends ResourceBase {
 }
 export interface EnvironmentProperties {
     Type: Value<string>;
-    EnvironmentVariables?: EnvironmentVariable[];
+    EnvironmentVariables?: List<EnvironmentVariable>;
     PrivilegedMode?: Value<boolean>;
     Image: Value<string>;
     ComputeType: Value<string>;

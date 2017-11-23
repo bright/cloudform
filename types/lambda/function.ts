@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface VpcConfigProperties {
-    SecurityGroupIds: Value<string>[]
-    SubnetIds: Value<string>[]
+    SecurityGroupIds: List<Value<string>>
+    SubnetIds: List<Value<string>>
 }
 
 export class VpcConfig extends ResourceBase {

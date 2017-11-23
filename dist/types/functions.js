@@ -13,7 +13,7 @@ function GetAtt(logicalNameOfResource, attributeName) {
     return new dataTypes_1.CFFunction('Fn::GetAtt', [logicalNameOfResource, attributeName]);
 }
 exports.GetAtt = GetAtt;
-function GetAZs(region) {
+function GetAZs(region = '') {
     return new dataTypes_1.CFFunction('Fn::GetAZs', region);
 }
 exports.GetAZs = GetAZs;

@@ -1,9 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface InstanceGroupConfigProperties {
     AutoScalingPolicy?: AutoScalingPolicy;
     BidPrice?: Value<string>;
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceCount: Value<number>;
     InstanceType: Value<string>;
@@ -36,7 +36,7 @@ export declare class ScalingConstraints extends ResourceBase {
     constructor(properties: ScalingConstraintsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface InstanceFleetConfigProperties {
-    InstanceTypeConfigs?: InstanceTypeConfig[];
+    InstanceTypeConfigs?: List<InstanceTypeConfig>;
     LaunchSpecifications?: InstanceFleetProvisioningSpecifications;
     Name?: Value<string>;
     TargetOnDemandCapacity?: Value<number>;
@@ -46,8 +46,8 @@ export declare class InstanceFleetConfig extends ResourceBase {
     constructor(properties: InstanceFleetConfigProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface JobFlowInstancesConfigProperties {
-    AdditionalMasterSecurityGroups?: Value<string>[];
-    AdditionalSlaveSecurityGroups?: Value<string>[];
+    AdditionalMasterSecurityGroups?: List<Value<string>>;
+    AdditionalSlaveSecurityGroups?: List<Value<string>>;
     CoreInstanceFleet?: InstanceFleetConfig;
     CoreInstanceGroup?: InstanceGroupConfig;
     Ec2KeyName?: Value<string>;
@@ -83,7 +83,7 @@ export interface ApplicationProperties {
     AdditionalInfo?: {
         [key: string]: Value<string>;
     };
-    Args?: Value<string>[];
+    Args?: List<Value<string>>;
     Name?: Value<string>;
     Version?: Value<string>;
 }
@@ -108,13 +108,13 @@ export interface ConfigurationProperties {
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
 }
 export declare class Configuration extends ResourceBase {
     constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ScriptBootstrapActionConfigProperties {
-    Args?: Value<string>[];
+    Args?: List<Value<string>>;
     Path: Value<string>;
 }
 export declare class ScriptBootstrapActionConfig extends ResourceBase {
@@ -122,7 +122,7 @@ export declare class ScriptBootstrapActionConfig extends ResourceBase {
 }
 export interface CloudWatchAlarmDefinitionProperties {
     ComparisonOperator: Value<string>;
-    Dimensions?: MetricDimension[];
+    Dimensions?: List<MetricDimension>;
     EvaluationPeriods?: Value<number>;
     MetricName: Value<string>;
     Namespace?: Value<string>;
@@ -135,7 +135,7 @@ export declare class CloudWatchAlarmDefinition extends ResourceBase {
     constructor(properties: CloudWatchAlarmDefinitionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsConfigurationProperties {
-    EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[];
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
 }
 export declare class EbsConfiguration extends ResourceBase {
@@ -153,7 +153,7 @@ export declare class ScalingRule extends ResourceBase {
 export interface InstanceTypeConfigProperties {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceType: Value<string>;
     WeightedCapacity?: Value<number>;
@@ -178,7 +178,7 @@ export declare class VolumeSpecification extends ResourceBase {
 }
 export interface AutoScalingPolicyProperties {
     Constraints: ScalingConstraints;
-    Rules: ScalingRule[];
+    Rules: List<ScalingRule>;
 }
 export declare class AutoScalingPolicy extends ResourceBase {
     constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -197,10 +197,10 @@ export declare class ScalingTrigger extends ResourceBase {
 }
 export interface ClusterProperties {
     AdditionalInfo?: any;
-    Applications?: Application[];
+    Applications?: List<Application>;
     AutoScalingRole?: Value<string>;
-    BootstrapActions?: BootstrapActionConfig[];
-    Configurations?: Configuration[];
+    BootstrapActions?: List<BootstrapActionConfig>;
+    Configurations?: List<Configuration>;
     CustomAmiId?: Value<string>;
     EbsRootVolumeSize?: Value<number>;
     Instances: JobFlowInstancesConfig;

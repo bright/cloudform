@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface NotificationFilterProperties {
     S3Key: S3KeyFilter
@@ -25,7 +25,7 @@ export class RoutingRuleCondition extends ResourceBase {
 }
 
 export interface LifecycleConfigurationProperties {
-    Rules: Rule[]
+    Rules: List<Rule>
 }
 
 export class LifecycleConfiguration extends ResourceBase {
@@ -60,10 +60,10 @@ export class ReplicationRule extends ResourceBase {
 }
 
 export interface CorsRuleProperties {
-    AllowedHeaders?: Value<string>[]
-    AllowedMethods: Value<string>[]
-    AllowedOrigins: Value<string>[]
-    ExposedHeaders?: Value<string>[]
+    AllowedHeaders?: List<Value<string>>
+    AllowedMethods: List<Value<string>>
+    AllowedOrigins: List<Value<string>>
+    ExposedHeaders?: List<Value<string>>
     Id?: Value<string>
     MaxAge?: Value<number>
 }
@@ -91,7 +91,7 @@ export interface AnalyticsConfigurationProperties {
     Id: Value<string>
     Prefix?: Value<string>
     StorageClassAnalysis: StorageClassAnalysis
-    TagFilters?: TagFilter[]
+    TagFilters?: List<TagFilter>
 }
 
 export class AnalyticsConfiguration extends ResourceBase {
@@ -143,9 +143,9 @@ export class VersioningConfiguration extends ResourceBase {
 }
 
 export interface NotificationConfigurationProperties {
-    LambdaConfigurations?: LambdaConfiguration[]
-    QueueConfigurations?: QueueConfiguration[]
-    TopicConfigurations?: TopicConfiguration[]
+    LambdaConfigurations?: List<LambdaConfiguration>
+    QueueConfigurations?: List<QueueConfiguration>
+    TopicConfigurations?: List<TopicConfiguration>
 }
 
 export class NotificationConfiguration extends ResourceBase {
@@ -180,7 +180,7 @@ export class RedirectAllRequestsTo extends ResourceBase {
 }
 
 export interface S3KeyFilterProperties {
-    Rules: FilterRule[]
+    Rules: List<FilterRule>
 }
 
 export class S3KeyFilter extends ResourceBase {
@@ -194,7 +194,7 @@ export interface InventoryConfigurationProperties {
     Enabled: Value<boolean>
     Id: Value<string>
     IncludedObjectVersions: Value<string>
-    OptionalFields?: Value<string>[]
+    OptionalFields?: List<Value<string>>
     Prefix?: Value<string>
     ScheduleFrequency: Value<string>
 }
@@ -209,7 +209,7 @@ export interface WebsiteConfigurationProperties {
     ErrorDocument?: Value<string>
     IndexDocument?: Value<string>
     RedirectAllRequestsTo?: RedirectAllRequestsTo
-    RoutingRules?: RoutingRule[]
+    RoutingRules?: List<RoutingRule>
 }
 
 export class WebsiteConfiguration extends ResourceBase {
@@ -220,7 +220,7 @@ export class WebsiteConfiguration extends ResourceBase {
 
 export interface ReplicationConfigurationProperties {
     Role: Value<string>
-    Rules: ReplicationRule[]
+    Rules: List<ReplicationRule>
 }
 
 export class ReplicationConfiguration extends ResourceBase {
@@ -236,12 +236,12 @@ export interface RuleProperties {
     Id?: Value<string>
     NoncurrentVersionExpirationInDays?: Value<number>
     NoncurrentVersionTransition?: NoncurrentVersionTransition
-    NoncurrentVersionTransitions?: NoncurrentVersionTransition[]
+    NoncurrentVersionTransitions?: List<NoncurrentVersionTransition>
     Prefix?: Value<string>
     Status: Value<string>
-    TagFilters?: TagFilter[]
+    TagFilters?: List<TagFilter>
     Transition?: Transition
-    Transitions?: Transition[]
+    Transitions?: List<Transition>
 }
 
 export class Rule extends ResourceBase {
@@ -277,7 +277,7 @@ export class TopicConfiguration extends ResourceBase {
 export interface MetricsConfigurationProperties {
     Id: Value<string>
     Prefix?: Value<string>
-    TagFilters?: TagFilter[]
+    TagFilters?: List<TagFilter>
 }
 
 export class MetricsConfiguration extends ResourceBase {
@@ -321,7 +321,7 @@ export class DataExport extends ResourceBase {
 }
 
 export interface CorsConfigurationProperties {
-    CorsRules: CorsRule[]
+    CorsRules: List<CorsRule>
 }
 
 export class CorsConfiguration extends ResourceBase {
@@ -386,13 +386,13 @@ export class FilterRule extends ResourceBase {
 export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration
     AccessControl?: Value<string>
-    AnalyticsConfigurations?: AnalyticsConfiguration[]
+    AnalyticsConfigurations?: List<AnalyticsConfiguration>
     BucketName?: Value<string>
     CorsConfiguration?: CorsConfiguration
-    InventoryConfigurations?: InventoryConfiguration[]
+    InventoryConfigurations?: List<InventoryConfiguration>
     LifecycleConfiguration?: LifecycleConfiguration
     LoggingConfiguration?: LoggingConfiguration
-    MetricsConfigurations?: MetricsConfiguration[]
+    MetricsConfigurations?: List<MetricsConfiguration>
     NotificationConfiguration?: NotificationConfiguration
     ReplicationConfiguration?: ReplicationConfiguration
     Tags?: ResourceTag[]

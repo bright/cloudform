@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface InstanceIpv6AddressProperties {
     Ipv6Address: Value<string>;
 }
@@ -15,12 +15,12 @@ export declare class PrivateIpAddressSpecification extends ResourceBase {
 }
 export interface NetworkInterfaceProperties {
     Description?: Value<string>;
-    GroupSet?: Value<string>[];
+    GroupSet?: List<Value<string>>;
     InterfaceType?: Value<string>;
     Ipv6AddressCount?: Value<number>;
     Ipv6Addresses?: InstanceIpv6Address;
     PrivateIpAddress?: Value<string>;
-    PrivateIpAddresses?: PrivateIpAddressSpecification[];
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>;
     SecondaryPrivateIpAddressCount?: Value<number>;
     SourceDestCheck?: Value<boolean>;
     SubnetId: Value<string>;

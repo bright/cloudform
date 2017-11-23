@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface GeoLocationProperties {
     ContinentCode?: Value<string>;
     CountryCode?: Value<string>;
@@ -26,7 +26,7 @@ export interface RecordSetProperties {
     HostedZoneName?: Value<string>;
     Name: Value<string>;
     Region?: Value<string>;
-    ResourceRecords?: Value<string>[];
+    ResourceRecords?: List<Value<string>>;
     SetIdentifier?: Value<string>;
     TTL?: Value<string>;
     Type: Value<string>;

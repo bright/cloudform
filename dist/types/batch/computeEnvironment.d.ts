@@ -1,16 +1,16 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ComputeResourcesProperties {
     SpotIamFleetRole?: Value<string>;
     MaxvCpus: Value<number>;
     BidPercentage?: Value<number>;
-    SecurityGroupIds: Value<string>[];
-    Subnets: Value<string>[];
+    SecurityGroupIds: List<Value<string>>;
+    Subnets: List<Value<string>>;
     Type: Value<string>;
     MinvCpus: Value<number>;
     ImageId?: Value<string>;
     InstanceRole: Value<string>;
-    InstanceTypes: Value<string>[];
+    InstanceTypes: List<Value<string>>;
     Ec2KeyPair?: Value<string>;
     Tags?: ResourceTag[];
     DesiredvCpus?: Value<number>;

@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MethodSettingProperties {
     CacheDataEncrypted?: Value<boolean>;
     CacheTtlInSeconds?: Value<number>;
@@ -22,7 +22,7 @@ export interface StageProperties {
     DeploymentId?: Value<string>;
     Description?: Value<string>;
     DocumentationVersion?: Value<string>;
-    MethodSettings?: MethodSetting[];
+    MethodSettings?: List<MethodSetting>;
     RestApiId: Value<string>;
     StageName?: Value<string>;
     Variables?: {

@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface DataSourceProperties {
     Arn?: Value<string>;
     DatabaseName?: Value<string>;
@@ -40,11 +40,11 @@ export interface AppProperties {
     Attributes?: {
         [key: string]: Value<string>;
     };
-    DataSources?: DataSource[];
+    DataSources?: List<DataSource>;
     Description?: Value<string>;
-    Domains?: Value<string>[];
+    Domains?: List<Value<string>>;
     EnableSsl?: Value<boolean>;
-    Environment?: EnvironmentVariable[];
+    Environment?: List<EnvironmentVariable>;
     Name: Value<string>;
     Shortname?: Value<string>;
     SslConfiguration?: SslConfiguration;

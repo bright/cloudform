@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ElasticGpuSpecificationProperties {
     Type: Value<string>;
 }
@@ -11,12 +11,12 @@ export interface NetworkInterfaceProperties {
     DeleteOnTermination?: Value<boolean>;
     Description?: Value<string>;
     DeviceIndex: Value<string>;
-    GroupSet?: Value<string>[];
+    GroupSet?: List<Value<string>>;
     Ipv6AddressCount?: Value<number>;
-    Ipv6Addresses?: InstanceIpv6Address[];
+    Ipv6Addresses?: List<InstanceIpv6Address>;
     NetworkInterfaceId?: Value<string>;
     PrivateIpAddress?: Value<string>;
-    PrivateIpAddresses?: PrivateIpAddressSpecification[];
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>;
     SecondaryPrivateIpAddressCount?: Value<number>;
     SubnetId?: Value<string>;
 }
@@ -38,7 +38,7 @@ export declare class Volume extends ResourceBase {
 }
 export interface AssociationParameterProperties {
     Key: Value<string>;
-    Value: Value<string>[];
+    Value: List<Value<string>>;
 }
 export declare class AssociationParameter extends ResourceBase {
     constructor(properties: AssociationParameterProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -60,7 +60,7 @@ export declare class NoDevice extends ResourceBase {
     constructor(properties: NoDeviceProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SsmAssociationProperties {
-    AssociationParameters?: AssociationParameter[];
+    AssociationParameters?: List<AssociationParameter>;
     DocumentName: Value<string>;
 }
 export declare class SsmAssociation extends ResourceBase {
@@ -86,33 +86,33 @@ export interface InstanceProperties {
     AdditionalInfo?: Value<string>;
     Affinity?: Value<string>;
     AvailabilityZone?: Value<string>;
-    BlockDeviceMappings?: BlockDeviceMapping[];
+    BlockDeviceMappings?: List<BlockDeviceMapping>;
     DisableApiTermination?: Value<boolean>;
     EbsOptimized?: Value<boolean>;
-    ElasticGpuSpecifications?: ElasticGpuSpecification[];
+    ElasticGpuSpecifications?: List<ElasticGpuSpecification>;
     HostId?: Value<string>;
     IamInstanceProfile?: Value<string>;
     ImageId: Value<string>;
     InstanceInitiatedShutdownBehavior?: Value<string>;
     InstanceType?: Value<string>;
     Ipv6AddressCount?: Value<number>;
-    Ipv6Addresses?: InstanceIpv6Address[];
+    Ipv6Addresses?: List<InstanceIpv6Address>;
     KernelId?: Value<string>;
     KeyName?: Value<string>;
     Monitoring?: Value<boolean>;
-    NetworkInterfaces?: NetworkInterface[];
+    NetworkInterfaces?: List<NetworkInterface>;
     PlacementGroupName?: Value<string>;
     PrivateIpAddress?: Value<string>;
     RamdiskId?: Value<string>;
-    SecurityGroupIds?: Value<string>[];
-    SecurityGroups?: Value<string>[];
+    SecurityGroupIds?: List<Value<string>>;
+    SecurityGroups?: List<Value<string>>;
     SourceDestCheck?: Value<boolean>;
-    SsmAssociations?: SsmAssociation[];
+    SsmAssociations?: List<SsmAssociation>;
     SubnetId?: Value<string>;
     Tags?: ResourceTag[];
     Tenancy?: Value<string>;
     UserData?: Value<string>;
-    Volumes?: Volume[];
+    Volumes?: List<Volume>;
 }
 export default class Instance extends ResourceBase {
     constructor(properties: InstanceProperties, dependsOn?: Value<string> | Value<string>[]);

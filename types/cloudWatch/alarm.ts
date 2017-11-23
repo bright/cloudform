@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface DimensionProperties {
     Name: Value<string>
@@ -16,18 +16,18 @@ export class Dimension extends ResourceBase {
 
 export interface AlarmProperties {
     ActionsEnabled?: Value<boolean>
-    AlarmActions?: Value<string>[]
+    AlarmActions?: List<Value<string>>
     AlarmDescription?: Value<string>
     AlarmName?: Value<string>
     ComparisonOperator: Value<string>
-    Dimensions?: Dimension[]
+    Dimensions?: List<Dimension>
     EvaluateLowSampleCountPercentile?: Value<string>
     EvaluationPeriods: Value<number>
     ExtendedStatistic?: Value<string>
-    InsufficientDataActions?: Value<string>[]
+    InsufficientDataActions?: List<Value<string>>
     MetricName: Value<string>
     Namespace: Value<string>
-    OKActions?: Value<string>[]
+    OKActions?: List<Value<string>>
     Period: Value<number>
     Statistic?: Value<string>
     Threshold: Value<number>

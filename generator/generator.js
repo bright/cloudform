@@ -9,7 +9,7 @@ function adjustedCamelCase(input) {
 }
 function determineTypeScriptType(property, propertyName, typeSuffix) {
     if (property[typeSuffix] === 'List') {
-        return determineTypeScriptType(property, propertyName, 'ItemType') + '[]';
+        return "List<" + determineTypeScriptType(property, propertyName, 'ItemType') + ">";
     }
     if (property[typeSuffix] === 'Map') {
         return "{[key: string]: " + determineTypeScriptType(property, propertyName, 'ItemType') + "}";
@@ -54,7 +54,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
         resourceImports.push('ResourceTag');
     }
     var generatedClass = generateClass(namespace, resourceName, properties, true);
-    var template = fileHeader + "\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass + "\n";
+    var template = fileHeader + "\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value, List} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass + "\n";
     if (!fs.existsSync("./types/" + adjustedCamelCase(namespace))) {
         fs.mkdirSync("./types/" + adjustedCamelCase(namespace));
     }

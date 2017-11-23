@@ -1,10 +1,10 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface EventSelectorProperties {
-    DataResources?: DataResource[]
+    DataResources?: List<DataResource>
     IncludeManagementEvents?: Value<boolean>
     ReadWriteType?: Value<string>
 }
@@ -17,7 +17,7 @@ export class EventSelector extends ResourceBase {
 
 export interface DataResourceProperties {
     Type: Value<string>
-    Values?: Value<string>[]
+    Values?: List<Value<string>>
 }
 
 export class DataResource extends ResourceBase {
@@ -30,7 +30,7 @@ export interface TrailProperties {
     CloudWatchLogsLogGroupArn?: Value<string>
     CloudWatchLogsRoleArn?: Value<string>
     EnableLogFileValidation?: Value<boolean>
-    EventSelectors?: EventSelector[]
+    EventSelectors?: List<EventSelector>
     IncludeGlobalServiceEvents?: Value<boolean>
     IsLogging: Value<boolean>
     IsMultiRegionTrail?: Value<boolean>

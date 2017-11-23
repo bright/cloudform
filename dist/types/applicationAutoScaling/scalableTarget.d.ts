@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ScheduledActionProperties {
     EndTime?: Value<string>;
     ScalableTargetAction?: ScalableTargetAction;
@@ -23,7 +23,7 @@ export interface ScalableTargetProperties {
     ResourceId: Value<string>;
     RoleARN: Value<string>;
     ScalableDimension: Value<string>;
-    ScheduledActions?: ScheduledAction[];
+    ScheduledActions?: List<ScheduledAction>;
     ServiceNamespace: Value<string>;
 }
 export default class ScalableTarget extends ResourceBase {

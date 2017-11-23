@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface IngressProperties {
     CIDRIP?: Value<string>;
     EC2SecurityGroupId?: Value<string>;
@@ -10,7 +10,7 @@ export declare class Ingress extends ResourceBase {
     constructor(properties: IngressProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface DBSecurityGroupProperties {
-    DBSecurityGroupIngress: Ingress[];
+    DBSecurityGroupIngress: List<Ingress>;
     EC2VpcId?: Value<string>;
     GroupDescription: Value<string>;
     Tags?: ResourceTag[];

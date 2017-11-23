@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface MethodResponseProperties {
     ResponseModels?: {[key: string]: Value<string>}
@@ -16,12 +16,12 @@ export class MethodResponse extends ResourceBase {
 }
 
 export interface IntegrationProperties {
-    CacheKeyParameters?: Value<string>[]
+    CacheKeyParameters?: List<Value<string>>
     CacheNamespace?: Value<string>
     ContentHandling?: Value<string>
     Credentials?: Value<string>
     IntegrationHttpMethod?: Value<string>
-    IntegrationResponses?: IntegrationResponse[]
+    IntegrationResponses?: List<IntegrationResponse>
     PassthroughBehavior?: Value<string>
     RequestParameters?: {[key: string]: Value<string>}
     RequestTemplates?: {[key: string]: Value<string>}
@@ -55,7 +55,7 @@ export interface MethodProperties {
     AuthorizerId?: Value<string>
     HttpMethod: Value<string>
     Integration?: Integration
-    MethodResponses?: MethodResponse[]
+    MethodResponses?: List<MethodResponse>
     OperationName?: Value<string>
     RequestModels?: {[key: string]: Value<string>}
     RequestParameters?: {[key: string]: Value<boolean>}

@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface TrustedSignersProperties {
     Enabled: Value<boolean>;
-    AwsAccountNumbers?: Value<string>[];
+    AwsAccountNumbers?: List<Value<string>>;
 }
 export declare class TrustedSigners extends ResourceBase {
     constructor(properties: TrustedSignersProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -28,7 +28,7 @@ export interface StreamingDistributionConfigProperties {
     PriceClass?: Value<string>;
     S3Origin: S3Origin;
     Enabled: Value<boolean>;
-    Aliases?: Value<string>[];
+    Aliases?: List<Value<string>>;
     TrustedSigners: TrustedSigners;
 }
 export declare class StreamingDistributionConfig extends ResourceBase {

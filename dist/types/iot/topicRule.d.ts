@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface S3ActionProperties {
     BucketName: Value<string>;
     Key: Value<string>;
@@ -46,7 +46,7 @@ export declare class FirehoseAction extends ResourceBase {
     constructor(properties: FirehoseActionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TopicRulePayloadProperties {
-    Actions: Action[];
+    Actions: List<Action>;
     AwsIotSqlVersion?: Value<string>;
     Description?: Value<string>;
     RuleDisabled: Value<boolean>;

@@ -1,13 +1,13 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface HadoopJarStepConfigProperties {
-    Args?: Value<string>[]
+    Args?: List<Value<string>>
     Jar: Value<string>
     MainClass?: Value<string>
-    StepProperties?: KeyValue[]
+    StepProperties?: List<KeyValue>
 }
 
 export class HadoopJarStepConfig extends ResourceBase {

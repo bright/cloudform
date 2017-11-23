@@ -1,9 +1,9 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RecordingGroupProperties {
     AllSupported?: Value<boolean>;
     IncludeGlobalResourceTypes?: Value<boolean>;
-    ResourceTypes?: Value<string>[];
+    ResourceTypes?: List<Value<string>>;
 }
 export declare class RecordingGroup extends ResourceBase {
     constructor(properties: RecordingGroupProperties, dependsOn?: Value<string> | Value<string>[]);

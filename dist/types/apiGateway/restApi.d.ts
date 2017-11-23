@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface S3LocationProperties {
     Bucket?: Value<string>;
     ETag?: Value<string>;
@@ -10,13 +10,13 @@ export declare class S3Location extends ResourceBase {
     constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EndpointConfigurationProperties {
-    Types?: Value<string>[];
+    Types?: List<Value<string>>;
 }
 export declare class EndpointConfiguration extends ResourceBase {
     constructor(properties: EndpointConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface RestApiProperties {
-    BinaryMediaTypes?: Value<string>[];
+    BinaryMediaTypes?: List<Value<string>>;
     Body?: any;
     BodyS3Location?: S3Location;
     CloneFrom?: Value<string>;

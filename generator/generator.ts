@@ -11,7 +11,7 @@ function adjustedCamelCase(input) {
 
 function determineTypeScriptType(property, propertyName, typeSuffix) {
     if (property[typeSuffix] === 'List') {
-        return determineTypeScriptType(property, propertyName, 'ItemType') + '[]'
+        return `List<${determineTypeScriptType(property, propertyName, 'ItemType')}>`
     }
     if (property[typeSuffix] === 'Map') {
         return `{[key: string]: ${determineTypeScriptType(property, propertyName, 'ItemType')}}`
@@ -75,7 +75,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
     const template = `${fileHeader}
    
 import {${resourceImports.join(', ')}} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 ${innerTypesTemplates.join('\n\n')}
 

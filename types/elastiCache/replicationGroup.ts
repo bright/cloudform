@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface NodeGroupConfigurationProperties {
     PrimaryAvailabilityZone?: Value<string>
-    ReplicaAvailabilityZones?: Value<string>[]
+    ReplicaAvailabilityZones?: List<Value<string>>
     ReplicaCount?: Value<number>
     Slots?: Value<string>
 }
@@ -23,23 +23,23 @@ export interface ReplicationGroupProperties {
     AutomaticFailoverEnabled?: Value<boolean>
     CacheNodeType?: Value<string>
     CacheParameterGroupName?: Value<string>
-    CacheSecurityGroupNames?: Value<string>[]
+    CacheSecurityGroupNames?: List<Value<string>>
     CacheSubnetGroupName?: Value<string>
     Engine?: Value<string>
     EngineVersion?: Value<string>
-    NodeGroupConfiguration?: NodeGroupConfiguration[]
+    NodeGroupConfiguration?: List<NodeGroupConfiguration>
     NotificationTopicArn?: Value<string>
     NumCacheClusters?: Value<number>
     NumNodeGroups?: Value<number>
     Port?: Value<number>
-    PreferredCacheClusterAZs?: Value<string>[]
+    PreferredCacheClusterAZs?: List<Value<string>>
     PreferredMaintenanceWindow?: Value<string>
     PrimaryClusterId?: Value<string>
     ReplicasPerNodeGroup?: Value<number>
     ReplicationGroupDescription: Value<string>
     ReplicationGroupId?: Value<string>
-    SecurityGroupIds?: Value<string>[]
-    SnapshotArns?: Value<string>[]
+    SecurityGroupIds?: List<Value<string>>
+    SnapshotArns?: List<Value<string>>
     SnapshotName?: Value<string>
     SnapshotRetentionLimit?: Value<number>
     SnapshotWindow?: Value<string>

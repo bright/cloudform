@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ParameterAttributeProperties {
     Key: Value<string>;
     StringValue: Value<string>;
@@ -15,14 +15,14 @@ export declare class PipelineTag extends ResourceBase {
     constructor(properties: PipelineTagProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ParameterObjectProperties {
-    Attributes: ParameterAttribute[];
+    Attributes: List<ParameterAttribute>;
     Id: Value<string>;
 }
 export declare class ParameterObject extends ResourceBase {
     constructor(properties: ParameterObjectProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PipelineObjectProperties {
-    Fields: Field[];
+    Fields: List<Field>;
     Id: Value<string>;
     Name: Value<string>;
 }
@@ -48,10 +48,10 @@ export interface PipelineProperties {
     Activate?: Value<boolean>;
     Description?: Value<string>;
     Name: Value<string>;
-    ParameterObjects: ParameterObject[];
-    ParameterValues?: ParameterValue[];
-    PipelineObjects?: PipelineObject[];
-    PipelineTags?: PipelineTag[];
+    ParameterObjects: List<ParameterObject>;
+    ParameterValues?: List<ParameterValue>;
+    PipelineObjects?: List<PipelineObject>;
+    PipelineTags?: List<PipelineTag>;
 }
 export default class Pipeline extends ResourceBase {
     constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]);

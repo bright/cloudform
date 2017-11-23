@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface S3LocationProperties {
     Bucket?: Value<string>
@@ -17,7 +17,7 @@ export class S3Location extends ResourceBase {
 }
 
 export interface EndpointConfigurationProperties {
-    Types?: Value<string>[]
+    Types?: List<Value<string>>
 }
 
 export class EndpointConfiguration extends ResourceBase {
@@ -27,7 +27,7 @@ export class EndpointConfiguration extends ResourceBase {
 }
 
 export interface RestApiProperties {
-    BinaryMediaTypes?: Value<string>[]
+    BinaryMediaTypes?: List<Value<string>>
     Body?: any
     BodyS3Location?: S3Location
     CloneFrom?: Value<string>

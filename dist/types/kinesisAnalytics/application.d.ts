@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MappingParametersProperties {
     JSONMappingParameters?: JSONMappingParameters;
     CSVMappingParameters?: CSVMappingParameters;
@@ -34,7 +34,7 @@ export declare class Input extends ResourceBase {
 }
 export interface InputSchemaProperties {
     RecordEncoding?: Value<string>;
-    RecordColumns: RecordColumn[];
+    RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
 }
 export declare class InputSchema extends ResourceBase {
@@ -89,7 +89,7 @@ export declare class InputLambdaProcessor extends ResourceBase {
 }
 export interface ApplicationProperties {
     ApplicationName?: Value<string>;
-    Inputs: Input[];
+    Inputs: List<Input>;
     ApplicationDescription?: Value<string>;
     ApplicationCode?: Value<string>;
 }

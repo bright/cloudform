@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface TargetProperties {
     Key: Value<string>
-    Values: Value<string>[]
+    Values: List<Value<string>>
 }
 
 export class Target extends ResourceBase {
@@ -15,7 +15,7 @@ export class Target extends ResourceBase {
 }
 
 export interface ParameterValuesProperties {
-    ParameterValues: Value<string>[]
+    ParameterValues: List<Value<string>>
 }
 
 export class ParameterValues extends ResourceBase {
@@ -30,7 +30,7 @@ export interface AssociationProperties {
     Name: Value<string>
     Parameters?: {[key: string]: ParameterValues}
     ScheduleExpression?: Value<string>
-    Targets?: Target[]
+    Targets?: List<Target>
 }
 
 export default class Association extends ResourceBase {

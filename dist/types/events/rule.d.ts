@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RunCommandParametersProperties {
-    RunCommandTargets: RunCommandTarget[];
+    RunCommandTargets: List<RunCommandTarget>;
 }
 export declare class RunCommandParameters extends ResourceBase {
     constructor(properties: RunCommandParametersProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -22,7 +22,7 @@ export declare class Target extends ResourceBase {
 }
 export interface RunCommandTargetProperties {
     Key: Value<string>;
-    Values: Value<string>[];
+    Values: List<Value<string>>;
 }
 export declare class RunCommandTarget extends ResourceBase {
     constructor(properties: RunCommandTargetProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -56,7 +56,7 @@ export interface RuleProperties {
     RoleArn?: Value<string>;
     ScheduleExpression?: Value<string>;
     State?: Value<string>;
-    Targets?: Target[];
+    Targets?: List<Target>;
 }
 export default class Rule extends ResourceBase {
     constructor(properties: RuleProperties, dependsOn?: Value<string> | Value<string>[]);

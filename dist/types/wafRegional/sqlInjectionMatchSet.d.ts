@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface FieldToMatchProperties {
     Type: Value<string>;
     Data?: Value<string>;
@@ -15,7 +15,7 @@ export declare class SqlInjectionMatchTuple extends ResourceBase {
     constructor(properties: SqlInjectionMatchTupleProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface SqlInjectionMatchSetProperties {
-    SqlInjectionMatchTuples?: SqlInjectionMatchTuple[];
+    SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>;
     Name: Value<string>;
 }
 export default class SqlInjectionMatchSet extends ResourceBase {

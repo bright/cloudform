@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface IpPermissionProperties {
     FromPort: Value<number>;
     IpRange: Value<string>;
@@ -13,9 +13,9 @@ export interface FleetProperties {
     BuildId: Value<string>;
     Description?: Value<string>;
     DesiredEC2Instances: Value<number>;
-    EC2InboundPermissions?: IpPermission[];
+    EC2InboundPermissions?: List<IpPermission>;
     EC2InstanceType: Value<string>;
-    LogPaths?: Value<string>[];
+    LogPaths?: List<Value<string>>;
     MaxSize?: Value<number>;
     MinSize?: Value<number>;
     Name: Value<string>;

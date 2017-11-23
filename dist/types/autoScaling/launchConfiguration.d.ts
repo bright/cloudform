@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface BlockDeviceMappingProperties {
     DeviceName: Value<string>;
     Ebs?: BlockDevice;
@@ -22,9 +22,9 @@ export declare class BlockDevice extends ResourceBase {
 }
 export interface LaunchConfigurationProperties {
     AssociatePublicIpAddress?: Value<boolean>;
-    BlockDeviceMappings?: BlockDeviceMapping[];
+    BlockDeviceMappings?: List<BlockDeviceMapping>;
     ClassicLinkVPCId?: Value<string>;
-    ClassicLinkVPCSecurityGroups?: Value<string>[];
+    ClassicLinkVPCSecurityGroups?: List<Value<string>>;
     EbsOptimized?: Value<boolean>;
     IamInstanceProfile?: Value<string>;
     ImageId: Value<string>;
@@ -35,7 +35,7 @@ export interface LaunchConfigurationProperties {
     KeyName?: Value<string>;
     PlacementTenancy?: Value<string>;
     RamDiskId?: Value<string>;
-    SecurityGroups?: Value<string>[];
+    SecurityGroups?: List<Value<string>>;
     SpotPrice?: Value<string>;
     UserData?: Value<string>;
 }

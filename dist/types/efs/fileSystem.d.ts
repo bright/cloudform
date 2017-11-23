@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ElasticFileSystemTagProperties {
     Key: Value<string>;
     Value: Value<string>;
@@ -9,7 +9,7 @@ export declare class ElasticFileSystemTag extends ResourceBase {
 }
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>;
-    FileSystemTags?: ElasticFileSystemTag[];
+    FileSystemTags?: List<ElasticFileSystemTag>;
     KmsKeyId?: Value<string>;
     PerformanceMode?: Value<string>;
 }

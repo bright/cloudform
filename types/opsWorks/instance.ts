@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface BlockDeviceMappingProperties {
     DeviceName?: Value<string>
@@ -52,13 +52,13 @@ export interface InstanceProperties {
     Architecture?: Value<string>
     AutoScalingType?: Value<string>
     AvailabilityZone?: Value<string>
-    BlockDeviceMappings?: BlockDeviceMapping[]
+    BlockDeviceMappings?: List<BlockDeviceMapping>
     EbsOptimized?: Value<boolean>
-    ElasticIps?: Value<string>[]
+    ElasticIps?: List<Value<string>>
     Hostname?: Value<string>
     InstallUpdatesOnBoot?: Value<boolean>
     InstanceType: Value<string>
-    LayerIds: Value<string>[]
+    LayerIds: List<Value<string>>
     Os?: Value<string>
     RootDeviceType?: Value<string>
     SshKeyName?: Value<string>
@@ -67,7 +67,7 @@ export interface InstanceProperties {
     Tenancy?: Value<string>
     TimeBasedAutoScaling?: TimeBasedAutoScaling
     VirtualizationType?: Value<string>
-    Volumes?: Value<string>[]
+    Volumes?: List<Value<string>>
 }
 
 export default class Instance extends ResourceBase {

@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VolumesProperties {
     Host?: VolumesHost;
     Name?: Value<string>;
@@ -14,16 +14,16 @@ export declare class RetryStrategy extends ResourceBase {
     constructor(properties: RetryStrategyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ContainerPropertiesProperties {
-    MountPoints?: MountPoints[];
+    MountPoints?: List<MountPoints>;
     User?: Value<string>;
-    Volumes?: Volumes[];
-    Command?: Value<string>[];
+    Volumes?: List<Volumes>;
+    Command?: List<Value<string>>;
     Memory: Value<number>;
     Privileged?: Value<boolean>;
-    Environment?: Environment[];
+    Environment?: List<Environment>;
     JobRoleArn?: Value<string>;
     ReadonlyRootFilesystem?: Value<boolean>;
-    Ulimits?: Ulimit[];
+    Ulimits?: List<Ulimit>;
     Vcpus: Value<number>;
     Image: Value<string>;
 }

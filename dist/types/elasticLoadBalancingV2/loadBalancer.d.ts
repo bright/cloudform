@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface LoadBalancerAttributeProperties {
     Key?: Value<string>;
     Value?: Value<string>;
@@ -16,12 +16,12 @@ export declare class SubnetMapping extends ResourceBase {
 }
 export interface LoadBalancerProperties {
     IpAddressType?: Value<string>;
-    LoadBalancerAttributes?: LoadBalancerAttribute[];
+    LoadBalancerAttributes?: List<LoadBalancerAttribute>;
     Name?: Value<string>;
     Scheme?: Value<string>;
-    SecurityGroups?: Value<string>[];
-    SubnetMappings?: SubnetMapping[];
-    Subnets?: Value<string>[];
+    SecurityGroups?: List<Value<string>>;
+    SubnetMappings?: List<SubnetMapping>;
+    Subnets?: List<Value<string>>;
     Tags?: ResourceTag[];
     Type?: Value<string>;
 }

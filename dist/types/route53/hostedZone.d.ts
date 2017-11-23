@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface HostedZoneTagProperties {
     Key: Value<string>;
     Value: Value<string>;
@@ -28,10 +28,10 @@ export declare class VPC extends ResourceBase {
 }
 export interface HostedZoneProperties {
     HostedZoneConfig?: HostedZoneConfig;
-    HostedZoneTags?: HostedZoneTag[];
+    HostedZoneTags?: List<HostedZoneTag>;
     Name: Value<string>;
     QueryLoggingConfig?: QueryLoggingConfig;
-    VPCs?: VPC[];
+    VPCs?: List<VPC>;
 }
 export default class HostedZone extends ResourceBase {
     constructor(properties: HostedZoneProperties, dependsOn?: Value<string> | Value<string>[]);

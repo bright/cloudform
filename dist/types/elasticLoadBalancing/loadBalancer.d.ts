@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface HealthCheckProperties {
     HealthyThreshold: Value<string>;
     Interval: Value<string>;
@@ -43,7 +43,7 @@ export interface ListenersProperties {
     InstancePort: Value<string>;
     InstanceProtocol?: Value<string>;
     LoadBalancerPort: Value<string>;
-    PolicyNames?: Value<string>[];
+    PolicyNames?: List<Value<string>>;
     Protocol: Value<string>;
     SSLCertificateId?: Value<string>;
 }
@@ -51,9 +51,9 @@ export declare class Listeners extends ResourceBase {
     constructor(properties: ListenersProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface PoliciesProperties {
-    Attributes: any[];
-    InstancePorts?: Value<string>[];
-    LoadBalancerPorts?: Value<string>[];
+    Attributes: List<any>;
+    InstancePorts?: List<Value<string>>;
+    LoadBalancerPorts?: List<Value<string>>;
     PolicyName: Value<string>;
     PolicyType: Value<string>;
 }
@@ -69,20 +69,20 @@ export declare class AppCookieStickinessPolicy extends ResourceBase {
 }
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy;
-    AppCookieStickinessPolicy?: AppCookieStickinessPolicy[];
-    AvailabilityZones?: Value<string>[];
+    AppCookieStickinessPolicy?: List<AppCookieStickinessPolicy>;
+    AvailabilityZones?: List<Value<string>>;
     ConnectionDrainingPolicy?: ConnectionDrainingPolicy;
     ConnectionSettings?: ConnectionSettings;
     CrossZone?: Value<boolean>;
     HealthCheck?: HealthCheck;
-    Instances?: Value<string>[];
-    LBCookieStickinessPolicy?: LBCookieStickinessPolicy[];
-    Listeners: Listeners[];
+    Instances?: List<Value<string>>;
+    LBCookieStickinessPolicy?: List<LBCookieStickinessPolicy>;
+    Listeners: List<Listeners>;
     LoadBalancerName?: Value<string>;
-    Policies?: Policies[];
+    Policies?: List<Policies>;
     Scheme?: Value<string>;
-    SecurityGroups?: Value<string>[];
-    Subnets?: Value<string>[];
+    SecurityGroups?: List<Value<string>>;
+    Subnets?: List<Value<string>>;
     Tags?: ResourceTag[];
 }
 export default class LoadBalancer extends ResourceBase {

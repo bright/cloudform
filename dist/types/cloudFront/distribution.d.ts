@@ -1,7 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface CookiesProperties {
-    WhitelistedNames?: Value<string>[];
+    WhitelistedNames?: List<Value<string>>;
     Forward: Value<string>;
 }
 export declare class Cookies extends ResourceBase {
@@ -18,7 +18,7 @@ export interface CustomOriginConfigProperties {
     OriginReadTimeout?: Value<number>;
     HTTPSPort?: Value<number>;
     OriginKeepaliveTimeout?: Value<number>;
-    OriginSSLProtocols?: Value<string>[];
+    OriginSSLProtocols?: List<Value<string>>;
     HTTPPort?: Value<number>;
     OriginProtocolPolicy: Value<string>;
 }
@@ -27,23 +27,23 @@ export declare class CustomOriginConfig extends ResourceBase {
 }
 export interface ForwardedValuesProperties {
     Cookies?: Cookies;
-    Headers?: Value<string>[];
+    Headers?: List<Value<string>>;
     QueryString: Value<boolean>;
-    QueryStringCacheKeys?: Value<string>[];
+    QueryStringCacheKeys?: List<Value<string>>;
 }
 export declare class ForwardedValues extends ResourceBase {
     constructor(properties: ForwardedValuesProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface CacheBehaviorProperties {
     Compress?: Value<boolean>;
-    LambdaFunctionAssociations?: LambdaFunctionAssociation[];
+    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>;
     TargetOriginId: Value<string>;
     ViewerProtocolPolicy: Value<string>;
-    TrustedSigners?: Value<string>[];
+    TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
-    AllowedMethods?: Value<string>[];
+    AllowedMethods?: List<Value<string>>;
     PathPattern: Value<string>;
-    CachedMethods?: Value<string>[];
+    CachedMethods?: List<Value<string>>;
     SmoothStreaming?: Value<boolean>;
     ForwardedValues: ForwardedValues;
     MinTTL?: Value<number>;
@@ -54,7 +54,7 @@ export declare class CacheBehavior extends ResourceBase {
 }
 export interface LegacyCustomOriginProperties {
     HTTPSPort?: Value<number>;
-    OriginSSLProtocols?: Value<string>[];
+    OriginSSLProtocols?: List<Value<string>>;
     DNSName: Value<string>;
     HTTPPort?: Value<number>;
     OriginProtocolPolicy: Value<string>;
@@ -64,16 +64,16 @@ export declare class LegacyCustomOrigin extends ResourceBase {
 }
 export interface DefaultCacheBehaviorProperties {
     Compress?: Value<boolean>;
-    AllowedMethods?: Value<string>[];
-    CachedMethods?: Value<string>[];
-    LambdaFunctionAssociations?: LambdaFunctionAssociation[];
+    AllowedMethods?: List<Value<string>>;
+    CachedMethods?: List<Value<string>>;
+    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>;
     SmoothStreaming?: Value<boolean>;
     TargetOriginId: Value<string>;
     ViewerProtocolPolicy: Value<string>;
     ForwardedValues: ForwardedValues;
     MinTTL?: Value<number>;
     MaxTTL?: Value<number>;
-    TrustedSigners?: Value<string>[];
+    TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
 }
 export declare class DefaultCacheBehavior extends ResourceBase {
@@ -86,7 +86,7 @@ export declare class Restrictions extends ResourceBase {
     constructor(properties: RestrictionsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface OriginProperties {
-    OriginCustomHeaders?: OriginCustomHeader[];
+    OriginCustomHeaders?: List<OriginCustomHeader>;
     DomainName: Value<string>;
     S3OriginConfig?: S3OriginConfig;
     OriginPath?: Value<string>;
@@ -97,7 +97,7 @@ export declare class Origin extends ResourceBase {
     constructor(properties: OriginProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface GeoRestrictionProperties {
-    Locations?: Value<string>[];
+    Locations?: List<Value<string>>;
     RestrictionType: Value<string>;
 }
 export declare class GeoRestriction extends ResourceBase {
@@ -140,21 +140,21 @@ export interface DistributionConfigProperties {
     Logging?: Logging;
     Comment?: Value<string>;
     DefaultRootObject?: Value<string>;
-    Origins?: Origin[];
+    Origins?: List<Origin>;
     ViewerCertificate?: ViewerCertificate;
     PriceClass?: Value<string>;
     S3Origin?: LegacyS3Origin;
     CustomOrigin?: LegacyCustomOrigin;
     DefaultCacheBehavior?: DefaultCacheBehavior;
-    CustomErrorResponses?: CustomErrorResponse[];
+    CustomErrorResponses?: List<CustomErrorResponse>;
     Enabled: Value<boolean>;
-    Aliases?: Value<string>[];
+    Aliases?: List<Value<string>>;
     IPV6Enabled?: Value<boolean>;
     WebACLId?: Value<string>;
-    CNAMEs?: Value<string>[];
+    CNAMEs?: List<Value<string>>;
     HttpVersion?: Value<string>;
     Restrictions?: Restrictions;
-    CacheBehaviors?: CacheBehavior[];
+    CacheBehaviors?: List<CacheBehavior>;
 }
 export declare class DistributionConfig extends ResourceBase {
     constructor(properties: DistributionConfigProperties, dependsOn?: Value<string> | Value<string>[]);

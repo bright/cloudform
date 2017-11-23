@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VPNGatewayRoutePropagationProperties {
-    RouteTableIds: Value<string>[];
+    RouteTableIds: List<Value<string>>;
     VpnGatewayId: Value<string>;
 }
 export default class VPNGatewayRoutePropagation extends ResourceBase {

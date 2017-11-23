@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MethodResponseProperties {
     ResponseModels?: {
         [key: string]: Value<string>;
@@ -13,12 +13,12 @@ export declare class MethodResponse extends ResourceBase {
     constructor(properties: MethodResponseProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IntegrationProperties {
-    CacheKeyParameters?: Value<string>[];
+    CacheKeyParameters?: List<Value<string>>;
     CacheNamespace?: Value<string>;
     ContentHandling?: Value<string>;
     Credentials?: Value<string>;
     IntegrationHttpMethod?: Value<string>;
-    IntegrationResponses?: IntegrationResponse[];
+    IntegrationResponses?: List<IntegrationResponse>;
     PassthroughBehavior?: Value<string>;
     RequestParameters?: {
         [key: string]: Value<string>;
@@ -52,7 +52,7 @@ export interface MethodProperties {
     AuthorizerId?: Value<string>;
     HttpMethod: Value<string>;
     Integration?: Integration;
-    MethodResponses?: MethodResponse[];
+    MethodResponses?: List<MethodResponse>;
     OperationName?: Value<string>;
     RequestModels?: {
         [key: string]: Value<string>;

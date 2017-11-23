@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface SettingsProperties {
     EntityUrlTemplate?: Value<string>
@@ -45,7 +45,7 @@ export class ConfigurationProperties extends ResourceBase {
 
 export interface CustomActionTypeProperties {
     Category: Value<string>
-    ConfigurationProperties?: ConfigurationProperties[]
+    ConfigurationProperties?: List<ConfigurationProperties>
     InputArtifactDetails: ArtifactDetails
     OutputArtifactDetails: ArtifactDetails
     Provider: Value<string>

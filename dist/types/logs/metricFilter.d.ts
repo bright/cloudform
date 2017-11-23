@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface MetricTransformationProperties {
     MetricName: Value<string>;
     MetricNamespace: Value<string>;
@@ -11,7 +11,7 @@ export declare class MetricTransformation extends ResourceBase {
 export interface MetricFilterProperties {
     FilterPattern: Value<string>;
     LogGroupName: Value<string>;
-    MetricTransformations: MetricTransformation[];
+    MetricTransformations: List<MetricTransformation>;
 }
 export default class MetricFilter extends ResourceBase {
     constructor(properties: MetricFilterProperties, dependsOn?: Value<string> | Value<string>[]);

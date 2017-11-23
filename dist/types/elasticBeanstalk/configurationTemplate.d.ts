@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface SourceConfigurationProperties {
     ApplicationName: Value<string>;
     TemplateName: Value<string>;
@@ -20,7 +20,7 @@ export interface ConfigurationTemplateProperties {
     ApplicationName: Value<string>;
     Description?: Value<string>;
     EnvironmentId?: Value<string>;
-    OptionSettings?: ConfigurationOptionSetting[];
+    OptionSettings?: List<ConfigurationOptionSetting>;
     PlatformArn?: Value<string>;
     SolutionStackName?: Value<string>;
     SourceConfiguration?: SourceConfiguration;

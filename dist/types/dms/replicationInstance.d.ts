@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ReplicationInstanceProperties {
     ReplicationInstanceIdentifier?: Value<string>;
     EngineVersion?: Value<string>;
@@ -9,7 +9,7 @@ export interface ReplicationInstanceProperties {
     AutoMinorVersionUpgrade?: Value<boolean>;
     ReplicationSubnetGroupIdentifier?: Value<string>;
     AllocatedStorage?: Value<number>;
-    VpcSecurityGroupIds?: Value<string>[];
+    VpcSecurityGroupIds?: List<Value<string>>;
     AllowMajorVersionUpgrade?: Value<boolean>;
     ReplicationInstanceClass: Value<string>;
     PubliclyAccessible?: Value<boolean>;

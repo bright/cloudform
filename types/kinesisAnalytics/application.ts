@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface MappingParametersProperties {
     JSONMappingParameters?: JSONMappingParameters
@@ -53,7 +53,7 @@ export class Input extends ResourceBase {
 
 export interface InputSchemaProperties {
     RecordEncoding?: Value<string>
-    RecordColumns: RecordColumn[]
+    RecordColumns: List<RecordColumn>
     RecordFormat: RecordFormat
 }
 
@@ -140,7 +140,7 @@ export class InputLambdaProcessor extends ResourceBase {
 
 export interface ApplicationProperties {
     ApplicationName?: Value<string>
-    Inputs: Input[]
+    Inputs: List<Input>
     ApplicationDescription?: Value<string>
     ApplicationCode?: Value<string>
 }

@@ -1,10 +1,10 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface RuleGroupProperties {
-    PatchRules?: Rule[]
+    PatchRules?: List<Rule>
 }
 
 export class RuleGroup extends ResourceBase {
@@ -14,7 +14,7 @@ export class RuleGroup extends ResourceBase {
 }
 
 export interface PatchFilterProperties {
-    Values?: Value<string>[]
+    Values?: List<Value<string>>
     Key?: Value<string>
 }
 
@@ -37,7 +37,7 @@ export class Rule extends ResourceBase {
 }
 
 export interface PatchFilterGroupProperties {
-    PatchFilters?: PatchFilter[]
+    PatchFilters?: List<PatchFilter>
 }
 
 export class PatchFilterGroup extends ResourceBase {
@@ -48,14 +48,14 @@ export class PatchFilterGroup extends ResourceBase {
 
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>
-    ApprovedPatches?: Value<string>[]
-    PatchGroups?: Value<string>[]
+    ApprovedPatches?: List<Value<string>>
+    PatchGroups?: List<Value<string>>
     Description?: Value<string>
     ApprovedPatchesComplianceLevel?: Value<string>
     ApprovalRules?: RuleGroup
     GlobalFilters?: PatchFilterGroup
     Name: Value<string>
-    RejectedPatches?: Value<string>[]
+    RejectedPatches?: List<Value<string>>
 }
 
 export default class PatchBaseline extends ResourceBase {

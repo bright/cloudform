@@ -1,12 +1,12 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 
 
 export interface DBClusterProperties {
-    AvailabilityZones?: Value<string>[]
+    AvailabilityZones?: List<Value<string>>
     BackupRetentionPeriod?: Value<number>
     DBClusterParameterGroupName?: Value<string>
     DBSubnetGroupName?: Value<string>
@@ -23,7 +23,7 @@ export interface DBClusterProperties {
     SnapshotIdentifier?: Value<string>
     StorageEncrypted?: Value<boolean>
     Tags?: ResourceTag[]
-    VpcSecurityGroupIds?: Value<string>[]
+    VpcSecurityGroupIds?: List<Value<string>>
 }
 
 export default class DBCluster extends ResourceBase {

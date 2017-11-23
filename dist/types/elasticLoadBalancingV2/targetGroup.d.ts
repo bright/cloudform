@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface TargetGroupAttributeProperties {
     Key?: Value<string>;
     Value?: Value<string>;
@@ -33,9 +33,9 @@ export interface TargetGroupProperties {
     Port: Value<number>;
     Protocol: Value<string>;
     Tags?: ResourceTag[];
-    TargetGroupAttributes?: TargetGroupAttribute[];
+    TargetGroupAttributes?: List<TargetGroupAttribute>;
     TargetType?: Value<string>;
-    Targets?: TargetDescription[];
+    Targets?: List<TargetDescription>;
     UnhealthyThresholdCount?: Value<number>;
     VpcId: Value<string>;
 }

@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface TimeToLiveSpecificationProperties {
     AttributeName: Value<string>
@@ -27,7 +27,7 @@ export class AttributeDefinition extends ResourceBase {
 
 export interface LocalSecondaryIndexProperties {
     IndexName: Value<string>
-    KeySchema: KeySchema[]
+    KeySchema: List<KeySchema>
     Projection: Projection
 }
 
@@ -50,7 +50,7 @@ export class ProvisionedThroughput extends ResourceBase {
 
 export interface GlobalSecondaryIndexProperties {
     IndexName: Value<string>
-    KeySchema: KeySchema[]
+    KeySchema: List<KeySchema>
     Projection: Projection
     ProvisionedThroughput: ProvisionedThroughput
 }
@@ -73,7 +73,7 @@ export class KeySchema extends ResourceBase {
 }
 
 export interface ProjectionProperties {
-    NonKeyAttributes?: Value<string>[]
+    NonKeyAttributes?: List<Value<string>>
     ProjectionType?: Value<string>
 }
 
@@ -94,10 +94,10 @@ export class StreamSpecification extends ResourceBase {
 }
 
 export interface TableProperties {
-    AttributeDefinitions?: AttributeDefinition[]
-    GlobalSecondaryIndexes?: GlobalSecondaryIndex[]
-    KeySchema: KeySchema[]
-    LocalSecondaryIndexes?: LocalSecondaryIndex[]
+    AttributeDefinitions?: List<AttributeDefinition>
+    GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>
+    KeySchema: List<KeySchema>
+    LocalSecondaryIndexes?: List<LocalSecondaryIndex>
     ProvisionedThroughput: ProvisionedThroughput
     StreamSpecification?: StreamSpecification
     TableName?: Value<string>

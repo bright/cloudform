@@ -14,3 +14,4 @@ export declare class CFFunction {
     };
 }
 export declare type Value<T> = T | CFFunction;
+export declare type List<T> = T[] | CFFunction;

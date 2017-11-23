@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ActionProperties {
     TargetGroupArn: Value<string>;
     Type: Value<string>;
@@ -9,14 +9,14 @@ export declare class Action extends ResourceBase {
 }
 export interface RuleConditionProperties {
     Field?: Value<string>;
-    Values?: Value<string>[];
+    Values?: List<Value<string>>;
 }
 export declare class RuleCondition extends ResourceBase {
     constructor(properties: RuleConditionProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenerRuleProperties {
-    Actions: Action[];
-    Conditions: RuleCondition[];
+    Actions: List<Action>;
+    Conditions: List<RuleCondition>;
     ListenerArn: Value<string>;
     Priority: Value<number>;
 }

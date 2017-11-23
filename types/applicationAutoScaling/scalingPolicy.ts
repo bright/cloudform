@@ -1,14 +1,14 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface StepScalingPolicyConfigurationProperties {
     AdjustmentType?: Value<string>
     Cooldown?: Value<number>
     MetricAggregationType?: Value<string>
     MinAdjustmentMagnitude?: Value<number>
-    StepAdjustments?: StepAdjustment[]
+    StepAdjustments?: List<StepAdjustment>
 }
 
 export class StepScalingPolicyConfiguration extends ResourceBase {
@@ -52,7 +52,7 @@ export class PredefinedMetricSpecification extends ResourceBase {
 }
 
 export interface CustomizedMetricSpecificationProperties {
-    Dimensions?: MetricDimension[]
+    Dimensions?: List<MetricDimension>
     MetricName: Value<string>
     Namespace: Value<string>
     Statistic: Value<string>

@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface LoggingPropertiesProperties {
     BucketName: Value<string>;
     S3KeyPrefix?: Value<string>;
@@ -12,7 +12,7 @@ export interface ClusterProperties {
     AutomatedSnapshotRetentionPeriod?: Value<number>;
     AvailabilityZone?: Value<string>;
     ClusterParameterGroupName?: Value<string>;
-    ClusterSecurityGroups?: Value<string>[];
+    ClusterSecurityGroups?: List<Value<string>>;
     ClusterSubnetGroupName?: Value<string>;
     ClusterType: Value<string>;
     ClusterVersion?: Value<string>;
@@ -21,7 +21,7 @@ export interface ClusterProperties {
     Encrypted?: Value<boolean>;
     HsmClientCertificateIdentifier?: Value<string>;
     HsmConfigurationIdentifier?: Value<string>;
-    IamRoles?: Value<string>[];
+    IamRoles?: List<Value<string>>;
     KmsKeyId?: Value<string>;
     LoggingProperties?: LoggingProperties;
     MasterUserPassword: Value<string>;
@@ -35,7 +35,7 @@ export interface ClusterProperties {
     SnapshotClusterIdentifier?: Value<string>;
     SnapshotIdentifier?: Value<string>;
     Tags?: ResourceTag[];
-    VpcSecurityGroupIds?: Value<string>[];
+    VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class Cluster extends ResourceBase {
     constructor(properties: ClusterProperties, dependsOn?: Value<string> | Value<string>[]);

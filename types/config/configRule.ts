@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ScopeProperties {
     ComplianceResourceId?: Value<string>
-    ComplianceResourceTypes?: Value<string>[]
+    ComplianceResourceTypes?: List<Value<string>>
     TagKey?: Value<string>
     TagValue?: Value<string>
 }
@@ -18,7 +18,7 @@ export class Scope extends ResourceBase {
 
 export interface SourceProperties {
     Owner: Value<string>
-    SourceDetails?: SourceDetail[]
+    SourceDetails?: List<SourceDetail>
     SourceIdentifier: Value<string>
 }
 

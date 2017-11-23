@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface PredicateProperties {
     DataId: Value<string>
@@ -18,7 +18,7 @@ export class Predicate extends ResourceBase {
 export interface RuleProperties {
     MetricName: Value<string>
     Name: Value<string>
-    Predicates?: Predicate[]
+    Predicates?: List<Predicate>
 }
 
 export default class Rule extends ResourceBase {

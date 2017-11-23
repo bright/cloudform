@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ElasticsearchDestinationConfigurationProperties {
     BufferingHints: ElasticsearchBufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
@@ -40,7 +40,7 @@ export declare class CloudWatchLoggingOptions extends ResourceBase {
 }
 export interface ProcessingConfigurationProperties {
     Enabled: Value<boolean>;
-    Processors: Processor[];
+    Processors: List<Processor>;
 }
 export declare class ProcessingConfiguration extends ResourceBase {
     constructor(properties: ProcessingConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -67,7 +67,7 @@ export declare class ProcessorParameter extends ResourceBase {
     constructor(properties: ProcessorParameterProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProcessorProperties {
-    Parameters: ProcessorParameter[];
+    Parameters: List<ProcessorParameter>;
     Type: Value<string>;
 }
 export declare class Processor extends ResourceBase {

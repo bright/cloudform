@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface LoadBalancerInfoProperties {
-    ElbInfoList?: ELBInfo[];
-    TargetGroupInfoList?: TargetGroupInfo[];
+    ElbInfoList?: List<ELBInfo>;
+    TargetGroupInfoList?: List<TargetGroupInfo>;
 }
 export declare class LoadBalancerInfo extends ResourceBase {
     constructor(properties: LoadBalancerInfoProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -26,7 +26,7 @@ export declare class S3Location extends ResourceBase {
     constructor(properties: S3LocationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TriggerConfigProperties {
-    TriggerEvents?: Value<string>[];
+    TriggerEvents?: List<Value<string>>;
     TriggerName?: Value<string>;
     TriggerTargetArn?: Value<string>;
 }
@@ -61,7 +61,7 @@ export declare class ELBInfo extends ResourceBase {
     constructor(properties: ELBInfoProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface AlarmConfigurationProperties {
-    Alarms?: Alarm[];
+    Alarms?: List<Alarm>;
     Enabled?: Value<boolean>;
     IgnorePollAlarmFailure?: Value<boolean>;
 }
@@ -90,7 +90,7 @@ export declare class EC2TagFilter extends ResourceBase {
 }
 export interface AutoRollbackConfigurationProperties {
     Enabled?: Value<boolean>;
-    Events?: Value<string>[];
+    Events?: List<Value<string>>;
 }
 export declare class AutoRollbackConfiguration extends ResourceBase {
     constructor(properties: AutoRollbackConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -107,16 +107,16 @@ export interface DeploymentGroupProperties {
     AlarmConfiguration?: AlarmConfiguration;
     ApplicationName: Value<string>;
     AutoRollbackConfiguration?: AutoRollbackConfiguration;
-    AutoScalingGroups?: Value<string>[];
+    AutoScalingGroups?: List<Value<string>>;
     Deployment?: Deployment;
     DeploymentConfigName?: Value<string>;
     DeploymentGroupName?: Value<string>;
     DeploymentStyle?: DeploymentStyle;
-    Ec2TagFilters?: EC2TagFilter[];
+    Ec2TagFilters?: List<EC2TagFilter>;
     LoadBalancerInfo?: LoadBalancerInfo;
-    OnPremisesInstanceTagFilters?: TagFilter[];
+    OnPremisesInstanceTagFilters?: List<TagFilter>;
     ServiceRoleArn: Value<string>;
-    TriggerConfigurations?: TriggerConfig[];
+    TriggerConfigurations?: List<TriggerConfig>;
 }
 export default class DeploymentGroup extends ResourceBase {
     constructor(properties: DeploymentGroupProperties, dependsOn?: Value<string> | Value<string>[]);

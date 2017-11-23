@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface TimeToLiveSpecificationProperties {
     AttributeName: Value<string>;
     Enabled: Value<boolean>;
@@ -16,7 +16,7 @@ export declare class AttributeDefinition extends ResourceBase {
 }
 export interface LocalSecondaryIndexProperties {
     IndexName: Value<string>;
-    KeySchema: KeySchema[];
+    KeySchema: List<KeySchema>;
     Projection: Projection;
 }
 export declare class LocalSecondaryIndex extends ResourceBase {
@@ -31,7 +31,7 @@ export declare class ProvisionedThroughput extends ResourceBase {
 }
 export interface GlobalSecondaryIndexProperties {
     IndexName: Value<string>;
-    KeySchema: KeySchema[];
+    KeySchema: List<KeySchema>;
     Projection: Projection;
     ProvisionedThroughput: ProvisionedThroughput;
 }
@@ -46,7 +46,7 @@ export declare class KeySchema extends ResourceBase {
     constructor(properties: KeySchemaProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ProjectionProperties {
-    NonKeyAttributes?: Value<string>[];
+    NonKeyAttributes?: List<Value<string>>;
     ProjectionType?: Value<string>;
 }
 export declare class Projection extends ResourceBase {
@@ -59,10 +59,10 @@ export declare class StreamSpecification extends ResourceBase {
     constructor(properties: StreamSpecificationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface TableProperties {
-    AttributeDefinitions?: AttributeDefinition[];
-    GlobalSecondaryIndexes?: GlobalSecondaryIndex[];
-    KeySchema: KeySchema[];
-    LocalSecondaryIndexes?: LocalSecondaryIndex[];
+    AttributeDefinitions?: List<AttributeDefinition>;
+    GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>;
+    KeySchema: List<KeySchema>;
+    LocalSecondaryIndexes?: List<LocalSecondaryIndex>;
     ProvisionedThroughput: ProvisionedThroughput;
     StreamSpecification?: StreamSpecification;
     TableName?: Value<string>;

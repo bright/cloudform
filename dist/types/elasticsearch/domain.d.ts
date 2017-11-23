@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VPCOptionsProperties {
-    SecurityGroupIds?: Value<string>[];
-    SubnetIds?: Value<string>[];
+    SecurityGroupIds?: List<Value<string>>;
+    SubnetIds?: List<Value<string>>;
 }
 export declare class VPCOptions extends ResourceBase {
     constructor(properties: VPCOptionsProperties, dependsOn?: Value<string> | Value<string>[]);

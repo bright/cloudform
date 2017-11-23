@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ScopeProperties {
     ComplianceResourceId?: Value<string>;
-    ComplianceResourceTypes?: Value<string>[];
+    ComplianceResourceTypes?: List<Value<string>>;
     TagKey?: Value<string>;
     TagValue?: Value<string>;
 }
@@ -11,7 +11,7 @@ export declare class Scope extends ResourceBase {
 }
 export interface SourceProperties {
     Owner: Value<string>;
-    SourceDetails?: SourceDetail[];
+    SourceDetails?: List<SourceDetail>;
     SourceIdentifier: Value<string>;
 }
 export declare class Source extends ResourceBase {

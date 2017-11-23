@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ParameterAttributeProperties {
     Key: Value<string>
@@ -26,7 +26,7 @@ export class PipelineTag extends ResourceBase {
 }
 
 export interface ParameterObjectProperties {
-    Attributes: ParameterAttribute[]
+    Attributes: List<ParameterAttribute>
     Id: Value<string>
 }
 
@@ -37,7 +37,7 @@ export class ParameterObject extends ResourceBase {
 }
 
 export interface PipelineObjectProperties {
-    Fields: Field[]
+    Fields: List<Field>
     Id: Value<string>
     Name: Value<string>
 }
@@ -75,10 +75,10 @@ export interface PipelineProperties {
     Activate?: Value<boolean>
     Description?: Value<string>
     Name: Value<string>
-    ParameterObjects: ParameterObject[]
-    ParameterValues?: ParameterValue[]
-    PipelineObjects?: PipelineObject[]
-    PipelineTags?: PipelineTag[]
+    ParameterObjects: List<ParameterObject>
+    ParameterValues?: List<ParameterValue>
+    PipelineObjects?: List<PipelineObject>
+    PipelineTags?: List<PipelineTag>
 }
 
 export default class Pipeline extends ResourceBase {

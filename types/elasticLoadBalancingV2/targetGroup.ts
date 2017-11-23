@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface TargetGroupAttributeProperties {
     Key?: Value<string>
@@ -48,9 +48,9 @@ export interface TargetGroupProperties {
     Port: Value<number>
     Protocol: Value<string>
     Tags?: ResourceTag[]
-    TargetGroupAttributes?: TargetGroupAttribute[]
+    TargetGroupAttributes?: List<TargetGroupAttribute>
     TargetType?: Value<string>
-    Targets?: TargetDescription[]
+    Targets?: List<TargetDescription>
     UnhealthyThresholdCount?: Value<number>
     VpcId: Value<string>
 }

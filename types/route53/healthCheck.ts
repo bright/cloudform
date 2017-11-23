@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface HealthCheckConfigProperties {
     AlarmIdentifier?: AlarmIdentifier
-    ChildHealthChecks?: Value<string>[]
+    ChildHealthChecks?: List<Value<string>>
     EnableSNI?: Value<boolean>
     FailureThreshold?: Value<number>
     FullyQualifiedDomainName?: Value<string>
@@ -51,7 +51,7 @@ export class AlarmIdentifier extends ResourceBase {
 
 export interface HealthCheckProperties {
     HealthCheckConfig: HealthCheckConfig
-    HealthCheckTags?: HealthCheckTag[]
+    HealthCheckTags?: List<HealthCheckTag>
 }
 
 export default class HealthCheck extends ResourceBase {

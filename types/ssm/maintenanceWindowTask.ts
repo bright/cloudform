@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface MaintenanceWindowLambdaParametersProperties {
     ClientContext?: Value<string>
@@ -18,7 +18,7 @@ export class MaintenanceWindowLambdaParameters extends ResourceBase {
 export interface NotificationConfigProperties {
     NotificationArn?: Value<string>
     NotificationType?: Value<string>
-    NotificationEvents?: Value<string>[]
+    NotificationEvents?: List<Value<string>>
 }
 
 export class NotificationConfig extends ResourceBase {
@@ -64,7 +64,7 @@ export class LoggingInfo extends ResourceBase {
 }
 
 export interface TargetProperties {
-    Values?: Value<string>[]
+    Values?: List<Value<string>>
     Key: Value<string>
 }
 
@@ -109,7 +109,7 @@ export interface MaintenanceWindowTaskProperties {
     ServiceRoleArn: Value<string>
     Priority: Value<number>
     MaxConcurrency: Value<string>
-    Targets: Target[]
+    Targets: List<Target>
     Name?: Value<string>
     TaskArn: Value<string>
     TaskInvocationParameters?: TaskInvocationParameters

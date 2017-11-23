@@ -1,10 +1,10 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface RunCommandParametersProperties {
-    RunCommandTargets: RunCommandTarget[]
+    RunCommandTargets: List<RunCommandTarget>
 }
 
 export class RunCommandParameters extends ResourceBase {
@@ -33,7 +33,7 @@ export class Target extends ResourceBase {
 
 export interface RunCommandTargetProperties {
     Key: Value<string>
-    Values: Value<string>[]
+    Values: List<Value<string>>
 }
 
 export class RunCommandTarget extends ResourceBase {
@@ -81,7 +81,7 @@ export interface RuleProperties {
     RoleArn?: Value<string>
     ScheduleExpression?: Value<string>
     State?: Value<string>
-    Targets?: Target[]
+    Targets?: List<Target>
 }
 
 export default class Rule extends ResourceBase {

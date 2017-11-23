@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface EbsBlockDeviceConfigProperties {
     VolumeSpecification: VolumeSpecification;
     VolumesPerInstance?: Value<number>;
@@ -12,7 +12,7 @@ export interface ConfigurationProperties {
     ConfigurationProperties?: {
         [key: string]: Value<string>;
     };
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
 }
 export declare class Configuration extends ResourceBase {
     constructor(properties: ConfigurationProperties, dependsOn?: Value<string> | Value<string>[]);
@@ -63,7 +63,7 @@ export declare class ScalingConstraints extends ResourceBase {
 }
 export interface CloudWatchAlarmDefinitionProperties {
     ComparisonOperator: Value<string>;
-    Dimensions?: MetricDimension[];
+    Dimensions?: List<MetricDimension>;
     EvaluationPeriods?: Value<number>;
     MetricName: Value<string>;
     Namespace?: Value<string>;
@@ -85,13 +85,13 @@ export declare class VolumeSpecification extends ResourceBase {
 }
 export interface AutoScalingPolicyProperties {
     Constraints: ScalingConstraints;
-    Rules: ScalingRule[];
+    Rules: List<ScalingRule>;
 }
 export declare class AutoScalingPolicy extends ResourceBase {
     constructor(properties: AutoScalingPolicyProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface EbsConfigurationProperties {
-    EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[];
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
     EbsOptimized?: Value<boolean>;
 }
 export declare class EbsConfiguration extends ResourceBase {
@@ -100,7 +100,7 @@ export declare class EbsConfiguration extends ResourceBase {
 export interface InstanceGroupConfigProperties {
     AutoScalingPolicy?: AutoScalingPolicy;
     BidPrice?: Value<string>;
-    Configurations?: Configuration[];
+    Configurations?: List<Configuration>;
     EbsConfiguration?: EbsConfiguration;
     InstanceCount: Value<number>;
     InstanceRole: Value<string>;

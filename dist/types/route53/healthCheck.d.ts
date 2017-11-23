@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface HealthCheckConfigProperties {
     AlarmIdentifier?: AlarmIdentifier;
-    ChildHealthChecks?: Value<string>[];
+    ChildHealthChecks?: List<Value<string>>;
     EnableSNI?: Value<boolean>;
     FailureThreshold?: Value<number>;
     FullyQualifiedDomainName?: Value<string>;
@@ -36,7 +36,7 @@ export declare class AlarmIdentifier extends ResourceBase {
 }
 export interface HealthCheckProperties {
     HealthCheckConfig: HealthCheckConfig;
-    HealthCheckTags?: HealthCheckTag[];
+    HealthCheckTags?: List<HealthCheckTag>;
 }
 export default class HealthCheck extends ResourceBase {
     constructor(properties: HealthCheckProperties, dependsOn?: Value<string> | Value<string>[]);

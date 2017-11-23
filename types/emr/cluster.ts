@@ -1,12 +1,12 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface InstanceGroupConfigProperties {
     AutoScalingPolicy?: AutoScalingPolicy
     BidPrice?: Value<string>
-    Configurations?: Configuration[]
+    Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
     InstanceCount: Value<number>
     InstanceType: Value<string>
@@ -55,7 +55,7 @@ export class ScalingConstraints extends ResourceBase {
 }
 
 export interface InstanceFleetConfigProperties {
-    InstanceTypeConfigs?: InstanceTypeConfig[]
+    InstanceTypeConfigs?: List<InstanceTypeConfig>
     LaunchSpecifications?: InstanceFleetProvisioningSpecifications
     Name?: Value<string>
     TargetOnDemandCapacity?: Value<number>
@@ -69,8 +69,8 @@ export class InstanceFleetConfig extends ResourceBase {
 }
 
 export interface JobFlowInstancesConfigProperties {
-    AdditionalMasterSecurityGroups?: Value<string>[]
-    AdditionalSlaveSecurityGroups?: Value<string>[]
+    AdditionalMasterSecurityGroups?: List<Value<string>>
+    AdditionalSlaveSecurityGroups?: List<Value<string>>
     CoreInstanceFleet?: InstanceFleetConfig
     CoreInstanceGroup?: InstanceGroupConfig
     Ec2KeyName?: Value<string>
@@ -116,7 +116,7 @@ export class SimpleScalingPolicyConfiguration extends ResourceBase {
 
 export interface ApplicationProperties {
     AdditionalInfo?: {[key: string]: Value<string>}
-    Args?: Value<string>[]
+    Args?: List<Value<string>>
     Name?: Value<string>
     Version?: Value<string>
 }
@@ -151,7 +151,7 @@ export class PlacementType extends ResourceBase {
 export interface ConfigurationProperties {
     Classification?: Value<string>
     ConfigurationProperties?: {[key: string]: Value<string>}
-    Configurations?: Configuration[]
+    Configurations?: List<Configuration>
 }
 
 export class Configuration extends ResourceBase {
@@ -161,7 +161,7 @@ export class Configuration extends ResourceBase {
 }
 
 export interface ScriptBootstrapActionConfigProperties {
-    Args?: Value<string>[]
+    Args?: List<Value<string>>
     Path: Value<string>
 }
 
@@ -173,7 +173,7 @@ export class ScriptBootstrapActionConfig extends ResourceBase {
 
 export interface CloudWatchAlarmDefinitionProperties {
     ComparisonOperator: Value<string>
-    Dimensions?: MetricDimension[]
+    Dimensions?: List<MetricDimension>
     EvaluationPeriods?: Value<number>
     MetricName: Value<string>
     Namespace?: Value<string>
@@ -190,7 +190,7 @@ export class CloudWatchAlarmDefinition extends ResourceBase {
 }
 
 export interface EbsConfigurationProperties {
-    EbsBlockDeviceConfigs?: EbsBlockDeviceConfig[]
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
 }
 
@@ -216,7 +216,7 @@ export class ScalingRule extends ResourceBase {
 export interface InstanceTypeConfigProperties {
     BidPrice?: Value<string>
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
-    Configurations?: Configuration[]
+    Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
     InstanceType: Value<string>
     WeightedCapacity?: Value<number>
@@ -253,7 +253,7 @@ export class VolumeSpecification extends ResourceBase {
 
 export interface AutoScalingPolicyProperties {
     Constraints: ScalingConstraints
-    Rules: ScalingRule[]
+    Rules: List<ScalingRule>
 }
 
 export class AutoScalingPolicy extends ResourceBase {
@@ -284,10 +284,10 @@ export class ScalingTrigger extends ResourceBase {
 
 export interface ClusterProperties {
     AdditionalInfo?: any
-    Applications?: Application[]
+    Applications?: List<Application>
     AutoScalingRole?: Value<string>
-    BootstrapActions?: BootstrapActionConfig[]
-    Configurations?: Configuration[]
+    BootstrapActions?: List<BootstrapActionConfig>
+    Configurations?: List<Configuration>
     CustomAmiId?: Value<string>
     EbsRootVolumeSize?: Value<number>
     Instances: JobFlowInstancesConfig

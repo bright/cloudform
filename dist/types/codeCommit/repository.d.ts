@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RepositoryTriggerProperties {
-    Events?: Value<string>[];
-    Branches?: Value<string>[];
+    Events?: List<Value<string>>;
+    Branches?: List<Value<string>>;
     CustomData?: Value<string>;
     DestinationArn?: Value<string>;
     Name?: Value<string>;
@@ -12,7 +12,7 @@ export declare class RepositoryTrigger extends ResourceBase {
 }
 export interface RepositoryProperties {
     RepositoryName: Value<string>;
-    Triggers?: RepositoryTrigger[];
+    Triggers?: List<RepositoryTrigger>;
     RepositoryDescription?: Value<string>;
 }
 export default class Repository extends ResourceBase {

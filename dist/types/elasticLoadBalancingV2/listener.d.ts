@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ActionProperties {
     TargetGroupArn: Value<string>;
     Type: Value<string>;
@@ -14,8 +14,8 @@ export declare class Certificate extends ResourceBase {
     constructor(properties: CertificateProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface ListenerProperties {
-    Certificates?: Certificate[];
-    DefaultActions: Action[];
+    Certificates?: List<Certificate>;
+    DefaultActions: List<Action>;
     LoadBalancerArn: Value<string>;
     Port: Value<number>;
     Protocol: Value<string>;

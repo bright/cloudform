@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface ApiStageProperties {
     ApiId?: Value<string>;
     Stage?: Value<string>;
@@ -23,7 +23,7 @@ export declare class QuotaSettings extends ResourceBase {
     constructor(properties: QuotaSettingsProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface UsagePlanProperties {
-    ApiStages?: ApiStage[];
+    ApiStages?: List<ApiStage>;
     Description?: Value<string>;
     Quota?: QuotaSettings;
     Throttle?: ThrottleSettings;

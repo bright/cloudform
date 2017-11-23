@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface IPSetDescriptorProperties {
     Type: Value<string>;
     Value: Value<string>;
@@ -8,7 +8,7 @@ export declare class IPSetDescriptor extends ResourceBase {
     constructor(properties: IPSetDescriptorProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface IPSetProperties {
-    IPSetDescriptors?: IPSetDescriptor[];
+    IPSetDescriptors?: List<IPSetDescriptor>;
     Name: Value<string>;
 }
 export default class IPSet extends ResourceBase {

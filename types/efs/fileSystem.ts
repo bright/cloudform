@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface ElasticFileSystemTagProperties {
     Key: Value<string>
@@ -16,7 +16,7 @@ export class ElasticFileSystemTag extends ResourceBase {
 
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>
-    FileSystemTags?: ElasticFileSystemTag[]
+    FileSystemTags?: List<ElasticFileSystemTag>
     KmsKeyId?: Value<string>
     PerformanceMode?: Value<string>
 }

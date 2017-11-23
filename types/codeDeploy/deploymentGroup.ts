@@ -1,11 +1,11 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface LoadBalancerInfoProperties {
-    ElbInfoList?: ELBInfo[]
-    TargetGroupInfoList?: TargetGroupInfo[]
+    ElbInfoList?: List<ELBInfo>
+    TargetGroupInfoList?: List<TargetGroupInfo>
 }
 
 export class LoadBalancerInfo extends ResourceBase {
@@ -41,7 +41,7 @@ export class S3Location extends ResourceBase {
 }
 
 export interface TriggerConfigProperties {
-    TriggerEvents?: Value<string>[]
+    TriggerEvents?: List<Value<string>>
     TriggerName?: Value<string>
     TriggerTargetArn?: Value<string>
 }
@@ -96,7 +96,7 @@ export class ELBInfo extends ResourceBase {
 }
 
 export interface AlarmConfigurationProperties {
-    Alarms?: Alarm[]
+    Alarms?: List<Alarm>
     Enabled?: Value<boolean>
     IgnorePollAlarmFailure?: Value<boolean>
 }
@@ -141,7 +141,7 @@ export class EC2TagFilter extends ResourceBase {
 
 export interface AutoRollbackConfigurationProperties {
     Enabled?: Value<boolean>
-    Events?: Value<string>[]
+    Events?: List<Value<string>>
 }
 
 export class AutoRollbackConfiguration extends ResourceBase {
@@ -166,16 +166,16 @@ export interface DeploymentGroupProperties {
     AlarmConfiguration?: AlarmConfiguration
     ApplicationName: Value<string>
     AutoRollbackConfiguration?: AutoRollbackConfiguration
-    AutoScalingGroups?: Value<string>[]
+    AutoScalingGroups?: List<Value<string>>
     Deployment?: Deployment
     DeploymentConfigName?: Value<string>
     DeploymentGroupName?: Value<string>
     DeploymentStyle?: DeploymentStyle
-    Ec2TagFilters?: EC2TagFilter[]
+    Ec2TagFilters?: List<EC2TagFilter>
     LoadBalancerInfo?: LoadBalancerInfo
-    OnPremisesInstanceTagFilters?: TagFilter[]
+    OnPremisesInstanceTagFilters?: List<TagFilter>
     ServiceRoleArn: Value<string>
-    TriggerConfigurations?: TriggerConfig[]
+    TriggerConfigurations?: List<TriggerConfig>
 }
 
 export default class DeploymentGroup extends ResourceBase {

@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RulesConfigurationTypeProperties {
-    Rules: MappingRule[];
+    Rules: List<MappingRule>;
 }
 export declare class RulesConfigurationType extends ResourceBase {
     constructor(properties: RulesConfigurationTypeProperties, dependsOn?: Value<string> | Value<string>[]);

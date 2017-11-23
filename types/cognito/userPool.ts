@@ -1,7 +1,7 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
    
 import {ResourceBase} from '../resource'
-import {Value} from '../dataTypes'
+import {Value, List} from '../dataTypes'
 
 export interface PasswordPolicyProperties {
     RequireNumbers?: Value<boolean>
@@ -143,17 +143,17 @@ export interface UserPoolProperties {
     UserPoolTags?: any
     Policies?: Policies
     MfaConfiguration?: Value<string>
-    Schema?: SchemaAttribute[]
+    Schema?: List<SchemaAttribute>
     AdminCreateUserConfig?: AdminCreateUserConfig
     SmsAuthenticationMessage?: Value<string>
     UserPoolName?: Value<string>
     SmsVerificationMessage?: Value<string>
     EmailConfiguration?: EmailConfiguration
     SmsConfiguration?: SmsConfiguration
-    AliasAttributes?: Value<string>[]
+    AliasAttributes?: List<Value<string>>
     EmailVerificationSubject?: Value<string>
     LambdaConfig?: LambdaConfig
-    AutoVerifiedAttributes?: Value<string>[]
+    AutoVerifiedAttributes?: List<Value<string>>
     DeviceConfiguration?: DeviceConfiguration
     EmailVerificationMessage?: Value<string>
 }

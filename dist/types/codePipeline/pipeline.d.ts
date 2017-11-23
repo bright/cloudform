@@ -1,5 +1,5 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface InputArtifactProperties {
     Name: Value<string>;
 }
@@ -9,9 +9,9 @@ export declare class InputArtifact extends ResourceBase {
 export interface ActionDeclarationProperties {
     ActionTypeId: ActionTypeId;
     Configuration?: any;
-    InputArtifacts?: InputArtifact[];
+    InputArtifacts?: List<InputArtifact>;
     Name: Value<string>;
-    OutputArtifacts?: OutputArtifact[];
+    OutputArtifacts?: List<OutputArtifact>;
     RoleArn?: Value<string>;
     RunOrder?: Value<number>;
 }
@@ -19,8 +19,8 @@ export declare class ActionDeclaration extends ResourceBase {
     constructor(properties: ActionDeclarationProperties, dependsOn?: Value<string> | Value<string>[]);
 }
 export interface StageDeclarationProperties {
-    Actions: ActionDeclaration[];
-    Blockers?: BlockerDeclaration[];
+    Actions: List<ActionDeclaration>;
+    Blockers?: List<BlockerDeclaration>;
     Name: Value<string>;
 }
 export declare class StageDeclaration extends ResourceBase {
@@ -72,11 +72,11 @@ export declare class EncryptionKey extends ResourceBase {
 }
 export interface PipelineProperties {
     ArtifactStore: ArtifactStore;
-    DisableInboundStageTransitions?: StageTransition[];
+    DisableInboundStageTransitions?: List<StageTransition>;
     Name?: Value<string>;
     RestartExecutionOnUpdate?: Value<boolean>;
     RoleArn: Value<string>;
-    Stages: StageDeclaration[];
+    Stages: List<StageDeclaration>;
 }
 export default class Pipeline extends ResourceBase {
     constructor(properties: PipelineProperties, dependsOn?: Value<string> | Value<string>[]);

@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface DBInstanceProperties {
     AllocatedStorage?: Value<string>;
     AllowMajorVersionUpgrade?: Value<boolean>;
@@ -13,7 +13,7 @@ export interface DBInstanceProperties {
     DBInstanceIdentifier?: Value<string>;
     DBName?: Value<string>;
     DBParameterGroupName?: Value<string>;
-    DBSecurityGroups?: Value<string>[];
+    DBSecurityGroups?: List<Value<string>>;
     DBSnapshotIdentifier?: Value<string>;
     DBSubnetGroupName?: Value<string>;
     Domain?: Value<string>;
@@ -39,7 +39,7 @@ export interface DBInstanceProperties {
     StorageType?: Value<string>;
     Tags?: ResourceTag[];
     Timezone?: Value<string>;
-    VPCSecurityGroups?: Value<string>[];
+    VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase {
     constructor(properties: DBInstanceProperties, dependsOn?: Value<string> | Value<string>[]);

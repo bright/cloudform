@@ -1,5 +1,3 @@
-const jsonStringify = require('json-pretty')
-
 import Template from "./types/template"
 
 import * as _Fn from './types/functions'
@@ -11,5 +9,5 @@ export const Refs = _Refs
 export * from './types'
 
 export default function cloudform(template: Template) {
-    return jsonStringify(template)
+    return JSON.stringify(template, undefined, 2)
 }

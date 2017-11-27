@@ -31,6 +31,10 @@ class ResourceBase {
         this.UpdatePolicy = policy;
         return this;
     }
+    condition(condition) {
+        this.Condition = condition;
+        return this;
+    }
 }
 exports.ResourceBase = ResourceBase;
 class ResourceTag {

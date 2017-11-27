@@ -17,6 +17,10 @@ cloudform({
             }
         }
     },
+    Conditions: {
+        FirstCondition: Fn.Equals(1, 2),
+        TestCondition: Fn.And([{Condition: 'FirstCondition'}, Fn.Equals("a", "b")])
+    },
     Resources: {
         VPC: new EC2.VPC({
             CidrBlock: Fn.FindInMap('SubnetConfig', 'VPC', 'CIDR'),
@@ -26,7 +30,7 @@ cloudform({
                 new ResourceTag('Network', 'Public'),
                 new ResourceTag('Name', Fn.Join('-', [Refs.StackId, 'VPC']))
             ]
-        }),
+        }).condition('TestCondition'),
 
         // can handle raw data pasted from existing JSON templates - convenient for transition phase
         "ECSSecurityGroup": {

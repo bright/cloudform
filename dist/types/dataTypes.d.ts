@@ -5,7 +5,7 @@ export default class DataTypes {
     static ListOfNumbers: DataType;
     static CommaDelimitedList: DataType;
 }
-export declare class CFFunction {
+export declare class IntrinsicFunction {
     private name;
     private payload;
     constructor(name: string, payload: any);
@@ -13,5 +13,11 @@ export declare class CFFunction {
         [x: string]: any;
     };
 }
-export declare type Value<T> = T | CFFunction;
-export declare type List<T> = T[] | CFFunction;
+export declare class ConditionIntrinsicFunction extends IntrinsicFunction {
+    constructor(name: string, payload: any);
+}
+export declare type Value<T> = T | IntrinsicFunction;
+export declare type List<T> = T[] | IntrinsicFunction;
+export declare type Condition = ConditionIntrinsicFunction | {
+    Condition: Value<string>;
+};

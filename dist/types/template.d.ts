@@ -1,5 +1,6 @@
 import Parameter from "./parameter";
 import Resource from "./resource";
+import { Condition } from "./dataTypes";
 export default interface Template {
     Description?: string;
     Parameters?: {
@@ -11,6 +12,9 @@ export default interface Template {
                 [key: string]: string | number;
             };
         };
+    };
+    Conditions?: {
+        [key: string]: Condition;
     };
     Resources?: {
         [key: string]: Resource;

@@ -1,9 +1,9 @@
-import { CFFunction } from "./dataTypes";
-export declare const AccountId: CFFunction;
-export declare const NotificationARNs: CFFunction;
-export declare const NoValue: CFFunction;
-export declare const Partition: CFFunction;
-export declare const Region: CFFunction;
-export declare const StackId: CFFunction;
-export declare const StackName: CFFunction;
-export declare const URLSuffix: CFFunction;
+import { IntrinsicFunction } from "./dataTypes";
+export declare const AccountId: IntrinsicFunction;
+export declare const NotificationARNs: IntrinsicFunction;
+export declare const NoValue: IntrinsicFunction;
+export declare const Partition: IntrinsicFunction;
+export declare const Region: IntrinsicFunction;
+export declare const StackId: IntrinsicFunction;
+export declare const StackName: IntrinsicFunction;
+export declare const URLSuffix: IntrinsicFunction;

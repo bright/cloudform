@@ -42,6 +42,7 @@ export default interface Resource {
     CreationPolicy?: CreationPolicy;
     DeletionPolicy?: DeletionPolicy;
     UpdatePolicy?: UpdatePolicy;
+    Condition?: Value<string>;
 }
 export declare abstract class ResourceBase implements Resource {
     Type: string;
@@ -55,6 +56,7 @@ export declare abstract class ResourceBase implements Resource {
     CreationPolicy?: CreationPolicy;
     DeletionPolicy?: DeletionPolicy;
     UpdatePolicy?: UpdatePolicy;
+    Condition?: Value<string>;
     constructor(type: string, properties?: {
         [key: string]: any;
     });
@@ -65,6 +67,7 @@ export declare abstract class ResourceBase implements Resource {
     creationPolicy(policy: CreationPolicy): this;
     deletionPolicy(policy: DeletionPolicy): this;
     updatePolicy(policy: UpdatePolicy): this;
+    condition(condition: Value<string>): this;
 }
 export declare class ResourceTag {
     Key: Value<string>;

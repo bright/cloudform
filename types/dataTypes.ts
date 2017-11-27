@@ -7,7 +7,7 @@ export default class DataTypes {
     static CommaDelimitedList: DataType = 'CommaDelimitedList'
 }
 
-export class CFFunction {
+export class IntrinsicFunction {
     constructor(private name: string, private payload: any) {
     }
 
@@ -16,5 +16,12 @@ export class CFFunction {
     }
 }
 
-export type Value<T> = T | CFFunction
-export type List<T> = T[] | CFFunction
+export class ConditionIntrinsicFunction extends IntrinsicFunction {
+    constructor(name: string, payload: any) {
+        super(name, payload)
+    }
+}
+
+export type Value<T> = T | IntrinsicFunction
+export type List<T> = T[] | IntrinsicFunction
+export type Condition = ConditionIntrinsicFunction | { Condition: Value<string> }

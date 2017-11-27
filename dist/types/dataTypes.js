@@ -7,7 +7,7 @@ DataTypes.Number = 'Number';
 DataTypes.ListOfNumbers = 'List<Number>';
 DataTypes.CommaDelimitedList = 'CommaDelimitedList';
 exports.default = DataTypes;
-class CFFunction {
+class IntrinsicFunction {
     constructor(name, payload) {
         this.name = name;
         this.payload = payload;
@@ -16,4 +16,10 @@ class CFFunction {
         return { [this.name]: this.payload };
     }
 }
-exports.CFFunction = CFFunction;
+exports.IntrinsicFunction = IntrinsicFunction;
+class ConditionIntrinsicFunction extends IntrinsicFunction {
+    constructor(name, payload) {
+        super(name, payload);
+    }
+}
+exports.ConditionIntrinsicFunction = ConditionIntrinsicFunction;

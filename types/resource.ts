@@ -43,6 +43,7 @@ export default interface Resource {
     CreationPolicy?: CreationPolicy
     DeletionPolicy?: DeletionPolicy
     UpdatePolicy?: UpdatePolicy
+    Condition?: Value<string>
 }
 
 export abstract class ResourceBase implements Resource {
@@ -53,6 +54,7 @@ export abstract class ResourceBase implements Resource {
     CreationPolicy?: CreationPolicy
     DeletionPolicy?: DeletionPolicy
     UpdatePolicy?: UpdatePolicy
+    Condition?: Value<string>
 
     constructor(type: string, properties?: { [key: string]: any }) {
         this.Type = type
@@ -81,6 +83,11 @@ export abstract class ResourceBase implements Resource {
 
     updatePolicy(policy: UpdatePolicy) {
         this.UpdatePolicy = policy
+        return this
+    }
+
+    condition(condition: Value<string>) {
+        this.Condition = condition
         return this
     }
 }

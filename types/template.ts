@@ -1,14 +1,16 @@
 import Parameter from "./parameter"
 import Resource from "./resource"
 import {Condition} from "./dataTypes"
+import Output from "./output"
 
 export default interface Template {
+    AWSTemplateFormatVersion?: string
     Description?: string
-    // TODO Metadata?: any
+    Metadata?: { [key: string]: any }
     Parameters?: { [key: string]: Parameter }
     Mappings?: { [key: string]: { [key: string]: { [key: string]: string | number } } }
     Conditions?: { [key: string]: Condition }
-    // TODO Transform?: any
+    Transform?: any
     Resources?: { [key: string]: Resource }
-    // TODO Outputs?: any
+    Outputs?: { [key: string]: Output }
 }

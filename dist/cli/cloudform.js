@@ -42,8 +42,18 @@ function compile(fileName, compilerOptions) {
         console.log(eval(output.outputFiles[0].text));
     }
 }
+const path = process.argv[2];
+if (!path || path.startsWith('-')) {
+    console.warn(`cloudform - TypeScript-based imperative way to define AWS CloudFormation templates
+
+usage: cloudform <path>
+    <path> should point to the TypeScript file containing entrypoint of the CloudFormation definition, including ".ts" suffix.
+
+example: cloudform aws/template.ts > generated.template`);
+    process.exit(1);
+}
 // console.info(`Compiling AWS CloudForm template from ${process.argv[2]}...`)
-compile(process.argv[2], {
+compile(path, {
     noEmitOnError: true,
     noImplicitAny: true,
     lib: [

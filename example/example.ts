@@ -1,29 +1,41 @@
-import cloudform, {Fn, Refs, EC2} from "../index"
-import {StringParameter} from "../types/parameter"
-import {ResourceTag} from "../types/resource"
+import cloudform, {Fn, Refs, EC2, StringParameter, ResourceTag} from ".." // you should import from cloudform here instead
+
+const NetworkingConfig = {
+    VPC: {
+        CIDR: '10.0.0.0/16'
+    }
+}
+
+const DeployEnv = Fn.Ref('DeployEnv')
 
 cloudform({
     Description: 'My template',
     Parameters: {
         DeployEnv: new StringParameter({
             Description: 'Deploy environment name',
-            AllowedValues: ['dev', 'stage', 'production']
+            AllowedValues: ['stage', 'production']
         })
     },
     Mappings: {
-        SubnetConfig: {
-            VPC: {
-                CIDR: '10.0.0.0/16'
+        SomeGroup: {
+            stage: {
+                SomeValue: 'one'
+            },
+            production: {
+                SomeValue: 'two'
             }
         }
     },
     Conditions: {
         FirstCondition: Fn.Equals(1, 2),
-        TestCondition: Fn.And([{Condition: 'FirstCondition'}, Fn.Equals("a", "b")])
+        TestCondition: Fn.And([
+            {Condition: 'FirstCondition'},
+            Fn.Equals(Fn.FindInMap('SomeGroup', DeployEnv, 'SomeValue'), 'three')
+        ])
     },
     Resources: {
         VPC: new EC2.VPC({
-            CidrBlock: Fn.FindInMap('SubnetConfig', 'VPC', 'CIDR'),
+            CidrBlock: NetworkingConfig.VPC.CIDR,
             EnableDnsHostnames: true,
             Tags: [
                 new ResourceTag('Application', Refs.StackName),
@@ -41,6 +53,11 @@ cloudform({
                     "Ref": "VPC"
                 }
             }
+        }
+    },
+    Outputs: {
+        VPCIpv6CidrBlocks: {
+            Value: Fn.GetAtt('VPC', 'Ipv6CidrBlocks')
         }
     }
 })

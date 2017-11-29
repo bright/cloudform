@@ -91,6 +91,7 @@ export class AlarmConfiguration {
 
 export class DeploymentStyle {
     DeploymentOption?: Value<string>
+    DeploymentType?: Value<string>
 
     constructor(properties: DeploymentStyle) {
         Object.assign(this, properties)

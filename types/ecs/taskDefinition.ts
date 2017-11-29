@@ -160,9 +160,13 @@ export class HostVolumeProperties {
 
 export interface TaskDefinitionProperties {
     ContainerDefinitions?: List<ContainerDefinition>
+    Cpu?: Value<string>
+    ExecutionRoleArn?: Value<string>
     Family?: Value<string>
+    Memory?: Value<string>
     NetworkMode?: Value<string>
     PlacementConstraints?: List<TaskDefinitionPlacementConstraint>
+    RequiresCompatibilities?: List<Value<string>>
     TaskRoleArn?: Value<string>
     Volumes?: List<Volume>
 }

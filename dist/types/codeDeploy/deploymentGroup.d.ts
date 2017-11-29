@@ -52,6 +52,7 @@ export declare class AlarmConfiguration {
 }
 export declare class DeploymentStyle {
     DeploymentOption?: Value<string>;
+    DeploymentType?: Value<string>;
     constructor(properties: DeploymentStyle);
 }
 export declare class Alarm {

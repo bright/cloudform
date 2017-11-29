@@ -21,12 +21,12 @@ const wafRegional_1 = require("./wafRegional");
 exports.WAFRegional = wafRegional_1.default;
 const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
-const emr_1 = require("./emr");
-exports.EMR = emr_1.default;
-const workSpaces_1 = require("./workSpaces");
-exports.WorkSpaces = workSpaces_1.default;
 const rds_1 = require("./rds");
 exports.RDS = rds_1.default;
+const workSpaces_1 = require("./workSpaces");
+exports.WorkSpaces = workSpaces_1.default;
+const emr_1 = require("./emr");
+exports.EMR = emr_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -83,6 +83,8 @@ const elastiCache_1 = require("./elastiCache");
 exports.ElastiCache = elastiCache_1.default;
 const codeDeploy_1 = require("./codeDeploy");
 exports.CodeDeploy = codeDeploy_1.default;
+const guardDuty_1 = require("./guardDuty");
+exports.GuardDuty = guardDuty_1.default;
 const codeBuild_1 = require("./codeBuild");
 exports.CodeBuild = codeBuild_1.default;
 const dax_1 = require("./dax");
@@ -120,9 +122,9 @@ exports.default = {
     Elasticsearch: exports.Elasticsearch,
     WAFRegional: exports.WAFRegional,
     ApiGateway: exports.ApiGateway,
-    EMR: exports.EMR,
-    WorkSpaces: exports.WorkSpaces,
     RDS: exports.RDS,
+    WorkSpaces: exports.WorkSpaces,
+    EMR: exports.EMR,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -151,6 +153,7 @@ exports.default = {
     DMS: exports.DMS,
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
+    GuardDuty: exports.GuardDuty,
     CodeBuild: exports.CodeBuild,
     DAX: exports.DAX,
     DataPipeline: exports.DataPipeline,

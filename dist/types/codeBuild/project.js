@@ -20,6 +20,18 @@ class Environment {
     }
 }
 exports.Environment = Environment;
+class ProjectCache {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ProjectCache = ProjectCache;
+class VpcConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.VpcConfig = VpcConfig;
 class EnvironmentVariable {
     constructor(properties) {
         Object.assign(this, properties);

@@ -22,6 +22,17 @@ export declare class Environment {
     ComputeType: Value<string>;
     constructor(properties: Environment);
 }
+export declare class ProjectCache {
+    Type: Value<string>;
+    Location?: Value<string>;
+    constructor(properties: ProjectCache);
+}
+export declare class VpcConfig {
+    Subnets: List<Value<string>>;
+    VpcId: Value<string>;
+    SecurityGroupIds: List<Value<string>>;
+    constructor(properties: VpcConfig);
+}
 export declare class EnvironmentVariable {
     Type?: Value<string>;
     Value: Value<string>;
@@ -37,14 +48,17 @@ export declare class Source {
 }
 export interface ProjectProperties {
     Artifacts: Artifacts;
+    BadgeEnabled?: Value<boolean>;
     Description?: Value<string>;
     ServiceRole: Value<string>;
+    VpcConfig?: VpcConfig;
     Environment: Environment;
     EncryptionKey?: Value<string>;
     Source: Source;
     Tags?: ResourceTag[];
     Name?: Value<string>;
     TimeoutInMinutes?: Value<number>;
+    Cache?: ProjectCache;
 }
 export default class Project extends ResourceBase {
     constructor(properties?: ProjectProperties);

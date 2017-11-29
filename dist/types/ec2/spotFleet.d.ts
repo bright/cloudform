@@ -53,7 +53,7 @@ export declare class SpotFleetRequestConfigData {
     IamFleetRole: Value<string>;
     LaunchSpecifications: List<SpotFleetLaunchSpecification>;
     ReplaceUnhealthyInstances?: Value<boolean>;
-    SpotPrice: Value<string>;
+    SpotPrice?: Value<string>;
     TargetCapacity: Value<number>;
     TerminateInstancesWithExpiration?: Value<boolean>;
     Type?: Value<string>;

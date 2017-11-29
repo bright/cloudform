@@ -37,6 +37,25 @@ export class Environment {
     }
 }
 
+export class ProjectCache {
+    Type: Value<string>
+    Location?: Value<string>
+
+    constructor(properties: ProjectCache) {
+        Object.assign(this, properties)
+    }
+}
+
+export class VpcConfig {
+    Subnets: List<Value<string>>
+    VpcId: Value<string>
+    SecurityGroupIds: List<Value<string>>
+
+    constructor(properties: VpcConfig) {
+        Object.assign(this, properties)
+    }
+}
+
 export class EnvironmentVariable {
     Type?: Value<string>
     Value: Value<string>
@@ -60,14 +79,17 @@ export class Source {
 
 export interface ProjectProperties {
     Artifacts: Artifacts
+    BadgeEnabled?: Value<boolean>
     Description?: Value<string>
     ServiceRole: Value<string>
+    VpcConfig?: VpcConfig
     Environment: Environment
     EncryptionKey?: Value<string>
     Source: Source
     Tags?: ResourceTag[]
     Name?: Value<string>
     TimeoutInMinutes?: Value<number>
+    Cache?: ProjectCache
 }
 
 export default class Project extends ResourceBase {

@@ -41,13 +41,34 @@ export class PlacementConstraint {
     }
 }
 
+export class AwsVpcConfiguration {
+    AssignPublicIp?: Value<string>
+    SecurityGroups?: List<Value<string>>
+    Subnets: List<Value<string>>
+
+    constructor(properties: AwsVpcConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class NetworkConfiguration {
+    AwsvpcConfiguration?: AwsVpcConfiguration
+
+    constructor(properties: NetworkConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
 export interface ServiceProperties {
     Cluster?: Value<string>
     DeploymentConfiguration?: DeploymentConfiguration
     DesiredCount?: Value<number>
+    LaunchType?: Value<string>
     LoadBalancers?: List<LoadBalancer>
+    NetworkConfiguration?: NetworkConfiguration
     PlacementConstraints?: List<PlacementConstraint>
     PlacementStrategies?: List<PlacementStrategy>
+    PlatformVersion?: Value<string>
     Role?: Value<string>
     ServiceName?: Value<string>
     TaskDefinition: Value<string>

@@ -26,6 +26,18 @@ class PlacementConstraint {
     }
 }
 exports.PlacementConstraint = PlacementConstraint;
+class AwsVpcConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.AwsVpcConfiguration = AwsVpcConfiguration;
+class NetworkConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.NetworkConfiguration = NetworkConfiguration;
 class Service extends resource_1.ResourceBase {
     constructor(properties) {
         super('AWS::ECS::Service', properties);

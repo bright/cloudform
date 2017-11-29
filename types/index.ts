@@ -13,8 +13,8 @@ import EC2_ from './ec2'
 export const EC2 = EC2_
 
 import EC2RouteTable from './ec2/routeTable'
-import EC2PlacementGroup from './ec2/placementGroup'
 import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
+import EC2PlacementGroup from './ec2/placementGroup'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
 import EC2Volume from './ec2/volume'
@@ -136,20 +136,6 @@ import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
-import EMR_ from './emr'
-export const EMR = EMR_
-
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
-import EMRCluster from './emr/cluster'
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
-import EMRStep from './emr/step'
-import EMRSecurityConfiguration from './emr/securityConfiguration'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
-
 import RDS_ from './rds'
 export const RDS = RDS_
 
@@ -162,6 +148,20 @@ import RDSEventSubscription from './rds/eventSubscription'
 import RDSDBInstance from './rds/dbInstance'
 import RDSDBSecurityGroup from './rds/dbSecurityGroup'
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup'
+
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
+
+import EMR_ from './emr'
+export const EMR = EMR_
+
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
+import EMRCluster from './emr/cluster'
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
+import EMRStep from './emr/step'
+import EMRSecurityConfiguration from './emr/securityConfiguration'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -373,6 +373,13 @@ import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup'
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig'
 import CodeDeployApplication from './codeDeploy/application'
 
+import GuardDuty_ from './guardDuty'
+export const GuardDuty = GuardDuty_
+
+import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
+import GuardDutyDetector from './guardDuty/detector'
+import GuardDutyIPSet from './guardDuty/ipSet'
+
 import CodeBuild_ from './codeBuild'
 export const CodeBuild = CodeBuild_
 
@@ -456,9 +463,9 @@ export default {
   Elasticsearch,
   WAFRegional,
   ApiGateway,
-  EMR,
-  WorkSpaces,
   RDS,
+  WorkSpaces,
+  EMR,
   Logs,
   Kinesis,
   AutoScaling,
@@ -487,6 +494,7 @@ export default {
   DMS,
   ElastiCache,
   CodeDeploy,
+  GuardDuty,
   CodeBuild,
   DAX,
   DataPipeline,

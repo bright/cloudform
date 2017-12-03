@@ -1,8 +1,12 @@
 {
   "name": "cloudform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bright/cloudform.git"
+  },
   "scripts": {
     "build": "tsc --declaration",
     "generate": "tsc generator/generator.ts --lib es2015,es2016.array.include && node generator/generator.js"

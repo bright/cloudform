@@ -40,8 +40,8 @@ export function Ref(logicalName: Value<string>) {
     return new IntrinsicFunction('Ref', logicalName)
 }
 
-export function And(condition: List<Condition>) {
-    return new ConditionIntrinsicFunction('Fn::And', condition)
+export function And(conditions: List<Condition>) {
+    return new ConditionIntrinsicFunction('Fn::And', conditions)
 }
 
 export function Equals(left: any, right: any) {
@@ -53,9 +53,9 @@ export function If(conditionName: Value<string>, valueIfTrue: any, valueIfFalse:
 }
 
 export function Not(condition: Condition) {
-    return new ConditionIntrinsicFunction('Fn::Not', condition)
+    return new ConditionIntrinsicFunction('Fn::Not', [condition])
 }
 
-export function Or(condition: List<Condition>) {
-    return new ConditionIntrinsicFunction('Fn::Or', condition)
+export function Or(conditions: List<Condition>) {
+    return new ConditionIntrinsicFunction('Fn::Or', conditions)
 }

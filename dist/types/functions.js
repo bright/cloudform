@@ -41,8 +41,8 @@ function Ref(logicalName) {
     return new dataTypes_1.IntrinsicFunction('Ref', logicalName);
 }
 exports.Ref = Ref;
-function And(condition) {
-    return new dataTypes_1.ConditionIntrinsicFunction('Fn::And', condition);
+function And(conditions) {
+    return new dataTypes_1.ConditionIntrinsicFunction('Fn::And', conditions);
 }
 exports.And = And;
 function Equals(left, right) {
@@ -54,10 +54,10 @@ function If(conditionName, valueIfTrue, valueIfFalse) {
 }
 exports.If = If;
 function Not(condition) {
-    return new dataTypes_1.ConditionIntrinsicFunction('Fn::Not', condition);
+    return new dataTypes_1.ConditionIntrinsicFunction('Fn::Not', [condition]);
 }
 exports.Not = Not;
-function Or(condition) {
-    return new dataTypes_1.ConditionIntrinsicFunction('Fn::Or', condition);
+function Or(conditions) {
+    return new dataTypes_1.ConditionIntrinsicFunction('Fn::Or', conditions);
 }
 exports.Or = Or;

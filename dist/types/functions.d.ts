@@ -11,8 +11,8 @@ export declare function Sub(string: Value<string>, vars: {
     [key: string]: Value<any>;
 }): IntrinsicFunction;
 export declare function Ref(logicalName: Value<string>): IntrinsicFunction;
-export declare function And(condition: List<Condition>): ConditionIntrinsicFunction;
+export declare function And(conditions: List<Condition>): ConditionIntrinsicFunction;
 export declare function Equals(left: any, right: any): ConditionIntrinsicFunction;
 export declare function If(conditionName: Value<string>, valueIfTrue: any, valueIfFalse: any): ConditionIntrinsicFunction;
 export declare function Not(condition: Condition): ConditionIntrinsicFunction;
-export declare function Or(condition: List<Condition>): ConditionIntrinsicFunction;
+export declare function Or(conditions: List<Condition>): ConditionIntrinsicFunction;

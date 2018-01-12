@@ -1,6 +1,6 @@
 import RouteTable from './routeTable';
-import VPCPeeringConnection from './vpcPeeringConnection';
 import PlacementGroup from './placementGroup';
+import VPCPeeringConnection from './vpcPeeringConnection';
 import NetworkAclEntry from './networkAclEntry';
 import InternetGateway from './internetGateway';
 import Volume from './volume';
@@ -39,8 +39,8 @@ import VPCCidrBlock from './vpcCidrBlock';
 import VPCDHCPOptionsAssociation from './vpcdhcpOptionsAssociation';
 declare const _default: {
     RouteTable: typeof RouteTable;
-    VPCPeeringConnection: typeof VPCPeeringConnection;
     PlacementGroup: typeof PlacementGroup;
+    VPCPeeringConnection: typeof VPCPeeringConnection;
     NetworkAclEntry: typeof NetworkAclEntry;
     InternetGateway: typeof InternetGateway;
     Volume: typeof Volume;

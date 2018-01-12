@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -61,18 +61,6 @@ export class CacheBehavior {
     MaxTTL?: Value<number>
 
     constructor(properties: CacheBehavior) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LegacyCustomOrigin {
-    HTTPSPort?: Value<number>
-    OriginSSLProtocols?: List<Value<string>>
-    DNSName: Value<string>
-    HTTPPort?: Value<number>
-    OriginProtocolPolicy: Value<string>
-
-    constructor(properties: LegacyCustomOrigin) {
         Object.assign(this, properties)
     }
 }
@@ -174,29 +162,17 @@ export class DistributionConfig {
     Origins?: List<Origin>
     ViewerCertificate?: ViewerCertificate
     PriceClass?: Value<string>
-    S3Origin?: LegacyS3Origin
-    CustomOrigin?: LegacyCustomOrigin
     DefaultCacheBehavior?: DefaultCacheBehavior
     CustomErrorResponses?: List<CustomErrorResponse>
     Enabled: Value<boolean>
     Aliases?: List<Value<string>>
     IPV6Enabled?: Value<boolean>
     WebACLId?: Value<string>
-    CNAMEs?: List<Value<string>>
     HttpVersion?: Value<string>
     Restrictions?: Restrictions
     CacheBehaviors?: List<CacheBehavior>
 
     constructor(properties: DistributionConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LegacyS3Origin {
-    OriginAccessIdentity?: Value<string>
-    DNSName: Value<string>
-
-    constructor(properties: LegacyS3Origin) {
         Object.assign(this, properties)
     }
 }

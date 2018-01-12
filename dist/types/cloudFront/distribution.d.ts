@@ -42,14 +42,6 @@ export declare class CacheBehavior {
     MaxTTL?: Value<number>;
     constructor(properties: CacheBehavior);
 }
-export declare class LegacyCustomOrigin {
-    HTTPSPort?: Value<number>;
-    OriginSSLProtocols?: List<Value<string>>;
-    DNSName: Value<string>;
-    HTTPPort?: Value<number>;
-    OriginProtocolPolicy: Value<string>;
-    constructor(properties: LegacyCustomOrigin);
-}
 export declare class DefaultCacheBehavior {
     Compress?: Value<boolean>;
     AllowedMethods?: List<Value<string>>;
@@ -115,24 +107,16 @@ export declare class DistributionConfig {
     Origins?: List<Origin>;
     ViewerCertificate?: ViewerCertificate;
     PriceClass?: Value<string>;
-    S3Origin?: LegacyS3Origin;
-    CustomOrigin?: LegacyCustomOrigin;
     DefaultCacheBehavior?: DefaultCacheBehavior;
     CustomErrorResponses?: List<CustomErrorResponse>;
     Enabled: Value<boolean>;
     Aliases?: List<Value<string>>;
     IPV6Enabled?: Value<boolean>;
     WebACLId?: Value<string>;
-    CNAMEs?: List<Value<string>>;
     HttpVersion?: Value<string>;
     Restrictions?: Restrictions;
     CacheBehaviors?: List<CacheBehavior>;
     constructor(properties: DistributionConfig);
-}
-export declare class LegacyS3Origin {
-    OriginAccessIdentity?: Value<string>;
-    DNSName: Value<string>;
-    constructor(properties: LegacyS3Origin);
 }
 export declare class OriginCustomHeader {
     HeaderValue: Value<string>;

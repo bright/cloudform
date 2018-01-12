@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -13,8 +13,8 @@ import EC2_ from './ec2'
 export const EC2 = EC2_
 
 import EC2RouteTable from './ec2/routeTable'
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2PlacementGroup from './ec2/placementGroup'
+import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
 import EC2Volume from './ec2/volume'
@@ -136,6 +136,20 @@ import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
+import EMR_ from './emr'
+export const EMR = EMR_
+
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
+import EMRCluster from './emr/cluster'
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
+import EMRStep from './emr/step'
+import EMRSecurityConfiguration from './emr/securityConfiguration'
+
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
+
 import RDS_ from './rds'
 export const RDS = RDS_
 
@@ -148,20 +162,6 @@ import RDSEventSubscription from './rds/eventSubscription'
 import RDSDBInstance from './rds/dbInstance'
 import RDSDBSecurityGroup from './rds/dbSecurityGroup'
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
-
-import EMR_ from './emr'
-export const EMR = EMR_
-
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
-import EMRCluster from './emr/cluster'
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
-import EMRStep from './emr/step'
-import EMRSecurityConfiguration from './emr/securityConfiguration'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -324,6 +324,13 @@ export const CertificateManager = CertificateManager_
 
 import CertificateManagerCertificate from './certificateManager/certificate'
 
+import Inspector_ from './inspector'
+export const Inspector = Inspector_
+
+import InspectorResourceGroup from './inspector/resourceGroup'
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
+import InspectorAssessmentTarget from './inspector/assessmentTarget'
+
 import Batch_ from './batch'
 export const Batch = Batch_
 
@@ -410,6 +417,19 @@ import CloudFormationStack from './cloudFormation/stack'
 import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle'
 import CloudFormationCustomResource from './cloudFormation/customResource'
 
+import Cloud9_ from './cloud9'
+export const Cloud9 = Cloud9_
+
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
+
+import ServiceDiscovery_ from './serviceDiscovery'
+export const ServiceDiscovery = ServiceDiscovery_
+
+import ServiceDiscoveryInstance from './serviceDiscovery/instance'
+import ServiceDiscoveryService from './serviceDiscovery/service'
+import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace'
+import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace'
+
 import ApplicationAutoScaling_ from './applicationAutoScaling'
 export const ApplicationAutoScaling = ApplicationAutoScaling_
 
@@ -463,9 +483,9 @@ export default {
   Elasticsearch,
   WAFRegional,
   ApiGateway,
-  RDS,
-  WorkSpaces,
   EMR,
+  WorkSpaces,
+  RDS,
   Logs,
   Kinesis,
   AutoScaling,
@@ -488,6 +508,7 @@ export default {
   Redshift,
   Lambda,
   CertificateManager,
+  Inspector,
   Batch,
   ElasticLoadBalancing,
   IoT,
@@ -500,6 +521,8 @@ export default {
   DataPipeline,
   CloudTrail,
   CloudFormation,
+  Cloud9,
+  ServiceDiscovery,
   ApplicationAutoScaling,
   CodeCommit,
   S3,

@@ -10,8 +10,8 @@ import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment';
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
-    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     PlacementGroup: typeof EC2PlacementGroup;
+    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
     Volume: typeof EC2Volume;
@@ -50,8 +50,8 @@ export declare const EC2: {
     VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
 };
 import EC2RouteTable from './ec2/routeTable';
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2PlacementGroup from './ec2/placementGroup';
+import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
 import EC2Volume from './ec2/volume';
@@ -208,6 +208,22 @@ import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -228,22 +244,6 @@ import RDSEventSubscription from './rds/eventSubscription';
 import RDSDBInstance from './rds/dbInstance';
 import RDSDBSecurityGroup from './rds/dbSecurityGroup';
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -434,6 +434,14 @@ export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
 import CertificateManagerCertificate from './certificateManager/certificate';
+export declare const Inspector: {
+    ResourceGroup: typeof InspectorResourceGroup;
+    AssessmentTemplate: typeof InspectorAssessmentTemplate;
+    AssessmentTarget: typeof InspectorAssessmentTarget;
+};
+import InspectorResourceGroup from './inspector/resourceGroup';
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
+import InspectorAssessmentTarget from './inspector/assessmentTarget';
 export declare const Batch: {
     JobDefinition: typeof BatchJobDefinition;
     JobQueue: typeof BatchJobQueue;
@@ -534,6 +542,20 @@ import CloudFormationWaitCondition from './cloudFormation/waitCondition';
 import CloudFormationStack from './cloudFormation/stack';
 import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle';
 import CloudFormationCustomResource from './cloudFormation/customResource';
+export declare const Cloud9: {
+    EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+};
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
+export declare const ServiceDiscovery: {
+    Instance: typeof ServiceDiscoveryInstance;
+    Service: typeof ServiceDiscoveryService;
+    PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+    PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+};
+import ServiceDiscoveryInstance from './serviceDiscovery/instance';
+import ServiceDiscoveryService from './serviceDiscovery/service';
+import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
+import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
 export declare const ApplicationAutoScaling: {
     ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
     ScalableTarget: typeof ApplicationAutoScalingScalableTarget;
@@ -579,8 +601,8 @@ declare const _default: {
     };
     EC2: {
         RouteTable: typeof EC2RouteTable;
-        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         PlacementGroup: typeof EC2PlacementGroup;
+        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
         Volume: typeof EC2Volume;
@@ -686,6 +708,16 @@ declare const _default: {
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
     };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
+    };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
         DBCluster: typeof RDSDBCluster;
@@ -696,16 +728,6 @@ declare const _default: {
         DBInstance: typeof RDSDBInstance;
         DBSecurityGroup: typeof RDSDBSecurityGroup;
         DBClusterParameterGroup: typeof RDSDBClusterParameterGroup;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
-    };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -824,6 +846,11 @@ declare const _default: {
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
     };
+    Inspector: {
+        ResourceGroup: typeof InspectorResourceGroup;
+        AssessmentTemplate: typeof InspectorAssessmentTemplate;
+        AssessmentTarget: typeof InspectorAssessmentTarget;
+    };
     Batch: {
         JobDefinition: typeof BatchJobDefinition;
         JobQueue: typeof BatchJobQueue;
@@ -885,6 +912,15 @@ declare const _default: {
         Stack: typeof CloudFormationStack;
         WaitConditionHandle: typeof CloudFormationWaitConditionHandle;
         CustomResource: typeof CloudFormationCustomResource;
+    };
+    Cloud9: {
+        EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+    };
+    ServiceDiscovery: {
+        Instance: typeof ServiceDiscoveryInstance;
+        Service: typeof ServiceDiscoveryService;
+        PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+        PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
     };
     ApplicationAutoScaling: {
         ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;

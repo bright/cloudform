@@ -14,6 +14,9 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
     if (property[typeSuffix] === 'Map') {
         return "{[key: string]: " + determineTypeScriptType(property, propertyName, 'ItemType') + "}";
     }
+    if (property[typeSuffix] === 'Tag') {
+        return 'ResourceTag';
+    }
     if (property[typeSuffix]) {
         return property[typeSuffix];
     }
@@ -44,7 +47,7 @@ function generateTopLevelClass(namespace, name, properties) {
     return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n    constructor(properties?: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
 }
 function hasTags(properties) {
-    return Object.keys(properties).includes('Tags');
+    return Object.keys(properties).includes('Tags') || lodash_1.some(properties, function (p) { return p.Type === 'List' && p.ItemType === 'Tag'; });
 }
 function generateFile(fileHeader, namespace, resourceName, properties, innerTypes) {
     var innerHasTags = false;

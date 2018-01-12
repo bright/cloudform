@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import {camelCase, forEach, pickBy, filter, uniq, map} from 'lodash'
+import {camelCase, forEach, pickBy, filter, uniq, map, some} from 'lodash'
 
 const fetch = require('node-fetch')
 
@@ -15,6 +15,9 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
     }
     if (property[typeSuffix] === 'Map') {
         return `{[key: string]: ${determineTypeScriptType(property, propertyName, 'ItemType')}}`
+    }
+    if (property[typeSuffix] === 'Tag') {
+        return 'ResourceTag'
     }
     if (property[typeSuffix]) {
         return property[typeSuffix]
@@ -66,7 +69,7 @@ export default class ${name} extends ResourceBase {
 }
 
 function hasTags(properties) {
-    return Object.keys(properties).includes('Tags')
+    return Object.keys(properties).includes('Tags') || some(properties, p => p.Type === 'List' && p.ItemType === 'Tag')
 }
 
 function generateFile(fileHeader, namespace, resourceName, properties, innerTypes) {

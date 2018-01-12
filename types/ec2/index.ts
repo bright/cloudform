@@ -1,8 +1,8 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
    
 import RouteTable from './routeTable'
-import VPCPeeringConnection from './vpcPeeringConnection'
 import PlacementGroup from './placementGroup'
+import VPCPeeringConnection from './vpcPeeringConnection'
 import NetworkAclEntry from './networkAclEntry'
 import InternetGateway from './internetGateway'
 import Volume from './volume'
@@ -42,8 +42,8 @@ import VPCDHCPOptionsAssociation from './vpcdhcpOptionsAssociation'
 
 export default {
   RouteTable,
-  VPCPeeringConnection,
   PlacementGroup,
+  VPCPeeringConnection,
   NetworkAclEntry,
   InternetGateway,
   Volume,

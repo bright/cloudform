@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.11.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
@@ -21,12 +21,12 @@ const wafRegional_1 = require("./wafRegional");
 exports.WAFRegional = wafRegional_1.default;
 const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
-const rds_1 = require("./rds");
-exports.RDS = rds_1.default;
-const workSpaces_1 = require("./workSpaces");
-exports.WorkSpaces = workSpaces_1.default;
 const emr_1 = require("./emr");
 exports.EMR = emr_1.default;
+const workSpaces_1 = require("./workSpaces");
+exports.WorkSpaces = workSpaces_1.default;
+const rds_1 = require("./rds");
+exports.RDS = rds_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -71,6 +71,8 @@ const lambda_1 = require("./lambda");
 exports.Lambda = lambda_1.default;
 const certificateManager_1 = require("./certificateManager");
 exports.CertificateManager = certificateManager_1.default;
+const inspector_1 = require("./inspector");
+exports.Inspector = inspector_1.default;
 const batch_1 = require("./batch");
 exports.Batch = batch_1.default;
 const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
@@ -95,6 +97,10 @@ const cloudTrail_1 = require("./cloudTrail");
 exports.CloudTrail = cloudTrail_1.default;
 const cloudFormation_1 = require("./cloudFormation");
 exports.CloudFormation = cloudFormation_1.default;
+const cloud9_1 = require("./cloud9");
+exports.Cloud9 = cloud9_1.default;
+const serviceDiscovery_1 = require("./serviceDiscovery");
+exports.ServiceDiscovery = serviceDiscovery_1.default;
 const applicationAutoScaling_1 = require("./applicationAutoScaling");
 exports.ApplicationAutoScaling = applicationAutoScaling_1.default;
 const codeCommit_1 = require("./codeCommit");
@@ -122,9 +128,9 @@ exports.default = {
     Elasticsearch: exports.Elasticsearch,
     WAFRegional: exports.WAFRegional,
     ApiGateway: exports.ApiGateway,
-    RDS: exports.RDS,
-    WorkSpaces: exports.WorkSpaces,
     EMR: exports.EMR,
+    WorkSpaces: exports.WorkSpaces,
+    RDS: exports.RDS,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -147,6 +153,7 @@ exports.default = {
     Redshift: exports.Redshift,
     Lambda: exports.Lambda,
     CertificateManager: exports.CertificateManager,
+    Inspector: exports.Inspector,
     Batch: exports.Batch,
     ElasticLoadBalancing: exports.ElasticLoadBalancing,
     IoT: exports.IoT,
@@ -159,6 +166,8 @@ exports.default = {
     DataPipeline: exports.DataPipeline,
     CloudTrail: exports.CloudTrail,
     CloudFormation: exports.CloudFormation,
+    Cloud9: exports.Cloud9,
+    ServiceDiscovery: exports.ServiceDiscovery,
     ApplicationAutoScaling: exports.ApplicationAutoScaling,
     CodeCommit: exports.CodeCommit,
     S3: exports.S3,

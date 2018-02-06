@@ -8,7 +8,7 @@ export default interface Template {
     Description?: string
     Metadata?: { [key: string]: any }
     Parameters?: { [key: string]: Parameter }
-    Mappings?: { [key: string]: { [key: string]: { [key: string]: string | number } } }
+    Mappings?: { [key: string]: { [key: string]: { [key: string]: string | number | string[] } } }
     Conditions?: { [key: string]: Condition }
     Transform?: any
     Resources?: { [key: string]: Resource }

@@ -14,7 +14,7 @@ export default interface Template {
     Mappings?: {
         [key: string]: {
             [key: string]: {
-                [key: string]: string | number;
+                [key: string]: string | number | string[];
             };
         };
     };

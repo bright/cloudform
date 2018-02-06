@@ -36,6 +36,7 @@ export interface ServiceProperties {
     Cluster?: Value<string>;
     DeploymentConfiguration?: DeploymentConfiguration;
     DesiredCount?: Value<number>;
+    HealthCheckGracePeriodSeconds?: Value<number>;
     LaunchType?: Value<string>;
     LoadBalancers?: List<LoadBalancer>;
     NetworkConfiguration?: NetworkConfiguration;

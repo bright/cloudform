@@ -12,10 +12,16 @@ export declare class KinesisStreamsOutput {
 }
 export declare class Output {
     DestinationSchema: DestinationSchema;
+    LambdaOutput?: LambdaOutput;
     KinesisFirehoseOutput?: KinesisFirehoseOutput;
     KinesisStreamsOutput?: KinesisStreamsOutput;
     Name?: Value<string>;
     constructor(properties: Output);
+}
+export declare class LambdaOutput {
+    ResourceARN: Value<string>;
+    RoleARN: Value<string>;
+    constructor(properties: LambdaOutput);
 }
 export declare class DestinationSchema {
     RecordFormatType?: Value<string>;

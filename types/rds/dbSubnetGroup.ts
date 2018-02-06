@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -7,6 +7,7 @@ import {Value, List} from '../dataTypes'
 
 export interface DBSubnetGroupProperties {
     DBSubnetGroupDescription: Value<string>
+    DBSubnetGroupName?: Value<string>
     SubnetIds: List<Value<string>>
     Tags?: ResourceTag[]
 }

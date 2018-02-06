@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -363,6 +363,19 @@ import DMSEndpoint from './dms/endpoint'
 import DMSReplicationTask from './dms/replicationTask'
 import DMSReplicationInstance from './dms/replicationInstance'
 
+import Glue_ from './glue'
+export const Glue = Glue_
+
+import GlueTable from './glue/table'
+import GlueConnection from './glue/connection'
+import GluePartition from './glue/partition'
+import GlueJob from './glue/job'
+import GlueDatabase from './glue/database'
+import GlueDevEndpoint from './glue/devEndpoint'
+import GlueTrigger from './glue/trigger'
+import GlueCrawler from './glue/crawler'
+import GlueClassifier from './glue/classifier'
+
 import ElastiCache_ from './elastiCache'
 export const ElastiCache = ElastiCache_
 
@@ -513,6 +526,7 @@ export default {
   ElasticLoadBalancing,
   IoT,
   DMS,
+  Glue,
   ElastiCache,
   CodeDeploy,
   GuardDuty,

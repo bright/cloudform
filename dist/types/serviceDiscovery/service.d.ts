@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class DnsConfig {
-    DnsRecords?: List<DnsRecord>;
+    DnsRecords: List<DnsRecord>;
     NamespaceId: Value<string>;
     constructor(properties: DnsConfig);
 }

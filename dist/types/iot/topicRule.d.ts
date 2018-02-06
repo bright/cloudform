@@ -63,9 +63,9 @@ export declare class DynamoDBAction {
     HashKeyType?: Value<string>;
     HashKeyValue: Value<string>;
     PayloadField?: Value<string>;
-    RangeKeyField: Value<string>;
+    RangeKeyField?: Value<string>;
     RangeKeyType?: Value<string>;
-    RangeKeyValue: Value<string>;
+    RangeKeyValue?: Value<string>;
     RoleArn: Value<string>;
     TableName: Value<string>;
     constructor(properties: DynamoDBAction);

@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -86,6 +86,14 @@ export class SsmAssociation {
     }
 }
 
+export class CreditSpecification {
+    CPUCredits?: Value<string>
+
+    constructor(properties: CreditSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
 export class BlockDeviceMapping {
     DeviceName: Value<string>
     Ebs?: Ebs
@@ -111,6 +119,7 @@ export interface InstanceProperties {
     Affinity?: Value<string>
     AvailabilityZone?: Value<string>
     BlockDeviceMappings?: List<BlockDeviceMapping>
+    CreditSpecification?: CreditSpecification
     DisableApiTermination?: Value<boolean>
     EbsOptimized?: Value<boolean>
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>

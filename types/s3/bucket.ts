@@ -1,7 +1,15 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class BucketEncryption {
+    ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>
+
+    constructor(properties: BucketEncryption) {
+        Object.assign(this, properties)
+    }
+}
 
 export class NotificationFilter {
     S3Key: S3KeyFilter
@@ -42,6 +50,7 @@ export class ReplicationRule {
     Destination: ReplicationDestination
     Id?: Value<string>
     Prefix: Value<string>
+    SourceSelectionCriteria?: SourceSelectionCriteria
     Status: Value<string>
 
     constructor(properties: ReplicationRule) {
@@ -73,6 +82,14 @@ export class Destination {
     }
 }
 
+export class ServerSideEncryptionRule {
+    ServerSideEncryptionByDefault?: ServerSideEncryptionByDefault
+
+    constructor(properties: ServerSideEncryptionRule) {
+        Object.assign(this, properties)
+    }
+}
+
 export class AnalyticsConfiguration {
     Id: Value<string>
     Prefix?: Value<string>
@@ -80,6 +97,14 @@ export class AnalyticsConfiguration {
     TagFilters?: List<TagFilter>
 
     constructor(properties: AnalyticsConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SourceSelectionCriteria {
+    SseKmsEncryptedObjects: SseKmsEncryptedObjects
+
+    constructor(properties: SourceSelectionCriteria) {
         Object.assign(this, properties)
     }
 }
@@ -110,10 +135,26 @@ export class RoutingRule {
     }
 }
 
+export class AccessControlTranslation {
+    Owner: Value<string>
+
+    constructor(properties: AccessControlTranslation) {
+        Object.assign(this, properties)
+    }
+}
+
 export class VersioningConfiguration {
     Status: Value<string>
 
     constructor(properties: VersioningConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class EncryptionConfiguration {
+    ReplicaKmsKeyID: Value<string>
+
+    constructor(properties: EncryptionConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -124,6 +165,15 @@ export class NotificationConfiguration {
     TopicConfigurations?: List<TopicConfiguration>
 
     constructor(properties: NotificationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ServerSideEncryptionByDefault {
+    KMSMasterKeyID?: Value<string>
+    SSEAlgorithm: Value<string>
+
+    constructor(properties: ServerSideEncryptionByDefault) {
         Object.assign(this, properties)
     }
 }
@@ -187,6 +237,14 @@ export class ReplicationConfiguration {
     Rules: List<ReplicationRule>
 
     constructor(properties: ReplicationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SseKmsEncryptedObjects {
+    Status: Value<string>
+
+    constructor(properties: SseKmsEncryptedObjects) {
         Object.assign(this, properties)
     }
 }
@@ -277,7 +335,10 @@ export class CorsConfiguration {
 }
 
 export class ReplicationDestination {
+    AccessControlTranslation?: AccessControlTranslation
+    Account?: Value<string>
     Bucket: Value<string>
+    EncryptionConfiguration?: EncryptionConfiguration
     StorageClass?: Value<string>
 
     constructor(properties: ReplicationDestination) {
@@ -323,6 +384,7 @@ export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration
     AccessControl?: Value<string>
     AnalyticsConfigurations?: List<AnalyticsConfiguration>
+    BucketEncryption?: BucketEncryption
     BucketName?: Value<string>
     CorsConfiguration?: CorsConfiguration
     InventoryConfigurations?: List<InventoryConfiguration>

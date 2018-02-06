@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class ElasticGpuSpecification {
@@ -50,6 +50,12 @@ class SsmAssociation {
     }
 }
 exports.SsmAssociation = SsmAssociation;
+class CreditSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.CreditSpecification = CreditSpecification;
 class BlockDeviceMapping {
     constructor(properties) {
         Object.assign(this, properties);

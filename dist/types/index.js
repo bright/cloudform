@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
@@ -81,6 +81,8 @@ const iot_1 = require("./iot");
 exports.IoT = iot_1.default;
 const dms_1 = require("./dms");
 exports.DMS = dms_1.default;
+const glue_1 = require("./glue");
+exports.Glue = glue_1.default;
 const elastiCache_1 = require("./elastiCache");
 exports.ElastiCache = elastiCache_1.default;
 const codeDeploy_1 = require("./codeDeploy");
@@ -158,6 +160,7 @@ exports.default = {
     ElasticLoadBalancing: exports.ElasticLoadBalancing,
     IoT: exports.IoT,
     DMS: exports.DMS,
+    Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
     GuardDuty: exports.GuardDuty,

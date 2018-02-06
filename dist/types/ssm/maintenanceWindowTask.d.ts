@@ -7,7 +7,7 @@ export declare class MaintenanceWindowLambdaParameters {
     constructor(properties: MaintenanceWindowLambdaParameters);
 }
 export declare class NotificationConfig {
-    NotificationArn?: Value<string>;
+    NotificationArn: Value<string>;
     NotificationType?: Value<string>;
     NotificationEvents?: List<Value<string>>;
     constructor(properties: NotificationConfig);

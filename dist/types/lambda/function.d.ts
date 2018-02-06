@@ -35,6 +35,7 @@ export interface FunctionProperties {
     Handler: Value<string>;
     KmsKeyArn?: Value<string>;
     MemorySize?: Value<number>;
+    ReservedConcurrentExecutions?: Value<number>;
     Role: Value<string>;
     Runtime: Value<string>;
     Tags?: ResourceTag[];

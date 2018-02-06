@@ -10,6 +10,7 @@ export declare class ParameterValues {
     constructor(properties: ParameterValues);
 }
 export interface AssociationProperties {
+    AssociationName?: Value<string>;
     DocumentVersion?: Value<string>;
     InstanceId?: Value<string>;
     Name: Value<string>;

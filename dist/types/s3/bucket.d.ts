@@ -1,5 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class BucketEncryption {
+    ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>;
+    constructor(properties: BucketEncryption);
+}
 export declare class NotificationFilter {
     S3Key: S3KeyFilter;
     constructor(properties: NotificationFilter);
@@ -23,6 +27,7 @@ export declare class ReplicationRule {
     Destination: ReplicationDestination;
     Id?: Value<string>;
     Prefix: Value<string>;
+    SourceSelectionCriteria?: SourceSelectionCriteria;
     Status: Value<string>;
     constructor(properties: ReplicationRule);
 }
@@ -42,12 +47,20 @@ export declare class Destination {
     Prefix?: Value<string>;
     constructor(properties: Destination);
 }
+export declare class ServerSideEncryptionRule {
+    ServerSideEncryptionByDefault?: ServerSideEncryptionByDefault;
+    constructor(properties: ServerSideEncryptionRule);
+}
 export declare class AnalyticsConfiguration {
     Id: Value<string>;
     Prefix?: Value<string>;
     StorageClassAnalysis: StorageClassAnalysis;
     TagFilters?: List<TagFilter>;
     constructor(properties: AnalyticsConfiguration);
+}
+export declare class SourceSelectionCriteria {
+    SseKmsEncryptedObjects: SseKmsEncryptedObjects;
+    constructor(properties: SourceSelectionCriteria);
 }
 export declare class LoggingConfiguration {
     DestinationBucketName?: Value<string>;
@@ -63,15 +76,28 @@ export declare class RoutingRule {
     RoutingRuleCondition?: RoutingRuleCondition;
     constructor(properties: RoutingRule);
 }
+export declare class AccessControlTranslation {
+    Owner: Value<string>;
+    constructor(properties: AccessControlTranslation);
+}
 export declare class VersioningConfiguration {
     Status: Value<string>;
     constructor(properties: VersioningConfiguration);
+}
+export declare class EncryptionConfiguration {
+    ReplicaKmsKeyID: Value<string>;
+    constructor(properties: EncryptionConfiguration);
 }
 export declare class NotificationConfiguration {
     LambdaConfigurations?: List<LambdaConfiguration>;
     QueueConfigurations?: List<QueueConfiguration>;
     TopicConfigurations?: List<TopicConfiguration>;
     constructor(properties: NotificationConfiguration);
+}
+export declare class ServerSideEncryptionByDefault {
+    KMSMasterKeyID?: Value<string>;
+    SSEAlgorithm: Value<string>;
+    constructor(properties: ServerSideEncryptionByDefault);
 }
 export declare class RedirectRule {
     HostName?: Value<string>;
@@ -111,6 +137,10 @@ export declare class ReplicationConfiguration {
     Role: Value<string>;
     Rules: List<ReplicationRule>;
     constructor(properties: ReplicationConfiguration);
+}
+export declare class SseKmsEncryptedObjects {
+    Status: Value<string>;
+    constructor(properties: SseKmsEncryptedObjects);
 }
 export declare class Rule {
     AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
@@ -166,7 +196,10 @@ export declare class CorsConfiguration {
     constructor(properties: CorsConfiguration);
 }
 export declare class ReplicationDestination {
+    AccessControlTranslation?: AccessControlTranslation;
+    Account?: Value<string>;
     Bucket: Value<string>;
+    EncryptionConfiguration?: EncryptionConfiguration;
     StorageClass?: Value<string>;
     constructor(properties: ReplicationDestination);
 }
@@ -192,6 +225,7 @@ export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration;
     AccessControl?: Value<string>;
     AnalyticsConfigurations?: List<AnalyticsConfiguration>;
+    BucketEncryption?: BucketEncryption;
     BucketName?: Value<string>;
     CorsConfiguration?: CorsConfiguration;
     InventoryConfigurations?: List<InventoryConfiguration>;

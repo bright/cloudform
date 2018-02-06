@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -23,11 +23,21 @@ export class KinesisStreamsOutput {
 
 export class Output {
     DestinationSchema: DestinationSchema
+    LambdaOutput?: LambdaOutput
     KinesisFirehoseOutput?: KinesisFirehoseOutput
     KinesisStreamsOutput?: KinesisStreamsOutput
     Name?: Value<string>
 
     constructor(properties: Output) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LambdaOutput {
+    ResourceARN: Value<string>
+    RoleARN: Value<string>
+
+    constructor(properties: LambdaOutput) {
         Object.assign(this, properties)
     }
 }

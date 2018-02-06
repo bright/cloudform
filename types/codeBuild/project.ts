@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -70,6 +70,8 @@ export class Source {
     Type: Value<string>
     Auth?: SourceAuth
     BuildSpec?: Value<string>
+    GitCloneDepth?: Value<number>
+    InsecureSsl?: Value<boolean>
     Location?: Value<string>
 
     constructor(properties: Source) {

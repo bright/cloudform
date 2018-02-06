@@ -1,7 +1,13 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
+class BucketEncryption {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.BucketEncryption = BucketEncryption;
 class NotificationFilter {
     constructor(properties) {
         Object.assign(this, properties);
@@ -44,12 +50,24 @@ class Destination {
     }
 }
 exports.Destination = Destination;
+class ServerSideEncryptionRule {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ServerSideEncryptionRule = ServerSideEncryptionRule;
 class AnalyticsConfiguration {
     constructor(properties) {
         Object.assign(this, properties);
     }
 }
 exports.AnalyticsConfiguration = AnalyticsConfiguration;
+class SourceSelectionCriteria {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.SourceSelectionCriteria = SourceSelectionCriteria;
 class LoggingConfiguration {
     constructor(properties) {
         Object.assign(this, properties);
@@ -68,18 +86,36 @@ class RoutingRule {
     }
 }
 exports.RoutingRule = RoutingRule;
+class AccessControlTranslation {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.AccessControlTranslation = AccessControlTranslation;
 class VersioningConfiguration {
     constructor(properties) {
         Object.assign(this, properties);
     }
 }
 exports.VersioningConfiguration = VersioningConfiguration;
+class EncryptionConfiguration {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.EncryptionConfiguration = EncryptionConfiguration;
 class NotificationConfiguration {
     constructor(properties) {
         Object.assign(this, properties);
     }
 }
 exports.NotificationConfiguration = NotificationConfiguration;
+class ServerSideEncryptionByDefault {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ServerSideEncryptionByDefault = ServerSideEncryptionByDefault;
 class RedirectRule {
     constructor(properties) {
         Object.assign(this, properties);
@@ -116,6 +152,12 @@ class ReplicationConfiguration {
     }
 }
 exports.ReplicationConfiguration = ReplicationConfiguration;
+class SseKmsEncryptedObjects {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.SseKmsEncryptedObjects = SseKmsEncryptedObjects;
 class Rule {
     constructor(properties) {
         Object.assign(this, properties);

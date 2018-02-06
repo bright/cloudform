@@ -50,6 +50,10 @@ export declare class SsmAssociation {
     DocumentName: Value<string>;
     constructor(properties: SsmAssociation);
 }
+export declare class CreditSpecification {
+    CPUCredits?: Value<string>;
+    constructor(properties: CreditSpecification);
+}
 export declare class BlockDeviceMapping {
     DeviceName: Value<string>;
     Ebs?: Ebs;
@@ -67,6 +71,7 @@ export interface InstanceProperties {
     Affinity?: Value<string>;
     AvailabilityZone?: Value<string>;
     BlockDeviceMappings?: List<BlockDeviceMapping>;
+    CreditSpecification?: CreditSpecification;
     DisableApiTermination?: Value<boolean>;
     EbsOptimized?: Value<boolean>;
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>;

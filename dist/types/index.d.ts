@@ -482,6 +482,26 @@ import DMSEventSubscription from './dms/eventSubscription';
 import DMSEndpoint from './dms/endpoint';
 import DMSReplicationTask from './dms/replicationTask';
 import DMSReplicationInstance from './dms/replicationInstance';
+export declare const Glue: {
+    Table: typeof GlueTable;
+    Connection: typeof GlueConnection;
+    Partition: typeof GluePartition;
+    Job: typeof GlueJob;
+    Database: typeof GlueDatabase;
+    DevEndpoint: typeof GlueDevEndpoint;
+    Trigger: typeof GlueTrigger;
+    Crawler: typeof GlueCrawler;
+    Classifier: typeof GlueClassifier;
+};
+import GlueTable from './glue/table';
+import GlueConnection from './glue/connection';
+import GluePartition from './glue/partition';
+import GlueJob from './glue/job';
+import GlueDatabase from './glue/database';
+import GlueDevEndpoint from './glue/devEndpoint';
+import GlueTrigger from './glue/trigger';
+import GlueCrawler from './glue/crawler';
+import GlueClassifier from './glue/classifier';
 export declare const ElastiCache: {
     SecurityGroup: typeof ElastiCacheSecurityGroup;
     SubnetGroup: typeof ElastiCacheSubnetGroup;
@@ -874,6 +894,17 @@ declare const _default: {
         Endpoint: typeof DMSEndpoint;
         ReplicationTask: typeof DMSReplicationTask;
         ReplicationInstance: typeof DMSReplicationInstance;
+    };
+    Glue: {
+        Table: typeof GlueTable;
+        Connection: typeof GlueConnection;
+        Partition: typeof GluePartition;
+        Job: typeof GlueJob;
+        Database: typeof GlueDatabase;
+        DevEndpoint: typeof GlueDevEndpoint;
+        Trigger: typeof GlueTrigger;
+        Crawler: typeof GlueCrawler;
+        Classifier: typeof GlueClassifier;
     };
     ElastiCache: {
         SecurityGroup: typeof ElastiCacheSecurityGroup;

@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -106,9 +106,9 @@ export class DynamoDBAction {
     HashKeyType?: Value<string>
     HashKeyValue: Value<string>
     PayloadField?: Value<string>
-    RangeKeyField: Value<string>
+    RangeKeyField?: Value<string>
     RangeKeyType?: Value<string>
-    RangeKeyValue: Value<string>
+    RangeKeyValue?: Value<string>
     RoleArn: Value<string>
     TableName: Value<string>
 

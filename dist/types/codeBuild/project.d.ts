@@ -43,6 +43,8 @@ export declare class Source {
     Type: Value<string>;
     Auth?: SourceAuth;
     BuildSpec?: Value<string>;
+    GitCloneDepth?: Value<number>;
+    InsecureSsl?: Value<boolean>;
     Location?: Value<string>;
     constructor(properties: Source);
 }

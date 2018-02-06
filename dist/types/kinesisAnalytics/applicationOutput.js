@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.12.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class KinesisFirehoseOutput {
@@ -20,6 +20,12 @@ class Output {
     }
 }
 exports.Output = Output;
+class LambdaOutput {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.LambdaOutput = LambdaOutput;
 class DestinationSchema {
     constructor(properties) {
         Object.assign(this, properties);

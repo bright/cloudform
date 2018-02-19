@@ -128,5 +128,20 @@ export interface DistributionProperties {
     Tags?: ResourceTag[];
 }
 export default class Distribution extends ResourceBase {
+    static Cookies: typeof Cookies;
+    static LambdaFunctionAssociation: typeof LambdaFunctionAssociation;
+    static CustomOriginConfig: typeof CustomOriginConfig;
+    static ForwardedValues: typeof ForwardedValues;
+    static CacheBehavior: typeof CacheBehavior;
+    static DefaultCacheBehavior: typeof DefaultCacheBehavior;
+    static Restrictions: typeof Restrictions;
+    static Origin: typeof Origin;
+    static GeoRestriction: typeof GeoRestriction;
+    static ViewerCertificate: typeof ViewerCertificate;
+    static S3OriginConfig: typeof S3OriginConfig;
+    static CustomErrorResponse: typeof CustomErrorResponse;
+    static Logging: typeof Logging;
+    static DistributionConfig: typeof DistributionConfig;
+    static OriginCustomHeader: typeof OriginCustomHeader;
     constructor(properties?: DistributionProperties);
 }

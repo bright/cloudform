@@ -19,4 +19,6 @@ class Connection extends resource_1.ResourceBase {
         super('AWS::Glue::Connection', properties);
     }
 }
+Connection.ConnectionInput = ConnectionInput;
+Connection.PhysicalConnectionRequirements = PhysicalConnectionRequirements;
 exports.default = Connection;

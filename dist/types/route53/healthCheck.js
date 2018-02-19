@@ -25,4 +25,7 @@ class HealthCheck extends resource_1.ResourceBase {
         super('AWS::Route53::HealthCheck', properties);
     }
 }
+HealthCheck.HealthCheckConfig = HealthCheckConfig;
+HealthCheck.HealthCheckTag = HealthCheckTag;
+HealthCheck.AlarmIdentifier = AlarmIdentifier;
 exports.default = HealthCheck;

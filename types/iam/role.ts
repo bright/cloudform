@@ -21,6 +21,8 @@ export interface RoleProperties {
 }
 
 export default class Role extends ResourceBase {
+    static Policy = Policy
+
     constructor(properties?: RoleProperties) {
         super('AWS::IAM::Role', properties)
     }

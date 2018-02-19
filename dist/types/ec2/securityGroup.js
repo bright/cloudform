@@ -19,4 +19,6 @@ class SecurityGroup extends resource_1.ResourceBase {
         super('AWS::EC2::SecurityGroup', properties);
     }
 }
+SecurityGroup.Ingress = Ingress;
+SecurityGroup.Egress = Egress;
 exports.default = SecurityGroup;

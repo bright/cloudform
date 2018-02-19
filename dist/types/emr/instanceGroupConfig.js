@@ -79,4 +79,16 @@ class InstanceGroupConfig extends resource_1.ResourceBase {
         super('AWS::EMR::InstanceGroupConfig', properties);
     }
 }
+InstanceGroupConfig.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
+InstanceGroupConfig.Configuration = Configuration;
+InstanceGroupConfig.MetricDimension = MetricDimension;
+InstanceGroupConfig.SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration;
+InstanceGroupConfig.ScalingRule = ScalingRule;
+InstanceGroupConfig.ScalingAction = ScalingAction;
+InstanceGroupConfig.ScalingTrigger = ScalingTrigger;
+InstanceGroupConfig.ScalingConstraints = ScalingConstraints;
+InstanceGroupConfig.CloudWatchAlarmDefinition = CloudWatchAlarmDefinition;
+InstanceGroupConfig.VolumeSpecification = VolumeSpecification;
+InstanceGroupConfig.AutoScalingPolicy = AutoScalingPolicy;
+InstanceGroupConfig.EbsConfiguration = EbsConfiguration;
 exports.default = InstanceGroupConfig;

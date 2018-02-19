@@ -34,6 +34,8 @@ export interface StageProperties {
 }
 
 export default class Stage extends ResourceBase {
+    static MethodSetting = MethodSetting
+
     constructor(properties?: StageProperties) {
         super('AWS::ApiGateway::Stage', properties)
     }

@@ -26,5 +26,7 @@ export interface RestApiProperties {
     };
 }
 export default class RestApi extends ResourceBase {
+    static S3Location: typeof S3Location;
+    static EndpointConfiguration: typeof EndpointConfiguration;
     constructor(properties?: RestApiProperties);
 }

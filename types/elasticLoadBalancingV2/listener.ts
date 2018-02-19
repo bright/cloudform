@@ -30,6 +30,9 @@ export interface ListenerProperties {
 }
 
 export default class Listener extends ResourceBase {
+    static Action = Action
+    static Certificate = Certificate
+
     constructor(properties?: ListenerProperties) {
         super('AWS::ElasticLoadBalancingV2::Listener', properties)
     }

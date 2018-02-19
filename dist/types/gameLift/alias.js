@@ -13,4 +13,5 @@ class Alias extends resource_1.ResourceBase {
         super('AWS::GameLift::Alias', properties);
     }
 }
+Alias.RoutingStrategy = RoutingStrategy;
 exports.default = Alias;

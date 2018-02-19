@@ -171,5 +171,27 @@ export interface ClusterProperties {
     VisibleToAllUsers?: Value<boolean>;
 }
 export default class Cluster extends ResourceBase {
+    static InstanceGroupConfig: typeof InstanceGroupConfig;
+    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
+    static BootstrapActionConfig: typeof BootstrapActionConfig;
+    static ScalingConstraints: typeof ScalingConstraints;
+    static InstanceFleetConfig: typeof InstanceFleetConfig;
+    static JobFlowInstancesConfig: typeof JobFlowInstancesConfig;
+    static ScalingAction: typeof ScalingAction;
+    static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
+    static Application: typeof Application;
+    static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
+    static PlacementType: typeof PlacementType;
+    static Configuration: typeof Configuration;
+    static ScriptBootstrapActionConfig: typeof ScriptBootstrapActionConfig;
+    static CloudWatchAlarmDefinition: typeof CloudWatchAlarmDefinition;
+    static EbsConfiguration: typeof EbsConfiguration;
+    static ScalingRule: typeof ScalingRule;
+    static InstanceTypeConfig: typeof InstanceTypeConfig;
+    static MetricDimension: typeof MetricDimension;
+    static VolumeSpecification: typeof VolumeSpecification;
+    static AutoScalingPolicy: typeof AutoScalingPolicy;
+    static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
+    static ScalingTrigger: typeof ScalingTrigger;
     constructor(properties?: ClusterProperties);
 }

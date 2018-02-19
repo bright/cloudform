@@ -91,4 +91,18 @@ class TaskDefinition extends resource_1.ResourceBase {
         super('AWS::ECS::TaskDefinition', properties);
     }
 }
+TaskDefinition.ContainerDefinition = ContainerDefinition;
+TaskDefinition.LogConfiguration = LogConfiguration;
+TaskDefinition.Device = Device;
+TaskDefinition.KeyValuePair = KeyValuePair;
+TaskDefinition.MountPoint = MountPoint;
+TaskDefinition.VolumeFrom = VolumeFrom;
+TaskDefinition.HostEntry = HostEntry;
+TaskDefinition.KernelCapabilities = KernelCapabilities;
+TaskDefinition.TaskDefinitionPlacementConstraint = TaskDefinitionPlacementConstraint;
+TaskDefinition.Volume = Volume;
+TaskDefinition.PortMapping = PortMapping;
+TaskDefinition.Ulimit = Ulimit;
+TaskDefinition.LinuxParameters = LinuxParameters;
+TaskDefinition.HostVolumeProperties = HostVolumeProperties;
 exports.default = TaskDefinition;

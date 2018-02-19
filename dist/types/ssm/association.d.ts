@@ -21,5 +21,7 @@ export interface AssociationProperties {
     Targets?: List<Target>;
 }
 export default class Association extends ResourceBase {
+    static Target: typeof Target;
+    static ParameterValues: typeof ParameterValues;
     constructor(properties?: AssociationProperties);
 }

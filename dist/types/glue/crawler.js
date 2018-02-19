@@ -37,4 +37,9 @@ class Crawler extends resource_1.ResourceBase {
         super('AWS::Glue::Crawler', properties);
     }
 }
+Crawler.Targets = Targets;
+Crawler.JdbcTarget = JdbcTarget;
+Crawler.Schedule = Schedule;
+Crawler.S3Target = S3Target;
+Crawler.SchemaChangePolicy = SchemaChangePolicy;
 exports.default = Crawler;

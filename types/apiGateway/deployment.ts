@@ -50,6 +50,9 @@ export interface DeploymentProperties {
 }
 
 export default class Deployment extends ResourceBase {
+    static MethodSetting = MethodSetting
+    static StageDescription = StageDescription
+
     constructor(properties?: DeploymentProperties) {
         super('AWS::ApiGateway::Deployment', properties)
     }

@@ -11,6 +11,8 @@ export interface QueuePolicyProperties {
 }
 
 export default class QueuePolicy extends ResourceBase {
+
+
     constructor(properties?: QueuePolicyProperties) {
         super('AWS::SQS::QueuePolicy', properties)
     }

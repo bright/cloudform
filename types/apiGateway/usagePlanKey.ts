@@ -12,6 +12,8 @@ export interface UsagePlanKeyProperties {
 }
 
 export default class UsagePlanKey extends ResourceBase {
+
+
     constructor(properties?: UsagePlanKeyProperties) {
         super('AWS::ApiGateway::UsagePlanKey', properties)
     }

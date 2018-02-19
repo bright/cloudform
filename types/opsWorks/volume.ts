@@ -13,6 +13,8 @@ export interface VolumeProperties {
 }
 
 export default class Volume extends ResourceBase {
+
+
     constructor(properties?: VolumeProperties) {
         super('AWS::OpsWorks::Volume', properties)
     }

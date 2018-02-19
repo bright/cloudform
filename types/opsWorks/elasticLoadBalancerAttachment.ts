@@ -11,6 +11,8 @@ export interface ElasticLoadBalancerAttachmentProperties {
 }
 
 export default class ElasticLoadBalancerAttachment extends ResourceBase {
+
+
     constructor(properties?: ElasticLoadBalancerAttachmentProperties) {
         super('AWS::OpsWorks::ElasticLoadBalancerAttachment', properties)
     }

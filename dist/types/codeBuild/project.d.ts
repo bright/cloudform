@@ -63,5 +63,12 @@ export interface ProjectProperties {
     Cache?: ProjectCache;
 }
 export default class Project extends ResourceBase {
+    static Artifacts: typeof Artifacts;
+    static SourceAuth: typeof SourceAuth;
+    static Environment: typeof Environment;
+    static ProjectCache: typeof ProjectCache;
+    static VpcConfig: typeof VpcConfig;
+    static EnvironmentVariable: typeof EnvironmentVariable;
+    static Source: typeof Source;
     constructor(properties?: ProjectProperties);
 }

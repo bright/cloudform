@@ -73,6 +73,13 @@ export interface RuleProperties {
 }
 
 export default class Rule extends ResourceBase {
+    static RunCommandParameters = RunCommandParameters
+    static Target = Target
+    static RunCommandTarget = RunCommandTarget
+    static InputTransformer = InputTransformer
+    static KinesisParameters = KinesisParameters
+    static EcsParameters = EcsParameters
+
     constructor(properties?: RuleProperties) {
         super('AWS::Events::Rule', properties)
     }

@@ -26,5 +26,8 @@ export interface JobProperties {
     Name?: Value<string>;
 }
 export default class Job extends ResourceBase {
+    static JobCommand: typeof JobCommand;
+    static ConnectionsList: typeof ConnectionsList;
+    static ExecutionProperty: typeof ExecutionProperty;
     constructor(properties?: JobProperties);
 }

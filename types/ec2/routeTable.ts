@@ -11,6 +11,8 @@ export interface RouteTableProperties {
 }
 
 export default class RouteTable extends ResourceBase {
+
+
     constructor(properties?: RouteTableProperties) {
         super('AWS::EC2::RouteTable', properties)
     }

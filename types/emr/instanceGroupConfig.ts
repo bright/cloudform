@@ -136,6 +136,19 @@ export interface InstanceGroupConfigProperties {
 }
 
 export default class InstanceGroupConfig extends ResourceBase {
+    static EbsBlockDeviceConfig = EbsBlockDeviceConfig
+    static Configuration = Configuration
+    static MetricDimension = MetricDimension
+    static SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration
+    static ScalingRule = ScalingRule
+    static ScalingAction = ScalingAction
+    static ScalingTrigger = ScalingTrigger
+    static ScalingConstraints = ScalingConstraints
+    static CloudWatchAlarmDefinition = CloudWatchAlarmDefinition
+    static VolumeSpecification = VolumeSpecification
+    static AutoScalingPolicy = AutoScalingPolicy
+    static EbsConfiguration = EbsConfiguration
+
     constructor(properties?: InstanceGroupConfigProperties) {
         super('AWS::EMR::InstanceGroupConfig', properties)
     }

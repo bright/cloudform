@@ -31,5 +31,9 @@ export interface StreamingDistributionProperties {
     Tags?: ResourceTag[];
 }
 export default class StreamingDistribution extends ResourceBase {
+    static TrustedSigners: typeof TrustedSigners;
+    static S3Origin: typeof S3Origin;
+    static Logging: typeof Logging;
+    static StreamingDistributionConfig: typeof StreamingDistributionConfig;
     constructor(properties?: StreamingDistributionProperties);
 }

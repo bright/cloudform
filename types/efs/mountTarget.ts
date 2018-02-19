@@ -13,6 +13,8 @@ export interface MountTargetProperties {
 }
 
 export default class MountTarget extends ResourceBase {
+
+
     constructor(properties?: MountTargetProperties) {
         super('AWS::EFS::MountTarget', properties)
     }

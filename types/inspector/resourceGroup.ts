@@ -10,6 +10,8 @@ export interface ResourceGroupProperties {
 }
 
 export default class ResourceGroup extends ResourceBase {
+
+
     constructor(properties?: ResourceGroupProperties) {
         super('AWS::Inspector::ResourceGroup', properties)
     }

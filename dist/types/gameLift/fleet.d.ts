@@ -21,5 +21,6 @@ export interface FleetProperties {
     ServerLaunchPath: Value<string>;
 }
 export default class Fleet extends ResourceBase {
+    static IpPermission: typeof IpPermission;
     constructor(properties?: FleetProperties);
 }

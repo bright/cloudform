@@ -92,5 +92,19 @@ export interface DeploymentGroupProperties {
     TriggerConfigurations?: List<TriggerConfig>;
 }
 export default class DeploymentGroup extends ResourceBase {
+    static LoadBalancerInfo: typeof LoadBalancerInfo;
+    static RevisionLocation: typeof RevisionLocation;
+    static S3Location: typeof S3Location;
+    static TriggerConfig: typeof TriggerConfig;
+    static TagFilter: typeof TagFilter;
+    static GitHubLocation: typeof GitHubLocation;
+    static TargetGroupInfo: typeof TargetGroupInfo;
+    static ELBInfo: typeof ELBInfo;
+    static AlarmConfiguration: typeof AlarmConfiguration;
+    static DeploymentStyle: typeof DeploymentStyle;
+    static Alarm: typeof Alarm;
+    static EC2TagFilter: typeof EC2TagFilter;
+    static AutoRollbackConfiguration: typeof AutoRollbackConfiguration;
+    static Deployment: typeof Deployment;
     constructor(properties?: DeploymentGroupProperties);
 }

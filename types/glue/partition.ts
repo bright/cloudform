@@ -79,6 +79,13 @@ export interface PartitionProperties {
 }
 
 export default class Partition extends ResourceBase {
+    static SerdeInfo = SerdeInfo
+    static StorageDescriptor = StorageDescriptor
+    static Order = Order
+    static SkewedInfo = SkewedInfo
+    static Column = Column
+    static PartitionInput = PartitionInput
+
     constructor(properties?: PartitionProperties) {
         super('AWS::Glue::Partition', properties)
     }

@@ -56,12 +56,17 @@ ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }`
 }
 
-function generateTopLevelClass(namespace, name, properties) {
+function generateTopLevelClass(namespace, name, properties, innerTypes) {
     return `export interface ${name}Properties {
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
 
 export default class ${name} extends ResourceBase {
+${Object.keys(innerTypes).map(innerTypeFullName => {
+    const [, innerTypeName] = innerTypeFullName.split('.')
+    return `    static ${innerTypeName} = ${innerTypeName}`
+}).join('\n')}
+
     constructor(properties?: ${name}Properties) {
         super('AWS::${namespace}::${name}', properties)
     }
@@ -85,7 +90,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
         resourceImports.push('ResourceTag')
     }
 
-    const generatedClass = generateTopLevelClass(namespace, resourceName, properties)
+    const generatedClass = generateTopLevelClass(namespace, resourceName, properties, innerTypes)
 
     const template = `${fileHeader}
    

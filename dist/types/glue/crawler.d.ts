@@ -37,5 +37,10 @@ export interface CrawlerProperties {
     Name?: Value<string>;
 }
 export default class Crawler extends ResourceBase {
+    static Targets: typeof Targets;
+    static JdbcTarget: typeof JdbcTarget;
+    static Schedule: typeof Schedule;
+    static S3Target: typeof S3Target;
+    static SchemaChangePolicy: typeof SchemaChangePolicy;
     constructor(properties?: CrawlerProperties);
 }

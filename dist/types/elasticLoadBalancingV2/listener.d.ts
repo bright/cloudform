@@ -18,5 +18,7 @@ export interface ListenerProperties {
     SslPolicy?: Value<string>;
 }
 export default class Listener extends ResourceBase {
+    static Action: typeof Action;
+    static Certificate: typeof Certificate;
     constructor(properties?: ListenerProperties);
 }

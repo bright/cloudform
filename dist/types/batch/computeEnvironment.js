@@ -13,4 +13,5 @@ class ComputeEnvironment extends resource_1.ResourceBase {
         super('AWS::Batch::ComputeEnvironment', properties);
     }
 }
+ComputeEnvironment.ComputeResources = ComputeResources;
 exports.default = ComputeEnvironment;

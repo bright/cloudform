@@ -47,5 +47,8 @@ export interface EndpointProperties {
     MongoDbSettings?: MongoDbSettings;
 }
 export default class Endpoint extends ResourceBase {
+    static S3Settings: typeof S3Settings;
+    static MongoDbSettings: typeof MongoDbSettings;
+    static DynamoDbSettings: typeof DynamoDbSettings;
     constructor(properties?: EndpointProperties);
 }

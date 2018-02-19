@@ -139,4 +139,26 @@ class Cluster extends resource_1.ResourceBase {
         super('AWS::EMR::Cluster', properties);
     }
 }
+Cluster.InstanceGroupConfig = InstanceGroupConfig;
+Cluster.SpotProvisioningSpecification = SpotProvisioningSpecification;
+Cluster.BootstrapActionConfig = BootstrapActionConfig;
+Cluster.ScalingConstraints = ScalingConstraints;
+Cluster.InstanceFleetConfig = InstanceFleetConfig;
+Cluster.JobFlowInstancesConfig = JobFlowInstancesConfig;
+Cluster.ScalingAction = ScalingAction;
+Cluster.SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration;
+Cluster.Application = Application;
+Cluster.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
+Cluster.PlacementType = PlacementType;
+Cluster.Configuration = Configuration;
+Cluster.ScriptBootstrapActionConfig = ScriptBootstrapActionConfig;
+Cluster.CloudWatchAlarmDefinition = CloudWatchAlarmDefinition;
+Cluster.EbsConfiguration = EbsConfiguration;
+Cluster.ScalingRule = ScalingRule;
+Cluster.InstanceTypeConfig = InstanceTypeConfig;
+Cluster.MetricDimension = MetricDimension;
+Cluster.VolumeSpecification = VolumeSpecification;
+Cluster.AutoScalingPolicy = AutoScalingPolicy;
+Cluster.InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications;
+Cluster.ScalingTrigger = ScalingTrigger;
 exports.default = Cluster;

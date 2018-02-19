@@ -13,4 +13,5 @@ class ClusterParameterGroup extends resource_1.ResourceBase {
         super('AWS::Redshift::ClusterParameterGroup', properties);
     }
 }
+ClusterParameterGroup.Parameter = Parameter;
 exports.default = ClusterParameterGroup;

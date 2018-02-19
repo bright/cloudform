@@ -19,4 +19,6 @@ class Listener extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::Listener', properties);
     }
 }
+Listener.Action = Action;
+Listener.Certificate = Certificate;
 exports.default = Listener;

@@ -19,4 +19,6 @@ class SqlInjectionMatchSet extends resource_1.ResourceBase {
         super('AWS::WAFRegional::SqlInjectionMatchSet', properties);
     }
 }
+SqlInjectionMatchSet.FieldToMatch = FieldToMatch;
+SqlInjectionMatchSet.SqlInjectionMatchTuple = SqlInjectionMatchTuple;
 exports.default = SqlInjectionMatchSet;

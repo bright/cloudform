@@ -19,6 +19,8 @@ export interface AuthorizerProperties {
 }
 
 export default class Authorizer extends ResourceBase {
+
+
     constructor(properties?: AuthorizerProperties) {
         super('AWS::ApiGateway::Authorizer', properties)
     }

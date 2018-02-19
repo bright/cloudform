@@ -39,6 +39,9 @@ export interface TrailProperties {
 }
 
 export default class Trail extends ResourceBase {
+    static EventSelector = EventSelector
+    static DataResource = DataResource
+
     constructor(properties?: TrailProperties) {
         super('AWS::CloudTrail::Trail', properties)
     }

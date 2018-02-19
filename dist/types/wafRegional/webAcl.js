@@ -19,4 +19,6 @@ class WebACL extends resource_1.ResourceBase {
         super('AWS::WAFRegional::WebACL', properties);
     }
 }
+WebACL.Rule = Rule;
+WebACL.Action = Action;
 exports.default = WebACL;

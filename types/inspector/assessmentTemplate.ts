@@ -14,6 +14,8 @@ export interface AssessmentTemplateProperties {
 }
 
 export default class AssessmentTemplate extends ResourceBase {
+
+
     constructor(properties?: AssessmentTemplateProperties) {
         super('AWS::Inspector::AssessmentTemplate', properties)
     }

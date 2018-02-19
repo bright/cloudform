@@ -19,4 +19,6 @@ class ListenerRule extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::ListenerRule', properties);
     }
 }
+ListenerRule.Action = Action;
+ListenerRule.RuleCondition = RuleCondition;
 exports.default = ListenerRule;

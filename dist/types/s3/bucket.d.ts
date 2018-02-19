@@ -239,5 +239,44 @@ export interface BucketProperties {
     WebsiteConfiguration?: WebsiteConfiguration;
 }
 export default class Bucket extends ResourceBase {
+    static BucketEncryption: typeof BucketEncryption;
+    static NotificationFilter: typeof NotificationFilter;
+    static RoutingRuleCondition: typeof RoutingRuleCondition;
+    static LifecycleConfiguration: typeof LifecycleConfiguration;
+    static LambdaConfiguration: typeof LambdaConfiguration;
+    static ReplicationRule: typeof ReplicationRule;
+    static CorsRule: typeof CorsRule;
+    static Destination: typeof Destination;
+    static ServerSideEncryptionRule: typeof ServerSideEncryptionRule;
+    static AnalyticsConfiguration: typeof AnalyticsConfiguration;
+    static SourceSelectionCriteria: typeof SourceSelectionCriteria;
+    static LoggingConfiguration: typeof LoggingConfiguration;
+    static StorageClassAnalysis: typeof StorageClassAnalysis;
+    static RoutingRule: typeof RoutingRule;
+    static AccessControlTranslation: typeof AccessControlTranslation;
+    static VersioningConfiguration: typeof VersioningConfiguration;
+    static EncryptionConfiguration: typeof EncryptionConfiguration;
+    static NotificationConfiguration: typeof NotificationConfiguration;
+    static ServerSideEncryptionByDefault: typeof ServerSideEncryptionByDefault;
+    static RedirectRule: typeof RedirectRule;
+    static RedirectAllRequestsTo: typeof RedirectAllRequestsTo;
+    static S3KeyFilter: typeof S3KeyFilter;
+    static InventoryConfiguration: typeof InventoryConfiguration;
+    static WebsiteConfiguration: typeof WebsiteConfiguration;
+    static ReplicationConfiguration: typeof ReplicationConfiguration;
+    static SseKmsEncryptedObjects: typeof SseKmsEncryptedObjects;
+    static Rule: typeof Rule;
+    static QueueConfiguration: typeof QueueConfiguration;
+    static TopicConfiguration: typeof TopicConfiguration;
+    static MetricsConfiguration: typeof MetricsConfiguration;
+    static TagFilter: typeof TagFilter;
+    static Transition: typeof Transition;
+    static DataExport: typeof DataExport;
+    static CorsConfiguration: typeof CorsConfiguration;
+    static ReplicationDestination: typeof ReplicationDestination;
+    static AccelerateConfiguration: typeof AccelerateConfiguration;
+    static NoncurrentVersionTransition: typeof NoncurrentVersionTransition;
+    static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
+    static FilterRule: typeof FilterRule;
     constructor(properties?: BucketProperties);
 }

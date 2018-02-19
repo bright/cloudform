@@ -12,5 +12,6 @@ export interface BuildProperties {
     Version?: Value<string>;
 }
 export default class Build extends ResourceBase {
+    static S3Location: typeof S3Location;
     constructor(properties?: BuildProperties);
 }

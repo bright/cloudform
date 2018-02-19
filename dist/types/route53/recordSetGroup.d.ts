@@ -36,5 +36,8 @@ export interface RecordSetGroupProperties {
     RecordSets?: List<RecordSet>;
 }
 export default class RecordSetGroup extends ResourceBase {
+    static RecordSet: typeof RecordSet;
+    static GeoLocation: typeof GeoLocation;
+    static AliasTarget: typeof AliasTarget;
     constructor(properties?: RecordSetGroupProperties);
 }

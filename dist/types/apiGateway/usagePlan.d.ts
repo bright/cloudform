@@ -24,5 +24,8 @@ export interface UsagePlanProperties {
     UsagePlanName?: Value<string>;
 }
 export default class UsagePlan extends ResourceBase {
+    static ApiStage: typeof ApiStage;
+    static ThrottleSettings: typeof ThrottleSettings;
+    static QuotaSettings: typeof QuotaSettings;
     constructor(properties?: UsagePlanProperties);
 }

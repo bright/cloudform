@@ -69,6 +69,14 @@ export class Projection {
     }
 }
 
+export class SSESpecification {
+    SSEEnabled: Value<boolean>
+
+    constructor(properties: SSESpecification) {
+        Object.assign(this, properties)
+    }
+}
+
 export class StreamSpecification {
     StreamViewType: Value<string>
 
@@ -83,6 +91,7 @@ export interface TableProperties {
     KeySchema: List<KeySchema>
     LocalSecondaryIndexes?: List<LocalSecondaryIndex>
     ProvisionedThroughput: ProvisionedThroughput
+    SSESpecification?: SSESpecification
     StreamSpecification?: StreamSpecification
     TableName?: Value<string>
     Tags?: ResourceTag[]
@@ -90,6 +99,16 @@ export interface TableProperties {
 }
 
 export default class Table extends ResourceBase {
+    static TimeToLiveSpecification = TimeToLiveSpecification
+    static AttributeDefinition = AttributeDefinition
+    static LocalSecondaryIndex = LocalSecondaryIndex
+    static ProvisionedThroughput = ProvisionedThroughput
+    static GlobalSecondaryIndex = GlobalSecondaryIndex
+    static KeySchema = KeySchema
+    static Projection = Projection
+    static SSESpecification = SSESpecification
+    static StreamSpecification = StreamSpecification
+
     constructor(properties?: TableProperties) {
         super('AWS::DynamoDB::Table', properties)
     }

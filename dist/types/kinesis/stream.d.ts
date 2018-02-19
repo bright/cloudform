@@ -13,5 +13,6 @@ export interface StreamProperties {
     Tags?: ResourceTag[];
 }
 export default class Stream extends ResourceBase {
+    static StreamEncryption: typeof StreamEncryption;
     constructor(properties?: StreamProperties);
 }

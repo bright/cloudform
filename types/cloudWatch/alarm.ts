@@ -34,6 +34,8 @@ export interface AlarmProperties {
 }
 
 export default class Alarm extends ResourceBase {
+    static Dimension = Dimension
+
     constructor(properties?: AlarmProperties) {
         super('AWS::CloudWatch::Alarm', properties)
     }

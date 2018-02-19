@@ -12,6 +12,8 @@ export interface InstanceProfileProperties {
 }
 
 export default class InstanceProfile extends ResourceBase {
+
+
     constructor(properties?: InstanceProfileProperties) {
         super('AWS::IAM::InstanceProfile', properties)
     }

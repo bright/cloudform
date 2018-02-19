@@ -19,4 +19,6 @@ class Step extends resource_1.ResourceBase {
         super('AWS::EMR::Step', properties);
     }
 }
+Step.HadoopJarStepConfig = HadoopJarStepConfig;
+Step.KeyValue = KeyValue;
 exports.default = Step;

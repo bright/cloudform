@@ -12,6 +12,8 @@ export interface CertificateProperties {
 }
 
 export default class Certificate extends ResourceBase {
+
+
     constructor(properties?: CertificateProperties) {
         super('AWS::DMS::Certificate', properties)
     }

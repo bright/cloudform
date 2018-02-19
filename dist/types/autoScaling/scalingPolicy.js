@@ -37,4 +37,9 @@ class ScalingPolicy extends resource_1.ResourceBase {
         super('AWS::AutoScaling::ScalingPolicy', properties);
     }
 }
+ScalingPolicy.MetricDimension = MetricDimension;
+ScalingPolicy.CustomizedMetricSpecification = CustomizedMetricSpecification;
+ScalingPolicy.PredefinedMetricSpecification = PredefinedMetricSpecification;
+ScalingPolicy.TargetTrackingConfiguration = TargetTrackingConfiguration;
+ScalingPolicy.StepAdjustment = StepAdjustment;
 exports.default = ScalingPolicy;

@@ -24,5 +24,6 @@ export interface ComputeEnvironmentProperties {
     State?: Value<string>;
 }
 export default class ComputeEnvironment extends ResourceBase {
+    static ComputeResources: typeof ComputeResources;
     constructor(properties?: ComputeEnvironmentProperties);
 }

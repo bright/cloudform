@@ -11,6 +11,8 @@ export interface PublicDnsNamespaceProperties {
 }
 
 export default class PublicDnsNamespace extends ResourceBase {
+
+
     constructor(properties?: PublicDnsNamespaceProperties) {
         super('AWS::ServiceDiscovery::PublicDnsNamespace', properties)
     }

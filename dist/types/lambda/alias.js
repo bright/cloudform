@@ -19,4 +19,6 @@ class Alias extends resource_1.ResourceBase {
         super('AWS::Lambda::Alias', properties);
     }
 }
+Alias.AliasRoutingConfiguration = AliasRoutingConfiguration;
+Alias.VersionWeight = VersionWeight;
 exports.default = Alias;

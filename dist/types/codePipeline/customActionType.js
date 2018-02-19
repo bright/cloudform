@@ -25,4 +25,7 @@ class CustomActionType extends resource_1.ResourceBase {
         super('AWS::CodePipeline::CustomActionType', properties);
     }
 }
+CustomActionType.Settings = Settings;
+CustomActionType.ArtifactDetails = ArtifactDetails;
+CustomActionType.ConfigurationProperties = ConfigurationProperties;
 exports.default = CustomActionType;

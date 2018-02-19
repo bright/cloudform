@@ -49,4 +49,11 @@ class Project extends resource_1.ResourceBase {
         super('AWS::CodeBuild::Project', properties);
     }
 }
+Project.Artifacts = Artifacts;
+Project.SourceAuth = SourceAuth;
+Project.Environment = Environment;
+Project.ProjectCache = ProjectCache;
+Project.VpcConfig = VpcConfig;
+Project.EnvironmentVariable = EnvironmentVariable;
+Project.Source = Source;
 exports.default = Project;

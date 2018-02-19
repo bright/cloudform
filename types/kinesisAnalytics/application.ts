@@ -122,6 +122,19 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
+    static MappingParameters = MappingParameters
+    static CSVMappingParameters = CSVMappingParameters
+    static KinesisStreamsInput = KinesisStreamsInput
+    static Input = Input
+    static InputSchema = InputSchema
+    static RecordColumn = RecordColumn
+    static RecordFormat = RecordFormat
+    static KinesisFirehoseInput = KinesisFirehoseInput
+    static InputParallelism = InputParallelism
+    static InputProcessingConfiguration = InputProcessingConfiguration
+    static JSONMappingParameters = JSONMappingParameters
+    static InputLambdaProcessor = InputLambdaProcessor
+
     constructor(properties?: ApplicationProperties) {
         super('AWS::KinesisAnalytics::Application', properties)
     }

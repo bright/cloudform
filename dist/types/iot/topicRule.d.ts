@@ -112,5 +112,20 @@ export interface TopicRuleProperties {
     TopicRulePayload: TopicRulePayload;
 }
 export default class TopicRule extends ResourceBase {
+    static S3Action: typeof S3Action;
+    static SqsAction: typeof SqsAction;
+    static PutItemInput: typeof PutItemInput;
+    static RepublishAction: typeof RepublishAction;
+    static SnsAction: typeof SnsAction;
+    static FirehoseAction: typeof FirehoseAction;
+    static TopicRulePayload: typeof TopicRulePayload;
+    static LambdaAction: typeof LambdaAction;
+    static DynamoDBv2Action: typeof DynamoDBv2Action;
+    static ElasticsearchAction: typeof ElasticsearchAction;
+    static DynamoDBAction: typeof DynamoDBAction;
+    static KinesisAction: typeof KinesisAction;
+    static CloudwatchAlarmAction: typeof CloudwatchAlarmAction;
+    static Action: typeof Action;
+    static CloudwatchMetricAction: typeof CloudwatchMetricAction;
     constructor(properties?: TopicRuleProperties);
 }

@@ -23,5 +23,8 @@ export interface ServiceProperties {
     Name?: Value<string>;
 }
 export default class Service extends ResourceBase {
+    static DnsConfig: typeof DnsConfig;
+    static DnsRecord: typeof DnsRecord;
+    static HealthCheckConfig: typeof HealthCheckConfig;
     constructor(properties?: ServiceProperties);
 }

@@ -17,5 +17,7 @@ export interface WebACLProperties {
     Name: Value<string>;
 }
 export default class WebACL extends ResourceBase {
+    static Rule: typeof Rule;
+    static Action: typeof Action;
     constructor(properties?: WebACLProperties);
 }

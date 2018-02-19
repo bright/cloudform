@@ -11,6 +11,8 @@ export interface AssessmentTargetProperties {
 }
 
 export default class AssessmentTarget extends ResourceBase {
+
+
     constructor(properties?: AssessmentTargetProperties) {
         super('AWS::Inspector::AssessmentTarget', properties)
     }

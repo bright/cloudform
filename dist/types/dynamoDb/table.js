@@ -44,6 +44,12 @@ class Projection {
     }
 }
 exports.Projection = Projection;
+class SSESpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.SSESpecification = SSESpecification;
 class StreamSpecification {
     constructor(properties) {
         Object.assign(this, properties);
@@ -55,4 +61,13 @@ class Table extends resource_1.ResourceBase {
         super('AWS::DynamoDB::Table', properties);
     }
 }
+Table.TimeToLiveSpecification = TimeToLiveSpecification;
+Table.AttributeDefinition = AttributeDefinition;
+Table.LocalSecondaryIndex = LocalSecondaryIndex;
+Table.ProvisionedThroughput = ProvisionedThroughput;
+Table.GlobalSecondaryIndex = GlobalSecondaryIndex;
+Table.KeySchema = KeySchema;
+Table.Projection = Projection;
+Table.SSESpecification = SSESpecification;
+Table.StreamSpecification = StreamSpecification;
 exports.default = Table;

@@ -10,6 +10,8 @@ export interface InternetGatewayProperties {
 }
 
 export default class InternetGateway extends ResourceBase {
+
+
     constructor(properties?: InternetGatewayProperties) {
         super('AWS::EC2::InternetGateway', properties)
     }

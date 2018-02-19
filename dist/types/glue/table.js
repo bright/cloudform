@@ -43,4 +43,10 @@ class Table extends resource_1.ResourceBase {
         super('AWS::Glue::Table', properties);
     }
 }
+Table.SkewedInfo = SkewedInfo;
+Table.StorageDescriptor = StorageDescriptor;
+Table.TableInput = TableInput;
+Table.SerdeInfo = SerdeInfo;
+Table.Order = Order;
+Table.Column = Column;
 exports.default = Table;

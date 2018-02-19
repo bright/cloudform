@@ -89,5 +89,16 @@ export interface UserPoolProperties {
     EmailVerificationMessage?: Value<string>;
 }
 export default class UserPool extends ResourceBase {
+    static PasswordPolicy: typeof PasswordPolicy;
+    static Policies: typeof Policies;
+    static EmailConfiguration: typeof EmailConfiguration;
+    static LambdaConfig: typeof LambdaConfig;
+    static AdminCreateUserConfig: typeof AdminCreateUserConfig;
+    static SchemaAttribute: typeof SchemaAttribute;
+    static NumberAttributeConstraints: typeof NumberAttributeConstraints;
+    static SmsConfiguration: typeof SmsConfiguration;
+    static DeviceConfiguration: typeof DeviceConfiguration;
+    static InviteMessageTemplate: typeof InviteMessageTemplate;
+    static StringAttributeConstraints: typeof StringAttributeConstraints;
     constructor(properties?: UserPoolProperties);
 }

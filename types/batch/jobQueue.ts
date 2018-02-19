@@ -20,6 +20,8 @@ export interface JobQueueProperties {
 }
 
 export default class JobQueue extends ResourceBase {
+    static ComputeEnvironmentOrder = ComputeEnvironmentOrder
+
     constructor(properties?: JobQueueProperties) {
         super('AWS::Batch::JobQueue', properties)
     }

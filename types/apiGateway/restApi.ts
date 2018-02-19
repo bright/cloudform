@@ -36,6 +36,9 @@ export interface RestApiProperties {
 }
 
 export default class RestApi extends ResourceBase {
+    static S3Location = S3Location
+    static EndpointConfiguration = EndpointConfiguration
+
     constructor(properties?: RestApiProperties) {
         super('AWS::ApiGateway::RestApi', properties)
     }

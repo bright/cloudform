@@ -19,5 +19,7 @@ export interface StepProperties {
     Name: Value<string>;
 }
 export default class Step extends ResourceBase {
+    static HadoopJarStepConfig: typeof HadoopJarStepConfig;
+    static KeyValue: typeof KeyValue;
     constructor(properties?: StepProperties);
 }

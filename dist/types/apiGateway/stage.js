@@ -13,4 +13,5 @@ class Stage extends resource_1.ResourceBase {
         super('AWS::ApiGateway::Stage', properties);
     }
 }
+Stage.MethodSetting = MethodSetting;
 exports.default = Stage;

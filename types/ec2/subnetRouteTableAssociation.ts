@@ -11,6 +11,8 @@ export interface SubnetRouteTableAssociationProperties {
 }
 
 export default class SubnetRouteTableAssociation extends ResourceBase {
+
+
     constructor(properties?: SubnetRouteTableAssociationProperties) {
         super('AWS::EC2::SubnetRouteTableAssociation', properties)
     }

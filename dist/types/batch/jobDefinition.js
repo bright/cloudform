@@ -49,4 +49,11 @@ class JobDefinition extends resource_1.ResourceBase {
         super('AWS::Batch::JobDefinition', properties);
     }
 }
+JobDefinition.Volumes = Volumes;
+JobDefinition.RetryStrategy = RetryStrategy;
+JobDefinition.ContainerProperties = ContainerProperties;
+JobDefinition.MountPoints = MountPoints;
+JobDefinition.Environment = Environment;
+JobDefinition.Ulimit = Ulimit;
+JobDefinition.VolumesHost = VolumesHost;
 exports.default = JobDefinition;

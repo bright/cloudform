@@ -2,8 +2,8 @@
 /* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const routeTable_1 = require("./routeTable");
-const placementGroup_1 = require("./placementGroup");
 const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
+const placementGroup_1 = require("./placementGroup");
 const networkAclEntry_1 = require("./networkAclEntry");
 const internetGateway_1 = require("./internetGateway");
 const volume_1 = require("./volume");
@@ -42,8 +42,8 @@ const vpcCidrBlock_1 = require("./vpcCidrBlock");
 const vpcdhcpOptionsAssociation_1 = require("./vpcdhcpOptionsAssociation");
 exports.default = {
     RouteTable: routeTable_1.default,
-    PlacementGroup: placementGroup_1.default,
     VPCPeeringConnection: vpcPeeringConnection_1.default,
+    PlacementGroup: placementGroup_1.default,
     NetworkAclEntry: networkAclEntry_1.default,
     InternetGateway: internetGateway_1.default,
     Volume: volume_1.default,

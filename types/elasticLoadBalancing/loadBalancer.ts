@@ -106,6 +106,15 @@ export interface LoadBalancerProperties {
 }
 
 export default class LoadBalancer extends ResourceBase {
+    static HealthCheck = HealthCheck
+    static AccessLoggingPolicy = AccessLoggingPolicy
+    static ConnectionSettings = ConnectionSettings
+    static LBCookieStickinessPolicy = LBCookieStickinessPolicy
+    static ConnectionDrainingPolicy = ConnectionDrainingPolicy
+    static Listeners = Listeners
+    static Policies = Policies
+    static AppCookieStickinessPolicy = AppCookieStickinessPolicy
+
     constructor(properties?: LoadBalancerProperties) {
         super('AWS::ElasticLoadBalancing::LoadBalancer', properties)
     }

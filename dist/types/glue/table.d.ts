@@ -57,5 +57,11 @@ export interface TableProperties {
     CatalogId: Value<string>;
 }
 export default class Table extends ResourceBase {
+    static SkewedInfo: typeof SkewedInfo;
+    static StorageDescriptor: typeof StorageDescriptor;
+    static TableInput: typeof TableInput;
+    static SerdeInfo: typeof SerdeInfo;
+    static Order: typeof Order;
+    static Column: typeof Column;
     constructor(properties?: TableProperties);
 }

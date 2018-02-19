@@ -13,4 +13,5 @@ class ReplicationGroup extends resource_1.ResourceBase {
         super('AWS::ElastiCache::ReplicationGroup', properties);
     }
 }
+ReplicationGroup.NodeGroupConfiguration = NodeGroupConfiguration;
 exports.default = ReplicationGroup;

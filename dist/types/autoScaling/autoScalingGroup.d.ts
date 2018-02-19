@@ -47,5 +47,9 @@ export interface AutoScalingGroupProperties {
     VPCZoneIdentifier?: List<Value<string>>;
 }
 export default class AutoScalingGroup extends ResourceBase {
+    static LifecycleHookSpecification: typeof LifecycleHookSpecification;
+    static NotificationConfiguration: typeof NotificationConfiguration;
+    static MetricsCollection: typeof MetricsCollection;
+    static TagProperty: typeof TagProperty;
     constructor(properties?: AutoScalingGroupProperties);
 }

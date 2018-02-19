@@ -13,4 +13,5 @@ class ApplicationVersion extends resource_1.ResourceBase {
         super('AWS::ElasticBeanstalk::ApplicationVersion', properties);
     }
 }
+ApplicationVersion.SourceBundle = SourceBundle;
 exports.default = ApplicationVersion;

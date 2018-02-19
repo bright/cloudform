@@ -27,6 +27,9 @@ export interface SqlInjectionMatchSetProperties {
 }
 
 export default class SqlInjectionMatchSet extends ResourceBase {
+    static SqlInjectionMatchTuple = SqlInjectionMatchTuple
+    static FieldToMatch = FieldToMatch
+
     constructor(properties?: SqlInjectionMatchSetProperties) {
         super('AWS::WAF::SqlInjectionMatchSet', properties)
     }

@@ -62,6 +62,11 @@ export interface AppProperties {
 }
 
 export default class App extends ResourceBase {
+    static DataSource = DataSource
+    static EnvironmentVariable = EnvironmentVariable
+    static SslConfiguration = SslConfiguration
+    static Source = Source
+
     constructor(properties?: AppProperties) {
         super('AWS::OpsWorks::App', properties)
     }

@@ -19,4 +19,6 @@ class User extends resource_1.ResourceBase {
         super('AWS::IAM::User', properties);
     }
 }
+User.LoginProfile = LoginProfile;
+User.Policy = Policy;
 exports.default = User;

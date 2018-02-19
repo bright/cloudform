@@ -47,6 +47,8 @@ export interface ReplicationGroupProperties {
 }
 
 export default class ReplicationGroup extends ResourceBase {
+    static NodeGroupConfiguration = NodeGroupConfiguration
+
     constructor(properties?: ReplicationGroupProperties) {
         super('AWS::ElastiCache::ReplicationGroup', properties)
     }

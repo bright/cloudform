@@ -11,5 +11,6 @@ export interface RepositoryProperties {
     RepositoryPolicyText?: any;
 }
 export default class Repository extends ResourceBase {
+    static LifecyclePolicy: typeof LifecyclePolicy;
     constructor(properties?: RepositoryProperties);
 }

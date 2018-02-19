@@ -12,5 +12,6 @@ export interface ConfigurationRecorderProperties {
     RoleARN: Value<string>;
 }
 export default class ConfigurationRecorder extends ResourceBase {
+    static RecordingGroup: typeof RecordingGroup;
     constructor(properties?: ConfigurationRecorderProperties);
 }

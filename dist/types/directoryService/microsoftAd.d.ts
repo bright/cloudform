@@ -14,5 +14,6 @@ export interface MicrosoftADProperties {
     VpcSettings: VpcSettings;
 }
 export default class MicrosoftAD extends ResourceBase {
+    static VpcSettings: typeof VpcSettings;
     constructor(properties?: MicrosoftADProperties);
 }

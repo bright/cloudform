@@ -29,5 +29,7 @@ export interface RecordSetProperties {
     Weight?: Value<number>;
 }
 export default class RecordSet extends ResourceBase {
+    static GeoLocation: typeof GeoLocation;
+    static AliasTarget: typeof AliasTarget;
     constructor(properties?: RecordSetProperties);
 }

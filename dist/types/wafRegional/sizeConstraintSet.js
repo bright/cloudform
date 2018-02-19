@@ -19,4 +19,6 @@ class SizeConstraintSet extends resource_1.ResourceBase {
         super('AWS::WAFRegional::SizeConstraintSet', properties);
     }
 }
+SizeConstraintSet.SizeConstraint = SizeConstraint;
+SizeConstraintSet.FieldToMatch = FieldToMatch;
 exports.default = SizeConstraintSet;

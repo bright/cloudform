@@ -43,4 +43,10 @@ class Layer extends resource_1.ResourceBase {
         super('AWS::OpsWorks::Layer', properties);
     }
 }
+Layer.ShutdownEventConfiguration = ShutdownEventConfiguration;
+Layer.VolumeConfiguration = VolumeConfiguration;
+Layer.AutoScalingThresholds = AutoScalingThresholds;
+Layer.Recipes = Recipes;
+Layer.LifecycleEventConfiguration = LifecycleEventConfiguration;
+Layer.LoadBasedAutoScaling = LoadBasedAutoScaling;
 exports.default = Layer;

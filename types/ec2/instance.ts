@@ -149,6 +149,18 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
+    static ElasticGpuSpecification = ElasticGpuSpecification
+    static NetworkInterface = NetworkInterface
+    static InstanceIpv6Address = InstanceIpv6Address
+    static Volume = Volume
+    static AssociationParameter = AssociationParameter
+    static Ebs = Ebs
+    static NoDevice = NoDevice
+    static SsmAssociation = SsmAssociation
+    static CreditSpecification = CreditSpecification
+    static BlockDeviceMapping = BlockDeviceMapping
+    static PrivateIpAddressSpecification = PrivateIpAddressSpecification
+
     constructor(properties?: InstanceProperties) {
         super('AWS::EC2::Instance', properties)
     }

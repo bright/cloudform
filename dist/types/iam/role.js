@@ -13,4 +13,5 @@ class Role extends resource_1.ResourceBase {
         super('AWS::IAM::Role', properties);
     }
 }
+Role.Policy = Policy;
 exports.default = Role;

@@ -36,5 +36,6 @@ export interface ClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class Cluster extends ResourceBase {
+    static LoggingProperties: typeof LoggingProperties;
     constructor(properties?: ClusterProperties);
 }

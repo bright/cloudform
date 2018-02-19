@@ -10,6 +10,8 @@ export interface ActivityProperties {
 }
 
 export default class Activity extends ResourceBase {
+
+
     constructor(properties?: ActivityProperties) {
         super('AWS::StepFunctions::Activity', properties)
     }

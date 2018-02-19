@@ -399,6 +399,46 @@ export interface BucketProperties {
 }
 
 export default class Bucket extends ResourceBase {
+    static BucketEncryption = BucketEncryption
+    static NotificationFilter = NotificationFilter
+    static RoutingRuleCondition = RoutingRuleCondition
+    static LifecycleConfiguration = LifecycleConfiguration
+    static LambdaConfiguration = LambdaConfiguration
+    static ReplicationRule = ReplicationRule
+    static CorsRule = CorsRule
+    static Destination = Destination
+    static ServerSideEncryptionRule = ServerSideEncryptionRule
+    static AnalyticsConfiguration = AnalyticsConfiguration
+    static SourceSelectionCriteria = SourceSelectionCriteria
+    static LoggingConfiguration = LoggingConfiguration
+    static StorageClassAnalysis = StorageClassAnalysis
+    static RoutingRule = RoutingRule
+    static AccessControlTranslation = AccessControlTranslation
+    static VersioningConfiguration = VersioningConfiguration
+    static EncryptionConfiguration = EncryptionConfiguration
+    static NotificationConfiguration = NotificationConfiguration
+    static ServerSideEncryptionByDefault = ServerSideEncryptionByDefault
+    static RedirectRule = RedirectRule
+    static RedirectAllRequestsTo = RedirectAllRequestsTo
+    static S3KeyFilter = S3KeyFilter
+    static InventoryConfiguration = InventoryConfiguration
+    static WebsiteConfiguration = WebsiteConfiguration
+    static ReplicationConfiguration = ReplicationConfiguration
+    static SseKmsEncryptedObjects = SseKmsEncryptedObjects
+    static Rule = Rule
+    static QueueConfiguration = QueueConfiguration
+    static TopicConfiguration = TopicConfiguration
+    static MetricsConfiguration = MetricsConfiguration
+    static TagFilter = TagFilter
+    static Transition = Transition
+    static DataExport = DataExport
+    static CorsConfiguration = CorsConfiguration
+    static ReplicationDestination = ReplicationDestination
+    static AccelerateConfiguration = AccelerateConfiguration
+    static NoncurrentVersionTransition = NoncurrentVersionTransition
+    static AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload
+    static FilterRule = FilterRule
+
     constructor(properties?: BucketProperties) {
         super('AWS::S3::Bucket', properties)
     }

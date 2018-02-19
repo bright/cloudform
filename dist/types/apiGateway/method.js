@@ -25,4 +25,7 @@ class Method extends resource_1.ResourceBase {
         super('AWS::ApiGateway::Method', properties);
     }
 }
+Method.MethodResponse = MethodResponse;
+Method.Integration = Integration;
+Method.IntegrationResponse = IntegrationResponse;
 exports.default = Method;

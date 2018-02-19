@@ -25,4 +25,7 @@ class IdentityPoolRoleAttachment extends resource_1.ResourceBase {
         super('AWS::Cognito::IdentityPoolRoleAttachment', properties);
     }
 }
+IdentityPoolRoleAttachment.RulesConfigurationType = RulesConfigurationType;
+IdentityPoolRoleAttachment.RoleMapping = RoleMapping;
+IdentityPoolRoleAttachment.MappingRule = MappingRule;
 exports.default = IdentityPoolRoleAttachment;

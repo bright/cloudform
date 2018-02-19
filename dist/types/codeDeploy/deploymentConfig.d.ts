@@ -10,5 +10,6 @@ export interface DeploymentConfigProperties {
     MinimumHealthyHosts?: MinimumHealthyHosts;
 }
 export default class DeploymentConfig extends ResourceBase {
+    static MinimumHealthyHosts: typeof MinimumHealthyHosts;
     constructor(properties?: DeploymentConfigProperties);
 }

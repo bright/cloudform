@@ -116,5 +116,19 @@ export interface TaskDefinitionProperties {
     Volumes?: List<Volume>;
 }
 export default class TaskDefinition extends ResourceBase {
+    static ContainerDefinition: typeof ContainerDefinition;
+    static LogConfiguration: typeof LogConfiguration;
+    static Device: typeof Device;
+    static KeyValuePair: typeof KeyValuePair;
+    static MountPoint: typeof MountPoint;
+    static VolumeFrom: typeof VolumeFrom;
+    static HostEntry: typeof HostEntry;
+    static KernelCapabilities: typeof KernelCapabilities;
+    static TaskDefinitionPlacementConstraint: typeof TaskDefinitionPlacementConstraint;
+    static Volume: typeof Volume;
+    static PortMapping: typeof PortMapping;
+    static Ulimit: typeof Ulimit;
+    static LinuxParameters: typeof LinuxParameters;
+    static HostVolumeProperties: typeof HostVolumeProperties;
     constructor(properties?: TaskDefinitionProperties);
 }

@@ -19,4 +19,6 @@ class XssMatchSet extends resource_1.ResourceBase {
         super('AWS::WAF::XssMatchSet', properties);
     }
 }
+XssMatchSet.FieldToMatch = FieldToMatch;
+XssMatchSet.XssMatchTuple = XssMatchTuple;
 exports.default = XssMatchSet;

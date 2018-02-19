@@ -48,6 +48,8 @@ export interface DBInstanceProperties {
 }
 
 export default class DBInstance extends ResourceBase {
+
+
     constructor(properties?: DBInstanceProperties) {
         super('AWS::RDS::DBInstance', properties)
     }

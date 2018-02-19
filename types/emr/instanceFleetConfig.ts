@@ -83,6 +83,14 @@ export interface InstanceFleetConfigProperties {
 }
 
 export default class InstanceFleetConfig extends ResourceBase {
+    static VolumeSpecification = VolumeSpecification
+    static SpotProvisioningSpecification = SpotProvisioningSpecification
+    static Configuration = Configuration
+    static EbsConfiguration = EbsConfiguration
+    static InstanceTypeConfig = InstanceTypeConfig
+    static InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications
+    static EbsBlockDeviceConfig = EbsBlockDeviceConfig
+
     constructor(properties?: InstanceFleetConfigProperties) {
         super('AWS::EMR::InstanceFleetConfig', properties)
     }

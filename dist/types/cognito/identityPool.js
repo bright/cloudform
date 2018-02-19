@@ -25,4 +25,7 @@ class IdentityPool extends resource_1.ResourceBase {
         super('AWS::Cognito::IdentityPool', properties);
     }
 }
+IdentityPool.PushSync = PushSync;
+IdentityPool.CognitoIdentityProvider = CognitoIdentityProvider;
+IdentityPool.CognitoStreams = CognitoStreams;
 exports.default = IdentityPool;

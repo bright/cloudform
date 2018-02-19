@@ -51,6 +51,11 @@ export interface StreamingDistributionProperties {
 }
 
 export default class StreamingDistribution extends ResourceBase {
+    static TrustedSigners = TrustedSigners
+    static S3Origin = S3Origin
+    static Logging = Logging
+    static StreamingDistributionConfig = StreamingDistributionConfig
+
     constructor(properties?: StreamingDistributionProperties) {
         super('AWS::CloudFront::StreamingDistribution', properties)
     }

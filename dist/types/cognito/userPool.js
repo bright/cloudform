@@ -73,4 +73,15 @@ class UserPool extends resource_1.ResourceBase {
         super('AWS::Cognito::UserPool', properties);
     }
 }
+UserPool.PasswordPolicy = PasswordPolicy;
+UserPool.Policies = Policies;
+UserPool.EmailConfiguration = EmailConfiguration;
+UserPool.LambdaConfig = LambdaConfig;
+UserPool.AdminCreateUserConfig = AdminCreateUserConfig;
+UserPool.SchemaAttribute = SchemaAttribute;
+UserPool.NumberAttributeConstraints = NumberAttributeConstraints;
+UserPool.SmsConfiguration = SmsConfiguration;
+UserPool.DeviceConfiguration = DeviceConfiguration;
+UserPool.InviteMessageTemplate = InviteMessageTemplate;
+UserPool.StringAttributeConstraints = StringAttributeConstraints;
 exports.default = UserPool;

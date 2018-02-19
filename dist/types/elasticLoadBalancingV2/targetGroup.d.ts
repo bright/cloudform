@@ -34,5 +34,8 @@ export interface TargetGroupProperties {
     VpcId: Value<string>;
 }
 export default class TargetGroup extends ResourceBase {
+    static TargetGroupAttribute: typeof TargetGroupAttribute;
+    static Matcher: typeof Matcher;
+    static TargetDescription: typeof TargetDescription;
     constructor(properties?: TargetGroupProperties);
 }

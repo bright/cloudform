@@ -51,5 +51,11 @@ export interface PartitionProperties {
     PartitionInput: PartitionInput;
 }
 export default class Partition extends ResourceBase {
+    static SerdeInfo: typeof SerdeInfo;
+    static StorageDescriptor: typeof StorageDescriptor;
+    static Order: typeof Order;
+    static SkewedInfo: typeof SkewedInfo;
+    static Column: typeof Column;
+    static PartitionInput: typeof PartitionInput;
     constructor(properties?: PartitionProperties);
 }

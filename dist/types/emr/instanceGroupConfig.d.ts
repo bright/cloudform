@@ -86,5 +86,17 @@ export interface InstanceGroupConfigProperties {
     Name?: Value<string>;
 }
 export default class InstanceGroupConfig extends ResourceBase {
+    static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
+    static Configuration: typeof Configuration;
+    static MetricDimension: typeof MetricDimension;
+    static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
+    static ScalingRule: typeof ScalingRule;
+    static ScalingAction: typeof ScalingAction;
+    static ScalingTrigger: typeof ScalingTrigger;
+    static ScalingConstraints: typeof ScalingConstraints;
+    static CloudWatchAlarmDefinition: typeof CloudWatchAlarmDefinition;
+    static VolumeSpecification: typeof VolumeSpecification;
+    static AutoScalingPolicy: typeof AutoScalingPolicy;
+    static EbsConfiguration: typeof EbsConfiguration;
     constructor(properties?: InstanceGroupConfigProperties);
 }

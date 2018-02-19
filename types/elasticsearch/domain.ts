@@ -57,6 +57,11 @@ export interface DomainProperties {
 }
 
 export default class Domain extends ResourceBase {
+    static VPCOptions = VPCOptions
+    static ElasticsearchClusterConfig = ElasticsearchClusterConfig
+    static SnapshotOptions = SnapshotOptions
+    static EBSOptions = EBSOptions
+
     constructor(properties?: DomainProperties) {
         super('AWS::Elasticsearch::Domain', properties)
     }

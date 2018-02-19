@@ -43,8 +43,11 @@ function propertiesEntries(properties) {
 function generateInnerClass(name, properties) {
     return "export class " + name + " {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n\n    constructor(properties: " + name + ") {\n        Object.assign(this, properties)\n    }\n}";
 }
-function generateTopLevelClass(namespace, name, properties) {
-    return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n    constructor(properties?: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
+function generateTopLevelClass(namespace, name, properties, innerTypes) {
+    return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n" + Object.keys(innerTypes).map(function (innerTypeFullName) {
+        var _a = innerTypeFullName.split('.'), innerTypeName = _a[1];
+        return "    static " + innerTypeName + " = " + innerTypeName;
+    }).join('\n') + "\n\n    constructor(properties?: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
 }
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags') || lodash_1.some(properties, function (p) { return p.Type === 'List' && p.ItemType === 'Tag'; });
@@ -60,7 +63,7 @@ function generateFile(fileHeader, namespace, resourceName, properties, innerType
     if (innerHasTags || hasTags(properties)) {
         resourceImports.push('ResourceTag');
     }
-    var generatedClass = generateTopLevelClass(namespace, resourceName, properties);
+    var generatedClass = generateTopLevelClass(namespace, resourceName, properties, innerTypes);
     var template = fileHeader + "\n   \nimport {" + resourceImports.join(', ') + "} from '../resource'\nimport {Value, List} from '../dataTypes'\n\n" + innerTypesTemplates.join('\n\n') + "\n\n" + generatedClass + "\n";
     if (!fs.existsSync("./types/" + adjustedCamelCase(namespace))) {
         fs.mkdirSync("./types/" + adjustedCamelCase(namespace));

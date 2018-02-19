@@ -40,6 +40,10 @@ export interface UsagePlanProperties {
 }
 
 export default class UsagePlan extends ResourceBase {
+    static ApiStage = ApiStage
+    static ThrottleSettings = ThrottleSettings
+    static QuotaSettings = QuotaSettings
+
     constructor(properties?: UsagePlanProperties) {
         super('AWS::ApiGateway::UsagePlan', properties)
     }

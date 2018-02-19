@@ -19,5 +19,7 @@ export interface UserProperties {
     UserName?: Value<string>;
 }
 export default class User extends ResourceBase {
+    static LoginProfile: typeof LoginProfile;
+    static Policy: typeof Policy;
     constructor(properties?: UserProperties);
 }

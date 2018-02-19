@@ -31,4 +31,8 @@ class PatchBaseline extends resource_1.ResourceBase {
         super('AWS::SSM::PatchBaseline', properties);
     }
 }
+PatchBaseline.RuleGroup = RuleGroup;
+PatchBaseline.PatchFilter = PatchFilter;
+PatchBaseline.Rule = Rule;
+PatchBaseline.PatchFilterGroup = PatchFilterGroup;
 exports.default = PatchBaseline;

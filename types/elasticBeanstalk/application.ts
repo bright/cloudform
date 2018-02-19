@@ -48,6 +48,11 @@ export interface ApplicationProperties {
 }
 
 export default class Application extends ResourceBase {
+    static ApplicationResourceLifecycleConfig = ApplicationResourceLifecycleConfig
+    static ApplicationVersionLifecycleConfig = ApplicationVersionLifecycleConfig
+    static MaxCountRule = MaxCountRule
+    static MaxAgeRule = MaxAgeRule
+
     constructor(properties?: ApplicationProperties) {
         super('AWS::ElasticBeanstalk::Application', properties)
     }

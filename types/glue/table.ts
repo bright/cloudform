@@ -85,6 +85,13 @@ export interface TableProperties {
 }
 
 export default class Table extends ResourceBase {
+    static SkewedInfo = SkewedInfo
+    static StorageDescriptor = StorageDescriptor
+    static TableInput = TableInput
+    static SerdeInfo = SerdeInfo
+    static Order = Order
+    static Column = Column
+
     constructor(properties?: TableProperties) {
         super('AWS::Glue::Table', properties)
     }

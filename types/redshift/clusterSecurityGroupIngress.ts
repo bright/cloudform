@@ -13,6 +13,8 @@ export interface ClusterSecurityGroupIngressProperties {
 }
 
 export default class ClusterSecurityGroupIngress extends ResourceBase {
+
+
     constructor(properties?: ClusterSecurityGroupIngressProperties) {
         super('AWS::Redshift::ClusterSecurityGroupIngress', properties)
     }

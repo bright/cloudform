@@ -31,4 +31,8 @@ class Domain extends resource_1.ResourceBase {
         super('AWS::Elasticsearch::Domain', properties);
     }
 }
+Domain.VPCOptions = VPCOptions;
+Domain.ElasticsearchClusterConfig = ElasticsearchClusterConfig;
+Domain.SnapshotOptions = SnapshotOptions;
+Domain.EBSOptions = EBSOptions;
 exports.default = Domain;

@@ -19,6 +19,8 @@ export interface RepositoryProperties {
 }
 
 export default class Repository extends ResourceBase {
+    static LifecyclePolicy = LifecyclePolicy
+
     constructor(properties?: RepositoryProperties) {
         super('AWS::ECR::Repository', properties)
     }

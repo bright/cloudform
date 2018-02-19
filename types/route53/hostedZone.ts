@@ -46,6 +46,11 @@ export interface HostedZoneProperties {
 }
 
 export default class HostedZone extends ResourceBase {
+    static HostedZoneTag = HostedZoneTag
+    static HostedZoneConfig = HostedZoneConfig
+    static QueryLoggingConfig = QueryLoggingConfig
+    static VPC = VPC
+
     constructor(properties?: HostedZoneProperties) {
         super('AWS::Route53::HostedZone', properties)
     }

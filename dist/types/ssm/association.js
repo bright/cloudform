@@ -19,4 +19,6 @@ class Association extends resource_1.ResourceBase {
         super('AWS::SSM::Association', properties);
     }
 }
+Association.Target = Target;
+Association.ParameterValues = ParameterValues;
 exports.default = Association;

@@ -13,4 +13,5 @@ class DBSecurityGroup extends resource_1.ResourceBase {
         super('AWS::RDS::DBSecurityGroup', properties);
     }
 }
+DBSecurityGroup.Ingress = Ingress;
 exports.default = DBSecurityGroup;

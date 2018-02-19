@@ -20,6 +20,8 @@ export interface FileSystemProperties {
 }
 
 export default class FileSystem extends ResourceBase {
+    static ElasticFileSystemTag = ElasticFileSystemTag
+
     constructor(properties?: FileSystemProperties) {
         super('AWS::EFS::FileSystem', properties)
     }

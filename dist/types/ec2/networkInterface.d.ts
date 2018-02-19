@@ -23,5 +23,7 @@ export interface NetworkInterfaceProperties {
     Tags?: ResourceTag[];
 }
 export default class NetworkInterface extends ResourceBase {
+    static InstanceIpv6Address: typeof InstanceIpv6Address;
+    static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     constructor(properties?: NetworkInterfaceProperties);
 }

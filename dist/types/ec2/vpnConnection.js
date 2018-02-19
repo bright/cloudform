@@ -13,4 +13,5 @@ class VPNConnection extends resource_1.ResourceBase {
         super('AWS::EC2::VPNConnection', properties);
     }
 }
+VPNConnection.VpnTunnelOptionsSpecification = VpnTunnelOptionsSpecification;
 exports.default = VPNConnection;

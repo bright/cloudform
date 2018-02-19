@@ -13,4 +13,5 @@ class DomainName extends resource_1.ResourceBase {
         super('AWS::ApiGateway::DomainName', properties);
     }
 }
+DomainName.EndpointConfiguration = EndpointConfiguration;
 exports.default = DomainName;

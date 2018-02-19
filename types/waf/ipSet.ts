@@ -18,6 +18,8 @@ export interface IPSetProperties {
 }
 
 export default class IPSet extends ResourceBase {
+    static IPSetDescriptor = IPSetDescriptor
+
     constructor(properties?: IPSetProperties) {
         super('AWS::WAF::IPSet', properties)
     }

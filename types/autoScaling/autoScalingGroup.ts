@@ -67,6 +67,11 @@ export interface AutoScalingGroupProperties {
 }
 
 export default class AutoScalingGroup extends ResourceBase {
+    static LifecycleHookSpecification = LifecycleHookSpecification
+    static NotificationConfiguration = NotificationConfiguration
+    static MetricsCollection = MetricsCollection
+    static TagProperty = TagProperty
+
     constructor(properties?: AutoScalingGroupProperties) {
         super('AWS::AutoScaling::AutoScalingGroup', properties)
     }

@@ -70,5 +70,17 @@ export interface ApplicationProperties {
     ApplicationCode?: Value<string>;
 }
 export default class Application extends ResourceBase {
+    static MappingParameters: typeof MappingParameters;
+    static CSVMappingParameters: typeof CSVMappingParameters;
+    static KinesisStreamsInput: typeof KinesisStreamsInput;
+    static Input: typeof Input;
+    static InputSchema: typeof InputSchema;
+    static RecordColumn: typeof RecordColumn;
+    static RecordFormat: typeof RecordFormat;
+    static KinesisFirehoseInput: typeof KinesisFirehoseInput;
+    static InputParallelism: typeof InputParallelism;
+    static InputProcessingConfiguration: typeof InputProcessingConfiguration;
+    static JSONMappingParameters: typeof JSONMappingParameters;
+    static InputLambdaProcessor: typeof InputLambdaProcessor;
     constructor(properties?: ApplicationProperties);
 }

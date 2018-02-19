@@ -53,5 +53,12 @@ export interface JobDefinitionProperties {
     RetryStrategy?: RetryStrategy;
 }
 export default class JobDefinition extends ResourceBase {
+    static Volumes: typeof Volumes;
+    static RetryStrategy: typeof RetryStrategy;
+    static ContainerProperties: typeof ContainerProperties;
+    static MountPoints: typeof MountPoints;
+    static Environment: typeof Environment;
+    static Ulimit: typeof Ulimit;
+    static VolumesHost: typeof VolumesHost;
     constructor(properties?: JobDefinitionProperties);
 }

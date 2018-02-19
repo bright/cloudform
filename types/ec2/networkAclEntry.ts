@@ -34,6 +34,9 @@ export interface NetworkAclEntryProperties {
 }
 
 export default class NetworkAclEntry extends ResourceBase {
+    static Icmp = Icmp
+    static PortRange = PortRange
+
     constructor(properties?: NetworkAclEntryProperties) {
         super('AWS::EC2::NetworkAclEntry', properties)
     }

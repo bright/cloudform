@@ -66,6 +66,12 @@ export interface FunctionProperties {
 }
 
 export default class Function extends ResourceBase {
+    static VpcConfig = VpcConfig
+    static DeadLetterConfig = DeadLetterConfig
+    static TracingConfig = TracingConfig
+    static Code = Code
+    static Environment = Environment
+
     constructor(properties?: FunctionProperties) {
         super('AWS::Lambda::Function', properties)
     }

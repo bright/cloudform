@@ -70,6 +70,13 @@ export interface PipelineProperties {
 }
 
 export default class Pipeline extends ResourceBase {
+    static ParameterAttribute = ParameterAttribute
+    static PipelineTag = PipelineTag
+    static ParameterObject = ParameterObject
+    static PipelineObject = PipelineObject
+    static ParameterValue = ParameterValue
+    static Field = Field
+
     constructor(properties?: PipelineProperties) {
         super('AWS::DataPipeline::Pipeline', properties)
     }

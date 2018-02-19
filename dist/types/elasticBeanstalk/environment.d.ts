@@ -27,5 +27,7 @@ export interface EnvironmentProperties {
     VersionLabel?: Value<string>;
 }
 export default class Environment extends ResourceBase {
+    static OptionSetting: typeof OptionSetting;
+    static Tier: typeof Tier;
     constructor(properties?: EnvironmentProperties);
 }

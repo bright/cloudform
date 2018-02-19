@@ -13,8 +13,8 @@ import EC2_ from './ec2'
 export const EC2 = EC2_
 
 import EC2RouteTable from './ec2/routeTable'
-import EC2PlacementGroup from './ec2/placementGroup'
 import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
+import EC2PlacementGroup from './ec2/placementGroup'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
 import EC2Volume from './ec2/volume'
@@ -102,18 +102,6 @@ export const Elasticsearch = Elasticsearch_
 
 import ElasticsearchDomain from './elasticsearch/domain'
 
-import WAFRegional_ from './wafRegional'
-export const WAFRegional = WAFRegional_
-
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
-import WAFRegionalWebACL from './wafRegional/webAcl'
-import WAFRegionalRule from './wafRegional/rule'
-import WAFRegionalIPSet from './wafRegional/ipSet'
-
 import ApiGateway_ from './apiGateway'
 export const ApiGateway = ApiGateway_
 
@@ -136,14 +124,17 @@ import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
-import EMR_ from './emr'
-export const EMR = EMR_
+import WAFRegional_ from './wafRegional'
+export const WAFRegional = WAFRegional_
 
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
-import EMRCluster from './emr/cluster'
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
-import EMRStep from './emr/step'
-import EMRSecurityConfiguration from './emr/securityConfiguration'
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
+import WAFRegionalWebACL from './wafRegional/webAcl'
+import WAFRegionalRule from './wafRegional/rule'
+import WAFRegionalIPSet from './wafRegional/ipSet'
 
 import WorkSpaces_ from './workSpaces'
 export const WorkSpaces = WorkSpaces_
@@ -162,6 +153,15 @@ import RDSEventSubscription from './rds/eventSubscription'
 import RDSDBInstance from './rds/dbInstance'
 import RDSDBSecurityGroup from './rds/dbSecurityGroup'
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup'
+
+import EMR_ from './emr'
+export const EMR = EMR_
+
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
+import EMRCluster from './emr/cluster'
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
+import EMRStep from './emr/step'
+import EMRSecurityConfiguration from './emr/securityConfiguration'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -338,11 +338,6 @@ import BatchJobDefinition from './batch/jobDefinition'
 import BatchJobQueue from './batch/jobQueue'
 import BatchComputeEnvironment from './batch/computeEnvironment'
 
-import ElasticLoadBalancing_ from './elasticLoadBalancing'
-export const ElasticLoadBalancing = ElasticLoadBalancing_
-
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer'
-
 import IoT_ from './iot'
 export const IoT = IoT_
 
@@ -352,6 +347,11 @@ import IoTTopicRule from './iot/topicRule'
 import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment'
 import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment'
 import IoTCertificate from './iot/certificate'
+
+import ElasticLoadBalancing_ from './elasticLoadBalancing'
+export const ElasticLoadBalancing = ElasticLoadBalancing_
+
+import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer'
 
 import DMS_ from './dms'
 export const DMS = DMS_
@@ -494,11 +494,11 @@ export default {
   IAM,
   CodePipeline,
   Elasticsearch,
-  WAFRegional,
   ApiGateway,
-  EMR,
+  WAFRegional,
   WorkSpaces,
   RDS,
+  EMR,
   Logs,
   Kinesis,
   AutoScaling,
@@ -523,8 +523,8 @@ export default {
   CertificateManager,
   Inspector,
   Batch,
-  ElasticLoadBalancing,
   IoT,
+  ElasticLoadBalancing,
   DMS,
   Glue,
   ElastiCache,

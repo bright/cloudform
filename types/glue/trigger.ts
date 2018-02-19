@@ -41,6 +41,10 @@ export interface TriggerProperties {
 }
 
 export default class Trigger extends ResourceBase {
+    static Action = Action
+    static Condition = Condition
+    static Predicate = Predicate
+
     constructor(properties?: TriggerProperties) {
         super('AWS::Glue::Trigger', properties)
     }

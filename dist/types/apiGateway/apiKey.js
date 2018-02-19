@@ -13,4 +13,5 @@ class ApiKey extends resource_1.ResourceBase {
         super('AWS::ApiGateway::ApiKey', properties);
     }
 }
+ApiKey.StageKey = StageKey;
 exports.default = ApiKey;

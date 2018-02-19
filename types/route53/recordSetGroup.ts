@@ -52,6 +52,10 @@ export interface RecordSetGroupProperties {
 }
 
 export default class RecordSetGroup extends ResourceBase {
+    static RecordSet = RecordSet
+    static GeoLocation = GeoLocation
+    static AliasTarget = AliasTarget
+
     constructor(properties?: RecordSetGroupProperties) {
         super('AWS::Route53::RecordSetGroup', properties)
     }

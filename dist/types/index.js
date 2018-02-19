@@ -17,16 +17,16 @@ const codePipeline_1 = require("./codePipeline");
 exports.CodePipeline = codePipeline_1.default;
 const elasticsearch_1 = require("./elasticsearch");
 exports.Elasticsearch = elasticsearch_1.default;
-const wafRegional_1 = require("./wafRegional");
-exports.WAFRegional = wafRegional_1.default;
 const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
-const emr_1 = require("./emr");
-exports.EMR = emr_1.default;
+const wafRegional_1 = require("./wafRegional");
+exports.WAFRegional = wafRegional_1.default;
 const workSpaces_1 = require("./workSpaces");
 exports.WorkSpaces = workSpaces_1.default;
 const rds_1 = require("./rds");
 exports.RDS = rds_1.default;
+const emr_1 = require("./emr");
+exports.EMR = emr_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -75,10 +75,10 @@ const inspector_1 = require("./inspector");
 exports.Inspector = inspector_1.default;
 const batch_1 = require("./batch");
 exports.Batch = batch_1.default;
-const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
-exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
 const iot_1 = require("./iot");
 exports.IoT = iot_1.default;
+const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
+exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
 const dms_1 = require("./dms");
 exports.DMS = dms_1.default;
 const glue_1 = require("./glue");
@@ -128,11 +128,11 @@ exports.default = {
     IAM: exports.IAM,
     CodePipeline: exports.CodePipeline,
     Elasticsearch: exports.Elasticsearch,
-    WAFRegional: exports.WAFRegional,
     ApiGateway: exports.ApiGateway,
-    EMR: exports.EMR,
+    WAFRegional: exports.WAFRegional,
     WorkSpaces: exports.WorkSpaces,
     RDS: exports.RDS,
+    EMR: exports.EMR,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -157,8 +157,8 @@ exports.default = {
     CertificateManager: exports.CertificateManager,
     Inspector: exports.Inspector,
     Batch: exports.Batch,
-    ElasticLoadBalancing: exports.ElasticLoadBalancing,
     IoT: exports.IoT,
+    ElasticLoadBalancing: exports.ElasticLoadBalancing,
     DMS: exports.DMS,
     Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,

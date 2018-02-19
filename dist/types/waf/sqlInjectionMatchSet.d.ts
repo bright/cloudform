@@ -15,5 +15,7 @@ export interface SqlInjectionMatchSetProperties {
     SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>;
 }
 export default class SqlInjectionMatchSet extends ResourceBase {
+    static SqlInjectionMatchTuple: typeof SqlInjectionMatchTuple;
+    static FieldToMatch: typeof FieldToMatch;
     constructor(properties?: SqlInjectionMatchSetProperties);
 }

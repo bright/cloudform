@@ -31,6 +31,9 @@ export interface AssociationProperties {
 }
 
 export default class Association extends ResourceBase {
+    static Target = Target
+    static ParameterValues = ParameterValues
+
     constructor(properties?: AssociationProperties) {
         super('AWS::SSM::Association', properties)
     }

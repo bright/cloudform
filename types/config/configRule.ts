@@ -44,6 +44,10 @@ export interface ConfigRuleProperties {
 }
 
 export default class ConfigRule extends ResourceBase {
+    static Scope = Scope
+    static Source = Source
+    static SourceDetail = SourceDetail
+
     constructor(properties?: ConfigRuleProperties) {
         super('AWS::Config::ConfigRule', properties)
     }

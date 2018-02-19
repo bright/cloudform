@@ -25,4 +25,7 @@ class ConfigRule extends resource_1.ResourceBase {
         super('AWS::Config::ConfigRule', properties);
     }
 }
+ConfigRule.Scope = Scope;
+ConfigRule.Source = Source;
+ConfigRule.SourceDetail = SourceDetail;
 exports.default = ConfigRule;

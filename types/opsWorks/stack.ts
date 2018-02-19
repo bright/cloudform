@@ -82,6 +82,12 @@ export interface StackProperties {
 }
 
 export default class Stack extends ResourceBase {
+    static Source = Source
+    static ChefConfiguration = ChefConfiguration
+    static StackConfigurationManager = StackConfigurationManager
+    static RdsDbInstance = RdsDbInstance
+    static ElasticIp = ElasticIp
+
     constructor(properties?: StackProperties) {
         super('AWS::OpsWorks::Stack', properties)
     }

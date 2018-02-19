@@ -11,6 +11,8 @@ export interface UserToGroupAdditionProperties {
 }
 
 export default class UserToGroupAddition extends ResourceBase {
+
+
     constructor(properties?: UserToGroupAdditionProperties) {
         super('AWS::IAM::UserToGroupAddition', properties)
     }

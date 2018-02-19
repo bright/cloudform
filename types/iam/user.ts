@@ -31,6 +31,9 @@ export interface UserProperties {
 }
 
 export default class User extends ResourceBase {
+    static LoginProfile = LoginProfile
+    static Policy = Policy
+
     constructor(properties?: UserProperties) {
         super('AWS::IAM::User', properties)
     }

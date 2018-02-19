@@ -35,6 +35,9 @@ export interface ScalableTargetProperties {
 }
 
 export default class ScalableTarget extends ResourceBase {
+    static ScheduledAction = ScheduledAction
+    static ScalableTargetAction = ScalableTargetAction
+
     constructor(properties?: ScalableTargetProperties) {
         super('AWS::ApplicationAutoScaling::ScalableTarget', properties)
     }

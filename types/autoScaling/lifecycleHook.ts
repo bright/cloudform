@@ -17,6 +17,8 @@ export interface LifecycleHookProperties {
 }
 
 export default class LifecycleHook extends ResourceBase {
+
+
     constructor(properties?: LifecycleHookProperties) {
         super('AWS::AutoScaling::LifecycleHook', properties)
     }

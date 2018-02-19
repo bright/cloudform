@@ -31,4 +31,8 @@ class HostedZone extends resource_1.ResourceBase {
         super('AWS::Route53::HostedZone', properties);
     }
 }
+HostedZone.HostedZoneTag = HostedZoneTag;
+HostedZone.HostedZoneConfig = HostedZoneConfig;
+HostedZone.QueryLoggingConfig = QueryLoggingConfig;
+HostedZone.VPC = VPC;
 exports.default = HostedZone;

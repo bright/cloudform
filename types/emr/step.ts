@@ -31,6 +31,9 @@ export interface StepProperties {
 }
 
 export default class Step extends ResourceBase {
+    static HadoopJarStepConfig = HadoopJarStepConfig
+    static KeyValue = KeyValue
+
     constructor(properties?: StepProperties) {
         super('AWS::EMR::Step', properties)
     }

@@ -30,6 +30,8 @@ export interface CacheClusterProperties {
 }
 
 export default class CacheCluster extends ResourceBase {
+
+
     constructor(properties?: CacheClusterProperties) {
         super('AWS::ElastiCache::CacheCluster', properties)
     }

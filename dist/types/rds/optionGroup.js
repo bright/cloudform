@@ -19,4 +19,6 @@ class OptionGroup extends resource_1.ResourceBase {
         super('AWS::RDS::OptionGroup', properties);
     }
 }
+OptionGroup.OptionSetting = OptionSetting;
+OptionGroup.OptionConfiguration = OptionConfiguration;
 exports.default = OptionGroup;

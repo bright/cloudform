@@ -19,6 +19,8 @@ export interface ClassifierProperties {
 }
 
 export default class Classifier extends ResourceBase {
+    static GrokClassifier = GrokClassifier
+
     constructor(properties?: ClassifierProperties) {
         super('AWS::Glue::Classifier', properties)
     }

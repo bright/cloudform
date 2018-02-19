@@ -29,6 +29,9 @@ export interface AliasProperties {
 }
 
 export default class Alias extends ResourceBase {
+    static AliasRoutingConfiguration = AliasRoutingConfiguration
+    static VersionWeight = VersionWeight
+
     constructor(properties?: AliasProperties) {
         super('AWS::Lambda::Alias', properties)
     }

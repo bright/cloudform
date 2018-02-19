@@ -29,6 +29,9 @@ export interface WebACLProperties {
 }
 
 export default class WebACL extends ResourceBase {
+    static WafAction = WafAction
+    static ActivatedRule = ActivatedRule
+
     constructor(properties?: WebACLProperties) {
         super('AWS::WAF::WebACL', properties)
     }

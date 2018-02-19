@@ -22,6 +22,8 @@ export interface VPNConnectionProperties {
 }
 
 export default class VPNConnection extends ResourceBase {
+    static VpnTunnelOptionsSpecification = VpnTunnelOptionsSpecification
+
     constructor(properties?: VPNConnectionProperties) {
         super('AWS::EC2::VPNConnection', properties)
     }

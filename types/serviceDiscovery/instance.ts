@@ -12,6 +12,8 @@ export interface InstanceProperties {
 }
 
 export default class Instance extends ResourceBase {
+
+
     constructor(properties?: InstanceProperties) {
         super('AWS::ServiceDiscovery::Instance', properties)
     }

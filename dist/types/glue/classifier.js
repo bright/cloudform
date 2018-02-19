@@ -13,4 +13,5 @@ class Classifier extends resource_1.ResourceBase {
         super('AWS::Glue::Classifier', properties);
     }
 }
+Classifier.GrokClassifier = GrokClassifier;
 exports.default = Classifier;

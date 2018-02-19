@@ -49,4 +49,11 @@ class InstanceFleetConfig extends resource_1.ResourceBase {
         super('AWS::EMR::InstanceFleetConfig', properties);
     }
 }
+InstanceFleetConfig.VolumeSpecification = VolumeSpecification;
+InstanceFleetConfig.SpotProvisioningSpecification = SpotProvisioningSpecification;
+InstanceFleetConfig.Configuration = Configuration;
+InstanceFleetConfig.EbsConfiguration = EbsConfiguration;
+InstanceFleetConfig.InstanceTypeConfig = InstanceTypeConfig;
+InstanceFleetConfig.InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications;
+InstanceFleetConfig.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
 exports.default = InstanceFleetConfig;

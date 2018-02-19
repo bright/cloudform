@@ -34,6 +34,9 @@ export interface OptionGroupProperties {
 }
 
 export default class OptionGroup extends ResourceBase {
+    static OptionSetting = OptionSetting
+    static OptionConfiguration = OptionConfiguration
+
     constructor(properties?: OptionGroupProperties) {
         super('AWS::RDS::OptionGroup', properties)
     }

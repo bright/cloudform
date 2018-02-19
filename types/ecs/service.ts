@@ -76,6 +76,13 @@ export interface ServiceProperties {
 }
 
 export default class Service extends ResourceBase {
+    static LoadBalancer = LoadBalancer
+    static PlacementStrategy = PlacementStrategy
+    static DeploymentConfiguration = DeploymentConfiguration
+    static PlacementConstraint = PlacementConstraint
+    static AwsVpcConfiguration = AwsVpcConfiguration
+    static NetworkConfiguration = NetworkConfiguration
+
     constructor(properties?: ServiceProperties) {
         super('AWS::ECS::Service', properties)
     }

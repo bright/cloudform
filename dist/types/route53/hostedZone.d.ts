@@ -26,5 +26,9 @@ export interface HostedZoneProperties {
     VPCs?: List<VPC>;
 }
 export default class HostedZone extends ResourceBase {
+    static HostedZoneTag: typeof HostedZoneTag;
+    static HostedZoneConfig: typeof HostedZoneConfig;
+    static QueryLoggingConfig: typeof QueryLoggingConfig;
+    static VPC: typeof VPC;
     constructor(properties?: HostedZoneProperties);
 }

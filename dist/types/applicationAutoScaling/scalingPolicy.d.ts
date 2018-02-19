@@ -51,5 +51,11 @@ export interface ScalingPolicyProperties {
     TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase {
+    static StepScalingPolicyConfiguration: typeof StepScalingPolicyConfiguration;
+    static MetricDimension: typeof MetricDimension;
+    static StepAdjustment: typeof StepAdjustment;
+    static PredefinedMetricSpecification: typeof PredefinedMetricSpecification;
+    static CustomizedMetricSpecification: typeof CustomizedMetricSpecification;
+    static TargetTrackingScalingPolicyConfiguration: typeof TargetTrackingScalingPolicyConfiguration;
     constructor(properties?: ScalingPolicyProperties);
 }

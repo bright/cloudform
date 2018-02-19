@@ -17,6 +17,8 @@ export interface ListenerCertificateProperties {
 }
 
 export default class ListenerCertificate extends ResourceBase {
+    static Certificate = Certificate
+
     constructor(properties?: ListenerCertificateProperties) {
         super('AWS::ElasticLoadBalancingV2::ListenerCertificate', properties)
     }

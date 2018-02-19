@@ -85,6 +85,14 @@ export interface JobDefinitionProperties {
 }
 
 export default class JobDefinition extends ResourceBase {
+    static Volumes = Volumes
+    static RetryStrategy = RetryStrategy
+    static ContainerProperties = ContainerProperties
+    static MountPoints = MountPoints
+    static Environment = Environment
+    static Ulimit = Ulimit
+    static VolumesHost = VolumesHost
+
     constructor(properties?: JobDefinitionProperties) {
         super('AWS::Batch::JobDefinition', properties)
     }

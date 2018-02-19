@@ -20,5 +20,7 @@ export interface ConnectionProperties {
     CatalogId: Value<string>;
 }
 export default class Connection extends ResourceBase {
+    static ConnectionInput: typeof ConnectionInput;
+    static PhysicalConnectionRequirements: typeof PhysicalConnectionRequirements;
     constructor(properties?: ConnectionProperties);
 }

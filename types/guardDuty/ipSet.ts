@@ -14,6 +14,8 @@ export interface IPSetProperties {
 }
 
 export default class IPSet extends ResourceBase {
+
+
     constructor(properties?: IPSetProperties) {
         super('AWS::GuardDuty::IPSet', properties)
     }

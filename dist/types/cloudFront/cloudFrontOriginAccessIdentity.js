@@ -13,4 +13,5 @@ class CloudFrontOriginAccessIdentity extends resource_1.ResourceBase {
         super('AWS::CloudFront::CloudFrontOriginAccessIdentity', properties);
     }
 }
+CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig = CloudFrontOriginAccessIdentityConfig;
 exports.default = CloudFrontOriginAccessIdentity;

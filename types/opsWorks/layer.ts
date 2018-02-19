@@ -91,6 +91,13 @@ export interface LayerProperties {
 }
 
 export default class Layer extends ResourceBase {
+    static ShutdownEventConfiguration = ShutdownEventConfiguration
+    static VolumeConfiguration = VolumeConfiguration
+    static AutoScalingThresholds = AutoScalingThresholds
+    static Recipes = Recipes
+    static LifecycleEventConfiguration = LifecycleEventConfiguration
+    static LoadBasedAutoScaling = LoadBasedAutoScaling
+
     constructor(properties?: LayerProperties) {
         super('AWS::OpsWorks::Layer', properties)
     }

@@ -13,4 +13,5 @@ class DeploymentConfig extends resource_1.ResourceBase {
         super('AWS::CodeDeploy::DeploymentConfig', properties);
     }
 }
+DeploymentConfig.MinimumHealthyHosts = MinimumHealthyHosts;
 exports.default = DeploymentConfig;

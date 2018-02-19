@@ -29,6 +29,9 @@ export interface ListenerRuleProperties {
 }
 
 export default class ListenerRule extends ResourceBase {
+    static Action = Action
+    static RuleCondition = RuleCondition
+
     constructor(properties?: ListenerRuleProperties) {
         super('AWS::ElasticLoadBalancingV2::ListenerRule', properties)
     }

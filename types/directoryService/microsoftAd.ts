@@ -22,6 +22,8 @@ export interface MicrosoftADProperties {
 }
 
 export default class MicrosoftAD extends ResourceBase {
+    static VpcSettings = VpcSettings
+
     constructor(properties?: MicrosoftADProperties) {
         super('AWS::DirectoryService::MicrosoftAD', properties)
     }

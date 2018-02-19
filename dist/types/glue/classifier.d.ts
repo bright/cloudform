@@ -11,5 +11,6 @@ export interface ClassifierProperties {
     GrokClassifier?: GrokClassifier;
 }
 export default class Classifier extends ResourceBase {
+    static GrokClassifier: typeof GrokClassifier;
     constructor(properties?: ClassifierProperties);
 }

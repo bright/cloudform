@@ -172,6 +172,21 @@ export interface TaskDefinitionProperties {
 }
 
 export default class TaskDefinition extends ResourceBase {
+    static ContainerDefinition = ContainerDefinition
+    static LogConfiguration = LogConfiguration
+    static Device = Device
+    static KeyValuePair = KeyValuePair
+    static MountPoint = MountPoint
+    static VolumeFrom = VolumeFrom
+    static HostEntry = HostEntry
+    static KernelCapabilities = KernelCapabilities
+    static TaskDefinitionPlacementConstraint = TaskDefinitionPlacementConstraint
+    static Volume = Volume
+    static PortMapping = PortMapping
+    static Ulimit = Ulimit
+    static LinuxParameters = LinuxParameters
+    static HostVolumeProperties = HostVolumeProperties
+
     constructor(properties?: TaskDefinitionProperties) {
         super('AWS::ECS::TaskDefinition', properties)
     }

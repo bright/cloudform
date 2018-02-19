@@ -11,6 +11,8 @@ export interface PolicyPrincipalAttachmentProperties {
 }
 
 export default class PolicyPrincipalAttachment extends ResourceBase {
+
+
     constructor(properties?: PolicyPrincipalAttachmentProperties) {
         super('AWS::IoT::PolicyPrincipalAttachment', properties)
     }

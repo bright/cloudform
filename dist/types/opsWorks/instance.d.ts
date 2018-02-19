@@ -63,5 +63,8 @@ export interface InstanceProperties {
     Volumes?: List<Value<string>>;
 }
 export default class Instance extends ResourceBase {
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static EbsBlockDevice: typeof EbsBlockDevice;
+    static TimeBasedAutoScaling: typeof TimeBasedAutoScaling;
     constructor(properties?: InstanceProperties);
 }

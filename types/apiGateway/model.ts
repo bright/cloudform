@@ -14,6 +14,8 @@ export interface ModelProperties {
 }
 
 export default class Model extends ResourceBase {
+
+
     constructor(properties?: ModelProperties) {
         super('AWS::ApiGateway::Model', properties)
     }

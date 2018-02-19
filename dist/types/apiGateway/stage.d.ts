@@ -28,5 +28,6 @@ export interface StageProperties {
     };
 }
 export default class Stage extends ResourceBase {
+    static MethodSetting: typeof MethodSetting;
     constructor(properties?: StageProperties);
 }

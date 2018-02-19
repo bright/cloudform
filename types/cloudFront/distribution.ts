@@ -192,6 +192,22 @@ export interface DistributionProperties {
 }
 
 export default class Distribution extends ResourceBase {
+    static Cookies = Cookies
+    static LambdaFunctionAssociation = LambdaFunctionAssociation
+    static CustomOriginConfig = CustomOriginConfig
+    static ForwardedValues = ForwardedValues
+    static CacheBehavior = CacheBehavior
+    static DefaultCacheBehavior = DefaultCacheBehavior
+    static Restrictions = Restrictions
+    static Origin = Origin
+    static GeoRestriction = GeoRestriction
+    static ViewerCertificate = ViewerCertificate
+    static S3OriginConfig = S3OriginConfig
+    static CustomErrorResponse = CustomErrorResponse
+    static Logging = Logging
+    static DistributionConfig = DistributionConfig
+    static OriginCustomHeader = OriginCustomHeader
+
     constructor(properties?: DistributionProperties) {
         super('AWS::CloudFront::Distribution', properties)
     }

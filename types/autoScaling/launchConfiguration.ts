@@ -48,6 +48,9 @@ export interface LaunchConfigurationProperties {
 }
 
 export default class LaunchConfiguration extends ResourceBase {
+    static BlockDeviceMapping = BlockDeviceMapping
+    static BlockDevice = BlockDevice
+
     constructor(properties?: LaunchConfigurationProperties) {
         super('AWS::AutoScaling::LaunchConfiguration', properties)
     }

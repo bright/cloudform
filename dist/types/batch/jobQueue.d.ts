@@ -12,5 +12,6 @@ export interface JobQueueProperties {
     JobQueueName?: Value<string>;
 }
 export default class JobQueue extends ResourceBase {
+    static ComputeEnvironmentOrder: typeof ComputeEnvironmentOrder;
     constructor(properties?: JobQueueProperties);
 }

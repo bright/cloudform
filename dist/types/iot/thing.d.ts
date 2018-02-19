@@ -11,5 +11,6 @@ export interface ThingProperties {
     ThingName?: Value<string>;
 }
 export default class Thing extends ResourceBase {
+    static AttributePayload: typeof AttributePayload;
     constructor(properties?: ThingProperties);
 }

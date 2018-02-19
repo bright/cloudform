@@ -20,6 +20,8 @@ export interface GroupProperties {
 }
 
 export default class Group extends ResourceBase {
+    static Policy = Policy
+
     constructor(properties?: GroupProperties) {
         super('AWS::IAM::Group', properties)
     }

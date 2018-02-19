@@ -91,4 +91,18 @@ class DeploymentGroup extends resource_1.ResourceBase {
         super('AWS::CodeDeploy::DeploymentGroup', properties);
     }
 }
+DeploymentGroup.LoadBalancerInfo = LoadBalancerInfo;
+DeploymentGroup.RevisionLocation = RevisionLocation;
+DeploymentGroup.S3Location = S3Location;
+DeploymentGroup.TriggerConfig = TriggerConfig;
+DeploymentGroup.TagFilter = TagFilter;
+DeploymentGroup.GitHubLocation = GitHubLocation;
+DeploymentGroup.TargetGroupInfo = TargetGroupInfo;
+DeploymentGroup.ELBInfo = ELBInfo;
+DeploymentGroup.AlarmConfiguration = AlarmConfiguration;
+DeploymentGroup.DeploymentStyle = DeploymentStyle;
+DeploymentGroup.Alarm = Alarm;
+DeploymentGroup.EC2TagFilter = EC2TagFilter;
+DeploymentGroup.AutoRollbackConfiguration = AutoRollbackConfiguration;
+DeploymentGroup.Deployment = Deployment;
 exports.default = DeploymentGroup;

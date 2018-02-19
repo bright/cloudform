@@ -53,5 +53,12 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>;
 }
 export default class InstanceFleetConfig extends ResourceBase {
+    static VolumeSpecification: typeof VolumeSpecification;
+    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
+    static Configuration: typeof Configuration;
+    static EbsConfiguration: typeof EbsConfiguration;
+    static InstanceTypeConfig: typeof InstanceTypeConfig;
+    static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
+    static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
     constructor(properties?: InstanceFleetConfigProperties);
 }

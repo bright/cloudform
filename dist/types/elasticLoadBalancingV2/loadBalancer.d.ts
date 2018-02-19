@@ -22,5 +22,7 @@ export interface LoadBalancerProperties {
     Type?: Value<string>;
 }
 export default class LoadBalancer extends ResourceBase {
+    static LoadBalancerAttribute: typeof LoadBalancerAttribute;
+    static SubnetMapping: typeof SubnetMapping;
     constructor(properties?: LoadBalancerProperties);
 }

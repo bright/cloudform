@@ -39,6 +39,10 @@ export interface ServiceProperties {
 }
 
 export default class Service extends ResourceBase {
+    static DnsConfig = DnsConfig
+    static DnsRecord = DnsRecord
+    static HealthCheckConfig = HealthCheckConfig
+
     constructor(properties?: ServiceProperties) {
         super('AWS::ServiceDiscovery::Service', properties)
     }

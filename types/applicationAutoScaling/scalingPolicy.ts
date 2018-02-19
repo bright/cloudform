@@ -79,6 +79,13 @@ export interface ScalingPolicyProperties {
 }
 
 export default class ScalingPolicy extends ResourceBase {
+    static StepScalingPolicyConfiguration = StepScalingPolicyConfiguration
+    static MetricDimension = MetricDimension
+    static StepAdjustment = StepAdjustment
+    static PredefinedMetricSpecification = PredefinedMetricSpecification
+    static CustomizedMetricSpecification = CustomizedMetricSpecification
+    static TargetTrackingScalingPolicyConfiguration = TargetTrackingScalingPolicyConfiguration
+
     constructor(properties?: ScalingPolicyProperties) {
         super('AWS::ApplicationAutoScaling::ScalingPolicy', properties)
     }

@@ -48,5 +48,11 @@ export interface ServiceProperties {
     TaskDefinition: Value<string>;
 }
 export default class Service extends ResourceBase {
+    static LoadBalancer: typeof LoadBalancer;
+    static PlacementStrategy: typeof PlacementStrategy;
+    static DeploymentConfiguration: typeof DeploymentConfiguration;
+    static PlacementConstraint: typeof PlacementConstraint;
+    static AwsVpcConfiguration: typeof AwsVpcConfiguration;
+    static NetworkConfiguration: typeof NetworkConfiguration;
     constructor(properties?: ServiceProperties);
 }

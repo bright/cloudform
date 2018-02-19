@@ -97,4 +97,19 @@ class DeliveryStream extends resource_1.ResourceBase {
         super('AWS::KinesisFirehose::DeliveryStream', properties);
     }
 }
+DeliveryStream.ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration;
+DeliveryStream.ElasticsearchBufferingHints = ElasticsearchBufferingHints;
+DeliveryStream.EncryptionConfiguration = EncryptionConfiguration;
+DeliveryStream.CloudWatchLoggingOptions = CloudWatchLoggingOptions;
+DeliveryStream.ProcessingConfiguration = ProcessingConfiguration;
+DeliveryStream.BufferingHints = BufferingHints;
+DeliveryStream.KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration;
+DeliveryStream.ProcessorParameter = ProcessorParameter;
+DeliveryStream.Processor = Processor;
+DeliveryStream.CopyCommand = CopyCommand;
+DeliveryStream.S3DestinationConfiguration = S3DestinationConfiguration;
+DeliveryStream.ElasticsearchRetryOptions = ElasticsearchRetryOptions;
+DeliveryStream.KMSEncryptionConfig = KMSEncryptionConfig;
+DeliveryStream.ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration;
+DeliveryStream.RedshiftDestinationConfiguration = RedshiftDestinationConfiguration;
 exports.default = DeliveryStream;

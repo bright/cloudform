@@ -79,4 +79,16 @@ class Application extends resource_1.ResourceBase {
         super('AWS::KinesisAnalytics::Application', properties);
     }
 }
+Application.MappingParameters = MappingParameters;
+Application.CSVMappingParameters = CSVMappingParameters;
+Application.KinesisStreamsInput = KinesisStreamsInput;
+Application.Input = Input;
+Application.InputSchema = InputSchema;
+Application.RecordColumn = RecordColumn;
+Application.RecordFormat = RecordFormat;
+Application.KinesisFirehoseInput = KinesisFirehoseInput;
+Application.InputParallelism = InputParallelism;
+Application.InputProcessingConfiguration = InputProcessingConfiguration;
+Application.JSONMappingParameters = JSONMappingParameters;
+Application.InputLambdaProcessor = InputLambdaProcessor;
 exports.default = Application;

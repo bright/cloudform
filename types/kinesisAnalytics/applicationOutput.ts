@@ -56,6 +56,12 @@ export interface ApplicationOutputProperties {
 }
 
 export default class ApplicationOutput extends ResourceBase {
+    static KinesisFirehoseOutput = KinesisFirehoseOutput
+    static KinesisStreamsOutput = KinesisStreamsOutput
+    static Output = Output
+    static LambdaOutput = LambdaOutput
+    static DestinationSchema = DestinationSchema
+
     constructor(properties?: ApplicationOutputProperties) {
         super('AWS::KinesisAnalytics::ApplicationOutput', properties)
     }

@@ -73,4 +73,15 @@ class SpotFleet extends resource_1.ResourceBase {
         super('AWS::EC2::SpotFleet', properties);
     }
 }
+SpotFleet.IamInstanceProfileSpecification = IamInstanceProfileSpecification;
+SpotFleet.InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification;
+SpotFleet.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
+SpotFleet.SpotFleetLaunchSpecification = SpotFleetLaunchSpecification;
+SpotFleet.SpotPlacement = SpotPlacement;
+SpotFleet.SpotFleetRequestConfigData = SpotFleetRequestConfigData;
+SpotFleet.EbsBlockDevice = EbsBlockDevice;
+SpotFleet.InstanceIpv6Address = InstanceIpv6Address;
+SpotFleet.GroupIdentifier = GroupIdentifier;
+SpotFleet.SpotFleetMonitoring = SpotFleetMonitoring;
+SpotFleet.BlockDeviceMapping = BlockDeviceMapping;
 exports.default = SpotFleet;

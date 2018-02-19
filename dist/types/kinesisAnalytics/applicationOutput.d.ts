@@ -32,5 +32,10 @@ export interface ApplicationOutputProperties {
     Output: Output;
 }
 export default class ApplicationOutput extends ResourceBase {
+    static KinesisFirehoseOutput: typeof KinesisFirehoseOutput;
+    static KinesisStreamsOutput: typeof KinesisStreamsOutput;
+    static Output: typeof Output;
+    static LambdaOutput: typeof LambdaOutput;
+    static DestinationSchema: typeof DestinationSchema;
     constructor(properties?: ApplicationOutputProperties);
 }

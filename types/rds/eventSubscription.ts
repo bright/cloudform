@@ -14,6 +14,8 @@ export interface EventSubscriptionProperties {
 }
 
 export default class EventSubscription extends ResourceBase {
+
+
     constructor(properties?: EventSubscriptionProperties) {
         super('AWS::RDS::EventSubscription', properties)
     }

@@ -73,4 +73,15 @@ class Instance extends resource_1.ResourceBase {
         super('AWS::EC2::Instance', properties);
     }
 }
+Instance.ElasticGpuSpecification = ElasticGpuSpecification;
+Instance.NetworkInterface = NetworkInterface;
+Instance.InstanceIpv6Address = InstanceIpv6Address;
+Instance.Volume = Volume;
+Instance.AssociationParameter = AssociationParameter;
+Instance.Ebs = Ebs;
+Instance.NoDevice = NoDevice;
+Instance.SsmAssociation = SsmAssociation;
+Instance.CreditSpecification = CreditSpecification;
+Instance.BlockDeviceMapping = BlockDeviceMapping;
+Instance.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
 exports.default = Instance;

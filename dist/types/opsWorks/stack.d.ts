@@ -60,5 +60,10 @@ export interface StackProperties {
     VpcId?: Value<string>;
 }
 export default class Stack extends ResourceBase {
+    static Source: typeof Source;
+    static ChefConfiguration: typeof ChefConfiguration;
+    static StackConfigurationManager: typeof StackConfigurationManager;
+    static RdsDbInstance: typeof RdsDbInstance;
+    static ElasticIp: typeof ElasticIp;
     constructor(properties?: StackProperties);
 }

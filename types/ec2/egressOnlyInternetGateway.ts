@@ -10,6 +10,8 @@ export interface EgressOnlyInternetGatewayProperties {
 }
 
 export default class EgressOnlyInternetGateway extends ResourceBase {
+
+
     constructor(properties?: EgressOnlyInternetGatewayProperties) {
         super('AWS::EC2::EgressOnlyInternetGateway', properties)
     }

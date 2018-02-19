@@ -25,4 +25,7 @@ class TargetGroup extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::TargetGroup', properties);
     }
 }
+TargetGroup.TargetGroupAttribute = TargetGroupAttribute;
+TargetGroup.Matcher = Matcher;
+TargetGroup.TargetDescription = TargetDescription;
 exports.default = TargetGroup;

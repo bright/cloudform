@@ -19,4 +19,6 @@ class Environment extends resource_1.ResourceBase {
         super('AWS::ElasticBeanstalk::Environment', properties);
     }
 }
+Environment.OptionSetting = OptionSetting;
+Environment.Tier = Tier;
 exports.default = Environment;

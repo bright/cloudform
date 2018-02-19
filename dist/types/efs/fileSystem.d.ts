@@ -12,5 +12,6 @@ export interface FileSystemProperties {
     PerformanceMode?: Value<string>;
 }
 export default class FileSystem extends ResourceBase {
+    static ElasticFileSystemTag: typeof ElasticFileSystemTag;
     constructor(properties?: FileSystemProperties);
 }

@@ -141,6 +141,18 @@ export interface SpotFleetProperties {
 }
 
 export default class SpotFleet extends ResourceBase {
+    static IamInstanceProfileSpecification = IamInstanceProfileSpecification
+    static InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification
+    static PrivateIpAddressSpecification = PrivateIpAddressSpecification
+    static SpotFleetLaunchSpecification = SpotFleetLaunchSpecification
+    static SpotPlacement = SpotPlacement
+    static SpotFleetRequestConfigData = SpotFleetRequestConfigData
+    static EbsBlockDevice = EbsBlockDevice
+    static InstanceIpv6Address = InstanceIpv6Address
+    static GroupIdentifier = GroupIdentifier
+    static SpotFleetMonitoring = SpotFleetMonitoring
+    static BlockDeviceMapping = BlockDeviceMapping
+
     constructor(properties?: SpotFleetProperties) {
         super('AWS::EC2::SpotFleet', properties)
     }

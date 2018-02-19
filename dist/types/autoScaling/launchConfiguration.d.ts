@@ -36,5 +36,7 @@ export interface LaunchConfigurationProperties {
     UserData?: Value<string>;
 }
 export default class LaunchConfiguration extends ResourceBase {
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static BlockDevice: typeof BlockDevice;
     constructor(properties?: LaunchConfigurationProperties);
 }

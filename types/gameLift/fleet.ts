@@ -29,6 +29,8 @@ export interface FleetProperties {
 }
 
 export default class Fleet extends ResourceBase {
+    static IpPermission = IpPermission
+
     constructor(properties?: FleetProperties) {
         super('AWS::GameLift::Fleet', properties)
     }

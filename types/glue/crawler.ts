@@ -61,6 +61,12 @@ export interface CrawlerProperties {
 }
 
 export default class Crawler extends ResourceBase {
+    static Targets = Targets
+    static JdbcTarget = JdbcTarget
+    static Schedule = Schedule
+    static S3Target = S3Target
+    static SchemaChangePolicy = SchemaChangePolicy
+
     constructor(properties?: CrawlerProperties) {
         super('AWS::Glue::Crawler', properties)
     }

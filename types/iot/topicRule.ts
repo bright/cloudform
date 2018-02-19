@@ -176,6 +176,22 @@ export interface TopicRuleProperties {
 }
 
 export default class TopicRule extends ResourceBase {
+    static S3Action = S3Action
+    static SqsAction = SqsAction
+    static PutItemInput = PutItemInput
+    static RepublishAction = RepublishAction
+    static SnsAction = SnsAction
+    static FirehoseAction = FirehoseAction
+    static TopicRulePayload = TopicRulePayload
+    static LambdaAction = LambdaAction
+    static DynamoDBv2Action = DynamoDBv2Action
+    static ElasticsearchAction = ElasticsearchAction
+    static DynamoDBAction = DynamoDBAction
+    static KinesisAction = KinesisAction
+    static CloudwatchAlarmAction = CloudwatchAlarmAction
+    static Action = Action
+    static CloudwatchMetricAction = CloudwatchMetricAction
+
     constructor(properties?: TopicRuleProperties) {
         super('AWS::IoT::TopicRule', properties)
     }

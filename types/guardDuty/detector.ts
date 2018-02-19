@@ -10,6 +10,8 @@ export interface DetectorProperties {
 }
 
 export default class Detector extends ResourceBase {
+
+
     constructor(properties?: DetectorProperties) {
         super('AWS::GuardDuty::Detector', properties)
     }

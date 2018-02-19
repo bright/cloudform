@@ -12,5 +12,6 @@ export interface RuleProperties {
     Name: Value<string>;
 }
 export default class Rule extends ResourceBase {
+    static Predicate: typeof Predicate;
     constructor(properties?: RuleProperties);
 }

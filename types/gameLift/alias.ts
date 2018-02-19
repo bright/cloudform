@@ -20,6 +20,8 @@ export interface AliasProperties {
 }
 
 export default class Alias extends ResourceBase {
+    static RoutingStrategy = RoutingStrategy
+
     constructor(properties?: AliasProperties) {
         super('AWS::GameLift::Alias', properties)
     }

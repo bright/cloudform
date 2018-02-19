@@ -23,6 +23,8 @@ export interface UserPoolUserProperties {
 }
 
 export default class UserPoolUser extends ResourceBase {
+    static AttributeType = AttributeType
+
     constructor(properties?: UserPoolUserProperties) {
         super('AWS::Cognito::UserPoolUser', properties)
     }

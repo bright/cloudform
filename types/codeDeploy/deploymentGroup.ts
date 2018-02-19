@@ -152,6 +152,21 @@ export interface DeploymentGroupProperties {
 }
 
 export default class DeploymentGroup extends ResourceBase {
+    static LoadBalancerInfo = LoadBalancerInfo
+    static RevisionLocation = RevisionLocation
+    static S3Location = S3Location
+    static TriggerConfig = TriggerConfig
+    static TagFilter = TagFilter
+    static GitHubLocation = GitHubLocation
+    static TargetGroupInfo = TargetGroupInfo
+    static ELBInfo = ELBInfo
+    static AlarmConfiguration = AlarmConfiguration
+    static DeploymentStyle = DeploymentStyle
+    static Alarm = Alarm
+    static EC2TagFilter = EC2TagFilter
+    static AutoRollbackConfiguration = AutoRollbackConfiguration
+    static Deployment = Deployment
+
     constructor(properties?: DeploymentGroupProperties) {
         super('AWS::CodeDeploy::DeploymentGroup', properties)
     }

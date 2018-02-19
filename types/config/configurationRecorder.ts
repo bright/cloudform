@@ -20,6 +20,8 @@ export interface ConfigurationRecorderProperties {
 }
 
 export default class ConfigurationRecorder extends ResourceBase {
+    static RecordingGroup = RecordingGroup
+
     constructor(properties?: ConfigurationRecorderProperties) {
         super('AWS::Config::ConfigurationRecorder', properties)
     }

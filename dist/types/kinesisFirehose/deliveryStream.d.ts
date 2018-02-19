@@ -113,5 +113,20 @@ export interface DeliveryStreamProperties {
     S3DestinationConfiguration?: S3DestinationConfiguration;
 }
 export default class DeliveryStream extends ResourceBase {
+    static ElasticsearchDestinationConfiguration: typeof ElasticsearchDestinationConfiguration;
+    static ElasticsearchBufferingHints: typeof ElasticsearchBufferingHints;
+    static EncryptionConfiguration: typeof EncryptionConfiguration;
+    static CloudWatchLoggingOptions: typeof CloudWatchLoggingOptions;
+    static ProcessingConfiguration: typeof ProcessingConfiguration;
+    static BufferingHints: typeof BufferingHints;
+    static KinesisStreamSourceConfiguration: typeof KinesisStreamSourceConfiguration;
+    static ProcessorParameter: typeof ProcessorParameter;
+    static Processor: typeof Processor;
+    static CopyCommand: typeof CopyCommand;
+    static S3DestinationConfiguration: typeof S3DestinationConfiguration;
+    static ElasticsearchRetryOptions: typeof ElasticsearchRetryOptions;
+    static KMSEncryptionConfig: typeof KMSEncryptionConfig;
+    static ExtendedS3DestinationConfiguration: typeof ExtendedS3DestinationConfiguration;
+    static RedshiftDestinationConfiguration: typeof RedshiftDestinationConfiguration;
     constructor(properties?: DeliveryStreamProperties);
 }

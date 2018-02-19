@@ -50,6 +50,10 @@ export interface TargetGroupProperties {
 }
 
 export default class TargetGroup extends ResourceBase {
+    static TargetGroupAttribute = TargetGroupAttribute
+    static Matcher = Matcher
+    static TargetDescription = TargetDescription
+
     constructor(properties?: TargetGroupProperties) {
         super('AWS::ElasticLoadBalancingV2::TargetGroup', properties)
     }

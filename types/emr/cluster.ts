@@ -259,6 +259,29 @@ export interface ClusterProperties {
 }
 
 export default class Cluster extends ResourceBase {
+    static InstanceGroupConfig = InstanceGroupConfig
+    static SpotProvisioningSpecification = SpotProvisioningSpecification
+    static BootstrapActionConfig = BootstrapActionConfig
+    static ScalingConstraints = ScalingConstraints
+    static InstanceFleetConfig = InstanceFleetConfig
+    static JobFlowInstancesConfig = JobFlowInstancesConfig
+    static ScalingAction = ScalingAction
+    static SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration
+    static Application = Application
+    static EbsBlockDeviceConfig = EbsBlockDeviceConfig
+    static PlacementType = PlacementType
+    static Configuration = Configuration
+    static ScriptBootstrapActionConfig = ScriptBootstrapActionConfig
+    static CloudWatchAlarmDefinition = CloudWatchAlarmDefinition
+    static EbsConfiguration = EbsConfiguration
+    static ScalingRule = ScalingRule
+    static InstanceTypeConfig = InstanceTypeConfig
+    static MetricDimension = MetricDimension
+    static VolumeSpecification = VolumeSpecification
+    static AutoScalingPolicy = AutoScalingPolicy
+    static InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications
+    static ScalingTrigger = ScalingTrigger
+
     constructor(properties?: ClusterProperties) {
         super('AWS::EMR::Cluster', properties)
     }

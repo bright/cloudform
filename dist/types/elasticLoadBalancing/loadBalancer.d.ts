@@ -70,5 +70,13 @@ export interface LoadBalancerProperties {
     Tags?: ResourceTag[];
 }
 export default class LoadBalancer extends ResourceBase {
+    static HealthCheck: typeof HealthCheck;
+    static AccessLoggingPolicy: typeof AccessLoggingPolicy;
+    static ConnectionSettings: typeof ConnectionSettings;
+    static LBCookieStickinessPolicy: typeof LBCookieStickinessPolicy;
+    static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
+    static Listeners: typeof Listeners;
+    static Policies: typeof Policies;
+    static AppCookieStickinessPolicy: typeof AppCookieStickinessPolicy;
     constructor(properties?: LoadBalancerProperties);
 }

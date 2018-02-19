@@ -33,5 +33,8 @@ export interface HealthCheckProperties {
     HealthCheckTags?: List<HealthCheckTag>;
 }
 export default class HealthCheck extends ResourceBase {
+    static HealthCheckConfig: typeof HealthCheckConfig;
+    static HealthCheckTag: typeof HealthCheckTag;
+    static AlarmIdentifier: typeof AlarmIdentifier;
     constructor(properties?: HealthCheckProperties);
 }

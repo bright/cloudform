@@ -177,6 +177,22 @@ export interface DeliveryStreamProperties {
 }
 
 export default class DeliveryStream extends ResourceBase {
+    static ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration
+    static ElasticsearchBufferingHints = ElasticsearchBufferingHints
+    static EncryptionConfiguration = EncryptionConfiguration
+    static CloudWatchLoggingOptions = CloudWatchLoggingOptions
+    static ProcessingConfiguration = ProcessingConfiguration
+    static BufferingHints = BufferingHints
+    static KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration
+    static ProcessorParameter = ProcessorParameter
+    static Processor = Processor
+    static CopyCommand = CopyCommand
+    static S3DestinationConfiguration = S3DestinationConfiguration
+    static ElasticsearchRetryOptions = ElasticsearchRetryOptions
+    static KMSEncryptionConfig = KMSEncryptionConfig
+    static ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration
+    static RedshiftDestinationConfiguration = RedshiftDestinationConfiguration
+
     constructor(properties?: DeliveryStreamProperties) {
         super('AWS::KinesisFirehose::DeliveryStream', properties)
     }

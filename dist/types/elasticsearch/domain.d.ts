@@ -39,5 +39,9 @@ export interface DomainProperties {
     VPCOptions?: VPCOptions;
 }
 export default class Domain extends ResourceBase {
+    static VPCOptions: typeof VPCOptions;
+    static ElasticsearchClusterConfig: typeof ElasticsearchClusterConfig;
+    static SnapshotOptions: typeof SnapshotOptions;
+    static EBSOptions: typeof EBSOptions;
     constructor(properties?: DomainProperties);
 }

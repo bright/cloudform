@@ -61,4 +61,13 @@ class Pipeline extends resource_1.ResourceBase {
         super('AWS::CodePipeline::Pipeline', properties);
     }
 }
+Pipeline.InputArtifact = InputArtifact;
+Pipeline.ActionDeclaration = ActionDeclaration;
+Pipeline.StageDeclaration = StageDeclaration;
+Pipeline.BlockerDeclaration = BlockerDeclaration;
+Pipeline.StageTransition = StageTransition;
+Pipeline.ArtifactStore = ArtifactStore;
+Pipeline.ActionTypeId = ActionTypeId;
+Pipeline.OutputArtifact = OutputArtifact;
+Pipeline.EncryptionKey = EncryptionKey;
 exports.default = Pipeline;

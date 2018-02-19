@@ -30,6 +30,9 @@ export interface ByteMatchSetProperties {
 }
 
 export default class ByteMatchSet extends ResourceBase {
+    static ByteMatchTuple = ByteMatchTuple
+    static FieldToMatch = FieldToMatch
+
     constructor(properties?: ByteMatchSetProperties) {
         super('AWS::WAFRegional::ByteMatchSet', properties)
     }

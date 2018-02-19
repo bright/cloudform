@@ -137,6 +137,18 @@ export interface UserPoolProperties {
 }
 
 export default class UserPool extends ResourceBase {
+    static PasswordPolicy = PasswordPolicy
+    static Policies = Policies
+    static EmailConfiguration = EmailConfiguration
+    static LambdaConfig = LambdaConfig
+    static AdminCreateUserConfig = AdminCreateUserConfig
+    static SchemaAttribute = SchemaAttribute
+    static NumberAttributeConstraints = NumberAttributeConstraints
+    static SmsConfiguration = SmsConfiguration
+    static DeviceConfiguration = DeviceConfiguration
+    static InviteMessageTemplate = InviteMessageTemplate
+    static StringAttributeConstraints = StringAttributeConstraints
+
     constructor(properties?: UserPoolProperties) {
         super('AWS::Cognito::UserPool', properties)
     }

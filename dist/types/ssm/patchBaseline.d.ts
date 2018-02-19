@@ -31,5 +31,9 @@ export interface PatchBaselineProperties {
     RejectedPatches?: List<Value<string>>;
 }
 export default class PatchBaseline extends ResourceBase {
+    static RuleGroup: typeof RuleGroup;
+    static PatchFilter: typeof PatchFilter;
+    static Rule: typeof Rule;
+    static PatchFilterGroup: typeof PatchFilterGroup;
     constructor(properties?: PatchBaselineProperties);
 }

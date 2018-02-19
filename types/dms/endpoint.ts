@@ -63,6 +63,10 @@ export interface EndpointProperties {
 }
 
 export default class Endpoint extends ResourceBase {
+    static S3Settings = S3Settings
+    static MongoDbSettings = MongoDbSettings
+    static DynamoDbSettings = DynamoDbSettings
+
     constructor(properties?: EndpointProperties) {
         super('AWS::DMS::Endpoint', properties)
     }

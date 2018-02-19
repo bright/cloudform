@@ -97,4 +97,19 @@ class TopicRule extends resource_1.ResourceBase {
         super('AWS::IoT::TopicRule', properties);
     }
 }
+TopicRule.S3Action = S3Action;
+TopicRule.SqsAction = SqsAction;
+TopicRule.PutItemInput = PutItemInput;
+TopicRule.RepublishAction = RepublishAction;
+TopicRule.SnsAction = SnsAction;
+TopicRule.FirehoseAction = FirehoseAction;
+TopicRule.TopicRulePayload = TopicRulePayload;
+TopicRule.LambdaAction = LambdaAction;
+TopicRule.DynamoDBv2Action = DynamoDBv2Action;
+TopicRule.ElasticsearchAction = ElasticsearchAction;
+TopicRule.DynamoDBAction = DynamoDBAction;
+TopicRule.KinesisAction = KinesisAction;
+TopicRule.CloudwatchAlarmAction = CloudwatchAlarmAction;
+TopicRule.Action = Action;
+TopicRule.CloudwatchMetricAction = CloudwatchMetricAction;
 exports.default = TopicRule;

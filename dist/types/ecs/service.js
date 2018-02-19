@@ -43,4 +43,10 @@ class Service extends resource_1.ResourceBase {
         super('AWS::ECS::Service', properties);
     }
 }
+Service.LoadBalancer = LoadBalancer;
+Service.PlacementStrategy = PlacementStrategy;
+Service.DeploymentConfiguration = DeploymentConfiguration;
+Service.PlacementConstraint = PlacementConstraint;
+Service.AwsVpcConfiguration = AwsVpcConfiguration;
+Service.NetworkConfiguration = NetworkConfiguration;
 exports.default = Service;

@@ -93,5 +93,16 @@ export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData;
 }
 export default class SpotFleet extends ResourceBase {
+    static IamInstanceProfileSpecification: typeof IamInstanceProfileSpecification;
+    static InstanceNetworkInterfaceSpecification: typeof InstanceNetworkInterfaceSpecification;
+    static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
+    static SpotFleetLaunchSpecification: typeof SpotFleetLaunchSpecification;
+    static SpotPlacement: typeof SpotPlacement;
+    static SpotFleetRequestConfigData: typeof SpotFleetRequestConfigData;
+    static EbsBlockDevice: typeof EbsBlockDevice;
+    static InstanceIpv6Address: typeof InstanceIpv6Address;
+    static GroupIdentifier: typeof GroupIdentifier;
+    static SpotFleetMonitoring: typeof SpotFleetMonitoring;
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
     constructor(properties?: SpotFleetProperties);
 }

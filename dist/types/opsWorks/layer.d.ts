@@ -65,5 +65,11 @@ export interface LayerProperties {
     VolumeConfigurations?: List<VolumeConfiguration>;
 }
 export default class Layer extends ResourceBase {
+    static ShutdownEventConfiguration: typeof ShutdownEventConfiguration;
+    static VolumeConfiguration: typeof VolumeConfiguration;
+    static AutoScalingThresholds: typeof AutoScalingThresholds;
+    static Recipes: typeof Recipes;
+    static LifecycleEventConfiguration: typeof LifecycleEventConfiguration;
+    static LoadBasedAutoScaling: typeof LoadBasedAutoScaling;
     constructor(properties?: LayerProperties);
 }

@@ -27,6 +27,9 @@ export interface XssMatchSetProperties {
 }
 
 export default class XssMatchSet extends ResourceBase {
+    static FieldToMatch = FieldToMatch
+    static XssMatchTuple = XssMatchTuple
+
     constructor(properties?: XssMatchSetProperties) {
         super('AWS::WAF::XssMatchSet', properties)
     }

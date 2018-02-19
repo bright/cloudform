@@ -47,5 +47,11 @@ export interface RuleProperties {
     Targets?: List<Target>;
 }
 export default class Rule extends ResourceBase {
+    static RunCommandParameters: typeof RunCommandParameters;
+    static Target: typeof Target;
+    static RunCommandTarget: typeof RunCommandTarget;
+    static InputTransformer: typeof InputTransformer;
+    static KinesisParameters: typeof KinesisParameters;
+    static EcsParameters: typeof EcsParameters;
     constructor(properties?: RuleProperties);
 }

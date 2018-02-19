@@ -48,5 +48,13 @@ export interface ApplicationReferenceDataSourceProperties {
     ReferenceDataSource: ReferenceDataSource;
 }
 export default class ApplicationReferenceDataSource extends ResourceBase {
+    static S3ReferenceDataSource: typeof S3ReferenceDataSource;
+    static MappingParameters: typeof MappingParameters;
+    static JSONMappingParameters: typeof JSONMappingParameters;
+    static RecordFormat: typeof RecordFormat;
+    static RecordColumn: typeof RecordColumn;
+    static CSVMappingParameters: typeof CSVMappingParameters;
+    static ReferenceSchema: typeof ReferenceSchema;
+    static ReferenceDataSource: typeof ReferenceDataSource;
     constructor(properties?: ApplicationReferenceDataSourceProperties);
 }

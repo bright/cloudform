@@ -23,5 +23,8 @@ export interface IdentityPoolRoleAttachmentProperties {
     Roles?: any;
 }
 export default class IdentityPoolRoleAttachment extends ResourceBase {
+    static RulesConfigurationType: typeof RulesConfigurationType;
+    static RoleMapping: typeof RoleMapping;
+    static MappingRule: typeof MappingRule;
     constructor(properties?: IdentityPoolRoleAttachmentProperties);
 }

@@ -20,6 +20,8 @@ export interface BuildProperties {
 }
 
 export default class Build extends ResourceBase {
+    static S3Location = S3Location
+
     constructor(properties?: BuildProperties) {
         super('AWS::GameLift::Build', properties)
     }

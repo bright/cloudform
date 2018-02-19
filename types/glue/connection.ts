@@ -32,6 +32,9 @@ export interface ConnectionProperties {
 }
 
 export default class Connection extends ResourceBase {
+    static ConnectionInput = ConnectionInput
+    static PhysicalConnectionRequirements = PhysicalConnectionRequirements
+
     constructor(properties?: ConnectionProperties) {
         super('AWS::Glue::Connection', properties)
     }

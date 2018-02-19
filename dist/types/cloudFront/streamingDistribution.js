@@ -31,4 +31,8 @@ class StreamingDistribution extends resource_1.ResourceBase {
         super('AWS::CloudFront::StreamingDistribution', properties);
     }
 }
+StreamingDistribution.TrustedSigners = TrustedSigners;
+StreamingDistribution.S3Origin = S3Origin;
+StreamingDistribution.Logging = Logging;
+StreamingDistribution.StreamingDistributionConfig = StreamingDistributionConfig;
 exports.default = StreamingDistribution;

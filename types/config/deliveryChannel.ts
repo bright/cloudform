@@ -20,6 +20,8 @@ export interface DeliveryChannelProperties {
 }
 
 export default class DeliveryChannel extends ResourceBase {
+    static ConfigSnapshotDeliveryProperties = ConfigSnapshotDeliveryProperties
+
     constructor(properties?: DeliveryChannelProperties) {
         super('AWS::Config::DeliveryChannel', properties)
     }

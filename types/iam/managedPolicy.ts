@@ -16,6 +16,8 @@ export interface ManagedPolicyProperties {
 }
 
 export default class ManagedPolicy extends ResourceBase {
+
+
     constructor(properties?: ManagedPolicyProperties) {
         super('AWS::IAM::ManagedPolicy', properties)
     }

@@ -39,6 +39,9 @@ export interface EnvironmentProperties {
 }
 
 export default class Environment extends ResourceBase {
+    static OptionSetting = OptionSetting
+    static Tier = Tier
+
     constructor(properties?: EnvironmentProperties) {
         super('AWS::ElasticBeanstalk::Environment', properties)
     }

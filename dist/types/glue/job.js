@@ -25,4 +25,7 @@ class Job extends resource_1.ResourceBase {
         super('AWS::Glue::Job', properties);
     }
 }
+Job.JobCommand = JobCommand;
+Job.ConnectionsList = ConnectionsList;
+Job.ExecutionProperty = ExecutionProperty;
 exports.default = Job;

@@ -95,6 +95,14 @@ export interface ProjectProperties {
 }
 
 export default class Project extends ResourceBase {
+    static Artifacts = Artifacts
+    static SourceAuth = SourceAuth
+    static Environment = Environment
+    static ProjectCache = ProjectCache
+    static VpcConfig = VpcConfig
+    static EnvironmentVariable = EnvironmentVariable
+    static Source = Source
+
     constructor(properties?: ProjectProperties) {
         super('AWS::CodeBuild::Project', properties)
     }

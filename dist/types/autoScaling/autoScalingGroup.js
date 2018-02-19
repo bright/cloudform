@@ -31,4 +31,8 @@ class AutoScalingGroup extends resource_1.ResourceBase {
         super('AWS::AutoScaling::AutoScalingGroup', properties);
     }
 }
+AutoScalingGroup.LifecycleHookSpecification = LifecycleHookSpecification;
+AutoScalingGroup.NotificationConfiguration = NotificationConfiguration;
+AutoScalingGroup.MetricsCollection = MetricsCollection;
+AutoScalingGroup.TagProperty = TagProperty;
 exports.default = AutoScalingGroup;

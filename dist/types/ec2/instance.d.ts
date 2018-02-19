@@ -100,5 +100,16 @@ export interface InstanceProperties {
     Volumes?: List<Volume>;
 }
 export default class Instance extends ResourceBase {
+    static ElasticGpuSpecification: typeof ElasticGpuSpecification;
+    static NetworkInterface: typeof NetworkInterface;
+    static InstanceIpv6Address: typeof InstanceIpv6Address;
+    static Volume: typeof Volume;
+    static AssociationParameter: typeof AssociationParameter;
+    static Ebs: typeof Ebs;
+    static NoDevice: typeof NoDevice;
+    static SsmAssociation: typeof SsmAssociation;
+    static CreditSpecification: typeof CreditSpecification;
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     constructor(properties?: InstanceProperties);
 }

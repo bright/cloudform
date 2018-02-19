@@ -9,5 +9,6 @@ export interface ListenerCertificateProperties {
     ListenerArn: Value<string>;
 }
 export default class ListenerCertificate extends ResourceBase {
+    static Certificate: typeof Certificate;
     constructor(properties?: ListenerCertificateProperties);
 }

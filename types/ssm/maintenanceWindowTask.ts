@@ -104,6 +104,15 @@ export interface MaintenanceWindowTaskProperties {
 }
 
 export default class MaintenanceWindowTask extends ResourceBase {
+    static MaintenanceWindowLambdaParameters = MaintenanceWindowLambdaParameters
+    static NotificationConfig = NotificationConfig
+    static MaintenanceWindowAutomationParameters = MaintenanceWindowAutomationParameters
+    static TaskInvocationParameters = TaskInvocationParameters
+    static LoggingInfo = LoggingInfo
+    static Target = Target
+    static MaintenanceWindowStepFunctionsParameters = MaintenanceWindowStepFunctionsParameters
+    static MaintenanceWindowRunCommandParameters = MaintenanceWindowRunCommandParameters
+
     constructor(properties?: MaintenanceWindowTaskProperties) {
         super('AWS::SSM::MaintenanceWindowTask', properties)
     }

@@ -13,6 +13,8 @@ export interface DBParameterGroupProperties {
 }
 
 export default class DBParameterGroup extends ResourceBase {
+
+
     constructor(properties?: DBParameterGroupProperties) {
         super('AWS::RDS::DBParameterGroup', properties)
     }

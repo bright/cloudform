@@ -101,6 +101,16 @@ export interface PipelineProperties {
 }
 
 export default class Pipeline extends ResourceBase {
+    static InputArtifact = InputArtifact
+    static ActionDeclaration = ActionDeclaration
+    static StageDeclaration = StageDeclaration
+    static BlockerDeclaration = BlockerDeclaration
+    static StageTransition = StageTransition
+    static ArtifactStore = ArtifactStore
+    static ActionTypeId = ActionTypeId
+    static OutputArtifact = OutputArtifact
+    static EncryptionKey = EncryptionKey
+
     constructor(properties?: PipelineProperties) {
         super('AWS::CodePipeline::Pipeline', properties)
     }

@@ -12,5 +12,6 @@ export interface GroupProperties {
     Policies?: List<Policy>;
 }
 export default class Group extends ResourceBase {
+    static Policy: typeof Policy;
     constructor(properties?: GroupProperties);
 }

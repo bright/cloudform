@@ -12,6 +12,8 @@ export interface UserPoolUserToGroupAttachmentProperties {
 }
 
 export default class UserPoolUserToGroupAttachment extends ResourceBase {
+
+
     constructor(properties?: UserPoolUserToGroupAttachmentProperties) {
         super('AWS::Cognito::UserPoolUserToGroupAttachment', properties)
     }

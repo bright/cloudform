@@ -43,4 +43,10 @@ class Rule extends resource_1.ResourceBase {
         super('AWS::Events::Rule', properties);
     }
 }
+Rule.RunCommandParameters = RunCommandParameters;
+Rule.Target = Target;
+Rule.RunCommandTarget = RunCommandTarget;
+Rule.InputTransformer = InputTransformer;
+Rule.KinesisParameters = KinesisParameters;
+Rule.EcsParameters = EcsParameters;
 exports.default = Rule;

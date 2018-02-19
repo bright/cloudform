@@ -28,5 +28,9 @@ export interface ApplicationProperties {
     ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
 }
 export default class Application extends ResourceBase {
+    static ApplicationResourceLifecycleConfig: typeof ApplicationResourceLifecycleConfig;
+    static ApplicationVersionLifecycleConfig: typeof ApplicationVersionLifecycleConfig;
+    static MaxCountRule: typeof MaxCountRule;
+    static MaxAgeRule: typeof MaxAgeRule;
     constructor(properties?: ApplicationProperties);
 }

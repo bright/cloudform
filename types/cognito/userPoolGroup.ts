@@ -14,6 +14,8 @@ export interface UserPoolGroupProperties {
 }
 
 export default class UserPoolGroup extends ResourceBase {
+
+
     constructor(properties?: UserPoolGroupProperties) {
         super('AWS::Cognito::UserPoolGroup', properties)
     }

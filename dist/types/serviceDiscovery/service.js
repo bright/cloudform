@@ -25,4 +25,7 @@ class Service extends resource_1.ResourceBase {
         super('AWS::ServiceDiscovery::Service', properties);
     }
 }
+Service.DnsConfig = DnsConfig;
+Service.DnsRecord = DnsRecord;
+Service.HealthCheckConfig = HealthCheckConfig;
 exports.default = Service;

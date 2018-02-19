@@ -26,5 +26,6 @@ export interface AlarmProperties {
     Unit?: Value<string>;
 }
 export default class Alarm extends ResourceBase {
+    static Dimension: typeof Dimension;
     constructor(properties?: AlarmProperties);
 }

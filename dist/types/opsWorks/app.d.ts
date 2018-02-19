@@ -44,5 +44,9 @@ export interface AppProperties {
     Type: Value<string>;
 }
 export default class App extends ResourceBase {
+    static DataSource: typeof DataSource;
+    static EnvironmentVariable: typeof EnvironmentVariable;
+    static SslConfiguration: typeof SslConfiguration;
+    static Source: typeof Source;
     constructor(properties?: AppProperties);
 }

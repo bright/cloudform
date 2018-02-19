@@ -38,6 +38,10 @@ export declare class Projection {
     ProjectionType?: Value<string>;
     constructor(properties: Projection);
 }
+export declare class SSESpecification {
+    SSEEnabled: Value<boolean>;
+    constructor(properties: SSESpecification);
+}
 export declare class StreamSpecification {
     StreamViewType: Value<string>;
     constructor(properties: StreamSpecification);
@@ -48,11 +52,21 @@ export interface TableProperties {
     KeySchema: List<KeySchema>;
     LocalSecondaryIndexes?: List<LocalSecondaryIndex>;
     ProvisionedThroughput: ProvisionedThroughput;
+    SSESpecification?: SSESpecification;
     StreamSpecification?: StreamSpecification;
     TableName?: Value<string>;
     Tags?: ResourceTag[];
     TimeToLiveSpecification?: TimeToLiveSpecification;
 }
 export default class Table extends ResourceBase {
+    static TimeToLiveSpecification: typeof TimeToLiveSpecification;
+    static AttributeDefinition: typeof AttributeDefinition;
+    static LocalSecondaryIndex: typeof LocalSecondaryIndex;
+    static ProvisionedThroughput: typeof ProvisionedThroughput;
+    static GlobalSecondaryIndex: typeof GlobalSecondaryIndex;
+    static KeySchema: typeof KeySchema;
+    static Projection: typeof Projection;
+    static SSESpecification: typeof SSESpecification;
+    static StreamSpecification: typeof StreamSpecification;
     constructor(properties?: TableProperties);
 }

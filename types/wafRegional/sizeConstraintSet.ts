@@ -29,6 +29,9 @@ export interface SizeConstraintSetProperties {
 }
 
 export default class SizeConstraintSet extends ResourceBase {
+    static SizeConstraint = SizeConstraint
+    static FieldToMatch = FieldToMatch
+
     constructor(properties?: SizeConstraintSetProperties) {
         super('AWS::WAFRegional::SizeConstraintSet', properties)
     }

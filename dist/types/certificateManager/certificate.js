@@ -13,4 +13,5 @@ class Certificate extends resource_1.ResourceBase {
         super('AWS::CertificateManager::Certificate', properties);
     }
 }
+Certificate.DomainValidationOption = DomainValidationOption;
 exports.default = Certificate;

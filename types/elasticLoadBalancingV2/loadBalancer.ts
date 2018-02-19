@@ -34,6 +34,9 @@ export interface LoadBalancerProperties {
 }
 
 export default class LoadBalancer extends ResourceBase {
+    static LoadBalancerAttribute = LoadBalancerAttribute
+    static SubnetMapping = SubnetMapping
+
     constructor(properties?: LoadBalancerProperties) {
         super('AWS::ElasticLoadBalancingV2::LoadBalancer', properties)
     }

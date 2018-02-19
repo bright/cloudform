@@ -46,6 +46,10 @@ export interface IdentityPoolProperties {
 }
 
 export default class IdentityPool extends ResourceBase {
+    static PushSync = PushSync
+    static CognitoIdentityProvider = CognitoIdentityProvider
+    static CognitoStreams = CognitoStreams
+
     constructor(properties?: IdentityPoolProperties) {
         super('AWS::Cognito::IdentityPool', properties)
     }

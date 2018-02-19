@@ -61,5 +61,14 @@ export interface PipelineProperties {
     Stages: List<StageDeclaration>;
 }
 export default class Pipeline extends ResourceBase {
+    static InputArtifact: typeof InputArtifact;
+    static ActionDeclaration: typeof ActionDeclaration;
+    static StageDeclaration: typeof StageDeclaration;
+    static BlockerDeclaration: typeof BlockerDeclaration;
+    static StageTransition: typeof StageTransition;
+    static ArtifactStore: typeof ArtifactStore;
+    static ActionTypeId: typeof ActionTypeId;
+    static OutputArtifact: typeof OutputArtifact;
+    static EncryptionKey: typeof EncryptionKey;
     constructor(properties?: PipelineProperties);
 }

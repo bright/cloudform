@@ -12,5 +12,6 @@ export interface CertificateProperties {
     Tags?: ResourceTag[];
 }
 export default class Certificate extends ResourceBase {
+    static DomainValidationOption: typeof DomainValidationOption;
     constructor(properties?: CertificateProperties);
 }

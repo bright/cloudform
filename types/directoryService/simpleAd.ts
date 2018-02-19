@@ -24,6 +24,8 @@ export interface SimpleADProperties {
 }
 
 export default class SimpleAD extends ResourceBase {
+    static VpcSettings = VpcSettings
+
     constructor(properties?: SimpleADProperties) {
         super('AWS::DirectoryService::SimpleAD', properties)
     }

@@ -1,14 +1,9 @@
 import cloudform, {Fn, Refs, EC2, StringParameter, ResourceTag} from ".." // you should import from cloudform here instead
-
-const NetworkingConfig = {
-    VPC: {
-        CIDR: '10.0.0.0/16'
-    }
-}
+import {NetworkingConfig} from './config'
 
 const DeployEnv = Fn.Ref('DeployEnv')
 
-cloudform({
+export default cloudform({
     Description: 'My template',
     Parameters: {
         DeployEnv: new StringParameter({

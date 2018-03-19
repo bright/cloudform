@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@types/node": "^8.0.53",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "ts-node": "^5.0.1"
   },
   "devDependencies": {
     "lodash": "^4.17.4",

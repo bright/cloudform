@@ -14,7 +14,7 @@ TypeScript-based imperative way to define AWS CloudFormation templates
 ```typescript
 import cloudform, {Fn, Refs, EC2, StringParameter, ResourceTag} from "cloudform"
 
-cloudform({
+export default cloudform({
     Description: 'My template',
     Parameters: {
         DeployEnv: new StringParameter({

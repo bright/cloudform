@@ -3,6 +3,7 @@ import { Value, List } from '../dataTypes';
 export interface DBClusterProperties {
     AvailabilityZones?: List<Value<string>>;
     BackupRetentionPeriod?: Value<number>;
+    DBClusterIdentifier?: Value<string>;
     DBClusterParameterGroupName?: Value<string>;
     DBSubnetGroupName?: Value<string>;
     DatabaseName?: Value<string>;

@@ -69,66 +69,6 @@ The types are generated automatically from the [AWS-provided schema file](http:/
 
 The simple convention is used – all the AWS types’ namespaces are available directly as exports from the `cloudform` package. All the resources within this package are available inside. This way `EC2.VPC` object from our example translates into `AWS::EC2::VPC` type we can find in [CloudFormation documentation](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html). All the properties also match one-to-one, including casing.
 
-Supported namespaces are:
-
-```
-ApiGateway
-ApplicationAutoScaling
-Athena
-AutoScaling
-Batch
-CertificateManager
-CloudFormation
-CloudFront
-CloudTrail
-CloudWatch
-CodeBuild
-CodeCommit
-CodeDeploy
-CodePipeline
-Cognito
-Config
-DAX
-DMS
-DataPipeline
-DirectoryService
-DynamoDB
-EC2
-ECR
-ECS
-EFS
-EMR
-ElastiCache
-ElasticBeanstalk
-ElasticLoadBalancing
-ElasticLoadBalancingV2
-Elasticsearch
-Events
-GameLift
-GuardDuty
-IAM
-IoT
-KMS
-Kinesis
-KinesisAnalytics
-KinesisFirehose
-Lambda
-Logs
-OpsWorks
-RDS
-Redshift
-Route53
-S3
-SDB
-SNS
-SQS
-SSM
-StepFunctions
-WAF
-WAFRegional
-WorkSpaces
-```
-
 All [Intrinsic Tunctions](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html) are available within `Fn` namespace:
 
 ```typescript

@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
@@ -21,12 +21,12 @@ const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
 const wafRegional_1 = require("./wafRegional");
 exports.WAFRegional = wafRegional_1.default;
-const workSpaces_1 = require("./workSpaces");
-exports.WorkSpaces = workSpaces_1.default;
 const rds_1 = require("./rds");
 exports.RDS = rds_1.default;
 const emr_1 = require("./emr");
 exports.EMR = emr_1.default;
+const workSpaces_1 = require("./workSpaces");
+exports.WorkSpaces = workSpaces_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -89,6 +89,8 @@ const codeDeploy_1 = require("./codeDeploy");
 exports.CodeDeploy = codeDeploy_1.default;
 const guardDuty_1 = require("./guardDuty");
 exports.GuardDuty = guardDuty_1.default;
+const ses_1 = require("./ses");
+exports.SES = ses_1.default;
 const codeBuild_1 = require("./codeBuild");
 exports.CodeBuild = codeBuild_1.default;
 const dax_1 = require("./dax");
@@ -130,9 +132,9 @@ exports.default = {
     Elasticsearch: exports.Elasticsearch,
     ApiGateway: exports.ApiGateway,
     WAFRegional: exports.WAFRegional,
-    WorkSpaces: exports.WorkSpaces,
     RDS: exports.RDS,
     EMR: exports.EMR,
+    WorkSpaces: exports.WorkSpaces,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -164,6 +166,7 @@ exports.default = {
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
     GuardDuty: exports.GuardDuty,
+    SES: exports.SES,
     CodeBuild: exports.CodeBuild,
     DAX: exports.DAX,
     DataPipeline: exports.DataPipeline,

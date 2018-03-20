@@ -12,6 +12,7 @@ export declare class HealthCheckConfig {
     Inverted?: Value<boolean>;
     MeasureLatency?: Value<boolean>;
     Port?: Value<number>;
+    Regions?: List<Value<string>>;
     RequestInterval?: Value<number>;
     ResourcePath?: Value<string>;
     SearchString?: Value<string>;

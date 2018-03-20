@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class Artifacts {
@@ -32,6 +32,12 @@ class VpcConfig {
     }
 }
 exports.VpcConfig = VpcConfig;
+class ProjectTriggers {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ProjectTriggers = ProjectTriggers;
 class EnvironmentVariable {
     constructor(properties) {
         Object.assign(this, properties);
@@ -54,6 +60,7 @@ Project.SourceAuth = SourceAuth;
 Project.Environment = Environment;
 Project.ProjectCache = ProjectCache;
 Project.VpcConfig = VpcConfig;
+Project.ProjectTriggers = ProjectTriggers;
 Project.EnvironmentVariable = EnvironmentVariable;
 Project.Source = Source;
 exports.default = Project;

@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const requestValidator_1 = require("./requestValidator");
 const deployment_1 = require("./deployment");
@@ -14,9 +14,10 @@ const restApi_1 = require("./restApi");
 const usagePlan_1 = require("./usagePlan");
 const basePathMapping_1 = require("./basePathMapping");
 const stage_1 = require("./stage");
+const vpcLink_1 = require("./vpcLink");
 const gatewayResponse_1 = require("./gatewayResponse");
-const clientCertificate_1 = require("./clientCertificate");
 const method_1 = require("./method");
+const clientCertificate_1 = require("./clientCertificate");
 const documentationVersion_1 = require("./documentationVersion");
 const usagePlanKey_1 = require("./usagePlanKey");
 exports.default = {
@@ -33,9 +34,10 @@ exports.default = {
     UsagePlan: usagePlan_1.default,
     BasePathMapping: basePathMapping_1.default,
     Stage: stage_1.default,
+    VpcLink: vpcLink_1.default,
     GatewayResponse: gatewayResponse_1.default,
-    ClientCertificate: clientCertificate_1.default,
     Method: method_1.default,
+    ClientCertificate: clientCertificate_1.default,
     DocumentationVersion: documentationVersion_1.default,
     UsagePlanKey: usagePlanKey_1.default
 };

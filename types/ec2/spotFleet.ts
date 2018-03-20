@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -29,6 +29,14 @@ export class InstanceNetworkInterfaceSpecification {
     }
 }
 
+export class SpotFleetTagSpecification {
+    ResourceType?: Value<string>
+
+    constructor(properties: SpotFleetTagSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
 export class PrivateIpAddressSpecification {
     Primary?: Value<boolean>
     PrivateIpAddress: Value<string>
@@ -53,6 +61,7 @@ export class SpotFleetLaunchSpecification {
     SecurityGroups?: List<GroupIdentifier>
     SpotPrice?: Value<string>
     SubnetId?: Value<string>
+    TagSpecifications?: List<SpotFleetTagSpecification>
     UserData?: Value<string>
     WeightedCapacity?: Value<number>
 
@@ -143,6 +152,7 @@ export interface SpotFleetProperties {
 export default class SpotFleet extends ResourceBase {
     static IamInstanceProfileSpecification = IamInstanceProfileSpecification
     static InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification
+    static SpotFleetTagSpecification = SpotFleetTagSpecification
     static PrivateIpAddressSpecification = PrivateIpAddressSpecification
     static SpotFleetLaunchSpecification = SpotFleetLaunchSpecification
     static SpotPlacement = SpotPlacement

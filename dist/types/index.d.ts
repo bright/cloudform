@@ -166,9 +166,10 @@ export declare const ApiGateway: {
     UsagePlan: typeof ApiGatewayUsagePlan;
     BasePathMapping: typeof ApiGatewayBasePathMapping;
     Stage: typeof ApiGatewayStage;
+    VpcLink: typeof ApiGatewayVpcLink;
     GatewayResponse: typeof ApiGatewayGatewayResponse;
-    ClientCertificate: typeof ApiGatewayClientCertificate;
     Method: typeof ApiGatewayMethod;
+    ClientCertificate: typeof ApiGatewayClientCertificate;
     DocumentationVersion: typeof ApiGatewayDocumentationVersion;
     UsagePlanKey: typeof ApiGatewayUsagePlanKey;
 };
@@ -185,9 +186,10 @@ import ApiGatewayRestApi from './apiGateway/restApi';
 import ApiGatewayUsagePlan from './apiGateway/usagePlan';
 import ApiGatewayBasePathMapping from './apiGateway/basePathMapping';
 import ApiGatewayStage from './apiGateway/stage';
+import ApiGatewayVpcLink from './apiGateway/vpcLink';
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse';
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
+import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
 export declare const WAFRegional: {
@@ -208,10 +210,6 @@ import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
 import WAFRegionalWebACL from './wafRegional/webAcl';
 import WAFRegionalRule from './wafRegional/rule';
 import WAFRegionalIPSet from './wafRegional/ipSet';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -244,6 +242,10 @@ import EMRCluster from './emr/cluster';
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
 import EMRStep from './emr/step';
 import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -526,12 +528,30 @@ import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig';
 import CodeDeployApplication from './codeDeploy/application';
 export declare const GuardDuty: {
     ThreatIntelSet: typeof GuardDutyThreatIntelSet;
+    Member: typeof GuardDutyMember;
     Detector: typeof GuardDutyDetector;
     IPSet: typeof GuardDutyIPSet;
+    Master: typeof GuardDutyMaster;
 };
 import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet';
+import GuardDutyMember from './guardDuty/member';
 import GuardDutyDetector from './guardDuty/detector';
 import GuardDutyIPSet from './guardDuty/ipSet';
+import GuardDutyMaster from './guardDuty/master';
+export declare const SES: {
+    ReceiptFilter: typeof SESReceiptFilter;
+    ReceiptRule: typeof SESReceiptRule;
+    ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
+    Template: typeof SESTemplate;
+    ConfigurationSet: typeof SESConfigurationSet;
+    ReceiptRuleSet: typeof SESReceiptRuleSet;
+};
+import SESReceiptFilter from './ses/receiptFilter';
+import SESReceiptRule from './ses/receiptRule';
+import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination';
+import SESTemplate from './ses/template';
+import SESConfigurationSet from './ses/configurationSet';
+import SESReceiptRuleSet from './ses/receiptRuleSet';
 export declare const CodeBuild: {
     Project: typeof CodeBuildProject;
 };
@@ -712,9 +732,10 @@ declare const _default: {
         UsagePlan: typeof ApiGatewayUsagePlan;
         BasePathMapping: typeof ApiGatewayBasePathMapping;
         Stage: typeof ApiGatewayStage;
+        VpcLink: typeof ApiGatewayVpcLink;
         GatewayResponse: typeof ApiGatewayGatewayResponse;
-        ClientCertificate: typeof ApiGatewayClientCertificate;
         Method: typeof ApiGatewayMethod;
+        ClientCertificate: typeof ApiGatewayClientCertificate;
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
     };
@@ -727,9 +748,6 @@ declare const _default: {
         WebACL: typeof WAFRegionalWebACL;
         Rule: typeof WAFRegionalRule;
         IPSet: typeof WAFRegionalIPSet;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
     };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
@@ -748,6 +766,9 @@ declare const _default: {
         InstanceGroupConfig: typeof EMRInstanceGroupConfig;
         Step: typeof EMRStep;
         SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -921,8 +942,18 @@ declare const _default: {
     };
     GuardDuty: {
         ThreatIntelSet: typeof GuardDutyThreatIntelSet;
+        Member: typeof GuardDutyMember;
         Detector: typeof GuardDutyDetector;
         IPSet: typeof GuardDutyIPSet;
+        Master: typeof GuardDutyMaster;
+    };
+    SES: {
+        ReceiptFilter: typeof SESReceiptFilter;
+        ReceiptRule: typeof SESReceiptRule;
+        ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
+        Template: typeof SESTemplate;
+        ConfigurationSet: typeof SESConfigurationSet;
+        ReceiptRuleSet: typeof SESReceiptRuleSet;
     };
     CodeBuild: {
         Project: typeof CodeBuildProject;

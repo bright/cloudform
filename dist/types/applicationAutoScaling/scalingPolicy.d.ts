@@ -34,6 +34,7 @@ export declare class CustomizedMetricSpecification {
 }
 export declare class TargetTrackingScalingPolicyConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification;
+    DisableScaleIn?: Value<boolean>;
     PredefinedMetricSpecification?: PredefinedMetricSpecification;
     ScaleInCooldown?: Value<number>;
     ScaleOutCooldown?: Value<number>;

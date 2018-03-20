@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -46,6 +46,7 @@ export class TagProperty {
 }
 
 export interface AutoScalingGroupProperties {
+    AutoScalingGroupName?: Value<string>
     AvailabilityZones?: List<Value<string>>
     Cooldown?: Value<string>
     DesiredCapacity?: Value<string>

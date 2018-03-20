@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -16,6 +16,7 @@ export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>
     AutomatedSnapshotRetentionPeriod?: Value<number>
     AvailabilityZone?: Value<string>
+    ClusterIdentifier?: Value<string>
     ClusterParameterGroupName?: Value<string>
     ClusterSecurityGroups?: List<Value<string>>
     ClusterSubnetGroupName?: Value<string>

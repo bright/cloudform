@@ -18,7 +18,7 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
         return 'ResourceTag';
     }
     if (property[typeSuffix]) {
-        return property[typeSuffix];
+        return innerTypeName('.' + property[typeSuffix]);
     }
     var primitiveType = property['Primitive' + typeSuffix].toLowerCase();
     if (primitiveType === 'json') {
@@ -45,19 +45,27 @@ function generateInnerClass(name, properties) {
 }
 function generateTopLevelClass(namespace, name, properties, innerTypes) {
     return "export interface " + name + "Properties {\n" + propertiesEntries(properties).map(function (e) { return "    " + e; }).join('\n') + "\n}\n\nexport default class " + name + " extends ResourceBase {\n" + Object.keys(innerTypes).map(function (innerTypeFullName) {
-        var _a = innerTypeFullName.split('.'), innerTypeName = _a[1];
-        return "    static " + innerTypeName + " = " + innerTypeName;
+        var _a = innerTypeFullName.split('.'), innerTypeNameUnsafe = _a[1];
+        var innerTypeNameSafe = innerTypeName(innerTypeFullName);
+        return "    static " + innerTypeNameUnsafe + " = " + innerTypeNameSafe;
     }).join('\n') + "\n\n    constructor(properties?: " + name + "Properties) {\n        super('AWS::" + namespace + "::" + name + "', properties)\n    }\n}";
 }
 function hasTags(properties) {
     return Object.keys(properties).includes('Tags') || lodash_1.some(properties, function (p) { return p.Type === 'List' && p.ItemType === 'Tag'; });
 }
+function innerTypeName(innerTypeFullName) {
+    var _a = innerTypeFullName.split('.'), containingTypeFullName = _a[0], innerTypeName = _a[1];
+    var containingTypeName = containingTypeFullName.split(':').pop();
+    if (innerTypeName === containingTypeName) {
+        return innerTypeName + 'Inner';
+    }
+    return innerTypeName;
+}
 function generateFile(fileHeader, namespace, resourceName, properties, innerTypes) {
     var innerHasTags = false;
     var innerTypesTemplates = lodash_1.map(innerTypes, function (innerType, innerTypeFullName) {
-        var _a = innerTypeFullName.split('.'), innerTypeName = _a[1];
         innerHasTags = innerHasTags || hasTags(innerType.Properties);
-        return generateInnerClass(innerTypeName, innerType.Properties);
+        return generateInnerClass(innerTypeName(innerTypeFullName), innerType.Properties);
     });
     var resourceImports = ['ResourceBase'];
     if (innerHasTags || hasTags(properties)) {

@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const applicationOutput_1 = require("./applicationOutput");
 const applicationReferenceDataSource_1 = require("./applicationReferenceDataSource");

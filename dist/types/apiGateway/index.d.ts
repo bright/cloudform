@@ -11,9 +11,10 @@ import RestApi from './restApi';
 import UsagePlan from './usagePlan';
 import BasePathMapping from './basePathMapping';
 import Stage from './stage';
+import VpcLink from './vpcLink';
 import GatewayResponse from './gatewayResponse';
-import ClientCertificate from './clientCertificate';
 import Method from './method';
+import ClientCertificate from './clientCertificate';
 import DocumentationVersion from './documentationVersion';
 import UsagePlanKey from './usagePlanKey';
 declare const _default: {
@@ -30,9 +31,10 @@ declare const _default: {
     UsagePlan: typeof UsagePlan;
     BasePathMapping: typeof BasePathMapping;
     Stage: typeof Stage;
+    VpcLink: typeof VpcLink;
     GatewayResponse: typeof GatewayResponse;
-    ClientCertificate: typeof ClientCertificate;
     Method: typeof Method;
+    ClientCertificate: typeof ClientCertificate;
     DocumentationVersion: typeof DocumentationVersion;
     UsagePlanKey: typeof UsagePlanKey;
 };

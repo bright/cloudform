@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import RequestValidator from './requestValidator'
 import Deployment from './deployment'
@@ -13,9 +13,10 @@ import RestApi from './restApi'
 import UsagePlan from './usagePlan'
 import BasePathMapping from './basePathMapping'
 import Stage from './stage'
+import VpcLink from './vpcLink'
 import GatewayResponse from './gatewayResponse'
-import ClientCertificate from './clientCertificate'
 import Method from './method'
+import ClientCertificate from './clientCertificate'
 import DocumentationVersion from './documentationVersion'
 import UsagePlanKey from './usagePlanKey' 
 
@@ -33,9 +34,10 @@ export default {
   UsagePlan,
   BasePathMapping,
   Stage,
+  VpcLink,
   GatewayResponse,
-  ClientCertificate,
   Method,
+  ClientCertificate,
   DocumentationVersion,
   UsagePlanKey
 }

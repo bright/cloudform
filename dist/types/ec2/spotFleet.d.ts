@@ -18,6 +18,10 @@ export declare class InstanceNetworkInterfaceSpecification {
     SubnetId?: Value<string>;
     constructor(properties: InstanceNetworkInterfaceSpecification);
 }
+export declare class SpotFleetTagSpecification {
+    ResourceType?: Value<string>;
+    constructor(properties: SpotFleetTagSpecification);
+}
 export declare class PrivateIpAddressSpecification {
     Primary?: Value<boolean>;
     PrivateIpAddress: Value<string>;
@@ -38,6 +42,7 @@ export declare class SpotFleetLaunchSpecification {
     SecurityGroups?: List<GroupIdentifier>;
     SpotPrice?: Value<string>;
     SubnetId?: Value<string>;
+    TagSpecifications?: List<SpotFleetTagSpecification>;
     UserData?: Value<string>;
     WeightedCapacity?: Value<number>;
     constructor(properties: SpotFleetLaunchSpecification);
@@ -95,6 +100,7 @@ export interface SpotFleetProperties {
 export default class SpotFleet extends ResourceBase {
     static IamInstanceProfileSpecification: typeof IamInstanceProfileSpecification;
     static InstanceNetworkInterfaceSpecification: typeof InstanceNetworkInterfaceSpecification;
+    static SpotFleetTagSpecification: typeof SpotFleetTagSpecification;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     static SpotFleetLaunchSpecification: typeof SpotFleetLaunchSpecification;
     static SpotPlacement: typeof SpotPlacement;

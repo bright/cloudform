@@ -33,6 +33,10 @@ export declare class VpcConfig {
     SecurityGroupIds: List<Value<string>>;
     constructor(properties: VpcConfig);
 }
+export declare class ProjectTriggers {
+    Webhook?: Value<boolean>;
+    constructor(properties: ProjectTriggers);
+}
 export declare class EnvironmentVariable {
     Type?: Value<string>;
     Value: Value<string>;
@@ -49,16 +53,17 @@ export declare class Source {
     constructor(properties: Source);
 }
 export interface ProjectProperties {
+    Description?: Value<string>;
+    VpcConfig?: VpcConfig;
+    EncryptionKey?: Value<string>;
+    Triggers?: ProjectTriggers;
+    Source: Source;
+    Name?: Value<string>;
     Artifacts: Artifacts;
     BadgeEnabled?: Value<boolean>;
-    Description?: Value<string>;
     ServiceRole: Value<string>;
-    VpcConfig?: VpcConfig;
     Environment: Environment;
-    EncryptionKey?: Value<string>;
-    Source: Source;
     Tags?: ResourceTag[];
-    Name?: Value<string>;
     TimeoutInMinutes?: Value<number>;
     Cache?: ProjectCache;
 }
@@ -68,6 +73,7 @@ export default class Project extends ResourceBase {
     static Environment: typeof Environment;
     static ProjectCache: typeof ProjectCache;
     static VpcConfig: typeof VpcConfig;
+    static ProjectTriggers: typeof ProjectTriggers;
     static EnvironmentVariable: typeof EnvironmentVariable;
     static Source: typeof Source;
     constructor(properties?: ProjectProperties);

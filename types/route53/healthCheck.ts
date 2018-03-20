@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -15,6 +15,7 @@ export class HealthCheckConfig {
     Inverted?: Value<boolean>
     MeasureLatency?: Value<boolean>
     Port?: Value<number>
+    Regions?: List<Value<string>>
     RequestInterval?: Value<number>
     ResourcePath?: Value<string>
     SearchString?: Value<string>

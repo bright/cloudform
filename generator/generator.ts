@@ -20,7 +20,7 @@ function determineTypeScriptType(property, propertyName, typeSuffix) {
         return 'ResourceTag'
     }
     if (property[typeSuffix]) {
-        return property[typeSuffix]
+        return innerTypeName('.' + property[typeSuffix])
     }
 
     let primitiveType = property['Primitive' + typeSuffix].toLowerCase()
@@ -63,8 +63,9 @@ ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 
 export default class ${name} extends ResourceBase {
 ${Object.keys(innerTypes).map(innerTypeFullName => {
-    const [, innerTypeName] = innerTypeFullName.split('.')
-    return `    static ${innerTypeName} = ${innerTypeName}`
+    const [, innerTypeNameUnsafe] = innerTypeFullName.split('.')
+    const innerTypeNameSafe = innerTypeName(innerTypeFullName)
+        return `    static ${innerTypeNameUnsafe} = ${innerTypeNameSafe}`
 }).join('\n')}
 
     constructor(properties?: ${name}Properties) {
@@ -77,12 +78,22 @@ function hasTags(properties) {
     return Object.keys(properties).includes('Tags') || some(properties, p => p.Type === 'List' && p.ItemType === 'Tag')
 }
 
+function innerTypeName(innerTypeFullName: string): string {
+    const [containingTypeFullName, innerTypeName] = innerTypeFullName.split('.')
+    const containingTypeName = containingTypeFullName.split(':').pop()
+
+    if (innerTypeName === containingTypeName) {
+        return innerTypeName + 'Inner'
+    }
+
+    return innerTypeName
+}
+
 function generateFile(fileHeader, namespace, resourceName, properties, innerTypes) {
     let innerHasTags = false
     const innerTypesTemplates = map(innerTypes, (innerType, innerTypeFullName) => {
-        const [, innerTypeName] = innerTypeFullName.split('.')
         innerHasTags = innerHasTags || hasTags(innerType.Properties)
-        return generateInnerClass(innerTypeName, innerType.Properties)
+        return generateInnerClass(innerTypeName(innerTypeFullName), innerType.Properties)
     })
 
     const resourceImports = ['ResourceBase']

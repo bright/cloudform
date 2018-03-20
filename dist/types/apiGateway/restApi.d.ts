@@ -12,6 +12,7 @@ export declare class EndpointConfiguration {
     constructor(properties: EndpointConfiguration);
 }
 export interface RestApiProperties {
+    ApiKeySourceType?: Value<string>;
     BinaryMediaTypes?: List<Value<string>>;
     Body?: any;
     BodyS3Location?: S3Location;
@@ -19,7 +20,7 @@ export interface RestApiProperties {
     Description?: Value<string>;
     EndpointConfiguration?: EndpointConfiguration;
     FailOnWarnings?: Value<boolean>;
-    Mode?: Value<string>;
+    MinimumCompressionSize?: Value<number>;
     Name?: Value<string>;
     Parameters?: {
         [key: string]: Value<string>;

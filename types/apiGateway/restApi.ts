@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -23,6 +23,7 @@ export class EndpointConfiguration {
 }
 
 export interface RestApiProperties {
+    ApiKeySourceType?: Value<string>
     BinaryMediaTypes?: List<Value<string>>
     Body?: any
     BodyS3Location?: S3Location
@@ -30,7 +31,7 @@ export interface RestApiProperties {
     Description?: Value<string>
     EndpointConfiguration?: EndpointConfiguration
     FailOnWarnings?: Value<boolean>
-    Mode?: Value<string>
+    MinimumCompressionSize?: Value<number>
     Name?: Value<string>
     Parameters?: {[key: string]: Value<string>}
 }

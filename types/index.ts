@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -118,9 +118,10 @@ import ApiGatewayRestApi from './apiGateway/restApi'
 import ApiGatewayUsagePlan from './apiGateway/usagePlan'
 import ApiGatewayBasePathMapping from './apiGateway/basePathMapping'
 import ApiGatewayStage from './apiGateway/stage'
+import ApiGatewayVpcLink from './apiGateway/vpcLink'
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse'
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
 import ApiGatewayMethod from './apiGateway/method'
+import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
@@ -135,11 +136,6 @@ import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
 import WAFRegionalWebACL from './wafRegional/webAcl'
 import WAFRegionalRule from './wafRegional/rule'
 import WAFRegionalIPSet from './wafRegional/ipSet'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import RDS_ from './rds'
 export const RDS = RDS_
@@ -162,6 +158,11 @@ import EMRCluster from './emr/cluster'
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
 import EMRStep from './emr/step'
 import EMRSecurityConfiguration from './emr/securityConfiguration'
+
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -397,8 +398,20 @@ import GuardDuty_ from './guardDuty'
 export const GuardDuty = GuardDuty_
 
 import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
+import GuardDutyMember from './guardDuty/member'
 import GuardDutyDetector from './guardDuty/detector'
 import GuardDutyIPSet from './guardDuty/ipSet'
+import GuardDutyMaster from './guardDuty/master'
+
+import SES_ from './ses'
+export const SES = SES_
+
+import SESReceiptFilter from './ses/receiptFilter'
+import SESReceiptRule from './ses/receiptRule'
+import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination'
+import SESTemplate from './ses/template'
+import SESConfigurationSet from './ses/configurationSet'
+import SESReceiptRuleSet from './ses/receiptRuleSet'
 
 import CodeBuild_ from './codeBuild'
 export const CodeBuild = CodeBuild_
@@ -496,9 +509,9 @@ export default {
   Elasticsearch,
   ApiGateway,
   WAFRegional,
-  WorkSpaces,
   RDS,
   EMR,
+  WorkSpaces,
   Logs,
   Kinesis,
   AutoScaling,
@@ -530,6 +543,7 @@ export default {
   ElastiCache,
   CodeDeploy,
   GuardDuty,
+  SES,
   CodeBuild,
   DAX,
   DataPipeline,

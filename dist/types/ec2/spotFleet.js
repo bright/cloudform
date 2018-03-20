@@ -1,5 +1,5 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 1.13.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class IamInstanceProfileSpecification {
@@ -14,6 +14,12 @@ class InstanceNetworkInterfaceSpecification {
     }
 }
 exports.InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification;
+class SpotFleetTagSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.SpotFleetTagSpecification = SpotFleetTagSpecification;
 class PrivateIpAddressSpecification {
     constructor(properties) {
         Object.assign(this, properties);
@@ -75,6 +81,7 @@ class SpotFleet extends resource_1.ResourceBase {
 }
 SpotFleet.IamInstanceProfileSpecification = IamInstanceProfileSpecification;
 SpotFleet.InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification;
+SpotFleet.SpotFleetTagSpecification = SpotFleetTagSpecification;
 SpotFleet.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
 SpotFleet.SpotFleetLaunchSpecification = SpotFleetLaunchSpecification;
 SpotFleet.SpotPlacement = SpotPlacement;

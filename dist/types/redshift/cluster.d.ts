@@ -9,6 +9,7 @@ export interface ClusterProperties {
     AllowVersionUpgrade?: Value<boolean>;
     AutomatedSnapshotRetentionPeriod?: Value<number>;
     AvailabilityZone?: Value<string>;
+    ClusterIdentifier?: Value<string>;
     ClusterParameterGroupName?: Value<string>;
     ClusterSecurityGroups?: List<Value<string>>;
     ClusterSubnetGroupName?: Value<string>;

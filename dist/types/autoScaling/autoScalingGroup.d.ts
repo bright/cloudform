@@ -27,6 +27,7 @@ export declare class TagProperty {
     constructor(properties: TagProperty);
 }
 export interface AutoScalingGroupProperties {
+    AutoScalingGroupName?: Value<string>;
     AvailabilityZones?: List<Value<string>>;
     Cooldown?: Value<string>;
     DesiredCapacity?: Value<string>;

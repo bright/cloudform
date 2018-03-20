@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc --declaration",
-    "generate": "tsc generator/generator.ts --lib es2015,es2016.array.include && node generator/generator.js"
+    "generate": "ts-node --project tsconfig.json generator/generator.ts"
   },
   "keywords": [
     "cloudformation",

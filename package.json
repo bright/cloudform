@@ -2,7 +2,7 @@
   "name": "cloudform",
   "version": "1.0.4",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bright/cloudform.git"
@@ -17,7 +17,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "cloudform": "./dist/cli/cloudform.js"
+    "cloudform": "./cli/cloudform.js"
   },
   "dependencies": {
     "@types/node": "^8.0.53",

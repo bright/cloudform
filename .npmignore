@@ -13,3 +13,6 @@ jspm_packages/
 
 generator/
 example/
+
+*.ts
+!*.d.ts

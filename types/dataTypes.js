@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class DataTypes {
-}
-DataTypes.String = 'String';
-DataTypes.Number = 'Number';
-DataTypes.ListOfNumbers = 'List<Number>';
-DataTypes.CommaDelimitedList = 'CommaDelimitedList';
-exports.default = DataTypes;
+var DataType;
+(function (DataType) {
+    DataType["String"] = "String";
+    DataType["Number"] = "Number";
+    DataType["ListOfNumbers"] = "List<Number>";
+    DataType["CommaDelimitedList"] = "CommaDelimitedList";
+})(DataType || (DataType = {}));
+exports.default = DataType;
 class IntrinsicFunction {
     constructor(name, payload) {
         this.name = name;

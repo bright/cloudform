@@ -1,10 +1,10 @@
-export declare type DataType = 'String' | 'Number' | 'List<Number>' | 'CommaDelimitedList';
-export default class DataTypes {
-    static String: DataType;
-    static Number: DataType;
-    static ListOfNumbers: DataType;
-    static CommaDelimitedList: DataType;
+declare enum DataType {
+    String = "String",
+    Number = "Number",
+    ListOfNumbers = "List<Number>",
+    CommaDelimitedList = "CommaDelimitedList",
 }
+export default DataType;
 export declare class IntrinsicFunction {
     private name;
     private payload;

@@ -1,4 +1,4 @@
-import DataTypes, {DataType} from "./dataTypes"
+import DataType from "./dataTypes"
 
 export default interface Parameter {
     AllowedPattern?: string
@@ -26,7 +26,7 @@ export interface StringParameterProperties {
 }
 
 export class StringParameter implements Parameter {
-    Type = DataTypes.String
+    Type = DataType.String
 
     AllowedPattern?: string
     AllowedValues?: string[]
@@ -53,7 +53,7 @@ export interface NumberParameterProperties {
 }
 
 export class NumberParameter implements Parameter {
-    Type = DataTypes.Number
+    Type = DataType.Number
 
     AllowedValues?: number[]
     ConstraintDescription?: string

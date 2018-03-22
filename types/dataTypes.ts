@@ -1,11 +1,11 @@
-export type DataType = 'String' | 'Number' | 'List<Number>' | 'CommaDelimitedList'
-
-export default class DataTypes {
-    static String: DataType = 'String'
-    static Number: DataType = 'Number'
-    static ListOfNumbers: DataType = 'List<Number>'
-    static CommaDelimitedList: DataType = 'CommaDelimitedList'
+enum DataType {
+    String = 'String',
+    Number = 'Number',
+    ListOfNumbers = 'List<Number>',
+    CommaDelimitedList = 'CommaDelimitedList'
 }
+
+export default DataType
 
 export class IntrinsicFunction {
     constructor(private name: string, private payload: any) {

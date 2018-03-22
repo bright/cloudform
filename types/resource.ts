@@ -10,12 +10,10 @@ export interface CreationPolicy {
     }
 }
 
-export type DeletionPolicy = 'Delete' | 'Retain' | 'Snapshot'
-
-export class DeletionPolicies {
-    static Delete: DeletionPolicy = 'Delete'
-    static Retain: DeletionPolicy = 'Retain'
-    static Snapshot: DeletionPolicy = 'Snapshot'
+export enum DeletionPolicy {
+    Delete = 'Delete',
+    Retain = 'Retain',
+    Snapshot = 'Snapshot'
 }
 
 export interface UpdatePolicy {

@@ -8,11 +8,10 @@ export interface CreationPolicy {
         Timeout?: Value<string>;
     };
 }
-export declare type DeletionPolicy = 'Delete' | 'Retain' | 'Snapshot';
-export declare class DeletionPolicies {
-    static Delete: DeletionPolicy;
-    static Retain: DeletionPolicy;
-    static Snapshot: DeletionPolicy;
+export declare enum DeletionPolicy {
+    Delete = "Delete",
+    Retain = "Retain",
+    Snapshot = "Snapshot",
 }
 export interface UpdatePolicy {
     AutoScalingReplacingUpdate?: {

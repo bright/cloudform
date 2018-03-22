@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class DeletionPolicies {
-}
-DeletionPolicies.Delete = 'Delete';
-DeletionPolicies.Retain = 'Retain';
-DeletionPolicies.Snapshot = 'Snapshot';
-exports.DeletionPolicies = DeletionPolicies;
+var DeletionPolicy;
+(function (DeletionPolicy) {
+    DeletionPolicy["Delete"] = "Delete";
+    DeletionPolicy["Retain"] = "Retain";
+    DeletionPolicy["Snapshot"] = "Snapshot";
+})(DeletionPolicy = exports.DeletionPolicy || (exports.DeletionPolicy = {}));
 class ResourceBase {
     constructor(type, properties) {
         this.Type = type;

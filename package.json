@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "tsc --declaration",
-    "generate": "ts-node --project tsconfig.json generator/generator.ts"
+    "generate": "ts-node --project tsconfig.json generator/generator.ts",
+    "run-example": "ts-node ./cli/cloudform.ts example/example.ts"
   },
   "keywords": [
     "cloudformation",

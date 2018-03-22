@@ -22,7 +22,7 @@ export interface StringParameterProperties {
     MinLength?: number;
     NoEcho?: boolean;
 }
-export declare class StringParameter implements Parameter {
+export declare abstract class StringParameterBase implements Parameter {
     Type: DataType;
     AllowedPattern?: string;
     AllowedValues?: string[];
@@ -32,6 +32,12 @@ export declare class StringParameter implements Parameter {
     MaxLength?: number;
     MinLength?: number;
     NoEcho?: boolean;
+    constructor(Type: DataType, properties?: StringParameterProperties);
+}
+export declare class StringParameter extends StringParameterBase {
+    constructor(properties?: StringParameterProperties);
+}
+export declare class CommaDelimitedListParameter extends StringParameterBase {
     constructor(properties?: StringParameterProperties);
 }
 export interface NumberParameterProperties {
@@ -43,7 +49,7 @@ export interface NumberParameterProperties {
     MinValue?: number;
     NoEcho?: boolean;
 }
-export declare class NumberParameter implements Parameter {
+export declare abstract class NumberParameterBase implements Parameter {
     Type: DataType;
     AllowedValues?: number[];
     ConstraintDescription?: string;
@@ -52,5 +58,11 @@ export declare class NumberParameter implements Parameter {
     MaxValue?: number;
     MinValue?: number;
     NoEcho?: boolean;
+    constructor(Type: DataType, properties?: NumberParameterProperties);
+}
+export declare class NumberParameter extends NumberParameterBase {
+    constructor(properties?: NumberParameterProperties);
+}
+export declare class ListOfNumbersParameter extends NumberParameterBase {
     constructor(properties?: NumberParameterProperties);
 }

@@ -25,9 +25,7 @@ export interface StringParameterProperties {
     NoEcho?: boolean
 }
 
-export class StringParameter implements Parameter {
-    Type = DataType.String
-
+export abstract class StringParameterBase implements Parameter {
     AllowedPattern?: string
     AllowedValues?: string[]
     ConstraintDescription?: string
@@ -37,8 +35,20 @@ export class StringParameter implements Parameter {
     MinLength?: number
     NoEcho?: boolean
 
-    constructor(properties?: StringParameterProperties) {
+    constructor(public Type: DataType, properties?: StringParameterProperties) {
         Object.assign(this, properties)
+    }
+}
+
+export class StringParameter extends StringParameterBase {
+    constructor(properties?: StringParameterProperties) {
+        super(DataType.String, properties)
+    }
+}
+
+export class CommaDelimitedListParameter extends StringParameterBase {
+    constructor(properties?: StringParameterProperties) {
+        super(DataType.CommaDelimitedList, properties)
     }
 }
 
@@ -52,9 +62,7 @@ export interface NumberParameterProperties {
     NoEcho?: boolean
 }
 
-export class NumberParameter implements Parameter {
-    Type = DataType.Number
-
+export abstract class NumberParameterBase implements Parameter {
     AllowedValues?: number[]
     ConstraintDescription?: string
     Default?: number
@@ -63,9 +71,19 @@ export class NumberParameter implements Parameter {
     MinValue?: number
     NoEcho?: boolean
 
-    constructor(properties?: NumberParameterProperties) {
+    constructor(public Type: DataType, properties?: NumberParameterProperties) {
         Object.assign(this, properties)
     }
 }
 
-// TODO List<Number> and CommaDelimitedList
+export class NumberParameter extends NumberParameterBase {
+    constructor(properties?: NumberParameterProperties) {
+        super(DataType.Number, properties)
+    }
+}
+
+export class ListOfNumbersParameter extends NumberParameterBase {
+    constructor(properties?: NumberParameterProperties) {
+        super(DataType.ListOfNumbers, properties)
+    }
+}

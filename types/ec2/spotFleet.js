@@ -1,7 +1,13 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.2.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
+class LaunchTemplateConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.LaunchTemplateConfig = LaunchTemplateConfig;
 class IamInstanceProfileSpecification {
     constructor(properties) {
         Object.assign(this, properties);
@@ -50,6 +56,12 @@ class EbsBlockDevice {
     }
 }
 exports.EbsBlockDevice = EbsBlockDevice;
+class FleetLaunchTemplateSpecification {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.FleetLaunchTemplateSpecification = FleetLaunchTemplateSpecification;
 class InstanceIpv6Address {
     constructor(properties) {
         Object.assign(this, properties);
@@ -62,6 +74,12 @@ class GroupIdentifier {
     }
 }
 exports.GroupIdentifier = GroupIdentifier;
+class LaunchTemplateOverrides {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.LaunchTemplateOverrides = LaunchTemplateOverrides;
 class SpotFleetMonitoring {
     constructor(properties) {
         Object.assign(this, properties);
@@ -79,6 +97,7 @@ class SpotFleet extends resource_1.ResourceBase {
         super('AWS::EC2::SpotFleet', properties);
     }
 }
+SpotFleet.LaunchTemplateConfig = LaunchTemplateConfig;
 SpotFleet.IamInstanceProfileSpecification = IamInstanceProfileSpecification;
 SpotFleet.InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification;
 SpotFleet.SpotFleetTagSpecification = SpotFleetTagSpecification;
@@ -87,8 +106,10 @@ SpotFleet.SpotFleetLaunchSpecification = SpotFleetLaunchSpecification;
 SpotFleet.SpotPlacement = SpotPlacement;
 SpotFleet.SpotFleetRequestConfigData = SpotFleetRequestConfigData;
 SpotFleet.EbsBlockDevice = EbsBlockDevice;
+SpotFleet.FleetLaunchTemplateSpecification = FleetLaunchTemplateSpecification;
 SpotFleet.InstanceIpv6Address = InstanceIpv6Address;
 SpotFleet.GroupIdentifier = GroupIdentifier;
+SpotFleet.LaunchTemplateOverrides = LaunchTemplateOverrides;
 SpotFleet.SpotFleetMonitoring = SpotFleetMonitoring;
 SpotFleet.BlockDeviceMapping = BlockDeviceMapping;
 exports.default = SpotFleet;

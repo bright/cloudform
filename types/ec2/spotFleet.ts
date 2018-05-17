@@ -1,7 +1,16 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.2.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class LaunchTemplateConfig {
+    LaunchTemplateSpecification?: FleetLaunchTemplateSpecification
+    Overrides?: List<LaunchTemplateOverrides>
+
+    constructor(properties: LaunchTemplateConfig) {
+        Object.assign(this, properties)
+    }
+}
 
 export class IamInstanceProfileSpecification {
     Arn?: Value<string>
@@ -83,7 +92,8 @@ export class SpotFleetRequestConfigData {
     AllocationStrategy?: Value<string>
     ExcessCapacityTerminationPolicy?: Value<string>
     IamFleetRole: Value<string>
-    LaunchSpecifications: List<SpotFleetLaunchSpecification>
+    LaunchSpecifications?: List<SpotFleetLaunchSpecification>
+    LaunchTemplateConfigs?: List<LaunchTemplateConfig>
     ReplaceUnhealthyInstances?: Value<boolean>
     SpotPrice?: Value<string>
     TargetCapacity: Value<number>
@@ -110,6 +120,16 @@ export class EbsBlockDevice {
     }
 }
 
+export class FleetLaunchTemplateSpecification {
+    LaunchTemplateId?: Value<string>
+    LaunchTemplateName?: Value<string>
+    Version?: Value<string>
+
+    constructor(properties: FleetLaunchTemplateSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
 export class InstanceIpv6Address {
     Ipv6Address: Value<string>
 
@@ -122,6 +142,18 @@ export class GroupIdentifier {
     GroupId: Value<string>
 
     constructor(properties: GroupIdentifier) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LaunchTemplateOverrides {
+    AvailabilityZone?: Value<string>
+    InstanceType?: Value<string>
+    SpotPrice?: Value<string>
+    SubnetId?: Value<string>
+    WeightedCapacity?: Value<number>
+
+    constructor(properties: LaunchTemplateOverrides) {
         Object.assign(this, properties)
     }
 }
@@ -150,6 +182,7 @@ export interface SpotFleetProperties {
 }
 
 export default class SpotFleet extends ResourceBase {
+    static LaunchTemplateConfig = LaunchTemplateConfig
     static IamInstanceProfileSpecification = IamInstanceProfileSpecification
     static InstanceNetworkInterfaceSpecification = InstanceNetworkInterfaceSpecification
     static SpotFleetTagSpecification = SpotFleetTagSpecification
@@ -158,8 +191,10 @@ export default class SpotFleet extends ResourceBase {
     static SpotPlacement = SpotPlacement
     static SpotFleetRequestConfigData = SpotFleetRequestConfigData
     static EbsBlockDevice = EbsBlockDevice
+    static FleetLaunchTemplateSpecification = FleetLaunchTemplateSpecification
     static InstanceIpv6Address = InstanceIpv6Address
     static GroupIdentifier = GroupIdentifier
+    static LaunchTemplateOverrides = LaunchTemplateOverrides
     static SpotFleetMonitoring = SpotFleetMonitoring
     static BlockDeviceMapping = BlockDeviceMapping
 

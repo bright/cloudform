@@ -8,12 +8,25 @@ import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurat
 import ElasticBeanstalkApplication from './elasticBeanstalk/application';
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment';
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncApiKey from './appSync/apiKey';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
     VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     PlacementGroup: typeof EC2PlacementGroup;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
+    LaunchTemplate: typeof EC2LaunchTemplate;
     Volume: typeof EC2Volume;
     SpotFleet: typeof EC2SpotFleet;
     VPNConnectionRoute: typeof EC2VPNConnectionRoute;
@@ -54,6 +67,7 @@ import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2PlacementGroup from './ec2/placementGroup';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
+import EC2LaunchTemplate from './ec2/launchTemplate';
 import EC2Volume from './ec2/volume';
 import EC2SpotFleet from './ec2/spotFleet';
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute';
@@ -280,6 +294,10 @@ export declare const SQS: {
 };
 import SQSQueue from './sqs/queue';
 import SQSQueuePolicy from './sqs/queuePolicy';
+export declare const AutoScalingPlans: {
+    ScalingPlan: typeof AutoScalingPlansScalingPlan;
+};
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const Route53: {
     RecordSet: typeof Route53RecordSet;
     HostedZone: typeof Route53HostedZone;
@@ -362,6 +380,20 @@ export declare const GameLift: {
 import GameLiftAlias from './gameLift/alias';
 import GameLiftBuild from './gameLift/build';
 import GameLiftFleet from './gameLift/fleet';
+export declare const GuardDuty: {
+    Filter: typeof GuardDutyFilter;
+    ThreatIntelSet: typeof GuardDutyThreatIntelSet;
+    Member: typeof GuardDutyMember;
+    Detector: typeof GuardDutyDetector;
+    IPSet: typeof GuardDutyIPSet;
+    Master: typeof GuardDutyMaster;
+};
+import GuardDutyFilter from './guardDuty/filter';
+import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet';
+import GuardDutyMember from './guardDuty/member';
+import GuardDutyDetector from './guardDuty/detector';
+import GuardDutyIPSet from './guardDuty/ipSet';
+import GuardDutyMaster from './guardDuty/master';
 export declare const DirectoryService: {
     MicrosoftAD: typeof DirectoryServiceMicrosoftAD;
     SimpleAD: typeof DirectoryServiceSimpleAD;
@@ -526,18 +558,6 @@ export declare const CodeDeploy: {
 import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup';
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig';
 import CodeDeployApplication from './codeDeploy/application';
-export declare const GuardDuty: {
-    ThreatIntelSet: typeof GuardDutyThreatIntelSet;
-    Member: typeof GuardDutyMember;
-    Detector: typeof GuardDutyDetector;
-    IPSet: typeof GuardDutyIPSet;
-    Master: typeof GuardDutyMaster;
-};
-import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet';
-import GuardDutyMember from './guardDuty/member';
-import GuardDutyDetector from './guardDuty/detector';
-import GuardDutyIPSet from './guardDuty/ipSet';
-import GuardDutyMaster from './guardDuty/master';
 export declare const SES: {
     ReceiptFilter: typeof SESReceiptFilter;
     ReceiptRule: typeof SESReceiptRule;
@@ -572,6 +592,10 @@ export declare const CloudTrail: {
     Trail: typeof CloudTrailTrail;
 };
 import CloudTrailTrail from './cloudTrail/trail';
+export declare const ServiceCatalog: {
+    CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
+};
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
 export declare const CloudFormation: {
     WaitCondition: typeof CloudFormationWaitCondition;
     Stack: typeof CloudFormationStack;
@@ -639,12 +663,20 @@ declare const _default: {
         Environment: typeof ElasticBeanstalkEnvironment;
         ApplicationVersion: typeof ElasticBeanstalkApplicationVersion;
     };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        ApiKey: typeof AppSyncApiKey;
+    };
     EC2: {
         RouteTable: typeof EC2RouteTable;
         VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         PlacementGroup: typeof EC2PlacementGroup;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
+        LaunchTemplate: typeof EC2LaunchTemplate;
         Volume: typeof EC2Volume;
         SpotFleet: typeof EC2SpotFleet;
         VPNConnectionRoute: typeof EC2VPNConnectionRoute;
@@ -791,6 +823,9 @@ declare const _default: {
         Queue: typeof SQSQueue;
         QueuePolicy: typeof SQSQueuePolicy;
     };
+    AutoScalingPlans: {
+        ScalingPlan: typeof AutoScalingPlansScalingPlan;
+    };
     Route53: {
         RecordSet: typeof Route53RecordSet;
         HostedZone: typeof Route53HostedZone;
@@ -840,6 +875,14 @@ declare const _default: {
         Alias: typeof GameLiftAlias;
         Build: typeof GameLiftBuild;
         Fleet: typeof GameLiftFleet;
+    };
+    GuardDuty: {
+        Filter: typeof GuardDutyFilter;
+        ThreatIntelSet: typeof GuardDutyThreatIntelSet;
+        Member: typeof GuardDutyMember;
+        Detector: typeof GuardDutyDetector;
+        IPSet: typeof GuardDutyIPSet;
+        Master: typeof GuardDutyMaster;
     };
     DirectoryService: {
         MicrosoftAD: typeof DirectoryServiceMicrosoftAD;
@@ -940,13 +983,6 @@ declare const _default: {
         DeploymentConfig: typeof CodeDeployDeploymentConfig;
         Application: typeof CodeDeployApplication;
     };
-    GuardDuty: {
-        ThreatIntelSet: typeof GuardDutyThreatIntelSet;
-        Member: typeof GuardDutyMember;
-        Detector: typeof GuardDutyDetector;
-        IPSet: typeof GuardDutyIPSet;
-        Master: typeof GuardDutyMaster;
-    };
     SES: {
         ReceiptFilter: typeof SESReceiptFilter;
         ReceiptRule: typeof SESReceiptRule;
@@ -968,6 +1004,9 @@ declare const _default: {
     };
     CloudTrail: {
         Trail: typeof CloudTrailTrail;
+    };
+    ServiceCatalog: {
+        CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
     };
     CloudFormation: {
         WaitCondition: typeof CloudFormationWaitCondition;

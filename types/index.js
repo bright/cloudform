@@ -1,8 +1,10 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.2.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
+const appSync_1 = require("./appSync");
+exports.AppSync = appSync_1.default;
 const ec2_1 = require("./ec2");
 exports.EC2 = ec2_1.default;
 const cognito_1 = require("./cognito");
@@ -35,6 +37,8 @@ const autoScaling_1 = require("./autoScaling");
 exports.AutoScaling = autoScaling_1.default;
 const sqs_1 = require("./sqs");
 exports.SQS = sqs_1.default;
+const autoScalingPlans_1 = require("./autoScalingPlans");
+exports.AutoScalingPlans = autoScalingPlans_1.default;
 const route53_1 = require("./route53");
 exports.Route53 = route53_1.default;
 const cloudWatch_1 = require("./cloudWatch");
@@ -53,6 +57,8 @@ const cloudFront_1 = require("./cloudFront");
 exports.CloudFront = cloudFront_1.default;
 const gameLift_1 = require("./gameLift");
 exports.GameLift = gameLift_1.default;
+const guardDuty_1 = require("./guardDuty");
+exports.GuardDuty = guardDuty_1.default;
 const directoryService_1 = require("./directoryService");
 exports.DirectoryService = directoryService_1.default;
 const sns_1 = require("./sns");
@@ -87,8 +93,6 @@ const elastiCache_1 = require("./elastiCache");
 exports.ElastiCache = elastiCache_1.default;
 const codeDeploy_1 = require("./codeDeploy");
 exports.CodeDeploy = codeDeploy_1.default;
-const guardDuty_1 = require("./guardDuty");
-exports.GuardDuty = guardDuty_1.default;
 const ses_1 = require("./ses");
 exports.SES = ses_1.default;
 const codeBuild_1 = require("./codeBuild");
@@ -99,6 +103,8 @@ const dataPipeline_1 = require("./dataPipeline");
 exports.DataPipeline = dataPipeline_1.default;
 const cloudTrail_1 = require("./cloudTrail");
 exports.CloudTrail = cloudTrail_1.default;
+const serviceCatalog_1 = require("./serviceCatalog");
+exports.ServiceCatalog = serviceCatalog_1.default;
 const cloudFormation_1 = require("./cloudFormation");
 exports.CloudFormation = cloudFormation_1.default;
 const cloud9_1 = require("./cloud9");
@@ -123,6 +129,7 @@ const athena_1 = require("./athena");
 exports.Athena = athena_1.default;
 exports.default = {
     ElasticBeanstalk: exports.ElasticBeanstalk,
+    AppSync: exports.AppSync,
     EC2: exports.EC2,
     Cognito: exports.Cognito,
     Events: exports.Events,
@@ -139,6 +146,7 @@ exports.default = {
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
     SQS: exports.SQS,
+    AutoScalingPlans: exports.AutoScalingPlans,
     Route53: exports.Route53,
     CloudWatch: exports.CloudWatch,
     ECS: exports.ECS,
@@ -148,6 +156,7 @@ exports.default = {
     OpsWorks: exports.OpsWorks,
     CloudFront: exports.CloudFront,
     GameLift: exports.GameLift,
+    GuardDuty: exports.GuardDuty,
     DirectoryService: exports.DirectoryService,
     SNS: exports.SNS,
     EFS: exports.EFS,
@@ -165,12 +174,12 @@ exports.default = {
     Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
-    GuardDuty: exports.GuardDuty,
     SES: exports.SES,
     CodeBuild: exports.CodeBuild,
     DAX: exports.DAX,
     DataPipeline: exports.DataPipeline,
     CloudTrail: exports.CloudTrail,
+    ServiceCatalog: exports.ServiceCatalog,
     CloudFormation: exports.CloudFormation,
     Cloud9: exports.Cloud9,
     ServiceDiscovery: exports.ServiceDiscovery,

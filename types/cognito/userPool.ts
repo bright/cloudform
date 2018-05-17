@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.2.0 */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
@@ -131,6 +131,7 @@ export interface UserPoolProperties {
     AliasAttributes?: List<Value<string>>
     EmailVerificationSubject?: Value<string>
     LambdaConfig?: LambdaConfig
+    UsernameAttributes?: List<Value<string>>
     AutoVerifiedAttributes?: List<Value<string>>
     DeviceConfiguration?: DeviceConfiguration
     EmailVerificationMessage?: Value<string>

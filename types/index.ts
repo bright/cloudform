@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.2.0 */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -9,6 +9,15 @@ import ElasticBeanstalkApplication from './elasticBeanstalk/application'
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment'
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion'
 
+import AppSync_ from './appSync'
+export const AppSync = AppSync_
+
+import AppSyncDataSource from './appSync/dataSource'
+import AppSyncResolver from './appSync/resolver'
+import AppSyncGraphQLSchema from './appSync/graphQlSchema'
+import AppSyncGraphQLApi from './appSync/graphQlApi'
+import AppSyncApiKey from './appSync/apiKey'
+
 import EC2_ from './ec2'
 export const EC2 = EC2_
 
@@ -17,6 +26,7 @@ import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2PlacementGroup from './ec2/placementGroup'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
+import EC2LaunchTemplate from './ec2/launchTemplate'
 import EC2Volume from './ec2/volume'
 import EC2SpotFleet from './ec2/spotFleet'
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute'
@@ -193,6 +203,11 @@ export const SQS = SQS_
 import SQSQueue from './sqs/queue'
 import SQSQueuePolicy from './sqs/queuePolicy'
 
+import AutoScalingPlans_ from './autoScalingPlans'
+export const AutoScalingPlans = AutoScalingPlans_
+
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
+
 import Route53_ from './route53'
 export const Route53 = Route53_
 
@@ -260,6 +275,16 @@ export const GameLift = GameLift_
 import GameLiftAlias from './gameLift/alias'
 import GameLiftBuild from './gameLift/build'
 import GameLiftFleet from './gameLift/fleet'
+
+import GuardDuty_ from './guardDuty'
+export const GuardDuty = GuardDuty_
+
+import GuardDutyFilter from './guardDuty/filter'
+import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
+import GuardDutyMember from './guardDuty/member'
+import GuardDutyDetector from './guardDuty/detector'
+import GuardDutyIPSet from './guardDuty/ipSet'
+import GuardDutyMaster from './guardDuty/master'
 
 import DirectoryService_ from './directoryService'
 export const DirectoryService = DirectoryService_
@@ -394,15 +419,6 @@ import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup'
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig'
 import CodeDeployApplication from './codeDeploy/application'
 
-import GuardDuty_ from './guardDuty'
-export const GuardDuty = GuardDuty_
-
-import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
-import GuardDutyMember from './guardDuty/member'
-import GuardDutyDetector from './guardDuty/detector'
-import GuardDutyIPSet from './guardDuty/ipSet'
-import GuardDutyMaster from './guardDuty/master'
-
 import SES_ from './ses'
 export const SES = SES_
 
@@ -434,6 +450,11 @@ import CloudTrail_ from './cloudTrail'
 export const CloudTrail = CloudTrail_
 
 import CloudTrailTrail from './cloudTrail/trail'
+
+import ServiceCatalog_ from './serviceCatalog'
+export const ServiceCatalog = ServiceCatalog_
+
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct'
 
 import CloudFormation_ from './cloudFormation'
 export const CloudFormation = CloudFormation_
@@ -500,6 +521,7 @@ import AthenaNamedQuery from './athena/namedQuery'
 
 export default {
   ElasticBeanstalk,
+  AppSync,
   EC2,
   Cognito,
   Events,
@@ -516,6 +538,7 @@ export default {
   Kinesis,
   AutoScaling,
   SQS,
+  AutoScalingPlans,
   Route53,
   CloudWatch,
   ECS,
@@ -525,6 +548,7 @@ export default {
   OpsWorks,
   CloudFront,
   GameLift,
+  GuardDuty,
   DirectoryService,
   SNS,
   EFS,
@@ -542,12 +566,12 @@ export default {
   Glue,
   ElastiCache,
   CodeDeploy,
-  GuardDuty,
   SES,
   CodeBuild,
   DAX,
   DataPipeline,
   CloudTrail,
+  ServiceCatalog,
   CloudFormation,
   Cloud9,
   ServiceDiscovery,

@@ -3,6 +3,7 @@ import VPCPeeringConnection from './vpcPeeringConnection';
 import PlacementGroup from './placementGroup';
 import NetworkAclEntry from './networkAclEntry';
 import InternetGateway from './internetGateway';
+import LaunchTemplate from './launchTemplate';
 import Volume from './volume';
 import SpotFleet from './spotFleet';
 import VPNConnectionRoute from './vpnConnectionRoute';
@@ -43,6 +44,7 @@ declare const _default: {
     PlacementGroup: typeof PlacementGroup;
     NetworkAclEntry: typeof NetworkAclEntry;
     InternetGateway: typeof InternetGateway;
+    LaunchTemplate: typeof LaunchTemplate;
     Volume: typeof Volume;
     SpotFleet: typeof SpotFleet;
     VPNConnectionRoute: typeof VPNConnectionRoute;

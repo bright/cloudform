@@ -84,6 +84,7 @@ export interface UserPoolProperties {
     AliasAttributes?: List<Value<string>>;
     EmailVerificationSubject?: Value<string>;
     LambdaConfig?: LambdaConfig;
+    UsernameAttributes?: List<Value<string>>;
     AutoVerifiedAttributes?: List<Value<string>>;
     DeviceConfiguration?: DeviceConfiguration;
     EmailVerificationMessage?: Value<string>;

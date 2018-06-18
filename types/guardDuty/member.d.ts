@@ -5,6 +5,7 @@ export interface MemberProperties {
     MemberId: Value<string>;
     Email: Value<string>;
     Message?: Value<string>;
+    DisableEmailNotification?: Value<boolean>;
     DetectorId: Value<string>;
 }
 export default class Member extends ResourceBase {

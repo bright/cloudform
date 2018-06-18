@@ -56,7 +56,7 @@ export declare class SpotFleetRequestConfigData {
     AllocationStrategy?: Value<string>;
     ExcessCapacityTerminationPolicy?: Value<string>;
     IamFleetRole: Value<string>;
-    LaunchSpecifications: List<SpotFleetLaunchSpecification>;
+    LaunchSpecifications?: List<SpotFleetLaunchSpecification>;
     ReplaceUnhealthyInstances?: Value<boolean>;
     SpotPrice?: Value<string>;
     TargetCapacity: Value<number>;

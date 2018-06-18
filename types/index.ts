@@ -1,4 +1,4 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.4.0 */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -9,6 +9,15 @@ import ElasticBeanstalkApplication from './elasticBeanstalk/application'
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment'
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion'
 
+import AppSync_ from './appSync'
+export const AppSync = AppSync_
+
+import AppSyncDataSource from './appSync/dataSource'
+import AppSyncResolver from './appSync/resolver'
+import AppSyncGraphQLSchema from './appSync/graphQlSchema'
+import AppSyncGraphQLApi from './appSync/graphQlApi'
+import AppSyncApiKey from './appSync/apiKey'
+
 import EC2_ from './ec2'
 export const EC2 = EC2_
 
@@ -17,6 +26,7 @@ import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2PlacementGroup from './ec2/placementGroup'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
+import EC2LaunchTemplate from './ec2/launchTemplate'
 import EC2Volume from './ec2/volume'
 import EC2SpotFleet from './ec2/spotFleet'
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute'
@@ -51,6 +61,22 @@ import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment'
 import EC2VPNConnection from './ec2/vpnConnection'
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock'
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation'
+
+import ServiceCatalog_ from './serviceCatalog'
+export const ServiceCatalog = ServiceCatalog_
+
+import ServiceCatalogPortfolioShare from './serviceCatalog/portfolioShare'
+import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssociation'
+import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint'
+import ServiceCatalogTagOption from './serviceCatalog/tagOption'
+import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation'
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct'
+import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint'
+import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct'
+import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation'
+import ServiceCatalogPortfolio from './serviceCatalog/portfolio'
+import ServiceCatalogAcceptedPortfolioShare from './serviceCatalog/acceptedPortfolioShare'
+import ServiceCatalogLaunchNotificationConstraint from './serviceCatalog/launchNotificationConstraint'
 
 import Cognito_ from './cognito'
 export const Cognito = Cognito_
@@ -120,8 +146,8 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping'
 import ApiGatewayStage from './apiGateway/stage'
 import ApiGatewayVpcLink from './apiGateway/vpcLink'
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse'
-import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
+import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
@@ -136,6 +162,11 @@ import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
 import WAFRegionalWebACL from './wafRegional/webAcl'
 import WAFRegionalRule from './wafRegional/rule'
 import WAFRegionalIPSet from './wafRegional/ipSet'
+
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import RDS_ from './rds'
 export const RDS = RDS_
@@ -158,11 +189,6 @@ import EMRCluster from './emr/cluster'
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
 import EMRStep from './emr/step'
 import EMRSecurityConfiguration from './emr/securityConfiguration'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -193,6 +219,11 @@ export const SQS = SQS_
 import SQSQueue from './sqs/queue'
 import SQSQueuePolicy from './sqs/queuePolicy'
 
+import AutoScalingPlans_ from './autoScalingPlans'
+export const AutoScalingPlans = AutoScalingPlans_
+
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
+
 import Route53_ from './route53'
 export const Route53 = Route53_
 
@@ -222,6 +253,15 @@ import ElasticLoadBalancingV2LoadBalancer from './elasticLoadBalancingV2/loadBal
 import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener'
 import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule'
 import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup'
+
+import Neptune_ from './neptune'
+export const Neptune = Neptune_
+
+import NeptuneDBParameterGroup from './neptune/dbParameterGroup'
+import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup'
+import NeptuneDBCluster from './neptune/dbCluster'
+import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup'
+import NeptuneDBInstance from './neptune/dbInstance'
 
 import StepFunctions_ from './stepFunctions'
 export const StepFunctions = StepFunctions_
@@ -260,6 +300,16 @@ export const GameLift = GameLift_
 import GameLiftAlias from './gameLift/alias'
 import GameLiftBuild from './gameLift/build'
 import GameLiftFleet from './gameLift/fleet'
+
+import GuardDuty_ from './guardDuty'
+export const GuardDuty = GuardDuty_
+
+import GuardDutyFilter from './guardDuty/filter'
+import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
+import GuardDutyMember from './guardDuty/member'
+import GuardDutyDetector from './guardDuty/detector'
+import GuardDutyIPSet from './guardDuty/ipSet'
+import GuardDutyMaster from './guardDuty/master'
 
 import DirectoryService_ from './directoryService'
 export const DirectoryService = DirectoryService_
@@ -394,15 +444,6 @@ import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup'
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig'
 import CodeDeployApplication from './codeDeploy/application'
 
-import GuardDuty_ from './guardDuty'
-export const GuardDuty = GuardDuty_
-
-import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
-import GuardDutyMember from './guardDuty/member'
-import GuardDutyDetector from './guardDuty/detector'
-import GuardDutyIPSet from './guardDuty/ipSet'
-import GuardDutyMaster from './guardDuty/master'
-
 import SES_ from './ses'
 export const SES = SES_
 
@@ -417,6 +458,11 @@ import CodeBuild_ from './codeBuild'
 export const CodeBuild = CodeBuild_
 
 import CodeBuildProject from './codeBuild/project'
+
+import Budgets_ from './budgets'
+export const Budgets = Budgets_
+
+import BudgetsBudget from './budgets/budget'
 
 import DAX_ from './dax'
 export const DAX = DAX_
@@ -500,7 +546,9 @@ import AthenaNamedQuery from './athena/namedQuery'
 
 export default {
   ElasticBeanstalk,
+  AppSync,
   EC2,
+  ServiceCatalog,
   Cognito,
   Events,
   WAF,
@@ -509,22 +557,25 @@ export default {
   Elasticsearch,
   ApiGateway,
   WAFRegional,
+  WorkSpaces,
   RDS,
   EMR,
-  WorkSpaces,
   Logs,
   Kinesis,
   AutoScaling,
   SQS,
+  AutoScalingPlans,
   Route53,
   CloudWatch,
   ECS,
   ElasticLoadBalancingV2,
+  Neptune,
   StepFunctions,
   KinesisAnalytics,
   OpsWorks,
   CloudFront,
   GameLift,
+  GuardDuty,
   DirectoryService,
   SNS,
   EFS,
@@ -542,9 +593,9 @@ export default {
   Glue,
   ElastiCache,
   CodeDeploy,
-  GuardDuty,
   SES,
   CodeBuild,
+  Budgets,
   DAX,
   DataPipeline,
   CloudTrail,

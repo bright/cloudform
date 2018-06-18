@@ -1,6 +1,7 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class MetricTransformation {
+    DefaultValue?: Value<number>;
     MetricName: Value<string>;
     MetricNamespace: Value<string>;
     MetricValue: Value<string>;

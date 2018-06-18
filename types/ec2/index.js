@@ -1,11 +1,12 @@
 "use strict";
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.4.0 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const routeTable_1 = require("./routeTable");
 const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
 const placementGroup_1 = require("./placementGroup");
 const networkAclEntry_1 = require("./networkAclEntry");
 const internetGateway_1 = require("./internetGateway");
+const launchTemplate_1 = require("./launchTemplate");
 const volume_1 = require("./volume");
 const spotFleet_1 = require("./spotFleet");
 const vpnConnectionRoute_1 = require("./vpnConnectionRoute");
@@ -46,6 +47,7 @@ exports.default = {
     PlacementGroup: placementGroup_1.default,
     NetworkAclEntry: networkAclEntry_1.default,
     InternetGateway: internetGateway_1.default,
+    LaunchTemplate: launchTemplate_1.default,
     Volume: volume_1.default,
     SpotFleet: spotFleet_1.default,
     VPNConnectionRoute: vpnConnectionRoute_1.default,

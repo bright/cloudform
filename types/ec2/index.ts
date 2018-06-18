@@ -1,10 +1,11 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.0.0 */
+/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.4.0 */
    
 import RouteTable from './routeTable'
 import VPCPeeringConnection from './vpcPeeringConnection'
 import PlacementGroup from './placementGroup'
 import NetworkAclEntry from './networkAclEntry'
 import InternetGateway from './internetGateway'
+import LaunchTemplate from './launchTemplate'
 import Volume from './volume'
 import SpotFleet from './spotFleet'
 import VPNConnectionRoute from './vpnConnectionRoute'
@@ -46,6 +47,7 @@ export default {
   PlacementGroup,
   NetworkAclEntry,
   InternetGateway,
+  LaunchTemplate,
   Volume,
   SpotFleet,
   VPNConnectionRoute,

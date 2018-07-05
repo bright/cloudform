@@ -35,9 +35,9 @@ export class StackConfigurationManager {
 }
 
 export class RdsDbInstance {
-    DbPassword: Value<string>
-    DbUser: Value<string>
-    RdsDbInstanceArn: Value<string>
+    DbPassword!: Value<string>
+    DbUser!: Value<string>
+    RdsDbInstanceArn!: Value<string>
 
     constructor(properties: RdsDbInstance) {
         Object.assign(this, properties)
@@ -45,7 +45,7 @@ export class RdsDbInstance {
 }
 
 export class ElasticIp {
-    Ip: Value<string>
+    Ip!: Value<string>
     Name?: Value<string>
 
     constructor(properties: ElasticIp) {

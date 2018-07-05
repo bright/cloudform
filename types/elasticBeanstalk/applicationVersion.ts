@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SourceBundle {
-    S3Bucket: Value<string>
-    S3Key: Value<string>
+    S3Bucket!: Value<string>
+    S3Key!: Value<string>
 
     constructor(properties: SourceBundle) {
         Object.assign(this, properties)

@@ -14,9 +14,9 @@ export class DataSource {
 }
 
 export class EnvironmentVariable {
-    Key: Value<string>
+    Key!: Value<string>
     Secure?: Value<boolean>
-    Value: Value<string>
+    Value!: Value<string>
 
     constructor(properties: EnvironmentVariable) {
         Object.assign(this, properties)

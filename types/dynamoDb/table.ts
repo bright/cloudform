@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class TimeToLiveSpecification {
-    AttributeName: Value<string>
-    Enabled: Value<boolean>
+    AttributeName!: Value<string>
+    Enabled!: Value<boolean>
 
     constructor(properties: TimeToLiveSpecification) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class TimeToLiveSpecification {
 }
 
 export class AttributeDefinition {
-    AttributeName: Value<string>
-    AttributeType: Value<string>
+    AttributeName!: Value<string>
+    AttributeType!: Value<string>
 
     constructor(properties: AttributeDefinition) {
         Object.assign(this, properties)
@@ -22,9 +22,9 @@ export class AttributeDefinition {
 }
 
 export class LocalSecondaryIndex {
-    IndexName: Value<string>
-    KeySchema: List<KeySchema>
-    Projection: Projection
+    IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
 
     constructor(properties: LocalSecondaryIndex) {
         Object.assign(this, properties)
@@ -32,8 +32,8 @@ export class LocalSecondaryIndex {
 }
 
 export class ProvisionedThroughput {
-    ReadCapacityUnits: Value<number>
-    WriteCapacityUnits: Value<number>
+    ReadCapacityUnits!: Value<number>
+    WriteCapacityUnits!: Value<number>
 
     constructor(properties: ProvisionedThroughput) {
         Object.assign(this, properties)
@@ -41,10 +41,10 @@ export class ProvisionedThroughput {
 }
 
 export class GlobalSecondaryIndex {
-    IndexName: Value<string>
-    KeySchema: List<KeySchema>
-    Projection: Projection
-    ProvisionedThroughput: ProvisionedThroughput
+    IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
+    ProvisionedThroughput!: ProvisionedThroughput
 
     constructor(properties: GlobalSecondaryIndex) {
         Object.assign(this, properties)
@@ -52,8 +52,8 @@ export class GlobalSecondaryIndex {
 }
 
 export class KeySchema {
-    AttributeName: Value<string>
-    KeyType: Value<string>
+    AttributeName!: Value<string>
+    KeyType!: Value<string>
 
     constructor(properties: KeySchema) {
         Object.assign(this, properties)
@@ -78,7 +78,7 @@ export class PointInTimeRecoverySpecification {
 }
 
 export class SSESpecification {
-    SSEEnabled: Value<boolean>
+    SSEEnabled!: Value<boolean>
 
     constructor(properties: SSESpecification) {
         Object.assign(this, properties)
@@ -86,7 +86,7 @@ export class SSESpecification {
 }
 
 export class StreamSpecification {
-    StreamViewType: Value<string>
+    StreamViewType!: Value<string>
 
     constructor(properties: StreamSpecification) {
         Object.assign(this, properties)

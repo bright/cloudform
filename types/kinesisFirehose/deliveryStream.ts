@@ -4,17 +4,17 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ElasticsearchDestinationConfiguration {
-    BufferingHints: ElasticsearchBufferingHints
+    BufferingHints!: ElasticsearchBufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    DomainARN: Value<string>
-    IndexName: Value<string>
-    IndexRotationPeriod: Value<string>
+    DomainARN!: Value<string>
+    IndexName!: Value<string>
+    IndexRotationPeriod!: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
-    RetryOptions: ElasticsearchRetryOptions
-    RoleARN: Value<string>
-    S3BackupMode: Value<string>
-    S3Configuration: S3DestinationConfiguration
-    TypeName: Value<string>
+    RetryOptions!: ElasticsearchRetryOptions
+    RoleARN!: Value<string>
+    S3BackupMode!: Value<string>
+    S3Configuration!: S3DestinationConfiguration
+    TypeName!: Value<string>
 
     constructor(properties: ElasticsearchDestinationConfiguration) {
         Object.assign(this, properties)
@@ -22,8 +22,8 @@ export class ElasticsearchDestinationConfiguration {
 }
 
 export class ElasticsearchBufferingHints {
-    IntervalInSeconds: Value<number>
-    SizeInMBs: Value<number>
+    IntervalInSeconds!: Value<number>
+    SizeInMBs!: Value<number>
 
     constructor(properties: ElasticsearchBufferingHints) {
         Object.assign(this, properties)
@@ -33,13 +33,13 @@ export class ElasticsearchBufferingHints {
 export class SplunkDestinationConfiguration {
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     HECAcknowledgmentTimeoutInSeconds?: Value<number>
-    HECEndpoint: Value<string>
-    HECEndpointType: Value<string>
-    HECToken: Value<string>
+    HECEndpoint!: Value<string>
+    HECEndpointType!: Value<string>
+    HECToken!: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
     RetryOptions?: SplunkRetryOptions
     S3BackupMode?: Value<string>
-    S3Configuration: S3DestinationConfiguration
+    S3Configuration!: S3DestinationConfiguration
 
     constructor(properties: SplunkDestinationConfiguration) {
         Object.assign(this, properties)
@@ -75,8 +75,8 @@ export class ProcessingConfiguration {
 }
 
 export class BufferingHints {
-    IntervalInSeconds: Value<number>
-    SizeInMBs: Value<number>
+    IntervalInSeconds!: Value<number>
+    SizeInMBs!: Value<number>
 
     constructor(properties: BufferingHints) {
         Object.assign(this, properties)
@@ -84,7 +84,7 @@ export class BufferingHints {
 }
 
 export class SplunkRetryOptions {
-    DurationInSeconds: Value<number>
+    DurationInSeconds!: Value<number>
 
     constructor(properties: SplunkRetryOptions) {
         Object.assign(this, properties)
@@ -92,8 +92,8 @@ export class SplunkRetryOptions {
 }
 
 export class KinesisStreamSourceConfiguration {
-    KinesisStreamARN: Value<string>
-    RoleARN: Value<string>
+    KinesisStreamARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: KinesisStreamSourceConfiguration) {
         Object.assign(this, properties)
@@ -101,8 +101,8 @@ export class KinesisStreamSourceConfiguration {
 }
 
 export class ProcessorParameter {
-    ParameterName: Value<string>
-    ParameterValue: Value<string>
+    ParameterName!: Value<string>
+    ParameterValue!: Value<string>
 
     constructor(properties: ProcessorParameter) {
         Object.assign(this, properties)
@@ -110,8 +110,8 @@ export class ProcessorParameter {
 }
 
 export class Processor {
-    Parameters: List<ProcessorParameter>
-    Type: Value<string>
+    Parameters!: List<ProcessorParameter>
+    Type!: Value<string>
 
     constructor(properties: Processor) {
         Object.assign(this, properties)
@@ -121,7 +121,7 @@ export class Processor {
 export class CopyCommand {
     CopyOptions?: Value<string>
     DataTableColumns?: Value<string>
-    DataTableName: Value<string>
+    DataTableName!: Value<string>
 
     constructor(properties: CopyCommand) {
         Object.assign(this, properties)
@@ -129,13 +129,13 @@ export class CopyCommand {
 }
 
 export class S3DestinationConfiguration {
-    BucketARN: Value<string>
-    BufferingHints: BufferingHints
+    BucketARN!: Value<string>
+    BufferingHints!: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    CompressionFormat: Value<string>
+    CompressionFormat!: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
     Prefix?: Value<string>
-    RoleARN: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: S3DestinationConfiguration) {
         Object.assign(this, properties)
@@ -143,7 +143,7 @@ export class S3DestinationConfiguration {
 }
 
 export class ElasticsearchRetryOptions {
-    DurationInSeconds: Value<number>
+    DurationInSeconds!: Value<number>
 
     constructor(properties: ElasticsearchRetryOptions) {
         Object.assign(this, properties)
@@ -151,7 +151,7 @@ export class ElasticsearchRetryOptions {
 }
 
 export class KMSEncryptionConfig {
-    AWSKMSKeyARN: Value<string>
+    AWSKMSKeyARN!: Value<string>
 
     constructor(properties: KMSEncryptionConfig) {
         Object.assign(this, properties)
@@ -159,14 +159,14 @@ export class KMSEncryptionConfig {
 }
 
 export class ExtendedS3DestinationConfiguration {
-    BucketARN: Value<string>
-    BufferingHints: BufferingHints
+    BucketARN!: Value<string>
+    BufferingHints!: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    CompressionFormat: Value<string>
+    CompressionFormat!: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
-    Prefix: Value<string>
+    Prefix!: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
-    RoleARN: Value<string>
+    RoleARN!: Value<string>
     S3BackupConfiguration?: S3DestinationConfiguration
     S3BackupMode?: Value<string>
 
@@ -177,13 +177,13 @@ export class ExtendedS3DestinationConfiguration {
 
 export class RedshiftDestinationConfiguration {
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    ClusterJDBCURL: Value<string>
-    CopyCommand: CopyCommand
-    Password: Value<string>
+    ClusterJDBCURL!: Value<string>
+    CopyCommand!: CopyCommand
+    Password!: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
-    RoleARN: Value<string>
-    S3Configuration: S3DestinationConfiguration
-    Username: Value<string>
+    RoleARN!: Value<string>
+    S3Configuration!: S3DestinationConfiguration
+    Username!: Value<string>
 
     constructor(properties: RedshiftDestinationConfiguration) {
         Object.assign(this, properties)

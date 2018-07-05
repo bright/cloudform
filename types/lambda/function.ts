@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class VpcConfig {
-    SecurityGroupIds: List<Value<string>>
-    SubnetIds: List<Value<string>>
+    SecurityGroupIds!: List<Value<string>>
+    SubnetIds!: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)

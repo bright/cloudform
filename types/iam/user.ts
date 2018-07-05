@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class LoginProfile {
-    Password: Value<string>
+    Password!: Value<string>
     PasswordResetRequired?: Value<boolean>
 
     constructor(properties: LoginProfile) {
@@ -13,8 +13,8 @@ export class LoginProfile {
 }
 
 export class Policy {
-    PolicyDocument: any
-    PolicyName: Value<string>
+    PolicyDocument!: any
+    PolicyName!: Value<string>
 
     constructor(properties: Policy) {
         Object.assign(this, properties)

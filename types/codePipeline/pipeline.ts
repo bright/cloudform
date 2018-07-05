@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class InputArtifact {
-    Name: Value<string>
+    Name!: Value<string>
 
     constructor(properties: InputArtifact) {
         Object.assign(this, properties)
@@ -12,10 +12,10 @@ export class InputArtifact {
 }
 
 export class ActionDeclaration {
-    ActionTypeId: ActionTypeId
+    ActionTypeId!: ActionTypeId
     Configuration?: any
     InputArtifacts?: List<InputArtifact>
-    Name: Value<string>
+    Name!: Value<string>
     OutputArtifacts?: List<OutputArtifact>
     RoleArn?: Value<string>
     RunOrder?: Value<number>
@@ -26,9 +26,9 @@ export class ActionDeclaration {
 }
 
 export class StageDeclaration {
-    Actions: List<ActionDeclaration>
+    Actions!: List<ActionDeclaration>
     Blockers?: List<BlockerDeclaration>
-    Name: Value<string>
+    Name!: Value<string>
 
     constructor(properties: StageDeclaration) {
         Object.assign(this, properties)
@@ -36,8 +36,8 @@ export class StageDeclaration {
 }
 
 export class BlockerDeclaration {
-    Name: Value<string>
-    Type: Value<string>
+    Name!: Value<string>
+    Type!: Value<string>
 
     constructor(properties: BlockerDeclaration) {
         Object.assign(this, properties)
@@ -45,8 +45,8 @@ export class BlockerDeclaration {
 }
 
 export class StageTransition {
-    Reason: Value<string>
-    StageName: Value<string>
+    Reason!: Value<string>
+    StageName!: Value<string>
 
     constructor(properties: StageTransition) {
         Object.assign(this, properties)
@@ -55,8 +55,8 @@ export class StageTransition {
 
 export class ArtifactStore {
     EncryptionKey?: EncryptionKey
-    Location: Value<string>
-    Type: Value<string>
+    Location!: Value<string>
+    Type!: Value<string>
 
     constructor(properties: ArtifactStore) {
         Object.assign(this, properties)
@@ -64,10 +64,10 @@ export class ArtifactStore {
 }
 
 export class ActionTypeId {
-    Category: Value<string>
-    Owner: Value<string>
-    Provider: Value<string>
-    Version: Value<string>
+    Category!: Value<string>
+    Owner!: Value<string>
+    Provider!: Value<string>
+    Version!: Value<string>
 
     constructor(properties: ActionTypeId) {
         Object.assign(this, properties)
@@ -75,7 +75,7 @@ export class ActionTypeId {
 }
 
 export class OutputArtifact {
-    Name: Value<string>
+    Name!: Value<string>
 
     constructor(properties: OutputArtifact) {
         Object.assign(this, properties)
@@ -83,8 +83,8 @@ export class OutputArtifact {
 }
 
 export class EncryptionKey {
-    Id: Value<string>
-    Type: Value<string>
+    Id!: Value<string>
+    Type!: Value<string>
 
     constructor(properties: EncryptionKey) {
         Object.assign(this, properties)

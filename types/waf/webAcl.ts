@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class WafAction {
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: WafAction) {
         Object.assign(this, properties)
@@ -12,9 +12,9 @@ export class WafAction {
 }
 
 export class ActivatedRule {
-    Action: WafAction
-    Priority: Value<number>
-    RuleId: Value<string>
+    Action!: WafAction
+    Priority!: Value<number>
+    RuleId!: Value<string>
 
     constructor(properties: ActivatedRule) {
         Object.assign(this, properties)

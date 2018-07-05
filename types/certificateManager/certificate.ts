@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DomainValidationOption {
-    DomainName: Value<string>
-    ValidationDomain: Value<string>
+    DomainName!: Value<string>
+    ValidationDomain!: Value<string>
 
     constructor(properties: DomainValidationOption) {
         Object.assign(this, properties)

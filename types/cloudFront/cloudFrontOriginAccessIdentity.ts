@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CloudFrontOriginAccessIdentityConfig {
-    Comment: Value<string>
+    Comment!: Value<string>
 
     constructor(properties: CloudFrontOriginAccessIdentityConfig) {
         Object.assign(this, properties)

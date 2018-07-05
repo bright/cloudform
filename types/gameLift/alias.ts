@@ -6,7 +6,7 @@ import {Value, List} from '../dataTypes'
 export class RoutingStrategy {
     FleetId?: Value<string>
     Message?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: RoutingStrategy) {
         Object.assign(this, properties)

@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Subscription {
-    Endpoint: Value<string>
-    Protocol: Value<string>
+    Endpoint!: Value<string>
+    Protocol!: Value<string>
 
     constructor(properties: Subscription) {
         Object.assign(this, properties)

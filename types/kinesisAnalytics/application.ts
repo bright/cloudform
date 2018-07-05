@@ -13,8 +13,8 @@ export class MappingParameters {
 }
 
 export class CSVMappingParameters {
-    RecordRowDelimiter: Value<string>
-    RecordColumnDelimiter: Value<string>
+    RecordRowDelimiter!: Value<string>
+    RecordColumnDelimiter!: Value<string>
 
     constructor(properties: CSVMappingParameters) {
         Object.assign(this, properties)
@@ -22,8 +22,8 @@ export class CSVMappingParameters {
 }
 
 export class KinesisStreamsInput {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: KinesisStreamsInput) {
         Object.assign(this, properties)
@@ -31,8 +31,8 @@ export class KinesisStreamsInput {
 }
 
 export class Input {
-    NamePrefix: Value<string>
-    InputSchema: InputSchema
+    NamePrefix!: Value<string>
+    InputSchema!: InputSchema
     KinesisStreamsInput?: KinesisStreamsInput
     KinesisFirehoseInput?: KinesisFirehoseInput
     InputProcessingConfiguration?: InputProcessingConfiguration
@@ -45,8 +45,8 @@ export class Input {
 
 export class InputSchema {
     RecordEncoding?: Value<string>
-    RecordColumns: List<RecordColumn>
-    RecordFormat: RecordFormat
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: InputSchema) {
         Object.assign(this, properties)
@@ -55,8 +55,8 @@ export class InputSchema {
 
 export class RecordColumn {
     Mapping?: Value<string>
-    SqlType: Value<string>
-    Name: Value<string>
+    SqlType!: Value<string>
+    Name!: Value<string>
 
     constructor(properties: RecordColumn) {
         Object.assign(this, properties)
@@ -65,7 +65,7 @@ export class RecordColumn {
 
 export class RecordFormat {
     MappingParameters?: MappingParameters
-    RecordFormatType: Value<string>
+    RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
         Object.assign(this, properties)
@@ -73,8 +73,8 @@ export class RecordFormat {
 }
 
 export class KinesisFirehoseInput {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: KinesisFirehoseInput) {
         Object.assign(this, properties)
@@ -98,7 +98,7 @@ export class InputProcessingConfiguration {
 }
 
 export class JSONMappingParameters {
-    RecordRowPath: Value<string>
+    RecordRowPath!: Value<string>
 
     constructor(properties: JSONMappingParameters) {
         Object.assign(this, properties)
@@ -106,8 +106,8 @@ export class JSONMappingParameters {
 }
 
 export class InputLambdaProcessor {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: InputLambdaProcessor) {
         Object.assign(this, properties)

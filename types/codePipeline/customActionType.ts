@@ -15,8 +15,8 @@ export class Settings {
 }
 
 export class ArtifactDetails {
-    MaximumCount: Value<number>
-    MinimumCount: Value<number>
+    MaximumCount!: Value<number>
+    MinimumCount!: Value<number>
 
     constructor(properties: ArtifactDetails) {
         Object.assign(this, properties)
@@ -25,11 +25,11 @@ export class ArtifactDetails {
 
 export class ConfigurationProperties {
     Description?: Value<string>
-    Key: Value<boolean>
-    Name: Value<string>
+    Key!: Value<boolean>
+    Name!: Value<string>
     Queryable?: Value<boolean>
-    Required: Value<boolean>
-    Secret: Value<boolean>
+    Required!: Value<boolean>
+    Secret!: Value<boolean>
     Type?: Value<string>
 
     constructor(properties: ConfigurationProperties) {

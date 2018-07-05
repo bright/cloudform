@@ -4,7 +4,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class BucketEncryption {
-    ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>
+    ServerSideEncryptionConfiguration!: List<ServerSideEncryptionRule>
 
     constructor(properties: BucketEncryption) {
         Object.assign(this, properties)
@@ -12,7 +12,7 @@ export class BucketEncryption {
 }
 
 export class NotificationFilter {
-    S3Key: S3KeyFilter
+    S3Key!: S3KeyFilter
 
     constructor(properties: NotificationFilter) {
         Object.assign(this, properties)
@@ -29,7 +29,7 @@ export class RoutingRuleCondition {
 }
 
 export class LifecycleConfiguration {
-    Rules: List<Rule>
+    Rules!: List<Rule>
 
     constructor(properties: LifecycleConfiguration) {
         Object.assign(this, properties)
@@ -37,9 +37,9 @@ export class LifecycleConfiguration {
 }
 
 export class LambdaConfiguration {
-    Event: Value<string>
+    Event!: Value<string>
     Filter?: NotificationFilter
-    Function: Value<string>
+    Function!: Value<string>
 
     constructor(properties: LambdaConfiguration) {
         Object.assign(this, properties)
@@ -47,11 +47,11 @@ export class LambdaConfiguration {
 }
 
 export class ReplicationRule {
-    Destination: ReplicationDestination
+    Destination!: ReplicationDestination
     Id?: Value<string>
-    Prefix: Value<string>
+    Prefix!: Value<string>
     SourceSelectionCriteria?: SourceSelectionCriteria
-    Status: Value<string>
+    Status!: Value<string>
 
     constructor(properties: ReplicationRule) {
         Object.assign(this, properties)
@@ -60,8 +60,8 @@ export class ReplicationRule {
 
 export class CorsRule {
     AllowedHeaders?: List<Value<string>>
-    AllowedMethods: List<Value<string>>
-    AllowedOrigins: List<Value<string>>
+    AllowedMethods!: List<Value<string>>
+    AllowedOrigins!: List<Value<string>>
     ExposedHeaders?: List<Value<string>>
     Id?: Value<string>
     MaxAge?: Value<number>
@@ -73,8 +73,8 @@ export class CorsRule {
 
 export class Destination {
     BucketAccountId?: Value<string>
-    BucketArn: Value<string>
-    Format: Value<string>
+    BucketArn!: Value<string>
+    Format!: Value<string>
     Prefix?: Value<string>
 
     constructor(properties: Destination) {
@@ -91,9 +91,9 @@ export class ServerSideEncryptionRule {
 }
 
 export class AnalyticsConfiguration {
-    Id: Value<string>
+    Id!: Value<string>
     Prefix?: Value<string>
-    StorageClassAnalysis: StorageClassAnalysis
+    StorageClassAnalysis!: StorageClassAnalysis
     TagFilters?: List<TagFilter>
 
     constructor(properties: AnalyticsConfiguration) {
@@ -102,7 +102,7 @@ export class AnalyticsConfiguration {
 }
 
 export class SourceSelectionCriteria {
-    SseKmsEncryptedObjects: SseKmsEncryptedObjects
+    SseKmsEncryptedObjects!: SseKmsEncryptedObjects
 
     constructor(properties: SourceSelectionCriteria) {
         Object.assign(this, properties)
@@ -127,7 +127,7 @@ export class StorageClassAnalysis {
 }
 
 export class RoutingRule {
-    RedirectRule: RedirectRule
+    RedirectRule!: RedirectRule
     RoutingRuleCondition?: RoutingRuleCondition
 
     constructor(properties: RoutingRule) {
@@ -136,7 +136,7 @@ export class RoutingRule {
 }
 
 export class AccessControlTranslation {
-    Owner: Value<string>
+    Owner!: Value<string>
 
     constructor(properties: AccessControlTranslation) {
         Object.assign(this, properties)
@@ -144,7 +144,7 @@ export class AccessControlTranslation {
 }
 
 export class VersioningConfiguration {
-    Status: Value<string>
+    Status!: Value<string>
 
     constructor(properties: VersioningConfiguration) {
         Object.assign(this, properties)
@@ -152,7 +152,7 @@ export class VersioningConfiguration {
 }
 
 export class EncryptionConfiguration {
-    ReplicaKmsKeyID: Value<string>
+    ReplicaKmsKeyID!: Value<string>
 
     constructor(properties: EncryptionConfiguration) {
         Object.assign(this, properties)
@@ -171,7 +171,7 @@ export class NotificationConfiguration {
 
 export class ServerSideEncryptionByDefault {
     KMSMasterKeyID?: Value<string>
-    SSEAlgorithm: Value<string>
+    SSEAlgorithm!: Value<string>
 
     constructor(properties: ServerSideEncryptionByDefault) {
         Object.assign(this, properties)
@@ -191,7 +191,7 @@ export class RedirectRule {
 }
 
 export class RedirectAllRequestsTo {
-    HostName: Value<string>
+    HostName!: Value<string>
     Protocol?: Value<string>
 
     constructor(properties: RedirectAllRequestsTo) {
@@ -200,7 +200,7 @@ export class RedirectAllRequestsTo {
 }
 
 export class S3KeyFilter {
-    Rules: List<FilterRule>
+    Rules!: List<FilterRule>
 
     constructor(properties: S3KeyFilter) {
         Object.assign(this, properties)
@@ -208,13 +208,13 @@ export class S3KeyFilter {
 }
 
 export class InventoryConfiguration {
-    Destination: Destination
-    Enabled: Value<boolean>
-    Id: Value<string>
-    IncludedObjectVersions: Value<string>
+    Destination!: Destination
+    Enabled!: Value<boolean>
+    Id!: Value<string>
+    IncludedObjectVersions!: Value<string>
     OptionalFields?: List<Value<string>>
     Prefix?: Value<string>
-    ScheduleFrequency: Value<string>
+    ScheduleFrequency!: Value<string>
 
     constructor(properties: InventoryConfiguration) {
         Object.assign(this, properties)
@@ -233,8 +233,8 @@ export class WebsiteConfiguration {
 }
 
 export class ReplicationConfiguration {
-    Role: Value<string>
-    Rules: List<ReplicationRule>
+    Role!: Value<string>
+    Rules!: List<ReplicationRule>
 
     constructor(properties: ReplicationConfiguration) {
         Object.assign(this, properties)
@@ -242,7 +242,7 @@ export class ReplicationConfiguration {
 }
 
 export class SseKmsEncryptedObjects {
-    Status: Value<string>
+    Status!: Value<string>
 
     constructor(properties: SseKmsEncryptedObjects) {
         Object.assign(this, properties)
@@ -258,7 +258,7 @@ export class Rule {
     NoncurrentVersionTransition?: NoncurrentVersionTransition
     NoncurrentVersionTransitions?: List<NoncurrentVersionTransition>
     Prefix?: Value<string>
-    Status: Value<string>
+    Status!: Value<string>
     TagFilters?: List<TagFilter>
     Transition?: Transition
     Transitions?: List<Transition>
@@ -269,9 +269,9 @@ export class Rule {
 }
 
 export class QueueConfiguration {
-    Event: Value<string>
+    Event!: Value<string>
     Filter?: NotificationFilter
-    Queue: Value<string>
+    Queue!: Value<string>
 
     constructor(properties: QueueConfiguration) {
         Object.assign(this, properties)
@@ -279,9 +279,9 @@ export class QueueConfiguration {
 }
 
 export class TopicConfiguration {
-    Event: Value<string>
+    Event!: Value<string>
     Filter?: NotificationFilter
-    Topic: Value<string>
+    Topic!: Value<string>
 
     constructor(properties: TopicConfiguration) {
         Object.assign(this, properties)
@@ -289,7 +289,7 @@ export class TopicConfiguration {
 }
 
 export class MetricsConfiguration {
-    Id: Value<string>
+    Id!: Value<string>
     Prefix?: Value<string>
     TagFilters?: List<TagFilter>
 
@@ -299,8 +299,8 @@ export class MetricsConfiguration {
 }
 
 export class TagFilter {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: TagFilter) {
         Object.assign(this, properties)
@@ -308,7 +308,7 @@ export class TagFilter {
 }
 
 export class Transition {
-    StorageClass: Value<string>
+    StorageClass!: Value<string>
     TransitionDate?: Value<string>
     TransitionInDays?: Value<number>
 
@@ -318,8 +318,8 @@ export class Transition {
 }
 
 export class DataExport {
-    Destination: Destination
-    OutputSchemaVersion: Value<string>
+    Destination!: Destination
+    OutputSchemaVersion!: Value<string>
 
     constructor(properties: DataExport) {
         Object.assign(this, properties)
@@ -327,7 +327,7 @@ export class DataExport {
 }
 
 export class CorsConfiguration {
-    CorsRules: List<CorsRule>
+    CorsRules!: List<CorsRule>
 
     constructor(properties: CorsConfiguration) {
         Object.assign(this, properties)
@@ -337,7 +337,7 @@ export class CorsConfiguration {
 export class ReplicationDestination {
     AccessControlTranslation?: AccessControlTranslation
     Account?: Value<string>
-    Bucket: Value<string>
+    Bucket!: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
     StorageClass?: Value<string>
 
@@ -347,7 +347,7 @@ export class ReplicationDestination {
 }
 
 export class AccelerateConfiguration {
-    AccelerationStatus: Value<string>
+    AccelerationStatus!: Value<string>
 
     constructor(properties: AccelerateConfiguration) {
         Object.assign(this, properties)
@@ -355,8 +355,8 @@ export class AccelerateConfiguration {
 }
 
 export class NoncurrentVersionTransition {
-    StorageClass: Value<string>
-    TransitionInDays: Value<number>
+    StorageClass!: Value<string>
+    TransitionInDays!: Value<number>
 
     constructor(properties: NoncurrentVersionTransition) {
         Object.assign(this, properties)
@@ -364,7 +364,7 @@ export class NoncurrentVersionTransition {
 }
 
 export class AbortIncompleteMultipartUpload {
-    DaysAfterInitiation: Value<number>
+    DaysAfterInitiation!: Value<number>
 
     constructor(properties: AbortIncompleteMultipartUpload) {
         Object.assign(this, properties)
@@ -372,8 +372,8 @@ export class AbortIncompleteMultipartUpload {
 }
 
 export class FilterRule {
-    Name: Value<string>
-    Value: Value<string>
+    Name!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: FilterRule) {
         Object.assign(this, properties)

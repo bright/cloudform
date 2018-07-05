@@ -14,7 +14,7 @@ export class OptionSetting {
 
 export class OptionConfiguration {
     DBSecurityGroupMemberships?: List<Value<string>>
-    OptionName: Value<string>
+    OptionName!: Value<string>
     OptionSettings?: OptionSetting
     OptionVersion?: Value<string>
     Port?: Value<number>

@@ -4,11 +4,11 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ByteMatchTuple {
-    FieldToMatch: FieldToMatch
-    PositionalConstraint: Value<string>
+    FieldToMatch!: FieldToMatch
+    PositionalConstraint!: Value<string>
     TargetString?: Value<string>
     TargetStringBase64?: Value<string>
-    TextTransformation: Value<string>
+    TextTransformation!: Value<string>
 
     constructor(properties: ByteMatchTuple) {
         Object.assign(this, properties)
@@ -17,7 +17,7 @@ export class ByteMatchTuple {
 
 export class FieldToMatch {
     Data?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)

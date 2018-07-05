@@ -8,7 +8,7 @@ export class Ingress {
     CidrIpv6?: Value<string>
     Description?: Value<string>
     FromPort?: Value<number>
-    IpProtocol: Value<string>
+    IpProtocol!: Value<string>
     SourceSecurityGroupId?: Value<string>
     SourceSecurityGroupName?: Value<string>
     SourceSecurityGroupOwnerId?: Value<string>
@@ -26,7 +26,7 @@ export class Egress {
     DestinationPrefixListId?: Value<string>
     DestinationSecurityGroupId?: Value<string>
     FromPort?: Value<number>
-    IpProtocol: Value<string>
+    IpProtocol!: Value<string>
     ToPort?: Value<number>
 
     constructor(properties: Egress) {

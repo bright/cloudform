@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class BlockDeviceMapping {
-    DeviceName: Value<string>
+    DeviceName!: Value<string>
     Ebs?: BlockDevice
     NoDevice?: Value<boolean>
     VirtualName?: Value<string>

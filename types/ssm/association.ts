@@ -12,8 +12,8 @@ export class InstanceAssociationOutputLocation {
 }
 
 export class Target {
-    Key: Value<string>
-    Values: List<Value<string>>
+    Key!: Value<string>
+    Values!: List<Value<string>>
 
     constructor(properties: Target) {
         Object.assign(this, properties)
@@ -21,7 +21,7 @@ export class Target {
 }
 
 export class ParameterValues {
-    ParameterValues: List<Value<string>>
+    ParameterValues!: List<Value<string>>
 
     constructor(properties: ParameterValues) {
         Object.assign(this, properties)

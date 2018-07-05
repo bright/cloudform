@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Action {
-    TargetGroupArn: Value<string>
-    Type: Value<string>
+    TargetGroupArn!: Value<string>
+    Type!: Value<string>
 
     constructor(properties: Action) {
         Object.assign(this, properties)

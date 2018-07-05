@@ -4,7 +4,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class TrustedSigners {
-    Enabled: Value<boolean>
+    Enabled!: Value<boolean>
     AwsAccountNumbers?: List<Value<string>>
 
     constructor(properties: TrustedSigners) {
@@ -13,8 +13,8 @@ export class TrustedSigners {
 }
 
 export class S3Origin {
-    DomainName: Value<string>
-    OriginAccessIdentity: Value<string>
+    DomainName!: Value<string>
+    OriginAccessIdentity!: Value<string>
 
     constructor(properties: S3Origin) {
         Object.assign(this, properties)
@@ -22,9 +22,9 @@ export class S3Origin {
 }
 
 export class Logging {
-    Bucket: Value<string>
-    Enabled: Value<boolean>
-    Prefix: Value<string>
+    Bucket!: Value<string>
+    Enabled!: Value<boolean>
+    Prefix!: Value<string>
 
     constructor(properties: Logging) {
         Object.assign(this, properties)
@@ -33,12 +33,12 @@ export class Logging {
 
 export class StreamingDistributionConfig {
     Logging?: Logging
-    Comment: Value<string>
+    Comment!: Value<string>
     PriceClass?: Value<string>
-    S3Origin: S3Origin
-    Enabled: Value<boolean>
+    S3Origin!: S3Origin
+    Enabled!: Value<boolean>
     Aliases?: List<Value<string>>
-    TrustedSigners: TrustedSigners
+    TrustedSigners!: TrustedSigners
 
     constructor(properties: StreamingDistributionConfig) {
         Object.assign(this, properties)

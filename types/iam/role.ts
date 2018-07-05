@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Policy {
-    PolicyDocument: any
-    PolicyName: Value<string>
+    PolicyDocument!: any
+    PolicyName!: Value<string>
 
     constructor(properties: Policy) {
         Object.assign(this, properties)

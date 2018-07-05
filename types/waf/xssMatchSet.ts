@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class FieldToMatch {
     Data?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class FieldToMatch {
 }
 
 export class XssMatchTuple {
-    FieldToMatch: FieldToMatch
-    TextTransformation: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformation!: Value<string>
 
     constructor(properties: XssMatchTuple) {
         Object.assign(this, properties)

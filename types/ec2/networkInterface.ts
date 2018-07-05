@@ -4,7 +4,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class InstanceIpv6Address {
-    Ipv6Address: Value<string>
+    Ipv6Address!: Value<string>
 
     constructor(properties: InstanceIpv6Address) {
         Object.assign(this, properties)
@@ -12,8 +12,8 @@ export class InstanceIpv6Address {
 }
 
 export class PrivateIpAddressSpecification {
-    Primary: Value<boolean>
-    PrivateIpAddress: Value<string>
+    Primary!: Value<boolean>
+    PrivateIpAddress!: Value<string>
 
     constructor(properties: PrivateIpAddressSpecification) {
         Object.assign(this, properties)

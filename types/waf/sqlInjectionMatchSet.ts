@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SqlInjectionMatchTuple {
-    FieldToMatch: FieldToMatch
-    TextTransformation: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformation!: Value<string>
 
     constructor(properties: SqlInjectionMatchTuple) {
         Object.assign(this, properties)
@@ -14,7 +14,7 @@ export class SqlInjectionMatchTuple {
 
 export class FieldToMatch {
     Data?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)

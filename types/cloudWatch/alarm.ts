@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Dimension {
-    Name: Value<string>
-    Value: Value<string>
+    Name!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: Dimension) {
         Object.assign(this, properties)

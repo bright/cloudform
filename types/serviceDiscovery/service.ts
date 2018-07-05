@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DnsConfig {
-    DnsRecords: List<DnsRecord>
-    NamespaceId: Value<string>
+    DnsRecords!: List<DnsRecord>
+    NamespaceId!: Value<string>
 
     constructor(properties: DnsConfig) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class DnsConfig {
 }
 
 export class DnsRecord {
-    Type: Value<string>
-    TTL: Value<string>
+    Type!: Value<string>
+    TTL!: Value<string>
 
     constructor(properties: DnsRecord) {
         Object.assign(this, properties)
@@ -22,7 +22,7 @@ export class DnsRecord {
 }
 
 export class HealthCheckConfig {
-    Type: Value<string>
+    Type!: Value<string>
     ResourcePath?: Value<string>
     FailureThreshold?: Value<number>
 

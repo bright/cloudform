@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class S3ReferenceDataSource {
-    BucketARN: Value<string>
-    FileKey: Value<string>
-    ReferenceRoleARN: Value<string>
+    BucketARN!: Value<string>
+    FileKey!: Value<string>
+    ReferenceRoleARN!: Value<string>
 
     constructor(properties: S3ReferenceDataSource) {
         Object.assign(this, properties)
@@ -23,7 +23,7 @@ export class MappingParameters {
 }
 
 export class JSONMappingParameters {
-    RecordRowPath: Value<string>
+    RecordRowPath!: Value<string>
 
     constructor(properties: JSONMappingParameters) {
         Object.assign(this, properties)
@@ -32,7 +32,7 @@ export class JSONMappingParameters {
 
 export class RecordFormat {
     MappingParameters?: MappingParameters
-    RecordFormatType: Value<string>
+    RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
         Object.assign(this, properties)
@@ -41,8 +41,8 @@ export class RecordFormat {
 
 export class RecordColumn {
     Mapping?: Value<string>
-    SqlType: Value<string>
-    Name: Value<string>
+    SqlType!: Value<string>
+    Name!: Value<string>
 
     constructor(properties: RecordColumn) {
         Object.assign(this, properties)
@@ -50,8 +50,8 @@ export class RecordColumn {
 }
 
 export class CSVMappingParameters {
-    RecordRowDelimiter: Value<string>
-    RecordColumnDelimiter: Value<string>
+    RecordRowDelimiter!: Value<string>
+    RecordColumnDelimiter!: Value<string>
 
     constructor(properties: CSVMappingParameters) {
         Object.assign(this, properties)
@@ -60,8 +60,8 @@ export class CSVMappingParameters {
 
 export class ReferenceSchema {
     RecordEncoding?: Value<string>
-    RecordColumns: List<RecordColumn>
-    RecordFormat: RecordFormat
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: ReferenceSchema) {
         Object.assign(this, properties)
@@ -69,7 +69,7 @@ export class ReferenceSchema {
 }
 
 export class ReferenceDataSource {
-    ReferenceSchema: ReferenceSchema
+    ReferenceSchema!: ReferenceSchema
     TableName?: Value<string>
     S3ReferenceDataSource?: S3ReferenceDataSource
 

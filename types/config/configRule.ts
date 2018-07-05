@@ -15,9 +15,9 @@ export class Scope {
 }
 
 export class Source {
-    Owner: Value<string>
+    Owner!: Value<string>
     SourceDetails?: List<SourceDetail>
-    SourceIdentifier: Value<string>
+    SourceIdentifier!: Value<string>
 
     constructor(properties: Source) {
         Object.assign(this, properties)
@@ -25,9 +25,9 @@ export class Source {
 }
 
 export class SourceDetail {
-    EventSource: Value<string>
+    EventSource!: Value<string>
     MaximumExecutionFrequency?: Value<string>
-    MessageType: Value<string>
+    MessageType!: Value<string>
 
     constructor(properties: SourceDetail) {
         Object.assign(this, properties)

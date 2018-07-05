@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class HadoopJarStepConfig {
     Args?: List<Value<string>>
-    Jar: Value<string>
+    Jar!: Value<string>
     MainClass?: Value<string>
     StepProperties?: List<KeyValue>
 

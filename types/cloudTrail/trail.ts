@@ -14,7 +14,7 @@ export class EventSelector {
 }
 
 export class DataResource {
-    Type: Value<string>
+    Type!: Value<string>
     Values?: List<Value<string>>
 
     constructor(properties: DataResource) {

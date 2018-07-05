@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class MinimumHealthyHosts {
-    Type: Value<string>
-    Value: Value<number>
+    Type!: Value<string>
+    Value!: Value<number>
 
     constructor(properties: MinimumHealthyHosts) {
         Object.assign(this, properties)

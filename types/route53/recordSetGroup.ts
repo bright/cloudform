@@ -11,12 +11,12 @@ export class RecordSet {
     HealthCheckId?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
-    Name: Value<string>
+    Name!: Value<string>
     Region?: Value<string>
     ResourceRecords?: List<Value<string>>
     SetIdentifier?: Value<string>
     TTL?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
     Weight?: Value<number>
 
     constructor(properties: RecordSet) {
@@ -35,9 +35,9 @@ export class GeoLocation {
 }
 
 export class AliasTarget {
-    DNSName: Value<string>
+    DNSName!: Value<string>
     EvaluateTargetHealth?: Value<boolean>
-    HostedZoneId: Value<string>
+    HostedZoneId!: Value<string>
 
     constructor(properties: AliasTarget) {
         Object.assign(this, properties)

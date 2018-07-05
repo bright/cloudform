@@ -5,9 +5,9 @@ import {Value, List} from '../dataTypes'
 
 export class MetricTransformation {
     DefaultValue?: Value<number>
-    MetricName: Value<string>
-    MetricNamespace: Value<string>
-    MetricValue: Value<string>
+    MetricName!: Value<string>
+    MetricNamespace!: Value<string>
+    MetricValue!: Value<string>
 
     constructor(properties: MetricTransformation) {
         Object.assign(this, properties)

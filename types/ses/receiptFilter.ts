@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Filter {
-    IpFilter: IpFilter
+    IpFilter!: IpFilter
     Name?: Value<string>
 
     constructor(properties: Filter) {
@@ -13,8 +13,8 @@ export class Filter {
 }
 
 export class IpFilter {
-    Policy: Value<string>
-    Cidr: Value<string>
+    Policy!: Value<string>
+    Cidr!: Value<string>
 
     constructor(properties: IpFilter) {
         Object.assign(this, properties)

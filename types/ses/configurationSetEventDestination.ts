@@ -6,7 +6,7 @@ import {Value, List} from '../dataTypes'
 export class EventDestination {
     CloudWatchDestination?: CloudWatchDestination
     Enabled?: Value<boolean>
-    MatchingEventTypes: List<Value<string>>
+    MatchingEventTypes!: List<Value<string>>
     Name?: Value<string>
     KinesisFirehoseDestination?: KinesisFirehoseDestination
 
@@ -24,8 +24,8 @@ export class CloudWatchDestination {
 }
 
 export class KinesisFirehoseDestination {
-    IAMRoleARN: Value<string>
-    DeliveryStreamARN: Value<string>
+    IAMRoleARN!: Value<string>
+    DeliveryStreamARN!: Value<string>
 
     constructor(properties: KinesisFirehoseDestination) {
         Object.assign(this, properties)
@@ -33,9 +33,9 @@ export class KinesisFirehoseDestination {
 }
 
 export class DimensionConfiguration {
-    DimensionValueSource: Value<string>
-    DefaultDimensionValue: Value<string>
-    DimensionName: Value<string>
+    DimensionValueSource!: Value<string>
+    DefaultDimensionValue!: Value<string>
+    DimensionName!: Value<string>
 
     constructor(properties: DimensionConfiguration) {
         Object.assign(this, properties)

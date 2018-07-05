@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class OptionSetting {
-    Namespace: Value<string>
-    OptionName: Value<string>
+    Namespace!: Value<string>
+    OptionName!: Value<string>
     ResourceName?: Value<string>
     Value?: Value<string>
 

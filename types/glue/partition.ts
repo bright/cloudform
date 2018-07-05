@@ -33,7 +33,7 @@ export class StorageDescriptor {
 }
 
 export class Order {
-    Column: Value<string>
+    Column!: Value<string>
     SortOrder?: Value<number>
 
     constructor(properties: Order) {
@@ -54,7 +54,7 @@ export class SkewedInfo {
 export class Column {
     Comment?: Value<string>
     Type?: Value<string>
-    Name: Value<string>
+    Name!: Value<string>
 
     constructor(properties: Column) {
         Object.assign(this, properties)
@@ -64,7 +64,7 @@ export class Column {
 export class PartitionInput {
     Parameters?: any
     StorageDescriptor?: StorageDescriptor
-    Values: List<Value<string>>
+    Values!: List<Value<string>>
 
     constructor(properties: PartitionInput) {
         Object.assign(this, properties)

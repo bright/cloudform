@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SourceConfiguration {
-    ApplicationName: Value<string>
-    TemplateName: Value<string>
+    ApplicationName!: Value<string>
+    TemplateName!: Value<string>
 
     constructor(properties: SourceConfiguration) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class SourceConfiguration {
 }
 
 export class ConfigurationOptionSetting {
-    Namespace: Value<string>
-    OptionName: Value<string>
+    Namespace!: Value<string>
+    OptionName!: Value<string>
     ResourceName?: Value<string>
     Value?: Value<string>
 

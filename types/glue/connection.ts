@@ -5,10 +5,10 @@ import {Value, List} from '../dataTypes'
 
 export class ConnectionInput {
     Description?: Value<string>
-    ConnectionType: Value<string>
+    ConnectionType!: Value<string>
     MatchCriteria?: List<Value<string>>
     PhysicalConnectionRequirements?: PhysicalConnectionRequirements
-    ConnectionProperties: any
+    ConnectionProperties!: any
     Name?: Value<string>
 
     constructor(properties: ConnectionInput) {

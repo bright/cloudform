@@ -23,10 +23,10 @@ export class RevisionLocation {
 }
 
 export class S3Location {
-    Bucket: Value<string>
+    Bucket!: Value<string>
     BundleType?: Value<string>
     ETag?: Value<string>
-    Key: Value<string>
+    Key!: Value<string>
     Version?: Value<string>
 
     constructor(properties: S3Location) {
@@ -55,8 +55,8 @@ export class TagFilter {
 }
 
 export class GitHubLocation {
-    CommitId: Value<string>
-    Repository: Value<string>
+    CommitId!: Value<string>
+    Repository!: Value<string>
 
     constructor(properties: GitHubLocation) {
         Object.assign(this, properties)
@@ -128,7 +128,7 @@ export class AutoRollbackConfiguration {
 export class Deployment {
     Description?: Value<string>
     IgnoreApplicationStopFailures?: Value<boolean>
-    Revision: RevisionLocation
+    Revision!: RevisionLocation
 
     constructor(properties: Deployment) {
         Object.assign(this, properties)

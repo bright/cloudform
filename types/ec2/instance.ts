@@ -4,7 +4,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ElasticGpuSpecification {
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: ElasticGpuSpecification) {
         Object.assign(this, properties)
@@ -15,7 +15,7 @@ export class NetworkInterface {
     AssociatePublicIpAddress?: Value<boolean>
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
-    DeviceIndex: Value<string>
+    DeviceIndex!: Value<string>
     GroupSet?: List<Value<string>>
     Ipv6AddressCount?: Value<number>
     Ipv6Addresses?: List<InstanceIpv6Address>
@@ -31,7 +31,7 @@ export class NetworkInterface {
 }
 
 export class InstanceIpv6Address {
-    Ipv6Address: Value<string>
+    Ipv6Address!: Value<string>
 
     constructor(properties: InstanceIpv6Address) {
         Object.assign(this, properties)
@@ -39,8 +39,8 @@ export class InstanceIpv6Address {
 }
 
 export class Volume {
-    Device: Value<string>
-    VolumeId: Value<string>
+    Device!: Value<string>
+    VolumeId!: Value<string>
 
     constructor(properties: Volume) {
         Object.assign(this, properties)
@@ -48,8 +48,8 @@ export class Volume {
 }
 
 export class AssociationParameter {
-    Key: Value<string>
-    Value: List<Value<string>>
+    Key!: Value<string>
+    Value!: List<Value<string>>
 
     constructor(properties: AssociationParameter) {
         Object.assign(this, properties)
@@ -59,7 +59,7 @@ export class AssociationParameter {
 export class LaunchTemplateSpecification {
     LaunchTemplateId?: Value<string>
     LaunchTemplateName?: Value<string>
-    Version: Value<string>
+    Version!: Value<string>
 
     constructor(properties: LaunchTemplateSpecification) {
         Object.assign(this, properties)
@@ -89,7 +89,7 @@ export class NoDevice {
 
 export class SsmAssociation {
     AssociationParameters?: List<AssociationParameter>
-    DocumentName: Value<string>
+    DocumentName!: Value<string>
 
     constructor(properties: SsmAssociation) {
         Object.assign(this, properties)
@@ -105,7 +105,7 @@ export class CreditSpecification {
 }
 
 export class BlockDeviceMapping {
-    DeviceName: Value<string>
+    DeviceName!: Value<string>
     Ebs?: Ebs
     NoDevice?: NoDevice
     VirtualName?: Value<string>
@@ -116,8 +116,8 @@ export class BlockDeviceMapping {
 }
 
 export class PrivateIpAddressSpecification {
-    Primary: Value<boolean>
-    PrivateIpAddress: Value<string>
+    Primary!: Value<boolean>
+    PrivateIpAddress!: Value<string>
 
     constructor(properties: PrivateIpAddressSpecification) {
         Object.assign(this, properties)

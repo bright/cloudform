@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class Artifacts {
     Path?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
     Packaging?: Value<string>
     Location?: Value<string>
     Name?: Value<string>
@@ -17,7 +17,7 @@ export class Artifacts {
 }
 
 export class SourceAuth {
-    Type: Value<string>
+    Type!: Value<string>
     Resource?: Value<string>
 
     constructor(properties: SourceAuth) {
@@ -26,11 +26,11 @@ export class SourceAuth {
 }
 
 export class Environment {
-    Type: Value<string>
+    Type!: Value<string>
     EnvironmentVariables?: List<EnvironmentVariable>
     PrivilegedMode?: Value<boolean>
-    Image: Value<string>
-    ComputeType: Value<string>
+    Image!: Value<string>
+    ComputeType!: Value<string>
 
     constructor(properties: Environment) {
         Object.assign(this, properties)
@@ -38,7 +38,7 @@ export class Environment {
 }
 
 export class ProjectCache {
-    Type: Value<string>
+    Type!: Value<string>
     Location?: Value<string>
 
     constructor(properties: ProjectCache) {
@@ -47,9 +47,9 @@ export class ProjectCache {
 }
 
 export class VpcConfig {
-    Subnets: List<Value<string>>
-    VpcId: Value<string>
-    SecurityGroupIds: List<Value<string>>
+    Subnets!: List<Value<string>>
+    VpcId!: Value<string>
+    SecurityGroupIds!: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -66,8 +66,8 @@ export class ProjectTriggers {
 
 export class EnvironmentVariable {
     Type?: Value<string>
-    Value: Value<string>
-    Name: Value<string>
+    Value!: Value<string>
+    Name!: Value<string>
 
     constructor(properties: EnvironmentVariable) {
         Object.assign(this, properties)
@@ -75,7 +75,7 @@ export class EnvironmentVariable {
 }
 
 export class Source {
-    Type: Value<string>
+    Type!: Value<string>
     Auth?: SourceAuth
     BuildSpec?: Value<string>
     GitCloneDepth?: Value<number>

@@ -4,11 +4,11 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class HealthCheck {
-    HealthyThreshold: Value<string>
-    Interval: Value<string>
-    Target: Value<string>
-    Timeout: Value<string>
-    UnhealthyThreshold: Value<string>
+    HealthyThreshold!: Value<string>
+    Interval!: Value<string>
+    Target!: Value<string>
+    Timeout!: Value<string>
+    UnhealthyThreshold!: Value<string>
 
     constructor(properties: HealthCheck) {
         Object.assign(this, properties)
@@ -17,8 +17,8 @@ export class HealthCheck {
 
 export class AccessLoggingPolicy {
     EmitInterval?: Value<number>
-    Enabled: Value<boolean>
-    S3BucketName: Value<string>
+    Enabled!: Value<boolean>
+    S3BucketName!: Value<string>
     S3BucketPrefix?: Value<string>
 
     constructor(properties: AccessLoggingPolicy) {
@@ -27,7 +27,7 @@ export class AccessLoggingPolicy {
 }
 
 export class ConnectionSettings {
-    IdleTimeout: Value<number>
+    IdleTimeout!: Value<number>
 
     constructor(properties: ConnectionSettings) {
         Object.assign(this, properties)
@@ -44,7 +44,7 @@ export class LBCookieStickinessPolicy {
 }
 
 export class ConnectionDrainingPolicy {
-    Enabled: Value<boolean>
+    Enabled!: Value<boolean>
     Timeout?: Value<number>
 
     constructor(properties: ConnectionDrainingPolicy) {
@@ -53,11 +53,11 @@ export class ConnectionDrainingPolicy {
 }
 
 export class Listeners {
-    InstancePort: Value<string>
+    InstancePort!: Value<string>
     InstanceProtocol?: Value<string>
-    LoadBalancerPort: Value<string>
+    LoadBalancerPort!: Value<string>
     PolicyNames?: List<Value<string>>
-    Protocol: Value<string>
+    Protocol!: Value<string>
     SSLCertificateId?: Value<string>
 
     constructor(properties: Listeners) {
@@ -66,11 +66,11 @@ export class Listeners {
 }
 
 export class Policies {
-    Attributes: List<any>
+    Attributes!: List<any>
     InstancePorts?: List<Value<string>>
     LoadBalancerPorts?: List<Value<string>>
-    PolicyName: Value<string>
-    PolicyType: Value<string>
+    PolicyName!: Value<string>
+    PolicyType!: Value<string>
 
     constructor(properties: Policies) {
         Object.assign(this, properties)
@@ -78,8 +78,8 @@ export class Policies {
 }
 
 export class AppCookieStickinessPolicy {
-    CookieName: Value<string>
-    PolicyName: Value<string>
+    CookieName!: Value<string>
+    PolicyName!: Value<string>
 
     constructor(properties: AppCookieStickinessPolicy) {
         Object.assign(this, properties)

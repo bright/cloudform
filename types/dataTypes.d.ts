@@ -2,7 +2,7 @@ declare enum DataType {
     String = "String",
     Number = "Number",
     ListOfNumbers = "List<Number>",
-    CommaDelimitedList = "CommaDelimitedList",
+    CommaDelimitedList = "CommaDelimitedList"
 }
 export default DataType;
 export declare class IntrinsicFunction {

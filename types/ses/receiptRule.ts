@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class BounceAction {
-    Sender: Value<string>
-    SmtpReplyCode: Value<string>
-    Message: Value<string>
+    Sender!: Value<string>
+    SmtpReplyCode!: Value<string>
+    Message!: Value<string>
     TopicArn?: Value<string>
     StatusCode?: Value<string>
 
@@ -17,7 +17,7 @@ export class BounceAction {
 
 export class WorkmailAction {
     TopicArn?: Value<string>
-    OrganizationArn: Value<string>
+    OrganizationArn!: Value<string>
 
     constructor(properties: WorkmailAction) {
         Object.assign(this, properties)
@@ -25,7 +25,7 @@ export class WorkmailAction {
 }
 
 export class StopAction {
-    Scope: Value<string>
+    Scope!: Value<string>
     TopicArn?: Value<string>
 
     constructor(properties: StopAction) {
@@ -70,7 +70,7 @@ export class Rule {
 }
 
 export class LambdaAction {
-    FunctionArn: Value<string>
+    FunctionArn!: Value<string>
     TopicArn?: Value<string>
     InvocationType?: Value<string>
 
@@ -80,7 +80,7 @@ export class LambdaAction {
 }
 
 export class S3Action {
-    BucketName: Value<string>
+    BucketName!: Value<string>
     KmsKeyArn?: Value<string>
     TopicArn?: Value<string>
     ObjectKeyPrefix?: Value<string>
@@ -91,8 +91,8 @@ export class S3Action {
 }
 
 export class AddHeaderAction {
-    HeaderValue: Value<string>
-    HeaderName: Value<string>
+    HeaderValue!: Value<string>
+    HeaderName!: Value<string>
 
     constructor(properties: AddHeaderAction) {
         Object.assign(this, properties)

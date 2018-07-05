@@ -60,8 +60,8 @@ export class SerdeInfo {
 }
 
 export class Order {
-    Column: Value<string>
-    SortOrder: Value<number>
+    Column!: Value<string>
+    SortOrder!: Value<number>
 
     constructor(properties: Order) {
         Object.assign(this, properties)
@@ -71,7 +71,7 @@ export class Order {
 export class Column {
     Comment?: Value<string>
     Type?: Value<string>
-    Name: Value<string>
+    Name!: Value<string>
 
     constructor(properties: Column) {
         Object.assign(this, properties)

@@ -39,7 +39,7 @@ export class SpotFleetTagSpecification {
 
 export class PrivateIpAddressSpecification {
     Primary?: Value<boolean>
-    PrivateIpAddress: Value<string>
+    PrivateIpAddress!: Value<string>
 
     constructor(properties: PrivateIpAddressSpecification) {
         Object.assign(this, properties)
@@ -50,8 +50,8 @@ export class SpotFleetLaunchSpecification {
     BlockDeviceMappings?: List<BlockDeviceMapping>
     EbsOptimized?: Value<boolean>
     IamInstanceProfile?: IamInstanceProfileSpecification
-    ImageId: Value<string>
-    InstanceType: Value<string>
+    ImageId!: Value<string>
+    InstanceType!: Value<string>
     KernelId?: Value<string>
     KeyName?: Value<string>
     Monitoring?: SpotFleetMonitoring
@@ -82,11 +82,11 @@ export class SpotPlacement {
 export class SpotFleetRequestConfigData {
     AllocationStrategy?: Value<string>
     ExcessCapacityTerminationPolicy?: Value<string>
-    IamFleetRole: Value<string>
+    IamFleetRole!: Value<string>
     LaunchSpecifications?: List<SpotFleetLaunchSpecification>
     ReplaceUnhealthyInstances?: Value<boolean>
     SpotPrice?: Value<string>
-    TargetCapacity: Value<number>
+    TargetCapacity!: Value<number>
     TerminateInstancesWithExpiration?: Value<boolean>
     Type?: Value<string>
     ValidFrom?: Value<string>
@@ -111,7 +111,7 @@ export class EbsBlockDevice {
 }
 
 export class InstanceIpv6Address {
-    Ipv6Address: Value<string>
+    Ipv6Address!: Value<string>
 
     constructor(properties: InstanceIpv6Address) {
         Object.assign(this, properties)
@@ -119,7 +119,7 @@ export class InstanceIpv6Address {
 }
 
 export class GroupIdentifier {
-    GroupId: Value<string>
+    GroupId!: Value<string>
 
     constructor(properties: GroupIdentifier) {
         Object.assign(this, properties)
@@ -135,7 +135,7 @@ export class SpotFleetMonitoring {
 }
 
 export class BlockDeviceMapping {
-    DeviceName: Value<string>
+    DeviceName!: Value<string>
     Ebs?: EbsBlockDevice
     NoDevice?: Value<string>
     VirtualName?: Value<string>

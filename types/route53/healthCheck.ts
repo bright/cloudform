@@ -19,7 +19,7 @@ export class HealthCheckConfig {
     RequestInterval?: Value<number>
     ResourcePath?: Value<string>
     SearchString?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: HealthCheckConfig) {
         Object.assign(this, properties)
@@ -27,8 +27,8 @@ export class HealthCheckConfig {
 }
 
 export class HealthCheckTag {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: HealthCheckTag) {
         Object.assign(this, properties)
@@ -36,8 +36,8 @@ export class HealthCheckTag {
 }
 
 export class AlarmIdentifier {
-    Name: Value<string>
-    Region: Value<string>
+    Name!: Value<string>
+    Region!: Value<string>
 
     constructor(properties: AlarmIdentifier) {
         Object.assign(this, properties)

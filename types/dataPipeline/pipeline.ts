@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ParameterAttribute {
-    Key: Value<string>
-    StringValue: Value<string>
+    Key!: Value<string>
+    StringValue!: Value<string>
 
     constructor(properties: ParameterAttribute) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class ParameterAttribute {
 }
 
 export class PipelineTag {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: PipelineTag) {
         Object.assign(this, properties)
@@ -22,8 +22,8 @@ export class PipelineTag {
 }
 
 export class ParameterObject {
-    Attributes: List<ParameterAttribute>
-    Id: Value<string>
+    Attributes!: List<ParameterAttribute>
+    Id!: Value<string>
 
     constructor(properties: ParameterObject) {
         Object.assign(this, properties)
@@ -31,9 +31,9 @@ export class ParameterObject {
 }
 
 export class PipelineObject {
-    Fields: List<Field>
-    Id: Value<string>
-    Name: Value<string>
+    Fields!: List<Field>
+    Id!: Value<string>
+    Name!: Value<string>
 
     constructor(properties: PipelineObject) {
         Object.assign(this, properties)
@@ -41,8 +41,8 @@ export class PipelineObject {
 }
 
 export class ParameterValue {
-    Id: Value<string>
-    StringValue: Value<string>
+    Id!: Value<string>
+    StringValue!: Value<string>
 
     constructor(properties: ParameterValue) {
         Object.assign(this, properties)
@@ -50,7 +50,7 @@ export class ParameterValue {
 }
 
 export class Field {
-    Key: Value<string>
+    Key!: Value<string>
     RefValue?: Value<string>
     StringValue?: Value<string>
 

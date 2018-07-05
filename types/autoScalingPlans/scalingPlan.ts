@@ -13,12 +13,12 @@ export class ApplicationSource {
 }
 
 export class ScalingInstruction {
-    ResourceId: Value<string>
-    ServiceNamespace: Value<string>
-    ScalableDimension: Value<string>
-    MinCapacity: Value<number>
-    TargetTrackingConfigurations: List<TargetTrackingConfiguration>
-    MaxCapacity: Value<number>
+    ResourceId!: Value<string>
+    ServiceNamespace!: Value<string>
+    ScalableDimension!: Value<string>
+    MinCapacity!: Value<number>
+    TargetTrackingConfigurations!: List<TargetTrackingConfiguration>
+    MaxCapacity!: Value<number>
 
     constructor(properties: ScalingInstruction) {
         Object.assign(this, properties)
@@ -27,7 +27,7 @@ export class ScalingInstruction {
 
 export class TargetTrackingConfiguration {
     ScaleOutCooldown?: Value<number>
-    TargetValue: Value<number>
+    TargetValue!: Value<number>
     PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification
     DisableScaleIn?: Value<boolean>
     ScaleInCooldown?: Value<number>
@@ -40,11 +40,11 @@ export class TargetTrackingConfiguration {
 }
 
 export class CustomizedScalingMetricSpecification {
-    MetricName: Value<string>
-    Statistic: Value<string>
+    MetricName!: Value<string>
+    Statistic!: Value<string>
     Dimensions?: List<MetricDimension>
     Unit?: Value<string>
-    Namespace: Value<string>
+    Namespace!: Value<string>
 
     constructor(properties: CustomizedScalingMetricSpecification) {
         Object.assign(this, properties)
@@ -52,8 +52,8 @@ export class CustomizedScalingMetricSpecification {
 }
 
 export class MetricDimension {
-    Value: Value<string>
-    Name: Value<string>
+    Value!: Value<string>
+    Name!: Value<string>
 
     constructor(properties: MetricDimension) {
         Object.assign(this, properties)
@@ -62,7 +62,7 @@ export class MetricDimension {
 
 export class PredefinedScalingMetricSpecification {
     ResourceLabel?: Value<string>
-    PredefinedScalingMetricType: Value<string>
+    PredefinedScalingMetricType!: Value<string>
 
     constructor(properties: PredefinedScalingMetricSpecification) {
         Object.assign(this, properties)
@@ -71,7 +71,7 @@ export class PredefinedScalingMetricSpecification {
 
 export class TagFilter {
     Values?: List<Value<string>>
-    Key: Value<string>
+    Key!: Value<string>
 
     constructor(properties: TagFilter) {
         Object.assign(this, properties)

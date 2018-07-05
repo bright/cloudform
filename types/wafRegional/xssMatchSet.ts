@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class XssMatchTuple {
-    TextTransformation: Value<string>
-    FieldToMatch: FieldToMatch
+    TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: XssMatchTuple) {
         Object.assign(this, properties)
@@ -13,7 +13,7 @@ export class XssMatchTuple {
 }
 
 export class FieldToMatch {
-    Type: Value<string>
+    Type!: Value<string>
     Data?: Value<string>
 
     constructor(properties: FieldToMatch) {

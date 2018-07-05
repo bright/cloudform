@@ -13,7 +13,7 @@ export class TargetGroupAttribute {
 }
 
 export class Matcher {
-    HttpCode: Value<string>
+    HttpCode!: Value<string>
 
     constructor(properties: Matcher) {
         Object.assign(this, properties)
@@ -22,7 +22,7 @@ export class Matcher {
 
 export class TargetDescription {
     AvailabilityZone?: Value<string>
-    Id: Value<string>
+    Id!: Value<string>
     Port?: Value<number>
 
     constructor(properties: TargetDescription) {

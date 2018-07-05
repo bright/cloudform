@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Repository {
-    PathComponent: Value<string>
-    RepositoryUrl: Value<string>
+    PathComponent!: Value<string>
+    RepositoryUrl!: Value<string>
 
     constructor(properties: Repository) {
         Object.assign(this, properties)

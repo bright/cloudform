@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class StreamEncryption {
-    EncryptionType: Value<string>
-    KeyId: Value<string>
+    EncryptionType!: Value<string>
+    KeyId!: Value<string>
 
     constructor(properties: StreamEncryption) {
         Object.assign(this, properties)

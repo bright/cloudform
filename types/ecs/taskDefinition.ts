@@ -39,7 +39,7 @@ export class ContainerDefinition {
 }
 
 export class LogConfiguration {
-    LogDriver: Value<string>
+    LogDriver!: Value<string>
     Options?: {[key: string]: Value<string>}
 
     constructor(properties: LogConfiguration) {
@@ -49,7 +49,7 @@ export class LogConfiguration {
 
 export class Device {
     ContainerPath?: Value<string>
-    HostPath: Value<string>
+    HostPath!: Value<string>
     Permissions?: List<Value<string>>
 
     constructor(properties: Device) {
@@ -86,8 +86,8 @@ export class VolumeFrom {
 }
 
 export class HostEntry {
-    Hostname: Value<string>
-    IpAddress: Value<string>
+    Hostname!: Value<string>
+    IpAddress!: Value<string>
 
     constructor(properties: HostEntry) {
         Object.assign(this, properties)
@@ -105,7 +105,7 @@ export class KernelCapabilities {
 
 export class TaskDefinitionPlacementConstraint {
     Expression?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: TaskDefinitionPlacementConstraint) {
         Object.assign(this, properties)
@@ -122,7 +122,7 @@ export class Volume {
 }
 
 export class HealthCheck {
-    Command: List<Value<string>>
+    Command!: List<Value<string>>
     Interval?: Value<number>
     Retries?: Value<number>
     StartPeriod?: Value<number>
@@ -144,9 +144,9 @@ export class PortMapping {
 }
 
 export class Ulimit {
-    HardLimit: Value<number>
-    Name: Value<string>
-    SoftLimit: Value<number>
+    HardLimit!: Value<number>
+    Name!: Value<string>
+    SoftLimit!: Value<number>
 
     constructor(properties: Ulimit) {
         Object.assign(this, properties)

@@ -8,8 +8,8 @@ export class InstanceGroupConfig {
     BidPrice?: Value<string>
     Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
-    InstanceCount: Value<number>
-    InstanceType: Value<string>
+    InstanceCount!: Value<number>
+    InstanceType!: Value<string>
     Market?: Value<string>
     Name?: Value<string>
 
@@ -20,8 +20,8 @@ export class InstanceGroupConfig {
 
 export class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>
-    TimeoutAction: Value<string>
-    TimeoutDurationMinutes: Value<number>
+    TimeoutAction!: Value<string>
+    TimeoutDurationMinutes!: Value<number>
 
     constructor(properties: SpotProvisioningSpecification) {
         Object.assign(this, properties)
@@ -29,8 +29,8 @@ export class SpotProvisioningSpecification {
 }
 
 export class BootstrapActionConfig {
-    Name: Value<string>
-    ScriptBootstrapAction: ScriptBootstrapActionConfig
+    Name!: Value<string>
+    ScriptBootstrapAction!: ScriptBootstrapActionConfig
 
     constructor(properties: BootstrapActionConfig) {
         Object.assign(this, properties)
@@ -38,8 +38,8 @@ export class BootstrapActionConfig {
 }
 
 export class ScalingConstraints {
-    MaxCapacity: Value<number>
-    MinCapacity: Value<number>
+    MaxCapacity!: Value<number>
+    MinCapacity!: Value<number>
 
     constructor(properties: ScalingConstraints) {
         Object.assign(this, properties)
@@ -81,7 +81,7 @@ export class JobFlowInstancesConfig {
 
 export class ScalingAction {
     Market?: Value<string>
-    SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration
+    SimpleScalingPolicyConfiguration!: SimpleScalingPolicyConfiguration
 
     constructor(properties: ScalingAction) {
         Object.assign(this, properties)
@@ -91,7 +91,7 @@ export class ScalingAction {
 export class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>
     CoolDown?: Value<number>
-    ScalingAdjustment: Value<number>
+    ScalingAdjustment!: Value<number>
 
     constructor(properties: SimpleScalingPolicyConfiguration) {
         Object.assign(this, properties)
@@ -110,7 +110,7 @@ export class Application {
 }
 
 export class EbsBlockDeviceConfig {
-    VolumeSpecification: VolumeSpecification
+    VolumeSpecification!: VolumeSpecification
     VolumesPerInstance?: Value<number>
 
     constructor(properties: EbsBlockDeviceConfig) {
@@ -119,7 +119,7 @@ export class EbsBlockDeviceConfig {
 }
 
 export class PlacementType {
-    AvailabilityZone: Value<string>
+    AvailabilityZone!: Value<string>
 
     constructor(properties: PlacementType) {
         Object.assign(this, properties)
@@ -138,7 +138,7 @@ export class Configuration {
 
 export class ScriptBootstrapActionConfig {
     Args?: List<Value<string>>
-    Path: Value<string>
+    Path!: Value<string>
 
     constructor(properties: ScriptBootstrapActionConfig) {
         Object.assign(this, properties)
@@ -146,14 +146,14 @@ export class ScriptBootstrapActionConfig {
 }
 
 export class CloudWatchAlarmDefinition {
-    ComparisonOperator: Value<string>
+    ComparisonOperator!: Value<string>
     Dimensions?: List<MetricDimension>
     EvaluationPeriods?: Value<number>
-    MetricName: Value<string>
+    MetricName!: Value<string>
     Namespace?: Value<string>
-    Period: Value<number>
+    Period!: Value<number>
     Statistic?: Value<string>
-    Threshold: Value<number>
+    Threshold!: Value<number>
     Unit?: Value<string>
 
     constructor(properties: CloudWatchAlarmDefinition) {
@@ -171,10 +171,10 @@ export class EbsConfiguration {
 }
 
 export class ScalingRule {
-    Action: ScalingAction
+    Action!: ScalingAction
     Description?: Value<string>
-    Name: Value<string>
-    Trigger: ScalingTrigger
+    Name!: Value<string>
+    Trigger!: ScalingTrigger
 
     constructor(properties: ScalingRule) {
         Object.assign(this, properties)
@@ -186,7 +186,7 @@ export class InstanceTypeConfig {
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
     Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
-    InstanceType: Value<string>
+    InstanceType!: Value<string>
     WeightedCapacity?: Value<number>
 
     constructor(properties: InstanceTypeConfig) {
@@ -195,8 +195,8 @@ export class InstanceTypeConfig {
 }
 
 export class MetricDimension {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: MetricDimension) {
         Object.assign(this, properties)
@@ -205,8 +205,8 @@ export class MetricDimension {
 
 export class VolumeSpecification {
     Iops?: Value<number>
-    SizeInGB: Value<number>
-    VolumeType: Value<string>
+    SizeInGB!: Value<number>
+    VolumeType!: Value<string>
 
     constructor(properties: VolumeSpecification) {
         Object.assign(this, properties)
@@ -214,8 +214,8 @@ export class VolumeSpecification {
 }
 
 export class AutoScalingPolicy {
-    Constraints: ScalingConstraints
-    Rules: List<ScalingRule>
+    Constraints!: ScalingConstraints
+    Rules!: List<ScalingRule>
 
     constructor(properties: AutoScalingPolicy) {
         Object.assign(this, properties)
@@ -223,7 +223,7 @@ export class AutoScalingPolicy {
 }
 
 export class InstanceFleetProvisioningSpecifications {
-    SpotSpecification: SpotProvisioningSpecification
+    SpotSpecification!: SpotProvisioningSpecification
 
     constructor(properties: InstanceFleetProvisioningSpecifications) {
         Object.assign(this, properties)
@@ -231,7 +231,7 @@ export class InstanceFleetProvisioningSpecifications {
 }
 
 export class ScalingTrigger {
-    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
+    CloudWatchAlarmDefinition!: CloudWatchAlarmDefinition
 
     constructor(properties: ScalingTrigger) {
         Object.assign(this, properties)

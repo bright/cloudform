@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import {camelCase, forEach, pickBy, map, some} from 'lodash'
+import {Response} from 'node-fetch'
 
 const fetch = require('node-fetch')
 
@@ -47,7 +48,7 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
         return innerTypeName('.' + property[typeSuffix])
     }
 
-    let primitiveType = property[typeSuffix === 'Type' ? 'PrimitiveType' : 'PrimitiveItemType'].toLowerCase()
+    let primitiveType = property[typeSuffix === 'Type' ? 'PrimitiveType' : 'PrimitiveItemType']!.toLowerCase()
     if (primitiveType === 'json') {
         return 'any'
     }
@@ -60,13 +61,14 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
     return `Value<${primitiveType}>`
 }
 
-function propertiesEntries(properties: {[key: string]: TypeProperties}): string[] {
+function propertiesEntries(properties: {[key: string]: TypeProperties}, useNonNullAssertion: boolean = false): string[] {
+    const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
     return map(properties, (property: TypeProperties, propertyName: string) => {
         if (propertyName === 'Tags') {
             return `Tags?: ResourceTag[]`
         }
 
-        return `${propertyName}${property.Required ? '' : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
+        return `${propertyName}${property.Required ? nonOptionalPostfix : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
     })
 }
 
@@ -88,7 +90,7 @@ function innerTypeName(innerTypeFullName: string): string {
 
 function generateInnerClass(name: string, properties: {[key: string]: TypeProperties}): string {
     return `export class ${name} {
-${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
+${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 
     constructor(properties: ${name}) {
         Object.assign(this, properties)
@@ -190,7 +192,7 @@ fetch(SchemaUrl)
         forEach(schema.ResourceTypes, (resource: ResourceType, resourceFullName: string) => {
             const [, namespace, typeName] = resourceFullName.split('::')
             const properties = resource.Properties || {}
-            const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: InnerType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.'))
+            const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: InnerType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.')) as {[key: string]: InnerType}
 
             indexContent[namespace] = indexContent[namespace] || []
             indexContent[namespace].push(typeName)

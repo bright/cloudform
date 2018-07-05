@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Predicate {
-    DataId: Value<string>
-    Negated: Value<boolean>
-    Type: Value<string>
+    DataId!: Value<string>
+    Negated!: Value<boolean>
+    Type!: Value<string>
 
     constructor(properties: Predicate) {
         Object.assign(this, properties)

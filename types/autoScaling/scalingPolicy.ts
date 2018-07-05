@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class MetricDimension {
-    Name: Value<string>
-    Value: Value<string>
+    Name!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: MetricDimension) {
         Object.assign(this, properties)
@@ -14,9 +14,9 @@ export class MetricDimension {
 
 export class CustomizedMetricSpecification {
     Dimensions?: List<MetricDimension>
-    MetricName: Value<string>
-    Namespace: Value<string>
-    Statistic: Value<string>
+    MetricName!: Value<string>
+    Namespace!: Value<string>
+    Statistic!: Value<string>
     Unit?: Value<string>
 
     constructor(properties: CustomizedMetricSpecification) {
@@ -25,7 +25,7 @@ export class CustomizedMetricSpecification {
 }
 
 export class PredefinedMetricSpecification {
-    PredefinedMetricType: Value<string>
+    PredefinedMetricType!: Value<string>
     ResourceLabel?: Value<string>
 
     constructor(properties: PredefinedMetricSpecification) {
@@ -37,7 +37,7 @@ export class TargetTrackingConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification
     DisableScaleIn?: Value<boolean>
     PredefinedMetricSpecification?: PredefinedMetricSpecification
-    TargetValue: Value<number>
+    TargetValue!: Value<number>
 
     constructor(properties: TargetTrackingConfiguration) {
         Object.assign(this, properties)
@@ -47,7 +47,7 @@ export class TargetTrackingConfiguration {
 export class StepAdjustment {
     MetricIntervalLowerBound?: Value<number>
     MetricIntervalUpperBound?: Value<number>
-    ScalingAdjustment: Value<number>
+    ScalingAdjustment!: Value<number>
 
     constructor(properties: StepAdjustment) {
         Object.assign(this, properties)

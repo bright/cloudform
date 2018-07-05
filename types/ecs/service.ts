@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class LoadBalancer {
     ContainerName?: Value<string>
-    ContainerPort: Value<number>
+    ContainerPort!: Value<number>
     LoadBalancerName?: Value<string>
     TargetGroupArn?: Value<string>
 
@@ -16,7 +16,7 @@ export class LoadBalancer {
 
 export class PlacementStrategy {
     Field?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: PlacementStrategy) {
         Object.assign(this, properties)
@@ -43,7 +43,7 @@ export class DeploymentConfiguration {
 
 export class PlacementConstraint {
     Expression?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: PlacementConstraint) {
         Object.assign(this, properties)
@@ -53,7 +53,7 @@ export class PlacementConstraint {
 export class AwsVpcConfiguration {
     AssignPublicIp?: Value<string>
     SecurityGroups?: List<Value<string>>
-    Subnets: List<Value<string>>
+    Subnets!: List<Value<string>>
 
     constructor(properties: AwsVpcConfiguration) {
         Object.assign(this, properties)

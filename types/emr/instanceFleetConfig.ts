@@ -5,8 +5,8 @@ import {Value, List} from '../dataTypes'
 
 export class VolumeSpecification {
     Iops?: Value<number>
-    SizeInGB: Value<number>
-    VolumeType: Value<string>
+    SizeInGB!: Value<number>
+    VolumeType!: Value<string>
 
     constructor(properties: VolumeSpecification) {
         Object.assign(this, properties)
@@ -15,8 +15,8 @@ export class VolumeSpecification {
 
 export class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>
-    TimeoutAction: Value<string>
-    TimeoutDurationMinutes: Value<number>
+    TimeoutAction!: Value<string>
+    TimeoutDurationMinutes!: Value<number>
 
     constructor(properties: SpotProvisioningSpecification) {
         Object.assign(this, properties)
@@ -47,7 +47,7 @@ export class InstanceTypeConfig {
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
     Configurations?: List<Configuration>
     EbsConfiguration?: EbsConfiguration
-    InstanceType: Value<string>
+    InstanceType!: Value<string>
     WeightedCapacity?: Value<number>
 
     constructor(properties: InstanceTypeConfig) {
@@ -56,7 +56,7 @@ export class InstanceTypeConfig {
 }
 
 export class InstanceFleetProvisioningSpecifications {
-    SpotSpecification: SpotProvisioningSpecification
+    SpotSpecification!: SpotProvisioningSpecification
 
     constructor(properties: InstanceFleetProvisioningSpecifications) {
         Object.assign(this, properties)
@@ -64,7 +64,7 @@ export class InstanceFleetProvisioningSpecifications {
 }
 
 export class EbsBlockDeviceConfig {
-    VolumeSpecification: VolumeSpecification
+    VolumeSpecification!: VolumeSpecification
     VolumesPerInstance?: Value<number>
 
     constructor(properties: EbsBlockDeviceConfig) {

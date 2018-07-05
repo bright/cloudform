@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Rule {
-    Action: Action
-    Priority: Value<number>
-    RuleId: Value<string>
+    Action!: Action
+    Priority!: Value<number>
+    RuleId!: Value<string>
 
     constructor(properties: Rule) {
         Object.assign(this, properties)
@@ -14,7 +14,7 @@ export class Rule {
 }
 
 export class Action {
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: Action) {
         Object.assign(this, properties)

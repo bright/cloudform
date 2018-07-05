@@ -11,7 +11,7 @@ export interface CreationPolicy {
 export declare enum DeletionPolicy {
     Delete = "Delete",
     Retain = "Retain",
-    Snapshot = "Snapshot",
+    Snapshot = "Snapshot"
 }
 export interface UpdatePolicy {
     AutoScalingReplacingUpdate?: {

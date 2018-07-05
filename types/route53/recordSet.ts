@@ -14,9 +14,9 @@ export class GeoLocation {
 }
 
 export class AliasTarget {
-    DNSName: Value<string>
+    DNSName!: Value<string>
     EvaluateTargetHealth?: Value<boolean>
-    HostedZoneId: Value<string>
+    HostedZoneId!: Value<string>
 
     constructor(properties: AliasTarget) {
         Object.assign(this, properties)

@@ -6,8 +6,8 @@ import {Value, List} from '../dataTypes'
 export class ScheduledAction {
     EndTime?: Value<string>
     ScalableTargetAction?: ScalableTargetAction
-    Schedule: Value<string>
-    ScheduledActionName: Value<string>
+    Schedule!: Value<string>
+    ScheduledActionName!: Value<string>
     StartTime?: Value<string>
 
     constructor(properties: ScheduledAction) {

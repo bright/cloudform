@@ -4,7 +4,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class LoggingProperties {
-    BucketName: Value<string>
+    BucketName!: Value<string>
     S3KeyPrefix?: Value<string>
 
     constructor(properties: LoggingProperties) {

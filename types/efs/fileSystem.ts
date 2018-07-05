@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ElasticFileSystemTag {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: ElasticFileSystemTag) {
         Object.assign(this, properties)

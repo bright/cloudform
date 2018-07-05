@@ -14,7 +14,7 @@ export class MaintenanceWindowLambdaParameters {
 }
 
 export class NotificationConfig {
-    NotificationArn: Value<string>
+    NotificationArn!: Value<string>
     NotificationType?: Value<string>
     NotificationEvents?: List<Value<string>>
 
@@ -44,8 +44,8 @@ export class TaskInvocationParameters {
 }
 
 export class LoggingInfo {
-    S3Bucket: Value<string>
-    Region: Value<string>
+    S3Bucket!: Value<string>
+    Region!: Value<string>
     S3Prefix?: Value<string>
 
     constructor(properties: LoggingInfo) {
@@ -55,7 +55,7 @@ export class LoggingInfo {
 
 export class Target {
     Values?: List<Value<string>>
-    Key: Value<string>
+    Key!: Value<string>
 
     constructor(properties: Target) {
         Object.assign(this, properties)

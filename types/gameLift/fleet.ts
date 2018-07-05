@@ -4,10 +4,10 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class IpPermission {
-    FromPort: Value<number>
-    IpRange: Value<string>
-    Protocol: Value<string>
-    ToPort: Value<number>
+    FromPort!: Value<number>
+    IpRange!: Value<string>
+    Protocol!: Value<string>
+    ToPort!: Value<number>
 
     constructor(properties: IpPermission) {
         Object.assign(this, properties)

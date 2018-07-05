@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class HostedZoneTag {
-    Key: Value<string>
-    Value: Value<string>
+    Key!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: HostedZoneTag) {
         Object.assign(this, properties)
@@ -21,7 +21,7 @@ export class HostedZoneConfig {
 }
 
 export class QueryLoggingConfig {
-    CloudWatchLogsLogGroupArn: Value<string>
+    CloudWatchLogsLogGroupArn!: Value<string>
 
     constructor(properties: QueryLoggingConfig) {
         Object.assign(this, properties)
@@ -29,8 +29,8 @@ export class QueryLoggingConfig {
 }
 
 export class VPC {
-    VPCId: Value<string>
-    VPCRegion: Value<string>
+    VPCId!: Value<string>
+    VPCRegion!: Value<string>
 
     constructor(properties: VPC) {
         Object.assign(this, properties)

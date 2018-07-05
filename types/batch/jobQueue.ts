@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ComputeEnvironmentOrder {
-    ComputeEnvironment: Value<string>
-    Order: Value<number>
+    ComputeEnvironment!: Value<string>
+    Order!: Value<number>
 
     constructor(properties: ComputeEnvironmentOrder) {
         Object.assign(this, properties)

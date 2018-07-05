@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class NotificationWithSubscribers {
-    Subscribers: List<Subscriber>
-    Notification: Notification
+    Subscribers!: List<Subscriber>
+    Notification!: Notification
 
     constructor(properties: NotificationWithSubscribers) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class NotificationWithSubscribers {
 }
 
 export class Subscriber {
-    SubscriptionType: Value<string>
-    Address: Value<string>
+    SubscriptionType!: Value<string>
+    Address!: Value<string>
 
     constructor(properties: Subscriber) {
         Object.assign(this, properties)
@@ -22,9 +22,9 @@ export class Subscriber {
 }
 
 export class Notification {
-    ComparisonOperator: Value<string>
-    NotificationType: Value<string>
-    Threshold: Value<number>
+    ComparisonOperator!: Value<string>
+    NotificationType!: Value<string>
+    Threshold!: Value<number>
     ThresholdType?: Value<string>
 
     constructor(properties: Notification) {
@@ -35,11 +35,11 @@ export class Notification {
 export class BudgetData {
     BudgetLimit?: Spend
     TimePeriod?: TimePeriod
-    TimeUnit: Value<string>
+    TimeUnit!: Value<string>
     CostFilters?: any
     BudgetName?: Value<string>
     CostTypes?: CostTypes
-    BudgetType: Value<string>
+    BudgetType!: Value<string>
 
     constructor(properties: BudgetData) {
         Object.assign(this, properties)
@@ -74,8 +74,8 @@ export class TimePeriod {
 }
 
 export class Spend {
-    Amount: Value<number>
-    Unit: Value<string>
+    Amount!: Value<number>
+    Unit!: Value<string>
 
     constructor(properties: Spend) {
         Object.assign(this, properties)

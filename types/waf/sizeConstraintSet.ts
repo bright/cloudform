@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class FieldToMatch {
     Data?: Value<string>
-    Type: Value<string>
+    Type!: Value<string>
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)
@@ -13,10 +13,10 @@ export class FieldToMatch {
 }
 
 export class SizeConstraint {
-    ComparisonOperator: Value<string>
-    FieldToMatch: FieldToMatch
-    Size: Value<number>
-    TextTransformation: Value<string>
+    ComparisonOperator!: Value<string>
+    FieldToMatch!: FieldToMatch
+    Size!: Value<number>
+    TextTransformation!: Value<string>
 
     constructor(properties: SizeConstraint) {
         Object.assign(this, properties)

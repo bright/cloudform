@@ -6,9 +6,9 @@ import {Value, List} from '../dataTypes'
 export class ByteMatchTuple {
     TargetString?: Value<string>
     TargetStringBase64?: Value<string>
-    PositionalConstraint: Value<string>
-    TextTransformation: Value<string>
-    FieldToMatch: FieldToMatch
+    PositionalConstraint!: Value<string>
+    TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: ByteMatchTuple) {
         Object.assign(this, properties)
@@ -16,7 +16,7 @@ export class ByteMatchTuple {
 }
 
 export class FieldToMatch {
-    Type: Value<string>
+    Type!: Value<string>
     Data?: Value<string>
 
     constructor(properties: FieldToMatch) {

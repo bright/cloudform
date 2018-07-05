@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class Cookies {
     WhitelistedNames?: List<Value<string>>
-    Forward: Value<string>
+    Forward!: Value<string>
 
     constructor(properties: Cookies) {
         Object.assign(this, properties)
@@ -27,7 +27,7 @@ export class CustomOriginConfig {
     OriginKeepaliveTimeout?: Value<number>
     OriginSSLProtocols?: List<Value<string>>
     HTTPPort?: Value<number>
-    OriginProtocolPolicy: Value<string>
+    OriginProtocolPolicy!: Value<string>
 
     constructor(properties: CustomOriginConfig) {
         Object.assign(this, properties)
@@ -37,7 +37,7 @@ export class CustomOriginConfig {
 export class ForwardedValues {
     Cookies?: Cookies
     Headers?: List<Value<string>>
-    QueryString: Value<boolean>
+    QueryString!: Value<boolean>
     QueryStringCacheKeys?: List<Value<string>>
 
     constructor(properties: ForwardedValues) {
@@ -48,15 +48,15 @@ export class ForwardedValues {
 export class CacheBehavior {
     Compress?: Value<boolean>
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
-    TargetOriginId: Value<string>
-    ViewerProtocolPolicy: Value<string>
+    TargetOriginId!: Value<string>
+    ViewerProtocolPolicy!: Value<string>
     TrustedSigners?: List<Value<string>>
     DefaultTTL?: Value<number>
     AllowedMethods?: List<Value<string>>
-    PathPattern: Value<string>
+    PathPattern!: Value<string>
     CachedMethods?: List<Value<string>>
     SmoothStreaming?: Value<boolean>
-    ForwardedValues: ForwardedValues
+    ForwardedValues!: ForwardedValues
     MinTTL?: Value<number>
     MaxTTL?: Value<number>
 
@@ -71,9 +71,9 @@ export class DefaultCacheBehavior {
     CachedMethods?: List<Value<string>>
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
     SmoothStreaming?: Value<boolean>
-    TargetOriginId: Value<string>
-    ViewerProtocolPolicy: Value<string>
-    ForwardedValues: ForwardedValues
+    TargetOriginId!: Value<string>
+    ViewerProtocolPolicy!: Value<string>
+    ForwardedValues!: ForwardedValues
     MinTTL?: Value<number>
     MaxTTL?: Value<number>
     TrustedSigners?: List<Value<string>>
@@ -85,7 +85,7 @@ export class DefaultCacheBehavior {
 }
 
 export class Restrictions {
-    GeoRestriction: GeoRestriction
+    GeoRestriction!: GeoRestriction
 
     constructor(properties: Restrictions) {
         Object.assign(this, properties)
@@ -94,10 +94,10 @@ export class Restrictions {
 
 export class Origin {
     OriginCustomHeaders?: List<OriginCustomHeader>
-    DomainName: Value<string>
+    DomainName!: Value<string>
     S3OriginConfig?: S3OriginConfig
     OriginPath?: Value<string>
-    Id: Value<string>
+    Id!: Value<string>
     CustomOriginConfig?: CustomOriginConfig
 
     constructor(properties: Origin) {
@@ -107,7 +107,7 @@ export class Origin {
 
 export class GeoRestriction {
     Locations?: List<Value<string>>
-    RestrictionType: Value<string>
+    RestrictionType!: Value<string>
 
     constructor(properties: GeoRestriction) {
         Object.assign(this, properties)
@@ -137,7 +137,7 @@ export class S3OriginConfig {
 export class CustomErrorResponse {
     ResponseCode?: Value<number>
     ErrorCachingMinTTL?: Value<number>
-    ErrorCode: Value<number>
+    ErrorCode!: Value<number>
     ResponsePagePath?: Value<string>
 
     constructor(properties: CustomErrorResponse) {
@@ -147,7 +147,7 @@ export class CustomErrorResponse {
 
 export class Logging {
     IncludeCookies?: Value<boolean>
-    Bucket: Value<string>
+    Bucket!: Value<string>
     Prefix?: Value<string>
 
     constructor(properties: Logging) {
@@ -164,7 +164,7 @@ export class DistributionConfig {
     PriceClass?: Value<string>
     DefaultCacheBehavior?: DefaultCacheBehavior
     CustomErrorResponses?: List<CustomErrorResponse>
-    Enabled: Value<boolean>
+    Enabled!: Value<boolean>
     Aliases?: List<Value<string>>
     IPV6Enabled?: Value<boolean>
     WebACLId?: Value<string>
@@ -178,8 +178,8 @@ export class DistributionConfig {
 }
 
 export class OriginCustomHeader {
-    HeaderValue: Value<string>
-    HeaderName: Value<string>
+    HeaderValue!: Value<string>
+    HeaderName!: Value<string>
 
     constructor(properties: OriginCustomHeader) {
         Object.assign(this, properties)

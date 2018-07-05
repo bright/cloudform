@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class S3Location {
-    Bucket: Value<string>
-    Key: Value<string>
-    RoleArn: Value<string>
+    Bucket!: Value<string>
+    Key!: Value<string>
+    RoleArn!: Value<string>
 
     constructor(properties: S3Location) {
         Object.assign(this, properties)

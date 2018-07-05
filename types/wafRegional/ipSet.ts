@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class IPSetDescriptor {
-    Type: Value<string>
-    Value: Value<string>
+    Type!: Value<string>
+    Value!: Value<string>
 
     constructor(properties: IPSetDescriptor) {
         Object.assign(this, properties)

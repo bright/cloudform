@@ -4,8 +4,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class KinesisFirehoseOutput {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: KinesisFirehoseOutput) {
         Object.assign(this, properties)
@@ -13,8 +13,8 @@ export class KinesisFirehoseOutput {
 }
 
 export class KinesisStreamsOutput {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: KinesisStreamsOutput) {
         Object.assign(this, properties)
@@ -22,7 +22,7 @@ export class KinesisStreamsOutput {
 }
 
 export class Output {
-    DestinationSchema: DestinationSchema
+    DestinationSchema!: DestinationSchema
     LambdaOutput?: LambdaOutput
     KinesisFirehoseOutput?: KinesisFirehoseOutput
     KinesisStreamsOutput?: KinesisStreamsOutput
@@ -34,8 +34,8 @@ export class Output {
 }
 
 export class LambdaOutput {
-    ResourceARN: Value<string>
-    RoleARN: Value<string>
+    ResourceARN!: Value<string>
+    RoleARN!: Value<string>
 
     constructor(properties: LambdaOutput) {
         Object.assign(this, properties)

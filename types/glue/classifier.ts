@@ -5,8 +5,8 @@ import {Value, List} from '../dataTypes'
 
 export class GrokClassifier {
     CustomPatterns?: Value<string>
-    GrokPattern: Value<string>
-    Classification: Value<string>
+    GrokPattern!: Value<string>
+    Classification!: Value<string>
     Name?: Value<string>
 
     constructor(properties: GrokClassifier) {

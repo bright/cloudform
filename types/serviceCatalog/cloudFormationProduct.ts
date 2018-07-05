@@ -5,7 +5,7 @@ import {Value, List} from '../dataTypes'
 
 export class ProvisioningArtifactProperties {
     Description?: Value<string>
-    Info: any
+    Info!: any
     Name?: Value<string>
 
     constructor(properties: ProvisioningArtifactProperties) {

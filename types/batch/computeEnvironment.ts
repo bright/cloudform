@@ -5,15 +5,15 @@ import {Value, List} from '../dataTypes'
 
 export class ComputeResources {
     SpotIamFleetRole?: Value<string>
-    MaxvCpus: Value<number>
+    MaxvCpus!: Value<number>
     BidPercentage?: Value<number>
-    SecurityGroupIds: List<Value<string>>
-    Subnets: List<Value<string>>
-    Type: Value<string>
-    MinvCpus: Value<number>
+    SecurityGroupIds!: List<Value<string>>
+    Subnets!: List<Value<string>>
+    Type!: Value<string>
+    MinvCpus!: Value<number>
     ImageId?: Value<string>
-    InstanceRole: Value<string>
-    InstanceTypes: List<Value<string>>
+    InstanceRole!: Value<string>
+    InstanceTypes!: List<Value<string>>
     Ec2KeyPair?: Value<string>
     Tags?: ResourceTag[]
     DesiredvCpus?: Value<number>

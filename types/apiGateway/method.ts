@@ -6,7 +6,7 @@ import {Value, List} from '../dataTypes'
 export class MethodResponse {
     ResponseModels?: {[key: string]: Value<string>}
     ResponseParameters?: {[key: string]: Value<boolean>}
-    StatusCode: Value<string>
+    StatusCode!: Value<string>
 
     constructor(properties: MethodResponse) {
         Object.assign(this, properties)
@@ -36,7 +36,7 @@ export class IntegrationResponse {
     ResponseParameters?: {[key: string]: Value<string>}
     ResponseTemplates?: {[key: string]: Value<string>}
     SelectionPattern?: Value<string>
-    StatusCode: Value<string>
+    StatusCode!: Value<string>
 
     constructor(properties: IntegrationResponse) {
         Object.assign(this, properties)

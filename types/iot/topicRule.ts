@@ -4,9 +4,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class S3Action {
-    BucketName: Value<string>
-    Key: Value<string>
-    RoleArn: Value<string>
+    BucketName!: Value<string>
+    Key!: Value<string>
+    RoleArn!: Value<string>
 
     constructor(properties: S3Action) {
         Object.assign(this, properties)
@@ -14,8 +14,8 @@ export class S3Action {
 }
 
 export class SqsAction {
-    QueueUrl: Value<string>
-    RoleArn: Value<string>
+    QueueUrl!: Value<string>
+    RoleArn!: Value<string>
     UseBase64?: Value<boolean>
 
     constructor(properties: SqsAction) {
@@ -24,7 +24,7 @@ export class SqsAction {
 }
 
 export class PutItemInput {
-    TableName: Value<string>
+    TableName!: Value<string>
 
     constructor(properties: PutItemInput) {
         Object.assign(this, properties)
@@ -32,8 +32,8 @@ export class PutItemInput {
 }
 
 export class RepublishAction {
-    RoleArn: Value<string>
-    Topic: Value<string>
+    RoleArn!: Value<string>
+    Topic!: Value<string>
 
     constructor(properties: RepublishAction) {
         Object.assign(this, properties)
@@ -42,8 +42,8 @@ export class RepublishAction {
 
 export class SnsAction {
     MessageFormat?: Value<string>
-    RoleArn: Value<string>
-    TargetArn: Value<string>
+    RoleArn!: Value<string>
+    TargetArn!: Value<string>
 
     constructor(properties: SnsAction) {
         Object.assign(this, properties)
@@ -51,8 +51,8 @@ export class SnsAction {
 }
 
 export class FirehoseAction {
-    DeliveryStreamName: Value<string>
-    RoleArn: Value<string>
+    DeliveryStreamName!: Value<string>
+    RoleArn!: Value<string>
     Separator?: Value<string>
 
     constructor(properties: FirehoseAction) {
@@ -61,11 +61,11 @@ export class FirehoseAction {
 }
 
 export class TopicRulePayload {
-    Actions: List<Action>
+    Actions!: List<Action>
     AwsIotSqlVersion?: Value<string>
     Description?: Value<string>
-    RuleDisabled: Value<boolean>
-    Sql: Value<string>
+    RuleDisabled!: Value<boolean>
+    Sql!: Value<string>
 
     constructor(properties: TopicRulePayload) {
         Object.assign(this, properties)
@@ -90,11 +90,11 @@ export class DynamoDBv2Action {
 }
 
 export class ElasticsearchAction {
-    Endpoint: Value<string>
-    Id: Value<string>
-    Index: Value<string>
-    RoleArn: Value<string>
-    Type: Value<string>
+    Endpoint!: Value<string>
+    Id!: Value<string>
+    Index!: Value<string>
+    RoleArn!: Value<string>
+    Type!: Value<string>
 
     constructor(properties: ElasticsearchAction) {
         Object.assign(this, properties)
@@ -102,15 +102,15 @@ export class ElasticsearchAction {
 }
 
 export class DynamoDBAction {
-    HashKeyField: Value<string>
+    HashKeyField!: Value<string>
     HashKeyType?: Value<string>
-    HashKeyValue: Value<string>
+    HashKeyValue!: Value<string>
     PayloadField?: Value<string>
     RangeKeyField?: Value<string>
     RangeKeyType?: Value<string>
     RangeKeyValue?: Value<string>
-    RoleArn: Value<string>
-    TableName: Value<string>
+    RoleArn!: Value<string>
+    TableName!: Value<string>
 
     constructor(properties: DynamoDBAction) {
         Object.assign(this, properties)
@@ -119,8 +119,8 @@ export class DynamoDBAction {
 
 export class KinesisAction {
     PartitionKey?: Value<string>
-    RoleArn: Value<string>
-    StreamName: Value<string>
+    RoleArn!: Value<string>
+    StreamName!: Value<string>
 
     constructor(properties: KinesisAction) {
         Object.assign(this, properties)
@@ -128,10 +128,10 @@ export class KinesisAction {
 }
 
 export class CloudwatchAlarmAction {
-    AlarmName: Value<string>
-    RoleArn: Value<string>
-    StateReason: Value<string>
-    StateValue: Value<string>
+    AlarmName!: Value<string>
+    RoleArn!: Value<string>
+    StateReason!: Value<string>
+    StateValue!: Value<string>
 
     constructor(properties: CloudwatchAlarmAction) {
         Object.assign(this, properties)
@@ -158,12 +158,12 @@ export class Action {
 }
 
 export class CloudwatchMetricAction {
-    MetricName: Value<string>
-    MetricNamespace: Value<string>
+    MetricName!: Value<string>
+    MetricNamespace!: Value<string>
     MetricTimestamp?: Value<string>
-    MetricUnit: Value<string>
-    MetricValue: Value<string>
-    RoleArn: Value<string>
+    MetricUnit!: Value<string>
+    MetricValue!: Value<string>
+    RoleArn!: Value<string>
 
     constructor(properties: CloudwatchMetricAction) {
         Object.assign(this, properties)

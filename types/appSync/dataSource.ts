@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class LambdaConfig {
-    LambdaFunctionArn: Value<string>
+    LambdaFunctionArn!: Value<string>
 
     constructor(properties: LambdaConfig) {
         Object.assign(this, properties)
@@ -12,8 +12,8 @@ export class LambdaConfig {
 }
 
 export class DynamoDBConfig {
-    TableName: Value<string>
-    AwsRegion: Value<string>
+    TableName!: Value<string>
+    AwsRegion!: Value<string>
     UseCallerCredentials?: Value<boolean>
 
     constructor(properties: DynamoDBConfig) {
@@ -22,8 +22,8 @@ export class DynamoDBConfig {
 }
 
 export class ElasticsearchConfig {
-    AwsRegion: Value<string>
-    Endpoint: Value<string>
+    AwsRegion!: Value<string>
+    Endpoint!: Value<string>
 
     constructor(properties: ElasticsearchConfig) {
         Object.assign(this, properties)

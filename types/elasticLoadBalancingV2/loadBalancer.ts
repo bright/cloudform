@@ -13,8 +13,8 @@ export class LoadBalancerAttribute {
 }
 
 export class SubnetMapping {
-    AllocationId: Value<string>
-    SubnetId: Value<string>
+    AllocationId!: Value<string>
+    SubnetId!: Value<string>
 
     constructor(properties: SubnetMapping) {
         Object.assign(this, properties)

@@ -4,10 +4,10 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SizeConstraint {
-    ComparisonOperator: Value<string>
-    Size: Value<number>
-    TextTransformation: Value<string>
-    FieldToMatch: FieldToMatch
+    ComparisonOperator!: Value<string>
+    Size!: Value<number>
+    TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: SizeConstraint) {
         Object.assign(this, properties)
@@ -15,7 +15,7 @@ export class SizeConstraint {
 }
 
 export class FieldToMatch {
-    Type: Value<string>
+    Type!: Value<string>
     Data?: Value<string>
 
     constructor(properties: FieldToMatch) {

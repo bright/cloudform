@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RunCommandParameters {
-    RunCommandTargets: List<RunCommandTarget>
+    RunCommandTargets!: List<RunCommandTarget>
 
     constructor(properties: RunCommandParameters) {
         Object.assign(this, properties)
@@ -12,9 +12,9 @@ export class RunCommandParameters {
 }
 
 export class Target {
-    Arn: Value<string>
+    Arn!: Value<string>
     EcsParameters?: EcsParameters
-    Id: Value<string>
+    Id!: Value<string>
     Input?: Value<string>
     InputPath?: Value<string>
     InputTransformer?: InputTransformer
@@ -28,8 +28,8 @@ export class Target {
 }
 
 export class RunCommandTarget {
-    Key: Value<string>
-    Values: List<Value<string>>
+    Key!: Value<string>
+    Values!: List<Value<string>>
 
     constructor(properties: RunCommandTarget) {
         Object.assign(this, properties)
@@ -38,7 +38,7 @@ export class RunCommandTarget {
 
 export class InputTransformer {
     InputPathsMap?: {[key: string]: Value<string>}
-    InputTemplate: Value<string>
+    InputTemplate!: Value<string>
 
     constructor(properties: InputTransformer) {
         Object.assign(this, properties)
@@ -46,7 +46,7 @@ export class InputTransformer {
 }
 
 export class KinesisParameters {
-    PartitionKeyPath: Value<string>
+    PartitionKeyPath!: Value<string>
 
     constructor(properties: KinesisParameters) {
         Object.assign(this, properties)
@@ -55,7 +55,7 @@ export class KinesisParameters {
 
 export class EcsParameters {
     TaskCount?: Value<number>
-    TaskDefinitionArn: Value<string>
+    TaskDefinitionArn!: Value<string>
 
     constructor(properties: EcsParameters) {
         Object.assign(this, properties)

@@ -4,7 +4,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class AliasRoutingConfiguration {
-    AdditionalVersionWeights: List<VersionWeight>
+    AdditionalVersionWeights!: List<VersionWeight>
 
     constructor(properties: AliasRoutingConfiguration) {
         Object.assign(this, properties)
@@ -12,8 +12,8 @@ export class AliasRoutingConfiguration {
 }
 
 export class VersionWeight {
-    FunctionVersion: Value<string>
-    FunctionWeight: Value<number>
+    FunctionVersion!: Value<string>
+    FunctionWeight!: Value<number>
 
     constructor(properties: VersionWeight) {
         Object.assign(this, properties)

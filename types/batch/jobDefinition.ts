@@ -25,14 +25,14 @@ export class ContainerProperties {
     User?: Value<string>
     Volumes?: List<Volumes>
     Command?: List<Value<string>>
-    Memory: Value<number>
+    Memory!: Value<number>
     Privileged?: Value<boolean>
     Environment?: List<Environment>
     JobRoleArn?: Value<string>
     ReadonlyRootFilesystem?: Value<boolean>
     Ulimits?: List<Ulimit>
-    Vcpus: Value<number>
-    Image: Value<string>
+    Vcpus!: Value<number>
+    Image!: Value<string>
 
     constructor(properties: ContainerProperties) {
         Object.assign(this, properties)
@@ -67,9 +67,9 @@ export class Environment {
 }
 
 export class Ulimit {
-    SoftLimit: Value<number>
-    HardLimit: Value<number>
-    Name: Value<string>
+    SoftLimit!: Value<number>
+    HardLimit!: Value<number>
+    Name!: Value<string>
 
     constructor(properties: Ulimit) {
         Object.assign(this, properties)

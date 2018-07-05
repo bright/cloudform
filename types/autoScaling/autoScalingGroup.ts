@@ -6,8 +6,8 @@ import {Value, List} from '../dataTypes'
 export class LifecycleHookSpecification {
     DefaultResult?: Value<string>
     HeartbeatTimeout?: Value<number>
-    LifecycleHookName: Value<string>
-    LifecycleTransition: Value<string>
+    LifecycleHookName!: Value<string>
+    LifecycleTransition!: Value<string>
     NotificationMetadata?: Value<string>
     NotificationTargetARN?: Value<string>
     RoleARN?: Value<string>
@@ -19,7 +19,7 @@ export class LifecycleHookSpecification {
 
 export class NotificationConfiguration {
     NotificationTypes?: List<Value<string>>
-    TopicARN: Value<string>
+    TopicARN!: Value<string>
 
     constructor(properties: NotificationConfiguration) {
         Object.assign(this, properties)
@@ -27,7 +27,7 @@ export class NotificationConfiguration {
 }
 
 export class MetricsCollection {
-    Granularity: Value<string>
+    Granularity!: Value<string>
     Metrics?: List<Value<string>>
 
     constructor(properties: MetricsCollection) {
@@ -36,9 +36,9 @@ export class MetricsCollection {
 }
 
 export class TagProperty {
-    Key: Value<string>
-    PropagateAtLaunch: Value<boolean>
-    Value: Value<string>
+    Key!: Value<string>
+    PropagateAtLaunch!: Value<boolean>
+    Value!: Value<string>
 
     constructor(properties: TagProperty) {
         Object.assign(this, properties)

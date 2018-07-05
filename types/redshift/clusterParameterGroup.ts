@@ -4,8 +4,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Parameter {
-    ParameterName: Value<string>
-    ParameterValue: Value<string>
+    ParameterName!: Value<string>
+    ParameterValue!: Value<string>
 
     constructor(properties: Parameter) {
         Object.assign(this, properties)

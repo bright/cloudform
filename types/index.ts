@@ -70,6 +70,15 @@ import EC2VPNConnection from './ec2/vpnConnection'
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock'
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation'
 
+import AppSync_ from './appSync'
+export const AppSync = AppSync_
+
+import AppSyncDataSource from './appSync/dataSource'
+import AppSyncResolver from './appSync/resolver'
+import AppSyncGraphQLSchema from './appSync/graphQlSchema'
+import AppSyncGraphQLApi from './appSync/graphQlApi'
+import AppSyncApiKey from './appSync/apiKey'
+
 import ServiceCatalog_ from './serviceCatalog'
 export const ServiceCatalog = ServiceCatalog_
 
@@ -136,6 +145,18 @@ export const Elasticsearch = Elasticsearch_
 
 import ElasticsearchDomain from './elasticsearch/domain'
 
+import WAFRegional_ from './wafRegional'
+export const WAFRegional = WAFRegional_
+
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
+import WAFRegionalWebACL from './wafRegional/webAcl'
+import WAFRegionalRule from './wafRegional/rule'
+import WAFRegionalIPSet from './wafRegional/ipSet'
+
 import ApiGateway_ from './apiGateway'
 export const ApiGateway = ApiGateway_
 
@@ -154,8 +175,8 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping'
 import ApiGatewayStage from './apiGateway/stage'
 import ApiGatewayVpcLink from './apiGateway/vpcLink'
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse'
-import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
+import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
@@ -172,6 +193,11 @@ import RDSDBInstance from './rds/dbInstance'
 import RDSDBSecurityGroup from './rds/dbSecurityGroup'
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup'
 
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
+
 import EMR_ from './emr'
 export const EMR = EMR_
 
@@ -180,11 +206,6 @@ import EMRCluster from './emr/cluster'
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
 import EMRStep from './emr/step'
 import EMRSecurityConfiguration from './emr/securityConfiguration'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -245,6 +266,12 @@ import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener'
 import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule'
 import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup'
 
+import StepFunctions_ from './stepFunctions'
+export const StepFunctions = StepFunctions_
+
+import StepFunctionsActivity from './stepFunctions/activity'
+import StepFunctionsStateMachine from './stepFunctions/stateMachine'
+
 import OpsWorks_ from './opsWorks'
 export const OpsWorks = OpsWorks_
 
@@ -304,9 +331,9 @@ export const SSM = SSM_
 
 import SSMDocument from './ssm/document'
 import SSMPatchBaseline from './ssm/patchBaseline'
+import SSMParameter from './ssm/parameter'
 import SSMAssociation from './ssm/association'
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask'
-import SSMParameter from './ssm/parameter'
 
 import Config_ from './config'
 export const Config = Config_
@@ -344,6 +371,13 @@ export const CertificateManager = CertificateManager_
 
 import CertificateManagerCertificate from './certificateManager/certificate'
 
+import Inspector_ from './inspector'
+export const Inspector = Inspector_
+
+import InspectorResourceGroup from './inspector/resourceGroup'
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
+import InspectorAssessmentTarget from './inspector/assessmentTarget'
+
 import Batch_ from './batch'
 export const Batch = Batch_
 
@@ -376,6 +410,19 @@ import DMSEndpoint from './dms/endpoint'
 import DMSReplicationTask from './dms/replicationTask'
 import DMSReplicationInstance from './dms/replicationInstance'
 
+import Glue_ from './glue'
+export const Glue = Glue_
+
+import GlueTable from './glue/table'
+import GlueConnection from './glue/connection'
+import GluePartition from './glue/partition'
+import GlueJob from './glue/job'
+import GlueDatabase from './glue/database'
+import GlueDevEndpoint from './glue/devEndpoint'
+import GlueTrigger from './glue/trigger'
+import GlueCrawler from './glue/crawler'
+import GlueClassifier from './glue/classifier'
+
 import ElastiCache_ from './elastiCache'
 export const ElastiCache = ElastiCache_
 
@@ -397,6 +444,13 @@ import Budgets_ from './budgets'
 export const Budgets = Budgets_
 
 import BudgetsBudget from './budgets/budget'
+
+import DAX_ from './dax'
+export const DAX = DAX_
+
+import DAXSubnetGroup from './dax/subnetGroup'
+import DAXParameterGroup from './dax/parameterGroup'
+import DAXCluster from './dax/cluster'
 
 import DataPipeline_ from './dataPipeline'
 export const DataPipeline = DataPipeline_
@@ -448,50 +502,20 @@ export const DynamoDB = DynamoDB_
 
 import DynamoDBTable from './dynamoDb/table'
 
-import StepFunctions_ from './stepFunctions'
-export const StepFunctions = StepFunctions_
+import Athena_ from './athena'
+export const Athena = Athena_
 
-import StepFunctionsActivity from './stepFunctions/activity'
-import StepFunctionsStateMachine from './stepFunctions/stateMachine'
-
-import Glue_ from './glue'
-export const Glue = Glue_
-
-import GlueTable from './glue/table'
-import GlueConnection from './glue/connection'
-import GluePartition from './glue/partition'
-import GlueJob from './glue/job'
-import GlueDatabase from './glue/database'
-import GlueDevEndpoint from './glue/devEndpoint'
-import GlueTrigger from './glue/trigger'
-import GlueCrawler from './glue/crawler'
-import GlueClassifier from './glue/classifier'
-
-import AppSync_ from './appSync'
-export const AppSync = AppSync_
-
-import AppSyncDataSource from './appSync/dataSource'
-import AppSyncResolver from './appSync/resolver'
-import AppSyncGraphQLSchema from './appSync/graphQlSchema'
-import AppSyncGraphQLApi from './appSync/graphQlApi'
-import AppSyncApiKey from './appSync/apiKey'
-
-import WAFRegional_ from './wafRegional'
-export const WAFRegional = WAFRegional_
-
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
-import WAFRegionalWebACL from './wafRegional/webAcl'
-import WAFRegionalRule from './wafRegional/rule'
-import WAFRegionalIPSet from './wafRegional/ipSet'
+import AthenaNamedQuery from './athena/namedQuery'
 
 import AutoScalingPlans_ from './autoScalingPlans'
 export const AutoScalingPlans = AutoScalingPlans_
 
 import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
+
+import Cloud9_ from './cloud9'
+export const Cloud9 = Cloud9_
+
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
 
 import Neptune_ from './neptune'
 export const Neptune = Neptune_
@@ -509,13 +533,6 @@ import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOut
 import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource'
 import KinesisAnalyticsApplication from './kinesisAnalytics/application'
 
-import Inspector_ from './inspector'
-export const Inspector = Inspector_
-
-import InspectorResourceGroup from './inspector/resourceGroup'
-import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
-import InspectorAssessmentTarget from './inspector/assessmentTarget'
-
 import SES_ from './ses'
 export const SES = SES_
 
@@ -531,18 +548,6 @@ export const CodeBuild = CodeBuild_
 
 import CodeBuildProject from './codeBuild/project'
 
-import DAX_ from './dax'
-export const DAX = DAX_
-
-import DAXSubnetGroup from './dax/subnetGroup'
-import DAXParameterGroup from './dax/parameterGroup'
-import DAXCluster from './dax/cluster'
-
-import Cloud9_ from './cloud9'
-export const Cloud9 = Cloud9_
-
-import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
-
 import ServiceDiscovery_ from './serviceDiscovery'
 export const ServiceDiscovery = ServiceDiscovery_
 
@@ -556,11 +561,6 @@ export const CodeCommit = CodeCommit_
 
 import CodeCommitRepository from './codeCommit/repository'
 
-import Athena_ from './athena'
-export const Athena = Athena_
-
-import AthenaNamedQuery from './athena/namedQuery'
-
 import EKS_ from './eks'
 export const EKS = EKS_
 
@@ -569,6 +569,7 @@ import EKSCluster from './eks/cluster'
 export default {
   ElasticBeanstalk,
   EC2,
+  AppSync,
   ServiceCatalog,
   Cognito,
   Events,
@@ -576,10 +577,11 @@ export default {
   IAM,
   CodePipeline,
   Elasticsearch,
+  WAFRegional,
   ApiGateway,
   RDS,
-  EMR,
   WorkSpaces,
+  EMR,
   Logs,
   Kinesis,
   AutoScaling,
@@ -588,6 +590,7 @@ export default {
   CloudWatch,
   ECS,
   ElasticLoadBalancingV2,
+  StepFunctions,
   OpsWorks,
   CloudFront,
   GameLift,
@@ -601,13 +604,16 @@ export default {
   Redshift,
   Lambda,
   CertificateManager,
+  Inspector,
   Batch,
   IoT,
   ElasticLoadBalancing,
   DMS,
+  Glue,
   ElastiCache,
   CodeDeploy,
   Budgets,
+  DAX,
   DataPipeline,
   CloudTrail,
   CloudFormation,
@@ -617,20 +623,14 @@ export default {
   SDB,
   ECR,
   DynamoDB,
-  StepFunctions,
-  Glue,
-  AppSync,
-  WAFRegional,
+  Athena,
   AutoScalingPlans,
+  Cloud9,
   Neptune,
   KinesisAnalytics,
-  Inspector,
   SES,
   CodeBuild,
-  DAX,
-  Cloud9,
   ServiceDiscovery,
   CodeCommit,
-  Athena,
   EKS
 }

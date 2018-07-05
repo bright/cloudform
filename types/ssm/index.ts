@@ -19,14 +19,14 @@
    
 import Document from './document'
 import PatchBaseline from './patchBaseline'
+import Parameter from './parameter'
 import Association from './association'
-import MaintenanceWindowTask from './maintenanceWindowTask'
-import Parameter from './parameter' 
+import MaintenanceWindowTask from './maintenanceWindowTask' 
 
 export default {
   Document,
   PatchBaseline,
+  Parameter,
   Association,
-  MaintenanceWindowTask,
-  Parameter
+  MaintenanceWindowTask
 }

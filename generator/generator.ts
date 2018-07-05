@@ -234,8 +234,7 @@ function generateFilesFromSchema(schema: Schema, resourceSources: { [key: string
 }
 
 function generateSchemas() {
-    let mergedSchema: Schema
-
+    const schemas: { [key: string]: Schema } = {}
     const schemaVersions: { [key: string]: string } = {}
     const resourceSources: { [key: string]: string[] } = {}
 
@@ -245,6 +244,7 @@ function generateSchemas() {
         return fetch(schemaUrl)
             .then((res: Response) => res.json())
             .then((schema: Schema) => {
+                schemas[region] = schema
                 schemaVersions[region] = schema.ResourceSpecificationVersion
 
                 forEach(schema.ResourceTypes, (resource: ResourceType, resourceFullName: string) => {
@@ -254,13 +254,19 @@ function generateSchemas() {
 
                     resourceSources[resourceFullName].push(region)
                 })
-
-                mergedSchema = merge(mergedSchema || {}, schema)
             })
     })
 
     Promise.all(mergedSchemaPromises)
-        .then(() => generateFilesFromSchema(mergedSchema, resourceSources, schemaVersions))
+        .then(() => {
+            let mergedSchema: Schema
+
+            Object.keys(SchemaUrls).sort().forEach(region => {
+                mergedSchema = merge(mergedSchema || {}, schemas[region])
+            })
+
+            generateFilesFromSchema(mergedSchema!, resourceSources, schemaVersions)
+        })
 }
 
 generateSchemas()

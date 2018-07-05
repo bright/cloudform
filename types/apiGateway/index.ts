@@ -32,8 +32,8 @@ import BasePathMapping from './basePathMapping'
 import Stage from './stage'
 import VpcLink from './vpcLink'
 import GatewayResponse from './gatewayResponse'
-import Method from './method'
 import ClientCertificate from './clientCertificate'
+import Method from './method'
 import DocumentationVersion from './documentationVersion'
 import UsagePlanKey from './usagePlanKey' 
 
@@ -53,8 +53,8 @@ export default {
   Stage,
   VpcLink,
   GatewayResponse,
-  Method,
   ClientCertificate,
+  Method,
   DocumentationVersion,
   UsagePlanKey
 }

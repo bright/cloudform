@@ -24,8 +24,6 @@ const ec2_1 = require("./ec2");
 exports.EC2 = ec2_1.default;
 const serviceCatalog_1 = require("./serviceCatalog");
 exports.ServiceCatalog = serviceCatalog_1.default;
-const cognito_1 = require("./cognito");
-exports.Cognito = cognito_1.default;
 const events_1 = require("./events");
 exports.Events = events_1.default;
 const waf_1 = require("./waf");
@@ -38,12 +36,12 @@ const elasticsearch_1 = require("./elasticsearch");
 exports.Elasticsearch = elasticsearch_1.default;
 const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
-const rds_1 = require("./rds");
-exports.RDS = rds_1.default;
 const emr_1 = require("./emr");
 exports.EMR = emr_1.default;
 const workSpaces_1 = require("./workSpaces");
 exports.WorkSpaces = workSpaces_1.default;
+const rds_1 = require("./rds");
+exports.RDS = rds_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -86,14 +84,16 @@ const lambda_1 = require("./lambda");
 exports.Lambda = lambda_1.default;
 const certificateManager_1 = require("./certificateManager");
 exports.CertificateManager = certificateManager_1.default;
-const batch_1 = require("./batch");
-exports.Batch = batch_1.default;
-const iot_1 = require("./iot");
-exports.IoT = iot_1.default;
+const inspector_1 = require("./inspector");
+exports.Inspector = inspector_1.default;
 const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
 exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
+const iot_1 = require("./iot");
+exports.IoT = iot_1.default;
 const dms_1 = require("./dms");
 exports.DMS = dms_1.default;
+const glue_1 = require("./glue");
+exports.Glue = glue_1.default;
 const elastiCache_1 = require("./elastiCache");
 exports.ElastiCache = elastiCache_1.default;
 const codeDeploy_1 = require("./codeDeploy");
@@ -118,52 +118,51 @@ const ecr_1 = require("./ecr");
 exports.ECR = ecr_1.default;
 const dynamoDb_1 = require("./dynamoDb");
 exports.DynamoDB = dynamoDb_1.default;
-const stepFunctions_1 = require("./stepFunctions");
-exports.StepFunctions = stepFunctions_1.default;
-const glue_1 = require("./glue");
-exports.Glue = glue_1.default;
-const appSync_1 = require("./appSync");
-exports.AppSync = appSync_1.default;
-const wafRegional_1 = require("./wafRegional");
-exports.WAFRegional = wafRegional_1.default;
+const cognito_1 = require("./cognito");
+exports.Cognito = cognito_1.default;
 const autoScalingPlans_1 = require("./autoScalingPlans");
 exports.AutoScalingPlans = autoScalingPlans_1.default;
+const cloud9_1 = require("./cloud9");
+exports.Cloud9 = cloud9_1.default;
+const athena_1 = require("./athena");
+exports.Athena = athena_1.default;
+const appSync_1 = require("./appSync");
+exports.AppSync = appSync_1.default;
+const batch_1 = require("./batch");
+exports.Batch = batch_1.default;
+const wafRegional_1 = require("./wafRegional");
+exports.WAFRegional = wafRegional_1.default;
+const stepFunctions_1 = require("./stepFunctions");
+exports.StepFunctions = stepFunctions_1.default;
+const dax_1 = require("./dax");
+exports.DAX = dax_1.default;
 const neptune_1 = require("./neptune");
 exports.Neptune = neptune_1.default;
 const kinesisAnalytics_1 = require("./kinesisAnalytics");
 exports.KinesisAnalytics = kinesisAnalytics_1.default;
-const inspector_1 = require("./inspector");
-exports.Inspector = inspector_1.default;
 const ses_1 = require("./ses");
 exports.SES = ses_1.default;
 const codeBuild_1 = require("./codeBuild");
 exports.CodeBuild = codeBuild_1.default;
-const dax_1 = require("./dax");
-exports.DAX = dax_1.default;
-const cloud9_1 = require("./cloud9");
-exports.Cloud9 = cloud9_1.default;
 const serviceDiscovery_1 = require("./serviceDiscovery");
 exports.ServiceDiscovery = serviceDiscovery_1.default;
 const codeCommit_1 = require("./codeCommit");
 exports.CodeCommit = codeCommit_1.default;
-const athena_1 = require("./athena");
-exports.Athena = athena_1.default;
 const eks_1 = require("./eks");
 exports.EKS = eks_1.default;
 exports.default = {
     ElasticBeanstalk: exports.ElasticBeanstalk,
     EC2: exports.EC2,
     ServiceCatalog: exports.ServiceCatalog,
-    Cognito: exports.Cognito,
     Events: exports.Events,
     WAF: exports.WAF,
     IAM: exports.IAM,
     CodePipeline: exports.CodePipeline,
     Elasticsearch: exports.Elasticsearch,
     ApiGateway: exports.ApiGateway,
-    RDS: exports.RDS,
     EMR: exports.EMR,
     WorkSpaces: exports.WorkSpaces,
+    RDS: exports.RDS,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -185,10 +184,11 @@ exports.default = {
     Redshift: exports.Redshift,
     Lambda: exports.Lambda,
     CertificateManager: exports.CertificateManager,
-    Batch: exports.Batch,
-    IoT: exports.IoT,
+    Inspector: exports.Inspector,
     ElasticLoadBalancing: exports.ElasticLoadBalancing,
+    IoT: exports.IoT,
     DMS: exports.DMS,
+    Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
     Budgets: exports.Budgets,
@@ -201,20 +201,20 @@ exports.default = {
     SDB: exports.SDB,
     ECR: exports.ECR,
     DynamoDB: exports.DynamoDB,
-    StepFunctions: exports.StepFunctions,
-    Glue: exports.Glue,
-    AppSync: exports.AppSync,
-    WAFRegional: exports.WAFRegional,
+    Cognito: exports.Cognito,
     AutoScalingPlans: exports.AutoScalingPlans,
+    Cloud9: exports.Cloud9,
+    Athena: exports.Athena,
+    AppSync: exports.AppSync,
+    Batch: exports.Batch,
+    WAFRegional: exports.WAFRegional,
+    StepFunctions: exports.StepFunctions,
+    DAX: exports.DAX,
     Neptune: exports.Neptune,
     KinesisAnalytics: exports.KinesisAnalytics,
-    Inspector: exports.Inspector,
     SES: exports.SES,
     CodeBuild: exports.CodeBuild,
-    DAX: exports.DAX,
-    Cloud9: exports.Cloud9,
     ServiceDiscovery: exports.ServiceDiscovery,
     CodeCommit: exports.CodeCommit,
-    Athena: exports.Athena,
     EKS: exports.EKS
 };

@@ -96,8 +96,8 @@ export declare const ServiceCatalog: {
     LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
     TagOption: typeof ServiceCatalogTagOption;
     PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-    CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
     LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
+    CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
     CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
     PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
     Portfolio: typeof ServiceCatalogPortfolio;
@@ -109,29 +109,13 @@ import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssoci
 import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint';
 import ServiceCatalogTagOption from './serviceCatalog/tagOption';
 import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation';
-import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
 import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
 import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct';
 import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation';
 import ServiceCatalogPortfolio from './serviceCatalog/portfolio';
 import ServiceCatalogAcceptedPortfolioShare from './serviceCatalog/acceptedPortfolioShare';
 import ServiceCatalogLaunchNotificationConstraint from './serviceCatalog/launchNotificationConstraint';
-export declare const Cognito: {
-    IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
-    UserPoolGroup: typeof CognitoUserPoolGroup;
-    IdentityPool: typeof CognitoIdentityPool;
-    UserPoolUser: typeof CognitoUserPoolUser;
-    UserPool: typeof CognitoUserPool;
-    UserPoolClient: typeof CognitoUserPoolClient;
-    UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
-};
-import CognitoIdentityPoolRoleAttachment from './cognito/identityPoolRoleAttachment';
-import CognitoUserPoolGroup from './cognito/userPoolGroup';
-import CognitoIdentityPool from './cognito/identityPool';
-import CognitoUserPoolUser from './cognito/userPoolUser';
-import CognitoUserPool from './cognito/userPool';
-import CognitoUserPoolClient from './cognito/userPoolClient';
-import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
 export declare const Events: {
     Rule: typeof EventsRule;
 };
@@ -220,6 +204,22 @@ import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -240,22 +240,6 @@ import RDSEventSubscription from './rds/eventSubscription';
 import RDSDBInstance from './rds/dbInstance';
 import RDSDBSecurityGroup from './rds/dbSecurityGroup';
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -395,15 +379,15 @@ import EFSFileSystem from './efs/fileSystem';
 export declare const SSM: {
     Document: typeof SSMDocument;
     PatchBaseline: typeof SSMPatchBaseline;
+    Parameter: typeof SSMParameter;
     Association: typeof SSMAssociation;
     MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
-    Parameter: typeof SSMParameter;
 };
 import SSMDocument from './ssm/document';
 import SSMPatchBaseline from './ssm/patchBaseline';
+import SSMParameter from './ssm/parameter';
 import SSMAssociation from './ssm/association';
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask';
-import SSMParameter from './ssm/parameter';
 export declare const Config: {
     DeliveryChannel: typeof ConfigDeliveryChannel;
     ConfigurationRecorder: typeof ConfigConfigurationRecorder;
@@ -446,14 +430,18 @@ export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
 import CertificateManagerCertificate from './certificateManager/certificate';
-export declare const Batch: {
-    JobDefinition: typeof BatchJobDefinition;
-    JobQueue: typeof BatchJobQueue;
-    ComputeEnvironment: typeof BatchComputeEnvironment;
+export declare const Inspector: {
+    ResourceGroup: typeof InspectorResourceGroup;
+    AssessmentTemplate: typeof InspectorAssessmentTemplate;
+    AssessmentTarget: typeof InspectorAssessmentTarget;
 };
-import BatchJobDefinition from './batch/jobDefinition';
-import BatchJobQueue from './batch/jobQueue';
-import BatchComputeEnvironment from './batch/computeEnvironment';
+import InspectorResourceGroup from './inspector/resourceGroup';
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
+import InspectorAssessmentTarget from './inspector/assessmentTarget';
+export declare const ElasticLoadBalancing: {
+    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
+};
+import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
 export declare const IoT: {
     Thing: typeof IoTThing;
     Policy: typeof IoTPolicy;
@@ -468,10 +456,6 @@ import IoTTopicRule from './iot/topicRule';
 import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment';
 import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment';
 import IoTCertificate from './iot/certificate';
-export declare const ElasticLoadBalancing: {
-    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
-};
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
 export declare const DMS: {
     Certificate: typeof DMSCertificate;
     ReplicationSubnetGroup: typeof DMSReplicationSubnetGroup;
@@ -486,6 +470,26 @@ import DMSEventSubscription from './dms/eventSubscription';
 import DMSEndpoint from './dms/endpoint';
 import DMSReplicationTask from './dms/replicationTask';
 import DMSReplicationInstance from './dms/replicationInstance';
+export declare const Glue: {
+    Table: typeof GlueTable;
+    Connection: typeof GlueConnection;
+    Partition: typeof GluePartition;
+    Job: typeof GlueJob;
+    Database: typeof GlueDatabase;
+    DevEndpoint: typeof GlueDevEndpoint;
+    Trigger: typeof GlueTrigger;
+    Crawler: typeof GlueCrawler;
+    Classifier: typeof GlueClassifier;
+};
+import GlueTable from './glue/table';
+import GlueConnection from './glue/connection';
+import GluePartition from './glue/partition';
+import GlueJob from './glue/job';
+import GlueDatabase from './glue/database';
+import GlueDevEndpoint from './glue/devEndpoint';
+import GlueTrigger from './glue/trigger';
+import GlueCrawler from './glue/crawler';
+import GlueClassifier from './glue/classifier';
 export declare const ElastiCache: {
     SecurityGroup: typeof ElastiCacheSecurityGroup;
     SubnetGroup: typeof ElastiCacheSubnetGroup;
@@ -558,32 +562,34 @@ export declare const DynamoDB: {
     Table: typeof DynamoDBTable;
 };
 import DynamoDBTable from './dynamoDb/table';
-export declare const StepFunctions: {
-    Activity: typeof StepFunctionsActivity;
-    StateMachine: typeof StepFunctionsStateMachine;
+export declare const Cognito: {
+    IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
+    UserPoolGroup: typeof CognitoUserPoolGroup;
+    IdentityPool: typeof CognitoIdentityPool;
+    UserPoolUser: typeof CognitoUserPoolUser;
+    UserPool: typeof CognitoUserPool;
+    UserPoolClient: typeof CognitoUserPoolClient;
+    UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
 };
-import StepFunctionsActivity from './stepFunctions/activity';
-import StepFunctionsStateMachine from './stepFunctions/stateMachine';
-export declare const Glue: {
-    Table: typeof GlueTable;
-    Connection: typeof GlueConnection;
-    Partition: typeof GluePartition;
-    Job: typeof GlueJob;
-    Database: typeof GlueDatabase;
-    DevEndpoint: typeof GlueDevEndpoint;
-    Trigger: typeof GlueTrigger;
-    Crawler: typeof GlueCrawler;
-    Classifier: typeof GlueClassifier;
+import CognitoIdentityPoolRoleAttachment from './cognito/identityPoolRoleAttachment';
+import CognitoUserPoolGroup from './cognito/userPoolGroup';
+import CognitoIdentityPool from './cognito/identityPool';
+import CognitoUserPoolUser from './cognito/userPoolUser';
+import CognitoUserPool from './cognito/userPool';
+import CognitoUserPoolClient from './cognito/userPoolClient';
+import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
+export declare const AutoScalingPlans: {
+    ScalingPlan: typeof AutoScalingPlansScalingPlan;
 };
-import GlueTable from './glue/table';
-import GlueConnection from './glue/connection';
-import GluePartition from './glue/partition';
-import GlueJob from './glue/job';
-import GlueDatabase from './glue/database';
-import GlueDevEndpoint from './glue/devEndpoint';
-import GlueTrigger from './glue/trigger';
-import GlueCrawler from './glue/crawler';
-import GlueClassifier from './glue/classifier';
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
+export declare const Cloud9: {
+    EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+};
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
+export declare const Athena: {
+    NamedQuery: typeof AthenaNamedQuery;
+};
+import AthenaNamedQuery from './athena/namedQuery';
 export declare const AppSync: {
     DataSource: typeof AppSyncDataSource;
     Resolver: typeof AppSyncResolver;
@@ -596,6 +602,14 @@ import AppSyncResolver from './appSync/resolver';
 import AppSyncGraphQLSchema from './appSync/graphQlSchema';
 import AppSyncGraphQLApi from './appSync/graphQlApi';
 import AppSyncApiKey from './appSync/apiKey';
+export declare const Batch: {
+    JobDefinition: typeof BatchJobDefinition;
+    JobQueue: typeof BatchJobQueue;
+    ComputeEnvironment: typeof BatchComputeEnvironment;
+};
+import BatchJobDefinition from './batch/jobDefinition';
+import BatchJobQueue from './batch/jobQueue';
+import BatchComputeEnvironment from './batch/computeEnvironment';
 export declare const WAFRegional: {
     SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
     SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
@@ -614,10 +628,20 @@ import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
 import WAFRegionalWebACL from './wafRegional/webAcl';
 import WAFRegionalRule from './wafRegional/rule';
 import WAFRegionalIPSet from './wafRegional/ipSet';
-export declare const AutoScalingPlans: {
-    ScalingPlan: typeof AutoScalingPlansScalingPlan;
+export declare const StepFunctions: {
+    Activity: typeof StepFunctionsActivity;
+    StateMachine: typeof StepFunctionsStateMachine;
 };
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
+import StepFunctionsActivity from './stepFunctions/activity';
+import StepFunctionsStateMachine from './stepFunctions/stateMachine';
+export declare const DAX: {
+    SubnetGroup: typeof DAXSubnetGroup;
+    ParameterGroup: typeof DAXParameterGroup;
+    Cluster: typeof DAXCluster;
+};
+import DAXSubnetGroup from './dax/subnetGroup';
+import DAXParameterGroup from './dax/parameterGroup';
+import DAXCluster from './dax/cluster';
 export declare const Neptune: {
     DBParameterGroup: typeof NeptuneDBParameterGroup;
     DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
@@ -638,14 +662,6 @@ export declare const KinesisAnalytics: {
 import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
 import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
 import KinesisAnalyticsApplication from './kinesisAnalytics/application';
-export declare const Inspector: {
-    ResourceGroup: typeof InspectorResourceGroup;
-    AssessmentTemplate: typeof InspectorAssessmentTemplate;
-    AssessmentTarget: typeof InspectorAssessmentTarget;
-};
-import InspectorResourceGroup from './inspector/resourceGroup';
-import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
-import InspectorAssessmentTarget from './inspector/assessmentTarget';
 export declare const SES: {
     ReceiptFilter: typeof SESReceiptFilter;
     ReceiptRule: typeof SESReceiptRule;
@@ -664,18 +680,6 @@ export declare const CodeBuild: {
     Project: typeof CodeBuildProject;
 };
 import CodeBuildProject from './codeBuild/project';
-export declare const DAX: {
-    SubnetGroup: typeof DAXSubnetGroup;
-    ParameterGroup: typeof DAXParameterGroup;
-    Cluster: typeof DAXCluster;
-};
-import DAXSubnetGroup from './dax/subnetGroup';
-import DAXParameterGroup from './dax/parameterGroup';
-import DAXCluster from './dax/cluster';
-export declare const Cloud9: {
-    EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-};
-import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
 export declare const ServiceDiscovery: {
     Instance: typeof ServiceDiscoveryInstance;
     Service: typeof ServiceDiscoveryService;
@@ -690,10 +694,6 @@ export declare const CodeCommit: {
     Repository: typeof CodeCommitRepository;
 };
 import CodeCommitRepository from './codeCommit/repository';
-export declare const Athena: {
-    NamedQuery: typeof AthenaNamedQuery;
-};
-import AthenaNamedQuery from './athena/namedQuery';
 export declare const EKS: {
     Cluster: typeof EKSCluster;
 };
@@ -753,22 +753,13 @@ declare const _default: {
         LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
         TagOption: typeof ServiceCatalogTagOption;
         PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-        CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
         LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
+        CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
         CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
         PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
         Portfolio: typeof ServiceCatalogPortfolio;
         AcceptedPortfolioShare: typeof ServiceCatalogAcceptedPortfolioShare;
         LaunchNotificationConstraint: typeof ServiceCatalogLaunchNotificationConstraint;
-    };
-    Cognito: {
-        IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
-        UserPoolGroup: typeof CognitoUserPoolGroup;
-        IdentityPool: typeof CognitoIdentityPool;
-        UserPoolUser: typeof CognitoUserPoolUser;
-        UserPool: typeof CognitoUserPool;
-        UserPoolClient: typeof CognitoUserPoolClient;
-        UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
     };
     Events: {
         Rule: typeof EventsRule;
@@ -820,6 +811,16 @@ declare const _default: {
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
     };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
+    };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
         DBCluster: typeof RDSDBCluster;
@@ -830,16 +831,6 @@ declare const _default: {
         DBInstance: typeof RDSDBInstance;
         DBSecurityGroup: typeof RDSDBSecurityGroup;
         DBClusterParameterGroup: typeof RDSDBClusterParameterGroup;
-    };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -927,9 +918,9 @@ declare const _default: {
     SSM: {
         Document: typeof SSMDocument;
         PatchBaseline: typeof SSMPatchBaseline;
+        Parameter: typeof SSMParameter;
         Association: typeof SSMAssociation;
         MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
-        Parameter: typeof SSMParameter;
     };
     Config: {
         DeliveryChannel: typeof ConfigDeliveryChannel;
@@ -957,10 +948,13 @@ declare const _default: {
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
     };
-    Batch: {
-        JobDefinition: typeof BatchJobDefinition;
-        JobQueue: typeof BatchJobQueue;
-        ComputeEnvironment: typeof BatchComputeEnvironment;
+    Inspector: {
+        ResourceGroup: typeof InspectorResourceGroup;
+        AssessmentTemplate: typeof InspectorAssessmentTemplate;
+        AssessmentTarget: typeof InspectorAssessmentTarget;
+    };
+    ElasticLoadBalancing: {
+        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
     };
     IoT: {
         Thing: typeof IoTThing;
@@ -970,9 +964,6 @@ declare const _default: {
         ThingPrincipalAttachment: typeof IoTThingPrincipalAttachment;
         Certificate: typeof IoTCertificate;
     };
-    ElasticLoadBalancing: {
-        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
-    };
     DMS: {
         Certificate: typeof DMSCertificate;
         ReplicationSubnetGroup: typeof DMSReplicationSubnetGroup;
@@ -980,6 +971,17 @@ declare const _default: {
         Endpoint: typeof DMSEndpoint;
         ReplicationTask: typeof DMSReplicationTask;
         ReplicationInstance: typeof DMSReplicationInstance;
+    };
+    Glue: {
+        Table: typeof GlueTable;
+        Connection: typeof GlueConnection;
+        Partition: typeof GluePartition;
+        Job: typeof GlueJob;
+        Database: typeof GlueDatabase;
+        DevEndpoint: typeof GlueDevEndpoint;
+        Trigger: typeof GlueTrigger;
+        Crawler: typeof GlueCrawler;
+        Classifier: typeof GlueClassifier;
     };
     ElastiCache: {
         SecurityGroup: typeof ElastiCacheSecurityGroup;
@@ -1029,20 +1031,23 @@ declare const _default: {
     DynamoDB: {
         Table: typeof DynamoDBTable;
     };
-    StepFunctions: {
-        Activity: typeof StepFunctionsActivity;
-        StateMachine: typeof StepFunctionsStateMachine;
+    Cognito: {
+        IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
+        UserPoolGroup: typeof CognitoUserPoolGroup;
+        IdentityPool: typeof CognitoIdentityPool;
+        UserPoolUser: typeof CognitoUserPoolUser;
+        UserPool: typeof CognitoUserPool;
+        UserPoolClient: typeof CognitoUserPoolClient;
+        UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
     };
-    Glue: {
-        Table: typeof GlueTable;
-        Connection: typeof GlueConnection;
-        Partition: typeof GluePartition;
-        Job: typeof GlueJob;
-        Database: typeof GlueDatabase;
-        DevEndpoint: typeof GlueDevEndpoint;
-        Trigger: typeof GlueTrigger;
-        Crawler: typeof GlueCrawler;
-        Classifier: typeof GlueClassifier;
+    AutoScalingPlans: {
+        ScalingPlan: typeof AutoScalingPlansScalingPlan;
+    };
+    Cloud9: {
+        EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+    };
+    Athena: {
+        NamedQuery: typeof AthenaNamedQuery;
     };
     AppSync: {
         DataSource: typeof AppSyncDataSource;
@@ -1050,6 +1055,11 @@ declare const _default: {
         GraphQLSchema: typeof AppSyncGraphQLSchema;
         GraphQLApi: typeof AppSyncGraphQLApi;
         ApiKey: typeof AppSyncApiKey;
+    };
+    Batch: {
+        JobDefinition: typeof BatchJobDefinition;
+        JobQueue: typeof BatchJobQueue;
+        ComputeEnvironment: typeof BatchComputeEnvironment;
     };
     WAFRegional: {
         SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
@@ -1061,8 +1071,14 @@ declare const _default: {
         Rule: typeof WAFRegionalRule;
         IPSet: typeof WAFRegionalIPSet;
     };
-    AutoScalingPlans: {
-        ScalingPlan: typeof AutoScalingPlansScalingPlan;
+    StepFunctions: {
+        Activity: typeof StepFunctionsActivity;
+        StateMachine: typeof StepFunctionsStateMachine;
+    };
+    DAX: {
+        SubnetGroup: typeof DAXSubnetGroup;
+        ParameterGroup: typeof DAXParameterGroup;
+        Cluster: typeof DAXCluster;
     };
     Neptune: {
         DBParameterGroup: typeof NeptuneDBParameterGroup;
@@ -1076,11 +1092,6 @@ declare const _default: {
         ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
         Application: typeof KinesisAnalyticsApplication;
     };
-    Inspector: {
-        ResourceGroup: typeof InspectorResourceGroup;
-        AssessmentTemplate: typeof InspectorAssessmentTemplate;
-        AssessmentTarget: typeof InspectorAssessmentTarget;
-    };
     SES: {
         ReceiptFilter: typeof SESReceiptFilter;
         ReceiptRule: typeof SESReceiptRule;
@@ -1092,14 +1103,6 @@ declare const _default: {
     CodeBuild: {
         Project: typeof CodeBuildProject;
     };
-    DAX: {
-        SubnetGroup: typeof DAXSubnetGroup;
-        ParameterGroup: typeof DAXParameterGroup;
-        Cluster: typeof DAXCluster;
-    };
-    Cloud9: {
-        EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-    };
     ServiceDiscovery: {
         Instance: typeof ServiceDiscoveryInstance;
         Service: typeof ServiceDiscoveryService;
@@ -1108,9 +1111,6 @@ declare const _default: {
     };
     CodeCommit: {
         Repository: typeof CodeCommitRepository;
-    };
-    Athena: {
-        NamedQuery: typeof AthenaNamedQuery;
     };
     EKS: {
         Cluster: typeof EKSCluster;

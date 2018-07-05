@@ -20,13 +20,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const document_1 = require("./document");
 const patchBaseline_1 = require("./patchBaseline");
+const parameter_1 = require("./parameter");
 const association_1 = require("./association");
 const maintenanceWindowTask_1 = require("./maintenanceWindowTask");
-const parameter_1 = require("./parameter");
 exports.default = {
     Document: document_1.default,
     PatchBaseline: patchBaseline_1.default,
+    Parameter: parameter_1.default,
     Association: association_1.default,
-    MaintenanceWindowTask: maintenanceWindowTask_1.default,
-    Parameter: parameter_1.default
+    MaintenanceWindowTask: maintenanceWindowTask_1.default
 };

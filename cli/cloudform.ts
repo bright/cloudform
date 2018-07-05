@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-import * as fs from 'fs'
-import * as ts from 'typescript'
 import * as path from 'path'
-import { exec } from 'child_process'
+import {exec} from 'child_process'
 
 const templatePath = process.argv[2]
 
@@ -18,14 +16,27 @@ example: cloudform aws/template.ts > generated.template`)
 }
 
 // console.info(`Compiling AWS CloudForm template from ${process.argv[2]}...`)
-exec(`$(npm bin)/ts-node -e "import t from '${path.resolve(templatePath)}'; console.log(t)"`, (err, stdout, stderr) => {
-  if(err) {
-    console.error(err)
-    return
-  }
-  if(stderr) {
-    console.error(stderr)
-    return
-  }
-  console.log(stdout)
+
+const resolvedTemplatePath = path.resolve(templatePath).replace(/\\/g, "\\\\");
+
+exec('npm bin', (err, npmBin) => {
+    if (err) {
+        console.error(err)
+        return
+    }
+
+    const tsNodePath = path.join(npmBin.trim(), 'ts-node')
+    exec(`${tsNodePath} -e "import t from '${path.resolve(resolvedTemplatePath)}'; console.log(t)"`, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err)
+            return
+        }
+        if (stderr) {
+            console.error(stderr)
+            return
+        }
+        console.log(stdout)
+    })
+
 })
+

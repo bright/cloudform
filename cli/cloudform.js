@@ -14,14 +14,22 @@ example: cloudform aws/template.ts > generated.template`);
     process.exit(1);
 }
 // console.info(`Compiling AWS CloudForm template from ${process.argv[2]}...`)
-child_process_1.exec(`$(npm bin)/ts-node -e "import t from '${path.resolve(templatePath)}'; console.log(t)"`, (err, stdout, stderr) => {
+const resolvedTemplatePath = path.resolve(templatePath).replace(/\\/g, "\\\\");
+child_process_1.exec('npm bin', (err, npmBin) => {
     if (err) {
         console.error(err);
         return;
     }
-    if (stderr) {
-        console.error(stderr);
-        return;
-    }
-    console.log(stdout);
+    const tsNodePath = path.join(npmBin.trim(), 'ts-node');
+    child_process_1.exec(`${tsNodePath} -e "import t from '${path.resolve(resolvedTemplatePath)}'; console.log(t)"`, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        if (stderr) {
+            console.error(stderr);
+            return;
+        }
+        console.log(stdout);
+    });
 });

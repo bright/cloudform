@@ -1,4 +1,5 @@
 import Template from "./types/template";
+export declare type Template = Template;
 import * as _Fn from './types/functions';
 export declare const Fn: typeof _Fn;
 import * as _Refs from './types/refs';

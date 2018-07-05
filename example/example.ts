@@ -1,4 +1,4 @@
-import cloudform, {Fn, Refs, EC2, StringParameter, ResourceTag} from ".." // you should import from cloudform here instead
+import cloudform, {Fn, Refs, EC2, StringParameter, ResourceTag, Template} from ".." // you should import from cloudform here instead
 import {NetworkingConfig} from './config'
 
 // you can define your own shortcuts for repeating Refs
@@ -67,4 +67,4 @@ export default cloudform({
             Value: Fn.GetAtt(Resources.VPC, 'Ipv6CidrBlocks')
         }
     }
-})
+} as Template)

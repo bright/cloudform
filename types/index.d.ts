@@ -90,14 +90,26 @@ import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment';
 import EC2VPNConnection from './ec2/vpnConnection';
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock';
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncApiKey from './appSync/apiKey';
 export declare const ServiceCatalog: {
     PortfolioShare: typeof ServiceCatalogPortfolioShare;
     TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
     LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
     TagOption: typeof ServiceCatalogTagOption;
     PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-    LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
     CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
+    LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
     CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
     PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
     Portfolio: typeof ServiceCatalogPortfolio;
@@ -109,13 +121,29 @@ import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssoci
 import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint';
 import ServiceCatalogTagOption from './serviceCatalog/tagOption';
 import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation';
-import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
 import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
+import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
 import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct';
 import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation';
 import ServiceCatalogPortfolio from './serviceCatalog/portfolio';
 import ServiceCatalogAcceptedPortfolioShare from './serviceCatalog/acceptedPortfolioShare';
 import ServiceCatalogLaunchNotificationConstraint from './serviceCatalog/launchNotificationConstraint';
+export declare const Cognito: {
+    IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
+    UserPoolGroup: typeof CognitoUserPoolGroup;
+    IdentityPool: typeof CognitoIdentityPool;
+    UserPoolUser: typeof CognitoUserPoolUser;
+    UserPool: typeof CognitoUserPool;
+    UserPoolClient: typeof CognitoUserPoolClient;
+    UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
+};
+import CognitoIdentityPoolRoleAttachment from './cognito/identityPoolRoleAttachment';
+import CognitoUserPoolGroup from './cognito/userPoolGroup';
+import CognitoIdentityPool from './cognito/identityPool';
+import CognitoUserPoolUser from './cognito/userPoolUser';
+import CognitoUserPool from './cognito/userPool';
+import CognitoUserPoolClient from './cognito/userPoolClient';
+import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
 export declare const Events: {
     Rule: typeof EventsRule;
 };
@@ -164,6 +192,24 @@ export declare const Elasticsearch: {
     Domain: typeof ElasticsearchDomain;
 };
 import ElasticsearchDomain from './elasticsearch/domain';
+export declare const WAFRegional: {
+    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+    XssMatchSet: typeof WAFRegionalXssMatchSet;
+    ByteMatchSet: typeof WAFRegionalByteMatchSet;
+    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+    WebACL: typeof WAFRegionalWebACL;
+    Rule: typeof WAFRegionalRule;
+    IPSet: typeof WAFRegionalIPSet;
+};
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
+import WAFRegionalWebACL from './wafRegional/webAcl';
+import WAFRegionalRule from './wafRegional/rule';
+import WAFRegionalIPSet from './wafRegional/ipSet';
 export declare const ApiGateway: {
     RequestValidator: typeof ApiGatewayRequestValidator;
     Deployment: typeof ApiGatewayDeployment;
@@ -180,8 +226,8 @@ export declare const ApiGateway: {
     Stage: typeof ApiGatewayStage;
     VpcLink: typeof ApiGatewayVpcLink;
     GatewayResponse: typeof ApiGatewayGatewayResponse;
-    Method: typeof ApiGatewayMethod;
     ClientCertificate: typeof ApiGatewayClientCertificate;
+    Method: typeof ApiGatewayMethod;
     DocumentationVersion: typeof ApiGatewayDocumentationVersion;
     UsagePlanKey: typeof ApiGatewayUsagePlanKey;
 };
@@ -200,26 +246,10 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping';
 import ApiGatewayStage from './apiGateway/stage';
 import ApiGatewayVpcLink from './apiGateway/vpcLink';
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse';
-import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
+import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -240,6 +270,22 @@ import RDSEventSubscription from './rds/eventSubscription';
 import RDSDBInstance from './rds/dbInstance';
 import RDSDBSecurityGroup from './rds/dbSecurityGroup';
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -310,6 +356,12 @@ import ElasticLoadBalancingV2LoadBalancer from './elasticLoadBalancingV2/loadBal
 import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener';
 import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule';
 import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup';
+export declare const StepFunctions: {
+    Activity: typeof StepFunctionsActivity;
+    StateMachine: typeof StepFunctionsStateMachine;
+};
+import StepFunctionsActivity from './stepFunctions/activity';
+import StepFunctionsStateMachine from './stepFunctions/stateMachine';
 export declare const OpsWorks: {
     Volume: typeof OpsWorksVolume;
     App: typeof OpsWorksApp;
@@ -438,10 +490,14 @@ export declare const Inspector: {
 import InspectorResourceGroup from './inspector/resourceGroup';
 import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
 import InspectorAssessmentTarget from './inspector/assessmentTarget';
-export declare const ElasticLoadBalancing: {
-    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
+export declare const Batch: {
+    JobDefinition: typeof BatchJobDefinition;
+    JobQueue: typeof BatchJobQueue;
+    ComputeEnvironment: typeof BatchComputeEnvironment;
 };
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
+import BatchJobDefinition from './batch/jobDefinition';
+import BatchJobQueue from './batch/jobQueue';
+import BatchComputeEnvironment from './batch/computeEnvironment';
 export declare const IoT: {
     Thing: typeof IoTThing;
     Policy: typeof IoTPolicy;
@@ -456,6 +512,10 @@ import IoTTopicRule from './iot/topicRule';
 import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment';
 import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment';
 import IoTCertificate from './iot/certificate';
+export declare const ElasticLoadBalancing: {
+    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
+};
+import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
 export declare const DMS: {
     Certificate: typeof DMSCertificate;
     ReplicationSubnetGroup: typeof DMSReplicationSubnetGroup;
@@ -516,6 +576,14 @@ export declare const Budgets: {
     Budget: typeof BudgetsBudget;
 };
 import BudgetsBudget from './budgets/budget';
+export declare const DAX: {
+    SubnetGroup: typeof DAXSubnetGroup;
+    ParameterGroup: typeof DAXParameterGroup;
+    Cluster: typeof DAXCluster;
+};
+import DAXSubnetGroup from './dax/subnetGroup';
+import DAXParameterGroup from './dax/parameterGroup';
+import DAXCluster from './dax/cluster';
 export declare const DataPipeline: {
     Pipeline: typeof DataPipelinePipeline;
 };
@@ -562,22 +630,10 @@ export declare const DynamoDB: {
     Table: typeof DynamoDBTable;
 };
 import DynamoDBTable from './dynamoDb/table';
-export declare const Cognito: {
-    IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
-    UserPoolGroup: typeof CognitoUserPoolGroup;
-    IdentityPool: typeof CognitoIdentityPool;
-    UserPoolUser: typeof CognitoUserPoolUser;
-    UserPool: typeof CognitoUserPool;
-    UserPoolClient: typeof CognitoUserPoolClient;
-    UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
+export declare const Athena: {
+    NamedQuery: typeof AthenaNamedQuery;
 };
-import CognitoIdentityPoolRoleAttachment from './cognito/identityPoolRoleAttachment';
-import CognitoUserPoolGroup from './cognito/userPoolGroup';
-import CognitoIdentityPool from './cognito/identityPool';
-import CognitoUserPoolUser from './cognito/userPoolUser';
-import CognitoUserPool from './cognito/userPool';
-import CognitoUserPoolClient from './cognito/userPoolClient';
-import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
+import AthenaNamedQuery from './athena/namedQuery';
 export declare const AutoScalingPlans: {
     ScalingPlan: typeof AutoScalingPlansScalingPlan;
 };
@@ -586,62 +642,6 @@ export declare const Cloud9: {
     EnvironmentEC2: typeof Cloud9EnvironmentEC2;
 };
 import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
-export declare const Athena: {
-    NamedQuery: typeof AthenaNamedQuery;
-};
-import AthenaNamedQuery from './athena/namedQuery';
-export declare const AppSync: {
-    DataSource: typeof AppSyncDataSource;
-    Resolver: typeof AppSyncResolver;
-    GraphQLSchema: typeof AppSyncGraphQLSchema;
-    GraphQLApi: typeof AppSyncGraphQLApi;
-    ApiKey: typeof AppSyncApiKey;
-};
-import AppSyncDataSource from './appSync/dataSource';
-import AppSyncResolver from './appSync/resolver';
-import AppSyncGraphQLSchema from './appSync/graphQlSchema';
-import AppSyncGraphQLApi from './appSync/graphQlApi';
-import AppSyncApiKey from './appSync/apiKey';
-export declare const Batch: {
-    JobDefinition: typeof BatchJobDefinition;
-    JobQueue: typeof BatchJobQueue;
-    ComputeEnvironment: typeof BatchComputeEnvironment;
-};
-import BatchJobDefinition from './batch/jobDefinition';
-import BatchJobQueue from './batch/jobQueue';
-import BatchComputeEnvironment from './batch/computeEnvironment';
-export declare const WAFRegional: {
-    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-    XssMatchSet: typeof WAFRegionalXssMatchSet;
-    ByteMatchSet: typeof WAFRegionalByteMatchSet;
-    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-    WebACL: typeof WAFRegionalWebACL;
-    Rule: typeof WAFRegionalRule;
-    IPSet: typeof WAFRegionalIPSet;
-};
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
-import WAFRegionalWebACL from './wafRegional/webAcl';
-import WAFRegionalRule from './wafRegional/rule';
-import WAFRegionalIPSet from './wafRegional/ipSet';
-export declare const StepFunctions: {
-    Activity: typeof StepFunctionsActivity;
-    StateMachine: typeof StepFunctionsStateMachine;
-};
-import StepFunctionsActivity from './stepFunctions/activity';
-import StepFunctionsStateMachine from './stepFunctions/stateMachine';
-export declare const DAX: {
-    SubnetGroup: typeof DAXSubnetGroup;
-    ParameterGroup: typeof DAXParameterGroup;
-    Cluster: typeof DAXCluster;
-};
-import DAXSubnetGroup from './dax/subnetGroup';
-import DAXParameterGroup from './dax/parameterGroup';
-import DAXCluster from './dax/cluster';
 export declare const Neptune: {
     DBParameterGroup: typeof NeptuneDBParameterGroup;
     DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
@@ -747,19 +747,35 @@ declare const _default: {
         VPCCidrBlock: typeof EC2VPCCidrBlock;
         VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
     };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        ApiKey: typeof AppSyncApiKey;
+    };
     ServiceCatalog: {
         PortfolioShare: typeof ServiceCatalogPortfolioShare;
         TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
         LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
         TagOption: typeof ServiceCatalogTagOption;
         PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-        LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
         CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
+        LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
         CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
         PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
         Portfolio: typeof ServiceCatalogPortfolio;
         AcceptedPortfolioShare: typeof ServiceCatalogAcceptedPortfolioShare;
         LaunchNotificationConstraint: typeof ServiceCatalogLaunchNotificationConstraint;
+    };
+    Cognito: {
+        IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
+        UserPoolGroup: typeof CognitoUserPoolGroup;
+        IdentityPool: typeof CognitoIdentityPool;
+        UserPoolUser: typeof CognitoUserPoolUser;
+        UserPool: typeof CognitoUserPool;
+        UserPoolClient: typeof CognitoUserPoolClient;
+        UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
     };
     Events: {
         Rule: typeof EventsRule;
@@ -790,6 +806,16 @@ declare const _default: {
     Elasticsearch: {
         Domain: typeof ElasticsearchDomain;
     };
+    WAFRegional: {
+        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+        XssMatchSet: typeof WAFRegionalXssMatchSet;
+        ByteMatchSet: typeof WAFRegionalByteMatchSet;
+        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+        WebACL: typeof WAFRegionalWebACL;
+        Rule: typeof WAFRegionalRule;
+        IPSet: typeof WAFRegionalIPSet;
+    };
     ApiGateway: {
         RequestValidator: typeof ApiGatewayRequestValidator;
         Deployment: typeof ApiGatewayDeployment;
@@ -806,20 +832,10 @@ declare const _default: {
         Stage: typeof ApiGatewayStage;
         VpcLink: typeof ApiGatewayVpcLink;
         GatewayResponse: typeof ApiGatewayGatewayResponse;
-        Method: typeof ApiGatewayMethod;
         ClientCertificate: typeof ApiGatewayClientCertificate;
+        Method: typeof ApiGatewayMethod;
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
-    };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
     };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
@@ -831,6 +847,16 @@ declare const _default: {
         DBInstance: typeof RDSDBInstance;
         DBSecurityGroup: typeof RDSDBSecurityGroup;
         DBClusterParameterGroup: typeof RDSDBClusterParameterGroup;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
+    };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -874,6 +900,10 @@ declare const _default: {
         Listener: typeof ElasticLoadBalancingV2Listener;
         ListenerRule: typeof ElasticLoadBalancingV2ListenerRule;
         TargetGroup: typeof ElasticLoadBalancingV2TargetGroup;
+    };
+    StepFunctions: {
+        Activity: typeof StepFunctionsActivity;
+        StateMachine: typeof StepFunctionsStateMachine;
     };
     OpsWorks: {
         Volume: typeof OpsWorksVolume;
@@ -953,8 +983,10 @@ declare const _default: {
         AssessmentTemplate: typeof InspectorAssessmentTemplate;
         AssessmentTarget: typeof InspectorAssessmentTarget;
     };
-    ElasticLoadBalancing: {
-        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
+    Batch: {
+        JobDefinition: typeof BatchJobDefinition;
+        JobQueue: typeof BatchJobQueue;
+        ComputeEnvironment: typeof BatchComputeEnvironment;
     };
     IoT: {
         Thing: typeof IoTThing;
@@ -963,6 +995,9 @@ declare const _default: {
         PolicyPrincipalAttachment: typeof IoTPolicyPrincipalAttachment;
         ThingPrincipalAttachment: typeof IoTThingPrincipalAttachment;
         Certificate: typeof IoTCertificate;
+    };
+    ElasticLoadBalancing: {
+        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
     };
     DMS: {
         Certificate: typeof DMSCertificate;
@@ -999,6 +1034,11 @@ declare const _default: {
     Budgets: {
         Budget: typeof BudgetsBudget;
     };
+    DAX: {
+        SubnetGroup: typeof DAXSubnetGroup;
+        ParameterGroup: typeof DAXParameterGroup;
+        Cluster: typeof DAXCluster;
+    };
     DataPipeline: {
         Pipeline: typeof DataPipelinePipeline;
     };
@@ -1031,54 +1071,14 @@ declare const _default: {
     DynamoDB: {
         Table: typeof DynamoDBTable;
     };
-    Cognito: {
-        IdentityPoolRoleAttachment: typeof CognitoIdentityPoolRoleAttachment;
-        UserPoolGroup: typeof CognitoUserPoolGroup;
-        IdentityPool: typeof CognitoIdentityPool;
-        UserPoolUser: typeof CognitoUserPoolUser;
-        UserPool: typeof CognitoUserPool;
-        UserPoolClient: typeof CognitoUserPoolClient;
-        UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
+    Athena: {
+        NamedQuery: typeof AthenaNamedQuery;
     };
     AutoScalingPlans: {
         ScalingPlan: typeof AutoScalingPlansScalingPlan;
     };
     Cloud9: {
         EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-    };
-    Athena: {
-        NamedQuery: typeof AthenaNamedQuery;
-    };
-    AppSync: {
-        DataSource: typeof AppSyncDataSource;
-        Resolver: typeof AppSyncResolver;
-        GraphQLSchema: typeof AppSyncGraphQLSchema;
-        GraphQLApi: typeof AppSyncGraphQLApi;
-        ApiKey: typeof AppSyncApiKey;
-    };
-    Batch: {
-        JobDefinition: typeof BatchJobDefinition;
-        JobQueue: typeof BatchJobQueue;
-        ComputeEnvironment: typeof BatchComputeEnvironment;
-    };
-    WAFRegional: {
-        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-        XssMatchSet: typeof WAFRegionalXssMatchSet;
-        ByteMatchSet: typeof WAFRegionalByteMatchSet;
-        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-        WebACL: typeof WAFRegionalWebACL;
-        Rule: typeof WAFRegionalRule;
-        IPSet: typeof WAFRegionalIPSet;
-    };
-    StepFunctions: {
-        Activity: typeof StepFunctionsActivity;
-        StateMachine: typeof StepFunctionsStateMachine;
-    };
-    DAX: {
-        SubnetGroup: typeof DAXSubnetGroup;
-        ParameterGroup: typeof DAXParameterGroup;
-        Cluster: typeof DAXCluster;
     };
     Neptune: {
         DBParameterGroup: typeof NeptuneDBParameterGroup;

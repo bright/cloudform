@@ -33,8 +33,8 @@ const basePathMapping_1 = require("./basePathMapping");
 const stage_1 = require("./stage");
 const vpcLink_1 = require("./vpcLink");
 const gatewayResponse_1 = require("./gatewayResponse");
-const method_1 = require("./method");
 const clientCertificate_1 = require("./clientCertificate");
+const method_1 = require("./method");
 const documentationVersion_1 = require("./documentationVersion");
 const usagePlanKey_1 = require("./usagePlanKey");
 exports.default = {
@@ -53,8 +53,8 @@ exports.default = {
     Stage: stage_1.default,
     VpcLink: vpcLink_1.default,
     GatewayResponse: gatewayResponse_1.default,
-    Method: method_1.default,
     ClientCertificate: clientCertificate_1.default,
+    Method: method_1.default,
     DocumentationVersion: documentationVersion_1.default,
     UsagePlanKey: usagePlanKey_1.default
 };

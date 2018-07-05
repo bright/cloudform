@@ -22,8 +22,12 @@ const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
 const ec2_1 = require("./ec2");
 exports.EC2 = ec2_1.default;
+const appSync_1 = require("./appSync");
+exports.AppSync = appSync_1.default;
 const serviceCatalog_1 = require("./serviceCatalog");
 exports.ServiceCatalog = serviceCatalog_1.default;
+const cognito_1 = require("./cognito");
+exports.Cognito = cognito_1.default;
 const events_1 = require("./events");
 exports.Events = events_1.default;
 const waf_1 = require("./waf");
@@ -34,14 +38,16 @@ const codePipeline_1 = require("./codePipeline");
 exports.CodePipeline = codePipeline_1.default;
 const elasticsearch_1 = require("./elasticsearch");
 exports.Elasticsearch = elasticsearch_1.default;
+const wafRegional_1 = require("./wafRegional");
+exports.WAFRegional = wafRegional_1.default;
 const apiGateway_1 = require("./apiGateway");
 exports.ApiGateway = apiGateway_1.default;
-const emr_1 = require("./emr");
-exports.EMR = emr_1.default;
-const workSpaces_1 = require("./workSpaces");
-exports.WorkSpaces = workSpaces_1.default;
 const rds_1 = require("./rds");
 exports.RDS = rds_1.default;
+const workSpaces_1 = require("./workSpaces");
+exports.WorkSpaces = workSpaces_1.default;
+const emr_1 = require("./emr");
+exports.EMR = emr_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -58,6 +64,8 @@ const ecs_1 = require("./ecs");
 exports.ECS = ecs_1.default;
 const elasticLoadBalancingV2_1 = require("./elasticLoadBalancingV2");
 exports.ElasticLoadBalancingV2 = elasticLoadBalancingV2_1.default;
+const stepFunctions_1 = require("./stepFunctions");
+exports.StepFunctions = stepFunctions_1.default;
 const opsWorks_1 = require("./opsWorks");
 exports.OpsWorks = opsWorks_1.default;
 const cloudFront_1 = require("./cloudFront");
@@ -86,10 +94,12 @@ const certificateManager_1 = require("./certificateManager");
 exports.CertificateManager = certificateManager_1.default;
 const inspector_1 = require("./inspector");
 exports.Inspector = inspector_1.default;
-const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
-exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
+const batch_1 = require("./batch");
+exports.Batch = batch_1.default;
 const iot_1 = require("./iot");
 exports.IoT = iot_1.default;
+const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
+exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
 const dms_1 = require("./dms");
 exports.DMS = dms_1.default;
 const glue_1 = require("./glue");
@@ -100,6 +110,8 @@ const codeDeploy_1 = require("./codeDeploy");
 exports.CodeDeploy = codeDeploy_1.default;
 const budgets_1 = require("./budgets");
 exports.Budgets = budgets_1.default;
+const dax_1 = require("./dax");
+exports.DAX = dax_1.default;
 const dataPipeline_1 = require("./dataPipeline");
 exports.DataPipeline = dataPipeline_1.default;
 const cloudTrail_1 = require("./cloudTrail");
@@ -118,24 +130,12 @@ const ecr_1 = require("./ecr");
 exports.ECR = ecr_1.default;
 const dynamoDb_1 = require("./dynamoDb");
 exports.DynamoDB = dynamoDb_1.default;
-const cognito_1 = require("./cognito");
-exports.Cognito = cognito_1.default;
+const athena_1 = require("./athena");
+exports.Athena = athena_1.default;
 const autoScalingPlans_1 = require("./autoScalingPlans");
 exports.AutoScalingPlans = autoScalingPlans_1.default;
 const cloud9_1 = require("./cloud9");
 exports.Cloud9 = cloud9_1.default;
-const athena_1 = require("./athena");
-exports.Athena = athena_1.default;
-const appSync_1 = require("./appSync");
-exports.AppSync = appSync_1.default;
-const batch_1 = require("./batch");
-exports.Batch = batch_1.default;
-const wafRegional_1 = require("./wafRegional");
-exports.WAFRegional = wafRegional_1.default;
-const stepFunctions_1 = require("./stepFunctions");
-exports.StepFunctions = stepFunctions_1.default;
-const dax_1 = require("./dax");
-exports.DAX = dax_1.default;
 const neptune_1 = require("./neptune");
 exports.Neptune = neptune_1.default;
 const kinesisAnalytics_1 = require("./kinesisAnalytics");
@@ -153,16 +153,19 @@ exports.EKS = eks_1.default;
 exports.default = {
     ElasticBeanstalk: exports.ElasticBeanstalk,
     EC2: exports.EC2,
+    AppSync: exports.AppSync,
     ServiceCatalog: exports.ServiceCatalog,
+    Cognito: exports.Cognito,
     Events: exports.Events,
     WAF: exports.WAF,
     IAM: exports.IAM,
     CodePipeline: exports.CodePipeline,
     Elasticsearch: exports.Elasticsearch,
+    WAFRegional: exports.WAFRegional,
     ApiGateway: exports.ApiGateway,
-    EMR: exports.EMR,
-    WorkSpaces: exports.WorkSpaces,
     RDS: exports.RDS,
+    WorkSpaces: exports.WorkSpaces,
+    EMR: exports.EMR,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -171,6 +174,7 @@ exports.default = {
     CloudWatch: exports.CloudWatch,
     ECS: exports.ECS,
     ElasticLoadBalancingV2: exports.ElasticLoadBalancingV2,
+    StepFunctions: exports.StepFunctions,
     OpsWorks: exports.OpsWorks,
     CloudFront: exports.CloudFront,
     GameLift: exports.GameLift,
@@ -185,13 +189,15 @@ exports.default = {
     Lambda: exports.Lambda,
     CertificateManager: exports.CertificateManager,
     Inspector: exports.Inspector,
-    ElasticLoadBalancing: exports.ElasticLoadBalancing,
+    Batch: exports.Batch,
     IoT: exports.IoT,
+    ElasticLoadBalancing: exports.ElasticLoadBalancing,
     DMS: exports.DMS,
     Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,
     CodeDeploy: exports.CodeDeploy,
     Budgets: exports.Budgets,
+    DAX: exports.DAX,
     DataPipeline: exports.DataPipeline,
     CloudTrail: exports.CloudTrail,
     CloudFormation: exports.CloudFormation,
@@ -201,15 +207,9 @@ exports.default = {
     SDB: exports.SDB,
     ECR: exports.ECR,
     DynamoDB: exports.DynamoDB,
-    Cognito: exports.Cognito,
+    Athena: exports.Athena,
     AutoScalingPlans: exports.AutoScalingPlans,
     Cloud9: exports.Cloud9,
-    Athena: exports.Athena,
-    AppSync: exports.AppSync,
-    Batch: exports.Batch,
-    WAFRegional: exports.WAFRegional,
-    StepFunctions: exports.StepFunctions,
-    DAX: exports.DAX,
     Neptune: exports.Neptune,
     KinesisAnalytics: exports.KinesisAnalytics,
     SES: exports.SES,

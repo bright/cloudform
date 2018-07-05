@@ -63,9 +63,11 @@ It makes sense to define it in your `npm` scripts and run within your build or d
 }
 ```
 
+Use `cloudform --minify path/to/your/template.ts` if you want CloudForm to output minified JSON instead of formatted. It might be useful if you reach [CloudFormation template body size limitation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html).
+
 ## API
 
-The types are generated automatically from the [AWS-provided schema file](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html), so `cloudform` supports all the types available in AWS CloudFormation. 
+The types are generated automatically from the [AWS-provided schema file](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html) throughout all the regions, so `cloudform` supports all the types available in AWS CloudFormation.
 
 The simple convention is used – all the AWS types’ namespaces are available directly as exports from the `cloudform` package. All the resources within this package are available inside. This way `EC2.VPC` object from our example translates into `AWS::EC2::VPC` type we can find in [CloudFormation documentation](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html). All the properties also match one-to-one, including casing.
 

@@ -25,6 +25,7 @@
     "typescript": "^2.9.2"
   },
   "devDependencies": {
+    "@types/jsonminify": "^0.4.0",
     "@types/lodash": "^4.14.110",
     "@types/node": "^8.10.20",
     "@types/node-fetch": "^2.1.1",

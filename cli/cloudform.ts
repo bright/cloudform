@@ -2,7 +2,7 @@
 
 import * as path from 'path'
 import {exec} from 'child_process'
-import * as jsonminify from 'jsonminify'
+const jsonminify = require('jsonminify')
 
 interface CloudformOptions {
     shouldMinify: boolean

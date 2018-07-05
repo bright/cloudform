@@ -1,4 +1,21 @@
-/* Generated from https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json, version 2.4.0 */
+/* Generated from: 
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0
+ */
    
 
 import ElasticBeanstalk_ from './elasticBeanstalk'
@@ -9,21 +26,12 @@ import ElasticBeanstalkApplication from './elasticBeanstalk/application'
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment'
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion'
 
-import AppSync_ from './appSync'
-export const AppSync = AppSync_
-
-import AppSyncDataSource from './appSync/dataSource'
-import AppSyncResolver from './appSync/resolver'
-import AppSyncGraphQLSchema from './appSync/graphQlSchema'
-import AppSyncGraphQLApi from './appSync/graphQlApi'
-import AppSyncApiKey from './appSync/apiKey'
-
 import EC2_ from './ec2'
 export const EC2 = EC2_
 
 import EC2RouteTable from './ec2/routeTable'
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2PlacementGroup from './ec2/placementGroup'
+import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
 import EC2NetworkAclEntry from './ec2/networkAclEntry'
 import EC2InternetGateway from './ec2/internetGateway'
 import EC2LaunchTemplate from './ec2/launchTemplate'
@@ -146,27 +154,10 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping'
 import ApiGatewayStage from './apiGateway/stage'
 import ApiGatewayVpcLink from './apiGateway/vpcLink'
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse'
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
 import ApiGatewayMethod from './apiGateway/method'
+import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
-
-import WAFRegional_ from './wafRegional'
-export const WAFRegional = WAFRegional_
-
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
-import WAFRegionalWebACL from './wafRegional/webAcl'
-import WAFRegionalRule from './wafRegional/rule'
-import WAFRegionalIPSet from './wafRegional/ipSet'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import RDS_ from './rds'
 export const RDS = RDS_
@@ -189,6 +180,11 @@ import EMRCluster from './emr/cluster'
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
 import EMRStep from './emr/step'
 import EMRSecurityConfiguration from './emr/securityConfiguration'
+
+import WorkSpaces_ from './workSpaces'
+export const WorkSpaces = WorkSpaces_
+
+import WorkSpacesWorkspace from './workSpaces/workspace'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -219,11 +215,6 @@ export const SQS = SQS_
 import SQSQueue from './sqs/queue'
 import SQSQueuePolicy from './sqs/queuePolicy'
 
-import AutoScalingPlans_ from './autoScalingPlans'
-export const AutoScalingPlans = AutoScalingPlans_
-
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
-
 import Route53_ from './route53'
 export const Route53 = Route53_
 
@@ -253,28 +244,6 @@ import ElasticLoadBalancingV2LoadBalancer from './elasticLoadBalancingV2/loadBal
 import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener'
 import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule'
 import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup'
-
-import Neptune_ from './neptune'
-export const Neptune = Neptune_
-
-import NeptuneDBParameterGroup from './neptune/dbParameterGroup'
-import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup'
-import NeptuneDBCluster from './neptune/dbCluster'
-import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup'
-import NeptuneDBInstance from './neptune/dbInstance'
-
-import StepFunctions_ from './stepFunctions'
-export const StepFunctions = StepFunctions_
-
-import StepFunctionsActivity from './stepFunctions/activity'
-import StepFunctionsStateMachine from './stepFunctions/stateMachine'
-
-import KinesisAnalytics_ from './kinesisAnalytics'
-export const KinesisAnalytics = KinesisAnalytics_
-
-import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput'
-import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource'
-import KinesisAnalyticsApplication from './kinesisAnalytics/application'
 
 import OpsWorks_ from './opsWorks'
 export const OpsWorks = OpsWorks_
@@ -335,9 +304,9 @@ export const SSM = SSM_
 
 import SSMDocument from './ssm/document'
 import SSMPatchBaseline from './ssm/patchBaseline'
-import SSMParameter from './ssm/parameter'
 import SSMAssociation from './ssm/association'
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask'
+import SSMParameter from './ssm/parameter'
 
 import Config_ from './config'
 export const Config = Config_
@@ -375,13 +344,6 @@ export const CertificateManager = CertificateManager_
 
 import CertificateManagerCertificate from './certificateManager/certificate'
 
-import Inspector_ from './inspector'
-export const Inspector = Inspector_
-
-import InspectorResourceGroup from './inspector/resourceGroup'
-import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
-import InspectorAssessmentTarget from './inspector/assessmentTarget'
-
 import Batch_ from './batch'
 export const Batch = Batch_
 
@@ -414,19 +376,6 @@ import DMSEndpoint from './dms/endpoint'
 import DMSReplicationTask from './dms/replicationTask'
 import DMSReplicationInstance from './dms/replicationInstance'
 
-import Glue_ from './glue'
-export const Glue = Glue_
-
-import GlueTable from './glue/table'
-import GlueConnection from './glue/connection'
-import GluePartition from './glue/partition'
-import GlueJob from './glue/job'
-import GlueDatabase from './glue/database'
-import GlueDevEndpoint from './glue/devEndpoint'
-import GlueTrigger from './glue/trigger'
-import GlueCrawler from './glue/crawler'
-import GlueClassifier from './glue/classifier'
-
 import ElastiCache_ from './elastiCache'
 export const ElastiCache = ElastiCache_
 
@@ -444,32 +393,10 @@ import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup'
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig'
 import CodeDeployApplication from './codeDeploy/application'
 
-import SES_ from './ses'
-export const SES = SES_
-
-import SESReceiptFilter from './ses/receiptFilter'
-import SESReceiptRule from './ses/receiptRule'
-import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination'
-import SESTemplate from './ses/template'
-import SESConfigurationSet from './ses/configurationSet'
-import SESReceiptRuleSet from './ses/receiptRuleSet'
-
-import CodeBuild_ from './codeBuild'
-export const CodeBuild = CodeBuild_
-
-import CodeBuildProject from './codeBuild/project'
-
 import Budgets_ from './budgets'
 export const Budgets = Budgets_
 
 import BudgetsBudget from './budgets/budget'
-
-import DAX_ from './dax'
-export const DAX = DAX_
-
-import DAXSubnetGroup from './dax/subnetGroup'
-import DAXParameterGroup from './dax/parameterGroup'
-import DAXCluster from './dax/cluster'
 
 import DataPipeline_ from './dataPipeline'
 export const DataPipeline = DataPipeline_
@@ -489,29 +416,11 @@ import CloudFormationStack from './cloudFormation/stack'
 import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle'
 import CloudFormationCustomResource from './cloudFormation/customResource'
 
-import Cloud9_ from './cloud9'
-export const Cloud9 = Cloud9_
-
-import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
-
-import ServiceDiscovery_ from './serviceDiscovery'
-export const ServiceDiscovery = ServiceDiscovery_
-
-import ServiceDiscoveryInstance from './serviceDiscovery/instance'
-import ServiceDiscoveryService from './serviceDiscovery/service'
-import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace'
-import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace'
-
 import ApplicationAutoScaling_ from './applicationAutoScaling'
 export const ApplicationAutoScaling = ApplicationAutoScaling_
 
 import ApplicationAutoScalingScalingPolicy from './applicationAutoScaling/scalingPolicy'
 import ApplicationAutoScalingScalableTarget from './applicationAutoScaling/scalableTarget'
-
-import CodeCommit_ from './codeCommit'
-export const CodeCommit = CodeCommit_
-
-import CodeCommitRepository from './codeCommit/repository'
 
 import S3_ from './s3'
 export const S3 = S3_
@@ -539,14 +448,126 @@ export const DynamoDB = DynamoDB_
 
 import DynamoDBTable from './dynamoDb/table'
 
+import StepFunctions_ from './stepFunctions'
+export const StepFunctions = StepFunctions_
+
+import StepFunctionsActivity from './stepFunctions/activity'
+import StepFunctionsStateMachine from './stepFunctions/stateMachine'
+
+import Glue_ from './glue'
+export const Glue = Glue_
+
+import GlueTable from './glue/table'
+import GlueConnection from './glue/connection'
+import GluePartition from './glue/partition'
+import GlueJob from './glue/job'
+import GlueDatabase from './glue/database'
+import GlueDevEndpoint from './glue/devEndpoint'
+import GlueTrigger from './glue/trigger'
+import GlueCrawler from './glue/crawler'
+import GlueClassifier from './glue/classifier'
+
+import AppSync_ from './appSync'
+export const AppSync = AppSync_
+
+import AppSyncDataSource from './appSync/dataSource'
+import AppSyncResolver from './appSync/resolver'
+import AppSyncGraphQLSchema from './appSync/graphQlSchema'
+import AppSyncGraphQLApi from './appSync/graphQlApi'
+import AppSyncApiKey from './appSync/apiKey'
+
+import WAFRegional_ from './wafRegional'
+export const WAFRegional = WAFRegional_
+
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
+import WAFRegionalWebACL from './wafRegional/webAcl'
+import WAFRegionalRule from './wafRegional/rule'
+import WAFRegionalIPSet from './wafRegional/ipSet'
+
+import AutoScalingPlans_ from './autoScalingPlans'
+export const AutoScalingPlans = AutoScalingPlans_
+
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
+
+import Neptune_ from './neptune'
+export const Neptune = Neptune_
+
+import NeptuneDBParameterGroup from './neptune/dbParameterGroup'
+import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup'
+import NeptuneDBCluster from './neptune/dbCluster'
+import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup'
+import NeptuneDBInstance from './neptune/dbInstance'
+
+import KinesisAnalytics_ from './kinesisAnalytics'
+export const KinesisAnalytics = KinesisAnalytics_
+
+import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput'
+import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource'
+import KinesisAnalyticsApplication from './kinesisAnalytics/application'
+
+import Inspector_ from './inspector'
+export const Inspector = Inspector_
+
+import InspectorResourceGroup from './inspector/resourceGroup'
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
+import InspectorAssessmentTarget from './inspector/assessmentTarget'
+
+import SES_ from './ses'
+export const SES = SES_
+
+import SESReceiptFilter from './ses/receiptFilter'
+import SESReceiptRule from './ses/receiptRule'
+import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination'
+import SESTemplate from './ses/template'
+import SESConfigurationSet from './ses/configurationSet'
+import SESReceiptRuleSet from './ses/receiptRuleSet'
+
+import CodeBuild_ from './codeBuild'
+export const CodeBuild = CodeBuild_
+
+import CodeBuildProject from './codeBuild/project'
+
+import DAX_ from './dax'
+export const DAX = DAX_
+
+import DAXSubnetGroup from './dax/subnetGroup'
+import DAXParameterGroup from './dax/parameterGroup'
+import DAXCluster from './dax/cluster'
+
+import Cloud9_ from './cloud9'
+export const Cloud9 = Cloud9_
+
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
+
+import ServiceDiscovery_ from './serviceDiscovery'
+export const ServiceDiscovery = ServiceDiscovery_
+
+import ServiceDiscoveryInstance from './serviceDiscovery/instance'
+import ServiceDiscoveryService from './serviceDiscovery/service'
+import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace'
+import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace'
+
+import CodeCommit_ from './codeCommit'
+export const CodeCommit = CodeCommit_
+
+import CodeCommitRepository from './codeCommit/repository'
+
 import Athena_ from './athena'
 export const Athena = Athena_
 
-import AthenaNamedQuery from './athena/namedQuery' 
+import AthenaNamedQuery from './athena/namedQuery'
+
+import EKS_ from './eks'
+export const EKS = EKS_
+
+import EKSCluster from './eks/cluster' 
 
 export default {
   ElasticBeanstalk,
-  AppSync,
   EC2,
   ServiceCatalog,
   Cognito,
@@ -556,22 +577,17 @@ export default {
   CodePipeline,
   Elasticsearch,
   ApiGateway,
-  WAFRegional,
-  WorkSpaces,
   RDS,
   EMR,
+  WorkSpaces,
   Logs,
   Kinesis,
   AutoScaling,
   SQS,
-  AutoScalingPlans,
   Route53,
   CloudWatch,
   ECS,
   ElasticLoadBalancingV2,
-  Neptune,
-  StepFunctions,
-  KinesisAnalytics,
   OpsWorks,
   CloudFront,
   GameLift,
@@ -585,29 +601,36 @@ export default {
   Redshift,
   Lambda,
   CertificateManager,
-  Inspector,
   Batch,
   IoT,
   ElasticLoadBalancing,
   DMS,
-  Glue,
   ElastiCache,
   CodeDeploy,
-  SES,
-  CodeBuild,
   Budgets,
-  DAX,
   DataPipeline,
   CloudTrail,
   CloudFormation,
-  Cloud9,
-  ServiceDiscovery,
   ApplicationAutoScaling,
-  CodeCommit,
   S3,
   KinesisFirehose,
   SDB,
   ECR,
   DynamoDB,
-  Athena
+  StepFunctions,
+  Glue,
+  AppSync,
+  WAFRegional,
+  AutoScalingPlans,
+  Neptune,
+  KinesisAnalytics,
+  Inspector,
+  SES,
+  CodeBuild,
+  DAX,
+  Cloud9,
+  ServiceDiscovery,
+  CodeCommit,
+  Athena,
+  EKS
 }

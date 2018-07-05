@@ -8,22 +8,10 @@ import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurat
 import ElasticBeanstalkApplication from './elasticBeanstalk/application';
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment';
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion';
-export declare const AppSync: {
-    DataSource: typeof AppSyncDataSource;
-    Resolver: typeof AppSyncResolver;
-    GraphQLSchema: typeof AppSyncGraphQLSchema;
-    GraphQLApi: typeof AppSyncGraphQLApi;
-    ApiKey: typeof AppSyncApiKey;
-};
-import AppSyncDataSource from './appSync/dataSource';
-import AppSyncResolver from './appSync/resolver';
-import AppSyncGraphQLSchema from './appSync/graphQlSchema';
-import AppSyncGraphQLApi from './appSync/graphQlApi';
-import AppSyncApiKey from './appSync/apiKey';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
-    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     PlacementGroup: typeof EC2PlacementGroup;
+    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
     LaunchTemplate: typeof EC2LaunchTemplate;
@@ -63,8 +51,8 @@ export declare const EC2: {
     VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
 };
 import EC2RouteTable from './ec2/routeTable';
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2PlacementGroup from './ec2/placementGroup';
+import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
 import EC2LaunchTemplate from './ec2/launchTemplate';
@@ -208,8 +196,8 @@ export declare const ApiGateway: {
     Stage: typeof ApiGatewayStage;
     VpcLink: typeof ApiGatewayVpcLink;
     GatewayResponse: typeof ApiGatewayGatewayResponse;
-    ClientCertificate: typeof ApiGatewayClientCertificate;
     Method: typeof ApiGatewayMethod;
+    ClientCertificate: typeof ApiGatewayClientCertificate;
     DocumentationVersion: typeof ApiGatewayDocumentationVersion;
     UsagePlanKey: typeof ApiGatewayUsagePlanKey;
 };
@@ -228,32 +216,10 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping';
 import ApiGatewayStage from './apiGateway/stage';
 import ApiGatewayVpcLink from './apiGateway/vpcLink';
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse';
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
+import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
-export declare const WAFRegional: {
-    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-    XssMatchSet: typeof WAFRegionalXssMatchSet;
-    ByteMatchSet: typeof WAFRegionalByteMatchSet;
-    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-    WebACL: typeof WAFRegionalWebACL;
-    Rule: typeof WAFRegionalRule;
-    IPSet: typeof WAFRegionalIPSet;
-};
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
-import WAFRegionalWebACL from './wafRegional/webAcl';
-import WAFRegionalRule from './wafRegional/rule';
-import WAFRegionalIPSet from './wafRegional/ipSet';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -286,6 +252,10 @@ import EMRCluster from './emr/cluster';
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
 import EMRStep from './emr/step';
 import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -320,10 +290,6 @@ export declare const SQS: {
 };
 import SQSQueue from './sqs/queue';
 import SQSQueuePolicy from './sqs/queuePolicy';
-export declare const AutoScalingPlans: {
-    ScalingPlan: typeof AutoScalingPlansScalingPlan;
-};
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const Route53: {
     RecordSet: typeof Route53RecordSet;
     HostedZone: typeof Route53HostedZone;
@@ -360,32 +326,6 @@ import ElasticLoadBalancingV2LoadBalancer from './elasticLoadBalancingV2/loadBal
 import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener';
 import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule';
 import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup';
-export declare const Neptune: {
-    DBParameterGroup: typeof NeptuneDBParameterGroup;
-    DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
-    DBCluster: typeof NeptuneDBCluster;
-    DBSubnetGroup: typeof NeptuneDBSubnetGroup;
-    DBInstance: typeof NeptuneDBInstance;
-};
-import NeptuneDBParameterGroup from './neptune/dbParameterGroup';
-import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup';
-import NeptuneDBCluster from './neptune/dbCluster';
-import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup';
-import NeptuneDBInstance from './neptune/dbInstance';
-export declare const StepFunctions: {
-    Activity: typeof StepFunctionsActivity;
-    StateMachine: typeof StepFunctionsStateMachine;
-};
-import StepFunctionsActivity from './stepFunctions/activity';
-import StepFunctionsStateMachine from './stepFunctions/stateMachine';
-export declare const KinesisAnalytics: {
-    ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
-    ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
-    Application: typeof KinesisAnalyticsApplication;
-};
-import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
-import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
-import KinesisAnalyticsApplication from './kinesisAnalytics/application';
 export declare const OpsWorks: {
     Volume: typeof OpsWorksVolume;
     App: typeof OpsWorksApp;
@@ -455,15 +395,15 @@ import EFSFileSystem from './efs/fileSystem';
 export declare const SSM: {
     Document: typeof SSMDocument;
     PatchBaseline: typeof SSMPatchBaseline;
-    Parameter: typeof SSMParameter;
     Association: typeof SSMAssociation;
     MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
+    Parameter: typeof SSMParameter;
 };
 import SSMDocument from './ssm/document';
 import SSMPatchBaseline from './ssm/patchBaseline';
-import SSMParameter from './ssm/parameter';
 import SSMAssociation from './ssm/association';
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask';
+import SSMParameter from './ssm/parameter';
 export declare const Config: {
     DeliveryChannel: typeof ConfigDeliveryChannel;
     ConfigurationRecorder: typeof ConfigConfigurationRecorder;
@@ -506,14 +446,6 @@ export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
 import CertificateManagerCertificate from './certificateManager/certificate';
-export declare const Inspector: {
-    ResourceGroup: typeof InspectorResourceGroup;
-    AssessmentTemplate: typeof InspectorAssessmentTemplate;
-    AssessmentTarget: typeof InspectorAssessmentTarget;
-};
-import InspectorResourceGroup from './inspector/resourceGroup';
-import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
-import InspectorAssessmentTarget from './inspector/assessmentTarget';
 export declare const Batch: {
     JobDefinition: typeof BatchJobDefinition;
     JobQueue: typeof BatchJobQueue;
@@ -554,26 +486,6 @@ import DMSEventSubscription from './dms/eventSubscription';
 import DMSEndpoint from './dms/endpoint';
 import DMSReplicationTask from './dms/replicationTask';
 import DMSReplicationInstance from './dms/replicationInstance';
-export declare const Glue: {
-    Table: typeof GlueTable;
-    Connection: typeof GlueConnection;
-    Partition: typeof GluePartition;
-    Job: typeof GlueJob;
-    Database: typeof GlueDatabase;
-    DevEndpoint: typeof GlueDevEndpoint;
-    Trigger: typeof GlueTrigger;
-    Crawler: typeof GlueCrawler;
-    Classifier: typeof GlueClassifier;
-};
-import GlueTable from './glue/table';
-import GlueConnection from './glue/connection';
-import GluePartition from './glue/partition';
-import GlueJob from './glue/job';
-import GlueDatabase from './glue/database';
-import GlueDevEndpoint from './glue/devEndpoint';
-import GlueTrigger from './glue/trigger';
-import GlueCrawler from './glue/crawler';
-import GlueClassifier from './glue/classifier';
 export declare const ElastiCache: {
     SecurityGroup: typeof ElastiCacheSecurityGroup;
     SubnetGroup: typeof ElastiCacheSubnetGroup;
@@ -596,36 +508,10 @@ export declare const CodeDeploy: {
 import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup';
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig';
 import CodeDeployApplication from './codeDeploy/application';
-export declare const SES: {
-    ReceiptFilter: typeof SESReceiptFilter;
-    ReceiptRule: typeof SESReceiptRule;
-    ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
-    Template: typeof SESTemplate;
-    ConfigurationSet: typeof SESConfigurationSet;
-    ReceiptRuleSet: typeof SESReceiptRuleSet;
-};
-import SESReceiptFilter from './ses/receiptFilter';
-import SESReceiptRule from './ses/receiptRule';
-import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination';
-import SESTemplate from './ses/template';
-import SESConfigurationSet from './ses/configurationSet';
-import SESReceiptRuleSet from './ses/receiptRuleSet';
-export declare const CodeBuild: {
-    Project: typeof CodeBuildProject;
-};
-import CodeBuildProject from './codeBuild/project';
 export declare const Budgets: {
     Budget: typeof BudgetsBudget;
 };
 import BudgetsBudget from './budgets/budget';
-export declare const DAX: {
-    SubnetGroup: typeof DAXSubnetGroup;
-    ParameterGroup: typeof DAXParameterGroup;
-    Cluster: typeof DAXCluster;
-};
-import DAXSubnetGroup from './dax/subnetGroup';
-import DAXParameterGroup from './dax/parameterGroup';
-import DAXCluster from './dax/cluster';
 export declare const DataPipeline: {
     Pipeline: typeof DataPipelinePipeline;
 };
@@ -644,30 +530,12 @@ import CloudFormationWaitCondition from './cloudFormation/waitCondition';
 import CloudFormationStack from './cloudFormation/stack';
 import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle';
 import CloudFormationCustomResource from './cloudFormation/customResource';
-export declare const Cloud9: {
-    EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-};
-import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
-export declare const ServiceDiscovery: {
-    Instance: typeof ServiceDiscoveryInstance;
-    Service: typeof ServiceDiscoveryService;
-    PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
-    PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
-};
-import ServiceDiscoveryInstance from './serviceDiscovery/instance';
-import ServiceDiscoveryService from './serviceDiscovery/service';
-import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
-import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
 export declare const ApplicationAutoScaling: {
     ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
     ScalableTarget: typeof ApplicationAutoScalingScalableTarget;
 };
 import ApplicationAutoScalingScalingPolicy from './applicationAutoScaling/scalingPolicy';
 import ApplicationAutoScalingScalableTarget from './applicationAutoScaling/scalableTarget';
-export declare const CodeCommit: {
-    Repository: typeof CodeCommitRepository;
-};
-import CodeCommitRepository from './codeCommit/repository';
 export declare const S3: {
     Bucket: typeof S3Bucket;
     BucketPolicy: typeof S3BucketPolicy;
@@ -690,10 +558,146 @@ export declare const DynamoDB: {
     Table: typeof DynamoDBTable;
 };
 import DynamoDBTable from './dynamoDb/table';
+export declare const StepFunctions: {
+    Activity: typeof StepFunctionsActivity;
+    StateMachine: typeof StepFunctionsStateMachine;
+};
+import StepFunctionsActivity from './stepFunctions/activity';
+import StepFunctionsStateMachine from './stepFunctions/stateMachine';
+export declare const Glue: {
+    Table: typeof GlueTable;
+    Connection: typeof GlueConnection;
+    Partition: typeof GluePartition;
+    Job: typeof GlueJob;
+    Database: typeof GlueDatabase;
+    DevEndpoint: typeof GlueDevEndpoint;
+    Trigger: typeof GlueTrigger;
+    Crawler: typeof GlueCrawler;
+    Classifier: typeof GlueClassifier;
+};
+import GlueTable from './glue/table';
+import GlueConnection from './glue/connection';
+import GluePartition from './glue/partition';
+import GlueJob from './glue/job';
+import GlueDatabase from './glue/database';
+import GlueDevEndpoint from './glue/devEndpoint';
+import GlueTrigger from './glue/trigger';
+import GlueCrawler from './glue/crawler';
+import GlueClassifier from './glue/classifier';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncApiKey from './appSync/apiKey';
+export declare const WAFRegional: {
+    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+    XssMatchSet: typeof WAFRegionalXssMatchSet;
+    ByteMatchSet: typeof WAFRegionalByteMatchSet;
+    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+    WebACL: typeof WAFRegionalWebACL;
+    Rule: typeof WAFRegionalRule;
+    IPSet: typeof WAFRegionalIPSet;
+};
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
+import WAFRegionalWebACL from './wafRegional/webAcl';
+import WAFRegionalRule from './wafRegional/rule';
+import WAFRegionalIPSet from './wafRegional/ipSet';
+export declare const AutoScalingPlans: {
+    ScalingPlan: typeof AutoScalingPlansScalingPlan;
+};
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
+export declare const Neptune: {
+    DBParameterGroup: typeof NeptuneDBParameterGroup;
+    DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
+    DBCluster: typeof NeptuneDBCluster;
+    DBSubnetGroup: typeof NeptuneDBSubnetGroup;
+    DBInstance: typeof NeptuneDBInstance;
+};
+import NeptuneDBParameterGroup from './neptune/dbParameterGroup';
+import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup';
+import NeptuneDBCluster from './neptune/dbCluster';
+import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup';
+import NeptuneDBInstance from './neptune/dbInstance';
+export declare const KinesisAnalytics: {
+    ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
+    ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
+    Application: typeof KinesisAnalyticsApplication;
+};
+import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
+import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
+import KinesisAnalyticsApplication from './kinesisAnalytics/application';
+export declare const Inspector: {
+    ResourceGroup: typeof InspectorResourceGroup;
+    AssessmentTemplate: typeof InspectorAssessmentTemplate;
+    AssessmentTarget: typeof InspectorAssessmentTarget;
+};
+import InspectorResourceGroup from './inspector/resourceGroup';
+import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
+import InspectorAssessmentTarget from './inspector/assessmentTarget';
+export declare const SES: {
+    ReceiptFilter: typeof SESReceiptFilter;
+    ReceiptRule: typeof SESReceiptRule;
+    ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
+    Template: typeof SESTemplate;
+    ConfigurationSet: typeof SESConfigurationSet;
+    ReceiptRuleSet: typeof SESReceiptRuleSet;
+};
+import SESReceiptFilter from './ses/receiptFilter';
+import SESReceiptRule from './ses/receiptRule';
+import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination';
+import SESTemplate from './ses/template';
+import SESConfigurationSet from './ses/configurationSet';
+import SESReceiptRuleSet from './ses/receiptRuleSet';
+export declare const CodeBuild: {
+    Project: typeof CodeBuildProject;
+};
+import CodeBuildProject from './codeBuild/project';
+export declare const DAX: {
+    SubnetGroup: typeof DAXSubnetGroup;
+    ParameterGroup: typeof DAXParameterGroup;
+    Cluster: typeof DAXCluster;
+};
+import DAXSubnetGroup from './dax/subnetGroup';
+import DAXParameterGroup from './dax/parameterGroup';
+import DAXCluster from './dax/cluster';
+export declare const Cloud9: {
+    EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+};
+import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
+export declare const ServiceDiscovery: {
+    Instance: typeof ServiceDiscoveryInstance;
+    Service: typeof ServiceDiscoveryService;
+    PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+    PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+};
+import ServiceDiscoveryInstance from './serviceDiscovery/instance';
+import ServiceDiscoveryService from './serviceDiscovery/service';
+import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
+import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
+export declare const CodeCommit: {
+    Repository: typeof CodeCommitRepository;
+};
+import CodeCommitRepository from './codeCommit/repository';
 export declare const Athena: {
     NamedQuery: typeof AthenaNamedQuery;
 };
 import AthenaNamedQuery from './athena/namedQuery';
+export declare const EKS: {
+    Cluster: typeof EKSCluster;
+};
+import EKSCluster from './eks/cluster';
 declare const _default: {
     ElasticBeanstalk: {
         ConfigurationTemplate: typeof ElasticBeanstalkConfigurationTemplate;
@@ -701,17 +705,10 @@ declare const _default: {
         Environment: typeof ElasticBeanstalkEnvironment;
         ApplicationVersion: typeof ElasticBeanstalkApplicationVersion;
     };
-    AppSync: {
-        DataSource: typeof AppSyncDataSource;
-        Resolver: typeof AppSyncResolver;
-        GraphQLSchema: typeof AppSyncGraphQLSchema;
-        GraphQLApi: typeof AppSyncGraphQLApi;
-        ApiKey: typeof AppSyncApiKey;
-    };
     EC2: {
         RouteTable: typeof EC2RouteTable;
-        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         PlacementGroup: typeof EC2PlacementGroup;
+        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
         LaunchTemplate: typeof EC2LaunchTemplate;
@@ -818,23 +815,10 @@ declare const _default: {
         Stage: typeof ApiGatewayStage;
         VpcLink: typeof ApiGatewayVpcLink;
         GatewayResponse: typeof ApiGatewayGatewayResponse;
-        ClientCertificate: typeof ApiGatewayClientCertificate;
         Method: typeof ApiGatewayMethod;
+        ClientCertificate: typeof ApiGatewayClientCertificate;
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
-    };
-    WAFRegional: {
-        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-        XssMatchSet: typeof WAFRegionalXssMatchSet;
-        ByteMatchSet: typeof WAFRegionalByteMatchSet;
-        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-        WebACL: typeof WAFRegionalWebACL;
-        Rule: typeof WAFRegionalRule;
-        IPSet: typeof WAFRegionalIPSet;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
     };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
@@ -853,6 +837,9 @@ declare const _default: {
         InstanceGroupConfig: typeof EMRInstanceGroupConfig;
         Step: typeof EMRStep;
         SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -875,9 +862,6 @@ declare const _default: {
         Queue: typeof SQSQueue;
         QueuePolicy: typeof SQSQueuePolicy;
     };
-    AutoScalingPlans: {
-        ScalingPlan: typeof AutoScalingPlansScalingPlan;
-    };
     Route53: {
         RecordSet: typeof Route53RecordSet;
         HostedZone: typeof Route53HostedZone;
@@ -899,22 +883,6 @@ declare const _default: {
         Listener: typeof ElasticLoadBalancingV2Listener;
         ListenerRule: typeof ElasticLoadBalancingV2ListenerRule;
         TargetGroup: typeof ElasticLoadBalancingV2TargetGroup;
-    };
-    Neptune: {
-        DBParameterGroup: typeof NeptuneDBParameterGroup;
-        DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
-        DBCluster: typeof NeptuneDBCluster;
-        DBSubnetGroup: typeof NeptuneDBSubnetGroup;
-        DBInstance: typeof NeptuneDBInstance;
-    };
-    StepFunctions: {
-        Activity: typeof StepFunctionsActivity;
-        StateMachine: typeof StepFunctionsStateMachine;
-    };
-    KinesisAnalytics: {
-        ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
-        ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
-        Application: typeof KinesisAnalyticsApplication;
     };
     OpsWorks: {
         Volume: typeof OpsWorksVolume;
@@ -959,9 +927,9 @@ declare const _default: {
     SSM: {
         Document: typeof SSMDocument;
         PatchBaseline: typeof SSMPatchBaseline;
-        Parameter: typeof SSMParameter;
         Association: typeof SSMAssociation;
         MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
+        Parameter: typeof SSMParameter;
     };
     Config: {
         DeliveryChannel: typeof ConfigDeliveryChannel;
@@ -989,11 +957,6 @@ declare const _default: {
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
     };
-    Inspector: {
-        ResourceGroup: typeof InspectorResourceGroup;
-        AssessmentTemplate: typeof InspectorAssessmentTemplate;
-        AssessmentTarget: typeof InspectorAssessmentTarget;
-    };
     Batch: {
         JobDefinition: typeof BatchJobDefinition;
         JobQueue: typeof BatchJobQueue;
@@ -1018,17 +981,6 @@ declare const _default: {
         ReplicationTask: typeof DMSReplicationTask;
         ReplicationInstance: typeof DMSReplicationInstance;
     };
-    Glue: {
-        Table: typeof GlueTable;
-        Connection: typeof GlueConnection;
-        Partition: typeof GluePartition;
-        Job: typeof GlueJob;
-        Database: typeof GlueDatabase;
-        DevEndpoint: typeof GlueDevEndpoint;
-        Trigger: typeof GlueTrigger;
-        Crawler: typeof GlueCrawler;
-        Classifier: typeof GlueClassifier;
-    };
     ElastiCache: {
         SecurityGroup: typeof ElastiCacheSecurityGroup;
         SubnetGroup: typeof ElastiCacheSubnetGroup;
@@ -1042,24 +994,8 @@ declare const _default: {
         DeploymentConfig: typeof CodeDeployDeploymentConfig;
         Application: typeof CodeDeployApplication;
     };
-    SES: {
-        ReceiptFilter: typeof SESReceiptFilter;
-        ReceiptRule: typeof SESReceiptRule;
-        ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
-        Template: typeof SESTemplate;
-        ConfigurationSet: typeof SESConfigurationSet;
-        ReceiptRuleSet: typeof SESReceiptRuleSet;
-    };
-    CodeBuild: {
-        Project: typeof CodeBuildProject;
-    };
     Budgets: {
         Budget: typeof BudgetsBudget;
-    };
-    DAX: {
-        SubnetGroup: typeof DAXSubnetGroup;
-        ParameterGroup: typeof DAXParameterGroup;
-        Cluster: typeof DAXCluster;
     };
     DataPipeline: {
         Pipeline: typeof DataPipelinePipeline;
@@ -1073,21 +1009,9 @@ declare const _default: {
         WaitConditionHandle: typeof CloudFormationWaitConditionHandle;
         CustomResource: typeof CloudFormationCustomResource;
     };
-    Cloud9: {
-        EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-    };
-    ServiceDiscovery: {
-        Instance: typeof ServiceDiscoveryInstance;
-        Service: typeof ServiceDiscoveryService;
-        PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
-        PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
-    };
     ApplicationAutoScaling: {
         ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
         ScalableTarget: typeof ApplicationAutoScalingScalableTarget;
-    };
-    CodeCommit: {
-        Repository: typeof CodeCommitRepository;
     };
     S3: {
         Bucket: typeof S3Bucket;
@@ -1105,8 +1029,91 @@ declare const _default: {
     DynamoDB: {
         Table: typeof DynamoDBTable;
     };
+    StepFunctions: {
+        Activity: typeof StepFunctionsActivity;
+        StateMachine: typeof StepFunctionsStateMachine;
+    };
+    Glue: {
+        Table: typeof GlueTable;
+        Connection: typeof GlueConnection;
+        Partition: typeof GluePartition;
+        Job: typeof GlueJob;
+        Database: typeof GlueDatabase;
+        DevEndpoint: typeof GlueDevEndpoint;
+        Trigger: typeof GlueTrigger;
+        Crawler: typeof GlueCrawler;
+        Classifier: typeof GlueClassifier;
+    };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        ApiKey: typeof AppSyncApiKey;
+    };
+    WAFRegional: {
+        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+        XssMatchSet: typeof WAFRegionalXssMatchSet;
+        ByteMatchSet: typeof WAFRegionalByteMatchSet;
+        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+        WebACL: typeof WAFRegionalWebACL;
+        Rule: typeof WAFRegionalRule;
+        IPSet: typeof WAFRegionalIPSet;
+    };
+    AutoScalingPlans: {
+        ScalingPlan: typeof AutoScalingPlansScalingPlan;
+    };
+    Neptune: {
+        DBParameterGroup: typeof NeptuneDBParameterGroup;
+        DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
+        DBCluster: typeof NeptuneDBCluster;
+        DBSubnetGroup: typeof NeptuneDBSubnetGroup;
+        DBInstance: typeof NeptuneDBInstance;
+    };
+    KinesisAnalytics: {
+        ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
+        ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
+        Application: typeof KinesisAnalyticsApplication;
+    };
+    Inspector: {
+        ResourceGroup: typeof InspectorResourceGroup;
+        AssessmentTemplate: typeof InspectorAssessmentTemplate;
+        AssessmentTarget: typeof InspectorAssessmentTarget;
+    };
+    SES: {
+        ReceiptFilter: typeof SESReceiptFilter;
+        ReceiptRule: typeof SESReceiptRule;
+        ConfigurationSetEventDestination: typeof SESConfigurationSetEventDestination;
+        Template: typeof SESTemplate;
+        ConfigurationSet: typeof SESConfigurationSet;
+        ReceiptRuleSet: typeof SESReceiptRuleSet;
+    };
+    CodeBuild: {
+        Project: typeof CodeBuildProject;
+    };
+    DAX: {
+        SubnetGroup: typeof DAXSubnetGroup;
+        ParameterGroup: typeof DAXParameterGroup;
+        Cluster: typeof DAXCluster;
+    };
+    Cloud9: {
+        EnvironmentEC2: typeof Cloud9EnvironmentEC2;
+    };
+    ServiceDiscovery: {
+        Instance: typeof ServiceDiscoveryInstance;
+        Service: typeof ServiceDiscoveryService;
+        PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+        PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+    };
+    CodeCommit: {
+        Repository: typeof CodeCommitRepository;
+    };
     Athena: {
         NamedQuery: typeof AthenaNamedQuery;
+    };
+    EKS: {
+        Cluster: typeof EKSCluster;
     };
 };
 export default _default;

@@ -1,10 +1,27 @@
 import * as fs from 'fs'
-import {camelCase, forEach, pickBy, map, some} from 'lodash'
+import {camelCase, forEach, pickBy, map, some, merge} from 'lodash'
 import {Response} from 'node-fetch'
 
 const fetch = require('node-fetch')
 
-const SchemaUrl = 'https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
+const SchemaUrls: { [key: string]: string } = {
+    'ap-south-1': 'https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ap-northeast-3': 'https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ap-northeast-2': 'https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ap-southeast-1': 'https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ap-southeast-2': 'https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ap-northeast-1': 'https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'ca-central-1': 'https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'eu-central-1': 'https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'eu-west-1': 'https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'eu-west-2': 'https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'eu-west-3': 'https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'sa-east-1': 'https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'us-east-1': 'https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'us-east-2': 'https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'us-west-1': 'https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json',
+    'us-west-2': 'https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
+}
 
 type BasicTypeSuffix = 'Type' | 'ItemType'
 
@@ -17,17 +34,17 @@ interface TypeProperties {
 }
 
 interface ResourceType {
-    Properties: {[key: string]: TypeProperties}
+    Properties: { [key: string]: TypeProperties }
 }
 
 interface InnerType {
-    Properties: {[key: string]: TypeProperties}
+    Properties: { [key: string]: TypeProperties }
 }
 
 interface Schema {
     ResourceSpecificationVersion: string
-    ResourceTypes: {[key: string]: ResourceType}
-    PropertyTypes: {[key: string]: InnerType}
+    ResourceTypes: { [key: string]: ResourceType }
+    PropertyTypes: { [key: string]: InnerType }
 }
 
 function adjustedCamelCase(input: string): string {
@@ -61,7 +78,7 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
     return `Value<${primitiveType}>`
 }
 
-function propertiesEntries(properties: {[key: string]: TypeProperties}, useNonNullAssertion: boolean = false): string[] {
+function propertiesEntries(properties: { [key: string]: TypeProperties }, useNonNullAssertion: boolean = false): string[] {
     const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
     return map(properties, (property: TypeProperties, propertyName: string) => {
         if (propertyName === 'Tags') {
@@ -72,7 +89,7 @@ function propertiesEntries(properties: {[key: string]: TypeProperties}, useNonNu
     })
 }
 
-function hasTags(properties: {[key: string]: TypeProperties}): boolean {
+function hasTags(properties: { [key: string]: TypeProperties }): boolean {
     return Object.keys(properties).includes('Tags')
            || some(properties, p => p.Type === 'List' && p.ItemType === 'Tag')
 }
@@ -88,7 +105,7 @@ function innerTypeName(innerTypeFullName: string): string {
     return innerTypeName
 }
 
-function generateInnerClass(name: string, properties: {[key: string]: TypeProperties}): string {
+function generateInnerClass(name: string, properties: { [key: string]: TypeProperties }): string {
     return `export class ${name} {
 ${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 
@@ -98,7 +115,7 @@ ${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 }`
 }
 
-function generateTopLevelClass(namespace: string, typeName: string, properties: {[key: string]: TypeProperties}, innerTypes: {[key: string]: InnerType}) {
+function generateTopLevelClass(namespace: string, typeName: string, properties: { [key: string]: TypeProperties }, innerTypes: { [key: string]: InnerType }) {
     return `export interface ${typeName}Properties {
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
@@ -116,7 +133,7 @@ ${Object.keys(innerTypes).map(innerTypeFullName => {
 }`
 }
 
-function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: {[key: string]: TypeProperties}, innerTypes: {[key: string]: InnerType}): void {
+function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: { [key: string]: TypeProperties }, innerTypes: { [key: string]: InnerType }): void {
     let innerHasTags = false
     const innerTypesTemplates = map(innerTypes, (innerType: InnerType, innerTypeFullName: string) => {
         innerHasTags = innerHasTags || hasTags(innerType.Properties)
@@ -162,7 +179,7 @@ ${resourceTypeNames.map(t => `  ${t}`).join(',\n')}
     fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/index.ts`, template, {encoding: 'utf8'})
 }
 
-function generateGrandIndexFile(fileHeader: string, indexContent: {[key: string]: string[]}): void {
+function generateGrandIndexFile(fileHeader: string, indexContent: { [key: string]: string[] }): void {
     const imports: string[] = []
 
     forEach(indexContent, (dependentResourceTypeNames: string[], namespace: string) => {
@@ -183,26 +200,67 @@ ${Object.keys(indexContent).map(t => `  ${t}`).join(',\n')}
     fs.writeFileSync('./types/index.ts', template, {encoding: 'utf8'})
 }
 
-fetch(SchemaUrl)
-    .then((res: Response) => res.json())
-    .then((schema: Schema) => {
-        const fileHeader = `/* Generated from ${SchemaUrl}, version ${schema.ResourceSpecificationVersion} */`
-        const indexContent: {[key: string]: string[]} = {}
+function generateFileHeader(regions: string[], schemaVersions: { [key: string]: string }) {
+    regions.sort()
+    return `/* Generated from: ${regions.map(region => `\n * ${region} (${SchemaUrls[region]}), version ${schemaVersions[region]}`)}\n */`
+}
 
-        forEach(schema.ResourceTypes, (resource: ResourceType, resourceFullName: string) => {
-            const [, namespace, typeName] = resourceFullName.split('::')
-            const properties = resource.Properties || {}
-            const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: InnerType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.')) as {[key: string]: InnerType}
+function generateFilesFromSchema(schema: Schema, resourceSources: { [key: string]: string[] }, schemaVersions: { [key: string]: string }) {
+    const regionsUsed = new Set<string>()
+    const indexContent: { [key: string]: string[] } = {}
 
-            indexContent[namespace] = indexContent[namespace] || []
-            indexContent[namespace].push(typeName)
+    forEach(schema.ResourceTypes, (resource: ResourceType, resourceFullName: string) => {
+        const [, namespace, typeName] = resourceFullName.split('::')
+        const properties = resource.Properties || {}
 
-            generateFile(fileHeader, namespace, typeName, properties, resourcePropertyTypes)
-        })
+        const fileHeader = generateFileHeader(resourceSources[resourceFullName], schemaVersions)
+        resourceSources[resourceFullName].forEach(region => regionsUsed.add(region))
 
-        forEach(indexContent, (resourceTypeNames: string[], namespace: string) => {
-            generateIndexFile(fileHeader, namespace, resourceTypeNames)
-        })
+        const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: InnerType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.')) as { [key: string]: InnerType }
 
-        generateGrandIndexFile(fileHeader, indexContent)
+        indexContent[namespace] = indexContent[namespace] || []
+        indexContent[namespace].push(typeName)
+
+        generateFile(fileHeader, namespace, typeName, properties, resourcePropertyTypes)
     })
+
+    const indexFileHeader = generateFileHeader([...regionsUsed], schemaVersions)
+
+    forEach(indexContent, (resourceTypeNames: string[], namespace: string) => {
+        generateIndexFile(indexFileHeader, namespace, resourceTypeNames)
+    })
+
+    generateGrandIndexFile(indexFileHeader, indexContent)
+}
+
+function generateSchemas() {
+    let mergedSchema: Schema
+
+    const schemaVersions: { [key: string]: string } = {}
+    const resourceSources: { [key: string]: string[] } = {}
+
+    const mergedSchemaPromises = Object.keys(SchemaUrls).map(region => {
+        const schemaUrl = SchemaUrls[region]
+
+        return fetch(schemaUrl)
+            .then((res: Response) => res.json())
+            .then((schema: Schema) => {
+                schemaVersions[region] = schema.ResourceSpecificationVersion
+
+                forEach(schema.ResourceTypes, (resource: ResourceType, resourceFullName: string) => {
+                    if (!resourceSources[resourceFullName]) {
+                        resourceSources[resourceFullName] = []
+                    }
+
+                    resourceSources[resourceFullName].push(region)
+                })
+
+                mergedSchema = merge(mergedSchema || {}, schema)
+            })
+    })
+
+    Promise.all(mergedSchemaPromises)
+        .then(() => generateFilesFromSchema(mergedSchema, resourceSources, schemaVersions))
+}
+
+generateSchemas()

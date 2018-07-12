@@ -20,6 +20,7 @@ export declare class Environment {
     PrivilegedMode?: Value<boolean>;
     Image: Value<string>;
     ComputeType: Value<string>;
+    Certificate?: Value<string>;
     constructor(properties: Environment);
 }
 export declare class ProjectCache {
@@ -45,6 +46,7 @@ export declare class EnvironmentVariable {
 }
 export declare class Source {
     Type: Value<string>;
+    ReportBuildStatus?: Value<boolean>;
     Auth?: SourceAuth;
     BuildSpec?: Value<string>;
     GitCloneDepth?: Value<number>;

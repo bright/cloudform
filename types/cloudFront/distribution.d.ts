@@ -40,6 +40,7 @@ export declare class CacheBehavior {
     ForwardedValues: ForwardedValues;
     MinTTL?: Value<number>;
     MaxTTL?: Value<number>;
+    FieldLevelEncryptionId?: Value<string>;
     constructor(properties: CacheBehavior);
 }
 export declare class DefaultCacheBehavior {
@@ -55,6 +56,7 @@ export declare class DefaultCacheBehavior {
     MaxTTL?: Value<number>;
     TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
+    FieldLevelEncryptionId?: Value<string>;
     constructor(properties: DefaultCacheBehavior);
 }
 export declare class Restrictions {

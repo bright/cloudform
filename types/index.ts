@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.4.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0
  */
    
 
@@ -25,6 +25,15 @@ import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurat
 import ElasticBeanstalkApplication from './elasticBeanstalk/application'
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment'
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion'
+
+import AppSync_ from './appSync'
+export const AppSync = AppSync_
+
+import AppSyncDataSource from './appSync/dataSource'
+import AppSyncResolver from './appSync/resolver'
+import AppSyncGraphQLSchema from './appSync/graphQlSchema'
+import AppSyncGraphQLApi from './appSync/graphQlApi'
+import AppSyncApiKey from './appSync/apiKey'
 
 import EC2_ from './ec2'
 export const EC2 = EC2_
@@ -40,6 +49,7 @@ import EC2SpotFleet from './ec2/spotFleet'
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute'
 import EC2NetworkInterfacePermission from './ec2/networkInterfacePermission'
 import EC2EIP from './ec2/eip'
+import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification'
 import EC2SecurityGroupIngress from './ec2/securityGroupIngress'
 import EC2SubnetRouteTableAssociation from './ec2/subnetRouteTableAssociation'
 import EC2Route from './ec2/route'
@@ -68,16 +78,8 @@ import EC2VPCEndpoint from './ec2/vpcEndpoint'
 import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment'
 import EC2VPNConnection from './ec2/vpnConnection'
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock'
+import EC2VPCEndpointService from './ec2/vpcEndpointService'
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation'
-
-import AppSync_ from './appSync'
-export const AppSync = AppSync_
-
-import AppSyncDataSource from './appSync/dataSource'
-import AppSyncResolver from './appSync/resolver'
-import AppSyncGraphQLSchema from './appSync/graphQlSchema'
-import AppSyncGraphQLApi from './appSync/graphQlApi'
-import AppSyncApiKey from './appSync/apiKey'
 
 import ServiceCatalog_ from './serviceCatalog'
 export const ServiceCatalog = ServiceCatalog_
@@ -87,8 +89,8 @@ import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssoci
 import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint'
 import ServiceCatalogTagOption from './serviceCatalog/tagOption'
 import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation'
-import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct'
 import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint'
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct'
 import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct'
 import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation'
 import ServiceCatalogPortfolio from './serviceCatalog/portfolio'
@@ -138,24 +140,13 @@ import CodePipeline_ from './codePipeline'
 export const CodePipeline = CodePipeline_
 
 import CodePipelineCustomActionType from './codePipeline/customActionType'
+import CodePipelineWebhook from './codePipeline/webhook'
 import CodePipelinePipeline from './codePipeline/pipeline'
 
 import Elasticsearch_ from './elasticsearch'
 export const Elasticsearch = Elasticsearch_
 
 import ElasticsearchDomain from './elasticsearch/domain'
-
-import WAFRegional_ from './wafRegional'
-export const WAFRegional = WAFRegional_
-
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
-import WAFRegionalWebACL from './wafRegional/webAcl'
-import WAFRegionalRule from './wafRegional/rule'
-import WAFRegionalIPSet from './wafRegional/ipSet'
 
 import ApiGateway_ from './apiGateway'
 export const ApiGateway = ApiGateway_
@@ -180,6 +171,27 @@ import ApiGatewayMethod from './apiGateway/method'
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
 
+import WAFRegional_ from './wafRegional'
+export const WAFRegional = WAFRegional_
+
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
+import WAFRegionalWebACL from './wafRegional/webAcl'
+import WAFRegionalRule from './wafRegional/rule'
+import WAFRegionalIPSet from './wafRegional/ipSet'
+
+import EMR_ from './emr'
+export const EMR = EMR_
+
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
+import EMRCluster from './emr/cluster'
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
+import EMRStep from './emr/step'
+import EMRSecurityConfiguration from './emr/securityConfiguration'
+
 import RDS_ from './rds'
 export const RDS = RDS_
 
@@ -197,15 +209,6 @@ import WorkSpaces_ from './workSpaces'
 export const WorkSpaces = WorkSpaces_
 
 import WorkSpacesWorkspace from './workSpaces/workspace'
-
-import EMR_ from './emr'
-export const EMR = EMR_
-
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
-import EMRCluster from './emr/cluster'
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
-import EMRStep from './emr/step'
-import EMRSecurityConfiguration from './emr/securityConfiguration'
 
 import Logs_ from './logs'
 export const Logs = Logs_
@@ -332,6 +335,7 @@ export const SSM = SSM_
 import SSMDocument from './ssm/document'
 import SSMPatchBaseline from './ssm/patchBaseline'
 import SSMParameter from './ssm/parameter'
+import SSMResourceDataSync from './ssm/resourceDataSync'
 import SSMAssociation from './ssm/association'
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask'
 
@@ -341,6 +345,15 @@ export const Config = Config_
 import ConfigDeliveryChannel from './config/deliveryChannel'
 import ConfigConfigurationRecorder from './config/configurationRecorder'
 import ConfigConfigRule from './config/configRule'
+
+import SageMaker_ from './sageMaker'
+export const SageMaker = SageMaker_
+
+import SageMakerModel from './sageMaker/model'
+import SageMakerNotebookInstanceLifecycleConfig from './sageMaker/notebookInstanceLifecycleConfig'
+import SageMakerEndpointConfig from './sageMaker/endpointConfig'
+import SageMakerEndpoint from './sageMaker/endpoint'
+import SageMakerNotebookInstance from './sageMaker/notebookInstance'
 
 import KMS_ from './kms'
 export const KMS = KMS_
@@ -385,6 +398,11 @@ import BatchJobDefinition from './batch/jobDefinition'
 import BatchJobQueue from './batch/jobQueue'
 import BatchComputeEnvironment from './batch/computeEnvironment'
 
+import ElasticLoadBalancing_ from './elasticLoadBalancing'
+export const ElasticLoadBalancing = ElasticLoadBalancing_
+
+import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer'
+
 import IoT_ from './iot'
 export const IoT = IoT_
 
@@ -394,11 +412,6 @@ import IoTTopicRule from './iot/topicRule'
 import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment'
 import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment'
 import IoTCertificate from './iot/certificate'
-
-import ElasticLoadBalancing_ from './elasticLoadBalancing'
-export const ElasticLoadBalancing = ElasticLoadBalancing_
-
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer'
 
 import DMS_ from './dms'
 export const DMS = DMS_
@@ -517,6 +530,12 @@ export const Cloud9 = Cloud9_
 
 import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
 
+import AmazonMQ_ from './amazonMq'
+export const AmazonMQ = AmazonMQ_
+
+import AmazonMQBroker from './amazonMq/broker'
+import AmazonMQConfiguration from './amazonMq/configuration'
+
 import Neptune_ from './neptune'
 export const Neptune = Neptune_
 
@@ -568,8 +587,8 @@ import EKSCluster from './eks/cluster'
 
 export default {
   ElasticBeanstalk,
-  EC2,
   AppSync,
+  EC2,
   ServiceCatalog,
   Cognito,
   Events,
@@ -577,11 +596,11 @@ export default {
   IAM,
   CodePipeline,
   Elasticsearch,
-  WAFRegional,
   ApiGateway,
+  WAFRegional,
+  EMR,
   RDS,
   WorkSpaces,
-  EMR,
   Logs,
   Kinesis,
   AutoScaling,
@@ -600,14 +619,15 @@ export default {
   EFS,
   SSM,
   Config,
+  SageMaker,
   KMS,
   Redshift,
   Lambda,
   CertificateManager,
   Inspector,
   Batch,
-  IoT,
   ElasticLoadBalancing,
+  IoT,
   DMS,
   Glue,
   ElastiCache,
@@ -626,6 +646,7 @@ export default {
   Athena,
   AutoScalingPlans,
   Cloud9,
+  AmazonMQ,
   Neptune,
   KinesisAnalytics,
   SES,

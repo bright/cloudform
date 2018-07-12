@@ -4,6 +4,10 @@ export declare class LambdaConfig {
     LambdaFunctionArn: Value<string>;
     constructor(properties: LambdaConfig);
 }
+export declare class HttpConfig {
+    Endpoint: Value<string>;
+    constructor(properties: HttpConfig);
+}
 export declare class DynamoDBConfig {
     TableName: Value<string>;
     AwsRegion: Value<string>;
@@ -19,6 +23,7 @@ export interface DataSourceProperties {
     Type: Value<string>;
     Description?: Value<string>;
     ServiceRoleArn?: Value<string>;
+    HttpConfig?: HttpConfig;
     LambdaConfig?: LambdaConfig;
     ApiId: Value<string>;
     Name: Value<string>;
@@ -27,6 +32,7 @@ export interface DataSourceProperties {
 }
 export default class DataSource extends ResourceBase {
     static LambdaConfig: typeof LambdaConfig;
+    static HttpConfig: typeof HttpConfig;
     static DynamoDBConfig: typeof DynamoDBConfig;
     static ElasticsearchConfig: typeof ElasticsearchConfig;
     constructor(properties?: DataSourceProperties);

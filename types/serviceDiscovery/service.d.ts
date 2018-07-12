@@ -2,6 +2,7 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class DnsConfig {
     DnsRecords: List<DnsRecord>;
+    RoutingPolicy?: Value<string>;
     NamespaceId: Value<string>;
     constructor(properties: DnsConfig);
 }
@@ -9,6 +10,10 @@ export declare class DnsRecord {
     Type: Value<string>;
     TTL: Value<string>;
     constructor(properties: DnsRecord);
+}
+export declare class HealthCheckCustomConfig {
+    FailureThreshold?: Value<number>;
+    constructor(properties: HealthCheckCustomConfig);
 }
 export declare class HealthCheckConfig {
     Type: Value<string>;
@@ -18,6 +23,7 @@ export declare class HealthCheckConfig {
 }
 export interface ServiceProperties {
     Description?: Value<string>;
+    HealthCheckCustomConfig?: HealthCheckCustomConfig;
     DnsConfig: DnsConfig;
     HealthCheckConfig?: HealthCheckConfig;
     Name?: Value<string>;
@@ -25,6 +31,7 @@ export interface ServiceProperties {
 export default class Service extends ResourceBase {
     static DnsConfig: typeof DnsConfig;
     static DnsRecord: typeof DnsRecord;
+    static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;
     static HealthCheckConfig: typeof HealthCheckConfig;
     constructor(properties?: ServiceProperties);
 }

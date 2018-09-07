@@ -11,7 +11,7 @@ const options = {
 let shouldShowUsageInfo = true;
 function parseParam(idx) {
     const param = process.argv[idx];
-    if (param.startsWith('-')) {
+    if (param && param.startsWith('-')) {
         if (param === '-m' || param === '--minify') {
             options.shouldMinify = true;
         }

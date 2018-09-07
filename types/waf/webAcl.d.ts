@@ -5,7 +5,7 @@ export declare class WafAction {
     constructor(properties: WafAction);
 }
 export declare class ActivatedRule {
-    Action: WafAction;
+    Action?: WafAction;
     Priority: Value<number>;
     RuleId: Value<string>;
     constructor(properties: ActivatedRule);

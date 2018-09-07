@@ -33,6 +33,7 @@ export declare class CacheBehavior {
     ViewerProtocolPolicy: Value<string>;
     TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
+    FieldLevelEncryptionId?: Value<string>;
     AllowedMethods?: List<Value<string>>;
     PathPattern: Value<string>;
     CachedMethods?: List<Value<string>>;
@@ -40,23 +41,22 @@ export declare class CacheBehavior {
     ForwardedValues: ForwardedValues;
     MinTTL?: Value<number>;
     MaxTTL?: Value<number>;
-    FieldLevelEncryptionId?: Value<string>;
     constructor(properties: CacheBehavior);
 }
 export declare class DefaultCacheBehavior {
     Compress?: Value<boolean>;
-    AllowedMethods?: List<Value<string>>;
-    CachedMethods?: List<Value<string>>;
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>;
-    SmoothStreaming?: Value<boolean>;
     TargetOriginId: Value<string>;
     ViewerProtocolPolicy: Value<string>;
-    ForwardedValues: ForwardedValues;
-    MinTTL?: Value<number>;
-    MaxTTL?: Value<number>;
     TrustedSigners?: List<Value<string>>;
     DefaultTTL?: Value<number>;
     FieldLevelEncryptionId?: Value<string>;
+    AllowedMethods?: List<Value<string>>;
+    CachedMethods?: List<Value<string>>;
+    SmoothStreaming?: Value<boolean>;
+    ForwardedValues: ForwardedValues;
+    MinTTL?: Value<number>;
+    MaxTTL?: Value<number>;
     constructor(properties: DefaultCacheBehavior);
 }
 export declare class Restrictions {

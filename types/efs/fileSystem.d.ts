@@ -10,6 +10,8 @@ export interface FileSystemProperties {
     FileSystemTags?: List<ElasticFileSystemTag>;
     KmsKeyId?: Value<string>;
     PerformanceMode?: Value<string>;
+    ProvisionedThroughputInMibps?: Value<number>;
+    ThroughputMode?: Value<string>;
 }
 export default class FileSystem extends ResourceBase {
     static ElasticFileSystemTag: typeof ElasticFileSystemTag;

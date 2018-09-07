@@ -30,6 +30,7 @@ export interface CrawlerProperties {
     Classifiers?: List<Value<string>>;
     Description?: Value<string>;
     SchemaChangePolicy?: SchemaChangePolicy;
+    Configuration?: Value<string>;
     Schedule?: Schedule;
     DatabaseName: Value<string>;
     Targets: Targets;

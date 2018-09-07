@@ -57,6 +57,14 @@ export declare class ScalingAction {
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
     constructor(properties: ScalingAction);
 }
+export declare class KerberosAttributes {
+    ADDomainJoinPassword?: Value<string>;
+    ADDomainJoinUser?: Value<string>;
+    CrossRealmTrustPrincipalPassword?: Value<string>;
+    KdcAdminPassword: Value<string>;
+    Realm: Value<string>;
+    constructor(properties: KerberosAttributes);
+}
 export declare class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>;
     CoolDown?: Value<number>;
@@ -161,6 +169,7 @@ export interface ClusterProperties {
     EbsRootVolumeSize?: Value<number>;
     Instances: JobFlowInstancesConfig;
     JobFlowRole: Value<string>;
+    KerberosAttributes?: KerberosAttributes;
     LogUri?: Value<string>;
     Name: Value<string>;
     ReleaseLabel?: Value<string>;
@@ -178,6 +187,7 @@ export default class Cluster extends ResourceBase {
     static InstanceFleetConfig: typeof InstanceFleetConfig;
     static JobFlowInstancesConfig: typeof JobFlowInstancesConfig;
     static ScalingAction: typeof ScalingAction;
+    static KerberosAttributes: typeof KerberosAttributes;
     static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
     static Application: typeof Application;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;

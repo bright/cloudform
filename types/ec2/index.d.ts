@@ -1,6 +1,7 @@
 import RouteTable from './routeTable';
 import PlacementGroup from './placementGroup';
 import VPCPeeringConnection from './vpcPeeringConnection';
+import VPCEndpointServicePermissions from './vpcEndpointServicePermissions';
 import NetworkAclEntry from './networkAclEntry';
 import InternetGateway from './internetGateway';
 import LaunchTemplate from './launchTemplate';
@@ -44,6 +45,7 @@ declare const _default: {
     RouteTable: typeof RouteTable;
     PlacementGroup: typeof PlacementGroup;
     VPCPeeringConnection: typeof VPCPeeringConnection;
+    VPCEndpointServicePermissions: typeof VPCEndpointServicePermissions;
     NetworkAclEntry: typeof NetworkAclEntry;
     InternetGateway: typeof InternetGateway;
     LaunchTemplate: typeof LaunchTemplate;

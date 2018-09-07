@@ -24,6 +24,7 @@ export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
     PlacementGroup: typeof EC2PlacementGroup;
     VPCPeeringConnection: typeof EC2VPCPeeringConnection;
+    VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
     LaunchTemplate: typeof EC2LaunchTemplate;
@@ -67,6 +68,7 @@ export declare const EC2: {
 import EC2RouteTable from './ec2/routeTable';
 import EC2PlacementGroup from './ec2/placementGroup';
 import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
+import EC2VPCEndpointServicePermissions from './ec2/vpcEndpointServicePermissions';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
 import EC2LaunchTemplate from './ec2/launchTemplate';
@@ -172,6 +174,7 @@ export declare const IAM: {
     Group: typeof IAMGroup;
     Policy: typeof IAMPolicy;
     Role: typeof IAMRole;
+    ServiceLinkedRole: typeof IAMServiceLinkedRole;
     UserToGroupAddition: typeof IAMUserToGroupAddition;
     InstanceProfile: typeof IAMInstanceProfile;
     AccessKey: typeof IAMAccessKey;
@@ -181,6 +184,7 @@ export declare const IAM: {
 import IAMGroup from './iam/group';
 import IAMPolicy from './iam/policy';
 import IAMRole from './iam/role';
+import IAMServiceLinkedRole from './iam/serviceLinkedRole';
 import IAMUserToGroupAddition from './iam/userToGroupAddition';
 import IAMInstanceProfile from './iam/instanceProfile';
 import IAMAccessKey from './iam/accessKey';
@@ -450,10 +454,14 @@ import SSMAssociation from './ssm/association';
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask';
 export declare const Config: {
     DeliveryChannel: typeof ConfigDeliveryChannel;
+    ConfigurationAggregator: typeof ConfigConfigurationAggregator;
+    AggregationAuthorization: typeof ConfigAggregationAuthorization;
     ConfigurationRecorder: typeof ConfigConfigurationRecorder;
     ConfigRule: typeof ConfigConfigRule;
 };
 import ConfigDeliveryChannel from './config/deliveryChannel';
+import ConfigConfigurationAggregator from './config/configurationAggregator';
+import ConfigAggregationAuthorization from './config/aggregationAuthorization';
 import ConfigConfigurationRecorder from './config/configurationRecorder';
 import ConfigConfigRule from './config/configRule';
 export declare const SageMaker: {
@@ -742,6 +750,7 @@ declare const _default: {
         RouteTable: typeof EC2RouteTable;
         PlacementGroup: typeof EC2PlacementGroup;
         VPCPeeringConnection: typeof EC2VPCPeeringConnection;
+        VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
         LaunchTemplate: typeof EC2LaunchTemplate;
@@ -821,6 +830,7 @@ declare const _default: {
         Group: typeof IAMGroup;
         Policy: typeof IAMPolicy;
         Role: typeof IAMRole;
+        ServiceLinkedRole: typeof IAMServiceLinkedRole;
         UserToGroupAddition: typeof IAMUserToGroupAddition;
         InstanceProfile: typeof IAMInstanceProfile;
         AccessKey: typeof IAMAccessKey;
@@ -984,6 +994,8 @@ declare const _default: {
     };
     Config: {
         DeliveryChannel: typeof ConfigDeliveryChannel;
+        ConfigurationAggregator: typeof ConfigConfigurationAggregator;
+        AggregationAuthorization: typeof ConfigAggregationAuthorization;
         ConfigurationRecorder: typeof ConfigConfigurationRecorder;
         ConfigRule: typeof ConfigConfigRule;
     };

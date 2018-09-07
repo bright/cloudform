@@ -13,6 +13,11 @@ export declare class MaintenanceWindow {
     TimeZone: Value<string>;
     constructor(properties: MaintenanceWindow);
 }
+export declare class LogList {
+    Audit?: Value<boolean>;
+    General?: Value<boolean>;
+    constructor(properties: LogList);
+}
 export declare class ConfigurationId {
     Revision: Value<number>;
     Id: Value<string>;
@@ -23,18 +28,20 @@ export interface BrokerProperties {
     EngineVersion: Value<string>;
     Configuration?: ConfigurationId;
     MaintenanceWindowStartTime?: MaintenanceWindow;
-    DeploymentMode: Value<string>;
     HostInstanceType: Value<string>;
-    EngineType: Value<string>;
     AutoMinorVersionUpgrade: Value<boolean>;
     Users: List<User>;
-    PubliclyAccessible: Value<boolean>;
+    Logs?: LogList;
     SubnetIds?: List<Value<string>>;
     BrokerName: Value<string>;
+    DeploymentMode: Value<string>;
+    EngineType: Value<string>;
+    PubliclyAccessible: Value<boolean>;
 }
 export default class Broker extends ResourceBase {
     static User: typeof User;
     static MaintenanceWindow: typeof MaintenanceWindow;
+    static LogList: typeof LogList;
     static ConfigurationId: typeof ConfigurationId;
     constructor(properties?: BrokerProperties);
 }

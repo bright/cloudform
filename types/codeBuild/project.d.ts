@@ -3,7 +3,9 @@ import { Value, List } from '../dataTypes';
 export declare class Artifacts {
     Path?: Value<string>;
     Type: Value<string>;
+    OverrideArtifactName?: Value<boolean>;
     Packaging?: Value<string>;
+    EncryptionDisabled?: Value<boolean>;
     Location?: Value<string>;
     Name?: Value<string>;
     NamespaceType?: Value<string>;
@@ -29,9 +31,9 @@ export declare class ProjectCache {
     constructor(properties: ProjectCache);
 }
 export declare class VpcConfig {
-    Subnets: List<Value<string>>;
-    VpcId: Value<string>;
-    SecurityGroupIds: List<Value<string>>;
+    Subnets?: List<Value<string>>;
+    VpcId?: Value<string>;
+    SecurityGroupIds?: List<Value<string>>;
     constructor(properties: VpcConfig);
 }
 export declare class ProjectTriggers {

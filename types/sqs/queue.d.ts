@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../dataTypes';
 export interface QueueProperties {
     ContentBasedDeduplication?: Value<boolean>;
@@ -11,6 +11,7 @@ export interface QueueProperties {
     QueueName?: Value<string>;
     ReceiveMessageWaitTimeSeconds?: Value<number>;
     RedrivePolicy?: any;
+    Tags?: ResourceTag[];
     VisibilityTimeout?: Value<number>;
 }
 export default class Queue extends ResourceBase {

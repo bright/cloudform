@@ -10,6 +10,12 @@ export declare class LifecycleHookSpecification {
     RoleARN?: Value<string>;
     constructor(properties: LifecycleHookSpecification);
 }
+export declare class LaunchTemplateSpecification {
+    LaunchTemplateId?: Value<string>;
+    LaunchTemplateName?: Value<string>;
+    Version: Value<string>;
+    constructor(properties: LaunchTemplateSpecification);
+}
 export declare class NotificationConfiguration {
     NotificationTypes?: List<Value<string>>;
     TopicARN: Value<string>;
@@ -35,6 +41,7 @@ export interface AutoScalingGroupProperties {
     HealthCheckType?: Value<string>;
     InstanceId?: Value<string>;
     LaunchConfigurationName?: Value<string>;
+    LaunchTemplate?: LaunchTemplateSpecification;
     LifecycleHookSpecificationList?: List<LifecycleHookSpecification>;
     LoadBalancerNames?: List<Value<string>>;
     MaxSize: Value<string>;
@@ -50,6 +57,7 @@ export interface AutoScalingGroupProperties {
 }
 export default class AutoScalingGroup extends ResourceBase {
     static LifecycleHookSpecification: typeof LifecycleHookSpecification;
+    static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static NotificationConfiguration: typeof NotificationConfiguration;
     static MetricsCollection: typeof MetricsCollection;
     static TagProperty: typeof TagProperty;

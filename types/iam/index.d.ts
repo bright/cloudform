@@ -1,6 +1,7 @@
 import Group from './group';
 import Policy from './policy';
 import Role from './role';
+import ServiceLinkedRole from './serviceLinkedRole';
 import UserToGroupAddition from './userToGroupAddition';
 import InstanceProfile from './instanceProfile';
 import AccessKey from './accessKey';
@@ -10,6 +11,7 @@ declare const _default: {
     Group: typeof Group;
     Policy: typeof Policy;
     Role: typeof Role;
+    ServiceLinkedRole: typeof ServiceLinkedRole;
     UserToGroupAddition: typeof UserToGroupAddition;
     InstanceProfile: typeof InstanceProfile;
     AccessKey: typeof AccessKey;

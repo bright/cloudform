@@ -9,6 +9,7 @@ export interface VPCEndpointProperties {
     SubnetIds?: List<Value<string>>;
     SecurityGroupIds?: List<Value<string>>;
     VPCEndpointType?: Value<string>;
+    PrivateDnsEnabled?: Value<boolean>;
 }
 export default class VPCEndpoint extends ResourceBase {
     constructor(properties?: VPCEndpointProperties);

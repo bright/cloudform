@@ -1,11 +1,11 @@
 /* Generated from: 
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.5.0
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0
  */
    
 import {ResourceBase} from '../resource'
@@ -32,6 +32,15 @@ export class MaintenanceWindow {
     }
 }
 
+export class LogList {
+    Audit?: Value<boolean>
+    General?: Value<boolean>
+
+    constructor(properties: LogList) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ConfigurationId {
     Revision!: Value<number>
     Id!: Value<string>
@@ -46,19 +55,21 @@ export interface BrokerProperties {
     EngineVersion: Value<string>
     Configuration?: ConfigurationId
     MaintenanceWindowStartTime?: MaintenanceWindow
-    DeploymentMode: Value<string>
     HostInstanceType: Value<string>
-    EngineType: Value<string>
     AutoMinorVersionUpgrade: Value<boolean>
     Users: List<User>
-    PubliclyAccessible: Value<boolean>
+    Logs?: LogList
     SubnetIds?: List<Value<string>>
     BrokerName: Value<string>
+    DeploymentMode: Value<string>
+    EngineType: Value<string>
+    PubliclyAccessible: Value<boolean>
 }
 
 export default class Broker extends ResourceBase {
     static User = User
     static MaintenanceWindow = MaintenanceWindow
+    static LogList = LogList
     static ConfigurationId = ConfigurationId
 
     constructor(properties?: BrokerProperties) {

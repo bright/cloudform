@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "sourceMap": false,
+    "watch": false,
+    "rootDir": "./",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es2015",
+      "es2016.array.include"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "generator"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cloudform",
+  "version": "3.0.0",
+  "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
+  "main": "packages/cloudform/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bright/cloudform.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "run-example": "ts-node ./cli/cloudform.ts example/example.ts"
+  },
+  "keywords": [
+    "cloudformation",
+    "aws"
+  ],
+  "license": "MIT",
+  "bin": {
+    "cloudform": "cli/cloudform.js"
+  },
+  "dependencies": {
+    "cloudform-types": "^3.0.0",
+    "jsonminify": "^0.4.1",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/jsonminify": "^0.4.0",
+    "@types/lodash": "^4.14.110",
+    "@types/node": "^8.10.20",
+    "@types/node-fetch": "^2.1.1",
+    "lodash": "^4.17.10",
+    "node-fetch": "^1.7.3"
+  }
+}

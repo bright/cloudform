@@ -1,6 +1,6 @@
 {
   "name": "cloudform-types",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "TypeScript AWS CloudFormation template types - used by cloudform",
   "repository": {
     "type": "git",
@@ -16,14 +16,13 @@
     "aws"
   ],
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "ts-node": "^5.0.1",
-    "typescript": "^2.9.2",
     "@types/lodash": "^4.14.110",
     "@types/node": "^8.10.20",
     "@types/node-fetch": "^2.1.1",
     "lodash": "^4.17.10",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "ts-node": "^5.0.1",
+    "typescript": "^2.9.2"
   }
 }

@@ -8,7 +8,7 @@
     "url": "git+https://github.com/bright/cloudform.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --declaration",
     "run-example": "ts-node ./cli/cloudform.ts example/example.ts"
   },
   "keywords": [

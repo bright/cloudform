@@ -1,5 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class SqsParameters {
+    MessageGroupId: Value<string>;
+    constructor(properties: SqsParameters);
+}
 export declare class RunCommandParameters {
     RunCommandTargets: List<RunCommandTarget>;
     constructor(properties: RunCommandParameters);
@@ -14,6 +18,7 @@ export declare class Target {
     KinesisParameters?: KinesisParameters;
     RoleArn?: Value<string>;
     RunCommandParameters?: RunCommandParameters;
+    SqsParameters?: SqsParameters;
     constructor(properties: Target);
 }
 export declare class RunCommandTarget {
@@ -47,6 +52,7 @@ export interface RuleProperties {
     Targets?: List<Target>;
 }
 export default class Rule extends ResourceBase {
+    static SqsParameters: typeof SqsParameters;
     static RunCommandParameters: typeof RunCommandParameters;
     static Target: typeof Target;
     static RunCommandTarget: typeof RunCommandTarget;

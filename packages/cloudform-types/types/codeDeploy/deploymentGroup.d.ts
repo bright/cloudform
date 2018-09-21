@@ -40,6 +40,10 @@ export declare class TargetGroupInfo {
     Name?: Value<string>;
     constructor(properties: TargetGroupInfo);
 }
+export declare class EC2TagSet {
+    Ec2TagSetList?: List<EC2TagSetListObject>;
+    constructor(properties: EC2TagSet);
+}
 export declare class ELBInfo {
     Name?: Value<string>;
     constructor(properties: ELBInfo);
@@ -49,6 +53,10 @@ export declare class AlarmConfiguration {
     Enabled?: Value<boolean>;
     IgnorePollAlarmFailure?: Value<boolean>;
     constructor(properties: AlarmConfiguration);
+}
+export declare class OnPremisesTagSetListObject {
+    OnPremisesTagGroup?: List<TagFilter>;
+    constructor(properties: OnPremisesTagSetListObject);
 }
 export declare class DeploymentStyle {
     DeploymentOption?: Value<string>;
@@ -65,6 +73,10 @@ export declare class EC2TagFilter {
     Value?: Value<string>;
     constructor(properties: EC2TagFilter);
 }
+export declare class OnPremisesTagSet {
+    OnPremisesTagSetList?: List<OnPremisesTagSetListObject>;
+    constructor(properties: OnPremisesTagSet);
+}
 export declare class AutoRollbackConfiguration {
     Enabled?: Value<boolean>;
     Events?: List<Value<string>>;
@@ -76,6 +88,10 @@ export declare class Deployment {
     Revision: RevisionLocation;
     constructor(properties: Deployment);
 }
+export declare class EC2TagSetListObject {
+    Ec2TagGroup?: List<EC2TagFilter>;
+    constructor(properties: EC2TagSetListObject);
+}
 export interface DeploymentGroupProperties {
     AlarmConfiguration?: AlarmConfiguration;
     ApplicationName: Value<string>;
@@ -86,8 +102,10 @@ export interface DeploymentGroupProperties {
     DeploymentGroupName?: Value<string>;
     DeploymentStyle?: DeploymentStyle;
     Ec2TagFilters?: List<EC2TagFilter>;
+    Ec2TagSet?: EC2TagSet;
     LoadBalancerInfo?: LoadBalancerInfo;
     OnPremisesInstanceTagFilters?: List<TagFilter>;
+    OnPremisesTagSet?: OnPremisesTagSet;
     ServiceRoleArn: Value<string>;
     TriggerConfigurations?: List<TriggerConfig>;
 }
@@ -99,12 +117,16 @@ export default class DeploymentGroup extends ResourceBase {
     static TagFilter: typeof TagFilter;
     static GitHubLocation: typeof GitHubLocation;
     static TargetGroupInfo: typeof TargetGroupInfo;
+    static EC2TagSet: typeof EC2TagSet;
     static ELBInfo: typeof ELBInfo;
     static AlarmConfiguration: typeof AlarmConfiguration;
+    static OnPremisesTagSetListObject: typeof OnPremisesTagSetListObject;
     static DeploymentStyle: typeof DeploymentStyle;
     static Alarm: typeof Alarm;
     static EC2TagFilter: typeof EC2TagFilter;
+    static OnPremisesTagSet: typeof OnPremisesTagSet;
     static AutoRollbackConfiguration: typeof AutoRollbackConfiguration;
     static Deployment: typeof Deployment;
+    static EC2TagSetListObject: typeof EC2TagSetListObject;
     constructor(properties?: DeploymentGroupProperties);
 }

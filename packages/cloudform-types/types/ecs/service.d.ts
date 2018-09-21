@@ -13,6 +13,8 @@ export declare class PlacementStrategy {
     constructor(properties: PlacementStrategy);
 }
 export declare class ServiceRegistry {
+    ContainerName?: Value<string>;
+    ContainerPort?: Value<number>;
     Port?: Value<number>;
     RegistryArn?: Value<string>;
     constructor(properties: ServiceRegistry);
@@ -49,6 +51,7 @@ export interface ServiceProperties {
     PlacementStrategies?: List<PlacementStrategy>;
     PlatformVersion?: Value<string>;
     Role?: Value<string>;
+    SchedulingStrategy?: Value<string>;
     ServiceName?: Value<string>;
     ServiceRegistries?: List<ServiceRegistry>;
     TaskDefinition: Value<string>;

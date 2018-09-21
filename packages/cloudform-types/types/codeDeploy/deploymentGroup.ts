@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0
  */
    
 import {ResourceBase} from '../resource'
@@ -88,6 +88,14 @@ export class TargetGroupInfo {
     }
 }
 
+export class EC2TagSet {
+    Ec2TagSetList?: List<EC2TagSetListObject>
+
+    constructor(properties: EC2TagSet) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ELBInfo {
     Name?: Value<string>
 
@@ -102,6 +110,14 @@ export class AlarmConfiguration {
     IgnorePollAlarmFailure?: Value<boolean>
 
     constructor(properties: AlarmConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OnPremisesTagSetListObject {
+    OnPremisesTagGroup?: List<TagFilter>
+
+    constructor(properties: OnPremisesTagSetListObject) {
         Object.assign(this, properties)
     }
 }
@@ -133,6 +149,14 @@ export class EC2TagFilter {
     }
 }
 
+export class OnPremisesTagSet {
+    OnPremisesTagSetList?: List<OnPremisesTagSetListObject>
+
+    constructor(properties: OnPremisesTagSet) {
+        Object.assign(this, properties)
+    }
+}
+
 export class AutoRollbackConfiguration {
     Enabled?: Value<boolean>
     Events?: List<Value<string>>
@@ -152,6 +176,14 @@ export class Deployment {
     }
 }
 
+export class EC2TagSetListObject {
+    Ec2TagGroup?: List<EC2TagFilter>
+
+    constructor(properties: EC2TagSetListObject) {
+        Object.assign(this, properties)
+    }
+}
+
 export interface DeploymentGroupProperties {
     AlarmConfiguration?: AlarmConfiguration
     ApplicationName: Value<string>
@@ -162,8 +194,10 @@ export interface DeploymentGroupProperties {
     DeploymentGroupName?: Value<string>
     DeploymentStyle?: DeploymentStyle
     Ec2TagFilters?: List<EC2TagFilter>
+    Ec2TagSet?: EC2TagSet
     LoadBalancerInfo?: LoadBalancerInfo
     OnPremisesInstanceTagFilters?: List<TagFilter>
+    OnPremisesTagSet?: OnPremisesTagSet
     ServiceRoleArn: Value<string>
     TriggerConfigurations?: List<TriggerConfig>
 }
@@ -176,13 +210,17 @@ export default class DeploymentGroup extends ResourceBase {
     static TagFilter = TagFilter
     static GitHubLocation = GitHubLocation
     static TargetGroupInfo = TargetGroupInfo
+    static EC2TagSet = EC2TagSet
     static ELBInfo = ELBInfo
     static AlarmConfiguration = AlarmConfiguration
+    static OnPremisesTagSetListObject = OnPremisesTagSetListObject
     static DeploymentStyle = DeploymentStyle
     static Alarm = Alarm
     static EC2TagFilter = EC2TagFilter
+    static OnPremisesTagSet = OnPremisesTagSet
     static AutoRollbackConfiguration = AutoRollbackConfiguration
     static Deployment = Deployment
+    static EC2TagSetListObject = EC2TagSetListObject
 
     constructor(properties?: DeploymentGroupProperties) {
         super('AWS::CodeDeploy::DeploymentGroup', properties)

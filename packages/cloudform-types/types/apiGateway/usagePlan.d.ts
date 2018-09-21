@@ -3,6 +3,9 @@ import { Value, List } from '../dataTypes';
 export declare class ApiStage {
     ApiId?: Value<string>;
     Stage?: Value<string>;
+    Throttle?: {
+        [key: string]: ThrottleSettings;
+    };
     constructor(properties: ApiStage);
 }
 export declare class ThrottleSettings {

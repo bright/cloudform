@@ -8,7 +8,7 @@ export declare class OptionSetting {
 export declare class OptionConfiguration {
     DBSecurityGroupMemberships?: List<Value<string>>;
     OptionName: Value<string>;
-    OptionSettings?: OptionSetting;
+    OptionSettings?: List<OptionSetting>;
     OptionVersion?: Value<string>;
     Port?: Value<number>;
     VpcSecurityGroupMemberships?: List<Value<string>>;

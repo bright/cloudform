@@ -1,24 +1,36 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class DockerVolumeConfiguration {
+    Autoprovision?: Value<boolean>
+    Driver?: Value<string>
+    DriverOpts?: {[key: string]: Value<string>}
+    Labels?: {[key: string]: Value<string>}
+    Scope?: Value<string>
+
+    constructor(properties: DockerVolumeConfiguration) {
+        Object.assign(this, properties)
+    }
+}
 
 export class ContainerDefinition {
     Command?: List<Value<string>>
@@ -45,6 +57,7 @@ export class ContainerDefinition {
     PortMappings?: List<PortMapping>
     Privileged?: Value<boolean>
     ReadonlyRootFilesystem?: Value<boolean>
+    RepositoryCredentials?: RepositoryCredentials
     Ulimits?: List<Ulimit>
     User?: Value<string>
     VolumesFrom?: List<VolumeFrom>
@@ -130,6 +143,7 @@ export class TaskDefinitionPlacementConstraint {
 }
 
 export class Volume {
+    DockerVolumeConfiguration?: DockerVolumeConfiguration
     Host?: HostVolumeProperties
     Name?: Value<string>
 
@@ -174,6 +188,8 @@ export class LinuxParameters {
     Capabilities?: KernelCapabilities
     Devices?: List<Device>
     InitProcessEnabled?: Value<boolean>
+    SharedMemorySize?: Value<number>
+    Tmpfs?: List<Tmpfs>
 
     constructor(properties: LinuxParameters) {
         Object.assign(this, properties)
@@ -184,6 +200,24 @@ export class HostVolumeProperties {
     SourcePath?: Value<string>
 
     constructor(properties: HostVolumeProperties) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Tmpfs {
+    ContainerPath?: Value<string>
+    MountOptions?: List<Value<string>>
+    Size?: Value<number>
+
+    constructor(properties: Tmpfs) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RepositoryCredentials {
+    CredentialsParameter?: Value<string>
+
+    constructor(properties: RepositoryCredentials) {
         Object.assign(this, properties)
     }
 }
@@ -202,6 +236,7 @@ export interface TaskDefinitionProperties {
 }
 
 export default class TaskDefinition extends ResourceBase {
+    static DockerVolumeConfiguration = DockerVolumeConfiguration
     static ContainerDefinition = ContainerDefinition
     static LogConfiguration = LogConfiguration
     static Device = Device
@@ -217,6 +252,8 @@ export default class TaskDefinition extends ResourceBase {
     static Ulimit = Ulimit
     static LinuxParameters = LinuxParameters
     static HostVolumeProperties = HostVolumeProperties
+    static Tmpfs = Tmpfs
+    static RepositoryCredentials = RepositoryCredentials
 
     constructor(properties?: TaskDefinitionProperties) {
         super('AWS::ECS::TaskDefinition', properties)

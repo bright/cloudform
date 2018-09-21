@@ -1,6 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class NodeGroupConfiguration {
+    NodeGroupId?: Value<string>;
     PrimaryAvailabilityZone?: Value<string>;
     ReplicaAvailabilityZones?: List<Value<string>>;
     ReplicaCount?: Value<number>;

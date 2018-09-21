@@ -1,29 +1,29 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.7.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
 exports.ElasticBeanstalk = elasticBeanstalk_1.default;
-const appSync_1 = require("./appSync");
-exports.AppSync = appSync_1.default;
 const ec2_1 = require("./ec2");
 exports.EC2 = ec2_1.default;
+const appSync_1 = require("./appSync");
+exports.AppSync = appSync_1.default;
 const serviceCatalog_1 = require("./serviceCatalog");
 exports.ServiceCatalog = serviceCatalog_1.default;
 const cognito_1 = require("./cognito");
@@ -38,16 +38,16 @@ const codePipeline_1 = require("./codePipeline");
 exports.CodePipeline = codePipeline_1.default;
 const elasticsearch_1 = require("./elasticsearch");
 exports.Elasticsearch = elasticsearch_1.default;
-const apiGateway_1 = require("./apiGateway");
-exports.ApiGateway = apiGateway_1.default;
 const wafRegional_1 = require("./wafRegional");
 exports.WAFRegional = wafRegional_1.default;
-const emr_1 = require("./emr");
-exports.EMR = emr_1.default;
+const apiGateway_1 = require("./apiGateway");
+exports.ApiGateway = apiGateway_1.default;
 const rds_1 = require("./rds");
 exports.RDS = rds_1.default;
 const workSpaces_1 = require("./workSpaces");
 exports.WorkSpaces = workSpaces_1.default;
+const emr_1 = require("./emr");
+exports.EMR = emr_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
@@ -94,14 +94,16 @@ const lambda_1 = require("./lambda");
 exports.Lambda = lambda_1.default;
 const certificateManager_1 = require("./certificateManager");
 exports.CertificateManager = certificateManager_1.default;
+const ioT1Click_1 = require("./ioT1Click");
+exports.IoT1Click = ioT1Click_1.default;
 const inspector_1 = require("./inspector");
 exports.Inspector = inspector_1.default;
 const batch_1 = require("./batch");
 exports.Batch = batch_1.default;
-const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
-exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
 const iot_1 = require("./iot");
 exports.IoT = iot_1.default;
+const elasticLoadBalancing_1 = require("./elasticLoadBalancing");
+exports.ElasticLoadBalancing = elasticLoadBalancing_1.default;
 const dms_1 = require("./dms");
 exports.DMS = dms_1.default;
 const glue_1 = require("./glue");
@@ -156,8 +158,8 @@ const eks_1 = require("./eks");
 exports.EKS = eks_1.default;
 exports.default = {
     ElasticBeanstalk: exports.ElasticBeanstalk,
-    AppSync: exports.AppSync,
     EC2: exports.EC2,
+    AppSync: exports.AppSync,
     ServiceCatalog: exports.ServiceCatalog,
     Cognito: exports.Cognito,
     Events: exports.Events,
@@ -165,11 +167,11 @@ exports.default = {
     IAM: exports.IAM,
     CodePipeline: exports.CodePipeline,
     Elasticsearch: exports.Elasticsearch,
-    ApiGateway: exports.ApiGateway,
     WAFRegional: exports.WAFRegional,
-    EMR: exports.EMR,
+    ApiGateway: exports.ApiGateway,
     RDS: exports.RDS,
     WorkSpaces: exports.WorkSpaces,
+    EMR: exports.EMR,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
     AutoScaling: exports.AutoScaling,
@@ -193,10 +195,11 @@ exports.default = {
     Redshift: exports.Redshift,
     Lambda: exports.Lambda,
     CertificateManager: exports.CertificateManager,
+    IoT1Click: exports.IoT1Click,
     Inspector: exports.Inspector,
     Batch: exports.Batch,
-    ElasticLoadBalancing: exports.ElasticLoadBalancing,
     IoT: exports.IoT,
+    ElasticLoadBalancing: exports.ElasticLoadBalancing,
     DMS: exports.DMS,
     Glue: exports.Glue,
     ElastiCache: exports.ElastiCache,

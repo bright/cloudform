@@ -1,5 +1,17 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class DockerVolumeConfiguration {
+    Autoprovision?: Value<boolean>;
+    Driver?: Value<string>;
+    DriverOpts?: {
+        [key: string]: Value<string>;
+    };
+    Labels?: {
+        [key: string]: Value<string>;
+    };
+    Scope?: Value<string>;
+    constructor(properties: DockerVolumeConfiguration);
+}
 export declare class ContainerDefinition {
     Command?: List<Value<string>>;
     Cpu?: Value<number>;
@@ -27,6 +39,7 @@ export declare class ContainerDefinition {
     PortMappings?: List<PortMapping>;
     Privileged?: Value<boolean>;
     ReadonlyRootFilesystem?: Value<boolean>;
+    RepositoryCredentials?: RepositoryCredentials;
     Ulimits?: List<Ulimit>;
     User?: Value<string>;
     VolumesFrom?: List<VolumeFrom>;
@@ -78,6 +91,7 @@ export declare class TaskDefinitionPlacementConstraint {
     constructor(properties: TaskDefinitionPlacementConstraint);
 }
 export declare class Volume {
+    DockerVolumeConfiguration?: DockerVolumeConfiguration;
     Host?: HostVolumeProperties;
     Name?: Value<string>;
     constructor(properties: Volume);
@@ -106,11 +120,23 @@ export declare class LinuxParameters {
     Capabilities?: KernelCapabilities;
     Devices?: List<Device>;
     InitProcessEnabled?: Value<boolean>;
+    SharedMemorySize?: Value<number>;
+    Tmpfs?: List<Tmpfs>;
     constructor(properties: LinuxParameters);
 }
 export declare class HostVolumeProperties {
     SourcePath?: Value<string>;
     constructor(properties: HostVolumeProperties);
+}
+export declare class Tmpfs {
+    ContainerPath?: Value<string>;
+    MountOptions?: List<Value<string>>;
+    Size?: Value<number>;
+    constructor(properties: Tmpfs);
+}
+export declare class RepositoryCredentials {
+    CredentialsParameter?: Value<string>;
+    constructor(properties: RepositoryCredentials);
 }
 export interface TaskDefinitionProperties {
     ContainerDefinitions?: List<ContainerDefinition>;
@@ -125,6 +151,7 @@ export interface TaskDefinitionProperties {
     Volumes?: List<Volume>;
 }
 export default class TaskDefinition extends ResourceBase {
+    static DockerVolumeConfiguration: typeof DockerVolumeConfiguration;
     static ContainerDefinition: typeof ContainerDefinition;
     static LogConfiguration: typeof LogConfiguration;
     static Device: typeof Device;
@@ -140,5 +167,7 @@ export default class TaskDefinition extends ResourceBase {
     static Ulimit: typeof Ulimit;
     static LinuxParameters: typeof LinuxParameters;
     static HostVolumeProperties: typeof HostVolumeProperties;
+    static Tmpfs: typeof Tmpfs;
+    static RepositoryCredentials: typeof RepositoryCredentials;
     constructor(properties?: TaskDefinitionProperties);
 }

@@ -1,5 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ClassicLoadBalancer {
+    Name: Value<string>;
+    constructor(properties: ClassicLoadBalancer);
+}
 export declare class LaunchTemplateConfig {
     LaunchTemplateSpecification?: FleetLaunchTemplateSpecification;
     Overrides?: List<LaunchTemplateOverrides>;
@@ -52,17 +56,24 @@ export declare class SpotFleetLaunchSpecification {
     WeightedCapacity?: Value<number>;
     constructor(properties: SpotFleetLaunchSpecification);
 }
+export declare class ClassicLoadBalancersConfig {
+    ClassicLoadBalancers: List<ClassicLoadBalancer>;
+    constructor(properties: ClassicLoadBalancersConfig);
+}
 export declare class SpotPlacement {
     AvailabilityZone?: Value<string>;
     GroupName?: Value<string>;
+    Tenancy?: Value<string>;
     constructor(properties: SpotPlacement);
 }
 export declare class SpotFleetRequestConfigData {
     AllocationStrategy?: Value<string>;
     ExcessCapacityTerminationPolicy?: Value<string>;
     IamFleetRole: Value<string>;
+    InstanceInterruptionBehavior?: Value<string>;
     LaunchSpecifications?: List<SpotFleetLaunchSpecification>;
     LaunchTemplateConfigs?: List<LaunchTemplateConfig>;
+    LoadBalancersConfig?: LoadBalancersConfig;
     ReplaceUnhealthyInstances?: Value<boolean>;
     SpotPrice?: Value<string>;
     TargetCapacity: Value<number>;
@@ -81,15 +92,28 @@ export declare class EbsBlockDevice {
     VolumeType?: Value<string>;
     constructor(properties: EbsBlockDevice);
 }
+export declare class LoadBalancersConfig {
+    ClassicLoadBalancersConfig?: ClassicLoadBalancersConfig;
+    TargetGroupsConfig?: TargetGroupsConfig;
+    constructor(properties: LoadBalancersConfig);
+}
 export declare class FleetLaunchTemplateSpecification {
     LaunchTemplateId?: Value<string>;
     LaunchTemplateName?: Value<string>;
     Version: Value<string>;
     constructor(properties: FleetLaunchTemplateSpecification);
 }
+export declare class TargetGroup {
+    Arn: Value<string>;
+    constructor(properties: TargetGroup);
+}
 export declare class InstanceIpv6Address {
     Ipv6Address: Value<string>;
     constructor(properties: InstanceIpv6Address);
+}
+export declare class TargetGroupsConfig {
+    TargetGroups: List<TargetGroup>;
+    constructor(properties: TargetGroupsConfig);
 }
 export declare class GroupIdentifier {
     GroupId: Value<string>;
@@ -118,17 +142,22 @@ export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData;
 }
 export default class SpotFleet extends ResourceBase {
+    static ClassicLoadBalancer: typeof ClassicLoadBalancer;
     static LaunchTemplateConfig: typeof LaunchTemplateConfig;
     static IamInstanceProfileSpecification: typeof IamInstanceProfileSpecification;
     static InstanceNetworkInterfaceSpecification: typeof InstanceNetworkInterfaceSpecification;
     static SpotFleetTagSpecification: typeof SpotFleetTagSpecification;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     static SpotFleetLaunchSpecification: typeof SpotFleetLaunchSpecification;
+    static ClassicLoadBalancersConfig: typeof ClassicLoadBalancersConfig;
     static SpotPlacement: typeof SpotPlacement;
     static SpotFleetRequestConfigData: typeof SpotFleetRequestConfigData;
     static EbsBlockDevice: typeof EbsBlockDevice;
+    static LoadBalancersConfig: typeof LoadBalancersConfig;
     static FleetLaunchTemplateSpecification: typeof FleetLaunchTemplateSpecification;
+    static TargetGroup: typeof TargetGroup;
     static InstanceIpv6Address: typeof InstanceIpv6Address;
+    static TargetGroupsConfig: typeof TargetGroupsConfig;
     static GroupIdentifier: typeof GroupIdentifier;
     static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
     static SpotFleetMonitoring: typeof SpotFleetMonitoring;

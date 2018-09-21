@@ -13,6 +13,8 @@ export declare class MethodResponse {
 export declare class Integration {
     CacheKeyParameters?: List<Value<string>>;
     CacheNamespace?: Value<string>;
+    ConnectionId?: Value<string>;
+    ConnectionType?: Value<string>;
     ContentHandling?: Value<string>;
     Credentials?: Value<string>;
     IntegrationHttpMethod?: Value<string>;
@@ -24,6 +26,7 @@ export declare class Integration {
     RequestTemplates?: {
         [key: string]: Value<string>;
     };
+    TimeoutInMillis?: Value<number>;
     Type?: Value<string>;
     Uri?: Value<string>;
     constructor(properties: Integration);
@@ -42,6 +45,7 @@ export declare class IntegrationResponse {
 }
 export interface MethodProperties {
     ApiKeyRequired?: Value<boolean>;
+    AuthorizationScopes?: List<Value<string>>;
     AuthorizationType?: Value<string>;
     AuthorizerId?: Value<string>;
     HttpMethod: Value<string>;

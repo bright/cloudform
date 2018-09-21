@@ -13,9 +13,25 @@ export declare class MethodSetting {
     ThrottlingRateLimit?: Value<number>;
     constructor(properties: MethodSetting);
 }
+export declare class CanarySetting {
+    DeploymentId?: Value<string>;
+    PercentTraffic?: Value<number>;
+    StageVariableOverrides?: {
+        [key: string]: Value<string>;
+    };
+    UseStageCache?: Value<boolean>;
+    constructor(properties: CanarySetting);
+}
+export declare class AccessLogSetting {
+    DestinationArn?: Value<string>;
+    Format?: Value<string>;
+    constructor(properties: AccessLogSetting);
+}
 export interface StageProperties {
+    AccessLogSetting?: AccessLogSetting;
     CacheClusterEnabled?: Value<boolean>;
     CacheClusterSize?: Value<string>;
+    CanarySetting?: CanarySetting;
     ClientCertificateId?: Value<string>;
     DeploymentId?: Value<string>;
     Description?: Value<string>;
@@ -29,5 +45,7 @@ export interface StageProperties {
 }
 export default class Stage extends ResourceBase {
     static MethodSetting: typeof MethodSetting;
+    static CanarySetting: typeof CanarySetting;
+    static AccessLogSetting: typeof AccessLogSetting;
     constructor(properties?: StageProperties);
 }

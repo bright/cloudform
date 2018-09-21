@@ -8,9 +8,7 @@
     "url": "git+https://github.com/bright/cloudform.git"
   },
   "scripts": {
-    "build": "tsc --declaration",
-    "generate": "ts-node --project tsconfig.json generator/generator.ts",
-    "run-example": "ts-node ./cli/cloudform.ts example/example.ts"
+    "publish": "lerna version && lerna publish"
   },
   "license": "MIT",
   "dependencies": {},

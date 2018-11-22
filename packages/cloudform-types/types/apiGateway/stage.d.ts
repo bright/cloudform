@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class MethodSetting {
     CacheDataEncrypted?: Value<boolean>;
@@ -39,6 +39,8 @@ export interface StageProperties {
     MethodSettings?: List<MethodSetting>;
     RestApiId: Value<string>;
     StageName?: Value<string>;
+    Tags?: ResourceTag[];
+    TracingEnabled?: Value<boolean>;
     Variables?: {
         [key: string]: Value<string>;
     };

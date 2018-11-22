@@ -10,6 +10,7 @@ export declare class ActionDeclaration {
     InputArtifacts?: List<InputArtifact>;
     Name: Value<string>;
     OutputArtifacts?: List<OutputArtifact>;
+    Region?: Value<string>;
     RoleArn?: Value<string>;
     RunOrder?: Value<number>;
     constructor(properties: ActionDeclaration);
@@ -24,6 +25,11 @@ export declare class BlockerDeclaration {
     Name: Value<string>;
     Type: Value<string>;
     constructor(properties: BlockerDeclaration);
+}
+export declare class ArtifactStoreMap {
+    ArtifactStore: ArtifactStore;
+    Region: Value<string>;
+    constructor(properties: ArtifactStoreMap);
 }
 export declare class StageTransition {
     Reason: Value<string>;
@@ -53,7 +59,8 @@ export declare class EncryptionKey {
     constructor(properties: EncryptionKey);
 }
 export interface PipelineProperties {
-    ArtifactStore: ArtifactStore;
+    ArtifactStore?: ArtifactStore;
+    ArtifactStores?: List<ArtifactStoreMap>;
     DisableInboundStageTransitions?: List<StageTransition>;
     Name?: Value<string>;
     RestartExecutionOnUpdate?: Value<boolean>;
@@ -65,6 +72,7 @@ export default class Pipeline extends ResourceBase {
     static ActionDeclaration: typeof ActionDeclaration;
     static StageDeclaration: typeof StageDeclaration;
     static BlockerDeclaration: typeof BlockerDeclaration;
+    static ArtifactStoreMap: typeof ArtifactStoreMap;
     static StageTransition: typeof StageTransition;
     static ArtifactStore: typeof ArtifactStore;
     static ActionTypeId: typeof ActionTypeId;

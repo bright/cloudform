@@ -10,7 +10,6 @@ import SpotFleet from './spotFleet';
 import VPNConnectionRoute from './vpnConnectionRoute';
 import NetworkInterfacePermission from './networkInterfacePermission';
 import EIP from './eip';
-import VPCEndpointConnectionNotification from './vpcEndpointConnectionNotification';
 import SecurityGroupIngress from './securityGroupIngress';
 import SubnetRouteTableAssociation from './subnetRouteTableAssociation';
 import Route from './route';
@@ -39,8 +38,9 @@ import VPCEndpoint from './vpcEndpoint';
 import VPCGatewayAttachment from './vpcGatewayAttachment';
 import VPNConnection from './vpnConnection';
 import VPCCidrBlock from './vpcCidrBlock';
-import VPCEndpointService from './vpcEndpointService';
+import EC2Fleet from './ec2Fleet';
 import VPCDHCPOptionsAssociation from './vpcdhcpOptionsAssociation';
+import VPCEndpointConnectionNotification from './vpcEndpointConnectionNotification';
 declare const _default: {
     RouteTable: typeof RouteTable;
     PlacementGroup: typeof PlacementGroup;
@@ -54,7 +54,6 @@ declare const _default: {
     VPNConnectionRoute: typeof VPNConnectionRoute;
     NetworkInterfacePermission: typeof NetworkInterfacePermission;
     EIP: typeof EIP;
-    VPCEndpointConnectionNotification: typeof VPCEndpointConnectionNotification;
     SecurityGroupIngress: typeof SecurityGroupIngress;
     SubnetRouteTableAssociation: typeof SubnetRouteTableAssociation;
     Route: typeof Route;
@@ -83,7 +82,8 @@ declare const _default: {
     VPCGatewayAttachment: typeof VPCGatewayAttachment;
     VPNConnection: typeof VPNConnection;
     VPCCidrBlock: typeof VPCCidrBlock;
-    VPCEndpointService: typeof VPCEndpointService;
+    EC2Fleet: typeof EC2Fleet;
     VPCDHCPOptionsAssociation: typeof VPCDHCPOptionsAssociation;
+    VPCEndpointConnectionNotification: typeof VPCEndpointConnectionNotification;
 };
 export default _default;

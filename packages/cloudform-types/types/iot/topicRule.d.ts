@@ -27,6 +27,12 @@ export declare class SnsAction {
     TargetArn: Value<string>;
     constructor(properties: SnsAction);
 }
+export declare class StepFunctionsAction {
+    ExecutionNamePrefix?: Value<string>;
+    RoleArn: Value<string>;
+    StateMachineName: Value<string>;
+    constructor(properties: StepFunctionsAction);
+}
 export declare class FirehoseAction {
     DeliveryStreamName: Value<string>;
     RoleArn: Value<string>;
@@ -37,6 +43,7 @@ export declare class TopicRulePayload {
     Actions: List<Action>;
     AwsIotSqlVersion?: Value<string>;
     Description?: Value<string>;
+    ErrorAction?: Action;
     RuleDisabled: Value<boolean>;
     Sql: Value<string>;
     constructor(properties: TopicRulePayload);
@@ -90,13 +97,20 @@ export declare class Action {
     DynamoDBv2?: DynamoDBv2Action;
     Elasticsearch?: ElasticsearchAction;
     Firehose?: FirehoseAction;
+    IotAnalytics?: IotAnalyticsAction;
     Kinesis?: KinesisAction;
     Lambda?: LambdaAction;
     Republish?: RepublishAction;
     S3?: S3Action;
     Sns?: SnsAction;
     Sqs?: SqsAction;
+    StepFunctions?: StepFunctionsAction;
     constructor(properties: Action);
+}
+export declare class IotAnalyticsAction {
+    ChannelName: Value<string>;
+    RoleArn: Value<string>;
+    constructor(properties: IotAnalyticsAction);
 }
 export declare class CloudwatchMetricAction {
     MetricName: Value<string>;
@@ -117,6 +131,7 @@ export default class TopicRule extends ResourceBase {
     static PutItemInput: typeof PutItemInput;
     static RepublishAction: typeof RepublishAction;
     static SnsAction: typeof SnsAction;
+    static StepFunctionsAction: typeof StepFunctionsAction;
     static FirehoseAction: typeof FirehoseAction;
     static TopicRulePayload: typeof TopicRulePayload;
     static LambdaAction: typeof LambdaAction;
@@ -126,6 +141,7 @@ export default class TopicRule extends ResourceBase {
     static KinesisAction: typeof KinesisAction;
     static CloudwatchAlarmAction: typeof CloudwatchAlarmAction;
     static Action: typeof Action;
+    static IotAnalyticsAction: typeof IotAnalyticsAction;
     static CloudwatchMetricAction: typeof CloudwatchMetricAction;
     constructor(properties?: TopicRuleProperties);
 }

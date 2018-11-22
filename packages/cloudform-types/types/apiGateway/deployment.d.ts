@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class DeploymentCanarySettings {
     PercentTraffic?: Value<number>;
@@ -36,8 +36,10 @@ export declare class StageDescription {
     LoggingLevel?: Value<string>;
     MethodSettings?: List<MethodSetting>;
     MetricsEnabled?: Value<boolean>;
+    Tags?: ResourceTag[];
     ThrottlingBurstLimit?: Value<number>;
     ThrottlingRateLimit?: Value<number>;
+    TracingEnabled?: Value<boolean>;
     Variables?: {
         [key: string]: Value<string>;
     };

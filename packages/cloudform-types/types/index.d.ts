@@ -8,6 +8,20 @@ import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurat
 import ElasticBeanstalkApplication from './elasticBeanstalk/application';
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment';
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncFunctionConfiguration from './appSync/functionConfiguration';
+import AppSyncApiKey from './appSync/apiKey';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
     PlacementGroup: typeof EC2PlacementGroup;
@@ -21,7 +35,6 @@ export declare const EC2: {
     VPNConnectionRoute: typeof EC2VPNConnectionRoute;
     NetworkInterfacePermission: typeof EC2NetworkInterfacePermission;
     EIP: typeof EC2EIP;
-    VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
     SecurityGroupIngress: typeof EC2SecurityGroupIngress;
     SubnetRouteTableAssociation: typeof EC2SubnetRouteTableAssociation;
     Route: typeof EC2Route;
@@ -50,8 +63,9 @@ export declare const EC2: {
     VPCGatewayAttachment: typeof EC2VPCGatewayAttachment;
     VPNConnection: typeof EC2VPNConnection;
     VPCCidrBlock: typeof EC2VPCCidrBlock;
-    VPCEndpointService: typeof EC2VPCEndpointService;
+    EC2Fleet: typeof EC2EC2Fleet;
     VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
+    VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
 };
 import EC2RouteTable from './ec2/routeTable';
 import EC2PlacementGroup from './ec2/placementGroup';
@@ -65,7 +79,6 @@ import EC2SpotFleet from './ec2/spotFleet';
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute';
 import EC2NetworkInterfacePermission from './ec2/networkInterfacePermission';
 import EC2EIP from './ec2/eip';
-import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification';
 import EC2SecurityGroupIngress from './ec2/securityGroupIngress';
 import EC2SubnetRouteTableAssociation from './ec2/subnetRouteTableAssociation';
 import EC2Route from './ec2/route';
@@ -94,28 +107,17 @@ import EC2VPCEndpoint from './ec2/vpcEndpoint';
 import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment';
 import EC2VPNConnection from './ec2/vpnConnection';
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock';
-import EC2VPCEndpointService from './ec2/vpcEndpointService';
+import EC2EC2Fleet from './ec2/ec2Fleet';
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
-export declare const AppSync: {
-    DataSource: typeof AppSyncDataSource;
-    Resolver: typeof AppSyncResolver;
-    GraphQLSchema: typeof AppSyncGraphQLSchema;
-    GraphQLApi: typeof AppSyncGraphQLApi;
-    ApiKey: typeof AppSyncApiKey;
-};
-import AppSyncDataSource from './appSync/dataSource';
-import AppSyncResolver from './appSync/resolver';
-import AppSyncGraphQLSchema from './appSync/graphQlSchema';
-import AppSyncGraphQLApi from './appSync/graphQlApi';
-import AppSyncApiKey from './appSync/apiKey';
+import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification';
 export declare const ServiceCatalog: {
     PortfolioShare: typeof ServiceCatalogPortfolioShare;
     TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
     LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
     TagOption: typeof ServiceCatalogTagOption;
     PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-    CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
     LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
+    CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
     CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
     PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
     Portfolio: typeof ServiceCatalogPortfolio;
@@ -127,8 +129,8 @@ import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssoci
 import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint';
 import ServiceCatalogTagOption from './serviceCatalog/tagOption';
 import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation';
-import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
 import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
+import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
 import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct';
 import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation';
 import ServiceCatalogPortfolio from './serviceCatalog/portfolio';
@@ -152,8 +154,10 @@ import CognitoUserPoolClient from './cognito/userPoolClient';
 import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
 export declare const Events: {
     Rule: typeof EventsRule;
+    EventBusPolicy: typeof EventsEventBusPolicy;
 };
 import EventsRule from './events/rule';
+import EventsEventBusPolicy from './events/eventBusPolicy';
 export declare const WAF: {
     IPSet: typeof WAFIPSet;
     SizeConstraintSet: typeof WAFSizeConstraintSet;
@@ -202,24 +206,6 @@ export declare const Elasticsearch: {
     Domain: typeof ElasticsearchDomain;
 };
 import ElasticsearchDomain from './elasticsearch/domain';
-export declare const WAFRegional: {
-    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-    XssMatchSet: typeof WAFRegionalXssMatchSet;
-    ByteMatchSet: typeof WAFRegionalByteMatchSet;
-    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-    WebACL: typeof WAFRegionalWebACL;
-    Rule: typeof WAFRegionalRule;
-    IPSet: typeof WAFRegionalIPSet;
-};
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
-import WAFRegionalWebACL from './wafRegional/webAcl';
-import WAFRegionalRule from './wafRegional/rule';
-import WAFRegionalIPSet from './wafRegional/ipSet';
 export declare const ApiGateway: {
     RequestValidator: typeof ApiGatewayRequestValidator;
     Deployment: typeof ApiGatewayDeployment;
@@ -260,6 +246,36 @@ import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
+export declare const WAFRegional: {
+    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+    XssMatchSet: typeof WAFRegionalXssMatchSet;
+    ByteMatchSet: typeof WAFRegionalByteMatchSet;
+    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+    WebACL: typeof WAFRegionalWebACL;
+    Rule: typeof WAFRegionalRule;
+    IPSet: typeof WAFRegionalIPSet;
+};
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
+import WAFRegionalWebACL from './wafRegional/webAcl';
+import WAFRegionalRule from './wafRegional/rule';
+import WAFRegionalIPSet from './wafRegional/ipSet';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -284,18 +300,6 @@ export declare const WorkSpaces: {
     Workspace: typeof WorkSpacesWorkspace;
 };
 import WorkSpacesWorkspace from './workSpaces/workspace';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -310,8 +314,10 @@ import LogsSubscriptionFilter from './logs/subscriptionFilter';
 import LogsDestination from './logs/destination';
 export declare const Kinesis: {
     Stream: typeof KinesisStream;
+    StreamConsumer: typeof KinesisStreamConsumer;
 };
 import KinesisStream from './kinesis/stream';
+import KinesisStreamConsumer from './kinesis/streamConsumer';
 export declare const AutoScaling: {
     LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
     LifecycleHook: typeof AutoScalingLifecycleHook;
@@ -330,6 +336,22 @@ export declare const SQS: {
 };
 import SQSQueue from './sqs/queue';
 import SQSQueuePolicy from './sqs/queuePolicy';
+export declare const AppStream: {
+    ImageBuilder: typeof AppStreamImageBuilder;
+    Stack: typeof AppStreamStack;
+    DirectoryConfig: typeof AppStreamDirectoryConfig;
+    StackFleetAssociation: typeof AppStreamStackFleetAssociation;
+    StackUserAssociation: typeof AppStreamStackUserAssociation;
+    User: typeof AppStreamUser;
+    Fleet: typeof AppStreamFleet;
+};
+import AppStreamImageBuilder from './appStream/imageBuilder';
+import AppStreamStack from './appStream/stack';
+import AppStreamDirectoryConfig from './appStream/directoryConfig';
+import AppStreamStackFleetAssociation from './appStream/stackFleetAssociation';
+import AppStreamStackUserAssociation from './appStream/stackUserAssociation';
+import AppStreamUser from './appStream/user';
+import AppStreamFleet from './appStream/fleet';
 export declare const Route53: {
     RecordSet: typeof Route53RecordSet;
     HostedZone: typeof Route53HostedZone;
@@ -441,17 +463,21 @@ import EFSFileSystem from './efs/fileSystem';
 export declare const SSM: {
     Document: typeof SSMDocument;
     PatchBaseline: typeof SSMPatchBaseline;
+    MaintenanceWindow: typeof SSMMaintenanceWindow;
     Parameter: typeof SSMParameter;
     ResourceDataSync: typeof SSMResourceDataSync;
     Association: typeof SSMAssociation;
     MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
+    MaintenanceWindowTarget: typeof SSMMaintenanceWindowTarget;
 };
 import SSMDocument from './ssm/document';
 import SSMPatchBaseline from './ssm/patchBaseline';
+import SSMMaintenanceWindow from './ssm/maintenanceWindow';
 import SSMParameter from './ssm/parameter';
 import SSMResourceDataSync from './ssm/resourceDataSync';
 import SSMAssociation from './ssm/association';
 import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask';
+import SSMMaintenanceWindowTarget from './ssm/maintenanceWindowTarget';
 export declare const Config: {
     DeliveryChannel: typeof ConfigDeliveryChannel;
     ConfigurationAggregator: typeof ConfigConfigurationAggregator;
@@ -510,14 +536,6 @@ export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
 import CertificateManagerCertificate from './certificateManager/certificate';
-export declare const IoT1Click: {
-    Project: typeof IoT1ClickProject;
-    Device: typeof IoT1ClickDevice;
-    Placement: typeof IoT1ClickPlacement;
-};
-import IoT1ClickProject from './ioT1Click/project';
-import IoT1ClickDevice from './ioT1Click/device';
-import IoT1ClickPlacement from './ioT1Click/placement';
 export declare const Inspector: {
     ResourceGroup: typeof InspectorResourceGroup;
     AssessmentTemplate: typeof InspectorAssessmentTemplate;
@@ -526,6 +544,14 @@ export declare const Inspector: {
 import InspectorResourceGroup from './inspector/resourceGroup';
 import InspectorAssessmentTemplate from './inspector/assessmentTemplate';
 import InspectorAssessmentTarget from './inspector/assessmentTarget';
+export declare const IoT1Click: {
+    Project: typeof IoT1ClickProject;
+    Device: typeof IoT1ClickDevice;
+    Placement: typeof IoT1ClickPlacement;
+};
+import IoT1ClickProject from './ioT1Click/project';
+import IoT1ClickDevice from './ioT1Click/device';
+import IoT1ClickPlacement from './ioT1Click/placement';
 export declare const Batch: {
     JobDefinition: typeof BatchJobDefinition;
     JobQueue: typeof BatchJobQueue;
@@ -534,6 +560,10 @@ export declare const Batch: {
 import BatchJobDefinition from './batch/jobDefinition';
 import BatchJobQueue from './batch/jobQueue';
 import BatchComputeEnvironment from './batch/computeEnvironment';
+export declare const ElasticLoadBalancing: {
+    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
+};
+import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
 export declare const IoT: {
     Thing: typeof IoTThing;
     Policy: typeof IoTPolicy;
@@ -548,10 +578,6 @@ import IoTTopicRule from './iot/topicRule';
 import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment';
 import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment';
 import IoTCertificate from './iot/certificate';
-export declare const ElasticLoadBalancing: {
-    LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
-};
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer';
 export declare const DMS: {
     Certificate: typeof DMSCertificate;
     ReplicationSubnetGroup: typeof DMSReplicationSubnetGroup;
@@ -608,6 +634,16 @@ export declare const CodeDeploy: {
 import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup';
 import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig';
 import CodeDeployApplication from './codeDeploy/application';
+export declare const SecretsManager: {
+    RotationSchedule: typeof SecretsManagerRotationSchedule;
+    Secret: typeof SecretsManagerSecret;
+    ResourcePolicy: typeof SecretsManagerResourcePolicy;
+    SecretTargetAttachment: typeof SecretsManagerSecretTargetAttachment;
+};
+import SecretsManagerRotationSchedule from './secretsManager/rotationSchedule';
+import SecretsManagerSecret from './secretsManager/secret';
+import SecretsManagerResourcePolicy from './secretsManager/resourcePolicy';
+import SecretsManagerSecretTargetAttachment from './secretsManager/secretTargetAttachment';
 export declare const Budgets: {
     Budget: typeof BudgetsBudget;
 };
@@ -624,6 +660,12 @@ export declare const DataPipeline: {
     Pipeline: typeof DataPipelinePipeline;
 };
 import DataPipelinePipeline from './dataPipeline/pipeline';
+export declare const Route53Resolver: {
+    ResolverRule: typeof Route53ResolverResolverRule;
+    ResolverEndpoint: typeof Route53ResolverResolverEndpoint;
+};
+import Route53ResolverResolverRule from './route53Resolver/resolverRule';
+import Route53ResolverResolverEndpoint from './route53Resolver/resolverEndpoint';
 export declare const CloudTrail: {
     Trail: typeof CloudTrailTrail;
 };
@@ -632,12 +674,24 @@ export declare const CloudFormation: {
     WaitCondition: typeof CloudFormationWaitCondition;
     Stack: typeof CloudFormationStack;
     WaitConditionHandle: typeof CloudFormationWaitConditionHandle;
+    Macro: typeof CloudFormationMacro;
     CustomResource: typeof CloudFormationCustomResource;
 };
 import CloudFormationWaitCondition from './cloudFormation/waitCondition';
 import CloudFormationStack from './cloudFormation/stack';
 import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle';
+import CloudFormationMacro from './cloudFormation/macro';
 import CloudFormationCustomResource from './cloudFormation/customResource';
+export declare const ServiceDiscovery: {
+    Instance: typeof ServiceDiscoveryInstance;
+    Service: typeof ServiceDiscoveryService;
+    PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+    PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+};
+import ServiceDiscoveryInstance from './serviceDiscovery/instance';
+import ServiceDiscoveryService from './serviceDiscovery/service';
+import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
+import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
 export declare const ApplicationAutoScaling: {
     ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
     ScalableTarget: typeof ApplicationAutoScalingScalableTarget;
@@ -654,6 +708,10 @@ export declare const KinesisFirehose: {
     DeliveryStream: typeof KinesisFirehoseDeliveryStream;
 };
 import KinesisFirehoseDeliveryStream from './kinesisFirehose/deliveryStream';
+export declare const DLM: {
+    LifecyclePolicy: typeof DLMLifecyclePolicy;
+};
+import DLMLifecyclePolicy from './dlm/lifecyclePolicy';
 export declare const SDB: {
     Domain: typeof SDBDomain;
 };
@@ -670,6 +728,10 @@ export declare const Athena: {
     NamedQuery: typeof AthenaNamedQuery;
 };
 import AthenaNamedQuery from './athena/namedQuery';
+export declare const ASK: {
+    Skill: typeof ASKSkill;
+};
+import ASKSkill from './ask/skill';
 export declare const AutoScalingPlans: {
     ScalingPlan: typeof AutoScalingPlansScalingPlan;
 };
@@ -722,16 +784,6 @@ export declare const CodeBuild: {
     Project: typeof CodeBuildProject;
 };
 import CodeBuildProject from './codeBuild/project';
-export declare const ServiceDiscovery: {
-    Instance: typeof ServiceDiscoveryInstance;
-    Service: typeof ServiceDiscoveryService;
-    PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
-    PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
-};
-import ServiceDiscoveryInstance from './serviceDiscovery/instance';
-import ServiceDiscoveryService from './serviceDiscovery/service';
-import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
-import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
 export declare const CodeCommit: {
     Repository: typeof CodeCommitRepository;
 };
@@ -747,6 +799,14 @@ declare const _default: {
         Environment: typeof ElasticBeanstalkEnvironment;
         ApplicationVersion: typeof ElasticBeanstalkApplicationVersion;
     };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+        ApiKey: typeof AppSyncApiKey;
+    };
     EC2: {
         RouteTable: typeof EC2RouteTable;
         PlacementGroup: typeof EC2PlacementGroup;
@@ -760,7 +820,6 @@ declare const _default: {
         VPNConnectionRoute: typeof EC2VPNConnectionRoute;
         NetworkInterfacePermission: typeof EC2NetworkInterfacePermission;
         EIP: typeof EC2EIP;
-        VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
         SecurityGroupIngress: typeof EC2SecurityGroupIngress;
         SubnetRouteTableAssociation: typeof EC2SubnetRouteTableAssociation;
         Route: typeof EC2Route;
@@ -789,15 +848,9 @@ declare const _default: {
         VPCGatewayAttachment: typeof EC2VPCGatewayAttachment;
         VPNConnection: typeof EC2VPNConnection;
         VPCCidrBlock: typeof EC2VPCCidrBlock;
-        VPCEndpointService: typeof EC2VPCEndpointService;
+        EC2Fleet: typeof EC2EC2Fleet;
         VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
-    };
-    AppSync: {
-        DataSource: typeof AppSyncDataSource;
-        Resolver: typeof AppSyncResolver;
-        GraphQLSchema: typeof AppSyncGraphQLSchema;
-        GraphQLApi: typeof AppSyncGraphQLApi;
-        ApiKey: typeof AppSyncApiKey;
+        VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
     };
     ServiceCatalog: {
         PortfolioShare: typeof ServiceCatalogPortfolioShare;
@@ -805,8 +858,8 @@ declare const _default: {
         LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
         TagOption: typeof ServiceCatalogTagOption;
         PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-        CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
         LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
+        CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
         CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
         PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
         Portfolio: typeof ServiceCatalogPortfolio;
@@ -824,6 +877,7 @@ declare const _default: {
     };
     Events: {
         Rule: typeof EventsRule;
+        EventBusPolicy: typeof EventsEventBusPolicy;
     };
     WAF: {
         IPSet: typeof WAFIPSet;
@@ -853,16 +907,6 @@ declare const _default: {
     Elasticsearch: {
         Domain: typeof ElasticsearchDomain;
     };
-    WAFRegional: {
-        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-        XssMatchSet: typeof WAFRegionalXssMatchSet;
-        ByteMatchSet: typeof WAFRegionalByteMatchSet;
-        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-        WebACL: typeof WAFRegionalWebACL;
-        Rule: typeof WAFRegionalRule;
-        IPSet: typeof WAFRegionalIPSet;
-    };
     ApiGateway: {
         RequestValidator: typeof ApiGatewayRequestValidator;
         Deployment: typeof ApiGatewayDeployment;
@@ -884,6 +928,23 @@ declare const _default: {
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
     };
+    WAFRegional: {
+        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+        XssMatchSet: typeof WAFRegionalXssMatchSet;
+        ByteMatchSet: typeof WAFRegionalByteMatchSet;
+        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+        WebACL: typeof WAFRegionalWebACL;
+        Rule: typeof WAFRegionalRule;
+        IPSet: typeof WAFRegionalIPSet;
+    };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
         DBCluster: typeof RDSDBCluster;
@@ -898,13 +959,6 @@ declare const _default: {
     WorkSpaces: {
         Workspace: typeof WorkSpacesWorkspace;
     };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
-    };
     Logs: {
         LogGroup: typeof LogsLogGroup;
         MetricFilter: typeof LogsMetricFilter;
@@ -914,6 +968,7 @@ declare const _default: {
     };
     Kinesis: {
         Stream: typeof KinesisStream;
+        StreamConsumer: typeof KinesisStreamConsumer;
     };
     AutoScaling: {
         LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
@@ -925,6 +980,15 @@ declare const _default: {
     SQS: {
         Queue: typeof SQSQueue;
         QueuePolicy: typeof SQSQueuePolicy;
+    };
+    AppStream: {
+        ImageBuilder: typeof AppStreamImageBuilder;
+        Stack: typeof AppStreamStack;
+        DirectoryConfig: typeof AppStreamDirectoryConfig;
+        StackFleetAssociation: typeof AppStreamStackFleetAssociation;
+        StackUserAssociation: typeof AppStreamStackUserAssociation;
+        User: typeof AppStreamUser;
+        Fleet: typeof AppStreamFleet;
     };
     Route53: {
         RecordSet: typeof Route53RecordSet;
@@ -995,10 +1059,12 @@ declare const _default: {
     SSM: {
         Document: typeof SSMDocument;
         PatchBaseline: typeof SSMPatchBaseline;
+        MaintenanceWindow: typeof SSMMaintenanceWindow;
         Parameter: typeof SSMParameter;
         ResourceDataSync: typeof SSMResourceDataSync;
         Association: typeof SSMAssociation;
         MaintenanceWindowTask: typeof SSMMaintenanceWindowTask;
+        MaintenanceWindowTarget: typeof SSMMaintenanceWindowTarget;
     };
     Config: {
         DeliveryChannel: typeof ConfigDeliveryChannel;
@@ -1035,20 +1101,23 @@ declare const _default: {
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
     };
-    IoT1Click: {
-        Project: typeof IoT1ClickProject;
-        Device: typeof IoT1ClickDevice;
-        Placement: typeof IoT1ClickPlacement;
-    };
     Inspector: {
         ResourceGroup: typeof InspectorResourceGroup;
         AssessmentTemplate: typeof InspectorAssessmentTemplate;
         AssessmentTarget: typeof InspectorAssessmentTarget;
     };
+    IoT1Click: {
+        Project: typeof IoT1ClickProject;
+        Device: typeof IoT1ClickDevice;
+        Placement: typeof IoT1ClickPlacement;
+    };
     Batch: {
         JobDefinition: typeof BatchJobDefinition;
         JobQueue: typeof BatchJobQueue;
         ComputeEnvironment: typeof BatchComputeEnvironment;
+    };
+    ElasticLoadBalancing: {
+        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
     };
     IoT: {
         Thing: typeof IoTThing;
@@ -1057,9 +1126,6 @@ declare const _default: {
         PolicyPrincipalAttachment: typeof IoTPolicyPrincipalAttachment;
         ThingPrincipalAttachment: typeof IoTThingPrincipalAttachment;
         Certificate: typeof IoTCertificate;
-    };
-    ElasticLoadBalancing: {
-        LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
     };
     DMS: {
         Certificate: typeof DMSCertificate;
@@ -1093,6 +1159,12 @@ declare const _default: {
         DeploymentConfig: typeof CodeDeployDeploymentConfig;
         Application: typeof CodeDeployApplication;
     };
+    SecretsManager: {
+        RotationSchedule: typeof SecretsManagerRotationSchedule;
+        Secret: typeof SecretsManagerSecret;
+        ResourcePolicy: typeof SecretsManagerResourcePolicy;
+        SecretTargetAttachment: typeof SecretsManagerSecretTargetAttachment;
+    };
     Budgets: {
         Budget: typeof BudgetsBudget;
     };
@@ -1104,6 +1176,10 @@ declare const _default: {
     DataPipeline: {
         Pipeline: typeof DataPipelinePipeline;
     };
+    Route53Resolver: {
+        ResolverRule: typeof Route53ResolverResolverRule;
+        ResolverEndpoint: typeof Route53ResolverResolverEndpoint;
+    };
     CloudTrail: {
         Trail: typeof CloudTrailTrail;
     };
@@ -1111,7 +1187,14 @@ declare const _default: {
         WaitCondition: typeof CloudFormationWaitCondition;
         Stack: typeof CloudFormationStack;
         WaitConditionHandle: typeof CloudFormationWaitConditionHandle;
+        Macro: typeof CloudFormationMacro;
         CustomResource: typeof CloudFormationCustomResource;
+    };
+    ServiceDiscovery: {
+        Instance: typeof ServiceDiscoveryInstance;
+        Service: typeof ServiceDiscoveryService;
+        PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
+        PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
     };
     ApplicationAutoScaling: {
         ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
@@ -1124,6 +1207,9 @@ declare const _default: {
     KinesisFirehose: {
         DeliveryStream: typeof KinesisFirehoseDeliveryStream;
     };
+    DLM: {
+        LifecyclePolicy: typeof DLMLifecyclePolicy;
+    };
     SDB: {
         Domain: typeof SDBDomain;
     };
@@ -1135,6 +1221,9 @@ declare const _default: {
     };
     Athena: {
         NamedQuery: typeof AthenaNamedQuery;
+    };
+    ASK: {
+        Skill: typeof ASKSkill;
     };
     AutoScalingPlans: {
         ScalingPlan: typeof AutoScalingPlansScalingPlan;
@@ -1168,12 +1257,6 @@ declare const _default: {
     };
     CodeBuild: {
         Project: typeof CodeBuildProject;
-    };
-    ServiceDiscovery: {
-        Instance: typeof ServiceDiscoveryInstance;
-        Service: typeof ServiceDiscoveryService;
-        PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
-        PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
     };
     CodeCommit: {
         Repository: typeof CodeCommitRepository;

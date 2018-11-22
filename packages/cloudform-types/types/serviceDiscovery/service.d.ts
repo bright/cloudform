@@ -3,7 +3,7 @@ import { Value, List } from '../dataTypes';
 export declare class DnsConfig {
     DnsRecords: List<DnsRecord>;
     RoutingPolicy?: Value<string>;
-    NamespaceId: Value<string>;
+    NamespaceId?: Value<string>;
     constructor(properties: DnsConfig);
 }
 export declare class DnsRecord {
@@ -24,7 +24,8 @@ export declare class HealthCheckConfig {
 export interface ServiceProperties {
     Description?: Value<string>;
     HealthCheckCustomConfig?: HealthCheckCustomConfig;
-    DnsConfig: DnsConfig;
+    DnsConfig?: DnsConfig;
+    NamespaceId?: Value<string>;
     HealthCheckConfig?: HealthCheckConfig;
     Name?: Value<string>;
 }

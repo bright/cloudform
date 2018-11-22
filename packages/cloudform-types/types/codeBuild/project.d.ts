@@ -87,6 +87,7 @@ export interface ProjectProperties {
     BadgeEnabled?: Value<boolean>;
     LogsConfig?: LogsConfig;
     ServiceRole: Value<string>;
+    QueuedTimeoutInMinutes?: Value<number>;
     Environment: Environment;
     Tags?: ResourceTag[];
     TimeoutInMinutes?: Value<number>;

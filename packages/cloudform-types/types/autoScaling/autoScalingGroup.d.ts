@@ -1,5 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class LaunchTemplateOverrides {
+    InstanceType?: Value<string>;
+    constructor(properties: LaunchTemplateOverrides);
+}
 export declare class LifecycleHookSpecification {
     DefaultResult?: Value<string>;
     HeartbeatTimeout?: Value<number>;
@@ -9,6 +13,11 @@ export declare class LifecycleHookSpecification {
     NotificationTargetARN?: Value<string>;
     RoleARN?: Value<string>;
     constructor(properties: LifecycleHookSpecification);
+}
+export declare class MixedInstancesPolicy {
+    InstancesDistribution?: InstancesDistribution;
+    LaunchTemplate: LaunchTemplate;
+    constructor(properties: MixedInstancesPolicy);
 }
 export declare class LaunchTemplateSpecification {
     LaunchTemplateId?: Value<string>;
@@ -25,6 +34,20 @@ export declare class MetricsCollection {
     Granularity: Value<string>;
     Metrics?: List<Value<string>>;
     constructor(properties: MetricsCollection);
+}
+export declare class InstancesDistribution {
+    OnDemandAllocationStrategy?: Value<string>;
+    OnDemandBaseCapacity?: Value<number>;
+    OnDemandPercentageAboveBaseCapacity?: Value<number>;
+    SpotAllocationStrategy?: Value<string>;
+    SpotInstancePools?: Value<number>;
+    SpotMaxPrice?: Value<string>;
+    constructor(properties: InstancesDistribution);
+}
+export declare class LaunchTemplate {
+    LaunchTemplateSpecification: LaunchTemplateSpecification;
+    Overrides?: List<LaunchTemplateOverrides>;
+    constructor(properties: LaunchTemplate);
 }
 export declare class TagProperty {
     Key: Value<string>;
@@ -47,6 +70,7 @@ export interface AutoScalingGroupProperties {
     MaxSize: Value<string>;
     MetricsCollection?: List<MetricsCollection>;
     MinSize: Value<string>;
+    MixedInstancesPolicy?: MixedInstancesPolicy;
     NotificationConfigurations?: List<NotificationConfiguration>;
     PlacementGroup?: Value<string>;
     ServiceLinkedRoleARN?: Value<string>;
@@ -56,10 +80,14 @@ export interface AutoScalingGroupProperties {
     VPCZoneIdentifier?: List<Value<string>>;
 }
 export default class AutoScalingGroup extends ResourceBase {
+    static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
     static LifecycleHookSpecification: typeof LifecycleHookSpecification;
+    static MixedInstancesPolicy: typeof MixedInstancesPolicy;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static NotificationConfiguration: typeof NotificationConfiguration;
     static MetricsCollection: typeof MetricsCollection;
+    static InstancesDistribution: typeof InstancesDistribution;
+    static LaunchTemplate: typeof LaunchTemplate;
     static TagProperty: typeof TagProperty;
     constructor(properties?: AutoScalingGroupProperties);
 }

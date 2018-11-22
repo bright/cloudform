@@ -45,6 +45,7 @@ export declare class JobFlowInstancesConfig {
     EmrManagedMasterSecurityGroup?: Value<string>;
     EmrManagedSlaveSecurityGroup?: Value<string>;
     HadoopVersion?: Value<string>;
+    KeepJobFlowAliveWhenNoSteps?: Value<boolean>;
     MasterInstanceFleet?: InstanceFleetConfig;
     MasterInstanceGroup?: InstanceGroupConfig;
     Placement?: PlacementType;
@@ -56,6 +57,12 @@ export declare class ScalingAction {
     Market?: Value<string>;
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
     constructor(properties: ScalingAction);
+}
+export declare class StepConfig {
+    ActionOnFailure?: Value<string>;
+    HadoopJarStep: HadoopJarStepConfig;
+    Name: Value<string>;
+    constructor(properties: StepConfig);
 }
 export declare class KerberosAttributes {
     ADDomainJoinPassword?: Value<string>;
@@ -126,6 +133,11 @@ export declare class ScalingRule {
     Trigger: ScalingTrigger;
     constructor(properties: ScalingRule);
 }
+export declare class KeyValue {
+    Key?: Value<string>;
+    Value?: Value<string>;
+    constructor(properties: KeyValue);
+}
 export declare class InstanceTypeConfig {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
@@ -155,6 +167,13 @@ export declare class InstanceFleetProvisioningSpecifications {
     SpotSpecification: SpotProvisioningSpecification;
     constructor(properties: InstanceFleetProvisioningSpecifications);
 }
+export declare class HadoopJarStepConfig {
+    Args?: List<Value<string>>;
+    Jar: Value<string>;
+    MainClass?: Value<string>;
+    StepProperties?: List<KeyValue>;
+    constructor(properties: HadoopJarStepConfig);
+}
 export declare class ScalingTrigger {
     CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
     constructor(properties: ScalingTrigger);
@@ -176,6 +195,7 @@ export interface ClusterProperties {
     ScaleDownBehavior?: Value<string>;
     SecurityConfiguration?: Value<string>;
     ServiceRole: Value<string>;
+    Steps?: List<StepConfig>;
     Tags?: ResourceTag[];
     VisibleToAllUsers?: Value<boolean>;
 }
@@ -187,6 +207,7 @@ export default class Cluster extends ResourceBase {
     static InstanceFleetConfig: typeof InstanceFleetConfig;
     static JobFlowInstancesConfig: typeof JobFlowInstancesConfig;
     static ScalingAction: typeof ScalingAction;
+    static StepConfig: typeof StepConfig;
     static KerberosAttributes: typeof KerberosAttributes;
     static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
     static Application: typeof Application;
@@ -197,11 +218,13 @@ export default class Cluster extends ResourceBase {
     static CloudWatchAlarmDefinition: typeof CloudWatchAlarmDefinition;
     static EbsConfiguration: typeof EbsConfiguration;
     static ScalingRule: typeof ScalingRule;
+    static KeyValue: typeof KeyValue;
     static InstanceTypeConfig: typeof InstanceTypeConfig;
     static MetricDimension: typeof MetricDimension;
     static VolumeSpecification: typeof VolumeSpecification;
     static AutoScalingPolicy: typeof AutoScalingPolicy;
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
+    static HadoopJarStepConfig: typeof HadoopJarStepConfig;
     static ScalingTrigger: typeof ScalingTrigger;
     constructor(properties?: ClusterProperties);
 }

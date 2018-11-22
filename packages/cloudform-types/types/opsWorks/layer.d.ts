@@ -6,6 +6,7 @@ export declare class ShutdownEventConfiguration {
     constructor(properties: ShutdownEventConfiguration);
 }
 export declare class VolumeConfiguration {
+    Encrypted?: Value<boolean>;
     Iops?: Value<number>;
     MountPoint?: Value<string>;
     NumberOfDisks?: Value<number>;

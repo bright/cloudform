@@ -6,12 +6,20 @@ export declare class ApplicationSource {
     constructor(properties: ApplicationSource);
 }
 export declare class ScalingInstruction {
-    ResourceId: Value<string>;
+    DisableDynamicScaling?: Value<boolean>;
     ServiceNamespace: Value<string>;
+    PredictiveScalingMaxCapacityBehavior?: Value<string>;
     ScalableDimension: Value<string>;
+    ScalingPolicyUpdateBehavior?: Value<string>;
     MinCapacity: Value<number>;
     TargetTrackingConfigurations: List<TargetTrackingConfiguration>;
+    PredictiveScalingMaxCapacityBuffer?: Value<number>;
+    CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification;
+    PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification;
+    ResourceId: Value<string>;
+    ScheduledActionBufferTime?: Value<number>;
     MaxCapacity: Value<number>;
+    PredictiveScalingMode?: Value<string>;
     constructor(properties: ScalingInstruction);
 }
 export declare class TargetTrackingConfiguration {
@@ -47,6 +55,19 @@ export declare class TagFilter {
     Key: Value<string>;
     constructor(properties: TagFilter);
 }
+export declare class PredefinedLoadMetricSpecification {
+    PredefinedLoadMetricType: Value<string>;
+    ResourceLabel?: Value<string>;
+    constructor(properties: PredefinedLoadMetricSpecification);
+}
+export declare class CustomizedLoadMetricSpecification {
+    MetricName: Value<string>;
+    Statistic: Value<string>;
+    Dimensions?: List<MetricDimension>;
+    Unit?: Value<string>;
+    Namespace: Value<string>;
+    constructor(properties: CustomizedLoadMetricSpecification);
+}
 export interface ScalingPlanProperties {
     ApplicationSource: ApplicationSource;
     ScalingInstructions: List<ScalingInstruction>;
@@ -59,5 +80,7 @@ export default class ScalingPlan extends ResourceBase {
     static MetricDimension: typeof MetricDimension;
     static PredefinedScalingMetricSpecification: typeof PredefinedScalingMetricSpecification;
     static TagFilter: typeof TagFilter;
+    static PredefinedLoadMetricSpecification: typeof PredefinedLoadMetricSpecification;
+    static CustomizedLoadMetricSpecification: typeof CustomizedLoadMetricSpecification;
     constructor(properties?: ScalingPlanProperties);
 }

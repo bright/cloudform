@@ -13,7 +13,7 @@ export declare class PlacementTemplate {
 export interface ProjectProperties {
     Description?: Value<string>;
     PlacementTemplate: PlacementTemplate;
-    ProjectName: Value<string>;
+    ProjectName?: Value<string>;
 }
 export default class Project extends ResourceBase {
     static DeviceTemplate: typeof DeviceTemplate;

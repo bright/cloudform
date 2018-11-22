@@ -6,6 +6,7 @@ export declare class Ingress {
     Description?: Value<string>;
     FromPort?: Value<number>;
     IpProtocol: Value<string>;
+    SourcePrefixListId?: Value<string>;
     SourceSecurityGroupId?: Value<string>;
     SourceSecurityGroupName?: Value<string>;
     SourceSecurityGroupOwnerId?: Value<string>;

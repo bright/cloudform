@@ -25,7 +25,7 @@ export declare class GlobalSecondaryIndex {
     IndexName: Value<string>;
     KeySchema: List<KeySchema>;
     Projection: Projection;
-    ProvisionedThroughput: ProvisionedThroughput;
+    ProvisionedThroughput?: ProvisionedThroughput;
     constructor(properties: GlobalSecondaryIndex);
 }
 export declare class KeySchema {
@@ -56,7 +56,7 @@ export interface TableProperties {
     KeySchema: List<KeySchema>;
     LocalSecondaryIndexes?: List<LocalSecondaryIndex>;
     PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification;
-    ProvisionedThroughput: ProvisionedThroughput;
+    ProvisionedThroughput?: ProvisionedThroughput;
     SSESpecification?: SSESpecification;
     StreamSpecification?: StreamSpecification;
     TableName?: Value<string>;

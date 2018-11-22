@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ClassicLoadBalancer {
     Name: Value<string>;
@@ -29,6 +29,7 @@ export declare class InstanceNetworkInterfaceSpecification {
 }
 export declare class SpotFleetTagSpecification {
     ResourceType?: Value<string>;
+    Tags?: ResourceTag[];
     constructor(properties: SpotFleetTagSpecification);
 }
 export declare class PrivateIpAddressSpecification {

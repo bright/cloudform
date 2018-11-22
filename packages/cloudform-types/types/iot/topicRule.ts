@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.8.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.15.0
  */
    
 import {ResourceBase} from '../resource'
@@ -67,6 +67,16 @@ export class SnsAction {
     }
 }
 
+export class StepFunctionsAction {
+    ExecutionNamePrefix?: Value<string>
+    RoleArn!: Value<string>
+    StateMachineName!: Value<string>
+
+    constructor(properties: StepFunctionsAction) {
+        Object.assign(this, properties)
+    }
+}
+
 export class FirehoseAction {
     DeliveryStreamName!: Value<string>
     RoleArn!: Value<string>
@@ -81,6 +91,7 @@ export class TopicRulePayload {
     Actions!: List<Action>
     AwsIotSqlVersion?: Value<string>
     Description?: Value<string>
+    ErrorAction?: Action
     RuleDisabled!: Value<boolean>
     Sql!: Value<string>
 
@@ -162,14 +173,25 @@ export class Action {
     DynamoDBv2?: DynamoDBv2Action
     Elasticsearch?: ElasticsearchAction
     Firehose?: FirehoseAction
+    IotAnalytics?: IotAnalyticsAction
     Kinesis?: KinesisAction
     Lambda?: LambdaAction
     Republish?: RepublishAction
     S3?: S3Action
     Sns?: SnsAction
     Sqs?: SqsAction
+    StepFunctions?: StepFunctionsAction
 
     constructor(properties: Action) {
+        Object.assign(this, properties)
+    }
+}
+
+export class IotAnalyticsAction {
+    ChannelName!: Value<string>
+    RoleArn!: Value<string>
+
+    constructor(properties: IotAnalyticsAction) {
         Object.assign(this, properties)
     }
 }
@@ -198,6 +220,7 @@ export default class TopicRule extends ResourceBase {
     static PutItemInput = PutItemInput
     static RepublishAction = RepublishAction
     static SnsAction = SnsAction
+    static StepFunctionsAction = StepFunctionsAction
     static FirehoseAction = FirehoseAction
     static TopicRulePayload = TopicRulePayload
     static LambdaAction = LambdaAction
@@ -207,6 +230,7 @@ export default class TopicRule extends ResourceBase {
     static KinesisAction = KinesisAction
     static CloudwatchAlarmAction = CloudwatchAlarmAction
     static Action = Action
+    static IotAnalyticsAction = IotAnalyticsAction
     static CloudwatchMetricAction = CloudwatchMetricAction
 
     constructor(properties?: TopicRuleProperties) {

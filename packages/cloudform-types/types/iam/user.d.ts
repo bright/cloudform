@@ -15,6 +15,7 @@ export interface UserProperties {
     LoginProfile?: LoginProfile;
     ManagedPolicyArns?: List<Value<string>>;
     Path?: Value<string>;
+    PermissionsBoundary?: Value<string>;
     Policies?: List<Policy>;
     UserName?: Value<string>;
 }

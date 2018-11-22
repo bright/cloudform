@@ -6,6 +6,7 @@ export interface KeyProperties {
     Enabled?: Value<boolean>;
     KeyPolicy: any;
     KeyUsage?: Value<string>;
+    PendingWindowInDays?: Value<number>;
     Tags?: ResourceTag[];
 }
 export default class Key extends ResourceBase {

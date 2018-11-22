@@ -29,6 +29,7 @@ export declare class PatchSource {
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>;
     ApprovedPatches?: List<Value<string>>;
+    RejectedPatchesAction?: Value<string>;
     PatchGroups?: List<Value<string>>;
     Description?: Value<string>;
     ApprovedPatchesComplianceLevel?: Value<string>;

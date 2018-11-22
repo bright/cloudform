@@ -20,6 +20,7 @@ export interface RecordSetProperties {
     HealthCheckId?: Value<string>;
     HostedZoneId?: Value<string>;
     HostedZoneName?: Value<string>;
+    MultiValueAnswer?: Value<boolean>;
     Name: Value<string>;
     Region?: Value<string>;
     ResourceRecords?: List<Value<string>>;

@@ -4,16 +4,20 @@ export declare class ScalingConfiguration {
     AutoPause?: Value<boolean>;
     MaxCapacity?: Value<number>;
     MinCapacity?: Value<number>;
-    SecondsBeforeAutoPause?: Value<number>;
+    SecondsUntilAutoPause?: Value<number>;
     constructor(properties: ScalingConfiguration);
 }
 export interface DBClusterProperties {
     AvailabilityZones?: List<Value<string>>;
+    BacktrackWindow?: Value<number>;
     BackupRetentionPeriod?: Value<number>;
     DBClusterIdentifier?: Value<string>;
     DBClusterParameterGroupName?: Value<string>;
     DBSubnetGroupName?: Value<string>;
     DatabaseName?: Value<string>;
+    DeletionProtection?: Value<boolean>;
+    EnableCloudwatchLogsExports?: List<Value<string>>;
+    EnableIAMDatabaseAuthentication?: Value<boolean>;
     Engine: Value<string>;
     EngineMode?: Value<string>;
     EngineVersion?: Value<string>;

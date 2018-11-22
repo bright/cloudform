@@ -10,6 +10,7 @@ export interface RoleProperties {
     ManagedPolicyArns?: List<Value<string>>;
     MaxSessionDuration?: Value<number>;
     Path?: Value<string>;
+    PermissionsBoundary?: Value<string>;
     Policies?: List<Policy>;
     RoleName?: Value<string>;
 }

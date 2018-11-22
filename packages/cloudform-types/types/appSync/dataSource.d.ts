@@ -1,11 +1,35 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
+export declare class AuthorizationConfig {
+    AwsIamConfig?: AwsIamConfig;
+    AuthorizationType: Value<string>;
+    constructor(properties: AuthorizationConfig);
+}
+export declare class RelationalDatabaseConfig {
+    RdsHttpEndpointConfig?: RdsHttpEndpointConfig;
+    RelationalDatabaseSourceType: Value<string>;
+    constructor(properties: RelationalDatabaseConfig);
+}
+export declare class RdsHttpEndpointConfig {
+    AwsRegion: Value<string>;
+    Schema?: Value<string>;
+    DatabaseName?: Value<string>;
+    DbClusterIdentifier: Value<string>;
+    AwsSecretStoreArn: Value<string>;
+    constructor(properties: RdsHttpEndpointConfig);
+}
 export declare class LambdaConfig {
     LambdaFunctionArn: Value<string>;
     constructor(properties: LambdaConfig);
 }
+export declare class AwsIamConfig {
+    SigningRegion?: Value<string>;
+    SigningServiceName?: Value<string>;
+    constructor(properties: AwsIamConfig);
+}
 export declare class HttpConfig {
     Endpoint: Value<string>;
+    AuthorizationConfig?: AuthorizationConfig;
     constructor(properties: HttpConfig);
 }
 export declare class DynamoDBConfig {
@@ -24,6 +48,7 @@ export interface DataSourceProperties {
     Description?: Value<string>;
     ServiceRoleArn?: Value<string>;
     HttpConfig?: HttpConfig;
+    RelationalDatabaseConfig?: RelationalDatabaseConfig;
     LambdaConfig?: LambdaConfig;
     ApiId: Value<string>;
     Name: Value<string>;
@@ -31,7 +56,11 @@ export interface DataSourceProperties {
     ElasticsearchConfig?: ElasticsearchConfig;
 }
 export default class DataSource extends ResourceBase {
+    static AuthorizationConfig: typeof AuthorizationConfig;
+    static RelationalDatabaseConfig: typeof RelationalDatabaseConfig;
+    static RdsHttpEndpointConfig: typeof RdsHttpEndpointConfig;
     static LambdaConfig: typeof LambdaConfig;
+    static AwsIamConfig: typeof AwsIamConfig;
     static HttpConfig: typeof HttpConfig;
     static DynamoDBConfig: typeof DynamoDBConfig;
     static ElasticsearchConfig: typeof ElasticsearchConfig;

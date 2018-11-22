@@ -1,5 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ProcessorFeature {
+    Name?: Value<string>;
+    Value?: Value<string>;
+    constructor(properties: ProcessorFeature);
+}
 export interface DBInstanceProperties {
     AllocatedStorage?: Value<string>;
     AllowMajorVersionUpgrade?: Value<boolean>;
@@ -16,8 +21,13 @@ export interface DBInstanceProperties {
     DBSecurityGroups?: List<Value<string>>;
     DBSnapshotIdentifier?: Value<string>;
     DBSubnetGroupName?: Value<string>;
+    DeleteAutomatedBackups?: Value<boolean>;
+    DeletionProtection?: Value<boolean>;
     Domain?: Value<string>;
     DomainIAMRoleName?: Value<string>;
+    EnableCloudwatchLogsExports?: List<Value<string>>;
+    EnableIAMDatabaseAuthentication?: Value<boolean>;
+    EnablePerformanceInsights?: Value<boolean>;
     Engine?: Value<string>;
     EngineVersion?: Value<string>;
     Iops?: Value<number>;
@@ -29,9 +39,13 @@ export interface DBInstanceProperties {
     MonitoringRoleArn?: Value<string>;
     MultiAZ?: Value<boolean>;
     OptionGroupName?: Value<string>;
+    PerformanceInsightsKMSKeyId?: Value<string>;
+    PerformanceInsightsRetentionPeriod?: Value<number>;
     Port?: Value<string>;
     PreferredBackupWindow?: Value<string>;
     PreferredMaintenanceWindow?: Value<string>;
+    ProcessorFeatures?: List<ProcessorFeature>;
+    PromotionTier?: Value<number>;
     PubliclyAccessible?: Value<boolean>;
     SourceDBInstanceIdentifier?: Value<string>;
     SourceRegion?: Value<string>;
@@ -42,5 +56,6 @@ export interface DBInstanceProperties {
     VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase {
+    static ProcessorFeature: typeof ProcessorFeature;
     constructor(properties?: DBInstanceProperties);
 }

@@ -7,6 +7,7 @@ export declare class Subscription {
 }
 export interface TopicProperties {
     DisplayName?: Value<string>;
+    KmsMasterKeyId?: Value<string>;
     Subscription?: List<Subscription>;
     TopicName?: Value<string>;
 }

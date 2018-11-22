@@ -8,6 +8,7 @@ export interface SecurityGroupIngressProperties {
     GroupId?: Value<string>;
     GroupName?: Value<string>;
     IpProtocol: Value<string>;
+    SourcePrefixListId?: Value<string>;
     SourceSecurityGroupId?: Value<string>;
     SourceSecurityGroupName?: Value<string>;
     SourceSecurityGroupOwnerId?: Value<string>;

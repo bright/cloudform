@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface PlacementProperties {
-    PlacementName: Value<string>;
+    PlacementName?: Value<string>;
     ProjectName: Value<string>;
     AssociatedDevices?: any;
     Attributes?: any;

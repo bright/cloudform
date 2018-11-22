@@ -221,6 +221,13 @@ export declare class FilterRule {
     Value: Value<string>;
     constructor(properties: FilterRule);
 }
+export declare class PublicAccessBlockConfiguration {
+    BlockPublicAcls?: Value<boolean>;
+    BlockPublicPolicy?: Value<boolean>;
+    IgnorePublicAcls?: Value<boolean>;
+    RestrictPublicBuckets?: Value<boolean>;
+    constructor(properties: PublicAccessBlockConfiguration);
+}
 export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration;
     AccessControl?: Value<string>;
@@ -233,6 +240,7 @@ export interface BucketProperties {
     LoggingConfiguration?: LoggingConfiguration;
     MetricsConfigurations?: List<MetricsConfiguration>;
     NotificationConfiguration?: NotificationConfiguration;
+    PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
     ReplicationConfiguration?: ReplicationConfiguration;
     Tags?: ResourceTag[];
     VersioningConfiguration?: VersioningConfiguration;
@@ -278,5 +286,6 @@ export default class Bucket extends ResourceBase {
     static NoncurrentVersionTransition: typeof NoncurrentVersionTransition;
     static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
     static FilterRule: typeof FilterRule;
+    static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;
     constructor(properties?: BucketProperties);
 }

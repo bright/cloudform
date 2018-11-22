@@ -1,5 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class NodeProperties {
+    MainNode: Value<number>;
+    NodeRangeProperties: List<NodeRangeProperty>;
+    NumNodes: Value<number>;
+    constructor(properties: NodeProperties);
+}
 export declare class Volumes {
     Host?: VolumesHost;
     Name?: Value<string>;
@@ -10,23 +16,29 @@ export declare class RetryStrategy {
     constructor(properties: RetryStrategy);
 }
 export declare class ContainerProperties {
-    MountPoints?: List<MountPoints>;
     User?: Value<string>;
-    Volumes?: List<Volumes>;
-    Command?: List<Value<string>>;
     Memory: Value<number>;
     Privileged?: Value<boolean>;
-    Environment?: List<Environment>;
     JobRoleArn?: Value<string>;
     ReadonlyRootFilesystem?: Value<boolean>;
-    Ulimits?: List<Ulimit>;
     Vcpus: Value<number>;
     Image: Value<string>;
+    MountPoints?: List<MountPoints>;
+    Volumes?: List<Volumes>;
+    Command?: List<Value<string>>;
+    Environment?: List<Environment>;
+    Ulimits?: List<Ulimit>;
+    InstanceType?: Value<string>;
     constructor(properties: ContainerProperties);
 }
 export declare class Timeout {
     AttemptDurationSeconds?: Value<number>;
     constructor(properties: Timeout);
+}
+export declare class NodeRangeProperty {
+    Container?: ContainerProperties;
+    TargetNodes: Value<string>;
+    constructor(properties: NodeRangeProperty);
 }
 export declare class MountPoints {
     ReadOnly?: Value<boolean>;
@@ -52,16 +64,19 @@ export declare class VolumesHost {
 export interface JobDefinitionProperties {
     Type: Value<string>;
     Parameters?: any;
+    NodeProperties?: NodeProperties;
     Timeout?: Timeout;
-    ContainerProperties: ContainerProperties;
+    ContainerProperties?: ContainerProperties;
     JobDefinitionName?: Value<string>;
     RetryStrategy?: RetryStrategy;
 }
 export default class JobDefinition extends ResourceBase {
+    static NodeProperties: typeof NodeProperties;
     static Volumes: typeof Volumes;
     static RetryStrategy: typeof RetryStrategy;
     static ContainerProperties: typeof ContainerProperties;
     static Timeout: typeof Timeout;
+    static NodeRangeProperty: typeof NodeRangeProperty;
     static MountPoints: typeof MountPoints;
     static Environment: typeof Environment;
     static Ulimit: typeof Ulimit;

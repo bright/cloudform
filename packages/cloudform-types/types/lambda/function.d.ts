@@ -34,6 +34,7 @@ export interface FunctionProperties {
     FunctionName?: Value<string>;
     Handler: Value<string>;
     KmsKeyArn?: Value<string>;
+    Layers?: List<Value<string>>;
     MemorySize?: Value<number>;
     ReservedConcurrentExecutions?: Value<number>;
     Role: Value<string>;

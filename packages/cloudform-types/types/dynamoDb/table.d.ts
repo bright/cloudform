@@ -52,6 +52,7 @@ export declare class StreamSpecification {
 }
 export interface TableProperties {
     AttributeDefinitions?: List<AttributeDefinition>;
+    BillingMode?: Value<string>;
     GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>;
     KeySchema: List<KeySchema>;
     LocalSecondaryIndexes?: List<LocalSecondaryIndex>;

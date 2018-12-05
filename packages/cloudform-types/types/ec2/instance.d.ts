@@ -48,6 +48,10 @@ export declare class Ebs {
     VolumeType?: Value<string>;
     constructor(properties: Ebs);
 }
+export declare class LicenseSpecification {
+    LicenseConfigurationArn: Value<string>;
+    constructor(properties: LicenseSpecification);
+}
 export declare class NoDevice {
     constructor(properties: NoDevice);
 }
@@ -59,6 +63,10 @@ export declare class SsmAssociation {
 export declare class CreditSpecification {
     CPUCredits?: Value<string>;
     constructor(properties: CreditSpecification);
+}
+export declare class ElasticInferenceAccelerator {
+    Type: Value<string>;
+    constructor(properties: ElasticInferenceAccelerator);
 }
 export declare class BlockDeviceMapping {
     DeviceName: Value<string>;
@@ -81,6 +89,7 @@ export interface InstanceProperties {
     DisableApiTermination?: Value<boolean>;
     EbsOptimized?: Value<boolean>;
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>;
+    ElasticInferenceAccelerators?: List<ElasticInferenceAccelerator>;
     HostId?: Value<string>;
     IamInstanceProfile?: Value<string>;
     ImageId?: Value<string>;
@@ -91,6 +100,7 @@ export interface InstanceProperties {
     KernelId?: Value<string>;
     KeyName?: Value<string>;
     LaunchTemplate?: LaunchTemplateSpecification;
+    LicenseSpecifications?: List<LicenseSpecification>;
     Monitoring?: Value<boolean>;
     NetworkInterfaces?: List<NetworkInterface>;
     PlacementGroupName?: Value<string>;
@@ -114,9 +124,11 @@ export default class Instance extends ResourceBase {
     static AssociationParameter: typeof AssociationParameter;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static Ebs: typeof Ebs;
+    static LicenseSpecification: typeof LicenseSpecification;
     static NoDevice: typeof NoDevice;
     static SsmAssociation: typeof SsmAssociation;
     static CreditSpecification: typeof CreditSpecification;
+    static ElasticInferenceAccelerator: typeof ElasticInferenceAccelerator;
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     constructor(properties?: InstanceProperties);

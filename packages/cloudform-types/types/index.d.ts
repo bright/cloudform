@@ -65,6 +65,12 @@ export declare const EC2: {
     VPCCidrBlock: typeof EC2VPCCidrBlock;
     EC2Fleet: typeof EC2EC2Fleet;
     VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
+    TransitGateway: typeof EC2TransitGateway;
+    TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
+    TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
+    TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
+    TransitGatewayRoute: typeof EC2TransitGatewayRoute;
+    TransitGatewayRouteTable: typeof EC2TransitGatewayRouteTable;
     VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
 };
 import EC2RouteTable from './ec2/routeTable';
@@ -109,6 +115,12 @@ import EC2VPNConnection from './ec2/vpnConnection';
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock';
 import EC2EC2Fleet from './ec2/ec2Fleet';
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
+import EC2TransitGateway from './ec2/transitGateway';
+import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation';
+import EC2TransitGatewayRouteTablePropagation from './ec2/transitGatewayRouteTablePropagation';
+import EC2TransitGatewayAttachment from './ec2/transitGatewayAttachment';
+import EC2TransitGatewayRoute from './ec2/transitGatewayRoute';
+import EC2TransitGatewayRouteTable from './ec2/transitGatewayRouteTable';
 import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification';
 export declare const ServiceCatalog: {
     PortfolioShare: typeof ServiceCatalogPortfolioShare;
@@ -687,11 +699,13 @@ export declare const ServiceDiscovery: {
     Service: typeof ServiceDiscoveryService;
     PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
     PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+    HttpNamespace: typeof ServiceDiscoveryHttpNamespace;
 };
 import ServiceDiscoveryInstance from './serviceDiscovery/instance';
 import ServiceDiscoveryService from './serviceDiscovery/service';
 import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace';
 import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace';
+import ServiceDiscoveryHttpNamespace from './serviceDiscovery/httpNamespace';
 export declare const ApplicationAutoScaling: {
     ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;
     ScalableTarget: typeof ApplicationAutoScalingScalableTarget;
@@ -850,6 +864,12 @@ declare const _default: {
         VPCCidrBlock: typeof EC2VPCCidrBlock;
         EC2Fleet: typeof EC2EC2Fleet;
         VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
+        TransitGateway: typeof EC2TransitGateway;
+        TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
+        TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
+        TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
+        TransitGatewayRoute: typeof EC2TransitGatewayRoute;
+        TransitGatewayRouteTable: typeof EC2TransitGatewayRouteTable;
         VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
     };
     ServiceCatalog: {
@@ -1195,6 +1215,7 @@ declare const _default: {
         Service: typeof ServiceDiscoveryService;
         PrivateDnsNamespace: typeof ServiceDiscoveryPrivateDnsNamespace;
         PublicDnsNamespace: typeof ServiceDiscoveryPublicDnsNamespace;
+        HttpNamespace: typeof ServiceDiscoveryHttpNamespace;
     };
     ApplicationAutoScaling: {
         ScalingPolicy: typeof ApplicationAutoScalingScalingPolicy;

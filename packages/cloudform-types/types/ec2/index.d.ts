@@ -40,6 +40,12 @@ import VPNConnection from './vpnConnection';
 import VPCCidrBlock from './vpcCidrBlock';
 import EC2Fleet from './ec2Fleet';
 import VPCDHCPOptionsAssociation from './vpcdhcpOptionsAssociation';
+import TransitGateway from './transitGateway';
+import TransitGatewayRouteTableAssociation from './transitGatewayRouteTableAssociation';
+import TransitGatewayRouteTablePropagation from './transitGatewayRouteTablePropagation';
+import TransitGatewayAttachment from './transitGatewayAttachment';
+import TransitGatewayRoute from './transitGatewayRoute';
+import TransitGatewayRouteTable from './transitGatewayRouteTable';
 import VPCEndpointConnectionNotification from './vpcEndpointConnectionNotification';
 declare const _default: {
     RouteTable: typeof RouteTable;
@@ -84,6 +90,12 @@ declare const _default: {
     VPCCidrBlock: typeof VPCCidrBlock;
     EC2Fleet: typeof EC2Fleet;
     VPCDHCPOptionsAssociation: typeof VPCDHCPOptionsAssociation;
+    TransitGateway: typeof TransitGateway;
+    TransitGatewayRouteTableAssociation: typeof TransitGatewayRouteTableAssociation;
+    TransitGatewayRouteTablePropagation: typeof TransitGatewayRouteTablePropagation;
+    TransitGatewayAttachment: typeof TransitGatewayAttachment;
+    TransitGatewayRoute: typeof TransitGatewayRoute;
+    TransitGatewayRouteTable: typeof TransitGatewayRouteTable;
     VPCEndpointConnectionNotification: typeof VPCEndpointConnectionNotification;
 };
 export default _default;

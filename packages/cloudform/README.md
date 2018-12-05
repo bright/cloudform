@@ -50,7 +50,7 @@ export default cloudform({
 })
 ```
 
-See also [example/example.ts](https://github.com/bright/cloudform/blob/master/example/example.ts).
+See also [example/example.ts](https://github.com/bright/cloudform/blob/master/packages/cloudform/example/example.ts).
 
 2\. Run `cloudform path/to/your/template.ts` to generate the CloudFormation template as JSON. 
 

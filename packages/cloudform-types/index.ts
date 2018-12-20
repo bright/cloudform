@@ -11,3 +11,10 @@ export * from './types/index'
 export * from './types/dataTypes'
 export * from './types/resource'
 export * from './types/parameter'
+
+import CloudFront from './types/cloudFront'
+const cfDistro: CloudFront.Distribution = new CloudFront.Distribution({
+    DistributionConfig: {
+        Enabled: true
+    }
+});

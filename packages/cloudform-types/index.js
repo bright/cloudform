@@ -11,3 +11,9 @@ __export(require("./types/index"));
 __export(require("./types/dataTypes"));
 __export(require("./types/resource"));
 __export(require("./types/parameter"));
+const cloudFront_1 = require("./types/cloudFront");
+const cfDistro = new cloudFront_1.default.Distribution({
+    DistributionConfig: {
+        Enabled: true
+    }
+});

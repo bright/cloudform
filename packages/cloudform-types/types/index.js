@@ -193,7 +193,7 @@ exports.default = {
     ElasticLoadBalancingV2: exports.ElasticLoadBalancingV2,
     StepFunctions: exports.StepFunctions,
     OpsWorks: exports.OpsWorks,
-    CloudFront: exports.CloudFront,
+    CloudFront: cloudFront_1.default,
     GameLift: exports.GameLift,
     GuardDuty: exports.GuardDuty,
     DirectoryService: exports.DirectoryService,

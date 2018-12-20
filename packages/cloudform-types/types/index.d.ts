@@ -422,14 +422,8 @@ import OpsWorksStack from './opsWorks/stack';
 import OpsWorksElasticLoadBalancerAttachment from './opsWorks/elasticLoadBalancerAttachment';
 import OpsWorksInstance from './opsWorks/instance';
 import OpsWorksUserProfile from './opsWorks/userProfile';
-export declare const CloudFront: {
-    StreamingDistribution: typeof CloudFrontStreamingDistribution;
-    Distribution: typeof CloudFrontDistribution;
-    CloudFrontOriginAccessIdentity: typeof CloudFrontCloudFrontOriginAccessIdentity;
-};
-import CloudFrontStreamingDistribution from './cloudFront/streamingDistribution';
-import CloudFrontDistribution from './cloudFront/distribution';
-import CloudFrontCloudFrontOriginAccessIdentity from './cloudFront/cloudFrontOriginAccessIdentity';
+import CloudFront from './cloudFront';
+export { CloudFront };
 export declare const GameLift: {
     Alias: typeof GameLiftAlias;
     Build: typeof GameLiftBuild;
@@ -1045,11 +1039,7 @@ declare const _default: {
         Instance: typeof OpsWorksInstance;
         UserProfile: typeof OpsWorksUserProfile;
     };
-    CloudFront: {
-        StreamingDistribution: typeof CloudFrontStreamingDistribution;
-        Distribution: typeof CloudFrontDistribution;
-        CloudFrontOriginAccessIdentity: typeof CloudFrontCloudFrontOriginAccessIdentity;
-    };
+    CloudFront: typeof CloudFront;
     GameLift: {
         Alias: typeof GameLiftAlias;
         Build: typeof GameLiftBuild;

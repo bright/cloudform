@@ -308,8 +308,8 @@ import OpsWorksElasticLoadBalancerAttachment from './opsWorks/elasticLoadBalance
 import OpsWorksInstance from './opsWorks/instance'
 import OpsWorksUserProfile from './opsWorks/userProfile'
 
-import CloudFront_ from './cloudFront'
-export const CloudFront = CloudFront_
+import CloudFront from './cloudFront';
+export {CloudFront}
 
 import CloudFrontStreamingDistribution from './cloudFront/streamingDistribution'
 import CloudFrontDistribution from './cloudFront/distribution'
@@ -642,7 +642,7 @@ import CodeCommitRepository from './codeCommit/repository'
 import EKS_ from './eks'
 export const EKS = EKS_
 
-import EKSCluster from './eks/cluster' 
+import EKSCluster from './eks/cluster'
 
 export default {
   ElasticBeanstalk,

@@ -33,18 +33,18 @@ interface TypeProperties {
     Required: boolean
 }
 
+type TypePropertiesMap = { [key: string]: TypeProperties }
+
 interface ResourceType {
-    Properties: { [key: string]: TypeProperties }
+    Properties: TypePropertiesMap
 }
 
-interface InnerType {
-    Properties: { [key: string]: TypeProperties }
-}
+type ResourceTypeMap = { [key: string]: ResourceType }
 
 interface Schema {
     ResourceSpecificationVersion: string
-    ResourceTypes: { [key: string]: ResourceType }
-    PropertyTypes: { [key: string]: InnerType }
+    ResourceTypes: ResourceTypeMap
+    PropertyTypes: ResourceTypeMap
 }
 
 function adjustedCamelCase(input: string): string {
@@ -78,7 +78,7 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
     return `Value<${primitiveType}>`
 }
 
-function propertiesEntries(properties: { [key: string]: TypeProperties }, useNonNullAssertion: boolean = false): string[] {
+function propertiesEntries(properties: TypePropertiesMap, useNonNullAssertion: boolean = false): string[] {
     const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
     return map(properties, (property: TypeProperties, propertyName: string) => {
         if (propertyName === 'Tags') {
@@ -105,7 +105,7 @@ function innerTypeName(innerTypeFullName: string): string {
     return innerTypeName
 }
 
-function generateInnerClass(name: string, properties: { [key: string]: TypeProperties }): string {
+function generateInnerClass(name: string, properties: TypePropertiesMap): string {
     return `export class ${name} {
 ${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 
@@ -115,7 +115,7 @@ ${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 }`
 }
 
-function generateTopLevelClass(namespace: string, typeName: string, properties: { [key: string]: TypeProperties }, innerTypes: { [key: string]: InnerType }) {
+function generateTopLevelClass(namespace: string, typeName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap) {
     return `export interface ${typeName}Properties {
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
@@ -133,9 +133,9 @@ ${Object.keys(innerTypes).map(innerTypeFullName => {
 }`
 }
 
-function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: { [key: string]: TypeProperties }, innerTypes: { [key: string]: InnerType }): void {
+function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap): void {
     let innerHasTags = false
-    const innerTypesTemplates = map(innerTypes, (innerType: InnerType, innerTypeFullName: string) => {
+    const innerTypesTemplates = map(innerTypes, (innerType: ResourceType, innerTypeFullName: string) => {
         innerHasTags = innerHasTags || hasTags(innerType.Properties)
         return generateInnerClass(innerTypeName(innerTypeFullName), innerType.Properties)
     })
@@ -216,7 +216,7 @@ function generateFilesFromSchema(schema: Schema, resourceSources: { [key: string
         const fileHeader = generateFileHeader(resourceSources[resourceFullName], schemaVersions)
         resourceSources[resourceFullName].forEach(region => regionsUsed.add(region))
 
-        const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: InnerType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.')) as { [key: string]: InnerType }
+        const resourcePropertyTypes = pickBy(schema.PropertyTypes, (propertyType: ResourceType, propertyFullName: string) => propertyFullName.startsWith(resourceFullName + '.')) as ResourceTypeMap
 
         indexContent[namespace] = indexContent[namespace] || []
         indexContent[namespace].push(typeName)

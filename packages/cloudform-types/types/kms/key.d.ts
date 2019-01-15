@@ -4,7 +4,9 @@ export interface KeyProperties {
     Description?: Value<string>;
     EnableKeyRotation?: Value<boolean>;
     Enabled?: Value<boolean>;
-    KeyPolicy: any;
+    KeyPolicy: {
+        [key: string]: any;
+    };
     KeyUsage?: Value<string>;
     PendingWindowInDays?: Value<number>;
     Tags?: ResourceTag[];

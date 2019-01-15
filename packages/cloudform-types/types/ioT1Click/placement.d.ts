@@ -3,8 +3,12 @@ import { Value } from '../dataTypes';
 export interface PlacementProperties {
     PlacementName?: Value<string>;
     ProjectName: Value<string>;
-    AssociatedDevices?: any;
-    Attributes?: any;
+    AssociatedDevices?: {
+        [key: string]: any;
+    };
+    Attributes?: {
+        [key: string]: any;
+    };
 }
 export default class Placement extends ResourceBase {
     constructor(properties?: PlacementProperties);

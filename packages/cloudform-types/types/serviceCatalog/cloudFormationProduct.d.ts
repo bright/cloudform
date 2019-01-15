@@ -2,7 +2,9 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ProvisioningArtifactProperties {
     Description?: Value<string>;
-    Info: any;
+    Info: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
     constructor(properties: ProvisioningArtifactProperties);
 }

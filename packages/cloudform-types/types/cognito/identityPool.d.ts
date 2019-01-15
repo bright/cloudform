@@ -20,12 +20,16 @@ export declare class CognitoStreams {
 export interface IdentityPoolProperties {
     PushSync?: PushSync;
     CognitoIdentityProviders?: List<CognitoIdentityProvider>;
-    CognitoEvents?: any;
+    CognitoEvents?: {
+        [key: string]: any;
+    };
     DeveloperProviderName?: Value<string>;
     CognitoStreams?: CognitoStreams;
     IdentityPoolName?: Value<string>;
     AllowUnauthenticatedIdentities: Value<boolean>;
-    SupportedLoginProviders?: any;
+    SupportedLoginProviders?: {
+        [key: string]: any;
+    };
     SamlProviderARNs?: List<Value<string>>;
     OpenIdConnectProviderARNs?: List<Value<string>>;
 }

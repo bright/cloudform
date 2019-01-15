@@ -8,7 +8,9 @@ export declare class LifecyclePolicy {
 export interface RepositoryProperties {
     LifecyclePolicy?: LifecyclePolicy;
     RepositoryName?: Value<string>;
-    RepositoryPolicyText?: any;
+    RepositoryPolicyText?: {
+        [key: string]: any;
+    };
 }
 export default class Repository extends ResourceBase {
     static LifecyclePolicy: typeof LifecyclePolicy;

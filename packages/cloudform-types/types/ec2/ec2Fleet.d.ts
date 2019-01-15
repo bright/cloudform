@@ -54,11 +54,11 @@ export interface EC2FleetProperties {
     ExcessCapacityTerminationPolicy?: Value<string>;
     TagSpecifications?: List<TagSpecification>;
     SpotOptions?: SpotOptionsRequest;
-    ValidFrom?: Value<number>;
+    ValidFrom?: Value<string>;
     ReplaceUnhealthyInstances?: Value<boolean>;
     LaunchTemplateConfigs: List<FleetLaunchTemplateConfigRequest>;
     TerminateInstancesWithExpiration?: Value<boolean>;
-    ValidUntil?: Value<number>;
+    ValidUntil?: Value<string>;
 }
 export default class EC2Fleet extends ResourceBase {
     static FleetLaunchTemplateSpecificationRequest: typeof FleetLaunchTemplateSpecificationRequest;

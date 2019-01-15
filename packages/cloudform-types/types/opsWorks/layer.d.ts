@@ -49,7 +49,9 @@ export interface LayerProperties {
     AutoAssignElasticIps: Value<boolean>;
     AutoAssignPublicIps: Value<boolean>;
     CustomInstanceProfileArn?: Value<string>;
-    CustomJson?: any;
+    CustomJson?: {
+        [key: string]: any;
+    };
     CustomRecipes?: Recipes;
     CustomSecurityGroupIds?: List<Value<string>>;
     EnableAutoHealing: Value<boolean>;

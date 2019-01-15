@@ -63,7 +63,9 @@ export declare class VolumesHost {
 }
 export interface JobDefinitionProperties {
     Type: Value<string>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     NodeProperties?: NodeProperties;
     Timeout?: Timeout;
     ContainerProperties?: ContainerProperties;

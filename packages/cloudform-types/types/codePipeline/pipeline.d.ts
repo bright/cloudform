@@ -6,7 +6,9 @@ export declare class InputArtifact {
 }
 export declare class ActionDeclaration {
     ActionTypeId: ActionTypeId;
-    Configuration?: any;
+    Configuration?: {
+        [key: string]: any;
+    };
     InputArtifacts?: List<InputArtifact>;
     Name: Value<string>;
     OutputArtifacts?: List<OutputArtifact>;

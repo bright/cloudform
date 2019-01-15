@@ -22,7 +22,9 @@ export declare class SourceDetail {
 export interface ConfigRuleProperties {
     ConfigRuleName?: Value<string>;
     Description?: Value<string>;
-    InputParameters?: any;
+    InputParameters?: {
+        [key: string]: any;
+    };
     MaximumExecutionFrequency?: Value<string>;
     Scope?: Scope;
     Source: Source;

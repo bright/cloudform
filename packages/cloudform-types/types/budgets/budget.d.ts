@@ -21,7 +21,9 @@ export declare class BudgetData {
     BudgetLimit?: Spend;
     TimePeriod?: TimePeriod;
     TimeUnit: Value<string>;
-    CostFilters?: any;
+    CostFilters?: {
+        [key: string]: any;
+    };
     BudgetName?: Value<string>;
     CostTypes?: CostTypes;
     BudgetType: Value<string>;

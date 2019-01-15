@@ -1,5 +1,11 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../dataTypes';
+export declare class KinesisSettings {
+    MessageFormat?: Value<string>;
+    StreamArn?: Value<string>;
+    ServiceAccessRoleArn?: Value<string>;
+    constructor(properties: KinesisSettings);
+}
 export declare class S3Settings {
     ExternalTableDefinition?: Value<string>;
     BucketName?: Value<string>;
@@ -24,6 +30,13 @@ export declare class MongoDbSettings {
     NestingLevel?: Value<string>;
     constructor(properties: MongoDbSettings);
 }
+export declare class ElasticsearchSettings {
+    EndpointUri?: Value<string>;
+    FullLoadErrorPercentage?: Value<number>;
+    ErrorRetryDuration?: Value<number>;
+    ServiceAccessRoleArn?: Value<string>;
+    constructor(properties: ElasticsearchSettings);
+}
 export declare class DynamoDbSettings {
     ServiceAccessRoleArn?: Value<string>;
     constructor(properties: DynamoDbSettings);
@@ -32,9 +45,11 @@ export interface EndpointProperties {
     KmsKeyId?: Value<string>;
     Port?: Value<number>;
     DatabaseName?: Value<string>;
+    ElasticsearchSettings?: ElasticsearchSettings;
     S3Settings?: S3Settings;
     EngineName: Value<string>;
     DynamoDbSettings?: DynamoDbSettings;
+    KinesisSettings?: KinesisSettings;
     Username?: Value<string>;
     SslMode?: Value<string>;
     ServerName?: Value<string>;
@@ -47,8 +62,10 @@ export interface EndpointProperties {
     MongoDbSettings?: MongoDbSettings;
 }
 export default class Endpoint extends ResourceBase {
+    static KinesisSettings: typeof KinesisSettings;
     static S3Settings: typeof S3Settings;
     static MongoDbSettings: typeof MongoDbSettings;
+    static ElasticsearchSettings: typeof ElasticsearchSettings;
     static DynamoDbSettings: typeof DynamoDbSettings;
     constructor(properties?: EndpointProperties);
 }

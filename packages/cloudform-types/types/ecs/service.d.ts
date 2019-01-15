@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LoadBalancer {
     ContainerName?: Value<string>;
@@ -54,6 +54,7 @@ export interface ServiceProperties {
     SchedulingStrategy?: Value<string>;
     ServiceName?: Value<string>;
     ServiceRegistries?: List<ServiceRegistry>;
+    Tags?: ResourceTag[];
     TaskDefinition: Value<string>;
 }
 export default class Service extends ResourceBase {

@@ -1,7 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface VPCEndpointProperties {
-    PolicyDocument?: any;
+    PolicyDocument?: {
+        [key: string]: any;
+    };
     PrivateDnsEnabled?: Value<boolean>;
     RouteTableIds?: List<Value<string>>;
     SecurityGroupIds?: List<Value<string>>;

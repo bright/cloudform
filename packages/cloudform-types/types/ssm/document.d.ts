@@ -1,7 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../dataTypes';
 export interface DocumentProperties {
-    Content: any;
+    Content: {
+        [key: string]: any;
+    };
     DocumentType?: Value<string>;
     Tags?: ResourceTag[];
 }

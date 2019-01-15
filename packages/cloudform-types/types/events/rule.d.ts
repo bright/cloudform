@@ -44,7 +44,9 @@ export declare class EcsParameters {
 }
 export interface RuleProperties {
     Description?: Value<string>;
-    EventPattern?: any;
+    EventPattern?: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
     RoleArn?: Value<string>;
     ScheduleExpression?: Value<string>;

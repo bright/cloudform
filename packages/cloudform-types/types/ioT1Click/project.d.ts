@@ -2,12 +2,18 @@ import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export declare class DeviceTemplate {
     DeviceType?: Value<string>;
-    CallbackOverrides?: any;
+    CallbackOverrides?: {
+        [key: string]: any;
+    };
     constructor(properties: DeviceTemplate);
 }
 export declare class PlacementTemplate {
-    DeviceTemplates?: any;
-    DefaultAttributes?: any;
+    DeviceTemplates?: {
+        [key: string]: any;
+    };
+    DefaultAttributes?: {
+        [key: string]: any;
+    };
     constructor(properties: PlacementTemplate);
 }
 export interface ProjectProperties {

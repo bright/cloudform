@@ -53,6 +53,7 @@ export interface DBInstanceProperties {
     StorageType?: Value<string>;
     Tags?: ResourceTag[];
     Timezone?: Value<string>;
+    UseDefaultProcessorFeatures?: Value<boolean>;
     VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase {

@@ -6,7 +6,9 @@ export declare class LoginProfile {
     constructor(properties: LoginProfile);
 }
 export declare class Policy {
-    PolicyDocument: any;
+    PolicyDocument: {
+        [key: string]: any;
+    };
     PolicyName: Value<string>;
     constructor(properties: Policy);
 }

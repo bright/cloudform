@@ -5,7 +5,9 @@ export declare class ConnectionInput {
     ConnectionType: Value<string>;
     MatchCriteria?: List<Value<string>>;
     PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
-    ConnectionProperties: any;
+    ConnectionProperties: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
     constructor(properties: ConnectionInput);
 }

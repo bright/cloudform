@@ -14,7 +14,9 @@ export declare class EndpointConfiguration {
 export interface RestApiProperties {
     ApiKeySourceType?: Value<string>;
     BinaryMediaTypes?: List<Value<string>>;
-    Body?: any;
+    Body?: {
+        [key: string]: any;
+    };
     BodyS3Location?: S3Location;
     CloneFrom?: Value<string>;
     Description?: Value<string>;
@@ -25,7 +27,9 @@ export interface RestApiProperties {
     Parameters?: {
         [key: string]: Value<string>;
     };
-    Policy?: any;
+    Policy?: {
+        [key: string]: any;
+    };
 }
 export default class RestApi extends ResourceBase {
     static S3Location: typeof S3Location;

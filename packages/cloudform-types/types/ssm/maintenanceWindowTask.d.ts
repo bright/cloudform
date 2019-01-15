@@ -13,7 +13,9 @@ export declare class NotificationConfig {
     constructor(properties: NotificationConfig);
 }
 export declare class MaintenanceWindowAutomationParameters {
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     DocumentVersion?: Value<string>;
     constructor(properties: MaintenanceWindowAutomationParameters);
 }
@@ -44,7 +46,9 @@ export declare class MaintenanceWindowRunCommandParameters {
     TimeoutSeconds?: Value<number>;
     Comment?: Value<string>;
     OutputS3KeyPrefix?: Value<string>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     DocumentHashType?: Value<string>;
     ServiceRoleArn?: Value<string>;
     NotificationConfig?: NotificationConfig;
@@ -63,7 +67,9 @@ export interface MaintenanceWindowTaskProperties {
     TaskArn: Value<string>;
     TaskInvocationParameters?: TaskInvocationParameters;
     WindowId?: Value<string>;
-    TaskParameters?: any;
+    TaskParameters?: {
+        [key: string]: any;
+    };
     TaskType: Value<string>;
     LoggingInfo?: LoggingInfo;
 }

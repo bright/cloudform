@@ -8,28 +8,24 @@ import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurat
 import ElasticBeanstalkApplication from './elasticBeanstalk/application';
 import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment';
 import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion';
-export declare const AppSync: {
-    DataSource: typeof AppSyncDataSource;
-    Resolver: typeof AppSyncResolver;
-    GraphQLSchema: typeof AppSyncGraphQLSchema;
-    GraphQLApi: typeof AppSyncGraphQLApi;
-    FunctionConfiguration: typeof AppSyncFunctionConfiguration;
-    ApiKey: typeof AppSyncApiKey;
+export declare const AmazonMQ: {
+    Broker: typeof AmazonMQBroker;
+    ConfigurationAssociation: typeof AmazonMQConfigurationAssociation;
+    Configuration: typeof AmazonMQConfiguration;
 };
-import AppSyncDataSource from './appSync/dataSource';
-import AppSyncResolver from './appSync/resolver';
-import AppSyncGraphQLSchema from './appSync/graphQlSchema';
-import AppSyncGraphQLApi from './appSync/graphQlApi';
-import AppSyncFunctionConfiguration from './appSync/functionConfiguration';
-import AppSyncApiKey from './appSync/apiKey';
+import AmazonMQBroker from './amazonMq/broker';
+import AmazonMQConfigurationAssociation from './amazonMq/configurationAssociation';
+import AmazonMQConfiguration from './amazonMq/configuration';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
-    PlacementGroup: typeof EC2PlacementGroup;
     VPCPeeringConnection: typeof EC2VPCPeeringConnection;
+    PlacementGroup: typeof EC2PlacementGroup;
+    TransitGateway: typeof EC2TransitGateway;
     VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
     LaunchTemplate: typeof EC2LaunchTemplate;
+    TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
     Volume: typeof EC2Volume;
     SpotFleet: typeof EC2SpotFleet;
     VPNConnectionRoute: typeof EC2VPNConnectionRoute;
@@ -39,8 +35,10 @@ export declare const EC2: {
     SubnetRouteTableAssociation: typeof EC2SubnetRouteTableAssociation;
     Route: typeof EC2Route;
     FlowLog: typeof EC2FlowLog;
+    TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
     SecurityGroupEgress: typeof EC2SecurityGroupEgress;
     NetworkInterface: typeof EC2NetworkInterface;
+    TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
     SubnetNetworkAclAssociation: typeof EC2SubnetNetworkAclAssociation;
     SubnetCidrBlock: typeof EC2SubnetCidrBlock;
     NatGateway: typeof EC2NatGateway;
@@ -48,6 +46,7 @@ export declare const EC2: {
     Subnet: typeof EC2Subnet;
     VPC: typeof EC2VPC;
     Instance: typeof EC2Instance;
+    TransitGatewayRoute: typeof EC2TransitGatewayRoute;
     DHCPOptions: typeof EC2DHCPOptions;
     NetworkAcl: typeof EC2NetworkAcl;
     VPNGatewayRoutePropagation: typeof EC2VPNGatewayRoutePropagation;
@@ -64,22 +63,19 @@ export declare const EC2: {
     VPNConnection: typeof EC2VPNConnection;
     VPCCidrBlock: typeof EC2VPCCidrBlock;
     EC2Fleet: typeof EC2EC2Fleet;
-    VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
-    TransitGateway: typeof EC2TransitGateway;
-    TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
-    TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
-    TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
-    TransitGatewayRoute: typeof EC2TransitGatewayRoute;
     TransitGatewayRouteTable: typeof EC2TransitGatewayRouteTable;
+    VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
     VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
 };
 import EC2RouteTable from './ec2/routeTable';
-import EC2PlacementGroup from './ec2/placementGroup';
 import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
+import EC2PlacementGroup from './ec2/placementGroup';
+import EC2TransitGateway from './ec2/transitGateway';
 import EC2VPCEndpointServicePermissions from './ec2/vpcEndpointServicePermissions';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
 import EC2LaunchTemplate from './ec2/launchTemplate';
+import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation';
 import EC2Volume from './ec2/volume';
 import EC2SpotFleet from './ec2/spotFleet';
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute';
@@ -89,8 +85,10 @@ import EC2SecurityGroupIngress from './ec2/securityGroupIngress';
 import EC2SubnetRouteTableAssociation from './ec2/subnetRouteTableAssociation';
 import EC2Route from './ec2/route';
 import EC2FlowLog from './ec2/flowLog';
+import EC2TransitGatewayRouteTablePropagation from './ec2/transitGatewayRouteTablePropagation';
 import EC2SecurityGroupEgress from './ec2/securityGroupEgress';
 import EC2NetworkInterface from './ec2/networkInterface';
+import EC2TransitGatewayAttachment from './ec2/transitGatewayAttachment';
 import EC2SubnetNetworkAclAssociation from './ec2/subnetNetworkAclAssociation';
 import EC2SubnetCidrBlock from './ec2/subnetCidrBlock';
 import EC2NatGateway from './ec2/natGateway';
@@ -98,6 +96,7 @@ import EC2SecurityGroup from './ec2/securityGroup';
 import EC2Subnet from './ec2/subnet';
 import EC2VPC from './ec2/vpc';
 import EC2Instance from './ec2/instance';
+import EC2TransitGatewayRoute from './ec2/transitGatewayRoute';
 import EC2DHCPOptions from './ec2/dhcpOptions';
 import EC2NetworkAcl from './ec2/networkAcl';
 import EC2VPNGatewayRoutePropagation from './ec2/vpnGatewayRoutePropagation';
@@ -114,14 +113,23 @@ import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment';
 import EC2VPNConnection from './ec2/vpnConnection';
 import EC2VPCCidrBlock from './ec2/vpcCidrBlock';
 import EC2EC2Fleet from './ec2/ec2Fleet';
-import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
-import EC2TransitGateway from './ec2/transitGateway';
-import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation';
-import EC2TransitGatewayRouteTablePropagation from './ec2/transitGatewayRouteTablePropagation';
-import EC2TransitGatewayAttachment from './ec2/transitGatewayAttachment';
-import EC2TransitGatewayRoute from './ec2/transitGatewayRoute';
 import EC2TransitGatewayRouteTable from './ec2/transitGatewayRouteTable';
+import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
 import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncFunctionConfiguration from './appSync/functionConfiguration';
+import AppSyncApiKey from './appSync/apiKey';
 export declare const ServiceCatalog: {
     PortfolioShare: typeof ServiceCatalogPortfolioShare;
     TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
@@ -218,6 +226,24 @@ export declare const Elasticsearch: {
     Domain: typeof ElasticsearchDomain;
 };
 import ElasticsearchDomain from './elasticsearch/domain';
+export declare const WAFRegional: {
+    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+    XssMatchSet: typeof WAFRegionalXssMatchSet;
+    ByteMatchSet: typeof WAFRegionalByteMatchSet;
+    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+    WebACL: typeof WAFRegionalWebACL;
+    Rule: typeof WAFRegionalRule;
+    IPSet: typeof WAFRegionalIPSet;
+};
+import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
+import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
+import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
+import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
+import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
+import WAFRegionalWebACL from './wafRegional/webAcl';
+import WAFRegionalRule from './wafRegional/rule';
+import WAFRegionalIPSet from './wafRegional/ipSet';
 export declare const ApiGateway: {
     RequestValidator: typeof ApiGatewayRequestValidator;
     Deployment: typeof ApiGatewayDeployment;
@@ -258,36 +284,6 @@ import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
-export declare const WAFRegional: {
-    SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-    SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-    XssMatchSet: typeof WAFRegionalXssMatchSet;
-    ByteMatchSet: typeof WAFRegionalByteMatchSet;
-    WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-    WebACL: typeof WAFRegionalWebACL;
-    Rule: typeof WAFRegionalRule;
-    IPSet: typeof WAFRegionalIPSet;
-};
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet';
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet';
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet';
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet';
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation';
-import WAFRegionalWebACL from './wafRegional/webAcl';
-import WAFRegionalRule from './wafRegional/rule';
-import WAFRegionalIPSet from './wafRegional/ipSet';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -312,6 +308,18 @@ export declare const WorkSpaces: {
     Workspace: typeof WorkSpacesWorkspace;
 };
 import WorkSpacesWorkspace from './workSpaces/workspace';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -364,6 +372,10 @@ import AppStreamStackFleetAssociation from './appStream/stackFleetAssociation';
 import AppStreamStackUserAssociation from './appStream/stackUserAssociation';
 import AppStreamUser from './appStream/user';
 import AppStreamFleet from './appStream/fleet';
+export declare const AutoScalingPlans: {
+    ScalingPlan: typeof AutoScalingPlansScalingPlan;
+};
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const Route53: {
     RecordSet: typeof Route53RecordSet;
     HostedZone: typeof Route53HostedZone;
@@ -534,16 +546,20 @@ import RedshiftClusterSubnetGroup from './redshift/clusterSubnetGroup';
 import RedshiftClusterSecurityGroup from './redshift/clusterSecurityGroup';
 export declare const Lambda: {
     EventSourceMapping: typeof LambdaEventSourceMapping;
+    LayerVersion: typeof LambdaLayerVersion;
     Alias: typeof LambdaAlias;
     Function: typeof LambdaFunction;
     Version: typeof LambdaVersion;
     Permission: typeof LambdaPermission;
+    LayerVersionPermission: typeof LambdaLayerVersionPermission;
 };
 import LambdaEventSourceMapping from './lambda/eventSourceMapping';
+import LambdaLayerVersion from './lambda/layerVersion';
 import LambdaAlias from './lambda/alias';
 import LambdaFunction from './lambda/function';
 import LambdaVersion from './lambda/version';
 import LambdaPermission from './lambda/permission';
+import LambdaLayerVersionPermission from './lambda/layerVersionPermission';
 export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
@@ -564,6 +580,16 @@ export declare const IoT1Click: {
 import IoT1ClickProject from './ioT1Click/project';
 import IoT1ClickDevice from './ioT1Click/device';
 import IoT1ClickPlacement from './ioT1Click/placement';
+export declare const IoTAnalytics: {
+    Dataset: typeof IoTAnalyticsDataset;
+    Channel: typeof IoTAnalyticsChannel;
+    Pipeline: typeof IoTAnalyticsPipeline;
+    Datastore: typeof IoTAnalyticsDatastore;
+};
+import IoTAnalyticsDataset from './ioTAnalytics/dataset';
+import IoTAnalyticsChannel from './ioTAnalytics/channel';
+import IoTAnalyticsPipeline from './ioTAnalytics/pipeline';
+import IoTAnalyticsDatastore from './ioTAnalytics/datastore';
 export declare const Batch: {
     JobDefinition: typeof BatchJobDefinition;
     JobQueue: typeof BatchJobQueue;
@@ -674,9 +700,11 @@ export declare const DataPipeline: {
 import DataPipelinePipeline from './dataPipeline/pipeline';
 export declare const Route53Resolver: {
     ResolverRule: typeof Route53ResolverResolverRule;
+    ResolverRuleAssociation: typeof Route53ResolverResolverRuleAssociation;
     ResolverEndpoint: typeof Route53ResolverResolverEndpoint;
 };
 import Route53ResolverResolverRule from './route53Resolver/resolverRule';
+import Route53ResolverResolverRuleAssociation from './route53Resolver/resolverRuleAssociation';
 import Route53ResolverResolverEndpoint from './route53Resolver/resolverEndpoint';
 export declare const CloudTrail: {
     Trail: typeof CloudTrailTrail;
@@ -746,20 +774,10 @@ export declare const ASK: {
     Skill: typeof ASKSkill;
 };
 import ASKSkill from './ask/skill';
-export declare const AutoScalingPlans: {
-    ScalingPlan: typeof AutoScalingPlansScalingPlan;
-};
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const Cloud9: {
     EnvironmentEC2: typeof Cloud9EnvironmentEC2;
 };
 import Cloud9EnvironmentEC2 from './cloud9/environmentEc2';
-export declare const AmazonMQ: {
-    Broker: typeof AmazonMQBroker;
-    Configuration: typeof AmazonMQConfiguration;
-};
-import AmazonMQBroker from './amazonMq/broker';
-import AmazonMQConfiguration from './amazonMq/configuration';
 export declare const Neptune: {
     DBParameterGroup: typeof NeptuneDBParameterGroup;
     DBClusterParameterGroup: typeof NeptuneDBClusterParameterGroup;
@@ -780,6 +798,16 @@ export declare const KinesisAnalytics: {
 import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
 import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
 import KinesisAnalyticsApplication from './kinesisAnalytics/application';
+export declare const DocDB: {
+    DBSubnetGroup: typeof DocDBDBSubnetGroup;
+    DBInstance: typeof DocDBDBInstance;
+    DBCluster: typeof DocDBDBCluster;
+    DBClusterParameterGroup: typeof DocDBDBClusterParameterGroup;
+};
+import DocDBDBSubnetGroup from './docDb/dbSubnetGroup';
+import DocDBDBInstance from './docDb/dbInstance';
+import DocDBDBCluster from './docDb/dbCluster';
+import DocDBDBClusterParameterGroup from './docDb/dbClusterParameterGroup';
 export declare const SES: {
     ReceiptFilter: typeof SESReceiptFilter;
     ReceiptRule: typeof SESReceiptRule;
@@ -813,22 +841,21 @@ declare const _default: {
         Environment: typeof ElasticBeanstalkEnvironment;
         ApplicationVersion: typeof ElasticBeanstalkApplicationVersion;
     };
-    AppSync: {
-        DataSource: typeof AppSyncDataSource;
-        Resolver: typeof AppSyncResolver;
-        GraphQLSchema: typeof AppSyncGraphQLSchema;
-        GraphQLApi: typeof AppSyncGraphQLApi;
-        FunctionConfiguration: typeof AppSyncFunctionConfiguration;
-        ApiKey: typeof AppSyncApiKey;
+    AmazonMQ: {
+        Broker: typeof AmazonMQBroker;
+        ConfigurationAssociation: typeof AmazonMQConfigurationAssociation;
+        Configuration: typeof AmazonMQConfiguration;
     };
     EC2: {
         RouteTable: typeof EC2RouteTable;
-        PlacementGroup: typeof EC2PlacementGroup;
         VPCPeeringConnection: typeof EC2VPCPeeringConnection;
+        PlacementGroup: typeof EC2PlacementGroup;
+        TransitGateway: typeof EC2TransitGateway;
         VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
         LaunchTemplate: typeof EC2LaunchTemplate;
+        TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
         Volume: typeof EC2Volume;
         SpotFleet: typeof EC2SpotFleet;
         VPNConnectionRoute: typeof EC2VPNConnectionRoute;
@@ -838,8 +865,10 @@ declare const _default: {
         SubnetRouteTableAssociation: typeof EC2SubnetRouteTableAssociation;
         Route: typeof EC2Route;
         FlowLog: typeof EC2FlowLog;
+        TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
         SecurityGroupEgress: typeof EC2SecurityGroupEgress;
         NetworkInterface: typeof EC2NetworkInterface;
+        TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
         SubnetNetworkAclAssociation: typeof EC2SubnetNetworkAclAssociation;
         SubnetCidrBlock: typeof EC2SubnetCidrBlock;
         NatGateway: typeof EC2NatGateway;
@@ -847,6 +876,7 @@ declare const _default: {
         Subnet: typeof EC2Subnet;
         VPC: typeof EC2VPC;
         Instance: typeof EC2Instance;
+        TransitGatewayRoute: typeof EC2TransitGatewayRoute;
         DHCPOptions: typeof EC2DHCPOptions;
         NetworkAcl: typeof EC2NetworkAcl;
         VPNGatewayRoutePropagation: typeof EC2VPNGatewayRoutePropagation;
@@ -863,14 +893,17 @@ declare const _default: {
         VPNConnection: typeof EC2VPNConnection;
         VPCCidrBlock: typeof EC2VPCCidrBlock;
         EC2Fleet: typeof EC2EC2Fleet;
-        VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
-        TransitGateway: typeof EC2TransitGateway;
-        TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
-        TransitGatewayRouteTablePropagation: typeof EC2TransitGatewayRouteTablePropagation;
-        TransitGatewayAttachment: typeof EC2TransitGatewayAttachment;
-        TransitGatewayRoute: typeof EC2TransitGatewayRoute;
         TransitGatewayRouteTable: typeof EC2TransitGatewayRouteTable;
+        VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
         VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
+    };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+        ApiKey: typeof AppSyncApiKey;
     };
     ServiceCatalog: {
         PortfolioShare: typeof ServiceCatalogPortfolioShare;
@@ -927,6 +960,16 @@ declare const _default: {
     Elasticsearch: {
         Domain: typeof ElasticsearchDomain;
     };
+    WAFRegional: {
+        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
+        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
+        XssMatchSet: typeof WAFRegionalXssMatchSet;
+        ByteMatchSet: typeof WAFRegionalByteMatchSet;
+        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
+        WebACL: typeof WAFRegionalWebACL;
+        Rule: typeof WAFRegionalRule;
+        IPSet: typeof WAFRegionalIPSet;
+    };
     ApiGateway: {
         RequestValidator: typeof ApiGatewayRequestValidator;
         Deployment: typeof ApiGatewayDeployment;
@@ -948,23 +991,6 @@ declare const _default: {
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
     };
-    WAFRegional: {
-        SizeConstraintSet: typeof WAFRegionalSizeConstraintSet;
-        SqlInjectionMatchSet: typeof WAFRegionalSqlInjectionMatchSet;
-        XssMatchSet: typeof WAFRegionalXssMatchSet;
-        ByteMatchSet: typeof WAFRegionalByteMatchSet;
-        WebACLAssociation: typeof WAFRegionalWebACLAssociation;
-        WebACL: typeof WAFRegionalWebACL;
-        Rule: typeof WAFRegionalRule;
-        IPSet: typeof WAFRegionalIPSet;
-    };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
-    };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
         DBCluster: typeof RDSDBCluster;
@@ -978,6 +1004,13 @@ declare const _default: {
     };
     WorkSpaces: {
         Workspace: typeof WorkSpacesWorkspace;
+    };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
     };
     Logs: {
         LogGroup: typeof LogsLogGroup;
@@ -1009,6 +1042,9 @@ declare const _default: {
         StackUserAssociation: typeof AppStreamStackUserAssociation;
         User: typeof AppStreamUser;
         Fleet: typeof AppStreamFleet;
+    };
+    AutoScalingPlans: {
+        ScalingPlan: typeof AutoScalingPlansScalingPlan;
     };
     Route53: {
         RecordSet: typeof Route53RecordSet;
@@ -1113,10 +1149,12 @@ declare const _default: {
     };
     Lambda: {
         EventSourceMapping: typeof LambdaEventSourceMapping;
+        LayerVersion: typeof LambdaLayerVersion;
         Alias: typeof LambdaAlias;
         Function: typeof LambdaFunction;
         Version: typeof LambdaVersion;
         Permission: typeof LambdaPermission;
+        LayerVersionPermission: typeof LambdaLayerVersionPermission;
     };
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
@@ -1130,6 +1168,12 @@ declare const _default: {
         Project: typeof IoT1ClickProject;
         Device: typeof IoT1ClickDevice;
         Placement: typeof IoT1ClickPlacement;
+    };
+    IoTAnalytics: {
+        Dataset: typeof IoTAnalyticsDataset;
+        Channel: typeof IoTAnalyticsChannel;
+        Pipeline: typeof IoTAnalyticsPipeline;
+        Datastore: typeof IoTAnalyticsDatastore;
     };
     Batch: {
         JobDefinition: typeof BatchJobDefinition;
@@ -1198,6 +1242,7 @@ declare const _default: {
     };
     Route53Resolver: {
         ResolverRule: typeof Route53ResolverResolverRule;
+        ResolverRuleAssociation: typeof Route53ResolverResolverRuleAssociation;
         ResolverEndpoint: typeof Route53ResolverResolverEndpoint;
     };
     CloudTrail: {
@@ -1246,15 +1291,8 @@ declare const _default: {
     ASK: {
         Skill: typeof ASKSkill;
     };
-    AutoScalingPlans: {
-        ScalingPlan: typeof AutoScalingPlansScalingPlan;
-    };
     Cloud9: {
         EnvironmentEC2: typeof Cloud9EnvironmentEC2;
-    };
-    AmazonMQ: {
-        Broker: typeof AmazonMQBroker;
-        Configuration: typeof AmazonMQConfiguration;
     };
     Neptune: {
         DBParameterGroup: typeof NeptuneDBParameterGroup;
@@ -1267,6 +1305,12 @@ declare const _default: {
         ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
         ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
         Application: typeof KinesisAnalyticsApplication;
+    };
+    DocDB: {
+        DBSubnetGroup: typeof DocDBDBSubnetGroup;
+        DBInstance: typeof DocDBDBInstance;
+        DBCluster: typeof DocDBDBCluster;
+        DBClusterParameterGroup: typeof DocDBDBClusterParameterGroup;
     };
     SES: {
         ReceiptFilter: typeof SESReceiptFilter;

@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class User {
     Username: Value<string>;
@@ -17,6 +17,11 @@ export declare class LogList {
     Audit?: Value<boolean>;
     General?: Value<boolean>;
     constructor(properties: LogList);
+}
+export declare class TagsEntry {
+    Value: Value<string>;
+    Key: Value<string>;
+    constructor(properties: TagsEntry);
 }
 export declare class ConfigurationId {
     Revision: Value<number>;
@@ -37,11 +42,13 @@ export interface BrokerProperties {
     DeploymentMode: Value<string>;
     EngineType: Value<string>;
     PubliclyAccessible: Value<boolean>;
+    Tags?: ResourceTag[];
 }
 export default class Broker extends ResourceBase {
     static User: typeof User;
     static MaintenanceWindow: typeof MaintenanceWindow;
     static LogList: typeof LogList;
+    static TagsEntry: typeof TagsEntry;
     static ConfigurationId: typeof ConfigurationId;
     constructor(properties?: BrokerProperties);
 }

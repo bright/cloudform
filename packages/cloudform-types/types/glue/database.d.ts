@@ -3,7 +3,9 @@ import { Value } from '../dataTypes';
 export declare class DatabaseInput {
     LocationUri?: Value<string>;
     Description?: Value<string>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
     constructor(properties: DatabaseInput);
 }

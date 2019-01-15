@@ -179,7 +179,9 @@ export declare class ScalingTrigger {
     constructor(properties: ScalingTrigger);
 }
 export interface ClusterProperties {
-    AdditionalInfo?: any;
+    AdditionalInfo?: {
+        [key: string]: any;
+    };
     Applications?: List<Application>;
     AutoScalingRole?: Value<string>;
     BootstrapActions?: List<BootstrapActionConfig>;

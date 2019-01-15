@@ -12,6 +12,7 @@ export interface ApiKeyProperties {
     GenerateDistinctId?: Value<boolean>;
     Name?: Value<string>;
     StageKeys?: List<StageKey>;
+    Value?: Value<string>;
 }
 export default class ApiKey extends ResourceBase {
     static StageKey: typeof StageKey;

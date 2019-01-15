@@ -9,7 +9,9 @@ export declare class SkillPackage {
     constructor(properties: SkillPackage);
 }
 export declare class Overrides {
-    Manifest?: any;
+    Manifest?: {
+        [key: string]: any;
+    };
     constructor(properties: Overrides);
 }
 export declare class AuthenticationConfiguration {

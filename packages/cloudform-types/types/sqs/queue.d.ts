@@ -10,7 +10,9 @@ export interface QueueProperties {
     MessageRetentionPeriod?: Value<number>;
     QueueName?: Value<string>;
     ReceiveMessageWaitTimeSeconds?: Value<number>;
-    RedrivePolicy?: any;
+    RedrivePolicy?: {
+        [key: string]: any;
+    };
     Tags?: ResourceTag[];
     VisibilityTimeout?: Value<number>;
 }

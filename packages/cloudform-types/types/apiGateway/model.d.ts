@@ -5,7 +5,9 @@ export interface ModelProperties {
     Description?: Value<string>;
     Name?: Value<string>;
     RestApiId: Value<string>;
-    Schema?: any;
+    Schema?: {
+        [key: string]: any;
+    };
 }
 export default class Model extends ResourceBase {
     constructor(properties?: ModelProperties);

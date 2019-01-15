@@ -2,7 +2,9 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Action {
     JobName?: Value<string>;
-    Arguments?: any;
+    Arguments?: {
+        [key: string]: any;
+    };
     constructor(properties: Action);
 }
 export declare class Condition {

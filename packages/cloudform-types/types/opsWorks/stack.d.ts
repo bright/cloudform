@@ -40,7 +40,9 @@ export interface StackProperties {
     ClonePermissions?: Value<boolean>;
     ConfigurationManager?: StackConfigurationManager;
     CustomCookbooksSource?: Source;
-    CustomJson?: any;
+    CustomJson?: {
+        [key: string]: any;
+    };
     DefaultAvailabilityZone?: Value<string>;
     DefaultInstanceProfileArn: Value<string>;
     DefaultOs?: Value<string>;

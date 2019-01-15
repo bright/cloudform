@@ -5,6 +5,7 @@ export declare class ProductionVariant {
     VariantName: Value<string>;
     InitialInstanceCount: Value<number>;
     InstanceType: Value<string>;
+    AcceleratorType?: Value<string>;
     InitialVariantWeight: Value<number>;
     constructor(properties: ProductionVariant);
 }

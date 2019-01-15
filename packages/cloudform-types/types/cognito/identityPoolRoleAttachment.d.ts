@@ -18,9 +18,13 @@ export declare class MappingRule {
     constructor(properties: MappingRule);
 }
 export interface IdentityPoolRoleAttachmentProperties {
-    RoleMappings?: any;
+    RoleMappings?: {
+        [key: string]: any;
+    };
     IdentityPoolId: Value<string>;
-    Roles?: any;
+    Roles?: {
+        [key: string]: any;
+    };
 }
 export default class IdentityPoolRoleAttachment extends ResourceBase {
     static RulesConfigurationType: typeof RulesConfigurationType;

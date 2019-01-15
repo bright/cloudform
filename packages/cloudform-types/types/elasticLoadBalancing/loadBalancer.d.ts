@@ -39,7 +39,9 @@ export declare class Listeners {
     constructor(properties: Listeners);
 }
 export declare class Policies {
-    Attributes: List<any>;
+    Attributes: List<{
+        [key: string]: any;
+    }>;
     InstancePorts?: List<Value<string>>;
     LoadBalancerPorts?: List<Value<string>>;
     PolicyName: Value<string>;

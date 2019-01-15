@@ -2,7 +2,9 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value } from '../dataTypes';
 export interface DBParameterGroupProperties {
     Description: Value<string>;
-    Parameters: any;
+    Parameters: {
+        [key: string]: any;
+    };
     Family: Value<string>;
     Tags?: ResourceTag[];
     Name?: Value<string>;

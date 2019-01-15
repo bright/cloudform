@@ -15,7 +15,9 @@ export declare class ExecutionProperty {
 }
 export interface JobProperties {
     Role: Value<string>;
-    DefaultArguments?: any;
+    DefaultArguments?: {
+        [key: string]: any;
+    };
     Connections?: ConnectionsList;
     MaxRetries?: Value<number>;
     Description?: Value<string>;

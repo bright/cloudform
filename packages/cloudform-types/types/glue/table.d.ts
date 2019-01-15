@@ -3,12 +3,16 @@ import { Value, List } from '../dataTypes';
 export declare class SkewedInfo {
     SkewedColumnNames?: List<Value<string>>;
     SkewedColumnValues?: List<Value<string>>;
-    SkewedColumnValueLocationMaps?: any;
+    SkewedColumnValueLocationMaps?: {
+        [key: string]: any;
+    };
     constructor(properties: SkewedInfo);
 }
 export declare class StorageDescriptor {
     StoredAsSubDirectories?: Value<boolean>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     BucketColumns?: List<Value<string>>;
     SkewedInfo?: SkewedInfo;
     InputFormat?: Value<string>;
@@ -26,7 +30,9 @@ export declare class TableInput {
     ViewOriginalText?: Value<string>;
     Description?: Value<string>;
     TableType?: Value<string>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     ViewExpandedText?: Value<string>;
     StorageDescriptor?: StorageDescriptor;
     PartitionKeys?: List<Column>;
@@ -35,7 +41,9 @@ export declare class TableInput {
     constructor(properties: TableInput);
 }
 export declare class SerdeInfo {
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     SerializationLibrary?: Value<string>;
     Name?: Value<string>;
     constructor(properties: SerdeInfo);

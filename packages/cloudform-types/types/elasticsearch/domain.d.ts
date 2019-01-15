@@ -5,6 +5,10 @@ export declare class VPCOptions {
     SubnetIds?: List<Value<string>>;
     constructor(properties: VPCOptions);
 }
+export declare class NodeToNodeEncryptionOptions {
+    Enabled?: Value<boolean>;
+    constructor(properties: NodeToNodeEncryptionOptions);
+}
 export declare class ElasticsearchClusterConfig {
     DedicatedMasterCount?: Value<number>;
     DedicatedMasterEnabled?: Value<boolean>;
@@ -31,7 +35,9 @@ export declare class EncryptionAtRestOptions {
     constructor(properties: EncryptionAtRestOptions);
 }
 export interface DomainProperties {
-    AccessPolicies?: any;
+    AccessPolicies?: {
+        [key: string]: any;
+    };
     AdvancedOptions?: {
         [key: string]: Value<string>;
     };
@@ -40,12 +46,14 @@ export interface DomainProperties {
     ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
     ElasticsearchVersion?: Value<string>;
     EncryptionAtRestOptions?: EncryptionAtRestOptions;
+    NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
     SnapshotOptions?: SnapshotOptions;
     Tags?: ResourceTag[];
     VPCOptions?: VPCOptions;
 }
 export default class Domain extends ResourceBase {
     static VPCOptions: typeof VPCOptions;
+    static NodeToNodeEncryptionOptions: typeof NodeToNodeEncryptionOptions;
     static ElasticsearchClusterConfig: typeof ElasticsearchClusterConfig;
     static SnapshotOptions: typeof SnapshotOptions;
     static EBSOptions: typeof EBSOptions;

@@ -1,7 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface QueuePolicyProperties {
-    PolicyDocument: any;
+    PolicyDocument: {
+        [key: string]: any;
+    };
     Queues: List<Value<string>>;
 }
 export default class QueuePolicy extends ResourceBase {

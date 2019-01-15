@@ -7,16 +7,19 @@ export declare class VpcConfig {
 }
 export declare class ContainerDefinition {
     ContainerHostname?: Value<string>;
-    Environment?: any;
+    Environment?: {
+        [key: string]: any;
+    };
     ModelDataUrl?: Value<string>;
     Image: Value<string>;
     constructor(properties: ContainerDefinition);
 }
 export interface ModelProperties {
     ExecutionRoleArn: Value<string>;
-    PrimaryContainer: ContainerDefinition;
+    PrimaryContainer?: ContainerDefinition;
     ModelName?: Value<string>;
     VpcConfig?: VpcConfig;
+    Containers?: List<ContainerDefinition>;
     Tags?: ResourceTag[];
 }
 export default class Model extends ResourceBase {

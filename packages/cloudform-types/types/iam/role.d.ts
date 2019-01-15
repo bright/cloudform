@@ -1,12 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Policy {
-    PolicyDocument: any;
+    PolicyDocument: {
+        [key: string]: any;
+    };
     PolicyName: Value<string>;
     constructor(properties: Policy);
 }
 export interface RoleProperties {
-    AssumeRolePolicyDocument: any;
+    AssumeRolePolicyDocument: {
+        [key: string]: any;
+    };
     ManagedPolicyArns?: List<Value<string>>;
     MaxSessionDuration?: Value<number>;
     Path?: Value<string>;

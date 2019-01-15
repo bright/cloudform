@@ -5,7 +5,9 @@ export interface ManagedPolicyProperties {
     Groups?: List<Value<string>>;
     ManagedPolicyName?: Value<string>;
     Path?: Value<string>;
-    PolicyDocument: any;
+    PolicyDocument: {
+        [key: string]: any;
+    };
     Roles?: List<Value<string>>;
     Users?: List<Value<string>>;
 }

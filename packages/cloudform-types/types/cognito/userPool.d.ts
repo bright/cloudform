@@ -71,7 +71,9 @@ export declare class StringAttributeConstraints {
     constructor(properties: StringAttributeConstraints);
 }
 export interface UserPoolProperties {
-    UserPoolTags?: any;
+    UserPoolTags?: {
+        [key: string]: any;
+    };
     Policies?: Policies;
     MfaConfiguration?: Value<string>;
     Schema?: List<SchemaAttribute>;

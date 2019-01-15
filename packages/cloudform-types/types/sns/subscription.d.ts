@@ -1,9 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface SubscriptionProperties {
-    DeliveryPolicy?: any;
+    DeliveryPolicy?: {
+        [key: string]: any;
+    };
     Endpoint?: Value<string>;
-    FilterPolicy?: any;
+    FilterPolicy?: {
+        [key: string]: any;
+    };
     Protocol?: Value<string>;
     RawMessageDelivery?: Value<boolean>;
     Region?: Value<string>;

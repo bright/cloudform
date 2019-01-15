@@ -1,14 +1,18 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class SerdeInfo {
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     SerializationLibrary?: Value<string>;
     Name?: Value<string>;
     constructor(properties: SerdeInfo);
 }
 export declare class StorageDescriptor {
     StoredAsSubDirectories?: Value<boolean>;
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     BucketColumns?: List<Value<string>>;
     SkewedInfo?: SkewedInfo;
     InputFormat?: Value<string>;
@@ -29,7 +33,9 @@ export declare class Order {
 export declare class SkewedInfo {
     SkewedColumnNames?: List<Value<string>>;
     SkewedColumnValues?: List<Value<string>>;
-    SkewedColumnValueLocationMaps?: any;
+    SkewedColumnValueLocationMaps?: {
+        [key: string]: any;
+    };
     constructor(properties: SkewedInfo);
 }
 export declare class Column {
@@ -39,7 +45,9 @@ export declare class Column {
     constructor(properties: Column);
 }
 export declare class PartitionInput {
-    Parameters?: any;
+    Parameters?: {
+        [key: string]: any;
+    };
     StorageDescriptor?: StorageDescriptor;
     Values: List<Value<string>>;
     constructor(properties: PartitionInput);

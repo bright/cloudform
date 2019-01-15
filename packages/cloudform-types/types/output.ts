@@ -1,4 +1,4 @@
-import {Value, Condition} from "./dataTypes"
+import {Value} from "./dataTypes"
 
 export default interface Output {
     Description?: Value<string>
@@ -6,5 +6,5 @@ export default interface Output {
     Export?: {
         Name: Value<string>
     }
-    Condition?: Condition
+    Condition?: Value<string>
 }

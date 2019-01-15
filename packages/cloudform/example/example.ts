@@ -64,7 +64,8 @@ export default cloudform({
     },
     Outputs: {
         VPCIpv6CidrBlocks: {
-            Value: Fn.GetAtt(Resources.VPC, 'Ipv6CidrBlocks')
+            Value: Fn.GetAtt(Resources.VPC, 'Ipv6CidrBlocks'),
+            Condition: Conditions.FirstCondition
         }
     }
 } as Template)

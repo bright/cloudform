@@ -22,7 +22,7 @@ export class RetentionPeriod {
 export interface DatastoreProperties {
     DatastoreName?: Value<string>
     RetentionPeriod?: RetentionPeriod
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Datastore extends ResourceBase {

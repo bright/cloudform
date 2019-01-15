@@ -48,7 +48,7 @@ export interface NetworkInterfaceProperties {
     SecondaryPrivateIpAddressCount?: Value<number>
     SourceDestCheck?: Value<boolean>
     SubnetId: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class NetworkInterface extends ResourceBase {

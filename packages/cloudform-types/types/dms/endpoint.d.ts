@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export declare class KinesisSettings {
     MessageFormat?: Value<string>;
     StreamArn?: Value<string>;
@@ -55,7 +55,7 @@ export interface EndpointProperties {
     ServerName?: Value<string>;
     ExtraConnectionAttributes?: Value<string>;
     EndpointType: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     EndpointIdentifier?: Value<string>;
     Password?: Value<string>;
     CertificateArn?: Value<string>;

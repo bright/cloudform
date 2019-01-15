@@ -16,7 +16,7 @@ export interface DBParameterGroupProperties {
     Description: Value<string>
     Parameters: {[key: string]: any}
     Family: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

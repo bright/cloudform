@@ -29,7 +29,7 @@ export interface SecurityGroupProperties {
     GroupName?: Value<string>;
     SecurityGroupEgress?: List<Egress>;
     SecurityGroupIngress?: List<Ingress>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VpcId?: Value<string>;
 }
 export default class SecurityGroup extends ResourceBase {

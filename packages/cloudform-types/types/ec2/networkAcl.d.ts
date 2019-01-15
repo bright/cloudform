@@ -1,7 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface NetworkAclProperties {
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VpcId: Value<string>;
 }
 export default class NetworkAcl extends ResourceBase {

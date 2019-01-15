@@ -92,7 +92,7 @@ export interface StackProperties {
     RdsDbInstances?: List<RdsDbInstance>
     ServiceRoleArn: Value<string>
     SourceStackId?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     UseCustomCookbooks?: Value<boolean>
     UseOpsworksSecurityGroups?: Value<boolean>
     VpcId?: Value<string>

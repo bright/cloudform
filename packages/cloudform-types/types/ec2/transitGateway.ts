@@ -28,7 +28,7 @@ export interface TransitGatewayProperties {
     VpnEcmpSupport?: Value<string>
     DnsSupport?: Value<string>
     AmazonSideAsn?: Value<number>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class TransitGateway extends ResourceBase {

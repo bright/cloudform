@@ -89,7 +89,7 @@ export interface ProjectProperties {
     ServiceRole: Value<string>;
     QueuedTimeoutInMinutes?: Value<number>;
     Environment: Environment;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TimeoutInMinutes?: Value<number>;
     Cache?: ProjectCache;
 }

@@ -39,7 +39,7 @@ export interface FunctionProperties {
     ReservedConcurrentExecutions?: Value<number>;
     Role: Value<string>;
     Runtime: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Timeout?: Value<number>;
     TracingConfig?: TracingConfig;
     VpcConfig?: VpcConfig;

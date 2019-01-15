@@ -36,7 +36,7 @@ export interface ReplicationGroupProperties {
     SnapshotRetentionLimit?: Value<number>;
     SnapshotWindow?: Value<string>;
     SnapshottingClusterId?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TransitEncryptionEnabled?: Value<boolean>;
 }
 export default class ReplicationGroup extends ResourceBase {

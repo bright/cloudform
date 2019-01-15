@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LaunchTemplateSpecification {
     LaunchTemplateName?: Value<string>;
@@ -20,7 +20,9 @@ export declare class ComputeResources {
     InstanceTypes: List<Value<string>>;
     Ec2KeyPair?: Value<string>;
     PlacementGroup?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: {
+        [key: string]: any;
+    };
     DesiredvCpus?: Value<number>;
     constructor(properties: ComputeResources);
 }

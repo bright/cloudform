@@ -81,10 +81,6 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
 function propertiesEntries(properties: TypePropertiesMap, useNonNullAssertion: boolean = false): string[] {
     const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
     return map(properties, (property: TypeProperties, propertyName: string) => {
-        if (propertyName === 'Tags') {
-            return `Tags?: ResourceTag[]`
-        }
-
         return `${propertyName}${property.Required ? nonOptionalPostfix : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
     })
 }

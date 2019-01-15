@@ -48,7 +48,7 @@ export interface DomainProperties {
     EncryptionAtRestOptions?: EncryptionAtRestOptions;
     NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
     SnapshotOptions?: SnapshotOptions;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VPCOptions?: VPCOptions;
 }
 export default class Domain extends ResourceBase {

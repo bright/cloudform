@@ -24,7 +24,7 @@ export interface ReplicationSubnetGroupProperties {
     ReplicationSubnetGroupDescription: Value<string>
     ReplicationSubnetGroupIdentifier?: Value<string>
     SubnetIds: List<Value<string>>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class ReplicationSubnetGroup extends ResourceBase {

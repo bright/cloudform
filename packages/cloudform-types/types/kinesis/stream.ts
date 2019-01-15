@@ -34,7 +34,7 @@ export interface StreamProperties {
     RetentionPeriodHours?: Value<number>
     ShardCount: Value<number>
     StreamEncryption?: StreamEncryption
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Stream extends ResourceBase {

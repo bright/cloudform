@@ -6,7 +6,7 @@ export interface DHCPOptionsProperties {
     NetbiosNameServers?: List<Value<string>>;
     NetbiosNodeType?: Value<number>;
     NtpServers?: List<Value<string>>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class DHCPOptions extends ResourceBase {
     constructor(properties?: DHCPOptionsProperties);

@@ -33,7 +33,7 @@ export interface ClusterProperties {
     PubliclyAccessible?: Value<boolean>;
     SnapshotClusterIdentifier?: Value<string>;
     SnapshotIdentifier?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class Cluster extends ResourceBase {

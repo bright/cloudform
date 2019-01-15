@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export declare class GenerateSecretString {
     ExcludeUppercase?: Value<boolean>;
     RequireEachIncludedType?: Value<boolean>;
@@ -18,7 +18,7 @@ export interface SecretProperties {
     KmsKeyId?: Value<string>;
     SecretString?: Value<string>;
     GenerateSecretString?: GenerateSecretString;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
 export default class Secret extends ResourceBase {

@@ -206,7 +206,7 @@ export class OriginCustomHeader {
 
 export interface DistributionProperties {
     DistributionConfig: DistributionConfig
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Distribution extends ResourceBase {

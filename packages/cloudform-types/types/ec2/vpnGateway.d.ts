@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VPNGatewayProperties {
     AmazonSideAsn?: Value<number>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Type: Value<string>;
 }
 export default class VPNGateway extends ResourceBase {

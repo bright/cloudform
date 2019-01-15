@@ -22,7 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export interface TransitGatewayRouteTableProperties {
     TransitGatewayId: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class TransitGatewayRouteTable extends ResourceBase {

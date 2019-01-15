@@ -24,7 +24,7 @@ export interface TransitGatewayAttachmentProperties {
     TransitGatewayId: Value<string>
     VpcId: Value<string>
     SubnetIds: List<Value<string>>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class TransitGatewayAttachment extends ResourceBase {

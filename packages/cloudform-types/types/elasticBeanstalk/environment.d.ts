@@ -21,7 +21,7 @@ export interface EnvironmentProperties {
     OptionSettings?: List<OptionSetting>;
     PlatformArn?: Value<string>;
     SolutionStackName?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TemplateName?: Value<string>;
     Tier?: Tier;
     VersionLabel?: Value<string>;

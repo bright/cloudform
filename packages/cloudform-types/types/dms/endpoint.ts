@@ -93,7 +93,7 @@ export interface EndpointProperties {
     ServerName?: Value<string>
     ExtraConnectionAttributes?: Value<string>
     EndpointType: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     EndpointIdentifier?: Value<string>
     Password?: Value<string>
     CertificateArn?: Value<string>

@@ -13,7 +13,7 @@ export interface CloudFormationProvisionedProductProperties {
     NotificationArns?: List<Value<string>>;
     AcceptLanguage?: Value<string>;
     ProductId?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     ProvisionedProductName?: Value<string>;
     ProvisioningArtifactId?: Value<string>;
 }

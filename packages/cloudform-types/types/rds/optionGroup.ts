@@ -47,7 +47,7 @@ export interface OptionGroupProperties {
     MajorEngineVersion: Value<string>
     OptionConfigurations: List<OptionConfiguration>
     OptionGroupDescription: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class OptionGroup extends ResourceBase {

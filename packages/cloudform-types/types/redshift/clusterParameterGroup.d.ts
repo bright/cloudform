@@ -9,7 +9,7 @@ export interface ClusterParameterGroupProperties {
     Description: Value<string>;
     ParameterGroupFamily: Value<string>;
     Parameters?: List<Parameter>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class ClusterParameterGroup extends ResourceBase {
     static Parameter: typeof Parameter;

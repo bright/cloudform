@@ -26,7 +26,7 @@ export interface DBSubnetGroupProperties {
     DBSubnetGroupDescription: Value<string>
     DBSubnetGroupName?: Value<string>
     SubnetIds: List<Value<string>>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class DBSubnetGroup extends ResourceBase {

@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export declare class WorkspaceProperties {
     ComputeTypeName?: Value<string>;
     RootVolumeSizeGib?: Value<number>;
@@ -12,7 +12,7 @@ export interface WorkspaceProperties {
     BundleId: Value<string>;
     DirectoryId: Value<string>;
     RootVolumeEncryptionEnabled?: Value<boolean>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     UserName: Value<string>;
     UserVolumeEncryptionEnabled?: Value<boolean>;
     VolumeEncryptionKey?: Value<string>;

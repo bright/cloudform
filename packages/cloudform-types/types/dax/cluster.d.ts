@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class SSESpecification {
     SSEEnabled?: Value<boolean>;
@@ -17,7 +17,9 @@ export interface ClusterProperties {
     SecurityGroupIds?: List<Value<string>>;
     NodeType: Value<string>;
     ClusterName?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: {
+        [key: string]: any;
+    };
 }
 export default class Cluster extends ResourceBase {
     static SSESpecification: typeof SSESpecification;

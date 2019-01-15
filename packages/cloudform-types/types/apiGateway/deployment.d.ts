@@ -36,7 +36,7 @@ export declare class StageDescription {
     LoggingLevel?: Value<string>;
     MethodSettings?: List<MethodSetting>;
     MetricsEnabled?: Value<boolean>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     ThrottlingBurstLimit?: Value<number>;
     ThrottlingRateLimit?: Value<number>;
     TracingEnabled?: Value<boolean>;

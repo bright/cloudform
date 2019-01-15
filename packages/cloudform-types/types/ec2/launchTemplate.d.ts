@@ -68,7 +68,7 @@ export declare class ElasticGpuSpecification {
 }
 export declare class TagSpecification {
     ResourceType?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     constructor(properties: TagSpecification);
 }
 export declare class Ipv6Add {

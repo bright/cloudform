@@ -43,7 +43,7 @@ export class ComputeResources {
     InstanceTypes!: List<Value<string>>
     Ec2KeyPair?: Value<string>
     PlacementGroup?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: {[key: string]: any}
     DesiredvCpus?: Value<number>
 
     constructor(properties: ComputeResources) {

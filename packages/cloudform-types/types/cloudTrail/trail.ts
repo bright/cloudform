@@ -51,7 +51,7 @@ export interface TrailProperties {
     S3BucketName: Value<string>
     S3KeyPrefix?: Value<string>
     SnsTopicName?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     TrailName?: Value<string>
 }
 

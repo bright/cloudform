@@ -35,7 +35,7 @@ export interface DBSecurityGroupProperties {
     DBSecurityGroupIngress: List<Ingress>
     EC2VpcId?: Value<string>
     GroupDescription: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class DBSecurityGroup extends ResourceBase {

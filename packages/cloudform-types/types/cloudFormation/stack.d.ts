@@ -5,7 +5,7 @@ export interface StackProperties {
     Parameters?: {
         [key: string]: Value<string>;
     };
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TemplateURL: Value<string>;
     TimeoutInMinutes?: Value<number>;
 }

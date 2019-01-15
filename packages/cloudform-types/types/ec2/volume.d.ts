@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface VolumeProperties {
     AutoEnableIO?: Value<boolean>;
     AvailabilityZone: Value<string>;
@@ -8,7 +8,7 @@ export interface VolumeProperties {
     KmsKeyId?: Value<string>;
     Size?: Value<number>;
     SnapshotId?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VolumeType?: Value<string>;
 }
 export default class Volume extends ResourceBase {

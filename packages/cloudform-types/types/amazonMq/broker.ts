@@ -76,7 +76,7 @@ export interface BrokerProperties {
     DeploymentMode: Value<string>
     EngineType: Value<string>
     PubliclyAccessible: Value<boolean>
-    Tags?: ResourceTag[]
+    Tags?: List<TagsEntry>
 }
 
 export default class Broker extends ResourceBase {

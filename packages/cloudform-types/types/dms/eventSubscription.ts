@@ -27,7 +27,7 @@ export interface EventSubscriptionProperties {
     SubscriptionName?: Value<string>
     SnsTopicArn: Value<string>
     SourceIds?: List<Value<string>>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class EventSubscription extends ResourceBase {

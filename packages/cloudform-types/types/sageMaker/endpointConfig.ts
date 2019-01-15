@@ -26,7 +26,7 @@ export interface EndpointConfigProperties {
     ProductionVariants: List<ProductionVariant>
     KmsKeyId?: Value<string>
     EndpointConfigName?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class EndpointConfig extends ResourceBase {

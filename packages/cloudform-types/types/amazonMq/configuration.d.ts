@@ -1,5 +1,5 @@
-import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { ResourceBase } from '../resource';
+import { Value, List } from '../dataTypes';
 export declare class TagsEntry {
     Value: Value<string>;
     Key: Value<string>;
@@ -10,7 +10,7 @@ export interface ConfigurationProperties {
     Description?: Value<string>;
     EngineType: Value<string>;
     Data: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<TagsEntry>;
     Name: Value<string>;
 }
 export default class Configuration extends ResourceBase {

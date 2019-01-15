@@ -46,7 +46,7 @@ export interface LoadBalancerProperties {
     SecurityGroups?: List<Value<string>>
     SubnetMappings?: List<SubnetMapping>
     Subnets?: List<Value<string>>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     Type?: Value<string>
 }
 

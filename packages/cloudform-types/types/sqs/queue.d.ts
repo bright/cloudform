@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface QueueProperties {
     ContentBasedDeduplication?: Value<boolean>;
     DelaySeconds?: Value<number>;
@@ -13,7 +13,7 @@ export interface QueueProperties {
     RedrivePolicy?: {
         [key: string]: any;
     };
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VisibilityTimeout?: Value<number>;
 }
 export default class Queue extends ResourceBase {

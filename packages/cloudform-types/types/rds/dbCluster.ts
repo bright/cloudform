@@ -56,7 +56,7 @@ export interface DBClusterProperties {
     SnapshotIdentifier?: Value<string>
     SourceRegion?: Value<string>
     StorageEncrypted?: Value<boolean>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     VpcSecurityGroupIds?: List<Value<string>>
 }
 

@@ -1,6 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
+import { List } from '../dataTypes';
 export interface InternetGatewayProperties {
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class InternetGateway extends ResourceBase {
     constructor(properties?: InternetGatewayProperties);

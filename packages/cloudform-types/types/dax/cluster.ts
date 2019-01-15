@@ -30,7 +30,7 @@ export interface ClusterProperties {
     SecurityGroupIds?: List<Value<string>>
     NodeType: Value<string>
     ClusterName?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: {[key: string]: any}
 }
 
 export default class Cluster extends ResourceBase {

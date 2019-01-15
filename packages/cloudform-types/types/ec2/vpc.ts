@@ -27,7 +27,7 @@ export interface VPCProperties {
     EnableDnsHostnames?: Value<boolean>
     EnableDnsSupport?: Value<boolean>
     InstanceTenancy?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class VPC extends ResourceBase {

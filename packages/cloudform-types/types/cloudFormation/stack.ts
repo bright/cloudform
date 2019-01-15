@@ -25,7 +25,7 @@ import {Value, List} from '../dataTypes'
 export interface StackProperties {
     NotificationARNs?: List<Value<string>>
     Parameters?: {[key: string]: Value<string>}
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     TemplateURL: Value<string>
     TimeoutInMinutes?: Value<number>
 }

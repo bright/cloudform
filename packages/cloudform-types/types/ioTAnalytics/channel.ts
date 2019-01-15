@@ -22,7 +22,7 @@ export class RetentionPeriod {
 export interface ChannelProperties {
     ChannelName?: Value<string>
     RetentionPeriod?: RetentionPeriod
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Channel extends ResourceBase {

@@ -29,7 +29,7 @@ export declare class InstanceNetworkInterfaceSpecification {
 }
 export declare class SpotFleetTagSpecification {
     ResourceType?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     constructor(properties: SpotFleetTagSpecification);
 }
 export declare class PrivateIpAddressSpecification {

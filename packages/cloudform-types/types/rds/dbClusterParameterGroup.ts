@@ -26,7 +26,7 @@ export interface DBClusterParameterGroupProperties {
     Description: Value<string>
     Family: Value<string>
     Parameters: {[key: string]: any}
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class DBClusterParameterGroup extends ResourceBase {

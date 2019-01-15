@@ -1,9 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface EndpointProperties {
     EndpointName?: Value<string>;
     EndpointConfigName: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Endpoint extends ResourceBase {
     constructor(properties?: EndpointProperties);

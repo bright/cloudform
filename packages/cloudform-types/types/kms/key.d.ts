@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface KeyProperties {
     Description?: Value<string>;
     EnableKeyRotation?: Value<boolean>;
@@ -9,7 +9,7 @@ export interface KeyProperties {
     };
     KeyUsage?: Value<string>;
     PendingWindowInDays?: Value<number>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Key extends ResourceBase {
     constructor(properties?: KeyProperties);

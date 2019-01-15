@@ -1,9 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface NatGatewayProperties {
     AllocationId: Value<string>;
     SubnetId: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class NatGateway extends ResourceBase {
     constructor(properties?: NatGatewayProperties);

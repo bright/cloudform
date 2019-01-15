@@ -14,7 +14,7 @@ export interface ReplicationInstanceProperties {
     ReplicationInstanceClass: Value<string>;
     PubliclyAccessible?: Value<boolean>;
     MultiAZ?: Value<boolean>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class ReplicationInstance extends ResourceBase {
     constructor(properties?: ReplicationInstanceProperties);

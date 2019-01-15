@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class FleetLaunchTemplateSpecificationRequest {
     LaunchTemplateName?: Value<string>;
@@ -38,7 +38,7 @@ export declare class FleetLaunchTemplateOverridesRequest {
 }
 export declare class TagSpecification {
     ResourceType?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<TagRequest>;
     constructor(properties: TagSpecification);
 }
 export declare class SpotOptionsRequest {

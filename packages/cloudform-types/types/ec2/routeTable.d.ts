@@ -1,7 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface RouteTableProperties {
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VpcId: Value<string>;
 }
 export default class RouteTable extends ResourceBase {

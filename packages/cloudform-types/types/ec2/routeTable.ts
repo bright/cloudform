@@ -23,7 +23,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface RouteTableProperties {
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     VpcId: Value<string>
 }
 

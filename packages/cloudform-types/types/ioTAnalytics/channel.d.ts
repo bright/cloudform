@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export declare class RetentionPeriod {
     NumberOfDays?: Value<number>;
     Unlimited?: Value<boolean>;
@@ -8,7 +8,7 @@ export declare class RetentionPeriod {
 export interface ChannelProperties {
     ChannelName?: Value<string>;
     RetentionPeriod?: RetentionPeriod;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Channel extends ResourceBase {
     static RetentionPeriod: typeof RetentionPeriod;

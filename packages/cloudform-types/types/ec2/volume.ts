@@ -30,7 +30,7 @@ export interface VolumeProperties {
     KmsKeyId?: Value<string>
     Size?: Value<number>
     SnapshotId?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     VolumeType?: Value<string>
 }
 

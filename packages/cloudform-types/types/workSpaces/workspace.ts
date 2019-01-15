@@ -36,7 +36,7 @@ export interface WorkspaceProperties {
     BundleId: Value<string>
     DirectoryId: Value<string>
     RootVolumeEncryptionEnabled?: Value<boolean>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     UserName: Value<string>
     UserVolumeEncryptionEnabled?: Value<boolean>
     VolumeEncryptionKey?: Value<string>

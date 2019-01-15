@@ -242,7 +242,7 @@ export interface BucketProperties {
     NotificationConfiguration?: NotificationConfiguration;
     PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
     ReplicationConfiguration?: ReplicationConfiguration;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VersioningConfiguration?: VersioningConfiguration;
     WebsiteConfiguration?: WebsiteConfiguration;
 }

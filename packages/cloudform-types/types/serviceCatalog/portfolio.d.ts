@@ -1,11 +1,11 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface PortfolioProperties {
     ProviderName: Value<string>;
     Description?: Value<string>;
     DisplayName: Value<string>;
     AcceptLanguage?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Portfolio extends ResourceBase {
     constructor(properties?: PortfolioProperties);

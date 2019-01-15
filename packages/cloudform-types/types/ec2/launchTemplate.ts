@@ -123,7 +123,7 @@ export class ElasticGpuSpecification {
 
 export class TagSpecification {
     ResourceType?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)

@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class User {
     Username: Value<string>;
@@ -42,7 +42,7 @@ export interface BrokerProperties {
     DeploymentMode: Value<string>;
     EngineType: Value<string>;
     PubliclyAccessible: Value<boolean>;
-    Tags?: ResourceTag[];
+    Tags?: List<TagsEntry>;
 }
 export default class Broker extends ResourceBase {
     static User: typeof User;

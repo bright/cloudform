@@ -111,7 +111,7 @@ export interface InstanceProperties {
     SourceDestCheck?: Value<boolean>;
     SsmAssociations?: List<SsmAssociation>;
     SubnetId?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Tenancy?: Value<string>;
     UserData?: Value<string>;
     Volumes?: List<Volume>;

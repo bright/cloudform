@@ -62,7 +62,7 @@ export interface LayerProperties {
     Packages?: List<Value<string>>;
     Shortname: Value<string>;
     StackId: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Type: Value<string>;
     UseEbsOptimizedInstances?: Value<boolean>;
     VolumeConfigurations?: List<VolumeConfiguration>;

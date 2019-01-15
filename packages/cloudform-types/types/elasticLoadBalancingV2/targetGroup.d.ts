@@ -26,7 +26,7 @@ export interface TargetGroupProperties {
     Name?: Value<string>;
     Port: Value<number>;
     Protocol: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TargetGroupAttributes?: List<TargetGroupAttribute>;
     TargetType?: Value<string>;
     Targets?: List<TargetDescription>;

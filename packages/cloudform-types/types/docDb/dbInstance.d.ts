@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface DBInstanceProperties {
     DBInstanceClass: Value<string>;
     DBClusterIdentifier: Value<string>;
@@ -7,7 +7,7 @@ export interface DBInstanceProperties {
     PreferredMaintenanceWindow?: Value<string>;
     AutoMinorVersionUpgrade?: Value<boolean>;
     DBInstanceIdentifier?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class DBInstance extends ResourceBase {
     constructor(properties?: DBInstanceProperties);

@@ -69,7 +69,7 @@ export interface LoadBalancerProperties {
     Scheme?: Value<string>;
     SecurityGroups?: List<Value<string>>;
     Subnets?: List<Value<string>>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class LoadBalancer extends ResourceBase {
     static HealthCheck: typeof HealthCheck;

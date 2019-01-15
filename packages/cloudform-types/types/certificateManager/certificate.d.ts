@@ -9,7 +9,7 @@ export interface CertificateProperties {
     DomainName: Value<string>;
     DomainValidationOptions?: List<DomainValidationOption>;
     SubjectAlternativeNames?: List<Value<string>>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     ValidationMethod?: Value<string>;
 }
 export default class Certificate extends ResourceBase {

@@ -147,7 +147,7 @@ export interface TaskDefinitionProperties {
     NetworkMode?: Value<string>;
     PlacementConstraints?: List<TaskDefinitionPlacementConstraint>;
     RequiresCompatibilities?: List<Value<string>>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TaskRoleArn?: Value<string>;
     Volumes?: List<Volume>;
 }

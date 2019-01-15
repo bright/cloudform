@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LaunchTemplateOverrides {
     InstanceType?: Value<string>;
@@ -74,7 +74,7 @@ export interface AutoScalingGroupProperties {
     NotificationConfigurations?: List<NotificationConfiguration>;
     PlacementGroup?: Value<string>;
     ServiceLinkedRoleARN?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<TagProperty>;
     TargetGroupARNs?: List<Value<string>>;
     TerminationPolicies?: List<Value<string>>;
     VPCZoneIdentifier?: List<Value<string>>;

@@ -28,7 +28,7 @@ export interface ConfigurationProperties {
     Description?: Value<string>
     EngineType: Value<string>
     Data: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<TagsEntry>
     Name: Value<string>
 }
 

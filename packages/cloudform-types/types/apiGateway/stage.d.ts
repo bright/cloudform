@@ -39,7 +39,7 @@ export interface StageProperties {
     MethodSettings?: List<MethodSetting>;
     RestApiId: Value<string>;
     StageName?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TracingEnabled?: Value<boolean>;
     Variables?: {
         [key: string]: Value<string>;

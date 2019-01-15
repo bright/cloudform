@@ -25,7 +25,7 @@ import {Value, List} from '../dataTypes'
 export interface DocumentProperties {
     Content: {[key: string]: any}
     DocumentType?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Document extends ResourceBase {

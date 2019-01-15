@@ -54,7 +54,7 @@ export interface ServiceProperties {
     SchedulingStrategy?: Value<string>;
     ServiceName?: Value<string>;
     ServiceRegistries?: List<ServiceRegistry>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     TaskDefinition: Value<string>;
 }
 export default class Service extends ResourceBase {

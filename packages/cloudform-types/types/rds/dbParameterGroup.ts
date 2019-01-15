@@ -26,7 +26,7 @@ export interface DBParameterGroupProperties {
     Description: Value<string>
     Family: Value<string>
     Parameters?: {[key: string]: Value<string>}
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class DBParameterGroup extends ResourceBase {

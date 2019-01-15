@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export interface TransitGatewayProperties {
     DefaultRouteTablePropagation?: Value<string>;
     Description?: Value<string>;
@@ -8,7 +8,7 @@ export interface TransitGatewayProperties {
     VpnEcmpSupport?: Value<string>;
     DnsSupport?: Value<string>;
     AmazonSideAsn?: Value<number>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class TransitGateway extends ResourceBase {
     constructor(properties?: TransitGatewayProperties);

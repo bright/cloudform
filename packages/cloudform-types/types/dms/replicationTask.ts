@@ -28,7 +28,7 @@ export interface ReplicationTaskProperties {
     MigrationType: Value<string>
     TargetEndpointArn: Value<string>
     ReplicationInstanceArn: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     CdcStartTime?: Value<number>
 }
 

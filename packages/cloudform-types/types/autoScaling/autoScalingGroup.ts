@@ -130,7 +130,7 @@ export interface AutoScalingGroupProperties {
     NotificationConfigurations?: List<NotificationConfiguration>
     PlacementGroup?: Value<string>
     ServiceLinkedRoleARN?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<TagProperty>
     TargetGroupARNs?: List<Value<string>>
     TerminationPolicies?: List<Value<string>>
     VPCZoneIdentifier?: List<Value<string>>

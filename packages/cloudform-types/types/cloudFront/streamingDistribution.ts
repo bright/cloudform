@@ -63,7 +63,7 @@ export class StreamingDistributionConfig {
 
 export interface StreamingDistributionProperties {
     StreamingDistributionConfig: StreamingDistributionConfig
-    Tags?: ResourceTag[]
+    Tags: List<ResourceTag>
 }
 
 export default class StreamingDistribution extends ResourceBase {

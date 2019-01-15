@@ -75,7 +75,7 @@ export interface DBInstanceProperties {
     SourceRegion?: Value<string>
     StorageEncrypted?: Value<boolean>
     StorageType?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     Timezone?: Value<string>
     UseDefaultProcessorFeatures?: Value<boolean>
     VPCSecurityGroups?: List<Value<string>>

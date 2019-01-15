@@ -41,7 +41,7 @@ export interface SecretProperties {
     KmsKeyId?: Value<string>
     SecretString?: Value<string>
     GenerateSecretString?: GenerateSecretString
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

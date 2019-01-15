@@ -14,7 +14,7 @@ export interface DBClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>;
     DBClusterParameterGroupName?: Value<string>;
     BackupRetentionPeriod?: Value<number>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class DBCluster extends ResourceBase {
     constructor(properties?: DBClusterProperties);

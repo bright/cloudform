@@ -29,7 +29,7 @@ export interface KeyProperties {
     KeyPolicy: {[key: string]: any}
     KeyUsage?: Value<string>
     PendingWindowInDays?: Value<number>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Key extends ResourceBase {

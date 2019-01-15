@@ -121,7 +121,7 @@ export interface TableProperties {
     SSESpecification?: SSESpecification
     StreamSpecification?: StreamSpecification
     TableName?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     TimeToLiveSpecification?: TimeToLiveSpecification
 }
 

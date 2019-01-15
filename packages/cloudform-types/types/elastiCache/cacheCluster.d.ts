@@ -20,7 +20,7 @@ export interface CacheClusterProperties {
     SnapshotName?: Value<string>;
     SnapshotRetentionLimit?: Value<number>;
     SnapshotWindow?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class CacheCluster extends ResourceBase {

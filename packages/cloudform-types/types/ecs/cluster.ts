@@ -24,7 +24,7 @@ import {Value, List} from '../dataTypes'
 
 export interface ClusterProperties {
     ClusterName?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Cluster extends ResourceBase {

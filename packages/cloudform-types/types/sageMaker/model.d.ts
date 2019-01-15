@@ -20,7 +20,7 @@ export interface ModelProperties {
     ModelName?: Value<string>;
     VpcConfig?: VpcConfig;
     Containers?: List<ContainerDefinition>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Model extends ResourceBase {
     static VpcConfig: typeof VpcConfig;

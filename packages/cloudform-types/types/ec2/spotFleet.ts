@@ -65,7 +65,7 @@ export class InstanceNetworkInterfaceSpecification {
 
 export class SpotFleetTagSpecification {
     ResourceType?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 
     constructor(properties: SpotFleetTagSpecification) {
         Object.assign(this, properties)

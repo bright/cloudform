@@ -82,7 +82,7 @@ export declare class Filter {
 }
 export interface PipelineProperties {
     PipelineName?: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     PipelineActivities: List<Activity>;
 }
 export default class Pipeline extends ResourceBase {

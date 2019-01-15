@@ -8,7 +8,7 @@ export declare class VpnTunnelOptionsSpecification {
 export interface VPNConnectionProperties {
     CustomerGatewayId: Value<string>;
     StaticRoutesOnly?: Value<boolean>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Type: Value<string>;
     VpnGatewayId: Value<string>;
     VpnTunnelOptionsSpecifications?: List<VpnTunnelOptionsSpecification>;

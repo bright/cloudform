@@ -3,7 +3,7 @@ import { Value, List } from '../dataTypes';
 export interface ClusterSubnetGroupProperties {
     Description: Value<string>;
     SubnetIds: List<Value<string>>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class ClusterSubnetGroup extends ResourceBase {
     constructor(properties?: ClusterSubnetGroupProperties);

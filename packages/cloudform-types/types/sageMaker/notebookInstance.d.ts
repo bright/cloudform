@@ -10,7 +10,7 @@ export interface NotebookInstanceProperties {
     LifecycleConfigName?: Value<string>;
     SecurityGroupIds?: List<Value<string>>;
     RoleArn: Value<string>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class NotebookInstance extends ResourceBase {
     constructor(properties?: NotebookInstanceProperties);

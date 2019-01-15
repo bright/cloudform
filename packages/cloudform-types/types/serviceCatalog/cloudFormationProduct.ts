@@ -37,7 +37,7 @@ export interface CloudFormationProductProperties {
     SupportEmail?: Value<string>
     AcceptLanguage?: Value<string>
     SupportUrl?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     Name: Value<string>
     ProvisioningArtifactParameters: List<ProvisioningArtifactProperties>
 }

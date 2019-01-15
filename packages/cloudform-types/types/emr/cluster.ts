@@ -316,7 +316,7 @@ export interface ClusterProperties {
     SecurityConfiguration?: Value<string>
     ServiceRole: Value<string>
     Steps?: List<StepConfig>
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
     VisibleToAllUsers?: Value<boolean>
 }
 

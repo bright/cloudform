@@ -10,7 +10,7 @@ export interface ResolverRuleProperties {
     DomainName: Value<string>;
     RuleType: Value<string>;
     TargetIps?: List<TargetAddress>;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
 export default class ResolverRule extends ResourceBase {

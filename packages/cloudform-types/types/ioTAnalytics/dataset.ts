@@ -133,7 +133,7 @@ export interface DatasetProperties {
     DatasetName?: Value<string>
     Triggers?: List<Trigger>
     RetentionPeriod?: RetentionPeriod
-    Tags?: ResourceTag[]
+    Tags?: List<ResourceTag>
 }
 
 export default class Dataset extends ResourceBase {

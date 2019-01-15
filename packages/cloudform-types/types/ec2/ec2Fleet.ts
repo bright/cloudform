@@ -82,7 +82,7 @@ export class FleetLaunchTemplateOverridesRequest {
 
 export class TagSpecification {
     ResourceType?: Value<string>
-    Tags?: ResourceTag[]
+    Tags?: List<TagRequest>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)

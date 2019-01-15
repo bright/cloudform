@@ -1,5 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
 export declare class StreamEncryption {
     EncryptionType: Value<string>;
     KeyId: Value<string>;
@@ -10,7 +10,7 @@ export interface StreamProperties {
     RetentionPeriodHours?: Value<number>;
     ShardCount: Value<number>;
     StreamEncryption?: StreamEncryption;
-    Tags?: ResourceTag[];
+    Tags?: List<ResourceTag>;
 }
 export default class Stream extends ResourceBase {
     static StreamEncryption: typeof StreamEncryption;

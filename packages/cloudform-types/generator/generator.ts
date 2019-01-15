@@ -66,8 +66,8 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
     }
 
     let primitiveType = property[typeSuffix === 'Type' ? 'PrimitiveType' : 'PrimitiveItemType']!.toLowerCase()
-    if (primitiveType === 'json') {
-        return 'any'
+    if (['json', 'map'].includes(primitiveType)) {
+        return '{[key: string]: any}'
     }
     if (['integer', 'double', 'long'].includes(primitiveType)) {
         primitiveType = 'number'

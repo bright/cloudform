@@ -62,7 +62,7 @@ exec('npm bin', (err, npmBin) => {
     }
 
     const tsNodePath = path.join(npmBin.trim(), 'ts-node')
-    exec(`${tsNodePath} -e "import t from '${path.resolve(resolvedTemplatePath)}'; console.log(t)"`, (err, template, stderr) => {
+    exec(`${tsNodePath} -e "import t from '${resolvedTemplatePath}'; console.log(t)"`, (err, template, stderr) => {
         if (err) {
             console.error(err)
             return

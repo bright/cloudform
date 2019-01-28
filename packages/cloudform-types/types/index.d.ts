@@ -548,18 +548,18 @@ export declare const Lambda: {
     EventSourceMapping: typeof LambdaEventSourceMapping;
     LayerVersion: typeof LambdaLayerVersion;
     Alias: typeof LambdaAlias;
+    LayerVersionPermission: typeof LambdaLayerVersionPermission;
     Function: typeof LambdaFunction;
     Version: typeof LambdaVersion;
     Permission: typeof LambdaPermission;
-    LayerVersionPermission: typeof LambdaLayerVersionPermission;
 };
 import LambdaEventSourceMapping from './lambda/eventSourceMapping';
 import LambdaLayerVersion from './lambda/layerVersion';
 import LambdaAlias from './lambda/alias';
+import LambdaLayerVersionPermission from './lambda/layerVersionPermission';
 import LambdaFunction from './lambda/function';
 import LambdaVersion from './lambda/version';
 import LambdaPermission from './lambda/permission';
-import LambdaLayerVersionPermission from './lambda/layerVersionPermission';
 export declare const CertificateManager: {
     Certificate: typeof CertificateManagerCertificate;
 };
@@ -598,6 +598,10 @@ export declare const Batch: {
 import BatchJobDefinition from './batch/jobDefinition';
 import BatchJobQueue from './batch/jobQueue';
 import BatchComputeEnvironment from './batch/computeEnvironment';
+export declare const OpsWorksCM: {
+    Server: typeof OpsWorksCMServer;
+};
+import OpsWorksCMServer from './opsWorksCm/server';
 export declare const ElasticLoadBalancing: {
     LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;
 };
@@ -1151,10 +1155,10 @@ declare const _default: {
         EventSourceMapping: typeof LambdaEventSourceMapping;
         LayerVersion: typeof LambdaLayerVersion;
         Alias: typeof LambdaAlias;
+        LayerVersionPermission: typeof LambdaLayerVersionPermission;
         Function: typeof LambdaFunction;
         Version: typeof LambdaVersion;
         Permission: typeof LambdaPermission;
-        LayerVersionPermission: typeof LambdaLayerVersionPermission;
     };
     CertificateManager: {
         Certificate: typeof CertificateManagerCertificate;
@@ -1179,6 +1183,9 @@ declare const _default: {
         JobDefinition: typeof BatchJobDefinition;
         JobQueue: typeof BatchJobQueue;
         ComputeEnvironment: typeof BatchComputeEnvironment;
+    };
+    OpsWorksCM: {
+        Server: typeof OpsWorksCMServer;
     };
     ElasticLoadBalancing: {
         LoadBalancer: typeof ElasticLoadBalancingLoadBalancer;

@@ -17,6 +17,11 @@ export declare class LogsConfig {
     S3Logs?: S3LogsConfig;
     constructor(properties: LogsConfig);
 }
+export declare class RegistryCredential {
+    Credential: Value<string>;
+    CredentialProvider: Value<string>;
+    constructor(properties: RegistryCredential);
+}
 export declare class SourceAuth {
     Type: Value<string>;
     Resource?: Value<string>;
@@ -26,7 +31,9 @@ export declare class Environment {
     Type: Value<string>;
     EnvironmentVariables?: List<EnvironmentVariable>;
     PrivilegedMode?: Value<boolean>;
+    ImagePullCredentialsType?: Value<string>;
     Image: Value<string>;
+    RegistryCredential?: RegistryCredential;
     ComputeType: Value<string>;
     Certificate?: Value<string>;
     constructor(properties: Environment);
@@ -96,6 +103,7 @@ export interface ProjectProperties {
 export default class Project extends ResourceBase {
     static Artifacts: typeof Artifacts;
     static LogsConfig: typeof LogsConfig;
+    static RegistryCredential: typeof RegistryCredential;
     static SourceAuth: typeof SourceAuth;
     static Environment: typeof Environment;
     static CloudWatchLogsConfig: typeof CloudWatchLogsConfig;

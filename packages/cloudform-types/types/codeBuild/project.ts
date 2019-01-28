@@ -1,7 +1,7 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.19.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.19.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.19.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -32,6 +32,15 @@ export class LogsConfig {
     }
 }
 
+export class RegistryCredential {
+    Credential!: Value<string>
+    CredentialProvider!: Value<string>
+
+    constructor(properties: RegistryCredential) {
+        Object.assign(this, properties)
+    }
+}
+
 export class SourceAuth {
     Type!: Value<string>
     Resource?: Value<string>
@@ -45,7 +54,9 @@ export class Environment {
     Type!: Value<string>
     EnvironmentVariables?: List<EnvironmentVariable>
     PrivilegedMode?: Value<boolean>
+    ImagePullCredentialsType?: Value<string>
     Image!: Value<string>
+    RegistryCredential?: RegistryCredential
     ComputeType!: Value<string>
     Certificate?: Value<string>
 
@@ -148,6 +159,7 @@ export interface ProjectProperties {
 export default class Project extends ResourceBase {
     static Artifacts = Artifacts
     static LogsConfig = LogsConfig
+    static RegistryCredential = RegistryCredential
     static SourceAuth = SourceAuth
     static Environment = Environment
     static CloudWatchLogsConfig = CloudWatchLogsConfig

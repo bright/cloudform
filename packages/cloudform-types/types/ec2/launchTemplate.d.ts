@@ -26,6 +26,11 @@ export declare class LaunchTemplateData {
     RamDiskId?: Value<string>;
     Monitoring?: Monitoring;
     CreditSpecification?: CreditSpecification;
+    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>;
+    HibernationOptions?: HibernationOptions;
+    LicenseSpecifications?: List<LicenseSpecification>;
+    CpuOptions?: CpuOptions;
+    CapacityReservationSpecification?: CapacityReservationSpecification;
     constructor(properties: LaunchTemplateData);
 }
 export declare class InstanceMarketOptions {
@@ -105,6 +110,35 @@ export declare class Ebs {
     DeleteOnTermination?: Value<boolean>;
     constructor(properties: Ebs);
 }
+export declare class CapacityReservationPreference {
+    constructor(properties: CapacityReservationPreference);
+}
+export declare class CapacityReservationSpecification {
+    CapacityReservationPreference?: CapacityReservationPreference;
+    CapacityReservationTarget?: CapacityReservationTarget;
+    constructor(properties: CapacityReservationSpecification);
+}
+export declare class CapacityReservationTarget {
+    CapacityReservationId?: Value<string>;
+    constructor(properties: CapacityReservationTarget);
+}
+export declare class LicenseSpecification {
+    LicenseConfigurationArn?: Value<string>;
+    constructor(properties: LicenseSpecification);
+}
+export declare class CpuOptions {
+    ThreadsPerCore?: Value<number>;
+    CoreCount?: Value<number>;
+    constructor(properties: CpuOptions);
+}
+export declare class HibernationOptions {
+    Configured?: Value<boolean>;
+    constructor(properties: HibernationOptions);
+}
+export declare class LaunchTemplateElasticInferenceAccelerator {
+    Type?: Value<string>;
+    constructor(properties: LaunchTemplateElasticInferenceAccelerator);
+}
 export interface LaunchTemplateProperties {
     LaunchTemplateName?: Value<string>;
     LaunchTemplateData?: LaunchTemplateData;
@@ -124,5 +158,12 @@ export default class LaunchTemplate extends ResourceBase {
     static IamInstanceProfile: typeof IamInstanceProfile;
     static NetworkInterface: typeof NetworkInterface;
     static Ebs: typeof Ebs;
+    static CapacityReservationPreference: typeof CapacityReservationPreference;
+    static CapacityReservationSpecification: typeof CapacityReservationSpecification;
+    static CapacityReservationTarget: typeof CapacityReservationTarget;
+    static LicenseSpecification: typeof LicenseSpecification;
+    static CpuOptions: typeof CpuOptions;
+    static HibernationOptions: typeof HibernationOptions;
+    static LaunchTemplateElasticInferenceAccelerator: typeof LaunchTemplateElasticInferenceAccelerator;
     constructor(properties?: LaunchTemplateProperties);
 }

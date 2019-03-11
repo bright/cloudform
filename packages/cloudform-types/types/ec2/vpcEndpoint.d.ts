@@ -9,7 +9,7 @@ export interface VPCEndpointProperties {
     SecurityGroupIds?: List<Value<string>>;
     ServiceName: Value<string>;
     SubnetIds?: List<Value<string>>;
-    VPCEndpointType?: Value<string>;
+    VpcEndpointType?: Value<string>;
     VpcId: Value<string>;
 }
 export default class VPCEndpoint extends ResourceBase {

@@ -1,19 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class MappingParameters {
-    JSONMappingParameters?: JSONMappingParameters;
-    CSVMappingParameters?: CSVMappingParameters;
-    constructor(properties: MappingParameters);
-}
 export declare class CSVMappingParameters {
     RecordRowDelimiter: Value<string>;
     RecordColumnDelimiter: Value<string>;
     constructor(properties: CSVMappingParameters);
-}
-export declare class KinesisStreamsInput {
-    ResourceARN: Value<string>;
-    RoleARN: Value<string>;
-    constructor(properties: KinesisStreamsInput);
 }
 export declare class Input {
     NamePrefix: Value<string>;
@@ -29,6 +19,20 @@ export declare class InputSchema {
     RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
     constructor(properties: InputSchema);
+}
+export declare class JSONMappingParameters {
+    RecordRowPath: Value<string>;
+    constructor(properties: JSONMappingParameters);
+}
+export declare class MappingParameters {
+    JSONMappingParameters?: JSONMappingParameters;
+    CSVMappingParameters?: CSVMappingParameters;
+    constructor(properties: MappingParameters);
+}
+export declare class KinesisStreamsInput {
+    ResourceARN: Value<string>;
+    RoleARN: Value<string>;
+    constructor(properties: KinesisStreamsInput);
 }
 export declare class RecordColumn {
     Mapping?: Value<string>;
@@ -54,10 +58,6 @@ export declare class InputProcessingConfiguration {
     InputLambdaProcessor?: InputLambdaProcessor;
     constructor(properties: InputProcessingConfiguration);
 }
-export declare class JSONMappingParameters {
-    RecordRowPath: Value<string>;
-    constructor(properties: JSONMappingParameters);
-}
 export declare class InputLambdaProcessor {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
@@ -70,17 +70,17 @@ export interface ApplicationProperties {
     ApplicationCode?: Value<string>;
 }
 export default class Application extends ResourceBase {
-    static MappingParameters: typeof MappingParameters;
     static CSVMappingParameters: typeof CSVMappingParameters;
-    static KinesisStreamsInput: typeof KinesisStreamsInput;
     static Input: typeof Input;
     static InputSchema: typeof InputSchema;
+    static JSONMappingParameters: typeof JSONMappingParameters;
+    static MappingParameters: typeof MappingParameters;
+    static KinesisStreamsInput: typeof KinesisStreamsInput;
     static RecordColumn: typeof RecordColumn;
     static RecordFormat: typeof RecordFormat;
     static KinesisFirehoseInput: typeof KinesisFirehoseInput;
     static InputParallelism: typeof InputParallelism;
     static InputProcessingConfiguration: typeof InputProcessingConfiguration;
-    static JSONMappingParameters: typeof JSONMappingParameters;
     static InputLambdaProcessor: typeof InputLambdaProcessor;
     constructor(properties?: ApplicationProperties);
 }

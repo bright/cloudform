@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ApplicationSettings {
     SettingsGroup?: Value<string>;
@@ -27,6 +27,7 @@ export interface StackProperties {
     RedirectURL?: Value<string>;
     Name?: Value<string>;
     FeedbackURL?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Stack extends ResourceBase {
     static ApplicationSettings: typeof ApplicationSettings;

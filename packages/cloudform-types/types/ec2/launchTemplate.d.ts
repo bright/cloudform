@@ -9,28 +9,28 @@ export declare class LaunchTemplateData {
     SecurityGroups?: List<Value<string>>;
     TagSpecifications?: List<TagSpecification>;
     UserData?: Value<string>;
-    InstanceInitiatedShutdownBehavior?: Value<string>;
     BlockDeviceMappings?: List<BlockDeviceMapping>;
     IamInstanceProfile?: IamInstanceProfile;
     KernelId?: Value<string>;
-    SecurityGroupIds?: List<Value<string>>;
     EbsOptimized?: Value<boolean>;
-    KeyName?: Value<string>;
-    DisableApiTermination?: Value<boolean>;
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>;
+    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>;
     Placement?: Placement;
-    InstanceMarketOptions?: InstanceMarketOptions;
     NetworkInterfaces?: List<NetworkInterface>;
     ImageId?: Value<string>;
     InstanceType?: Value<string>;
-    RamDiskId?: Value<string>;
     Monitoring?: Monitoring;
-    CreditSpecification?: CreditSpecification;
-    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>;
     HibernationOptions?: HibernationOptions;
     LicenseSpecifications?: List<LicenseSpecification>;
+    InstanceInitiatedShutdownBehavior?: Value<string>;
     CpuOptions?: CpuOptions;
+    SecurityGroupIds?: List<Value<string>>;
+    KeyName?: Value<string>;
+    DisableApiTermination?: Value<boolean>;
+    InstanceMarketOptions?: InstanceMarketOptions;
+    RamDiskId?: Value<string>;
     CapacityReservationSpecification?: CapacityReservationSpecification;
+    CreditSpecification?: CreditSpecification;
     constructor(properties: LaunchTemplateData);
 }
 export declare class InstanceMarketOptions {
@@ -67,6 +67,12 @@ export declare class SpotOptions {
     MaxPrice?: Value<string>;
     constructor(properties: SpotOptions);
 }
+export declare type CapacityReservationPreference = Value<string>;
+export declare class CapacityReservationSpecification {
+    CapacityReservationPreference?: CapacityReservationPreference;
+    CapacityReservationTarget?: CapacityReservationTarget;
+    constructor(properties: CapacityReservationSpecification);
+}
 export declare class ElasticGpuSpecification {
     Type?: Value<string>;
     constructor(properties: ElasticGpuSpecification);
@@ -85,6 +91,10 @@ export declare class IamInstanceProfile {
     Name?: Value<string>;
     constructor(properties: IamInstanceProfile);
 }
+export declare class CapacityReservationTarget {
+    CapacityReservationId?: Value<string>;
+    constructor(properties: CapacityReservationTarget);
+}
 export declare class NetworkInterface {
     Description?: Value<string>;
     PrivateIpAddress?: Value<string>;
@@ -100,6 +110,15 @@ export declare class NetworkInterface {
     DeleteOnTermination?: Value<boolean>;
     constructor(properties: NetworkInterface);
 }
+export declare class LicenseSpecification {
+    LicenseConfigurationArn?: Value<string>;
+    constructor(properties: LicenseSpecification);
+}
+export declare class CpuOptions {
+    ThreadsPerCore?: Value<number>;
+    CoreCount?: Value<number>;
+    constructor(properties: CpuOptions);
+}
 export declare class Ebs {
     SnapshotId?: Value<string>;
     VolumeType?: Value<string>;
@@ -109,27 +128,6 @@ export declare class Ebs {
     VolumeSize?: Value<number>;
     DeleteOnTermination?: Value<boolean>;
     constructor(properties: Ebs);
-}
-export declare class CapacityReservationPreference {
-    constructor(properties: CapacityReservationPreference);
-}
-export declare class CapacityReservationSpecification {
-    CapacityReservationPreference?: CapacityReservationPreference;
-    CapacityReservationTarget?: CapacityReservationTarget;
-    constructor(properties: CapacityReservationSpecification);
-}
-export declare class CapacityReservationTarget {
-    CapacityReservationId?: Value<string>;
-    constructor(properties: CapacityReservationTarget);
-}
-export declare class LicenseSpecification {
-    LicenseConfigurationArn?: Value<string>;
-    constructor(properties: LicenseSpecification);
-}
-export declare class CpuOptions {
-    ThreadsPerCore?: Value<number>;
-    CoreCount?: Value<number>;
-    constructor(properties: CpuOptions);
 }
 export declare class HibernationOptions {
     Configured?: Value<boolean>;
@@ -152,17 +150,16 @@ export default class LaunchTemplate extends ResourceBase {
     static Placement: typeof Placement;
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static SpotOptions: typeof SpotOptions;
+    static CapacityReservationSpecification: typeof CapacityReservationSpecification;
     static ElasticGpuSpecification: typeof ElasticGpuSpecification;
     static TagSpecification: typeof TagSpecification;
     static Ipv6Add: typeof Ipv6Add;
     static IamInstanceProfile: typeof IamInstanceProfile;
-    static NetworkInterface: typeof NetworkInterface;
-    static Ebs: typeof Ebs;
-    static CapacityReservationPreference: typeof CapacityReservationPreference;
-    static CapacityReservationSpecification: typeof CapacityReservationSpecification;
     static CapacityReservationTarget: typeof CapacityReservationTarget;
+    static NetworkInterface: typeof NetworkInterface;
     static LicenseSpecification: typeof LicenseSpecification;
     static CpuOptions: typeof CpuOptions;
+    static Ebs: typeof Ebs;
     static HibernationOptions: typeof HibernationOptions;
     static LaunchTemplateElasticInferenceAccelerator: typeof LaunchTemplateElasticInferenceAccelerator;
     constructor(properties?: LaunchTemplateProperties);

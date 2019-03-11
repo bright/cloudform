@@ -1,7 +1,7 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
    
 import {ResourceBase} from '../resource'
@@ -15,6 +15,16 @@ export class EventDestination {
     KinesisFirehoseDestination?: KinesisFirehoseDestination
 
     constructor(properties: EventDestination) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DimensionConfiguration {
+    DimensionValueSource!: Value<string>
+    DefaultDimensionValue!: Value<string>
+    DimensionName!: Value<string>
+
+    constructor(properties: DimensionConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -36,16 +46,6 @@ export class KinesisFirehoseDestination {
     }
 }
 
-export class DimensionConfiguration {
-    DimensionValueSource!: Value<string>
-    DefaultDimensionValue!: Value<string>
-    DimensionName!: Value<string>
-
-    constructor(properties: DimensionConfiguration) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface ConfigurationSetEventDestinationProperties {
     ConfigurationSetName: Value<string>
     EventDestination: EventDestination
@@ -53,9 +53,9 @@ export interface ConfigurationSetEventDestinationProperties {
 
 export default class ConfigurationSetEventDestination extends ResourceBase {
     static EventDestination = EventDestination
+    static DimensionConfiguration = DimensionConfiguration
     static CloudWatchDestination = CloudWatchDestination
     static KinesisFirehoseDestination = KinesisFirehoseDestination
-    static DimensionConfiguration = DimensionConfiguration
 
     constructor(properties?: ConfigurationSetEventDestinationProperties) {
         super('AWS::SES::ConfigurationSetEventDestination', properties)

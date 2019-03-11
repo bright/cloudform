@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class VpcConfig {
     SecurityGroupIds?: List<Value<string>>;
@@ -21,6 +21,7 @@ export interface ImageBuilderProperties {
     InstanceType: Value<string>;
     Name?: Value<string>;
     ImageArn?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class ImageBuilder extends ResourceBase {
     static VpcConfig: typeof VpcConfig;

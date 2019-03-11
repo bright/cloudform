@@ -1,19 +1,19 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -32,28 +32,28 @@ export class LaunchTemplateData {
     SecurityGroups?: List<Value<string>>
     TagSpecifications?: List<TagSpecification>
     UserData?: Value<string>
-    InstanceInitiatedShutdownBehavior?: Value<string>
     BlockDeviceMappings?: List<BlockDeviceMapping>
     IamInstanceProfile?: IamInstanceProfile
     KernelId?: Value<string>
-    SecurityGroupIds?: List<Value<string>>
     EbsOptimized?: Value<boolean>
-    KeyName?: Value<string>
-    DisableApiTermination?: Value<boolean>
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>
+    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>
     Placement?: Placement
-    InstanceMarketOptions?: InstanceMarketOptions
     NetworkInterfaces?: List<NetworkInterface>
     ImageId?: Value<string>
     InstanceType?: Value<string>
-    RamDiskId?: Value<string>
     Monitoring?: Monitoring
-    CreditSpecification?: CreditSpecification
-    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>
     HibernationOptions?: HibernationOptions
     LicenseSpecifications?: List<LicenseSpecification>
+    InstanceInitiatedShutdownBehavior?: Value<string>
     CpuOptions?: CpuOptions
+    SecurityGroupIds?: List<Value<string>>
+    KeyName?: Value<string>
+    DisableApiTermination?: Value<boolean>
+    InstanceMarketOptions?: InstanceMarketOptions
+    RamDiskId?: Value<string>
     CapacityReservationSpecification?: CapacityReservationSpecification
+    CreditSpecification?: CreditSpecification
 
     constructor(properties: LaunchTemplateData) {
         Object.assign(this, properties)
@@ -118,6 +118,17 @@ export class SpotOptions {
     }
 }
 
+export type CapacityReservationPreference = Value<string>
+
+export class CapacityReservationSpecification {
+    CapacityReservationPreference?: CapacityReservationPreference
+    CapacityReservationTarget?: CapacityReservationTarget
+
+    constructor(properties: CapacityReservationSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ElasticGpuSpecification {
     Type?: Value<string>
 
@@ -152,6 +163,14 @@ export class IamInstanceProfile {
     }
 }
 
+export class CapacityReservationTarget {
+    CapacityReservationId?: Value<string>
+
+    constructor(properties: CapacityReservationTarget) {
+        Object.assign(this, properties)
+    }
+}
+
 export class NetworkInterface {
     Description?: Value<string>
     PrivateIpAddress?: Value<string>
@@ -171,45 +190,6 @@ export class NetworkInterface {
     }
 }
 
-export class Ebs {
-    SnapshotId?: Value<string>
-    VolumeType?: Value<string>
-    KmsKeyId?: Value<string>
-    Encrypted?: Value<boolean>
-    Iops?: Value<number>
-    VolumeSize?: Value<number>
-    DeleteOnTermination?: Value<boolean>
-
-    constructor(properties: Ebs) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CapacityReservationPreference {
-
-
-    constructor(properties: CapacityReservationPreference) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CapacityReservationSpecification {
-    CapacityReservationPreference?: CapacityReservationPreference
-    CapacityReservationTarget?: CapacityReservationTarget
-
-    constructor(properties: CapacityReservationSpecification) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CapacityReservationTarget {
-    CapacityReservationId?: Value<string>
-
-    constructor(properties: CapacityReservationTarget) {
-        Object.assign(this, properties)
-    }
-}
-
 export class LicenseSpecification {
     LicenseConfigurationArn?: Value<string>
 
@@ -223,6 +203,20 @@ export class CpuOptions {
     CoreCount?: Value<number>
 
     constructor(properties: CpuOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Ebs {
+    SnapshotId?: Value<string>
+    VolumeType?: Value<string>
+    KmsKeyId?: Value<string>
+    Encrypted?: Value<boolean>
+    Iops?: Value<number>
+    VolumeSize?: Value<number>
+    DeleteOnTermination?: Value<boolean>
+
+    constructor(properties: Ebs) {
         Object.assign(this, properties)
     }
 }
@@ -257,17 +251,16 @@ export default class LaunchTemplate extends ResourceBase {
     static Placement = Placement
     static BlockDeviceMapping = BlockDeviceMapping
     static SpotOptions = SpotOptions
+    static CapacityReservationSpecification = CapacityReservationSpecification
     static ElasticGpuSpecification = ElasticGpuSpecification
     static TagSpecification = TagSpecification
     static Ipv6Add = Ipv6Add
     static IamInstanceProfile = IamInstanceProfile
-    static NetworkInterface = NetworkInterface
-    static Ebs = Ebs
-    static CapacityReservationPreference = CapacityReservationPreference
-    static CapacityReservationSpecification = CapacityReservationSpecification
     static CapacityReservationTarget = CapacityReservationTarget
+    static NetworkInterface = NetworkInterface
     static LicenseSpecification = LicenseSpecification
     static CpuOptions = CpuOptions
+    static Ebs = Ebs
     static HibernationOptions = HibernationOptions
     static LaunchTemplateElasticInferenceAccelerator = LaunchTemplateElasticInferenceAccelerator
 

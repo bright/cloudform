@@ -8,10 +8,10 @@ export interface SubscriptionProperties {
     FilterPolicy?: {
         [key: string]: any;
     };
-    Protocol?: Value<string>;
+    Protocol: Value<string>;
     RawMessageDelivery?: Value<boolean>;
     Region?: Value<string>;
-    TopicArn?: Value<string>;
+    TopicArn: Value<string>;
 }
 export default class Subscription extends ResourceBase {
     constructor(properties?: SubscriptionProperties);

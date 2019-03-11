@@ -1,30 +1,18 @@
 "use strict";
 /* Generated from:
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
-class MappingParameters {
-    constructor(properties) {
-        Object.assign(this, properties);
-    }
-}
-exports.MappingParameters = MappingParameters;
 class CSVMappingParameters {
     constructor(properties) {
         Object.assign(this, properties);
     }
 }
 exports.CSVMappingParameters = CSVMappingParameters;
-class KinesisStreamsInput {
-    constructor(properties) {
-        Object.assign(this, properties);
-    }
-}
-exports.KinesisStreamsInput = KinesisStreamsInput;
 class Input {
     constructor(properties) {
         Object.assign(this, properties);
@@ -37,6 +25,24 @@ class InputSchema {
     }
 }
 exports.InputSchema = InputSchema;
+class JSONMappingParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.JSONMappingParameters = JSONMappingParameters;
+class MappingParameters {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.MappingParameters = MappingParameters;
+class KinesisStreamsInput {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.KinesisStreamsInput = KinesisStreamsInput;
 class RecordColumn {
     constructor(properties) {
         Object.assign(this, properties);
@@ -67,12 +73,6 @@ class InputProcessingConfiguration {
     }
 }
 exports.InputProcessingConfiguration = InputProcessingConfiguration;
-class JSONMappingParameters {
-    constructor(properties) {
-        Object.assign(this, properties);
-    }
-}
-exports.JSONMappingParameters = JSONMappingParameters;
 class InputLambdaProcessor {
     constructor(properties) {
         Object.assign(this, properties);
@@ -84,16 +84,16 @@ class Application extends resource_1.ResourceBase {
         super('AWS::KinesisAnalytics::Application', properties);
     }
 }
-Application.MappingParameters = MappingParameters;
 Application.CSVMappingParameters = CSVMappingParameters;
-Application.KinesisStreamsInput = KinesisStreamsInput;
 Application.Input = Input;
 Application.InputSchema = InputSchema;
+Application.JSONMappingParameters = JSONMappingParameters;
+Application.MappingParameters = MappingParameters;
+Application.KinesisStreamsInput = KinesisStreamsInput;
 Application.RecordColumn = RecordColumn;
 Application.RecordFormat = RecordFormat;
 Application.KinesisFirehoseInput = KinesisFirehoseInput;
 Application.InputParallelism = InputParallelism;
 Application.InputProcessingConfiguration = InputProcessingConfiguration;
-Application.JSONMappingParameters = JSONMappingParameters;
 Application.InputLambdaProcessor = InputLambdaProcessor;
 exports.default = Application;

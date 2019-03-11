@@ -13,6 +13,7 @@ export interface ServerProperties {
     BackupId?: Value<string>;
     EngineModel?: Value<string>;
     PreferredMaintenanceWindow?: Value<string>;
+    AssociatePublicIpAddress?: Value<boolean>;
     InstanceProfileArn: Value<string>;
     PreferredBackupWindow?: Value<string>;
     SecurityGroupIds?: List<Value<string>>;

@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class RuleGroup {
     PatchRules?: List<Rule>;
@@ -28,17 +28,18 @@ export declare class PatchSource {
 }
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>;
-    ApprovedPatches?: List<Value<string>>;
-    RejectedPatchesAction?: Value<string>;
-    PatchGroups?: List<Value<string>>;
     Description?: Value<string>;
-    ApprovedPatchesComplianceLevel?: Value<string>;
-    ApprovedPatchesEnableNonSecurity?: Value<boolean>;
     ApprovalRules?: RuleGroup;
-    GlobalFilters?: PatchFilterGroup;
     Sources?: List<PatchSource>;
     Name: Value<string>;
     RejectedPatches?: List<Value<string>>;
+    ApprovedPatches?: List<Value<string>>;
+    RejectedPatchesAction?: Value<string>;
+    PatchGroups?: List<Value<string>>;
+    ApprovedPatchesComplianceLevel?: Value<string>;
+    ApprovedPatchesEnableNonSecurity?: Value<boolean>;
+    GlobalFilters?: PatchFilterGroup;
+    Tags?: List<ResourceTag>;
 }
 export default class PatchBaseline extends ResourceBase {
     static RuleGroup: typeof RuleGroup;

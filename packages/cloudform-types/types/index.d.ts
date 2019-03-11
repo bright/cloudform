@@ -320,6 +320,26 @@ import EMRCluster from './emr/cluster';
 import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
 import EMRStep from './emr/step';
 import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const ApiGatewayV2: {
+    Route: typeof ApiGatewayV2Route;
+    Integration: typeof ApiGatewayV2Integration;
+    Stage: typeof ApiGatewayV2Stage;
+    Deployment: typeof ApiGatewayV2Deployment;
+    Model: typeof ApiGatewayV2Model;
+    Authorizer: typeof ApiGatewayV2Authorizer;
+    Api: typeof ApiGatewayV2Api;
+    RouteResponse: typeof ApiGatewayV2RouteResponse;
+    IntegrationResponse: typeof ApiGatewayV2IntegrationResponse;
+};
+import ApiGatewayV2Route from './apiGatewayV2/route';
+import ApiGatewayV2Integration from './apiGatewayV2/integration';
+import ApiGatewayV2Stage from './apiGatewayV2/stage';
+import ApiGatewayV2Deployment from './apiGatewayV2/deployment';
+import ApiGatewayV2Model from './apiGatewayV2/model';
+import ApiGatewayV2Authorizer from './apiGatewayV2/authorizer';
+import ApiGatewayV2Api from './apiGatewayV2/api';
+import ApiGatewayV2RouteResponse from './apiGatewayV2/routeResponse';
+import ApiGatewayV2IntegrationResponse from './apiGatewayV2/integrationResponse';
 export declare const Logs: {
     LogGroup: typeof LogsLogGroup;
     MetricFilter: typeof LogsMetricFilter;
@@ -338,6 +358,10 @@ export declare const Kinesis: {
 };
 import KinesisStream from './kinesis/stream';
 import KinesisStreamConsumer from './kinesis/streamConsumer';
+export declare const RAM: {
+    ResourceShare: typeof RAMResourceShare;
+};
+import RAMResourceShare from './ram/resourceShare';
 export declare const AutoScaling: {
     LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
     LifecycleHook: typeof AutoScalingLifecycleHook;
@@ -830,6 +854,34 @@ export declare const CodeBuild: {
     Project: typeof CodeBuildProject;
 };
 import CodeBuildProject from './codeBuild/project';
+export declare const FSx: {
+    FileSystem: typeof FSxFileSystem;
+};
+import FSxFileSystem from './fSx/fileSystem';
+export declare const RoboMaker: {
+    SimulationApplication: typeof RoboMakerSimulationApplication;
+    SimulationApplicationVersion: typeof RoboMakerSimulationApplicationVersion;
+    RobotApplicationVersion: typeof RoboMakerRobotApplicationVersion;
+    RobotApplication: typeof RoboMakerRobotApplication;
+    Robot: typeof RoboMakerRobot;
+    Fleet: typeof RoboMakerFleet;
+};
+import RoboMakerSimulationApplication from './roboMaker/simulationApplication';
+import RoboMakerSimulationApplicationVersion from './roboMaker/simulationApplicationVersion';
+import RoboMakerRobotApplicationVersion from './roboMaker/robotApplicationVersion';
+import RoboMakerRobotApplication from './roboMaker/robotApplication';
+import RoboMakerRobot from './roboMaker/robot';
+import RoboMakerFleet from './roboMaker/fleet';
+export declare const KinesisAnalyticsV2: {
+    ApplicationOutput: typeof KinesisAnalyticsV2ApplicationOutput;
+    ApplicationCloudWatchLoggingOption: typeof KinesisAnalyticsV2ApplicationCloudWatchLoggingOption;
+    ApplicationReferenceDataSource: typeof KinesisAnalyticsV2ApplicationReferenceDataSource;
+    Application: typeof KinesisAnalyticsV2Application;
+};
+import KinesisAnalyticsV2ApplicationOutput from './kinesisAnalyticsV2/applicationOutput';
+import KinesisAnalyticsV2ApplicationCloudWatchLoggingOption from './kinesisAnalyticsV2/applicationCloudWatchLoggingOption';
+import KinesisAnalyticsV2ApplicationReferenceDataSource from './kinesisAnalyticsV2/applicationReferenceDataSource';
+import KinesisAnalyticsV2Application from './kinesisAnalyticsV2/application';
 export declare const CodeCommit: {
     Repository: typeof CodeCommitRepository;
 };
@@ -1016,6 +1068,17 @@ declare const _default: {
         Step: typeof EMRStep;
         SecurityConfiguration: typeof EMRSecurityConfiguration;
     };
+    ApiGatewayV2: {
+        Route: typeof ApiGatewayV2Route;
+        Integration: typeof ApiGatewayV2Integration;
+        Stage: typeof ApiGatewayV2Stage;
+        Deployment: typeof ApiGatewayV2Deployment;
+        Model: typeof ApiGatewayV2Model;
+        Authorizer: typeof ApiGatewayV2Authorizer;
+        Api: typeof ApiGatewayV2Api;
+        RouteResponse: typeof ApiGatewayV2RouteResponse;
+        IntegrationResponse: typeof ApiGatewayV2IntegrationResponse;
+    };
     Logs: {
         LogGroup: typeof LogsLogGroup;
         MetricFilter: typeof LogsMetricFilter;
@@ -1026,6 +1089,9 @@ declare const _default: {
     Kinesis: {
         Stream: typeof KinesisStream;
         StreamConsumer: typeof KinesisStreamConsumer;
+    };
+    RAM: {
+        ResourceShare: typeof RAMResourceShare;
     };
     AutoScaling: {
         LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
@@ -1329,6 +1395,23 @@ declare const _default: {
     };
     CodeBuild: {
         Project: typeof CodeBuildProject;
+    };
+    FSx: {
+        FileSystem: typeof FSxFileSystem;
+    };
+    RoboMaker: {
+        SimulationApplication: typeof RoboMakerSimulationApplication;
+        SimulationApplicationVersion: typeof RoboMakerSimulationApplicationVersion;
+        RobotApplicationVersion: typeof RoboMakerRobotApplicationVersion;
+        RobotApplication: typeof RoboMakerRobotApplication;
+        Robot: typeof RoboMakerRobot;
+        Fleet: typeof RoboMakerFleet;
+    };
+    KinesisAnalyticsV2: {
+        ApplicationOutput: typeof KinesisAnalyticsV2ApplicationOutput;
+        ApplicationCloudWatchLoggingOption: typeof KinesisAnalyticsV2ApplicationCloudWatchLoggingOption;
+        ApplicationReferenceDataSource: typeof KinesisAnalyticsV2ApplicationReferenceDataSource;
+        Application: typeof KinesisAnalyticsV2Application;
     };
     CodeCommit: {
         Repository: typeof CodeCommitRepository;

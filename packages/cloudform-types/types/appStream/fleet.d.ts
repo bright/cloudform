@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ComputeCapacity {
     DesiredInstances: Value<number>;
@@ -28,6 +28,7 @@ export interface FleetProperties {
     DisplayName?: Value<string>;
     InstanceType: Value<string>;
     ImageArn?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Fleet extends ResourceBase {
     static ComputeCapacity: typeof ComputeCapacity;

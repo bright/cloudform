@@ -10,7 +10,7 @@ export interface AuthorizerProperties {
     Name?: Value<string>;
     ProviderARNs?: List<Value<string>>;
     RestApiId: Value<string>;
-    Type?: Value<string>;
+    Type: Value<string>;
 }
 export default class Authorizer extends ResourceBase {
     constructor(properties?: AuthorizerProperties);

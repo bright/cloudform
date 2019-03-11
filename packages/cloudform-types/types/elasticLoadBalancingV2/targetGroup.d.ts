@@ -16,6 +16,7 @@ export declare class TargetDescription {
     constructor(properties: TargetDescription);
 }
 export interface TargetGroupProperties {
+    HealthCheckEnabled?: Value<boolean>;
     HealthCheckIntervalSeconds?: Value<number>;
     HealthCheckPath?: Value<string>;
     HealthCheckPort?: Value<string>;
@@ -24,14 +25,14 @@ export interface TargetGroupProperties {
     HealthyThresholdCount?: Value<number>;
     Matcher?: Matcher;
     Name?: Value<string>;
-    Port: Value<number>;
-    Protocol: Value<string>;
+    Port?: Value<number>;
+    Protocol?: Value<string>;
     Tags?: List<ResourceTag>;
     TargetGroupAttributes?: List<TargetGroupAttribute>;
     TargetType?: Value<string>;
     Targets?: List<TargetDescription>;
     UnhealthyThresholdCount?: Value<number>;
-    VpcId: Value<string>;
+    VpcId?: Value<string>;
 }
 export default class TargetGroup extends ResourceBase {
     static TargetGroupAttribute: typeof TargetGroupAttribute;

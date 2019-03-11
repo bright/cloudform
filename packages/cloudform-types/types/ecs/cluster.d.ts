@@ -1,8 +1,7 @@
-import { ResourceBase, ResourceTag } from '../resource';
-import { Value, List } from '../dataTypes';
+import { ResourceBase } from '../resource';
+import { Value } from '../dataTypes';
 export interface ClusterProperties {
     ClusterName?: Value<string>;
-    Tags?: List<ResourceTag>;
 }
 export default class Cluster extends ResourceBase {
     constructor(properties?: ClusterProperties);

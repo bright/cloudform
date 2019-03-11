@@ -1,7 +1,7 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
    
 import {ResourceBase} from '../resource'
@@ -15,6 +15,31 @@ export class BounceAction {
     StatusCode?: Value<string>
 
     constructor(properties: BounceAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Action {
+    BounceAction?: BounceAction
+    S3Action?: S3Action
+    StopAction?: StopAction
+    SNSAction?: SNSAction
+    WorkmailAction?: WorkmailAction
+    AddHeaderAction?: AddHeaderAction
+    LambdaAction?: LambdaAction
+
+    constructor(properties: Action) {
+        Object.assign(this, properties)
+    }
+}
+
+export class S3Action {
+    BucketName!: Value<string>
+    KmsKeyArn?: Value<string>
+    TopicArn?: Value<string>
+    ObjectKeyPrefix?: Value<string>
+
+    constructor(properties: S3Action) {
         Object.assign(this, properties)
     }
 }
@@ -33,20 +58,6 @@ export class StopAction {
     TopicArn?: Value<string>
 
     constructor(properties: StopAction) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Action {
-    BounceAction?: BounceAction
-    S3Action?: S3Action
-    StopAction?: StopAction
-    SNSAction?: SNSAction
-    WorkmailAction?: WorkmailAction
-    AddHeaderAction?: AddHeaderAction
-    LambdaAction?: LambdaAction
-
-    constructor(properties: Action) {
         Object.assign(this, properties)
     }
 }
@@ -83,17 +94,6 @@ export class LambdaAction {
     }
 }
 
-export class S3Action {
-    BucketName!: Value<string>
-    KmsKeyArn?: Value<string>
-    TopicArn?: Value<string>
-    ObjectKeyPrefix?: Value<string>
-
-    constructor(properties: S3Action) {
-        Object.assign(this, properties)
-    }
-}
-
 export class AddHeaderAction {
     HeaderValue!: Value<string>
     HeaderName!: Value<string>
@@ -111,13 +111,13 @@ export interface ReceiptRuleProperties {
 
 export default class ReceiptRule extends ResourceBase {
     static BounceAction = BounceAction
+    static Action = Action
+    static S3Action = S3Action
     static WorkmailAction = WorkmailAction
     static StopAction = StopAction
-    static Action = Action
     static SNSAction = SNSAction
     static Rule = Rule
     static LambdaAction = LambdaAction
-    static S3Action = S3Action
     static AddHeaderAction = AddHeaderAction
 
     constructor(properties?: ReceiptRuleProperties) {

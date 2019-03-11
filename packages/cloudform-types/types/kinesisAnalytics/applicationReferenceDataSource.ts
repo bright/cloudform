@@ -1,12 +1,30 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class RecordFormat {
+    MappingParameters?: MappingParameters
+    RecordFormatType!: Value<string>
+
+    constructor(properties: RecordFormat) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CSVMappingParameters {
+    RecordRowDelimiter!: Value<string>
+    RecordColumnDelimiter!: Value<string>
+
+    constructor(properties: CSVMappingParameters) {
+        Object.assign(this, properties)
+    }
+}
 
 export class S3ReferenceDataSource {
     BucketARN!: Value<string>
@@ -35,30 +53,12 @@ export class JSONMappingParameters {
     }
 }
 
-export class RecordFormat {
-    MappingParameters?: MappingParameters
-    RecordFormatType!: Value<string>
-
-    constructor(properties: RecordFormat) {
-        Object.assign(this, properties)
-    }
-}
-
 export class RecordColumn {
     Mapping?: Value<string>
     SqlType!: Value<string>
     Name!: Value<string>
 
     constructor(properties: RecordColumn) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CSVMappingParameters {
-    RecordRowDelimiter!: Value<string>
-    RecordColumnDelimiter!: Value<string>
-
-    constructor(properties: CSVMappingParameters) {
         Object.assign(this, properties)
     }
 }
@@ -89,12 +89,12 @@ export interface ApplicationReferenceDataSourceProperties {
 }
 
 export default class ApplicationReferenceDataSource extends ResourceBase {
+    static RecordFormat = RecordFormat
+    static CSVMappingParameters = CSVMappingParameters
     static S3ReferenceDataSource = S3ReferenceDataSource
     static MappingParameters = MappingParameters
     static JSONMappingParameters = JSONMappingParameters
-    static RecordFormat = RecordFormat
     static RecordColumn = RecordColumn
-    static CSVMappingParameters = CSVMappingParameters
     static ReferenceSchema = ReferenceSchema
     static ReferenceDataSource = ReferenceDataSource
 

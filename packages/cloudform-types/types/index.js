@@ -1,21 +1,21 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const elasticBeanstalk_1 = require("./elasticBeanstalk");
@@ -50,10 +50,14 @@ const workSpaces_1 = require("./workSpaces");
 exports.WorkSpaces = workSpaces_1.default;
 const emr_1 = require("./emr");
 exports.EMR = emr_1.default;
+const apiGatewayV2_1 = require("./apiGatewayV2");
+exports.ApiGatewayV2 = apiGatewayV2_1.default;
 const logs_1 = require("./logs");
 exports.Logs = logs_1.default;
 const kinesis_1 = require("./kinesis");
 exports.Kinesis = kinesis_1.default;
+const ram_1 = require("./ram");
+exports.RAM = ram_1.default;
 const autoScaling_1 = require("./autoScaling");
 exports.AutoScaling = autoScaling_1.default;
 const sqs_1 = require("./sqs");
@@ -168,6 +172,12 @@ const ses_1 = require("./ses");
 exports.SES = ses_1.default;
 const codeBuild_1 = require("./codeBuild");
 exports.CodeBuild = codeBuild_1.default;
+const fSx_1 = require("./fSx");
+exports.FSx = fSx_1.default;
+const roboMaker_1 = require("./roboMaker");
+exports.RoboMaker = roboMaker_1.default;
+const kinesisAnalyticsV2_1 = require("./kinesisAnalyticsV2");
+exports.KinesisAnalyticsV2 = kinesisAnalyticsV2_1.default;
 const codeCommit_1 = require("./codeCommit");
 exports.CodeCommit = codeCommit_1.default;
 const eks_1 = require("./eks");
@@ -189,8 +199,10 @@ exports.default = {
     RDS: exports.RDS,
     WorkSpaces: exports.WorkSpaces,
     EMR: exports.EMR,
+    ApiGatewayV2: exports.ApiGatewayV2,
     Logs: exports.Logs,
     Kinesis: exports.Kinesis,
+    RAM: exports.RAM,
     AutoScaling: exports.AutoScaling,
     SQS: exports.SQS,
     AppStream: exports.AppStream,
@@ -248,6 +260,9 @@ exports.default = {
     DocDB: exports.DocDB,
     SES: exports.SES,
     CodeBuild: exports.CodeBuild,
+    FSx: exports.FSx,
+    RoboMaker: exports.RoboMaker,
+    KinesisAnalyticsV2: exports.KinesisAnalyticsV2,
     CodeCommit: exports.CodeCommit,
     EKS: exports.EKS
 };

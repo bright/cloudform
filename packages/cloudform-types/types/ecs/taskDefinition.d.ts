@@ -1,4 +1,4 @@
-import { ResourceBase, ResourceTag } from '../resource';
+import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class DockerVolumeConfiguration {
     Autoprovision?: Value<boolean>;
@@ -147,7 +147,6 @@ export interface TaskDefinitionProperties {
     NetworkMode?: Value<string>;
     PlacementConstraints?: List<TaskDefinitionPlacementConstraint>;
     RequiresCompatibilities?: List<Value<string>>;
-    Tags?: List<ResourceTag>;
     TaskRoleArn?: Value<string>;
     Volumes?: List<Volume>;
 }

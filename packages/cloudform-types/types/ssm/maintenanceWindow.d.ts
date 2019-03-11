@@ -1,5 +1,5 @@
-import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { ResourceBase, ResourceTag } from '../resource';
+import { Value, List } from '../dataTypes';
 export interface MaintenanceWindowProperties {
     StartDate?: Value<string>;
     Description?: Value<string>;
@@ -8,6 +8,7 @@ export interface MaintenanceWindowProperties {
     Schedule: Value<string>;
     Duration: Value<number>;
     EndDate?: Value<string>;
+    Tags?: List<ResourceTag>;
     Name: Value<string>;
     ScheduleTimezone?: Value<string>;
 }

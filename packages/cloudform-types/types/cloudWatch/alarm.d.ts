@@ -1,9 +1,30 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class MetricStat {
+    Metric: Metric;
+    Period: Value<number>;
+    Stat: Value<string>;
+    Unit?: Value<string>;
+    constructor(properties: MetricStat);
+}
 export declare class Dimension {
     Name: Value<string>;
     Value: Value<string>;
     constructor(properties: Dimension);
+}
+export declare class MetricDataQuery {
+    Expression?: Value<string>;
+    Id: Value<string>;
+    Label?: Value<string>;
+    MetricStat?: MetricStat;
+    ReturnData?: Value<boolean>;
+    constructor(properties: MetricDataQuery);
+}
+export declare class Metric {
+    Dimensions?: List<Dimension>;
+    MetricName?: Value<string>;
+    Namespace?: Value<string>;
+    constructor(properties: Metric);
 }
 export interface AlarmProperties {
     ActionsEnabled?: Value<boolean>;
@@ -18,6 +39,7 @@ export interface AlarmProperties {
     ExtendedStatistic?: Value<string>;
     InsufficientDataActions?: List<Value<string>>;
     MetricName?: Value<string>;
+    Metrics?: List<MetricDataQuery>;
     Namespace?: Value<string>;
     OKActions?: List<Value<string>>;
     Period?: Value<number>;
@@ -27,6 +49,9 @@ export interface AlarmProperties {
     Unit?: Value<string>;
 }
 export default class Alarm extends ResourceBase {
+    static MetricStat: typeof MetricStat;
     static Dimension: typeof Dimension;
+    static MetricDataQuery: typeof MetricDataQuery;
+    static Metric: typeof Metric;
     constructor(properties?: AlarmProperties);
 }

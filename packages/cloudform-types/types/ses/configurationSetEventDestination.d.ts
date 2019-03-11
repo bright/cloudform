@@ -8,6 +8,12 @@ export declare class EventDestination {
     KinesisFirehoseDestination?: KinesisFirehoseDestination;
     constructor(properties: EventDestination);
 }
+export declare class DimensionConfiguration {
+    DimensionValueSource: Value<string>;
+    DefaultDimensionValue: Value<string>;
+    DimensionName: Value<string>;
+    constructor(properties: DimensionConfiguration);
+}
 export declare class CloudWatchDestination {
     DimensionConfigurations?: List<DimensionConfiguration>;
     constructor(properties: CloudWatchDestination);
@@ -17,20 +23,14 @@ export declare class KinesisFirehoseDestination {
     DeliveryStreamARN: Value<string>;
     constructor(properties: KinesisFirehoseDestination);
 }
-export declare class DimensionConfiguration {
-    DimensionValueSource: Value<string>;
-    DefaultDimensionValue: Value<string>;
-    DimensionName: Value<string>;
-    constructor(properties: DimensionConfiguration);
-}
 export interface ConfigurationSetEventDestinationProperties {
     ConfigurationSetName: Value<string>;
     EventDestination: EventDestination;
 }
 export default class ConfigurationSetEventDestination extends ResourceBase {
     static EventDestination: typeof EventDestination;
+    static DimensionConfiguration: typeof DimensionConfiguration;
     static CloudWatchDestination: typeof CloudWatchDestination;
     static KinesisFirehoseDestination: typeof KinesisFirehoseDestination;
-    static DimensionConfiguration: typeof DimensionConfiguration;
     constructor(properties?: ConfigurationSetEventDestinationProperties);
 }

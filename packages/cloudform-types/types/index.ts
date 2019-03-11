@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.21.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
  */
    
 
@@ -227,6 +227,19 @@ import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
 import EMRStep from './emr/step'
 import EMRSecurityConfiguration from './emr/securityConfiguration'
 
+import ApiGatewayV2_ from './apiGatewayV2'
+export const ApiGatewayV2 = ApiGatewayV2_
+
+import ApiGatewayV2Route from './apiGatewayV2/route'
+import ApiGatewayV2Integration from './apiGatewayV2/integration'
+import ApiGatewayV2Stage from './apiGatewayV2/stage'
+import ApiGatewayV2Deployment from './apiGatewayV2/deployment'
+import ApiGatewayV2Model from './apiGatewayV2/model'
+import ApiGatewayV2Authorizer from './apiGatewayV2/authorizer'
+import ApiGatewayV2Api from './apiGatewayV2/api'
+import ApiGatewayV2RouteResponse from './apiGatewayV2/routeResponse'
+import ApiGatewayV2IntegrationResponse from './apiGatewayV2/integrationResponse'
+
 import Logs_ from './logs'
 export const Logs = Logs_
 
@@ -241,6 +254,11 @@ export const Kinesis = Kinesis_
 
 import KinesisStream from './kinesis/stream'
 import KinesisStreamConsumer from './kinesis/streamConsumer'
+
+import RAM_ from './ram'
+export const RAM = RAM_
+
+import RAMResourceShare from './ram/resourceShare'
 
 import AutoScaling_ from './autoScaling'
 export const AutoScaling = AutoScaling_
@@ -659,6 +677,29 @@ export const CodeBuild = CodeBuild_
 
 import CodeBuildProject from './codeBuild/project'
 
+import FSx_ from './fSx'
+export const FSx = FSx_
+
+import FSxFileSystem from './fSx/fileSystem'
+
+import RoboMaker_ from './roboMaker'
+export const RoboMaker = RoboMaker_
+
+import RoboMakerSimulationApplication from './roboMaker/simulationApplication'
+import RoboMakerSimulationApplicationVersion from './roboMaker/simulationApplicationVersion'
+import RoboMakerRobotApplicationVersion from './roboMaker/robotApplicationVersion'
+import RoboMakerRobotApplication from './roboMaker/robotApplication'
+import RoboMakerRobot from './roboMaker/robot'
+import RoboMakerFleet from './roboMaker/fleet'
+
+import KinesisAnalyticsV2_ from './kinesisAnalyticsV2'
+export const KinesisAnalyticsV2 = KinesisAnalyticsV2_
+
+import KinesisAnalyticsV2ApplicationOutput from './kinesisAnalyticsV2/applicationOutput'
+import KinesisAnalyticsV2ApplicationCloudWatchLoggingOption from './kinesisAnalyticsV2/applicationCloudWatchLoggingOption'
+import KinesisAnalyticsV2ApplicationReferenceDataSource from './kinesisAnalyticsV2/applicationReferenceDataSource'
+import KinesisAnalyticsV2Application from './kinesisAnalyticsV2/application'
+
 import CodeCommit_ from './codeCommit'
 export const CodeCommit = CodeCommit_
 
@@ -686,8 +727,10 @@ export default {
   RDS,
   WorkSpaces,
   EMR,
+  ApiGatewayV2,
   Logs,
   Kinesis,
+  RAM,
   AutoScaling,
   SQS,
   AppStream,
@@ -745,6 +788,9 @@ export default {
   DocDB,
   SES,
   CodeBuild,
+  FSx,
+  RoboMaker,
+  KinesisAnalyticsV2,
   CodeCommit,
   EKS
 }

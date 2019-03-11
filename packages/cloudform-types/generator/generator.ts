@@ -111,17 +111,23 @@ ${propertiesEntries(properties, true).map(e => `    ${e}`).join('\n')}
 }`
 }
 
+function generateInnerType(name: string, type: TypeProperties) {
+    return `export type ${name} = ${determineTypeScriptType(type, "_t", 'Type')}`
+}
+
 function generateTopLevelClass(namespace: string, typeName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap) {
     return `export interface ${typeName}Properties {
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
 
 export default class ${typeName} extends ResourceBase {
-${Object.keys(innerTypes).map(innerTypeFullName => {
-        const [, innerTypeNameUnsafe] = innerTypeFullName.split('.')
-        const innerTypeNameSafe = innerTypeName(innerTypeFullName)
-        return `    static ${innerTypeNameUnsafe} = ${innerTypeNameSafe}`
-    }).join('\n')}
+${Object.keys(innerTypes)
+        .filter(innerType => !!innerTypes[innerType].Properties)
+        .map(innerTypeFullName => {
+            const [, innerTypeNameUnsafe] = innerTypeFullName.split('.')
+            const innerTypeNameSafe = innerTypeName(innerTypeFullName)
+            return `    static ${innerTypeNameUnsafe} = ${innerTypeNameSafe}`
+        }).join('\n')}
 
     constructor(properties?: ${typeName}Properties) {
         super('AWS::${namespace}::${typeName}', properties)
@@ -132,8 +138,13 @@ ${Object.keys(innerTypes).map(innerTypeFullName => {
 function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap): void {
     let innerHasTags = false
     const innerTypesTemplates = map(innerTypes, (innerType: ResourceType, innerTypeFullName: string) => {
-        innerHasTags = innerHasTags || hasTags(innerType.Properties)
-        return generateInnerClass(innerTypeName(innerTypeFullName), innerType.Properties)
+        const resolvedInnerTypeName = innerTypeName(innerTypeFullName)
+        if (innerType.Properties) {
+            innerHasTags = innerHasTags || hasTags(innerType.Properties)
+            return generateInnerClass(resolvedInnerTypeName, innerType.Properties)
+        } else {
+            return generateInnerType(resolvedInnerTypeName, innerType as any)
+        }
     })
 
     const resourceImports = ['ResourceBase']
@@ -263,6 +274,7 @@ function generateSchemas() {
 
             generateFilesFromSchema(mergedSchema!, resourceSources, schemaVersions)
         })
+        .catch(err => console.error(err))
 }
 
 generateSchemas()

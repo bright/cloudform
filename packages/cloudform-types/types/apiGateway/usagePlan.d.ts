@@ -26,7 +26,7 @@ export interface UsagePlanProperties {
     Throttle?: ThrottleSettings;
     UsagePlanName?: Value<string>;
 }
-export default class UsagePlan extends ResourceBase {
+export default class UsagePlan extends ResourceBase<UsagePlanProperties> {
     static ApiStage: typeof ApiStage;
     static ThrottleSettings: typeof ThrottleSettings;
     static QuotaSettings: typeof QuotaSettings;

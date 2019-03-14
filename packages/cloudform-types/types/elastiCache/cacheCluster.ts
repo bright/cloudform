@@ -46,7 +46,7 @@ export interface CacheClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>
 }
 
-export default class CacheCluster extends ResourceBase {
+export default class CacheCluster extends ResourceBase<CacheClusterProperties> {
 
 
     constructor(properties?: CacheClusterProperties) {

@@ -7,6 +7,6 @@ export interface InstanceProperties {
     InstanceId?: Value<string>;
     ServiceId: Value<string>;
 }
-export default class Instance extends ResourceBase {
+export default class Instance extends ResourceBase<InstanceProperties> {
     constructor(properties?: InstanceProperties);
 }

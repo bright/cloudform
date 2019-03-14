@@ -28,7 +28,7 @@ export interface ResolverRuleProperties {
     Name?: Value<string>
 }
 
-export default class ResolverRule extends ResourceBase {
+export default class ResolverRule extends ResourceBase<ResolverRuleProperties> {
     static TargetAddress = TargetAddress
 
     constructor(properties?: ResolverRuleProperties) {

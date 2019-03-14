@@ -14,7 +14,7 @@ export interface VPCEndpointConnectionNotificationProperties {
     ConnectionNotificationArn: Value<string>
 }
 
-export default class VPCEndpointConnectionNotification extends ResourceBase {
+export default class VPCEndpointConnectionNotification extends ResourceBase<VPCEndpointConnectionNotificationProperties> {
 
 
     constructor(properties?: VPCEndpointConnectionNotificationProperties) {

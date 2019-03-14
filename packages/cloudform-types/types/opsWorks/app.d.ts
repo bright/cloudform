@@ -43,7 +43,7 @@ export interface AppProperties {
     StackId: Value<string>;
     Type: Value<string>;
 }
-export default class App extends ResourceBase {
+export default class App extends ResourceBase<AppProperties> {
     static DataSource: typeof DataSource;
     static EnvironmentVariable: typeof EnvironmentVariable;
     static SslConfiguration: typeof SslConfiguration;

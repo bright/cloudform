@@ -10,7 +10,7 @@ export interface ApplicationVersionProperties {
     Description?: Value<string>;
     SourceBundle: SourceBundle;
 }
-export default class ApplicationVersion extends ResourceBase {
+export default class ApplicationVersion extends ResourceBase<ApplicationVersionProperties> {
     static SourceBundle: typeof SourceBundle;
     constructor(properties?: ApplicationVersionProperties);
 }

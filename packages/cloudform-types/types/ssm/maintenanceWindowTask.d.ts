@@ -73,7 +73,7 @@ export interface MaintenanceWindowTaskProperties {
     TaskType: Value<string>;
     LoggingInfo?: LoggingInfo;
 }
-export default class MaintenanceWindowTask extends ResourceBase {
+export default class MaintenanceWindowTask extends ResourceBase<MaintenanceWindowTaskProperties> {
     static MaintenanceWindowLambdaParameters: typeof MaintenanceWindowLambdaParameters;
     static NotificationConfig: typeof NotificationConfig;
     static MaintenanceWindowAutomationParameters: typeof MaintenanceWindowAutomationParameters;

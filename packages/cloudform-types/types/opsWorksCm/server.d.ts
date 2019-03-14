@@ -24,7 +24,7 @@ export interface ServerProperties {
     InstanceType: Value<string>;
     Engine?: Value<string>;
 }
-export default class Server extends ResourceBase {
+export default class Server extends ResourceBase<ServerProperties> {
     static EngineAttribute: typeof EngineAttribute;
     constructor(properties?: ServerProperties);
 }

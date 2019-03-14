@@ -23,7 +23,7 @@ export interface ImageBuilderProperties {
     ImageArn?: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class ImageBuilder extends ResourceBase {
+export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
     static VpcConfig: typeof VpcConfig;
     static DomainJoinInfo: typeof DomainJoinInfo;
     constructor(properties?: ImageBuilderProperties);

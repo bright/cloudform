@@ -13,6 +13,6 @@ export interface IntegrationResponseProperties {
     IntegrationResponseKey: Value<string>;
     ApiId: Value<string>;
 }
-export default class IntegrationResponse extends ResourceBase {
+export default class IntegrationResponse extends ResourceBase<IntegrationResponseProperties> {
     constructor(properties?: IntegrationResponseProperties);
 }

@@ -89,7 +89,7 @@ export interface PartitionProperties {
     PartitionInput: PartitionInput
 }
 
-export default class Partition extends ResourceBase {
+export default class Partition extends ResourceBase<PartitionProperties> {
     static SerdeInfo = SerdeInfo
     static StorageDescriptor = StorageDescriptor
     static Order = Order

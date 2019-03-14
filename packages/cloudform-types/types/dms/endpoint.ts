@@ -100,7 +100,7 @@ export interface EndpointProperties {
     MongoDbSettings?: MongoDbSettings
 }
 
-export default class Endpoint extends ResourceBase {
+export default class Endpoint extends ResourceBase<EndpointProperties> {
     static KinesisSettings = KinesisSettings
     static S3Settings = S3Settings
     static MongoDbSettings = MongoDbSettings

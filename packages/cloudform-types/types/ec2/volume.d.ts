@@ -11,6 +11,6 @@ export interface VolumeProperties {
     Tags?: List<ResourceTag>;
     VolumeType?: Value<string>;
 }
-export default class Volume extends ResourceBase {
+export default class Volume extends ResourceBase<VolumeProperties> {
     constructor(properties?: VolumeProperties);
 }

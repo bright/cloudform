@@ -13,7 +13,7 @@ export declare class IpFilter {
 export interface ReceiptFilterProperties {
     Filter: Filter;
 }
-export default class ReceiptFilter extends ResourceBase {
+export default class ReceiptFilter extends ResourceBase<ReceiptFilterProperties> {
     static Filter: typeof Filter;
     static IpFilter: typeof IpFilter;
     constructor(properties?: ReceiptFilterProperties);

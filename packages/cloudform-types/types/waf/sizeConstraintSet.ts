@@ -45,7 +45,7 @@ export interface SizeConstraintSetProperties {
     SizeConstraints: List<SizeConstraint>
 }
 
-export default class SizeConstraintSet extends ResourceBase {
+export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetProperties> {
     static FieldToMatch = FieldToMatch
     static SizeConstraint = SizeConstraint
 

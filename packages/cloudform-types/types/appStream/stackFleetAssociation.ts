@@ -19,7 +19,7 @@ export interface StackFleetAssociationProperties {
     StackName: Value<string>
 }
 
-export default class StackFleetAssociation extends ResourceBase {
+export default class StackFleetAssociation extends ResourceBase<StackFleetAssociationProperties> {
 
 
     constructor(properties?: StackFleetAssociationProperties) {

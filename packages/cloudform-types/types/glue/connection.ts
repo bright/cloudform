@@ -42,7 +42,7 @@ export interface ConnectionProperties {
     CatalogId: Value<string>
 }
 
-export default class Connection extends ResourceBase {
+export default class Connection extends ResourceBase<ConnectionProperties> {
     static ConnectionInput = ConnectionInput
     static PhysicalConnectionRequirements = PhysicalConnectionRequirements
 

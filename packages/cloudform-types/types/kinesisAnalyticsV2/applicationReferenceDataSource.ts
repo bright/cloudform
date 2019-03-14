@@ -87,7 +87,7 @@ export interface ApplicationReferenceDataSourceProperties {
     ReferenceDataSource: ReferenceDataSource
 }
 
-export default class ApplicationReferenceDataSource extends ResourceBase {
+export default class ApplicationReferenceDataSource extends ResourceBase<ApplicationReferenceDataSourceProperties> {
     static RecordColumn = RecordColumn
     static RecordFormat = RecordFormat
     static JSONMappingParameters = JSONMappingParameters

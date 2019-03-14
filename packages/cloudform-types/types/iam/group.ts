@@ -36,7 +36,7 @@ export interface GroupProperties {
     Policies?: List<Policy>
 }
 
-export default class Group extends ResourceBase {
+export default class Group extends ResourceBase<GroupProperties> {
     static Policy = Policy
 
     constructor(properties?: GroupProperties) {

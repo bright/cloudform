@@ -8,7 +8,7 @@ export interface ListenerCertificateProperties {
     Certificates: List<Certificate>;
     ListenerArn: Value<string>;
 }
-export default class ListenerCertificate extends ResourceBase {
+export default class ListenerCertificate extends ResourceBase<ListenerCertificateProperties> {
     static Certificate: typeof Certificate;
     constructor(properties?: ListenerCertificateProperties);
 }

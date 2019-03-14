@@ -9,6 +9,6 @@ export interface DBClusterParameterGroupProperties {
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
-export default class DBClusterParameterGroup extends ResourceBase {
+export default class DBClusterParameterGroup extends ResourceBase<DBClusterParameterGroupProperties> {
     constructor(properties?: DBClusterParameterGroupProperties);
 }

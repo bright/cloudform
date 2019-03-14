@@ -61,7 +61,7 @@ export interface EndpointProperties {
     CertificateArn?: Value<string>;
     MongoDbSettings?: MongoDbSettings;
 }
-export default class Endpoint extends ResourceBase {
+export default class Endpoint extends ResourceBase<EndpointProperties> {
     static KinesisSettings: typeof KinesisSettings;
     static S3Settings: typeof S3Settings;
     static MongoDbSettings: typeof MongoDbSettings;

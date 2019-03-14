@@ -13,7 +13,7 @@ export interface LayerVersionProperties {
     LayerName?: Value<string>;
     Content: Content;
 }
-export default class LayerVersion extends ResourceBase {
+export default class LayerVersion extends ResourceBase<LayerVersionProperties> {
     static Content: typeof Content;
     constructor(properties?: LayerVersionProperties);
 }

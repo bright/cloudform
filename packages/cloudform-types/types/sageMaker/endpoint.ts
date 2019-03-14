@@ -17,7 +17,7 @@ export interface EndpointProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Endpoint extends ResourceBase {
+export default class Endpoint extends ResourceBase<EndpointProperties> {
 
 
     constructor(properties?: EndpointProperties) {

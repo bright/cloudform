@@ -113,7 +113,7 @@ export interface EC2FleetProperties {
     ValidUntil?: Value<string>
 }
 
-export default class EC2Fleet extends ResourceBase {
+export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static FleetLaunchTemplateSpecificationRequest = FleetLaunchTemplateSpecificationRequest
     static FleetLaunchTemplateConfigRequest = FleetLaunchTemplateConfigRequest
     static OnDemandOptionsRequest = OnDemandOptionsRequest

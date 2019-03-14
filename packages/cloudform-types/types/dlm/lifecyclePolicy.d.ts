@@ -30,7 +30,7 @@ export interface LifecyclePolicyProperties {
     State?: Value<string>;
     PolicyDetails?: PolicyDetails;
 }
-export default class LifecyclePolicy extends ResourceBase {
+export default class LifecyclePolicy extends ResourceBase<LifecyclePolicyProperties> {
     static Schedule: typeof Schedule;
     static CreateRule: typeof CreateRule;
     static RetainRule: typeof RetainRule;

@@ -27,7 +27,7 @@ export interface SecretTargetAttachmentProperties {
     TargetId: Value<string>
 }
 
-export default class SecretTargetAttachment extends ResourceBase {
+export default class SecretTargetAttachment extends ResourceBase<SecretTargetAttachmentProperties> {
 
 
     constructor(properties?: SecretTargetAttachmentProperties) {

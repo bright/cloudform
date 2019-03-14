@@ -20,7 +20,7 @@ export interface CloudFormationProductProperties {
     Name: Value<string>;
     ProvisioningArtifactParameters: List<ProvisioningArtifactProperties>;
 }
-export default class CloudFormationProduct extends ResourceBase {
+export default class CloudFormationProduct extends ResourceBase<CloudFormationProductProperties> {
     static ProvisioningArtifactProperties: typeof ProvisioningArtifactProperties;
     constructor(properties?: CloudFormationProductProperties);
 }

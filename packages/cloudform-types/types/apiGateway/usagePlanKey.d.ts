@@ -5,6 +5,6 @@ export interface UsagePlanKeyProperties {
     KeyType: Value<string>;
     UsagePlanId: Value<string>;
 }
-export default class UsagePlanKey extends ResourceBase {
+export default class UsagePlanKey extends ResourceBase<UsagePlanKeyProperties> {
     constructor(properties?: UsagePlanKeyProperties);
 }

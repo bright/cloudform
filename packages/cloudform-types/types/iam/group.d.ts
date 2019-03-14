@@ -13,7 +13,7 @@ export interface GroupProperties {
     Path?: Value<string>;
     Policies?: List<Policy>;
 }
-export default class Group extends ResourceBase {
+export default class Group extends ResourceBase<GroupProperties> {
     static Policy: typeof Policy;
     constructor(properties?: GroupProperties);
 }

@@ -10,6 +10,6 @@ export interface TransitGatewayProperties {
     AmazonSideAsn?: Value<number>;
     Tags?: List<ResourceTag>;
 }
-export default class TransitGateway extends ResourceBase {
+export default class TransitGateway extends ResourceBase<TransitGatewayProperties> {
     constructor(properties?: TransitGatewayProperties);
 }

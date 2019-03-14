@@ -7,6 +7,6 @@ export interface ParameterGroupProperties {
         [key: string]: Value<string>;
     };
 }
-export default class ParameterGroup extends ResourceBase {
+export default class ParameterGroup extends ResourceBase<ParameterGroupProperties> {
     constructor(properties?: ParameterGroupProperties);
 }

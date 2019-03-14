@@ -33,7 +33,7 @@ export interface RotationScheduleProperties {
     RotationRules?: RotationRules
 }
 
-export default class RotationSchedule extends ResourceBase {
+export default class RotationSchedule extends ResourceBase<RotationScheduleProperties> {
     static RotationRules = RotationRules
 
     constructor(properties?: RotationScheduleProperties) {

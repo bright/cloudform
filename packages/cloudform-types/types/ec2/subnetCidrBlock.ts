@@ -27,7 +27,7 @@ export interface SubnetCidrBlockProperties {
     SubnetId: Value<string>
 }
 
-export default class SubnetCidrBlock extends ResourceBase {
+export default class SubnetCidrBlock extends ResourceBase<SubnetCidrBlockProperties> {
 
 
     constructor(properties?: SubnetCidrBlockProperties) {

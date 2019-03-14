@@ -36,7 +36,7 @@ export interface LaunchConfigurationProperties {
     SpotPrice?: Value<string>;
     UserData?: Value<string>;
 }
-export default class LaunchConfiguration extends ResourceBase {
+export default class LaunchConfiguration extends ResourceBase<LaunchConfigurationProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static BlockDevice: typeof BlockDevice;
     constructor(properties?: LaunchConfigurationProperties);

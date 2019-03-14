@@ -10,7 +10,7 @@ export interface DatastoreProperties {
     RetentionPeriod?: RetentionPeriod;
     Tags?: List<ResourceTag>;
 }
-export default class Datastore extends ResourceBase {
+export default class Datastore extends ResourceBase<DatastoreProperties> {
     static RetentionPeriod: typeof RetentionPeriod;
     constructor(properties?: DatastoreProperties);
 }

@@ -29,7 +29,7 @@ export interface JobQueueProperties {
     JobQueueName?: Value<string>
 }
 
-export default class JobQueue extends ResourceBase {
+export default class JobQueue extends ResourceBase<JobQueueProperties> {
     static ComputeEnvironmentOrder = ComputeEnvironmentOrder
 
     constructor(properties?: JobQueueProperties) {

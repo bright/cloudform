@@ -37,7 +37,7 @@ export interface StreamProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Stream extends ResourceBase {
+export default class Stream extends ResourceBase<StreamProperties> {
     static StreamEncryption = StreamEncryption
 
     constructor(properties?: StreamProperties) {

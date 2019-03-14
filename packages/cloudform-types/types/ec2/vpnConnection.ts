@@ -38,7 +38,7 @@ export interface VPNConnectionProperties {
     VpnTunnelOptionsSpecifications?: List<VpnTunnelOptionsSpecification>
 }
 
-export default class VPNConnection extends ResourceBase {
+export default class VPNConnection extends ResourceBase<VPNConnectionProperties> {
     static VpnTunnelOptionsSpecification = VpnTunnelOptionsSpecification
 
     constructor(properties?: VPNConnectionProperties) {

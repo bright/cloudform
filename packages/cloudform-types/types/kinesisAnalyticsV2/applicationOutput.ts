@@ -57,7 +57,7 @@ export interface ApplicationOutputProperties {
     Output: Output
 }
 
-export default class ApplicationOutput extends ResourceBase {
+export default class ApplicationOutput extends ResourceBase<ApplicationOutputProperties> {
     static LambdaOutput = LambdaOutput
     static KinesisFirehoseOutput = KinesisFirehoseOutput
     static KinesisStreamsOutput = KinesisStreamsOutput

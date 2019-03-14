@@ -28,7 +28,7 @@ export interface InstanceProfileProperties {
     Roles: List<Value<string>>
 }
 
-export default class InstanceProfile extends ResourceBase {
+export default class InstanceProfile extends ResourceBase<InstanceProfileProperties> {
 
 
     constructor(properties?: InstanceProfileProperties) {

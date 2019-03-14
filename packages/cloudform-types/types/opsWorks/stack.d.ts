@@ -61,7 +61,7 @@ export interface StackProperties {
     UseOpsworksSecurityGroups?: Value<boolean>;
     VpcId?: Value<string>;
 }
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
     static Source: typeof Source;
     static ChefConfiguration: typeof ChefConfiguration;
     static StackConfigurationManager: typeof StackConfigurationManager;

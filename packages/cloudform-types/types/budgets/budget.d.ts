@@ -57,7 +57,7 @@ export interface BudgetProperties {
     NotificationsWithSubscribers?: List<NotificationWithSubscribers>;
     Budget: BudgetData;
 }
-export default class Budget extends ResourceBase {
+export default class Budget extends ResourceBase<BudgetProperties> {
     static NotificationWithSubscribers: typeof NotificationWithSubscribers;
     static Subscriber: typeof Subscriber;
     static Notification: typeof Notification;

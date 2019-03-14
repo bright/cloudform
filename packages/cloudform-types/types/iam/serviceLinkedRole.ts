@@ -27,7 +27,7 @@ export interface ServiceLinkedRoleProperties {
     AWSServiceName: Value<string>
 }
 
-export default class ServiceLinkedRole extends ResourceBase {
+export default class ServiceLinkedRole extends ResourceBase<ServiceLinkedRoleProperties> {
 
 
     constructor(properties?: ServiceLinkedRoleProperties) {

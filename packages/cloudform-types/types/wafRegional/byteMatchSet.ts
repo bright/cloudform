@@ -34,7 +34,7 @@ export interface ByteMatchSetProperties {
     Name: Value<string>
 }
 
-export default class ByteMatchSet extends ResourceBase {
+export default class ByteMatchSet extends ResourceBase<ByteMatchSetProperties> {
     static ByteMatchTuple = ByteMatchTuple
     static FieldToMatch = FieldToMatch
 

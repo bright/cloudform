@@ -37,7 +37,7 @@ export interface QueueProperties {
     VisibilityTimeout?: Value<number>
 }
 
-export default class Queue extends ResourceBase {
+export default class Queue extends ResourceBase<QueueProperties> {
 
 
     constructor(properties?: QueueProperties) {

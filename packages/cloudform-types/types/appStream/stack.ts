@@ -54,7 +54,7 @@ export interface StackProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
     static ApplicationSettings = ApplicationSettings
     static StorageConnector = StorageConnector
     static UserSetting = UserSetting

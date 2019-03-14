@@ -4,6 +4,6 @@ export interface AssessmentTargetProperties {
     AssessmentTargetName?: Value<string>;
     ResourceGroupArn?: Value<string>;
 }
-export default class AssessmentTarget extends ResourceBase {
+export default class AssessmentTarget extends ResourceBase<AssessmentTargetProperties> {
     constructor(properties?: AssessmentTargetProperties);
 }

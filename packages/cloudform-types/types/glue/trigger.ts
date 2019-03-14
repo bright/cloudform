@@ -51,7 +51,7 @@ export interface TriggerProperties {
     Predicate?: Predicate
 }
 
-export default class Trigger extends ResourceBase {
+export default class Trigger extends ResourceBase<TriggerProperties> {
     static Action = Action
     static Condition = Condition
     static Predicate = Predicate

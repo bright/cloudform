@@ -34,7 +34,7 @@ export interface TargetGroupProperties {
     UnhealthyThresholdCount?: Value<number>;
     VpcId?: Value<string>;
 }
-export default class TargetGroup extends ResourceBase {
+export default class TargetGroup extends ResourceBase<TargetGroupProperties> {
     static TargetGroupAttribute: typeof TargetGroupAttribute;
     static Matcher: typeof Matcher;
     static TargetDescription: typeof TargetDescription;

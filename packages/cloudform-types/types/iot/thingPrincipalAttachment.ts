@@ -27,7 +27,7 @@ export interface ThingPrincipalAttachmentProperties {
     ThingName: Value<string>
 }
 
-export default class ThingPrincipalAttachment extends ResourceBase {
+export default class ThingPrincipalAttachment extends ResourceBase<ThingPrincipalAttachmentProperties> {
 
 
     constructor(properties?: ThingPrincipalAttachmentProperties) {

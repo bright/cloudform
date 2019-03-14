@@ -29,7 +29,7 @@ export interface DBClusterProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class DBCluster extends ResourceBase {
+export default class DBCluster extends ResourceBase<DBClusterProperties> {
 
 
     constructor(properties?: DBClusterProperties) {

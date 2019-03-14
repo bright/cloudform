@@ -9,6 +9,6 @@ export interface ScheduledActionProperties {
     Recurrence?: Value<string>;
     StartTime?: Value<string>;
 }
-export default class ScheduledAction extends ResourceBase {
+export default class ScheduledAction extends ResourceBase<ScheduledActionProperties> {
     constructor(properties?: ScheduledActionProperties);
 }

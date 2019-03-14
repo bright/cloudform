@@ -28,7 +28,7 @@ export interface ConfigurationAssociationProperties {
     Configuration: ConfigurationId
 }
 
-export default class ConfigurationAssociation extends ResourceBase {
+export default class ConfigurationAssociation extends ResourceBase<ConfigurationAssociationProperties> {
     static ConfigurationId = ConfigurationId
 
     constructor(properties?: ConfigurationAssociationProperties) {

@@ -69,7 +69,7 @@ export interface RecordSetGroupProperties {
     RecordSets?: List<RecordSet>
 }
 
-export default class RecordSetGroup extends ResourceBase {
+export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {
     static RecordSet = RecordSet
     static GeoLocation = GeoLocation
     static AliasTarget = AliasTarget

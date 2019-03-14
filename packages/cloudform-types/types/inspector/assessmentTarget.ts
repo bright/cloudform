@@ -20,7 +20,7 @@ export interface AssessmentTargetProperties {
     ResourceGroupArn?: Value<string>
 }
 
-export default class AssessmentTarget extends ResourceBase {
+export default class AssessmentTarget extends ResourceBase<AssessmentTargetProperties> {
 
 
     constructor(properties?: AssessmentTargetProperties) {

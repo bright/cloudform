@@ -202,7 +202,7 @@ export interface DeploymentGroupProperties {
     TriggerConfigurations?: List<TriggerConfig>
 }
 
-export default class DeploymentGroup extends ResourceBase {
+export default class DeploymentGroup extends ResourceBase<DeploymentGroupProperties> {
     static LoadBalancerInfo = LoadBalancerInfo
     static RevisionLocation = RevisionLocation
     static S3Location = S3Location

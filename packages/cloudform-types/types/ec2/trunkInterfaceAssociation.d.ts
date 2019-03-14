@@ -6,6 +6,6 @@ export interface TrunkInterfaceAssociationProperties {
     TrunkInterfaceId: Value<string>;
     VLANId?: Value<number>;
 }
-export default class TrunkInterfaceAssociation extends ResourceBase {
+export default class TrunkInterfaceAssociation extends ResourceBase<TrunkInterfaceAssociationProperties> {
     constructor(properties?: TrunkInterfaceAssociationProperties);
 }

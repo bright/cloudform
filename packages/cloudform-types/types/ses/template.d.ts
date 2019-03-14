@@ -10,7 +10,7 @@ export declare class TemplateInner {
 export interface TemplateProperties {
     Template?: Template;
 }
-export default class Template extends ResourceBase {
+export default class Template extends ResourceBase<TemplateProperties> {
     static Template: typeof TemplateInner;
     constructor(properties?: TemplateProperties);
 }

@@ -137,7 +137,7 @@ export interface ApplicationProperties {
     ApplicationDescription?: Value<string>;
     ServiceExecutionRole: Value<string>;
 }
-export default class Application extends ResourceBase {
+export default class Application extends ResourceBase<ApplicationProperties> {
     static S3ContentLocation: typeof S3ContentLocation;
     static PropertyGroup: typeof PropertyGroup;
     static KinesisStreamsInput: typeof KinesisStreamsInput;

@@ -36,7 +36,7 @@ export interface AliasProperties {
     RoutingStrategy: RoutingStrategy
 }
 
-export default class Alias extends ResourceBase {
+export default class Alias extends ResourceBase<AliasProperties> {
     static RoutingStrategy = RoutingStrategy
 
     constructor(properties?: AliasProperties) {

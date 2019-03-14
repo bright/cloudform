@@ -242,7 +242,7 @@ export interface LaunchTemplateProperties {
     LaunchTemplateData?: LaunchTemplateData
 }
 
-export default class LaunchTemplate extends ResourceBase {
+export default class LaunchTemplate extends ResourceBase<LaunchTemplateProperties> {
     static PrivateIpAdd = PrivateIpAdd
     static LaunchTemplateData = LaunchTemplateData
     static InstanceMarketOptions = InstanceMarketOptions

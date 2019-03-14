@@ -31,7 +31,7 @@ export interface ApplicationOutputProperties {
     ApplicationName: Value<string>;
     Output: Output;
 }
-export default class ApplicationOutput extends ResourceBase {
+export default class ApplicationOutput extends ResourceBase<ApplicationOutputProperties> {
     static KinesisFirehoseOutput: typeof KinesisFirehoseOutput;
     static Output: typeof Output;
     static DestinationSchema: typeof DestinationSchema;

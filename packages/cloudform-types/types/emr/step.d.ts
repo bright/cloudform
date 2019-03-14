@@ -18,7 +18,7 @@ export interface StepProperties {
     JobFlowId: Value<string>;
     Name: Value<string>;
 }
-export default class Step extends ResourceBase {
+export default class Step extends ResourceBase<StepProperties> {
     static HadoopJarStepConfig: typeof HadoopJarStepConfig;
     static KeyValue: typeof KeyValue;
     constructor(properties?: StepProperties);

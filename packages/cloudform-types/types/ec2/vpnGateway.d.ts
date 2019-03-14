@@ -5,6 +5,6 @@ export interface VPNGatewayProperties {
     Tags?: List<ResourceTag>;
     Type: Value<string>;
 }
-export default class VPNGateway extends ResourceBase {
+export default class VPNGateway extends ResourceBase<VPNGatewayProperties> {
     constructor(properties?: VPNGatewayProperties);
 }

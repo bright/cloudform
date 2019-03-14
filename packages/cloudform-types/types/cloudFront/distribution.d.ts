@@ -129,7 +129,7 @@ export interface DistributionProperties {
     DistributionConfig: DistributionConfig;
     Tags?: List<ResourceTag>;
 }
-export default class Distribution extends ResourceBase {
+export default class Distribution extends ResourceBase<DistributionProperties> {
     static Cookies: typeof Cookies;
     static LambdaFunctionAssociation: typeof LambdaFunctionAssociation;
     static CustomOriginConfig: typeof CustomOriginConfig;

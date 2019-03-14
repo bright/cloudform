@@ -33,7 +33,7 @@ export interface ClusterProperties {
     Tags?: {[key: string]: any}
 }
 
-export default class Cluster extends ResourceBase {
+export default class Cluster extends ResourceBase<ClusterProperties> {
     static SSESpecification = SSESpecification
 
     constructor(properties?: ClusterProperties) {

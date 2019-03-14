@@ -13,7 +13,7 @@ export interface RepositoryProperties {
     Triggers?: List<RepositoryTrigger>;
     RepositoryDescription?: Value<string>;
 }
-export default class Repository extends ResourceBase {
+export default class Repository extends ResourceBase<RepositoryProperties> {
     static RepositoryTrigger: typeof RepositoryTrigger;
     constructor(properties?: RepositoryProperties);
 }

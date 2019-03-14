@@ -29,7 +29,7 @@ export interface ServiceProperties {
     HealthCheckConfig?: HealthCheckConfig;
     Name?: Value<string>;
 }
-export default class Service extends ResourceBase {
+export default class Service extends ResourceBase<ServiceProperties> {
     static DnsConfig: typeof DnsConfig;
     static DnsRecord: typeof DnsRecord;
     static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;

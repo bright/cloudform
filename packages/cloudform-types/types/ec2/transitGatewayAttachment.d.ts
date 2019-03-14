@@ -6,6 +6,6 @@ export interface TransitGatewayAttachmentProperties {
     SubnetIds: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }
-export default class TransitGatewayAttachment extends ResourceBase {
+export default class TransitGatewayAttachment extends ResourceBase<TransitGatewayAttachmentProperties> {
     constructor(properties?: TransitGatewayAttachmentProperties);
 }

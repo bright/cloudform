@@ -102,7 +102,7 @@ export interface BudgetProperties {
     Budget: BudgetData
 }
 
-export default class Budget extends ResourceBase {
+export default class Budget extends ResourceBase<BudgetProperties> {
     static NotificationWithSubscribers = NotificationWithSubscribers
     static Subscriber = Subscriber
     static Notification = Notification

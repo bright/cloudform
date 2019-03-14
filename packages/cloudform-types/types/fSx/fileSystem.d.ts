@@ -32,7 +32,7 @@ export interface FileSystemProperties {
     Tags?: List<TagEntry>;
     WindowsConfiguration?: WindowsConfiguration;
 }
-export default class FileSystem extends ResourceBase {
+export default class FileSystem extends ResourceBase<FileSystemProperties> {
     static TagEntry: typeof TagEntry;
     static LustreConfiguration: typeof LustreConfiguration;
     static WindowsConfiguration: typeof WindowsConfiguration;

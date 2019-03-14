@@ -26,7 +26,7 @@ export interface AccountProperties {
     CloudWatchRoleArn?: Value<string>
 }
 
-export default class Account extends ResourceBase {
+export default class Account extends ResourceBase<AccountProperties> {
 
 
     constructor(properties?: AccountProperties) {

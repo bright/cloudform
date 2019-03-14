@@ -39,7 +39,7 @@ export interface ReplicationGroupProperties {
     Tags?: List<ResourceTag>;
     TransitEncryptionEnabled?: Value<boolean>;
 }
-export default class ReplicationGroup extends ResourceBase {
+export default class ReplicationGroup extends ResourceBase<ReplicationGroupProperties> {
     static NodeGroupConfiguration: typeof NodeGroupConfiguration;
     constructor(properties?: ReplicationGroupProperties);
 }

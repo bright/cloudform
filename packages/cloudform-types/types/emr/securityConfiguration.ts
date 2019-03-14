@@ -27,7 +27,7 @@ export interface SecurityConfigurationProperties {
     SecurityConfiguration: {[key: string]: any}
 }
 
-export default class SecurityConfiguration extends ResourceBase {
+export default class SecurityConfiguration extends ResourceBase<SecurityConfigurationProperties> {
 
 
     constructor(properties?: SecurityConfigurationProperties) {

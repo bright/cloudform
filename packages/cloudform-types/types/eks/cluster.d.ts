@@ -11,7 +11,7 @@ export interface ClusterProperties {
     ResourcesVpcConfig: ResourcesVpcConfig;
     Name?: Value<string>;
 }
-export default class Cluster extends ResourceBase {
+export default class Cluster extends ResourceBase<ClusterProperties> {
     static ResourcesVpcConfig: typeof ResourcesVpcConfig;
     constructor(properties?: ClusterProperties);
 }

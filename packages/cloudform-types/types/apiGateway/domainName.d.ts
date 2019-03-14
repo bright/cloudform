@@ -10,7 +10,7 @@ export interface DomainNameProperties {
     EndpointConfiguration?: EndpointConfiguration;
     RegionalCertificateArn?: Value<string>;
 }
-export default class DomainName extends ResourceBase {
+export default class DomainName extends ResourceBase<DomainNameProperties> {
     static EndpointConfiguration: typeof EndpointConfiguration;
     constructor(properties?: DomainNameProperties);
 }

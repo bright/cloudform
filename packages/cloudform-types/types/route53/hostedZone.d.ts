@@ -25,7 +25,7 @@ export interface HostedZoneProperties {
     QueryLoggingConfig?: QueryLoggingConfig;
     VPCs?: List<VPC>;
 }
-export default class HostedZone extends ResourceBase {
+export default class HostedZone extends ResourceBase<HostedZoneProperties> {
     static HostedZoneTag: typeof HostedZoneTag;
     static HostedZoneConfig: typeof HostedZoneConfig;
     static QueryLoggingConfig: typeof QueryLoggingConfig;

@@ -7,6 +7,6 @@ export interface ResourceShareProperties {
     Tags?: List<ResourceTag>;
     Name: Value<string>;
 }
-export default class ResourceShare extends ResourceBase {
+export default class ResourceShare extends ResourceBase<ResourceShareProperties> {
     constructor(properties?: ResourceShareProperties);
 }

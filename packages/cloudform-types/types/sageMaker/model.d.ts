@@ -22,7 +22,7 @@ export interface ModelProperties {
     Containers?: List<ContainerDefinition>;
     Tags?: List<ResourceTag>;
 }
-export default class Model extends ResourceBase {
+export default class Model extends ResourceBase<ModelProperties> {
     static VpcConfig: typeof VpcConfig;
     static ContainerDefinition: typeof ContainerDefinition;
     constructor(properties?: ModelProperties);

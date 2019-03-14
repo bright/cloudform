@@ -22,7 +22,7 @@ export interface RouteProperties {
         [key: string]: any;
     };
 }
-export default class Route extends ResourceBase {
+export default class Route extends ResourceBase<RouteProperties> {
     static ParameterConstraints: typeof ParameterConstraints;
     constructor(properties?: RouteProperties);
 }

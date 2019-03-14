@@ -31,7 +31,7 @@ export interface DHCPOptionsProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class DHCPOptions extends ResourceBase {
+export default class DHCPOptions extends ResourceBase<DHCPOptionsProperties> {
 
 
     constructor(properties?: DHCPOptionsProperties) {

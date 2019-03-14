@@ -66,7 +66,7 @@ export interface HealthCheckProperties {
     HealthCheckTags?: List<HealthCheckTag>
 }
 
-export default class HealthCheck extends ResourceBase {
+export default class HealthCheck extends ResourceBase<HealthCheckProperties> {
     static HealthCheckConfig = HealthCheckConfig
     static HealthCheckTag = HealthCheckTag
     static AlarmIdentifier = AlarmIdentifier

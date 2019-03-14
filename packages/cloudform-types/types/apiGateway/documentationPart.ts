@@ -38,7 +38,7 @@ export interface DocumentationPartProperties {
     RestApiId: Value<string>
 }
 
-export default class DocumentationPart extends ResourceBase {
+export default class DocumentationPart extends ResourceBase<DocumentationPartProperties> {
     static Location = Location
 
     constructor(properties?: DocumentationPartProperties) {

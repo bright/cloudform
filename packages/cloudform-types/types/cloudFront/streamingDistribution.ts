@@ -66,7 +66,7 @@ export interface StreamingDistributionProperties {
     Tags: List<ResourceTag>
 }
 
-export default class StreamingDistribution extends ResourceBase {
+export default class StreamingDistribution extends ResourceBase<StreamingDistributionProperties> {
     static TrustedSigners = TrustedSigners
     static S3Origin = S3Origin
     static Logging = Logging

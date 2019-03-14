@@ -83,7 +83,7 @@ export interface FunctionProperties {
     VpcConfig?: VpcConfig
 }
 
-export default class Function extends ResourceBase {
+export default class Function extends ResourceBase<FunctionProperties> {
     static VpcConfig = VpcConfig
     static DeadLetterConfig = DeadLetterConfig
     static TracingConfig = TracingConfig

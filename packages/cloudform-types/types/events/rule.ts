@@ -98,7 +98,7 @@ export interface RuleProperties {
     Targets?: List<Target>
 }
 
-export default class Rule extends ResourceBase {
+export default class Rule extends ResourceBase<RuleProperties> {
     static SqsParameters = SqsParameters
     static RunCommandParameters = RunCommandParameters
     static Target = Target

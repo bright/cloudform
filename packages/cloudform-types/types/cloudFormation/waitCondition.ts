@@ -28,7 +28,7 @@ export interface WaitConditionProperties {
     Timeout?: Value<string>
 }
 
-export default class WaitCondition extends ResourceBase {
+export default class WaitCondition extends ResourceBase<WaitConditionProperties> {
 
 
     constructor(properties?: WaitConditionProperties) {

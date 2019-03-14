@@ -3,6 +3,6 @@ import { Value } from '../dataTypes';
 export interface SecurityGroupProperties {
     Description: Value<string>;
 }
-export default class SecurityGroup extends ResourceBase {
+export default class SecurityGroup extends ResourceBase<SecurityGroupProperties> {
     constructor(properties?: SecurityGroupProperties);
 }

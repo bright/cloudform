@@ -235,7 +235,7 @@ export interface TaskDefinitionProperties {
     Volumes?: List<Volume>
 }
 
-export default class TaskDefinition extends ResourceBase {
+export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {
     static DockerVolumeConfiguration = DockerVolumeConfiguration
     static ContainerDefinition = ContainerDefinition
     static LogConfiguration = LogConfiguration

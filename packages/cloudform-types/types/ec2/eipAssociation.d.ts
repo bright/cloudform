@@ -7,6 +7,6 @@ export interface EIPAssociationProperties {
     NetworkInterfaceId?: Value<string>;
     PrivateIpAddress?: Value<string>;
 }
-export default class EIPAssociation extends ResourceBase {
+export default class EIPAssociation extends ResourceBase<EIPAssociationProperties> {
     constructor(properties?: EIPAssociationProperties);
 }

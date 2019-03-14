@@ -15,7 +15,7 @@ export interface EndpointConfigProperties {
     EndpointConfigName?: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class EndpointConfig extends ResourceBase {
+export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {
     static ProductionVariant: typeof ProductionVariant;
     constructor(properties?: EndpointConfigProperties);
 }

@@ -64,7 +64,7 @@ export interface TableProperties {
     Tags?: List<ResourceTag>;
     TimeToLiveSpecification?: TimeToLiveSpecification;
 }
-export default class Table extends ResourceBase {
+export default class Table extends ResourceBase<TableProperties> {
     static TimeToLiveSpecification: typeof TimeToLiveSpecification;
     static AttributeDefinition: typeof AttributeDefinition;
     static LocalSecondaryIndex: typeof LocalSecondaryIndex;

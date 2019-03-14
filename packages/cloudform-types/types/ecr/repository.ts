@@ -35,7 +35,7 @@ export interface RepositoryProperties {
     RepositoryPolicyText?: {[key: string]: any}
 }
 
-export default class Repository extends ResourceBase {
+export default class Repository extends ResourceBase<RepositoryProperties> {
     static LifecyclePolicy = LifecyclePolicy
 
     constructor(properties?: RepositoryProperties) {

@@ -47,7 +47,7 @@ export interface ApplicationReferenceDataSourceProperties {
     ApplicationName: Value<string>;
     ReferenceDataSource: ReferenceDataSource;
 }
-export default class ApplicationReferenceDataSource extends ResourceBase {
+export default class ApplicationReferenceDataSource extends ResourceBase<ApplicationReferenceDataSourceProperties> {
     static RecordFormat: typeof RecordFormat;
     static CSVMappingParameters: typeof CSVMappingParameters;
     static S3ReferenceDataSource: typeof S3ReferenceDataSource;

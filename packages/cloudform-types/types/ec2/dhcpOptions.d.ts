@@ -8,6 +8,6 @@ export interface DHCPOptionsProperties {
     NtpServers?: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }
-export default class DHCPOptions extends ResourceBase {
+export default class DHCPOptions extends ResourceBase<DHCPOptionsProperties> {
     constructor(properties?: DHCPOptionsProperties);
 }

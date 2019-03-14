@@ -39,7 +39,7 @@ export interface ConfigurationAggregatorProperties {
     OrganizationAggregationSource?: OrganizationAggregationSource
 }
 
-export default class ConfigurationAggregator extends ResourceBase {
+export default class ConfigurationAggregator extends ResourceBase<ConfigurationAggregatorProperties> {
     static OrganizationAggregationSource = OrganizationAggregationSource
     static AccountAggregationSource = AccountAggregationSource
 

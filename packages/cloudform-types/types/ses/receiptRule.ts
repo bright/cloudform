@@ -109,7 +109,7 @@ export interface ReceiptRuleProperties {
     RuleSetName: Value<string>
 }
 
-export default class ReceiptRule extends ResourceBase {
+export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
     static BounceAction = BounceAction
     static Action = Action
     static S3Action = S3Action

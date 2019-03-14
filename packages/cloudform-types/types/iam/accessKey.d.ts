@@ -5,6 +5,6 @@ export interface AccessKeyProperties {
     Status?: Value<string>;
     UserName: Value<string>;
 }
-export default class AccessKey extends ResourceBase {
+export default class AccessKey extends ResourceBase<AccessKeyProperties> {
     constructor(properties?: AccessKeyProperties);
 }

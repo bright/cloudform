@@ -28,7 +28,7 @@ export interface PortfolioPrincipalAssociationProperties {
     PrincipalType: Value<string>
 }
 
-export default class PortfolioPrincipalAssociation extends ResourceBase {
+export default class PortfolioPrincipalAssociation extends ResourceBase<PortfolioPrincipalAssociationProperties> {
 
 
     constructor(properties?: PortfolioPrincipalAssociationProperties) {

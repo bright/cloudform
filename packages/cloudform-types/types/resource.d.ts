@@ -43,12 +43,10 @@ export default interface Resource {
     UpdatePolicy?: UpdatePolicy;
     Condition?: Value<string>;
 }
-export declare abstract class ResourceBase implements Resource {
+export declare abstract class ResourceBase<TProperties extends object> implements Resource {
     Type: string;
     DependsOn?: Value<string> | List<string>;
-    Properties?: {
-        [key: string]: any;
-    };
+    Properties?: TProperties;
     Metadata?: {
         [key: string]: any;
     };
@@ -56,9 +54,7 @@ export declare abstract class ResourceBase implements Resource {
     DeletionPolicy?: DeletionPolicy;
     UpdatePolicy?: UpdatePolicy;
     Condition?: Value<string>;
-    constructor(type: string, properties?: {
-        [key: string]: any;
-    });
+    protected constructor(type: string, properties?: TProperties);
     dependsOn(dependencies: Value<string> | List<string>): this;
     metadata(metadata: {
         [key: string]: any;

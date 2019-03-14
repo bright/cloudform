@@ -43,7 +43,7 @@ export interface WorkspaceProperties {
     WorkspaceProperties?: WorkspaceProperties
 }
 
-export default class Workspace extends ResourceBase {
+export default class Workspace extends ResourceBase<WorkspaceProperties> {
     static WorkspaceProperties = WorkspaceProperties
 
     constructor(properties?: WorkspaceProperties) {

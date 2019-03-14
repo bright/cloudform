@@ -44,7 +44,7 @@ export interface FunctionProperties {
     TracingConfig?: TracingConfig;
     VpcConfig?: VpcConfig;
 }
-export default class Function extends ResourceBase {
+export default class Function extends ResourceBase<FunctionProperties> {
     static VpcConfig: typeof VpcConfig;
     static DeadLetterConfig: typeof DeadLetterConfig;
     static TracingConfig: typeof TracingConfig;

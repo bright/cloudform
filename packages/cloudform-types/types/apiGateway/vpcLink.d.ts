@@ -5,6 +5,6 @@ export interface VpcLinkProperties {
     TargetArns: List<Value<string>>;
     Name: Value<string>;
 }
-export default class VpcLink extends ResourceBase {
+export default class VpcLink extends ResourceBase<VpcLinkProperties> {
     constructor(properties?: VpcLinkProperties);
 }

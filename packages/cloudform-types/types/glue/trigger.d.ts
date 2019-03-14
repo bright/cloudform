@@ -26,7 +26,7 @@ export interface TriggerProperties {
     Name?: Value<string>;
     Predicate?: Predicate;
 }
-export default class Trigger extends ResourceBase {
+export default class Trigger extends ResourceBase<TriggerProperties> {
     static Action: typeof Action;
     static Condition: typeof Condition;
     static Predicate: typeof Predicate;

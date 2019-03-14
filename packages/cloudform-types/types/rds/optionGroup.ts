@@ -50,7 +50,7 @@ export interface OptionGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class OptionGroup extends ResourceBase {
+export default class OptionGroup extends ResourceBase<OptionGroupProperties> {
     static OptionSetting = OptionSetting
     static OptionConfiguration = OptionConfiguration
 

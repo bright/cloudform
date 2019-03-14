@@ -32,7 +32,7 @@ export interface SecurityGroupProperties {
     Tags?: List<ResourceTag>;
     VpcId?: Value<string>;
 }
-export default class SecurityGroup extends ResourceBase {
+export default class SecurityGroup extends ResourceBase<SecurityGroupProperties> {
     static Ingress: typeof Ingress;
     static Egress: typeof Egress;
     constructor(properties?: SecurityGroupProperties);

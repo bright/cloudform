@@ -27,7 +27,7 @@ export interface LogGroupProperties {
     RetentionInDays?: Value<number>
 }
 
-export default class LogGroup extends ResourceBase {
+export default class LogGroup extends ResourceBase<LogGroupProperties> {
 
 
     constructor(properties?: LogGroupProperties) {

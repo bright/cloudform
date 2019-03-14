@@ -55,7 +55,7 @@ export interface DataSourceProperties {
     DynamoDBConfig?: DynamoDBConfig;
     ElasticsearchConfig?: ElasticsearchConfig;
 }
-export default class DataSource extends ResourceBase {
+export default class DataSource extends ResourceBase<DataSourceProperties> {
     static AuthorizationConfig: typeof AuthorizationConfig;
     static RelationalDatabaseConfig: typeof RelationalDatabaseConfig;
     static RdsHttpEndpointConfig: typeof RdsHttpEndpointConfig;

@@ -11,6 +11,6 @@ export interface ReplicationTaskProperties {
     Tags?: List<ResourceTag>;
     CdcStartTime?: Value<number>;
 }
-export default class ReplicationTask extends ResourceBase {
+export default class ReplicationTask extends ResourceBase<ReplicationTaskProperties> {
     constructor(properties?: ReplicationTaskProperties);
 }

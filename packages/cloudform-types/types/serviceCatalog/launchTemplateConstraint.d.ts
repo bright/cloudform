@@ -7,6 +7,6 @@ export interface LaunchTemplateConstraintProperties {
     ProductId: Value<string>;
     Rules: Value<string>;
 }
-export default class LaunchTemplateConstraint extends ResourceBase {
+export default class LaunchTemplateConstraint extends ResourceBase<LaunchTemplateConstraintProperties> {
     constructor(properties?: LaunchTemplateConstraintProperties);
 }

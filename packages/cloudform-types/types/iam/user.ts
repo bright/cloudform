@@ -48,7 +48,7 @@ export interface UserProperties {
     UserName?: Value<string>
 }
 
-export default class User extends ResourceBase {
+export default class User extends ResourceBase<UserProperties> {
     static LoginProfile = LoginProfile
     static Policy = Policy
 

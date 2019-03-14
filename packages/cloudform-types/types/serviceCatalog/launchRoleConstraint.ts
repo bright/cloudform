@@ -29,7 +29,7 @@ export interface LaunchRoleConstraintProperties {
     RoleArn: Value<string>
 }
 
-export default class LaunchRoleConstraint extends ResourceBase {
+export default class LaunchRoleConstraint extends ResourceBase<LaunchRoleConstraintProperties> {
 
 
     constructor(properties?: LaunchRoleConstraintProperties) {

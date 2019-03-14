@@ -53,7 +53,7 @@ export interface FileSystemProperties {
     WindowsConfiguration?: WindowsConfiguration
 }
 
-export default class FileSystem extends ResourceBase {
+export default class FileSystem extends ResourceBase<FileSystemProperties> {
     static TagEntry = TagEntry
     static LustreConfiguration = LustreConfiguration
     static WindowsConfiguration = WindowsConfiguration

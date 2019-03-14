@@ -136,7 +136,7 @@ export interface AutoScalingGroupProperties {
     VPCZoneIdentifier?: List<Value<string>>
 }
 
-export default class AutoScalingGroup extends ResourceBase {
+export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupProperties> {
     static LaunchTemplateOverrides = LaunchTemplateOverrides
     static LifecycleHookSpecification = LifecycleHookSpecification
     static MixedInstancesPolicy = MixedInstancesPolicy

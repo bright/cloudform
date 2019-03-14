@@ -30,7 +30,7 @@ export interface DatabaseProperties {
     CatalogId: Value<string>
 }
 
-export default class Database extends ResourceBase {
+export default class Database extends ResourceBase<DatabaseProperties> {
     static DatabaseInput = DatabaseInput
 
     constructor(properties?: DatabaseProperties) {

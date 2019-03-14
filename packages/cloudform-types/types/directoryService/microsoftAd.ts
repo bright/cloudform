@@ -39,7 +39,7 @@ export interface MicrosoftADProperties {
     VpcSettings: VpcSettings
 }
 
-export default class MicrosoftAD extends ResourceBase {
+export default class MicrosoftAD extends ResourceBase<MicrosoftADProperties> {
     static VpcSettings = VpcSettings
 
     constructor(properties?: MicrosoftADProperties) {

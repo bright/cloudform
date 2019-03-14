@@ -33,7 +33,7 @@ export interface WebACLProperties {
     Name: Value<string>
 }
 
-export default class WebACL extends ResourceBase {
+export default class WebACL extends ResourceBase<WebACLProperties> {
     static Rule = Rule
     static Action = Action
 

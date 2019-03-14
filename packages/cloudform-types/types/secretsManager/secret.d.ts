@@ -21,7 +21,7 @@ export interface SecretProperties {
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
-export default class Secret extends ResourceBase {
+export default class Secret extends ResourceBase<SecretProperties> {
     static GenerateSecretString: typeof GenerateSecretString;
     constructor(properties?: SecretProperties);
 }

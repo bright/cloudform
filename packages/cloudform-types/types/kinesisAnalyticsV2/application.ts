@@ -240,7 +240,7 @@ export interface ApplicationProperties {
     ServiceExecutionRole: Value<string>
 }
 
-export default class Application extends ResourceBase {
+export default class Application extends ResourceBase<ApplicationProperties> {
     static S3ContentLocation = S3ContentLocation
     static PropertyGroup = PropertyGroup
     static KinesisStreamsInput = KinesisStreamsInput

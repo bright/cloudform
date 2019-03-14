@@ -13,7 +13,7 @@ export interface ResolverRuleProperties {
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
-export default class ResolverRule extends ResourceBase {
+export default class ResolverRule extends ResourceBase<ResolverRuleProperties> {
     static TargetAddress: typeof TargetAddress;
     constructor(properties?: ResolverRuleProperties);
 }

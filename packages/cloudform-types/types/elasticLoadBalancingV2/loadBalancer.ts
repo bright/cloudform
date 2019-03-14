@@ -50,7 +50,7 @@ export interface LoadBalancerProperties {
     Type?: Value<string>
 }
 
-export default class LoadBalancer extends ResourceBase {
+export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static LoadBalancerAttribute = LoadBalancerAttribute
     static SubnetMapping = SubnetMapping
 

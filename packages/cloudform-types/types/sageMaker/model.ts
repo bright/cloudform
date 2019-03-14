@@ -45,7 +45,7 @@ export interface ModelProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Model extends ResourceBase {
+export default class Model extends ResourceBase<ModelProperties> {
     static VpcConfig = VpcConfig
     static ContainerDefinition = ContainerDefinition
 

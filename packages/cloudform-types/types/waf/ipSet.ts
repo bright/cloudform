@@ -34,7 +34,7 @@ export interface IPSetProperties {
     Name: Value<string>
 }
 
-export default class IPSet extends ResourceBase {
+export default class IPSet extends ResourceBase<IPSetProperties> {
     static IPSetDescriptor = IPSetDescriptor
 
     constructor(properties?: IPSetProperties) {

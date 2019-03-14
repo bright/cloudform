@@ -45,7 +45,7 @@ export interface SecretProperties {
     Name?: Value<string>
 }
 
-export default class Secret extends ResourceBase {
+export default class Secret extends ResourceBase<SecretProperties> {
     static GenerateSecretString = GenerateSecretString
 
     constructor(properties?: SecretProperties) {

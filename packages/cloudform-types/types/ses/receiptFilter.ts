@@ -29,7 +29,7 @@ export interface ReceiptFilterProperties {
     Filter: Filter
 }
 
-export default class ReceiptFilter extends ResourceBase {
+export default class ReceiptFilter extends ResourceBase<ReceiptFilterProperties> {
     static Filter = Filter
     static IpFilter = IpFilter
 

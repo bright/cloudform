@@ -29,7 +29,7 @@ export interface SubscriptionFilterProperties {
     RoleArn?: Value<string>
 }
 
-export default class SubscriptionFilter extends ResourceBase {
+export default class SubscriptionFilter extends ResourceBase<SubscriptionFilterProperties> {
 
 
     constructor(properties?: SubscriptionFilterProperties) {

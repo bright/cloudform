@@ -23,7 +23,7 @@ export interface NotebookInstanceLifecycleConfigProperties {
     OnCreate?: List<NotebookInstanceLifecycleHook>
 }
 
-export default class NotebookInstanceLifecycleConfig extends ResourceBase {
+export default class NotebookInstanceLifecycleConfig extends ResourceBase<NotebookInstanceLifecycleConfigProperties> {
     static NotebookInstanceLifecycleHook = NotebookInstanceLifecycleHook
 
     constructor(properties?: NotebookInstanceLifecycleConfigProperties) {

@@ -36,7 +36,7 @@ export interface ConfigurationRecorderProperties {
     RoleARN: Value<string>
 }
 
-export default class ConfigurationRecorder extends ResourceBase {
+export default class ConfigurationRecorder extends ResourceBase<ConfigurationRecorderProperties> {
     static RecordingGroup = RecordingGroup
 
     constructor(properties?: ConfigurationRecorderProperties) {

@@ -26,7 +26,7 @@ export interface RepositoryProperties {
     RepositoryDescription?: Value<string>
 }
 
-export default class Repository extends ResourceBase {
+export default class Repository extends ResourceBase<RepositoryProperties> {
     static RepositoryTrigger = RepositoryTrigger
 
     constructor(properties?: RepositoryProperties) {

@@ -28,7 +28,7 @@ export interface NatGatewayProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class NatGateway extends ResourceBase {
+export default class NatGateway extends ResourceBase<NatGatewayProperties> {
 
 
     constructor(properties?: NatGatewayProperties) {

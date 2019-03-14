@@ -48,7 +48,7 @@ export interface AlarmProperties {
     TreatMissingData?: Value<string>;
     Unit?: Value<string>;
 }
-export default class Alarm extends ResourceBase {
+export default class Alarm extends ResourceBase<AlarmProperties> {
     static MetricStat: typeof MetricStat;
     static Dimension: typeof Dimension;
     static MetricDataQuery: typeof MetricDataQuery;

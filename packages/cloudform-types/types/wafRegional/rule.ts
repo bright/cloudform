@@ -24,7 +24,7 @@ export interface RuleProperties {
     Name: Value<string>
 }
 
-export default class Rule extends ResourceBase {
+export default class Rule extends ResourceBase<RuleProperties> {
     static Predicate = Predicate
 
     constructor(properties?: RuleProperties) {

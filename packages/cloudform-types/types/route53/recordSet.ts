@@ -58,7 +58,7 @@ export interface RecordSetProperties {
     Weight?: Value<number>
 }
 
-export default class RecordSet extends ResourceBase {
+export default class RecordSet extends ResourceBase<RecordSetProperties> {
     static GeoLocation = GeoLocation
     static AliasTarget = AliasTarget
 

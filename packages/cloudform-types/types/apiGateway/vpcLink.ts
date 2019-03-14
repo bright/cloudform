@@ -25,7 +25,7 @@ export interface VpcLinkProperties {
     Name: Value<string>
 }
 
-export default class VpcLink extends ResourceBase {
+export default class VpcLink extends ResourceBase<VpcLinkProperties> {
 
 
     constructor(properties?: VpcLinkProperties) {

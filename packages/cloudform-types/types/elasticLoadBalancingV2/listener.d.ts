@@ -66,7 +66,7 @@ export interface ListenerProperties {
     Protocol: Value<string>;
     SslPolicy?: Value<string>;
 }
-export default class Listener extends ResourceBase {
+export default class Listener extends ResourceBase<ListenerProperties> {
     static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
     static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
     static RedirectConfig: typeof RedirectConfig;

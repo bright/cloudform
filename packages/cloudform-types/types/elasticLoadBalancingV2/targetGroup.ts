@@ -67,7 +67,7 @@ export interface TargetGroupProperties {
     VpcId?: Value<string>
 }
 
-export default class TargetGroup extends ResourceBase {
+export default class TargetGroup extends ResourceBase<TargetGroupProperties> {
     static TargetGroupAttribute = TargetGroupAttribute
     static Matcher = Matcher
     static TargetDescription = TargetDescription

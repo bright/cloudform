@@ -31,7 +31,7 @@ export interface SqlInjectionMatchSetProperties {
     Name: Value<string>
 }
 
-export default class SqlInjectionMatchSet extends ResourceBase {
+export default class SqlInjectionMatchSet extends ResourceBase<SqlInjectionMatchSetProperties> {
     static FieldToMatch = FieldToMatch
     static SqlInjectionMatchTuple = SqlInjectionMatchTuple
 

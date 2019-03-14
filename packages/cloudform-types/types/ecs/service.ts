@@ -105,7 +105,7 @@ export interface ServiceProperties {
     TaskDefinition: Value<string>
 }
 
-export default class Service extends ResourceBase {
+export default class Service extends ResourceBase<ServiceProperties> {
     static LoadBalancer = LoadBalancer
     static PlacementStrategy = PlacementStrategy
     static ServiceRegistry = ServiceRegistry

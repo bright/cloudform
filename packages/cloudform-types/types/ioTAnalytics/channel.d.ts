@@ -10,7 +10,7 @@ export interface ChannelProperties {
     RetentionPeriod?: RetentionPeriod;
     Tags?: List<ResourceTag>;
 }
-export default class Channel extends ResourceBase {
+export default class Channel extends ResourceBase<ChannelProperties> {
     static RetentionPeriod: typeof RetentionPeriod;
     constructor(properties?: ChannelProperties);
 }

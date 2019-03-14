@@ -56,7 +56,7 @@ export interface DBInstanceProperties {
     UseDefaultProcessorFeatures?: Value<boolean>;
     VPCSecurityGroups?: List<Value<string>>;
 }
-export default class DBInstance extends ResourceBase {
+export default class DBInstance extends ResourceBase<DBInstanceProperties> {
     static ProcessorFeature: typeof ProcessorFeature;
     constructor(properties?: DBInstanceProperties);
 }

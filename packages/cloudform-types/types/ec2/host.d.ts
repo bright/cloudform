@@ -5,6 +5,6 @@ export interface HostProperties {
     AvailabilityZone: Value<string>;
     InstanceType: Value<string>;
 }
-export default class Host extends ResourceBase {
+export default class Host extends ResourceBase<HostProperties> {
     constructor(properties?: HostProperties);
 }

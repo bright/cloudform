@@ -62,7 +62,7 @@ export interface InstanceProperties {
     VirtualizationType?: Value<string>;
     Volumes?: List<Value<string>>;
 }
-export default class Instance extends ResourceBase {
+export default class Instance extends ResourceBase<InstanceProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static EbsBlockDevice: typeof EbsBlockDevice;
     static TimeBasedAutoScaling: typeof TimeBasedAutoScaling;

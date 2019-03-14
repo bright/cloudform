@@ -30,7 +30,7 @@ export interface ModelProperties {
     Schema?: {[key: string]: any}
 }
 
-export default class Model extends ResourceBase {
+export default class Model extends ResourceBase<ModelProperties> {
 
 
     constructor(properties?: ModelProperties) {

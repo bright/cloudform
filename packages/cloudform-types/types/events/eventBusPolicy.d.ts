@@ -12,7 +12,7 @@ export interface EventBusPolicyProperties {
     StatementId: Value<string>;
     Principal: Value<string>;
 }
-export default class EventBusPolicy extends ResourceBase {
+export default class EventBusPolicy extends ResourceBase<EventBusPolicyProperties> {
     static Condition: typeof Condition;
     constructor(properties?: EventBusPolicyProperties);
 }

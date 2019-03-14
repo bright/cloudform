@@ -23,7 +23,7 @@ export interface AssessmentTemplateProperties {
     UserAttributesForFindings?: List<ResourceTag>
 }
 
-export default class AssessmentTemplate extends ResourceBase {
+export default class AssessmentTemplate extends ResourceBase<AssessmentTemplateProperties> {
 
 
     constructor(properties?: AssessmentTemplateProperties) {

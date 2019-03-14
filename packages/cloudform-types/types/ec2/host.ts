@@ -28,7 +28,7 @@ export interface HostProperties {
     InstanceType: Value<string>
 }
 
-export default class Host extends ResourceBase {
+export default class Host extends ResourceBase<HostProperties> {
 
 
     constructor(properties?: HostProperties) {

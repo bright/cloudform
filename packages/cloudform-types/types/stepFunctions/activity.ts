@@ -24,7 +24,7 @@ export interface ActivityProperties {
     Name: Value<string>
 }
 
-export default class Activity extends ResourceBase {
+export default class Activity extends ResourceBase<ActivityProperties> {
     static TagsEntry = TagsEntry
 
     constructor(properties?: ActivityProperties) {

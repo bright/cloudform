@@ -29,7 +29,7 @@ export interface TrunkInterfaceAssociationProperties {
     VLANId?: Value<number>
 }
 
-export default class TrunkInterfaceAssociation extends ResourceBase {
+export default class TrunkInterfaceAssociation extends ResourceBase<TrunkInterfaceAssociationProperties> {
 
 
     constructor(properties?: TrunkInterfaceAssociationProperties) {

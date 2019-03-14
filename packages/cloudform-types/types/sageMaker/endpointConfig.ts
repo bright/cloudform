@@ -29,7 +29,7 @@ export interface EndpointConfigProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class EndpointConfig extends ResourceBase {
+export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {
     static ProductionVariant = ProductionVariant
 
     constructor(properties?: EndpointConfigProperties) {

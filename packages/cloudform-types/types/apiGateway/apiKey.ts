@@ -39,7 +39,7 @@ export interface ApiKeyProperties {
     Value?: Value<string>
 }
 
-export default class ApiKey extends ResourceBase {
+export default class ApiKey extends ResourceBase<ApiKeyProperties> {
     static StageKey = StageKey
 
     constructor(properties?: ApiKeyProperties) {

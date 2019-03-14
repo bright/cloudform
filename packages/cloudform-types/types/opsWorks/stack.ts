@@ -98,7 +98,7 @@ export interface StackProperties {
     VpcId?: Value<string>
 }
 
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
     static Source = Source
     static ChefConfiguration = ChefConfiguration
     static StackConfigurationManager = StackConfigurationManager

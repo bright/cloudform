@@ -138,7 +138,7 @@ export interface PipelineProperties {
     PipelineActivities: List<Activity>
 }
 
-export default class Pipeline extends ResourceBase {
+export default class Pipeline extends ResourceBase<PipelineProperties> {
     static DeviceShadowEnrich = DeviceShadowEnrich
     static Activity = Activity
     static Lambda = Lambda

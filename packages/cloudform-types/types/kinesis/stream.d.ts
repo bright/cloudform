@@ -12,7 +12,7 @@ export interface StreamProperties {
     StreamEncryption?: StreamEncryption;
     Tags?: List<ResourceTag>;
 }
-export default class Stream extends ResourceBase {
+export default class Stream extends ResourceBase<StreamProperties> {
     static StreamEncryption: typeof StreamEncryption;
     constructor(properties?: StreamProperties);
 }

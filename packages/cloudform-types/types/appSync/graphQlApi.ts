@@ -49,7 +49,7 @@ export interface GraphQLApiProperties {
     LogConfig?: LogConfig
 }
 
-export default class GraphQLApi extends ResourceBase {
+export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
     static OpenIDConnectConfig = OpenIDConnectConfig
     static LogConfig = LogConfig
     static UserPoolConfig = UserPoolConfig

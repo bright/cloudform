@@ -427,7 +427,7 @@ export interface BucketProperties {
     WebsiteConfiguration?: WebsiteConfiguration
 }
 
-export default class Bucket extends ResourceBase {
+export default class Bucket extends ResourceBase<BucketProperties> {
     static BucketEncryption = BucketEncryption
     static NotificationFilter = NotificationFilter
     static RoutingRuleCondition = RoutingRuleCondition

@@ -5,6 +5,6 @@ export interface GraphQLSchemaProperties {
     DefinitionS3Location?: Value<string>;
     ApiId: Value<string>;
 }
-export default class GraphQLSchema extends ResourceBase {
+export default class GraphQLSchema extends ResourceBase<GraphQLSchemaProperties> {
     constructor(properties?: GraphQLSchemaProperties);
 }

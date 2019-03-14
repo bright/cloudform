@@ -9,7 +9,7 @@ export interface RotationScheduleProperties {
     RotationLambdaARN?: Value<string>;
     RotationRules?: RotationRules;
 }
-export default class RotationSchedule extends ResourceBase {
+export default class RotationSchedule extends ResourceBase<RotationScheduleProperties> {
     static RotationRules: typeof RotationRules;
     constructor(properties?: RotationScheduleProperties);
 }

@@ -116,7 +116,7 @@ export interface InstanceProperties {
     UserData?: Value<string>;
     Volumes?: List<Volume>;
 }
-export default class Instance extends ResourceBase {
+export default class Instance extends ResourceBase<InstanceProperties> {
     static ElasticGpuSpecification: typeof ElasticGpuSpecification;
     static NetworkInterface: typeof NetworkInterface;
     static InstanceIpv6Address: typeof InstanceIpv6Address;

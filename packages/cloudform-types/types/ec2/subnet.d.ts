@@ -9,6 +9,6 @@ export interface SubnetProperties {
     Tags?: List<ResourceTag>;
     VpcId: Value<string>;
 }
-export default class Subnet extends ResourceBase {
+export default class Subnet extends ResourceBase<SubnetProperties> {
     constructor(properties?: SubnetProperties);
 }

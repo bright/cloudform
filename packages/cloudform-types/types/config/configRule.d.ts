@@ -29,7 +29,7 @@ export interface ConfigRuleProperties {
     Scope?: Scope;
     Source: Source;
 }
-export default class ConfigRule extends ResourceBase {
+export default class ConfigRule extends ResourceBase<ConfigRuleProperties> {
     static Scope: typeof Scope;
     static Source: typeof Source;
     static SourceDetail: typeof SourceDetail;

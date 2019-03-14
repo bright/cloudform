@@ -30,7 +30,7 @@ export interface FleetProperties {
     ImageArn?: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class Fleet extends ResourceBase {
+export default class Fleet extends ResourceBase<FleetProperties> {
     static ComputeCapacity: typeof ComputeCapacity;
     static DomainJoinInfo: typeof DomainJoinInfo;
     static VpcConfig: typeof VpcConfig;

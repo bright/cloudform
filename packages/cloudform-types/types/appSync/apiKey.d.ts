@@ -5,6 +5,6 @@ export interface ApiKeyProperties {
     Expires?: Value<number>;
     ApiId: Value<string>;
 }
-export default class ApiKey extends ResourceBase {
+export default class ApiKey extends ResourceBase<ApiKeyProperties> {
     constructor(properties?: ApiKeyProperties);
 }

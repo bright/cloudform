@@ -28,7 +28,7 @@ export interface VersionProperties {
     FunctionName: Value<string>
 }
 
-export default class Version extends ResourceBase {
+export default class Version extends ResourceBase<VersionProperties> {
 
 
     constructor(properties?: VersionProperties) {

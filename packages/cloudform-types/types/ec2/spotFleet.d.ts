@@ -142,7 +142,7 @@ export declare class BlockDeviceMapping {
 export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData;
 }
-export default class SpotFleet extends ResourceBase {
+export default class SpotFleet extends ResourceBase<SpotFleetProperties> {
     static ClassicLoadBalancer: typeof ClassicLoadBalancer;
     static LaunchTemplateConfig: typeof LaunchTemplateConfig;
     static IamInstanceProfileSpecification: typeof IamInstanceProfileSpecification;

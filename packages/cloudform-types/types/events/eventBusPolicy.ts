@@ -36,7 +36,7 @@ export interface EventBusPolicyProperties {
     Principal: Value<string>
 }
 
-export default class EventBusPolicy extends ResourceBase {
+export default class EventBusPolicy extends ResourceBase<EventBusPolicyProperties> {
     static Condition = Condition
 
     constructor(properties?: EventBusPolicyProperties) {

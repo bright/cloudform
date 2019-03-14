@@ -33,7 +33,7 @@ export interface ListenerCertificateProperties {
     ListenerArn: Value<string>
 }
 
-export default class ListenerCertificate extends ResourceBase {
+export default class ListenerCertificate extends ResourceBase<ListenerCertificateProperties> {
     static Certificate = Certificate
 
     constructor(properties?: ListenerCertificateProperties) {

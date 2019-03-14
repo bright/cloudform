@@ -22,7 +22,7 @@ export interface NetworkInterfaceProperties {
     SubnetId: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class NetworkInterface extends ResourceBase {
+export default class NetworkInterface extends ResourceBase<NetworkInterfaceProperties> {
     static InstanceIpv6Address: typeof InstanceIpv6Address;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     constructor(properties?: NetworkInterfaceProperties);

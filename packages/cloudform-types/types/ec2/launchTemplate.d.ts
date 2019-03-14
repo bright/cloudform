@@ -141,7 +141,7 @@ export interface LaunchTemplateProperties {
     LaunchTemplateName?: Value<string>;
     LaunchTemplateData?: LaunchTemplateData;
 }
-export default class LaunchTemplate extends ResourceBase {
+export default class LaunchTemplate extends ResourceBase<LaunchTemplateProperties> {
     static PrivateIpAdd: typeof PrivateIpAdd;
     static LaunchTemplateData: typeof LaunchTemplateData;
     static InstanceMarketOptions: typeof InstanceMarketOptions;

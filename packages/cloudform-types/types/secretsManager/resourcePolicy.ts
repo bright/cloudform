@@ -26,7 +26,7 @@ export interface ResourcePolicyProperties {
     ResourcePolicy: {[key: string]: any}
 }
 
-export default class ResourcePolicy extends ResourceBase {
+export default class ResourcePolicy extends ResourceBase<ResourcePolicyProperties> {
 
 
     constructor(properties?: ResourcePolicyProperties) {

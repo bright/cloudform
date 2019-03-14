@@ -7,6 +7,6 @@ export interface EventSourceMappingProperties {
     FunctionName: Value<string>;
     StartingPosition?: Value<string>;
 }
-export default class EventSourceMapping extends ResourceBase {
+export default class EventSourceMapping extends ResourceBase<EventSourceMappingProperties> {
     constructor(properties?: EventSourceMappingProperties);
 }

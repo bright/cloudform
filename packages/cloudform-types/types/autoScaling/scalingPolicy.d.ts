@@ -43,7 +43,7 @@ export interface ScalingPolicyProperties {
     StepAdjustments?: List<StepAdjustment>;
     TargetTrackingConfiguration?: TargetTrackingConfiguration;
 }
-export default class ScalingPolicy extends ResourceBase {
+export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {
     static MetricDimension: typeof MetricDimension;
     static CustomizedMetricSpecification: typeof CustomizedMetricSpecification;
     static PredefinedMetricSpecification: typeof PredefinedMetricSpecification;

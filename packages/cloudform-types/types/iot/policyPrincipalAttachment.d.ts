@@ -4,6 +4,6 @@ export interface PolicyPrincipalAttachmentProperties {
     PolicyName: Value<string>;
     Principal: Value<string>;
 }
-export default class PolicyPrincipalAttachment extends ResourceBase {
+export default class PolicyPrincipalAttachment extends ResourceBase<PolicyPrincipalAttachmentProperties> {
     constructor(properties?: PolicyPrincipalAttachmentProperties);
 }

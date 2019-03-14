@@ -10,6 +10,6 @@ export interface AuthorizerProperties {
     ApiId: Value<string>;
     Name: Value<string>;
 }
-export default class Authorizer extends ResourceBase {
+export default class Authorizer extends ResourceBase<AuthorizerProperties> {
     constructor(properties?: AuthorizerProperties);
 }

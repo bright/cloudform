@@ -79,7 +79,7 @@ export interface AutoScalingGroupProperties {
     TerminationPolicies?: List<Value<string>>;
     VPCZoneIdentifier?: List<Value<string>>;
 }
-export default class AutoScalingGroup extends ResourceBase {
+export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupProperties> {
     static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
     static LifecycleHookSpecification: typeof LifecycleHookSpecification;
     static MixedInstancesPolicy: typeof MixedInstancesPolicy;

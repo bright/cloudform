@@ -35,7 +35,7 @@ export interface ProjectProperties {
     ProjectName?: Value<string>
 }
 
-export default class Project extends ResourceBase {
+export default class Project extends ResourceBase<ProjectProperties> {
     static DeviceTemplate = DeviceTemplate
     static PlacementTemplate = PlacementTemplate
 

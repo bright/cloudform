@@ -27,7 +27,7 @@ export interface ResolverEndpointProperties {
     Name?: Value<string>
 }
 
-export default class ResolverEndpoint extends ResourceBase {
+export default class ResolverEndpoint extends ResourceBase<ResolverEndpointProperties> {
     static IpAddressRequest = IpAddressRequest
 
     constructor(properties?: ResolverEndpointProperties) {

@@ -34,7 +34,7 @@ export interface RouteProperties {
     VpcPeeringConnectionId?: Value<string>
 }
 
-export default class Route extends ResourceBase {
+export default class Route extends ResourceBase<RouteProperties> {
 
 
     constructor(properties?: RouteProperties) {

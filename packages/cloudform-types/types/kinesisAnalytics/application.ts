@@ -126,7 +126,7 @@ export interface ApplicationProperties {
     ApplicationCode?: Value<string>
 }
 
-export default class Application extends ResourceBase {
+export default class Application extends ResourceBase<ApplicationProperties> {
     static CSVMappingParameters = CSVMappingParameters
     static Input = Input
     static InputSchema = InputSchema

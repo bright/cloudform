@@ -37,7 +37,7 @@ export interface MetricFilterProperties {
     MetricTransformations: List<MetricTransformation>
 }
 
-export default class MetricFilter extends ResourceBase {
+export default class MetricFilter extends ResourceBase<MetricFilterProperties> {
     static MetricTransformation = MetricTransformation
 
     constructor(properties?: MetricFilterProperties) {

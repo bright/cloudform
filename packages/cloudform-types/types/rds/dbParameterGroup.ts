@@ -29,7 +29,7 @@ export interface DBParameterGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class DBParameterGroup extends ResourceBase {
+export default class DBParameterGroup extends ResourceBase<DBParameterGroupProperties> {
 
 
     constructor(properties?: DBParameterGroupProperties) {

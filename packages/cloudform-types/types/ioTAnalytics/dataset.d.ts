@@ -73,7 +73,7 @@ export interface DatasetProperties {
     RetentionPeriod?: RetentionPeriod;
     Tags?: List<ResourceTag>;
 }
-export default class Dataset extends ResourceBase {
+export default class Dataset extends ResourceBase<DatasetProperties> {
     static DatasetContentVersionValue: typeof DatasetContentVersionValue;
     static OutputFileUriValue: typeof OutputFileUriValue;
     static QueryAction: typeof QueryAction;

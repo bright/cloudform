@@ -5,6 +5,6 @@ export interface VPCGatewayAttachmentProperties {
     VpcId: Value<string>;
     VpnGatewayId?: Value<string>;
 }
-export default class VPCGatewayAttachment extends ResourceBase {
+export default class VPCGatewayAttachment extends ResourceBase<VPCGatewayAttachmentProperties> {
     constructor(properties?: VPCGatewayAttachmentProperties);
 }

@@ -37,7 +37,7 @@ export interface CrawlerProperties {
     TablePrefix?: Value<string>;
     Name?: Value<string>;
 }
-export default class Crawler extends ResourceBase {
+export default class Crawler extends ResourceBase<CrawlerProperties> {
     static Targets: typeof Targets;
     static JdbcTarget: typeof JdbcTarget;
     static Schedule: typeof Schedule;

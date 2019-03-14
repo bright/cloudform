@@ -26,7 +26,7 @@ export interface GraphQLApiProperties {
     AuthenticationType: Value<string>;
     LogConfig?: LogConfig;
 }
-export default class GraphQLApi extends ResourceBase {
+export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
     static OpenIDConnectConfig: typeof OpenIDConnectConfig;
     static LogConfig: typeof LogConfig;
     static UserPoolConfig: typeof UserPoolConfig;

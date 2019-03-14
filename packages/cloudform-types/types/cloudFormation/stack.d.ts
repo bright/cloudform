@@ -9,6 +9,6 @@ export interface StackProperties {
     TemplateURL: Value<string>;
     TimeoutInMinutes?: Value<number>;
 }
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
     constructor(properties?: StackProperties);
 }

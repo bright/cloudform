@@ -35,7 +35,7 @@ export interface DBClusterProperties {
     Tags?: List<ResourceTag>;
     VpcSecurityGroupIds?: List<Value<string>>;
 }
-export default class DBCluster extends ResourceBase {
+export default class DBCluster extends ResourceBase<DBClusterProperties> {
     static ScalingConfiguration: typeof ScalingConfiguration;
     constructor(properties?: DBClusterProperties);
 }

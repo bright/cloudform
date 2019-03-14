@@ -32,7 +32,7 @@ export interface ConfigurationProperties {
     Name: Value<string>
 }
 
-export default class Configuration extends ResourceBase {
+export default class Configuration extends ResourceBase<ConfigurationProperties> {
     static TagsEntry = TagsEntry
 
     constructor(properties?: ConfigurationProperties) {

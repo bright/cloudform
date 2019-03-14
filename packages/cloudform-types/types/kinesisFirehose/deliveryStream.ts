@@ -218,7 +218,7 @@ export interface DeliveryStreamProperties {
     SplunkDestinationConfiguration?: SplunkDestinationConfiguration
 }
 
-export default class DeliveryStream extends ResourceBase {
+export default class DeliveryStream extends ResourceBase<DeliveryStreamProperties> {
     static ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration
     static ElasticsearchBufferingHints = ElasticsearchBufferingHints
     static SplunkDestinationConfiguration = SplunkDestinationConfiguration

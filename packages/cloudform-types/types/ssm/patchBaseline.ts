@@ -80,7 +80,7 @@ export interface PatchBaselineProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class PatchBaseline extends ResourceBase {
+export default class PatchBaseline extends ResourceBase<PatchBaselineProperties> {
     static RuleGroup = RuleGroup
     static PatchFilter = PatchFilter
     static Rule = Rule

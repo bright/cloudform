@@ -11,7 +11,7 @@ export interface StateMachineProperties {
     RoleArn: Value<string>;
     Tags?: List<TagsEntry>;
 }
-export default class StateMachine extends ResourceBase {
+export default class StateMachine extends ResourceBase<StateMachineProperties> {
     static TagsEntry: typeof TagsEntry;
     constructor(properties?: StateMachineProperties);
 }

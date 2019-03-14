@@ -20,7 +20,7 @@ export interface WebhookProperties {
     TargetPipelineVersion: Value<number>;
     RegisterWithThirdParty?: Value<boolean>;
 }
-export default class Webhook extends ResourceBase {
+export default class Webhook extends ResourceBase<WebhookProperties> {
     static WebhookFilterRule: typeof WebhookFilterRule;
     static WebhookAuthConfiguration: typeof WebhookAuthConfiguration;
     constructor(properties?: WebhookProperties);

@@ -22,7 +22,7 @@ export interface ClusterProperties {
     Name?: Value<string>
 }
 
-export default class Cluster extends ResourceBase {
+export default class Cluster extends ResourceBase<ClusterProperties> {
     static ResourcesVpcConfig = ResourcesVpcConfig
 
     constructor(properties?: ClusterProperties) {

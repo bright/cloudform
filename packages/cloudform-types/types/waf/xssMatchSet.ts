@@ -43,7 +43,7 @@ export interface XssMatchSetProperties {
     XssMatchTuples: List<XssMatchTuple>
 }
 
-export default class XssMatchSet extends ResourceBase {
+export default class XssMatchSet extends ResourceBase<XssMatchSetProperties> {
     static FieldToMatch = FieldToMatch
     static XssMatchTuple = XssMatchTuple
 

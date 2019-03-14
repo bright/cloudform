@@ -28,7 +28,7 @@ export interface VPCCidrBlockProperties {
     VpcId: Value<string>
 }
 
-export default class VPCCidrBlock extends ResourceBase {
+export default class VPCCidrBlock extends ResourceBase<VPCCidrBlockProperties> {
 
 
     constructor(properties?: VPCCidrBlockProperties) {

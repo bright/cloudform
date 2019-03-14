@@ -3,6 +3,6 @@ import { Value } from '../dataTypes';
 export interface ClusterProperties {
     ClusterName?: Value<string>;
 }
-export default class Cluster extends ResourceBase {
+export default class Cluster extends ResourceBase<ClusterProperties> {
     constructor(properties?: ClusterProperties);
 }

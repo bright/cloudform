@@ -109,7 +109,7 @@ export interface DeploymentGroupProperties {
     ServiceRoleArn: Value<string>;
     TriggerConfigurations?: List<TriggerConfig>;
 }
-export default class DeploymentGroup extends ResourceBase {
+export default class DeploymentGroup extends ResourceBase<DeploymentGroupProperties> {
     static LoadBalancerInfo: typeof LoadBalancerInfo;
     static RevisionLocation: typeof RevisionLocation;
     static S3Location: typeof S3Location;

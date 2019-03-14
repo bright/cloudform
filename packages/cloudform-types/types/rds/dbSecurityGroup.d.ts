@@ -13,7 +13,7 @@ export interface DBSecurityGroupProperties {
     GroupDescription: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class DBSecurityGroup extends ResourceBase {
+export default class DBSecurityGroup extends ResourceBase<DBSecurityGroupProperties> {
     static Ingress: typeof Ingress;
     constructor(properties?: DBSecurityGroupProperties);
 }

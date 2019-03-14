@@ -13,7 +13,7 @@ export interface DocumentationPartProperties {
     Properties: Value<string>;
     RestApiId: Value<string>;
 }
-export default class DocumentationPart extends ResourceBase {
+export default class DocumentationPart extends ResourceBase<DocumentationPartProperties> {
     static Location: typeof Location;
     constructor(properties?: DocumentationPartProperties);
 }

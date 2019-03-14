@@ -7,6 +7,6 @@ export interface LaunchNotificationConstraintProperties {
     PortfolioId: Value<string>;
     ProductId: Value<string>;
 }
-export default class LaunchNotificationConstraint extends ResourceBase {
+export default class LaunchNotificationConstraint extends ResourceBase<LaunchNotificationConstraintProperties> {
     constructor(properties?: LaunchNotificationConstraintProperties);
 }

@@ -14,7 +14,7 @@ export interface MicrosoftADProperties {
     ShortName?: Value<string>;
     VpcSettings: VpcSettings;
 }
-export default class MicrosoftAD extends ResourceBase {
+export default class MicrosoftAD extends ResourceBase<MicrosoftADProperties> {
     static VpcSettings: typeof VpcSettings;
     constructor(properties?: MicrosoftADProperties);
 }

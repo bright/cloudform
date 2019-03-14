@@ -21,7 +21,7 @@ export interface UserProperties {
     Policies?: List<Policy>;
     UserName?: Value<string>;
 }
-export default class User extends ResourceBase {
+export default class User extends ResourceBase<UserProperties> {
     static LoginProfile: typeof LoginProfile;
     static Policy: typeof Policy;
     constructor(properties?: UserProperties);

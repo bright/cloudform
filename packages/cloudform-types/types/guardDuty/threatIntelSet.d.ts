@@ -7,6 +7,6 @@ export interface ThreatIntelSetProperties {
     Name?: Value<string>;
     Location: Value<string>;
 }
-export default class ThreatIntelSet extends ResourceBase {
+export default class ThreatIntelSet extends ResourceBase<ThreatIntelSetProperties> {
     constructor(properties?: ThreatIntelSetProperties);
 }

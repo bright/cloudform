@@ -95,7 +95,7 @@ export interface TableProperties {
     CatalogId: Value<string>
 }
 
-export default class Table extends ResourceBase {
+export default class Table extends ResourceBase<TableProperties> {
     static SkewedInfo = SkewedInfo
     static StorageDescriptor = StorageDescriptor
     static TableInput = TableInput

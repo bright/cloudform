@@ -150,7 +150,7 @@ export interface TaskDefinitionProperties {
     TaskRoleArn?: Value<string>;
     Volumes?: List<Volume>;
 }
-export default class TaskDefinition extends ResourceBase {
+export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {
     static DockerVolumeConfiguration: typeof DockerVolumeConfiguration;
     static ContainerDefinition: typeof ContainerDefinition;
     static LogConfiguration: typeof LogConfiguration;

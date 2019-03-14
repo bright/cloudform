@@ -27,7 +27,7 @@ export interface VPNGatewayRoutePropagationProperties {
     VpnGatewayId: Value<string>
 }
 
-export default class VPNGatewayRoutePropagation extends ResourceBase {
+export default class VPNGatewayRoutePropagation extends ResourceBase<VPNGatewayRoutePropagationProperties> {
 
 
     constructor(properties?: VPNGatewayRoutePropagationProperties) {

@@ -50,7 +50,7 @@ export interface ConfigurationTemplateProperties {
     SourceConfiguration?: SourceConfiguration
 }
 
-export default class ConfigurationTemplate extends ResourceBase {
+export default class ConfigurationTemplate extends ResourceBase<ConfigurationTemplateProperties> {
     static SourceConfiguration = SourceConfiguration
     static ConfigurationOptionSetting = ConfigurationOptionSetting
 

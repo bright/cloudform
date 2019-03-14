@@ -14,7 +14,7 @@ export interface EnvironmentEC2Properties {
     InstanceType: Value<string>;
     Name?: Value<string>;
 }
-export default class EnvironmentEC2 extends ResourceBase {
+export default class EnvironmentEC2 extends ResourceBase<EnvironmentEC2Properties> {
     static Repository: typeof Repository;
     constructor(properties?: EnvironmentEC2Properties);
 }

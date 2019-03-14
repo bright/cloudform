@@ -201,7 +201,7 @@ export interface ClusterProperties {
     Tags?: List<ResourceTag>;
     VisibleToAllUsers?: Value<boolean>;
 }
-export default class Cluster extends ResourceBase {
+export default class Cluster extends ResourceBase<ClusterProperties> {
     static InstanceGroupConfig: typeof InstanceGroupConfig;
     static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
     static BootstrapActionConfig: typeof BootstrapActionConfig;

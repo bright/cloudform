@@ -31,7 +31,7 @@ export interface VPCPeeringConnectionProperties {
     VpcId: Value<string>
 }
 
-export default class VPCPeeringConnection extends ResourceBase {
+export default class VPCPeeringConnection extends ResourceBase<VPCPeeringConnectionProperties> {
 
 
     constructor(properties?: VPCPeeringConnectionProperties) {

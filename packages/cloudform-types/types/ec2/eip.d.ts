@@ -5,6 +5,6 @@ export interface EIPProperties {
     InstanceId?: Value<string>;
     PublicIpv4Pool?: Value<string>;
 }
-export default class EIP extends ResourceBase {
+export default class EIP extends ResourceBase<EIPProperties> {
     constructor(properties?: EIPProperties);
 }

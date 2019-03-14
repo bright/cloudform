@@ -6,6 +6,6 @@ export interface MountTargetProperties {
     SecurityGroups: List<Value<string>>;
     SubnetId: Value<string>;
 }
-export default class MountTarget extends ResourceBase {
+export default class MountTarget extends ResourceBase<MountTargetProperties> {
     constructor(properties?: MountTargetProperties);
 }

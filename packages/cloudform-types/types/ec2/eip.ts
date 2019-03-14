@@ -28,7 +28,7 @@ export interface EIPProperties {
     PublicIpv4Pool?: Value<string>
 }
 
-export default class EIP extends ResourceBase {
+export default class EIP extends ResourceBase<EIPProperties> {
 
 
     constructor(properties?: EIPProperties) {

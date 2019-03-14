@@ -122,7 +122,7 @@ export interface LoadBalancerProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class LoadBalancer extends ResourceBase {
+export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static HealthCheck = HealthCheck
     static AccessLoggingPolicy = AccessLoggingPolicy
     static ConnectionSettings = ConnectionSettings

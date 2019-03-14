@@ -32,7 +32,7 @@ export interface FlowLogProperties {
     TrafficType: Value<string>
 }
 
-export default class FlowLog extends ResourceBase {
+export default class FlowLog extends ResourceBase<FlowLogProperties> {
 
 
     constructor(properties?: FlowLogProperties) {

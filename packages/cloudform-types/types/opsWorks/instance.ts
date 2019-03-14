@@ -81,7 +81,7 @@ export interface InstanceProperties {
     Volumes?: List<Value<string>>
 }
 
-export default class Instance extends ResourceBase {
+export default class Instance extends ResourceBase<InstanceProperties> {
     static BlockDeviceMapping = BlockDeviceMapping
     static EbsBlockDevice = EbsBlockDevice
     static TimeBasedAutoScaling = TimeBasedAutoScaling

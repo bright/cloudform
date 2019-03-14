@@ -27,7 +27,7 @@ export interface BucketPolicyProperties {
     PolicyDocument: {[key: string]: any}
 }
 
-export default class BucketPolicy extends ResourceBase {
+export default class BucketPolicy extends ResourceBase<BucketPolicyProperties> {
 
 
     constructor(properties?: BucketPolicyProperties) {

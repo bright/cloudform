@@ -130,7 +130,7 @@ export interface JobDefinitionProperties {
     RetryStrategy?: RetryStrategy
 }
 
-export default class JobDefinition extends ResourceBase {
+export default class JobDefinition extends ResourceBase<JobDefinitionProperties> {
     static NodeProperties = NodeProperties
     static Volumes = Volumes
     static RetryStrategy = RetryStrategy

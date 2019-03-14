@@ -65,7 +65,7 @@ export interface ReceiptRuleProperties {
     Rule: Rule;
     RuleSetName: Value<string>;
 }
-export default class ReceiptRule extends ResourceBase {
+export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
     static BounceAction: typeof BounceAction;
     static Action: typeof Action;
     static S3Action: typeof S3Action;

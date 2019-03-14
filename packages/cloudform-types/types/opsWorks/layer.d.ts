@@ -67,7 +67,7 @@ export interface LayerProperties {
     UseEbsOptimizedInstances?: Value<boolean>;
     VolumeConfigurations?: List<VolumeConfiguration>;
 }
-export default class Layer extends ResourceBase {
+export default class Layer extends ResourceBase<LayerProperties> {
     static ShutdownEventConfiguration: typeof ShutdownEventConfiguration;
     static VolumeConfiguration: typeof VolumeConfiguration;
     static AutoScalingThresholds: typeof AutoScalingThresholds;

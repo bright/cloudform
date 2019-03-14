@@ -9,6 +9,6 @@ export interface ApiProperties {
     Name: Value<string>;
     ApiKeySelectionExpression?: Value<string>;
 }
-export default class Api extends ResourceBase {
+export default class Api extends ResourceBase<ApiProperties> {
     constructor(properties?: ApiProperties);
 }

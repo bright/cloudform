@@ -13,7 +13,7 @@ export interface DatabaseProperties {
     DatabaseInput: DatabaseInput;
     CatalogId: Value<string>;
 }
-export default class Database extends ResourceBase {
+export default class Database extends ResourceBase<DatabaseProperties> {
     static DatabaseInput: typeof DatabaseInput;
     constructor(properties?: DatabaseProperties);
 }

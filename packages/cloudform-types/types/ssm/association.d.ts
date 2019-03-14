@@ -30,7 +30,7 @@ export interface AssociationProperties {
     ScheduleExpression?: Value<string>;
     Targets?: List<Target>;
 }
-export default class Association extends ResourceBase {
+export default class Association extends ResourceBase<AssociationProperties> {
     static InstanceAssociationOutputLocation: typeof InstanceAssociationOutputLocation;
     static Target: typeof Target;
     static ParameterValues: typeof ParameterValues;

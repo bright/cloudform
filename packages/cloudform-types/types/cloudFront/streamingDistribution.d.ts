@@ -30,7 +30,7 @@ export interface StreamingDistributionProperties {
     StreamingDistributionConfig: StreamingDistributionConfig;
     Tags: List<ResourceTag>;
 }
-export default class StreamingDistribution extends ResourceBase {
+export default class StreamingDistribution extends ResourceBase<StreamingDistributionProperties> {
     static TrustedSigners: typeof TrustedSigners;
     static S3Origin: typeof S3Origin;
     static Logging: typeof Logging;

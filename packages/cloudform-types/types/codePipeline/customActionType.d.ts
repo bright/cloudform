@@ -31,7 +31,7 @@ export interface CustomActionTypeProperties {
     Settings?: Settings;
     Version?: Value<string>;
 }
-export default class CustomActionType extends ResourceBase {
+export default class CustomActionType extends ResourceBase<CustomActionTypeProperties> {
     static Settings: typeof Settings;
     static ArtifactDetails: typeof ArtifactDetails;
     static ConfigurationProperties: typeof ConfigurationProperties;

@@ -54,7 +54,7 @@ export interface SkillProperties {
     SkillPackage: SkillPackage
 }
 
-export default class Skill extends ResourceBase {
+export default class Skill extends ResourceBase<SkillProperties> {
     static SkillPackage = SkillPackage
     static Overrides = Overrides
     static AuthenticationConfiguration = AuthenticationConfiguration

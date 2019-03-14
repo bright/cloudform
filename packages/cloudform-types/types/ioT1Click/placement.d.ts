@@ -10,6 +10,6 @@ export interface PlacementProperties {
         [key: string]: any;
     };
 }
-export default class Placement extends ResourceBase {
+export default class Placement extends ResourceBase<PlacementProperties> {
     constructor(properties?: PlacementProperties);
 }

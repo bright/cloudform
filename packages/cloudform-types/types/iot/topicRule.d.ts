@@ -125,7 +125,7 @@ export interface TopicRuleProperties {
     RuleName?: Value<string>;
     TopicRulePayload: TopicRulePayload;
 }
-export default class TopicRule extends ResourceBase {
+export default class TopicRule extends ResourceBase<TopicRuleProperties> {
     static S3Action: typeof S3Action;
     static SqsAction: typeof SqsAction;
     static PutItemInput: typeof PutItemInput;

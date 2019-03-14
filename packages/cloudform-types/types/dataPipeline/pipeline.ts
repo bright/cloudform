@@ -86,7 +86,7 @@ export interface PipelineProperties {
     PipelineTags?: List<PipelineTag>
 }
 
-export default class Pipeline extends ResourceBase {
+export default class Pipeline extends ResourceBase<PipelineProperties> {
     static ParameterAttribute = ParameterAttribute
     static PipelineTag = PipelineTag
     static ParameterObject = ParameterObject

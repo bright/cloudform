@@ -42,7 +42,7 @@ export interface CloudFormationProductProperties {
     ProvisioningArtifactParameters: List<ProvisioningArtifactProperties>
 }
 
-export default class CloudFormationProduct extends ResourceBase {
+export default class CloudFormationProduct extends ResourceBase<CloudFormationProductProperties> {
     static ProvisioningArtifactProperties = ProvisioningArtifactProperties
 
     constructor(properties?: CloudFormationProductProperties) {

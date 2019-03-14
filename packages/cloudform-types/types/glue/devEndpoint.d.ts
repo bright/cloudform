@@ -10,6 +10,6 @@ export interface DevEndpointProperties {
     SecurityGroupIds?: List<Value<string>>;
     RoleArn: Value<string>;
 }
-export default class DevEndpoint extends ResourceBase {
+export default class DevEndpoint extends ResourceBase<DevEndpointProperties> {
     constructor(properties?: DevEndpointProperties);
 }

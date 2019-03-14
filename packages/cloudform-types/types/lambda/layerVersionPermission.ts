@@ -28,7 +28,7 @@ export interface LayerVersionPermissionProperties {
     Principal: Value<string>
 }
 
-export default class LayerVersionPermission extends ResourceBase {
+export default class LayerVersionPermission extends ResourceBase<LayerVersionPermissionProperties> {
 
 
     constructor(properties?: LayerVersionPermissionProperties) {

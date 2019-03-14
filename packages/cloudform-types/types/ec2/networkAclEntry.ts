@@ -50,7 +50,7 @@ export interface NetworkAclEntryProperties {
     RuleNumber: Value<number>
 }
 
-export default class NetworkAclEntry extends ResourceBase {
+export default class NetworkAclEntry extends ResourceBase<NetworkAclEntryProperties> {
     static Icmp = Icmp
     static PortRange = PortRange
 

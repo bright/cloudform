@@ -53,7 +53,7 @@ export interface RuleProperties {
     State?: Value<string>;
     Targets?: List<Target>;
 }
-export default class Rule extends ResourceBase {
+export default class Rule extends ResourceBase<RuleProperties> {
     static SqsParameters: typeof SqsParameters;
     static RunCommandParameters: typeof RunCommandParameters;
     static Target: typeof Target;

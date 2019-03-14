@@ -50,7 +50,7 @@ export interface ClassifierProperties {
     GrokClassifier?: GrokClassifier
 }
 
-export default class Classifier extends ResourceBase {
+export default class Classifier extends ResourceBase<ClassifierProperties> {
     static XMLClassifier = XMLClassifier
     static GrokClassifier = GrokClassifier
     static JsonClassifier = JsonClassifier

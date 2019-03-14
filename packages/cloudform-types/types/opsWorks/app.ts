@@ -78,7 +78,7 @@ export interface AppProperties {
     Type: Value<string>
 }
 
-export default class App extends ResourceBase {
+export default class App extends ResourceBase<AppProperties> {
     static DataSource = DataSource
     static EnvironmentVariable = EnvironmentVariable
     static SslConfiguration = SslConfiguration

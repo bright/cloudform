@@ -33,7 +33,7 @@ export interface SizeConstraintSetProperties {
     Name: Value<string>
 }
 
-export default class SizeConstraintSet extends ResourceBase {
+export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetProperties> {
     static SizeConstraint = SizeConstraint
     static FieldToMatch = FieldToMatch
 

@@ -27,7 +27,7 @@ export interface TagOptionProperties {
     Key: Value<string>
 }
 
-export default class TagOption extends ResourceBase {
+export default class TagOption extends ResourceBase<TagOptionProperties> {
 
 
     constructor(properties?: TagOptionProperties) {

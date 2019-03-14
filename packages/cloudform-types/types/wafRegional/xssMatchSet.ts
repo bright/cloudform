@@ -31,7 +31,7 @@ export interface XssMatchSetProperties {
     Name: Value<string>
 }
 
-export default class XssMatchSet extends ResourceBase {
+export default class XssMatchSet extends ResourceBase<XssMatchSetProperties> {
     static XssMatchTuple = XssMatchTuple
     static FieldToMatch = FieldToMatch
 

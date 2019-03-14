@@ -27,7 +27,7 @@ export interface ClusterSecurityGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class ClusterSecurityGroup extends ResourceBase {
+export default class ClusterSecurityGroup extends ResourceBase<ClusterSecurityGroupProperties> {
 
 
     constructor(properties?: ClusterSecurityGroupProperties) {

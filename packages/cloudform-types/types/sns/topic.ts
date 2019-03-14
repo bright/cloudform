@@ -36,7 +36,7 @@ export interface TopicProperties {
     TopicName?: Value<string>
 }
 
-export default class Topic extends ResourceBase {
+export default class Topic extends ResourceBase<TopicProperties> {
     static Subscription = Subscription
 
     constructor(properties?: TopicProperties) {

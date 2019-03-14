@@ -38,7 +38,7 @@ export interface FileSystemProperties {
     ThroughputMode?: Value<string>
 }
 
-export default class FileSystem extends ResourceBase {
+export default class FileSystem extends ResourceBase<FileSystemProperties> {
     static ElasticFileSystemTag = ElasticFileSystemTag
 
     constructor(properties?: FileSystemProperties) {

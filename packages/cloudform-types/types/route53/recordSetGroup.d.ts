@@ -36,7 +36,7 @@ export interface RecordSetGroupProperties {
     HostedZoneName?: Value<string>;
     RecordSets?: List<RecordSet>;
 }
-export default class RecordSetGroup extends ResourceBase {
+export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {
     static RecordSet: typeof RecordSet;
     static GeoLocation: typeof GeoLocation;
     static AliasTarget: typeof AliasTarget;

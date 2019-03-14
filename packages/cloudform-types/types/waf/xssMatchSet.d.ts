@@ -14,7 +14,7 @@ export interface XssMatchSetProperties {
     Name: Value<string>;
     XssMatchTuples: List<XssMatchTuple>;
 }
-export default class XssMatchSet extends ResourceBase {
+export default class XssMatchSet extends ResourceBase<XssMatchSetProperties> {
     static FieldToMatch: typeof FieldToMatch;
     static XssMatchTuple: typeof XssMatchTuple;
     constructor(properties?: XssMatchSetProperties);

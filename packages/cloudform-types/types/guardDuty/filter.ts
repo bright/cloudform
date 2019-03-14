@@ -48,7 +48,7 @@ export interface FilterProperties {
     Name?: Value<string>
 }
 
-export default class Filter extends ResourceBase {
+export default class Filter extends ResourceBase<FilterProperties> {
     static FindingCriteria = FindingCriteria
     static Condition = Condition
 

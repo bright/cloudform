@@ -48,7 +48,7 @@ export interface WebhookProperties {
     RegisterWithThirdParty?: Value<boolean>
 }
 
-export default class Webhook extends ResourceBase {
+export default class Webhook extends ResourceBase<WebhookProperties> {
     static WebhookFilterRule = WebhookFilterRule
     static WebhookAuthConfiguration = WebhookAuthConfiguration
 

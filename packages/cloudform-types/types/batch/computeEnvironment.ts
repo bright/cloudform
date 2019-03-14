@@ -59,7 +59,7 @@ export interface ComputeEnvironmentProperties {
     State?: Value<string>
 }
 
-export default class ComputeEnvironment extends ResourceBase {
+export default class ComputeEnvironment extends ResourceBase<ComputeEnvironmentProperties> {
     static LaunchTemplateSpecification = LaunchTemplateSpecification
     static ComputeResources = ComputeResources
 

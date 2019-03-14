@@ -102,7 +102,7 @@ export interface DataSourceProperties {
     ElasticsearchConfig?: ElasticsearchConfig
 }
 
-export default class DataSource extends ResourceBase {
+export default class DataSource extends ResourceBase<DataSourceProperties> {
     static AuthorizationConfig = AuthorizationConfig
     static RelationalDatabaseConfig = RelationalDatabaseConfig
     static RdsHttpEndpointConfig = RdsHttpEndpointConfig

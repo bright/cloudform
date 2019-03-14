@@ -55,7 +55,7 @@ export interface EnvironmentProperties {
     VersionLabel?: Value<string>
 }
 
-export default class Environment extends ResourceBase {
+export default class Environment extends ResourceBase<EnvironmentProperties> {
     static OptionSetting = OptionSetting
     static Tier = Tier
 

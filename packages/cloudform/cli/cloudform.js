@@ -49,7 +49,7 @@ child_process_1.exec('npm bin', (err, npmBin) => {
         return;
     }
     const tsNodePath = path.join(npmBin.trim(), 'ts-node');
-    child_process_1.exec(`${tsNodePath} -e "import t from '${resolvedTemplatePath}'; console.log(t)"`, (err, template, stderr) => {
+    child_process_1.exec(`${tsNodePath} -e "import t from '${resolvedTemplatePath}'; console.log(t)"`, { maxBuffer: 1024 * 1024 * 5 }, (err, template, stderr) => {
         if (err) {
             console.error(err);
             return;

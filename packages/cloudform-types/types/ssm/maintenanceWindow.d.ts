@@ -12,6 +12,6 @@ export interface MaintenanceWindowProperties {
     Name: Value<string>;
     ScheduleTimezone?: Value<string>;
 }
-export default class MaintenanceWindow extends ResourceBase {
+export default class MaintenanceWindow extends ResourceBase<MaintenanceWindowProperties> {
     constructor(properties?: MaintenanceWindowProperties);
 }

@@ -7,6 +7,6 @@ export interface MacroProperties {
     LogRoleARN?: Value<string>;
     Name: Value<string>;
 }
-export default class Macro extends ResourceBase {
+export default class Macro extends ResourceBase<MacroProperties> {
     constructor(properties?: MacroProperties);
 }

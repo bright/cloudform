@@ -26,7 +26,7 @@ export interface PlacementGroupProperties {
     Strategy?: Value<string>
 }
 
-export default class PlacementGroup extends ResourceBase {
+export default class PlacementGroup extends ResourceBase<PlacementGroupProperties> {
 
 
     constructor(properties?: PlacementGroupProperties) {

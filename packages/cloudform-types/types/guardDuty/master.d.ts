@@ -5,6 +5,6 @@ export interface MasterProperties {
     MasterId: Value<string>;
     InvitationId?: Value<string>;
 }
-export default class Master extends ResourceBase {
+export default class Master extends ResourceBase<MasterProperties> {
     constructor(properties?: MasterProperties);
 }

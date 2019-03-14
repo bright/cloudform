@@ -129,7 +129,7 @@ export interface DeliveryStreamProperties {
     S3DestinationConfiguration?: S3DestinationConfiguration;
     SplunkDestinationConfiguration?: SplunkDestinationConfiguration;
 }
-export default class DeliveryStream extends ResourceBase {
+export default class DeliveryStream extends ResourceBase<DeliveryStreamProperties> {
     static ElasticsearchDestinationConfiguration: typeof ElasticsearchDestinationConfiguration;
     static ElasticsearchBufferingHints: typeof ElasticsearchBufferingHints;
     static SplunkDestinationConfiguration: typeof SplunkDestinationConfiguration;

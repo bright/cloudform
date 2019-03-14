@@ -3,6 +3,6 @@ import { Value } from '../dataTypes';
 export interface ClientCertificateProperties {
     Description?: Value<string>;
 }
-export default class ClientCertificate extends ResourceBase {
+export default class ClientCertificate extends ResourceBase<ClientCertificateProperties> {
     constructor(properties?: ClientCertificateProperties);
 }

@@ -61,7 +61,7 @@ export interface SecurityGroupProperties {
     VpcId?: Value<string>
 }
 
-export default class SecurityGroup extends ResourceBase {
+export default class SecurityGroup extends ResourceBase<SecurityGroupProperties> {
     static Ingress = Ingress
     static Egress = Egress
 

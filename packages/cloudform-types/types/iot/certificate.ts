@@ -27,7 +27,7 @@ export interface CertificateProperties {
     Status: Value<string>
 }
 
-export default class Certificate extends ResourceBase {
+export default class Certificate extends ResourceBase<CertificateProperties> {
 
 
     constructor(properties?: CertificateProperties) {

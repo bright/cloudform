@@ -4,6 +4,6 @@ export interface AggregationAuthorizationProperties {
     AuthorizedAccountId: Value<string>;
     AuthorizedAwsRegion: Value<string>;
 }
-export default class AggregationAuthorization extends ResourceBase {
+export default class AggregationAuthorization extends ResourceBase<AggregationAuthorizationProperties> {
     constructor(properties?: AggregationAuthorizationProperties);
 }

@@ -38,7 +38,7 @@ export interface DBSecurityGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class DBSecurityGroup extends ResourceBase {
+export default class DBSecurityGroup extends ResourceBase<DBSecurityGroupProperties> {
     static Ingress = Ingress
 
     constructor(properties?: DBSecurityGroupProperties) {

@@ -79,7 +79,7 @@ export interface MethodProperties {
     RestApiId: Value<string>
 }
 
-export default class Method extends ResourceBase {
+export default class Method extends ResourceBase<MethodProperties> {
     static MethodResponse = MethodResponse
     static Integration = Integration
     static IntegrationResponse = IntegrationResponse

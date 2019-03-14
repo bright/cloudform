@@ -23,7 +23,7 @@ export interface ClassifierProperties {
     JsonClassifier?: JsonClassifier;
     GrokClassifier?: GrokClassifier;
 }
-export default class Classifier extends ResourceBase {
+export default class Classifier extends ResourceBase<ClassifierProperties> {
     static XMLClassifier: typeof XMLClassifier;
     static GrokClassifier: typeof GrokClassifier;
     static JsonClassifier: typeof JsonClassifier;

@@ -5,6 +5,6 @@ export interface ResourceProperties {
     PathPart: Value<string>;
     RestApiId: Value<string>;
 }
-export default class Resource extends ResourceBase {
+export default class Resource extends ResourceBase<ResourceProperties> {
     constructor(properties?: ResourceProperties);
 }

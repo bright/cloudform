@@ -52,7 +52,7 @@ export interface InstanceFleetConfigProperties {
     TargetOnDemandCapacity?: Value<number>;
     TargetSpotCapacity?: Value<number>;
 }
-export default class InstanceFleetConfig extends ResourceBase {
+export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfigProperties> {
     static VolumeSpecification: typeof VolumeSpecification;
     static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
     static Configuration: typeof Configuration;

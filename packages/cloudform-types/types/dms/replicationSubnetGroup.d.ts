@@ -6,6 +6,6 @@ export interface ReplicationSubnetGroupProperties {
     SubnetIds: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }
-export default class ReplicationSubnetGroup extends ResourceBase {
+export default class ReplicationSubnetGroup extends ResourceBase<ReplicationSubnetGroupProperties> {
     constructor(properties?: ReplicationSubnetGroupProperties);
 }

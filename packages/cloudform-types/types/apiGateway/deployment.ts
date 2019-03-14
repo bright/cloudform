@@ -100,7 +100,7 @@ export interface DeploymentProperties {
     StageName?: Value<string>
 }
 
-export default class Deployment extends ResourceBase {
+export default class Deployment extends ResourceBase<DeploymentProperties> {
     static DeploymentCanarySettings = DeploymentCanarySettings
     static MethodSetting = MethodSetting
     static StageDescription = StageDescription

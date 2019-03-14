@@ -21,7 +21,7 @@ export interface ProjectProperties {
     PlacementTemplate: PlacementTemplate;
     ProjectName?: Value<string>;
 }
-export default class Project extends ResourceBase {
+export default class Project extends ResourceBase<ProjectProperties> {
     static DeviceTemplate: typeof DeviceTemplate;
     static PlacementTemplate: typeof PlacementTemplate;
     constructor(properties?: ProjectProperties);

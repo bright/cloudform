@@ -125,7 +125,7 @@ export interface TableProperties {
     TimeToLiveSpecification?: TimeToLiveSpecification
 }
 
-export default class Table extends ResourceBase {
+export default class Table extends ResourceBase<TableProperties> {
     static TimeToLiveSpecification = TimeToLiveSpecification
     static AttributeDefinition = AttributeDefinition
     static LocalSecondaryIndex = LocalSecondaryIndex

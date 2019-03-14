@@ -10,7 +10,7 @@ export interface DirectoryConfigProperties {
     ServiceAccountCredentials: ServiceAccountCredentials;
     DirectoryName: Value<string>;
 }
-export default class DirectoryConfig extends ResourceBase {
+export default class DirectoryConfig extends ResourceBase<DirectoryConfigProperties> {
     static ServiceAccountCredentials: typeof ServiceAccountCredentials;
     constructor(properties?: DirectoryConfigProperties);
 }

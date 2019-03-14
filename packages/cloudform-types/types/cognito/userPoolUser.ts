@@ -32,7 +32,7 @@ export interface UserPoolUserProperties {
     UserAttributes?: List<AttributeType>
 }
 
-export default class UserPoolUser extends ResourceBase {
+export default class UserPoolUser extends ResourceBase<UserPoolUserProperties> {
     static AttributeType = AttributeType
 
     constructor(properties?: UserPoolUserProperties) {

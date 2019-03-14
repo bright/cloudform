@@ -5,6 +5,6 @@ export interface NatGatewayProperties {
     SubnetId: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class NatGateway extends ResourceBase {
+export default class NatGateway extends ResourceBase<NatGatewayProperties> {
     constructor(properties?: NatGatewayProperties);
 }

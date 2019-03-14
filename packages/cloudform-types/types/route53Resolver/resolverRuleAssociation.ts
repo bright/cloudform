@@ -19,7 +19,7 @@ export interface ResolverRuleAssociationProperties {
     Name?: Value<string>
 }
 
-export default class ResolverRuleAssociation extends ResourceBase {
+export default class ResolverRuleAssociation extends ResourceBase<ResolverRuleAssociationProperties> {
 
 
     constructor(properties?: ResolverRuleAssociationProperties) {

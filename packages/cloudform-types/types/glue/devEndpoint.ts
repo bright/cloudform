@@ -27,7 +27,7 @@ export interface DevEndpointProperties {
     RoleArn: Value<string>
 }
 
-export default class DevEndpoint extends ResourceBase {
+export default class DevEndpoint extends ResourceBase<DevEndpointProperties> {
 
 
     constructor(properties?: DevEndpointProperties) {

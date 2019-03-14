@@ -25,7 +25,7 @@ export interface TransitGatewayRouteTableProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class TransitGatewayRouteTable extends ResourceBase {
+export default class TransitGatewayRouteTable extends ResourceBase<TransitGatewayRouteTableProperties> {
 
 
     constructor(properties?: TransitGatewayRouteTableProperties) {

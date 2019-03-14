@@ -60,7 +60,7 @@ export interface DBClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>
 }
 
-export default class DBCluster extends ResourceBase {
+export default class DBCluster extends ResourceBase<DBClusterProperties> {
     static ScalingConfiguration = ScalingConfiguration
 
     constructor(properties?: DBClusterProperties) {

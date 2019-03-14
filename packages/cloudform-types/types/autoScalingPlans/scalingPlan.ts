@@ -126,7 +126,7 @@ export interface ScalingPlanProperties {
     ScalingInstructions: List<ScalingInstruction>
 }
 
-export default class ScalingPlan extends ResourceBase {
+export default class ScalingPlan extends ResourceBase<ScalingPlanProperties> {
     static ApplicationSource = ApplicationSource
     static ScalingInstruction = ScalingInstruction
     static TargetTrackingConfiguration = TargetTrackingConfiguration

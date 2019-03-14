@@ -99,7 +99,7 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>
 }
 
-export default class InstanceFleetConfig extends ResourceBase {
+export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfigProperties> {
     static VolumeSpecification = VolumeSpecification
     static SpotProvisioningSpecification = SpotProvisioningSpecification
     static Configuration = Configuration

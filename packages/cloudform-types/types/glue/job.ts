@@ -52,7 +52,7 @@ export interface JobProperties {
     Name?: Value<string>
 }
 
-export default class Job extends ResourceBase {
+export default class Job extends ResourceBase<JobProperties> {
     static JobCommand = JobCommand
     static ConnectionsList = ConnectionsList
     static ExecutionProperty = ExecutionProperty

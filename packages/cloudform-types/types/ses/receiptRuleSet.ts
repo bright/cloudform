@@ -13,7 +13,7 @@ export interface ReceiptRuleSetProperties {
     RuleSetName?: Value<string>
 }
 
-export default class ReceiptRuleSet extends ResourceBase {
+export default class ReceiptRuleSet extends ResourceBase<ReceiptRuleSetProperties> {
 
 
     constructor(properties?: ReceiptRuleSetProperties) {

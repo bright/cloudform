@@ -26,7 +26,7 @@ export interface TrailProperties {
     Tags?: List<ResourceTag>;
     TrailName?: Value<string>;
 }
-export default class Trail extends ResourceBase {
+export default class Trail extends ResourceBase<TrailProperties> {
     static EventSelector: typeof EventSelector;
     static DataResource: typeof DataResource;
     constructor(properties?: TrailProperties);

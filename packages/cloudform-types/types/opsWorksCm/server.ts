@@ -42,7 +42,7 @@ export interface ServerProperties {
     Engine?: Value<string>
 }
 
-export default class Server extends ResourceBase {
+export default class Server extends ResourceBase<ServerProperties> {
     static EngineAttribute = EngineAttribute
 
     constructor(properties?: ServerProperties) {

@@ -25,7 +25,7 @@ export interface TransitGatewayRouteTablePropagationProperties {
     TransitGatewayAttachmentId: Value<string>
 }
 
-export default class TransitGatewayRouteTablePropagation extends ResourceBase {
+export default class TransitGatewayRouteTablePropagation extends ResourceBase<TransitGatewayRouteTablePropagationProperties> {
 
 
     constructor(properties?: TransitGatewayRouteTablePropagationProperties) {

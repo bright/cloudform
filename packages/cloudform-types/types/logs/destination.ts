@@ -29,7 +29,7 @@ export interface DestinationProperties {
     TargetArn: Value<string>
 }
 
-export default class Destination extends ResourceBase {
+export default class Destination extends ResourceBase<DestinationProperties> {
 
 
     constructor(properties?: DestinationProperties) {

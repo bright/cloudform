@@ -14,7 +14,7 @@ export interface SimulationApplicationVersionProperties {
     Application: Value<string>
 }
 
-export default class SimulationApplicationVersion extends ResourceBase {
+export default class SimulationApplicationVersion extends ResourceBase<SimulationApplicationVersionProperties> {
 
 
     constructor(properties?: SimulationApplicationVersionProperties) {

@@ -45,7 +45,7 @@ export interface AliasProperties {
     RoutingConfig?: AliasRoutingConfiguration
 }
 
-export default class Alias extends ResourceBase {
+export default class Alias extends ResourceBase<AliasProperties> {
     static AliasRoutingConfiguration = AliasRoutingConfiguration
     static VersionWeight = VersionWeight
 

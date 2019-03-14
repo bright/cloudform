@@ -28,7 +28,7 @@ export interface SecurityGroupIngressProperties {
     EC2SecurityGroupOwnerId?: Value<string>
 }
 
-export default class SecurityGroupIngress extends ResourceBase {
+export default class SecurityGroupIngress extends ResourceBase<SecurityGroupIngressProperties> {
 
 
     constructor(properties?: SecurityGroupIngressProperties) {

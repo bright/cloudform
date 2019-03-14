@@ -44,7 +44,7 @@ export interface BrokerProperties {
     PubliclyAccessible: Value<boolean>;
     Tags?: List<TagsEntry>;
 }
-export default class Broker extends ResourceBase {
+export default class Broker extends ResourceBase<BrokerProperties> {
     static User: typeof User;
     static MaintenanceWindow: typeof MaintenanceWindow;
     static LogList: typeof LogList;

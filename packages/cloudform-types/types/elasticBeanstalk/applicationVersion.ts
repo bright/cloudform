@@ -35,7 +35,7 @@ export interface ApplicationVersionProperties {
     SourceBundle: SourceBundle
 }
 
-export default class ApplicationVersion extends ResourceBase {
+export default class ApplicationVersion extends ResourceBase<ApplicationVersionProperties> {
     static SourceBundle = SourceBundle
 
     constructor(properties?: ApplicationVersionProperties) {

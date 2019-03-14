@@ -6,6 +6,6 @@ export interface TransitGatewayRouteProperties {
     Blackhole?: Value<boolean>;
     TransitGatewayAttachmentId?: Value<string>;
 }
-export default class TransitGatewayRoute extends ResourceBase {
+export default class TransitGatewayRoute extends ResourceBase<TransitGatewayRouteProperties> {
     constructor(properties?: TransitGatewayRouteProperties);
 }

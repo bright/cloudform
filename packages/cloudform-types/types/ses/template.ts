@@ -22,7 +22,7 @@ export interface TemplateProperties {
     Template?: Template
 }
 
-export default class Template extends ResourceBase {
+export default class Template extends ResourceBase<TemplateProperties> {
     static Template = TemplateInner
 
     constructor(properties?: TemplateProperties) {

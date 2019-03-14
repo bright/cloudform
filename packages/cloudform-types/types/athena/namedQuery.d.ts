@@ -6,6 +6,6 @@ export interface NamedQueryProperties {
     Database: Value<string>;
     Name?: Value<string>;
 }
-export default class NamedQuery extends ResourceBase {
+export default class NamedQuery extends ResourceBase<NamedQueryProperties> {
     constructor(properties?: NamedQueryProperties);
 }

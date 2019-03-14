@@ -26,7 +26,7 @@ export interface StateMachineProperties {
     Tags?: List<TagsEntry>
 }
 
-export default class StateMachine extends ResourceBase {
+export default class StateMachine extends ResourceBase<StateMachineProperties> {
     static TagsEntry = TagsEntry
 
     constructor(properties?: StateMachineProperties) {

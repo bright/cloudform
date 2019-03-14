@@ -13,7 +13,7 @@ export interface FileSystemProperties {
     ProvisionedThroughputInMibps?: Value<number>;
     ThroughputMode?: Value<string>;
 }
-export default class FileSystem extends ResourceBase {
+export default class FileSystem extends ResourceBase<FileSystemProperties> {
     static ElasticFileSystemTag: typeof ElasticFileSystemTag;
     constructor(properties?: FileSystemProperties);
 }

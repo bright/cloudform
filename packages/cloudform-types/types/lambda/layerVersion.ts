@@ -37,7 +37,7 @@ export interface LayerVersionProperties {
     Content: Content
 }
 
-export default class LayerVersion extends ResourceBase {
+export default class LayerVersion extends ResourceBase<LayerVersionProperties> {
     static Content = Content
 
     constructor(properties?: LayerVersionProperties) {

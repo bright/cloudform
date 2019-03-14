@@ -33,7 +33,7 @@ export interface ThingProperties {
     ThingName?: Value<string>
 }
 
-export default class Thing extends ResourceBase {
+export default class Thing extends ResourceBase<ThingProperties> {
     static AttributePayload = AttributePayload
 
     constructor(properties?: ThingProperties) {

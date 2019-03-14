@@ -60,7 +60,7 @@ export interface ApplicationOutputProperties {
     Output: Output
 }
 
-export default class ApplicationOutput extends ResourceBase {
+export default class ApplicationOutput extends ResourceBase<ApplicationOutputProperties> {
     static KinesisFirehoseOutput = KinesisFirehoseOutput
     static Output = Output
     static DestinationSchema = DestinationSchema

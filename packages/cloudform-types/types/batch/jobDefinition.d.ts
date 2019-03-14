@@ -72,7 +72,7 @@ export interface JobDefinitionProperties {
     JobDefinitionName?: Value<string>;
     RetryStrategy?: RetryStrategy;
 }
-export default class JobDefinition extends ResourceBase {
+export default class JobDefinition extends ResourceBase<JobDefinitionProperties> {
     static NodeProperties: typeof NodeProperties;
     static Volumes: typeof Volumes;
     static RetryStrategy: typeof RetryStrategy;

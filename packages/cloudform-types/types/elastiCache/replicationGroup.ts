@@ -64,7 +64,7 @@ export interface ReplicationGroupProperties {
     TransitEncryptionEnabled?: Value<boolean>
 }
 
-export default class ReplicationGroup extends ResourceBase {
+export default class ReplicationGroup extends ResourceBase<ReplicationGroupProperties> {
     static NodeGroupConfiguration = NodeGroupConfiguration
 
     constructor(properties?: ReplicationGroupProperties) {

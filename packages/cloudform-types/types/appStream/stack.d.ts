@@ -29,7 +29,7 @@ export interface StackProperties {
     FeedbackURL?: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
     static ApplicationSettings: typeof ApplicationSettings;
     static StorageConnector: typeof StorageConnector;
     static UserSetting: typeof UserSetting;

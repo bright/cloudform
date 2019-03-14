@@ -91,7 +91,7 @@ export interface UserPoolProperties {
     DeviceConfiguration?: DeviceConfiguration;
     EmailVerificationMessage?: Value<string>;
 }
-export default class UserPool extends ResourceBase {
+export default class UserPool extends ResourceBase<UserPoolProperties> {
     static PasswordPolicy: typeof PasswordPolicy;
     static Policies: typeof Policies;
     static EmailConfiguration: typeof EmailConfiguration;

@@ -55,7 +55,7 @@ export interface IdentityPoolProperties {
     OpenIdConnectProviderARNs?: List<Value<string>>
 }
 
-export default class IdentityPool extends ResourceBase {
+export default class IdentityPool extends ResourceBase<IdentityPoolProperties> {
     static PushSync = PushSync
     static CognitoIdentityProvider = CognitoIdentityProvider
     static CognitoStreams = CognitoStreams

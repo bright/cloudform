@@ -6,6 +6,6 @@ export interface PortfolioProductAssociationProperties {
     PortfolioId: Value<string>;
     ProductId: Value<string>;
 }
-export default class PortfolioProductAssociation extends ResourceBase {
+export default class PortfolioProductAssociation extends ResourceBase<PortfolioProductAssociationProperties> {
     constructor(properties?: PortfolioProductAssociationProperties);
 }

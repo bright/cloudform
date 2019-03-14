@@ -16,7 +16,7 @@ export interface WebACLProperties {
     Name: Value<string>;
     Rules?: List<ActivatedRule>;
 }
-export default class WebACL extends ResourceBase {
+export default class WebACL extends ResourceBase<WebACLProperties> {
     static WafAction: typeof WafAction;
     static ActivatedRule: typeof ActivatedRule;
     constructor(properties?: WebACLProperties);

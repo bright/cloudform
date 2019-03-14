@@ -85,7 +85,7 @@ export interface InstanceGroupConfigProperties {
     Market?: Value<string>;
     Name?: Value<string>;
 }
-export default class InstanceGroupConfig extends ResourceBase {
+export default class InstanceGroupConfig extends ResourceBase<InstanceGroupConfigProperties> {
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
     static Configuration: typeof Configuration;
     static MetricDimension: typeof MetricDimension;

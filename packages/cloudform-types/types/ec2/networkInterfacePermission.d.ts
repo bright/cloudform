@@ -5,6 +5,6 @@ export interface NetworkInterfacePermissionProperties {
     NetworkInterfaceId: Value<string>;
     Permission: Value<string>;
 }
-export default class NetworkInterfacePermission extends ResourceBase {
+export default class NetworkInterfacePermission extends ResourceBase<NetworkInterfacePermissionProperties> {
     constructor(properties?: NetworkInterfacePermissionProperties);
 }

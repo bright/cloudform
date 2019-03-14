@@ -41,7 +41,7 @@ export interface PipelineProperties {
     PipelineObjects?: List<PipelineObject>;
     PipelineTags?: List<PipelineTag>;
 }
-export default class Pipeline extends ResourceBase {
+export default class Pipeline extends ResourceBase<PipelineProperties> {
     static ParameterAttribute: typeof ParameterAttribute;
     static PipelineTag: typeof PipelineTag;
     static ParameterObject: typeof ParameterObject;

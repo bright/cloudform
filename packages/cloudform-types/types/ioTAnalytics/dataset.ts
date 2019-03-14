@@ -136,7 +136,7 @@ export interface DatasetProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Dataset extends ResourceBase {
+export default class Dataset extends ResourceBase<DatasetProperties> {
     static DatasetContentVersionValue = DatasetContentVersionValue
     static OutputFileUriValue = OutputFileUriValue
     static QueryAction = QueryAction

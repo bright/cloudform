@@ -10,6 +10,6 @@ export interface LifecycleHookProperties {
     NotificationTargetARN?: Value<string>;
     RoleARN?: Value<string>;
 }
-export default class LifecycleHook extends ResourceBase {
+export default class LifecycleHook extends ResourceBase<LifecycleHookProperties> {
     constructor(properties?: LifecycleHookProperties);
 }

@@ -11,6 +11,6 @@ export interface ManagedPolicyProperties {
     Roles?: List<Value<string>>;
     Users?: List<Value<string>>;
 }
-export default class ManagedPolicy extends ResourceBase {
+export default class ManagedPolicy extends ResourceBase<ManagedPolicyProperties> {
     constructor(properties?: ManagedPolicyProperties);
 }

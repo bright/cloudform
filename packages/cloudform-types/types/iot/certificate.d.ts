@@ -4,6 +4,6 @@ export interface CertificateProperties {
     CertificateSigningRequest: Value<string>;
     Status: Value<string>;
 }
-export default class Certificate extends ResourceBase {
+export default class Certificate extends ResourceBase<CertificateProperties> {
     constructor(properties?: CertificateProperties);
 }

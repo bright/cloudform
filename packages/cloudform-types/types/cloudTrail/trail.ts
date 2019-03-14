@@ -55,7 +55,7 @@ export interface TrailProperties {
     TrailName?: Value<string>
 }
 
-export default class Trail extends ResourceBase {
+export default class Trail extends ResourceBase<TrailProperties> {
     static EventSelector = EventSelector
     static DataResource = DataResource
 

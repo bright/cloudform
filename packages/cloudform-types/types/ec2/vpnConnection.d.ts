@@ -13,7 +13,7 @@ export interface VPNConnectionProperties {
     VpnGatewayId: Value<string>;
     VpnTunnelOptionsSpecifications?: List<VpnTunnelOptionsSpecification>;
 }
-export default class VPNConnection extends ResourceBase {
+export default class VPNConnection extends ResourceBase<VPNConnectionProperties> {
     static VpnTunnelOptionsSpecification: typeof VpnTunnelOptionsSpecification;
     constructor(properties?: VPNConnectionProperties);
 }

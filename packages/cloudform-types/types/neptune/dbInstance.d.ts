@@ -13,6 +13,6 @@ export interface DBInstanceProperties {
     DBSnapshotIdentifier?: Value<string>;
     Tags?: List<ResourceTag>;
 }
-export default class DBInstance extends ResourceBase {
+export default class DBInstance extends ResourceBase<DBInstanceProperties> {
     constructor(properties?: DBInstanceProperties);
 }

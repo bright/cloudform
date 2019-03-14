@@ -36,7 +36,7 @@ export interface ClusterParameterGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class ClusterParameterGroup extends ResourceBase {
+export default class ClusterParameterGroup extends ResourceBase<ClusterParameterGroupProperties> {
     static Parameter = Parameter
 
     constructor(properties?: ClusterParameterGroupProperties) {

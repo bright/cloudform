@@ -26,7 +26,7 @@ export interface InternetGatewayProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class InternetGateway extends ResourceBase {
+export default class InternetGateway extends ResourceBase<InternetGatewayProperties> {
 
 
     constructor(properties?: InternetGatewayProperties) {

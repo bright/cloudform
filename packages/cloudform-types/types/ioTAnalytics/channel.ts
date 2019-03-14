@@ -25,7 +25,7 @@ export interface ChannelProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Channel extends ResourceBase {
+export default class Channel extends ResourceBase<ChannelProperties> {
     static RetentionPeriod = RetentionPeriod
 
     constructor(properties?: ChannelProperties) {

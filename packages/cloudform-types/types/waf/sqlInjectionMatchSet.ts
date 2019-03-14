@@ -43,7 +43,7 @@ export interface SqlInjectionMatchSetProperties {
     SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>
 }
 
-export default class SqlInjectionMatchSet extends ResourceBase {
+export default class SqlInjectionMatchSet extends ResourceBase<SqlInjectionMatchSetProperties> {
     static SqlInjectionMatchTuple = SqlInjectionMatchTuple
     static FieldToMatch = FieldToMatch
 

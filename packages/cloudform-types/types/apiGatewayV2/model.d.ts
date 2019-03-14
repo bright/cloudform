@@ -9,6 +9,6 @@ export interface ModelProperties {
     ApiId: Value<string>;
     Name: Value<string>;
 }
-export default class Model extends ResourceBase {
+export default class Model extends ResourceBase<ModelProperties> {
     constructor(properties?: ModelProperties);
 }

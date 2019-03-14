@@ -29,7 +29,7 @@ export interface UserProfileProperties {
     SshUsername?: Value<string>
 }
 
-export default class UserProfile extends ResourceBase {
+export default class UserProfile extends ResourceBase<UserProfileProperties> {
 
 
     constructor(properties?: UserProfileProperties) {

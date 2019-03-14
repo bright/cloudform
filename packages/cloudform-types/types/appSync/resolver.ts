@@ -35,7 +35,7 @@ export interface ResolverProperties {
     FieldName: Value<string>
 }
 
-export default class Resolver extends ResourceBase {
+export default class Resolver extends ResourceBase<ResolverProperties> {
     static PipelineConfig = PipelineConfig
 
     constructor(properties?: ResolverProperties) {

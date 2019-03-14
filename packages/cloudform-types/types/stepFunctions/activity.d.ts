@@ -9,7 +9,7 @@ export interface ActivityProperties {
     Tags?: List<TagsEntry>;
     Name: Value<string>;
 }
-export default class Activity extends ResourceBase {
+export default class Activity extends ResourceBase<ActivityProperties> {
     static TagsEntry: typeof TagsEntry;
     constructor(properties?: ActivityProperties);
 }

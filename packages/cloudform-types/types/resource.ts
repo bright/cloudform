@@ -44,17 +44,17 @@ export default interface Resource {
     Condition?: Value<string>
 }
 
-export abstract class ResourceBase implements Resource {
+export abstract class ResourceBase<TProperties extends object = { [key: string]: any }> implements Resource {
     Type: string
     DependsOn?: Value<string> | List<string>
-    Properties?: { [key: string]: any }
+    Properties?: TProperties
     Metadata?: { [key: string]: any }
     CreationPolicy?: CreationPolicy
     DeletionPolicy?: DeletionPolicy
     UpdatePolicy?: UpdatePolicy
     Condition?: Value<string>
 
-    constructor(type: string, properties?: { [key: string]: any }) {
+    protected constructor(type: string, properties?: TProperties) {
         this.Type = type
         this.Properties = properties
     }

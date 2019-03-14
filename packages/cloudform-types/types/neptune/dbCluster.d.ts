@@ -16,6 +16,6 @@ export interface DBClusterProperties {
     BackupRetentionPeriod?: Value<number>;
     Tags?: List<ResourceTag>;
 }
-export default class DBCluster extends ResourceBase {
+export default class DBCluster extends ResourceBase<DBClusterProperties> {
     constructor(properties?: DBClusterProperties);
 }

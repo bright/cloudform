@@ -4,6 +4,6 @@ export interface StreamConsumerProperties {
     ConsumerName: Value<string>;
     StreamARN: Value<string>;
 }
-export default class StreamConsumer extends ResourceBase {
+export default class StreamConsumer extends ResourceBase<StreamConsumerProperties> {
     constructor(properties?: StreamConsumerProperties);
 }

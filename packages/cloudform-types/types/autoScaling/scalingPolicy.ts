@@ -84,7 +84,7 @@ export interface ScalingPolicyProperties {
     TargetTrackingConfiguration?: TargetTrackingConfiguration
 }
 
-export default class ScalingPolicy extends ResourceBase {
+export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {
     static MetricDimension = MetricDimension
     static CustomizedMetricSpecification = CustomizedMetricSpecification
     static PredefinedMetricSpecification = PredefinedMetricSpecification

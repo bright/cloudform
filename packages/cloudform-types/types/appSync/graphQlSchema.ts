@@ -18,7 +18,7 @@ export interface GraphQLSchemaProperties {
     ApiId: Value<string>
 }
 
-export default class GraphQLSchema extends ResourceBase {
+export default class GraphQLSchema extends ResourceBase<GraphQLSchemaProperties> {
 
 
     constructor(properties?: GraphQLSchemaProperties) {

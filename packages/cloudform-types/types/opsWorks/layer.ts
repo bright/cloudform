@@ -108,7 +108,7 @@ export interface LayerProperties {
     VolumeConfigurations?: List<VolumeConfiguration>
 }
 
-export default class Layer extends ResourceBase {
+export default class Layer extends ResourceBase<LayerProperties> {
     static ShutdownEventConfiguration = ShutdownEventConfiguration
     static VolumeConfiguration = VolumeConfiguration
     static AutoScalingThresholds = AutoScalingThresholds

@@ -26,7 +26,7 @@ export interface VPCEndpointServicePermissionsProperties {
     ServiceId: Value<string>
 }
 
-export default class VPCEndpointServicePermissions extends ResourceBase {
+export default class VPCEndpointServicePermissions extends ResourceBase<VPCEndpointServicePermissionsProperties> {
 
 
     constructor(properties?: VPCEndpointServicePermissionsProperties) {

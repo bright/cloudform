@@ -74,7 +74,7 @@ export interface StageProperties {
     Variables?: {[key: string]: Value<string>}
 }
 
-export default class Stage extends ResourceBase {
+export default class Stage extends ResourceBase<StageProperties> {
     static MethodSetting = MethodSetting
     static CanarySetting = CanarySetting
     static AccessLogSetting = AccessLogSetting

@@ -17,7 +17,7 @@ export interface CloudFormationProvisionedProductProperties {
     ProvisionedProductName?: Value<string>;
     ProvisioningArtifactId?: Value<string>;
 }
-export default class CloudFormationProvisionedProduct extends ResourceBase {
+export default class CloudFormationProvisionedProduct extends ResourceBase<CloudFormationProvisionedProductProperties> {
     static ProvisioningParameter: typeof ProvisioningParameter;
     constructor(properties?: CloudFormationProvisionedProductProperties);
 }

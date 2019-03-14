@@ -65,7 +65,7 @@ export interface AssociationProperties {
     Targets?: List<Target>
 }
 
-export default class Association extends ResourceBase {
+export default class Association extends ResourceBase<AssociationProperties> {
     static InstanceAssociationOutputLocation = InstanceAssociationOutputLocation
     static Target = Target
     static ParameterValues = ParameterValues

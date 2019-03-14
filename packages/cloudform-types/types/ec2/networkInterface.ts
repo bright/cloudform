@@ -51,7 +51,7 @@ export interface NetworkInterfaceProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class NetworkInterface extends ResourceBase {
+export default class NetworkInterface extends ResourceBase<NetworkInterfaceProperties> {
     static InstanceIpv6Address = InstanceIpv6Address
     static PrivateIpAddressSpecification = PrivateIpAddressSpecification
 

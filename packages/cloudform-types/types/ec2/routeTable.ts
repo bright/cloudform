@@ -27,7 +27,7 @@ export interface RouteTableProperties {
     VpcId: Value<string>
 }
 
-export default class RouteTable extends ResourceBase {
+export default class RouteTable extends ResourceBase<RouteTableProperties> {
 
 
     constructor(properties?: RouteTableProperties) {

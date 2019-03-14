@@ -12,7 +12,7 @@ export interface MetricFilterProperties {
     LogGroupName: Value<string>;
     MetricTransformations: List<MetricTransformation>;
 }
-export default class MetricFilter extends ResourceBase {
+export default class MetricFilter extends ResourceBase<MetricFilterProperties> {
     static MetricTransformation: typeof MetricTransformation;
     constructor(properties?: MetricFilterProperties);
 }

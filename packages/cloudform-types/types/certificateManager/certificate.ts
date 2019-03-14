@@ -37,7 +37,7 @@ export interface CertificateProperties {
     ValidationMethod?: Value<string>
 }
 
-export default class Certificate extends ResourceBase {
+export default class Certificate extends ResourceBase<CertificateProperties> {
     static DomainValidationOption = DomainValidationOption
 
     constructor(properties?: CertificateProperties) {

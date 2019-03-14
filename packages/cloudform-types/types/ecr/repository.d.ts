@@ -12,7 +12,7 @@ export interface RepositoryProperties {
         [key: string]: any;
     };
 }
-export default class Repository extends ResourceBase {
+export default class Repository extends ResourceBase<RepositoryProperties> {
     static LifecyclePolicy: typeof LifecyclePolicy;
     constructor(properties?: RepositoryProperties);
 }

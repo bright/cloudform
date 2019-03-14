@@ -12,7 +12,7 @@ export interface CertificateProperties {
     Tags?: List<ResourceTag>;
     ValidationMethod?: Value<string>;
 }
-export default class Certificate extends ResourceBase {
+export default class Certificate extends ResourceBase<CertificateProperties> {
     static DomainValidationOption: typeof DomainValidationOption;
     constructor(properties?: CertificateProperties);
 }

@@ -4,6 +4,6 @@ export interface NetworkAclProperties {
     Tags?: List<ResourceTag>;
     VpcId: Value<string>;
 }
-export default class NetworkAcl extends ResourceBase {
+export default class NetworkAcl extends ResourceBase<NetworkAclProperties> {
     constructor(properties?: NetworkAclProperties);
 }

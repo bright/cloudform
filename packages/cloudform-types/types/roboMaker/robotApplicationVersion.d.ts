@@ -4,6 +4,6 @@ export interface RobotApplicationVersionProperties {
     CurrentRevisionId?: Value<string>;
     Application: Value<string>;
 }
-export default class RobotApplicationVersion extends ResourceBase {
+export default class RobotApplicationVersion extends ResourceBase<RobotApplicationVersionProperties> {
     constructor(properties?: RobotApplicationVersionProperties);
 }

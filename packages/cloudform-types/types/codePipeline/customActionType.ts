@@ -64,7 +64,7 @@ export interface CustomActionTypeProperties {
     Version?: Value<string>
 }
 
-export default class CustomActionType extends ResourceBase {
+export default class CustomActionType extends ResourceBase<CustomActionTypeProperties> {
     static Settings = Settings
     static ArtifactDetails = ArtifactDetails
     static ConfigurationProperties = ConfigurationProperties

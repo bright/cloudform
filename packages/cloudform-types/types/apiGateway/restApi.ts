@@ -54,7 +54,7 @@ export interface RestApiProperties {
     Policy?: {[key: string]: any}
 }
 
-export default class RestApi extends ResourceBase {
+export default class RestApi extends ResourceBase<RestApiProperties> {
     static S3Location = S3Location
     static EndpointConfiguration = EndpointConfiguration
 

@@ -106,7 +106,7 @@ export interface ListenerRuleProperties {
     Priority: Value<number>
 }
 
-export default class ListenerRule extends ResourceBase {
+export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {
     static AuthenticateOidcConfig = AuthenticateOidcConfig
     static AuthenticateCognitoConfig = AuthenticateCognitoConfig
     static FixedResponseConfig = FixedResponseConfig

@@ -25,7 +25,7 @@ export interface SkillProperties {
     VendorId: Value<string>;
     SkillPackage: SkillPackage;
 }
-export default class Skill extends ResourceBase {
+export default class Skill extends ResourceBase<SkillProperties> {
     static SkillPackage: typeof SkillPackage;
     static Overrides: typeof Overrides;
     static AuthenticationConfiguration: typeof AuthenticationConfiguration;

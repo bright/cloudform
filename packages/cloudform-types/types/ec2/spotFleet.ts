@@ -243,7 +243,7 @@ export interface SpotFleetProperties {
     SpotFleetRequestConfigData: SpotFleetRequestConfigData
 }
 
-export default class SpotFleet extends ResourceBase {
+export default class SpotFleet extends ResourceBase<SpotFleetProperties> {
     static ClassicLoadBalancer = ClassicLoadBalancer
     static LaunchTemplateConfig = LaunchTemplateConfig
     static IamInstanceProfileSpecification = IamInstanceProfileSpecification

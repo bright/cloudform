@@ -26,7 +26,7 @@ export interface PrivateDnsNamespaceProperties {
     Name: Value<string>
 }
 
-export default class PrivateDnsNamespace extends ResourceBase {
+export default class PrivateDnsNamespace extends ResourceBase<PrivateDnsNamespaceProperties> {
 
 
     constructor(properties?: PrivateDnsNamespaceProperties) {

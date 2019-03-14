@@ -180,7 +180,7 @@ export interface ProjectProperties {
     Cache?: ProjectCache
 }
 
-export default class Project extends ResourceBase {
+export default class Project extends ResourceBase<ProjectProperties> {
     static LogsConfig = LogsConfig
     static SourceAuth = SourceAuth
     static Environment = Environment

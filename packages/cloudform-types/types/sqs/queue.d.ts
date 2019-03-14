@@ -16,6 +16,6 @@ export interface QueueProperties {
     Tags?: List<ResourceTag>;
     VisibilityTimeout?: Value<number>;
 }
-export default class Queue extends ResourceBase {
+export default class Queue extends ResourceBase<QueueProperties> {
     constructor(properties?: QueueProperties);
 }

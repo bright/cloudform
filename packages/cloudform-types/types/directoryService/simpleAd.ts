@@ -40,7 +40,7 @@ export interface SimpleADProperties {
     VpcSettings: VpcSettings
 }
 
-export default class SimpleAD extends ResourceBase {
+export default class SimpleAD extends ResourceBase<SimpleADProperties> {
     static VpcSettings = VpcSettings
 
     constructor(properties?: SimpleADProperties) {

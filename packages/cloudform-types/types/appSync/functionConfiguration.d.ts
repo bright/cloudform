@@ -11,6 +11,6 @@ export interface FunctionConfigurationProperties {
     ApiId: Value<string>;
     Name?: Value<string>;
 }
-export default class FunctionConfiguration extends ResourceBase {
+export default class FunctionConfiguration extends ResourceBase<FunctionConfigurationProperties> {
     constructor(properties?: FunctionConfigurationProperties);
 }

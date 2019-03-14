@@ -5,6 +5,6 @@ export interface VolumeAttachmentProperties {
     InstanceId: Value<string>;
     VolumeId: Value<string>;
 }
-export default class VolumeAttachment extends ResourceBase {
+export default class VolumeAttachment extends ResourceBase<VolumeAttachmentProperties> {
     constructor(properties?: VolumeAttachmentProperties);
 }

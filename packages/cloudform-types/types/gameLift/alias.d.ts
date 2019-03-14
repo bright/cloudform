@@ -11,7 +11,7 @@ export interface AliasProperties {
     Name: Value<string>;
     RoutingStrategy: RoutingStrategy;
 }
-export default class Alias extends ResourceBase {
+export default class Alias extends ResourceBase<AliasProperties> {
     static RoutingStrategy: typeof RoutingStrategy;
     constructor(properties?: AliasProperties);
 }

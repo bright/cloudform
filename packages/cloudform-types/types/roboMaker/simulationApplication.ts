@@ -54,7 +54,7 @@ export interface SimulationApplicationProperties {
     Name?: Value<string>
 }
 
-export default class SimulationApplication extends ResourceBase {
+export default class SimulationApplication extends ResourceBase<SimulationApplicationProperties> {
     static RenderingEngine = RenderingEngine
     static SimulationSoftwareSuite = SimulationSoftwareSuite
     static RobotSoftwareSuite = RobotSoftwareSuite

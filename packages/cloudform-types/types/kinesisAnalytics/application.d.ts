@@ -69,7 +69,7 @@ export interface ApplicationProperties {
     ApplicationDescription?: Value<string>;
     ApplicationCode?: Value<string>;
 }
-export default class Application extends ResourceBase {
+export default class Application extends ResourceBase<ApplicationProperties> {
     static CSVMappingParameters: typeof CSVMappingParameters;
     static Input: typeof Input;
     static InputSchema: typeof InputSchema;

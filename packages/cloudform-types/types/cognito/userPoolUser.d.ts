@@ -14,7 +14,7 @@ export interface UserPoolUserProperties {
     ForceAliasCreation?: Value<boolean>;
     UserAttributes?: List<AttributeType>;
 }
-export default class UserPoolUser extends ResourceBase {
+export default class UserPoolUser extends ResourceBase<UserPoolUserProperties> {
     static AttributeType: typeof AttributeType;
     constructor(properties?: UserPoolUserProperties);
 }

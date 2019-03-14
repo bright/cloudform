@@ -9,7 +9,7 @@ export interface ConfigurationAssociationProperties {
     Broker: Value<string>;
     Configuration: ConfigurationId;
 }
-export default class ConfigurationAssociation extends ResourceBase {
+export default class ConfigurationAssociation extends ResourceBase<ConfigurationAssociationProperties> {
     static ConfigurationId: typeof ConfigurationId;
     constructor(properties?: ConfigurationAssociationProperties);
 }

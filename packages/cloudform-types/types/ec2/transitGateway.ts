@@ -31,7 +31,7 @@ export interface TransitGatewayProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class TransitGateway extends ResourceBase {
+export default class TransitGateway extends ResourceBase<TransitGatewayProperties> {
 
 
     constructor(properties?: TransitGatewayProperties) {

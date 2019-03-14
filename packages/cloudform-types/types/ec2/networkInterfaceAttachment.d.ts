@@ -6,6 +6,6 @@ export interface NetworkInterfaceAttachmentProperties {
     InstanceId: Value<string>;
     NetworkInterfaceId: Value<string>;
 }
-export default class NetworkInterfaceAttachment extends ResourceBase {
+export default class NetworkInterfaceAttachment extends ResourceBase<NetworkInterfaceAttachmentProperties> {
     constructor(properties?: NetworkInterfaceAttachmentProperties);
 }

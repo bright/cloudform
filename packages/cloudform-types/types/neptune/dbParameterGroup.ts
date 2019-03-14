@@ -20,7 +20,7 @@ export interface DBParameterGroupProperties {
     Name?: Value<string>
 }
 
-export default class DBParameterGroup extends ResourceBase {
+export default class DBParameterGroup extends ResourceBase<DBParameterGroupProperties> {
 
 
     constructor(properties?: DBParameterGroupProperties) {

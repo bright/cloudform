@@ -41,7 +41,7 @@ export interface PatchBaselineProperties {
     GlobalFilters?: PatchFilterGroup;
     Tags?: List<ResourceTag>;
 }
-export default class PatchBaseline extends ResourceBase {
+export default class PatchBaseline extends ResourceBase<PatchBaselineProperties> {
     static RuleGroup: typeof RuleGroup;
     static PatchFilter: typeof PatchFilter;
     static Rule: typeof Rule;

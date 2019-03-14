@@ -18,7 +18,7 @@ export interface DeviceProperties {
     Enabled: Value<boolean>
 }
 
-export default class Device extends ResourceBase {
+export default class Device extends ResourceBase<DeviceProperties> {
 
 
     constructor(properties?: DeviceProperties) {

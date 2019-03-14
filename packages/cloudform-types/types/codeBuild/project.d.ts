@@ -115,7 +115,7 @@ export interface ProjectProperties {
     TimeoutInMinutes?: Value<number>;
     Cache?: ProjectCache;
 }
-export default class Project extends ResourceBase {
+export default class Project extends ResourceBase<ProjectProperties> {
     static LogsConfig: typeof LogsConfig;
     static SourceAuth: typeof SourceAuth;
     static Environment: typeof Environment;

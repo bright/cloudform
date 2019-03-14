@@ -25,7 +25,7 @@ export interface DatastoreProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Datastore extends ResourceBase {
+export default class Datastore extends ResourceBase<DatastoreProperties> {
     static RetentionPeriod = RetentionPeriod
 
     constructor(properties?: DatastoreProperties) {

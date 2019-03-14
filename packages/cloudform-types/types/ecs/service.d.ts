@@ -56,7 +56,7 @@ export interface ServiceProperties {
     ServiceRegistries?: List<ServiceRegistry>;
     TaskDefinition: Value<string>;
 }
-export default class Service extends ResourceBase {
+export default class Service extends ResourceBase<ServiceProperties> {
     static LoadBalancer: typeof LoadBalancer;
     static PlacementStrategy: typeof PlacementStrategy;
     static ServiceRegistry: typeof ServiceRegistry;

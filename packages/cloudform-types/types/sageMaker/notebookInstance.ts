@@ -24,7 +24,7 @@ export interface NotebookInstanceProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class NotebookInstance extends ResourceBase {
+export default class NotebookInstance extends ResourceBase<NotebookInstanceProperties> {
 
 
     constructor(properties?: NotebookInstanceProperties) {

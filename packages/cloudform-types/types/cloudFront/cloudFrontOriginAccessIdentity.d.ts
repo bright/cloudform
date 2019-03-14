@@ -7,7 +7,7 @@ export declare class CloudFrontOriginAccessIdentityConfig {
 export interface CloudFrontOriginAccessIdentityProperties {
     CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig;
 }
-export default class CloudFrontOriginAccessIdentity extends ResourceBase {
+export default class CloudFrontOriginAccessIdentity extends ResourceBase<CloudFrontOriginAccessIdentityProperties> {
     static CloudFrontOriginAccessIdentityConfig: typeof CloudFrontOriginAccessIdentityConfig;
     constructor(properties?: CloudFrontOriginAccessIdentityProperties);
 }

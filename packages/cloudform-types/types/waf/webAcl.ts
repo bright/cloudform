@@ -45,7 +45,7 @@ export interface WebACLProperties {
     Rules?: List<ActivatedRule>
 }
 
-export default class WebACL extends ResourceBase {
+export default class WebACL extends ResourceBase<WebACLProperties> {
     static WafAction = WafAction
     static ActivatedRule = ActivatedRule
 

@@ -62,7 +62,7 @@ export interface HostedZoneProperties {
     VPCs?: List<VPC>
 }
 
-export default class HostedZone extends ResourceBase {
+export default class HostedZone extends ResourceBase<HostedZoneProperties> {
     static HostedZoneTag = HostedZoneTag
     static HostedZoneConfig = HostedZoneConfig
     static QueryLoggingConfig = QueryLoggingConfig

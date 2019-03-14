@@ -28,7 +28,7 @@ export interface PortfolioProductAssociationProperties {
     ProductId: Value<string>
 }
 
-export default class PortfolioProductAssociation extends ResourceBase {
+export default class PortfolioProductAssociation extends ResourceBase<PortfolioProductAssociationProperties> {
 
 
     constructor(properties?: PortfolioProductAssociationProperties) {

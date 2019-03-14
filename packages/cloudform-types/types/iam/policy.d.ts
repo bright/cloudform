@@ -9,6 +9,6 @@ export interface PolicyProperties {
     Roles?: List<Value<string>>;
     Users?: List<Value<string>>;
 }
-export default class Policy extends ResourceBase {
+export default class Policy extends ResourceBase<PolicyProperties> {
     constructor(properties?: PolicyProperties);
 }

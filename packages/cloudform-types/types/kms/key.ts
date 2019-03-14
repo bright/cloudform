@@ -32,7 +32,7 @@ export interface KeyProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Key extends ResourceBase {
+export default class Key extends ResourceBase<KeyProperties> {
 
 
     constructor(properties?: KeyProperties) {

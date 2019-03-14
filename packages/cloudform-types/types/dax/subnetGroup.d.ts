@@ -5,6 +5,6 @@ export interface SubnetGroupProperties {
     SubnetGroupName?: Value<string>;
     SubnetIds: List<Value<string>>;
 }
-export default class SubnetGroup extends ResourceBase {
+export default class SubnetGroup extends ResourceBase<SubnetGroupProperties> {
     constructor(properties?: SubnetGroupProperties);
 }

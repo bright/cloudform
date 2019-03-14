@@ -23,7 +23,7 @@ export interface HttpNamespaceProperties {
     Name: Value<string>
 }
 
-export default class HttpNamespace extends ResourceBase {
+export default class HttpNamespace extends ResourceBase<HttpNamespaceProperties> {
 
 
     constructor(properties?: HttpNamespaceProperties) {

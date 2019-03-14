@@ -81,7 +81,7 @@ export interface DBInstanceProperties {
     VPCSecurityGroups?: List<Value<string>>
 }
 
-export default class DBInstance extends ResourceBase {
+export default class DBInstance extends ResourceBase<DBInstanceProperties> {
     static ProcessorFeature = ProcessorFeature
 
     constructor(properties?: DBInstanceProperties) {

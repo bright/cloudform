@@ -30,7 +30,7 @@ export interface EventSubscriptionProperties {
     SourceType?: Value<string>
 }
 
-export default class EventSubscription extends ResourceBase {
+export default class EventSubscription extends ResourceBase<EventSubscriptionProperties> {
 
 
     constructor(properties?: EventSubscriptionProperties) {

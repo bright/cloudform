@@ -21,7 +21,7 @@ export interface NetworkAclEntryProperties {
     RuleAction: Value<string>;
     RuleNumber: Value<number>;
 }
-export default class NetworkAclEntry extends ResourceBase {
+export default class NetworkAclEntry extends ResourceBase<NetworkAclEntryProperties> {
     static Icmp: typeof Icmp;
     static PortRange: typeof PortRange;
     constructor(properties?: NetworkAclEntryProperties);

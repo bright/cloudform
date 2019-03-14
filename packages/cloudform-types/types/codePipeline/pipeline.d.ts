@@ -69,7 +69,7 @@ export interface PipelineProperties {
     RoleArn: Value<string>;
     Stages: List<StageDeclaration>;
 }
-export default class Pipeline extends ResourceBase {
+export default class Pipeline extends ResourceBase<PipelineProperties> {
     static InputArtifact: typeof InputArtifact;
     static ActionDeclaration: typeof ActionDeclaration;
     static StageDeclaration: typeof StageDeclaration;

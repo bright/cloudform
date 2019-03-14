@@ -22,7 +22,7 @@ export interface NamedQueryProperties {
     Name?: Value<string>
 }
 
-export default class NamedQuery extends ResourceBase {
+export default class NamedQuery extends ResourceBase<NamedQueryProperties> {
 
 
     constructor(properties?: NamedQueryProperties) {

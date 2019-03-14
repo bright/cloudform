@@ -79,7 +79,7 @@ export interface BrokerProperties {
     Tags?: List<TagsEntry>
 }
 
-export default class Broker extends ResourceBase {
+export default class Broker extends ResourceBase<BrokerProperties> {
     static User = User
     static MaintenanceWindow = MaintenanceWindow
     static LogList = LogList

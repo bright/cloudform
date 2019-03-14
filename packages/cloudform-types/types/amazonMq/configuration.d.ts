@@ -13,7 +13,7 @@ export interface ConfigurationProperties {
     Tags?: List<TagsEntry>;
     Name: Value<string>;
 }
-export default class Configuration extends ResourceBase {
+export default class Configuration extends ResourceBase<ConfigurationProperties> {
     static TagsEntry: typeof TagsEntry;
     constructor(properties?: ConfigurationProperties);
 }

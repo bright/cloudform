@@ -13,7 +13,7 @@ export interface MaintenanceWindowTargetProperties {
     Targets: List<Targets>;
     Name?: Value<string>;
 }
-export default class MaintenanceWindowTarget extends ResourceBase {
+export default class MaintenanceWindowTarget extends ResourceBase<MaintenanceWindowTargetProperties> {
     static Targets: typeof Targets;
     constructor(properties?: MaintenanceWindowTargetProperties);
 }

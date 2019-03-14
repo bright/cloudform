@@ -152,7 +152,7 @@ export interface InstanceGroupConfigProperties {
     Name?: Value<string>
 }
 
-export default class InstanceGroupConfig extends ResourceBase {
+export default class InstanceGroupConfig extends ResourceBase<InstanceGroupConfigProperties> {
     static EbsBlockDeviceConfig = EbsBlockDeviceConfig
     static Configuration = Configuration
     static MetricDimension = MetricDimension

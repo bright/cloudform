@@ -17,7 +17,7 @@ export interface DBSubnetGroupProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class DBSubnetGroup extends ResourceBase {
+export default class DBSubnetGroup extends ResourceBase<DBSubnetGroupProperties> {
 
 
     constructor(properties?: DBSubnetGroupProperties) {

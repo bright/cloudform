@@ -64,7 +64,7 @@ export interface ApplicationProperties {
     ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig
 }
 
-export default class Application extends ResourceBase {
+export default class Application extends ResourceBase<ApplicationProperties> {
     static ApplicationResourceLifecycleConfig = ApplicationResourceLifecycleConfig
     static ApplicationVersionLifecycleConfig = ApplicationVersionLifecycleConfig
     static MaxCountRule = MaxCountRule

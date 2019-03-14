@@ -120,7 +120,7 @@ function generateTopLevelClass(namespace: string, typeName: string, properties: 
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
 
-export default class ${typeName} extends ResourceBase {
+export default class ${typeName} extends ResourceBase<${typeName}Properties> {
 ${Object.keys(innerTypes)
         .filter(innerType => !!innerTypes[innerType].Properties)
         .map(innerTypeFullName => {

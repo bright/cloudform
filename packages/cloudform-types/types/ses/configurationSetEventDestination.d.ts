@@ -27,7 +27,7 @@ export interface ConfigurationSetEventDestinationProperties {
     ConfigurationSetName: Value<string>;
     EventDestination: EventDestination;
 }
-export default class ConfigurationSetEventDestination extends ResourceBase {
+export default class ConfigurationSetEventDestination extends ResourceBase<ConfigurationSetEventDestinationProperties> {
     static EventDestination: typeof EventDestination;
     static DimensionConfiguration: typeof DimensionConfiguration;
     static CloudWatchDestination: typeof CloudWatchDestination;

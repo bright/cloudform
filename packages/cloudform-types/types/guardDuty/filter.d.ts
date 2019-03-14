@@ -23,7 +23,7 @@ export interface FilterProperties {
     Rank: Value<number>;
     Name?: Value<string>;
 }
-export default class Filter extends ResourceBase {
+export default class Filter extends ResourceBase<FilterProperties> {
     static FindingCriteria: typeof FindingCriteria;
     static Condition: typeof Condition;
     constructor(properties?: FilterProperties);

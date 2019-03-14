@@ -85,7 +85,7 @@ export interface AlarmProperties {
     Unit?: Value<string>
 }
 
-export default class Alarm extends ResourceBase {
+export default class Alarm extends ResourceBase<AlarmProperties> {
     static MetricStat = MetricStat
     static Dimension = Dimension
     static MetricDataQuery = MetricDataQuery

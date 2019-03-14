@@ -11,7 +11,7 @@ export interface DeliveryChannelProperties {
     S3KeyPrefix?: Value<string>;
     SnsTopicARN?: Value<string>;
 }
-export default class DeliveryChannel extends ResourceBase {
+export default class DeliveryChannel extends ResourceBase<DeliveryChannelProperties> {
     static ConfigSnapshotDeliveryProperties: typeof ConfigSnapshotDeliveryProperties;
     constructor(properties?: DeliveryChannelProperties);
 }

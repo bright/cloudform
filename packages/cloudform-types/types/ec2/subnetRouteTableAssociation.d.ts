@@ -4,6 +4,6 @@ export interface SubnetRouteTableAssociationProperties {
     RouteTableId: Value<string>;
     SubnetId: Value<string>;
 }
-export default class SubnetRouteTableAssociation extends ResourceBase {
+export default class SubnetRouteTableAssociation extends ResourceBase<SubnetRouteTableAssociationProperties> {
     constructor(properties?: SubnetRouteTableAssociationProperties);
 }

@@ -45,7 +45,7 @@ export interface StageProperties {
         [key: string]: Value<string>;
     };
 }
-export default class Stage extends ResourceBase {
+export default class Stage extends ResourceBase<StageProperties> {
     static MethodSetting: typeof MethodSetting;
     static CanarySetting: typeof CanarySetting;
     static AccessLogSetting: typeof AccessLogSetting;

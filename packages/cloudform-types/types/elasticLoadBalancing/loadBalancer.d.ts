@@ -71,7 +71,7 @@ export interface LoadBalancerProperties {
     Subnets?: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }
-export default class LoadBalancer extends ResourceBase {
+export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static HealthCheck: typeof HealthCheck;
     static AccessLoggingPolicy: typeof AccessLoggingPolicy;
     static ConnectionSettings: typeof ConnectionSettings;

@@ -27,7 +27,7 @@ export interface StreamConsumerProperties {
     StreamARN: Value<string>
 }
 
-export default class StreamConsumer extends ResourceBase {
+export default class StreamConsumer extends ResourceBase<StreamConsumerProperties> {
 
 
     constructor(properties?: StreamConsumerProperties) {

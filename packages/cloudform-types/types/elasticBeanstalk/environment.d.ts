@@ -26,7 +26,7 @@ export interface EnvironmentProperties {
     Tier?: Tier;
     VersionLabel?: Value<string>;
 }
-export default class Environment extends ResourceBase {
+export default class Environment extends ResourceBase<EnvironmentProperties> {
     static OptionSetting: typeof OptionSetting;
     static Tier: typeof Tier;
     constructor(properties?: EnvironmentProperties);

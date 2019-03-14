@@ -39,7 +39,7 @@ export interface RoleProperties {
     RoleName?: Value<string>
 }
 
-export default class Role extends ResourceBase {
+export default class Role extends ResourceBase<RoleProperties> {
     static Policy = Policy
 
     constructor(properties?: RoleProperties) {

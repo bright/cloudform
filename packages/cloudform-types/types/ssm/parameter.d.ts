@@ -7,6 +7,6 @@ export interface ParameterProperties {
     Value: Value<string>;
     Name?: Value<string>;
 }
-export default class Parameter extends ResourceBase {
+export default class Parameter extends ResourceBase<ParameterProperties> {
     constructor(properties?: ParameterProperties);
 }

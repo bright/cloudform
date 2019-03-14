@@ -32,7 +32,7 @@ export interface ScheduledActionProperties {
     StartTime?: Value<string>
 }
 
-export default class ScheduledAction extends ResourceBase {
+export default class ScheduledAction extends ResourceBase<ScheduledActionProperties> {
 
 
     constructor(properties?: ScheduledActionProperties) {

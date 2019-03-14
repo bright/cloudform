@@ -18,7 +18,7 @@ export interface WorkspaceProperties {
     VolumeEncryptionKey?: Value<string>;
     WorkspaceProperties?: WorkspaceProperties;
 }
-export default class Workspace extends ResourceBase {
+export default class Workspace extends ResourceBase<WorkspaceProperties> {
     static WorkspaceProperties: typeof WorkspaceProperties;
     constructor(properties?: WorkspaceProperties);
 }

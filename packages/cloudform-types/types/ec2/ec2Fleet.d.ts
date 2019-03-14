@@ -60,7 +60,7 @@ export interface EC2FleetProperties {
     TerminateInstancesWithExpiration?: Value<boolean>;
     ValidUntil?: Value<string>;
 }
-export default class EC2Fleet extends ResourceBase {
+export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static FleetLaunchTemplateSpecificationRequest: typeof FleetLaunchTemplateSpecificationRequest;
     static FleetLaunchTemplateConfigRequest: typeof FleetLaunchTemplateConfigRequest;
     static OnDemandOptionsRequest: typeof OnDemandOptionsRequest;

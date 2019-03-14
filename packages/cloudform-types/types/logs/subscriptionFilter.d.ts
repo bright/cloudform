@@ -6,6 +6,6 @@ export interface SubscriptionFilterProperties {
     LogGroupName: Value<string>;
     RoleArn?: Value<string>;
 }
-export default class SubscriptionFilter extends ResourceBase {
+export default class SubscriptionFilter extends ResourceBase<SubscriptionFilterProperties> {
     constructor(properties?: SubscriptionFilterProperties);
 }

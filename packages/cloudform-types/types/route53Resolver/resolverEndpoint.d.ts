@@ -12,7 +12,7 @@ export interface ResolverEndpointProperties {
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
-export default class ResolverEndpoint extends ResourceBase {
+export default class ResolverEndpoint extends ResourceBase<ResolverEndpointProperties> {
     static IpAddressRequest: typeof IpAddressRequest;
     constructor(properties?: ResolverEndpointProperties);
 }

@@ -65,7 +65,7 @@ export interface LaunchConfigurationProperties {
     UserData?: Value<string>
 }
 
-export default class LaunchConfiguration extends ResourceBase {
+export default class LaunchConfiguration extends ResourceBase<LaunchConfigurationProperties> {
     static BlockDeviceMapping = BlockDeviceMapping
     static BlockDevice = BlockDevice
 

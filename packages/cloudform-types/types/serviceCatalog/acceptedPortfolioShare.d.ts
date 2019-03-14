@@ -4,6 +4,6 @@ export interface AcceptedPortfolioShareProperties {
     AcceptLanguage?: Value<string>;
     PortfolioId: Value<string>;
 }
-export default class AcceptedPortfolioShare extends ResourceBase {
+export default class AcceptedPortfolioShare extends ResourceBase<AcceptedPortfolioShareProperties> {
     constructor(properties?: AcceptedPortfolioShareProperties);
 }

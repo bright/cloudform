@@ -58,7 +58,7 @@ export interface PartitionProperties {
     CatalogId: Value<string>;
     PartitionInput: PartitionInput;
 }
-export default class Partition extends ResourceBase {
+export default class Partition extends ResourceBase<PartitionProperties> {
     static SerdeInfo: typeof SerdeInfo;
     static StorageDescriptor: typeof StorageDescriptor;
     static Order: typeof Order;

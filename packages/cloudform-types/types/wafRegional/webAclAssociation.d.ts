@@ -4,6 +4,6 @@ export interface WebACLAssociationProperties {
     ResourceArn: Value<string>;
     WebACLId: Value<string>;
 }
-export default class WebACLAssociation extends ResourceBase {
+export default class WebACLAssociation extends ResourceBase<WebACLAssociationProperties> {
     constructor(properties?: WebACLAssociationProperties);
 }

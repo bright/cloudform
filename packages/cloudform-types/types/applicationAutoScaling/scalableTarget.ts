@@ -51,7 +51,7 @@ export interface ScalableTargetProperties {
     ServiceNamespace: Value<string>
 }
 
-export default class ScalableTarget extends ResourceBase {
+export default class ScalableTarget extends ResourceBase<ScalableTargetProperties> {
     static ScheduledAction = ScheduledAction
     static ScalableTargetAction = ScalableTargetAction
 

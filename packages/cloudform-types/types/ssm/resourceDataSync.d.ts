@@ -8,6 +8,6 @@ export interface ResourceDataSyncProperties {
     SyncName: Value<string>;
     BucketPrefix?: Value<string>;
 }
-export default class ResourceDataSync extends ResourceBase {
+export default class ResourceDataSync extends ResourceBase<ResourceDataSyncProperties> {
     constructor(properties?: ResourceDataSyncProperties);
 }

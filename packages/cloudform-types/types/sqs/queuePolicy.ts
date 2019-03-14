@@ -27,7 +27,7 @@ export interface QueuePolicyProperties {
     Queues: List<Value<string>>
 }
 
-export default class QueuePolicy extends ResourceBase {
+export default class QueuePolicy extends ResourceBase<QueuePolicyProperties> {
 
 
     constructor(properties?: QueuePolicyProperties) {

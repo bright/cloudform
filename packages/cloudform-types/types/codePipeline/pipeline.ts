@@ -128,7 +128,7 @@ export interface PipelineProperties {
     Stages: List<StageDeclaration>
 }
 
-export default class Pipeline extends ResourceBase {
+export default class Pipeline extends ResourceBase<PipelineProperties> {
     static InputArtifact = InputArtifact
     static ActionDeclaration = ActionDeclaration
     static StageDeclaration = StageDeclaration

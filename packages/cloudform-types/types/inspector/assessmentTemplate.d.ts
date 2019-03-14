@@ -7,6 +7,6 @@ export interface AssessmentTemplateProperties {
     RulesPackageArns: List<Value<string>>;
     UserAttributesForFindings?: List<ResourceTag>;
 }
-export default class AssessmentTemplate extends ResourceBase {
+export default class AssessmentTemplate extends ResourceBase<AssessmentTemplateProperties> {
     constructor(properties?: AssessmentTemplateProperties);
 }

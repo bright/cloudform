@@ -34,7 +34,7 @@ export interface SecurityGroupEgressProperties {
     ToPort?: Value<number>
 }
 
-export default class SecurityGroupEgress extends ResourceBase {
+export default class SecurityGroupEgress extends ResourceBase<SecurityGroupEgressProperties> {
 
 
     constructor(properties?: SecurityGroupEgressProperties) {

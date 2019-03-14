@@ -6,6 +6,6 @@ export interface CustomerGatewayProperties {
     Tags?: List<ResourceTag>;
     Type: Value<string>;
 }
-export default class CustomerGateway extends ResourceBase {
+export default class CustomerGateway extends ResourceBase<CustomerGatewayProperties> {
     constructor(properties?: CustomerGatewayProperties);
 }

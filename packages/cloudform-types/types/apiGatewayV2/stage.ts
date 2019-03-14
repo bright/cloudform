@@ -52,7 +52,7 @@ export interface StageProperties {
     DefaultRouteSettings?: RouteSettings
 }
 
-export default class Stage extends ResourceBase {
+export default class Stage extends ResourceBase<StageProperties> {
     static AccessLogSettings = AccessLogSettings
     static RouteSettings = RouteSettings
 

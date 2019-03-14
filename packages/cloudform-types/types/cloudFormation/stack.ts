@@ -30,7 +30,7 @@ export interface StackProperties {
     TimeoutInMinutes?: Value<number>
 }
 
-export default class Stack extends ResourceBase {
+export default class Stack extends ResourceBase<StackProperties> {
 
 
     constructor(properties?: StackProperties) {

@@ -47,7 +47,7 @@ export interface StepProperties {
     Name: Value<string>
 }
 
-export default class Step extends ResourceBase {
+export default class Step extends ResourceBase<StepProperties> {
     static HadoopJarStepConfig = HadoopJarStepConfig
     static KeyValue = KeyValue
 

@@ -5,6 +5,6 @@ export interface WaitConditionProperties {
     Handle?: Value<string>;
     Timeout?: Value<string>;
 }
-export default class WaitCondition extends ResourceBase {
+export default class WaitCondition extends ResourceBase<WaitConditionProperties> {
     constructor(properties?: WaitConditionProperties);
 }

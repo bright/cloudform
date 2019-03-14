@@ -22,7 +22,7 @@ export interface UserProperties {
     AuthenticationType: Value<string>
 }
 
-export default class User extends ResourceBase {
+export default class User extends ResourceBase<UserProperties> {
 
 
     constructor(properties?: UserProperties) {

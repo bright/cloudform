@@ -147,7 +147,7 @@ export interface UserPoolProperties {
     EmailVerificationMessage?: Value<string>
 }
 
-export default class UserPool extends ResourceBase {
+export default class UserPool extends ResourceBase<UserPoolProperties> {
     static PasswordPolicy = PasswordPolicy
     static Policies = Policies
     static EmailConfiguration = EmailConfiguration

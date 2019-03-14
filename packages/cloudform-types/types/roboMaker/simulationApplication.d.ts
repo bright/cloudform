@@ -32,7 +32,7 @@ export interface SimulationApplicationProperties {
     };
     Name?: Value<string>;
 }
-export default class SimulationApplication extends ResourceBase {
+export default class SimulationApplication extends ResourceBase<SimulationApplicationProperties> {
     static RenderingEngine: typeof RenderingEngine;
     static SimulationSoftwareSuite: typeof SimulationSoftwareSuite;
     static RobotSoftwareSuite: typeof RobotSoftwareSuite;

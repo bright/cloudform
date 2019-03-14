@@ -51,7 +51,7 @@ export interface DomainProperties {
     Tags?: List<ResourceTag>;
     VPCOptions?: VPCOptions;
 }
-export default class Domain extends ResourceBase {
+export default class Domain extends ResourceBase<DomainProperties> {
     static VPCOptions: typeof VPCOptions;
     static NodeToNodeEncryptionOptions: typeof NodeToNodeEncryptionOptions;
     static ElasticsearchClusterConfig: typeof ElasticsearchClusterConfig;

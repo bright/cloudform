@@ -6,6 +6,6 @@ export interface UserProfileProperties {
     SshPublicKey?: Value<string>;
     SshUsername?: Value<string>;
 }
-export default class UserProfile extends ResourceBase {
+export default class UserProfile extends ResourceBase<UserProfileProperties> {
     constructor(properties?: UserProfileProperties);
 }

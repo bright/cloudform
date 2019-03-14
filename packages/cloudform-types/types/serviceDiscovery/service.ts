@@ -64,7 +64,7 @@ export interface ServiceProperties {
     Name?: Value<string>
 }
 
-export default class Service extends ResourceBase {
+export default class Service extends ResourceBase<ServiceProperties> {
     static DnsConfig = DnsConfig
     static DnsRecord = DnsRecord
     static HealthCheckCustomConfig = HealthCheckCustomConfig

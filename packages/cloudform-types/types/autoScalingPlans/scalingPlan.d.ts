@@ -72,7 +72,7 @@ export interface ScalingPlanProperties {
     ApplicationSource: ApplicationSource;
     ScalingInstructions: List<ScalingInstruction>;
 }
-export default class ScalingPlan extends ResourceBase {
+export default class ScalingPlan extends ResourceBase<ScalingPlanProperties> {
     static ApplicationSource: typeof ApplicationSource;
     static ScalingInstruction: typeof ScalingInstruction;
     static TargetTrackingConfiguration: typeof TargetTrackingConfiguration;

@@ -29,7 +29,7 @@ export interface RequestValidatorProperties {
     ValidateRequestParameters?: Value<boolean>
 }
 
-export default class RequestValidator extends ResourceBase {
+export default class RequestValidator extends ResourceBase<RequestValidatorProperties> {
 
 
     constructor(properties?: RequestValidatorProperties) {

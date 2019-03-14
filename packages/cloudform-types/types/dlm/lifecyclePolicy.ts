@@ -65,7 +65,7 @@ export interface LifecyclePolicyProperties {
     PolicyDetails?: PolicyDetails
 }
 
-export default class LifecyclePolicy extends ResourceBase {
+export default class LifecyclePolicy extends ResourceBase<LifecyclePolicyProperties> {
     static Schedule = Schedule
     static CreateRule = CreateRule
     static RetainRule = RetainRule

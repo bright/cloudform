@@ -55,7 +55,7 @@ export interface FleetProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Fleet extends ResourceBase {
+export default class Fleet extends ResourceBase<FleetProperties> {
     static ComputeCapacity = ComputeCapacity
     static DomainJoinInfo = DomainJoinInfo
     static VpcConfig = VpcConfig

@@ -31,7 +31,7 @@ export interface PermissionProperties {
     SourceArn?: Value<string>
 }
 
-export default class Permission extends ResourceBase {
+export default class Permission extends ResourceBase<PermissionProperties> {
 
 
     constructor(properties?: PermissionProperties) {

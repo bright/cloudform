@@ -28,7 +28,7 @@ export interface DocumentProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class Document extends ResourceBase {
+export default class Document extends ResourceBase<DocumentProperties> {
 
 
     constructor(properties?: DocumentProperties) {

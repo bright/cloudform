@@ -35,7 +35,7 @@ export interface MaintenanceWindowTargetProperties {
     Name?: Value<string>
 }
 
-export default class MaintenanceWindowTarget extends ResourceBase {
+export default class MaintenanceWindowTarget extends ResourceBase<MaintenanceWindowTargetProperties> {
     static Targets = Targets
 
     constructor(properties?: MaintenanceWindowTargetProperties) {

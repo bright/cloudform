@@ -16,7 +16,7 @@ export interface SizeConstraintSetProperties {
     SizeConstraints?: List<SizeConstraint>;
     Name: Value<string>;
 }
-export default class SizeConstraintSet extends ResourceBase {
+export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetProperties> {
     static SizeConstraint: typeof SizeConstraint;
     static FieldToMatch: typeof FieldToMatch;
     constructor(properties?: SizeConstraintSetProperties);

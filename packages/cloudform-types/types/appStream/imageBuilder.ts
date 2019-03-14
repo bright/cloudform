@@ -44,7 +44,7 @@ export interface ImageBuilderProperties {
     Tags?: List<ResourceTag>
 }
 
-export default class ImageBuilder extends ResourceBase {
+export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
     static VpcConfig = VpcConfig
     static DomainJoinInfo = DomainJoinInfo
 

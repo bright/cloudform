@@ -26,7 +26,7 @@ export interface DomainProperties {
     Description?: Value<string>
 }
 
-export default class Domain extends ResourceBase {
+export default class Domain extends ResourceBase<DomainProperties> {
 
 
     constructor(properties?: DomainProperties) {

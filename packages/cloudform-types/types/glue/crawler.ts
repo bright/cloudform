@@ -72,7 +72,7 @@ export interface CrawlerProperties {
     Name?: Value<string>
 }
 
-export default class Crawler extends ResourceBase {
+export default class Crawler extends ResourceBase<CrawlerProperties> {
     static Targets = Targets
     static JdbcTarget = JdbcTarget
     static Schedule = Schedule

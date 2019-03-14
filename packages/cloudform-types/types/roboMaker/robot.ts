@@ -17,7 +17,7 @@ export interface RobotProperties {
     Name?: Value<string>
 }
 
-export default class Robot extends ResourceBase {
+export default class Robot extends ResourceBase<RobotProperties> {
 
 
     constructor(properties?: RobotProperties) {

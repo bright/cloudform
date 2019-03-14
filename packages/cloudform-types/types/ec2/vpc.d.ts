@@ -8,5 +8,5 @@ export interface VPCProperties {
     Tags?: List<ResourceTag>;
 }
 export default class VPC extends ResourceBase<VPCProperties> {
-    constructor(properties?: VPCProperties);
+    constructor(properties: VPCProperties);
 }

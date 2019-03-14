@@ -101,6 +101,6 @@ export default class Domain extends ResourceBase<DomainProperties> {
     static EncryptionAtRestOptions = EncryptionAtRestOptions
 
     constructor(properties?: DomainProperties) {
-        super('AWS::Elasticsearch::Domain', properties)
+        super('AWS::Elasticsearch::Domain', properties || {})
     }
 }

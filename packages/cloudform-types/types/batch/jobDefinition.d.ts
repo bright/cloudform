@@ -83,5 +83,5 @@ export default class JobDefinition extends ResourceBase<JobDefinitionProperties>
     static Environment: typeof Environment;
     static Ulimit: typeof Ulimit;
     static VolumesHost: typeof VolumesHost;
-    constructor(properties?: JobDefinitionProperties);
+    constructor(properties: JobDefinitionProperties);
 }

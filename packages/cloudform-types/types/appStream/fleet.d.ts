@@ -34,5 +34,5 @@ export default class Fleet extends ResourceBase<FleetProperties> {
     static ComputeCapacity: typeof ComputeCapacity;
     static DomainJoinInfo: typeof DomainJoinInfo;
     static VpcConfig: typeof VpcConfig;
-    constructor(properties?: FleetProperties);
+    constructor(properties: FleetProperties);
 }

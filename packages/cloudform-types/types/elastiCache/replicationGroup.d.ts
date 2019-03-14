@@ -41,5 +41,5 @@ export interface ReplicationGroupProperties {
 }
 export default class ReplicationGroup extends ResourceBase<ReplicationGroupProperties> {
     static NodeGroupConfiguration: typeof NodeGroupConfiguration;
-    constructor(properties?: ReplicationGroupProperties);
+    constructor(properties: ReplicationGroupProperties);
 }

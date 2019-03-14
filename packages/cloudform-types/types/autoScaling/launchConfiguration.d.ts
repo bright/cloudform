@@ -39,5 +39,5 @@ export interface LaunchConfigurationProperties {
 export default class LaunchConfiguration extends ResourceBase<LaunchConfigurationProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static BlockDevice: typeof BlockDevice;
-    constructor(properties?: LaunchConfigurationProperties);
+    constructor(properties: LaunchConfigurationProperties);
 }

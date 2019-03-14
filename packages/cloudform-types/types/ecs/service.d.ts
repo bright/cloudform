@@ -64,5 +64,5 @@ export default class Service extends ResourceBase<ServiceProperties> {
     static PlacementConstraint: typeof PlacementConstraint;
     static AwsVpcConfiguration: typeof AwsVpcConfiguration;
     static NetworkConfiguration: typeof NetworkConfiguration;
-    constructor(properties?: ServiceProperties);
+    constructor(properties: ServiceProperties);
 }

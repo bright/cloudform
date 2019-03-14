@@ -8,5 +8,5 @@ export interface LaunchTemplateConstraintProperties {
     Rules: Value<string>;
 }
 export default class LaunchTemplateConstraint extends ResourceBase<LaunchTemplateConstraintProperties> {
-    constructor(properties?: LaunchTemplateConstraintProperties);
+    constructor(properties: LaunchTemplateConstraintProperties);
 }

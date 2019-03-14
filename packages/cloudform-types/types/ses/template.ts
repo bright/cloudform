@@ -26,6 +26,6 @@ export default class Template extends ResourceBase<TemplateProperties> {
     static Template = TemplateInner
 
     constructor(properties?: TemplateProperties) {
-        super('AWS::SES::Template', properties)
+        super('AWS::SES::Template', properties || {})
     }
 }

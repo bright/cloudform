@@ -31,7 +31,7 @@ class UserSetting {
 exports.UserSetting = UserSetting;
 class Stack extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::AppStream::Stack', properties);
+        super('AWS::AppStream::Stack', properties || {});
     }
 }
 Stack.ApplicationSettings = ApplicationSettings;

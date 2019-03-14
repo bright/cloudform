@@ -140,7 +140,7 @@ export default class Application extends ResourceBase<ApplicationProperties> {
     static InputProcessingConfiguration = InputProcessingConfiguration
     static InputLambdaProcessor = InputLambdaProcessor
 
-    constructor(properties?: ApplicationProperties) {
+    constructor(properties: ApplicationProperties) {
         super('AWS::KinesisAnalytics::Application', properties)
     }
 }

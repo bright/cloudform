@@ -15,5 +15,5 @@ export interface DocumentationPartProperties {
 }
 export default class DocumentationPart extends ResourceBase<DocumentationPartProperties> {
     static Location: typeof Location;
-    constructor(properties?: DocumentationPartProperties);
+    constructor(properties: DocumentationPartProperties);
 }

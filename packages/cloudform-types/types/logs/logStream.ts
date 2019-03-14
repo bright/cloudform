@@ -30,7 +30,7 @@ export interface LogStreamProperties {
 export default class LogStream extends ResourceBase<LogStreamProperties> {
 
 
-    constructor(properties?: LogStreamProperties) {
+    constructor(properties: LogStreamProperties) {
         super('AWS::Logs::LogStream', properties)
     }
 }

@@ -6,5 +6,5 @@ export interface MasterProperties {
     InvitationId?: Value<string>;
 }
 export default class Master extends ResourceBase<MasterProperties> {
-    constructor(properties?: MasterProperties);
+    constructor(properties: MasterProperties);
 }

@@ -151,7 +151,7 @@ export default class Dataset extends ResourceBase<DatasetProperties> {
     static Action = Action
     static ContainerAction = ContainerAction
 
-    constructor(properties?: DatasetProperties) {
+    constructor(properties: DatasetProperties) {
         super('AWS::IoTAnalytics::Dataset', properties)
     }
 }

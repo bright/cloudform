@@ -14,5 +14,5 @@ export interface StreamProperties {
 }
 export default class Stream extends ResourceBase<StreamProperties> {
     static StreamEncryption: typeof StreamEncryption;
-    constructor(properties?: StreamProperties);
+    constructor(properties: StreamProperties);
 }

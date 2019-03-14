@@ -30,6 +30,6 @@ export default class InternetGateway extends ResourceBase<InternetGatewayPropert
 
 
     constructor(properties?: InternetGatewayProperties) {
-        super('AWS::EC2::InternetGateway', properties)
+        super('AWS::EC2::InternetGateway', properties || {})
     }
 }

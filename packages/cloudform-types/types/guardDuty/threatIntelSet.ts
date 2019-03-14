@@ -31,7 +31,7 @@ export interface ThreatIntelSetProperties {
 export default class ThreatIntelSet extends ResourceBase<ThreatIntelSetProperties> {
 
 
-    constructor(properties?: ThreatIntelSetProperties) {
+    constructor(properties: ThreatIntelSetProperties) {
         super('AWS::GuardDuty::ThreatIntelSet', properties)
     }
 }

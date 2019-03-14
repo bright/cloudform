@@ -33,7 +33,7 @@ export interface DatabaseProperties {
 export default class Database extends ResourceBase<DatabaseProperties> {
     static DatabaseInput = DatabaseInput
 
-    constructor(properties?: DatabaseProperties) {
+    constructor(properties: DatabaseProperties) {
         super('AWS::Glue::Database', properties)
     }
 }

@@ -32,7 +32,7 @@ export interface DestinationProperties {
 export default class Destination extends ResourceBase<DestinationProperties> {
 
 
-    constructor(properties?: DestinationProperties) {
+    constructor(properties: DestinationProperties) {
         super('AWS::Logs::Destination', properties)
     }
 }

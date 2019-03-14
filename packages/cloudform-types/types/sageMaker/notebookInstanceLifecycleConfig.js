@@ -16,7 +16,7 @@ class NotebookInstanceLifecycleHook {
 exports.NotebookInstanceLifecycleHook = NotebookInstanceLifecycleHook;
 class NotebookInstanceLifecycleConfig extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::SageMaker::NotebookInstanceLifecycleConfig', properties);
+        super('AWS::SageMaker::NotebookInstanceLifecycleConfig', properties || {});
     }
 }
 NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook = NotebookInstanceLifecycleHook;

@@ -37,5 +37,5 @@ export default class HealthCheck extends ResourceBase<HealthCheckProperties> {
     static HealthCheckConfig: typeof HealthCheckConfig;
     static HealthCheckTag: typeof HealthCheckTag;
     static AlarmIdentifier: typeof AlarmIdentifier;
-    constructor(properties?: HealthCheckProperties);
+    constructor(properties: HealthCheckProperties);
 }

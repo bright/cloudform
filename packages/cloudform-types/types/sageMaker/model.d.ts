@@ -25,5 +25,5 @@ export interface ModelProperties {
 export default class Model extends ResourceBase<ModelProperties> {
     static VpcConfig: typeof VpcConfig;
     static ContainerDefinition: typeof ContainerDefinition;
-    constructor(properties?: ModelProperties);
+    constructor(properties: ModelProperties);
 }

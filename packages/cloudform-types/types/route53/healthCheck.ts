@@ -71,7 +71,7 @@ export default class HealthCheck extends ResourceBase<HealthCheckProperties> {
     static HealthCheckTag = HealthCheckTag
     static AlarmIdentifier = AlarmIdentifier
 
-    constructor(properties?: HealthCheckProperties) {
+    constructor(properties: HealthCheckProperties) {
         super('AWS::Route53::HealthCheck', properties)
     }
 }

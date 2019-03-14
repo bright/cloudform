@@ -30,5 +30,5 @@ export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
     static OpenIDConnectConfig: typeof OpenIDConnectConfig;
     static LogConfig: typeof LogConfig;
     static UserPoolConfig: typeof UserPoolConfig;
-    constructor(properties?: GraphQLApiProperties);
+    constructor(properties: GraphQLApiProperties);
 }

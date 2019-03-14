@@ -116,7 +116,7 @@ export default class Layer extends ResourceBase<LayerProperties> {
     static LifecycleEventConfiguration = LifecycleEventConfiguration
     static LoadBasedAutoScaling = LoadBasedAutoScaling
 
-    constructor(properties?: LayerProperties) {
+    constructor(properties: LayerProperties) {
         super('AWS::OpsWorks::Layer', properties)
     }
 }

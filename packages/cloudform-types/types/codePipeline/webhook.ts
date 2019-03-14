@@ -52,7 +52,7 @@ export default class Webhook extends ResourceBase<WebhookProperties> {
     static WebhookFilterRule = WebhookFilterRule
     static WebhookAuthConfiguration = WebhookAuthConfiguration
 
-    constructor(properties?: WebhookProperties) {
+    constructor(properties: WebhookProperties) {
         super('AWS::CodePipeline::Webhook', properties)
     }
 }

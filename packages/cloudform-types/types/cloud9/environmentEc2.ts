@@ -31,7 +31,7 @@ export interface EnvironmentEC2Properties {
 export default class EnvironmentEC2 extends ResourceBase<EnvironmentEC2Properties> {
     static Repository = Repository
 
-    constructor(properties?: EnvironmentEC2Properties) {
+    constructor(properties: EnvironmentEC2Properties) {
         super('AWS::Cloud9::EnvironmentEC2', properties)
     }
 }

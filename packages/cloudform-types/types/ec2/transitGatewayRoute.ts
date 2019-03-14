@@ -30,7 +30,7 @@ export interface TransitGatewayRouteProperties {
 export default class TransitGatewayRoute extends ResourceBase<TransitGatewayRouteProperties> {
 
 
-    constructor(properties?: TransitGatewayRouteProperties) {
+    constructor(properties: TransitGatewayRouteProperties) {
         super('AWS::EC2::TransitGatewayRoute', properties)
     }
 }

@@ -30,7 +30,7 @@ export interface TagOptionProperties {
 export default class TagOption extends ResourceBase<TagOptionProperties> {
 
 
-    constructor(properties?: TagOptionProperties) {
+    constructor(properties: TagOptionProperties) {
         super('AWS::ServiceCatalog::TagOption', properties)
     }
 }

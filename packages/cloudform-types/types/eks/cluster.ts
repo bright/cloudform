@@ -25,7 +25,7 @@ export interface ClusterProperties {
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static ResourcesVpcConfig = ResourcesVpcConfig
 
-    constructor(properties?: ClusterProperties) {
+    constructor(properties: ClusterProperties) {
         super('AWS::EKS::Cluster', properties)
     }
 }

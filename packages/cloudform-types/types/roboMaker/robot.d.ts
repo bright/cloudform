@@ -10,5 +10,5 @@ export interface RobotProperties {
     Name?: Value<string>;
 }
 export default class Robot extends ResourceBase<RobotProperties> {
-    constructor(properties?: RobotProperties);
+    constructor(properties: RobotProperties);
 }

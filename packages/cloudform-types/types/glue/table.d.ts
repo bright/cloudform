@@ -71,5 +71,5 @@ export default class Table extends ResourceBase<TableProperties> {
     static SerdeInfo: typeof SerdeInfo;
     static Order: typeof Order;
     static Column: typeof Column;
-    constructor(properties?: TableProperties);
+    constructor(properties: TableProperties);
 }

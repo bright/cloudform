@@ -56,5 +56,5 @@ export default class ApplicationReferenceDataSource extends ResourceBase<Applica
     static RecordColumn: typeof RecordColumn;
     static ReferenceSchema: typeof ReferenceSchema;
     static ReferenceDataSource: typeof ReferenceDataSource;
-    constructor(properties?: ApplicationReferenceDataSourceProperties);
+    constructor(properties: ApplicationReferenceDataSourceProperties);
 }

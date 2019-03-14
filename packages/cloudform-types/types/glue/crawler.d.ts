@@ -43,5 +43,5 @@ export default class Crawler extends ResourceBase<CrawlerProperties> {
     static Schedule: typeof Schedule;
     static S3Target: typeof S3Target;
     static SchemaChangePolicy: typeof SchemaChangePolicy;
-    constructor(properties?: CrawlerProperties);
+    constructor(properties: CrawlerProperties);
 }

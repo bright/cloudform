@@ -50,5 +50,5 @@ export default class Broker extends ResourceBase<BrokerProperties> {
     static LogList: typeof LogList;
     static TagsEntry: typeof TagsEntry;
     static ConfigurationId: typeof ConfigurationId;
-    constructor(properties?: BrokerProperties);
+    constructor(properties: BrokerProperties);
 }

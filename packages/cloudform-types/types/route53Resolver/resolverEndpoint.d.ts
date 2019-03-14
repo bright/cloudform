@@ -14,5 +14,5 @@ export interface ResolverEndpointProperties {
 }
 export default class ResolverEndpoint extends ResourceBase<ResolverEndpointProperties> {
     static IpAddressRequest: typeof IpAddressRequest;
-    constructor(properties?: ResolverEndpointProperties);
+    constructor(properties: ResolverEndpointProperties);
 }

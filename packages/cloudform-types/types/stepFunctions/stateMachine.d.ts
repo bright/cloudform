@@ -13,5 +13,5 @@ export interface StateMachineProperties {
 }
 export default class StateMachine extends ResourceBase<StateMachineProperties> {
     static TagsEntry: typeof TagsEntry;
-    constructor(properties?: StateMachineProperties);
+    constructor(properties: StateMachineProperties);
 }

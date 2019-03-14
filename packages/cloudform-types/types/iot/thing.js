@@ -27,7 +27,7 @@ class AttributePayload {
 exports.AttributePayload = AttributePayload;
 class Thing extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::IoT::Thing', properties);
+        super('AWS::IoT::Thing', properties || {});
     }
 }
 Thing.AttributePayload = AttributePayload;

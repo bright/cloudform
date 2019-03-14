@@ -71,6 +71,6 @@ export default class Application extends ResourceBase<ApplicationProperties> {
     static MaxAgeRule = MaxAgeRule
 
     constructor(properties?: ApplicationProperties) {
-        super('AWS::ElasticBeanstalk::Application', properties)
+        super('AWS::ElasticBeanstalk::Application', properties || {})
     }
 }

@@ -63,7 +63,7 @@ export default class ComputeEnvironment extends ResourceBase<ComputeEnvironmentP
     static LaunchTemplateSpecification = LaunchTemplateSpecification
     static ComputeResources = ComputeResources
 
-    constructor(properties?: ComputeEnvironmentProperties) {
+    constructor(properties: ComputeEnvironmentProperties) {
         super('AWS::Batch::ComputeEnvironment', properties)
     }
 }

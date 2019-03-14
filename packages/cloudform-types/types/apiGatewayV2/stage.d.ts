@@ -31,5 +31,5 @@ export interface StageProperties {
 export default class Stage extends ResourceBase<StageProperties> {
     static AccessLogSettings: typeof AccessLogSettings;
     static RouteSettings: typeof RouteSettings;
-    constructor(properties?: StageProperties);
+    constructor(properties: StageProperties);
 }

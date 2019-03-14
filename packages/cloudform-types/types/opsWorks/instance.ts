@@ -86,7 +86,7 @@ export default class Instance extends ResourceBase<InstanceProperties> {
     static EbsBlockDevice = EbsBlockDevice
     static TimeBasedAutoScaling = TimeBasedAutoScaling
 
-    constructor(properties?: InstanceProperties) {
+    constructor(properties: InstanceProperties) {
         super('AWS::OpsWorks::Instance', properties)
     }
 }

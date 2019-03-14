@@ -103,7 +103,7 @@ export default class Table extends ResourceBase<TableProperties> {
     static Order = Order
     static Column = Column
 
-    constructor(properties?: TableProperties) {
+    constructor(properties: TableProperties) {
         super('AWS::Glue::Table', properties)
     }
 }

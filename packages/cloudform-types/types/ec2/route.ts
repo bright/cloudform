@@ -37,7 +37,7 @@ export interface RouteProperties {
 export default class Route extends ResourceBase<RouteProperties> {
 
 
-    constructor(properties?: RouteProperties) {
+    constructor(properties: RouteProperties) {
         super('AWS::EC2::Route', properties)
     }
 }

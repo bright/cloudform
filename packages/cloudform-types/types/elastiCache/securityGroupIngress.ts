@@ -31,7 +31,7 @@ export interface SecurityGroupIngressProperties {
 export default class SecurityGroupIngress extends ResourceBase<SecurityGroupIngressProperties> {
 
 
-    constructor(properties?: SecurityGroupIngressProperties) {
+    constructor(properties: SecurityGroupIngressProperties) {
         super('AWS::ElastiCache::SecurityGroupIngress', properties)
     }
 }

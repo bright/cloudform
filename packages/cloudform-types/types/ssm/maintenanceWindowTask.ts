@@ -129,7 +129,7 @@ export default class MaintenanceWindowTask extends ResourceBase<MaintenanceWindo
     static MaintenanceWindowStepFunctionsParameters = MaintenanceWindowStepFunctionsParameters
     static MaintenanceWindowRunCommandParameters = MaintenanceWindowRunCommandParameters
 
-    constructor(properties?: MaintenanceWindowTaskProperties) {
+    constructor(properties: MaintenanceWindowTaskProperties) {
         super('AWS::SSM::MaintenanceWindowTask', properties)
     }
 }

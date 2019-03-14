@@ -97,7 +97,7 @@ export default class ApplicationReferenceDataSource extends ResourceBase<Applica
     static ReferenceSchema = ReferenceSchema
     static CSVMappingParameters = CSVMappingParameters
 
-    constructor(properties?: ApplicationReferenceDataSourceProperties) {
+    constructor(properties: ApplicationReferenceDataSourceProperties) {
         super('AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource', properties)
     }
 }

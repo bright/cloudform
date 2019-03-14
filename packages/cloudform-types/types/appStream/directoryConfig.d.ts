@@ -12,5 +12,5 @@ export interface DirectoryConfigProperties {
 }
 export default class DirectoryConfig extends ResourceBase<DirectoryConfigProperties> {
     static ServiceAccountCredentials: typeof ServiceAccountCredentials;
-    constructor(properties?: DirectoryConfigProperties);
+    constructor(properties: DirectoryConfigProperties);
 }

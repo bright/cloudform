@@ -41,7 +41,7 @@ export interface DBSecurityGroupProperties {
 export default class DBSecurityGroup extends ResourceBase<DBSecurityGroupProperties> {
     static Ingress = Ingress
 
-    constructor(properties?: DBSecurityGroupProperties) {
+    constructor(properties: DBSecurityGroupProperties) {
         super('AWS::RDS::DBSecurityGroup', properties)
     }
 }

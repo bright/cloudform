@@ -90,7 +90,7 @@ export default class Function extends ResourceBase<FunctionProperties> {
     static Code = Code
     static Environment = Environment
 
-    constructor(properties?: FunctionProperties) {
+    constructor(properties: FunctionProperties) {
         super('AWS::Lambda::Function', properties)
     }
 }

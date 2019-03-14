@@ -30,7 +30,7 @@ export interface ResolverEndpointProperties {
 export default class ResolverEndpoint extends ResourceBase<ResolverEndpointProperties> {
     static IpAddressRequest = IpAddressRequest
 
-    constructor(properties?: ResolverEndpointProperties) {
+    constructor(properties: ResolverEndpointProperties) {
         super('AWS::Route53Resolver::ResolverEndpoint', properties)
     }
 }

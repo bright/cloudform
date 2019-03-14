@@ -25,7 +25,7 @@ export interface UserProperties {
 export default class User extends ResourceBase<UserProperties> {
 
 
-    constructor(properties?: UserProperties) {
+    constructor(properties: UserProperties) {
         super('AWS::AppStream::User', properties)
     }
 }

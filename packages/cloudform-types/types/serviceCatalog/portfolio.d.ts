@@ -8,5 +8,5 @@ export interface PortfolioProperties {
     Tags?: List<ResourceTag>;
 }
 export default class Portfolio extends ResourceBase<PortfolioProperties> {
-    constructor(properties?: PortfolioProperties);
+    constructor(properties: PortfolioProperties);
 }

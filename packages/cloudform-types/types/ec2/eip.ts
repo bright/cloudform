@@ -32,6 +32,6 @@ export default class EIP extends ResourceBase<EIPProperties> {
 
 
     constructor(properties?: EIPProperties) {
-        super('AWS::EC2::EIP', properties)
+        super('AWS::EC2::EIP', properties || {})
     }
 }

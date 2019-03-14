@@ -63,7 +63,7 @@ class EcsParameters {
 exports.EcsParameters = EcsParameters;
 class Rule extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Events::Rule', properties);
+        super('AWS::Events::Rule', properties || {});
     }
 }
 Rule.SqsParameters = SqsParameters;

@@ -98,7 +98,7 @@ export default class ApplicationReferenceDataSource extends ResourceBase<Applica
     static ReferenceSchema = ReferenceSchema
     static ReferenceDataSource = ReferenceDataSource
 
-    constructor(properties?: ApplicationReferenceDataSourceProperties) {
+    constructor(properties: ApplicationReferenceDataSourceProperties) {
         super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties)
     }
 }

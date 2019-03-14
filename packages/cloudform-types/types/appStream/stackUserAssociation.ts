@@ -24,7 +24,7 @@ export interface StackUserAssociationProperties {
 export default class StackUserAssociation extends ResourceBase<StackUserAssociationProperties> {
 
 
-    constructor(properties?: StackUserAssociationProperties) {
+    constructor(properties: StackUserAssociationProperties) {
         super('AWS::AppStream::StackUserAssociation', properties)
     }
 }

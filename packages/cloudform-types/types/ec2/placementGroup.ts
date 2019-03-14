@@ -30,6 +30,6 @@ export default class PlacementGroup extends ResourceBase<PlacementGroupPropertie
 
 
     constructor(properties?: PlacementGroupProperties) {
-        super('AWS::EC2::PlacementGroup', properties)
+        super('AWS::EC2::PlacementGroup', properties || {})
     }
 }

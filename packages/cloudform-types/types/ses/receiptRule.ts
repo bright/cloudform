@@ -120,7 +120,7 @@ export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
     static LambdaAction = LambdaAction
     static AddHeaderAction = AddHeaderAction
 
-    constructor(properties?: ReceiptRuleProperties) {
+    constructor(properties: ReceiptRuleProperties) {
         super('AWS::SES::ReceiptRule', properties)
     }
 }

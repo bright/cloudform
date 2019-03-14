@@ -32,7 +32,7 @@ export interface NetworkInterfaceAttachmentProperties {
 export default class NetworkInterfaceAttachment extends ResourceBase<NetworkInterfaceAttachmentProperties> {
 
 
-    constructor(properties?: NetworkInterfaceAttachmentProperties) {
+    constructor(properties: NetworkInterfaceAttachmentProperties) {
         super('AWS::EC2::NetworkInterfaceAttachment', properties)
     }
 }

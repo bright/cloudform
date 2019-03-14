@@ -64,7 +64,7 @@ export interface ClusterProperties {
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static LoggingProperties = LoggingProperties
 
-    constructor(properties?: ClusterProperties) {
+    constructor(properties: ClusterProperties) {
         super('AWS::Redshift::Cluster', properties)
     }
 }

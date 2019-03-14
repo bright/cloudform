@@ -226,7 +226,7 @@ export default class Distribution extends ResourceBase<DistributionProperties> {
     static DistributionConfig = DistributionConfig
     static OriginCustomHeader = OriginCustomHeader
 
-    constructor(properties?: DistributionProperties) {
+    constructor(properties: DistributionProperties) {
         super('AWS::CloudFront::Distribution', properties)
     }
 }

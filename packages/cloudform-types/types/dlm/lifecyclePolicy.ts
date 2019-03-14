@@ -72,6 +72,6 @@ export default class LifecyclePolicy extends ResourceBase<LifecyclePolicyPropert
     static PolicyDetails = PolicyDetails
 
     constructor(properties?: LifecyclePolicyProperties) {
-        super('AWS::DLM::LifecyclePolicy', properties)
+        super('AWS::DLM::LifecyclePolicy', properties || {})
     }
 }

@@ -39,6 +39,6 @@ export default class Repository extends ResourceBase<RepositoryProperties> {
     static LifecyclePolicy = LifecyclePolicy
 
     constructor(properties?: RepositoryProperties) {
-        super('AWS::ECR::Repository', properties)
+        super('AWS::ECR::Repository', properties || {})
     }
 }

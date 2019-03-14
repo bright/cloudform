@@ -17,5 +17,5 @@ export interface EndpointConfigProperties {
 }
 export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {
     static ProductionVariant: typeof ProductionVariant;
-    constructor(properties?: EndpointConfigProperties);
+    constructor(properties: EndpointConfigProperties);
 }

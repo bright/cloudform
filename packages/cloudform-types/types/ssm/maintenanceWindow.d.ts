@@ -13,5 +13,5 @@ export interface MaintenanceWindowProperties {
     ScheduleTimezone?: Value<string>;
 }
 export default class MaintenanceWindow extends ResourceBase<MaintenanceWindowProperties> {
-    constructor(properties?: MaintenanceWindowProperties);
+    constructor(properties: MaintenanceWindowProperties);
 }

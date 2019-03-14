@@ -53,6 +53,6 @@ export default class User extends ResourceBase<UserProperties> {
     static Policy = Policy
 
     constructor(properties?: UserProperties) {
-        super('AWS::IAM::User', properties)
+        super('AWS::IAM::User', properties || {})
     }
 }

@@ -60,5 +60,5 @@ export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfi
     static InstanceTypeConfig: typeof InstanceTypeConfig;
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
-    constructor(properties?: InstanceFleetConfigProperties);
+    constructor(properties: InstanceFleetConfigProperties);
 }

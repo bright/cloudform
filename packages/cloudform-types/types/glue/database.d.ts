@@ -15,5 +15,5 @@ export interface DatabaseProperties {
 }
 export default class Database extends ResourceBase<DatabaseProperties> {
     static DatabaseInput: typeof DatabaseInput;
-    constructor(properties?: DatabaseProperties);
+    constructor(properties: DatabaseProperties);
 }

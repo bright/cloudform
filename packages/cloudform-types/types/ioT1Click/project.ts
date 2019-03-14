@@ -39,7 +39,7 @@ export default class Project extends ResourceBase<ProjectProperties> {
     static DeviceTemplate = DeviceTemplate
     static PlacementTemplate = PlacementTemplate
 
-    constructor(properties?: ProjectProperties) {
+    constructor(properties: ProjectProperties) {
         super('AWS::IoT1Click::Project', properties)
     }
 }

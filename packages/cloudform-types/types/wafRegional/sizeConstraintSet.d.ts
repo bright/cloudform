@@ -19,5 +19,5 @@ export interface SizeConstraintSetProperties {
 export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetProperties> {
     static SizeConstraint: typeof SizeConstraint;
     static FieldToMatch: typeof FieldToMatch;
-    constructor(properties?: SizeConstraintSetProperties);
+    constructor(properties: SizeConstraintSetProperties);
 }

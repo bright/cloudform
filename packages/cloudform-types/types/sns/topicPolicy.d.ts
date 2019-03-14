@@ -7,5 +7,5 @@ export interface TopicPolicyProperties {
     Topics: List<Value<string>>;
 }
 export default class TopicPolicy extends ResourceBase<TopicPolicyProperties> {
-    constructor(properties?: TopicPolicyProperties);
+    constructor(properties: TopicPolicyProperties);
 }

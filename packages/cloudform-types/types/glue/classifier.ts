@@ -56,6 +56,6 @@ export default class Classifier extends ResourceBase<ClassifierProperties> {
     static JsonClassifier = JsonClassifier
 
     constructor(properties?: ClassifierProperties) {
-        super('AWS::Glue::Classifier', properties)
+        super('AWS::Glue::Classifier', properties || {})
     }
 }

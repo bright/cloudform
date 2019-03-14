@@ -29,6 +29,6 @@ export default class Channel extends ResourceBase<ChannelProperties> {
     static RetentionPeriod = RetentionPeriod
 
     constructor(properties?: ChannelProperties) {
-        super('AWS::IoTAnalytics::Channel', properties)
+        super('AWS::IoTAnalytics::Channel', properties || {})
     }
 }

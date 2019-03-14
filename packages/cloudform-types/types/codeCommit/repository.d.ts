@@ -15,5 +15,5 @@ export interface RepositoryProperties {
 }
 export default class Repository extends ResourceBase<RepositoryProperties> {
     static RepositoryTrigger: typeof RepositoryTrigger;
-    constructor(properties?: RepositoryProperties);
+    constructor(properties: RepositoryProperties);
 }

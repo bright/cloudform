@@ -112,7 +112,7 @@ export default class DataSource extends ResourceBase<DataSourceProperties> {
     static DynamoDBConfig = DynamoDBConfig
     static ElasticsearchConfig = ElasticsearchConfig
 
-    constructor(properties?: DataSourceProperties) {
+    constructor(properties: DataSourceProperties) {
         super('AWS::AppSync::DataSource', properties)
     }
 }

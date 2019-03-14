@@ -33,7 +33,7 @@ class EndpointConfiguration {
 exports.EndpointConfiguration = EndpointConfiguration;
 class RestApi extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ApiGateway::RestApi', properties);
+        super('AWS::ApiGateway::RestApi', properties || {});
     }
 }
 RestApi.S3Location = S3Location;

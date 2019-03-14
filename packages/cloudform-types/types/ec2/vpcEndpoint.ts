@@ -36,7 +36,7 @@ export interface VPCEndpointProperties {
 export default class VPCEndpoint extends ResourceBase<VPCEndpointProperties> {
 
 
-    constructor(properties?: VPCEndpointProperties) {
+    constructor(properties: VPCEndpointProperties) {
         super('AWS::EC2::VPCEndpoint', properties)
     }
 }

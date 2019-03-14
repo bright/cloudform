@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class Fleet extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::RoboMaker::Fleet', properties);
+        super('AWS::RoboMaker::Fleet', properties || {});
     }
 }
 exports.default = Fleet;

@@ -228,5 +228,5 @@ export default class Cluster extends ResourceBase<ClusterProperties> {
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static HadoopJarStepConfig: typeof HadoopJarStepConfig;
     static ScalingTrigger: typeof ScalingTrigger;
-    constructor(properties?: ClusterProperties);
+    constructor(properties: ClusterProperties);
 }

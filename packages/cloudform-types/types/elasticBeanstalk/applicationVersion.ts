@@ -38,7 +38,7 @@ export interface ApplicationVersionProperties {
 export default class ApplicationVersion extends ResourceBase<ApplicationVersionProperties> {
     static SourceBundle = SourceBundle
 
-    constructor(properties?: ApplicationVersionProperties) {
+    constructor(properties: ApplicationVersionProperties) {
         super('AWS::ElasticBeanstalk::ApplicationVersion', properties)
     }
 }

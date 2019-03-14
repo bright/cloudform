@@ -29,7 +29,7 @@ export interface TagOptionAssociationProperties {
 export default class TagOptionAssociation extends ResourceBase<TagOptionAssociationProperties> {
 
 
-    constructor(properties?: TagOptionAssociationProperties) {
+    constructor(properties: TagOptionAssociationProperties) {
         super('AWS::ServiceCatalog::TagOptionAssociation', properties)
     }
 }

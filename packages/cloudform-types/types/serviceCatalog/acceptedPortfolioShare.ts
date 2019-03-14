@@ -29,7 +29,7 @@ export interface AcceptedPortfolioShareProperties {
 export default class AcceptedPortfolioShare extends ResourceBase<AcceptedPortfolioShareProperties> {
 
 
-    constructor(properties?: AcceptedPortfolioShareProperties) {
+    constructor(properties: AcceptedPortfolioShareProperties) {
         super('AWS::ServiceCatalog::AcceptedPortfolioShare', properties)
     }
 }

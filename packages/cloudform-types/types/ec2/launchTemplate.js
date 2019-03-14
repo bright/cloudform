@@ -140,7 +140,7 @@ class LaunchTemplateElasticInferenceAccelerator {
 exports.LaunchTemplateElasticInferenceAccelerator = LaunchTemplateElasticInferenceAccelerator;
 class LaunchTemplate extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::EC2::LaunchTemplate', properties);
+        super('AWS::EC2::LaunchTemplate', properties || {});
     }
 }
 LaunchTemplate.PrivateIpAdd = PrivateIpAdd;

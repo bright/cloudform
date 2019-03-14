@@ -67,5 +67,5 @@ export default class Stack extends ResourceBase<StackProperties> {
     static StackConfigurationManager: typeof StackConfigurationManager;
     static RdsDbInstance: typeof RdsDbInstance;
     static ElasticIp: typeof ElasticIp;
-    constructor(properties?: StackProperties);
+    constructor(properties: StackProperties);
 }

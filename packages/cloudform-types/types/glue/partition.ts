@@ -97,7 +97,7 @@ export default class Partition extends ResourceBase<PartitionProperties> {
     static Column = Column
     static PartitionInput = PartitionInput
 
-    constructor(properties?: PartitionProperties) {
+    constructor(properties: PartitionProperties) {
         super('AWS::Glue::Partition', properties)
     }
 }

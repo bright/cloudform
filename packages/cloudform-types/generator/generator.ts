@@ -116,6 +116,8 @@ function generateInnerType(name: string, type: TypeProperties) {
 }
 
 function generateTopLevelClass(namespace: string, typeName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap) {
+    const canOmitProperties = Object.keys(properties).every(prop => !properties[prop].Required)
+
     return `export interface ${typeName}Properties {
 ${propertiesEntries(properties).map(e => `    ${e}`).join('\n')}
 }
@@ -129,8 +131,8 @@ ${Object.keys(innerTypes)
             return `    static ${innerTypeNameUnsafe} = ${innerTypeNameSafe}`
         }).join('\n')}
 
-    constructor(properties?: ${typeName}Properties) {
-        super('AWS::${namespace}::${typeName}', properties)
+    constructor(properties${canOmitProperties ? '?' : ''}: ${typeName}Properties) {
+        super('AWS::${namespace}::${typeName}', properties${canOmitProperties ? ' || {}' : ''})
     }
 }`
 }

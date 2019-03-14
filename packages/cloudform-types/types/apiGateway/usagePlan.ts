@@ -63,6 +63,6 @@ export default class UsagePlan extends ResourceBase<UsagePlanProperties> {
     static QuotaSettings = QuotaSettings
 
     constructor(properties?: UsagePlanProperties) {
-        super('AWS::ApiGateway::UsagePlan', properties)
+        super('AWS::ApiGateway::UsagePlan', properties || {})
     }
 }

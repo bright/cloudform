@@ -10,5 +10,5 @@ export interface DBInstanceProperties {
     Tags?: List<ResourceTag>;
 }
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {
-    constructor(properties?: DBInstanceProperties);
+    constructor(properties: DBInstanceProperties);
 }

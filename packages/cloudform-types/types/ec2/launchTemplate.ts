@@ -265,6 +265,6 @@ export default class LaunchTemplate extends ResourceBase<LaunchTemplatePropertie
     static LaunchTemplateElasticInferenceAccelerator = LaunchTemplateElasticInferenceAccelerator
 
     constructor(properties?: LaunchTemplateProperties) {
-        super('AWS::EC2::LaunchTemplate', properties)
+        super('AWS::EC2::LaunchTemplate', properties || {})
     }
 }

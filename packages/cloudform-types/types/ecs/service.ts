@@ -114,7 +114,7 @@ export default class Service extends ResourceBase<ServiceProperties> {
     static AwsVpcConfiguration = AwsVpcConfiguration
     static NetworkConfiguration = NetworkConfiguration
 
-    constructor(properties?: ServiceProperties) {
+    constructor(properties: ServiceProperties) {
         super('AWS::ECS::Service', properties)
     }
 }

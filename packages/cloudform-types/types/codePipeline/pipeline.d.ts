@@ -80,5 +80,5 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static ActionTypeId: typeof ActionTypeId;
     static OutputArtifact: typeof OutputArtifact;
     static EncryptionKey: typeof EncryptionKey;
-    constructor(properties?: PipelineProperties);
+    constructor(properties: PipelineProperties);
 }

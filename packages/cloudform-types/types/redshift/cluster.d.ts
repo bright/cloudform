@@ -38,5 +38,5 @@ export interface ClusterProperties {
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static LoggingProperties: typeof LoggingProperties;
-    constructor(properties?: ClusterProperties);
+    constructor(properties: ClusterProperties);
 }

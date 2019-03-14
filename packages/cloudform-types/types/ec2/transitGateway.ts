@@ -35,6 +35,6 @@ export default class TransitGateway extends ResourceBase<TransitGatewayPropertie
 
 
     constructor(properties?: TransitGatewayProperties) {
-        super('AWS::EC2::TransitGateway', properties)
+        super('AWS::EC2::TransitGateway', properties || {})
     }
 }

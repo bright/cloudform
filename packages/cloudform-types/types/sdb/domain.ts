@@ -30,6 +30,6 @@ export default class Domain extends ResourceBase<DomainProperties> {
 
 
     constructor(properties?: DomainProperties) {
-        super('AWS::SDB::Domain', properties)
+        super('AWS::SDB::Domain', properties || {})
     }
 }

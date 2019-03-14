@@ -29,5 +29,5 @@ export default class Skill extends ResourceBase<SkillProperties> {
     static SkillPackage: typeof SkillPackage;
     static Overrides: typeof Overrides;
     static AuthenticationConfiguration: typeof AuthenticationConfiguration;
-    constructor(properties?: SkillProperties);
+    constructor(properties: SkillProperties);
 }

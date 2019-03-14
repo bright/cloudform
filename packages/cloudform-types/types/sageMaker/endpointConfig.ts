@@ -32,7 +32,7 @@ export interface EndpointConfigProperties {
 export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {
     static ProductionVariant = ProductionVariant
 
-    constructor(properties?: EndpointConfigProperties) {
+    constructor(properties: EndpointConfigProperties) {
         super('AWS::SageMaker::EndpointConfig', properties)
     }
 }

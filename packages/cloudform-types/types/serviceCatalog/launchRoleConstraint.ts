@@ -32,7 +32,7 @@ export interface LaunchRoleConstraintProperties {
 export default class LaunchRoleConstraint extends ResourceBase<LaunchRoleConstraintProperties> {
 
 
-    constructor(properties?: LaunchRoleConstraintProperties) {
+    constructor(properties: LaunchRoleConstraintProperties) {
         super('AWS::ServiceCatalog::LaunchRoleConstraint', properties)
     }
 }

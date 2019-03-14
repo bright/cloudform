@@ -26,5 +26,5 @@ export interface FilterProperties {
 export default class Filter extends ResourceBase<FilterProperties> {
     static FindingCriteria: typeof FindingCriteria;
     static Condition: typeof Condition;
-    constructor(properties?: FilterProperties);
+    constructor(properties: FilterProperties);
 }

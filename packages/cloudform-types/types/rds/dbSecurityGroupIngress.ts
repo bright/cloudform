@@ -33,7 +33,7 @@ export interface DBSecurityGroupIngressProperties {
 export default class DBSecurityGroupIngress extends ResourceBase<DBSecurityGroupIngressProperties> {
 
 
-    constructor(properties?: DBSecurityGroupIngressProperties) {
+    constructor(properties: DBSecurityGroupIngressProperties) {
         super('AWS::RDS::DBSecurityGroupIngress', properties)
     }
 }

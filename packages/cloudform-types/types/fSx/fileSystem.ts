@@ -59,6 +59,6 @@ export default class FileSystem extends ResourceBase<FileSystemProperties> {
     static WindowsConfiguration = WindowsConfiguration
 
     constructor(properties?: FileSystemProperties) {
-        super('AWS::FSx::FileSystem', properties)
+        super('AWS::FSx::FileSystem', properties || {})
     }
 }

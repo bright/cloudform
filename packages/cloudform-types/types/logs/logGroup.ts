@@ -31,6 +31,6 @@ export default class LogGroup extends ResourceBase<LogGroupProperties> {
 
 
     constructor(properties?: LogGroupProperties) {
-        super('AWS::Logs::LogGroup', properties)
+        super('AWS::Logs::LogGroup', properties || {})
     }
 }

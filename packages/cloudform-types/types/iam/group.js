@@ -27,7 +27,7 @@ class Policy {
 exports.Policy = Policy;
 class Group extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::IAM::Group', properties);
+        super('AWS::IAM::Group', properties || {});
     }
 }
 Group.Policy = Policy;

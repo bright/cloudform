@@ -11,5 +11,5 @@ export interface ActivityProperties {
 }
 export default class Activity extends ResourceBase<ActivityProperties> {
     static TagsEntry: typeof TagsEntry;
-    constructor(properties?: ActivityProperties);
+    constructor(properties: ActivityProperties);
 }

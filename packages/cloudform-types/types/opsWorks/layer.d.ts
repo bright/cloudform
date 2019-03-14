@@ -74,5 +74,5 @@ export default class Layer extends ResourceBase<LayerProperties> {
     static Recipes: typeof Recipes;
     static LifecycleEventConfiguration: typeof LifecycleEventConfiguration;
     static LoadBasedAutoScaling: typeof LoadBasedAutoScaling;
-    constructor(properties?: LayerProperties);
+    constructor(properties: LayerProperties);
 }

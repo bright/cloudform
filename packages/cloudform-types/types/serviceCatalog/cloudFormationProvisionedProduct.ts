@@ -45,6 +45,6 @@ export default class CloudFormationProvisionedProduct extends ResourceBase<Cloud
     static ProvisioningParameter = ProvisioningParameter
 
     constructor(properties?: CloudFormationProvisionedProductProperties) {
-        super('AWS::ServiceCatalog::CloudFormationProvisionedProduct', properties)
+        super('AWS::ServiceCatalog::CloudFormationProvisionedProduct', properties || {})
     }
 }

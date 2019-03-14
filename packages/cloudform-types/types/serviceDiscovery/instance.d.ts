@@ -8,5 +8,5 @@ export interface InstanceProperties {
     ServiceId: Value<string>;
 }
 export default class Instance extends ResourceBase<InstanceProperties> {
-    constructor(properties?: InstanceProperties);
+    constructor(properties: InstanceProperties);
 }

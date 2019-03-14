@@ -6,5 +6,5 @@ export interface ResolverRuleAssociationProperties {
     Name?: Value<string>;
 }
 export default class ResolverRuleAssociation extends ResourceBase<ResolverRuleAssociationProperties> {
-    constructor(properties?: ResolverRuleAssociationProperties);
+    constructor(properties: ResolverRuleAssociationProperties);
 }

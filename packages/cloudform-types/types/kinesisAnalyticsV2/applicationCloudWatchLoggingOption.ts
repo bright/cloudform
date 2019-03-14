@@ -24,7 +24,7 @@ export interface ApplicationCloudWatchLoggingOptionProperties {
 export default class ApplicationCloudWatchLoggingOption extends ResourceBase<ApplicationCloudWatchLoggingOptionProperties> {
     static CloudWatchLoggingOption = CloudWatchLoggingOption
 
-    constructor(properties?: ApplicationCloudWatchLoggingOptionProperties) {
+    constructor(properties: ApplicationCloudWatchLoggingOptionProperties) {
         super('AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption', properties)
     }
 }

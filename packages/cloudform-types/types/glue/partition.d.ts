@@ -65,5 +65,5 @@ export default class Partition extends ResourceBase<PartitionProperties> {
     static SkewedInfo: typeof SkewedInfo;
     static Column: typeof Column;
     static PartitionInput: typeof PartitionInput;
-    constructor(properties?: PartitionProperties);
+    constructor(properties: PartitionProperties);
 }

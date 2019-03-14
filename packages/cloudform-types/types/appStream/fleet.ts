@@ -60,7 +60,7 @@ export default class Fleet extends ResourceBase<FleetProperties> {
     static DomainJoinInfo = DomainJoinInfo
     static VpcConfig = VpcConfig
 
-    constructor(properties?: FleetProperties) {
+    constructor(properties: FleetProperties) {
         super('AWS::AppStream::Fleet', properties)
     }
 }

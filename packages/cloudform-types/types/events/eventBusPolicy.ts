@@ -39,7 +39,7 @@ export interface EventBusPolicyProperties {
 export default class EventBusPolicy extends ResourceBase<EventBusPolicyProperties> {
     static Condition = Condition
 
-    constructor(properties?: EventBusPolicyProperties) {
+    constructor(properties: EventBusPolicyProperties) {
         super('AWS::Events::EventBusPolicy', properties)
     }
 }

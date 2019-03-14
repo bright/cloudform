@@ -32,7 +32,7 @@ export interface LaunchNotificationConstraintProperties {
 export default class LaunchNotificationConstraint extends ResourceBase<LaunchNotificationConstraintProperties> {
 
 
-    constructor(properties?: LaunchNotificationConstraintProperties) {
+    constructor(properties: LaunchNotificationConstraintProperties) {
         super('AWS::ServiceCatalog::LaunchNotificationConstraint', properties)
     }
 }

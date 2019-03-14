@@ -75,5 +75,5 @@ export default class Table extends ResourceBase<TableProperties> {
     static PointInTimeRecoverySpecification: typeof PointInTimeRecoverySpecification;
     static SSESpecification: typeof SSESpecification;
     static StreamSpecification: typeof StreamSpecification;
-    constructor(properties?: TableProperties);
+    constructor(properties: TableProperties);
 }

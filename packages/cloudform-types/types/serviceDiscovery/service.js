@@ -43,7 +43,7 @@ class HealthCheckConfig {
 exports.HealthCheckConfig = HealthCheckConfig;
 class Service extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ServiceDiscovery::Service', properties);
+        super('AWS::ServiceDiscovery::Service', properties || {});
     }
 }
 Service.DnsConfig = DnsConfig;

@@ -166,7 +166,7 @@ export default class InstanceGroupConfig extends ResourceBase<InstanceGroupConfi
     static AutoScalingPolicy = AutoScalingPolicy
     static EbsConfiguration = EbsConfiguration
 
-    constructor(properties?: InstanceGroupConfigProperties) {
+    constructor(properties: InstanceGroupConfigProperties) {
         super('AWS::EMR::InstanceGroupConfig', properties)
     }
 }

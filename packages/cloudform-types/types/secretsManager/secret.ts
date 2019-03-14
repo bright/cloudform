@@ -49,6 +49,6 @@ export default class Secret extends ResourceBase<SecretProperties> {
     static GenerateSecretString = GenerateSecretString
 
     constructor(properties?: SecretProperties) {
-        super('AWS::SecretsManager::Secret', properties)
+        super('AWS::SecretsManager::Secret', properties || {})
     }
 }

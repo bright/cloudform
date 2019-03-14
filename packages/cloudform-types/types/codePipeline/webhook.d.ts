@@ -23,5 +23,5 @@ export interface WebhookProperties {
 export default class Webhook extends ResourceBase<WebhookProperties> {
     static WebhookFilterRule: typeof WebhookFilterRule;
     static WebhookAuthConfiguration: typeof WebhookAuthConfiguration;
-    constructor(properties?: WebhookProperties);
+    constructor(properties: WebhookProperties);
 }

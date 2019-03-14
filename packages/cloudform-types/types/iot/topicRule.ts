@@ -233,7 +233,7 @@ export default class TopicRule extends ResourceBase<TopicRuleProperties> {
     static IotAnalyticsAction = IotAnalyticsAction
     static CloudwatchMetricAction = CloudwatchMetricAction
 
-    constructor(properties?: TopicRuleProperties) {
+    constructor(properties: TopicRuleProperties) {
         super('AWS::IoT::TopicRule', properties)
     }
 }

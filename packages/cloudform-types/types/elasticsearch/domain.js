@@ -57,7 +57,7 @@ class EncryptionAtRestOptions {
 exports.EncryptionAtRestOptions = EncryptionAtRestOptions;
 class Domain extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Elasticsearch::Domain', properties);
+        super('AWS::Elasticsearch::Domain', properties || {});
     }
 }
 Domain.VPCOptions = VPCOptions;

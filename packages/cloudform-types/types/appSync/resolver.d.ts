@@ -18,5 +18,5 @@ export interface ResolverProperties {
 }
 export default class Resolver extends ResourceBase<ResolverProperties> {
     static PipelineConfig: typeof PipelineConfig;
-    constructor(properties?: ResolverProperties);
+    constructor(properties: ResolverProperties);
 }

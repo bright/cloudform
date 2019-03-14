@@ -142,7 +142,7 @@ export default class JobDefinition extends ResourceBase<JobDefinitionProperties>
     static Ulimit = Ulimit
     static VolumesHost = VolumesHost
 
-    constructor(properties?: JobDefinitionProperties) {
+    constructor(properties: JobDefinitionProperties) {
         super('AWS::Batch::JobDefinition', properties)
     }
 }

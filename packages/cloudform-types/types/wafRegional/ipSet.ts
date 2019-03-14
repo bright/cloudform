@@ -25,7 +25,7 @@ export interface IPSetProperties {
 export default class IPSet extends ResourceBase<IPSetProperties> {
     static IPSetDescriptor = IPSetDescriptor
 
-    constructor(properties?: IPSetProperties) {
+    constructor(properties: IPSetProperties) {
         super('AWS::WAFRegional::IPSet', properties)
     }
 }

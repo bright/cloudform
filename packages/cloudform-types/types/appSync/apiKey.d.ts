@@ -6,5 +6,5 @@ export interface ApiKeyProperties {
     ApiId: Value<string>;
 }
 export default class ApiKey extends ResourceBase<ApiKeyProperties> {
-    constructor(properties?: ApiKeyProperties);
+    constructor(properties: ApiKeyProperties);
 }

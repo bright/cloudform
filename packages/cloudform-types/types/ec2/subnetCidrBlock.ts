@@ -30,7 +30,7 @@ export interface SubnetCidrBlockProperties {
 export default class SubnetCidrBlock extends ResourceBase<SubnetCidrBlockProperties> {
 
 
-    constructor(properties?: SubnetCidrBlockProperties) {
+    constructor(properties: SubnetCidrBlockProperties) {
         super('AWS::EC2::SubnetCidrBlock', properties)
     }
 }

@@ -13,5 +13,5 @@ export interface DeliveryChannelProperties {
 }
 export default class DeliveryChannel extends ResourceBase<DeliveryChannelProperties> {
     static ConfigSnapshotDeliveryProperties: typeof ConfigSnapshotDeliveryProperties;
-    constructor(properties?: DeliveryChannelProperties);
+    constructor(properties: DeliveryChannelProperties);
 }

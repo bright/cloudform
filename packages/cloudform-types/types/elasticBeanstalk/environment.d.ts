@@ -29,5 +29,5 @@ export interface EnvironmentProperties {
 export default class Environment extends ResourceBase<EnvironmentProperties> {
     static OptionSetting: typeof OptionSetting;
     static Tier: typeof Tier;
-    constructor(properties?: EnvironmentProperties);
+    constructor(properties: EnvironmentProperties);
 }

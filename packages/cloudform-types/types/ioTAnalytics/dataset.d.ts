@@ -87,5 +87,5 @@ export default class Dataset extends ResourceBase<DatasetProperties> {
     static RetentionPeriod: typeof RetentionPeriod;
     static Action: typeof Action;
     static ContainerAction: typeof ContainerAction;
-    constructor(properties?: DatasetProperties);
+    constructor(properties: DatasetProperties);
 }

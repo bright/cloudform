@@ -14,5 +14,5 @@ export interface SubscriptionProperties {
     TopicArn: Value<string>;
 }
 export default class Subscription extends ResourceBase<SubscriptionProperties> {
-    constructor(properties?: SubscriptionProperties);
+    constructor(properties: SubscriptionProperties);
 }

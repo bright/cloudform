@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class ReceiptRuleSet extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::SES::ReceiptRuleSet', properties);
+        super('AWS::SES::ReceiptRuleSet', properties || {});
     }
 }
 exports.default = ReceiptRuleSet;

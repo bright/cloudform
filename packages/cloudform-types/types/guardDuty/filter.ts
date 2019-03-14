@@ -52,7 +52,7 @@ export default class Filter extends ResourceBase<FilterProperties> {
     static FindingCriteria = FindingCriteria
     static Condition = Condition
 
-    constructor(properties?: FilterProperties) {
+    constructor(properties: FilterProperties) {
         super('AWS::GuardDuty::Filter', properties)
     }
 }

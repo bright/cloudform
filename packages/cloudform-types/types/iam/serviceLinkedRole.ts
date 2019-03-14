@@ -30,7 +30,7 @@ export interface ServiceLinkedRoleProperties {
 export default class ServiceLinkedRole extends ResourceBase<ServiceLinkedRoleProperties> {
 
 
-    constructor(properties?: ServiceLinkedRoleProperties) {
+    constructor(properties: ServiceLinkedRoleProperties) {
         super('AWS::IAM::ServiceLinkedRole', properties)
     }
 }

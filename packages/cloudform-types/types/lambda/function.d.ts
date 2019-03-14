@@ -50,5 +50,5 @@ export default class Function extends ResourceBase<FunctionProperties> {
     static TracingConfig: typeof TracingConfig;
     static Code: typeof Code;
     static Environment: typeof Environment;
-    constructor(properties?: FunctionProperties);
+    constructor(properties: FunctionProperties);
 }

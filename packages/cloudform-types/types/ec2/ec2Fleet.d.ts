@@ -69,5 +69,5 @@ export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static FleetLaunchTemplateOverridesRequest: typeof FleetLaunchTemplateOverridesRequest;
     static TagSpecification: typeof TagSpecification;
     static SpotOptionsRequest: typeof SpotOptionsRequest;
-    constructor(properties?: EC2FleetProperties);
+    constructor(properties: EC2FleetProperties);
 }

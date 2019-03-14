@@ -30,7 +30,7 @@ export interface DevEndpointProperties {
 export default class DevEndpoint extends ResourceBase<DevEndpointProperties> {
 
 
-    constructor(properties?: DevEndpointProperties) {
+    constructor(properties: DevEndpointProperties) {
         super('AWS::Glue::DevEndpoint', properties)
     }
 }

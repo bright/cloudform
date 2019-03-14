@@ -40,7 +40,7 @@ export interface CertificateProperties {
 export default class Certificate extends ResourceBase<CertificateProperties> {
     static DomainValidationOption = DomainValidationOption
 
-    constructor(properties?: CertificateProperties) {
+    constructor(properties: CertificateProperties) {
         super('AWS::CertificateManager::Certificate', properties)
     }
 }

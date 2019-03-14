@@ -37,5 +37,5 @@ export interface DBClusterProperties {
 }
 export default class DBCluster extends ResourceBase<DBClusterProperties> {
     static ScalingConfiguration: typeof ScalingConfiguration;
-    constructor(properties?: DBClusterProperties);
+    constructor(properties: DBClusterProperties);
 }

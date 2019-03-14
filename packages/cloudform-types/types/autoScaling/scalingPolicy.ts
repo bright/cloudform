@@ -91,7 +91,7 @@ export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties>
     static TargetTrackingConfiguration = TargetTrackingConfiguration
     static StepAdjustment = StepAdjustment
 
-    constructor(properties?: ScalingPolicyProperties) {
+    constructor(properties: ScalingPolicyProperties) {
         super('AWS::AutoScaling::ScalingPolicy', properties)
     }
 }

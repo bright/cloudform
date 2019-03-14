@@ -14,7 +14,7 @@ class TemplateInner {
 exports.TemplateInner = TemplateInner;
 class Template extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::SES::Template', properties);
+        super('AWS::SES::Template', properties || {});
     }
 }
 Template.Template = TemplateInner;

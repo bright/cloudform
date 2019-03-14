@@ -72,5 +72,5 @@ export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {
     static Action: typeof Action;
     static RuleCondition: typeof RuleCondition;
     static RedirectConfig: typeof RedirectConfig;
-    constructor(properties?: ListenerRuleProperties);
+    constructor(properties: ListenerRuleProperties);
 }

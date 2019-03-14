@@ -48,5 +48,5 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static PipelineObject: typeof PipelineObject;
     static ParameterValue: typeof ParameterValue;
     static Field: typeof Field;
-    constructor(properties?: PipelineProperties);
+    constructor(properties: PipelineProperties);
 }

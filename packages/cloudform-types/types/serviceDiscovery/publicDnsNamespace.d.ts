@@ -5,5 +5,5 @@ export interface PublicDnsNamespaceProperties {
     Name: Value<string>;
 }
 export default class PublicDnsNamespace extends ResourceBase<PublicDnsNamespaceProperties> {
-    constructor(properties?: PublicDnsNamespaceProperties);
+    constructor(properties: PublicDnsNamespaceProperties);
 }

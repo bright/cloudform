@@ -163,5 +163,5 @@ export default class SpotFleet extends ResourceBase<SpotFleetProperties> {
     static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
     static SpotFleetMonitoring: typeof SpotFleetMonitoring;
     static BlockDeviceMapping: typeof BlockDeviceMapping;
-    constructor(properties?: SpotFleetProperties);
+    constructor(properties: SpotFleetProperties);
 }

@@ -66,5 +66,5 @@ export default class Method extends ResourceBase<MethodProperties> {
     static MethodResponse: typeof MethodResponse;
     static Integration: typeof Integration;
     static IntegrationResponse: typeof IntegrationResponse;
-    constructor(properties?: MethodProperties);
+    constructor(properties: MethodProperties);
 }

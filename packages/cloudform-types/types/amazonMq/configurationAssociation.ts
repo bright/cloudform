@@ -31,7 +31,7 @@ export interface ConfigurationAssociationProperties {
 export default class ConfigurationAssociation extends ResourceBase<ConfigurationAssociationProperties> {
     static ConfigurationId = ConfigurationId
 
-    constructor(properties?: ConfigurationAssociationProperties) {
+    constructor(properties: ConfigurationAssociationProperties) {
         super('AWS::AmazonMQ::ConfigurationAssociation', properties)
     }
 }

@@ -73,6 +73,6 @@ export default class TargetGroup extends ResourceBase<TargetGroupProperties> {
     static TargetDescription = TargetDescription
 
     constructor(properties?: TargetGroupProperties) {
-        super('AWS::ElasticLoadBalancingV2::TargetGroup', properties)
+        super('AWS::ElasticLoadBalancingV2::TargetGroup', properties || {})
     }
 }

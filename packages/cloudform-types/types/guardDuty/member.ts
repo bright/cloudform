@@ -32,7 +32,7 @@ export interface MemberProperties {
 export default class Member extends ResourceBase<MemberProperties> {
 
 
-    constructor(properties?: MemberProperties) {
+    constructor(properties: MemberProperties) {
         super('AWS::GuardDuty::Member', properties)
     }
 }

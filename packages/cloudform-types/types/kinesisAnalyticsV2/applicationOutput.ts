@@ -64,7 +64,7 @@ export default class ApplicationOutput extends ResourceBase<ApplicationOutputPro
     static DestinationSchema = DestinationSchema
     static Output = Output
 
-    constructor(properties?: ApplicationOutputProperties) {
+    constructor(properties: ApplicationOutputProperties) {
         super('AWS::KinesisAnalyticsV2::ApplicationOutput', properties)
     }
 }

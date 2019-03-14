@@ -23,7 +23,7 @@ export interface AggregationAuthorizationProperties {
 export default class AggregationAuthorization extends ResourceBase<AggregationAuthorizationProperties> {
 
 
-    constructor(properties?: AggregationAuthorizationProperties) {
+    constructor(properties: AggregationAuthorizationProperties) {
         super('AWS::Config::AggregationAuthorization', properties)
     }
 }

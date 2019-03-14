@@ -97,5 +97,5 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static DeviceRegistryEnrich: typeof DeviceRegistryEnrich;
     static Channel: typeof Channel;
     static Filter: typeof Filter;
-    constructor(properties?: PipelineProperties);
+    constructor(properties: PipelineProperties);
 }

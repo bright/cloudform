@@ -29,7 +29,7 @@ export interface VPCEndpointServicePermissionsProperties {
 export default class VPCEndpointServicePermissions extends ResourceBase<VPCEndpointServicePermissionsProperties> {
 
 
-    constructor(properties?: VPCEndpointServicePermissionsProperties) {
+    constructor(properties: VPCEndpointServicePermissionsProperties) {
         super('AWS::EC2::VPCEndpointServicePermissions', properties)
     }
 }

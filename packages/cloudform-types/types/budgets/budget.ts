@@ -111,7 +111,7 @@ export default class Budget extends ResourceBase<BudgetProperties> {
     static TimePeriod = TimePeriod
     static Spend = Spend
 
-    constructor(properties?: BudgetProperties) {
+    constructor(properties: BudgetProperties) {
         super('AWS::Budgets::Budget', properties)
     }
 }

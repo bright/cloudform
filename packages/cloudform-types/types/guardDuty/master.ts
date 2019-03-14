@@ -29,7 +29,7 @@ export interface MasterProperties {
 export default class Master extends ResourceBase<MasterProperties> {
 
 
-    constructor(properties?: MasterProperties) {
+    constructor(properties: MasterProperties) {
         super('AWS::GuardDuty::Master', properties)
     }
 }

@@ -4,5 +4,5 @@ export interface CustomResourceProperties {
     ServiceToken: Value<string>;
 }
 export default class CustomResource extends ResourceBase<CustomResourceProperties> {
-    constructor(properties?: CustomResourceProperties);
+    constructor(properties: CustomResourceProperties);
 }

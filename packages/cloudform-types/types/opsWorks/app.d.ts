@@ -48,5 +48,5 @@ export default class App extends ResourceBase<AppProperties> {
     static EnvironmentVariable: typeof EnvironmentVariable;
     static SslConfiguration: typeof SslConfiguration;
     static Source: typeof Source;
-    constructor(properties?: AppProperties);
+    constructor(properties: AppProperties);
 }

@@ -105,7 +105,7 @@ class PrivateIpAddressSpecification {
 exports.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
 class Instance extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::EC2::Instance', properties);
+        super('AWS::EC2::Instance', properties || {});
     }
 }
 Instance.ElasticGpuSpecification = ElasticGpuSpecification;

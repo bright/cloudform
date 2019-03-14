@@ -29,7 +29,7 @@ export interface DBInstanceProperties {
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {
 
 
-    constructor(properties?: DBInstanceProperties) {
+    constructor(properties: DBInstanceProperties) {
         super('AWS::Neptune::DBInstance', properties)
     }
 }

@@ -132,7 +132,7 @@ export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static Policies = Policies
     static AppCookieStickinessPolicy = AppCookieStickinessPolicy
 
-    constructor(properties?: LoadBalancerProperties) {
+    constructor(properties: LoadBalancerProperties) {
         super('AWS::ElasticLoadBalancing::LoadBalancer', properties)
     }
 }

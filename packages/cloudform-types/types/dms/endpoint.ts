@@ -107,7 +107,7 @@ export default class Endpoint extends ResourceBase<EndpointProperties> {
     static ElasticsearchSettings = ElasticsearchSettings
     static DynamoDbSettings = DynamoDbSettings
 
-    constructor(properties?: EndpointProperties) {
+    constructor(properties: EndpointProperties) {
         super('AWS::DMS::Endpoint', properties)
     }
 }

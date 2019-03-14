@@ -60,6 +60,6 @@ export default class Stack extends ResourceBase<StackProperties> {
     static UserSetting = UserSetting
 
     constructor(properties?: StackProperties) {
-        super('AWS::AppStream::Stack', properties)
+        super('AWS::AppStream::Stack', properties || {})
     }
 }

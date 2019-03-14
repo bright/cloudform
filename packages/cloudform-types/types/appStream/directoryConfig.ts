@@ -30,7 +30,7 @@ export interface DirectoryConfigProperties {
 export default class DirectoryConfig extends ResourceBase<DirectoryConfigProperties> {
     static ServiceAccountCredentials = ServiceAccountCredentials
 
-    constructor(properties?: DirectoryConfigProperties) {
+    constructor(properties: DirectoryConfigProperties) {
         super('AWS::AppStream::DirectoryConfig', properties)
     }
 }

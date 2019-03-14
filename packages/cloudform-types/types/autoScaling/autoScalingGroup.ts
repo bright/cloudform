@@ -147,7 +147,7 @@ export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupPrope
     static LaunchTemplate = LaunchTemplate
     static TagProperty = TagProperty
 
-    constructor(properties?: AutoScalingGroupProperties) {
+    constructor(properties: AutoScalingGroupProperties) {
         super('AWS::AutoScaling::AutoScalingGroup', properties)
     }
 }

@@ -30,7 +30,7 @@ export interface VPNConnectionRouteProperties {
 export default class VPNConnectionRoute extends ResourceBase<VPNConnectionRouteProperties> {
 
 
-    constructor(properties?: VPNConnectionRouteProperties) {
+    constructor(properties: VPNConnectionRouteProperties) {
         super('AWS::EC2::VPNConnectionRoute', properties)
     }
 }

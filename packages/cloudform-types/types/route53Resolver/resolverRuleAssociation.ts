@@ -22,7 +22,7 @@ export interface ResolverRuleAssociationProperties {
 export default class ResolverRuleAssociation extends ResourceBase<ResolverRuleAssociationProperties> {
 
 
-    constructor(properties?: ResolverRuleAssociationProperties) {
+    constructor(properties: ResolverRuleAssociationProperties) {
         super('AWS::Route53Resolver::ResolverRuleAssociation', properties)
     }
 }

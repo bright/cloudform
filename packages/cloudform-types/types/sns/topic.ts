@@ -40,6 +40,6 @@ export default class Topic extends ResourceBase<TopicProperties> {
     static Subscription = Subscription
 
     constructor(properties?: TopicProperties) {
-        super('AWS::SNS::Topic', properties)
+        super('AWS::SNS::Topic', properties || {})
     }
 }

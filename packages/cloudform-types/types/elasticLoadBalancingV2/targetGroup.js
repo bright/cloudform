@@ -39,7 +39,7 @@ class TargetDescription {
 exports.TargetDescription = TargetDescription;
 class TargetGroup extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ElasticLoadBalancingV2::TargetGroup', properties);
+        super('AWS::ElasticLoadBalancingV2::TargetGroup', properties || {});
     }
 }
 TargetGroup.TargetGroupAttribute = TargetGroupAttribute;

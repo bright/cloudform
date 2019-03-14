@@ -86,7 +86,7 @@ export default class Broker extends ResourceBase<BrokerProperties> {
     static TagsEntry = TagsEntry
     static ConfigurationId = ConfigurationId
 
-    constructor(properties?: BrokerProperties) {
+    constructor(properties: BrokerProperties) {
         super('AWS::AmazonMQ::Broker', properties)
     }
 }

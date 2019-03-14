@@ -7,5 +7,5 @@ export interface CustomerGatewayProperties {
     Type: Value<string>;
 }
 export default class CustomerGateway extends ResourceBase<CustomerGatewayProperties> {
-    constructor(properties?: CustomerGatewayProperties);
+    constructor(properties: CustomerGatewayProperties);
 }

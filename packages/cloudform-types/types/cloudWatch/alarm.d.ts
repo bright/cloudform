@@ -53,5 +53,5 @@ export default class Alarm extends ResourceBase<AlarmProperties> {
     static Dimension: typeof Dimension;
     static MetricDataQuery: typeof MetricDataQuery;
     static Metric: typeof Metric;
-    constructor(properties?: AlarmProperties);
+    constructor(properties: AlarmProperties);
 }

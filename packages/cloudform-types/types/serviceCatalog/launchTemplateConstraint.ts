@@ -32,7 +32,7 @@ export interface LaunchTemplateConstraintProperties {
 export default class LaunchTemplateConstraint extends ResourceBase<LaunchTemplateConstraintProperties> {
 
 
-    constructor(properties?: LaunchTemplateConstraintProperties) {
+    constructor(properties: LaunchTemplateConstraintProperties) {
         super('AWS::ServiceCatalog::LaunchTemplateConstraint', properties)
     }
 }

@@ -15,5 +15,5 @@ export interface DBSecurityGroupProperties {
 }
 export default class DBSecurityGroup extends ResourceBase<DBSecurityGroupProperties> {
     static Ingress: typeof Ingress;
-    constructor(properties?: DBSecurityGroupProperties);
+    constructor(properties: DBSecurityGroupProperties);
 }

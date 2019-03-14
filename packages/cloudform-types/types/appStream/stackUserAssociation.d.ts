@@ -7,5 +7,5 @@ export interface StackUserAssociationProperties {
     AuthenticationType: Value<string>;
 }
 export default class StackUserAssociation extends ResourceBase<StackUserAssociationProperties> {
-    constructor(properties?: StackUserAssociationProperties);
+    constructor(properties: StackUserAssociationProperties);
 }

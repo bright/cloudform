@@ -13,5 +13,5 @@ export interface ConfigurationRecorderProperties {
 }
 export default class ConfigurationRecorder extends ResourceBase<ConfigurationRecorderProperties> {
     static RecordingGroup: typeof RecordingGroup;
-    constructor(properties?: ConfigurationRecorderProperties);
+    constructor(properties: ConfigurationRecorderProperties);
 }

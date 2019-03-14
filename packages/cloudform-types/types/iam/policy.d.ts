@@ -10,5 +10,5 @@ export interface PolicyProperties {
     Users?: List<Value<string>>;
 }
 export default class Policy extends ResourceBase<PolicyProperties> {
-    constructor(properties?: PolicyProperties);
+    constructor(properties: PolicyProperties);
 }

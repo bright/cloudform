@@ -32,7 +32,7 @@ export interface CustomerGatewayProperties {
 export default class CustomerGateway extends ResourceBase<CustomerGatewayProperties> {
 
 
-    constructor(properties?: CustomerGatewayProperties) {
+    constructor(properties: CustomerGatewayProperties) {
         super('AWS::EC2::CustomerGateway', properties)
     }
 }

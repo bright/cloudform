@@ -7,5 +7,5 @@ export interface PortfolioPrincipalAssociationProperties {
     PrincipalType: Value<string>;
 }
 export default class PortfolioPrincipalAssociation extends ResourceBase<PortfolioPrincipalAssociationProperties> {
-    constructor(properties?: PortfolioPrincipalAssociationProperties);
+    constructor(properties: PortfolioPrincipalAssociationProperties);
 }

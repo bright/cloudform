@@ -35,6 +35,6 @@ export default class DHCPOptions extends ResourceBase<DHCPOptionsProperties> {
 
 
     constructor(properties?: DHCPOptionsProperties) {
-        super('AWS::EC2::DHCPOptions', properties)
+        super('AWS::EC2::DHCPOptions', properties || {})
     }
 }

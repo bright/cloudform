@@ -60,7 +60,7 @@ export default class IdentityPool extends ResourceBase<IdentityPoolProperties> {
     static CognitoIdentityProvider = CognitoIdentityProvider
     static CognitoStreams = CognitoStreams
 
-    constructor(properties?: IdentityPoolProperties) {
+    constructor(properties: IdentityPoolProperties) {
         super('AWS::Cognito::IdentityPool', properties)
     }
 }

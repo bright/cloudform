@@ -211,6 +211,6 @@ export default class Instance extends ResourceBase<InstanceProperties> {
     static PrivateIpAddressSpecification = PrivateIpAddressSpecification
 
     constructor(properties?: InstanceProperties) {
-        super('AWS::EC2::Instance', properties)
+        super('AWS::EC2::Instance', properties || {})
     }
 }

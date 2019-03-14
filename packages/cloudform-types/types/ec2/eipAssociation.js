@@ -21,7 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class EIPAssociation extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::EC2::EIPAssociation', properties);
+        super('AWS::EC2::EIPAssociation', properties || {});
     }
 }
 exports.default = EIPAssociation;

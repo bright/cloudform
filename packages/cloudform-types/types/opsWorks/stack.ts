@@ -105,7 +105,7 @@ export default class Stack extends ResourceBase<StackProperties> {
     static RdsDbInstance = RdsDbInstance
     static ElasticIp = ElasticIp
 
-    constructor(properties?: StackProperties) {
+    constructor(properties: StackProperties) {
         super('AWS::OpsWorks::Stack', properties)
     }
 }

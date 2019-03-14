@@ -33,7 +33,7 @@ class JsonClassifier {
 exports.JsonClassifier = JsonClassifier;
 class Classifier extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Glue::Classifier', properties);
+        super('AWS::Glue::Classifier', properties || {});
     }
 }
 Classifier.XMLClassifier = XMLClassifier;

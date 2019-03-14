@@ -31,7 +31,7 @@ export interface IPSetProperties {
 export default class IPSet extends ResourceBase<IPSetProperties> {
 
 
-    constructor(properties?: IPSetProperties) {
+    constructor(properties: IPSetProperties) {
         super('AWS::GuardDuty::IPSet', properties)
     }
 }

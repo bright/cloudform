@@ -50,7 +50,7 @@ export default class ByteMatchSet extends ResourceBase<ByteMatchSetProperties> {
     static ByteMatchTuple = ByteMatchTuple
     static FieldToMatch = FieldToMatch
 
-    constructor(properties?: ByteMatchSetProperties) {
+    constructor(properties: ByteMatchSetProperties) {
         super('AWS::WAF::ByteMatchSet', properties)
     }
 }

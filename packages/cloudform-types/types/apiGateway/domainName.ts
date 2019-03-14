@@ -38,7 +38,7 @@ export interface DomainNameProperties {
 export default class DomainName extends ResourceBase<DomainNameProperties> {
     static EndpointConfiguration = EndpointConfiguration
 
-    constructor(properties?: DomainNameProperties) {
+    constructor(properties: DomainNameProperties) {
         super('AWS::ApiGateway::DomainName', properties)
     }
 }

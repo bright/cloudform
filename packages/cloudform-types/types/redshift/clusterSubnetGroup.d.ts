@@ -6,5 +6,5 @@ export interface ClusterSubnetGroupProperties {
     Tags?: List<ResourceTag>;
 }
 export default class ClusterSubnetGroup extends ResourceBase<ClusterSubnetGroupProperties> {
-    constructor(properties?: ClusterSubnetGroupProperties);
+    constructor(properties: ClusterSubnetGroupProperties);
 }

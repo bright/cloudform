@@ -31,7 +31,7 @@ export interface ResolverRuleProperties {
 export default class ResolverRule extends ResourceBase<ResolverRuleProperties> {
     static TargetAddress = TargetAddress
 
-    constructor(properties?: ResolverRuleProperties) {
+    constructor(properties: ResolverRuleProperties) {
         super('AWS::Route53Resolver::ResolverRule', properties)
     }
 }

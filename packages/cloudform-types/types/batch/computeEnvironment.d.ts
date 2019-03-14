@@ -36,5 +36,5 @@ export interface ComputeEnvironmentProperties {
 export default class ComputeEnvironment extends ResourceBase<ComputeEnvironmentProperties> {
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static ComputeResources: typeof ComputeResources;
-    constructor(properties?: ComputeEnvironmentProperties);
+    constructor(properties: ComputeEnvironmentProperties);
 }

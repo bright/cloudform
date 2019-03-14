@@ -84,7 +84,7 @@ export default class App extends ResourceBase<AppProperties> {
     static SslConfiguration = SslConfiguration
     static Source = Source
 
-    constructor(properties?: AppProperties) {
+    constructor(properties: AppProperties) {
         super('AWS::OpsWorks::App', properties)
     }
 }

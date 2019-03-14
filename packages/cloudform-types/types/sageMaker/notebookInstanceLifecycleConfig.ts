@@ -27,6 +27,6 @@ export default class NotebookInstanceLifecycleConfig extends ResourceBase<Notebo
     static NotebookInstanceLifecycleHook = NotebookInstanceLifecycleHook
 
     constructor(properties?: NotebookInstanceLifecycleConfigProperties) {
-        super('AWS::SageMaker::NotebookInstanceLifecycleConfig', properties)
+        super('AWS::SageMaker::NotebookInstanceLifecycleConfig', properties || {})
     }
 }

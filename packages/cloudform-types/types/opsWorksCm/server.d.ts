@@ -26,5 +26,5 @@ export interface ServerProperties {
 }
 export default class Server extends ResourceBase<ServerProperties> {
     static EngineAttribute: typeof EngineAttribute;
-    constructor(properties?: ServerProperties);
+    constructor(properties: ServerProperties);
 }

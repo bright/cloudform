@@ -20,5 +20,5 @@ export interface ConfigurationAggregatorProperties {
 export default class ConfigurationAggregator extends ResourceBase<ConfigurationAggregatorProperties> {
     static OrganizationAggregationSource: typeof OrganizationAggregationSource;
     static AccountAggregationSource: typeof AccountAggregationSource;
-    constructor(properties?: ConfigurationAggregatorProperties);
+    constructor(properties: ConfigurationAggregatorProperties);
 }

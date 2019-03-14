@@ -33,6 +33,6 @@ export default class DBCluster extends ResourceBase<DBClusterProperties> {
 
 
     constructor(properties?: DBClusterProperties) {
-        super('AWS::Neptune::DBCluster', properties)
+        super('AWS::Neptune::DBCluster', properties || {})
     }
 }

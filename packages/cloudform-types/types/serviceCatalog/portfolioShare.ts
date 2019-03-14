@@ -30,7 +30,7 @@ export interface PortfolioShareProperties {
 export default class PortfolioShare extends ResourceBase<PortfolioShareProperties> {
 
 
-    constructor(properties?: PortfolioShareProperties) {
+    constructor(properties: PortfolioShareProperties) {
         super('AWS::ServiceCatalog::PortfolioShare', properties)
     }
 }

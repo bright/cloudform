@@ -128,5 +128,5 @@ export default class DeploymentGroup extends ResourceBase<DeploymentGroupPropert
     static AutoRollbackConfiguration: typeof AutoRollbackConfiguration;
     static Deployment: typeof Deployment;
     static EC2TagSetListObject: typeof EC2TagSetListObject;
-    constructor(properties?: DeploymentGroupProperties);
+    constructor(properties: DeploymentGroupProperties);
 }

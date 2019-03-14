@@ -21,6 +21,6 @@ export default class ParameterGroup extends ResourceBase<ParameterGroupPropertie
 
 
     constructor(properties?: ParameterGroupProperties) {
-        super('AWS::DAX::ParameterGroup', properties)
+        super('AWS::DAX::ParameterGroup', properties || {})
     }
 }

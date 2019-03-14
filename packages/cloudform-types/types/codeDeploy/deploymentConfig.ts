@@ -38,6 +38,6 @@ export default class DeploymentConfig extends ResourceBase<DeploymentConfigPrope
     static MinimumHealthyHosts = MinimumHealthyHosts
 
     constructor(properties?: DeploymentConfigProperties) {
-        super('AWS::CodeDeploy::DeploymentConfig', properties)
+        super('AWS::CodeDeploy::DeploymentConfig', properties || {})
     }
 }

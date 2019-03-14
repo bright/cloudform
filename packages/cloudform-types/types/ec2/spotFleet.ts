@@ -265,7 +265,7 @@ export default class SpotFleet extends ResourceBase<SpotFleetProperties> {
     static SpotFleetMonitoring = SpotFleetMonitoring
     static BlockDeviceMapping = BlockDeviceMapping
 
-    constructor(properties?: SpotFleetProperties) {
+    constructor(properties: SpotFleetProperties) {
         super('AWS::EC2::SpotFleet', properties)
     }
 }

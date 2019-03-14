@@ -15,5 +15,5 @@ export interface ConfigurationProperties {
 }
 export default class Configuration extends ResourceBase<ConfigurationProperties> {
     static TagsEntry: typeof TagsEntry;
-    constructor(properties?: ConfigurationProperties);
+    constructor(properties: ConfigurationProperties);
 }

@@ -57,7 +57,7 @@ export default class Job extends ResourceBase<JobProperties> {
     static ConnectionsList = ConnectionsList
     static ExecutionProperty = ExecutionProperty
 
-    constructor(properties?: JobProperties) {
+    constructor(properties: JobProperties) {
         super('AWS::Glue::Job', properties)
     }
 }

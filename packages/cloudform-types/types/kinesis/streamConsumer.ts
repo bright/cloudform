@@ -30,7 +30,7 @@ export interface StreamConsumerProperties {
 export default class StreamConsumer extends ResourceBase<StreamConsumerProperties> {
 
 
-    constructor(properties?: StreamConsumerProperties) {
+    constructor(properties: StreamConsumerProperties) {
         super('AWS::Kinesis::StreamConsumer', properties)
     }
 }

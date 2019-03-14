@@ -30,7 +30,7 @@ export interface SecurityConfigurationProperties {
 export default class SecurityConfiguration extends ResourceBase<SecurityConfigurationProperties> {
 
 
-    constructor(properties?: SecurityConfigurationProperties) {
+    constructor(properties: SecurityConfigurationProperties) {
         super('AWS::EMR::SecurityConfiguration', properties)
     }
 }

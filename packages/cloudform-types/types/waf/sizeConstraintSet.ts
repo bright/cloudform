@@ -49,7 +49,7 @@ export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetPro
     static FieldToMatch = FieldToMatch
     static SizeConstraint = SizeConstraint
 
-    constructor(properties?: SizeConstraintSetProperties) {
+    constructor(properties: SizeConstraintSetProperties) {
         super('AWS::WAF::SizeConstraintSet', properties)
     }
 }

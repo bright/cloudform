@@ -45,7 +45,7 @@ export interface RouteProperties {
 export default class Route extends ResourceBase<RouteProperties> {
     static ParameterConstraints = ParameterConstraints
 
-    constructor(properties?: RouteProperties) {
+    constructor(properties: RouteProperties) {
         super('AWS::ApiGatewayV2::Route', properties)
     }
 }

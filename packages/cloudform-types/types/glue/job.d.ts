@@ -31,5 +31,5 @@ export default class Job extends ResourceBase<JobProperties> {
     static JobCommand: typeof JobCommand;
     static ConnectionsList: typeof ConnectionsList;
     static ExecutionProperty: typeof ExecutionProperty;
-    constructor(properties?: JobProperties);
+    constructor(properties: JobProperties);
 }

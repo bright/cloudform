@@ -5,5 +5,5 @@ export interface TagOptionAssociationProperties {
     ResourceId: Value<string>;
 }
 export default class TagOptionAssociation extends ResourceBase<TagOptionAssociationProperties> {
-    constructor(properties?: TagOptionAssociationProperties);
+    constructor(properties: TagOptionAssociationProperties);
 }

@@ -79,7 +79,7 @@ export default class Crawler extends ResourceBase<CrawlerProperties> {
     static S3Target = S3Target
     static SchemaChangePolicy = SchemaChangePolicy
 
-    constructor(properties?: CrawlerProperties) {
+    constructor(properties: CrawlerProperties) {
         super('AWS::Glue::Crawler', properties)
     }
 }

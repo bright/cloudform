@@ -137,7 +137,7 @@ export default class ScalingPlan extends ResourceBase<ScalingPlanProperties> {
     static PredefinedLoadMetricSpecification = PredefinedLoadMetricSpecification
     static CustomizedLoadMetricSpecification = CustomizedLoadMetricSpecification
 
-    constructor(properties?: ScalingPlanProperties) {
+    constructor(properties: ScalingPlanProperties) {
         super('AWS::AutoScalingPlans::ScalingPlan', properties)
     }
 }

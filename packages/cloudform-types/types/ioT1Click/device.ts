@@ -21,7 +21,7 @@ export interface DeviceProperties {
 export default class Device extends ResourceBase<DeviceProperties> {
 
 
-    constructor(properties?: DeviceProperties) {
+    constructor(properties: DeviceProperties) {
         super('AWS::IoT1Click::Device', properties)
     }
 }

@@ -49,5 +49,5 @@ export default class Stage extends ResourceBase<StageProperties> {
     static MethodSetting: typeof MethodSetting;
     static CanarySetting: typeof CanarySetting;
     static AccessLogSetting: typeof AccessLogSetting;
-    constructor(properties?: StageProperties);
+    constructor(properties: StageProperties);
 }

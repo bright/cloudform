@@ -69,7 +69,7 @@ export default class CustomActionType extends ResourceBase<CustomActionTypePrope
     static ArtifactDetails = ArtifactDetails
     static ConfigurationProperties = ConfigurationProperties
 
-    constructor(properties?: CustomActionTypeProperties) {
+    constructor(properties: CustomActionTypeProperties) {
         super('AWS::CodePipeline::CustomActionType', properties)
     }
 }

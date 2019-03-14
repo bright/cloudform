@@ -33,7 +33,7 @@ export interface GatewayResponseProperties {
 export default class GatewayResponse extends ResourceBase<GatewayResponseProperties> {
 
 
-    constructor(properties?: GatewayResponseProperties) {
+    constructor(properties: GatewayResponseProperties) {
         super('AWS::ApiGateway::GatewayResponse', properties)
     }
 }

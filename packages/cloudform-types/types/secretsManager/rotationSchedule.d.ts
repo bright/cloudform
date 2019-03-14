@@ -11,5 +11,5 @@ export interface RotationScheduleProperties {
 }
 export default class RotationSchedule extends ResourceBase<RotationScheduleProperties> {
     static RotationRules: typeof RotationRules;
-    constructor(properties?: RotationScheduleProperties);
+    constructor(properties: RotationScheduleProperties);
 }

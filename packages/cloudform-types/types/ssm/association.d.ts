@@ -35,5 +35,5 @@ export default class Association extends ResourceBase<AssociationProperties> {
     static Target: typeof Target;
     static ParameterValues: typeof ParameterValues;
     static S3OutputLocation: typeof S3OutputLocation;
-    constructor(properties?: AssociationProperties);
+    constructor(properties: AssociationProperties);
 }

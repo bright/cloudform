@@ -20,5 +20,5 @@ export interface IntegrationProperties {
     IntegrationType: Value<string>;
 }
 export default class Integration extends ResourceBase<IntegrationProperties> {
-    constructor(properties?: IntegrationProperties);
+    constructor(properties: IntegrationProperties);
 }

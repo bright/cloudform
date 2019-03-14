@@ -75,6 +75,6 @@ export default class RecordSetGroup extends ResourceBase<RecordSetGroupPropertie
     static AliasTarget = AliasTarget
 
     constructor(properties?: RecordSetGroupProperties) {
-        super('AWS::Route53::RecordSetGroup', properties)
+        super('AWS::Route53::RecordSetGroup', properties || {})
     }
 }

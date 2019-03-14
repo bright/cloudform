@@ -107,7 +107,7 @@ export default class Deployment extends ResourceBase<DeploymentProperties> {
     static CanarySetting = CanarySetting
     static AccessLogSetting = AccessLogSetting
 
-    constructor(properties?: DeploymentProperties) {
+    constructor(properties: DeploymentProperties) {
         super('AWS::ApiGateway::Deployment', properties)
     }
 }

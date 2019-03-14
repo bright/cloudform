@@ -7,5 +7,5 @@ export interface ResourcePolicyProperties {
     };
 }
 export default class ResourcePolicy extends ResourceBase<ResourcePolicyProperties> {
-    constructor(properties?: ResourcePolicyProperties);
+    constructor(properties: ResourcePolicyProperties);
 }

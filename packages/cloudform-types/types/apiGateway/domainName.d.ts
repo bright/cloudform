@@ -12,5 +12,5 @@ export interface DomainNameProperties {
 }
 export default class DomainName extends ResourceBase<DomainNameProperties> {
     static EndpointConfiguration: typeof EndpointConfiguration;
-    constructor(properties?: DomainNameProperties);
+    constructor(properties: DomainNameProperties);
 }

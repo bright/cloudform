@@ -37,7 +37,7 @@ export interface SecurityGroupEgressProperties {
 export default class SecurityGroupEgress extends ResourceBase<SecurityGroupEgressProperties> {
 
 
-    constructor(properties?: SecurityGroupEgressProperties) {
+    constructor(properties: SecurityGroupEgressProperties) {
         super('AWS::EC2::SecurityGroupEgress', properties)
     }
 }

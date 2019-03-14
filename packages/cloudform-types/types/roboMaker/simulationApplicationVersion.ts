@@ -17,7 +17,7 @@ export interface SimulationApplicationVersionProperties {
 export default class SimulationApplicationVersion extends ResourceBase<SimulationApplicationVersionProperties> {
 
 
-    constructor(properties?: SimulationApplicationVersionProperties) {
+    constructor(properties: SimulationApplicationVersionProperties) {
         super('AWS::RoboMaker::SimulationApplicationVersion', properties)
     }
 }

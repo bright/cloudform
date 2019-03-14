@@ -13,5 +13,5 @@ export interface VPCEndpointProperties {
     VpcId: Value<string>;
 }
 export default class VPCEndpoint extends ResourceBase<VPCEndpointProperties> {
-    constructor(properties?: VPCEndpointProperties);
+    constructor(properties: VPCEndpointProperties);
 }

@@ -35,7 +35,7 @@ export interface SubscriptionProperties {
 export default class Subscription extends ResourceBase<SubscriptionProperties> {
 
 
-    constructor(properties?: SubscriptionProperties) {
+    constructor(properties: SubscriptionProperties) {
         super('AWS::SNS::Subscription', properties)
     }
 }

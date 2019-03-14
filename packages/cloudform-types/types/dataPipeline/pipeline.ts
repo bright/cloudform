@@ -94,7 +94,7 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static ParameterValue = ParameterValue
     static Field = Field
 
-    constructor(properties?: PipelineProperties) {
+    constructor(properties: PipelineProperties) {
         super('AWS::DataPipeline::Pipeline', properties)
     }
 }

@@ -20,7 +20,7 @@ export interface RobotProperties {
 export default class Robot extends ResourceBase<RobotProperties> {
 
 
-    constructor(properties?: RobotProperties) {
+    constructor(properties: RobotProperties) {
         super('AWS::RoboMaker::Robot', properties)
     }
 }

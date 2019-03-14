@@ -19,5 +19,5 @@ export interface WebACLProperties {
 export default class WebACL extends ResourceBase<WebACLProperties> {
     static WafAction: typeof WafAction;
     static ActivatedRule: typeof ActivatedRule;
-    constructor(properties?: WebACLProperties);
+    constructor(properties: WebACLProperties);
 }

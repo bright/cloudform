@@ -64,5 +64,5 @@ export default class DataSource extends ResourceBase<DataSourceProperties> {
     static HttpConfig: typeof HttpConfig;
     static DynamoDBConfig: typeof DynamoDBConfig;
     static ElasticsearchConfig: typeof ElasticsearchConfig;
-    constructor(properties?: DataSourceProperties);
+    constructor(properties: DataSourceProperties);
 }

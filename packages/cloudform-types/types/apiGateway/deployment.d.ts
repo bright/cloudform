@@ -71,5 +71,5 @@ export default class Deployment extends ResourceBase<DeploymentProperties> {
     static StageDescription: typeof StageDescription;
     static CanarySetting: typeof CanarySetting;
     static AccessLogSetting: typeof AccessLogSetting;
-    constructor(properties?: DeploymentProperties);
+    constructor(properties: DeploymentProperties);
 }

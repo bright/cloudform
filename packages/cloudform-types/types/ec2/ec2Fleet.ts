@@ -123,7 +123,7 @@ export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static TagSpecification = TagSpecification
     static SpotOptionsRequest = SpotOptionsRequest
 
-    constructor(properties?: EC2FleetProperties) {
+    constructor(properties: EC2FleetProperties) {
         super('AWS::EC2::EC2Fleet', properties)
     }
 }

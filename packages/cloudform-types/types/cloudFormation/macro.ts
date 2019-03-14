@@ -33,7 +33,7 @@ export interface MacroProperties {
 export default class Macro extends ResourceBase<MacroProperties> {
 
 
-    constructor(properties?: MacroProperties) {
+    constructor(properties: MacroProperties) {
         super('AWS::CloudFormation::Macro', properties)
     }
 }

@@ -28,7 +28,7 @@ export interface TransitGatewayRouteTableAssociationProperties {
 export default class TransitGatewayRouteTableAssociation extends ResourceBase<TransitGatewayRouteTableAssociationProperties> {
 
 
-    constructor(properties?: TransitGatewayRouteTableAssociationProperties) {
+    constructor(properties: TransitGatewayRouteTableAssociationProperties) {
         super('AWS::EC2::TransitGatewayRouteTableAssociation', properties)
     }
 }

@@ -21,7 +21,7 @@ export interface DBClusterParameterGroupProperties {
 export default class DBClusterParameterGroup extends ResourceBase<DBClusterParameterGroupProperties> {
 
 
-    constructor(properties?: DBClusterParameterGroupProperties) {
+    constructor(properties: DBClusterParameterGroupProperties) {
         super('AWS::DocDB::DBClusterParameterGroup', properties)
     }
 }

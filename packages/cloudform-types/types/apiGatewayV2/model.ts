@@ -32,7 +32,7 @@ export interface ModelProperties {
 export default class Model extends ResourceBase<ModelProperties> {
 
 
-    constructor(properties?: ModelProperties) {
+    constructor(properties: ModelProperties) {
         super('AWS::ApiGatewayV2::Model', properties)
     }
 }

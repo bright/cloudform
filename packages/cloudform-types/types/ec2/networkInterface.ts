@@ -55,7 +55,7 @@ export default class NetworkInterface extends ResourceBase<NetworkInterfacePrope
     static InstanceIpv6Address = InstanceIpv6Address
     static PrivateIpAddressSpecification = PrivateIpAddressSpecification
 
-    constructor(properties?: NetworkInterfaceProperties) {
+    constructor(properties: NetworkInterfaceProperties) {
         super('AWS::EC2::NetworkInterface', properties)
     }
 }

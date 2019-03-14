@@ -104,7 +104,7 @@ export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties>
     static CustomizedMetricSpecification = CustomizedMetricSpecification
     static TargetTrackingScalingPolicyConfiguration = TargetTrackingScalingPolicyConfiguration
 
-    constructor(properties?: ScalingPolicyProperties) {
+    constructor(properties: ScalingPolicyProperties) {
         super('AWS::ApplicationAutoScaling::ScalingPolicy', properties)
     }
 }

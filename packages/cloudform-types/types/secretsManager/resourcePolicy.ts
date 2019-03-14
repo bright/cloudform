@@ -29,7 +29,7 @@ export interface ResourcePolicyProperties {
 export default class ResourcePolicy extends ResourceBase<ResourcePolicyProperties> {
 
 
-    constructor(properties?: ResourcePolicyProperties) {
+    constructor(properties: ResourcePolicyProperties) {
         super('AWS::SecretsManager::ResourcePolicy', properties)
     }
 }

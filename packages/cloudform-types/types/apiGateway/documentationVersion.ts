@@ -31,7 +31,7 @@ export interface DocumentationVersionProperties {
 export default class DocumentationVersion extends ResourceBase<DocumentationVersionProperties> {
 
 
-    constructor(properties?: DocumentationVersionProperties) {
+    constructor(properties: DocumentationVersionProperties) {
         super('AWS::ApiGateway::DocumentationVersion', properties)
     }
 }

@@ -89,5 +89,5 @@ export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupPrope
     static InstancesDistribution: typeof InstancesDistribution;
     static LaunchTemplate: typeof LaunchTemplate;
     static TagProperty: typeof TagProperty;
-    constructor(properties?: AutoScalingGroupProperties);
+    constructor(properties: AutoScalingGroupProperties);
 }

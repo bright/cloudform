@@ -58,5 +58,5 @@ export interface DBInstanceProperties {
 }
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {
     static ProcessorFeature: typeof ProcessorFeature;
-    constructor(properties?: DBInstanceProperties);
+    constructor(properties: DBInstanceProperties);
 }

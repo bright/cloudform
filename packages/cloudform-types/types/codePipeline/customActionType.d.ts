@@ -35,5 +35,5 @@ export default class CustomActionType extends ResourceBase<CustomActionTypePrope
     static Settings: typeof Settings;
     static ArtifactDetails: typeof ArtifactDetails;
     static ConfigurationProperties: typeof ConfigurationProperties;
-    constructor(properties?: CustomActionTypeProperties);
+    constructor(properties: CustomActionTypeProperties);
 }

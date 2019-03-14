@@ -123,7 +123,7 @@ class RedshiftDestinationConfiguration {
 exports.RedshiftDestinationConfiguration = RedshiftDestinationConfiguration;
 class DeliveryStream extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::KinesisFirehose::DeliveryStream', properties);
+        super('AWS::KinesisFirehose::DeliveryStream', properties || {});
     }
 }
 DeliveryStream.ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration;

@@ -91,7 +91,7 @@ export default class Alarm extends ResourceBase<AlarmProperties> {
     static MetricDataQuery = MetricDataQuery
     static Metric = Metric
 
-    constructor(properties?: AlarmProperties) {
+    constructor(properties: AlarmProperties) {
         super('AWS::CloudWatch::Alarm', properties)
     }
 }

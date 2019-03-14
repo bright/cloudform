@@ -14,5 +14,5 @@ export interface IntegrationResponseProperties {
     ApiId: Value<string>;
 }
 export default class IntegrationResponse extends ResourceBase<IntegrationResponseProperties> {
-    constructor(properties?: IntegrationResponseProperties);
+    constructor(properties: IntegrationResponseProperties);
 }

@@ -23,5 +23,5 @@ export interface RobotApplicationProperties {
 export default class RobotApplication extends ResourceBase<RobotApplicationProperties> {
     static RobotSoftwareSuite: typeof RobotSoftwareSuite;
     static SourceConfig: typeof SourceConfig;
-    constructor(properties?: RobotApplicationProperties);
+    constructor(properties: RobotApplicationProperties);
 }

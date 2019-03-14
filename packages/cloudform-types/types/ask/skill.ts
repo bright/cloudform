@@ -59,7 +59,7 @@ export default class Skill extends ResourceBase<SkillProperties> {
     static Overrides = Overrides
     static AuthenticationConfiguration = AuthenticationConfiguration
 
-    constructor(properties?: SkillProperties) {
+    constructor(properties: SkillProperties) {
         super('AWS::ASK::Skill', properties)
     }
 }

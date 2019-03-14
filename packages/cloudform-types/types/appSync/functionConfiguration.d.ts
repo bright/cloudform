@@ -12,5 +12,5 @@ export interface FunctionConfigurationProperties {
     Name?: Value<string>;
 }
 export default class FunctionConfiguration extends ResourceBase<FunctionConfigurationProperties> {
-    constructor(properties?: FunctionConfigurationProperties);
+    constructor(properties: FunctionConfigurationProperties);
 }

@@ -27,7 +27,7 @@ class LifecyclePolicy {
 exports.LifecyclePolicy = LifecyclePolicy;
 class Repository extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ECR::Repository', properties);
+        super('AWS::ECR::Repository', properties || {});
     }
 }
 Repository.LifecyclePolicy = LifecyclePolicy;

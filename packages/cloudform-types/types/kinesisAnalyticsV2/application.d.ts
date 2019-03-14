@@ -162,5 +162,5 @@ export default class Application extends ResourceBase<ApplicationProperties> {
     static ApplicationConfiguration: typeof ApplicationConfiguration;
     static ApplicationCodeConfiguration: typeof ApplicationCodeConfiguration;
     static EnvironmentProperties: typeof EnvironmentProperties;
-    constructor(properties?: ApplicationProperties);
+    constructor(properties: ApplicationProperties);
 }

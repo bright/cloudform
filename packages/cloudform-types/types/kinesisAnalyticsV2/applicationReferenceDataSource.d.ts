@@ -55,5 +55,5 @@ export default class ApplicationReferenceDataSource extends ResourceBase<Applica
     static S3ReferenceDataSource: typeof S3ReferenceDataSource;
     static ReferenceSchema: typeof ReferenceSchema;
     static CSVMappingParameters: typeof CSVMappingParameters;
-    constructor(properties?: ApplicationReferenceDataSourceProperties);
+    constructor(properties: ApplicationReferenceDataSourceProperties);
 }

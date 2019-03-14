@@ -36,7 +36,7 @@ export interface ClusterProperties {
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static SSESpecification = SSESpecification
 
-    constructor(properties?: ClusterProperties) {
+    constructor(properties: ClusterProperties) {
         super('AWS::DAX::Cluster', properties)
     }
 }

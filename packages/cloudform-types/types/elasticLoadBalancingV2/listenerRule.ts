@@ -114,7 +114,7 @@ export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {
     static RuleCondition = RuleCondition
     static RedirectConfig = RedirectConfig
 
-    constructor(properties?: ListenerRuleProperties) {
+    constructor(properties: ListenerRuleProperties) {
         super('AWS::ElasticLoadBalancingV2::ListenerRule', properties)
     }
 }

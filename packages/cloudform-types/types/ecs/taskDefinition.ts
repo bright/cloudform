@@ -256,6 +256,6 @@ export default class TaskDefinition extends ResourceBase<TaskDefinitionPropertie
     static RepositoryCredentials = RepositoryCredentials
 
     constructor(properties?: TaskDefinitionProperties) {
-        super('AWS::ECS::TaskDefinition', properties)
+        super('AWS::ECS::TaskDefinition', properties || {})
     }
 }

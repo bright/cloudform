@@ -17,7 +17,7 @@ export interface RobotApplicationVersionProperties {
 export default class RobotApplicationVersion extends ResourceBase<RobotApplicationVersionProperties> {
 
 
-    constructor(properties?: RobotApplicationVersionProperties) {
+    constructor(properties: RobotApplicationVersionProperties) {
         super('AWS::RoboMaker::RobotApplicationVersion', properties)
     }
 }

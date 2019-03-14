@@ -31,7 +31,7 @@ export interface PortfolioPrincipalAssociationProperties {
 export default class PortfolioPrincipalAssociation extends ResourceBase<PortfolioPrincipalAssociationProperties> {
 
 
-    constructor(properties?: PortfolioPrincipalAssociationProperties) {
+    constructor(properties: PortfolioPrincipalAssociationProperties) {
         super('AWS::ServiceCatalog::PortfolioPrincipalAssociation', properties)
     }
 }

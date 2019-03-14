@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class DBCluster extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Neptune::DBCluster', properties);
+        super('AWS::Neptune::DBCluster', properties || {});
     }
 }
 exports.default = DBCluster;

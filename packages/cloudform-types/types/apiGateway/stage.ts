@@ -79,7 +79,7 @@ export default class Stage extends ResourceBase<StageProperties> {
     static CanarySetting = CanarySetting
     static AccessLogSetting = AccessLogSetting
 
-    constructor(properties?: StageProperties) {
+    constructor(properties: StageProperties) {
         super('AWS::ApiGateway::Stage', properties)
     }
 }

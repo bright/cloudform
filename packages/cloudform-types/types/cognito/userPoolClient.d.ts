@@ -10,5 +10,5 @@ export interface UserPoolClientProperties {
     WriteAttributes?: List<Value<string>>;
 }
 export default class UserPoolClient extends ResourceBase<UserPoolClientProperties> {
-    constructor(properties?: UserPoolClientProperties);
+    constructor(properties: UserPoolClientProperties);
 }

@@ -40,7 +40,7 @@ export interface IntegrationProperties {
 export default class Integration extends ResourceBase<IntegrationProperties> {
 
 
-    constructor(properties?: IntegrationProperties) {
+    constructor(properties: IntegrationProperties) {
         super('AWS::ApiGatewayV2::Integration', properties)
     }
 }

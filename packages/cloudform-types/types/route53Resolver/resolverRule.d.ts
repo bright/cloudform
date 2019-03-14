@@ -15,5 +15,5 @@ export interface ResolverRuleProperties {
 }
 export default class ResolverRule extends ResourceBase<ResolverRuleProperties> {
     static TargetAddress: typeof TargetAddress;
-    constructor(properties?: ResolverRuleProperties);
+    constructor(properties: ResolverRuleProperties);
 }

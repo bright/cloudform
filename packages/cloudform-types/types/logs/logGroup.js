@@ -21,7 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class LogGroup extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Logs::LogGroup', properties);
+        super('AWS::Logs::LogGroup', properties || {});
     }
 }
 exports.default = LogGroup;

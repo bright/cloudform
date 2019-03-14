@@ -54,7 +54,7 @@ export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
     static LogConfig = LogConfig
     static UserPoolConfig = UserPoolConfig
 
-    constructor(properties?: GraphQLApiProperties) {
+    constructor(properties: GraphQLApiProperties) {
         super('AWS::AppSync::GraphQLApi', properties)
     }
 }

@@ -68,7 +68,7 @@ export default class HostedZone extends ResourceBase<HostedZoneProperties> {
     static QueryLoggingConfig = QueryLoggingConfig
     static VPC = VPC
 
-    constructor(properties?: HostedZoneProperties) {
+    constructor(properties: HostedZoneProperties) {
         super('AWS::Route53::HostedZone', properties)
     }
 }

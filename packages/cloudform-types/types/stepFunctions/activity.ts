@@ -27,7 +27,7 @@ export interface ActivityProperties {
 export default class Activity extends ResourceBase<ActivityProperties> {
     static TagsEntry = TagsEntry
 
-    constructor(properties?: ActivityProperties) {
+    constructor(properties: ActivityProperties) {
         super('AWS::StepFunctions::Activity', properties)
     }
 }

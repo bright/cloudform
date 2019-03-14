@@ -7,5 +7,5 @@ export interface TransitGatewayAttachmentProperties {
     Tags?: List<ResourceTag>;
 }
 export default class TransitGatewayAttachment extends ResourceBase<TransitGatewayAttachmentProperties> {
-    constructor(properties?: TransitGatewayAttachmentProperties);
+    constructor(properties: TransitGatewayAttachmentProperties);
 }

@@ -37,6 +37,6 @@ export default class Thing extends ResourceBase<ThingProperties> {
     static AttributePayload = AttributePayload
 
     constructor(properties?: ThingProperties) {
-        super('AWS::IoT::Thing', properties)
+        super('AWS::IoT::Thing', properties || {})
     }
 }

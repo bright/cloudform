@@ -26,7 +26,7 @@ class ProvisioningParameter {
 exports.ProvisioningParameter = ProvisioningParameter;
 class CloudFormationProvisionedProduct extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ServiceCatalog::CloudFormationProvisionedProduct', properties);
+        super('AWS::ServiceCatalog::CloudFormationProvisionedProduct', properties || {});
     }
 }
 CloudFormationProvisionedProduct.ProvisioningParameter = ProvisioningParameter;

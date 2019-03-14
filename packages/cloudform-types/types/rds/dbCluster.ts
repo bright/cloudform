@@ -63,7 +63,7 @@ export interface DBClusterProperties {
 export default class DBCluster extends ResourceBase<DBClusterProperties> {
     static ScalingConfiguration = ScalingConfiguration
 
-    constructor(properties?: DBClusterProperties) {
+    constructor(properties: DBClusterProperties) {
         super('AWS::RDS::DBCluster', properties)
     }
 }

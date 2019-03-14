@@ -65,5 +65,5 @@ export default class Budget extends ResourceBase<BudgetProperties> {
     static CostTypes: typeof CostTypes;
     static TimePeriod: typeof TimePeriod;
     static Spend: typeof Spend;
-    constructor(properties?: BudgetProperties);
+    constructor(properties: BudgetProperties);
 }

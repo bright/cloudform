@@ -7,5 +7,5 @@ export interface TransitGatewayRouteProperties {
     TransitGatewayAttachmentId?: Value<string>;
 }
 export default class TransitGatewayRoute extends ResourceBase<TransitGatewayRouteProperties> {
-    constructor(properties?: TransitGatewayRouteProperties);
+    constructor(properties: TransitGatewayRouteProperties);
 }

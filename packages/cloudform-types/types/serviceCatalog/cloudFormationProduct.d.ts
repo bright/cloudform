@@ -22,5 +22,5 @@ export interface CloudFormationProductProperties {
 }
 export default class CloudFormationProduct extends ResourceBase<CloudFormationProductProperties> {
     static ProvisioningArtifactProperties: typeof ProvisioningArtifactProperties;
-    constructor(properties?: CloudFormationProductProperties);
+    constructor(properties: CloudFormationProductProperties);
 }

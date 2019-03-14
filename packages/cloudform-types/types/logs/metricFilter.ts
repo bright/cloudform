@@ -40,7 +40,7 @@ export interface MetricFilterProperties {
 export default class MetricFilter extends ResourceBase<MetricFilterProperties> {
     static MetricTransformation = MetricTransformation
 
-    constructor(properties?: MetricFilterProperties) {
+    constructor(properties: MetricFilterProperties) {
         super('AWS::Logs::MetricFilter', properties)
     }
 }

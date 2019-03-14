@@ -5,5 +5,5 @@ export interface RobotApplicationVersionProperties {
     Application: Value<string>;
 }
 export default class RobotApplicationVersion extends ResourceBase<RobotApplicationVersionProperties> {
-    constructor(properties?: RobotApplicationVersionProperties);
+    constructor(properties: RobotApplicationVersionProperties);
 }

@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class ParameterGroup extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::DAX::ParameterGroup', properties);
+        super('AWS::DAX::ParameterGroup', properties || {});
     }
 }
 exports.default = ParameterGroup;

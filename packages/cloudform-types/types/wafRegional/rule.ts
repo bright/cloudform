@@ -27,7 +27,7 @@ export interface RuleProperties {
 export default class Rule extends ResourceBase<RuleProperties> {
     static Predicate = Predicate
 
-    constructor(properties?: RuleProperties) {
+    constructor(properties: RuleProperties) {
         super('AWS::WAFRegional::Rule', properties)
     }
 }

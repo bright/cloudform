@@ -20,5 +20,5 @@ export interface RoleProperties {
 }
 export default class Role extends ResourceBase<RoleProperties> {
     static Policy: typeof Policy;
-    constructor(properties?: RoleProperties);
+    constructor(properties: RoleProperties);
 }

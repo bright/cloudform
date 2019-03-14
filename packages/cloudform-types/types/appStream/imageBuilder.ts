@@ -48,7 +48,7 @@ export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
     static VpcConfig = VpcConfig
     static DomainJoinInfo = DomainJoinInfo
 
-    constructor(properties?: ImageBuilderProperties) {
+    constructor(properties: ImageBuilderProperties) {
         super('AWS::AppStream::ImageBuilder', properties)
     }
 }

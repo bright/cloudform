@@ -8,5 +8,5 @@ export interface ParameterProperties {
     Name?: Value<string>;
 }
 export default class Parameter extends ResourceBase<ParameterProperties> {
-    constructor(properties?: ParameterProperties);
+    constructor(properties: ParameterProperties);
 }

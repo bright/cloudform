@@ -140,7 +140,7 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static OutputArtifact = OutputArtifact
     static EncryptionKey = EncryptionKey
 
-    constructor(properties?: PipelineProperties) {
+    constructor(properties: PipelineProperties) {
         super('AWS::CodePipeline::Pipeline', properties)
     }
 }

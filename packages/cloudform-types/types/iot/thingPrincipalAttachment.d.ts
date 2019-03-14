@@ -5,5 +5,5 @@ export interface ThingPrincipalAttachmentProperties {
     ThingName: Value<string>;
 }
 export default class ThingPrincipalAttachment extends ResourceBase<ThingPrincipalAttachmentProperties> {
-    constructor(properties?: ThingPrincipalAttachmentProperties);
+    constructor(properties: ThingPrincipalAttachmentProperties);
 }

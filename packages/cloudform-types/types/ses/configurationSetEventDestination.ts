@@ -57,7 +57,7 @@ export default class ConfigurationSetEventDestination extends ResourceBase<Confi
     static CloudWatchDestination = CloudWatchDestination
     static KinesisFirehoseDestination = KinesisFirehoseDestination
 
-    constructor(properties?: ConfigurationSetEventDestinationProperties) {
+    constructor(properties: ConfigurationSetEventDestinationProperties) {
         super('AWS::SES::ConfigurationSetEventDestination', properties)
     }
 }

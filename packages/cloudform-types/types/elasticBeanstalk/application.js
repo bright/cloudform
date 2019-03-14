@@ -45,7 +45,7 @@ class MaxAgeRule {
 exports.MaxAgeRule = MaxAgeRule;
 class Application extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ElasticBeanstalk::Application', properties);
+        super('AWS::ElasticBeanstalk::Application', properties || {});
     }
 }
 Application.ApplicationResourceLifecycleConfig = ApplicationResourceLifecycleConfig;

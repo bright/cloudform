@@ -17,6 +17,6 @@ export default class ReceiptRuleSet extends ResourceBase<ReceiptRuleSetPropertie
 
 
     constructor(properties?: ReceiptRuleSetProperties) {
-        super('AWS::SES::ReceiptRuleSet', properties)
+        super('AWS::SES::ReceiptRuleSet', properties || {})
     }
 }

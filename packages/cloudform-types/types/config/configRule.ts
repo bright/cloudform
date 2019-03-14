@@ -65,7 +65,7 @@ export default class ConfigRule extends ResourceBase<ConfigRuleProperties> {
     static Source = Source
     static SourceDetail = SourceDetail
 
-    constructor(properties?: ConfigRuleProperties) {
+    constructor(properties: ConfigRuleProperties) {
         super('AWS::Config::ConfigRule', properties)
     }
 }

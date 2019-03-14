@@ -59,7 +59,7 @@ export default class Environment extends ResourceBase<EnvironmentProperties> {
     static OptionSetting = OptionSetting
     static Tier = Tier
 
-    constructor(properties?: EnvironmentProperties) {
+    constructor(properties: EnvironmentProperties) {
         super('AWS::ElasticBeanstalk::Environment', properties)
     }
 }

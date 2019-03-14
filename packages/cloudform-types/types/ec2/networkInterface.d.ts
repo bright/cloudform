@@ -25,5 +25,5 @@ export interface NetworkInterfaceProperties {
 export default class NetworkInterface extends ResourceBase<NetworkInterfaceProperties> {
     static InstanceIpv6Address: typeof InstanceIpv6Address;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
-    constructor(properties?: NetworkInterfaceProperties);
+    constructor(properties: NetworkInterfaceProperties);
 }

@@ -37,5 +37,5 @@ export default class SimulationApplication extends ResourceBase<SimulationApplic
     static SimulationSoftwareSuite: typeof SimulationSoftwareSuite;
     static RobotSoftwareSuite: typeof RobotSoftwareSuite;
     static SourceConfig: typeof SourceConfig;
-    constructor(properties?: SimulationApplicationProperties);
+    constructor(properties: SimulationApplicationProperties);
 }

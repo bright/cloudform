@@ -27,7 +27,7 @@ class WindowsConfiguration {
 exports.WindowsConfiguration = WindowsConfiguration;
 class FileSystem extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::FSx::FileSystem', properties);
+        super('AWS::FSx::FileSystem', properties || {});
     }
 }
 FileSystem.TagEntry = TagEntry;

@@ -5,5 +5,5 @@ export interface HttpNamespaceProperties {
     Name: Value<string>;
 }
 export default class HttpNamespace extends ResourceBase<HttpNamespaceProperties> {
-    constructor(properties?: HttpNamespaceProperties);
+    constructor(properties: HttpNamespaceProperties);
 }

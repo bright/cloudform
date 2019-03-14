@@ -21,7 +21,7 @@ export interface GraphQLSchemaProperties {
 export default class GraphQLSchema extends ResourceBase<GraphQLSchemaProperties> {
 
 
-    constructor(properties?: GraphQLSchemaProperties) {
+    constructor(properties: GraphQLSchemaProperties) {
         super('AWS::AppSync::GraphQLSchema', properties)
     }
 }

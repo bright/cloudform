@@ -45,7 +45,7 @@ export interface CloudFormationProductProperties {
 export default class CloudFormationProduct extends ResourceBase<CloudFormationProductProperties> {
     static ProvisioningArtifactProperties = ProvisioningArtifactProperties
 
-    constructor(properties?: CloudFormationProductProperties) {
+    constructor(properties: CloudFormationProductProperties) {
         super('AWS::ServiceCatalog::CloudFormationProduct', properties)
     }
 }

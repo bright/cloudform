@@ -30,5 +30,5 @@ export default class Trigger extends ResourceBase<TriggerProperties> {
     static Action: typeof Action;
     static Condition: typeof Condition;
     static Predicate: typeof Predicate;
-    constructor(properties?: TriggerProperties);
+    constructor(properties: TriggerProperties);
 }

@@ -10,5 +10,5 @@ export interface ApplicationCloudWatchLoggingOptionProperties {
 }
 export default class ApplicationCloudWatchLoggingOption extends ResourceBase<ApplicationCloudWatchLoggingOptionProperties> {
     static CloudWatchLoggingOption: typeof CloudWatchLoggingOption;
-    constructor(properties?: ApplicationCloudWatchLoggingOptionProperties);
+    constructor(properties: ApplicationCloudWatchLoggingOptionProperties);
 }

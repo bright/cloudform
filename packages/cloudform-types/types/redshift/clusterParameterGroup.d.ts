@@ -13,5 +13,5 @@ export interface ClusterParameterGroupProperties {
 }
 export default class ClusterParameterGroup extends ResourceBase<ClusterParameterGroupProperties> {
     static Parameter: typeof Parameter;
-    constructor(properties?: ClusterParameterGroupProperties);
+    constructor(properties: ClusterParameterGroupProperties);
 }

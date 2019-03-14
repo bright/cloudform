@@ -39,7 +39,7 @@ export interface RouteResponseProperties {
 export default class RouteResponse extends ResourceBase<RouteResponseProperties> {
     static ParameterConstraints = ParameterConstraints
 
-    constructor(properties?: RouteResponseProperties) {
+    constructor(properties: RouteResponseProperties) {
         super('AWS::ApiGatewayV2::RouteResponse', properties)
     }
 }

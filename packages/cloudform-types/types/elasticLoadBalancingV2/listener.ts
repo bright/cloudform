@@ -115,7 +115,7 @@ export default class Listener extends ResourceBase<ListenerProperties> {
     static FixedResponseConfig = FixedResponseConfig
     static Certificate = Certificate
 
-    constructor(properties?: ListenerProperties) {
+    constructor(properties: ListenerProperties) {
         super('AWS::ElasticLoadBalancingV2::Listener', properties)
     }
 }

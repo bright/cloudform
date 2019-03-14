@@ -10,5 +10,5 @@ export interface ApiProperties {
     ApiKeySelectionExpression?: Value<string>;
 }
 export default class Api extends ResourceBase<ApiProperties> {
-    constructor(properties?: ApiProperties);
+    constructor(properties: ApiProperties);
 }

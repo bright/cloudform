@@ -27,7 +27,7 @@ class StageKey {
 exports.StageKey = StageKey;
 class ApiKey extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ApiGateway::ApiKey', properties);
+        super('AWS::ApiGateway::ApiKey', properties || {});
     }
 }
 ApiKey.StageKey = StageKey;

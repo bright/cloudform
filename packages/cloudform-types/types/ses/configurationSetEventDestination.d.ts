@@ -32,5 +32,5 @@ export default class ConfigurationSetEventDestination extends ResourceBase<Confi
     static DimensionConfiguration: typeof DimensionConfiguration;
     static CloudWatchDestination: typeof CloudWatchDestination;
     static KinesisFirehoseDestination: typeof KinesisFirehoseDestination;
-    constructor(properties?: ConfigurationSetEventDestinationProperties);
+    constructor(properties: ConfigurationSetEventDestinationProperties);
 }

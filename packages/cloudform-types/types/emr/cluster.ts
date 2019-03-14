@@ -348,7 +348,7 @@ export default class Cluster extends ResourceBase<ClusterProperties> {
     static HadoopJarStepConfig = HadoopJarStepConfig
     static ScalingTrigger = ScalingTrigger
 
-    constructor(properties?: ClusterProperties) {
+    constructor(properties: ClusterProperties) {
         super('AWS::EMR::Cluster', properties)
     }
 }

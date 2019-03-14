@@ -35,5 +35,5 @@ export interface SecurityGroupProperties {
 export default class SecurityGroup extends ResourceBase<SecurityGroupProperties> {
     static Ingress: typeof Ingress;
     static Egress: typeof Egress;
-    constructor(properties?: SecurityGroupProperties);
+    constructor(properties: SecurityGroupProperties);
 }

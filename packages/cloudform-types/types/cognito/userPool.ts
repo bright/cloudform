@@ -161,6 +161,6 @@ export default class UserPool extends ResourceBase<UserPoolProperties> {
     static StringAttributeConstraints = StringAttributeConstraints
 
     constructor(properties?: UserPoolProperties) {
-        super('AWS::Cognito::UserPool', properties)
+        super('AWS::Cognito::UserPool', properties || {})
     }
 }

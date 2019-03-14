@@ -30,6 +30,6 @@ export default class Certificate extends ResourceBase<CertificateProperties> {
 
 
     constructor(properties?: CertificateProperties) {
-        super('AWS::DMS::Certificate', properties)
+        super('AWS::DMS::Certificate', properties || {})
     }
 }

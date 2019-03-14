@@ -5,5 +5,5 @@ export interface AliasProperties {
     TargetKeyId: Value<string>;
 }
 export default class Alias extends ResourceBase<AliasProperties> {
-    constructor(properties?: AliasProperties);
+    constructor(properties: AliasProperties);
 }

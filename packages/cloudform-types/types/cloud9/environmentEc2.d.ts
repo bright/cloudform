@@ -16,5 +16,5 @@ export interface EnvironmentEC2Properties {
 }
 export default class EnvironmentEC2 extends ResourceBase<EnvironmentEC2Properties> {
     static Repository: typeof Repository;
-    constructor(properties?: EnvironmentEC2Properties);
+    constructor(properties: EnvironmentEC2Properties);
 }

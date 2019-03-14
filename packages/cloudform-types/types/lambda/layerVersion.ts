@@ -40,7 +40,7 @@ export interface LayerVersionProperties {
 export default class LayerVersion extends ResourceBase<LayerVersionProperties> {
     static Content = Content
 
-    constructor(properties?: LayerVersionProperties) {
+    constructor(properties: LayerVersionProperties) {
         super('AWS::Lambda::LayerVersion', properties)
     }
 }

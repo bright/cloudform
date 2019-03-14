@@ -39,7 +39,7 @@ class AliasTarget {
 exports.AliasTarget = AliasTarget;
 class RecordSetGroup extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Route53::RecordSetGroup', properties);
+        super('AWS::Route53::RecordSetGroup', properties || {});
     }
 }
 RecordSetGroup.RecordSet = RecordSet;

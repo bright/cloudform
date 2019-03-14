@@ -137,7 +137,7 @@ export default class Table extends ResourceBase<TableProperties> {
     static SSESpecification = SSESpecification
     static StreamSpecification = StreamSpecification
 
-    constructor(properties?: TableProperties) {
+    constructor(properties: TableProperties) {
         super('AWS::DynamoDB::Table', properties)
     }
 }

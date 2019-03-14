@@ -30,6 +30,6 @@ export default class Cluster extends ResourceBase<ClusterProperties> {
 
 
     constructor(properties?: ClusterProperties) {
-        super('AWS::ECS::Cluster', properties)
+        super('AWS::ECS::Cluster', properties || {})
     }
 }

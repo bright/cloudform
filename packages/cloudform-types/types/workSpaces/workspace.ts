@@ -46,7 +46,7 @@ export interface WorkspaceProperties {
 export default class Workspace extends ResourceBase<WorkspaceProperties> {
     static WorkspaceProperties = WorkspaceProperties
 
-    constructor(properties?: WorkspaceProperties) {
+    constructor(properties: WorkspaceProperties) {
         super('AWS::WorkSpaces::Workspace', properties)
     }
 }

@@ -238,6 +238,6 @@ export default class DeliveryStream extends ResourceBase<DeliveryStreamPropertie
     static RedshiftDestinationConfiguration = RedshiftDestinationConfiguration
 
     constructor(properties?: DeliveryStreamProperties) {
-        super('AWS::KinesisFirehose::DeliveryStream', properties)
+        super('AWS::KinesisFirehose::DeliveryStream', properties || {})
     }
 }

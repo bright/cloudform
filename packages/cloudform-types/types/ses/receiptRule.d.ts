@@ -75,5 +75,5 @@ export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
     static Rule: typeof Rule;
     static LambdaAction: typeof LambdaAction;
     static AddHeaderAction: typeof AddHeaderAction;
-    constructor(properties?: ReceiptRuleProperties);
+    constructor(properties: ReceiptRuleProperties);
 }

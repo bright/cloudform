@@ -82,5 +82,5 @@ export default class Application extends ResourceBase<ApplicationProperties> {
     static InputParallelism: typeof InputParallelism;
     static InputProcessingConfiguration: typeof InputProcessingConfiguration;
     static InputLambdaProcessor: typeof InputLambdaProcessor;
-    constructor(properties?: ApplicationProperties);
+    constructor(properties: ApplicationProperties);
 }

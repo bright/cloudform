@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class AssessmentTarget extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Inspector::AssessmentTarget', properties);
+        super('AWS::Inspector::AssessmentTarget', properties || {});
     }
 }
 exports.default = AssessmentTarget;

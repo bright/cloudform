@@ -30,6 +30,6 @@ export default class ClientCertificate extends ResourceBase<ClientCertificatePro
 
 
     constructor(properties?: ClientCertificateProperties) {
-        super('AWS::ApiGateway::ClientCertificate', properties)
+        super('AWS::ApiGateway::ClientCertificate', properties || {})
     }
 }

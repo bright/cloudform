@@ -59,6 +59,6 @@ export default class RestApi extends ResourceBase<RestApiProperties> {
     static EndpointConfiguration = EndpointConfiguration
 
     constructor(properties?: RestApiProperties) {
-        super('AWS::ApiGateway::RestApi', properties)
+        super('AWS::ApiGateway::RestApi', properties || {})
     }
 }

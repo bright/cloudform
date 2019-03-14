@@ -40,7 +40,7 @@ export interface StreamProperties {
 export default class Stream extends ResourceBase<StreamProperties> {
     static StreamEncryption = StreamEncryption
 
-    constructor(properties?: StreamProperties) {
+    constructor(properties: StreamProperties) {
         super('AWS::Kinesis::Stream', properties)
     }
 }

@@ -25,5 +25,5 @@ export interface ScalableTargetProperties {
 export default class ScalableTarget extends ResourceBase<ScalableTargetProperties> {
     static ScheduledAction: typeof ScheduledAction;
     static ScalableTargetAction: typeof ScalableTargetAction;
-    constructor(properties?: ScalableTargetProperties);
+    constructor(properties: ScalableTargetProperties);
 }

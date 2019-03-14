@@ -31,6 +31,6 @@ export default class Application extends ResourceBase<ApplicationProperties> {
 
 
     constructor(properties?: ApplicationProperties) {
-        super('AWS::CodeDeploy::Application', properties)
+        super('AWS::CodeDeploy::Application', properties || {})
     }
 }

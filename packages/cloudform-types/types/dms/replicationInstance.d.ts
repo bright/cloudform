@@ -17,5 +17,5 @@ export interface ReplicationInstanceProperties {
     Tags?: List<ResourceTag>;
 }
 export default class ReplicationInstance extends ResourceBase<ReplicationInstanceProperties> {
-    constructor(properties?: ReplicationInstanceProperties);
+    constructor(properties: ReplicationInstanceProperties);
 }

@@ -30,7 +30,7 @@ export interface AliasProperties {
 export default class Alias extends ResourceBase<AliasProperties> {
 
 
-    constructor(properties?: AliasProperties) {
+    constructor(properties: AliasProperties) {
         super('AWS::KMS::Alias', properties)
     }
 }

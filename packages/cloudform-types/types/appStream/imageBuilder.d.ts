@@ -26,5 +26,5 @@ export interface ImageBuilderProperties {
 export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
     static VpcConfig: typeof VpcConfig;
     static DomainJoinInfo: typeof DomainJoinInfo;
-    constructor(properties?: ImageBuilderProperties);
+    constructor(properties: ImageBuilderProperties);
 }

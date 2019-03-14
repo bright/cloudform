@@ -29,6 +29,6 @@ export default class Datastore extends ResourceBase<DatastoreProperties> {
     static RetentionPeriod = RetentionPeriod
 
     constructor(properties?: DatastoreProperties) {
-        super('AWS::IoTAnalytics::Datastore', properties)
+        super('AWS::IoTAnalytics::Datastore', properties || {})
     }
 }

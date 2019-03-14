@@ -17,7 +17,7 @@ class RetentionPeriod {
 exports.RetentionPeriod = RetentionPeriod;
 class Datastore extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::IoTAnalytics::Datastore', properties);
+        super('AWS::IoTAnalytics::Datastore', properties || {});
     }
 }
 Datastore.RetentionPeriod = RetentionPeriod;

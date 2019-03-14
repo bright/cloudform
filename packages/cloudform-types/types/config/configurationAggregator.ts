@@ -43,7 +43,7 @@ export default class ConfigurationAggregator extends ResourceBase<ConfigurationA
     static OrganizationAggregationSource = OrganizationAggregationSource
     static AccountAggregationSource = AccountAggregationSource
 
-    constructor(properties?: ConfigurationAggregatorProperties) {
+    constructor(properties: ConfigurationAggregatorProperties) {
         super('AWS::Config::ConfigurationAggregator', properties)
     }
 }

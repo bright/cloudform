@@ -71,6 +71,6 @@ export default class Service extends ResourceBase<ServiceProperties> {
     static HealthCheckConfig = HealthCheckConfig
 
     constructor(properties?: ServiceProperties) {
-        super('AWS::ServiceDiscovery::Service', properties)
+        super('AWS::ServiceDiscovery::Service', properties || {})
     }
 }

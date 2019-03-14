@@ -14,5 +14,5 @@ export interface EventBusPolicyProperties {
 }
 export default class EventBusPolicy extends ResourceBase<EventBusPolicyProperties> {
     static Condition: typeof Condition;
-    constructor(properties?: EventBusPolicyProperties);
+    constructor(properties: EventBusPolicyProperties);
 }

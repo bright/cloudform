@@ -22,5 +22,5 @@ export interface FleetProperties {
 }
 export default class Fleet extends ResourceBase<FleetProperties> {
     static IpPermission: typeof IpPermission;
-    constructor(properties?: FleetProperties);
+    constructor(properties: FleetProperties);
 }

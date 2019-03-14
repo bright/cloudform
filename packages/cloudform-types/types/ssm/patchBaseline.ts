@@ -87,7 +87,7 @@ export default class PatchBaseline extends ResourceBase<PatchBaselineProperties>
     static PatchFilterGroup = PatchFilterGroup
     static PatchSource = PatchSource
 
-    constructor(properties?: PatchBaselineProperties) {
+    constructor(properties: PatchBaselineProperties) {
         super('AWS::SSM::PatchBaseline', properties)
     }
 }

@@ -41,6 +41,6 @@ export default class Queue extends ResourceBase<QueueProperties> {
 
 
     constructor(properties?: QueueProperties) {
-        super('AWS::SQS::Queue', properties)
+        super('AWS::SQS::Queue', properties || {})
     }
 }

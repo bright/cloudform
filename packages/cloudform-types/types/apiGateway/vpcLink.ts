@@ -28,7 +28,7 @@ export interface VpcLinkProperties {
 export default class VpcLink extends ResourceBase<VpcLinkProperties> {
 
 
-    constructor(properties?: VpcLinkProperties) {
+    constructor(properties: VpcLinkProperties) {
         super('AWS::ApiGateway::VpcLink', properties)
     }
 }

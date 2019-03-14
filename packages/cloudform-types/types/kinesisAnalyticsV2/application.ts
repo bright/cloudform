@@ -266,7 +266,7 @@ export default class Application extends ResourceBase<ApplicationProperties> {
     static ApplicationCodeConfiguration = ApplicationCodeConfiguration
     static EnvironmentProperties = EnvironmentProperties
 
-    constructor(properties?: ApplicationProperties) {
+    constructor(properties: ApplicationProperties) {
         super('AWS::KinesisAnalyticsV2::Application', properties)
     }
 }

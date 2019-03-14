@@ -54,7 +54,7 @@ export default class ConfigurationTemplate extends ResourceBase<ConfigurationTem
     static SourceConfiguration = SourceConfiguration
     static ConfigurationOptionSetting = ConfigurationOptionSetting
 
-    constructor(properties?: ConfigurationTemplateProperties) {
+    constructor(properties: ConfigurationTemplateProperties) {
         super('AWS::ElasticBeanstalk::ConfigurationTemplate', properties)
     }
 }

@@ -29,7 +29,7 @@ export interface StateMachineProperties {
 export default class StateMachine extends ResourceBase<StateMachineProperties> {
     static TagsEntry = TagsEntry
 
-    constructor(properties?: StateMachineProperties) {
+    constructor(properties: StateMachineProperties) {
         super('AWS::StepFunctions::StateMachine', properties)
     }
 }

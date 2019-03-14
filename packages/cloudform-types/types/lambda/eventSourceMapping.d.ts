@@ -8,5 +8,5 @@ export interface EventSourceMappingProperties {
     StartingPosition?: Value<string>;
 }
 export default class EventSourceMapping extends ResourceBase<EventSourceMappingProperties> {
-    constructor(properties?: EventSourceMappingProperties);
+    constructor(properties: EventSourceMappingProperties);
 }

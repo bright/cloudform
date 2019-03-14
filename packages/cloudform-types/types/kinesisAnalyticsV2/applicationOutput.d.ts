@@ -34,5 +34,5 @@ export default class ApplicationOutput extends ResourceBase<ApplicationOutputPro
     static KinesisStreamsOutput: typeof KinesisStreamsOutput;
     static DestinationSchema: typeof DestinationSchema;
     static Output: typeof Output;
-    constructor(properties?: ApplicationOutputProperties);
+    constructor(properties: ApplicationOutputProperties);
 }

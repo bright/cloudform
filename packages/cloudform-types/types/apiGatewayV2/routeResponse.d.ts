@@ -18,5 +18,5 @@ export interface RouteResponseProperties {
 }
 export default class RouteResponse extends ResourceBase<RouteResponseProperties> {
     static ParameterConstraints: typeof ParameterConstraints;
-    constructor(properties?: RouteResponseProperties);
+    constructor(properties: RouteResponseProperties);
 }

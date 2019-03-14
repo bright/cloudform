@@ -11,5 +11,5 @@ export interface IPSetProperties {
 }
 export default class IPSet extends ResourceBase<IPSetProperties> {
     static IPSetDescriptor: typeof IPSetDescriptor;
-    constructor(properties?: IPSetProperties);
+    constructor(properties: IPSetProperties);
 }

@@ -7,5 +7,5 @@ export interface VolumeProperties {
     StackId: Value<string>;
 }
 export default class Volume extends ResourceBase<VolumeProperties> {
-    constructor(properties?: VolumeProperties);
+    constructor(properties: VolumeProperties);
 }

@@ -34,7 +34,7 @@ export interface CloudFrontOriginAccessIdentityProperties {
 export default class CloudFrontOriginAccessIdentity extends ResourceBase<CloudFrontOriginAccessIdentityProperties> {
     static CloudFrontOriginAccessIdentityConfig = CloudFrontOriginAccessIdentityConfig
 
-    constructor(properties?: CloudFrontOriginAccessIdentityProperties) {
+    constructor(properties: CloudFrontOriginAccessIdentityProperties) {
         super('AWS::CloudFront::CloudFrontOriginAccessIdentity', properties)
     }
 }

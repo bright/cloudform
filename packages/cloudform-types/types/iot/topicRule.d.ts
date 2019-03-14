@@ -143,5 +143,5 @@ export default class TopicRule extends ResourceBase<TopicRuleProperties> {
     static Action: typeof Action;
     static IotAnalyticsAction: typeof IotAnalyticsAction;
     static CloudwatchMetricAction: typeof CloudwatchMetricAction;
-    constructor(properties?: TopicRuleProperties);
+    constructor(properties: TopicRuleProperties);
 }

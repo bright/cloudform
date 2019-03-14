@@ -46,7 +46,7 @@ export default class Connection extends ResourceBase<ConnectionProperties> {
     static ConnectionInput = ConnectionInput
     static PhysicalConnectionRequirements = PhysicalConnectionRequirements
 
-    constructor(properties?: ConnectionProperties) {
+    constructor(properties: ConnectionProperties) {
         super('AWS::Glue::Connection', properties)
     }
 }

@@ -53,7 +53,7 @@ export default class IdentityPoolRoleAttachment extends ResourceBase<IdentityPoo
     static RoleMapping = RoleMapping
     static MappingRule = MappingRule
 
-    constructor(properties?: IdentityPoolRoleAttachmentProperties) {
+    constructor(properties: IdentityPoolRoleAttachmentProperties) {
         super('AWS::Cognito::IdentityPoolRoleAttachment', properties)
     }
 }

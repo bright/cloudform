@@ -26,7 +26,7 @@ export interface HttpNamespaceProperties {
 export default class HttpNamespace extends ResourceBase<HttpNamespaceProperties> {
 
 
-    constructor(properties?: HttpNamespaceProperties) {
+    constructor(properties: HttpNamespaceProperties) {
         super('AWS::ServiceDiscovery::HttpNamespace', properties)
     }
 }

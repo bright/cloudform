@@ -45,7 +45,7 @@ export interface ServerProperties {
 export default class Server extends ResourceBase<ServerProperties> {
     static EngineAttribute = EngineAttribute
 
-    constructor(properties?: ServerProperties) {
+    constructor(properties: ServerProperties) {
         super('AWS::OpsWorksCM::Server', properties)
     }
 }

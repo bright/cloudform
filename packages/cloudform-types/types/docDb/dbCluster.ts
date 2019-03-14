@@ -33,6 +33,6 @@ export default class DBCluster extends ResourceBase<DBClusterProperties> {
 
 
     constructor(properties?: DBClusterProperties) {
-        super('AWS::DocDB::DBCluster', properties)
+        super('AWS::DocDB::DBCluster', properties || {})
     }
 }

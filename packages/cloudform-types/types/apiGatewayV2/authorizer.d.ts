@@ -11,5 +11,5 @@ export interface AuthorizerProperties {
     Name: Value<string>;
 }
 export default class Authorizer extends ResourceBase<AuthorizerProperties> {
-    constructor(properties?: AuthorizerProperties);
+    constructor(properties: AuthorizerProperties);
 }

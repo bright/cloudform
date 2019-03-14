@@ -24,6 +24,6 @@ export default class AssessmentTarget extends ResourceBase<AssessmentTargetPrope
 
 
     constructor(properties?: AssessmentTargetProperties) {
-        super('AWS::Inspector::AssessmentTarget', properties)
+        super('AWS::Inspector::AssessmentTarget', properties || {})
     }
 }

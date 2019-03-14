@@ -84,7 +84,7 @@ export default class Method extends ResourceBase<MethodProperties> {
     static Integration = Integration
     static IntegrationResponse = IntegrationResponse
 
-    constructor(properties?: MethodProperties) {
+    constructor(properties: MethodProperties) {
         super('AWS::ApiGateway::Method', properties)
     }
 }

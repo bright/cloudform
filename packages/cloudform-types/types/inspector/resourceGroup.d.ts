@@ -4,5 +4,5 @@ export interface ResourceGroupProperties {
     ResourceGroupTags: List<ResourceTag>;
 }
 export default class ResourceGroup extends ResourceBase<ResourceGroupProperties> {
-    constructor(properties?: ResourceGroupProperties);
+    constructor(properties: ResourceGroupProperties);
 }

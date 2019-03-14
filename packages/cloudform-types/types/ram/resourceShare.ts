@@ -31,7 +31,7 @@ export interface ResourceShareProperties {
 export default class ResourceShare extends ResourceBase<ResourceShareProperties> {
 
 
-    constructor(properties?: ResourceShareProperties) {
+    constructor(properties: ResourceShareProperties) {
         super('AWS::RAM::ResourceShare', properties)
     }
 }

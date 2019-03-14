@@ -23,5 +23,5 @@ export interface ClusterProperties {
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static SSESpecification: typeof SSESpecification;
-    constructor(properties?: ClusterProperties);
+    constructor(properties: ClusterProperties);
 }

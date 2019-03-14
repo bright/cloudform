@@ -38,7 +38,7 @@ export interface ResolverProperties {
 export default class Resolver extends ResourceBase<ResolverProperties> {
     static PipelineConfig = PipelineConfig
 
-    constructor(properties?: ResolverProperties) {
+    constructor(properties: ResolverProperties) {
         super('AWS::AppSync::Resolver', properties)
     }
 }

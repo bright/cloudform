@@ -108,7 +108,7 @@ export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfi
     static InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications
     static EbsBlockDeviceConfig = EbsBlockDeviceConfig
 
-    constructor(properties?: InstanceFleetConfigProperties) {
+    constructor(properties: InstanceFleetConfigProperties) {
         super('AWS::EMR::InstanceFleetConfig', properties)
     }
 }

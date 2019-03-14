@@ -49,5 +49,5 @@ export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties>
     static PredefinedMetricSpecification: typeof PredefinedMetricSpecification;
     static TargetTrackingConfiguration: typeof TargetTrackingConfiguration;
     static StepAdjustment: typeof StepAdjustment;
-    constructor(properties?: ScalingPolicyProperties);
+    constructor(properties: ScalingPolicyProperties);
 }

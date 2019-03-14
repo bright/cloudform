@@ -151,7 +151,7 @@ export default class Pipeline extends ResourceBase<PipelineProperties> {
     static Channel = Channel
     static Filter = Filter
 
-    constructor(properties?: PipelineProperties) {
+    constructor(properties: PipelineProperties) {
         super('AWS::IoTAnalytics::Pipeline', properties)
     }
 }

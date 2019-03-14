@@ -27,7 +27,7 @@ class ElasticFileSystemTag {
 exports.ElasticFileSystemTag = ElasticFileSystemTag;
 class FileSystem extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::EFS::FileSystem', properties);
+        super('AWS::EFS::FileSystem', properties || {});
     }
 }
 FileSystem.ElasticFileSystemTag = ElasticFileSystemTag;

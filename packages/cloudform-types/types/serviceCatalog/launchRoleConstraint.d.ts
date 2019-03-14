@@ -8,5 +8,5 @@ export interface LaunchRoleConstraintProperties {
     RoleArn: Value<string>;
 }
 export default class LaunchRoleConstraint extends ResourceBase<LaunchRoleConstraintProperties> {
-    constructor(properties?: LaunchRoleConstraintProperties);
+    constructor(properties: LaunchRoleConstraintProperties);
 }

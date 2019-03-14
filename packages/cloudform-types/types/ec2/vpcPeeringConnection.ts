@@ -34,7 +34,7 @@ export interface VPCPeeringConnectionProperties {
 export default class VPCPeeringConnection extends ResourceBase<VPCPeeringConnectionProperties> {
 
 
-    constructor(properties?: VPCPeeringConnectionProperties) {
+    constructor(properties: VPCPeeringConnectionProperties) {
         super('AWS::EC2::VPCPeeringConnection', properties)
     }
 }

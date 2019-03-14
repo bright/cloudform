@@ -32,5 +32,5 @@ export interface RecordSetProperties {
 export default class RecordSet extends ResourceBase<RecordSetProperties> {
     static GeoLocation: typeof GeoLocation;
     static AliasTarget: typeof AliasTarget;
-    constructor(properties?: RecordSetProperties);
+    constructor(properties: RecordSetProperties);
 }

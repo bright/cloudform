@@ -60,7 +60,7 @@ export default class SimulationApplication extends ResourceBase<SimulationApplic
     static RobotSoftwareSuite = RobotSoftwareSuite
     static SourceConfig = SourceConfig
 
-    constructor(properties?: SimulationApplicationProperties) {
+    constructor(properties: SimulationApplicationProperties) {
         super('AWS::RoboMaker::SimulationApplication', properties)
     }
 }

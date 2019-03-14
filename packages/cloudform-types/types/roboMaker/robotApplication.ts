@@ -38,7 +38,7 @@ export default class RobotApplication extends ResourceBase<RobotApplicationPrope
     static RobotSoftwareSuite = RobotSoftwareSuite
     static SourceConfig = SourceConfig
 
-    constructor(properties?: RobotApplicationProperties) {
+    constructor(properties: RobotApplicationProperties) {
         super('AWS::RoboMaker::RobotApplication', properties)
     }
 }

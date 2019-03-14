@@ -80,7 +80,7 @@ class StringAttributeConstraints {
 exports.StringAttributeConstraints = StringAttributeConstraints;
 class UserPool extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::Cognito::UserPool', properties);
+        super('AWS::Cognito::UserPool', properties || {});
     }
 }
 UserPool.PasswordPolicy = PasswordPolicy;

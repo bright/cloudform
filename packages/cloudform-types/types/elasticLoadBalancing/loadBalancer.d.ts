@@ -80,5 +80,5 @@ export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static Listeners: typeof Listeners;
     static Policies: typeof Policies;
     static AppCookieStickinessPolicy: typeof AppCookieStickinessPolicy;
-    constructor(properties?: LoadBalancerProperties);
+    constructor(properties: LoadBalancerProperties);
 }

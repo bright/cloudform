@@ -6,5 +6,5 @@ export interface DeploymentProperties {
     ApiId: Value<string>;
 }
 export default class Deployment extends ResourceBase<DeploymentProperties> {
-    constructor(properties?: DeploymentProperties);
+    constructor(properties: DeploymentProperties);
 }

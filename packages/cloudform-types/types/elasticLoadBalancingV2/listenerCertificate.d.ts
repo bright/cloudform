@@ -10,5 +10,5 @@ export interface ListenerCertificateProperties {
 }
 export default class ListenerCertificate extends ResourceBase<ListenerCertificateProperties> {
     static Certificate: typeof Certificate;
-    constructor(properties?: ListenerCertificateProperties);
+    constructor(properties: ListenerCertificateProperties);
 }

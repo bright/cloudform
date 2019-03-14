@@ -33,7 +33,7 @@ export interface PolicyProperties {
 export default class Policy extends ResourceBase<PolicyProperties> {
 
 
-    constructor(properties?: PolicyProperties) {
+    constructor(properties: PolicyProperties) {
         super('AWS::IAM::Policy', properties)
     }
 }

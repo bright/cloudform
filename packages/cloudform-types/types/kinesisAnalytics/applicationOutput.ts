@@ -67,7 +67,7 @@ export default class ApplicationOutput extends ResourceBase<ApplicationOutputPro
     static KinesisStreamsOutput = KinesisStreamsOutput
     static LambdaOutput = LambdaOutput
 
-    constructor(properties?: ApplicationOutputProperties) {
+    constructor(properties: ApplicationOutputProperties) {
         super('AWS::KinesisAnalytics::ApplicationOutput', properties)
     }
 }

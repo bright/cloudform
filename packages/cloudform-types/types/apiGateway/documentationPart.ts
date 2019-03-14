@@ -41,7 +41,7 @@ export interface DocumentationPartProperties {
 export default class DocumentationPart extends ResourceBase<DocumentationPartProperties> {
     static Location = Location
 
-    constructor(properties?: DocumentationPartProperties) {
+    constructor(properties: DocumentationPartProperties) {
         super('AWS::ApiGateway::DocumentationPart', properties)
     }
 }

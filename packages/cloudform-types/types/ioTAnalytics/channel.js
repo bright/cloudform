@@ -17,7 +17,7 @@ class RetentionPeriod {
 exports.RetentionPeriod = RetentionPeriod;
 class Channel extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::IoTAnalytics::Channel', properties);
+        super('AWS::IoTAnalytics::Channel', properties || {});
     }
 }
 Channel.RetentionPeriod = RetentionPeriod;

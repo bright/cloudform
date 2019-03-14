@@ -32,7 +32,7 @@ export interface RequestValidatorProperties {
 export default class RequestValidator extends ResourceBase<RequestValidatorProperties> {
 
 
-    constructor(properties?: RequestValidatorProperties) {
+    constructor(properties: RequestValidatorProperties) {
         super('AWS::ApiGateway::RequestValidator', properties)
     }
 }

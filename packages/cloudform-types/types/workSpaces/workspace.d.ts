@@ -20,5 +20,5 @@ export interface WorkspaceProperties {
 }
 export default class Workspace extends ResourceBase<WorkspaceProperties> {
     static WorkspaceProperties: typeof WorkspaceProperties;
-    constructor(properties?: WorkspaceProperties);
+    constructor(properties: WorkspaceProperties);
 }

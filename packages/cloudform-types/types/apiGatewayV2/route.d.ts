@@ -24,5 +24,5 @@ export interface RouteProperties {
 }
 export default class Route extends ResourceBase<RouteProperties> {
     static ParameterConstraints: typeof ParameterConstraints;
-    constructor(properties?: RouteProperties);
+    constructor(properties: RouteProperties);
 }

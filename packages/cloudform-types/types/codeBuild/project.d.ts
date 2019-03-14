@@ -130,5 +130,5 @@ export default class Project extends ResourceBase<ProjectProperties> {
     static EnvironmentVariable: typeof EnvironmentVariable;
     static Source: typeof Source;
     static GitSubmodulesConfig: typeof GitSubmodulesConfig;
-    constructor(properties?: ProjectProperties);
+    constructor(properties: ProjectProperties);
 }

@@ -43,7 +43,7 @@ class PolicyDetails {
 exports.PolicyDetails = PolicyDetails;
 class LifecyclePolicy extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::DLM::LifecyclePolicy', properties);
+        super('AWS::DLM::LifecyclePolicy', properties || {});
     }
 }
 LifecyclePolicy.Schedule = Schedule;

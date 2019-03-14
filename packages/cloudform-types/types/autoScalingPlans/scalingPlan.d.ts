@@ -82,5 +82,5 @@ export default class ScalingPlan extends ResourceBase<ScalingPlanProperties> {
     static TagFilter: typeof TagFilter;
     static PredefinedLoadMetricSpecification: typeof PredefinedLoadMetricSpecification;
     static CustomizedLoadMetricSpecification: typeof CustomizedLoadMetricSpecification;
-    constructor(properties?: ScalingPlanProperties);
+    constructor(properties: ScalingPlanProperties);
 }

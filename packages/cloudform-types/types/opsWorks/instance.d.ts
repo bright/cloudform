@@ -66,5 +66,5 @@ export default class Instance extends ResourceBase<InstanceProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static EbsBlockDevice: typeof EbsBlockDevice;
     static TimeBasedAutoScaling: typeof TimeBasedAutoScaling;
-    constructor(properties?: InstanceProperties);
+    constructor(properties: InstanceProperties);
 }

@@ -21,7 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
 class WaitConditionHandle extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::CloudFormation::WaitConditionHandle', properties);
+        super('AWS::CloudFormation::WaitConditionHandle', properties || {});
     }
 }
 exports.default = WaitConditionHandle;

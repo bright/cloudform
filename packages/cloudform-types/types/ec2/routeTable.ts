@@ -30,7 +30,7 @@ export interface RouteTableProperties {
 export default class RouteTable extends ResourceBase<RouteTableProperties> {
 
 
-    constructor(properties?: RouteTableProperties) {
+    constructor(properties: RouteTableProperties) {
         super('AWS::EC2::RouteTable', properties)
     }
 }

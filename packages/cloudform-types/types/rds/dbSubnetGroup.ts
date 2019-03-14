@@ -32,7 +32,7 @@ export interface DBSubnetGroupProperties {
 export default class DBSubnetGroup extends ResourceBase<DBSubnetGroupProperties> {
 
 
-    constructor(properties?: DBSubnetGroupProperties) {
+    constructor(properties: DBSubnetGroupProperties) {
         super('AWS::RDS::DBSubnetGroup', properties)
     }
 }

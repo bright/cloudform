@@ -129,7 +129,7 @@ class RepositoryCredentials {
 exports.RepositoryCredentials = RepositoryCredentials;
 class TaskDefinition extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ECS::TaskDefinition', properties);
+        super('AWS::ECS::TaskDefinition', properties || {});
     }
 }
 TaskDefinition.DockerVolumeConfiguration = DockerVolumeConfiguration;

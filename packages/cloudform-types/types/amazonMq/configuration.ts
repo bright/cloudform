@@ -35,7 +35,7 @@ export interface ConfigurationProperties {
 export default class Configuration extends ResourceBase<ConfigurationProperties> {
     static TagsEntry = TagsEntry
 
-    constructor(properties?: ConfigurationProperties) {
+    constructor(properties: ConfigurationProperties) {
         super('AWS::AmazonMQ::Configuration', properties)
     }
 }

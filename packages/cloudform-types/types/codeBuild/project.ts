@@ -196,7 +196,7 @@ export default class Project extends ResourceBase<ProjectProperties> {
     static Source = Source
     static GitSubmodulesConfig = GitSubmodulesConfig
 
-    constructor(properties?: ProjectProperties) {
+    constructor(properties: ProjectProperties) {
         super('AWS::CodeBuild::Project', properties)
     }
 }

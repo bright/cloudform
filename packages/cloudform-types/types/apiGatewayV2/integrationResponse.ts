@@ -34,7 +34,7 @@ export interface IntegrationResponseProperties {
 export default class IntegrationResponse extends ResourceBase<IntegrationResponseProperties> {
 
 
-    constructor(properties?: IntegrationResponseProperties) {
+    constructor(properties: IntegrationResponseProperties) {
         super('AWS::ApiGatewayV2::IntegrationResponse', properties)
     }
 }

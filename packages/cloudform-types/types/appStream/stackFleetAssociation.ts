@@ -22,7 +22,7 @@ export interface StackFleetAssociationProperties {
 export default class StackFleetAssociation extends ResourceBase<StackFleetAssociationProperties> {
 
 
-    constructor(properties?: StackFleetAssociationProperties) {
+    constructor(properties: StackFleetAssociationProperties) {
         super('AWS::AppStream::StackFleetAssociation', properties)
     }
 }

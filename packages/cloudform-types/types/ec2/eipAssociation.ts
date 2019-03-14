@@ -34,6 +34,6 @@ export default class EIPAssociation extends ResourceBase<EIPAssociationPropertie
 
 
     constructor(properties?: EIPAssociationProperties) {
-        super('AWS::EC2::EIPAssociation', properties)
+        super('AWS::EC2::EIPAssociation', properties || {})
     }
 }

@@ -47,5 +47,5 @@ export default class PatchBaseline extends ResourceBase<PatchBaselineProperties>
     static Rule: typeof Rule;
     static PatchFilterGroup: typeof PatchFilterGroup;
     static PatchSource: typeof PatchSource;
-    constructor(properties?: PatchBaselineProperties);
+    constructor(properties: PatchBaselineProperties);
 }

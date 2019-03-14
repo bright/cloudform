@@ -17,6 +17,6 @@ export default class ConfigurationSet extends ResourceBase<ConfigurationSetPrope
 
 
     constructor(properties?: ConfigurationSetProperties) {
-        super('AWS::SES::ConfigurationSet', properties)
+        super('AWS::SES::ConfigurationSet', properties || {})
     }
 }

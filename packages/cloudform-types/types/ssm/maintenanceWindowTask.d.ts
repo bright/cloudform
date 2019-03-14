@@ -82,5 +82,5 @@ export default class MaintenanceWindowTask extends ResourceBase<MaintenanceWindo
     static Target: typeof Target;
     static MaintenanceWindowStepFunctionsParameters: typeof MaintenanceWindowStepFunctionsParameters;
     static MaintenanceWindowRunCommandParameters: typeof MaintenanceWindowRunCommandParameters;
-    constructor(properties?: MaintenanceWindowTaskProperties);
+    constructor(properties: MaintenanceWindowTaskProperties);
 }

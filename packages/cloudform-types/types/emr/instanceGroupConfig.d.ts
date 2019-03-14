@@ -98,5 +98,5 @@ export default class InstanceGroupConfig extends ResourceBase<InstanceGroupConfi
     static VolumeSpecification: typeof VolumeSpecification;
     static AutoScalingPolicy: typeof AutoScalingPolicy;
     static EbsConfiguration: typeof EbsConfiguration;
-    constructor(properties?: InstanceGroupConfigProperties);
+    constructor(properties: InstanceGroupConfigProperties);
 }

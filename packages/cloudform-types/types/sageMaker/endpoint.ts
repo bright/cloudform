@@ -20,7 +20,7 @@ export interface EndpointProperties {
 export default class Endpoint extends ResourceBase<EndpointProperties> {
 
 
-    constructor(properties?: EndpointProperties) {
+    constructor(properties: EndpointProperties) {
         super('AWS::SageMaker::Endpoint', properties)
     }
 }

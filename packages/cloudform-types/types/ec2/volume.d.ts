@@ -12,5 +12,5 @@ export interface VolumeProperties {
     VolumeType?: Value<string>;
 }
 export default class Volume extends ResourceBase<VolumeProperties> {
-    constructor(properties?: VolumeProperties);
+    constructor(properties: VolumeProperties);
 }

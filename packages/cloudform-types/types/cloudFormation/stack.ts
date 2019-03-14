@@ -33,7 +33,7 @@ export interface StackProperties {
 export default class Stack extends ResourceBase<StackProperties> {
 
 
-    constructor(properties?: StackProperties) {
+    constructor(properties: StackProperties) {
         super('AWS::CloudFormation::Stack', properties)
     }
 }

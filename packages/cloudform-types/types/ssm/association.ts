@@ -71,7 +71,7 @@ export default class Association extends ResourceBase<AssociationProperties> {
     static ParameterValues = ParameterValues
     static S3OutputLocation = S3OutputLocation
 
-    constructor(properties?: AssociationProperties) {
+    constructor(properties: AssociationProperties) {
         super('AWS::SSM::Association', properties)
     }
 }

@@ -31,7 +31,7 @@ export interface FunctionConfigurationProperties {
 export default class FunctionConfiguration extends ResourceBase<FunctionConfigurationProperties> {
 
 
-    constructor(properties?: FunctionConfigurationProperties) {
+    constructor(properties: FunctionConfigurationProperties) {
         super('AWS::AppSync::FunctionConfiguration', properties)
     }
 }

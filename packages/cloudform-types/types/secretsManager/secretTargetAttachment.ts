@@ -30,7 +30,7 @@ export interface SecretTargetAttachmentProperties {
 export default class SecretTargetAttachment extends ResourceBase<SecretTargetAttachmentProperties> {
 
 
-    constructor(properties?: SecretTargetAttachmentProperties) {
+    constructor(properties: SecretTargetAttachmentProperties) {
         super('AWS::SecretsManager::SecretTargetAttachment', properties)
     }
 }

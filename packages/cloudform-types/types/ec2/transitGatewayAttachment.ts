@@ -30,7 +30,7 @@ export interface TransitGatewayAttachmentProperties {
 export default class TransitGatewayAttachment extends ResourceBase<TransitGatewayAttachmentProperties> {
 
 
-    constructor(properties?: TransitGatewayAttachmentProperties) {
+    constructor(properties: TransitGatewayAttachmentProperties) {
         super('AWS::EC2::TransitGatewayAttachment', properties)
     }
 }

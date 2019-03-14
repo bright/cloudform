@@ -29,7 +29,7 @@ export interface RepositoryProperties {
 export default class Repository extends ResourceBase<RepositoryProperties> {
     static RepositoryTrigger = RepositoryTrigger
 
-    constructor(properties?: RepositoryProperties) {
+    constructor(properties: RepositoryProperties) {
         super('AWS::CodeCommit::Repository', properties)
     }
 }

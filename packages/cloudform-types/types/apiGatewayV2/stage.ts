@@ -56,7 +56,7 @@ export default class Stage extends ResourceBase<StageProperties> {
     static AccessLogSettings = AccessLogSettings
     static RouteSettings = RouteSettings
 
-    constructor(properties?: StageProperties) {
+    constructor(properties: StageProperties) {
         super('AWS::ApiGatewayV2::Stage', properties)
     }
 }

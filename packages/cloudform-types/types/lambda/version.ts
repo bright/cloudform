@@ -31,7 +31,7 @@ export interface VersionProperties {
 export default class Version extends ResourceBase<VersionProperties> {
 
 
-    constructor(properties?: VersionProperties) {
+    constructor(properties: VersionProperties) {
         super('AWS::Lambda::Version', properties)
     }
 }

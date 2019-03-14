@@ -222,7 +222,7 @@ export default class DeploymentGroup extends ResourceBase<DeploymentGroupPropert
     static Deployment = Deployment
     static EC2TagSetListObject = EC2TagSetListObject
 
-    constructor(properties?: DeploymentGroupProperties) {
+    constructor(properties: DeploymentGroupProperties) {
         super('AWS::CodeDeploy::DeploymentGroup', properties)
     }
 }

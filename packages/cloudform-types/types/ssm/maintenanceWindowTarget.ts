@@ -38,7 +38,7 @@ export interface MaintenanceWindowTargetProperties {
 export default class MaintenanceWindowTarget extends ResourceBase<MaintenanceWindowTargetProperties> {
     static Targets = Targets
 
-    constructor(properties?: MaintenanceWindowTargetProperties) {
+    constructor(properties: MaintenanceWindowTargetProperties) {
         super('AWS::SSM::MaintenanceWindowTarget', properties)
     }
 }

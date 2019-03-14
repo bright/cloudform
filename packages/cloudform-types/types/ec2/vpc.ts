@@ -33,7 +33,7 @@ export interface VPCProperties {
 export default class VPC extends ResourceBase<VPCProperties> {
 
 
-    constructor(properties?: VPCProperties) {
+    constructor(properties: VPCProperties) {
         super('AWS::EC2::VPC', properties)
     }
 }

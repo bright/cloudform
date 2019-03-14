@@ -22,7 +22,7 @@ export interface ResourceGroupProperties {
 export default class ResourceGroup extends ResourceBase<ResourceGroupProperties> {
 
 
-    constructor(properties?: ResourceGroupProperties) {
+    constructor(properties: ResourceGroupProperties) {
         super('AWS::Inspector::ResourceGroup', properties)
     }
 }

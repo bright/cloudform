@@ -17,7 +17,7 @@ export interface VPCEndpointConnectionNotificationProperties {
 export default class VPCEndpointConnectionNotification extends ResourceBase<VPCEndpointConnectionNotificationProperties> {
 
 
-    constructor(properties?: VPCEndpointConnectionNotificationProperties) {
+    constructor(properties: VPCEndpointConnectionNotificationProperties) {
         super('AWS::EC2::VPCEndpointConnectionNotification', properties)
     }
 }

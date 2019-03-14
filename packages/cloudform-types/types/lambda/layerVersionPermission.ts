@@ -31,7 +31,7 @@ export interface LayerVersionPermissionProperties {
 export default class LayerVersionPermission extends ResourceBase<LayerVersionPermissionProperties> {
 
 
-    constructor(properties?: LayerVersionPermissionProperties) {
+    constructor(properties: LayerVersionPermissionProperties) {
         super('AWS::Lambda::LayerVersionPermission', properties)
     }
 }

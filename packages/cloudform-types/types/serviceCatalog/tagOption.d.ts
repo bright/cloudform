@@ -6,5 +6,5 @@ export interface TagOptionProperties {
     Key: Value<string>;
 }
 export default class TagOption extends ResourceBase<TagOptionProperties> {
-    constructor(properties?: TagOptionProperties);
+    constructor(properties: TagOptionProperties);
 }

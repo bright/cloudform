@@ -43,6 +43,6 @@ export default class ApiKey extends ResourceBase<ApiKeyProperties> {
     static StageKey = StageKey
 
     constructor(properties?: ApiKeyProperties) {
-        super('AWS::ApiGateway::ApiKey', properties)
+        super('AWS::ApiGateway::ApiKey', properties || {})
     }
 }

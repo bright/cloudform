@@ -73,5 +73,5 @@ export default class Listener extends ResourceBase<ListenerProperties> {
     static Action: typeof Action;
     static FixedResponseConfig: typeof FixedResponseConfig;
     static Certificate: typeof Certificate;
-    constructor(properties?: ListenerProperties);
+    constructor(properties: ListenerProperties);
 }

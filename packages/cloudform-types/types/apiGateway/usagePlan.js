@@ -39,7 +39,7 @@ class QuotaSettings {
 exports.QuotaSettings = QuotaSettings;
 class UsagePlan extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::ApiGateway::UsagePlan', properties);
+        super('AWS::ApiGateway::UsagePlan', properties || {});
     }
 }
 UsagePlan.ApiStage = ApiStage;

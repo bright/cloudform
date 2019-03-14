@@ -23,7 +23,7 @@ export interface PlacementProperties {
 export default class Placement extends ResourceBase<PlacementProperties> {
 
 
-    constructor(properties?: PlacementProperties) {
+    constructor(properties: PlacementProperties) {
         super('AWS::IoT1Click::Placement', properties)
     }
 }

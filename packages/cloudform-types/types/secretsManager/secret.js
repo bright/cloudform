@@ -26,7 +26,7 @@ class GenerateSecretString {
 exports.GenerateSecretString = GenerateSecretString;
 class Secret extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::SecretsManager::Secret', properties);
+        super('AWS::SecretsManager::Secret', properties || {});
     }
 }
 Secret.GenerateSecretString = GenerateSecretString;

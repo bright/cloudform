@@ -35,5 +35,5 @@ export default class StreamingDistribution extends ResourceBase<StreamingDistrib
     static S3Origin: typeof S3Origin;
     static Logging: typeof Logging;
     static StreamingDistributionConfig: typeof StreamingDistributionConfig;
-    constructor(properties?: StreamingDistributionProperties);
+    constructor(properties: StreamingDistributionProperties);
 }

@@ -24,5 +24,5 @@ export interface OptionGroupProperties {
 export default class OptionGroup extends ResourceBase<OptionGroupProperties> {
     static OptionSetting: typeof OptionSetting;
     static OptionConfiguration: typeof OptionConfiguration;
-    constructor(properties?: OptionGroupProperties);
+    constructor(properties: OptionGroupProperties);
 }

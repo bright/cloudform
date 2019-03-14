@@ -145,5 +145,5 @@ export default class Distribution extends ResourceBase<DistributionProperties> {
     static Logging: typeof Logging;
     static DistributionConfig: typeof DistributionConfig;
     static OriginCustomHeader: typeof OriginCustomHeader;
-    constructor(properties?: DistributionProperties);
+    constructor(properties: DistributionProperties);
 }

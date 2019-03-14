@@ -9,5 +9,5 @@ export interface MemberProperties {
     DetectorId: Value<string>;
 }
 export default class Member extends ResourceBase<MemberProperties> {
-    constructor(properties?: MemberProperties);
+    constructor(properties: MemberProperties);
 }

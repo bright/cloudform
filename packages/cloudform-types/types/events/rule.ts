@@ -108,6 +108,6 @@ export default class Rule extends ResourceBase<RuleProperties> {
     static EcsParameters = EcsParameters
 
     constructor(properties?: RuleProperties) {
-        super('AWS::Events::Rule', properties)
+        super('AWS::Events::Rule', properties || {})
     }
 }

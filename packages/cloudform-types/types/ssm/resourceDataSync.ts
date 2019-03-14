@@ -33,7 +33,7 @@ export interface ResourceDataSyncProperties {
 export default class ResourceDataSync extends ResourceBase<ResourceDataSyncProperties> {
 
 
-    constructor(properties?: ResourceDataSyncProperties) {
+    constructor(properties: ResourceDataSyncProperties) {
         super('AWS::SSM::ResourceDataSync', properties)
     }
 }

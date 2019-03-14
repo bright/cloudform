@@ -30,5 +30,5 @@ export default class HostedZone extends ResourceBase<HostedZoneProperties> {
     static HostedZoneConfig: typeof HostedZoneConfig;
     static QueryLoggingConfig: typeof QueryLoggingConfig;
     static VPC: typeof VPC;
-    constructor(properties?: HostedZoneProperties);
+    constructor(properties: HostedZoneProperties);
 }

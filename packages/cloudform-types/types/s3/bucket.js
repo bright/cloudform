@@ -261,7 +261,7 @@ class PublicAccessBlockConfiguration {
 exports.PublicAccessBlockConfiguration = PublicAccessBlockConfiguration;
 class Bucket extends resource_1.ResourceBase {
     constructor(properties) {
-        super('AWS::S3::Bucket', properties);
+        super('AWS::S3::Bucket', properties || {});
     }
 }
 Bucket.BucketEncryption = BucketEncryption;

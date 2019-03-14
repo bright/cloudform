@@ -31,7 +31,7 @@ export interface AccessKeyProperties {
 export default class AccessKey extends ResourceBase<AccessKeyProperties> {
 
 
-    constructor(properties?: AccessKeyProperties) {
+    constructor(properties: AccessKeyProperties) {
         super('AWS::IAM::AccessKey', properties)
     }
 }

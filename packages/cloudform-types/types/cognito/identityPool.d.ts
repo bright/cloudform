@@ -37,5 +37,5 @@ export default class IdentityPool extends ResourceBase<IdentityPoolProperties> {
     static PushSync: typeof PushSync;
     static CognitoIdentityProvider: typeof CognitoIdentityProvider;
     static CognitoStreams: typeof CognitoStreams;
-    constructor(properties?: IdentityPoolProperties);
+    constructor(properties: IdentityPoolProperties);
 }

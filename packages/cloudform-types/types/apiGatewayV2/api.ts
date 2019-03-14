@@ -34,7 +34,7 @@ export interface ApiProperties {
 export default class Api extends ResourceBase<ApiProperties> {
 
 
-    constructor(properties?: ApiProperties) {
+    constructor(properties: ApiProperties) {
         super('AWS::ApiGatewayV2::Api', properties)
     }
 }

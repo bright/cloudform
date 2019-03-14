@@ -16,5 +16,5 @@ export interface ReceiptFilterProperties {
 export default class ReceiptFilter extends ResourceBase<ReceiptFilterProperties> {
     static Filter: typeof Filter;
     static IpFilter: typeof IpFilter;
-    constructor(properties?: ReceiptFilterProperties);
+    constructor(properties: ReceiptFilterProperties);
 }

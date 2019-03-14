@@ -67,5 +67,5 @@ export default class Endpoint extends ResourceBase<EndpointProperties> {
     static MongoDbSettings: typeof MongoDbSettings;
     static ElasticsearchSettings: typeof ElasticsearchSettings;
     static DynamoDbSettings: typeof DynamoDbSettings;
-    constructor(properties?: EndpointProperties);
+    constructor(properties: EndpointProperties);
 }

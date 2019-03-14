@@ -36,7 +36,7 @@ export interface RotationScheduleProperties {
 export default class RotationSchedule extends ResourceBase<RotationScheduleProperties> {
     static RotationRules = RotationRules
 
-    constructor(properties?: RotationScheduleProperties) {
+    constructor(properties: RotationScheduleProperties) {
         super('AWS::SecretsManager::RotationSchedule', properties)
     }
 }

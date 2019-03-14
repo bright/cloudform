@@ -470,6 +470,6 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static PublicAccessBlockConfiguration = PublicAccessBlockConfiguration
 
     constructor(properties?: BucketProperties) {
-        super('AWS::S3::Bucket', properties)
+        super('AWS::S3::Bucket', properties || {})
     }
 }

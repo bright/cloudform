@@ -33,7 +33,7 @@ export default class ReceiptFilter extends ResourceBase<ReceiptFilterProperties>
     static Filter = Filter
     static IpFilter = IpFilter
 
-    constructor(properties?: ReceiptFilterProperties) {
+    constructor(properties: ReceiptFilterProperties) {
         super('AWS::SES::ReceiptFilter', properties)
     }
 }

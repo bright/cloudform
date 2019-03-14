@@ -24,5 +24,5 @@ export interface NetworkAclEntryProperties {
 export default class NetworkAclEntry extends ResourceBase<NetworkAclEntryProperties> {
     static Icmp: typeof Icmp;
     static PortRange: typeof PortRange;
-    constructor(properties?: NetworkAclEntryProperties);
+    constructor(properties: NetworkAclEntryProperties);
 }

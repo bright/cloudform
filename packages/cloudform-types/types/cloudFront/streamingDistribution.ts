@@ -72,7 +72,7 @@ export default class StreamingDistribution extends ResourceBase<StreamingDistrib
     static Logging = Logging
     static StreamingDistributionConfig = StreamingDistributionConfig
 
-    constructor(properties?: StreamingDistributionProperties) {
+    constructor(properties: StreamingDistributionProperties) {
         super('AWS::CloudFront::StreamingDistribution', properties)
     }
 }

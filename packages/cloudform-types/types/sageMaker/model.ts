@@ -49,7 +49,7 @@ export default class Model extends ResourceBase<ModelProperties> {
     static VpcConfig = VpcConfig
     static ContainerDefinition = ContainerDefinition
 
-    constructor(properties?: ModelProperties) {
+    constructor(properties: ModelProperties) {
         super('AWS::SageMaker::Model', properties)
     }
 }

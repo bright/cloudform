@@ -21,7 +21,7 @@ export interface ApiKeyProperties {
 export default class ApiKey extends ResourceBase<ApiKeyProperties> {
 
 
-    constructor(properties?: ApiKeyProperties) {
+    constructor(properties: ApiKeyProperties) {
         super('AWS::AppSync::ApiKey', properties)
     }
 }

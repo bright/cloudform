@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const waitCondition_1 = require("./waitCondition");
-const stack_1 = require("./stack");
-const waitConditionHandle_1 = require("./waitConditionHandle");
-const macro_1 = require("./macro");
-const customResource_1 = require("./customResource");
-exports.default = {
-    WaitCondition: waitCondition_1.default,
-    Stack: stack_1.default,
-    WaitConditionHandle: waitConditionHandle_1.default,
-    Macro: macro_1.default,
-    CustomResource: customResource_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.CloudFormation;

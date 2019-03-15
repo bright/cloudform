@@ -18,17 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const simulationApplication_1 = require("./simulationApplication");
-const simulationApplicationVersion_1 = require("./simulationApplicationVersion");
-const robotApplicationVersion_1 = require("./robotApplicationVersion");
-const robotApplication_1 = require("./robotApplication");
-const robot_1 = require("./robot");
-const fleet_1 = require("./fleet");
-exports.default = {
-    SimulationApplication: simulationApplication_1.default,
-    SimulationApplicationVersion: simulationApplicationVersion_1.default,
-    RobotApplicationVersion: robotApplicationVersion_1.default,
-    RobotApplication: robotApplication_1.default,
-    Robot: robot_1.default,
-    Fleet: fleet_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.RoboMaker;

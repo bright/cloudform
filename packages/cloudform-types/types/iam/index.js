@@ -18,23 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const group_1 = require("./group");
-const policy_1 = require("./policy");
-const role_1 = require("./role");
-const serviceLinkedRole_1 = require("./serviceLinkedRole");
-const userToGroupAddition_1 = require("./userToGroupAddition");
-const instanceProfile_1 = require("./instanceProfile");
-const accessKey_1 = require("./accessKey");
-const user_1 = require("./user");
-const managedPolicy_1 = require("./managedPolicy");
-exports.default = {
-    Group: group_1.default,
-    Policy: policy_1.default,
-    Role: role_1.default,
-    ServiceLinkedRole: serviceLinkedRole_1.default,
-    UserToGroupAddition: userToGroupAddition_1.default,
-    InstanceProfile: instanceProfile_1.default,
-    AccessKey: accessKey_1.default,
-    User: user_1.default,
-    ManagedPolicy: managedPolicy_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.IAM;

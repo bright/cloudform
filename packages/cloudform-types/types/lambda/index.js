@@ -18,19 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const eventSourceMapping_1 = require("./eventSourceMapping");
-const layerVersion_1 = require("./layerVersion");
-const alias_1 = require("./alias");
-const layerVersionPermission_1 = require("./layerVersionPermission");
-const function_1 = require("./function");
-const version_1 = require("./version");
-const permission_1 = require("./permission");
-exports.default = {
-    EventSourceMapping: eventSourceMapping_1.default,
-    LayerVersion: layerVersion_1.default,
-    Alias: alias_1.default,
-    LayerVersionPermission: layerVersionPermission_1.default,
-    Function: function_1.default,
-    Version: version_1.default,
-    Permission: permission_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Lambda;

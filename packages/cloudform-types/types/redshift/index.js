@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const cluster_1 = require("./cluster");
-const clusterParameterGroup_1 = require("./clusterParameterGroup");
-const clusterSecurityGroupIngress_1 = require("./clusterSecurityGroupIngress");
-const clusterSubnetGroup_1 = require("./clusterSubnetGroup");
-const clusterSecurityGroup_1 = require("./clusterSecurityGroup");
-exports.default = {
-    Cluster: cluster_1.default,
-    ClusterParameterGroup: clusterParameterGroup_1.default,
-    ClusterSecurityGroupIngress: clusterSecurityGroupIngress_1.default,
-    ClusterSubnetGroup: clusterSubnetGroup_1.default,
-    ClusterSecurityGroup: clusterSecurityGroup_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Redshift;

@@ -17,24 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Group from './group'
-import Policy from './policy'
-import Role from './role'
-import ServiceLinkedRole from './serviceLinkedRole'
-import UserToGroupAddition from './userToGroupAddition'
-import InstanceProfile from './instanceProfile'
-import AccessKey from './accessKey'
-import User from './user'
-import ManagedPolicy from './managedPolicy' 
+import {IAM} from './index.namespace'
 
-export default {
-  Group,
-  Policy,
-  Role,
-  ServiceLinkedRole,
-  UserToGroupAddition,
-  InstanceProfile,
-  AccessKey,
-  User,
-  ManagedPolicy
-}
+export default IAM

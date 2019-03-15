@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const instance_1 = require("./instance");
-const service_1 = require("./service");
-const privateDnsNamespace_1 = require("./privateDnsNamespace");
-const publicDnsNamespace_1 = require("./publicDnsNamespace");
-const httpNamespace_1 = require("./httpNamespace");
-exports.default = {
-    Instance: instance_1.default,
-    Service: service_1.default,
-    PrivateDnsNamespace: privateDnsNamespace_1.default,
-    PublicDnsNamespace: publicDnsNamespace_1.default,
-    HttpNamespace: httpNamespace_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.ServiceDiscovery;

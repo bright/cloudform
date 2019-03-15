@@ -1,5 +1,2 @@
-import LifecyclePolicy from './lifecyclePolicy';
-declare const _default: {
-    LifecyclePolicy: typeof LifecyclePolicy;
-};
-export default _default;
+import { DLM } from './index.namespace';
+export default DLM;

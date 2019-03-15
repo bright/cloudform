@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const deliveryChannel_1 = require("./deliveryChannel");
-const configurationAggregator_1 = require("./configurationAggregator");
-const aggregationAuthorization_1 = require("./aggregationAuthorization");
-const configurationRecorder_1 = require("./configurationRecorder");
-const configRule_1 = require("./configRule");
-exports.default = {
-    DeliveryChannel: deliveryChannel_1.default,
-    ConfigurationAggregator: configurationAggregator_1.default,
-    AggregationAuthorization: aggregationAuthorization_1.default,
-    ConfigurationRecorder: configurationRecorder_1.default,
-    ConfigRule: configRule_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Config;

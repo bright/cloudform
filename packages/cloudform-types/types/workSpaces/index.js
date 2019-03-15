@@ -18,7 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const workspace_1 = require("./workspace");
-exports.default = {
-    Workspace: workspace_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.WorkSpaces;

@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import LaunchConfiguration from './launchConfiguration'
-import LifecycleHook from './lifecycleHook'
-import ScalingPolicy from './scalingPolicy'
-import AutoScalingGroup from './autoScalingGroup'
-import ScheduledAction from './scheduledAction' 
+import {AutoScaling} from './index.namespace'
 
-export default {
-  LaunchConfiguration,
-  LifecycleHook,
-  ScalingPolicy,
-  AutoScalingGroup,
-  ScheduledAction
-}
+export default AutoScaling

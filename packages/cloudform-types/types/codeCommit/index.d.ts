@@ -1,5 +1,2 @@
-import Repository from './repository';
-declare const _default: {
-    Repository: typeof Repository;
-};
-export default _default;
+import { CodeCommit } from './index.namespace';
+export default CodeCommit;

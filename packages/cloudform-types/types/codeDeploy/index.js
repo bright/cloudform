@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const deploymentGroup_1 = require("./deploymentGroup");
-const deploymentConfig_1 = require("./deploymentConfig");
-const application_1 = require("./application");
-exports.default = {
-    DeploymentGroup: deploymentGroup_1.default,
-    DeploymentConfig: deploymentConfig_1.default,
-    Application: application_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.CodeDeploy;

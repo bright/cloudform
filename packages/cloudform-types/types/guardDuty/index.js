@@ -18,17 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const filter_1 = require("./filter");
-const threatIntelSet_1 = require("./threatIntelSet");
-const member_1 = require("./member");
-const detector_1 = require("./detector");
-const ipSet_1 = require("./ipSet");
-const master_1 = require("./master");
-exports.default = {
-    Filter: filter_1.default,
-    ThreatIntelSet: threatIntelSet_1.default,
-    Member: member_1.default,
-    Detector: detector_1.default,
-    IPSet: ipSet_1.default,
-    Master: master_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.GuardDuty;

@@ -1,0 +1,38 @@
+import PortfolioShare_ from './portfolioShare';
+import TagOptionAssociation_ from './tagOptionAssociation';
+import LaunchTemplateConstraint_ from './launchTemplateConstraint';
+import TagOption_ from './tagOption';
+import PortfolioPrincipalAssociation_ from './portfolioPrincipalAssociation';
+import CloudFormationProvisionedProduct_ from './cloudFormationProvisionedProduct';
+import LaunchRoleConstraint_ from './launchRoleConstraint';
+import CloudFormationProduct_ from './cloudFormationProduct';
+import PortfolioProductAssociation_ from './portfolioProductAssociation';
+import Portfolio_ from './portfolio';
+import AcceptedPortfolioShare_ from './acceptedPortfolioShare';
+import LaunchNotificationConstraint_ from './launchNotificationConstraint';
+export declare namespace ServiceCatalog {
+    const PortfolioShare: typeof PortfolioShare_;
+    const TagOptionAssociation: typeof TagOptionAssociation_;
+    const LaunchTemplateConstraint: typeof LaunchTemplateConstraint_;
+    const TagOption: typeof TagOption_;
+    const PortfolioPrincipalAssociation: typeof PortfolioPrincipalAssociation_;
+    const CloudFormationProvisionedProduct: typeof CloudFormationProvisionedProduct_;
+    const LaunchRoleConstraint: typeof LaunchRoleConstraint_;
+    const CloudFormationProduct: typeof CloudFormationProduct_;
+    const PortfolioProductAssociation: typeof PortfolioProductAssociation_;
+    const Portfolio: typeof Portfolio_;
+    const AcceptedPortfolioShare: typeof AcceptedPortfolioShare_;
+    const LaunchNotificationConstraint: typeof LaunchNotificationConstraint_;
+    type PortfolioShare = PortfolioShare_;
+    type TagOptionAssociation = TagOptionAssociation_;
+    type LaunchTemplateConstraint = LaunchTemplateConstraint_;
+    type TagOption = TagOption_;
+    type PortfolioPrincipalAssociation = PortfolioPrincipalAssociation_;
+    type CloudFormationProvisionedProduct = CloudFormationProvisionedProduct_;
+    type LaunchRoleConstraint = LaunchRoleConstraint_;
+    type CloudFormationProduct = CloudFormationProduct_;
+    type PortfolioProductAssociation = PortfolioProductAssociation_;
+    type Portfolio = Portfolio_;
+    type AcceptedPortfolioShare = AcceptedPortfolioShare_;
+    type LaunchNotificationConstraint = LaunchNotificationConstraint_;
+}

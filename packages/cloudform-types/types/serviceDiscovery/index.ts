@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Instance from './instance'
-import Service from './service'
-import PrivateDnsNamespace from './privateDnsNamespace'
-import PublicDnsNamespace from './publicDnsNamespace'
-import HttpNamespace from './httpNamespace' 
+import {ServiceDiscovery} from './index.namespace'
 
-export default {
-  Instance,
-  Service,
-  PrivateDnsNamespace,
-  PublicDnsNamespace,
-  HttpNamespace
-}
+export default ServiceDiscovery

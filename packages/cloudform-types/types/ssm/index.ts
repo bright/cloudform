@@ -17,22 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Document from './document'
-import PatchBaseline from './patchBaseline'
-import MaintenanceWindow from './maintenanceWindow'
-import Parameter from './parameter'
-import ResourceDataSync from './resourceDataSync'
-import Association from './association'
-import MaintenanceWindowTask from './maintenanceWindowTask'
-import MaintenanceWindowTarget from './maintenanceWindowTarget' 
+import {SSM} from './index.namespace'
 
-export default {
-  Document,
-  PatchBaseline,
-  MaintenanceWindow,
-  Parameter,
-  ResourceDataSync,
-  Association,
-  MaintenanceWindowTask,
-  MaintenanceWindowTarget
-}
+export default SSM

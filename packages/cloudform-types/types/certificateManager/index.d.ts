@@ -1,5 +1,2 @@
-import Certificate from './certificate';
-declare const _default: {
-    Certificate: typeof Certificate;
-};
-export default _default;
+import { CertificateManager } from './index.namespace';
+export default CertificateManager;

@@ -17,14 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import RecordSet from './recordSet'
-import HostedZone from './hostedZone'
-import RecordSetGroup from './recordSetGroup'
-import HealthCheck from './healthCheck' 
+import {Route53} from './index.namespace'
 
-export default {
-  RecordSet,
-  HostedZone,
-  RecordSetGroup,
-  HealthCheck
-}
+export default Route53

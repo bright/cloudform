@@ -18,21 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const document_1 = require("./document");
-const patchBaseline_1 = require("./patchBaseline");
-const maintenanceWindow_1 = require("./maintenanceWindow");
-const parameter_1 = require("./parameter");
-const resourceDataSync_1 = require("./resourceDataSync");
-const association_1 = require("./association");
-const maintenanceWindowTask_1 = require("./maintenanceWindowTask");
-const maintenanceWindowTarget_1 = require("./maintenanceWindowTarget");
-exports.default = {
-    Document: document_1.default,
-    PatchBaseline: patchBaseline_1.default,
-    MaintenanceWindow: maintenanceWindow_1.default,
-    Parameter: parameter_1.default,
-    ResourceDataSync: resourceDataSync_1.default,
-    Association: association_1.default,
-    MaintenanceWindowTask: maintenanceWindowTask_1.default,
-    MaintenanceWindowTarget: maintenanceWindowTarget_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SSM;

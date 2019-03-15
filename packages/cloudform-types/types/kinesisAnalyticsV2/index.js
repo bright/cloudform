@@ -18,13 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const applicationOutput_1 = require("./applicationOutput");
-const applicationCloudWatchLoggingOption_1 = require("./applicationCloudWatchLoggingOption");
-const applicationReferenceDataSource_1 = require("./applicationReferenceDataSource");
-const application_1 = require("./application");
-exports.default = {
-    ApplicationOutput: applicationOutput_1.default,
-    ApplicationCloudWatchLoggingOption: applicationCloudWatchLoggingOption_1.default,
-    ApplicationReferenceDataSource: applicationReferenceDataSource_1.default,
-    Application: application_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.KinesisAnalyticsV2;

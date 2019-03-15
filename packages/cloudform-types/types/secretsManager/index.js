@@ -18,13 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const rotationSchedule_1 = require("./rotationSchedule");
-const secret_1 = require("./secret");
-const resourcePolicy_1 = require("./resourcePolicy");
-const secretTargetAttachment_1 = require("./secretTargetAttachment");
-exports.default = {
-    RotationSchedule: rotationSchedule_1.default,
-    Secret: secret_1.default,
-    ResourcePolicy: resourcePolicy_1.default,
-    SecretTargetAttachment: secretTargetAttachment_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SecretsManager;

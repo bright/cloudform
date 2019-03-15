@@ -18,17 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const receiptFilter_1 = require("./receiptFilter");
-const receiptRule_1 = require("./receiptRule");
-const configurationSetEventDestination_1 = require("./configurationSetEventDestination");
-const template_1 = require("./template");
-const configurationSet_1 = require("./configurationSet");
-const receiptRuleSet_1 = require("./receiptRuleSet");
-exports.default = {
-    ReceiptFilter: receiptFilter_1.default,
-    ReceiptRule: receiptRule_1.default,
-    ConfigurationSetEventDestination: configurationSetEventDestination_1.default,
-    Template: template_1.default,
-    ConfigurationSet: configurationSet_1.default,
-    ReceiptRuleSet: receiptRuleSet_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SES;

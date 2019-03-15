@@ -1,5 +1,2 @@
-import Project from './project';
-declare const _default: {
-    Project: typeof Project;
-};
-export default _default;
+import { CodeBuild } from './index.namespace';
+export default CodeBuild;

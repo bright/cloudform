@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const streamingDistribution_1 = require("./streamingDistribution");
-const distribution_1 = require("./distribution");
-const cloudFrontOriginAccessIdentity_1 = require("./cloudFrontOriginAccessIdentity");
-exports.default = {
-    StreamingDistribution: streamingDistribution_1.default,
-    Distribution: distribution_1.default,
-    CloudFrontOriginAccessIdentity: cloudFrontOriginAccessIdentity_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.CloudFront;

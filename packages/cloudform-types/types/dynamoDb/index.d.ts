@@ -1,5 +1,2 @@
-import Table from './table';
-declare const _default: {
-    Table: typeof Table;
-};
-export default _default;
+import { DynamoDB } from './index.namespace';
+export default DynamoDB;

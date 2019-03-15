@@ -17,10 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Activity from './activity'
-import StateMachine from './stateMachine' 
+import {StepFunctions} from './index.namespace'
 
-export default {
-  Activity,
-  StateMachine
-}
+export default StepFunctions

@@ -17,18 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import ReceiptFilter from './receiptFilter'
-import ReceiptRule from './receiptRule'
-import ConfigurationSetEventDestination from './configurationSetEventDestination'
-import Template from './template'
-import ConfigurationSet from './configurationSet'
-import ReceiptRuleSet from './receiptRuleSet' 
+import {SES} from './index.namespace'
 
-export default {
-  ReceiptFilter,
-  ReceiptRule,
-  ConfigurationSetEventDestination,
-  Template,
-  ConfigurationSet,
-  ReceiptRuleSet
-}
+export default SES

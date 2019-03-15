@@ -18,13 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const dataset_1 = require("./dataset");
-const channel_1 = require("./channel");
-const pipeline_1 = require("./pipeline");
-const datastore_1 = require("./datastore");
-exports.default = {
-    Dataset: dataset_1.default,
-    Channel: channel_1.default,
-    Pipeline: pipeline_1.default,
-    Datastore: datastore_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.IoTAnalytics;

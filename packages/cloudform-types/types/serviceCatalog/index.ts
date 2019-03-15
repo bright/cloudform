@@ -17,30 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import PortfolioShare from './portfolioShare'
-import TagOptionAssociation from './tagOptionAssociation'
-import LaunchTemplateConstraint from './launchTemplateConstraint'
-import TagOption from './tagOption'
-import PortfolioPrincipalAssociation from './portfolioPrincipalAssociation'
-import CloudFormationProvisionedProduct from './cloudFormationProvisionedProduct'
-import LaunchRoleConstraint from './launchRoleConstraint'
-import CloudFormationProduct from './cloudFormationProduct'
-import PortfolioProductAssociation from './portfolioProductAssociation'
-import Portfolio from './portfolio'
-import AcceptedPortfolioShare from './acceptedPortfolioShare'
-import LaunchNotificationConstraint from './launchNotificationConstraint' 
+import {ServiceCatalog} from './index.namespace'
 
-export default {
-  PortfolioShare,
-  TagOptionAssociation,
-  LaunchTemplateConstraint,
-  TagOption,
-  PortfolioPrincipalAssociation,
-  CloudFormationProvisionedProduct,
-  LaunchRoleConstraint,
-  CloudFormationProduct,
-  PortfolioProductAssociation,
-  Portfolio,
-  AcceptedPortfolioShare,
-  LaunchNotificationConstraint
-}
+export default ServiceCatalog

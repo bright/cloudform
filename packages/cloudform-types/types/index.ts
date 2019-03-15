@@ -17,718 +17,255 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
+import ElasticBeanstalk from './elasticBeanstalk'
+export {ElasticBeanstalk}
 
-import ElasticBeanstalk_ from './elasticBeanstalk'
-export const ElasticBeanstalk = ElasticBeanstalk_
-
-import ElasticBeanstalkConfigurationTemplate from './elasticBeanstalk/configurationTemplate'
-import ElasticBeanstalkApplication from './elasticBeanstalk/application'
-import ElasticBeanstalkEnvironment from './elasticBeanstalk/environment'
-import ElasticBeanstalkApplicationVersion from './elasticBeanstalk/applicationVersion'
-
-import AmazonMQ_ from './amazonMq'
-export const AmazonMQ = AmazonMQ_
-
-import AmazonMQBroker from './amazonMq/broker'
-import AmazonMQConfigurationAssociation from './amazonMq/configurationAssociation'
-import AmazonMQConfiguration from './amazonMq/configuration'
-
-import AppSync_ from './appSync'
-export const AppSync = AppSync_
-
-import AppSyncDataSource from './appSync/dataSource'
-import AppSyncResolver from './appSync/resolver'
-import AppSyncGraphQLSchema from './appSync/graphQlSchema'
-import AppSyncGraphQLApi from './appSync/graphQlApi'
-import AppSyncFunctionConfiguration from './appSync/functionConfiguration'
-import AppSyncApiKey from './appSync/apiKey'
-
-import EC2_ from './ec2'
-export const EC2 = EC2_
-
-import EC2RouteTable from './ec2/routeTable'
-import EC2PlacementGroup from './ec2/placementGroup'
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection'
-import EC2TransitGateway from './ec2/transitGateway'
-import EC2VPCEndpointServicePermissions from './ec2/vpcEndpointServicePermissions'
-import EC2NetworkAclEntry from './ec2/networkAclEntry'
-import EC2InternetGateway from './ec2/internetGateway'
-import EC2LaunchTemplate from './ec2/launchTemplate'
-import EC2Volume from './ec2/volume'
-import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation'
-import EC2SpotFleet from './ec2/spotFleet'
-import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute'
-import EC2NetworkInterfacePermission from './ec2/networkInterfacePermission'
-import EC2EIP from './ec2/eip'
-import EC2SecurityGroupIngress from './ec2/securityGroupIngress'
-import EC2SubnetRouteTableAssociation from './ec2/subnetRouteTableAssociation'
-import EC2Route from './ec2/route'
-import EC2FlowLog from './ec2/flowLog'
-import EC2TransitGatewayRouteTablePropagation from './ec2/transitGatewayRouteTablePropagation'
-import EC2SecurityGroupEgress from './ec2/securityGroupEgress'
-import EC2NetworkInterface from './ec2/networkInterface'
-import EC2TransitGatewayAttachment from './ec2/transitGatewayAttachment'
-import EC2SubnetNetworkAclAssociation from './ec2/subnetNetworkAclAssociation'
-import EC2SubnetCidrBlock from './ec2/subnetCidrBlock'
-import EC2NatGateway from './ec2/natGateway'
-import EC2SecurityGroup from './ec2/securityGroup'
-import EC2Subnet from './ec2/subnet'
-import EC2VPC from './ec2/vpc'
-import EC2Instance from './ec2/instance'
-import EC2DHCPOptions from './ec2/dhcpOptions'
-import EC2TransitGatewayRoute from './ec2/transitGatewayRoute'
-import EC2NetworkAcl from './ec2/networkAcl'
-import EC2VPNGatewayRoutePropagation from './ec2/vpnGatewayRoutePropagation'
-import EC2EgressOnlyInternetGateway from './ec2/egressOnlyInternetGateway'
-import EC2NetworkInterfaceAttachment from './ec2/networkInterfaceAttachment'
-import EC2CustomerGateway from './ec2/customerGateway'
-import EC2TrunkInterfaceAssociation from './ec2/trunkInterfaceAssociation'
-import EC2VolumeAttachment from './ec2/volumeAttachment'
-import EC2Host from './ec2/host'
-import EC2EIPAssociation from './ec2/eipAssociation'
-import EC2VPNGateway from './ec2/vpnGateway'
-import EC2VPCEndpoint from './ec2/vpcEndpoint'
-import EC2VPCGatewayAttachment from './ec2/vpcGatewayAttachment'
-import EC2VPNConnection from './ec2/vpnConnection'
-import EC2VPCCidrBlock from './ec2/vpcCidrBlock'
-import EC2EC2Fleet from './ec2/ec2Fleet'
-import EC2TransitGatewayRouteTable from './ec2/transitGatewayRouteTable'
-import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation'
-import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification'
-
-import ServiceCatalog_ from './serviceCatalog'
-export const ServiceCatalog = ServiceCatalog_
-
-import ServiceCatalogPortfolioShare from './serviceCatalog/portfolioShare'
-import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssociation'
-import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint'
-import ServiceCatalogTagOption from './serviceCatalog/tagOption'
-import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation'
-import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct'
-import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint'
-import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct'
-import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation'
-import ServiceCatalogPortfolio from './serviceCatalog/portfolio'
-import ServiceCatalogAcceptedPortfolioShare from './serviceCatalog/acceptedPortfolioShare'
-import ServiceCatalogLaunchNotificationConstraint from './serviceCatalog/launchNotificationConstraint'
-
-import Cognito_ from './cognito'
-export const Cognito = Cognito_
-
-import CognitoIdentityPoolRoleAttachment from './cognito/identityPoolRoleAttachment'
-import CognitoUserPoolGroup from './cognito/userPoolGroup'
-import CognitoIdentityPool from './cognito/identityPool'
-import CognitoUserPoolUser from './cognito/userPoolUser'
-import CognitoUserPool from './cognito/userPool'
-import CognitoUserPoolClient from './cognito/userPoolClient'
-import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment'
-
-import Greengrass_ from './greengrass'
-export const Greengrass = Greengrass_
-
-import GreengrassGroup from './greengrass/group'
-import GreengrassConnectorDefinition from './greengrass/connectorDefinition'
-import GreengrassConnectorDefinitionVersion from './greengrass/connectorDefinitionVersion'
-import GreengrassFunctionDefinition from './greengrass/functionDefinition'
-import GreengrassSubscriptionDefinitionVersion from './greengrass/subscriptionDefinitionVersion'
-import GreengrassCoreDefinitionVersion from './greengrass/coreDefinitionVersion'
-import GreengrassDeviceDefinition from './greengrass/deviceDefinition'
-import GreengrassLoggerDefinition from './greengrass/loggerDefinition'
-import GreengrassCoreDefinition from './greengrass/coreDefinition'
-import GreengrassDeviceDefinitionVersion from './greengrass/deviceDefinitionVersion'
-import GreengrassSubscriptionDefinition from './greengrass/subscriptionDefinition'
-import GreengrassResourceDefinitionVersion from './greengrass/resourceDefinitionVersion'
-import GreengrassLoggerDefinitionVersion from './greengrass/loggerDefinitionVersion'
-import GreengrassFunctionDefinitionVersion from './greengrass/functionDefinitionVersion'
-import GreengrassGroupVersion from './greengrass/groupVersion'
-import GreengrassResourceDefinition from './greengrass/resourceDefinition'
-
-import Events_ from './events'
-export const Events = Events_
-
-import EventsRule from './events/rule'
-import EventsEventBusPolicy from './events/eventBusPolicy'
-
-import WAF_ from './waf'
-export const WAF = WAF_
-
-import WAFIPSet from './waf/ipSet'
-import WAFSizeConstraintSet from './waf/sizeConstraintSet'
-import WAFRule from './waf/rule'
-import WAFByteMatchSet from './waf/byteMatchSet'
-import WAFSqlInjectionMatchSet from './waf/sqlInjectionMatchSet'
-import WAFWebACL from './waf/webAcl'
-import WAFXssMatchSet from './waf/xssMatchSet'
-
-import IAM_ from './iam'
-export const IAM = IAM_
-
-import IAMGroup from './iam/group'
-import IAMPolicy from './iam/policy'
-import IAMRole from './iam/role'
-import IAMServiceLinkedRole from './iam/serviceLinkedRole'
-import IAMUserToGroupAddition from './iam/userToGroupAddition'
-import IAMInstanceProfile from './iam/instanceProfile'
-import IAMAccessKey from './iam/accessKey'
-import IAMUser from './iam/user'
-import IAMManagedPolicy from './iam/managedPolicy'
-
-import CodePipeline_ from './codePipeline'
-export const CodePipeline = CodePipeline_
-
-import CodePipelineCustomActionType from './codePipeline/customActionType'
-import CodePipelineWebhook from './codePipeline/webhook'
-import CodePipelinePipeline from './codePipeline/pipeline'
-
-import Elasticsearch_ from './elasticsearch'
-export const Elasticsearch = Elasticsearch_
-
-import ElasticsearchDomain from './elasticsearch/domain'
-
-import WAFRegional_ from './wafRegional'
-export const WAFRegional = WAFRegional_
-
-import WAFRegionalSizeConstraintSet from './wafRegional/sizeConstraintSet'
-import WAFRegionalSqlInjectionMatchSet from './wafRegional/sqlInjectionMatchSet'
-import WAFRegionalXssMatchSet from './wafRegional/xssMatchSet'
-import WAFRegionalByteMatchSet from './wafRegional/byteMatchSet'
-import WAFRegionalWebACLAssociation from './wafRegional/webAclAssociation'
-import WAFRegionalWebACL from './wafRegional/webAcl'
-import WAFRegionalRule from './wafRegional/rule'
-import WAFRegionalIPSet from './wafRegional/ipSet'
-
-import ApiGateway_ from './apiGateway'
-export const ApiGateway = ApiGateway_
-
-import ApiGatewayRequestValidator from './apiGateway/requestValidator'
-import ApiGatewayDeployment from './apiGateway/deployment'
-import ApiGatewayAuthorizer from './apiGateway/authorizer'
-import ApiGatewayDomainName from './apiGateway/domainName'
-import ApiGatewayDocumentationPart from './apiGateway/documentationPart'
-import ApiGatewayApiKey from './apiGateway/apiKey'
-import ApiGatewayModel from './apiGateway/model'
-import ApiGatewayResource from './apiGateway/resource'
-import ApiGatewayAccount from './apiGateway/account'
-import ApiGatewayRestApi from './apiGateway/restApi'
-import ApiGatewayUsagePlan from './apiGateway/usagePlan'
-import ApiGatewayBasePathMapping from './apiGateway/basePathMapping'
-import ApiGatewayStage from './apiGateway/stage'
-import ApiGatewayVpcLink from './apiGateway/vpcLink'
-import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse'
-import ApiGatewayMethod from './apiGateway/method'
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate'
-import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion'
-import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey'
-
-import EMR_ from './emr'
-export const EMR = EMR_
-
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig'
-import EMRCluster from './emr/cluster'
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig'
-import EMRStep from './emr/step'
-import EMRSecurityConfiguration from './emr/securityConfiguration'
-
-import WorkSpaces_ from './workSpaces'
-export const WorkSpaces = WorkSpaces_
-
-import WorkSpacesWorkspace from './workSpaces/workspace'
-
-import RDS_ from './rds'
-export const RDS = RDS_
-
-import RDSDBSecurityGroupIngress from './rds/dbSecurityGroupIngress'
-import RDSDBCluster from './rds/dbCluster'
-import RDSDBSubnetGroup from './rds/dbSubnetGroup'
-import RDSOptionGroup from './rds/optionGroup'
-import RDSDBParameterGroup from './rds/dbParameterGroup'
-import RDSEventSubscription from './rds/eventSubscription'
-import RDSDBInstance from './rds/dbInstance'
-import RDSDBSecurityGroup from './rds/dbSecurityGroup'
-import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup'
-
-import ApiGatewayV2_ from './apiGatewayV2'
-export const ApiGatewayV2 = ApiGatewayV2_
-
-import ApiGatewayV2Route from './apiGatewayV2/route'
-import ApiGatewayV2Integration from './apiGatewayV2/integration'
-import ApiGatewayV2Stage from './apiGatewayV2/stage'
-import ApiGatewayV2Deployment from './apiGatewayV2/deployment'
-import ApiGatewayV2Model from './apiGatewayV2/model'
-import ApiGatewayV2Authorizer from './apiGatewayV2/authorizer'
-import ApiGatewayV2Api from './apiGatewayV2/api'
-import ApiGatewayV2RouteResponse from './apiGatewayV2/routeResponse'
-import ApiGatewayV2IntegrationResponse from './apiGatewayV2/integrationResponse'
-
-import Logs_ from './logs'
-export const Logs = Logs_
-
-import LogsLogGroup from './logs/logGroup'
-import LogsMetricFilter from './logs/metricFilter'
-import LogsLogStream from './logs/logStream'
-import LogsSubscriptionFilter from './logs/subscriptionFilter'
-import LogsDestination from './logs/destination'
-
-import RAM_ from './ram'
-export const RAM = RAM_
-
-import RAMResourceShare from './ram/resourceShare'
-
-import Kinesis_ from './kinesis'
-export const Kinesis = Kinesis_
-
-import KinesisStream from './kinesis/stream'
-import KinesisStreamConsumer from './kinesis/streamConsumer'
-
-import AutoScaling_ from './autoScaling'
-export const AutoScaling = AutoScaling_
-
-import AutoScalingLaunchConfiguration from './autoScaling/launchConfiguration'
-import AutoScalingLifecycleHook from './autoScaling/lifecycleHook'
-import AutoScalingScalingPolicy from './autoScaling/scalingPolicy'
-import AutoScalingAutoScalingGroup from './autoScaling/autoScalingGroup'
-import AutoScalingScheduledAction from './autoScaling/scheduledAction'
-
-import SQS_ from './sqs'
-export const SQS = SQS_
-
-import SQSQueue from './sqs/queue'
-import SQSQueuePolicy from './sqs/queuePolicy'
-
-import AutoScalingPlans_ from './autoScalingPlans'
-export const AutoScalingPlans = AutoScalingPlans_
-
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan'
-
-import AppStream_ from './appStream'
-export const AppStream = AppStream_
-
-import AppStreamImageBuilder from './appStream/imageBuilder'
-import AppStreamStack from './appStream/stack'
-import AppStreamDirectoryConfig from './appStream/directoryConfig'
-import AppStreamStackFleetAssociation from './appStream/stackFleetAssociation'
-import AppStreamStackUserAssociation from './appStream/stackUserAssociation'
-import AppStreamUser from './appStream/user'
-import AppStreamFleet from './appStream/fleet'
-
-import Route53_ from './route53'
-export const Route53 = Route53_
-
-import Route53RecordSet from './route53/recordSet'
-import Route53HostedZone from './route53/hostedZone'
-import Route53RecordSetGroup from './route53/recordSetGroup'
-import Route53HealthCheck from './route53/healthCheck'
-
-import CloudWatch_ from './cloudWatch'
-export const CloudWatch = CloudWatch_
-
-import CloudWatchDashboard from './cloudWatch/dashboard'
-import CloudWatchAlarm from './cloudWatch/alarm'
-
-import ECS_ from './ecs'
-export const ECS = ECS_
-
-import ECSCluster from './ecs/cluster'
-import ECSService from './ecs/service'
-import ECSTaskDefinition from './ecs/taskDefinition'
-
-import ElasticLoadBalancingV2_ from './elasticLoadBalancingV2'
-export const ElasticLoadBalancingV2 = ElasticLoadBalancingV2_
-
-import ElasticLoadBalancingV2ListenerCertificate from './elasticLoadBalancingV2/listenerCertificate'
-import ElasticLoadBalancingV2LoadBalancer from './elasticLoadBalancingV2/loadBalancer'
-import ElasticLoadBalancingV2Listener from './elasticLoadBalancingV2/listener'
-import ElasticLoadBalancingV2ListenerRule from './elasticLoadBalancingV2/listenerRule'
-import ElasticLoadBalancingV2TargetGroup from './elasticLoadBalancingV2/targetGroup'
-
-import StepFunctions_ from './stepFunctions'
-export const StepFunctions = StepFunctions_
-
-import StepFunctionsActivity from './stepFunctions/activity'
-import StepFunctionsStateMachine from './stepFunctions/stateMachine'
-
-import OpsWorks_ from './opsWorks'
-export const OpsWorks = OpsWorks_
-
-import OpsWorksVolume from './opsWorks/volume'
-import OpsWorksApp from './opsWorks/app'
-import OpsWorksLayer from './opsWorks/layer'
-import OpsWorksStack from './opsWorks/stack'
-import OpsWorksElasticLoadBalancerAttachment from './opsWorks/elasticLoadBalancerAttachment'
-import OpsWorksInstance from './opsWorks/instance'
-import OpsWorksUserProfile from './opsWorks/userProfile'
-
-import CloudFront_ from './cloudFront'
-export const CloudFront = CloudFront_
-
-import CloudFrontStreamingDistribution from './cloudFront/streamingDistribution'
-import CloudFrontDistribution from './cloudFront/distribution'
-import CloudFrontCloudFrontOriginAccessIdentity from './cloudFront/cloudFrontOriginAccessIdentity'
-
-import GameLift_ from './gameLift'
-export const GameLift = GameLift_
-
-import GameLiftAlias from './gameLift/alias'
-import GameLiftBuild from './gameLift/build'
-import GameLiftFleet from './gameLift/fleet'
-
-import GuardDuty_ from './guardDuty'
-export const GuardDuty = GuardDuty_
-
-import GuardDutyFilter from './guardDuty/filter'
-import GuardDutyThreatIntelSet from './guardDuty/threatIntelSet'
-import GuardDutyMember from './guardDuty/member'
-import GuardDutyDetector from './guardDuty/detector'
-import GuardDutyIPSet from './guardDuty/ipSet'
-import GuardDutyMaster from './guardDuty/master'
-
-import DirectoryService_ from './directoryService'
-export const DirectoryService = DirectoryService_
-
-import DirectoryServiceMicrosoftAD from './directoryService/microsoftAd'
-import DirectoryServiceSimpleAD from './directoryService/simpleAd'
-
-import SNS_ from './sns'
-export const SNS = SNS_
-
-import SNSSubscription from './sns/subscription'
-import SNSTopic from './sns/topic'
-import SNSTopicPolicy from './sns/topicPolicy'
-
-import EFS_ from './efs'
-export const EFS = EFS_
-
-import EFSMountTarget from './efs/mountTarget'
-import EFSFileSystem from './efs/fileSystem'
-
-import SSM_ from './ssm'
-export const SSM = SSM_
-
-import SSMDocument from './ssm/document'
-import SSMPatchBaseline from './ssm/patchBaseline'
-import SSMMaintenanceWindow from './ssm/maintenanceWindow'
-import SSMParameter from './ssm/parameter'
-import SSMResourceDataSync from './ssm/resourceDataSync'
-import SSMAssociation from './ssm/association'
-import SSMMaintenanceWindowTask from './ssm/maintenanceWindowTask'
-import SSMMaintenanceWindowTarget from './ssm/maintenanceWindowTarget'
-
-import Config_ from './config'
-export const Config = Config_
-
-import ConfigDeliveryChannel from './config/deliveryChannel'
-import ConfigConfigurationAggregator from './config/configurationAggregator'
-import ConfigAggregationAuthorization from './config/aggregationAuthorization'
-import ConfigConfigurationRecorder from './config/configurationRecorder'
-import ConfigConfigRule from './config/configRule'
-
-import SageMaker_ from './sageMaker'
-export const SageMaker = SageMaker_
-
-import SageMakerModel from './sageMaker/model'
-import SageMakerNotebookInstanceLifecycleConfig from './sageMaker/notebookInstanceLifecycleConfig'
-import SageMakerEndpointConfig from './sageMaker/endpointConfig'
-import SageMakerEndpoint from './sageMaker/endpoint'
-import SageMakerNotebookInstance from './sageMaker/notebookInstance'
-
-import KMS_ from './kms'
-export const KMS = KMS_
-
-import KMSKey from './kms/key'
-import KMSAlias from './kms/alias'
-
-import Redshift_ from './redshift'
-export const Redshift = Redshift_
-
-import RedshiftCluster from './redshift/cluster'
-import RedshiftClusterParameterGroup from './redshift/clusterParameterGroup'
-import RedshiftClusterSecurityGroupIngress from './redshift/clusterSecurityGroupIngress'
-import RedshiftClusterSubnetGroup from './redshift/clusterSubnetGroup'
-import RedshiftClusterSecurityGroup from './redshift/clusterSecurityGroup'
-
-import Lambda_ from './lambda'
-export const Lambda = Lambda_
-
-import LambdaEventSourceMapping from './lambda/eventSourceMapping'
-import LambdaLayerVersion from './lambda/layerVersion'
-import LambdaAlias from './lambda/alias'
-import LambdaLayerVersionPermission from './lambda/layerVersionPermission'
-import LambdaFunction from './lambda/function'
-import LambdaVersion from './lambda/version'
-import LambdaPermission from './lambda/permission'
-
-import CertificateManager_ from './certificateManager'
-export const CertificateManager = CertificateManager_
-
-import CertificateManagerCertificate from './certificateManager/certificate'
-
-import Inspector_ from './inspector'
-export const Inspector = Inspector_
-
-import InspectorResourceGroup from './inspector/resourceGroup'
-import InspectorAssessmentTemplate from './inspector/assessmentTemplate'
-import InspectorAssessmentTarget from './inspector/assessmentTarget'
-
-import IoT1Click_ from './ioT1Click'
-export const IoT1Click = IoT1Click_
-
-import IoT1ClickProject from './ioT1Click/project'
-import IoT1ClickDevice from './ioT1Click/device'
-import IoT1ClickPlacement from './ioT1Click/placement'
-
-import IoTAnalytics_ from './ioTAnalytics'
-export const IoTAnalytics = IoTAnalytics_
-
-import IoTAnalyticsDataset from './ioTAnalytics/dataset'
-import IoTAnalyticsChannel from './ioTAnalytics/channel'
-import IoTAnalyticsPipeline from './ioTAnalytics/pipeline'
-import IoTAnalyticsDatastore from './ioTAnalytics/datastore'
-
-import Batch_ from './batch'
-export const Batch = Batch_
-
-import BatchJobDefinition from './batch/jobDefinition'
-import BatchJobQueue from './batch/jobQueue'
-import BatchComputeEnvironment from './batch/computeEnvironment'
-
-import OpsWorksCM_ from './opsWorksCm'
-export const OpsWorksCM = OpsWorksCM_
-
-import OpsWorksCMServer from './opsWorksCm/server'
-
-import ElasticLoadBalancing_ from './elasticLoadBalancing'
-export const ElasticLoadBalancing = ElasticLoadBalancing_
-
-import ElasticLoadBalancingLoadBalancer from './elasticLoadBalancing/loadBalancer'
-
-import IoT_ from './iot'
-export const IoT = IoT_
-
-import IoTThing from './iot/thing'
-import IoTPolicy from './iot/policy'
-import IoTTopicRule from './iot/topicRule'
-import IoTPolicyPrincipalAttachment from './iot/policyPrincipalAttachment'
-import IoTThingPrincipalAttachment from './iot/thingPrincipalAttachment'
-import IoTCertificate from './iot/certificate'
-
-import DMS_ from './dms'
-export const DMS = DMS_
-
-import DMSCertificate from './dms/certificate'
-import DMSReplicationSubnetGroup from './dms/replicationSubnetGroup'
-import DMSEventSubscription from './dms/eventSubscription'
-import DMSEndpoint from './dms/endpoint'
-import DMSReplicationTask from './dms/replicationTask'
-import DMSReplicationInstance from './dms/replicationInstance'
-
-import Glue_ from './glue'
-export const Glue = Glue_
-
-import GlueTable from './glue/table'
-import GlueConnection from './glue/connection'
-import GluePartition from './glue/partition'
-import GlueJob from './glue/job'
-import GlueDatabase from './glue/database'
-import GlueDevEndpoint from './glue/devEndpoint'
-import GlueTrigger from './glue/trigger'
-import GlueCrawler from './glue/crawler'
-import GlueClassifier from './glue/classifier'
-
-import ElastiCache_ from './elastiCache'
-export const ElastiCache = ElastiCache_
-
-import ElastiCacheSecurityGroup from './elastiCache/securityGroup'
-import ElastiCacheSubnetGroup from './elastiCache/subnetGroup'
-import ElastiCacheSecurityGroupIngress from './elastiCache/securityGroupIngress'
-import ElastiCacheReplicationGroup from './elastiCache/replicationGroup'
-import ElastiCacheParameterGroup from './elastiCache/parameterGroup'
-import ElastiCacheCacheCluster from './elastiCache/cacheCluster'
-
-import CodeDeploy_ from './codeDeploy'
-export const CodeDeploy = CodeDeploy_
-
-import CodeDeployDeploymentGroup from './codeDeploy/deploymentGroup'
-import CodeDeployDeploymentConfig from './codeDeploy/deploymentConfig'
-import CodeDeployApplication from './codeDeploy/application'
-
-import SecretsManager_ from './secretsManager'
-export const SecretsManager = SecretsManager_
-
-import SecretsManagerRotationSchedule from './secretsManager/rotationSchedule'
-import SecretsManagerSecret from './secretsManager/secret'
-import SecretsManagerResourcePolicy from './secretsManager/resourcePolicy'
-import SecretsManagerSecretTargetAttachment from './secretsManager/secretTargetAttachment'
-
-import CodeBuild_ from './codeBuild'
-export const CodeBuild = CodeBuild_
+import AmazonMQ from './amazonMq'
+export {AmazonMQ}
 
-import CodeBuildProject from './codeBuild/project'
+import AppSync from './appSync'
+export {AppSync}
 
-import Budgets_ from './budgets'
-export const Budgets = Budgets_
+import EC2 from './ec2'
+export {EC2}
 
-import BudgetsBudget from './budgets/budget'
+import ServiceCatalog from './serviceCatalog'
+export {ServiceCatalog}
 
-import DAX_ from './dax'
-export const DAX = DAX_
-
-import DAXSubnetGroup from './dax/subnetGroup'
-import DAXParameterGroup from './dax/parameterGroup'
-import DAXCluster from './dax/cluster'
+import Cognito from './cognito'
+export {Cognito}
 
-import DataPipeline_ from './dataPipeline'
-export const DataPipeline = DataPipeline_
-
-import DataPipelinePipeline from './dataPipeline/pipeline'
+import Greengrass from './greengrass'
+export {Greengrass}
 
-import Route53Resolver_ from './route53Resolver'
-export const Route53Resolver = Route53Resolver_
+import Events from './events'
+export {Events}
 
-import Route53ResolverResolverRule from './route53Resolver/resolverRule'
-import Route53ResolverResolverRuleAssociation from './route53Resolver/resolverRuleAssociation'
-import Route53ResolverResolverEndpoint from './route53Resolver/resolverEndpoint'
+import WAF from './waf'
+export {WAF}
 
-import CloudTrail_ from './cloudTrail'
-export const CloudTrail = CloudTrail_
+import IAM from './iam'
+export {IAM}
 
-import CloudTrailTrail from './cloudTrail/trail'
+import CodePipeline from './codePipeline'
+export {CodePipeline}
 
-import CloudFormation_ from './cloudFormation'
-export const CloudFormation = CloudFormation_
-
-import CloudFormationWaitCondition from './cloudFormation/waitCondition'
-import CloudFormationStack from './cloudFormation/stack'
-import CloudFormationWaitConditionHandle from './cloudFormation/waitConditionHandle'
-import CloudFormationMacro from './cloudFormation/macro'
-import CloudFormationCustomResource from './cloudFormation/customResource'
+import Elasticsearch from './elasticsearch'
+export {Elasticsearch}
 
-import ServiceDiscovery_ from './serviceDiscovery'
-export const ServiceDiscovery = ServiceDiscovery_
+import WAFRegional from './wafRegional'
+export {WAFRegional}
 
-import ServiceDiscoveryInstance from './serviceDiscovery/instance'
-import ServiceDiscoveryService from './serviceDiscovery/service'
-import ServiceDiscoveryPrivateDnsNamespace from './serviceDiscovery/privateDnsNamespace'
-import ServiceDiscoveryPublicDnsNamespace from './serviceDiscovery/publicDnsNamespace'
-import ServiceDiscoveryHttpNamespace from './serviceDiscovery/httpNamespace'
-
-import ApplicationAutoScaling_ from './applicationAutoScaling'
-export const ApplicationAutoScaling = ApplicationAutoScaling_
+import ApiGateway from './apiGateway'
+export {ApiGateway}
 
-import ApplicationAutoScalingScalingPolicy from './applicationAutoScaling/scalingPolicy'
-import ApplicationAutoScalingScalableTarget from './applicationAutoScaling/scalableTarget'
+import EMR from './emr'
+export {EMR}
 
-import S3_ from './s3'
-export const S3 = S3_
-
-import S3Bucket from './s3/bucket'
-import S3BucketPolicy from './s3/bucketPolicy'
-
-import KinesisFirehose_ from './kinesisFirehose'
-export const KinesisFirehose = KinesisFirehose_
+import WorkSpaces from './workSpaces'
+export {WorkSpaces}
 
-import KinesisFirehoseDeliveryStream from './kinesisFirehose/deliveryStream'
+import RDS from './rds'
+export {RDS}
 
-import DLM_ from './dlm'
-export const DLM = DLM_
+import ApiGatewayV2 from './apiGatewayV2'
+export {ApiGatewayV2}
 
-import DLMLifecyclePolicy from './dlm/lifecyclePolicy'
+import Logs from './logs'
+export {Logs}
 
-import SDB_ from './sdb'
-export const SDB = SDB_
+import RAM from './ram'
+export {RAM}
 
-import SDBDomain from './sdb/domain'
+import Kinesis from './kinesis'
+export {Kinesis}
 
-import ECR_ from './ecr'
-export const ECR = ECR_
+import AutoScaling from './autoScaling'
+export {AutoScaling}
 
-import ECRRepository from './ecr/repository'
+import SQS from './sqs'
+export {SQS}
 
-import DynamoDB_ from './dynamoDb'
-export const DynamoDB = DynamoDB_
+import AutoScalingPlans from './autoScalingPlans'
+export {AutoScalingPlans}
 
-import DynamoDBTable from './dynamoDb/table'
+import AppStream from './appStream'
+export {AppStream}
 
-import Athena_ from './athena'
-export const Athena = Athena_
+import Route53 from './route53'
+export {Route53}
 
-import AthenaNamedQuery from './athena/namedQuery'
+import CloudWatch from './cloudWatch'
+export {CloudWatch}
 
-import ASK_ from './ask'
-export const ASK = ASK_
+import ECS from './ecs'
+export {ECS}
 
-import ASKSkill from './ask/skill'
+import ElasticLoadBalancingV2 from './elasticLoadBalancingV2'
+export {ElasticLoadBalancingV2}
 
-import Cloud9_ from './cloud9'
-export const Cloud9 = Cloud9_
+import StepFunctions from './stepFunctions'
+export {StepFunctions}
 
-import Cloud9EnvironmentEC2 from './cloud9/environmentEc2'
+import OpsWorks from './opsWorks'
+export {OpsWorks}
 
-import Neptune_ from './neptune'
-export const Neptune = Neptune_
+import CloudFront from './cloudFront'
+export {CloudFront}
 
-import NeptuneDBParameterGroup from './neptune/dbParameterGroup'
-import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup'
-import NeptuneDBCluster from './neptune/dbCluster'
-import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup'
-import NeptuneDBInstance from './neptune/dbInstance'
+import GameLift from './gameLift'
+export {GameLift}
 
-import DocDB_ from './docDb'
-export const DocDB = DocDB_
+import GuardDuty from './guardDuty'
+export {GuardDuty}
 
-import DocDBDBSubnetGroup from './docDb/dbSubnetGroup'
-import DocDBDBInstance from './docDb/dbInstance'
-import DocDBDBCluster from './docDb/dbCluster'
-import DocDBDBClusterParameterGroup from './docDb/dbClusterParameterGroup'
+import DirectoryService from './directoryService'
+export {DirectoryService}
 
-import KinesisAnalytics_ from './kinesisAnalytics'
-export const KinesisAnalytics = KinesisAnalytics_
+import SNS from './sns'
+export {SNS}
 
-import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput'
-import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource'
-import KinesisAnalyticsApplication from './kinesisAnalytics/application'
+import EFS from './efs'
+export {EFS}
 
-import SES_ from './ses'
-export const SES = SES_
+import SSM from './ssm'
+export {SSM}
 
-import SESReceiptFilter from './ses/receiptFilter'
-import SESReceiptRule from './ses/receiptRule'
-import SESConfigurationSetEventDestination from './ses/configurationSetEventDestination'
-import SESTemplate from './ses/template'
-import SESConfigurationSet from './ses/configurationSet'
-import SESReceiptRuleSet from './ses/receiptRuleSet'
+import Config from './config'
+export {Config}
 
-import FSx_ from './fSx'
-export const FSx = FSx_
+import SageMaker from './sageMaker'
+export {SageMaker}
 
-import FSxFileSystem from './fSx/fileSystem'
+import KMS from './kms'
+export {KMS}
 
-import RoboMaker_ from './roboMaker'
-export const RoboMaker = RoboMaker_
+import Redshift from './redshift'
+export {Redshift}
 
-import RoboMakerSimulationApplication from './roboMaker/simulationApplication'
-import RoboMakerSimulationApplicationVersion from './roboMaker/simulationApplicationVersion'
-import RoboMakerRobotApplicationVersion from './roboMaker/robotApplicationVersion'
-import RoboMakerRobotApplication from './roboMaker/robotApplication'
-import RoboMakerRobot from './roboMaker/robot'
-import RoboMakerFleet from './roboMaker/fleet'
+import Lambda from './lambda'
+export {Lambda}
 
-import KinesisAnalyticsV2_ from './kinesisAnalyticsV2'
-export const KinesisAnalyticsV2 = KinesisAnalyticsV2_
+import CertificateManager from './certificateManager'
+export {CertificateManager}
 
-import KinesisAnalyticsV2ApplicationOutput from './kinesisAnalyticsV2/applicationOutput'
-import KinesisAnalyticsV2ApplicationCloudWatchLoggingOption from './kinesisAnalyticsV2/applicationCloudWatchLoggingOption'
-import KinesisAnalyticsV2ApplicationReferenceDataSource from './kinesisAnalyticsV2/applicationReferenceDataSource'
-import KinesisAnalyticsV2Application from './kinesisAnalyticsV2/application'
+import Inspector from './inspector'
+export {Inspector}
 
-import CodeCommit_ from './codeCommit'
-export const CodeCommit = CodeCommit_
+import IoT1Click from './ioT1Click'
+export {IoT1Click}
 
-import CodeCommitRepository from './codeCommit/repository'
+import IoTAnalytics from './ioTAnalytics'
+export {IoTAnalytics}
 
-import EKS_ from './eks'
-export const EKS = EKS_
+import Batch from './batch'
+export {Batch}
 
-import EKSCluster from './eks/cluster' 
+import OpsWorksCM from './opsWorksCm'
+export {OpsWorksCM}
+
+import ElasticLoadBalancing from './elasticLoadBalancing'
+export {ElasticLoadBalancing}
+
+import IoT from './iot'
+export {IoT}
+
+import DMS from './dms'
+export {DMS}
+
+import Glue from './glue'
+export {Glue}
+
+import ElastiCache from './elastiCache'
+export {ElastiCache}
+
+import CodeDeploy from './codeDeploy'
+export {CodeDeploy}
+
+import SecretsManager from './secretsManager'
+export {SecretsManager}
+
+import CodeBuild from './codeBuild'
+export {CodeBuild}
+
+import Budgets from './budgets'
+export {Budgets}
+
+import DAX from './dax'
+export {DAX}
+
+import DataPipeline from './dataPipeline'
+export {DataPipeline}
+
+import Route53Resolver from './route53Resolver'
+export {Route53Resolver}
+
+import CloudTrail from './cloudTrail'
+export {CloudTrail}
+
+import CloudFormation from './cloudFormation'
+export {CloudFormation}
+
+import ServiceDiscovery from './serviceDiscovery'
+export {ServiceDiscovery}
+
+import ApplicationAutoScaling from './applicationAutoScaling'
+export {ApplicationAutoScaling}
+
+import S3 from './s3'
+export {S3}
+
+import KinesisFirehose from './kinesisFirehose'
+export {KinesisFirehose}
+
+import DLM from './dlm'
+export {DLM}
+
+import SDB from './sdb'
+export {SDB}
+
+import ECR from './ecr'
+export {ECR}
+
+import DynamoDB from './dynamoDb'
+export {DynamoDB}
+
+import Athena from './athena'
+export {Athena}
+
+import ASK from './ask'
+export {ASK}
+
+import Cloud9 from './cloud9'
+export {Cloud9}
+
+import Neptune from './neptune'
+export {Neptune}
+
+import DocDB from './docDb'
+export {DocDB}
+
+import KinesisAnalytics from './kinesisAnalytics'
+export {KinesisAnalytics}
+
+import SES from './ses'
+export {SES}
+
+import FSx from './fSx'
+export {FSx}
+
+import RoboMaker from './roboMaker'
+export {RoboMaker}
+
+import KinesisAnalyticsV2 from './kinesisAnalyticsV2'
+export {KinesisAnalyticsV2}
+
+import CodeCommit from './codeCommit'
+export {CodeCommit}
+
+import EKS from './eks'
+export {EKS}
+ 
 
 export default {
   ElasticBeanstalk,

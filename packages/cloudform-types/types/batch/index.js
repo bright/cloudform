@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const jobDefinition_1 = require("./jobDefinition");
-const jobQueue_1 = require("./jobQueue");
-const computeEnvironment_1 = require("./computeEnvironment");
-exports.default = {
-    JobDefinition: jobDefinition_1.default,
-    JobQueue: jobQueue_1.default,
-    ComputeEnvironment: computeEnvironment_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Batch;

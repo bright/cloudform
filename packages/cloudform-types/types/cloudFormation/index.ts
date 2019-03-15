@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import WaitCondition from './waitCondition'
-import Stack from './stack'
-import WaitConditionHandle from './waitConditionHandle'
-import Macro from './macro'
-import CustomResource from './customResource' 
+import {CloudFormation} from './index.namespace'
 
-export default {
-  WaitCondition,
-  Stack,
-  WaitConditionHandle,
-  Macro,
-  CustomResource
-}
+export default CloudFormation

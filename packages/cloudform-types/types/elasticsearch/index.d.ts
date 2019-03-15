@@ -1,5 +1,2 @@
-import Domain from './domain';
-declare const _default: {
-    Domain: typeof Domain;
-};
-export default _default;
+import { Elasticsearch } from './index.namespace';
+export default Elasticsearch;

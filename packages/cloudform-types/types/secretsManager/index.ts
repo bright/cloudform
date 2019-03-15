@@ -17,14 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import RotationSchedule from './rotationSchedule'
-import Secret from './secret'
-import ResourcePolicy from './resourcePolicy'
-import SecretTargetAttachment from './secretTargetAttachment' 
+import {SecretsManager} from './index.namespace'
 
-export default {
-  RotationSchedule,
-  Secret,
-  ResourcePolicy,
-  SecretTargetAttachment
-}
+export default SecretsManager

@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const subscription_1 = require("./subscription");
-const topic_1 = require("./topic");
-const topicPolicy_1 = require("./topicPolicy");
-exports.default = {
-    Subscription: subscription_1.default,
-    Topic: topic_1.default,
-    TopicPolicy: topicPolicy_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SNS;

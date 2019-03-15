@@ -18,7 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const deliveryStream_1 = require("./deliveryStream");
-exports.default = {
-    DeliveryStream: deliveryStream_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.KinesisFirehose;

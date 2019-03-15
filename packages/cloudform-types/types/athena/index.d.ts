@@ -1,5 +1,2 @@
-import NamedQuery from './namedQuery';
-declare const _default: {
-    NamedQuery: typeof NamedQuery;
-};
-export default _default;
+import { Athena } from './index.namespace';
+export default Athena;

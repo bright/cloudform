@@ -18,13 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const configurationTemplate_1 = require("./configurationTemplate");
-const application_1 = require("./application");
-const environment_1 = require("./environment");
-const applicationVersion_1 = require("./applicationVersion");
-exports.default = {
-    ConfigurationTemplate: configurationTemplate_1.default,
-    Application: application_1.default,
-    Environment: environment_1.default,
-    ApplicationVersion: applicationVersion_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.ElasticBeanstalk;

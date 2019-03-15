@@ -17,18 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import DataSource from './dataSource'
-import Resolver from './resolver'
-import GraphQLSchema from './graphQlSchema'
-import GraphQLApi from './graphQlApi'
-import FunctionConfiguration from './functionConfiguration'
-import ApiKey from './apiKey' 
+import {AppSync} from './index.namespace'
 
-export default {
-  DataSource,
-  Resolver,
-  GraphQLSchema,
-  GraphQLApi,
-  FunctionConfiguration,
-  ApiKey
-}
+export default AppSync

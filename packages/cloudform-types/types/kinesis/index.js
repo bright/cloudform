@@ -18,9 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const stream_1 = require("./stream");
-const streamConsumer_1 = require("./streamConsumer");
-exports.default = {
-    Stream: stream_1.default,
-    StreamConsumer: streamConsumer_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Kinesis;

@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Broker from './broker'
-import ConfigurationAssociation from './configurationAssociation'
-import Configuration from './configuration' 
+import {AmazonMQ} from './index.namespace'
 
-export default {
-  Broker,
-  ConfigurationAssociation,
-  Configuration
-}
+export default AmazonMQ

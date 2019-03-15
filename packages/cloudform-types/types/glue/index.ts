@@ -17,24 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Table from './table'
-import Connection from './connection'
-import Partition from './partition'
-import Job from './job'
-import Database from './database'
-import DevEndpoint from './devEndpoint'
-import Trigger from './trigger'
-import Crawler from './crawler'
-import Classifier from './classifier' 
+import {Glue} from './index.namespace'
 
-export default {
-  Table,
-  Connection,
-  Partition,
-  Job,
-  Database,
-  DevEndpoint,
-  Trigger,
-  Crawler,
-  Classifier
-}
+export default Glue

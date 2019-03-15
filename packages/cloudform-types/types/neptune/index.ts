@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import DBParameterGroup from './dbParameterGroup'
-import DBClusterParameterGroup from './dbClusterParameterGroup'
-import DBCluster from './dbCluster'
-import DBSubnetGroup from './dbSubnetGroup'
-import DBInstance from './dbInstance' 
+import {Neptune} from './index.namespace'
 
-export default {
-  DBParameterGroup,
-  DBClusterParameterGroup,
-  DBCluster,
-  DBSubnetGroup,
-  DBInstance
-}
+export default Neptune

@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import DeliveryChannel from './deliveryChannel'
-import ConfigurationAggregator from './configurationAggregator'
-import AggregationAuthorization from './aggregationAuthorization'
-import ConfigurationRecorder from './configurationRecorder'
-import ConfigRule from './configRule' 
+import {Config} from './index.namespace'
 
-export default {
-  DeliveryChannel,
-  ConfigurationAggregator,
-  AggregationAuthorization,
-  ConfigurationRecorder,
-  ConfigRule
-}
+export default Config

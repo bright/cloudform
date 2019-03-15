@@ -173,33 +173,46 @@ ${generatedClass}
     fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/${camelCase(resourceName)}.ts`, template, {encoding: 'utf8'})
 }
 
-function generateIndexFile(fileHeader: string, namespace: string, resourceTypeNames: string[]): void {
-    const imports = resourceTypeNames.map(typeName => `import ${typeName} from './${camelCase(typeName)}'`)
+function generateIndexNamespaceFile(fileHeader: string, namespace: string, resourceTypeNames: string[]): void {
+    const imports = resourceTypeNames.map(typeName => `import ${typeName}_ from './${camelCase(typeName)}'`)
 
     const template = `${fileHeader}
    
 ${imports.join('\n')} 
 
-export default {
-${resourceTypeNames.map(t => `  ${t}`).join(',\n')}
+export namespace ${namespace} {
+${resourceTypeNames.map(typeName => `  export const ${typeName} = ${typeName}_`).join('\n')}
+
+${resourceTypeNames.map(typeName => `  export type ${typeName} = ${typeName}_`).join('\n')}
 }
+`
+
+    fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/index.namespace.ts`, template, {encoding: 'utf8'})
+}
+
+function generateIndexReexportFile(fileHeader: string, namespace: string): void {
+    const template = `${fileHeader}
+   
+import {${namespace}} from './index.namespace'
+
+export default ${namespace}
 `
 
     fs.writeFileSync(`./types/${adjustedCamelCase(namespace)}/index.ts`, template, {encoding: 'utf8'})
 }
 
 function generateGrandIndexFile(fileHeader: string, indexContent: { [key: string]: string[] }): void {
-    const imports: string[] = []
+    const lines: string[] = []
 
     forEach(indexContent, (dependentResourceTypeNames: string[], namespace: string) => {
-        imports.push('\n' + `import ${namespace}_ from './${adjustedCamelCase(namespace)}'`)
-        imports.push(`export const ${namespace} = ${namespace}_` + '\n')
-        dependentResourceTypeNames.forEach(resourceName => imports.push(`import ${namespace}${resourceName} from './${adjustedCamelCase(namespace)}/${camelCase(resourceName)}'`))
+        lines.push(`import ${namespace} from './${adjustedCamelCase(namespace)}'`)
+        lines.push(`export {${namespace}}`)
+        lines.push('')
     })
 
     const template = `${fileHeader}
    
-${imports.join('\n')} 
+${lines.join('\n')} 
 
 export default {
 ${Object.keys(indexContent).map(t => `  ${t}`).join(',\n')}
@@ -236,7 +249,8 @@ function generateFilesFromSchema(schema: Schema, resourceSources: { [key: string
     const indexFileHeader = generateFileHeader([...regionsUsed], schemaVersions)
 
     forEach(indexContent, (resourceTypeNames: string[], namespace: string) => {
-        generateIndexFile(indexFileHeader, namespace, resourceTypeNames)
+        generateIndexNamespaceFile(indexFileHeader, namespace, resourceTypeNames)
+        generateIndexReexportFile(indexFileHeader, namespace)
     })
 
     generateGrandIndexFile(indexFileHeader, indexContent)

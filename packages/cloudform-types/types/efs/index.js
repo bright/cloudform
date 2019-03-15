@@ -18,9 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const mountTarget_1 = require("./mountTarget");
-const fileSystem_1 = require("./fileSystem");
-exports.default = {
-    MountTarget: mountTarget_1.default,
-    FileSystem: fileSystem_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.EFS;

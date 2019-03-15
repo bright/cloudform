@@ -17,22 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import SizeConstraintSet from './sizeConstraintSet'
-import SqlInjectionMatchSet from './sqlInjectionMatchSet'
-import XssMatchSet from './xssMatchSet'
-import ByteMatchSet from './byteMatchSet'
-import WebACLAssociation from './webAclAssociation'
-import WebACL from './webAcl'
-import Rule from './rule'
-import IPSet from './ipSet' 
+import {WAFRegional} from './index.namespace'
 
-export default {
-  SizeConstraintSet,
-  SqlInjectionMatchSet,
-  XssMatchSet,
-  ByteMatchSet,
-  WebACLAssociation,
-  WebACL,
-  Rule,
-  IPSet
-}
+export default WAFRegional

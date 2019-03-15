@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const project_1 = require("./project");
-const device_1 = require("./device");
-const placement_1 = require("./placement");
-exports.default = {
-    Project: project_1.default,
-    Device: device_1.default,
-    Placement: placement_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.IoT1Click;

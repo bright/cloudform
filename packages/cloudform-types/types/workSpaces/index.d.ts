@@ -1,5 +1,2 @@
-import Workspace from './workspace';
-declare const _default: {
-    Workspace: typeof Workspace;
-};
-export default _default;
+import { WorkSpaces } from './index.namespace';
+export default WorkSpaces;

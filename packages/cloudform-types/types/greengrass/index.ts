@@ -17,38 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Group from './group'
-import ConnectorDefinition from './connectorDefinition'
-import ConnectorDefinitionVersion from './connectorDefinitionVersion'
-import FunctionDefinition from './functionDefinition'
-import SubscriptionDefinitionVersion from './subscriptionDefinitionVersion'
-import CoreDefinitionVersion from './coreDefinitionVersion'
-import DeviceDefinition from './deviceDefinition'
-import LoggerDefinition from './loggerDefinition'
-import CoreDefinition from './coreDefinition'
-import DeviceDefinitionVersion from './deviceDefinitionVersion'
-import SubscriptionDefinition from './subscriptionDefinition'
-import ResourceDefinitionVersion from './resourceDefinitionVersion'
-import LoggerDefinitionVersion from './loggerDefinitionVersion'
-import FunctionDefinitionVersion from './functionDefinitionVersion'
-import GroupVersion from './groupVersion'
-import ResourceDefinition from './resourceDefinition' 
+import {Greengrass} from './index.namespace'
 
-export default {
-  Group,
-  ConnectorDefinition,
-  ConnectorDefinitionVersion,
-  FunctionDefinition,
-  SubscriptionDefinitionVersion,
-  CoreDefinitionVersion,
-  DeviceDefinition,
-  LoggerDefinition,
-  CoreDefinition,
-  DeviceDefinitionVersion,
-  SubscriptionDefinition,
-  ResourceDefinitionVersion,
-  LoggerDefinitionVersion,
-  FunctionDefinitionVersion,
-  GroupVersion,
-  ResourceDefinition
-}
+export default Greengrass

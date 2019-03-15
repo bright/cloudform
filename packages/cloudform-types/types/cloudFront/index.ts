@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import StreamingDistribution from './streamingDistribution'
-import Distribution from './distribution'
-import CloudFrontOriginAccessIdentity from './cloudFrontOriginAccessIdentity' 
+import {CloudFront} from './index.namespace'
 
-export default {
-  StreamingDistribution,
-  Distribution,
-  CloudFrontOriginAccessIdentity
-}
+export default CloudFront

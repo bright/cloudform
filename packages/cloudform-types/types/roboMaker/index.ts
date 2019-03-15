@@ -17,18 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import SimulationApplication from './simulationApplication'
-import SimulationApplicationVersion from './simulationApplicationVersion'
-import RobotApplicationVersion from './robotApplicationVersion'
-import RobotApplication from './robotApplication'
-import Robot from './robot'
-import Fleet from './fleet' 
+import {RoboMaker} from './index.namespace'
 
-export default {
-  SimulationApplication,
-  SimulationApplicationVersion,
-  RobotApplicationVersion,
-  RobotApplication,
-  Robot,
-  Fleet
-}
+export default RoboMaker

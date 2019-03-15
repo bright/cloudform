@@ -17,10 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Dashboard from './dashboard'
-import Alarm from './alarm' 
+import {CloudWatch} from './index.namespace'
 
-export default {
-  Dashboard,
-  Alarm
-}
+export default CloudWatch

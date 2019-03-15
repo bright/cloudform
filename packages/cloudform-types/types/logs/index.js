@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const logGroup_1 = require("./logGroup");
-const metricFilter_1 = require("./metricFilter");
-const logStream_1 = require("./logStream");
-const subscriptionFilter_1 = require("./subscriptionFilter");
-const destination_1 = require("./destination");
-exports.default = {
-    LogGroup: logGroup_1.default,
-    MetricFilter: metricFilter_1.default,
-    LogStream: logStream_1.default,
-    SubscriptionFilter: subscriptionFilter_1.default,
-    Destination: destination_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Logs;

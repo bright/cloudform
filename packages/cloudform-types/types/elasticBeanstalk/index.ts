@@ -17,14 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import ConfigurationTemplate from './configurationTemplate'
-import Application from './application'
-import Environment from './environment'
-import ApplicationVersion from './applicationVersion' 
+import {ElasticBeanstalk} from './index.namespace'
 
-export default {
-  ConfigurationTemplate,
-  Application,
-  Environment,
-  ApplicationVersion
-}
+export default ElasticBeanstalk

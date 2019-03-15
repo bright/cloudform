@@ -18,37 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const group_1 = require("./group");
-const connectorDefinition_1 = require("./connectorDefinition");
-const connectorDefinitionVersion_1 = require("./connectorDefinitionVersion");
-const functionDefinition_1 = require("./functionDefinition");
-const subscriptionDefinitionVersion_1 = require("./subscriptionDefinitionVersion");
-const coreDefinitionVersion_1 = require("./coreDefinitionVersion");
-const deviceDefinition_1 = require("./deviceDefinition");
-const loggerDefinition_1 = require("./loggerDefinition");
-const coreDefinition_1 = require("./coreDefinition");
-const deviceDefinitionVersion_1 = require("./deviceDefinitionVersion");
-const subscriptionDefinition_1 = require("./subscriptionDefinition");
-const resourceDefinitionVersion_1 = require("./resourceDefinitionVersion");
-const loggerDefinitionVersion_1 = require("./loggerDefinitionVersion");
-const functionDefinitionVersion_1 = require("./functionDefinitionVersion");
-const groupVersion_1 = require("./groupVersion");
-const resourceDefinition_1 = require("./resourceDefinition");
-exports.default = {
-    Group: group_1.default,
-    ConnectorDefinition: connectorDefinition_1.default,
-    ConnectorDefinitionVersion: connectorDefinitionVersion_1.default,
-    FunctionDefinition: functionDefinition_1.default,
-    SubscriptionDefinitionVersion: subscriptionDefinitionVersion_1.default,
-    CoreDefinitionVersion: coreDefinitionVersion_1.default,
-    DeviceDefinition: deviceDefinition_1.default,
-    LoggerDefinition: loggerDefinition_1.default,
-    CoreDefinition: coreDefinition_1.default,
-    DeviceDefinitionVersion: deviceDefinitionVersion_1.default,
-    SubscriptionDefinition: subscriptionDefinition_1.default,
-    ResourceDefinitionVersion: resourceDefinitionVersion_1.default,
-    LoggerDefinitionVersion: loggerDefinitionVersion_1.default,
-    FunctionDefinitionVersion: functionDefinitionVersion_1.default,
-    GroupVersion: groupVersion_1.default,
-    ResourceDefinition: resourceDefinition_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Greengrass;

@@ -17,18 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Thing from './thing'
-import Policy from './policy'
-import TopicRule from './topicRule'
-import PolicyPrincipalAttachment from './policyPrincipalAttachment'
-import ThingPrincipalAttachment from './thingPrincipalAttachment'
-import Certificate from './certificate' 
+import {IoT} from './index.namespace'
 
-export default {
-  Thing,
-  Policy,
-  TopicRule,
-  PolicyPrincipalAttachment,
-  ThingPrincipalAttachment,
-  Certificate
-}
+export default IoT

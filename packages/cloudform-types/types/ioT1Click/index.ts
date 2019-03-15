@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Project from './project'
-import Device from './device'
-import Placement from './placement' 
+import {IoT1Click} from './index.namespace'
 
-export default {
-  Project,
-  Device,
-  Placement
-}
+export default IoT1Click

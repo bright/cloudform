@@ -18,23 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const route_1 = require("./route");
-const integration_1 = require("./integration");
-const stage_1 = require("./stage");
-const deployment_1 = require("./deployment");
-const model_1 = require("./model");
-const authorizer_1 = require("./authorizer");
-const api_1 = require("./api");
-const routeResponse_1 = require("./routeResponse");
-const integrationResponse_1 = require("./integrationResponse");
-exports.default = {
-    Route: route_1.default,
-    Integration: integration_1.default,
-    Stage: stage_1.default,
-    Deployment: deployment_1.default,
-    Model: model_1.default,
-    Authorizer: authorizer_1.default,
-    Api: api_1.default,
-    RouteResponse: routeResponse_1.default,
-    IntegrationResponse: integrationResponse_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.ApiGatewayV2;

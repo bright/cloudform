@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Subscription from './subscription'
-import Topic from './topic'
-import TopicPolicy from './topicPolicy' 
+import {SNS} from './index.namespace'
 
-export default {
-  Subscription,
-  Topic,
-  TopicPolicy
-}
+export default SNS

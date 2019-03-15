@@ -1,5 +1,2 @@
-import ResourceShare from './resourceShare';
-declare const _default: {
-    ResourceShare: typeof ResourceShare;
-};
-export default _default;
+import { RAM } from './index.namespace';
+export default RAM;

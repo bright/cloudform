@@ -1,0 +1,29 @@
+import Table_ from './table';
+import Connection_ from './connection';
+import Partition_ from './partition';
+import Job_ from './job';
+import Database_ from './database';
+import DevEndpoint_ from './devEndpoint';
+import Trigger_ from './trigger';
+import Crawler_ from './crawler';
+import Classifier_ from './classifier';
+export declare namespace Glue {
+    const Table: typeof Table_;
+    const Connection: typeof Connection_;
+    const Partition: typeof Partition_;
+    const Job: typeof Job_;
+    const Database: typeof Database_;
+    const DevEndpoint: typeof DevEndpoint_;
+    const Trigger: typeof Trigger_;
+    const Crawler: typeof Crawler_;
+    const Classifier: typeof Classifier_;
+    type Table = Table_;
+    type Connection = Connection_;
+    type Partition = Partition_;
+    type Job = Job_;
+    type Database = Database_;
+    type DevEndpoint = DevEndpoint_;
+    type Trigger = Trigger_;
+    type Crawler = Crawler_;
+    type Classifier = Classifier_;
+}

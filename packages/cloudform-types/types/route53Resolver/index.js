@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const resolverRule_1 = require("./resolverRule");
-const resolverRuleAssociation_1 = require("./resolverRuleAssociation");
-const resolverEndpoint_1 = require("./resolverEndpoint");
-exports.default = {
-    ResolverRule: resolverRule_1.default,
-    ResolverRuleAssociation: resolverRuleAssociation_1.default,
-    ResolverEndpoint: resolverEndpoint_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.Route53Resolver;

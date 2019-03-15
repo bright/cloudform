@@ -1,5 +1,2 @@
-import EnvironmentEC2 from './environmentEc2';
-declare const _default: {
-    EnvironmentEC2: typeof EnvironmentEC2;
-};
-export default _default;
+import { Cloud9 } from './index.namespace';
+export default Cloud9;

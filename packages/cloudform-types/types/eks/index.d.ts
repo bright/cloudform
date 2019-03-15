@@ -1,5 +1,2 @@
-import Cluster from './cluster';
-declare const _default: {
-    Cluster: typeof Cluster;
-};
-export default _default;
+import { EKS } from './index.namespace';
+export default EKS;

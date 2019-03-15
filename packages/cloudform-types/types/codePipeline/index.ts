@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import CustomActionType from './customActionType'
-import Webhook from './webhook'
-import Pipeline from './pipeline' 
+import {CodePipeline} from './index.namespace'
 
-export default {
-  CustomActionType,
-  Webhook,
-  Pipeline
-}
+export default CodePipeline

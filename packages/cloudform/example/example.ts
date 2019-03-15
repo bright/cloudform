@@ -14,6 +14,16 @@ const Resources = {
     VPC: 'VPC'
 }
 
+const vpc: EC2.VPC = new EC2.VPC({
+    CidrBlock: NetworkingConfig.VPC.CIDR,
+    EnableDnsHostnames: true,
+    Tags: [
+        new ResourceTag('Application', Refs.StackName),
+        new ResourceTag('Network', 'Public'),
+        new ResourceTag('Name', Fn.Join('-', [Refs.StackId, Resources.VPC]))
+    ]
+});
+
 // the actual template definition
 export default cloudform({
     Description: 'My template',
@@ -41,15 +51,7 @@ export default cloudform({
         ])
     },
     Resources: {
-        [Resources.VPC]: new EC2.VPC({
-            CidrBlock: NetworkingConfig.VPC.CIDR,
-            EnableDnsHostnames: true,
-            Tags: [
-                new ResourceTag('Application', Refs.StackName),
-                new ResourceTag('Network', 'Public'),
-                new ResourceTag('Name', Fn.Join('-', [Refs.StackId, Resources.VPC]))
-            ]
-        }).condition(Conditions.TestCondition),
+        [Resources.VPC]: vpc.condition(Conditions.TestCondition),
 
         // can handle raw data pasted from existing JSON templates - convenient for transition phase
         "ECSSecurityGroup": {

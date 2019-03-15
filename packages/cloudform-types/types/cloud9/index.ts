@@ -17,8 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import EnvironmentEC2 from './environmentEc2' 
+import {Cloud9} from './index.namespace'
 
-export default {
-  EnvironmentEC2
-}
+export default Cloud9

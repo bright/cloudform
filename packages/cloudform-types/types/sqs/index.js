@@ -18,9 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const queue_1 = require("./queue");
-const queuePolicy_1 = require("./queuePolicy");
-exports.default = {
-    Queue: queue_1.default,
-    QueuePolicy: queuePolicy_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SQS;

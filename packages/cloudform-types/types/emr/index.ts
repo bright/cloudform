@@ -17,16 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import InstanceFleetConfig from './instanceFleetConfig'
-import Cluster from './cluster'
-import InstanceGroupConfig from './instanceGroupConfig'
-import Step from './step'
-import SecurityConfiguration from './securityConfiguration' 
+import {EMR} from './index.namespace'
 
-export default {
-  InstanceFleetConfig,
-  Cluster,
-  InstanceGroupConfig,
-  Step,
-  SecurityConfiguration
-}
+export default EMR

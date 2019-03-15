@@ -18,17 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const dataSource_1 = require("./dataSource");
-const resolver_1 = require("./resolver");
-const graphQlSchema_1 = require("./graphQlSchema");
-const graphQlApi_1 = require("./graphQlApi");
-const functionConfiguration_1 = require("./functionConfiguration");
-const apiKey_1 = require("./apiKey");
-exports.default = {
-    DataSource: dataSource_1.default,
-    Resolver: resolver_1.default,
-    GraphQLSchema: graphQlSchema_1.default,
-    GraphQLApi: graphQlApi_1.default,
-    FunctionConfiguration: functionConfiguration_1.default,
-    ApiKey: apiKey_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.AppSync;

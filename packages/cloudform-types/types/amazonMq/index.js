@@ -18,11 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const broker_1 = require("./broker");
-const configurationAssociation_1 = require("./configurationAssociation");
-const configuration_1 = require("./configuration");
-exports.default = {
-    Broker: broker_1.default,
-    ConfigurationAssociation: configurationAssociation_1.default,
-    Configuration: configuration_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.AmazonMQ;

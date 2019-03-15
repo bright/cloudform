@@ -18,15 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const model_1 = require("./model");
-const notebookInstanceLifecycleConfig_1 = require("./notebookInstanceLifecycleConfig");
-const endpointConfig_1 = require("./endpointConfig");
-const endpoint_1 = require("./endpoint");
-const notebookInstance_1 = require("./notebookInstance");
-exports.default = {
-    Model: model_1.default,
-    NotebookInstanceLifecycleConfig: notebookInstanceLifecycleConfig_1.default,
-    EndpointConfig: endpointConfig_1.default,
-    Endpoint: endpoint_1.default,
-    NotebookInstance: notebookInstance_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.SageMaker;

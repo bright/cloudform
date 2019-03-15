@@ -17,24 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import DBSecurityGroupIngress from './dbSecurityGroupIngress'
-import DBCluster from './dbCluster'
-import DBSubnetGroup from './dbSubnetGroup'
-import OptionGroup from './optionGroup'
-import DBParameterGroup from './dbParameterGroup'
-import EventSubscription from './eventSubscription'
-import DBInstance from './dbInstance'
-import DBSecurityGroup from './dbSecurityGroup'
-import DBClusterParameterGroup from './dbClusterParameterGroup' 
+import {RDS} from './index.namespace'
 
-export default {
-  DBSecurityGroupIngress,
-  DBCluster,
-  DBSubnetGroup,
-  OptionGroup,
-  DBParameterGroup,
-  EventSubscription,
-  DBInstance,
-  DBSecurityGroup,
-  DBClusterParameterGroup
-}
+export default RDS

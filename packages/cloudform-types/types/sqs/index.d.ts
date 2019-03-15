@@ -1,7 +1,2 @@
-import Queue from './queue';
-import QueuePolicy from './queuePolicy';
-declare const _default: {
-    Queue: typeof Queue;
-    QueuePolicy: typeof QueuePolicy;
-};
-export default _default;
+import { SQS } from './index.namespace';
+export default SQS;

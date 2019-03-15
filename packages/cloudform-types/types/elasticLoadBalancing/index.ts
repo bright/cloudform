@@ -17,8 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import LoadBalancer from './loadBalancer' 
+import {ElasticLoadBalancing} from './index.namespace'
 
-export default {
-  LoadBalancer
-}
+export default ElasticLoadBalancing

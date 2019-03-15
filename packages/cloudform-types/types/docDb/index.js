@@ -18,13 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const dbSubnetGroup_1 = require("./dbSubnetGroup");
-const dbInstance_1 = require("./dbInstance");
-const dbCluster_1 = require("./dbCluster");
-const dbClusterParameterGroup_1 = require("./dbClusterParameterGroup");
-exports.default = {
-    DBSubnetGroup: dbSubnetGroup_1.default,
-    DBInstance: dbInstance_1.default,
-    DBCluster: dbCluster_1.default,
-    DBClusterParameterGroup: dbClusterParameterGroup_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.DocDB;

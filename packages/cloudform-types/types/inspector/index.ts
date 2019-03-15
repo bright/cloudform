@@ -17,12 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import ResourceGroup from './resourceGroup'
-import AssessmentTemplate from './assessmentTemplate'
-import AssessmentTarget from './assessmentTarget' 
+import {Inspector} from './index.namespace'
 
-export default {
-  ResourceGroup,
-  AssessmentTemplate,
-  AssessmentTarget
-}
+export default Inspector

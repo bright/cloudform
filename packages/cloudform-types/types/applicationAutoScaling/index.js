@@ -18,9 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const scalingPolicy_1 = require("./scalingPolicy");
-const scalableTarget_1 = require("./scalableTarget");
-exports.default = {
-    ScalingPolicy: scalingPolicy_1.default,
-    ScalableTarget: scalableTarget_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.ApplicationAutoScaling;

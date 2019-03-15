@@ -1,5 +1,2 @@
-import Budget from './budget';
-declare const _default: {
-    Budget: typeof Budget;
-};
-export default _default;
+import { Budgets } from './index.namespace';
+export default Budgets;

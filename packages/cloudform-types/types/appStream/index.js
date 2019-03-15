@@ -18,19 +18,5 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const imageBuilder_1 = require("./imageBuilder");
-const stack_1 = require("./stack");
-const directoryConfig_1 = require("./directoryConfig");
-const stackFleetAssociation_1 = require("./stackFleetAssociation");
-const stackUserAssociation_1 = require("./stackUserAssociation");
-const user_1 = require("./user");
-const fleet_1 = require("./fleet");
-exports.default = {
-    ImageBuilder: imageBuilder_1.default,
-    Stack: stack_1.default,
-    DirectoryConfig: directoryConfig_1.default,
-    StackFleetAssociation: stackFleetAssociation_1.default,
-    StackUserAssociation: stackUserAssociation_1.default,
-    User: user_1.default,
-    Fleet: fleet_1.default
-};
+const index_namespace_1 = require("./index.namespace");
+exports.default = index_namespace_1.AppStream;

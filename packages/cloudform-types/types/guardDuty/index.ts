@@ -17,18 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Filter from './filter'
-import ThreatIntelSet from './threatIntelSet'
-import Member from './member'
-import Detector from './detector'
-import IPSet from './ipSet'
-import Master from './master' 
+import {GuardDuty} from './index.namespace'
 
-export default {
-  Filter,
-  ThreatIntelSet,
-  Member,
-  Detector,
-  IPSet,
-  Master
-}
+export default GuardDuty

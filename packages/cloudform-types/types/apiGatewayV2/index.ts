@@ -17,24 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Route from './route'
-import Integration from './integration'
-import Stage from './stage'
-import Deployment from './deployment'
-import Model from './model'
-import Authorizer from './authorizer'
-import Api from './api'
-import RouteResponse from './routeResponse'
-import IntegrationResponse from './integrationResponse' 
+import {ApiGatewayV2} from './index.namespace'
 
-export default {
-  Route,
-  Integration,
-  Stage,
-  Deployment,
-  Model,
-  Authorizer,
-  Api,
-  RouteResponse,
-  IntegrationResponse
-}
+export default ApiGatewayV2

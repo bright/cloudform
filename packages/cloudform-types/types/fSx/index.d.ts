@@ -1,5 +1,2 @@
-import FileSystem from './fileSystem';
-declare const _default: {
-    FileSystem: typeof FileSystem;
-};
-export default _default;
+import { FSx } from './index.namespace';
+export default FSx;

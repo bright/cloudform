@@ -17,8 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import Server from './server' 
+import {OpsWorksCM} from './index.namespace'
 
-export default {
-  Server
-}
+export default OpsWorksCM

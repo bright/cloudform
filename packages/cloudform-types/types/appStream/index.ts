@@ -17,20 +17,6 @@
  * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
    
-import ImageBuilder from './imageBuilder'
-import Stack from './stack'
-import DirectoryConfig from './directoryConfig'
-import StackFleetAssociation from './stackFleetAssociation'
-import StackUserAssociation from './stackUserAssociation'
-import User from './user'
-import Fleet from './fleet' 
+import {AppStream} from './index.namespace'
 
-export default {
-  ImageBuilder,
-  Stack,
-  DirectoryConfig,
-  StackFleetAssociation,
-  StackUserAssociation,
-  User,
-  Fleet
-}
+export default AppStream

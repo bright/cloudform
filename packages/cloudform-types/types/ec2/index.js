@@ -1,33 +1,33 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.26.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const routeTable_1 = require("./routeTable");
-const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
 const placementGroup_1 = require("./placementGroup");
+const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
 const transitGateway_1 = require("./transitGateway");
 const vpcEndpointServicePermissions_1 = require("./vpcEndpointServicePermissions");
 const networkAclEntry_1 = require("./networkAclEntry");
 const internetGateway_1 = require("./internetGateway");
 const launchTemplate_1 = require("./launchTemplate");
-const transitGatewayRouteTableAssociation_1 = require("./transitGatewayRouteTableAssociation");
 const volume_1 = require("./volume");
+const transitGatewayRouteTableAssociation_1 = require("./transitGatewayRouteTableAssociation");
 const spotFleet_1 = require("./spotFleet");
 const vpnConnectionRoute_1 = require("./vpnConnectionRoute");
 const networkInterfacePermission_1 = require("./networkInterfacePermission");
@@ -47,8 +47,8 @@ const securityGroup_1 = require("./securityGroup");
 const subnet_1 = require("./subnet");
 const vpc_1 = require("./vpc");
 const instance_1 = require("./instance");
-const transitGatewayRoute_1 = require("./transitGatewayRoute");
 const dhcpOptions_1 = require("./dhcpOptions");
+const transitGatewayRoute_1 = require("./transitGatewayRoute");
 const networkAcl_1 = require("./networkAcl");
 const vpnGatewayRoutePropagation_1 = require("./vpnGatewayRoutePropagation");
 const egressOnlyInternetGateway_1 = require("./egressOnlyInternetGateway");
@@ -69,15 +69,15 @@ const vpcdhcpOptionsAssociation_1 = require("./vpcdhcpOptionsAssociation");
 const vpcEndpointConnectionNotification_1 = require("./vpcEndpointConnectionNotification");
 exports.default = {
     RouteTable: routeTable_1.default,
-    VPCPeeringConnection: vpcPeeringConnection_1.default,
     PlacementGroup: placementGroup_1.default,
+    VPCPeeringConnection: vpcPeeringConnection_1.default,
     TransitGateway: transitGateway_1.default,
     VPCEndpointServicePermissions: vpcEndpointServicePermissions_1.default,
     NetworkAclEntry: networkAclEntry_1.default,
     InternetGateway: internetGateway_1.default,
     LaunchTemplate: launchTemplate_1.default,
-    TransitGatewayRouteTableAssociation: transitGatewayRouteTableAssociation_1.default,
     Volume: volume_1.default,
+    TransitGatewayRouteTableAssociation: transitGatewayRouteTableAssociation_1.default,
     SpotFleet: spotFleet_1.default,
     VPNConnectionRoute: vpnConnectionRoute_1.default,
     NetworkInterfacePermission: networkInterfacePermission_1.default,
@@ -97,8 +97,8 @@ exports.default = {
     Subnet: subnet_1.default,
     VPC: vpc_1.default,
     Instance: instance_1.default,
-    TransitGatewayRoute: transitGatewayRoute_1.default,
     DHCPOptions: dhcpOptions_1.default,
+    TransitGatewayRoute: transitGatewayRoute_1.default,
     NetworkAcl: networkAcl_1.default,
     VPNGatewayRoutePropagation: vpnGatewayRoutePropagation_1.default,
     EgressOnlyInternetGateway: egressOnlyInternetGateway_1.default,

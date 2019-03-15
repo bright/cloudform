@@ -25,9 +25,9 @@ export interface StackProperties {
     AttributesToDelete?: List<Value<string>>;
     DisplayName?: Value<string>;
     RedirectURL?: Value<string>;
+    Tags?: List<ResourceTag>;
     Name?: Value<string>;
     FeedbackURL?: Value<string>;
-    Tags?: List<ResourceTag>;
 }
 export default class Stack extends ResourceBase<StackProperties> {
     static ApplicationSettings: typeof ApplicationSettings;

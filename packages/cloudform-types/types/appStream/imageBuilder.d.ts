@@ -19,9 +19,9 @@ export interface ImageBuilderProperties {
     DomainJoinInfo?: DomainJoinInfo;
     AppstreamAgentVersion?: Value<string>;
     InstanceType: Value<string>;
+    Tags?: List<ResourceTag>;
     Name?: Value<string>;
     ImageArn?: Value<string>;
-    Tags?: List<ResourceTag>;
 }
 export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
     static VpcConfig: typeof VpcConfig;

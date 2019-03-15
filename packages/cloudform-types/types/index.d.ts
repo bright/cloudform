@@ -16,17 +16,31 @@ export declare const AmazonMQ: {
 import AmazonMQBroker from './amazonMq/broker';
 import AmazonMQConfigurationAssociation from './amazonMq/configurationAssociation';
 import AmazonMQConfiguration from './amazonMq/configuration';
+export declare const AppSync: {
+    DataSource: typeof AppSyncDataSource;
+    Resolver: typeof AppSyncResolver;
+    GraphQLSchema: typeof AppSyncGraphQLSchema;
+    GraphQLApi: typeof AppSyncGraphQLApi;
+    FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+    ApiKey: typeof AppSyncApiKey;
+};
+import AppSyncDataSource from './appSync/dataSource';
+import AppSyncResolver from './appSync/resolver';
+import AppSyncGraphQLSchema from './appSync/graphQlSchema';
+import AppSyncGraphQLApi from './appSync/graphQlApi';
+import AppSyncFunctionConfiguration from './appSync/functionConfiguration';
+import AppSyncApiKey from './appSync/apiKey';
 export declare const EC2: {
     RouteTable: typeof EC2RouteTable;
-    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     PlacementGroup: typeof EC2PlacementGroup;
+    VPCPeeringConnection: typeof EC2VPCPeeringConnection;
     TransitGateway: typeof EC2TransitGateway;
     VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
     NetworkAclEntry: typeof EC2NetworkAclEntry;
     InternetGateway: typeof EC2InternetGateway;
     LaunchTemplate: typeof EC2LaunchTemplate;
-    TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
     Volume: typeof EC2Volume;
+    TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
     SpotFleet: typeof EC2SpotFleet;
     VPNConnectionRoute: typeof EC2VPNConnectionRoute;
     NetworkInterfacePermission: typeof EC2NetworkInterfacePermission;
@@ -46,8 +60,8 @@ export declare const EC2: {
     Subnet: typeof EC2Subnet;
     VPC: typeof EC2VPC;
     Instance: typeof EC2Instance;
-    TransitGatewayRoute: typeof EC2TransitGatewayRoute;
     DHCPOptions: typeof EC2DHCPOptions;
+    TransitGatewayRoute: typeof EC2TransitGatewayRoute;
     NetworkAcl: typeof EC2NetworkAcl;
     VPNGatewayRoutePropagation: typeof EC2VPNGatewayRoutePropagation;
     EgressOnlyInternetGateway: typeof EC2EgressOnlyInternetGateway;
@@ -68,15 +82,15 @@ export declare const EC2: {
     VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
 };
 import EC2RouteTable from './ec2/routeTable';
-import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2PlacementGroup from './ec2/placementGroup';
+import EC2VPCPeeringConnection from './ec2/vpcPeeringConnection';
 import EC2TransitGateway from './ec2/transitGateway';
 import EC2VPCEndpointServicePermissions from './ec2/vpcEndpointServicePermissions';
 import EC2NetworkAclEntry from './ec2/networkAclEntry';
 import EC2InternetGateway from './ec2/internetGateway';
 import EC2LaunchTemplate from './ec2/launchTemplate';
-import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation';
 import EC2Volume from './ec2/volume';
+import EC2TransitGatewayRouteTableAssociation from './ec2/transitGatewayRouteTableAssociation';
 import EC2SpotFleet from './ec2/spotFleet';
 import EC2VPNConnectionRoute from './ec2/vpnConnectionRoute';
 import EC2NetworkInterfacePermission from './ec2/networkInterfacePermission';
@@ -96,8 +110,8 @@ import EC2SecurityGroup from './ec2/securityGroup';
 import EC2Subnet from './ec2/subnet';
 import EC2VPC from './ec2/vpc';
 import EC2Instance from './ec2/instance';
-import EC2TransitGatewayRoute from './ec2/transitGatewayRoute';
 import EC2DHCPOptions from './ec2/dhcpOptions';
+import EC2TransitGatewayRoute from './ec2/transitGatewayRoute';
 import EC2NetworkAcl from './ec2/networkAcl';
 import EC2VPNGatewayRoutePropagation from './ec2/vpnGatewayRoutePropagation';
 import EC2EgressOnlyInternetGateway from './ec2/egressOnlyInternetGateway';
@@ -116,28 +130,14 @@ import EC2EC2Fleet from './ec2/ec2Fleet';
 import EC2TransitGatewayRouteTable from './ec2/transitGatewayRouteTable';
 import EC2VPCDHCPOptionsAssociation from './ec2/vpcdhcpOptionsAssociation';
 import EC2VPCEndpointConnectionNotification from './ec2/vpcEndpointConnectionNotification';
-export declare const AppSync: {
-    DataSource: typeof AppSyncDataSource;
-    Resolver: typeof AppSyncResolver;
-    GraphQLSchema: typeof AppSyncGraphQLSchema;
-    GraphQLApi: typeof AppSyncGraphQLApi;
-    FunctionConfiguration: typeof AppSyncFunctionConfiguration;
-    ApiKey: typeof AppSyncApiKey;
-};
-import AppSyncDataSource from './appSync/dataSource';
-import AppSyncResolver from './appSync/resolver';
-import AppSyncGraphQLSchema from './appSync/graphQlSchema';
-import AppSyncGraphQLApi from './appSync/graphQlApi';
-import AppSyncFunctionConfiguration from './appSync/functionConfiguration';
-import AppSyncApiKey from './appSync/apiKey';
 export declare const ServiceCatalog: {
     PortfolioShare: typeof ServiceCatalogPortfolioShare;
     TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
     LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
     TagOption: typeof ServiceCatalogTagOption;
     PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-    LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
     CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
+    LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
     CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
     PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
     Portfolio: typeof ServiceCatalogPortfolio;
@@ -149,8 +149,8 @@ import ServiceCatalogTagOptionAssociation from './serviceCatalog/tagOptionAssoci
 import ServiceCatalogLaunchTemplateConstraint from './serviceCatalog/launchTemplateConstraint';
 import ServiceCatalogTagOption from './serviceCatalog/tagOption';
 import ServiceCatalogPortfolioPrincipalAssociation from './serviceCatalog/portfolioPrincipalAssociation';
-import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
 import ServiceCatalogCloudFormationProvisionedProduct from './serviceCatalog/cloudFormationProvisionedProduct';
+import ServiceCatalogLaunchRoleConstraint from './serviceCatalog/launchRoleConstraint';
 import ServiceCatalogCloudFormationProduct from './serviceCatalog/cloudFormationProduct';
 import ServiceCatalogPortfolioProductAssociation from './serviceCatalog/portfolioProductAssociation';
 import ServiceCatalogPortfolio from './serviceCatalog/portfolio';
@@ -172,6 +172,40 @@ import CognitoUserPoolUser from './cognito/userPoolUser';
 import CognitoUserPool from './cognito/userPool';
 import CognitoUserPoolClient from './cognito/userPoolClient';
 import CognitoUserPoolUserToGroupAttachment from './cognito/userPoolUserToGroupAttachment';
+export declare const Greengrass: {
+    Group: typeof GreengrassGroup;
+    ConnectorDefinition: typeof GreengrassConnectorDefinition;
+    ConnectorDefinitionVersion: typeof GreengrassConnectorDefinitionVersion;
+    FunctionDefinition: typeof GreengrassFunctionDefinition;
+    SubscriptionDefinitionVersion: typeof GreengrassSubscriptionDefinitionVersion;
+    CoreDefinitionVersion: typeof GreengrassCoreDefinitionVersion;
+    DeviceDefinition: typeof GreengrassDeviceDefinition;
+    LoggerDefinition: typeof GreengrassLoggerDefinition;
+    CoreDefinition: typeof GreengrassCoreDefinition;
+    DeviceDefinitionVersion: typeof GreengrassDeviceDefinitionVersion;
+    SubscriptionDefinition: typeof GreengrassSubscriptionDefinition;
+    ResourceDefinitionVersion: typeof GreengrassResourceDefinitionVersion;
+    LoggerDefinitionVersion: typeof GreengrassLoggerDefinitionVersion;
+    FunctionDefinitionVersion: typeof GreengrassFunctionDefinitionVersion;
+    GroupVersion: typeof GreengrassGroupVersion;
+    ResourceDefinition: typeof GreengrassResourceDefinition;
+};
+import GreengrassGroup from './greengrass/group';
+import GreengrassConnectorDefinition from './greengrass/connectorDefinition';
+import GreengrassConnectorDefinitionVersion from './greengrass/connectorDefinitionVersion';
+import GreengrassFunctionDefinition from './greengrass/functionDefinition';
+import GreengrassSubscriptionDefinitionVersion from './greengrass/subscriptionDefinitionVersion';
+import GreengrassCoreDefinitionVersion from './greengrass/coreDefinitionVersion';
+import GreengrassDeviceDefinition from './greengrass/deviceDefinition';
+import GreengrassLoggerDefinition from './greengrass/loggerDefinition';
+import GreengrassCoreDefinition from './greengrass/coreDefinition';
+import GreengrassDeviceDefinitionVersion from './greengrass/deviceDefinitionVersion';
+import GreengrassSubscriptionDefinition from './greengrass/subscriptionDefinition';
+import GreengrassResourceDefinitionVersion from './greengrass/resourceDefinitionVersion';
+import GreengrassLoggerDefinitionVersion from './greengrass/loggerDefinitionVersion';
+import GreengrassFunctionDefinitionVersion from './greengrass/functionDefinitionVersion';
+import GreengrassGroupVersion from './greengrass/groupVersion';
+import GreengrassResourceDefinition from './greengrass/resourceDefinition';
 export declare const Events: {
     Rule: typeof EventsRule;
     EventBusPolicy: typeof EventsEventBusPolicy;
@@ -260,8 +294,8 @@ export declare const ApiGateway: {
     Stage: typeof ApiGatewayStage;
     VpcLink: typeof ApiGatewayVpcLink;
     GatewayResponse: typeof ApiGatewayGatewayResponse;
-    ClientCertificate: typeof ApiGatewayClientCertificate;
     Method: typeof ApiGatewayMethod;
+    ClientCertificate: typeof ApiGatewayClientCertificate;
     DocumentationVersion: typeof ApiGatewayDocumentationVersion;
     UsagePlanKey: typeof ApiGatewayUsagePlanKey;
 };
@@ -280,10 +314,26 @@ import ApiGatewayBasePathMapping from './apiGateway/basePathMapping';
 import ApiGatewayStage from './apiGateway/stage';
 import ApiGatewayVpcLink from './apiGateway/vpcLink';
 import ApiGatewayGatewayResponse from './apiGateway/gatewayResponse';
-import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayMethod from './apiGateway/method';
+import ApiGatewayClientCertificate from './apiGateway/clientCertificate';
 import ApiGatewayDocumentationVersion from './apiGateway/documentationVersion';
 import ApiGatewayUsagePlanKey from './apiGateway/usagePlanKey';
+export declare const EMR: {
+    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+    Cluster: typeof EMRCluster;
+    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+    Step: typeof EMRStep;
+    SecurityConfiguration: typeof EMRSecurityConfiguration;
+};
+import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
+import EMRCluster from './emr/cluster';
+import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
+import EMRStep from './emr/step';
+import EMRSecurityConfiguration from './emr/securityConfiguration';
+export declare const WorkSpaces: {
+    Workspace: typeof WorkSpacesWorkspace;
+};
+import WorkSpacesWorkspace from './workSpaces/workspace';
 export declare const RDS: {
     DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
     DBCluster: typeof RDSDBCluster;
@@ -304,22 +354,6 @@ import RDSEventSubscription from './rds/eventSubscription';
 import RDSDBInstance from './rds/dbInstance';
 import RDSDBSecurityGroup from './rds/dbSecurityGroup';
 import RDSDBClusterParameterGroup from './rds/dbClusterParameterGroup';
-export declare const WorkSpaces: {
-    Workspace: typeof WorkSpacesWorkspace;
-};
-import WorkSpacesWorkspace from './workSpaces/workspace';
-export declare const EMR: {
-    InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-    Cluster: typeof EMRCluster;
-    InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-    Step: typeof EMRStep;
-    SecurityConfiguration: typeof EMRSecurityConfiguration;
-};
-import EMRInstanceFleetConfig from './emr/instanceFleetConfig';
-import EMRCluster from './emr/cluster';
-import EMRInstanceGroupConfig from './emr/instanceGroupConfig';
-import EMRStep from './emr/step';
-import EMRSecurityConfiguration from './emr/securityConfiguration';
 export declare const ApiGatewayV2: {
     Route: typeof ApiGatewayV2Route;
     Integration: typeof ApiGatewayV2Integration;
@@ -352,16 +386,16 @@ import LogsMetricFilter from './logs/metricFilter';
 import LogsLogStream from './logs/logStream';
 import LogsSubscriptionFilter from './logs/subscriptionFilter';
 import LogsDestination from './logs/destination';
+export declare const RAM: {
+    ResourceShare: typeof RAMResourceShare;
+};
+import RAMResourceShare from './ram/resourceShare';
 export declare const Kinesis: {
     Stream: typeof KinesisStream;
     StreamConsumer: typeof KinesisStreamConsumer;
 };
 import KinesisStream from './kinesis/stream';
 import KinesisStreamConsumer from './kinesis/streamConsumer';
-export declare const RAM: {
-    ResourceShare: typeof RAMResourceShare;
-};
-import RAMResourceShare from './ram/resourceShare';
 export declare const AutoScaling: {
     LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
     LifecycleHook: typeof AutoScalingLifecycleHook;
@@ -380,6 +414,10 @@ export declare const SQS: {
 };
 import SQSQueue from './sqs/queue';
 import SQSQueuePolicy from './sqs/queuePolicy';
+export declare const AutoScalingPlans: {
+    ScalingPlan: typeof AutoScalingPlansScalingPlan;
+};
+import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const AppStream: {
     ImageBuilder: typeof AppStreamImageBuilder;
     Stack: typeof AppStreamStack;
@@ -396,10 +434,6 @@ import AppStreamStackFleetAssociation from './appStream/stackFleetAssociation';
 import AppStreamStackUserAssociation from './appStream/stackUserAssociation';
 import AppStreamUser from './appStream/user';
 import AppStreamFleet from './appStream/fleet';
-export declare const AutoScalingPlans: {
-    ScalingPlan: typeof AutoScalingPlansScalingPlan;
-};
-import AutoScalingPlansScalingPlan from './autoScalingPlans/scalingPlan';
 export declare const Route53: {
     RecordSet: typeof Route53RecordSet;
     HostedZone: typeof Route53HostedZone;
@@ -710,6 +744,10 @@ import SecretsManagerRotationSchedule from './secretsManager/rotationSchedule';
 import SecretsManagerSecret from './secretsManager/secret';
 import SecretsManagerResourcePolicy from './secretsManager/resourcePolicy';
 import SecretsManagerSecretTargetAttachment from './secretsManager/secretTargetAttachment';
+export declare const CodeBuild: {
+    Project: typeof CodeBuildProject;
+};
+import CodeBuildProject from './codeBuild/project';
 export declare const Budgets: {
     Budget: typeof BudgetsBudget;
 };
@@ -818,14 +856,6 @@ import NeptuneDBClusterParameterGroup from './neptune/dbClusterParameterGroup';
 import NeptuneDBCluster from './neptune/dbCluster';
 import NeptuneDBSubnetGroup from './neptune/dbSubnetGroup';
 import NeptuneDBInstance from './neptune/dbInstance';
-export declare const KinesisAnalytics: {
-    ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
-    ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
-    Application: typeof KinesisAnalyticsApplication;
-};
-import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
-import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
-import KinesisAnalyticsApplication from './kinesisAnalytics/application';
 export declare const DocDB: {
     DBSubnetGroup: typeof DocDBDBSubnetGroup;
     DBInstance: typeof DocDBDBInstance;
@@ -836,6 +866,14 @@ import DocDBDBSubnetGroup from './docDb/dbSubnetGroup';
 import DocDBDBInstance from './docDb/dbInstance';
 import DocDBDBCluster from './docDb/dbCluster';
 import DocDBDBClusterParameterGroup from './docDb/dbClusterParameterGroup';
+export declare const KinesisAnalytics: {
+    ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
+    ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
+    Application: typeof KinesisAnalyticsApplication;
+};
+import KinesisAnalyticsApplicationOutput from './kinesisAnalytics/applicationOutput';
+import KinesisAnalyticsApplicationReferenceDataSource from './kinesisAnalytics/applicationReferenceDataSource';
+import KinesisAnalyticsApplication from './kinesisAnalytics/application';
 export declare const SES: {
     ReceiptFilter: typeof SESReceiptFilter;
     ReceiptRule: typeof SESReceiptRule;
@@ -850,10 +888,6 @@ import SESConfigurationSetEventDestination from './ses/configurationSetEventDest
 import SESTemplate from './ses/template';
 import SESConfigurationSet from './ses/configurationSet';
 import SESReceiptRuleSet from './ses/receiptRuleSet';
-export declare const CodeBuild: {
-    Project: typeof CodeBuildProject;
-};
-import CodeBuildProject from './codeBuild/project';
 export declare const FSx: {
     FileSystem: typeof FSxFileSystem;
 };
@@ -902,17 +936,25 @@ declare const _default: {
         ConfigurationAssociation: typeof AmazonMQConfigurationAssociation;
         Configuration: typeof AmazonMQConfiguration;
     };
+    AppSync: {
+        DataSource: typeof AppSyncDataSource;
+        Resolver: typeof AppSyncResolver;
+        GraphQLSchema: typeof AppSyncGraphQLSchema;
+        GraphQLApi: typeof AppSyncGraphQLApi;
+        FunctionConfiguration: typeof AppSyncFunctionConfiguration;
+        ApiKey: typeof AppSyncApiKey;
+    };
     EC2: {
         RouteTable: typeof EC2RouteTable;
-        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         PlacementGroup: typeof EC2PlacementGroup;
+        VPCPeeringConnection: typeof EC2VPCPeeringConnection;
         TransitGateway: typeof EC2TransitGateway;
         VPCEndpointServicePermissions: typeof EC2VPCEndpointServicePermissions;
         NetworkAclEntry: typeof EC2NetworkAclEntry;
         InternetGateway: typeof EC2InternetGateway;
         LaunchTemplate: typeof EC2LaunchTemplate;
-        TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
         Volume: typeof EC2Volume;
+        TransitGatewayRouteTableAssociation: typeof EC2TransitGatewayRouteTableAssociation;
         SpotFleet: typeof EC2SpotFleet;
         VPNConnectionRoute: typeof EC2VPNConnectionRoute;
         NetworkInterfacePermission: typeof EC2NetworkInterfacePermission;
@@ -932,8 +974,8 @@ declare const _default: {
         Subnet: typeof EC2Subnet;
         VPC: typeof EC2VPC;
         Instance: typeof EC2Instance;
-        TransitGatewayRoute: typeof EC2TransitGatewayRoute;
         DHCPOptions: typeof EC2DHCPOptions;
+        TransitGatewayRoute: typeof EC2TransitGatewayRoute;
         NetworkAcl: typeof EC2NetworkAcl;
         VPNGatewayRoutePropagation: typeof EC2VPNGatewayRoutePropagation;
         EgressOnlyInternetGateway: typeof EC2EgressOnlyInternetGateway;
@@ -953,22 +995,14 @@ declare const _default: {
         VPCDHCPOptionsAssociation: typeof EC2VPCDHCPOptionsAssociation;
         VPCEndpointConnectionNotification: typeof EC2VPCEndpointConnectionNotification;
     };
-    AppSync: {
-        DataSource: typeof AppSyncDataSource;
-        Resolver: typeof AppSyncResolver;
-        GraphQLSchema: typeof AppSyncGraphQLSchema;
-        GraphQLApi: typeof AppSyncGraphQLApi;
-        FunctionConfiguration: typeof AppSyncFunctionConfiguration;
-        ApiKey: typeof AppSyncApiKey;
-    };
     ServiceCatalog: {
         PortfolioShare: typeof ServiceCatalogPortfolioShare;
         TagOptionAssociation: typeof ServiceCatalogTagOptionAssociation;
         LaunchTemplateConstraint: typeof ServiceCatalogLaunchTemplateConstraint;
         TagOption: typeof ServiceCatalogTagOption;
         PortfolioPrincipalAssociation: typeof ServiceCatalogPortfolioPrincipalAssociation;
-        LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
         CloudFormationProvisionedProduct: typeof ServiceCatalogCloudFormationProvisionedProduct;
+        LaunchRoleConstraint: typeof ServiceCatalogLaunchRoleConstraint;
         CloudFormationProduct: typeof ServiceCatalogCloudFormationProduct;
         PortfolioProductAssociation: typeof ServiceCatalogPortfolioProductAssociation;
         Portfolio: typeof ServiceCatalogPortfolio;
@@ -983,6 +1017,24 @@ declare const _default: {
         UserPool: typeof CognitoUserPool;
         UserPoolClient: typeof CognitoUserPoolClient;
         UserPoolUserToGroupAttachment: typeof CognitoUserPoolUserToGroupAttachment;
+    };
+    Greengrass: {
+        Group: typeof GreengrassGroup;
+        ConnectorDefinition: typeof GreengrassConnectorDefinition;
+        ConnectorDefinitionVersion: typeof GreengrassConnectorDefinitionVersion;
+        FunctionDefinition: typeof GreengrassFunctionDefinition;
+        SubscriptionDefinitionVersion: typeof GreengrassSubscriptionDefinitionVersion;
+        CoreDefinitionVersion: typeof GreengrassCoreDefinitionVersion;
+        DeviceDefinition: typeof GreengrassDeviceDefinition;
+        LoggerDefinition: typeof GreengrassLoggerDefinition;
+        CoreDefinition: typeof GreengrassCoreDefinition;
+        DeviceDefinitionVersion: typeof GreengrassDeviceDefinitionVersion;
+        SubscriptionDefinition: typeof GreengrassSubscriptionDefinition;
+        ResourceDefinitionVersion: typeof GreengrassResourceDefinitionVersion;
+        LoggerDefinitionVersion: typeof GreengrassLoggerDefinitionVersion;
+        FunctionDefinitionVersion: typeof GreengrassFunctionDefinitionVersion;
+        GroupVersion: typeof GreengrassGroupVersion;
+        ResourceDefinition: typeof GreengrassResourceDefinition;
     };
     Events: {
         Rule: typeof EventsRule;
@@ -1042,10 +1094,20 @@ declare const _default: {
         Stage: typeof ApiGatewayStage;
         VpcLink: typeof ApiGatewayVpcLink;
         GatewayResponse: typeof ApiGatewayGatewayResponse;
-        ClientCertificate: typeof ApiGatewayClientCertificate;
         Method: typeof ApiGatewayMethod;
+        ClientCertificate: typeof ApiGatewayClientCertificate;
         DocumentationVersion: typeof ApiGatewayDocumentationVersion;
         UsagePlanKey: typeof ApiGatewayUsagePlanKey;
+    };
+    EMR: {
+        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
+        Cluster: typeof EMRCluster;
+        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
+        Step: typeof EMRStep;
+        SecurityConfiguration: typeof EMRSecurityConfiguration;
+    };
+    WorkSpaces: {
+        Workspace: typeof WorkSpacesWorkspace;
     };
     RDS: {
         DBSecurityGroupIngress: typeof RDSDBSecurityGroupIngress;
@@ -1057,16 +1119,6 @@ declare const _default: {
         DBInstance: typeof RDSDBInstance;
         DBSecurityGroup: typeof RDSDBSecurityGroup;
         DBClusterParameterGroup: typeof RDSDBClusterParameterGroup;
-    };
-    WorkSpaces: {
-        Workspace: typeof WorkSpacesWorkspace;
-    };
-    EMR: {
-        InstanceFleetConfig: typeof EMRInstanceFleetConfig;
-        Cluster: typeof EMRCluster;
-        InstanceGroupConfig: typeof EMRInstanceGroupConfig;
-        Step: typeof EMRStep;
-        SecurityConfiguration: typeof EMRSecurityConfiguration;
     };
     ApiGatewayV2: {
         Route: typeof ApiGatewayV2Route;
@@ -1086,12 +1138,12 @@ declare const _default: {
         SubscriptionFilter: typeof LogsSubscriptionFilter;
         Destination: typeof LogsDestination;
     };
+    RAM: {
+        ResourceShare: typeof RAMResourceShare;
+    };
     Kinesis: {
         Stream: typeof KinesisStream;
         StreamConsumer: typeof KinesisStreamConsumer;
-    };
-    RAM: {
-        ResourceShare: typeof RAMResourceShare;
     };
     AutoScaling: {
         LaunchConfiguration: typeof AutoScalingLaunchConfiguration;
@@ -1104,6 +1156,9 @@ declare const _default: {
         Queue: typeof SQSQueue;
         QueuePolicy: typeof SQSQueuePolicy;
     };
+    AutoScalingPlans: {
+        ScalingPlan: typeof AutoScalingPlansScalingPlan;
+    };
     AppStream: {
         ImageBuilder: typeof AppStreamImageBuilder;
         Stack: typeof AppStreamStack;
@@ -1112,9 +1167,6 @@ declare const _default: {
         StackUserAssociation: typeof AppStreamStackUserAssociation;
         User: typeof AppStreamUser;
         Fleet: typeof AppStreamFleet;
-    };
-    AutoScalingPlans: {
-        ScalingPlan: typeof AutoScalingPlansScalingPlan;
     };
     Route53: {
         RecordSet: typeof Route53RecordSet;
@@ -1302,6 +1354,9 @@ declare const _default: {
         ResourcePolicy: typeof SecretsManagerResourcePolicy;
         SecretTargetAttachment: typeof SecretsManagerSecretTargetAttachment;
     };
+    CodeBuild: {
+        Project: typeof CodeBuildProject;
+    };
     Budgets: {
         Budget: typeof BudgetsBudget;
     };
@@ -1374,16 +1429,16 @@ declare const _default: {
         DBSubnetGroup: typeof NeptuneDBSubnetGroup;
         DBInstance: typeof NeptuneDBInstance;
     };
-    KinesisAnalytics: {
-        ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
-        ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
-        Application: typeof KinesisAnalyticsApplication;
-    };
     DocDB: {
         DBSubnetGroup: typeof DocDBDBSubnetGroup;
         DBInstance: typeof DocDBDBInstance;
         DBCluster: typeof DocDBDBCluster;
         DBClusterParameterGroup: typeof DocDBDBClusterParameterGroup;
+    };
+    KinesisAnalytics: {
+        ApplicationOutput: typeof KinesisAnalyticsApplicationOutput;
+        ApplicationReferenceDataSource: typeof KinesisAnalyticsApplicationReferenceDataSource;
+        Application: typeof KinesisAnalyticsApplication;
     };
     SES: {
         ReceiptFilter: typeof SESReceiptFilter;
@@ -1392,9 +1447,6 @@ declare const _default: {
         Template: typeof SESTemplate;
         ConfigurationSet: typeof SESConfigurationSet;
         ReceiptRuleSet: typeof SESReceiptRuleSet;
-    };
-    CodeBuild: {
-        Project: typeof CodeBuildProject;
     };
     FSx: {
         FileSystem: typeof FSxFileSystem;

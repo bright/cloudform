@@ -1,6 +1,7 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface NotebookInstanceProperties {
+    RootAccess?: Value<string>;
     KmsKeyId?: Value<string>;
     VolumeSizeInGB?: Value<number>;
     DirectInternetAccess?: Value<string>;

@@ -27,8 +27,8 @@ export interface FleetProperties {
     DisconnectTimeoutInSeconds?: Value<number>;
     DisplayName?: Value<string>;
     InstanceType: Value<string>;
-    ImageArn?: Value<string>;
     Tags?: List<ResourceTag>;
+    ImageArn?: Value<string>;
 }
 export default class Fleet extends ResourceBase<FleetProperties> {
     static ComputeCapacity: typeof ComputeCapacity;

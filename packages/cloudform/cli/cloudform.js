@@ -42,7 +42,9 @@ example: cloudform aws/template.ts > generated.template`);
     process.exit(1);
 }
 // console.info(`Compiling AWS CloudForm template from ${process.argv[2]}...`)
-const resolvedTemplatePath = path.resolve(options.templatePath).replace(/\\/g, "\\\\");
+const resolvedTemplatePath = path.resolve(options.templatePath)
+    .replace(/\\/g, "\\\\")
+    .replace(/\.ts$/, '');
 child_process_1.exec('npm bin', (err, npmBin) => {
     if (err) {
         console.error(err);

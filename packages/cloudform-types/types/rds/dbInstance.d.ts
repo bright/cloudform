@@ -10,7 +10,7 @@ export interface DBInstanceProperties {
     AllowMajorVersionUpgrade?: Value<boolean>;
     AutoMinorVersionUpgrade?: Value<boolean>;
     AvailabilityZone?: Value<string>;
-    BackupRetentionPeriod?: Value<string>;
+    BackupRetentionPeriod?: Value<number>;
     CharacterSetName?: Value<string>;
     CopyTagsToSnapshot?: Value<boolean>;
     DBClusterIdentifier?: Value<string>;

@@ -5,6 +5,31 @@ export declare class EbsBlockDeviceConfig {
     VolumesPerInstance?: Value<number>;
     constructor(properties: EbsBlockDeviceConfig);
 }
+export declare class ScalingAction {
+    Market?: Value<string>;
+    SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
+    constructor(properties: ScalingAction);
+}
+export declare class ScalingTrigger {
+    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
+    constructor(properties: ScalingTrigger);
+}
+export declare class VolumeSpecification {
+    Iops?: Value<number>;
+    SizeInGB: Value<number>;
+    VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
+}
+export declare class AutoScalingPolicy {
+    Constraints: ScalingConstraints;
+    Rules: List<ScalingRule>;
+    constructor(properties: AutoScalingPolicy);
+}
+export declare class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
+    EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
+}
 export declare class Configuration {
     Classification?: Value<string>;
     ConfigurationProperties?: {
@@ -31,15 +56,6 @@ export declare class ScalingRule {
     Trigger: ScalingTrigger;
     constructor(properties: ScalingRule);
 }
-export declare class ScalingAction {
-    Market?: Value<string>;
-    SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
-    constructor(properties: ScalingAction);
-}
-export declare class ScalingTrigger {
-    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
-    constructor(properties: ScalingTrigger);
-}
 export declare class ScalingConstraints {
     MaxCapacity: Value<number>;
     MinCapacity: Value<number>;
@@ -57,22 +73,6 @@ export declare class CloudWatchAlarmDefinition {
     Unit?: Value<string>;
     constructor(properties: CloudWatchAlarmDefinition);
 }
-export declare class VolumeSpecification {
-    Iops?: Value<number>;
-    SizeInGB: Value<number>;
-    VolumeType: Value<string>;
-    constructor(properties: VolumeSpecification);
-}
-export declare class AutoScalingPolicy {
-    Constraints: ScalingConstraints;
-    Rules: List<ScalingRule>;
-    constructor(properties: AutoScalingPolicy);
-}
-export declare class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
-    EbsOptimized?: Value<boolean>;
-    constructor(properties: EbsConfiguration);
-}
 export interface InstanceGroupConfigProperties {
     AutoScalingPolicy?: AutoScalingPolicy;
     BidPrice?: Value<string>;
@@ -87,16 +87,16 @@ export interface InstanceGroupConfigProperties {
 }
 export default class InstanceGroupConfig extends ResourceBase<InstanceGroupConfigProperties> {
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
+    static ScalingAction: typeof ScalingAction;
+    static ScalingTrigger: typeof ScalingTrigger;
+    static VolumeSpecification: typeof VolumeSpecification;
+    static AutoScalingPolicy: typeof AutoScalingPolicy;
+    static EbsConfiguration: typeof EbsConfiguration;
     static Configuration: typeof Configuration;
     static MetricDimension: typeof MetricDimension;
     static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
     static ScalingRule: typeof ScalingRule;
-    static ScalingAction: typeof ScalingAction;
-    static ScalingTrigger: typeof ScalingTrigger;
     static ScalingConstraints: typeof ScalingConstraints;
     static CloudWatchAlarmDefinition: typeof CloudWatchAlarmDefinition;
-    static VolumeSpecification: typeof VolumeSpecification;
-    static AutoScalingPolicy: typeof AutoScalingPolicy;
-    static EbsConfiguration: typeof EbsConfiguration;
     constructor(properties: InstanceGroupConfigProperties);
 }

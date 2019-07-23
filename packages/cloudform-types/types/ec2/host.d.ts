@@ -3,6 +3,7 @@ import { Value } from '../dataTypes';
 export interface HostProperties {
     AutoPlacement?: Value<string>;
     AvailabilityZone: Value<string>;
+    HostRecovery?: Value<string>;
     InstanceType: Value<string>;
 }
 export default class Host extends ResourceBase<HostProperties> {

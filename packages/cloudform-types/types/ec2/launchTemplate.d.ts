@@ -5,6 +5,54 @@ export declare class PrivateIpAdd {
     Primary?: Value<boolean>;
     constructor(properties: PrivateIpAdd);
 }
+export declare class BlockDeviceMapping {
+    Ebs?: Ebs;
+    NoDevice?: Value<string>;
+    VirtualName?: Value<string>;
+    DeviceName?: Value<string>;
+    constructor(properties: BlockDeviceMapping);
+}
+export declare class SpotOptions {
+    SpotInstanceType?: Value<string>;
+    InstanceInterruptionBehavior?: Value<string>;
+    MaxPrice?: Value<string>;
+    BlockDurationMinutes?: Value<number>;
+    ValidUntil?: Value<string>;
+    constructor(properties: SpotOptions);
+}
+export declare type CapacityReservationPreference = Value<string>;
+export declare class ElasticGpuSpecification {
+    Type?: Value<string>;
+    constructor(properties: ElasticGpuSpecification);
+}
+export declare class TagSpecification {
+    ResourceType?: Value<string>;
+    Tags?: List<ResourceTag>;
+    constructor(properties: TagSpecification);
+}
+export declare class IamInstanceProfile {
+    Arn?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: IamInstanceProfile);
+}
+export declare class LicenseSpecification {
+    LicenseConfigurationArn?: Value<string>;
+    constructor(properties: LicenseSpecification);
+}
+export declare class Ebs {
+    SnapshotId?: Value<string>;
+    VolumeType?: Value<string>;
+    KmsKeyId?: Value<string>;
+    Encrypted?: Value<boolean>;
+    Iops?: Value<number>;
+    VolumeSize?: Value<number>;
+    DeleteOnTermination?: Value<boolean>;
+    constructor(properties: Ebs);
+}
+export declare class HibernationOptions {
+    Configured?: Value<boolean>;
+    constructor(properties: HibernationOptions);
+}
 export declare class LaunchTemplateData {
     SecurityGroups?: List<Value<string>>;
     TagSpecifications?: List<TagSpecification>;
@@ -54,42 +102,14 @@ export declare class Placement {
     HostId?: Value<string>;
     constructor(properties: Placement);
 }
-export declare class BlockDeviceMapping {
-    Ebs?: Ebs;
-    NoDevice?: Value<string>;
-    VirtualName?: Value<string>;
-    DeviceName?: Value<string>;
-    constructor(properties: BlockDeviceMapping);
-}
-export declare class SpotOptions {
-    SpotInstanceType?: Value<string>;
-    InstanceInterruptionBehavior?: Value<string>;
-    MaxPrice?: Value<string>;
-    constructor(properties: SpotOptions);
-}
-export declare type CapacityReservationPreference = Value<string>;
 export declare class CapacityReservationSpecification {
     CapacityReservationPreference?: CapacityReservationPreference;
     CapacityReservationTarget?: CapacityReservationTarget;
     constructor(properties: CapacityReservationSpecification);
 }
-export declare class ElasticGpuSpecification {
-    Type?: Value<string>;
-    constructor(properties: ElasticGpuSpecification);
-}
-export declare class TagSpecification {
-    ResourceType?: Value<string>;
-    Tags?: List<ResourceTag>;
-    constructor(properties: TagSpecification);
-}
 export declare class Ipv6Add {
     Ipv6Address?: Value<string>;
     constructor(properties: Ipv6Add);
-}
-export declare class IamInstanceProfile {
-    Arn?: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: IamInstanceProfile);
 }
 export declare class CapacityReservationTarget {
     CapacityReservationId?: Value<string>;
@@ -100,38 +120,21 @@ export declare class NetworkInterface {
     PrivateIpAddress?: Value<string>;
     PrivateIpAddresses?: List<PrivateIpAdd>;
     SecondaryPrivateIpAddressCount?: Value<number>;
-    Ipv6AddressCount?: Value<number>;
-    Groups?: List<Value<string>>;
     DeviceIndex?: Value<number>;
     SubnetId?: Value<string>;
     Ipv6Addresses?: List<Ipv6Add>;
     AssociatePublicIpAddress?: Value<boolean>;
     NetworkInterfaceId?: Value<string>;
+    InterfaceType?: Value<string>;
+    Ipv6AddressCount?: Value<number>;
+    Groups?: List<Value<string>>;
     DeleteOnTermination?: Value<boolean>;
     constructor(properties: NetworkInterface);
-}
-export declare class LicenseSpecification {
-    LicenseConfigurationArn?: Value<string>;
-    constructor(properties: LicenseSpecification);
 }
 export declare class CpuOptions {
     ThreadsPerCore?: Value<number>;
     CoreCount?: Value<number>;
     constructor(properties: CpuOptions);
-}
-export declare class Ebs {
-    SnapshotId?: Value<string>;
-    VolumeType?: Value<string>;
-    KmsKeyId?: Value<string>;
-    Encrypted?: Value<boolean>;
-    Iops?: Value<number>;
-    VolumeSize?: Value<number>;
-    DeleteOnTermination?: Value<boolean>;
-    constructor(properties: Ebs);
-}
-export declare class HibernationOptions {
-    Configured?: Value<boolean>;
-    constructor(properties: HibernationOptions);
 }
 export declare class LaunchTemplateElasticInferenceAccelerator {
     Type?: Value<string>;
@@ -143,24 +146,24 @@ export interface LaunchTemplateProperties {
 }
 export default class LaunchTemplate extends ResourceBase<LaunchTemplateProperties> {
     static PrivateIpAdd: typeof PrivateIpAdd;
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static SpotOptions: typeof SpotOptions;
+    static ElasticGpuSpecification: typeof ElasticGpuSpecification;
+    static TagSpecification: typeof TagSpecification;
+    static IamInstanceProfile: typeof IamInstanceProfile;
+    static LicenseSpecification: typeof LicenseSpecification;
+    static Ebs: typeof Ebs;
+    static HibernationOptions: typeof HibernationOptions;
     static LaunchTemplateData: typeof LaunchTemplateData;
     static InstanceMarketOptions: typeof InstanceMarketOptions;
     static CreditSpecification: typeof CreditSpecification;
     static Monitoring: typeof Monitoring;
     static Placement: typeof Placement;
-    static BlockDeviceMapping: typeof BlockDeviceMapping;
-    static SpotOptions: typeof SpotOptions;
     static CapacityReservationSpecification: typeof CapacityReservationSpecification;
-    static ElasticGpuSpecification: typeof ElasticGpuSpecification;
-    static TagSpecification: typeof TagSpecification;
     static Ipv6Add: typeof Ipv6Add;
-    static IamInstanceProfile: typeof IamInstanceProfile;
     static CapacityReservationTarget: typeof CapacityReservationTarget;
     static NetworkInterface: typeof NetworkInterface;
-    static LicenseSpecification: typeof LicenseSpecification;
     static CpuOptions: typeof CpuOptions;
-    static Ebs: typeof Ebs;
-    static HibernationOptions: typeof HibernationOptions;
     static LaunchTemplateElasticInferenceAccelerator: typeof LaunchTemplateElasticInferenceAccelerator;
     constructor(properties?: LaunchTemplateProperties);
 }

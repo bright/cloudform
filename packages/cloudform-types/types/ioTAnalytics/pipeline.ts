@@ -1,10 +1,10 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -18,6 +18,47 @@ export class DeviceShadowEnrich {
     Name?: Value<string>
 
     constructor(properties: DeviceShadowEnrich) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Lambda {
+    BatchSize?: Value<number>
+    Next?: Value<string>
+    LambdaName?: Value<string>
+    Name?: Value<string>
+
+    constructor(properties: Lambda) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SelectAttributes {
+    Next?: Value<string>
+    Attributes?: List<Value<string>>
+    Name?: Value<string>
+
+    constructor(properties: SelectAttributes) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Channel {
+    ChannelName?: Value<string>
+    Next?: Value<string>
+    Name?: Value<string>
+
+    constructor(properties: Channel) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Filter {
+    Filter?: Value<string>
+    Next?: Value<string>
+    Name?: Value<string>
+
+    constructor(properties: Filter) {
         Object.assign(this, properties)
     }
 }
@@ -39,17 +80,6 @@ export class Activity {
     }
 }
 
-export class Lambda {
-    BatchSize?: Value<number>
-    Next?: Value<string>
-    LambdaName?: Value<string>
-    Name?: Value<string>
-
-    constructor(properties: Lambda) {
-        Object.assign(this, properties)
-    }
-}
-
 export class Math {
     Attribute?: Value<string>
     Next?: Value<string>
@@ -67,16 +97,6 @@ export class RemoveAttributes {
     Name?: Value<string>
 
     constructor(properties: RemoveAttributes) {
-        Object.assign(this, properties)
-    }
-}
-
-export class SelectAttributes {
-    Next?: Value<string>
-    Attributes?: List<Value<string>>
-    Name?: Value<string>
-
-    constructor(properties: SelectAttributes) {
         Object.assign(this, properties)
     }
 }
@@ -112,26 +132,6 @@ export class DeviceRegistryEnrich {
     }
 }
 
-export class Channel {
-    ChannelName?: Value<string>
-    Next?: Value<string>
-    Name?: Value<string>
-
-    constructor(properties: Channel) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Filter {
-    Filter?: Value<string>
-    Next?: Value<string>
-    Name?: Value<string>
-
-    constructor(properties: Filter) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface PipelineProperties {
     PipelineName?: Value<string>
     Tags?: List<ResourceTag>
@@ -140,16 +140,16 @@ export interface PipelineProperties {
 
 export default class Pipeline extends ResourceBase<PipelineProperties> {
     static DeviceShadowEnrich = DeviceShadowEnrich
-    static Activity = Activity
     static Lambda = Lambda
+    static SelectAttributes = SelectAttributes
+    static Channel = Channel
+    static Filter = Filter
+    static Activity = Activity
     static Math = Math
     static RemoveAttributes = RemoveAttributes
-    static SelectAttributes = SelectAttributes
     static Datastore = Datastore
     static AddAttributes = AddAttributes
     static DeviceRegistryEnrich = DeviceRegistryEnrich
-    static Channel = Channel
-    static Filter = Filter
 
     constructor(properties: PipelineProperties) {
         super('AWS::IoTAnalytics::Pipeline', properties)

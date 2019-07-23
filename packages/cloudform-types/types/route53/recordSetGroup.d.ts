@@ -18,17 +18,17 @@ export declare class RecordSet {
     Weight?: Value<number>;
     constructor(properties: RecordSet);
 }
-export declare class GeoLocation {
-    ContinentCode?: Value<string>;
-    CountryCode?: Value<string>;
-    SubdivisionCode?: Value<string>;
-    constructor(properties: GeoLocation);
-}
 export declare class AliasTarget {
     DNSName: Value<string>;
     EvaluateTargetHealth?: Value<boolean>;
     HostedZoneId: Value<string>;
     constructor(properties: AliasTarget);
+}
+export declare class GeoLocation {
+    ContinentCode?: Value<string>;
+    CountryCode?: Value<string>;
+    SubdivisionCode?: Value<string>;
+    constructor(properties: GeoLocation);
 }
 export interface RecordSetGroupProperties {
     Comment?: Value<string>;
@@ -38,7 +38,7 @@ export interface RecordSetGroupProperties {
 }
 export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {
     static RecordSet: typeof RecordSet;
-    static GeoLocation: typeof GeoLocation;
     static AliasTarget: typeof AliasTarget;
+    static GeoLocation: typeof GeoLocation;
     constructor(properties?: RecordSetGroupProperties);
 }

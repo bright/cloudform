@@ -1,39 +1,38 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export class ElasticsearchDestinationConfiguration {
-    BufferingHints!: ElasticsearchBufferingHints
-    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    DomainARN!: Value<string>
-    IndexName!: Value<string>
-    IndexRotationPeriod!: Value<string>
-    ProcessingConfiguration?: ProcessingConfiguration
-    RetryOptions!: ElasticsearchRetryOptions
-    RoleARN!: Value<string>
-    S3BackupMode!: Value<string>
-    S3Configuration!: S3DestinationConfiguration
-    TypeName!: Value<string>
+export class OrcSerDe {
+    BlockSizeBytes?: Value<number>
+    BloomFilterColumns?: List<Value<string>>
+    BloomFilterFalsePositiveProbability?: Value<number>
+    Compression?: Value<string>
+    DictionaryKeyThreshold?: Value<number>
+    EnablePadding?: Value<boolean>
+    FormatVersion?: Value<string>
+    PaddingTolerance?: Value<number>
+    RowIndexStride?: Value<number>
+    StripeSizeBytes?: Value<number>
 
-    constructor(properties: ElasticsearchDestinationConfiguration) {
+    constructor(properties: OrcSerDe) {
         Object.assign(this, properties)
     }
 }
@@ -82,6 +81,14 @@ export class CloudWatchLoggingOptions {
     }
 }
 
+export class InputFormatConfiguration {
+    Deserializer!: Deserializer
+
+    constructor(properties: InputFormatConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ProcessingConfiguration {
     Enabled?: Value<boolean>
     Processors?: List<Processor>
@@ -100,10 +107,111 @@ export class BufferingHints {
     }
 }
 
+export class ProcessorParameter {
+    ParameterName!: Value<string>
+    ParameterValue!: Value<string>
+
+    constructor(properties: ProcessorParameter) {
+        Object.assign(this, properties)
+    }
+}
+
+export class HiveJsonSerDe {
+    TimestampFormats?: List<Value<string>>
+
+    constructor(properties: HiveJsonSerDe) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Processor {
+    Parameters!: List<ProcessorParameter>
+    Type!: Value<string>
+
+    constructor(properties: Processor) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ElasticsearchRetryOptions {
+    DurationInSeconds!: Value<number>
+
+    constructor(properties: ElasticsearchRetryOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DataFormatConversionConfiguration {
+    Enabled!: Value<boolean>
+    InputFormatConfiguration!: InputFormatConfiguration
+    OutputFormatConfiguration!: OutputFormatConfiguration
+    SchemaConfiguration!: SchemaConfiguration
+
+    constructor(properties: DataFormatConversionConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class KMSEncryptionConfig {
+    AWSKMSKeyARN!: Value<string>
+
+    constructor(properties: KMSEncryptionConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OutputFormatConfiguration {
+    Serializer!: Serializer
+
+    constructor(properties: OutputFormatConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ElasticsearchDestinationConfiguration {
+    BufferingHints!: ElasticsearchBufferingHints
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
+    DomainARN!: Value<string>
+    IndexName!: Value<string>
+    IndexRotationPeriod!: Value<string>
+    ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions!: ElasticsearchRetryOptions
+    RoleARN!: Value<string>
+    S3BackupMode!: Value<string>
+    S3Configuration!: S3DestinationConfiguration
+    TypeName!: Value<string>
+
+    constructor(properties: ElasticsearchDestinationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SchemaConfiguration {
+    CatalogId!: Value<string>
+    DatabaseName!: Value<string>
+    Region!: Value<string>
+    RoleARN!: Value<string>
+    TableName!: Value<string>
+    VersionId!: Value<string>
+
+    constructor(properties: SchemaConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
 export class SplunkRetryOptions {
     DurationInSeconds!: Value<number>
 
     constructor(properties: SplunkRetryOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Deserializer {
+    HiveJsonSerDe?: HiveJsonSerDe
+    OpenXJsonSerDe?: OpenXJsonSerDe
+
+    constructor(properties: Deserializer) {
         Object.assign(this, properties)
     }
 }
@@ -117,20 +225,24 @@ export class KinesisStreamSourceConfiguration {
     }
 }
 
-export class ProcessorParameter {
-    ParameterName!: Value<string>
-    ParameterValue!: Value<string>
+export class ParquetSerDe {
+    BlockSizeBytes?: Value<number>
+    Compression?: Value<string>
+    EnableDictionaryCompression?: Value<boolean>
+    MaxPaddingBytes?: Value<number>
+    PageSizeBytes?: Value<number>
+    WriterVersion?: Value<string>
 
-    constructor(properties: ProcessorParameter) {
+    constructor(properties: ParquetSerDe) {
         Object.assign(this, properties)
     }
 }
 
-export class Processor {
-    Parameters!: List<ProcessorParameter>
-    Type!: Value<string>
+export class Serializer {
+    OrcSerDe?: OrcSerDe
+    ParquetSerDe?: ParquetSerDe
 
-    constructor(properties: Processor) {
+    constructor(properties: Serializer) {
         Object.assign(this, properties)
     }
 }
@@ -145,32 +257,27 @@ export class CopyCommand {
     }
 }
 
+export class OpenXJsonSerDe {
+    CaseInsensitive?: Value<boolean>
+    ColumnToJsonKeyMappings?: {[key: string]: Value<string>}
+    ConvertDotsInJsonKeysToUnderscores?: Value<boolean>
+
+    constructor(properties: OpenXJsonSerDe) {
+        Object.assign(this, properties)
+    }
+}
+
 export class S3DestinationConfiguration {
     BucketARN!: Value<string>
     BufferingHints!: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     CompressionFormat!: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
+    ErrorOutputPrefix?: Value<string>
     Prefix?: Value<string>
     RoleARN!: Value<string>
 
     constructor(properties: S3DestinationConfiguration) {
-        Object.assign(this, properties)
-    }
-}
-
-export class ElasticsearchRetryOptions {
-    DurationInSeconds!: Value<number>
-
-    constructor(properties: ElasticsearchRetryOptions) {
-        Object.assign(this, properties)
-    }
-}
-
-export class KMSEncryptionConfig {
-    AWSKMSKeyARN!: Value<string>
-
-    constructor(properties: KMSEncryptionConfig) {
         Object.assign(this, properties)
     }
 }
@@ -180,8 +287,10 @@ export class ExtendedS3DestinationConfiguration {
     BufferingHints!: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     CompressionFormat!: Value<string>
+    DataFormatConversionConfiguration?: DataFormatConversionConfiguration
     EncryptionConfiguration?: EncryptionConfiguration
-    Prefix!: Value<string>
+    ErrorOutputPrefix?: Value<string>
+    Prefix?: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
     RoleARN!: Value<string>
     S3BackupConfiguration?: S3DestinationConfiguration
@@ -219,21 +328,31 @@ export interface DeliveryStreamProperties {
 }
 
 export default class DeliveryStream extends ResourceBase<DeliveryStreamProperties> {
-    static ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration
+    static OrcSerDe = OrcSerDe
     static ElasticsearchBufferingHints = ElasticsearchBufferingHints
     static SplunkDestinationConfiguration = SplunkDestinationConfiguration
     static EncryptionConfiguration = EncryptionConfiguration
     static CloudWatchLoggingOptions = CloudWatchLoggingOptions
+    static InputFormatConfiguration = InputFormatConfiguration
     static ProcessingConfiguration = ProcessingConfiguration
     static BufferingHints = BufferingHints
-    static SplunkRetryOptions = SplunkRetryOptions
-    static KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration
     static ProcessorParameter = ProcessorParameter
+    static HiveJsonSerDe = HiveJsonSerDe
     static Processor = Processor
-    static CopyCommand = CopyCommand
-    static S3DestinationConfiguration = S3DestinationConfiguration
     static ElasticsearchRetryOptions = ElasticsearchRetryOptions
+    static DataFormatConversionConfiguration = DataFormatConversionConfiguration
     static KMSEncryptionConfig = KMSEncryptionConfig
+    static OutputFormatConfiguration = OutputFormatConfiguration
+    static ElasticsearchDestinationConfiguration = ElasticsearchDestinationConfiguration
+    static SchemaConfiguration = SchemaConfiguration
+    static SplunkRetryOptions = SplunkRetryOptions
+    static Deserializer = Deserializer
+    static KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration
+    static ParquetSerDe = ParquetSerDe
+    static Serializer = Serializer
+    static CopyCommand = CopyCommand
+    static OpenXJsonSerDe = OpenXJsonSerDe
+    static S3DestinationConfiguration = S3DestinationConfiguration
     static ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration
     static RedshiftDestinationConfiguration = RedshiftDestinationConfiguration
 

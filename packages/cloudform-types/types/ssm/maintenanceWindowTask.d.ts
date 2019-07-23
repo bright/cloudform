@@ -1,5 +1,30 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class LoggingInfo {
+    S3Bucket: Value<string>;
+    Region: Value<string>;
+    S3Prefix?: Value<string>;
+    constructor(properties: LoggingInfo);
+}
+export declare class Target {
+    Values?: List<Value<string>>;
+    Key: Value<string>;
+    constructor(properties: Target);
+}
+export declare class MaintenanceWindowRunCommandParameters {
+    TimeoutSeconds?: Value<number>;
+    Comment?: Value<string>;
+    OutputS3KeyPrefix?: Value<string>;
+    Parameters?: {
+        [key: string]: any;
+    };
+    DocumentHashType?: Value<string>;
+    ServiceRoleArn?: Value<string>;
+    NotificationConfig?: NotificationConfig;
+    OutputS3BucketName?: Value<string>;
+    DocumentHash?: Value<string>;
+    constructor(properties: MaintenanceWindowRunCommandParameters);
+}
 export declare class MaintenanceWindowLambdaParameters {
     ClientContext?: Value<string>;
     Qualifier?: Value<string>;
@@ -26,35 +51,10 @@ export declare class TaskInvocationParameters {
     MaintenanceWindowLambdaParameters?: MaintenanceWindowLambdaParameters;
     constructor(properties: TaskInvocationParameters);
 }
-export declare class LoggingInfo {
-    S3Bucket: Value<string>;
-    Region: Value<string>;
-    S3Prefix?: Value<string>;
-    constructor(properties: LoggingInfo);
-}
-export declare class Target {
-    Values?: List<Value<string>>;
-    Key: Value<string>;
-    constructor(properties: Target);
-}
 export declare class MaintenanceWindowStepFunctionsParameters {
     Input?: Value<string>;
     Name?: Value<string>;
     constructor(properties: MaintenanceWindowStepFunctionsParameters);
-}
-export declare class MaintenanceWindowRunCommandParameters {
-    TimeoutSeconds?: Value<number>;
-    Comment?: Value<string>;
-    OutputS3KeyPrefix?: Value<string>;
-    Parameters?: {
-        [key: string]: any;
-    };
-    DocumentHashType?: Value<string>;
-    ServiceRoleArn?: Value<string>;
-    NotificationConfig?: NotificationConfig;
-    OutputS3BucketName?: Value<string>;
-    DocumentHash?: Value<string>;
-    constructor(properties: MaintenanceWindowRunCommandParameters);
 }
 export interface MaintenanceWindowTaskProperties {
     MaxErrors: Value<string>;
@@ -74,13 +74,13 @@ export interface MaintenanceWindowTaskProperties {
     LoggingInfo?: LoggingInfo;
 }
 export default class MaintenanceWindowTask extends ResourceBase<MaintenanceWindowTaskProperties> {
+    static LoggingInfo: typeof LoggingInfo;
+    static Target: typeof Target;
+    static MaintenanceWindowRunCommandParameters: typeof MaintenanceWindowRunCommandParameters;
     static MaintenanceWindowLambdaParameters: typeof MaintenanceWindowLambdaParameters;
     static NotificationConfig: typeof NotificationConfig;
     static MaintenanceWindowAutomationParameters: typeof MaintenanceWindowAutomationParameters;
     static TaskInvocationParameters: typeof TaskInvocationParameters;
-    static LoggingInfo: typeof LoggingInfo;
-    static Target: typeof Target;
     static MaintenanceWindowStepFunctionsParameters: typeof MaintenanceWindowStepFunctionsParameters;
-    static MaintenanceWindowRunCommandParameters: typeof MaintenanceWindowRunCommandParameters;
     constructor(properties: MaintenanceWindowTaskProperties);
 }

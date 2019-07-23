@@ -8,6 +8,31 @@ export declare class DeviceShadowEnrich {
     Name?: Value<string>;
     constructor(properties: DeviceShadowEnrich);
 }
+export declare class Lambda {
+    BatchSize?: Value<number>;
+    Next?: Value<string>;
+    LambdaName?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: Lambda);
+}
+export declare class SelectAttributes {
+    Next?: Value<string>;
+    Attributes?: List<Value<string>>;
+    Name?: Value<string>;
+    constructor(properties: SelectAttributes);
+}
+export declare class Channel {
+    ChannelName?: Value<string>;
+    Next?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: Channel);
+}
+export declare class Filter {
+    Filter?: Value<string>;
+    Next?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: Filter);
+}
 export declare class Activity {
     SelectAttributes?: SelectAttributes;
     Datastore?: Datastore;
@@ -21,13 +46,6 @@ export declare class Activity {
     RemoveAttributes?: RemoveAttributes;
     constructor(properties: Activity);
 }
-export declare class Lambda {
-    BatchSize?: Value<number>;
-    Next?: Value<string>;
-    LambdaName?: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: Lambda);
-}
 export declare class Math {
     Attribute?: Value<string>;
     Next?: Value<string>;
@@ -40,12 +58,6 @@ export declare class RemoveAttributes {
     Attributes?: List<Value<string>>;
     Name?: Value<string>;
     constructor(properties: RemoveAttributes);
-}
-export declare class SelectAttributes {
-    Next?: Value<string>;
-    Attributes?: List<Value<string>>;
-    Name?: Value<string>;
-    constructor(properties: SelectAttributes);
 }
 export declare class Datastore {
     DatastoreName?: Value<string>;
@@ -68,18 +80,6 @@ export declare class DeviceRegistryEnrich {
     Name?: Value<string>;
     constructor(properties: DeviceRegistryEnrich);
 }
-export declare class Channel {
-    ChannelName?: Value<string>;
-    Next?: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: Channel);
-}
-export declare class Filter {
-    Filter?: Value<string>;
-    Next?: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: Filter);
-}
 export interface PipelineProperties {
     PipelineName?: Value<string>;
     Tags?: List<ResourceTag>;
@@ -87,15 +87,15 @@ export interface PipelineProperties {
 }
 export default class Pipeline extends ResourceBase<PipelineProperties> {
     static DeviceShadowEnrich: typeof DeviceShadowEnrich;
-    static Activity: typeof Activity;
     static Lambda: typeof Lambda;
+    static SelectAttributes: typeof SelectAttributes;
+    static Channel: typeof Channel;
+    static Filter: typeof Filter;
+    static Activity: typeof Activity;
     static Math: typeof Math;
     static RemoveAttributes: typeof RemoveAttributes;
-    static SelectAttributes: typeof SelectAttributes;
     static Datastore: typeof Datastore;
     static AddAttributes: typeof AddAttributes;
     static DeviceRegistryEnrich: typeof DeviceRegistryEnrich;
-    static Channel: typeof Channel;
-    static Filter: typeof Filter;
     constructor(properties: PipelineProperties);
 }

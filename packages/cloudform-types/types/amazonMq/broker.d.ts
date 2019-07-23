@@ -1,12 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class User {
-    Username: Value<string>;
-    Groups?: List<Value<string>>;
-    ConsoleAccess?: Value<boolean>;
-    Password: Value<string>;
-    constructor(properties: User);
-}
 export declare class MaintenanceWindow {
     DayOfWeek: Value<string>;
     TimeOfDay: Value<string>;
@@ -23,10 +16,22 @@ export declare class TagsEntry {
     Key: Value<string>;
     constructor(properties: TagsEntry);
 }
+export declare class User {
+    Username: Value<string>;
+    Groups?: List<Value<string>>;
+    ConsoleAccess?: Value<boolean>;
+    Password: Value<string>;
+    constructor(properties: User);
+}
 export declare class ConfigurationId {
     Revision: Value<number>;
     Id: Value<string>;
     constructor(properties: ConfigurationId);
+}
+export declare class EncryptionOptions {
+    KmsKeyId?: Value<string>;
+    UseAwsOwnedKey: Value<boolean>;
+    constructor(properties: EncryptionOptions);
 }
 export interface BrokerProperties {
     SecurityGroups?: List<Value<string>>;
@@ -43,12 +48,14 @@ export interface BrokerProperties {
     EngineType: Value<string>;
     PubliclyAccessible: Value<boolean>;
     Tags?: List<TagsEntry>;
+    EncryptionOptions?: EncryptionOptions;
 }
 export default class Broker extends ResourceBase<BrokerProperties> {
-    static User: typeof User;
     static MaintenanceWindow: typeof MaintenanceWindow;
     static LogList: typeof LogList;
     static TagsEntry: typeof TagsEntry;
+    static User: typeof User;
     static ConfigurationId: typeof ConfigurationId;
+    static EncryptionOptions: typeof EncryptionOptions;
     constructor(properties: BrokerProperties);
 }

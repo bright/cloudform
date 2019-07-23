@@ -1,14 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export declare class Icmp {
-    Code?: Value<number>;
-    Type?: Value<number>;
-    constructor(properties: Icmp);
-}
 export declare class PortRange {
     From?: Value<number>;
     To?: Value<number>;
     constructor(properties: PortRange);
+}
+export declare class Icmp {
+    Code?: Value<number>;
+    Type?: Value<number>;
+    constructor(properties: Icmp);
 }
 export interface NetworkAclEntryProperties {
     CidrBlock: Value<string>;
@@ -22,7 +22,7 @@ export interface NetworkAclEntryProperties {
     RuleNumber: Value<number>;
 }
 export default class NetworkAclEntry extends ResourceBase<NetworkAclEntryProperties> {
-    static Icmp: typeof Icmp;
     static PortRange: typeof PortRange;
+    static Icmp: typeof Icmp;
     constructor(properties: NetworkAclEntryProperties);
 }

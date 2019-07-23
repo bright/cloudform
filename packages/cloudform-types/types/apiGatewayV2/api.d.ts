@@ -6,6 +6,9 @@ export interface ApiProperties {
     Version?: Value<string>;
     ProtocolType: Value<string>;
     DisableSchemaValidation?: Value<boolean>;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
     ApiKeySelectionExpression?: Value<string>;
 }

@@ -4,6 +4,25 @@ export declare class InputArtifact {
     Name: Value<string>;
     constructor(properties: InputArtifact);
 }
+export declare class BlockerDeclaration {
+    Name: Value<string>;
+    Type: Value<string>;
+    constructor(properties: BlockerDeclaration);
+}
+export declare class ArtifactStoreMap {
+    ArtifactStore: ArtifactStore;
+    Region: Value<string>;
+    constructor(properties: ArtifactStoreMap);
+}
+export declare class OutputArtifact {
+    Name: Value<string>;
+    constructor(properties: OutputArtifact);
+}
+export declare class EncryptionKey {
+    Id: Value<string>;
+    Type: Value<string>;
+    constructor(properties: EncryptionKey);
+}
 export declare class ActionDeclaration {
     ActionTypeId: ActionTypeId;
     Configuration?: {
@@ -23,16 +42,6 @@ export declare class StageDeclaration {
     Name: Value<string>;
     constructor(properties: StageDeclaration);
 }
-export declare class BlockerDeclaration {
-    Name: Value<string>;
-    Type: Value<string>;
-    constructor(properties: BlockerDeclaration);
-}
-export declare class ArtifactStoreMap {
-    ArtifactStore: ArtifactStore;
-    Region: Value<string>;
-    constructor(properties: ArtifactStoreMap);
-}
 export declare class StageTransition {
     Reason: Value<string>;
     StageName: Value<string>;
@@ -51,15 +60,6 @@ export declare class ActionTypeId {
     Version: Value<string>;
     constructor(properties: ActionTypeId);
 }
-export declare class OutputArtifact {
-    Name: Value<string>;
-    constructor(properties: OutputArtifact);
-}
-export declare class EncryptionKey {
-    Id: Value<string>;
-    Type: Value<string>;
-    constructor(properties: EncryptionKey);
-}
 export interface PipelineProperties {
     ArtifactStore?: ArtifactStore;
     ArtifactStores?: List<ArtifactStoreMap>;
@@ -71,14 +71,14 @@ export interface PipelineProperties {
 }
 export default class Pipeline extends ResourceBase<PipelineProperties> {
     static InputArtifact: typeof InputArtifact;
-    static ActionDeclaration: typeof ActionDeclaration;
-    static StageDeclaration: typeof StageDeclaration;
     static BlockerDeclaration: typeof BlockerDeclaration;
     static ArtifactStoreMap: typeof ArtifactStoreMap;
+    static OutputArtifact: typeof OutputArtifact;
+    static EncryptionKey: typeof EncryptionKey;
+    static ActionDeclaration: typeof ActionDeclaration;
+    static StageDeclaration: typeof StageDeclaration;
     static StageTransition: typeof StageTransition;
     static ArtifactStore: typeof ArtifactStore;
     static ActionTypeId: typeof ActionTypeId;
-    static OutputArtifact: typeof OutputArtifact;
-    static EncryptionKey: typeof EncryptionKey;
     constructor(properties: PipelineProperties);
 }

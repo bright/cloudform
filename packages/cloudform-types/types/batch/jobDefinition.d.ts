@@ -1,19 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class NodeProperties {
-    MainNode: Value<number>;
-    NodeRangeProperties: List<NodeRangeProperty>;
-    NumNodes: Value<number>;
-    constructor(properties: NodeProperties);
-}
 export declare class Volumes {
     Host?: VolumesHost;
     Name?: Value<string>;
     constructor(properties: Volumes);
-}
-export declare class RetryStrategy {
-    Attempts?: Value<number>;
-    constructor(properties: RetryStrategy);
 }
 export declare class ContainerProperties {
     User?: Value<string>;
@@ -23,6 +13,7 @@ export declare class ContainerProperties {
     ReadonlyRootFilesystem?: Value<boolean>;
     Vcpus: Value<number>;
     Image: Value<string>;
+    ResourceRequirements?: List<ResourceRequirement>;
     MountPoints?: List<MountPoints>;
     Volumes?: List<Volumes>;
     Command?: List<Value<string>>;
@@ -31,14 +22,10 @@ export declare class ContainerProperties {
     InstanceType?: Value<string>;
     constructor(properties: ContainerProperties);
 }
-export declare class Timeout {
-    AttemptDurationSeconds?: Value<number>;
-    constructor(properties: Timeout);
-}
-export declare class NodeRangeProperty {
-    Container?: ContainerProperties;
-    TargetNodes: Value<string>;
-    constructor(properties: NodeRangeProperty);
+export declare class ResourceRequirement {
+    Type?: Value<string>;
+    Value?: Value<string>;
+    constructor(properties: ResourceRequirement);
 }
 export declare class MountPoints {
     ReadOnly?: Value<boolean>;
@@ -61,6 +48,25 @@ export declare class VolumesHost {
     SourcePath?: Value<string>;
     constructor(properties: VolumesHost);
 }
+export declare class NodeProperties {
+    MainNode: Value<number>;
+    NodeRangeProperties: List<NodeRangeProperty>;
+    NumNodes: Value<number>;
+    constructor(properties: NodeProperties);
+}
+export declare class RetryStrategy {
+    Attempts?: Value<number>;
+    constructor(properties: RetryStrategy);
+}
+export declare class Timeout {
+    AttemptDurationSeconds?: Value<number>;
+    constructor(properties: Timeout);
+}
+export declare class NodeRangeProperty {
+    Container?: ContainerProperties;
+    TargetNodes: Value<string>;
+    constructor(properties: NodeRangeProperty);
+}
 export interface JobDefinitionProperties {
     Type: Value<string>;
     Parameters?: {
@@ -73,15 +79,16 @@ export interface JobDefinitionProperties {
     RetryStrategy?: RetryStrategy;
 }
 export default class JobDefinition extends ResourceBase<JobDefinitionProperties> {
-    static NodeProperties: typeof NodeProperties;
     static Volumes: typeof Volumes;
-    static RetryStrategy: typeof RetryStrategy;
     static ContainerProperties: typeof ContainerProperties;
-    static Timeout: typeof Timeout;
-    static NodeRangeProperty: typeof NodeRangeProperty;
+    static ResourceRequirement: typeof ResourceRequirement;
     static MountPoints: typeof MountPoints;
     static Environment: typeof Environment;
     static Ulimit: typeof Ulimit;
     static VolumesHost: typeof VolumesHost;
+    static NodeProperties: typeof NodeProperties;
+    static RetryStrategy: typeof RetryStrategy;
+    static Timeout: typeof Timeout;
+    static NodeRangeProperty: typeof NodeRangeProperty;
     constructor(properties: JobDefinitionProperties);
 }

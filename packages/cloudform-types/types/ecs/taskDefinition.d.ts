@@ -1,5 +1,55 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class LogConfiguration {
+    LogDriver: Value<string>;
+    Options?: {
+        [key: string]: Value<string>;
+    };
+    constructor(properties: LogConfiguration);
+}
+export declare class Device {
+    ContainerPath?: Value<string>;
+    HostPath: Value<string>;
+    Permissions?: List<Value<string>>;
+    constructor(properties: Device);
+}
+export declare class Secret {
+    Name: Value<string>;
+    ValueFrom: Value<string>;
+    constructor(properties: Secret);
+}
+export declare class VolumeFrom {
+    ReadOnly?: Value<boolean>;
+    SourceContainer?: Value<string>;
+    constructor(properties: VolumeFrom);
+}
+export declare class HostEntry {
+    Hostname: Value<string>;
+    IpAddress: Value<string>;
+    constructor(properties: HostEntry);
+}
+export declare class TaskDefinitionPlacementConstraint {
+    Expression?: Value<string>;
+    Type: Value<string>;
+    constructor(properties: TaskDefinitionPlacementConstraint);
+}
+export declare class Volume {
+    DockerVolumeConfiguration?: DockerVolumeConfiguration;
+    Host?: HostVolumeProperties;
+    Name?: Value<string>;
+    constructor(properties: Volume);
+}
+export declare class Tmpfs {
+    ContainerPath?: Value<string>;
+    MountOptions?: List<Value<string>>;
+    Size?: Value<number>;
+    constructor(properties: Tmpfs);
+}
+export declare class ResourceRequirement {
+    Type: Value<string>;
+    Value: Value<string>;
+    constructor(properties: ResourceRequirement);
+}
 export declare class DockerVolumeConfiguration {
     Autoprovision?: Value<boolean>;
     Driver?: Value<string>;
@@ -15,6 +65,7 @@ export declare class DockerVolumeConfiguration {
 export declare class ContainerDefinition {
     Command?: List<Value<string>>;
     Cpu?: Value<number>;
+    DependsOn?: List<ContainerDependency>;
     DisableNetworking?: Value<boolean>;
     DnsSearchDomains?: List<Value<string>>;
     DnsServers?: List<Value<string>>;
@@ -40,24 +91,15 @@ export declare class ContainerDefinition {
     Privileged?: Value<boolean>;
     ReadonlyRootFilesystem?: Value<boolean>;
     RepositoryCredentials?: RepositoryCredentials;
+    ResourceRequirements?: List<ResourceRequirement>;
+    Secrets?: List<Secret>;
+    StartTimeout?: Value<number>;
+    StopTimeout?: Value<number>;
     Ulimits?: List<Ulimit>;
     User?: Value<string>;
     VolumesFrom?: List<VolumeFrom>;
     WorkingDirectory?: Value<string>;
     constructor(properties: ContainerDefinition);
-}
-export declare class LogConfiguration {
-    LogDriver: Value<string>;
-    Options?: {
-        [key: string]: Value<string>;
-    };
-    constructor(properties: LogConfiguration);
-}
-export declare class Device {
-    ContainerPath?: Value<string>;
-    HostPath: Value<string>;
-    Permissions?: List<Value<string>>;
-    constructor(properties: Device);
 }
 export declare class KeyValuePair {
     Name?: Value<string>;
@@ -70,31 +112,10 @@ export declare class MountPoint {
     SourceVolume?: Value<string>;
     constructor(properties: MountPoint);
 }
-export declare class VolumeFrom {
-    ReadOnly?: Value<boolean>;
-    SourceContainer?: Value<string>;
-    constructor(properties: VolumeFrom);
-}
-export declare class HostEntry {
-    Hostname: Value<string>;
-    IpAddress: Value<string>;
-    constructor(properties: HostEntry);
-}
 export declare class KernelCapabilities {
     Add?: List<Value<string>>;
     Drop?: List<Value<string>>;
     constructor(properties: KernelCapabilities);
-}
-export declare class TaskDefinitionPlacementConstraint {
-    Expression?: Value<string>;
-    Type: Value<string>;
-    constructor(properties: TaskDefinitionPlacementConstraint);
-}
-export declare class Volume {
-    DockerVolumeConfiguration?: DockerVolumeConfiguration;
-    Host?: HostVolumeProperties;
-    Name?: Value<string>;
-    constructor(properties: Volume);
 }
 export declare class HealthCheck {
     Command: List<Value<string>>;
@@ -124,15 +145,20 @@ export declare class LinuxParameters {
     Tmpfs?: List<Tmpfs>;
     constructor(properties: LinuxParameters);
 }
+export declare class ContainerDependency {
+    Condition: Value<string>;
+    ContainerName: Value<string>;
+    constructor(properties: ContainerDependency);
+}
+export declare class ProxyConfiguration {
+    ContainerName: Value<string>;
+    ProxyConfigurationProperties?: List<KeyValuePair>;
+    Type?: Value<string>;
+    constructor(properties: ProxyConfiguration);
+}
 export declare class HostVolumeProperties {
     SourcePath?: Value<string>;
     constructor(properties: HostVolumeProperties);
-}
-export declare class Tmpfs {
-    ContainerPath?: Value<string>;
-    MountOptions?: List<Value<string>>;
-    Size?: Value<number>;
-    constructor(properties: Tmpfs);
 }
 export declare class RepositoryCredentials {
     CredentialsParameter?: Value<string>;
@@ -146,28 +172,34 @@ export interface TaskDefinitionProperties {
     Memory?: Value<string>;
     NetworkMode?: Value<string>;
     PlacementConstraints?: List<TaskDefinitionPlacementConstraint>;
+    ProxyConfiguration?: ProxyConfiguration;
     RequiresCompatibilities?: List<Value<string>>;
+    Tags?: List<ResourceTag>;
     TaskRoleArn?: Value<string>;
     Volumes?: List<Volume>;
 }
 export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {
-    static DockerVolumeConfiguration: typeof DockerVolumeConfiguration;
-    static ContainerDefinition: typeof ContainerDefinition;
     static LogConfiguration: typeof LogConfiguration;
     static Device: typeof Device;
-    static KeyValuePair: typeof KeyValuePair;
-    static MountPoint: typeof MountPoint;
+    static Secret: typeof Secret;
     static VolumeFrom: typeof VolumeFrom;
     static HostEntry: typeof HostEntry;
-    static KernelCapabilities: typeof KernelCapabilities;
     static TaskDefinitionPlacementConstraint: typeof TaskDefinitionPlacementConstraint;
     static Volume: typeof Volume;
+    static Tmpfs: typeof Tmpfs;
+    static ResourceRequirement: typeof ResourceRequirement;
+    static DockerVolumeConfiguration: typeof DockerVolumeConfiguration;
+    static ContainerDefinition: typeof ContainerDefinition;
+    static KeyValuePair: typeof KeyValuePair;
+    static MountPoint: typeof MountPoint;
+    static KernelCapabilities: typeof KernelCapabilities;
     static HealthCheck: typeof HealthCheck;
     static PortMapping: typeof PortMapping;
     static Ulimit: typeof Ulimit;
     static LinuxParameters: typeof LinuxParameters;
+    static ContainerDependency: typeof ContainerDependency;
+    static ProxyConfiguration: typeof ProxyConfiguration;
     static HostVolumeProperties: typeof HostVolumeProperties;
-    static Tmpfs: typeof Tmpfs;
     static RepositoryCredentials: typeof RepositoryCredentials;
     constructor(properties?: TaskDefinitionProperties);
 }

@@ -1,12 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Settings {
-    EntityUrlTemplate?: Value<string>;
-    ExecutionUrlTemplate?: Value<string>;
-    RevisionUrlTemplate?: Value<string>;
-    ThirdPartyConfigurationUrl?: Value<string>;
-    constructor(properties: Settings);
-}
 export declare class ArtifactDetails {
     MaximumCount: Value<number>;
     MinimumCount: Value<number>;
@@ -22,6 +15,13 @@ export declare class ConfigurationProperties {
     Type?: Value<string>;
     constructor(properties: ConfigurationProperties);
 }
+export declare class Settings {
+    EntityUrlTemplate?: Value<string>;
+    ExecutionUrlTemplate?: Value<string>;
+    RevisionUrlTemplate?: Value<string>;
+    ThirdPartyConfigurationUrl?: Value<string>;
+    constructor(properties: Settings);
+}
 export interface CustomActionTypeProperties {
     Category: Value<string>;
     ConfigurationProperties?: List<ConfigurationProperties>;
@@ -29,11 +29,11 @@ export interface CustomActionTypeProperties {
     OutputArtifactDetails: ArtifactDetails;
     Provider: Value<string>;
     Settings?: Settings;
-    Version?: Value<string>;
+    Version: Value<string>;
 }
 export default class CustomActionType extends ResourceBase<CustomActionTypeProperties> {
-    static Settings: typeof Settings;
     static ArtifactDetails: typeof ArtifactDetails;
     static ConfigurationProperties: typeof ConfigurationProperties;
+    static Settings: typeof Settings;
     constructor(properties: CustomActionTypeProperties);
 }

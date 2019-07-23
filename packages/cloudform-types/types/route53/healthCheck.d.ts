@@ -19,15 +19,15 @@ export declare class HealthCheckConfig {
     Type: Value<string>;
     constructor(properties: HealthCheckConfig);
 }
-export declare class HealthCheckTag {
-    Key: Value<string>;
-    Value: Value<string>;
-    constructor(properties: HealthCheckTag);
-}
 export declare class AlarmIdentifier {
     Name: Value<string>;
     Region: Value<string>;
     constructor(properties: AlarmIdentifier);
+}
+export declare class HealthCheckTag {
+    Key: Value<string>;
+    Value: Value<string>;
+    constructor(properties: HealthCheckTag);
 }
 export interface HealthCheckProperties {
     HealthCheckConfig: HealthCheckConfig;
@@ -35,7 +35,7 @@ export interface HealthCheckProperties {
 }
 export default class HealthCheck extends ResourceBase<HealthCheckProperties> {
     static HealthCheckConfig: typeof HealthCheckConfig;
-    static HealthCheckTag: typeof HealthCheckTag;
     static AlarmIdentifier: typeof AlarmIdentifier;
+    static HealthCheckTag: typeof HealthCheckTag;
     constructor(properties: HealthCheckProperties);
 }

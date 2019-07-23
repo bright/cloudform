@@ -2,6 +2,7 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ProvisioningArtifactProperties {
     Description?: Value<string>;
+    DisableTemplateValidation?: Value<boolean>;
     Info: {
         [key: string]: any;
     };

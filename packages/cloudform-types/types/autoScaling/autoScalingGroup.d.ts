@@ -14,16 +14,16 @@ export declare class LifecycleHookSpecification {
     RoleARN?: Value<string>;
     constructor(properties: LifecycleHookSpecification);
 }
-export declare class MixedInstancesPolicy {
-    InstancesDistribution?: InstancesDistribution;
-    LaunchTemplate: LaunchTemplate;
-    constructor(properties: MixedInstancesPolicy);
-}
 export declare class LaunchTemplateSpecification {
     LaunchTemplateId?: Value<string>;
     LaunchTemplateName?: Value<string>;
     Version: Value<string>;
     constructor(properties: LaunchTemplateSpecification);
+}
+export declare class MixedInstancesPolicy {
+    InstancesDistribution?: InstancesDistribution;
+    LaunchTemplate: LaunchTemplate;
+    constructor(properties: MixedInstancesPolicy);
 }
 export declare class NotificationConfiguration {
     NotificationTypes?: List<Value<string>>;
@@ -82,8 +82,8 @@ export interface AutoScalingGroupProperties {
 export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupProperties> {
     static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
     static LifecycleHookSpecification: typeof LifecycleHookSpecification;
-    static MixedInstancesPolicy: typeof MixedInstancesPolicy;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
+    static MixedInstancesPolicy: typeof MixedInstancesPolicy;
     static NotificationConfiguration: typeof NotificationConfiguration;
     static MetricsCollection: typeof MetricsCollection;
     static InstancesDistribution: typeof InstancesDistribution;

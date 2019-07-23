@@ -16,22 +16,11 @@ export declare class PutItemInput {
     TableName: Value<string>;
     constructor(properties: PutItemInput);
 }
-export declare class RepublishAction {
-    RoleArn: Value<string>;
-    Topic: Value<string>;
-    constructor(properties: RepublishAction);
-}
 export declare class SnsAction {
     MessageFormat?: Value<string>;
     RoleArn: Value<string>;
     TargetArn: Value<string>;
     constructor(properties: SnsAction);
-}
-export declare class StepFunctionsAction {
-    ExecutionNamePrefix?: Value<string>;
-    RoleArn: Value<string>;
-    StateMachineName: Value<string>;
-    constructor(properties: StepFunctionsAction);
 }
 export declare class FirehoseAction {
     DeliveryStreamName: Value<string>;
@@ -39,23 +28,9 @@ export declare class FirehoseAction {
     Separator?: Value<string>;
     constructor(properties: FirehoseAction);
 }
-export declare class TopicRulePayload {
-    Actions: List<Action>;
-    AwsIotSqlVersion?: Value<string>;
-    Description?: Value<string>;
-    ErrorAction?: Action;
-    RuleDisabled: Value<boolean>;
-    Sql: Value<string>;
-    constructor(properties: TopicRulePayload);
-}
 export declare class LambdaAction {
     FunctionArn?: Value<string>;
     constructor(properties: LambdaAction);
-}
-export declare class DynamoDBv2Action {
-    PutItem?: PutItemInput;
-    RoleArn?: Value<string>;
-    constructor(properties: DynamoDBv2Action);
 }
 export declare class ElasticsearchAction {
     Endpoint: Value<string>;
@@ -83,13 +58,6 @@ export declare class KinesisAction {
     StreamName: Value<string>;
     constructor(properties: KinesisAction);
 }
-export declare class CloudwatchAlarmAction {
-    AlarmName: Value<string>;
-    RoleArn: Value<string>;
-    StateReason: Value<string>;
-    StateValue: Value<string>;
-    constructor(properties: CloudwatchAlarmAction);
-}
 export declare class Action {
     CloudwatchAlarm?: CloudwatchAlarmAction;
     CloudwatchMetric?: CloudwatchMetricAction;
@@ -112,6 +80,38 @@ export declare class IotAnalyticsAction {
     RoleArn: Value<string>;
     constructor(properties: IotAnalyticsAction);
 }
+export declare class RepublishAction {
+    RoleArn: Value<string>;
+    Topic: Value<string>;
+    constructor(properties: RepublishAction);
+}
+export declare class StepFunctionsAction {
+    ExecutionNamePrefix?: Value<string>;
+    RoleArn: Value<string>;
+    StateMachineName: Value<string>;
+    constructor(properties: StepFunctionsAction);
+}
+export declare class TopicRulePayload {
+    Actions: List<Action>;
+    AwsIotSqlVersion?: Value<string>;
+    Description?: Value<string>;
+    ErrorAction?: Action;
+    RuleDisabled: Value<boolean>;
+    Sql: Value<string>;
+    constructor(properties: TopicRulePayload);
+}
+export declare class DynamoDBv2Action {
+    PutItem?: PutItemInput;
+    RoleArn?: Value<string>;
+    constructor(properties: DynamoDBv2Action);
+}
+export declare class CloudwatchAlarmAction {
+    AlarmName: Value<string>;
+    RoleArn: Value<string>;
+    StateReason: Value<string>;
+    StateValue: Value<string>;
+    constructor(properties: CloudwatchAlarmAction);
+}
 export declare class CloudwatchMetricAction {
     MetricName: Value<string>;
     MetricNamespace: Value<string>;
@@ -129,19 +129,19 @@ export default class TopicRule extends ResourceBase<TopicRuleProperties> {
     static S3Action: typeof S3Action;
     static SqsAction: typeof SqsAction;
     static PutItemInput: typeof PutItemInput;
-    static RepublishAction: typeof RepublishAction;
     static SnsAction: typeof SnsAction;
-    static StepFunctionsAction: typeof StepFunctionsAction;
     static FirehoseAction: typeof FirehoseAction;
-    static TopicRulePayload: typeof TopicRulePayload;
     static LambdaAction: typeof LambdaAction;
-    static DynamoDBv2Action: typeof DynamoDBv2Action;
     static ElasticsearchAction: typeof ElasticsearchAction;
     static DynamoDBAction: typeof DynamoDBAction;
     static KinesisAction: typeof KinesisAction;
-    static CloudwatchAlarmAction: typeof CloudwatchAlarmAction;
     static Action: typeof Action;
     static IotAnalyticsAction: typeof IotAnalyticsAction;
+    static RepublishAction: typeof RepublishAction;
+    static StepFunctionsAction: typeof StepFunctionsAction;
+    static TopicRulePayload: typeof TopicRulePayload;
+    static DynamoDBv2Action: typeof DynamoDBv2Action;
+    static CloudwatchAlarmAction: typeof CloudwatchAlarmAction;
     static CloudwatchMetricAction: typeof CloudwatchMetricAction;
     constructor(properties: TopicRuleProperties);
 }

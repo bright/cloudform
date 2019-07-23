@@ -13,12 +13,6 @@ export declare class MetricDimension {
     Value: Value<string>;
     constructor(properties: MetricDimension);
 }
-export declare class StepAdjustment {
-    MetricIntervalLowerBound?: Value<number>;
-    MetricIntervalUpperBound?: Value<number>;
-    ScalingAdjustment: Value<number>;
-    constructor(properties: StepAdjustment);
-}
 export declare class PredefinedMetricSpecification {
     PredefinedMetricType: Value<string>;
     ResourceLabel?: Value<string>;
@@ -31,6 +25,12 @@ export declare class CustomizedMetricSpecification {
     Statistic: Value<string>;
     Unit?: Value<string>;
     constructor(properties: CustomizedMetricSpecification);
+}
+export declare class StepAdjustment {
+    MetricIntervalLowerBound?: Value<number>;
+    MetricIntervalUpperBound?: Value<number>;
+    ScalingAdjustment: Value<number>;
+    constructor(properties: StepAdjustment);
 }
 export declare class TargetTrackingScalingPolicyConfiguration {
     CustomizedMetricSpecification?: CustomizedMetricSpecification;
@@ -54,9 +54,9 @@ export interface ScalingPolicyProperties {
 export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {
     static StepScalingPolicyConfiguration: typeof StepScalingPolicyConfiguration;
     static MetricDimension: typeof MetricDimension;
-    static StepAdjustment: typeof StepAdjustment;
     static PredefinedMetricSpecification: typeof PredefinedMetricSpecification;
     static CustomizedMetricSpecification: typeof CustomizedMetricSpecification;
+    static StepAdjustment: typeof StepAdjustment;
     static TargetTrackingScalingPolicyConfiguration: typeof TargetTrackingScalingPolicyConfiguration;
     constructor(properties: ScalingPolicyProperties);
 }

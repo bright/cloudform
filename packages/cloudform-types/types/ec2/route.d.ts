@@ -9,6 +9,7 @@ export interface RouteProperties {
     NatGatewayId?: Value<string>;
     NetworkInterfaceId?: Value<string>;
     RouteTableId: Value<string>;
+    TransitGatewayId?: Value<string>;
     VpcPeeringConnectionId?: Value<string>;
 }
 export default class Route extends ResourceBase<RouteProperties> {

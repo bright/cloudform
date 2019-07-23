@@ -25,6 +25,10 @@ export interface JobProperties {
     Command: JobCommand;
     AllocatedCapacity?: Value<number>;
     ExecutionProperty?: ExecutionProperty;
+    SecurityConfiguration?: Value<string>;
+    Tags?: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
 }
 export default class Job extends ResourceBase<JobProperties> {

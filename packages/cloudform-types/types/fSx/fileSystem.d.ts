@@ -1,10 +1,5 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class TagEntry {
-    Value: Value<string>;
-    Key: Value<string>;
-    constructor(properties: TagEntry);
-}
 export declare class LustreConfiguration {
     ImportPath?: Value<string>;
     WeeklyMaintenanceStartTime?: Value<string>;
@@ -29,11 +24,10 @@ export interface FileSystemProperties {
     BackupId?: Value<string>;
     SubnetIds?: List<Value<string>>;
     SecurityGroupIds?: List<Value<string>>;
-    Tags?: List<TagEntry>;
+    Tags?: List<ResourceTag>;
     WindowsConfiguration?: WindowsConfiguration;
 }
 export default class FileSystem extends ResourceBase<FileSystemProperties> {
-    static TagEntry: typeof TagEntry;
     static LustreConfiguration: typeof LustreConfiguration;
     static WindowsConfiguration: typeof WindowsConfiguration;
     constructor(properties?: FileSystemProperties);

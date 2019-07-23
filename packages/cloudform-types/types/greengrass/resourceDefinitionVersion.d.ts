@@ -6,15 +6,20 @@ export declare class ResourceInstance {
     Name: Value<string>;
     constructor(properties: ResourceInstance);
 }
-export declare class S3MachineLearningModelResourceData {
-    DestinationPath: Value<string>;
-    S3Uri: Value<string>;
-    constructor(properties: S3MachineLearningModelResourceData);
-}
 export declare class SageMakerMachineLearningModelResourceData {
     DestinationPath: Value<string>;
     SageMakerJobArn: Value<string>;
     constructor(properties: SageMakerMachineLearningModelResourceData);
+}
+export declare class LocalDeviceResourceData {
+    SourcePath: Value<string>;
+    GroupOwnerSetting?: GroupOwnerSetting;
+    constructor(properties: LocalDeviceResourceData);
+}
+export declare class S3MachineLearningModelResourceData {
+    DestinationPath: Value<string>;
+    S3Uri: Value<string>;
+    constructor(properties: S3MachineLearningModelResourceData);
 }
 export declare class LocalVolumeResourceData {
     SourcePath: Value<string>;
@@ -40,23 +45,18 @@ export declare class SecretsManagerSecretResourceData {
     AdditionalStagingLabelsToDownload?: List<Value<string>>;
     constructor(properties: SecretsManagerSecretResourceData);
 }
-export declare class LocalDeviceResourceData {
-    SourcePath: Value<string>;
-    GroupOwnerSetting?: GroupOwnerSetting;
-    constructor(properties: LocalDeviceResourceData);
-}
 export interface ResourceDefinitionVersionProperties {
     Resources: List<ResourceInstance>;
     ResourceDefinitionId: Value<string>;
 }
 export default class ResourceDefinitionVersion extends ResourceBase<ResourceDefinitionVersionProperties> {
     static ResourceInstance: typeof ResourceInstance;
-    static S3MachineLearningModelResourceData: typeof S3MachineLearningModelResourceData;
     static SageMakerMachineLearningModelResourceData: typeof SageMakerMachineLearningModelResourceData;
+    static LocalDeviceResourceData: typeof LocalDeviceResourceData;
+    static S3MachineLearningModelResourceData: typeof S3MachineLearningModelResourceData;
     static LocalVolumeResourceData: typeof LocalVolumeResourceData;
     static ResourceDataContainer: typeof ResourceDataContainer;
     static GroupOwnerSetting: typeof GroupOwnerSetting;
     static SecretsManagerSecretResourceData: typeof SecretsManagerSecretResourceData;
-    static LocalDeviceResourceData: typeof LocalDeviceResourceData;
     constructor(properties: ResourceDefinitionVersionProperties);
 }

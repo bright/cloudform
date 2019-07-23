@@ -9,16 +9,16 @@ export declare class DeadLetterConfig {
     TargetArn?: Value<string>;
     constructor(properties: DeadLetterConfig);
 }
-export declare class TracingConfig {
-    Mode?: Value<string>;
-    constructor(properties: TracingConfig);
-}
 export declare class Code {
     S3Bucket?: Value<string>;
     S3Key?: Value<string>;
     S3ObjectVersion?: Value<string>;
     ZipFile?: Value<string>;
     constructor(properties: Code);
+}
+export declare class TracingConfig {
+    Mode?: Value<string>;
+    constructor(properties: TracingConfig);
 }
 export declare class Environment {
     Variables?: {
@@ -47,8 +47,8 @@ export interface FunctionProperties {
 export default class Function extends ResourceBase<FunctionProperties> {
     static VpcConfig: typeof VpcConfig;
     static DeadLetterConfig: typeof DeadLetterConfig;
-    static TracingConfig: typeof TracingConfig;
     static Code: typeof Code;
+    static TracingConfig: typeof TracingConfig;
     static Environment: typeof Environment;
     constructor(properties: FunctionProperties);
 }

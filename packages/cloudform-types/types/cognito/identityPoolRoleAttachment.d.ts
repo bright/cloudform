@@ -1,9 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class RulesConfigurationType {
-    Rules: List<MappingRule>;
-    constructor(properties: RulesConfigurationType);
-}
 export declare class RoleMapping {
     Type: Value<string>;
     AmbiguousRoleResolution?: Value<string>;
@@ -17,6 +13,10 @@ export declare class MappingRule {
     RoleARN: Value<string>;
     constructor(properties: MappingRule);
 }
+export declare class RulesConfigurationType {
+    Rules: List<MappingRule>;
+    constructor(properties: RulesConfigurationType);
+}
 export interface IdentityPoolRoleAttachmentProperties {
     RoleMappings?: {
         [key: string]: any;
@@ -27,8 +27,8 @@ export interface IdentityPoolRoleAttachmentProperties {
     };
 }
 export default class IdentityPoolRoleAttachment extends ResourceBase<IdentityPoolRoleAttachmentProperties> {
-    static RulesConfigurationType: typeof RulesConfigurationType;
     static RoleMapping: typeof RoleMapping;
     static MappingRule: typeof MappingRule;
+    static RulesConfigurationType: typeof RulesConfigurationType;
     constructor(properties: IdentityPoolRoleAttachmentProperties);
 }

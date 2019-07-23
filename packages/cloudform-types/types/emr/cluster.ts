@@ -1,39 +1,24 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
-
-export class InstanceGroupConfig {
-    AutoScalingPolicy?: AutoScalingPolicy
-    BidPrice?: Value<string>
-    Configurations?: List<Configuration>
-    EbsConfiguration?: EbsConfiguration
-    InstanceCount!: Value<number>
-    InstanceType!: Value<string>
-    Market?: Value<string>
-    Name?: Value<string>
-
-    constructor(properties: InstanceGroupConfig) {
-        Object.assign(this, properties)
-    }
-}
 
 export class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>
@@ -50,15 +35,6 @@ export class BootstrapActionConfig {
     ScriptBootstrapAction!: ScriptBootstrapActionConfig
 
     constructor(properties: BootstrapActionConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class ScalingConstraints {
-    MaxCapacity!: Value<number>
-    MinCapacity!: Value<number>
-
-    constructor(properties: ScalingConstraints) {
         Object.assign(this, properties)
     }
 }
@@ -82,6 +58,7 @@ export class JobFlowInstancesConfig {
     CoreInstanceGroup?: InstanceGroupConfig
     Ec2KeyName?: Value<string>
     Ec2SubnetId?: Value<string>
+    Ec2SubnetIds?: List<Value<string>>
     EmrManagedMasterSecurityGroup?: Value<string>
     EmrManagedSlaveSecurityGroup?: Value<string>
     HadoopVersion?: Value<string>
@@ -97,21 +74,97 @@ export class JobFlowInstancesConfig {
     }
 }
 
-export class ScalingAction {
-    Market?: Value<string>
-    SimpleScalingPolicyConfiguration!: SimpleScalingPolicyConfiguration
-
-    constructor(properties: ScalingAction) {
-        Object.assign(this, properties)
-    }
-}
-
 export class StepConfig {
     ActionOnFailure?: Value<string>
     HadoopJarStep!: HadoopJarStepConfig
     Name!: Value<string>
 
     constructor(properties: StepConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class EbsBlockDeviceConfig {
+    VolumeSpecification!: VolumeSpecification
+    VolumesPerInstance?: Value<number>
+
+    constructor(properties: EbsBlockDeviceConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CloudWatchAlarmDefinition {
+    ComparisonOperator!: Value<string>
+    Dimensions?: List<MetricDimension>
+    EvaluationPeriods?: Value<number>
+    MetricName!: Value<string>
+    Namespace?: Value<string>
+    Period!: Value<number>
+    Statistic?: Value<string>
+    Threshold!: Value<number>
+    Unit?: Value<string>
+
+    constructor(properties: CloudWatchAlarmDefinition) {
+        Object.assign(this, properties)
+    }
+}
+
+export class KeyValue {
+    Key?: Value<string>
+    Value?: Value<string>
+
+    constructor(properties: KeyValue) {
+        Object.assign(this, properties)
+    }
+}
+
+export class VolumeSpecification {
+    Iops?: Value<number>
+    SizeInGB!: Value<number>
+    VolumeType!: Value<string>
+
+    constructor(properties: VolumeSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
+export class InstanceFleetProvisioningSpecifications {
+    SpotSpecification!: SpotProvisioningSpecification
+
+    constructor(properties: InstanceFleetProvisioningSpecifications) {
+        Object.assign(this, properties)
+    }
+}
+
+export class InstanceGroupConfig {
+    AutoScalingPolicy?: AutoScalingPolicy
+    BidPrice?: Value<string>
+    Configurations?: List<Configuration>
+    EbsConfiguration?: EbsConfiguration
+    InstanceCount!: Value<number>
+    InstanceType!: Value<string>
+    Market?: Value<string>
+    Name?: Value<string>
+
+    constructor(properties: InstanceGroupConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ScalingConstraints {
+    MaxCapacity!: Value<number>
+    MinCapacity!: Value<number>
+
+    constructor(properties: ScalingConstraints) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ScalingAction {
+    Market?: Value<string>
+    SimpleScalingPolicyConfiguration!: SimpleScalingPolicyConfiguration
+
+    constructor(properties: ScalingAction) {
         Object.assign(this, properties)
     }
 }
@@ -149,15 +202,6 @@ export class Application {
     }
 }
 
-export class EbsBlockDeviceConfig {
-    VolumeSpecification!: VolumeSpecification
-    VolumesPerInstance?: Value<number>
-
-    constructor(properties: EbsBlockDeviceConfig) {
-        Object.assign(this, properties)
-    }
-}
-
 export class PlacementType {
     AvailabilityZone!: Value<string>
 
@@ -185,22 +229,6 @@ export class ScriptBootstrapActionConfig {
     }
 }
 
-export class CloudWatchAlarmDefinition {
-    ComparisonOperator!: Value<string>
-    Dimensions?: List<MetricDimension>
-    EvaluationPeriods?: Value<number>
-    MetricName!: Value<string>
-    Namespace?: Value<string>
-    Period!: Value<number>
-    Statistic?: Value<string>
-    Threshold!: Value<number>
-    Unit?: Value<string>
-
-    constructor(properties: CloudWatchAlarmDefinition) {
-        Object.assign(this, properties)
-    }
-}
-
 export class EbsConfiguration {
     EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
@@ -217,15 +245,6 @@ export class ScalingRule {
     Trigger!: ScalingTrigger
 
     constructor(properties: ScalingRule) {
-        Object.assign(this, properties)
-    }
-}
-
-export class KeyValue {
-    Key?: Value<string>
-    Value?: Value<string>
-
-    constructor(properties: KeyValue) {
         Object.assign(this, properties)
     }
 }
@@ -252,29 +271,11 @@ export class MetricDimension {
     }
 }
 
-export class VolumeSpecification {
-    Iops?: Value<number>
-    SizeInGB!: Value<number>
-    VolumeType!: Value<string>
-
-    constructor(properties: VolumeSpecification) {
-        Object.assign(this, properties)
-    }
-}
-
 export class AutoScalingPolicy {
     Constraints!: ScalingConstraints
     Rules!: List<ScalingRule>
 
     constructor(properties: AutoScalingPolicy) {
-        Object.assign(this, properties)
-    }
-}
-
-export class InstanceFleetProvisioningSpecifications {
-    SpotSpecification!: SpotProvisioningSpecification
-
-    constructor(properties: InstanceFleetProvisioningSpecifications) {
         Object.assign(this, properties)
     }
 }
@@ -321,30 +322,30 @@ export interface ClusterProperties {
 }
 
 export default class Cluster extends ResourceBase<ClusterProperties> {
-    static InstanceGroupConfig = InstanceGroupConfig
     static SpotProvisioningSpecification = SpotProvisioningSpecification
     static BootstrapActionConfig = BootstrapActionConfig
-    static ScalingConstraints = ScalingConstraints
     static InstanceFleetConfig = InstanceFleetConfig
     static JobFlowInstancesConfig = JobFlowInstancesConfig
-    static ScalingAction = ScalingAction
     static StepConfig = StepConfig
+    static EbsBlockDeviceConfig = EbsBlockDeviceConfig
+    static CloudWatchAlarmDefinition = CloudWatchAlarmDefinition
+    static KeyValue = KeyValue
+    static VolumeSpecification = VolumeSpecification
+    static InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications
+    static InstanceGroupConfig = InstanceGroupConfig
+    static ScalingConstraints = ScalingConstraints
+    static ScalingAction = ScalingAction
     static KerberosAttributes = KerberosAttributes
     static SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration
     static Application = Application
-    static EbsBlockDeviceConfig = EbsBlockDeviceConfig
     static PlacementType = PlacementType
     static Configuration = Configuration
     static ScriptBootstrapActionConfig = ScriptBootstrapActionConfig
-    static CloudWatchAlarmDefinition = CloudWatchAlarmDefinition
     static EbsConfiguration = EbsConfiguration
     static ScalingRule = ScalingRule
-    static KeyValue = KeyValue
     static InstanceTypeConfig = InstanceTypeConfig
     static MetricDimension = MetricDimension
-    static VolumeSpecification = VolumeSpecification
     static AutoScalingPolicy = AutoScalingPolicy
-    static InstanceFleetProvisioningSpecifications = InstanceFleetProvisioningSpecifications
     static HadoopJarStepConfig = HadoopJarStepConfig
     static ScalingTrigger = ScalingTrigger
 

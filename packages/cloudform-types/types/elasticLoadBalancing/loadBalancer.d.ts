@@ -1,13 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class HealthCheck {
-    HealthyThreshold: Value<string>;
-    Interval: Value<string>;
-    Target: Value<string>;
-    Timeout: Value<string>;
-    UnhealthyThreshold: Value<string>;
-    constructor(properties: HealthCheck);
-}
 export declare class AccessLoggingPolicy {
     EmitInterval?: Value<number>;
     Enabled: Value<boolean>;
@@ -15,19 +7,10 @@ export declare class AccessLoggingPolicy {
     S3BucketPrefix?: Value<string>;
     constructor(properties: AccessLoggingPolicy);
 }
-export declare class ConnectionSettings {
-    IdleTimeout: Value<number>;
-    constructor(properties: ConnectionSettings);
-}
 export declare class LBCookieStickinessPolicy {
     CookieExpirationPeriod?: Value<string>;
     PolicyName?: Value<string>;
     constructor(properties: LBCookieStickinessPolicy);
-}
-export declare class ConnectionDrainingPolicy {
-    Enabled: Value<boolean>;
-    Timeout?: Value<number>;
-    constructor(properties: ConnectionDrainingPolicy);
 }
 export declare class Listeners {
     InstancePort: Value<string>;
@@ -37,6 +20,23 @@ export declare class Listeners {
     Protocol: Value<string>;
     SSLCertificateId?: Value<string>;
     constructor(properties: Listeners);
+}
+export declare class HealthCheck {
+    HealthyThreshold: Value<string>;
+    Interval: Value<string>;
+    Target: Value<string>;
+    Timeout: Value<string>;
+    UnhealthyThreshold: Value<string>;
+    constructor(properties: HealthCheck);
+}
+export declare class ConnectionSettings {
+    IdleTimeout: Value<number>;
+    constructor(properties: ConnectionSettings);
+}
+export declare class ConnectionDrainingPolicy {
+    Enabled: Value<boolean>;
+    Timeout?: Value<number>;
+    constructor(properties: ConnectionDrainingPolicy);
 }
 export declare class Policies {
     Attributes: List<{
@@ -72,12 +72,12 @@ export interface LoadBalancerProperties {
     Tags?: List<ResourceTag>;
 }
 export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
-    static HealthCheck: typeof HealthCheck;
     static AccessLoggingPolicy: typeof AccessLoggingPolicy;
-    static ConnectionSettings: typeof ConnectionSettings;
     static LBCookieStickinessPolicy: typeof LBCookieStickinessPolicy;
-    static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
     static Listeners: typeof Listeners;
+    static HealthCheck: typeof HealthCheck;
+    static ConnectionSettings: typeof ConnectionSettings;
+    static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
     static Policies: typeof Policies;
     static AppCookieStickinessPolicy: typeof AppCookieStickinessPolicy;
     constructor(properties: LoadBalancerProperties);

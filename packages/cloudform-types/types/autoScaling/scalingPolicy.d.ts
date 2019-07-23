@@ -1,10 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class MetricDimension {
-    Name: Value<string>;
-    Value: Value<string>;
-    constructor(properties: MetricDimension);
-}
 export declare class CustomizedMetricSpecification {
     Dimensions?: List<MetricDimension>;
     MetricName: Value<string>;
@@ -12,6 +7,17 @@ export declare class CustomizedMetricSpecification {
     Statistic: Value<string>;
     Unit?: Value<string>;
     constructor(properties: CustomizedMetricSpecification);
+}
+export declare class StepAdjustment {
+    MetricIntervalLowerBound?: Value<number>;
+    MetricIntervalUpperBound?: Value<number>;
+    ScalingAdjustment: Value<number>;
+    constructor(properties: StepAdjustment);
+}
+export declare class MetricDimension {
+    Name: Value<string>;
+    Value: Value<string>;
+    constructor(properties: MetricDimension);
 }
 export declare class PredefinedMetricSpecification {
     PredefinedMetricType: Value<string>;
@@ -24,12 +30,6 @@ export declare class TargetTrackingConfiguration {
     PredefinedMetricSpecification?: PredefinedMetricSpecification;
     TargetValue: Value<number>;
     constructor(properties: TargetTrackingConfiguration);
-}
-export declare class StepAdjustment {
-    MetricIntervalLowerBound?: Value<number>;
-    MetricIntervalUpperBound?: Value<number>;
-    ScalingAdjustment: Value<number>;
-    constructor(properties: StepAdjustment);
 }
 export interface ScalingPolicyProperties {
     AdjustmentType?: Value<string>;
@@ -44,10 +44,10 @@ export interface ScalingPolicyProperties {
     TargetTrackingConfiguration?: TargetTrackingConfiguration;
 }
 export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {
-    static MetricDimension: typeof MetricDimension;
     static CustomizedMetricSpecification: typeof CustomizedMetricSpecification;
+    static StepAdjustment: typeof StepAdjustment;
+    static MetricDimension: typeof MetricDimension;
     static PredefinedMetricSpecification: typeof PredefinedMetricSpecification;
     static TargetTrackingConfiguration: typeof TargetTrackingConfiguration;
-    static StepAdjustment: typeof StepAdjustment;
     constructor(properties: ScalingPolicyProperties);
 }

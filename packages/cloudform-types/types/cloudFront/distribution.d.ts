@@ -10,22 +10,6 @@ export declare class LambdaFunctionAssociation {
     LambdaFunctionARN?: Value<string>;
     constructor(properties: LambdaFunctionAssociation);
 }
-export declare class CustomOriginConfig {
-    OriginReadTimeout?: Value<number>;
-    HTTPSPort?: Value<number>;
-    OriginKeepaliveTimeout?: Value<number>;
-    OriginSSLProtocols?: List<Value<string>>;
-    HTTPPort?: Value<number>;
-    OriginProtocolPolicy: Value<string>;
-    constructor(properties: CustomOriginConfig);
-}
-export declare class ForwardedValues {
-    Cookies?: Cookies;
-    Headers?: List<Value<string>>;
-    QueryString: Value<boolean>;
-    QueryStringCacheKeys?: List<Value<string>>;
-    constructor(properties: ForwardedValues);
-}
 export declare class CacheBehavior {
     Compress?: Value<boolean>;
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>;
@@ -72,6 +56,45 @@ export declare class Origin {
     CustomOriginConfig?: CustomOriginConfig;
     constructor(properties: Origin);
 }
+export declare class DistributionConfig {
+    Logging?: Logging;
+    Comment?: Value<string>;
+    DefaultRootObject?: Value<string>;
+    Origins?: List<Origin>;
+    ViewerCertificate?: ViewerCertificate;
+    PriceClass?: Value<string>;
+    DefaultCacheBehavior?: DefaultCacheBehavior;
+    CustomErrorResponses?: List<CustomErrorResponse>;
+    Enabled: Value<boolean>;
+    Aliases?: List<Value<string>>;
+    IPV6Enabled?: Value<boolean>;
+    WebACLId?: Value<string>;
+    HttpVersion?: Value<string>;
+    Restrictions?: Restrictions;
+    CacheBehaviors?: List<CacheBehavior>;
+    constructor(properties: DistributionConfig);
+}
+export declare class OriginCustomHeader {
+    HeaderValue: Value<string>;
+    HeaderName: Value<string>;
+    constructor(properties: OriginCustomHeader);
+}
+export declare class CustomOriginConfig {
+    OriginReadTimeout?: Value<number>;
+    HTTPSPort?: Value<number>;
+    OriginKeepaliveTimeout?: Value<number>;
+    OriginSSLProtocols?: List<Value<string>>;
+    HTTPPort?: Value<number>;
+    OriginProtocolPolicy: Value<string>;
+    constructor(properties: CustomOriginConfig);
+}
+export declare class ForwardedValues {
+    Cookies?: Cookies;
+    Headers?: List<Value<string>>;
+    QueryString: Value<boolean>;
+    QueryStringCacheKeys?: List<Value<string>>;
+    constructor(properties: ForwardedValues);
+}
 export declare class GeoRestriction {
     Locations?: List<Value<string>>;
     RestrictionType: Value<string>;
@@ -102,29 +125,6 @@ export declare class Logging {
     Prefix?: Value<string>;
     constructor(properties: Logging);
 }
-export declare class DistributionConfig {
-    Logging?: Logging;
-    Comment?: Value<string>;
-    DefaultRootObject?: Value<string>;
-    Origins?: List<Origin>;
-    ViewerCertificate?: ViewerCertificate;
-    PriceClass?: Value<string>;
-    DefaultCacheBehavior?: DefaultCacheBehavior;
-    CustomErrorResponses?: List<CustomErrorResponse>;
-    Enabled: Value<boolean>;
-    Aliases?: List<Value<string>>;
-    IPV6Enabled?: Value<boolean>;
-    WebACLId?: Value<string>;
-    HttpVersion?: Value<string>;
-    Restrictions?: Restrictions;
-    CacheBehaviors?: List<CacheBehavior>;
-    constructor(properties: DistributionConfig);
-}
-export declare class OriginCustomHeader {
-    HeaderValue: Value<string>;
-    HeaderName: Value<string>;
-    constructor(properties: OriginCustomHeader);
-}
 export interface DistributionProperties {
     DistributionConfig: DistributionConfig;
     Tags?: List<ResourceTag>;
@@ -132,18 +132,18 @@ export interface DistributionProperties {
 export default class Distribution extends ResourceBase<DistributionProperties> {
     static Cookies: typeof Cookies;
     static LambdaFunctionAssociation: typeof LambdaFunctionAssociation;
-    static CustomOriginConfig: typeof CustomOriginConfig;
-    static ForwardedValues: typeof ForwardedValues;
     static CacheBehavior: typeof CacheBehavior;
     static DefaultCacheBehavior: typeof DefaultCacheBehavior;
     static Restrictions: typeof Restrictions;
     static Origin: typeof Origin;
+    static DistributionConfig: typeof DistributionConfig;
+    static OriginCustomHeader: typeof OriginCustomHeader;
+    static CustomOriginConfig: typeof CustomOriginConfig;
+    static ForwardedValues: typeof ForwardedValues;
     static GeoRestriction: typeof GeoRestriction;
     static ViewerCertificate: typeof ViewerCertificate;
     static S3OriginConfig: typeof S3OriginConfig;
     static CustomErrorResponse: typeof CustomErrorResponse;
     static Logging: typeof Logging;
-    static DistributionConfig: typeof DistributionConfig;
-    static OriginCustomHeader: typeof OriginCustomHeader;
     constructor(properties: DistributionProperties);
 }

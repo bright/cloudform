@@ -6,11 +6,6 @@ export declare class FleetLaunchTemplateSpecificationRequest {
     LaunchTemplateId?: Value<string>;
     constructor(properties: FleetLaunchTemplateSpecificationRequest);
 }
-export declare class FleetLaunchTemplateConfigRequest {
-    LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest;
-    Overrides?: List<FleetLaunchTemplateOverridesRequest>;
-    constructor(properties: FleetLaunchTemplateConfigRequest);
-}
 export declare class OnDemandOptionsRequest {
     AllocationStrategy?: Value<string>;
     constructor(properties: OnDemandOptionsRequest);
@@ -35,6 +30,11 @@ export declare class FleetLaunchTemplateOverridesRequest {
     InstanceType?: Value<string>;
     MaxPrice?: Value<string>;
     constructor(properties: FleetLaunchTemplateOverridesRequest);
+}
+export declare class FleetLaunchTemplateConfigRequest {
+    LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest;
+    Overrides?: List<FleetLaunchTemplateOverridesRequest>;
+    constructor(properties: FleetLaunchTemplateConfigRequest);
 }
 export declare class TagSpecification {
     ResourceType?: Value<string>;
@@ -62,11 +62,11 @@ export interface EC2FleetProperties {
 }
 export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static FleetLaunchTemplateSpecificationRequest: typeof FleetLaunchTemplateSpecificationRequest;
-    static FleetLaunchTemplateConfigRequest: typeof FleetLaunchTemplateConfigRequest;
     static OnDemandOptionsRequest: typeof OnDemandOptionsRequest;
     static TagRequest: typeof TagRequest;
     static TargetCapacitySpecificationRequest: typeof TargetCapacitySpecificationRequest;
     static FleetLaunchTemplateOverridesRequest: typeof FleetLaunchTemplateOverridesRequest;
+    static FleetLaunchTemplateConfigRequest: typeof FleetLaunchTemplateConfigRequest;
     static TagSpecification: typeof TagSpecification;
     static SpotOptionsRequest: typeof SpotOptionsRequest;
     constructor(properties: EC2FleetProperties);

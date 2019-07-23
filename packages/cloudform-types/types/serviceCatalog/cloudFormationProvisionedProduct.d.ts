@@ -5,9 +5,20 @@ export declare class ProvisioningParameter {
     Key?: Value<string>;
     constructor(properties: ProvisioningParameter);
 }
+export declare class ProvisioningPreferences {
+    StackSetAccounts?: List<Value<string>>;
+    StackSetFailureToleranceCount?: Value<number>;
+    StackSetMaxConcurrencyPercentage?: Value<number>;
+    StackSetMaxConcurrencyCount?: Value<number>;
+    StackSetRegions?: List<Value<string>>;
+    StackSetOperationType?: Value<string>;
+    StackSetFailureTolerancePercentage?: Value<number>;
+    constructor(properties: ProvisioningPreferences);
+}
 export interface CloudFormationProvisionedProductProperties {
     PathId?: Value<string>;
     ProvisioningParameters?: List<ProvisioningParameter>;
+    ProvisioningPreferences?: ProvisioningPreferences;
     ProductName?: Value<string>;
     ProvisioningArtifactName?: Value<string>;
     NotificationArns?: List<Value<string>>;
@@ -19,5 +30,6 @@ export interface CloudFormationProvisionedProductProperties {
 }
 export default class CloudFormationProvisionedProduct extends ResourceBase<CloudFormationProvisionedProductProperties> {
     static ProvisioningParameter: typeof ProvisioningParameter;
+    static ProvisioningPreferences: typeof ProvisioningPreferences;
     constructor(properties?: CloudFormationProvisionedProductProperties);
 }

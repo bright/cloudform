@@ -1,5 +1,28 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class AuthenticateCognitoConfig {
+    AuthenticationRequestExtraParams?: {
+        [key: string]: Value<string>;
+    };
+    OnUnauthenticatedRequest?: Value<string>;
+    Scope?: Value<string>;
+    SessionCookieName?: Value<string>;
+    SessionTimeout?: Value<number>;
+    UserPoolArn: Value<string>;
+    UserPoolClientId: Value<string>;
+    UserPoolDomain: Value<string>;
+    constructor(properties: AuthenticateCognitoConfig);
+}
+export declare class Action {
+    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
+    AuthenticateOidcConfig?: AuthenticateOidcConfig;
+    FixedResponseConfig?: FixedResponseConfig;
+    Order?: Value<number>;
+    RedirectConfig?: RedirectConfig;
+    TargetGroupArn?: Value<string>;
+    Type: Value<string>;
+    constructor(properties: Action);
+}
 export declare class AuthenticateOidcConfig {
     AuthenticationRequestExtraParams?: {
         [key: string]: Value<string>;
@@ -16,19 +39,6 @@ export declare class AuthenticateOidcConfig {
     UserInfoEndpoint: Value<string>;
     constructor(properties: AuthenticateOidcConfig);
 }
-export declare class AuthenticateCognitoConfig {
-    AuthenticationRequestExtraParams?: {
-        [key: string]: Value<string>;
-    };
-    OnUnauthenticatedRequest?: Value<string>;
-    Scope?: Value<string>;
-    SessionCookieName?: Value<string>;
-    SessionTimeout?: Value<number>;
-    UserPoolArn: Value<string>;
-    UserPoolClientId: Value<string>;
-    UserPoolDomain: Value<string>;
-    constructor(properties: AuthenticateCognitoConfig);
-}
 export declare class RedirectConfig {
     Host?: Value<string>;
     Path?: Value<string>;
@@ -37,16 +47,6 @@ export declare class RedirectConfig {
     Query?: Value<string>;
     StatusCode: Value<string>;
     constructor(properties: RedirectConfig);
-}
-export declare class Action {
-    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
-    AuthenticateOidcConfig?: AuthenticateOidcConfig;
-    FixedResponseConfig?: FixedResponseConfig;
-    Order?: Value<number>;
-    RedirectConfig?: RedirectConfig;
-    TargetGroupArn?: Value<string>;
-    Type: Value<string>;
-    constructor(properties: Action);
 }
 export declare class FixedResponseConfig {
     ContentType?: Value<string>;
@@ -67,10 +67,10 @@ export interface ListenerProperties {
     SslPolicy?: Value<string>;
 }
 export default class Listener extends ResourceBase<ListenerProperties> {
-    static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
     static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
-    static RedirectConfig: typeof RedirectConfig;
     static Action: typeof Action;
+    static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
+    static RedirectConfig: typeof RedirectConfig;
     static FixedResponseConfig: typeof FixedResponseConfig;
     static Certificate: typeof Certificate;
     constructor(properties: ListenerProperties);

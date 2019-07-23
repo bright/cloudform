@@ -15,6 +15,16 @@ export declare class VolumeConfiguration {
     VolumeType?: Value<string>;
     constructor(properties: VolumeConfiguration);
 }
+export declare class LifecycleEventConfiguration {
+    ShutdownEventConfiguration?: ShutdownEventConfiguration;
+    constructor(properties: LifecycleEventConfiguration);
+}
+export declare class LoadBasedAutoScaling {
+    DownScaling?: AutoScalingThresholds;
+    Enable?: Value<boolean>;
+    UpScaling?: AutoScalingThresholds;
+    constructor(properties: LoadBasedAutoScaling);
+}
 export declare class AutoScalingThresholds {
     CpuThreshold?: Value<number>;
     IgnoreMetricsTime?: Value<number>;
@@ -31,16 +41,6 @@ export declare class Recipes {
     Shutdown?: List<Value<string>>;
     Undeploy?: List<Value<string>>;
     constructor(properties: Recipes);
-}
-export declare class LifecycleEventConfiguration {
-    ShutdownEventConfiguration?: ShutdownEventConfiguration;
-    constructor(properties: LifecycleEventConfiguration);
-}
-export declare class LoadBasedAutoScaling {
-    DownScaling?: AutoScalingThresholds;
-    Enable?: Value<boolean>;
-    UpScaling?: AutoScalingThresholds;
-    constructor(properties: LoadBasedAutoScaling);
 }
 export interface LayerProperties {
     Attributes?: {
@@ -70,9 +70,9 @@ export interface LayerProperties {
 export default class Layer extends ResourceBase<LayerProperties> {
     static ShutdownEventConfiguration: typeof ShutdownEventConfiguration;
     static VolumeConfiguration: typeof VolumeConfiguration;
-    static AutoScalingThresholds: typeof AutoScalingThresholds;
-    static Recipes: typeof Recipes;
     static LifecycleEventConfiguration: typeof LifecycleEventConfiguration;
     static LoadBasedAutoScaling: typeof LoadBasedAutoScaling;
+    static AutoScalingThresholds: typeof AutoScalingThresholds;
+    static Recipes: typeof Recipes;
     constructor(properties: LayerProperties);
 }

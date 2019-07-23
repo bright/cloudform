@@ -1,14 +1,14 @@
-import Dataset_ from './dataset';
 import Channel_ from './channel';
-import Pipeline_ from './pipeline';
 import Datastore_ from './datastore';
+import Dataset_ from './dataset';
+import Pipeline_ from './pipeline';
 export declare namespace IoTAnalytics {
-    const Dataset: typeof Dataset_;
     const Channel: typeof Channel_;
-    const Pipeline: typeof Pipeline_;
     const Datastore: typeof Datastore_;
-    type Dataset = Dataset_;
+    const Dataset: typeof Dataset_;
+    const Pipeline: typeof Pipeline_;
     type Channel = Channel_;
-    type Pipeline = Pipeline_;
     type Datastore = Datastore_;
+    type Dataset = Dataset_;
+    type Pipeline = Pipeline_;
 }

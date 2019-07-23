@@ -3,6 +3,7 @@ import { Value, List } from '../dataTypes';
 export declare class Schedule {
     TagsToAdd?: List<ResourceTag>;
     CreateRule?: CreateRule;
+    VariableTags?: List<ResourceTag>;
     RetainRule?: RetainRule;
     Name?: Value<string>;
     CopyTags?: Value<boolean>;
@@ -21,8 +22,14 @@ export declare class RetainRule {
 export declare class PolicyDetails {
     ResourceTypes?: List<Value<string>>;
     Schedules?: List<Schedule>;
+    PolicyType?: Value<string>;
+    Parameters?: Parameters;
     TargetTags?: List<ResourceTag>;
     constructor(properties: PolicyDetails);
+}
+export declare class Parameters {
+    ExcludeBootVolume?: Value<boolean>;
+    constructor(properties: Parameters);
 }
 export interface LifecyclePolicyProperties {
     ExecutionRoleArn?: Value<string>;
@@ -35,5 +42,6 @@ export default class LifecyclePolicy extends ResourceBase<LifecyclePolicyPropert
     static CreateRule: typeof CreateRule;
     static RetainRule: typeof RetainRule;
     static PolicyDetails: typeof PolicyDetails;
+    static Parameters: typeof Parameters;
     constructor(properties?: LifecyclePolicyProperties);
 }

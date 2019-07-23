@@ -1,16 +1,21 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class VolumeSpecification {
-    Iops?: Value<number>;
-    SizeInGB: Value<number>;
-    VolumeType: Value<string>;
-    constructor(properties: VolumeSpecification);
-}
 export declare class SpotProvisioningSpecification {
     BlockDurationMinutes?: Value<number>;
     TimeoutAction: Value<string>;
     TimeoutDurationMinutes: Value<number>;
     constructor(properties: SpotProvisioningSpecification);
+}
+export declare class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
+    EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
+}
+export declare class VolumeSpecification {
+    Iops?: Value<number>;
+    SizeInGB: Value<number>;
+    VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
 }
 export declare class Configuration {
     Classification?: Value<string>;
@@ -19,11 +24,6 @@ export declare class Configuration {
     };
     Configurations?: List<Configuration>;
     constructor(properties: Configuration);
-}
-export declare class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
-    EbsOptimized?: Value<boolean>;
-    constructor(properties: EbsConfiguration);
 }
 export declare class InstanceTypeConfig {
     BidPrice?: Value<string>;
@@ -53,10 +53,10 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>;
 }
 export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfigProperties> {
-    static VolumeSpecification: typeof VolumeSpecification;
     static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
-    static Configuration: typeof Configuration;
     static EbsConfiguration: typeof EbsConfiguration;
+    static VolumeSpecification: typeof VolumeSpecification;
+    static Configuration: typeof Configuration;
     static InstanceTypeConfig: typeof InstanceTypeConfig;
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;

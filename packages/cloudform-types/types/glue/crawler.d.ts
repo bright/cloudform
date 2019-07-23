@@ -15,15 +15,15 @@ export declare class Schedule {
     ScheduleExpression?: Value<string>;
     constructor(properties: Schedule);
 }
-export declare class S3Target {
-    Path?: Value<string>;
-    Exclusions?: List<Value<string>>;
-    constructor(properties: S3Target);
-}
 export declare class SchemaChangePolicy {
     UpdateBehavior?: Value<string>;
     DeleteBehavior?: Value<string>;
     constructor(properties: SchemaChangePolicy);
+}
+export declare class S3Target {
+    Path?: Value<string>;
+    Exclusions?: List<Value<string>>;
+    constructor(properties: S3Target);
 }
 export interface CrawlerProperties {
     Role: Value<string>;
@@ -34,14 +34,18 @@ export interface CrawlerProperties {
     Schedule?: Schedule;
     DatabaseName: Value<string>;
     Targets: Targets;
+    CrawlerSecurityConfiguration?: Value<string>;
     TablePrefix?: Value<string>;
+    Tags?: {
+        [key: string]: any;
+    };
     Name?: Value<string>;
 }
 export default class Crawler extends ResourceBase<CrawlerProperties> {
     static Targets: typeof Targets;
     static JdbcTarget: typeof JdbcTarget;
     static Schedule: typeof Schedule;
-    static S3Target: typeof S3Target;
     static SchemaChangePolicy: typeof SchemaChangePolicy;
+    static S3Target: typeof S3Target;
     constructor(properties: CrawlerProperties);
 }

@@ -1,5 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class HealthCheckCustomConfig {
+    FailureThreshold?: Value<number>;
+    constructor(properties: HealthCheckCustomConfig);
+}
 export declare class DnsConfig {
     DnsRecords: List<DnsRecord>;
     RoutingPolicy?: Value<string>;
@@ -8,12 +12,8 @@ export declare class DnsConfig {
 }
 export declare class DnsRecord {
     Type: Value<string>;
-    TTL: Value<string>;
+    TTL: Value<number>;
     constructor(properties: DnsRecord);
-}
-export declare class HealthCheckCustomConfig {
-    FailureThreshold?: Value<number>;
-    constructor(properties: HealthCheckCustomConfig);
 }
 export declare class HealthCheckConfig {
     Type: Value<string>;
@@ -30,9 +30,9 @@ export interface ServiceProperties {
     Name?: Value<string>;
 }
 export default class Service extends ResourceBase<ServiceProperties> {
+    static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;
     static DnsConfig: typeof DnsConfig;
     static DnsRecord: typeof DnsRecord;
-    static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;
     static HealthCheckConfig: typeof HealthCheckConfig;
     constructor(properties?: ServiceProperties);
 }

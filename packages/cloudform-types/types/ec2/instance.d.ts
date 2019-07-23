@@ -1,5 +1,26 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class Volume {
+    Device: Value<string>;
+    VolumeId: Value<string>;
+    constructor(properties: Volume);
+}
+export declare class Ebs {
+    DeleteOnTermination?: Value<boolean>;
+    Encrypted?: Value<boolean>;
+    Iops?: Value<number>;
+    SnapshotId?: Value<string>;
+    VolumeSize?: Value<number>;
+    VolumeType?: Value<string>;
+    constructor(properties: Ebs);
+}
+export declare class NoDevice {
+    constructor(properties: NoDevice);
+}
+export declare class CreditSpecification {
+    CPUCredits?: Value<string>;
+    constructor(properties: CreditSpecification);
+}
 export declare class ElasticGpuSpecification {
     Type: Value<string>;
     constructor(properties: ElasticGpuSpecification);
@@ -23,11 +44,6 @@ export declare class InstanceIpv6Address {
     Ipv6Address: Value<string>;
     constructor(properties: InstanceIpv6Address);
 }
-export declare class Volume {
-    Device: Value<string>;
-    VolumeId: Value<string>;
-    constructor(properties: Volume);
-}
 export declare class AssociationParameter {
     Key: Value<string>;
     Value: List<Value<string>>;
@@ -39,30 +55,14 @@ export declare class LaunchTemplateSpecification {
     Version: Value<string>;
     constructor(properties: LaunchTemplateSpecification);
 }
-export declare class Ebs {
-    DeleteOnTermination?: Value<boolean>;
-    Encrypted?: Value<boolean>;
-    Iops?: Value<number>;
-    SnapshotId?: Value<string>;
-    VolumeSize?: Value<number>;
-    VolumeType?: Value<string>;
-    constructor(properties: Ebs);
-}
 export declare class LicenseSpecification {
     LicenseConfigurationArn: Value<string>;
     constructor(properties: LicenseSpecification);
-}
-export declare class NoDevice {
-    constructor(properties: NoDevice);
 }
 export declare class SsmAssociation {
     AssociationParameters?: List<AssociationParameter>;
     DocumentName: Value<string>;
     constructor(properties: SsmAssociation);
-}
-export declare class CreditSpecification {
-    CPUCredits?: Value<string>;
-    constructor(properties: CreditSpecification);
 }
 export declare class ElasticInferenceAccelerator {
     Type: Value<string>;
@@ -117,17 +117,17 @@ export interface InstanceProperties {
     Volumes?: List<Volume>;
 }
 export default class Instance extends ResourceBase<InstanceProperties> {
+    static Volume: typeof Volume;
+    static Ebs: typeof Ebs;
+    static NoDevice: typeof NoDevice;
+    static CreditSpecification: typeof CreditSpecification;
     static ElasticGpuSpecification: typeof ElasticGpuSpecification;
     static NetworkInterface: typeof NetworkInterface;
     static InstanceIpv6Address: typeof InstanceIpv6Address;
-    static Volume: typeof Volume;
     static AssociationParameter: typeof AssociationParameter;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
-    static Ebs: typeof Ebs;
     static LicenseSpecification: typeof LicenseSpecification;
-    static NoDevice: typeof NoDevice;
     static SsmAssociation: typeof SsmAssociation;
-    static CreditSpecification: typeof CreditSpecification;
     static ElasticInferenceAccelerator: typeof ElasticInferenceAccelerator;
     static BlockDeviceMapping: typeof BlockDeviceMapping;
     static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;

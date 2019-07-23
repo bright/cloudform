@@ -7,11 +7,6 @@ export declare class MetricStat {
     Unit?: Value<string>;
     constructor(properties: MetricStat);
 }
-export declare class Dimension {
-    Name: Value<string>;
-    Value: Value<string>;
-    constructor(properties: Dimension);
-}
 export declare class MetricDataQuery {
     Expression?: Value<string>;
     Id: Value<string>;
@@ -19,6 +14,11 @@ export declare class MetricDataQuery {
     MetricStat?: MetricStat;
     ReturnData?: Value<boolean>;
     constructor(properties: MetricDataQuery);
+}
+export declare class Dimension {
+    Name: Value<string>;
+    Value: Value<string>;
+    constructor(properties: Dimension);
 }
 export declare class Metric {
     Dimensions?: List<Dimension>;
@@ -50,8 +50,8 @@ export interface AlarmProperties {
 }
 export default class Alarm extends ResourceBase<AlarmProperties> {
     static MetricStat: typeof MetricStat;
-    static Dimension: typeof Dimension;
     static MetricDataQuery: typeof MetricDataQuery;
+    static Dimension: typeof Dimension;
     static Metric: typeof Metric;
     constructor(properties: AlarmProperties);
 }

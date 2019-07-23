@@ -1,5 +1,5 @@
-import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { ResourceBase, ResourceTag } from '../resource';
+import { Value, List } from '../dataTypes';
 export declare class LifecyclePolicy {
     LifecyclePolicyText?: Value<string>;
     RegistryId?: Value<string>;
@@ -11,6 +11,7 @@ export interface RepositoryProperties {
     RepositoryPolicyText?: {
         [key: string]: any;
     };
+    Tags?: List<ResourceTag>;
 }
 export default class Repository extends ResourceBase<RepositoryProperties> {
     static LifecyclePolicy: typeof LifecyclePolicy;

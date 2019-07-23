@@ -1,21 +1,14 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 2.28.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
-
-export class TagEntry {
-    Value!: Value<string>
-    Key!: Value<string>
-
-    constructor(properties: TagEntry) {
-        Object.assign(this, properties)
-    }
-}
 
 export class LustreConfiguration {
     ImportPath?: Value<string>
@@ -49,12 +42,11 @@ export interface FileSystemProperties {
     BackupId?: Value<string>
     SubnetIds?: List<Value<string>>
     SecurityGroupIds?: List<Value<string>>
-    Tags?: List<TagEntry>
+    Tags?: List<ResourceTag>
     WindowsConfiguration?: WindowsConfiguration
 }
 
 export default class FileSystem extends ResourceBase<FileSystemProperties> {
-    static TagEntry = TagEntry
     static LustreConfiguration = LustreConfiguration
     static WindowsConfiguration = WindowsConfiguration
 

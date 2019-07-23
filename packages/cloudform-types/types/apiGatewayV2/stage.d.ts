@@ -27,6 +27,9 @@ export interface StageProperties {
     };
     ApiId: Value<string>;
     DefaultRouteSettings?: RouteSettings;
+    Tags?: {
+        [key: string]: any;
+    };
 }
 export default class Stage extends ResourceBase<StageProperties> {
     static AccessLogSettings: typeof AccessLogSettings;

@@ -1,12 +1,24 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class SqsParameters {
-    MessageGroupId: Value<string>;
-    constructor(properties: SqsParameters);
-}
 export declare class RunCommandParameters {
     RunCommandTargets: List<RunCommandTarget>;
     constructor(properties: RunCommandParameters);
+}
+export declare class RunCommandTarget {
+    Key: Value<string>;
+    Values: List<Value<string>>;
+    constructor(properties: RunCommandTarget);
+}
+export declare class InputTransformer {
+    InputPathsMap?: {
+        [key: string]: Value<string>;
+    };
+    InputTemplate: Value<string>;
+    constructor(properties: InputTransformer);
+}
+export declare class SqsParameters {
+    MessageGroupId: Value<string>;
+    constructor(properties: SqsParameters);
 }
 export declare class Target {
     Arn: Value<string>;
@@ -20,18 +32,6 @@ export declare class Target {
     RunCommandParameters?: RunCommandParameters;
     SqsParameters?: SqsParameters;
     constructor(properties: Target);
-}
-export declare class RunCommandTarget {
-    Key: Value<string>;
-    Values: List<Value<string>>;
-    constructor(properties: RunCommandTarget);
-}
-export declare class InputTransformer {
-    InputPathsMap?: {
-        [key: string]: Value<string>;
-    };
-    InputTemplate: Value<string>;
-    constructor(properties: InputTransformer);
 }
 export declare class KinesisParameters {
     PartitionKeyPath: Value<string>;
@@ -54,11 +54,11 @@ export interface RuleProperties {
     Targets?: List<Target>;
 }
 export default class Rule extends ResourceBase<RuleProperties> {
-    static SqsParameters: typeof SqsParameters;
     static RunCommandParameters: typeof RunCommandParameters;
-    static Target: typeof Target;
     static RunCommandTarget: typeof RunCommandTarget;
     static InputTransformer: typeof InputTransformer;
+    static SqsParameters: typeof SqsParameters;
+    static Target: typeof Target;
     static KinesisParameters: typeof KinesisParameters;
     static EcsParameters: typeof EcsParameters;
     constructor(properties?: RuleProperties);

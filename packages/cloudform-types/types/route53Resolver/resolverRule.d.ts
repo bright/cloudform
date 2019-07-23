@@ -2,7 +2,7 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class TargetAddress {
     Ip: Value<string>;
-    Port: Value<string>;
+    Port?: Value<string>;
     constructor(properties: TargetAddress);
 }
 export interface ResolverRuleProperties {

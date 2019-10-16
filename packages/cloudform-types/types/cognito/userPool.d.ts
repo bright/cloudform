@@ -46,6 +46,19 @@ export declare class StringAttributeConstraints {
     MaxLength?: Value<string>;
     constructor(properties: StringAttributeConstraints);
 }
+export declare class VerificationMessageTemplate {
+    EmailMessageByLink?: Value<string>;
+    EmailMessage?: Value<string>;
+    SmsMessage?: Value<string>;
+    EmailSubject?: Value<string>;
+    DefaultEmailOption?: Value<string>;
+    EmailSubjectByLink?: Value<string>;
+    constructor(properties: VerificationMessageTemplate);
+}
+export declare class UserPoolAddOns {
+    AdvancedSecurityMode?: Value<string>;
+    constructor(properties: UserPoolAddOns);
+}
 export declare class Policies {
     PasswordPolicy?: PasswordPolicy;
     constructor(properties: Policies);
@@ -55,6 +68,8 @@ export declare class LambdaConfig {
     PreAuthentication?: Value<string>;
     DefineAuthChallenge?: Value<string>;
     PreSignUp?: Value<string>;
+    PreTokenGeneration?: Value<string>;
+    UserMigration?: Value<string>;
     PostAuthentication?: Value<string>;
     PostConfirmation?: Value<string>;
     CustomMessage?: Value<string>;
@@ -77,15 +92,18 @@ export interface UserPoolProperties {
         [key: string]: any;
     };
     Policies?: Policies;
+    VerificationMessageTemplate?: VerificationMessageTemplate;
     MfaConfiguration?: Value<string>;
     Schema?: List<SchemaAttribute>;
     AdminCreateUserConfig?: AdminCreateUserConfig;
     SmsAuthenticationMessage?: Value<string>;
     UserPoolName?: Value<string>;
     SmsVerificationMessage?: Value<string>;
+    UserPoolAddOns?: UserPoolAddOns;
     EmailConfiguration?: EmailConfiguration;
     SmsConfiguration?: SmsConfiguration;
     AliasAttributes?: List<Value<string>>;
+    EnabledMfas?: List<Value<string>>;
     EmailVerificationSubject?: Value<string>;
     LambdaConfig?: LambdaConfig;
     UsernameAttributes?: List<Value<string>>;
@@ -101,6 +119,8 @@ export default class UserPool extends ResourceBase<UserPoolProperties> {
     static NumberAttributeConstraints: typeof NumberAttributeConstraints;
     static SmsConfiguration: typeof SmsConfiguration;
     static StringAttributeConstraints: typeof StringAttributeConstraints;
+    static VerificationMessageTemplate: typeof VerificationMessageTemplate;
+    static UserPoolAddOns: typeof UserPoolAddOns;
     static Policies: typeof Policies;
     static LambdaConfig: typeof LambdaConfig;
     static DeviceConfiguration: typeof DeviceConfiguration;

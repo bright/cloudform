@@ -5,6 +5,7 @@ export interface EventSourceMappingProperties {
     Enabled?: Value<boolean>;
     EventSourceArn: Value<string>;
     FunctionName: Value<string>;
+    MaximumBatchingWindowInSeconds?: Value<number>;
     StartingPosition?: Value<string>;
 }
 export default class EventSourceMapping extends ResourceBase<EventSourceMappingProperties> {

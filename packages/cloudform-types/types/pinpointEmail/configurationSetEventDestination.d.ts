@@ -10,6 +10,14 @@ export declare class SnsDestination {
     TopicArn: Value<string>;
     constructor(properties: SnsDestination);
 }
+export declare class PinpointDestination {
+    ApplicationArn?: Value<string>;
+    constructor(properties: PinpointDestination);
+}
+export declare class CloudWatchDestination {
+    DimensionConfigurations?: List<DimensionConfiguration>;
+    constructor(properties: CloudWatchDestination);
+}
 export declare class KinesisFirehoseDestination {
     DeliveryStreamArn: Value<string>;
     IamRoleArn: Value<string>;
@@ -24,14 +32,6 @@ export declare class EventDestination {
     KinesisFirehoseDestination?: KinesisFirehoseDestination;
     constructor(properties: EventDestination);
 }
-export declare class PinpointDestination {
-    ApplicationArn?: Value<string>;
-    constructor(properties: PinpointDestination);
-}
-export declare class CloudWatchDestination {
-    DimensionConfigurations?: List<DimensionConfiguration>;
-    constructor(properties: CloudWatchDestination);
-}
 export interface ConfigurationSetEventDestinationProperties {
     EventDestinationName: Value<string>;
     ConfigurationSetName: Value<string>;
@@ -40,9 +40,9 @@ export interface ConfigurationSetEventDestinationProperties {
 export default class ConfigurationSetEventDestination extends ResourceBase<ConfigurationSetEventDestinationProperties> {
     static DimensionConfiguration: typeof DimensionConfiguration;
     static SnsDestination: typeof SnsDestination;
-    static KinesisFirehoseDestination: typeof KinesisFirehoseDestination;
-    static EventDestination: typeof EventDestination;
     static PinpointDestination: typeof PinpointDestination;
     static CloudWatchDestination: typeof CloudWatchDestination;
+    static KinesisFirehoseDestination: typeof KinesisFirehoseDestination;
+    static EventDestination: typeof EventDestination;
     constructor(properties: ConfigurationSetEventDestinationProperties);
 }

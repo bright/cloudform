@@ -51,6 +51,9 @@ export declare class ResourceDataContainer {
 }
 export interface ResourceDefinitionProperties {
     InitialVersion?: ResourceDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class ResourceDefinition extends ResourceBase<ResourceDefinitionProperties> {

@@ -7,7 +7,14 @@ export declare class ScalingConfiguration {
     SecondsUntilAutoPause?: Value<number>;
     constructor(properties: ScalingConfiguration);
 }
+export declare class DBClusterRole {
+    FeatureName?: Value<string>;
+    RoleArn: Value<string>;
+    Status?: Value<string>;
+    constructor(properties: DBClusterRole);
+}
 export interface DBClusterProperties {
+    AssociatedRoles?: List<DBClusterRole>;
     AvailabilityZones?: List<Value<string>>;
     BacktrackWindow?: Value<number>;
     BackupRetentionPeriod?: Value<number>;
@@ -28,14 +35,18 @@ export interface DBClusterProperties {
     PreferredBackupWindow?: Value<string>;
     PreferredMaintenanceWindow?: Value<string>;
     ReplicationSourceIdentifier?: Value<string>;
+    RestoreType?: Value<string>;
     ScalingConfiguration?: ScalingConfiguration;
     SnapshotIdentifier?: Value<string>;
+    SourceDBClusterIdentifier?: Value<string>;
     SourceRegion?: Value<string>;
     StorageEncrypted?: Value<boolean>;
     Tags?: List<ResourceTag>;
+    UseLatestRestorableTime?: Value<boolean>;
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class DBCluster extends ResourceBase<DBClusterProperties> {
     static ScalingConfiguration: typeof ScalingConfiguration;
+    static DBClusterRole: typeof DBClusterRole;
     constructor(properties: DBClusterProperties);
 }

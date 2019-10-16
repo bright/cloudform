@@ -15,8 +15,8 @@ export declare class DirectoryServiceAuthenticationRequest {
     constructor(properties: DirectoryServiceAuthenticationRequest);
 }
 export declare class TagSpecification {
-    ResourceType?: Value<string>;
-    Tags?: List<ResourceTag>;
+    ResourceType: Value<string>;
+    Tags: List<ResourceTag>;
     constructor(properties: TagSpecification);
 }
 export declare class ClientAuthenticationRequest {
@@ -28,6 +28,7 @@ export declare class ClientAuthenticationRequest {
 export interface ClientVpnEndpointProperties {
     ClientCidrBlock: Value<string>;
     ConnectionLogOptions: ConnectionLogOptions;
+    SplitTunnel?: Value<boolean>;
     Description?: Value<string>;
     TagSpecifications?: List<TagSpecification>;
     AuthenticationOptions: List<ClientAuthenticationRequest>;

@@ -15,6 +15,7 @@ export interface DBClusterProperties {
     DBClusterParameterGroupName?: Value<string>;
     BackupRetentionPeriod?: Value<number>;
     Tags?: List<ResourceTag>;
+    EnableCloudwatchLogsExports?: List<Value<string>>;
 }
 export default class DBCluster extends ResourceBase<DBClusterProperties> {
     constructor(properties?: DBClusterProperties);

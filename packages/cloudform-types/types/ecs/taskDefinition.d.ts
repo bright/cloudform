@@ -5,6 +5,7 @@ export declare class LogConfiguration {
     Options?: {
         [key: string]: Value<string>;
     };
+    SecretOptions?: List<Secret>;
     constructor(properties: LogConfiguration);
 }
 export declare class Device {
@@ -33,6 +34,11 @@ export declare class TaskDefinitionPlacementConstraint {
     Type: Value<string>;
     constructor(properties: TaskDefinitionPlacementConstraint);
 }
+export declare class SystemControl {
+    Namespace: Value<string>;
+    Value: Value<string>;
+    constructor(properties: SystemControl);
+}
 export declare class Volume {
     DockerVolumeConfiguration?: DockerVolumeConfiguration;
     Host?: HostVolumeProperties;
@@ -42,7 +48,7 @@ export declare class Volume {
 export declare class Tmpfs {
     ContainerPath?: Value<string>;
     MountOptions?: List<Value<string>>;
-    Size?: Value<number>;
+    Size: Value<number>;
     constructor(properties: Tmpfs);
 }
 export declare class ResourceRequirement {
@@ -80,6 +86,7 @@ export declare class ContainerDefinition {
     HealthCheck?: HealthCheck;
     Hostname?: Value<string>;
     Image?: Value<string>;
+    Interactive?: Value<boolean>;
     Links?: List<Value<string>>;
     LinuxParameters?: LinuxParameters;
     LogConfiguration?: LogConfiguration;
@@ -89,12 +96,14 @@ export declare class ContainerDefinition {
     Name?: Value<string>;
     PortMappings?: List<PortMapping>;
     Privileged?: Value<boolean>;
+    PseudoTerminal?: Value<boolean>;
     ReadonlyRootFilesystem?: Value<boolean>;
     RepositoryCredentials?: RepositoryCredentials;
     ResourceRequirements?: List<ResourceRequirement>;
     Secrets?: List<Secret>;
     StartTimeout?: Value<number>;
     StopTimeout?: Value<number>;
+    SystemControls?: List<SystemControl>;
     Ulimits?: List<Ulimit>;
     User?: Value<string>;
     VolumesFrom?: List<VolumeFrom>;
@@ -169,8 +178,10 @@ export interface TaskDefinitionProperties {
     Cpu?: Value<string>;
     ExecutionRoleArn?: Value<string>;
     Family?: Value<string>;
+    IpcMode?: Value<string>;
     Memory?: Value<string>;
     NetworkMode?: Value<string>;
+    PidMode?: Value<string>;
     PlacementConstraints?: List<TaskDefinitionPlacementConstraint>;
     ProxyConfiguration?: ProxyConfiguration;
     RequiresCompatibilities?: List<Value<string>>;
@@ -185,6 +196,7 @@ export default class TaskDefinition extends ResourceBase<TaskDefinitionPropertie
     static VolumeFrom: typeof VolumeFrom;
     static HostEntry: typeof HostEntry;
     static TaskDefinitionPlacementConstraint: typeof TaskDefinitionPlacementConstraint;
+    static SystemControl: typeof SystemControl;
     static Volume: typeof Volume;
     static Tmpfs: typeof Tmpfs;
     static ResourceRequirement: typeof ResourceRequirement;

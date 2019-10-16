@@ -1,5 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class EncryptionOptions {
+    KmsKeyId?: Value<string>;
+    UseAwsOwnedKey: Value<boolean>;
+    constructor(properties: EncryptionOptions);
+}
 export declare class MaintenanceWindow {
     DayOfWeek: Value<string>;
     TimeOfDay: Value<string>;
@@ -28,11 +33,6 @@ export declare class ConfigurationId {
     Id: Value<string>;
     constructor(properties: ConfigurationId);
 }
-export declare class EncryptionOptions {
-    KmsKeyId?: Value<string>;
-    UseAwsOwnedKey: Value<boolean>;
-    constructor(properties: EncryptionOptions);
-}
 export interface BrokerProperties {
     SecurityGroups?: List<Value<string>>;
     EngineVersion: Value<string>;
@@ -47,15 +47,15 @@ export interface BrokerProperties {
     DeploymentMode: Value<string>;
     EngineType: Value<string>;
     PubliclyAccessible: Value<boolean>;
-    Tags?: List<TagsEntry>;
     EncryptionOptions?: EncryptionOptions;
+    Tags?: List<TagsEntry>;
 }
 export default class Broker extends ResourceBase<BrokerProperties> {
+    static EncryptionOptions: typeof EncryptionOptions;
     static MaintenanceWindow: typeof MaintenanceWindow;
     static LogList: typeof LogList;
     static TagsEntry: typeof TagsEntry;
     static User: typeof User;
     static ConfigurationId: typeof ConfigurationId;
-    static EncryptionOptions: typeof EncryptionOptions;
     constructor(properties: BrokerProperties);
 }

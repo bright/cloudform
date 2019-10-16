@@ -3,7 +3,9 @@ import { Value, List } from '../dataTypes';
 export interface ReplicationTaskProperties {
     ReplicationTaskSettings?: Value<string>;
     TableMappings: Value<string>;
+    CdcStartPosition?: Value<string>;
     ReplicationTaskIdentifier?: Value<string>;
+    CdcStopPosition?: Value<string>;
     SourceEndpointArn: Value<string>;
     MigrationType: Value<string>;
     TargetEndpointArn: Value<string>;

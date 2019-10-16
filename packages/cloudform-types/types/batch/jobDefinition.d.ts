@@ -9,6 +9,7 @@ export declare class ContainerProperties {
     User?: Value<string>;
     Memory: Value<number>;
     Privileged?: Value<boolean>;
+    LinuxParameters?: LinuxParameters;
     JobRoleArn?: Value<string>;
     ReadonlyRootFilesystem?: Value<boolean>;
     Vcpus: Value<number>;
@@ -48,6 +49,10 @@ export declare class VolumesHost {
     SourcePath?: Value<string>;
     constructor(properties: VolumesHost);
 }
+export declare class LinuxParameters {
+    Devices?: List<Device>;
+    constructor(properties: LinuxParameters);
+}
 export declare class NodeProperties {
     MainNode: Value<number>;
     NodeRangeProperties: List<NodeRangeProperty>;
@@ -66,6 +71,12 @@ export declare class NodeRangeProperty {
     Container?: ContainerProperties;
     TargetNodes: Value<string>;
     constructor(properties: NodeRangeProperty);
+}
+export declare class Device {
+    HostPath?: Value<string>;
+    Permissions?: List<Value<string>>;
+    ContainerPath?: Value<string>;
+    constructor(properties: Device);
 }
 export interface JobDefinitionProperties {
     Type: Value<string>;
@@ -86,9 +97,11 @@ export default class JobDefinition extends ResourceBase<JobDefinitionProperties>
     static Environment: typeof Environment;
     static Ulimit: typeof Ulimit;
     static VolumesHost: typeof VolumesHost;
+    static LinuxParameters: typeof LinuxParameters;
     static NodeProperties: typeof NodeProperties;
     static RetryStrategy: typeof RetryStrategy;
     static Timeout: typeof Timeout;
     static NodeRangeProperty: typeof NodeRangeProperty;
+    static Device: typeof Device;
     constructor(properties: JobDefinitionProperties);
 }

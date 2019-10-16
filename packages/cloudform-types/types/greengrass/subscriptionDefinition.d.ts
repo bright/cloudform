@@ -13,6 +13,9 @@ export declare class Subscription {
 }
 export interface SubscriptionDefinitionProperties {
     InitialVersion?: SubscriptionDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class SubscriptionDefinition extends ResourceBase<SubscriptionDefinitionProperties> {

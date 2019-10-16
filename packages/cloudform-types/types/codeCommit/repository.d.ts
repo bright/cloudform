@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Code {
     S3: S3;
@@ -11,11 +11,11 @@ export declare class S3 {
     constructor(properties: S3);
 }
 export declare class RepositoryTrigger {
-    Events?: List<Value<string>>;
+    Events: List<Value<string>>;
     Branches?: List<Value<string>>;
     CustomData?: Value<string>;
-    DestinationArn?: Value<string>;
-    Name?: Value<string>;
+    DestinationArn: Value<string>;
+    Name: Value<string>;
     constructor(properties: RepositoryTrigger);
 }
 export interface RepositoryProperties {
@@ -23,6 +23,7 @@ export interface RepositoryProperties {
     Triggers?: List<RepositoryTrigger>;
     Code?: Code;
     RepositoryDescription?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Repository extends ResourceBase<RepositoryProperties> {
     static Code: typeof Code;

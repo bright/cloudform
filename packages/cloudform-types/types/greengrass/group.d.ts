@@ -13,6 +13,9 @@ export declare class GroupVersion {
 export interface GroupProperties {
     InitialVersion?: GroupVersion;
     RoleArn?: Value<string>;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class Group extends ResourceBase<GroupProperties> {

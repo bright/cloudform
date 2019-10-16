@@ -59,14 +59,14 @@ export declare class MaintenanceWindowStepFunctionsParameters {
 export interface MaintenanceWindowTaskProperties {
     MaxErrors: Value<string>;
     Description?: Value<string>;
-    ServiceRoleArn: Value<string>;
+    ServiceRoleArn?: Value<string>;
     Priority: Value<number>;
     MaxConcurrency: Value<string>;
     Targets: List<Target>;
     Name?: Value<string>;
     TaskArn: Value<string>;
     TaskInvocationParameters?: TaskInvocationParameters;
-    WindowId?: Value<string>;
+    WindowId: Value<string>;
     TaskParameters?: {
         [key: string]: any;
     };

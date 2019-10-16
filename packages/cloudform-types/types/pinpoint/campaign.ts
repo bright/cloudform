@@ -1,13 +1,13 @@
 /* Generated from: 
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 6.3.0
  */
-   
-import {ResourceBase} from '../resource'
+
+import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class MetricDimension {
@@ -24,6 +24,41 @@ export class SetDimension {
     Values?: List<Value<string>>
 
     constructor(properties: SetDimension) {
+        Object.assign(this, properties)
+    }
+}
+
+export class EventDimensions {
+    Metrics?: {[key: string]: any}
+    EventType?: SetDimension
+    Attributes?: {[key: string]: any}
+
+    constructor(properties: EventDimensions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Schedule {
+    TimeZone?: Value<string>
+    QuietTime?: QuietTime
+    EndTime?: Value<string>
+    StartTime?: Value<string>
+    Frequency?: Value<string>
+    EventFilter?: CampaignEventFilter
+    IsLocalTime?: Value<boolean>
+
+    constructor(properties: Schedule) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Limits {
+    Daily?: Value<number>
+    MaximumDuration?: Value<number>
+    Total?: Value<number>
+    MessagesPerSecond?: Value<number>
+
+    constructor(properties: Limits) {
         Object.assign(this, properties)
     }
 }
@@ -70,16 +105,6 @@ export class CampaignHook {
     }
 }
 
-export class EventDimensions {
-    Metrics?: {[key: string]: any}
-    EventType?: SetDimension
-    Attributes?: {[key: string]: any}
-
-    constructor(properties: EventDimensions) {
-        Object.assign(this, properties)
-    }
-}
-
 export class Message {
     JsonBody?: Value<string>
     Action?: Value<string>
@@ -95,20 +120,6 @@ export class Message {
     Url?: Value<string>
 
     constructor(properties: Message) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Schedule {
-    TimeZone?: Value<string>
-    QuietTime?: QuietTime
-    EndTime?: Value<string>
-    StartTime?: Value<string>
-    Frequency?: Value<string>
-    EventFilter?: CampaignEventFilter
-    IsLocalTime?: Value<boolean>
-
-    constructor(properties: Schedule) {
         Object.assign(this, properties)
     }
 }
@@ -155,17 +166,6 @@ export class WriteTreatmentResource {
     }
 }
 
-export class Limits {
-    Daily?: Value<number>
-    MaximumDuration?: Value<number>
-    Total?: Value<number>
-    MessagesPerSecond?: Value<number>
-
-    constructor(properties: Limits) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface CampaignProperties {
     Description?: Value<string>
     SegmentId: Value<string>
@@ -180,24 +180,25 @@ export interface CampaignProperties {
     Schedule: Schedule
     ApplicationId: Value<string>
     CampaignHook?: CampaignHook
+    Tags?: {[key: string]: any}
     TreatmentName?: Value<string>
 }
 
 export default class Campaign extends ResourceBase<CampaignProperties> {
     static MetricDimension = MetricDimension
     static SetDimension = SetDimension
+    static EventDimensions = EventDimensions
+    static Schedule = Schedule
+    static Limits = Limits
     static AttributeDimension = AttributeDimension
     static MessageConfiguration = MessageConfiguration
     static QuietTime = QuietTime
     static CampaignHook = CampaignHook
-    static EventDimensions = EventDimensions
     static Message = Message
-    static Schedule = Schedule
     static CampaignEventFilter = CampaignEventFilter
     static CampaignSmsMessage = CampaignSmsMessage
     static CampaignEmailMessage = CampaignEmailMessage
     static WriteTreatmentResource = WriteTreatmentResource
-    static Limits = Limits
 
     constructor(properties: CampaignProperties) {
         super('AWS::Pinpoint::Campaign', properties)

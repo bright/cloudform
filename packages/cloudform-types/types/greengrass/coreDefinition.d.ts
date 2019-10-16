@@ -13,6 +13,9 @@ export declare class CoreDefinitionVersion {
 }
 export interface CoreDefinitionProperties {
     InitialVersion?: CoreDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class CoreDefinition extends ResourceBase<CoreDefinitionProperties> {

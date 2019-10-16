@@ -10,6 +10,7 @@ export declare class ElasticsearchClusterConfig {
     DedicatedMasterType?: Value<string>;
     InstanceCount?: Value<number>;
     InstanceType?: Value<string>;
+    ZoneAwarenessConfig?: ZoneAwarenessConfig;
     ZoneAwarenessEnabled?: Value<boolean>;
     constructor(properties: ElasticsearchClusterConfig);
 }
@@ -21,6 +22,10 @@ export declare class VPCOptions {
     SecurityGroupIds?: List<Value<string>>;
     SubnetIds?: List<Value<string>>;
     constructor(properties: VPCOptions);
+}
+export declare class ZoneAwarenessConfig {
+    AvailabilityZoneCount?: Value<number>;
+    constructor(properties: ZoneAwarenessConfig);
 }
 export declare class EBSOptions {
     EBSEnabled?: Value<boolean>;
@@ -56,6 +61,7 @@ export default class Domain extends ResourceBase<DomainProperties> {
     static ElasticsearchClusterConfig: typeof ElasticsearchClusterConfig;
     static SnapshotOptions: typeof SnapshotOptions;
     static VPCOptions: typeof VPCOptions;
+    static ZoneAwarenessConfig: typeof ZoneAwarenessConfig;
     static EBSOptions: typeof EBSOptions;
     static EncryptionAtRestOptions: typeof EncryptionAtRestOptions;
     constructor(properties?: DomainProperties);

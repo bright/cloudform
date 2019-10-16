@@ -17,6 +17,7 @@ export declare class OpenIDConnectConfig {
 }
 export declare class LogConfig {
     CloudWatchLogsRoleArn?: Value<string>;
+    ExcludeVerboseContent?: Value<boolean>;
     FieldLogLevel?: Value<string>;
     constructor(properties: LogConfig);
 }

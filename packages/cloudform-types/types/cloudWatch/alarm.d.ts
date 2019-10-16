@@ -44,7 +44,8 @@ export interface AlarmProperties {
     OKActions?: List<Value<string>>;
     Period?: Value<number>;
     Statistic?: Value<string>;
-    Threshold: Value<number>;
+    Threshold?: Value<number>;
+    ThresholdMetricId?: Value<string>;
     TreatMissingData?: Value<string>;
     Unit?: Value<string>;
 }

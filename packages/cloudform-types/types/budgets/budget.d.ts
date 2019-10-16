@@ -4,6 +4,9 @@ export declare class BudgetData {
     BudgetLimit?: Spend;
     TimePeriod?: TimePeriod;
     TimeUnit: Value<string>;
+    PlannedBudgetLimits?: {
+        [key: string]: any;
+    };
     CostFilters?: {
         [key: string]: any;
     };

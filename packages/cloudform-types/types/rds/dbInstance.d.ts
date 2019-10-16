@@ -1,5 +1,11 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class DBInstanceRole {
+    FeatureName: Value<string>;
+    RoleArn: Value<string>;
+    Status?: Value<string>;
+    constructor(properties: DBInstanceRole);
+}
 export declare class ProcessorFeature {
     Name?: Value<string>;
     Value?: Value<string>;
@@ -8,6 +14,7 @@ export declare class ProcessorFeature {
 export interface DBInstanceProperties {
     AllocatedStorage?: Value<string>;
     AllowMajorVersionUpgrade?: Value<boolean>;
+    AssociatedRoles?: List<DBInstanceRole>;
     AutoMinorVersionUpgrade?: Value<boolean>;
     AvailabilityZone?: Value<string>;
     BackupRetentionPeriod?: Value<number>;
@@ -57,6 +64,7 @@ export interface DBInstanceProperties {
     VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {
+    static DBInstanceRole: typeof DBInstanceRole;
     static ProcessorFeature: typeof ProcessorFeature;
     constructor(properties: DBInstanceProperties);
 }

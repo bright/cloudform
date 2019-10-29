@@ -1,6 +1,6 @@
 {
-  "name": "cloudform-types",
-  "version": "4.2.0",
+  "name": "@brettneese/cloudform-types",
+  "version": "4.1.0",
   "description": "TypeScript AWS CloudFormation template types - used by cloudform",
   "repository": {
     "type": "git",

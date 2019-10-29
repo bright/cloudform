@@ -20,7 +20,7 @@
     "cloudform": "cli/cloudform.js"
   },
   "dependencies": {
-    "cloudform-types": "^4.1.0",
+    "cloudform-types": "^4.2.0",
     "jsonminify": "^0.4.1",
     "ts-node": "^5.0.1",
     "typescript": "^2.9.2"

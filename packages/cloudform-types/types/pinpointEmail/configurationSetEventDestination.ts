@@ -1,10 +1,10 @@
 /* Generated from: 
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0
  */
    
 import {ResourceBase} from '../resource'
@@ -24,6 +24,22 @@ export class SnsDestination {
     TopicArn!: Value<string>
 
     constructor(properties: SnsDestination) {
+        Object.assign(this, properties)
+    }
+}
+
+export class PinpointDestination {
+    ApplicationArn?: Value<string>
+
+    constructor(properties: PinpointDestination) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CloudWatchDestination {
+    DimensionConfigurations?: List<DimensionConfiguration>
+
+    constructor(properties: CloudWatchDestination) {
         Object.assign(this, properties)
     }
 }
@@ -50,22 +66,6 @@ export class EventDestination {
     }
 }
 
-export class PinpointDestination {
-    ApplicationArn?: Value<string>
-
-    constructor(properties: PinpointDestination) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CloudWatchDestination {
-    DimensionConfigurations?: List<DimensionConfiguration>
-
-    constructor(properties: CloudWatchDestination) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface ConfigurationSetEventDestinationProperties {
     EventDestinationName: Value<string>
     ConfigurationSetName: Value<string>
@@ -75,10 +75,10 @@ export interface ConfigurationSetEventDestinationProperties {
 export default class ConfigurationSetEventDestination extends ResourceBase<ConfigurationSetEventDestinationProperties> {
     static DimensionConfiguration = DimensionConfiguration
     static SnsDestination = SnsDestination
-    static KinesisFirehoseDestination = KinesisFirehoseDestination
-    static EventDestination = EventDestination
     static PinpointDestination = PinpointDestination
     static CloudWatchDestination = CloudWatchDestination
+    static KinesisFirehoseDestination = KinesisFirehoseDestination
+    static EventDestination = EventDestination
 
     constructor(properties: ConfigurationSetEventDestinationProperties) {
         super('AWS::PinpointEmail::ConfigurationSetEventDestination', properties)

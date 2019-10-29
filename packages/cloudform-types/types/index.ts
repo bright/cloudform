@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 7.1.0
  */
    
 import EC2 from './ec2'
@@ -47,6 +47,9 @@ export {EMR}
 import ApiGatewayV2 from './apiGatewayV2'
 export {ApiGatewayV2}
 
+import SageMaker from './sageMaker'
+export {SageMaker}
+
 import Kinesis from './kinesis'
 export {Kinesis}
 
@@ -77,6 +80,9 @@ export {StepFunctions}
 import KinesisAnalytics from './kinesisAnalytics'
 export {KinesisAnalytics}
 
+import Cognito from './cognito'
+export {Cognito}
+
 import AppStream from './appStream'
 export {AppStream}
 
@@ -89,6 +95,9 @@ export {CloudFront}
 import GuardDuty from './guardDuty'
 export {GuardDuty}
 
+import LakeFormation from './lakeFormation'
+export {LakeFormation}
+
 import SNS from './sns'
 export {SNS}
 
@@ -97,12 +106,6 @@ export {EFS}
 
 import Glue from './glue'
 export {Glue}
-
-import SageMaker from './sageMaker'
-export {SageMaker}
-
-import Cognito from './cognito'
-export {Cognito}
 
 import ApiGateway from './apiGateway'
 export {ApiGateway}
@@ -149,14 +152,14 @@ export {SecretsManager}
 import ElasticLoadBalancingV2 from './elasticLoadBalancingV2'
 export {ElasticLoadBalancingV2}
 
+import CodeBuild from './codeBuild'
+export {CodeBuild}
+
 import AmazonMQ from './amazonMq'
 export {AmazonMQ}
 
 import DMS from './dms'
 export {DMS}
-
-import CodeBuild from './codeBuild'
-export {CodeBuild}
 
 import Budgets from './budgets'
 export {Budgets}
@@ -191,11 +194,11 @@ export {Amplify}
 import ServiceDiscovery from './serviceDiscovery'
 export {ServiceDiscovery}
 
-import Events from './events'
-export {Events}
-
 import EKS from './eks'
 export {EKS}
+
+import Events from './events'
+export {Events}
 
 import CloudFormation from './cloudFormation'
 export {CloudFormation}
@@ -239,6 +242,9 @@ export {AutoScalingPlans}
 import DirectoryService from './directoryService'
 export {DirectoryService}
 
+import QLDB from './qldb'
+export {QLDB}
+
 import CertificateManager from './certificateManager'
 export {CertificateManager}
 
@@ -278,6 +284,9 @@ export {MSK}
 import DynamoDB from './dynamoDb'
 export {DynamoDB}
 
+import CodeStar from './codeStar'
+export {CodeStar}
+
 import Athena from './athena'
 export {Athena}
 
@@ -301,6 +310,9 @@ export {SES}
 
 import CodeCommit from './codeCommit'
 export {CodeCommit}
+
+import ManagedBlockchain from './managedBlockchain'
+export {ManagedBlockchain}
  
 
 export default {
@@ -314,6 +326,7 @@ export default {
   WorkSpaces,
   EMR,
   ApiGatewayV2,
+  SageMaker,
   Kinesis,
   RAM,
   AutoScaling,
@@ -324,15 +337,15 @@ export default {
   ECS,
   StepFunctions,
   KinesisAnalytics,
+  Cognito,
   AppStream,
   Greengrass,
   CloudFront,
   GuardDuty,
+  LakeFormation,
   SNS,
   EFS,
   Glue,
-  SageMaker,
-  Cognito,
   ApiGateway,
   KMS,
   Redshift,
@@ -348,9 +361,9 @@ export default {
   Config,
   SecretsManager,
   ElasticLoadBalancingV2,
+  CodeBuild,
   AmazonMQ,
   DMS,
-  CodeBuild,
   Budgets,
   CodeDeploy,
   DAX,
@@ -362,8 +375,8 @@ export default {
   IoTAnalytics,
   Amplify,
   ServiceDiscovery,
-  Events,
   EKS,
+  Events,
   CloudFormation,
   SSM,
   KinesisAnalyticsV2,
@@ -378,6 +391,7 @@ export default {
   IoTThingsGraph,
   AutoScalingPlans,
   DirectoryService,
+  QLDB,
   CertificateManager,
   Inspector,
   OpsWorksCM,
@@ -391,6 +405,7 @@ export default {
   KinesisFirehose,
   MSK,
   DynamoDB,
+  CodeStar,
   Athena,
   ASK,
   PinpointEmail,
@@ -398,5 +413,6 @@ export default {
   Cloud9,
   Neptune,
   SES,
-  CodeCommit
+  CodeCommit,
+  ManagedBlockchain
 }

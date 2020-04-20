@@ -1,5 +1,4 @@
-import Template from "./types/template"
-export type Template = Template
+export { default as Template } from "./types/template"
 
 import * as _Fn from './types/functions'
 export const Fn = _Fn

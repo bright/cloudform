@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -34,6 +34,7 @@ export class ElasticsearchClusterConfig {
     DedicatedMasterType?: Value<string>
     InstanceCount?: Value<number>
     InstanceType?: Value<string>
+    ZoneAwarenessConfig?: ZoneAwarenessConfig
     ZoneAwarenessEnabled?: Value<boolean>
 
     constructor(properties: ElasticsearchClusterConfig) {
@@ -49,11 +50,39 @@ export class SnapshotOptions {
     }
 }
 
+export class CognitoOptions {
+    Enabled?: Value<boolean>
+    IdentityPoolId?: Value<string>
+    RoleArn?: Value<string>
+    UserPoolId?: Value<string>
+
+    constructor(properties: CognitoOptions) {
+        Object.assign(this, properties)
+    }
+}
+
 export class VPCOptions {
     SecurityGroupIds?: List<Value<string>>
     SubnetIds?: List<Value<string>>
 
     constructor(properties: VPCOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LogPublishingOption {
+    CloudWatchLogsLogGroupArn?: Value<string>
+    Enabled?: Value<boolean>
+
+    constructor(properties: LogPublishingOption) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ZoneAwarenessConfig {
+    AvailabilityZoneCount?: Value<number>
+
+    constructor(properties: ZoneAwarenessConfig) {
         Object.assign(this, properties)
     }
 }
@@ -81,11 +110,13 @@ export class EncryptionAtRestOptions {
 export interface DomainProperties {
     AccessPolicies?: {[key: string]: any}
     AdvancedOptions?: {[key: string]: Value<string>}
+    CognitoOptions?: CognitoOptions
     DomainName?: Value<string>
     EBSOptions?: EBSOptions
     ElasticsearchClusterConfig?: ElasticsearchClusterConfig
     ElasticsearchVersion?: Value<string>
     EncryptionAtRestOptions?: EncryptionAtRestOptions
+    LogPublishingOptions?: {[key: string]: LogPublishingOption}
     NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions
     SnapshotOptions?: SnapshotOptions
     Tags?: List<ResourceTag>
@@ -96,7 +127,10 @@ export default class Domain extends ResourceBase<DomainProperties> {
     static NodeToNodeEncryptionOptions = NodeToNodeEncryptionOptions
     static ElasticsearchClusterConfig = ElasticsearchClusterConfig
     static SnapshotOptions = SnapshotOptions
+    static CognitoOptions = CognitoOptions
     static VPCOptions = VPCOptions
+    static LogPublishingOption = LogPublishingOption
+    static ZoneAwarenessConfig = ZoneAwarenessConfig
     static EBSOptions = EBSOptions
     static EncryptionAtRestOptions = EncryptionAtRestOptions
 

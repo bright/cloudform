@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0
  */
    
 import RouteTable_ from './routeTable'
@@ -22,8 +22,9 @@ import VPCPeeringConnection_ from './vpcPeeringConnection'
 import TransitGateway_ from './transitGateway'
 import CapacityReservation_ from './capacityReservation'
 import VPCEndpointServicePermissions_ from './vpcEndpointServicePermissions'
-import TransitGatewayRouteTableAssociation_ from './transitGatewayRouteTableAssociation'
 import Volume_ from './volume'
+import TransitGatewayRouteTableAssociation_ from './transitGatewayRouteTableAssociation'
+import LocalGatewayRoute_ from './localGatewayRoute'
 import EIP_ from './eip'
 import FlowLog_ from './flowLog'
 import SecurityGroupEgress_ from './securityGroupEgress'
@@ -38,25 +39,31 @@ import EIPAssociation_ from './eipAssociation'
 import VPNGateway_ from './vpnGateway'
 import VPNConnection_ from './vpnConnection'
 import TransitGatewayRouteTable_ from './transitGatewayRouteTable'
+import VPCEndpointService_ from './vpcEndpointService'
 import ClientVpnRoute_ from './clientVpnRoute'
 import PlacementGroup_ from './placementGroup'
+import GatewayRouteTableAssociation_ from './gatewayRouteTableAssociation'
 import NetworkAclEntry_ from './networkAclEntry'
 import InternetGateway_ from './internetGateway'
 import LaunchTemplate_ from './launchTemplate'
 import SpotFleet_ from './spotFleet'
 import VPNConnectionRoute_ from './vpnConnectionRoute'
 import NetworkInterfacePermission_ from './networkInterfacePermission'
+import TrafficMirrorFilter_ from './trafficMirrorFilter'
 import SecurityGroupIngress_ from './securityGroupIngress'
 import ClientVpnEndpoint_ from './clientVpnEndpoint'
 import SubnetRouteTableAssociation_ from './subnetRouteTableAssociation'
 import Route_ from './route'
+import LocalGatewayRouteTableVPCAssociation_ from './localGatewayRouteTableVpcAssociation'
 import TransitGatewayRouteTablePropagation_ from './transitGatewayRouteTablePropagation'
 import NetworkInterface_ from './networkInterface'
 import ClientVpnAuthorizationRule_ from './clientVpnAuthorizationRule'
 import SubnetNetworkAclAssociation_ from './subnetNetworkAclAssociation'
+import TrafficMirrorSession_ from './trafficMirrorSession'
 import SubnetCidrBlock_ from './subnetCidrBlock'
 import NatGateway_ from './natGateway'
 import SecurityGroup_ from './securityGroup'
+import TrafficMirrorFilterRule_ from './trafficMirrorFilterRule'
 import VPC_ from './vpc'
 import TransitGatewayRoute_ from './transitGatewayRoute'
 import NetworkAcl_ from './networkAcl'
@@ -69,8 +76,8 @@ import VPCGatewayAttachment_ from './vpcGatewayAttachment'
 import VPCCidrBlock_ from './vpcCidrBlock'
 import EC2Fleet_ from './ec2Fleet'
 import VPCDHCPOptionsAssociation_ from './vpcdhcpOptionsAssociation'
-import VPCEndpointConnectionNotification_ from './vpcEndpointConnectionNotification'
-import VPCEndpointService_ from './vpcEndpointService' 
+import TrafficMirrorTarget_ from './trafficMirrorTarget'
+import VPCEndpointConnectionNotification_ from './vpcEndpointConnectionNotification' 
 
 export namespace EC2 {
   export const RouteTable = RouteTable_
@@ -78,8 +85,9 @@ export namespace EC2 {
   export const TransitGateway = TransitGateway_
   export const CapacityReservation = CapacityReservation_
   export const VPCEndpointServicePermissions = VPCEndpointServicePermissions_
-  export const TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
   export const Volume = Volume_
+  export const TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
+  export const LocalGatewayRoute = LocalGatewayRoute_
   export const EIP = EIP_
   export const FlowLog = FlowLog_
   export const SecurityGroupEgress = SecurityGroupEgress_
@@ -94,25 +102,31 @@ export namespace EC2 {
   export const VPNGateway = VPNGateway_
   export const VPNConnection = VPNConnection_
   export const TransitGatewayRouteTable = TransitGatewayRouteTable_
+  export const VPCEndpointService = VPCEndpointService_
   export const ClientVpnRoute = ClientVpnRoute_
   export const PlacementGroup = PlacementGroup_
+  export const GatewayRouteTableAssociation = GatewayRouteTableAssociation_
   export const NetworkAclEntry = NetworkAclEntry_
   export const InternetGateway = InternetGateway_
   export const LaunchTemplate = LaunchTemplate_
   export const SpotFleet = SpotFleet_
   export const VPNConnectionRoute = VPNConnectionRoute_
   export const NetworkInterfacePermission = NetworkInterfacePermission_
+  export const TrafficMirrorFilter = TrafficMirrorFilter_
   export const SecurityGroupIngress = SecurityGroupIngress_
   export const ClientVpnEndpoint = ClientVpnEndpoint_
   export const SubnetRouteTableAssociation = SubnetRouteTableAssociation_
   export const Route = Route_
+  export const LocalGatewayRouteTableVPCAssociation = LocalGatewayRouteTableVPCAssociation_
   export const TransitGatewayRouteTablePropagation = TransitGatewayRouteTablePropagation_
   export const NetworkInterface = NetworkInterface_
   export const ClientVpnAuthorizationRule = ClientVpnAuthorizationRule_
   export const SubnetNetworkAclAssociation = SubnetNetworkAclAssociation_
+  export const TrafficMirrorSession = TrafficMirrorSession_
   export const SubnetCidrBlock = SubnetCidrBlock_
   export const NatGateway = NatGateway_
   export const SecurityGroup = SecurityGroup_
+  export const TrafficMirrorFilterRule = TrafficMirrorFilterRule_
   export const VPC = VPC_
   export const TransitGatewayRoute = TransitGatewayRoute_
   export const NetworkAcl = NetworkAcl_
@@ -125,16 +139,17 @@ export namespace EC2 {
   export const VPCCidrBlock = VPCCidrBlock_
   export const EC2Fleet = EC2Fleet_
   export const VPCDHCPOptionsAssociation = VPCDHCPOptionsAssociation_
+  export const TrafficMirrorTarget = TrafficMirrorTarget_
   export const VPCEndpointConnectionNotification = VPCEndpointConnectionNotification_
-  export const VPCEndpointService = VPCEndpointService_
 
   export type RouteTable = RouteTable_
   export type VPCPeeringConnection = VPCPeeringConnection_
   export type TransitGateway = TransitGateway_
   export type CapacityReservation = CapacityReservation_
   export type VPCEndpointServicePermissions = VPCEndpointServicePermissions_
-  export type TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
   export type Volume = Volume_
+  export type TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
+  export type LocalGatewayRoute = LocalGatewayRoute_
   export type EIP = EIP_
   export type FlowLog = FlowLog_
   export type SecurityGroupEgress = SecurityGroupEgress_
@@ -149,25 +164,31 @@ export namespace EC2 {
   export type VPNGateway = VPNGateway_
   export type VPNConnection = VPNConnection_
   export type TransitGatewayRouteTable = TransitGatewayRouteTable_
+  export type VPCEndpointService = VPCEndpointService_
   export type ClientVpnRoute = ClientVpnRoute_
   export type PlacementGroup = PlacementGroup_
+  export type GatewayRouteTableAssociation = GatewayRouteTableAssociation_
   export type NetworkAclEntry = NetworkAclEntry_
   export type InternetGateway = InternetGateway_
   export type LaunchTemplate = LaunchTemplate_
   export type SpotFleet = SpotFleet_
   export type VPNConnectionRoute = VPNConnectionRoute_
   export type NetworkInterfacePermission = NetworkInterfacePermission_
+  export type TrafficMirrorFilter = TrafficMirrorFilter_
   export type SecurityGroupIngress = SecurityGroupIngress_
   export type ClientVpnEndpoint = ClientVpnEndpoint_
   export type SubnetRouteTableAssociation = SubnetRouteTableAssociation_
   export type Route = Route_
+  export type LocalGatewayRouteTableVPCAssociation = LocalGatewayRouteTableVPCAssociation_
   export type TransitGatewayRouteTablePropagation = TransitGatewayRouteTablePropagation_
   export type NetworkInterface = NetworkInterface_
   export type ClientVpnAuthorizationRule = ClientVpnAuthorizationRule_
   export type SubnetNetworkAclAssociation = SubnetNetworkAclAssociation_
+  export type TrafficMirrorSession = TrafficMirrorSession_
   export type SubnetCidrBlock = SubnetCidrBlock_
   export type NatGateway = NatGateway_
   export type SecurityGroup = SecurityGroup_
+  export type TrafficMirrorFilterRule = TrafficMirrorFilterRule_
   export type VPC = VPC_
   export type TransitGatewayRoute = TransitGatewayRoute_
   export type NetworkAcl = NetworkAcl_
@@ -180,6 +201,6 @@ export namespace EC2 {
   export type VPCCidrBlock = VPCCidrBlock_
   export type EC2Fleet = EC2Fleet_
   export type VPCDHCPOptionsAssociation = VPCDHCPOptionsAssociation_
+  export type TrafficMirrorTarget = TrafficMirrorTarget_
   export type VPCEndpointConnectionNotification = VPCEndpointConnectionNotification_
-  export type VPCEndpointService = VPCEndpointService_
 }

@@ -78,6 +78,7 @@ class AutoScalingGroup extends resource_1.ResourceBase {
         super('AWS::AutoScaling::AutoScalingGroup', properties);
     }
 }
+exports.default = AutoScalingGroup;
 AutoScalingGroup.LaunchTemplateOverrides = LaunchTemplateOverrides;
 AutoScalingGroup.LifecycleHookSpecification = LifecycleHookSpecification;
 AutoScalingGroup.LaunchTemplateSpecification = LaunchTemplateSpecification;
@@ -87,4 +88,3 @@ AutoScalingGroup.MetricsCollection = MetricsCollection;
 AutoScalingGroup.InstancesDistribution = InstancesDistribution;
 AutoScalingGroup.LaunchTemplate = LaunchTemplate;
 AutoScalingGroup.TagProperty = TagProperty;
-exports.default = AutoScalingGroup;

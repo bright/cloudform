@@ -96,6 +96,7 @@ class InstanceGroupConfig extends resource_1.ResourceBase {
         super('AWS::EMR::InstanceGroupConfig', properties);
     }
 }
+exports.default = InstanceGroupConfig;
 InstanceGroupConfig.EbsBlockDeviceConfig = EbsBlockDeviceConfig;
 InstanceGroupConfig.ScalingAction = ScalingAction;
 InstanceGroupConfig.ScalingTrigger = ScalingTrigger;
@@ -108,4 +109,3 @@ InstanceGroupConfig.SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfig
 InstanceGroupConfig.ScalingRule = ScalingRule;
 InstanceGroupConfig.ScalingConstraints = ScalingConstraints;
 InstanceGroupConfig.CloudWatchAlarmDefinition = CloudWatchAlarmDefinition;
-exports.default = InstanceGroupConfig;

@@ -30,5 +30,5 @@ class DeliveryChannel extends resource_1.ResourceBase {
         super('AWS::Config::DeliveryChannel', properties);
     }
 }
-DeliveryChannel.ConfigSnapshotDeliveryProperties = ConfigSnapshotDeliveryProperties;
 exports.default = DeliveryChannel;
+DeliveryChannel.ConfigSnapshotDeliveryProperties = ConfigSnapshotDeliveryProperties;

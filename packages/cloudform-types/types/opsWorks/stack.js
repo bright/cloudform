@@ -54,9 +54,9 @@ class Stack extends resource_1.ResourceBase {
         super('AWS::OpsWorks::Stack', properties);
     }
 }
+exports.default = Stack;
 Stack.StackConfigurationManager = StackConfigurationManager;
 Stack.RdsDbInstance = RdsDbInstance;
 Stack.Source = Source;
 Stack.ChefConfiguration = ChefConfiguration;
 Stack.ElasticIp = ElasticIp;
-exports.default = Stack;

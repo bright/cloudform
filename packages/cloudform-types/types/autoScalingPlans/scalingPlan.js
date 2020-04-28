@@ -75,6 +75,7 @@ class ScalingPlan extends resource_1.ResourceBase {
         super('AWS::AutoScalingPlans::ScalingPlan', properties);
     }
 }
+exports.default = ScalingPlan;
 ScalingPlan.CustomizedScalingMetricSpecification = CustomizedScalingMetricSpecification;
 ScalingPlan.TagFilter = TagFilter;
 ScalingPlan.CustomizedLoadMetricSpecification = CustomizedLoadMetricSpecification;
@@ -84,4 +85,3 @@ ScalingPlan.TargetTrackingConfiguration = TargetTrackingConfiguration;
 ScalingPlan.MetricDimension = MetricDimension;
 ScalingPlan.PredefinedScalingMetricSpecification = PredefinedScalingMetricSpecification;
 ScalingPlan.PredefinedLoadMetricSpecification = PredefinedLoadMetricSpecification;
-exports.default = ScalingPlan;

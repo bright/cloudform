@@ -54,10 +54,10 @@ class Partition extends resource_1.ResourceBase {
         super('AWS::Glue::Partition', properties);
     }
 }
+exports.default = Partition;
 Partition.SerdeInfo = SerdeInfo;
 Partition.Column = Column;
 Partition.PartitionInput = PartitionInput;
 Partition.StorageDescriptor = StorageDescriptor;
 Partition.Order = Order;
 Partition.SkewedInfo = SkewedInfo;
-exports.default = Partition;

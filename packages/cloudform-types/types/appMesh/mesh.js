@@ -33,6 +33,6 @@ class Mesh extends resource_1.ResourceBase {
         super('AWS::AppMesh::Mesh', properties);
     }
 }
+exports.default = Mesh;
 Mesh.MeshSpec = MeshSpec;
 Mesh.EgressFilter = EgressFilter;
-exports.default = Mesh;

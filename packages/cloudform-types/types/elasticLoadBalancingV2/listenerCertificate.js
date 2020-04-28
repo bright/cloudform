@@ -30,5 +30,5 @@ class ListenerCertificate extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::ListenerCertificate', properties);
     }
 }
-ListenerCertificate.Certificate = Certificate;
 exports.default = ListenerCertificate;
+ListenerCertificate.Certificate = Certificate;

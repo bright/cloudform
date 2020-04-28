@@ -66,6 +66,7 @@ class DataSource extends resource_1.ResourceBase {
         super('AWS::AppSync::DataSource', properties);
     }
 }
+exports.default = DataSource;
 DataSource.RelationalDatabaseConfig = RelationalDatabaseConfig;
 DataSource.AwsIamConfig = AwsIamConfig;
 DataSource.DynamoDBConfig = DynamoDBConfig;
@@ -74,4 +75,3 @@ DataSource.RdsHttpEndpointConfig = RdsHttpEndpointConfig;
 DataSource.LambdaConfig = LambdaConfig;
 DataSource.HttpConfig = HttpConfig;
 DataSource.ElasticsearchConfig = ElasticsearchConfig;
-exports.default = DataSource;

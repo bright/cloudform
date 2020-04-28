@@ -43,8 +43,8 @@ class App extends resource_1.ResourceBase {
         super('AWS::Amplify::App', properties);
     }
 }
+exports.default = App;
 App.BasicAuthConfig = BasicAuthConfig;
 App.EnvironmentVariable = EnvironmentVariable;
 App.CustomRule = CustomRule;
 App.AutoBranchCreationConfig = AutoBranchCreationConfig;
-exports.default = App;

@@ -282,6 +282,7 @@ class Bucket extends resource_1.ResourceBase {
         super('AWS::S3::Bucket', properties || {});
     }
 }
+exports.default = Bucket;
 Bucket.BucketEncryption = BucketEncryption;
 Bucket.RoutingRuleCondition = RoutingRuleCondition;
 Bucket.LifecycleConfiguration = LifecycleConfiguration;
@@ -325,4 +326,3 @@ Bucket.TagFilter = TagFilter;
 Bucket.Transition = Transition;
 Bucket.DataExport = DataExport;
 Bucket.FilterRule = FilterRule;
-exports.default = Bucket;

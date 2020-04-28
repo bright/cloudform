@@ -25,5 +25,5 @@ class Domain extends resource_1.ResourceBase {
         super('AWS::Amplify::Domain', properties);
     }
 }
-Domain.SubDomainSetting = SubDomainSetting;
 exports.default = Domain;
+Domain.SubDomainSetting = SubDomainSetting;

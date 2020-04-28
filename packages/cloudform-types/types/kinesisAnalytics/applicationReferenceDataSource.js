@@ -65,6 +65,7 @@ class ApplicationReferenceDataSource extends resource_1.ResourceBase {
         super('AWS::KinesisAnalytics::ApplicationReferenceDataSource', properties);
     }
 }
+exports.default = ApplicationReferenceDataSource;
 ApplicationReferenceDataSource.RecordFormat = RecordFormat;
 ApplicationReferenceDataSource.CSVMappingParameters = CSVMappingParameters;
 ApplicationReferenceDataSource.S3ReferenceDataSource = S3ReferenceDataSource;
@@ -73,4 +74,3 @@ ApplicationReferenceDataSource.JSONMappingParameters = JSONMappingParameters;
 ApplicationReferenceDataSource.RecordColumn = RecordColumn;
 ApplicationReferenceDataSource.ReferenceSchema = ReferenceSchema;
 ApplicationReferenceDataSource.ReferenceDataSource = ReferenceDataSource;
-exports.default = ApplicationReferenceDataSource;

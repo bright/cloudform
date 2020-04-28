@@ -25,5 +25,5 @@ class RateBasedRule extends resource_1.ResourceBase {
         super('AWS::WAFRegional::RateBasedRule', properties);
     }
 }
-RateBasedRule.Predicate = Predicate;
 exports.default = RateBasedRule;
+RateBasedRule.Predicate = Predicate;

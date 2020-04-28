@@ -31,6 +31,6 @@ class ByteMatchSet extends resource_1.ResourceBase {
         super('AWS::WAFRegional::ByteMatchSet', properties);
     }
 }
+exports.default = ByteMatchSet;
 ByteMatchSet.ByteMatchTuple = ByteMatchTuple;
 ByteMatchSet.FieldToMatch = FieldToMatch;
-exports.default = ByteMatchSet;

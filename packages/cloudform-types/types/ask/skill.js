@@ -40,7 +40,7 @@ class Skill extends resource_1.ResourceBase {
         super('AWS::ASK::Skill', properties);
     }
 }
+exports.default = Skill;
 Skill.SkillPackage = SkillPackage;
 Skill.AuthenticationConfiguration = AuthenticationConfiguration;
 Skill.Overrides = Overrides;
-exports.default = Skill;

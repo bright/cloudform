@@ -42,8 +42,8 @@ class Input extends resource_1.ResourceBase {
         super('AWS::MediaLive::Input', properties || {});
     }
 }
+exports.default = Input;
 Input.InputVpcRequest = InputVpcRequest;
 Input.InputSourceRequest = InputSourceRequest;
 Input.InputDestinationRequest = InputDestinationRequest;
 Input.MediaConnectFlowRequest = MediaConnectFlowRequest;
-exports.default = Input;

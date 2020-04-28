@@ -30,5 +30,5 @@ class Topic extends resource_1.ResourceBase {
         super('AWS::SNS::Topic', properties || {});
     }
 }
-Topic.Subscription = Subscription;
 exports.default = Topic;
+Topic.Subscription = Subscription;

@@ -23,5 +23,5 @@ class UserPoolUser extends resource_1.ResourceBase {
         super('AWS::Cognito::UserPoolUser', properties);
     }
 }
-UserPoolUser.AttributeType = AttributeType;
 exports.default = UserPoolUser;
+UserPoolUser.AttributeType = AttributeType;

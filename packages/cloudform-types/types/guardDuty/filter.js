@@ -34,6 +34,6 @@ class Filter extends resource_1.ResourceBase {
         super('AWS::GuardDuty::Filter', properties);
     }
 }
+exports.default = Filter;
 Filter.FindingCriteria = FindingCriteria;
 Filter.Condition = Condition;
-exports.default = Filter;

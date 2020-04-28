@@ -132,6 +132,7 @@ class DeploymentGroup extends resource_1.ResourceBase {
         super('AWS::CodeDeploy::DeploymentGroup', properties);
     }
 }
+exports.default = DeploymentGroup;
 DeploymentGroup.S3Location = S3Location;
 DeploymentGroup.TagFilter = TagFilter;
 DeploymentGroup.GitHubLocation = GitHubLocation;
@@ -150,4 +151,3 @@ DeploymentGroup.EC2TagSet = EC2TagSet;
 DeploymentGroup.AlarmConfiguration = AlarmConfiguration;
 DeploymentGroup.AutoRollbackConfiguration = AutoRollbackConfiguration;
 DeploymentGroup.EC2TagSetListObject = EC2TagSetListObject;
-exports.default = DeploymentGroup;

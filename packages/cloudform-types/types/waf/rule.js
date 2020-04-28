@@ -30,5 +30,5 @@ class Rule extends resource_1.ResourceBase {
         super('AWS::WAF::Rule', properties);
     }
 }
-Rule.Predicate = Predicate;
 exports.default = Rule;
+Rule.Predicate = Predicate;

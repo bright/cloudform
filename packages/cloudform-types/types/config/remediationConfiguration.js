@@ -41,7 +41,7 @@ class RemediationConfiguration extends resource_1.ResourceBase {
         super('AWS::Config::RemediationConfiguration', properties);
     }
 }
+exports.default = RemediationConfiguration;
 RemediationConfiguration.ResourceValue = ResourceValue;
 RemediationConfiguration.StaticValue = StaticValue;
 RemediationConfiguration.RemediationParameterValue = RemediationParameterValue;
-exports.default = RemediationConfiguration;

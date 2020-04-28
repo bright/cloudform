@@ -45,8 +45,8 @@ class VirtualService extends resource_1.ResourceBase {
         super('AWS::AppMesh::VirtualService', properties);
     }
 }
+exports.default = VirtualService;
 VirtualService.VirtualServiceSpec = VirtualServiceSpec;
 VirtualService.VirtualRouterServiceProvider = VirtualRouterServiceProvider;
 VirtualService.VirtualNodeServiceProvider = VirtualNodeServiceProvider;
 VirtualService.VirtualServiceProvider = VirtualServiceProvider;
-exports.default = VirtualService;

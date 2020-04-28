@@ -36,6 +36,6 @@ class LoadBalancer extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::LoadBalancer', properties || {});
     }
 }
+exports.default = LoadBalancer;
 LoadBalancer.LoadBalancerAttribute = LoadBalancerAttribute;
 LoadBalancer.SubnetMapping = SubnetMapping;
-exports.default = LoadBalancer;

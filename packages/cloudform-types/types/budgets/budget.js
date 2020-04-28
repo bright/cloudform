@@ -64,6 +64,7 @@ class Budget extends resource_1.ResourceBase {
         super('AWS::Budgets::Budget', properties);
     }
 }
+exports.default = Budget;
 Budget.BudgetData = BudgetData;
 Budget.CostTypes = CostTypes;
 Budget.NotificationWithSubscribers = NotificationWithSubscribers;
@@ -71,4 +72,3 @@ Budget.Subscriber = Subscriber;
 Budget.Notification = Notification;
 Budget.TimePeriod = TimePeriod;
 Budget.Spend = Spend;
-exports.default = Budget;

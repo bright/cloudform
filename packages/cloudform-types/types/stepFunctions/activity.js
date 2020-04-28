@@ -20,5 +20,5 @@ class Activity extends resource_1.ResourceBase {
         super('AWS::StepFunctions::Activity', properties);
     }
 }
-Activity.TagsEntry = TagsEntry;
 exports.default = Activity;
+Activity.TagsEntry = TagsEntry;

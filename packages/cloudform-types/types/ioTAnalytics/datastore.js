@@ -38,8 +38,8 @@ class Datastore extends resource_1.ResourceBase {
         super('AWS::IoTAnalytics::Datastore', properties || {});
     }
 }
+exports.default = Datastore;
 Datastore.DatastoreStorage = DatastoreStorage;
 Datastore.ServiceManagedS3 = ServiceManagedS3;
 Datastore.RetentionPeriod = RetentionPeriod;
 Datastore.CustomerManagedS3 = CustomerManagedS3;
-exports.default = Datastore;

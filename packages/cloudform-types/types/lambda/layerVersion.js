@@ -29,5 +29,5 @@ class LayerVersion extends resource_1.ResourceBase {
         super('AWS::Lambda::LayerVersion', properties);
     }
 }
-LayerVersion.Content = Content;
 exports.default = LayerVersion;
+LayerVersion.Content = Content;

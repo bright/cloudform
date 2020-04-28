@@ -32,6 +32,6 @@ class BackupSelection extends resource_1.ResourceBase {
         super('AWS::Backup::BackupSelection', properties);
     }
 }
+exports.default = BackupSelection;
 BackupSelection.BackupSelectionResourceType = BackupSelectionResourceType;
 BackupSelection.ConditionResourceType = ConditionResourceType;
-exports.default = BackupSelection;

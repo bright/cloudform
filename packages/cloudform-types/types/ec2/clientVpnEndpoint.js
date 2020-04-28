@@ -48,9 +48,9 @@ class ClientVpnEndpoint extends resource_1.ResourceBase {
         super('AWS::EC2::ClientVpnEndpoint', properties);
     }
 }
+exports.default = ClientVpnEndpoint;
 ClientVpnEndpoint.ConnectionLogOptions = ConnectionLogOptions;
 ClientVpnEndpoint.CertificateAuthenticationRequest = CertificateAuthenticationRequest;
 ClientVpnEndpoint.DirectoryServiceAuthenticationRequest = DirectoryServiceAuthenticationRequest;
 ClientVpnEndpoint.TagSpecification = TagSpecification;
 ClientVpnEndpoint.ClientAuthenticationRequest = ClientAuthenticationRequest;
-exports.default = ClientVpnEndpoint;

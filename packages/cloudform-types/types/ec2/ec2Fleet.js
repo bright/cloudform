@@ -72,6 +72,7 @@ class EC2Fleet extends resource_1.ResourceBase {
         super('AWS::EC2::EC2Fleet', properties);
     }
 }
+exports.default = EC2Fleet;
 EC2Fleet.FleetLaunchTemplateSpecificationRequest = FleetLaunchTemplateSpecificationRequest;
 EC2Fleet.OnDemandOptionsRequest = OnDemandOptionsRequest;
 EC2Fleet.TagRequest = TagRequest;
@@ -80,4 +81,3 @@ EC2Fleet.FleetLaunchTemplateOverridesRequest = FleetLaunchTemplateOverridesReque
 EC2Fleet.FleetLaunchTemplateConfigRequest = FleetLaunchTemplateConfigRequest;
 EC2Fleet.TagSpecification = TagSpecification;
 EC2Fleet.SpotOptionsRequest = SpotOptionsRequest;
-exports.default = EC2Fleet;

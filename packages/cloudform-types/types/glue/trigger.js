@@ -40,7 +40,7 @@ class Trigger extends resource_1.ResourceBase {
         super('AWS::Glue::Trigger', properties);
     }
 }
+exports.default = Trigger;
 Trigger.Condition = Condition;
 Trigger.Predicate = Predicate;
 Trigger.Action = Action;
-exports.default = Trigger;

@@ -27,5 +27,5 @@ class MaintenanceWindowTarget extends resource_1.ResourceBase {
         super('AWS::SSM::MaintenanceWindowTarget', properties);
     }
 }
-MaintenanceWindowTarget.Targets = Targets;
 exports.default = MaintenanceWindowTarget;
+MaintenanceWindowTarget.Targets = Targets;

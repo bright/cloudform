@@ -30,5 +30,5 @@ class Thing extends resource_1.ResourceBase {
         super('AWS::IoT::Thing', properties || {});
     }
 }
-Thing.AttributePayload = AttributePayload;
 exports.default = Thing;
+Thing.AttributePayload = AttributePayload;

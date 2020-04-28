@@ -30,5 +30,5 @@ class Stream extends resource_1.ResourceBase {
         super('AWS::Kinesis::Stream', properties);
     }
 }
-Stream.StreamEncryption = StreamEncryption;
 exports.default = Stream;
+Stream.StreamEncryption = StreamEncryption;

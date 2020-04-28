@@ -27,5 +27,5 @@ class Configuration extends resource_1.ResourceBase {
         super('AWS::AmazonMQ::Configuration', properties);
     }
 }
-Configuration.TagsEntry = TagsEntry;
 exports.default = Configuration;
+Configuration.TagsEntry = TagsEntry;

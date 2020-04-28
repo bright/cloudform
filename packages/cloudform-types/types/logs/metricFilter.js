@@ -30,5 +30,5 @@ class MetricFilter extends resource_1.ResourceBase {
         super('AWS::Logs::MetricFilter', properties);
     }
 }
-MetricFilter.MetricTransformation = MetricTransformation;
 exports.default = MetricFilter;
+MetricFilter.MetricTransformation = MetricTransformation;

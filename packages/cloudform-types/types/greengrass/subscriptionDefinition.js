@@ -26,6 +26,6 @@ class SubscriptionDefinition extends resource_1.ResourceBase {
         super('AWS::Greengrass::SubscriptionDefinition', properties);
     }
 }
+exports.default = SubscriptionDefinition;
 SubscriptionDefinition.SubscriptionDefinitionVersion = SubscriptionDefinitionVersion;
 SubscriptionDefinition.Subscription = Subscription;
-exports.default = SubscriptionDefinition;

@@ -29,6 +29,6 @@ class ConfigurationAggregator extends resource_1.ResourceBase {
         super('AWS::Config::ConfigurationAggregator', properties);
     }
 }
+exports.default = ConfigurationAggregator;
 ConfigurationAggregator.OrganizationAggregationSource = OrganizationAggregationSource;
 ConfigurationAggregator.AccountAggregationSource = AccountAggregationSource;
-exports.default = ConfigurationAggregator;

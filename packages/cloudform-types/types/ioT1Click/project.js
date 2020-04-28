@@ -27,6 +27,6 @@ class Project extends resource_1.ResourceBase {
         super('AWS::IoT1Click::Project', properties);
     }
 }
+exports.default = Project;
 Project.DeviceTemplate = DeviceTemplate;
 Project.PlacementTemplate = PlacementTemplate;
-exports.default = Project;

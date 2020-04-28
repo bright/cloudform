@@ -24,5 +24,5 @@ class Database extends resource_1.ResourceBase {
         super('AWS::Glue::Database', properties);
     }
 }
-Database.DatabaseInput = DatabaseInput;
 exports.default = Database;
+Database.DatabaseInput = DatabaseInput;

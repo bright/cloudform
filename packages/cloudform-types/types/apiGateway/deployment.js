@@ -54,9 +54,9 @@ class Deployment extends resource_1.ResourceBase {
         super('AWS::ApiGateway::Deployment', properties);
     }
 }
+exports.default = Deployment;
 Deployment.DeploymentCanarySettings = DeploymentCanarySettings;
 Deployment.MethodSetting = MethodSetting;
 Deployment.StageDescription = StageDescription;
 Deployment.CanarySetting = CanarySetting;
 Deployment.AccessLogSetting = AccessLogSetting;
-exports.default = Deployment;

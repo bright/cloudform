@@ -84,6 +84,7 @@ class Pipeline extends resource_1.ResourceBase {
         super('AWS::CodePipeline::Pipeline', properties);
     }
 }
+exports.default = Pipeline;
 Pipeline.InputArtifact = InputArtifact;
 Pipeline.BlockerDeclaration = BlockerDeclaration;
 Pipeline.ArtifactStoreMap = ArtifactStoreMap;
@@ -94,4 +95,3 @@ Pipeline.StageDeclaration = StageDeclaration;
 Pipeline.StageTransition = StageTransition;
 Pipeline.ArtifactStore = ArtifactStore;
 Pipeline.ActionTypeId = ActionTypeId;
-exports.default = Pipeline;

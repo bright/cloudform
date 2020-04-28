@@ -26,5 +26,5 @@ class BackupVault extends resource_1.ResourceBase {
         super('AWS::Backup::BackupVault', properties);
     }
 }
-BackupVault.NotificationObjectType = NotificationObjectType;
 exports.default = BackupVault;
+BackupVault.NotificationObjectType = NotificationObjectType;

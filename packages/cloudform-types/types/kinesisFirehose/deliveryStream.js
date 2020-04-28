@@ -186,6 +186,7 @@ class DeliveryStream extends resource_1.ResourceBase {
         super('AWS::KinesisFirehose::DeliveryStream', properties || {});
     }
 }
+exports.default = DeliveryStream;
 DeliveryStream.OrcSerDe = OrcSerDe;
 DeliveryStream.ElasticsearchBufferingHints = ElasticsearchBufferingHints;
 DeliveryStream.SplunkDestinationConfiguration = SplunkDestinationConfiguration;
@@ -213,4 +214,3 @@ DeliveryStream.OpenXJsonSerDe = OpenXJsonSerDe;
 DeliveryStream.S3DestinationConfiguration = S3DestinationConfiguration;
 DeliveryStream.ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration;
 DeliveryStream.RedshiftDestinationConfiguration = RedshiftDestinationConfiguration;
-exports.default = DeliveryStream;

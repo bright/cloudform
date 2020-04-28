@@ -34,6 +34,6 @@ class Server extends resource_1.ResourceBase {
         super('AWS::Transfer::Server', properties || {});
     }
 }
+exports.default = Server;
 Server.IdentityProviderDetails = IdentityProviderDetails;
 Server.EndpointDetails = EndpointDetails;
-exports.default = Server;

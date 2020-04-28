@@ -24,5 +24,5 @@ class InputSecurityGroup extends resource_1.ResourceBase {
         super('AWS::MediaLive::InputSecurityGroup', properties || {});
     }
 }
-InputSecurityGroup.InputWhitelistRuleCidr = InputWhitelistRuleCidr;
 exports.default = InputSecurityGroup;
+InputSecurityGroup.InputWhitelistRuleCidr = InputWhitelistRuleCidr;

@@ -35,6 +35,6 @@ class CloudFormationProvisionedProduct extends resource_1.ResourceBase {
         super('AWS::ServiceCatalog::CloudFormationProvisionedProduct', properties || {});
     }
 }
+exports.default = CloudFormationProvisionedProduct;
 CloudFormationProvisionedProduct.ProvisioningParameter = ProvisioningParameter;
 CloudFormationProvisionedProduct.ProvisioningPreferences = ProvisioningPreferences;
-exports.default = CloudFormationProvisionedProduct;

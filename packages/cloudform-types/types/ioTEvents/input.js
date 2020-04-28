@@ -27,6 +27,6 @@ class Input extends resource_1.ResourceBase {
         super('AWS::IoTEvents::Input', properties || {});
     }
 }
+exports.default = Input;
 Input.Attribute = Attribute;
 Input.InputDefinition = InputDefinition;
-exports.default = Input;

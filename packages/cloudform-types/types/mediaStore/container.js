@@ -21,5 +21,5 @@ class Container extends resource_1.ResourceBase {
         super('AWS::MediaStore::Container', properties);
     }
 }
-Container.CorsRule = CorsRule;
 exports.default = Container;
+Container.CorsRule = CorsRule;

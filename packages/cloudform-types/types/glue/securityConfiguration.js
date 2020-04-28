@@ -46,8 +46,8 @@ class SecurityConfiguration extends resource_1.ResourceBase {
         super('AWS::Glue::SecurityConfiguration', properties);
     }
 }
+exports.default = SecurityConfiguration;
 SecurityConfiguration.S3Encryption = S3Encryption;
 SecurityConfiguration.CloudWatchEncryption = CloudWatchEncryption;
 SecurityConfiguration.EncryptionConfiguration = EncryptionConfiguration;
 SecurityConfiguration.JobBookmarksEncryption = JobBookmarksEncryption;
-exports.default = SecurityConfiguration;

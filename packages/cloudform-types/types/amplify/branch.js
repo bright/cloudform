@@ -31,6 +31,6 @@ class Branch extends resource_1.ResourceBase {
         super('AWS::Amplify::Branch', properties);
     }
 }
+exports.default = Branch;
 Branch.EnvironmentVariable = EnvironmentVariable;
 Branch.BasicAuthConfig = BasicAuthConfig;
-exports.default = Branch;

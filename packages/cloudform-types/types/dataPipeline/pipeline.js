@@ -60,10 +60,10 @@ class Pipeline extends resource_1.ResourceBase {
         super('AWS::DataPipeline::Pipeline', properties);
     }
 }
+exports.default = Pipeline;
 Pipeline.PipelineObject = PipelineObject;
 Pipeline.ParameterAttribute = ParameterAttribute;
 Pipeline.PipelineTag = PipelineTag;
 Pipeline.ParameterObject = ParameterObject;
 Pipeline.ParameterValue = ParameterValue;
 Pipeline.Field = Field;
-exports.default = Pipeline;

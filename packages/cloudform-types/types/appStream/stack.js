@@ -34,7 +34,7 @@ class Stack extends resource_1.ResourceBase {
         super('AWS::AppStream::Stack', properties || {});
     }
 }
+exports.default = Stack;
 Stack.ApplicationSettings = ApplicationSettings;
 Stack.StorageConnector = StorageConnector;
 Stack.UserSetting = UserSetting;
-exports.default = Stack;

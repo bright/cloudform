@@ -19,5 +19,5 @@ class FlowTemplate extends resource_1.ResourceBase {
         super('AWS::IoTThingsGraph::FlowTemplate', properties);
     }
 }
-FlowTemplate.DefinitionDocument = DefinitionDocument;
 exports.default = FlowTemplate;
+FlowTemplate.DefinitionDocument = DefinitionDocument;

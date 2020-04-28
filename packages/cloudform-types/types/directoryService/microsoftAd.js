@@ -30,5 +30,5 @@ class MicrosoftAD extends resource_1.ResourceBase {
         super('AWS::DirectoryService::MicrosoftAD', properties);
     }
 }
-MicrosoftAD.VpcSettings = VpcSettings;
 exports.default = MicrosoftAD;
+MicrosoftAD.VpcSettings = VpcSettings;

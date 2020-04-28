@@ -20,5 +20,5 @@ class ResolverEndpoint extends resource_1.ResourceBase {
         super('AWS::Route53Resolver::ResolverEndpoint', properties);
     }
 }
-ResolverEndpoint.IpAddressRequest = IpAddressRequest;
 exports.default = ResolverEndpoint;
+ResolverEndpoint.IpAddressRequest = IpAddressRequest;

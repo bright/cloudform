@@ -29,5 +29,5 @@ class EventBusPolicy extends resource_1.ResourceBase {
         super('AWS::Events::EventBusPolicy', properties);
     }
 }
-EventBusPolicy.Condition = Condition;
 exports.default = EventBusPolicy;
+EventBusPolicy.Condition = Condition;

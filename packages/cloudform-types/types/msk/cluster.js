@@ -72,6 +72,7 @@ class Cluster extends resource_1.ResourceBase {
         super('AWS::MSK::Cluster', properties);
     }
 }
+exports.default = Cluster;
 Cluster.EncryptionInfo = EncryptionInfo;
 Cluster.ConfigurationInfo = ConfigurationInfo;
 Cluster.BrokerNodeGroupInfo = BrokerNodeGroupInfo;
@@ -81,4 +82,3 @@ Cluster.EBSStorageInfo = EBSStorageInfo;
 Cluster.EncryptionInTransit = EncryptionInTransit;
 Cluster.ClientAuthentication = ClientAuthentication;
 Cluster.Tls = Tls;
-exports.default = Cluster;

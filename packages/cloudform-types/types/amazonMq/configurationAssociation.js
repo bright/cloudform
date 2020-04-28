@@ -27,5 +27,5 @@ class ConfigurationAssociation extends resource_1.ResourceBase {
         super('AWS::AmazonMQ::ConfigurationAssociation', properties);
     }
 }
-ConfigurationAssociation.ConfigurationId = ConfigurationId;
 exports.default = ConfigurationAssociation;
+ConfigurationAssociation.ConfigurationId = ConfigurationId;

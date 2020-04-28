@@ -17,5 +17,5 @@ class Template extends resource_1.ResourceBase {
         super('AWS::SES::Template', properties || {});
     }
 }
-Template.Template = TemplateInner;
 exports.default = Template;
+Template.Template = TemplateInner;

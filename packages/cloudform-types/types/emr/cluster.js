@@ -180,6 +180,7 @@ class Cluster extends resource_1.ResourceBase {
         super('AWS::EMR::Cluster', properties);
     }
 }
+exports.default = Cluster;
 Cluster.SpotProvisioningSpecification = SpotProvisioningSpecification;
 Cluster.BootstrapActionConfig = BootstrapActionConfig;
 Cluster.InstanceFleetConfig = InstanceFleetConfig;
@@ -206,4 +207,3 @@ Cluster.MetricDimension = MetricDimension;
 Cluster.AutoScalingPolicy = AutoScalingPolicy;
 Cluster.HadoopJarStepConfig = HadoopJarStepConfig;
 Cluster.ScalingTrigger = ScalingTrigger;
-exports.default = Cluster;

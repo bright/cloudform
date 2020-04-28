@@ -30,5 +30,5 @@ class Cluster extends resource_1.ResourceBase {
         super('AWS::Redshift::Cluster', properties);
     }
 }
-Cluster.LoggingProperties = LoggingProperties;
 exports.default = Cluster;
+Cluster.LoggingProperties = LoggingProperties;

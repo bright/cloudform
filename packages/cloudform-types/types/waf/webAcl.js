@@ -36,6 +36,6 @@ class WebACL extends resource_1.ResourceBase {
         super('AWS::WAF::WebACL', properties);
     }
 }
+exports.default = WebACL;
 WebACL.WafAction = WafAction;
 WebACL.ActivatedRule = ActivatedRule;
-exports.default = WebACL;

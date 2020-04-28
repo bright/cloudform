@@ -19,5 +19,5 @@ class EndpointConfig extends resource_1.ResourceBase {
         super('AWS::SageMaker::EndpointConfig', properties);
     }
 }
-EndpointConfig.ProductionVariant = ProductionVariant;
 exports.default = EndpointConfig;
+EndpointConfig.ProductionVariant = ProductionVariant;

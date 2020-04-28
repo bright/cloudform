@@ -42,7 +42,7 @@ class UsagePlan extends resource_1.ResourceBase {
         super('AWS::ApiGateway::UsagePlan', properties || {});
     }
 }
+exports.default = UsagePlan;
 UsagePlan.ApiStage = ApiStage;
 UsagePlan.ThrottleSettings = ThrottleSettings;
 UsagePlan.QuotaSettings = QuotaSettings;
-exports.default = UsagePlan;

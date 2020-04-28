@@ -40,7 +40,7 @@ class DataCatalogEncryptionSettings extends resource_1.ResourceBase {
         super('AWS::Glue::DataCatalogEncryptionSettings', properties);
     }
 }
+exports.default = DataCatalogEncryptionSettings;
 DataCatalogEncryptionSettings.DataCatalogEncryptionSettings = DataCatalogEncryptionSettingsInner;
 DataCatalogEncryptionSettings.EncryptionAtRest = EncryptionAtRest;
 DataCatalogEncryptionSettings.ConnectionPasswordEncryption = ConnectionPasswordEncryption;
-exports.default = DataCatalogEncryptionSettings;

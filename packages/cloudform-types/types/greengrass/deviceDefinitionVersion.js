@@ -20,5 +20,5 @@ class DeviceDefinitionVersion extends resource_1.ResourceBase {
         super('AWS::Greengrass::DeviceDefinitionVersion', properties);
     }
 }
-DeviceDefinitionVersion.Device = Device;
 exports.default = DeviceDefinitionVersion;
+DeviceDefinitionVersion.Device = Device;

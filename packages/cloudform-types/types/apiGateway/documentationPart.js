@@ -30,5 +30,5 @@ class DocumentationPart extends resource_1.ResourceBase {
         super('AWS::ApiGateway::DocumentationPart', properties);
     }
 }
-DocumentationPart.Location = Location;
 exports.default = DocumentationPart;
+DocumentationPart.Location = Location;

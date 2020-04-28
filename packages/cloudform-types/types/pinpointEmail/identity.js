@@ -26,6 +26,6 @@ class Identity extends resource_1.ResourceBase {
         super('AWS::PinpointEmail::Identity', properties);
     }
 }
+exports.default = Identity;
 Identity.Tags = Tags;
 Identity.MailFromAttributes = MailFromAttributes;
-exports.default = Identity;

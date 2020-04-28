@@ -19,5 +19,5 @@ class Cluster extends resource_1.ResourceBase {
         super('AWS::DAX::Cluster', properties);
     }
 }
-Cluster.SSESpecification = SSESpecification;
 exports.default = Cluster;
+Cluster.SSESpecification = SSESpecification;

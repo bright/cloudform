@@ -20,5 +20,5 @@ class LoggerDefinitionVersion extends resource_1.ResourceBase {
         super('AWS::Greengrass::LoggerDefinitionVersion', properties);
     }
 }
-LoggerDefinitionVersion.Logger = Logger;
 exports.default = LoggerDefinitionVersion;
+LoggerDefinitionVersion.Logger = Logger;

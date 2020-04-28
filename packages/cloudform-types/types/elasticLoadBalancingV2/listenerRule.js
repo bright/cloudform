@@ -102,6 +102,7 @@ class ListenerRule extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancingV2::ListenerRule', properties);
     }
 }
+exports.default = ListenerRule;
 ListenerRule.SourceIpConfig = SourceIpConfig;
 ListenerRule.AuthenticateOidcConfig = AuthenticateOidcConfig;
 ListenerRule.AuthenticateCognitoConfig = AuthenticateCognitoConfig;
@@ -115,4 +116,3 @@ ListenerRule.HttpRequestMethodConfig = HttpRequestMethodConfig;
 ListenerRule.RuleCondition = RuleCondition;
 ListenerRule.RedirectConfig = RedirectConfig;
 ListenerRule.HostHeaderConfig = HostHeaderConfig;
-exports.default = ListenerRule;

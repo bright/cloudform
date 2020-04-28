@@ -48,8 +48,8 @@ class App extends resource_1.ResourceBase {
         super('AWS::OpsWorks::App', properties);
     }
 }
+exports.default = App;
 App.DataSource = DataSource;
 App.EnvironmentVariable = EnvironmentVariable;
 App.SslConfiguration = SslConfiguration;
 App.Source = Source;
-exports.default = App;

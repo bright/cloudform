@@ -19,5 +19,5 @@ class DedicatedIpPool extends resource_1.ResourceBase {
         super('AWS::PinpointEmail::DedicatedIpPool', properties || {});
     }
 }
-DedicatedIpPool.Tags = Tags;
 exports.default = DedicatedIpPool;
+DedicatedIpPool.Tags = Tags;

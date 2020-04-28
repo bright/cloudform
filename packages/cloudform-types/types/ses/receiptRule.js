@@ -65,6 +65,7 @@ class ReceiptRule extends resource_1.ResourceBase {
         super('AWS::SES::ReceiptRule', properties);
     }
 }
+exports.default = ReceiptRule;
 ReceiptRule.BounceAction = BounceAction;
 ReceiptRule.Action = Action;
 ReceiptRule.S3Action = S3Action;
@@ -74,4 +75,3 @@ ReceiptRule.SNSAction = SNSAction;
 ReceiptRule.Rule = Rule;
 ReceiptRule.LambdaAction = LambdaAction;
 ReceiptRule.AddHeaderAction = AddHeaderAction;
-exports.default = ReceiptRule;

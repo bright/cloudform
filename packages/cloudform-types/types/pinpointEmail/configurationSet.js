@@ -44,9 +44,9 @@ class ConfigurationSet extends resource_1.ResourceBase {
         super('AWS::PinpointEmail::ConfigurationSet', properties);
     }
 }
+exports.default = ConfigurationSet;
 ConfigurationSet.SendingOptions = SendingOptions;
 ConfigurationSet.Tags = Tags;
 ConfigurationSet.ReputationOptions = ReputationOptions;
 ConfigurationSet.DeliveryOptions = DeliveryOptions;
 ConfigurationSet.TrackingOptions = TrackingOptions;
-exports.default = ConfigurationSet;

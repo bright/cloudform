@@ -32,6 +32,6 @@ class Model extends resource_1.ResourceBase {
         super('AWS::SageMaker::Model', properties);
     }
 }
+exports.default = Model;
 Model.VpcConfig = VpcConfig;
 Model.ContainerDefinition = ContainerDefinition;
-exports.default = Model;

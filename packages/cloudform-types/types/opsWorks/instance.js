@@ -42,7 +42,7 @@ class Instance extends resource_1.ResourceBase {
         super('AWS::OpsWorks::Instance', properties);
     }
 }
+exports.default = Instance;
 Instance.BlockDeviceMapping = BlockDeviceMapping;
 Instance.EbsBlockDevice = EbsBlockDevice;
 Instance.TimeBasedAutoScaling = TimeBasedAutoScaling;
-exports.default = Instance;

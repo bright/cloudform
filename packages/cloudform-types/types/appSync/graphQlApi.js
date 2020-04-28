@@ -45,9 +45,9 @@ class GraphQLApi extends resource_1.ResourceBase {
         super('AWS::AppSync::GraphQLApi', properties);
     }
 }
+exports.default = GraphQLApi;
 GraphQLApi.UserPoolConfig = UserPoolConfig;
 GraphQLApi.OpenIDConnectConfig = OpenIDConnectConfig;
 GraphQLApi.LogConfig = LogConfig;
 GraphQLApi.CognitoUserPoolConfig = CognitoUserPoolConfig;
 GraphQLApi.AdditionalAuthenticationProvider = AdditionalAuthenticationProvider;
-exports.default = GraphQLApi;

@@ -54,9 +54,9 @@ class Function extends resource_1.ResourceBase {
         super('AWS::Lambda::Function', properties);
     }
 }
+exports.default = Function;
 Function.VpcConfig = VpcConfig;
 Function.DeadLetterConfig = DeadLetterConfig;
 Function.Code = Code;
 Function.TracingConfig = TracingConfig;
 Function.Environment = Environment;
-exports.default = Function;

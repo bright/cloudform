@@ -48,8 +48,8 @@ class Alarm extends resource_1.ResourceBase {
         super('AWS::CloudWatch::Alarm', properties);
     }
 }
+exports.default = Alarm;
 Alarm.MetricStat = MetricStat;
 Alarm.MetricDataQuery = MetricDataQuery;
 Alarm.Dimension = Dimension;
 Alarm.Metric = Metric;
-exports.default = Alarm;

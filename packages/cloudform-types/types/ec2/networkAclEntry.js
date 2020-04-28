@@ -36,6 +36,6 @@ class NetworkAclEntry extends resource_1.ResourceBase {
         super('AWS::EC2::NetworkAclEntry', properties);
     }
 }
+exports.default = NetworkAclEntry;
 NetworkAclEntry.PortRange = PortRange;
 NetworkAclEntry.Icmp = Icmp;
-exports.default = NetworkAclEntry;

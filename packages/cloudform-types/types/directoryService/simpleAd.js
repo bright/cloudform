@@ -30,5 +30,5 @@ class SimpleAD extends resource_1.ResourceBase {
         super('AWS::DirectoryService::SimpleAD', properties);
     }
 }
-SimpleAD.VpcSettings = VpcSettings;
 exports.default = SimpleAD;
+SimpleAD.VpcSettings = VpcSettings;

@@ -20,5 +20,5 @@ class ResolverRule extends resource_1.ResourceBase {
         super('AWS::Route53Resolver::ResolverRule', properties);
     }
 }
-ResolverRule.TargetAddress = TargetAddress;
 exports.default = ResolverRule;
+ResolverRule.TargetAddress = TargetAddress;

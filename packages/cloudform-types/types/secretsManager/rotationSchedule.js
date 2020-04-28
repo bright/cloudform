@@ -29,5 +29,5 @@ class RotationSchedule extends resource_1.ResourceBase {
         super('AWS::SecretsManager::RotationSchedule', properties);
     }
 }
-RotationSchedule.RotationRules = RotationRules;
 exports.default = RotationSchedule;
+RotationSchedule.RotationRules = RotationRules;

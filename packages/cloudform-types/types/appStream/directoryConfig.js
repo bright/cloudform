@@ -22,5 +22,5 @@ class DirectoryConfig extends resource_1.ResourceBase {
         super('AWS::AppStream::DirectoryConfig', properties);
     }
 }
-DirectoryConfig.ServiceAccountCredentials = ServiceAccountCredentials;
 exports.default = DirectoryConfig;
+DirectoryConfig.ServiceAccountCredentials = ServiceAccountCredentials;

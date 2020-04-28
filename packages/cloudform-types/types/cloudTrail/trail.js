@@ -36,6 +36,6 @@ class Trail extends resource_1.ResourceBase {
         super('AWS::CloudTrail::Trail', properties);
     }
 }
+exports.default = Trail;
 Trail.EventSelector = EventSelector;
 Trail.DataResource = DataResource;
-exports.default = Trail;

@@ -72,6 +72,7 @@ class LoadBalancer extends resource_1.ResourceBase {
         super('AWS::ElasticLoadBalancing::LoadBalancer', properties);
     }
 }
+exports.default = LoadBalancer;
 LoadBalancer.AccessLoggingPolicy = AccessLoggingPolicy;
 LoadBalancer.LBCookieStickinessPolicy = LBCookieStickinessPolicy;
 LoadBalancer.Listeners = Listeners;
@@ -80,4 +81,3 @@ LoadBalancer.ConnectionSettings = ConnectionSettings;
 LoadBalancer.ConnectionDrainingPolicy = ConnectionDrainingPolicy;
 LoadBalancer.Policies = Policies;
 LoadBalancer.AppCookieStickinessPolicy = AppCookieStickinessPolicy;
-exports.default = LoadBalancer;

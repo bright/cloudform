@@ -30,5 +30,5 @@ class ConfigurationRecorder extends resource_1.ResourceBase {
         super('AWS::Config::ConfigurationRecorder', properties);
     }
 }
-ConfigurationRecorder.RecordingGroup = RecordingGroup;
 exports.default = ConfigurationRecorder;
+ConfigurationRecorder.RecordingGroup = RecordingGroup;

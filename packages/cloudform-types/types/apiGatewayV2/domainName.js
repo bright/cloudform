@@ -29,5 +29,5 @@ class DomainName extends resource_1.ResourceBase {
         super('AWS::ApiGatewayV2::DomainName', properties);
     }
 }
-DomainName.DomainNameConfiguration = DomainNameConfiguration;
 exports.default = DomainName;
+DomainName.DomainNameConfiguration = DomainNameConfiguration;

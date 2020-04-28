@@ -30,5 +30,5 @@ class Workspace extends resource_1.ResourceBase {
         super('AWS::WorkSpaces::Workspace', properties);
     }
 }
-Workspace.WorkspaceProperties = WorkspaceProperties;
 exports.default = Workspace;
+Workspace.WorkspaceProperties = WorkspaceProperties;

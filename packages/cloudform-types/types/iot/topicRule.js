@@ -126,6 +126,7 @@ class TopicRule extends resource_1.ResourceBase {
         super('AWS::IoT::TopicRule', properties);
     }
 }
+exports.default = TopicRule;
 TopicRule.S3Action = S3Action;
 TopicRule.SqsAction = SqsAction;
 TopicRule.PutItemInput = PutItemInput;
@@ -143,4 +144,3 @@ TopicRule.TopicRulePayload = TopicRulePayload;
 TopicRule.DynamoDBv2Action = DynamoDBv2Action;
 TopicRule.CloudwatchAlarmAction = CloudwatchAlarmAction;
 TopicRule.CloudwatchMetricAction = CloudwatchMetricAction;
-exports.default = TopicRule;

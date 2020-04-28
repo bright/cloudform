@@ -30,5 +30,5 @@ class Build extends resource_1.ResourceBase {
         super('AWS::GameLift::Build', properties || {});
     }
 }
-Build.S3Location = S3Location;
 exports.default = Build;
+Build.S3Location = S3Location;

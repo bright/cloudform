@@ -38,7 +38,7 @@ class BackupPlan extends resource_1.ResourceBase {
         super('AWS::Backup::BackupPlan', properties);
     }
 }
+exports.default = BackupPlan;
 BackupPlan.LifecycleResourceType = LifecycleResourceType;
 BackupPlan.BackupRuleResourceType = BackupRuleResourceType;
 BackupPlan.BackupPlanResourceType = BackupPlanResourceType;
-exports.default = BackupPlan;

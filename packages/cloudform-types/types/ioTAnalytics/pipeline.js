@@ -80,6 +80,7 @@ class Pipeline extends resource_1.ResourceBase {
         super('AWS::IoTAnalytics::Pipeline', properties);
     }
 }
+exports.default = Pipeline;
 Pipeline.DeviceShadowEnrich = DeviceShadowEnrich;
 Pipeline.Lambda = Lambda;
 Pipeline.SelectAttributes = SelectAttributes;
@@ -91,4 +92,3 @@ Pipeline.RemoveAttributes = RemoveAttributes;
 Pipeline.Datastore = Datastore;
 Pipeline.AddAttributes = AddAttributes;
 Pipeline.DeviceRegistryEnrich = DeviceRegistryEnrich;
-exports.default = Pipeline;

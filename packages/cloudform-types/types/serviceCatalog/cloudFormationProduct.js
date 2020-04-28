@@ -29,5 +29,5 @@ class CloudFormationProduct extends resource_1.ResourceBase {
         super('AWS::ServiceCatalog::CloudFormationProduct', properties);
     }
 }
-CloudFormationProduct.ProvisioningArtifactProperties = ProvisioningArtifactProperties;
 exports.default = CloudFormationProduct;
+CloudFormationProduct.ProvisioningArtifactProperties = ProvisioningArtifactProperties;

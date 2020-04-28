@@ -36,6 +36,6 @@ class FileSystem extends resource_1.ResourceBase {
         super('AWS::EFS::FileSystem', properties || {});
     }
 }
+exports.default = FileSystem;
 FileSystem.ElasticFileSystemTag = ElasticFileSystemTag;
 FileSystem.LifecyclePolicy = LifecyclePolicy;
-exports.default = FileSystem;

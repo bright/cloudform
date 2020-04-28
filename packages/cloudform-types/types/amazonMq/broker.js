@@ -57,10 +57,10 @@ class Broker extends resource_1.ResourceBase {
         super('AWS::AmazonMQ::Broker', properties);
     }
 }
+exports.default = Broker;
 Broker.MaintenanceWindow = MaintenanceWindow;
 Broker.LogList = LogList;
 Broker.TagsEntry = TagsEntry;
 Broker.User = User;
 Broker.ConfigurationId = ConfigurationId;
 Broker.EncryptionOptions = EncryptionOptions;
-exports.default = Broker;

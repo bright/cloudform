@@ -36,6 +36,6 @@ class NetworkInterface extends resource_1.ResourceBase {
         super('AWS::EC2::NetworkInterface', properties);
     }
 }
+exports.default = NetworkInterface;
 NetworkInterface.InstanceIpv6Address = InstanceIpv6Address;
 NetworkInterface.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
-exports.default = NetworkInterface;

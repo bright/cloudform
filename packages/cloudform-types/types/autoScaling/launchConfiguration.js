@@ -36,6 +36,6 @@ class LaunchConfiguration extends resource_1.ResourceBase {
         super('AWS::AutoScaling::LaunchConfiguration', properties);
     }
 }
+exports.default = LaunchConfiguration;
 LaunchConfiguration.BlockDeviceMapping = BlockDeviceMapping;
 LaunchConfiguration.BlockDevice = BlockDevice;
-exports.default = LaunchConfiguration;

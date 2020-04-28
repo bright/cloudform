@@ -71,6 +71,7 @@ class MaintenanceWindowTask extends resource_1.ResourceBase {
         super('AWS::SSM::MaintenanceWindowTask', properties);
     }
 }
+exports.default = MaintenanceWindowTask;
 MaintenanceWindowTask.LoggingInfo = LoggingInfo;
 MaintenanceWindowTask.Target = Target;
 MaintenanceWindowTask.MaintenanceWindowRunCommandParameters = MaintenanceWindowRunCommandParameters;
@@ -79,4 +80,3 @@ MaintenanceWindowTask.NotificationConfig = NotificationConfig;
 MaintenanceWindowTask.MaintenanceWindowAutomationParameters = MaintenanceWindowAutomationParameters;
 MaintenanceWindowTask.TaskInvocationParameters = TaskInvocationParameters;
 MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters = MaintenanceWindowStepFunctionsParameters;
-exports.default = MaintenanceWindowTask;

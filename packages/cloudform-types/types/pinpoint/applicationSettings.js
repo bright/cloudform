@@ -32,7 +32,7 @@ class ApplicationSettings extends resource_1.ResourceBase {
         super('AWS::Pinpoint::ApplicationSettings', properties);
     }
 }
+exports.default = ApplicationSettings;
 ApplicationSettings.CampaignHook = CampaignHook;
 ApplicationSettings.Limits = Limits;
 ApplicationSettings.QuietTime = QuietTime;
-exports.default = ApplicationSettings;

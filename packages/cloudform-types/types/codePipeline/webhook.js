@@ -35,6 +35,6 @@ class Webhook extends resource_1.ResourceBase {
         super('AWS::CodePipeline::Webhook', properties);
     }
 }
+exports.default = Webhook;
 Webhook.WebhookFilterRule = WebhookFilterRule;
 Webhook.WebhookAuthConfiguration = WebhookAuthConfiguration;
-exports.default = Webhook;

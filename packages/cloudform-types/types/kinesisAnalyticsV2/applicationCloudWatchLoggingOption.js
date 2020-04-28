@@ -24,5 +24,5 @@ class ApplicationCloudWatchLoggingOption extends resource_1.ResourceBase {
         super('AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption', properties);
     }
 }
-ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption = CloudWatchLoggingOption;
 exports.default = ApplicationCloudWatchLoggingOption;
+ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption = CloudWatchLoggingOption;

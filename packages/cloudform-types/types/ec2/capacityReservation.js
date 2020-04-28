@@ -28,5 +28,5 @@ class CapacityReservation extends resource_1.ResourceBase {
         super('AWS::EC2::CapacityReservation', properties);
     }
 }
-CapacityReservation.TagSpecification = TagSpecification;
 exports.default = CapacityReservation;
+CapacityReservation.TagSpecification = TagSpecification;

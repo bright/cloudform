@@ -50,10 +50,10 @@ class ConfigurationSetEventDestination extends resource_1.ResourceBase {
         super('AWS::PinpointEmail::ConfigurationSetEventDestination', properties);
     }
 }
+exports.default = ConfigurationSetEventDestination;
 ConfigurationSetEventDestination.DimensionConfiguration = DimensionConfiguration;
 ConfigurationSetEventDestination.SnsDestination = SnsDestination;
 ConfigurationSetEventDestination.KinesisFirehoseDestination = KinesisFirehoseDestination;
 ConfigurationSetEventDestination.EventDestination = EventDestination;
 ConfigurationSetEventDestination.PinpointDestination = PinpointDestination;
 ConfigurationSetEventDestination.CloudWatchDestination = CloudWatchDestination;
-exports.default = ConfigurationSetEventDestination;

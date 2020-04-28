@@ -52,9 +52,9 @@ class Endpoint extends resource_1.ResourceBase {
         super('AWS::DMS::Endpoint', properties);
     }
 }
+exports.default = Endpoint;
 Endpoint.KinesisSettings = KinesisSettings;
 Endpoint.S3Settings = S3Settings;
 Endpoint.MongoDbSettings = MongoDbSettings;
 Endpoint.DynamoDbSettings = DynamoDbSettings;
 Endpoint.ElasticsearchSettings = ElasticsearchSettings;
-exports.default = Endpoint;

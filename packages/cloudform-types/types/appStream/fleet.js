@@ -34,7 +34,7 @@ class Fleet extends resource_1.ResourceBase {
         super('AWS::AppStream::Fleet', properties);
     }
 }
+exports.default = Fleet;
 Fleet.DomainJoinInfo = DomainJoinInfo;
 Fleet.ComputeCapacity = ComputeCapacity;
 Fleet.VpcConfig = VpcConfig;
-exports.default = Fleet;

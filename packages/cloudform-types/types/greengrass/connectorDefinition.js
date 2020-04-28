@@ -26,6 +26,6 @@ class ConnectorDefinition extends resource_1.ResourceBase {
         super('AWS::Greengrass::ConnectorDefinition', properties);
     }
 }
+exports.default = ConnectorDefinition;
 ConnectorDefinition.ConnectorDefinitionVersion = ConnectorDefinitionVersion;
 ConnectorDefinition.Connector = Connector;
-exports.default = ConnectorDefinition;

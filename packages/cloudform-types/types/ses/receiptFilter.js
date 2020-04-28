@@ -23,6 +23,6 @@ class ReceiptFilter extends resource_1.ResourceBase {
         super('AWS::SES::ReceiptFilter', properties);
     }
 }
+exports.default = ReceiptFilter;
 ReceiptFilter.Filter = Filter;
 ReceiptFilter.IpFilter = IpFilter;
-exports.default = ReceiptFilter;

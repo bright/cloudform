@@ -47,9 +47,9 @@ class ApplicationOutput extends resource_1.ResourceBase {
         super('AWS::KinesisAnalytics::ApplicationOutput', properties);
     }
 }
+exports.default = ApplicationOutput;
 ApplicationOutput.KinesisFirehoseOutput = KinesisFirehoseOutput;
 ApplicationOutput.Output = Output;
 ApplicationOutput.DestinationSchema = DestinationSchema;
 ApplicationOutput.KinesisStreamsOutput = KinesisStreamsOutput;
 ApplicationOutput.LambdaOutput = LambdaOutput;
-exports.default = ApplicationOutput;

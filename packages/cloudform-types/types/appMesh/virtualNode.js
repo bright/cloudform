@@ -99,6 +99,7 @@ class VirtualNode extends resource_1.ResourceBase {
         super('AWS::AppMesh::VirtualNode', properties);
     }
 }
+exports.default = VirtualNode;
 VirtualNode.Logging = Logging;
 VirtualNode.ServiceDiscovery = ServiceDiscovery;
 VirtualNode.FileAccessLog = FileAccessLog;
@@ -112,4 +113,3 @@ VirtualNode.AccessLog = AccessLog;
 VirtualNode.VirtualNodeSpec = VirtualNodeSpec;
 VirtualNode.Listener = Listener;
 VirtualNode.DnsServiceDiscovery = DnsServiceDiscovery;
-exports.default = VirtualNode;

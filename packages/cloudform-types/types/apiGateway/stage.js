@@ -42,7 +42,7 @@ class Stage extends resource_1.ResourceBase {
         super('AWS::ApiGateway::Stage', properties);
     }
 }
+exports.default = Stage;
 Stage.CanarySetting = CanarySetting;
 Stage.AccessLogSetting = AccessLogSetting;
 Stage.MethodSetting = MethodSetting;
-exports.default = Stage;

@@ -48,8 +48,8 @@ class Application extends resource_1.ResourceBase {
         super('AWS::ElasticBeanstalk::Application', properties || {});
     }
 }
+exports.default = Application;
 Application.ApplicationResourceLifecycleConfig = ApplicationResourceLifecycleConfig;
 Application.ApplicationVersionLifecycleConfig = ApplicationVersionLifecycleConfig;
 Application.MaxAgeRule = MaxAgeRule;
 Application.MaxCountRule = MaxCountRule;
-exports.default = Application;

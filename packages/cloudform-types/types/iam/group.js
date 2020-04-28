@@ -30,5 +30,5 @@ class Group extends resource_1.ResourceBase {
         super('AWS::IAM::Group', properties || {});
     }
 }
-Group.Policy = Policy;
 exports.default = Group;
+Group.Policy = Policy;

@@ -89,6 +89,7 @@ class Application extends resource_1.ResourceBase {
         super('AWS::KinesisAnalytics::Application', properties);
     }
 }
+exports.default = Application;
 Application.CSVMappingParameters = CSVMappingParameters;
 Application.Input = Input;
 Application.InputSchema = InputSchema;
@@ -101,4 +102,3 @@ Application.KinesisFirehoseInput = KinesisFirehoseInput;
 Application.InputParallelism = InputParallelism;
 Application.InputProcessingConfiguration = InputProcessingConfiguration;
 Application.InputLambdaProcessor = InputLambdaProcessor;
-exports.default = Application;

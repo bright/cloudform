@@ -19,5 +19,5 @@ class EnvironmentEC2 extends resource_1.ResourceBase {
         super('AWS::Cloud9::EnvironmentEC2', properties);
     }
 }
-EnvironmentEC2.Repository = Repository;
 exports.default = EnvironmentEC2;
+EnvironmentEC2.Repository = Repository;

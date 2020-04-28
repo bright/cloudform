@@ -20,5 +20,5 @@ class StateMachine extends resource_1.ResourceBase {
         super('AWS::StepFunctions::StateMachine', properties);
     }
 }
-StateMachine.TagsEntry = TagsEntry;
 exports.default = StateMachine;
+StateMachine.TagsEntry = TagsEntry;

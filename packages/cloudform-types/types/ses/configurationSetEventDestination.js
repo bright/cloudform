@@ -35,8 +35,8 @@ class ConfigurationSetEventDestination extends resource_1.ResourceBase {
         super('AWS::SES::ConfigurationSetEventDestination', properties);
     }
 }
+exports.default = ConfigurationSetEventDestination;
 ConfigurationSetEventDestination.EventDestination = EventDestination;
 ConfigurationSetEventDestination.DimensionConfiguration = DimensionConfiguration;
 ConfigurationSetEventDestination.CloudWatchDestination = CloudWatchDestination;
 ConfigurationSetEventDestination.KinesisFirehoseDestination = KinesisFirehoseDestination;
-exports.default = ConfigurationSetEventDestination;

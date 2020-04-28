@@ -36,6 +36,6 @@ class ConfigurationTemplate extends resource_1.ResourceBase {
         super('AWS::ElasticBeanstalk::ConfigurationTemplate', properties);
     }
 }
+exports.default = ConfigurationTemplate;
 ConfigurationTemplate.SourceConfiguration = SourceConfiguration;
 ConfigurationTemplate.ConfigurationOptionSetting = ConfigurationOptionSetting;
-exports.default = ConfigurationTemplate;

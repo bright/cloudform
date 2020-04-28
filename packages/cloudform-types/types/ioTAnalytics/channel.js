@@ -38,8 +38,8 @@ class Channel extends resource_1.ResourceBase {
         super('AWS::IoTAnalytics::Channel', properties || {});
     }
 }
+exports.default = Channel;
 Channel.ChannelStorage = ChannelStorage;
 Channel.CustomerManagedS3 = CustomerManagedS3;
 Channel.RetentionPeriod = RetentionPeriod;
 Channel.ServiceManagedS3 = ServiceManagedS3;
-exports.default = Channel;

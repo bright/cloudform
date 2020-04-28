@@ -24,5 +24,5 @@ class Resolver extends resource_1.ResourceBase {
         super('AWS::AppSync::Resolver', properties);
     }
 }
-Resolver.PipelineConfig = PipelineConfig;
 exports.default = Resolver;
+Resolver.PipelineConfig = PipelineConfig;

@@ -20,5 +20,5 @@ class CoreDefinitionVersion extends resource_1.ResourceBase {
         super('AWS::Greengrass::CoreDefinitionVersion', properties);
     }
 }
-CoreDefinitionVersion.Core = Core;
 exports.default = CoreDefinitionVersion;
+CoreDefinitionVersion.Core = Core;

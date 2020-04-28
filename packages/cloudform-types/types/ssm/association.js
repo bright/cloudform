@@ -48,8 +48,8 @@ class Association extends resource_1.ResourceBase {
         super('AWS::SSM::Association', properties);
     }
 }
+exports.default = Association;
 Association.S3OutputLocation = S3OutputLocation;
 Association.InstanceAssociationOutputLocation = InstanceAssociationOutputLocation;
 Association.Target = Target;
 Association.ParameterValues = ParameterValues;
-exports.default = Association;

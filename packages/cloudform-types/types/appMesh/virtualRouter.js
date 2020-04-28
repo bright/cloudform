@@ -39,7 +39,7 @@ class VirtualRouter extends resource_1.ResourceBase {
         super('AWS::AppMesh::VirtualRouter', properties);
     }
 }
+exports.default = VirtualRouter;
 VirtualRouter.PortMapping = PortMapping;
 VirtualRouter.VirtualRouterListener = VirtualRouterListener;
 VirtualRouter.VirtualRouterSpec = VirtualRouterSpec;
-exports.default = VirtualRouter;

@@ -128,6 +128,7 @@ class Dataset extends resource_1.ResourceBase {
         super('AWS::IoTAnalytics::Dataset', properties);
     }
 }
+exports.default = Dataset;
 Dataset.DatasetContentVersionValue = DatasetContentVersionValue;
 Dataset.GlueConfiguration = GlueConfiguration;
 Dataset.OutputFileUriValue = OutputFileUriValue;
@@ -147,4 +148,3 @@ Dataset.TriggeringDataset = TriggeringDataset;
 Dataset.Schedule = Schedule;
 Dataset.RetentionPeriod = RetentionPeriod;
 Dataset.S3DestinationConfiguration = S3DestinationConfiguration;
-exports.default = Dataset;

@@ -123,6 +123,7 @@ class DetectorModel extends resource_1.ResourceBase {
         super('AWS::IoTEvents::DetectorModel', properties || {});
     }
 }
+exports.default = DetectorModel;
 DetectorModel.SetTimer = SetTimer;
 DetectorModel.ResetTimer = ResetTimer;
 DetectorModel.IotEvents = IotEvents;
@@ -141,4 +142,3 @@ DetectorModel.DetectorModelDefinition = DetectorModelDefinition;
 DetectorModel.IotTopicPublish = IotTopicPublish;
 DetectorModel.Action = Action;
 DetectorModel.Lambda = Lambda;
-exports.default = DetectorModel;

@@ -84,6 +84,7 @@ class Table extends resource_1.ResourceBase {
         super('AWS::DynamoDB::Table', properties);
     }
 }
+exports.default = Table;
 Table.LocalSecondaryIndex = LocalSecondaryIndex;
 Table.PointInTimeRecoverySpecification = PointInTimeRecoverySpecification;
 Table.SSESpecification = SSESpecification;
@@ -94,4 +95,3 @@ Table.GlobalSecondaryIndex = GlobalSecondaryIndex;
 Table.KeySchema = KeySchema;
 Table.Projection = Projection;
 Table.StreamSpecification = StreamSpecification;
-exports.default = Table;

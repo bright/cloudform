@@ -25,5 +25,5 @@ class GeoMatchSet extends resource_1.ResourceBase {
         super('AWS::WAFRegional::GeoMatchSet', properties);
     }
 }
-GeoMatchSet.GeoMatchConstraint = GeoMatchConstraint;
 exports.default = GeoMatchSet;
+GeoMatchSet.GeoMatchConstraint = GeoMatchConstraint;

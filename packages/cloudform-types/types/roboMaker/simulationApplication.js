@@ -36,8 +36,8 @@ class SimulationApplication extends resource_1.ResourceBase {
         super('AWS::RoboMaker::SimulationApplication', properties);
     }
 }
+exports.default = SimulationApplication;
 SimulationApplication.RenderingEngine = RenderingEngine;
 SimulationApplication.SimulationSoftwareSuite = SimulationSoftwareSuite;
 SimulationApplication.RobotSoftwareSuite = RobotSoftwareSuite;
 SimulationApplication.SourceConfig = SourceConfig;
-exports.default = SimulationApplication;

@@ -24,6 +24,6 @@ class RobotApplication extends resource_1.ResourceBase {
         super('AWS::RoboMaker::RobotApplication', properties);
     }
 }
+exports.default = RobotApplication;
 RobotApplication.RobotSoftwareSuite = RobotSoftwareSuite;
 RobotApplication.SourceConfig = SourceConfig;
-exports.default = RobotApplication;

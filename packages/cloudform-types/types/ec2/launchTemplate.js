@@ -144,6 +144,7 @@ class LaunchTemplate extends resource_1.ResourceBase {
         super('AWS::EC2::LaunchTemplate', properties || {});
     }
 }
+exports.default = LaunchTemplate;
 LaunchTemplate.PrivateIpAdd = PrivateIpAdd;
 LaunchTemplate.BlockDeviceMapping = BlockDeviceMapping;
 LaunchTemplate.SpotOptions = SpotOptions;
@@ -164,4 +165,3 @@ LaunchTemplate.CapacityReservationTarget = CapacityReservationTarget;
 LaunchTemplate.NetworkInterface = NetworkInterface;
 LaunchTemplate.CpuOptions = CpuOptions;
 LaunchTemplate.LaunchTemplateElasticInferenceAccelerator = LaunchTemplateElasticInferenceAccelerator;
-exports.default = LaunchTemplate;

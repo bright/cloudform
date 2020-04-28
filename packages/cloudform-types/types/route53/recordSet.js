@@ -36,6 +36,6 @@ class RecordSet extends resource_1.ResourceBase {
         super('AWS::Route53::RecordSet', properties);
     }
 }
+exports.default = RecordSet;
 RecordSet.GeoLocation = GeoLocation;
 RecordSet.AliasTarget = AliasTarget;
-exports.default = RecordSet;

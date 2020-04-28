@@ -25,5 +25,5 @@ class IPSet extends resource_1.ResourceBase {
         super('AWS::WAFRegional::IPSet', properties);
     }
 }
-IPSet.IPSetDescriptor = IPSetDescriptor;
 exports.default = IPSet;
+IPSet.IPSetDescriptor = IPSetDescriptor;

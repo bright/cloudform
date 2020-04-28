@@ -52,9 +52,9 @@ class LifecyclePolicy extends resource_1.ResourceBase {
         super('AWS::DLM::LifecyclePolicy', properties || {});
     }
 }
+exports.default = LifecyclePolicy;
 LifecyclePolicy.Schedule = Schedule;
 LifecyclePolicy.CreateRule = CreateRule;
 LifecyclePolicy.RetainRule = RetainRule;
 LifecyclePolicy.PolicyDetails = PolicyDetails;
 LifecyclePolicy.Parameters = Parameters;
-exports.default = LifecyclePolicy;

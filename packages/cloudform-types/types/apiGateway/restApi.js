@@ -36,6 +36,6 @@ class RestApi extends resource_1.ResourceBase {
         super('AWS::ApiGateway::RestApi', properties || {});
     }
 }
+exports.default = RestApi;
 RestApi.S3Location = S3Location;
 RestApi.EndpointConfiguration = EndpointConfiguration;
-exports.default = RestApi;

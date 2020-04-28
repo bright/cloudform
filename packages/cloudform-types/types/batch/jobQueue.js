@@ -23,5 +23,5 @@ class JobQueue extends resource_1.ResourceBase {
         super('AWS::Batch::JobQueue', properties);
     }
 }
-JobQueue.ComputeEnvironmentOrder = ComputeEnvironmentOrder;
 exports.default = JobQueue;
+JobQueue.ComputeEnvironmentOrder = ComputeEnvironmentOrder;

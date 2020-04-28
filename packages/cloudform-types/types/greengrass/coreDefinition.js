@@ -26,6 +26,6 @@ class CoreDefinition extends resource_1.ResourceBase {
         super('AWS::Greengrass::CoreDefinition', properties);
     }
 }
+exports.default = CoreDefinition;
 CoreDefinition.Core = Core;
 CoreDefinition.CoreDefinitionVersion = CoreDefinitionVersion;
-exports.default = CoreDefinition;

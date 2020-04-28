@@ -42,7 +42,7 @@ class AnomalyDetector extends resource_1.ResourceBase {
         super('AWS::CloudWatch::AnomalyDetector', properties);
     }
 }
+exports.default = AnomalyDetector;
 AnomalyDetector.Range = Range;
 AnomalyDetector.Dimension = Dimension;
 AnomalyDetector.Configuration = Configuration;
-exports.default = AnomalyDetector;

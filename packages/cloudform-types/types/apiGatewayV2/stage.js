@@ -35,6 +35,6 @@ class Stage extends resource_1.ResourceBase {
         super('AWS::ApiGatewayV2::Stage', properties);
     }
 }
+exports.default = Stage;
 Stage.AccessLogSettings = AccessLogSettings;
 Stage.RouteSettings = RouteSettings;
-exports.default = Stage;

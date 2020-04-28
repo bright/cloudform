@@ -29,5 +29,5 @@ class RouteResponse extends resource_1.ResourceBase {
         super('AWS::ApiGatewayV2::RouteResponse', properties);
     }
 }
-RouteResponse.ParameterConstraints = ParameterConstraints;
 exports.default = RouteResponse;
+RouteResponse.ParameterConstraints = ParameterConstraints;

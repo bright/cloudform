@@ -23,5 +23,5 @@ class Server extends resource_1.ResourceBase {
         super('AWS::OpsWorksCM::Server', properties);
     }
 }
-Server.EngineAttribute = EngineAttribute;
 exports.default = Server;
+Server.EngineAttribute = EngineAttribute;

@@ -30,5 +30,5 @@ class Repository extends resource_1.ResourceBase {
         super('AWS::ECR::Repository', properties || {});
     }
 }
-Repository.LifecyclePolicy = LifecyclePolicy;
 exports.default = Repository;
+Repository.LifecyclePolicy = LifecyclePolicy;

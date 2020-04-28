@@ -29,5 +29,5 @@ class Secret extends resource_1.ResourceBase {
         super('AWS::SecretsManager::Secret', properties || {});
     }
 }
-Secret.GenerateSecretString = GenerateSecretString;
 exports.default = Secret;
+Secret.GenerateSecretString = GenerateSecretString;

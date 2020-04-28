@@ -42,7 +42,7 @@ class RecordSetGroup extends resource_1.ResourceBase {
         super('AWS::Route53::RecordSetGroup', properties || {});
     }
 }
+exports.default = RecordSetGroup;
 RecordSetGroup.RecordSet = RecordSet;
 RecordSetGroup.AliasTarget = AliasTarget;
 RecordSetGroup.GeoLocation = GeoLocation;
-exports.default = RecordSetGroup;

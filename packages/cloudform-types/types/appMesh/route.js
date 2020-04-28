@@ -63,6 +63,7 @@ class Route extends resource_1.ResourceBase {
         super('AWS::AppMesh::Route', properties);
     }
 }
+exports.default = Route;
 Route.WeightedTarget = WeightedTarget;
 Route.TcpRoute = TcpRoute;
 Route.RouteSpec = RouteSpec;
@@ -70,4 +71,3 @@ Route.HttpRouteMatch = HttpRouteMatch;
 Route.HttpRouteAction = HttpRouteAction;
 Route.HttpRoute = HttpRoute;
 Route.TcpRouteAction = TcpRouteAction;
-exports.default = Route;

@@ -108,6 +108,7 @@ class Instance extends resource_1.ResourceBase {
         super('AWS::EC2::Instance', properties || {});
     }
 }
+exports.default = Instance;
 Instance.Volume = Volume;
 Instance.Ebs = Ebs;
 Instance.NoDevice = NoDevice;
@@ -122,4 +123,3 @@ Instance.SsmAssociation = SsmAssociation;
 Instance.ElasticInferenceAccelerator = ElasticInferenceAccelerator;
 Instance.BlockDeviceMapping = BlockDeviceMapping;
 Instance.PrivateIpAddressSpecification = PrivateIpAddressSpecification;
-exports.default = Instance;

@@ -162,6 +162,7 @@ class Application extends resource_1.ResourceBase {
         super('AWS::KinesisAnalyticsV2::Application', properties);
     }
 }
+exports.default = Application;
 Application.S3ContentLocation = S3ContentLocation;
 Application.PropertyGroup = PropertyGroup;
 Application.KinesisStreamsInput = KinesisStreamsInput;
@@ -186,4 +187,3 @@ Application.InputProcessingConfiguration = InputProcessingConfiguration;
 Application.ApplicationConfiguration = ApplicationConfiguration;
 Application.ApplicationCodeConfiguration = ApplicationCodeConfiguration;
 Application.EnvironmentProperties = EnvironmentProperties;
-exports.default = Application;

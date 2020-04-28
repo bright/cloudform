@@ -30,7 +30,7 @@ class Repository extends resource_1.ResourceBase {
         super('AWS::CodeCommit::Repository', properties);
     }
 }
+exports.default = Repository;
 Repository.Code = Code;
 Repository.S3 = S3;
 Repository.RepositoryTrigger = RepositoryTrigger;
-exports.default = Repository;

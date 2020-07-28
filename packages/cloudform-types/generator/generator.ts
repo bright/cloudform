@@ -139,15 +139,29 @@ ${Object.keys(innerTypes)
 
 function generateFile(fileHeader: string, namespace: string, resourceName: string, properties: TypePropertiesMap, innerTypes: ResourceTypeMap): void {
     let innerHasTags = false
-    const innerTypesTemplates = map(innerTypes, (innerType: ResourceType, innerTypeFullName: string) => {
-        const resolvedInnerTypeName = innerTypeName(innerTypeFullName)
-        if (innerType.Properties) {
-            innerHasTags = innerHasTags || hasTags(innerType.Properties)
-            return generateInnerClass(resolvedInnerTypeName, innerType.Properties)
-        } else {
-            return generateInnerType(resolvedInnerTypeName, innerType as any)
-        }
-    })
+    const innerTypesTemplates = Object.entries(innerTypes)
+        .filter(([, innerType]: [string, any]) => {
+            const hasProperties = !!innerType.Properties;
+            const hasPrimitiveType = !!innerType.PrimitiveType;
+            const hasPrimitiveItemType = !!innerType.PrimitiveItemType;
+            const hasType = !!innerType.Type;
+
+            return (
+                hasProperties ||
+                hasPrimitiveType ||
+                hasPrimitiveItemType ||
+                hasType
+            )
+        })
+        .map(([innerTypeFullName, innerType]) => {
+            const resolvedInnerTypeName = innerTypeName(innerTypeFullName)
+            if (innerType.Properties) {
+                innerHasTags = innerHasTags || hasTags(innerType.Properties)
+                return generateInnerClass(resolvedInnerTypeName, innerType.Properties)
+            } else {
+                return generateInnerType(resolvedInnerTypeName, innerType as any)
+            }
+        })
 
     const resourceImports = ['ResourceBase']
     if (innerHasTags || hasTags(properties)) {

@@ -19,6 +19,7 @@ export declare class VirtualServiceProvider {
 }
 export interface VirtualServiceProperties {
     MeshName: Value<string>;
+    MeshOwner?: Value<string>;
     VirtualServiceName: Value<string>;
     Spec: VirtualServiceSpec;
     Tags?: List<ResourceTag>;

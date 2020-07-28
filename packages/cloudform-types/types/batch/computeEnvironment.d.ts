@@ -10,9 +10,10 @@ export declare class ComputeResources {
     SpotIamFleetRole?: Value<string>;
     MaxvCpus: Value<number>;
     BidPercentage?: Value<number>;
-    SecurityGroupIds: List<Value<string>>;
+    SecurityGroupIds?: List<Value<string>>;
     Subnets: List<Value<string>>;
     Type: Value<string>;
+    AllocationStrategy?: Value<string>;
     MinvCpus: Value<number>;
     LaunchTemplate?: LaunchTemplateSpecification;
     ImageId?: Value<string>;

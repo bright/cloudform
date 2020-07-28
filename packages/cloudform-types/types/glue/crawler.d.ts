@@ -2,8 +2,15 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Targets {
     S3Targets?: List<S3Target>;
+    CatalogTargets?: List<CatalogTarget>;
     JdbcTargets?: List<JdbcTarget>;
+    DynamoDBTargets?: List<DynamoDBTarget>;
     constructor(properties: Targets);
+}
+export declare class CatalogTarget {
+    DatabaseName?: Value<string>;
+    Tables?: List<Value<string>>;
+    constructor(properties: CatalogTarget);
 }
 export declare class JdbcTarget {
     ConnectionName?: Value<string>;
@@ -14,6 +21,10 @@ export declare class JdbcTarget {
 export declare class Schedule {
     ScheduleExpression?: Value<string>;
     constructor(properties: Schedule);
+}
+export declare class DynamoDBTarget {
+    Path?: Value<string>;
+    constructor(properties: DynamoDBTarget);
 }
 export declare class SchemaChangePolicy {
     UpdateBehavior?: Value<string>;
@@ -32,7 +43,7 @@ export interface CrawlerProperties {
     SchemaChangePolicy?: SchemaChangePolicy;
     Configuration?: Value<string>;
     Schedule?: Schedule;
-    DatabaseName: Value<string>;
+    DatabaseName?: Value<string>;
     Targets: Targets;
     CrawlerSecurityConfiguration?: Value<string>;
     TablePrefix?: Value<string>;
@@ -43,8 +54,10 @@ export interface CrawlerProperties {
 }
 export default class Crawler extends ResourceBase<CrawlerProperties> {
     static Targets: typeof Targets;
+    static CatalogTarget: typeof CatalogTarget;
     static JdbcTarget: typeof JdbcTarget;
     static Schedule: typeof Schedule;
+    static DynamoDBTarget: typeof DynamoDBTarget;
     static SchemaChangePolicy: typeof SchemaChangePolicy;
     static S3Target: typeof S3Target;
     constructor(properties: CrawlerProperties);

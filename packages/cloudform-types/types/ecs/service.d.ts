@@ -17,6 +17,10 @@ export declare class DeploymentConfiguration {
     MinimumHealthyPercent?: Value<number>;
     constructor(properties: DeploymentConfiguration);
 }
+export declare class DeploymentController {
+    Type?: Value<string>;
+    constructor(properties: DeploymentController);
+}
 export declare class PlacementConstraint {
     Expression?: Value<string>;
     Type: Value<string>;
@@ -42,6 +46,7 @@ export declare class ServiceRegistry {
 export interface ServiceProperties {
     Cluster?: Value<string>;
     DeploymentConfiguration?: DeploymentConfiguration;
+    DeploymentController?: DeploymentController;
     DesiredCount?: Value<number>;
     EnableECSManagedTags?: Value<boolean>;
     HealthCheckGracePeriodSeconds?: Value<number>;
@@ -57,15 +62,16 @@ export interface ServiceProperties {
     ServiceName?: Value<string>;
     ServiceRegistries?: List<ServiceRegistry>;
     Tags?: List<ResourceTag>;
-    TaskDefinition: Value<string>;
+    TaskDefinition?: Value<string>;
 }
 export default class Service extends ResourceBase<ServiceProperties> {
     static LoadBalancer: typeof LoadBalancer;
     static PlacementStrategy: typeof PlacementStrategy;
     static DeploymentConfiguration: typeof DeploymentConfiguration;
+    static DeploymentController: typeof DeploymentController;
     static PlacementConstraint: typeof PlacementConstraint;
     static AwsVpcConfiguration: typeof AwsVpcConfiguration;
     static NetworkConfiguration: typeof NetworkConfiguration;
     static ServiceRegistry: typeof ServiceRegistry;
-    constructor(properties: ServiceProperties);
+    constructor(properties?: ServiceProperties);
 }

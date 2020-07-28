@@ -17,6 +17,7 @@ export declare class OpenIDConnectConfig {
 }
 export declare class LogConfig {
     CloudWatchLogsRoleArn?: Value<string>;
+    ExcludeVerboseContent?: Value<boolean>;
     FieldLogLevel?: Value<string>;
     constructor(properties: LogConfig);
 }
@@ -35,6 +36,7 @@ export declare class AdditionalAuthenticationProvider {
 }
 export interface GraphQLApiProperties {
     OpenIDConnectConfig?: OpenIDConnectConfig;
+    XrayEnabled?: Value<boolean>;
     UserPoolConfig?: UserPoolConfig;
     Tags?: Tags;
     Name: Value<string>;

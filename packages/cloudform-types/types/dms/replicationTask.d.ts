@@ -3,12 +3,15 @@ import { Value, List } from '../dataTypes';
 export interface ReplicationTaskProperties {
     ReplicationTaskSettings?: Value<string>;
     TableMappings: Value<string>;
+    CdcStartPosition?: Value<string>;
     ReplicationTaskIdentifier?: Value<string>;
+    CdcStopPosition?: Value<string>;
     SourceEndpointArn: Value<string>;
     MigrationType: Value<string>;
     TargetEndpointArn: Value<string>;
     ReplicationInstanceArn: Value<string>;
     Tags?: List<ResourceTag>;
+    TaskData?: Value<string>;
     CdcStartTime?: Value<number>;
 }
 export default class ReplicationTask extends ResourceBase<ReplicationTaskProperties> {

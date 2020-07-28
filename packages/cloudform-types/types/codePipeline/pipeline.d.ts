@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class InputArtifact {
     Name: Value<string>;
@@ -30,6 +30,7 @@ export declare class ActionDeclaration {
     };
     InputArtifacts?: List<InputArtifact>;
     Name: Value<string>;
+    Namespace?: Value<string>;
     OutputArtifacts?: List<OutputArtifact>;
     Region?: Value<string>;
     RoleArn?: Value<string>;
@@ -68,6 +69,7 @@ export interface PipelineProperties {
     RestartExecutionOnUpdate?: Value<boolean>;
     RoleArn: Value<string>;
     Stages: List<StageDeclaration>;
+    Tags?: List<ResourceTag>;
 }
 export default class Pipeline extends ResourceBase<PipelineProperties> {
     static InputArtifact: typeof InputArtifact;

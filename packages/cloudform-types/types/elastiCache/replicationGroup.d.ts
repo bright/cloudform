@@ -19,6 +19,8 @@ export interface ReplicationGroupProperties {
     CacheSubnetGroupName?: Value<string>;
     Engine?: Value<string>;
     EngineVersion?: Value<string>;
+    KmsKeyId?: Value<string>;
+    MultiAZEnabled?: Value<boolean>;
     NodeGroupConfiguration?: List<NodeGroupConfiguration>;
     NotificationTopicArn?: Value<string>;
     NumCacheClusters?: Value<number>;

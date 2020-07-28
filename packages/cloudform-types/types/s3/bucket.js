@@ -1,21 +1,21 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
@@ -25,6 +25,12 @@ class BucketEncryption {
     }
 }
 exports.BucketEncryption = BucketEncryption;
+class Metrics {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.Metrics = Metrics;
 class RoutingRuleCondition {
     constructor(properties) {
         Object.assign(this, properties);
@@ -67,6 +73,12 @@ class NotificationConfiguration {
     }
 }
 exports.NotificationConfiguration = NotificationConfiguration;
+class ReplicationTime {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ReplicationTime = ReplicationTime;
 class ServerSideEncryptionByDefault {
     constructor(properties) {
         Object.assign(this, properties);
@@ -145,6 +157,12 @@ class AbortIncompleteMultipartUpload {
     }
 }
 exports.AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload;
+class DeleteMarkerReplication {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.DeleteMarkerReplication = DeleteMarkerReplication;
 class PublicAccessBlockConfiguration {
     constructor(properties) {
         Object.assign(this, properties);
@@ -271,12 +289,30 @@ class DataExport {
     }
 }
 exports.DataExport = DataExport;
+class ReplicationTimeValue {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ReplicationTimeValue = ReplicationTimeValue;
+class ReplicationRuleFilter {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ReplicationRuleFilter = ReplicationRuleFilter;
 class FilterRule {
     constructor(properties) {
         Object.assign(this, properties);
     }
 }
 exports.FilterRule = FilterRule;
+class ReplicationRuleAndOperator {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.ReplicationRuleAndOperator = ReplicationRuleAndOperator;
 class Bucket extends resource_1.ResourceBase {
     constructor(properties) {
         super('AWS::S3::Bucket', properties || {});
@@ -284,6 +320,7 @@ class Bucket extends resource_1.ResourceBase {
 }
 exports.default = Bucket;
 Bucket.BucketEncryption = BucketEncryption;
+Bucket.Metrics = Metrics;
 Bucket.RoutingRuleCondition = RoutingRuleCondition;
 Bucket.LifecycleConfiguration = LifecycleConfiguration;
 Bucket.CorsRule = CorsRule;
@@ -291,6 +328,7 @@ Bucket.Destination = Destination;
 Bucket.AccessControlTranslation = AccessControlTranslation;
 Bucket.VersioningConfiguration = VersioningConfiguration;
 Bucket.NotificationConfiguration = NotificationConfiguration;
+Bucket.ReplicationTime = ReplicationTime;
 Bucket.ServerSideEncryptionByDefault = ServerSideEncryptionByDefault;
 Bucket.RedirectAllRequestsTo = RedirectAllRequestsTo;
 Bucket.S3KeyFilter = S3KeyFilter;
@@ -304,6 +342,7 @@ Bucket.ReplicationDestination = ReplicationDestination;
 Bucket.AccelerateConfiguration = AccelerateConfiguration;
 Bucket.NoncurrentVersionTransition = NoncurrentVersionTransition;
 Bucket.AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload;
+Bucket.DeleteMarkerReplication = DeleteMarkerReplication;
 Bucket.PublicAccessBlockConfiguration = PublicAccessBlockConfiguration;
 Bucket.DefaultRetention = DefaultRetention;
 Bucket.NotificationFilter = NotificationFilter;
@@ -325,4 +364,7 @@ Bucket.MetricsConfiguration = MetricsConfiguration;
 Bucket.TagFilter = TagFilter;
 Bucket.Transition = Transition;
 Bucket.DataExport = DataExport;
+Bucket.ReplicationTimeValue = ReplicationTimeValue;
+Bucket.ReplicationRuleFilter = ReplicationRuleFilter;
 Bucket.FilterRule = FilterRule;
+Bucket.ReplicationRuleAndOperator = ReplicationRuleAndOperator;

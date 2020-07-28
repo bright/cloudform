@@ -14,8 +14,8 @@ export declare class OrcSerDe {
     constructor(properties: OrcSerDe);
 }
 export declare class ElasticsearchBufferingHints {
-    IntervalInSeconds: Value<number>;
-    SizeInMBs: Value<number>;
+    IntervalInSeconds?: Value<number>;
+    SizeInMBs?: Value<number>;
     constructor(properties: ElasticsearchBufferingHints);
 }
 export declare class SplunkDestinationConfiguration {
@@ -42,7 +42,7 @@ export declare class CloudWatchLoggingOptions {
     constructor(properties: CloudWatchLoggingOptions);
 }
 export declare class InputFormatConfiguration {
-    Deserializer: Deserializer;
+    Deserializer?: Deserializer;
     constructor(properties: InputFormatConfiguration);
 }
 export declare class ProcessingConfiguration {
@@ -51,8 +51,8 @@ export declare class ProcessingConfiguration {
     constructor(properties: ProcessingConfiguration);
 }
 export declare class BufferingHints {
-    IntervalInSeconds: Value<number>;
-    SizeInMBs: Value<number>;
+    IntervalInSeconds?: Value<number>;
+    SizeInMBs?: Value<number>;
     constructor(properties: BufferingHints);
 }
 export declare class ProcessorParameter {
@@ -65,19 +65,19 @@ export declare class HiveJsonSerDe {
     constructor(properties: HiveJsonSerDe);
 }
 export declare class Processor {
-    Parameters: List<ProcessorParameter>;
+    Parameters?: List<ProcessorParameter>;
     Type: Value<string>;
     constructor(properties: Processor);
 }
 export declare class ElasticsearchRetryOptions {
-    DurationInSeconds: Value<number>;
+    DurationInSeconds?: Value<number>;
     constructor(properties: ElasticsearchRetryOptions);
 }
 export declare class DataFormatConversionConfiguration {
-    Enabled: Value<boolean>;
-    InputFormatConfiguration: InputFormatConfiguration;
-    OutputFormatConfiguration: OutputFormatConfiguration;
-    SchemaConfiguration: SchemaConfiguration;
+    Enabled?: Value<boolean>;
+    InputFormatConfiguration?: InputFormatConfiguration;
+    OutputFormatConfiguration?: OutputFormatConfiguration;
+    SchemaConfiguration?: SchemaConfiguration;
     constructor(properties: DataFormatConversionConfiguration);
 }
 export declare class KMSEncryptionConfig {
@@ -85,34 +85,36 @@ export declare class KMSEncryptionConfig {
     constructor(properties: KMSEncryptionConfig);
 }
 export declare class OutputFormatConfiguration {
-    Serializer: Serializer;
+    Serializer?: Serializer;
     constructor(properties: OutputFormatConfiguration);
 }
 export declare class ElasticsearchDestinationConfiguration {
-    BufferingHints: ElasticsearchBufferingHints;
+    BufferingHints?: ElasticsearchBufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
-    DomainARN: Value<string>;
+    DomainARN?: Value<string>;
     IndexName: Value<string>;
-    IndexRotationPeriod: Value<string>;
+    IndexRotationPeriod?: Value<string>;
     ProcessingConfiguration?: ProcessingConfiguration;
-    RetryOptions: ElasticsearchRetryOptions;
+    RetryOptions?: ElasticsearchRetryOptions;
     RoleARN: Value<string>;
-    S3BackupMode: Value<string>;
+    S3BackupMode?: Value<string>;
     S3Configuration: S3DestinationConfiguration;
-    TypeName: Value<string>;
+    ClusterEndpoint?: Value<string>;
+    TypeName?: Value<string>;
+    VpcConfiguration?: VpcConfiguration;
     constructor(properties: ElasticsearchDestinationConfiguration);
 }
 export declare class SchemaConfiguration {
-    CatalogId: Value<string>;
-    DatabaseName: Value<string>;
-    Region: Value<string>;
-    RoleARN: Value<string>;
-    TableName: Value<string>;
-    VersionId: Value<string>;
+    CatalogId?: Value<string>;
+    DatabaseName?: Value<string>;
+    Region?: Value<string>;
+    RoleARN?: Value<string>;
+    TableName?: Value<string>;
+    VersionId?: Value<string>;
     constructor(properties: SchemaConfiguration);
 }
 export declare class SplunkRetryOptions {
-    DurationInSeconds: Value<number>;
+    DurationInSeconds?: Value<number>;
     constructor(properties: SplunkRetryOptions);
 }
 export declare class Deserializer {
@@ -124,6 +126,10 @@ export declare class KinesisStreamSourceConfiguration {
     KinesisStreamARN: Value<string>;
     RoleARN: Value<string>;
     constructor(properties: KinesisStreamSourceConfiguration);
+}
+export declare class RedshiftRetryOptions {
+    DurationInSeconds?: Value<number>;
+    constructor(properties: RedshiftRetryOptions);
 }
 export declare class ParquetSerDe {
     BlockSizeBytes?: Value<number>;
@@ -155,20 +161,26 @@ export declare class OpenXJsonSerDe {
 }
 export declare class S3DestinationConfiguration {
     BucketARN: Value<string>;
-    BufferingHints: BufferingHints;
+    BufferingHints?: BufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
-    CompressionFormat: Value<string>;
+    CompressionFormat?: Value<string>;
     EncryptionConfiguration?: EncryptionConfiguration;
     ErrorOutputPrefix?: Value<string>;
     Prefix?: Value<string>;
     RoleARN: Value<string>;
     constructor(properties: S3DestinationConfiguration);
 }
+export declare class VpcConfiguration {
+    RoleARN: Value<string>;
+    SubnetIds: List<Value<string>>;
+    SecurityGroupIds: List<Value<string>>;
+    constructor(properties: VpcConfiguration);
+}
 export declare class ExtendedS3DestinationConfiguration {
     BucketARN: Value<string>;
-    BufferingHints: BufferingHints;
+    BufferingHints?: BufferingHints;
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
-    CompressionFormat: Value<string>;
+    CompressionFormat?: Value<string>;
     DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
     EncryptionConfiguration?: EncryptionConfiguration;
     ErrorOutputPrefix?: Value<string>;
@@ -185,7 +197,10 @@ export declare class RedshiftDestinationConfiguration {
     CopyCommand: CopyCommand;
     Password: Value<string>;
     ProcessingConfiguration?: ProcessingConfiguration;
+    RetryOptions?: RedshiftRetryOptions;
     RoleARN: Value<string>;
+    S3BackupConfiguration?: S3DestinationConfiguration;
+    S3BackupMode?: Value<string>;
     S3Configuration: S3DestinationConfiguration;
     Username: Value<string>;
     constructor(properties: RedshiftDestinationConfiguration);
@@ -221,11 +236,13 @@ export default class DeliveryStream extends ResourceBase<DeliveryStreamPropertie
     static SplunkRetryOptions: typeof SplunkRetryOptions;
     static Deserializer: typeof Deserializer;
     static KinesisStreamSourceConfiguration: typeof KinesisStreamSourceConfiguration;
+    static RedshiftRetryOptions: typeof RedshiftRetryOptions;
     static ParquetSerDe: typeof ParquetSerDe;
     static Serializer: typeof Serializer;
     static CopyCommand: typeof CopyCommand;
     static OpenXJsonSerDe: typeof OpenXJsonSerDe;
     static S3DestinationConfiguration: typeof S3DestinationConfiguration;
+    static VpcConfiguration: typeof VpcConfiguration;
     static ExtendedS3DestinationConfiguration: typeof ExtendedS3DestinationConfiguration;
     static RedshiftDestinationConfiguration: typeof RedshiftDestinationConfiguration;
     constructor(properties?: DeliveryStreamProperties);

@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LoginProfile {
     Password: Value<string>;
@@ -19,6 +19,7 @@ export interface UserProperties {
     Path?: Value<string>;
     PermissionsBoundary?: Value<string>;
     Policies?: List<Policy>;
+    Tags?: List<ResourceTag>;
     UserName?: Value<string>;
 }
 export default class User extends ResourceBase<UserProperties> {

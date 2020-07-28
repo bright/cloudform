@@ -1,5 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class CopyActionResourceType {
+    Lifecycle?: LifecycleResourceType;
+    DestinationBackupVaultArn: Value<string>;
+    constructor(properties: CopyActionResourceType);
+}
 export declare class LifecycleResourceType {
     DeleteAfterDays?: Value<number>;
     MoveToColdStorageAfterDays?: Value<number>;
@@ -11,6 +16,7 @@ export declare class BackupRuleResourceType {
     RecoveryPointTags?: {
         [key: string]: any;
     };
+    CopyActions?: List<CopyActionResourceType>;
     Lifecycle?: LifecycleResourceType;
     TargetBackupVault: Value<string>;
     StartWindowMinutes?: Value<number>;
@@ -29,6 +35,7 @@ export interface BackupPlanProperties {
     };
 }
 export default class BackupPlan extends ResourceBase<BackupPlanProperties> {
+    static CopyActionResourceType: typeof CopyActionResourceType;
     static LifecycleResourceType: typeof LifecycleResourceType;
     static BackupRuleResourceType: typeof BackupRuleResourceType;
     static BackupPlanResourceType: typeof BackupPlanResourceType;

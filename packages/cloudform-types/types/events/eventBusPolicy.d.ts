@@ -7,6 +7,7 @@ export declare class Condition {
     constructor(properties: Condition);
 }
 export interface EventBusPolicyProperties {
+    EventBusName?: Value<string>;
     Condition?: Condition;
     Action: Value<string>;
     StatementId: Value<string>;

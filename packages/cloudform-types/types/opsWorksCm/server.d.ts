@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class EngineAttribute {
     Value?: Value<string>;
@@ -15,13 +15,17 @@ export interface ServerProperties {
     PreferredMaintenanceWindow?: Value<string>;
     AssociatePublicIpAddress?: Value<boolean>;
     InstanceProfileArn: Value<string>;
+    CustomCertificate?: Value<string>;
     PreferredBackupWindow?: Value<string>;
     SecurityGroupIds?: List<Value<string>>;
     SubnetIds?: List<Value<string>>;
+    CustomDomain?: Value<string>;
+    CustomPrivateKey?: Value<string>;
     ServerName?: Value<string>;
     EngineAttributes?: List<EngineAttribute>;
     BackupRetentionCount?: Value<number>;
     InstanceType: Value<string>;
+    Tags?: List<ResourceTag>;
     Engine?: Value<string>;
 }
 export default class Server extends ResourceBase<ServerProperties> {

@@ -21,7 +21,9 @@ export declare class CustomRule {
 export declare class AutoBranchCreationConfig {
     EnvironmentVariables?: List<EnvironmentVariable>;
     EnableAutoBranchCreation?: Value<boolean>;
+    PullRequestEnvironmentName?: Value<string>;
     AutoBranchCreationPatterns?: List<Value<string>>;
+    EnablePullRequestPreview?: Value<boolean>;
     EnableAutoBuild?: Value<boolean>;
     BuildSpec?: Value<string>;
     Stage?: Value<string>;
@@ -31,15 +33,16 @@ export declare class AutoBranchCreationConfig {
 export interface AppProperties {
     AutoBranchCreationConfig?: AutoBranchCreationConfig;
     OauthToken?: Value<string>;
-    Repository?: Value<string>;
     Description?: Value<string>;
+    EnableBranchAutoDeletion?: Value<boolean>;
+    Name: Value<string>;
+    Repository?: Value<string>;
     EnvironmentVariables?: List<EnvironmentVariable>;
     AccessToken?: Value<string>;
     BuildSpec?: Value<string>;
     CustomRules?: List<CustomRule>;
     BasicAuthConfig?: BasicAuthConfig;
     Tags?: List<ResourceTag>;
-    Name: Value<string>;
     IAMServiceRole?: Value<string>;
 }
 export default class App extends ResourceBase<AppProperties> {

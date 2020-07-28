@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class S3ContentLocation {
     BucketARN?: Value<string>;
@@ -135,6 +135,7 @@ export interface ApplicationProperties {
     RuntimeEnvironment: Value<string>;
     ApplicationConfiguration?: ApplicationConfiguration;
     ApplicationDescription?: Value<string>;
+    Tags?: List<ResourceTag>;
     ServiceExecutionRole: Value<string>;
 }
 export default class Application extends ResourceBase<ApplicationProperties> {

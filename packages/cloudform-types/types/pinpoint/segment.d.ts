@@ -5,17 +5,6 @@ export declare class Coordinates {
     Longitude: Value<number>;
     constructor(properties: Coordinates);
 }
-export declare class Groups {
-    Type?: Value<string>;
-    SourceType?: Value<string>;
-    Dimensions?: List<SegmentDimensions>;
-    SourceSegments?: List<SourceSegments>;
-    constructor(properties: Groups);
-}
-export declare class Behavior {
-    Recency?: Recency;
-    constructor(properties: Behavior);
-}
 export declare class SegmentDimensions {
     Demographic?: Demographic;
     Metrics?: {
@@ -35,11 +24,6 @@ export declare class SourceSegments {
     Version?: Value<number>;
     Id: Value<string>;
     constructor(properties: SourceSegments);
-}
-export declare class Location {
-    GPSPoint?: GPSPoint;
-    Country?: SetDimension;
-    constructor(properties: Location);
 }
 export declare class AttributeDimension {
     AttributeType?: Value<string>;
@@ -65,34 +49,53 @@ export declare class Recency {
     RecencyType: Value<string>;
     constructor(properties: Recency);
 }
-export declare class SegmentGroups {
-    Groups?: List<Groups>;
-    Include?: Value<string>;
-    constructor(properties: SegmentGroups);
-}
 export declare class SetDimension {
     DimensionType?: Value<string>;
     Values?: List<Value<string>>;
     constructor(properties: SetDimension);
 }
+export declare class Groups {
+    Type?: Value<string>;
+    SourceType?: Value<string>;
+    Dimensions?: List<SegmentDimensions>;
+    SourceSegments?: List<SourceSegments>;
+    constructor(properties: Groups);
+}
+export declare class Behavior {
+    Recency?: Recency;
+    constructor(properties: Behavior);
+}
+export declare class Location {
+    GPSPoint?: GPSPoint;
+    Country?: SetDimension;
+    constructor(properties: Location);
+}
+export declare class SegmentGroups {
+    Groups?: List<Groups>;
+    Include?: Value<string>;
+    constructor(properties: SegmentGroups);
+}
 export interface SegmentProperties {
     SegmentGroups?: SegmentGroups;
     Dimensions?: SegmentDimensions;
     ApplicationId: Value<string>;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class Segment extends ResourceBase<SegmentProperties> {
     static Coordinates: typeof Coordinates;
-    static Groups: typeof Groups;
-    static Behavior: typeof Behavior;
     static SegmentDimensions: typeof SegmentDimensions;
     static SourceSegments: typeof SourceSegments;
-    static Location: typeof Location;
     static AttributeDimension: typeof AttributeDimension;
     static GPSPoint: typeof GPSPoint;
     static Demographic: typeof Demographic;
     static Recency: typeof Recency;
-    static SegmentGroups: typeof SegmentGroups;
     static SetDimension: typeof SetDimension;
+    static Groups: typeof Groups;
+    static Behavior: typeof Behavior;
+    static Location: typeof Location;
+    static SegmentGroups: typeof SegmentGroups;
     constructor(properties: SegmentProperties);
 }

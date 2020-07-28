@@ -8,7 +8,10 @@ export declare class SubDomainSetting {
 export interface DomainProperties {
     SubDomainSettings: List<SubDomainSetting>;
     AppId: Value<string>;
+    AutoSubDomainIAMRole?: Value<string>;
     DomainName: Value<string>;
+    EnableAutoSubDomain?: Value<boolean>;
+    AutoSubDomainCreationPatterns?: List<Value<string>>;
 }
 export default class Domain extends ResourceBase<DomainProperties> {
     static SubDomainSetting: typeof SubDomainSetting;

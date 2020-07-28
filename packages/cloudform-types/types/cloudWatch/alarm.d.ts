@@ -12,6 +12,7 @@ export declare class MetricDataQuery {
     Id: Value<string>;
     Label?: Value<string>;
     MetricStat?: MetricStat;
+    Period?: Value<number>;
     ReturnData?: Value<boolean>;
     constructor(properties: MetricDataQuery);
 }
@@ -44,7 +45,8 @@ export interface AlarmProperties {
     OKActions?: List<Value<string>>;
     Period?: Value<number>;
     Statistic?: Value<string>;
-    Threshold: Value<number>;
+    Threshold?: Value<number>;
+    ThresholdMetricId?: Value<string>;
     TreatMissingData?: Value<string>;
     Unit?: Value<string>;
 }

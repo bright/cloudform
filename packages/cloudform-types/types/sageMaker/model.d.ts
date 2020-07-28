@@ -7,11 +7,13 @@ export declare class VpcConfig {
 }
 export declare class ContainerDefinition {
     ContainerHostname?: Value<string>;
+    ModelPackageName?: Value<string>;
+    Mode?: Value<string>;
     Environment?: {
         [key: string]: any;
     };
     ModelDataUrl?: Value<string>;
-    Image: Value<string>;
+    Image?: Value<string>;
     constructor(properties: ContainerDefinition);
 }
 export interface ModelProperties {

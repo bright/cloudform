@@ -16,6 +16,7 @@ export declare class VirtualRouterSpec {
 export interface VirtualRouterProperties {
     MeshName: Value<string>;
     VirtualRouterName: Value<string>;
+    MeshOwner?: Value<string>;
     Spec: VirtualRouterSpec;
     Tags?: List<ResourceTag>;
 }

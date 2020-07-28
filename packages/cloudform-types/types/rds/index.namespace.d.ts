@@ -7,6 +7,8 @@ import DBCluster_ from './dbCluster';
 import OptionGroup_ from './optionGroup';
 import DBParameterGroup_ from './dbParameterGroup';
 import EventSubscription_ from './eventSubscription';
+import DBProxy_ from './dbProxy';
+import DBProxyTargetGroup_ from './dbProxyTargetGroup';
 export declare namespace RDS {
     const DBSubnetGroup: typeof DBSubnetGroup_;
     const DBInstance: typeof DBInstance_;
@@ -17,6 +19,8 @@ export declare namespace RDS {
     const OptionGroup: typeof OptionGroup_;
     const DBParameterGroup: typeof DBParameterGroup_;
     const EventSubscription: typeof EventSubscription_;
+    const DBProxy: typeof DBProxy_;
+    const DBProxyTargetGroup: typeof DBProxyTargetGroup_;
     type DBSubnetGroup = DBSubnetGroup_;
     type DBInstance = DBInstance_;
     type DBSecurityGroup = DBSecurityGroup_;
@@ -26,4 +30,6 @@ export declare namespace RDS {
     type OptionGroup = OptionGroup_;
     type DBParameterGroup = DBParameterGroup_;
     type EventSubscription = EventSubscription_;
+    type DBProxy = DBProxy_;
+    type DBProxyTargetGroup = DBProxyTargetGroup_;
 }

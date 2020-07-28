@@ -11,7 +11,7 @@ export declare class Icmp {
     constructor(properties: Icmp);
 }
 export interface NetworkAclEntryProperties {
-    CidrBlock: Value<string>;
+    CidrBlock?: Value<string>;
     Egress?: Value<boolean>;
     Icmp?: Icmp;
     Ipv6CidrBlock?: Value<string>;

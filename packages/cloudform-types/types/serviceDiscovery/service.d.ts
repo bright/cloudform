@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class HealthCheckCustomConfig {
     FailureThreshold?: Value<number>;
@@ -27,6 +27,7 @@ export interface ServiceProperties {
     DnsConfig?: DnsConfig;
     NamespaceId?: Value<string>;
     HealthCheckConfig?: HealthCheckConfig;
+    Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
 export default class Service extends ResourceBase<ServiceProperties> {

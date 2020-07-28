@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class EndpointConfiguration {
     Types?: List<Value<string>>;
@@ -9,6 +9,8 @@ export interface DomainNameProperties {
     DomainName: Value<string>;
     EndpointConfiguration?: EndpointConfiguration;
     RegionalCertificateArn?: Value<string>;
+    SecurityPolicy?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class DomainName extends ResourceBase<DomainNameProperties> {
     static EndpointConfiguration: typeof EndpointConfiguration;

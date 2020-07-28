@@ -13,6 +13,9 @@ export declare class DeviceDefinitionVersion {
 }
 export interface DeviceDefinitionProperties {
     InitialVersion?: DeviceDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class DeviceDefinition extends ResourceBase<DeviceDefinitionProperties> {

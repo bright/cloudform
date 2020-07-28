@@ -9,6 +9,8 @@ import Model_ from './model';
 import Authorizer_ from './authorizer';
 import IntegrationResponse_ from './integrationResponse';
 import ApiMapping_ from './apiMapping';
+import ApiGatewayManagedOverrides_ from './apiGatewayManagedOverrides';
+import VpcLink_ from './vpcLink';
 export declare namespace ApiGatewayV2 {
     const Route: typeof Route_;
     const Stage: typeof Stage_;
@@ -21,6 +23,8 @@ export declare namespace ApiGatewayV2 {
     const Authorizer: typeof Authorizer_;
     const IntegrationResponse: typeof IntegrationResponse_;
     const ApiMapping: typeof ApiMapping_;
+    const ApiGatewayManagedOverrides: typeof ApiGatewayManagedOverrides_;
+    const VpcLink: typeof VpcLink_;
     type Route = Route_;
     type Stage = Stage_;
     type Api = Api_;
@@ -32,4 +36,6 @@ export declare namespace ApiGatewayV2 {
     type Authorizer = Authorizer_;
     type IntegrationResponse = IntegrationResponse_;
     type ApiMapping = ApiMapping_;
+    type ApiGatewayManagedOverrides = ApiGatewayManagedOverrides_;
+    type VpcLink = VpcLink_;
 }

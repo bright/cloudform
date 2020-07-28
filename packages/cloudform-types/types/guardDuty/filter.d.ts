@@ -21,7 +21,7 @@ export interface FilterProperties {
     DetectorId: Value<string>;
     FindingCriteria: FindingCriteria;
     Rank: Value<number>;
-    Name?: Value<string>;
+    Name: Value<string>;
 }
 export default class Filter extends ResourceBase<FilterProperties> {
     static FindingCriteria: typeof FindingCriteria;

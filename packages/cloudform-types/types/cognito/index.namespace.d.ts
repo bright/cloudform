@@ -1,23 +1,38 @@
+import UserPoolRiskConfigurationAttachment_ from './userPoolRiskConfigurationAttachment';
+import UserPoolIdentityProvider_ from './userPoolIdentityProvider';
 import UserPoolGroup_ from './userPoolGroup';
 import IdentityPool_ from './identityPool';
+import UserPoolResourceServer_ from './userPoolResourceServer';
 import UserPool_ from './userPool';
 import UserPoolClient_ from './userPoolClient';
 import UserPoolUserToGroupAttachment_ from './userPoolUserToGroupAttachment';
 import IdentityPoolRoleAttachment_ from './identityPoolRoleAttachment';
 import UserPoolUser_ from './userPoolUser';
+import UserPoolUICustomizationAttachment_ from './userPoolUiCustomizationAttachment';
+import UserPoolDomain_ from './userPoolDomain';
 export declare namespace Cognito {
+    const UserPoolRiskConfigurationAttachment: typeof UserPoolRiskConfigurationAttachment_;
+    const UserPoolIdentityProvider: typeof UserPoolIdentityProvider_;
     const UserPoolGroup: typeof UserPoolGroup_;
     const IdentityPool: typeof IdentityPool_;
+    const UserPoolResourceServer: typeof UserPoolResourceServer_;
     const UserPool: typeof UserPool_;
     const UserPoolClient: typeof UserPoolClient_;
     const UserPoolUserToGroupAttachment: typeof UserPoolUserToGroupAttachment_;
     const IdentityPoolRoleAttachment: typeof IdentityPoolRoleAttachment_;
     const UserPoolUser: typeof UserPoolUser_;
+    const UserPoolUICustomizationAttachment: typeof UserPoolUICustomizationAttachment_;
+    const UserPoolDomain: typeof UserPoolDomain_;
+    type UserPoolRiskConfigurationAttachment = UserPoolRiskConfigurationAttachment_;
+    type UserPoolIdentityProvider = UserPoolIdentityProvider_;
     type UserPoolGroup = UserPoolGroup_;
     type IdentityPool = IdentityPool_;
+    type UserPoolResourceServer = UserPoolResourceServer_;
     type UserPool = UserPool_;
     type UserPoolClient = UserPoolClient_;
     type UserPoolUserToGroupAttachment = UserPoolUserToGroupAttachment_;
     type IdentityPoolRoleAttachment = IdentityPoolRoleAttachment_;
     type UserPoolUser = UserPoolUser_;
+    type UserPoolUICustomizationAttachment = UserPoolUICustomizationAttachment_;
+    type UserPoolDomain = UserPoolDomain_;
 }

@@ -10,6 +10,9 @@ export interface SubscriptionProperties {
     };
     Protocol: Value<string>;
     RawMessageDelivery?: Value<boolean>;
+    RedrivePolicy?: {
+        [key: string]: any;
+    };
     Region?: Value<string>;
     TopicArn: Value<string>;
 }

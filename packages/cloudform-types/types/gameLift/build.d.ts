@@ -3,11 +3,13 @@ import { Value } from '../dataTypes';
 export declare class S3Location {
     Bucket: Value<string>;
     Key: Value<string>;
+    ObjectVersion?: Value<string>;
     RoleArn: Value<string>;
     constructor(properties: S3Location);
 }
 export interface BuildProperties {
     Name?: Value<string>;
+    OperatingSystem?: Value<string>;
     StorageLocation?: S3Location;
     Version?: Value<string>;
 }

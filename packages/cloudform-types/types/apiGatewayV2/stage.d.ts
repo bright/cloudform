@@ -15,9 +15,10 @@ export declare class RouteSettings {
 }
 export interface StageProperties {
     ClientCertificateId?: Value<string>;
-    DeploymentId: Value<string>;
+    DeploymentId?: Value<string>;
     Description?: Value<string>;
     AccessLogSettings?: AccessLogSettings;
+    AutoDeploy?: Value<boolean>;
     RouteSettings?: {
         [key: string]: any;
     };

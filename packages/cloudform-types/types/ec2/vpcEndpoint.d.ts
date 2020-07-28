@@ -11,8 +11,6 @@ export interface VPCEndpointProperties {
     SubnetIds?: List<Value<string>>;
     VpcEndpointType?: Value<string>;
     VpcId: Value<string>;
-    IsPrivateDnsEnabled?: Value<boolean>;
-    VPCEndpointType?: Value<string>;
 }
 export default class VPCEndpoint extends ResourceBase<VPCEndpointProperties> {
     constructor(properties: VPCEndpointProperties);

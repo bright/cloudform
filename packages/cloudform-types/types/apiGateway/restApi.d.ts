@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class S3Location {
     Bucket?: Value<string>;
@@ -9,6 +9,7 @@ export declare class S3Location {
 }
 export declare class EndpointConfiguration {
     Types?: List<Value<string>>;
+    VpcEndpointIds?: List<Value<string>>;
     constructor(properties: EndpointConfiguration);
 }
 export interface RestApiProperties {
@@ -30,6 +31,7 @@ export interface RestApiProperties {
     Policy?: {
         [key: string]: any;
     };
+    Tags?: List<ResourceTag>;
 }
 export default class RestApi extends ResourceBase<RestApiProperties> {
     static S3Location: typeof S3Location;

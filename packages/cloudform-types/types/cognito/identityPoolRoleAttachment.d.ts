@@ -4,6 +4,7 @@ export declare class RoleMapping {
     Type: Value<string>;
     AmbiguousRoleResolution?: Value<string>;
     RulesConfiguration?: RulesConfigurationType;
+    IdentityProvider?: Value<string>;
     constructor(properties: RoleMapping);
 }
 export declare class MappingRule {

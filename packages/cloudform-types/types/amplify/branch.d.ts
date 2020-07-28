@@ -15,6 +15,8 @@ export interface BranchProperties {
     Description?: Value<string>;
     EnvironmentVariables?: List<EnvironmentVariable>;
     AppId: Value<string>;
+    PullRequestEnvironmentName?: Value<string>;
+    EnablePullRequestPreview?: Value<boolean>;
     EnableAutoBuild?: Value<boolean>;
     BuildSpec?: Value<string>;
     Stage?: Value<string>;

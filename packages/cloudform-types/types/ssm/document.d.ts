@@ -5,6 +5,7 @@ export interface DocumentProperties {
         [key: string]: any;
     };
     DocumentType?: Value<string>;
+    Name?: Value<string>;
     Tags?: List<ResourceTag>;
 }
 export default class Document extends ResourceBase<DocumentProperties> {

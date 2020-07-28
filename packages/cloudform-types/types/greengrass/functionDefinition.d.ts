@@ -51,6 +51,9 @@ export declare class ResourceAccessPolicy {
 }
 export interface FunctionDefinitionProperties {
     InitialVersion?: FunctionDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class FunctionDefinition extends ResourceBase<FunctionDefinitionProperties> {

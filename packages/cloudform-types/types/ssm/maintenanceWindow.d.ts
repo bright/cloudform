@@ -7,6 +7,7 @@ export interface MaintenanceWindowProperties {
     Cutoff: Value<number>;
     Schedule: Value<string>;
     Duration: Value<number>;
+    ScheduleOffset?: Value<number>;
     EndDate?: Value<string>;
     Tags?: List<ResourceTag>;
     Name: Value<string>;

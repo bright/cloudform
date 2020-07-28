@@ -21,6 +21,11 @@ export declare class InputAttachment {
     InputSettings?: InputSettings;
     constructor(properties: InputAttachment);
 }
+export declare class MultiplexProgramChannelDestinationSettings {
+    MultiplexId?: Value<string>;
+    ProgramName?: Value<string>;
+    constructor(properties: MultiplexProgramChannelDestinationSettings);
+}
 export declare class EmbeddedSourceSettings {
     Source608ChannelNumber?: Value<number>;
     Scte20Detection?: Value<string>;
@@ -122,6 +127,7 @@ export declare class OutputDestinationSettings {
     constructor(properties: OutputDestinationSettings);
 }
 export declare class OutputDestination {
+    MultiplexSettings?: MultiplexProgramChannelDestinationSettings;
     Id?: Value<string>;
     Settings?: List<OutputDestinationSettings>;
     MediaPackageSettings?: List<MediaPackageOutputDestinationSettings>;
@@ -153,6 +159,7 @@ export default class Channel extends ResourceBase<ChannelProperties> {
     static HlsInputSettings: typeof HlsInputSettings;
     static VideoSelectorProgramId: typeof VideoSelectorProgramId;
     static InputAttachment: typeof InputAttachment;
+    static MultiplexProgramChannelDestinationSettings: typeof MultiplexProgramChannelDestinationSettings;
     static EmbeddedSourceSettings: typeof EmbeddedSourceSettings;
     static InputSpecification: typeof InputSpecification;
     static Scte27SourceSettings: typeof Scte27SourceSettings;

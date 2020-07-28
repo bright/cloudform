@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class OrganizationAggregationSource {
     AllAwsRegions?: Value<boolean>;
@@ -16,6 +16,7 @@ export interface ConfigurationAggregatorProperties {
     AccountAggregationSources?: List<AccountAggregationSource>;
     ConfigurationAggregatorName: Value<string>;
     OrganizationAggregationSource?: OrganizationAggregationSource;
+    Tags?: List<ResourceTag>;
 }
 export default class ConfigurationAggregator extends ResourceBase<ConfigurationAggregatorProperties> {
     static OrganizationAggregationSource: typeof OrganizationAggregationSource;

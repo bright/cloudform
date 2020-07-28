@@ -4,6 +4,11 @@ export declare class BucketEncryption {
     ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>;
     constructor(properties: BucketEncryption);
 }
+export declare class Metrics {
+    EventThreshold: ReplicationTimeValue;
+    Status: Value<string>;
+    constructor(properties: Metrics);
+}
 export declare class RoutingRuleCondition {
     HttpErrorCodeReturnedEquals?: Value<string>;
     KeyPrefixEquals?: Value<string>;
@@ -42,6 +47,11 @@ export declare class NotificationConfiguration {
     QueueConfigurations?: List<QueueConfiguration>;
     TopicConfigurations?: List<TopicConfiguration>;
     constructor(properties: NotificationConfiguration);
+}
+export declare class ReplicationTime {
+    Status: Value<string>;
+    Time: ReplicationTimeValue;
+    constructor(properties: ReplicationTime);
 }
 export declare class ServerSideEncryptionByDefault {
     KMSMasterKeyID?: Value<string>;
@@ -96,6 +106,8 @@ export declare class ReplicationDestination {
     Account?: Value<string>;
     Bucket: Value<string>;
     EncryptionConfiguration?: EncryptionConfiguration;
+    Metrics?: Metrics;
+    ReplicationTime?: ReplicationTime;
     StorageClass?: Value<string>;
     constructor(properties: ReplicationDestination);
 }
@@ -111,6 +123,10 @@ export declare class NoncurrentVersionTransition {
 export declare class AbortIncompleteMultipartUpload {
     DaysAfterInitiation: Value<number>;
     constructor(properties: AbortIncompleteMultipartUpload);
+}
+export declare class DeleteMarkerReplication {
+    Status?: Value<string>;
+    constructor(properties: DeleteMarkerReplication);
 }
 export declare class PublicAccessBlockConfiguration {
     BlockPublicAcls?: Value<boolean>;
@@ -136,9 +152,12 @@ export declare class LambdaConfiguration {
     constructor(properties: LambdaConfiguration);
 }
 export declare class ReplicationRule {
+    DeleteMarkerReplication?: DeleteMarkerReplication;
     Destination: ReplicationDestination;
+    Filter?: ReplicationRuleFilter;
     Id?: Value<string>;
-    Prefix: Value<string>;
+    Prefix?: Value<string>;
+    Priority?: Value<number>;
     SourceSelectionCriteria?: SourceSelectionCriteria;
     Status: Value<string>;
     constructor(properties: ReplicationRule);
@@ -238,10 +257,25 @@ export declare class DataExport {
     OutputSchemaVersion: Value<string>;
     constructor(properties: DataExport);
 }
+export declare class ReplicationTimeValue {
+    Minutes: Value<number>;
+    constructor(properties: ReplicationTimeValue);
+}
+export declare class ReplicationRuleFilter {
+    And?: ReplicationRuleAndOperator;
+    Prefix?: Value<string>;
+    TagFilter?: TagFilter;
+    constructor(properties: ReplicationRuleFilter);
+}
 export declare class FilterRule {
     Name: Value<string>;
     Value: Value<string>;
     constructor(properties: FilterRule);
+}
+export declare class ReplicationRuleAndOperator {
+    Prefix?: Value<string>;
+    TagFilters?: List<TagFilter>;
+    constructor(properties: ReplicationRuleAndOperator);
 }
 export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration;
@@ -265,6 +299,7 @@ export interface BucketProperties {
 }
 export default class Bucket extends ResourceBase<BucketProperties> {
     static BucketEncryption: typeof BucketEncryption;
+    static Metrics: typeof Metrics;
     static RoutingRuleCondition: typeof RoutingRuleCondition;
     static LifecycleConfiguration: typeof LifecycleConfiguration;
     static CorsRule: typeof CorsRule;
@@ -272,6 +307,7 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static AccessControlTranslation: typeof AccessControlTranslation;
     static VersioningConfiguration: typeof VersioningConfiguration;
     static NotificationConfiguration: typeof NotificationConfiguration;
+    static ReplicationTime: typeof ReplicationTime;
     static ServerSideEncryptionByDefault: typeof ServerSideEncryptionByDefault;
     static RedirectAllRequestsTo: typeof RedirectAllRequestsTo;
     static S3KeyFilter: typeof S3KeyFilter;
@@ -285,6 +321,7 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static AccelerateConfiguration: typeof AccelerateConfiguration;
     static NoncurrentVersionTransition: typeof NoncurrentVersionTransition;
     static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
+    static DeleteMarkerReplication: typeof DeleteMarkerReplication;
     static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;
     static DefaultRetention: typeof DefaultRetention;
     static NotificationFilter: typeof NotificationFilter;
@@ -306,6 +343,9 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static TagFilter: typeof TagFilter;
     static Transition: typeof Transition;
     static DataExport: typeof DataExport;
+    static ReplicationTimeValue: typeof ReplicationTimeValue;
+    static ReplicationRuleFilter: typeof ReplicationRuleFilter;
     static FilterRule: typeof FilterRule;
+    static ReplicationRuleAndOperator: typeof ReplicationRuleAndOperator;
     constructor(properties?: BucketProperties);
 }

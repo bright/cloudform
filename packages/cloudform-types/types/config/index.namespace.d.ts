@@ -3,18 +3,27 @@ import ConfigurationAggregator_ from './configurationAggregator';
 import AggregationAuthorization_ from './aggregationAuthorization';
 import ConfigurationRecorder_ from './configurationRecorder';
 import DeliveryChannel_ from './deliveryChannel';
+import OrganizationConfigRule_ from './organizationConfigRule';
+import OrganizationConformancePack_ from './organizationConformancePack';
 import ConfigRule_ from './configRule';
+import ConformancePack_ from './conformancePack';
 export declare namespace Config {
     const RemediationConfiguration: typeof RemediationConfiguration_;
     const ConfigurationAggregator: typeof ConfigurationAggregator_;
     const AggregationAuthorization: typeof AggregationAuthorization_;
     const ConfigurationRecorder: typeof ConfigurationRecorder_;
     const DeliveryChannel: typeof DeliveryChannel_;
+    const OrganizationConfigRule: typeof OrganizationConfigRule_;
+    const OrganizationConformancePack: typeof OrganizationConformancePack_;
     const ConfigRule: typeof ConfigRule_;
+    const ConformancePack: typeof ConformancePack_;
     type RemediationConfiguration = RemediationConfiguration_;
     type ConfigurationAggregator = ConfigurationAggregator_;
     type AggregationAuthorization = AggregationAuthorization_;
     type ConfigurationRecorder = ConfigurationRecorder_;
     type DeliveryChannel = DeliveryChannel_;
+    type OrganizationConfigRule = OrganizationConfigRule_;
+    type OrganizationConformancePack = OrganizationConformancePack_;
     type ConfigRule = ConfigRule_;
+    type ConformancePack = ConformancePack_;
 }

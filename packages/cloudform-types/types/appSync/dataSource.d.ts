@@ -13,6 +13,8 @@ export declare class AwsIamConfig {
 export declare class DynamoDBConfig {
     TableName: Value<string>;
     AwsRegion: Value<string>;
+    Versioned?: Value<boolean>;
+    DeltaSyncConfig?: DeltaSyncConfig;
     UseCallerCredentials?: Value<boolean>;
     constructor(properties: DynamoDBConfig);
 }
@@ -43,6 +45,12 @@ export declare class ElasticsearchConfig {
     Endpoint: Value<string>;
     constructor(properties: ElasticsearchConfig);
 }
+export declare class DeltaSyncConfig {
+    BaseTableTTL: Value<string>;
+    DeltaSyncTableTTL: Value<string>;
+    DeltaSyncTableName: Value<string>;
+    constructor(properties: DeltaSyncConfig);
+}
 export interface DataSourceProperties {
     Type: Value<string>;
     Description?: Value<string>;
@@ -64,5 +72,6 @@ export default class DataSource extends ResourceBase<DataSourceProperties> {
     static LambdaConfig: typeof LambdaConfig;
     static HttpConfig: typeof HttpConfig;
     static ElasticsearchConfig: typeof ElasticsearchConfig;
+    static DeltaSyncConfig: typeof DeltaSyncConfig;
     constructor(properties: DataSourceProperties);
 }

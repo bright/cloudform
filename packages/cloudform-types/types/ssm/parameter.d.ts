@@ -7,6 +7,7 @@ export interface ParameterProperties {
     AllowedPattern?: Value<string>;
     Tier?: Value<string>;
     Value: Value<string>;
+    DataType?: Value<string>;
     Tags?: {
         [key: string]: any;
     };

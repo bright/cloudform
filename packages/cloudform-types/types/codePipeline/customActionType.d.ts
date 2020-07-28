@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ArtifactDetails {
     MaximumCount: Value<number>;
@@ -29,6 +29,7 @@ export interface CustomActionTypeProperties {
     OutputArtifactDetails: ArtifactDetails;
     Provider: Value<string>;
     Settings?: Settings;
+    Tags?: List<ResourceTag>;
     Version: Value<string>;
 }
 export default class CustomActionType extends ResourceBase<CustomActionTypeProperties> {

@@ -9,6 +9,11 @@ export declare class DeadLetterConfig {
     TargetArn?: Value<string>;
     constructor(properties: DeadLetterConfig);
 }
+export declare class FileSystemConfig {
+    Arn: Value<string>;
+    LocalMountPath: Value<string>;
+    constructor(properties: FileSystemConfig);
+}
 export declare class Code {
     S3Bucket?: Value<string>;
     S3Key?: Value<string>;
@@ -31,6 +36,7 @@ export interface FunctionProperties {
     DeadLetterConfig?: DeadLetterConfig;
     Description?: Value<string>;
     Environment?: Environment;
+    FileSystemConfigs?: List<FileSystemConfig>;
     FunctionName?: Value<string>;
     Handler: Value<string>;
     KmsKeyArn?: Value<string>;
@@ -47,6 +53,7 @@ export interface FunctionProperties {
 export default class Function extends ResourceBase<FunctionProperties> {
     static VpcConfig: typeof VpcConfig;
     static DeadLetterConfig: typeof DeadLetterConfig;
+    static FileSystemConfig: typeof FileSystemConfig;
     static Code: typeof Code;
     static TracingConfig: typeof TracingConfig;
     static Environment: typeof Environment;

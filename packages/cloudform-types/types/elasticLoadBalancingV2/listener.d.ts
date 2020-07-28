@@ -17,11 +17,17 @@ export declare class Action {
     AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
     AuthenticateOidcConfig?: AuthenticateOidcConfig;
     FixedResponseConfig?: FixedResponseConfig;
+    ForwardConfig?: ForwardConfig;
     Order?: Value<number>;
     RedirectConfig?: RedirectConfig;
     TargetGroupArn?: Value<string>;
     Type: Value<string>;
     constructor(properties: Action);
+}
+export declare class ForwardConfig {
+    TargetGroupStickinessConfig?: TargetGroupStickinessConfig;
+    TargetGroups?: List<TargetGroupTuple>;
+    constructor(properties: ForwardConfig);
 }
 export declare class AuthenticateOidcConfig {
     AuthenticationRequestExtraParams?: {
@@ -58,7 +64,18 @@ export declare class Certificate {
     CertificateArn?: Value<string>;
     constructor(properties: Certificate);
 }
+export declare class TargetGroupStickinessConfig {
+    DurationSeconds?: Value<number>;
+    Enabled?: Value<boolean>;
+    constructor(properties: TargetGroupStickinessConfig);
+}
+export declare class TargetGroupTuple {
+    TargetGroupArn?: Value<string>;
+    Weight?: Value<number>;
+    constructor(properties: TargetGroupTuple);
+}
 export interface ListenerProperties {
+    AlpnPolicy?: List<Value<string>>;
     Certificates?: List<Certificate>;
     DefaultActions: List<Action>;
     LoadBalancerArn: Value<string>;
@@ -69,9 +86,12 @@ export interface ListenerProperties {
 export default class Listener extends ResourceBase<ListenerProperties> {
     static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
     static Action: typeof Action;
+    static ForwardConfig: typeof ForwardConfig;
     static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
     static RedirectConfig: typeof RedirectConfig;
     static FixedResponseConfig: typeof FixedResponseConfig;
     static Certificate: typeof Certificate;
+    static TargetGroupStickinessConfig: typeof TargetGroupStickinessConfig;
+    static TargetGroupTuple: typeof TargetGroupTuple;
     constructor(properties: ListenerProperties);
 }

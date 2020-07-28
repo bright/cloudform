@@ -2,6 +2,7 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LaunchTemplateOverrides {
     InstanceType?: Value<string>;
+    WeightedCapacity?: Value<string>;
     constructor(properties: LaunchTemplateOverrides);
 }
 export declare class LifecycleHookSpecification {
@@ -67,10 +68,12 @@ export interface AutoScalingGroupProperties {
     LaunchTemplate?: LaunchTemplateSpecification;
     LifecycleHookSpecificationList?: List<LifecycleHookSpecification>;
     LoadBalancerNames?: List<Value<string>>;
+    MaxInstanceLifetime?: Value<number>;
     MaxSize: Value<string>;
     MetricsCollection?: List<MetricsCollection>;
     MinSize: Value<string>;
     MixedInstancesPolicy?: MixedInstancesPolicy;
+    NewInstancesProtectedFromScaleIn?: Value<boolean>;
     NotificationConfigurations?: List<NotificationConfiguration>;
     PlacementGroup?: Value<string>;
     ServiceLinkedRoleARN?: Value<string>;

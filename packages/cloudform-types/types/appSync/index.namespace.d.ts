@@ -4,6 +4,7 @@ import GraphQLApi_ from './graphQlApi';
 import ApiKey_ from './apiKey';
 import DataSource_ from './dataSource';
 import FunctionConfiguration_ from './functionConfiguration';
+import ApiCache_ from './apiCache';
 export declare namespace AppSync {
     const Resolver: typeof Resolver_;
     const GraphQLSchema: typeof GraphQLSchema_;
@@ -11,10 +12,12 @@ export declare namespace AppSync {
     const ApiKey: typeof ApiKey_;
     const DataSource: typeof DataSource_;
     const FunctionConfiguration: typeof FunctionConfiguration_;
+    const ApiCache: typeof ApiCache_;
     type Resolver = Resolver_;
     type GraphQLSchema = GraphQLSchema_;
     type GraphQLApi = GraphQLApi_;
     type ApiKey = ApiKey_;
     type DataSource = DataSource_;
     type FunctionConfiguration = FunctionConfiguration_;
+    type ApiCache = ApiCache_;
 }

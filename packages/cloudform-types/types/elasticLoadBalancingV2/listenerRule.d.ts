@@ -48,6 +48,7 @@ export declare class Action {
     AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
     AuthenticateOidcConfig?: AuthenticateOidcConfig;
     FixedResponseConfig?: FixedResponseConfig;
+    ForwardConfig?: ForwardConfig;
     Order?: Value<number>;
     RedirectConfig?: RedirectConfig;
     TargetGroupArn?: Value<string>;
@@ -66,6 +67,16 @@ export declare class HttpHeaderConfig {
     HttpHeaderName?: Value<string>;
     Values?: List<Value<string>>;
     constructor(properties: HttpHeaderConfig);
+}
+export declare class ForwardConfig {
+    TargetGroupStickinessConfig?: TargetGroupStickinessConfig;
+    TargetGroups?: List<TargetGroupTuple>;
+    constructor(properties: ForwardConfig);
+}
+export declare class TargetGroupTuple {
+    TargetGroupArn?: Value<string>;
+    Weight?: Value<number>;
+    constructor(properties: TargetGroupTuple);
 }
 export declare class HttpRequestMethodConfig {
     Values?: List<Value<string>>;
@@ -91,6 +102,11 @@ export declare class RedirectConfig {
     StatusCode: Value<string>;
     constructor(properties: RedirectConfig);
 }
+export declare class TargetGroupStickinessConfig {
+    DurationSeconds?: Value<number>;
+    Enabled?: Value<boolean>;
+    constructor(properties: TargetGroupStickinessConfig);
+}
 export declare class HostHeaderConfig {
     Values?: List<Value<string>>;
     constructor(properties: HostHeaderConfig);
@@ -111,9 +127,12 @@ export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {
     static QueryStringConfig: typeof QueryStringConfig;
     static PathPatternConfig: typeof PathPatternConfig;
     static HttpHeaderConfig: typeof HttpHeaderConfig;
+    static ForwardConfig: typeof ForwardConfig;
+    static TargetGroupTuple: typeof TargetGroupTuple;
     static HttpRequestMethodConfig: typeof HttpRequestMethodConfig;
     static RuleCondition: typeof RuleCondition;
     static RedirectConfig: typeof RedirectConfig;
+    static TargetGroupStickinessConfig: typeof TargetGroupStickinessConfig;
     static HostHeaderConfig: typeof HostHeaderConfig;
     constructor(properties: ListenerRuleProperties);
 }

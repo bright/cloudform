@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ApiStage {
     ApiId?: Value<string>;
@@ -23,6 +23,7 @@ export interface UsagePlanProperties {
     ApiStages?: List<ApiStage>;
     Description?: Value<string>;
     Quota?: QuotaSettings;
+    Tags?: List<ResourceTag>;
     Throttle?: ThrottleSettings;
     UsagePlanName?: Value<string>;
 }

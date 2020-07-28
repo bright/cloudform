@@ -1,21 +1,21 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 4.3.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const routeTable_1 = require("./routeTable");
@@ -25,6 +25,7 @@ const capacityReservation_1 = require("./capacityReservation");
 const vpcEndpointServicePermissions_1 = require("./vpcEndpointServicePermissions");
 const transitGatewayRouteTableAssociation_1 = require("./transitGatewayRouteTableAssociation");
 const volume_1 = require("./volume");
+const localGatewayRoute_1 = require("./localGatewayRoute");
 const eip_1 = require("./eip");
 const flowLog_1 = require("./flowLog");
 const securityGroupEgress_1 = require("./securityGroupEgress");
@@ -39,25 +40,32 @@ const eipAssociation_1 = require("./eipAssociation");
 const vpnGateway_1 = require("./vpnGateway");
 const vpnConnection_1 = require("./vpnConnection");
 const transitGatewayRouteTable_1 = require("./transitGatewayRouteTable");
+const vpcEndpointService_1 = require("./vpcEndpointService");
 const clientVpnRoute_1 = require("./clientVpnRoute");
 const placementGroup_1 = require("./placementGroup");
+const gatewayRouteTableAssociation_1 = require("./gatewayRouteTableAssociation");
 const networkAclEntry_1 = require("./networkAclEntry");
 const internetGateway_1 = require("./internetGateway");
 const launchTemplate_1 = require("./launchTemplate");
 const spotFleet_1 = require("./spotFleet");
 const vpnConnectionRoute_1 = require("./vpnConnectionRoute");
 const networkInterfacePermission_1 = require("./networkInterfacePermission");
+const trafficMirrorFilter_1 = require("./trafficMirrorFilter");
 const securityGroupIngress_1 = require("./securityGroupIngress");
 const clientVpnEndpoint_1 = require("./clientVpnEndpoint");
 const subnetRouteTableAssociation_1 = require("./subnetRouteTableAssociation");
 const route_1 = require("./route");
+const localGatewayRouteTableVpcAssociation_1 = require("./localGatewayRouteTableVpcAssociation");
 const transitGatewayRouteTablePropagation_1 = require("./transitGatewayRouteTablePropagation");
 const networkInterface_1 = require("./networkInterface");
 const clientVpnAuthorizationRule_1 = require("./clientVpnAuthorizationRule");
 const subnetNetworkAclAssociation_1 = require("./subnetNetworkAclAssociation");
+const trafficMirrorSession_1 = require("./trafficMirrorSession");
 const subnetCidrBlock_1 = require("./subnetCidrBlock");
 const natGateway_1 = require("./natGateway");
 const securityGroup_1 = require("./securityGroup");
+const trafficMirrorFilterRule_1 = require("./trafficMirrorFilterRule");
+const prefixList_1 = require("./prefixList");
 const vpc_1 = require("./vpc");
 const transitGatewayRoute_1 = require("./transitGatewayRoute");
 const networkAcl_1 = require("./networkAcl");
@@ -70,8 +78,8 @@ const vpcGatewayAttachment_1 = require("./vpcGatewayAttachment");
 const vpcCidrBlock_1 = require("./vpcCidrBlock");
 const ec2Fleet_1 = require("./ec2Fleet");
 const vpcdhcpOptionsAssociation_1 = require("./vpcdhcpOptionsAssociation");
+const trafficMirrorTarget_1 = require("./trafficMirrorTarget");
 const vpcEndpointConnectionNotification_1 = require("./vpcEndpointConnectionNotification");
-const vpcEndpointService_1 = require("./vpcEndpointService");
 var EC2;
 (function (EC2) {
     EC2.RouteTable = routeTable_1.default;
@@ -81,6 +89,7 @@ var EC2;
     EC2.VPCEndpointServicePermissions = vpcEndpointServicePermissions_1.default;
     EC2.TransitGatewayRouteTableAssociation = transitGatewayRouteTableAssociation_1.default;
     EC2.Volume = volume_1.default;
+    EC2.LocalGatewayRoute = localGatewayRoute_1.default;
     EC2.EIP = eip_1.default;
     EC2.FlowLog = flowLog_1.default;
     EC2.SecurityGroupEgress = securityGroupEgress_1.default;
@@ -95,25 +104,32 @@ var EC2;
     EC2.VPNGateway = vpnGateway_1.default;
     EC2.VPNConnection = vpnConnection_1.default;
     EC2.TransitGatewayRouteTable = transitGatewayRouteTable_1.default;
+    EC2.VPCEndpointService = vpcEndpointService_1.default;
     EC2.ClientVpnRoute = clientVpnRoute_1.default;
     EC2.PlacementGroup = placementGroup_1.default;
+    EC2.GatewayRouteTableAssociation = gatewayRouteTableAssociation_1.default;
     EC2.NetworkAclEntry = networkAclEntry_1.default;
     EC2.InternetGateway = internetGateway_1.default;
     EC2.LaunchTemplate = launchTemplate_1.default;
     EC2.SpotFleet = spotFleet_1.default;
     EC2.VPNConnectionRoute = vpnConnectionRoute_1.default;
     EC2.NetworkInterfacePermission = networkInterfacePermission_1.default;
+    EC2.TrafficMirrorFilter = trafficMirrorFilter_1.default;
     EC2.SecurityGroupIngress = securityGroupIngress_1.default;
     EC2.ClientVpnEndpoint = clientVpnEndpoint_1.default;
     EC2.SubnetRouteTableAssociation = subnetRouteTableAssociation_1.default;
     EC2.Route = route_1.default;
+    EC2.LocalGatewayRouteTableVPCAssociation = localGatewayRouteTableVpcAssociation_1.default;
     EC2.TransitGatewayRouteTablePropagation = transitGatewayRouteTablePropagation_1.default;
     EC2.NetworkInterface = networkInterface_1.default;
     EC2.ClientVpnAuthorizationRule = clientVpnAuthorizationRule_1.default;
     EC2.SubnetNetworkAclAssociation = subnetNetworkAclAssociation_1.default;
+    EC2.TrafficMirrorSession = trafficMirrorSession_1.default;
     EC2.SubnetCidrBlock = subnetCidrBlock_1.default;
     EC2.NatGateway = natGateway_1.default;
     EC2.SecurityGroup = securityGroup_1.default;
+    EC2.TrafficMirrorFilterRule = trafficMirrorFilterRule_1.default;
+    EC2.PrefixList = prefixList_1.default;
     EC2.VPC = vpc_1.default;
     EC2.TransitGatewayRoute = transitGatewayRoute_1.default;
     EC2.NetworkAcl = networkAcl_1.default;
@@ -126,6 +142,6 @@ var EC2;
     EC2.VPCCidrBlock = vpcCidrBlock_1.default;
     EC2.EC2Fleet = ec2Fleet_1.default;
     EC2.VPCDHCPOptionsAssociation = vpcdhcpOptionsAssociation_1.default;
+    EC2.TrafficMirrorTarget = trafficMirrorTarget_1.default;
     EC2.VPCEndpointConnectionNotification = vpcEndpointConnectionNotification_1.default;
-    EC2.VPCEndpointService = vpcEndpointService_1.default;
 })(EC2 = exports.EC2 || (exports.EC2 = {}));

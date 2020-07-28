@@ -14,6 +14,9 @@ export declare class Connector {
 }
 export interface ConnectorDefinitionProperties {
     InitialVersion?: ConnectorDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class ConnectorDefinition extends ResourceBase<ConnectorDefinitionProperties> {

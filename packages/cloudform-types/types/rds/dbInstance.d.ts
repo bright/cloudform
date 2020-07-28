@@ -1,5 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class DBInstanceRole {
+    FeatureName: Value<string>;
+    RoleArn: Value<string>;
+    constructor(properties: DBInstanceRole);
+}
 export declare class ProcessorFeature {
     Name?: Value<string>;
     Value?: Value<string>;
@@ -8,9 +13,11 @@ export declare class ProcessorFeature {
 export interface DBInstanceProperties {
     AllocatedStorage?: Value<string>;
     AllowMajorVersionUpgrade?: Value<boolean>;
+    AssociatedRoles?: List<DBInstanceRole>;
     AutoMinorVersionUpgrade?: Value<boolean>;
     AvailabilityZone?: Value<string>;
     BackupRetentionPeriod?: Value<number>;
+    CACertificateIdentifier?: Value<string>;
     CharacterSetName?: Value<string>;
     CopyTagsToSnapshot?: Value<boolean>;
     DBClusterIdentifier?: Value<string>;
@@ -35,6 +42,7 @@ export interface DBInstanceProperties {
     LicenseModel?: Value<string>;
     MasterUserPassword?: Value<string>;
     MasterUsername?: Value<string>;
+    MaxAllocatedStorage?: Value<number>;
     MonitoringInterval?: Value<number>;
     MonitoringRoleArn?: Value<string>;
     MultiAZ?: Value<boolean>;
@@ -57,6 +65,7 @@ export interface DBInstanceProperties {
     VPCSecurityGroups?: List<Value<string>>;
 }
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {
+    static DBInstanceRole: typeof DBInstanceRole;
     static ProcessorFeature: typeof ProcessorFeature;
     constructor(properties: DBInstanceProperties);
 }

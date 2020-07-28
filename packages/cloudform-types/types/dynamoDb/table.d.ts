@@ -11,7 +11,9 @@ export declare class PointInTimeRecoverySpecification {
     constructor(properties: PointInTimeRecoverySpecification);
 }
 export declare class SSESpecification {
+    KMSMasterKeyId?: Value<string>;
     SSEEnabled: Value<boolean>;
+    SSEType?: Value<string>;
     constructor(properties: SSESpecification);
 }
 export declare class TimeToLiveSpecification {

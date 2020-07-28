@@ -4,12 +4,14 @@ export declare class RuleGroup {
     PatchRules?: List<Rule>;
     constructor(properties: RuleGroup);
 }
+export declare type PatchStringDate = Value<string>;
 export declare class PatchFilter {
     Values?: List<Value<string>>;
     Key?: Value<string>;
     constructor(properties: PatchFilter);
 }
 export declare class Rule {
+    ApproveUntilDate?: PatchStringDate;
     EnableNonSecurity?: Value<boolean>;
     PatchFilterGroup?: PatchFilterGroup;
     ApproveAfterDays?: Value<number>;

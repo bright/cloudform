@@ -36,6 +36,14 @@ export declare class VpcConfig {
     SecurityGroupIds?: List<Value<string>>;
     constructor(properties: VpcConfig);
 }
+export declare class ProjectFileSystemLocation {
+    MountPoint: Value<string>;
+    Type: Value<string>;
+    Identifier: Value<string>;
+    MountOptions?: Value<string>;
+    Location: Value<string>;
+    constructor(properties: ProjectFileSystemLocation);
+}
 export declare class S3LogsConfig {
     Status: Value<string>;
     EncryptionDisabled?: Value<boolean>;
@@ -59,6 +67,11 @@ export declare class Artifacts {
     Name?: Value<string>;
     NamespaceType?: Value<string>;
     constructor(properties: Artifacts);
+}
+export declare class BuildStatusConfig {
+    Context?: Value<string>;
+    TargetUrl?: Value<string>;
+    constructor(properties: BuildStatusConfig);
 }
 export declare class RegistryCredential {
     Credential: Value<string>;
@@ -96,6 +109,7 @@ export declare class Source {
     SourceIdentifier?: Value<string>;
     BuildSpec?: Value<string>;
     GitCloneDepth?: Value<number>;
+    BuildStatusConfig?: BuildStatusConfig;
     GitSubmodulesConfig?: GitSubmodulesConfig;
     InsecureSsl?: Value<boolean>;
     Location?: Value<string>;
@@ -116,6 +130,7 @@ export interface ProjectProperties {
     LogsConfig?: LogsConfig;
     ServiceRole: Value<string>;
     QueuedTimeoutInMinutes?: Value<number>;
+    FileSystemLocations?: List<ProjectFileSystemLocation>;
     Environment: Environment;
     SecondarySourceVersions?: List<ProjectSourceVersion>;
     Tags?: List<ResourceTag>;
@@ -129,9 +144,11 @@ export default class Project extends ResourceBase<ProjectProperties> {
     static Environment: typeof Environment;
     static GitSubmodulesConfig: typeof GitSubmodulesConfig;
     static VpcConfig: typeof VpcConfig;
+    static ProjectFileSystemLocation: typeof ProjectFileSystemLocation;
     static S3LogsConfig: typeof S3LogsConfig;
     static WebhookFilter: typeof WebhookFilter;
     static Artifacts: typeof Artifacts;
+    static BuildStatusConfig: typeof BuildStatusConfig;
     static RegistryCredential: typeof RegistryCredential;
     static CloudWatchLogsConfig: typeof CloudWatchLogsConfig;
     static ProjectCache: typeof ProjectCache;

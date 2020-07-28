@@ -6,6 +6,8 @@ export interface VolumeProperties {
     Encrypted?: Value<boolean>;
     Iops?: Value<number>;
     KmsKeyId?: Value<string>;
+    MultiAttachEnabled?: Value<boolean>;
+    OutpostArn?: Value<string>;
     Size?: Value<number>;
     SnapshotId?: Value<string>;
     Tags?: List<ResourceTag>;

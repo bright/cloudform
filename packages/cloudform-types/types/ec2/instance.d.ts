@@ -1,5 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class HibernationOptions {
+    Configured?: Value<boolean>;
+    constructor(properties: HibernationOptions);
+}
 export declare class Volume {
     Device: Value<string>;
     VolumeId: Value<string>;
@@ -9,6 +13,7 @@ export declare class Ebs {
     DeleteOnTermination?: Value<boolean>;
     Encrypted?: Value<boolean>;
     Iops?: Value<number>;
+    KmsKeyId?: Value<string>;
     SnapshotId?: Value<string>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
@@ -49,6 +54,11 @@ export declare class AssociationParameter {
     Value: List<Value<string>>;
     constructor(properties: AssociationParameter);
 }
+export declare class CpuOptions {
+    CoreCount?: Value<number>;
+    ThreadsPerCore?: Value<number>;
+    constructor(properties: CpuOptions);
+}
 export declare class LaunchTemplateSpecification {
     LaunchTemplateId?: Value<string>;
     LaunchTemplateName?: Value<string>;
@@ -65,6 +75,7 @@ export declare class SsmAssociation {
     constructor(properties: SsmAssociation);
 }
 export declare class ElasticInferenceAccelerator {
+    Count?: Value<number>;
     Type: Value<string>;
     constructor(properties: ElasticInferenceAccelerator);
 }
@@ -85,12 +96,15 @@ export interface InstanceProperties {
     Affinity?: Value<string>;
     AvailabilityZone?: Value<string>;
     BlockDeviceMappings?: List<BlockDeviceMapping>;
+    CpuOptions?: CpuOptions;
     CreditSpecification?: CreditSpecification;
     DisableApiTermination?: Value<boolean>;
     EbsOptimized?: Value<boolean>;
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>;
     ElasticInferenceAccelerators?: List<ElasticInferenceAccelerator>;
+    HibernationOptions?: HibernationOptions;
     HostId?: Value<string>;
+    HostResourceGroupArn?: Value<string>;
     IamInstanceProfile?: Value<string>;
     ImageId?: Value<string>;
     InstanceInitiatedShutdownBehavior?: Value<string>;
@@ -117,6 +131,7 @@ export interface InstanceProperties {
     Volumes?: List<Volume>;
 }
 export default class Instance extends ResourceBase<InstanceProperties> {
+    static HibernationOptions: typeof HibernationOptions;
     static Volume: typeof Volume;
     static Ebs: typeof Ebs;
     static NoDevice: typeof NoDevice;
@@ -125,6 +140,7 @@ export default class Instance extends ResourceBase<InstanceProperties> {
     static NetworkInterface: typeof NetworkInterface;
     static InstanceIpv6Address: typeof InstanceIpv6Address;
     static AssociationParameter: typeof AssociationParameter;
+    static CpuOptions: typeof CpuOptions;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static LicenseSpecification: typeof LicenseSpecification;
     static SsmAssociation: typeof SsmAssociation;

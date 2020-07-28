@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class StageKey {
     RestApiId?: Value<string>;
@@ -12,6 +12,7 @@ export interface ApiKeyProperties {
     GenerateDistinctId?: Value<boolean>;
     Name?: Value<string>;
     StageKeys?: List<StageKey>;
+    Tags?: List<ResourceTag>;
     Value?: Value<string>;
 }
 export default class ApiKey extends ResourceBase<ApiKeyProperties> {

@@ -6,9 +6,14 @@ export declare class Cookies {
     constructor(properties: Cookies);
 }
 export declare class LambdaFunctionAssociation {
+    IncludeBody?: Value<boolean>;
     EventType?: Value<string>;
     LambdaFunctionARN?: Value<string>;
     constructor(properties: LambdaFunctionAssociation);
+}
+export declare class OriginGroupMember {
+    OriginId: Value<string>;
+    constructor(properties: OriginGroupMember);
 }
 export declare class CacheBehavior {
     Compress?: Value<boolean>;
@@ -22,8 +27,10 @@ export declare class CacheBehavior {
     PathPattern: Value<string>;
     CachedMethods?: List<Value<string>>;
     SmoothStreaming?: Value<boolean>;
-    ForwardedValues: ForwardedValues;
+    ForwardedValues?: ForwardedValues;
+    OriginRequestPolicyId?: Value<string>;
     MinTTL?: Value<number>;
+    CachePolicyId?: Value<string>;
     MaxTTL?: Value<number>;
     constructor(properties: CacheBehavior);
 }
@@ -38,8 +45,10 @@ export declare class DefaultCacheBehavior {
     AllowedMethods?: List<Value<string>>;
     CachedMethods?: List<Value<string>>;
     SmoothStreaming?: Value<boolean>;
-    ForwardedValues: ForwardedValues;
+    ForwardedValues?: ForwardedValues;
+    OriginRequestPolicyId?: Value<string>;
     MinTTL?: Value<number>;
+    CachePolicyId?: Value<string>;
     MaxTTL?: Value<number>;
     constructor(properties: DefaultCacheBehavior);
 }
@@ -48,7 +57,9 @@ export declare class Restrictions {
     constructor(properties: Restrictions);
 }
 export declare class Origin {
+    ConnectionTimeout?: Value<number>;
     OriginCustomHeaders?: List<OriginCustomHeader>;
+    ConnectionAttempts?: Value<number>;
     DomainName: Value<string>;
     S3OriginConfig?: S3OriginConfig;
     OriginPath?: Value<string>;
@@ -65,6 +76,7 @@ export declare class DistributionConfig {
     PriceClass?: Value<string>;
     DefaultCacheBehavior?: DefaultCacheBehavior;
     CustomErrorResponses?: List<CustomErrorResponse>;
+    OriginGroups?: OriginGroups;
     Enabled: Value<boolean>;
     Aliases?: List<Value<string>>;
     IPV6Enabled?: Value<boolean>;
@@ -74,10 +86,25 @@ export declare class DistributionConfig {
     CacheBehaviors?: List<CacheBehavior>;
     constructor(properties: DistributionConfig);
 }
+export declare class StatusCodes {
+    Quantity: Value<number>;
+    Items: List<Value<number>>;
+    constructor(properties: StatusCodes);
+}
 export declare class OriginCustomHeader {
     HeaderValue: Value<string>;
     HeaderName: Value<string>;
     constructor(properties: OriginCustomHeader);
+}
+export declare class OriginGroup {
+    Id: Value<string>;
+    FailoverCriteria: OriginGroupFailoverCriteria;
+    Members: OriginGroupMembers;
+    constructor(properties: OriginGroup);
+}
+export declare class OriginGroupFailoverCriteria {
+    StatusCodes: StatusCodes;
+    constructor(properties: OriginGroupFailoverCriteria);
 }
 export declare class CustomOriginConfig {
     OriginReadTimeout?: Value<number>;
@@ -87,6 +114,16 @@ export declare class CustomOriginConfig {
     HTTPPort?: Value<number>;
     OriginProtocolPolicy: Value<string>;
     constructor(properties: CustomOriginConfig);
+}
+export declare class OriginGroups {
+    Quantity: Value<number>;
+    Items?: List<OriginGroup>;
+    constructor(properties: OriginGroups);
+}
+export declare class OriginGroupMembers {
+    Quantity: Value<number>;
+    Items: List<OriginGroupMember>;
+    constructor(properties: OriginGroupMembers);
 }
 export declare class ForwardedValues {
     Cookies?: Cookies;
@@ -132,13 +169,19 @@ export interface DistributionProperties {
 export default class Distribution extends ResourceBase<DistributionProperties> {
     static Cookies: typeof Cookies;
     static LambdaFunctionAssociation: typeof LambdaFunctionAssociation;
+    static OriginGroupMember: typeof OriginGroupMember;
     static CacheBehavior: typeof CacheBehavior;
     static DefaultCacheBehavior: typeof DefaultCacheBehavior;
     static Restrictions: typeof Restrictions;
     static Origin: typeof Origin;
     static DistributionConfig: typeof DistributionConfig;
+    static StatusCodes: typeof StatusCodes;
     static OriginCustomHeader: typeof OriginCustomHeader;
+    static OriginGroup: typeof OriginGroup;
+    static OriginGroupFailoverCriteria: typeof OriginGroupFailoverCriteria;
     static CustomOriginConfig: typeof CustomOriginConfig;
+    static OriginGroups: typeof OriginGroups;
+    static OriginGroupMembers: typeof OriginGroupMembers;
     static ForwardedValues: typeof ForwardedValues;
     static GeoRestriction: typeof GeoRestriction;
     static ViewerCertificate: typeof ViewerCertificate;

@@ -30,9 +30,24 @@ export declare class MongoDbSettings {
     NestingLevel?: Value<string>;
     constructor(properties: MongoDbSettings);
 }
+export declare class KafkaSettings {
+    Broker?: Value<string>;
+    Topic?: Value<string>;
+    constructor(properties: KafkaSettings);
+}
 export declare class DynamoDbSettings {
     ServiceAccessRoleArn?: Value<string>;
     constructor(properties: DynamoDbSettings);
+}
+export declare class NeptuneSettings {
+    MaxRetryCount?: Value<number>;
+    MaxFileSize?: Value<number>;
+    S3BucketFolder?: Value<string>;
+    ErrorRetryDuration?: Value<number>;
+    IamAuthEnabled?: Value<boolean>;
+    S3BucketName?: Value<string>;
+    ServiceAccessRoleArn?: Value<string>;
+    constructor(properties: NeptuneSettings);
 }
 export declare class ElasticsearchSettings {
     EndpointUri?: Value<string>;
@@ -43,8 +58,10 @@ export declare class ElasticsearchSettings {
 }
 export interface EndpointProperties {
     KmsKeyId?: Value<string>;
+    KafkaSettings?: KafkaSettings;
     Port?: Value<number>;
     DatabaseName?: Value<string>;
+    NeptuneSettings?: NeptuneSettings;
     ElasticsearchSettings?: ElasticsearchSettings;
     S3Settings?: S3Settings;
     EngineName: Value<string>;
@@ -65,7 +82,9 @@ export default class Endpoint extends ResourceBase<EndpointProperties> {
     static KinesisSettings: typeof KinesisSettings;
     static S3Settings: typeof S3Settings;
     static MongoDbSettings: typeof MongoDbSettings;
+    static KafkaSettings: typeof KafkaSettings;
     static DynamoDbSettings: typeof DynamoDbSettings;
+    static NeptuneSettings: typeof NeptuneSettings;
     static ElasticsearchSettings: typeof ElasticsearchSettings;
     constructor(properties: EndpointProperties);
 }

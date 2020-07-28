@@ -14,6 +14,9 @@ export declare class LoggerDefinitionVersion {
 }
 export interface LoggerDefinitionProperties {
     InitialVersion?: LoggerDefinitionVersion;
+    Tags?: {
+        [key: string]: any;
+    };
     Name: Value<string>;
 }
 export default class LoggerDefinition extends ResourceBase<LoggerDefinitionProperties> {

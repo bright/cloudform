@@ -10,6 +10,7 @@ export declare class ProvisioningArtifactProperties {
     constructor(properties: ProvisioningArtifactProperties);
 }
 export interface CloudFormationProductProperties {
+    ReplaceProvisioningArtifacts?: Value<boolean>;
     Owner: Value<string>;
     SupportDescription?: Value<string>;
     Description?: Value<string>;

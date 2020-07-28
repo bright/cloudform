@@ -21,7 +21,7 @@ export interface FleetProperties {
     FleetType?: Value<string>;
     EnableDefaultInternetAccess?: Value<boolean>;
     DomainJoinInfo?: DomainJoinInfo;
-    Name?: Value<string>;
+    Name: Value<string>;
     ImageName?: Value<string>;
     MaxUserDurationInSeconds?: Value<number>;
     IdleDisconnectTimeoutInSeconds?: Value<number>;

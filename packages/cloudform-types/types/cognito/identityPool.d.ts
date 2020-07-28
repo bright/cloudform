@@ -32,6 +32,7 @@ export interface IdentityPoolProperties {
     };
     SamlProviderARNs?: List<Value<string>>;
     OpenIdConnectProviderARNs?: List<Value<string>>;
+    AllowClassicFlow?: Value<boolean>;
 }
 export default class IdentityPool extends ResourceBase<IdentityPoolProperties> {
     static CognitoStreams: typeof CognitoStreams;

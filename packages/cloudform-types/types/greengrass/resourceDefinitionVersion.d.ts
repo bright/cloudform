@@ -7,9 +7,15 @@ export declare class ResourceInstance {
     constructor(properties: ResourceInstance);
 }
 export declare class SageMakerMachineLearningModelResourceData {
+    OwnerSetting?: ResourceDownloadOwnerSetting;
     DestinationPath: Value<string>;
     SageMakerJobArn: Value<string>;
     constructor(properties: SageMakerMachineLearningModelResourceData);
+}
+export declare class ResourceDownloadOwnerSetting {
+    GroupOwner: Value<string>;
+    GroupPermission: Value<string>;
+    constructor(properties: ResourceDownloadOwnerSetting);
 }
 export declare class LocalDeviceResourceData {
     SourcePath: Value<string>;
@@ -17,6 +23,7 @@ export declare class LocalDeviceResourceData {
     constructor(properties: LocalDeviceResourceData);
 }
 export declare class S3MachineLearningModelResourceData {
+    OwnerSetting?: ResourceDownloadOwnerSetting;
     DestinationPath: Value<string>;
     S3Uri: Value<string>;
     constructor(properties: S3MachineLearningModelResourceData);
@@ -52,6 +59,7 @@ export interface ResourceDefinitionVersionProperties {
 export default class ResourceDefinitionVersion extends ResourceBase<ResourceDefinitionVersionProperties> {
     static ResourceInstance: typeof ResourceInstance;
     static SageMakerMachineLearningModelResourceData: typeof SageMakerMachineLearningModelResourceData;
+    static ResourceDownloadOwnerSetting: typeof ResourceDownloadOwnerSetting;
     static LocalDeviceResourceData: typeof LocalDeviceResourceData;
     static S3MachineLearningModelResourceData: typeof S3MachineLearningModelResourceData;
     static LocalVolumeResourceData: typeof LocalVolumeResourceData;

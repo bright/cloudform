@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
    
 import {ResourceBase} from '../resource'
@@ -38,8 +38,8 @@ export class OrcSerDe {
 }
 
 export class ElasticsearchBufferingHints {
-    IntervalInSeconds!: Value<number>
-    SizeInMBs!: Value<number>
+    IntervalInSeconds?: Value<number>
+    SizeInMBs?: Value<number>
 
     constructor(properties: ElasticsearchBufferingHints) {
         Object.assign(this, properties)
@@ -82,7 +82,7 @@ export class CloudWatchLoggingOptions {
 }
 
 export class InputFormatConfiguration {
-    Deserializer!: Deserializer
+    Deserializer?: Deserializer
 
     constructor(properties: InputFormatConfiguration) {
         Object.assign(this, properties)
@@ -99,8 +99,8 @@ export class ProcessingConfiguration {
 }
 
 export class BufferingHints {
-    IntervalInSeconds!: Value<number>
-    SizeInMBs!: Value<number>
+    IntervalInSeconds?: Value<number>
+    SizeInMBs?: Value<number>
 
     constructor(properties: BufferingHints) {
         Object.assign(this, properties)
@@ -125,7 +125,7 @@ export class HiveJsonSerDe {
 }
 
 export class Processor {
-    Parameters!: List<ProcessorParameter>
+    Parameters?: List<ProcessorParameter>
     Type!: Value<string>
 
     constructor(properties: Processor) {
@@ -134,7 +134,7 @@ export class Processor {
 }
 
 export class ElasticsearchRetryOptions {
-    DurationInSeconds!: Value<number>
+    DurationInSeconds?: Value<number>
 
     constructor(properties: ElasticsearchRetryOptions) {
         Object.assign(this, properties)
@@ -142,10 +142,10 @@ export class ElasticsearchRetryOptions {
 }
 
 export class DataFormatConversionConfiguration {
-    Enabled!: Value<boolean>
-    InputFormatConfiguration!: InputFormatConfiguration
-    OutputFormatConfiguration!: OutputFormatConfiguration
-    SchemaConfiguration!: SchemaConfiguration
+    Enabled?: Value<boolean>
+    InputFormatConfiguration?: InputFormatConfiguration
+    OutputFormatConfiguration?: OutputFormatConfiguration
+    SchemaConfiguration?: SchemaConfiguration
 
     constructor(properties: DataFormatConversionConfiguration) {
         Object.assign(this, properties)
@@ -161,7 +161,7 @@ export class KMSEncryptionConfig {
 }
 
 export class OutputFormatConfiguration {
-    Serializer!: Serializer
+    Serializer?: Serializer
 
     constructor(properties: OutputFormatConfiguration) {
         Object.assign(this, properties)
@@ -169,17 +169,19 @@ export class OutputFormatConfiguration {
 }
 
 export class ElasticsearchDestinationConfiguration {
-    BufferingHints!: ElasticsearchBufferingHints
+    BufferingHints?: ElasticsearchBufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    DomainARN!: Value<string>
+    DomainARN?: Value<string>
     IndexName!: Value<string>
-    IndexRotationPeriod!: Value<string>
+    IndexRotationPeriod?: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
-    RetryOptions!: ElasticsearchRetryOptions
+    RetryOptions?: ElasticsearchRetryOptions
     RoleARN!: Value<string>
-    S3BackupMode!: Value<string>
+    S3BackupMode?: Value<string>
     S3Configuration!: S3DestinationConfiguration
-    TypeName!: Value<string>
+    ClusterEndpoint?: Value<string>
+    TypeName?: Value<string>
+    VpcConfiguration?: VpcConfiguration
 
     constructor(properties: ElasticsearchDestinationConfiguration) {
         Object.assign(this, properties)
@@ -187,12 +189,12 @@ export class ElasticsearchDestinationConfiguration {
 }
 
 export class SchemaConfiguration {
-    CatalogId!: Value<string>
-    DatabaseName!: Value<string>
-    Region!: Value<string>
-    RoleARN!: Value<string>
-    TableName!: Value<string>
-    VersionId!: Value<string>
+    CatalogId?: Value<string>
+    DatabaseName?: Value<string>
+    Region?: Value<string>
+    RoleARN?: Value<string>
+    TableName?: Value<string>
+    VersionId?: Value<string>
 
     constructor(properties: SchemaConfiguration) {
         Object.assign(this, properties)
@@ -200,7 +202,7 @@ export class SchemaConfiguration {
 }
 
 export class SplunkRetryOptions {
-    DurationInSeconds!: Value<number>
+    DurationInSeconds?: Value<number>
 
     constructor(properties: SplunkRetryOptions) {
         Object.assign(this, properties)
@@ -221,6 +223,14 @@ export class KinesisStreamSourceConfiguration {
     RoleARN!: Value<string>
 
     constructor(properties: KinesisStreamSourceConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RedshiftRetryOptions {
+    DurationInSeconds?: Value<number>
+
+    constructor(properties: RedshiftRetryOptions) {
         Object.assign(this, properties)
     }
 }
@@ -269,9 +279,9 @@ export class OpenXJsonSerDe {
 
 export class S3DestinationConfiguration {
     BucketARN!: Value<string>
-    BufferingHints!: BufferingHints
+    BufferingHints?: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    CompressionFormat!: Value<string>
+    CompressionFormat?: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
     ErrorOutputPrefix?: Value<string>
     Prefix?: Value<string>
@@ -282,11 +292,21 @@ export class S3DestinationConfiguration {
     }
 }
 
+export class VpcConfiguration {
+    RoleARN!: Value<string>
+    SubnetIds!: List<Value<string>>
+    SecurityGroupIds!: List<Value<string>>
+
+    constructor(properties: VpcConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ExtendedS3DestinationConfiguration {
     BucketARN!: Value<string>
-    BufferingHints!: BufferingHints
+    BufferingHints?: BufferingHints
     CloudWatchLoggingOptions?: CloudWatchLoggingOptions
-    CompressionFormat!: Value<string>
+    CompressionFormat?: Value<string>
     DataFormatConversionConfiguration?: DataFormatConversionConfiguration
     EncryptionConfiguration?: EncryptionConfiguration
     ErrorOutputPrefix?: Value<string>
@@ -307,7 +327,10 @@ export class RedshiftDestinationConfiguration {
     CopyCommand!: CopyCommand
     Password!: Value<string>
     ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions?: RedshiftRetryOptions
     RoleARN!: Value<string>
+    S3BackupConfiguration?: S3DestinationConfiguration
+    S3BackupMode?: Value<string>
     S3Configuration!: S3DestinationConfiguration
     Username!: Value<string>
 
@@ -348,11 +371,13 @@ export default class DeliveryStream extends ResourceBase<DeliveryStreamPropertie
     static SplunkRetryOptions = SplunkRetryOptions
     static Deserializer = Deserializer
     static KinesisStreamSourceConfiguration = KinesisStreamSourceConfiguration
+    static RedshiftRetryOptions = RedshiftRetryOptions
     static ParquetSerDe = ParquetSerDe
     static Serializer = Serializer
     static CopyCommand = CopyCommand
     static OpenXJsonSerDe = OpenXJsonSerDe
     static S3DestinationConfiguration = S3DestinationConfiguration
+    static VpcConfiguration = VpcConfiguration
     static ExtendedS3DestinationConfiguration = ExtendedS3DestinationConfiguration
     static RedshiftDestinationConfiguration = RedshiftDestinationConfiguration
 

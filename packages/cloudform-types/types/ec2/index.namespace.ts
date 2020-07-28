@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.0.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
    
 import RouteTable_ from './routeTable'
@@ -22,8 +22,8 @@ import VPCPeeringConnection_ from './vpcPeeringConnection'
 import TransitGateway_ from './transitGateway'
 import CapacityReservation_ from './capacityReservation'
 import VPCEndpointServicePermissions_ from './vpcEndpointServicePermissions'
-import Volume_ from './volume'
 import TransitGatewayRouteTableAssociation_ from './transitGatewayRouteTableAssociation'
+import Volume_ from './volume'
 import LocalGatewayRoute_ from './localGatewayRoute'
 import EIP_ from './eip'
 import FlowLog_ from './flowLog'
@@ -64,6 +64,7 @@ import SubnetCidrBlock_ from './subnetCidrBlock'
 import NatGateway_ from './natGateway'
 import SecurityGroup_ from './securityGroup'
 import TrafficMirrorFilterRule_ from './trafficMirrorFilterRule'
+import PrefixList_ from './prefixList'
 import VPC_ from './vpc'
 import TransitGatewayRoute_ from './transitGatewayRoute'
 import NetworkAcl_ from './networkAcl'
@@ -85,8 +86,8 @@ export namespace EC2 {
   export const TransitGateway = TransitGateway_
   export const CapacityReservation = CapacityReservation_
   export const VPCEndpointServicePermissions = VPCEndpointServicePermissions_
-  export const Volume = Volume_
   export const TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
+  export const Volume = Volume_
   export const LocalGatewayRoute = LocalGatewayRoute_
   export const EIP = EIP_
   export const FlowLog = FlowLog_
@@ -127,6 +128,7 @@ export namespace EC2 {
   export const NatGateway = NatGateway_
   export const SecurityGroup = SecurityGroup_
   export const TrafficMirrorFilterRule = TrafficMirrorFilterRule_
+  export const PrefixList = PrefixList_
   export const VPC = VPC_
   export const TransitGatewayRoute = TransitGatewayRoute_
   export const NetworkAcl = NetworkAcl_
@@ -147,8 +149,8 @@ export namespace EC2 {
   export type TransitGateway = TransitGateway_
   export type CapacityReservation = CapacityReservation_
   export type VPCEndpointServicePermissions = VPCEndpointServicePermissions_
-  export type Volume = Volume_
   export type TransitGatewayRouteTableAssociation = TransitGatewayRouteTableAssociation_
+  export type Volume = Volume_
   export type LocalGatewayRoute = LocalGatewayRoute_
   export type EIP = EIP_
   export type FlowLog = FlowLog_
@@ -189,6 +191,7 @@ export namespace EC2 {
   export type NatGateway = NatGateway_
   export type SecurityGroup = SecurityGroup_
   export type TrafficMirrorFilterRule = TrafficMirrorFilterRule_
+  export type PrefixList = PrefixList_
   export type VPC = VPC_
   export type TransitGatewayRoute = TransitGatewayRoute_
   export type NetworkAcl = NetworkAcl_

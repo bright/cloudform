@@ -1,19 +1,19 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -127,8 +127,18 @@ export class RateBasedStatementTwo {
     Limit!: Value<number>
     AggregateKeyType!: Value<string>
     ScopeDownStatement?: StatementThree
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: RateBasedStatementTwo) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ForwardedIPConfiguration {
+    HeaderName!: Value<string>
+    FallbackBehavior!: Value<string>
+
+    constructor(properties: ForwardedIPConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -147,6 +157,16 @@ export class RegexPatternSetReferenceStatement {
     TextTransformations!: List<TextTransformation>
 
     constructor(properties: RegexPatternSetReferenceStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class IPSetForwardedIPConfiguration {
+    HeaderName!: Value<string>
+    FallbackBehavior!: Value<string>
+    Position!: Value<string>
+
+    constructor(properties: IPSetForwardedIPConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -213,6 +233,7 @@ export class RateBasedStatementOne {
     Limit!: Value<number>
     AggregateKeyType!: Value<string>
     ScopeDownStatement?: StatementTwo
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: RateBasedStatementOne) {
         Object.assign(this, properties)
@@ -273,6 +294,7 @@ export class SqliMatchStatement {
 
 export class GeoMatchStatement {
     CountryCodes?: List<Value<string>>
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: GeoMatchStatement) {
         Object.assign(this, properties)
@@ -281,6 +303,7 @@ export class GeoMatchStatement {
 
 export class IPSetReferenceStatement {
     Arn!: Value<string>
+    IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration
 
     constructor(properties: IPSetReferenceStatement) {
         Object.assign(this, properties)
@@ -333,8 +356,10 @@ export default class WebACL extends ResourceBase<WebACLProperties> {
     static NotStatementTwo = NotStatementTwo
     static OverrideAction = OverrideAction
     static RateBasedStatementTwo = RateBasedStatementTwo
+    static ForwardedIPConfiguration = ForwardedIPConfiguration
     static AndStatementTwo = AndStatementTwo
     static RegexPatternSetReferenceStatement = RegexPatternSetReferenceStatement
+    static IPSetForwardedIPConfiguration = IPSetForwardedIPConfiguration
     static Rule = Rule
     static OrStatementOne = OrStatementOne
     static RuleGroupReferenceStatement = RuleGroupReferenceStatement

@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -24,6 +24,15 @@ export class BucketEncryption {
     ServerSideEncryptionConfiguration!: List<ServerSideEncryptionRule>
 
     constructor(properties: BucketEncryption) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Metrics {
+    EventThreshold!: ReplicationTimeValue
+    Status!: Value<string>
+
+    constructor(properties: Metrics) {
         Object.assign(this, properties)
     }
 }
@@ -91,6 +100,15 @@ export class NotificationConfiguration {
     TopicConfigurations?: List<TopicConfiguration>
 
     constructor(properties: NotificationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ReplicationTime {
+    Status!: Value<string>
+    Time!: ReplicationTimeValue
+
+    constructor(properties: ReplicationTime) {
         Object.assign(this, properties)
     }
 }
@@ -184,6 +202,8 @@ export class ReplicationDestination {
     Account?: Value<string>
     Bucket!: Value<string>
     EncryptionConfiguration?: EncryptionConfiguration
+    Metrics?: Metrics
+    ReplicationTime?: ReplicationTime
     StorageClass?: Value<string>
 
     constructor(properties: ReplicationDestination) {
@@ -212,6 +232,14 @@ export class AbortIncompleteMultipartUpload {
     DaysAfterInitiation!: Value<number>
 
     constructor(properties: AbortIncompleteMultipartUpload) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DeleteMarkerReplication {
+    Status?: Value<string>
+
+    constructor(properties: DeleteMarkerReplication) {
         Object.assign(this, properties)
     }
 }
@@ -256,9 +284,12 @@ export class LambdaConfiguration {
 }
 
 export class ReplicationRule {
+    DeleteMarkerReplication?: DeleteMarkerReplication
     Destination!: ReplicationDestination
+    Filter?: ReplicationRuleFilter
     Id?: Value<string>
-    Prefix!: Value<string>
+    Prefix?: Value<string>
+    Priority?: Value<number>
     SourceSelectionCriteria?: SourceSelectionCriteria
     Status!: Value<string>
 
@@ -426,11 +457,38 @@ export class DataExport {
     }
 }
 
+export class ReplicationTimeValue {
+    Minutes!: Value<number>
+
+    constructor(properties: ReplicationTimeValue) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ReplicationRuleFilter {
+    And?: ReplicationRuleAndOperator
+    Prefix?: Value<string>
+    TagFilter?: TagFilter
+
+    constructor(properties: ReplicationRuleFilter) {
+        Object.assign(this, properties)
+    }
+}
+
 export class FilterRule {
     Name!: Value<string>
     Value!: Value<string>
 
     constructor(properties: FilterRule) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ReplicationRuleAndOperator {
+    Prefix?: Value<string>
+    TagFilters?: List<TagFilter>
+
+    constructor(properties: ReplicationRuleAndOperator) {
         Object.assign(this, properties)
     }
 }
@@ -458,6 +516,7 @@ export interface BucketProperties {
 
 export default class Bucket extends ResourceBase<BucketProperties> {
     static BucketEncryption = BucketEncryption
+    static Metrics = Metrics
     static RoutingRuleCondition = RoutingRuleCondition
     static LifecycleConfiguration = LifecycleConfiguration
     static CorsRule = CorsRule
@@ -465,6 +524,7 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static AccessControlTranslation = AccessControlTranslation
     static VersioningConfiguration = VersioningConfiguration
     static NotificationConfiguration = NotificationConfiguration
+    static ReplicationTime = ReplicationTime
     static ServerSideEncryptionByDefault = ServerSideEncryptionByDefault
     static RedirectAllRequestsTo = RedirectAllRequestsTo
     static S3KeyFilter = S3KeyFilter
@@ -478,6 +538,7 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static AccelerateConfiguration = AccelerateConfiguration
     static NoncurrentVersionTransition = NoncurrentVersionTransition
     static AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload
+    static DeleteMarkerReplication = DeleteMarkerReplication
     static PublicAccessBlockConfiguration = PublicAccessBlockConfiguration
     static DefaultRetention = DefaultRetention
     static NotificationFilter = NotificationFilter
@@ -499,7 +560,10 @@ export default class Bucket extends ResourceBase<BucketProperties> {
     static TagFilter = TagFilter
     static Transition = Transition
     static DataExport = DataExport
+    static ReplicationTimeValue = ReplicationTimeValue
+    static ReplicationRuleFilter = ReplicationRuleFilter
     static FilterRule = FilterRule
+    static ReplicationRuleAndOperator = ReplicationRuleAndOperator
 
     constructor(properties?: BucketProperties) {
         super('AWS::S3::Bucket', properties || {})

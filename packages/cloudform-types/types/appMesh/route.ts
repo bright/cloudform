@@ -1,17 +1,17 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 14.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -49,6 +49,7 @@ export class WeightedTarget {
 
 export class TcpRoute {
     Action!: TcpRouteAction
+    Timeout?: TcpTimeout
 
     constructor(properties: TcpRoute) {
         Object.assign(this, properties)
@@ -102,12 +103,39 @@ export class RouteSpec {
     }
 }
 
+export class GrpcTimeout {
+    PerRequest?: Duration
+    Idle?: Duration
+
+    constructor(properties: GrpcTimeout) {
+        Object.assign(this, properties)
+    }
+}
+
 export class GrpcRoute {
     Action!: GrpcRouteAction
+    Timeout?: GrpcTimeout
     RetryPolicy?: GrpcRetryPolicy
     Match!: GrpcRouteMatch
 
     constructor(properties: GrpcRoute) {
+        Object.assign(this, properties)
+    }
+}
+
+export class TcpTimeout {
+    Idle?: Duration
+
+    constructor(properties: TcpTimeout) {
+        Object.assign(this, properties)
+    }
+}
+
+export class HttpTimeout {
+    PerRequest?: Duration
+    Idle?: Duration
+
+    constructor(properties: HttpTimeout) {
         Object.assign(this, properties)
     }
 }
@@ -171,6 +199,7 @@ export class GrpcRouteMatch {
 
 export class HttpRoute {
     Action!: HttpRouteAction
+    Timeout?: HttpTimeout
     RetryPolicy?: HttpRetryPolicy
     Match!: HttpRouteMatch
 
@@ -214,7 +243,10 @@ export default class Route extends ResourceBase<RouteProperties> {
     static HttpRetryPolicy = HttpRetryPolicy
     static HeaderMatchMethod = HeaderMatchMethod
     static RouteSpec = RouteSpec
+    static GrpcTimeout = GrpcTimeout
     static GrpcRoute = GrpcRoute
+    static TcpTimeout = TcpTimeout
+    static HttpTimeout = HttpTimeout
     static HttpRouteHeader = HttpRouteHeader
     static GrpcRouteMetadata = GrpcRouteMetadata
     static HttpRouteMatch = HttpRouteMatch

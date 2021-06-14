@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -24,15 +24,6 @@ export class HibernationOptions {
     Configured?: Value<boolean>
 
     constructor(properties: HibernationOptions) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Volume {
-    Device!: Value<string>
-    VolumeId!: Value<string>
-
-    constructor(properties: Volume) {
         Object.assign(this, properties)
     }
 }
@@ -75,6 +66,54 @@ export class ElasticGpuSpecification {
     }
 }
 
+export class CpuOptions {
+    CoreCount?: Value<number>
+    ThreadsPerCore?: Value<number>
+
+    constructor(properties: CpuOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LaunchTemplateSpecification {
+    LaunchTemplateId?: Value<string>
+    LaunchTemplateName?: Value<string>
+    Version!: Value<string>
+
+    constructor(properties: LaunchTemplateSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
+export class BlockDeviceMapping {
+    DeviceName!: Value<string>
+    Ebs?: Ebs
+    NoDevice?: NoDevice
+    VirtualName?: Value<string>
+
+    constructor(properties: BlockDeviceMapping) {
+        Object.assign(this, properties)
+    }
+}
+
+export class PrivateIpAddressSpecification {
+    Primary!: Value<boolean>
+    PrivateIpAddress!: Value<string>
+
+    constructor(properties: PrivateIpAddressSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Volume {
+    Device!: Value<string>
+    VolumeId!: Value<string>
+
+    constructor(properties: Volume) {
+        Object.assign(this, properties)
+    }
+}
+
 export class NetworkInterface {
     AssociatePublicIpAddress?: Value<boolean>
     DeleteOnTermination?: Value<boolean>
@@ -111,21 +150,10 @@ export class AssociationParameter {
     }
 }
 
-export class CpuOptions {
-    CoreCount?: Value<number>
-    ThreadsPerCore?: Value<number>
+export class EnclaveOptions {
+    Enabled?: Value<boolean>
 
-    constructor(properties: CpuOptions) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LaunchTemplateSpecification {
-    LaunchTemplateId?: Value<string>
-    LaunchTemplateName?: Value<string>
-    Version!: Value<string>
-
-    constructor(properties: LaunchTemplateSpecification) {
+    constructor(properties: EnclaveOptions) {
         Object.assign(this, properties)
     }
 }
@@ -156,26 +184,6 @@ export class ElasticInferenceAccelerator {
     }
 }
 
-export class BlockDeviceMapping {
-    DeviceName!: Value<string>
-    Ebs?: Ebs
-    NoDevice?: NoDevice
-    VirtualName?: Value<string>
-
-    constructor(properties: BlockDeviceMapping) {
-        Object.assign(this, properties)
-    }
-}
-
-export class PrivateIpAddressSpecification {
-    Primary!: Value<boolean>
-    PrivateIpAddress!: Value<string>
-
-    constructor(properties: PrivateIpAddressSpecification) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface InstanceProperties {
     AdditionalInfo?: Value<string>
     Affinity?: Value<string>
@@ -187,6 +195,7 @@ export interface InstanceProperties {
     EbsOptimized?: Value<boolean>
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>
     ElasticInferenceAccelerators?: List<ElasticInferenceAccelerator>
+    EnclaveOptions?: EnclaveOptions
     HibernationOptions?: HibernationOptions
     HostId?: Value<string>
     HostResourceGroupArn?: Value<string>
@@ -218,21 +227,22 @@ export interface InstanceProperties {
 
 export default class Instance extends ResourceBase<InstanceProperties> {
     static HibernationOptions = HibernationOptions
-    static Volume = Volume
     static Ebs = Ebs
     static NoDevice = NoDevice
     static CreditSpecification = CreditSpecification
     static ElasticGpuSpecification = ElasticGpuSpecification
+    static CpuOptions = CpuOptions
+    static LaunchTemplateSpecification = LaunchTemplateSpecification
+    static BlockDeviceMapping = BlockDeviceMapping
+    static PrivateIpAddressSpecification = PrivateIpAddressSpecification
+    static Volume = Volume
     static NetworkInterface = NetworkInterface
     static InstanceIpv6Address = InstanceIpv6Address
     static AssociationParameter = AssociationParameter
-    static CpuOptions = CpuOptions
-    static LaunchTemplateSpecification = LaunchTemplateSpecification
+    static EnclaveOptions = EnclaveOptions
     static LicenseSpecification = LicenseSpecification
     static SsmAssociation = SsmAssociation
     static ElasticInferenceAccelerator = ElasticInferenceAccelerator
-    static BlockDeviceMapping = BlockDeviceMapping
-    static PrivateIpAddressSpecification = PrivateIpAddressSpecification
 
     constructor(properties?: InstanceProperties) {
         super('AWS::EC2::Instance', properties || {})

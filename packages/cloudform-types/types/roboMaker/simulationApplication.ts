@@ -1,24 +1,15 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
-
-export class RenderingEngine {
-    Version!: Value<string>
-    Name!: Value<string>
-
-    constructor(properties: RenderingEngine) {
-        Object.assign(this, properties)
-    }
-}
 
 export class SimulationSoftwareSuite {
     Version!: Value<string>
@@ -48,6 +39,15 @@ export class SourceConfig {
     }
 }
 
+export class RenderingEngine {
+    Version!: Value<string>
+    Name!: Value<string>
+
+    constructor(properties: RenderingEngine) {
+        Object.assign(this, properties)
+    }
+}
+
 export interface SimulationApplicationProperties {
     RenderingEngine: RenderingEngine
     SimulationSoftwareSuite: SimulationSoftwareSuite
@@ -59,10 +59,10 @@ export interface SimulationApplicationProperties {
 }
 
 export default class SimulationApplication extends ResourceBase<SimulationApplicationProperties> {
-    static RenderingEngine = RenderingEngine
     static SimulationSoftwareSuite = SimulationSoftwareSuite
     static RobotSoftwareSuite = RobotSoftwareSuite
     static SourceConfig = SourceConfig
+    static RenderingEngine = RenderingEngine
 
     constructor(properties: SimulationApplicationProperties) {
         super('AWS::RoboMaker::SimulationApplication', properties)

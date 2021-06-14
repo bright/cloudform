@@ -12,11 +12,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Task {
-    ConnectorOperator?: ConnectorOperator
-    SourceFields!: List<Value<string>>
     DestinationField?: Value<string>
     TaskType!: Value<string>
-    TaskProperties?: List<TaskPropertiesMap>
 
     constructor(properties: Task) {
         Object.assign(this, properties)
@@ -24,7 +21,7 @@ export class Task {
 }
 
 export class TriggerProperties {
-    Scheduled?: ScheduledTriggerProperties
+
 
     constructor(properties: TriggerProperties) {
         Object.assign(this, properties)
@@ -58,9 +55,6 @@ export class FlowDefinition {
     FlowName!: Value<string>
     Description?: Value<string>
     KmsArn!: Value<string>
-    Tasks!: List<Task>
-    TriggerConfig!: TriggerConfig
-    SourceFlowConfig!: SourceFlowConfig
 
     constructor(properties: FlowDefinition) {
         Object.assign(this, properties)
@@ -113,11 +107,7 @@ export class ZendeskSourceProperties {
 }
 
 export class SourceConnectorProperties {
-    Marketo?: MarketoSourceProperties
-    S3?: S3SourceProperties
-    Salesforce?: SalesforceSourceProperties
-    ServiceNow?: ServiceNowSourceProperties
-    Zendesk?: ZendeskSourceProperties
+
 
     constructor(properties: SourceConnectorProperties) {
         Object.assign(this, properties)
@@ -144,7 +134,6 @@ export class SalesforceSourceProperties {
 
 export class TriggerConfig {
     TriggerType!: Value<string>
-    TriggerProperties?: TriggerProperties
 
     constructor(properties: TriggerConfig) {
         Object.assign(this, properties)
@@ -154,8 +143,6 @@ export class TriggerConfig {
 export class SourceFlowConfig {
     ConnectorType!: Value<string>
     ConnectorProfileName?: Value<string>
-    IncrementalPullConfig?: IncrementalPullConfig
-    SourceConnectorProperties!: SourceConnectorProperties
 
     constructor(properties: SourceFlowConfig) {
         Object.assign(this, properties)
@@ -165,9 +152,7 @@ export class SourceFlowConfig {
 export interface IntegrationProperties {
     DomainName: Value<string>
     Uri?: Value<string>
-    FlowDefinition?: FlowDefinition
     ObjectTypeName: Value<string>
-    Tags?: List<ResourceTag>
 }
 
 export default class Integration extends ResourceBase<IntegrationProperties> {

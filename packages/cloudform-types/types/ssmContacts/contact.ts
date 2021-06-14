@@ -22,8 +22,7 @@ export class ContactTargetInfo {
 }
 
 export class Targets {
-    ContactTargetInfo?: ContactTargetInfo
-    ChannelTargetInfo?: ChannelTargetInfo
+
 
     constructor(properties: Targets) {
         Object.assign(this, properties)
@@ -41,7 +40,6 @@ export class ChannelTargetInfo {
 
 export class Stage {
     DurationInMinutes!: Value<number>
-    Targets?: List<Targets>
 
     constructor(properties: Stage) {
         Object.assign(this, properties)
@@ -52,7 +50,6 @@ export interface ContactProperties {
     Alias: Value<string>
     DisplayName: Value<string>
     Type: Value<string>
-    Plan: List<Stage>
 }
 
 export default class Contact extends ResourceBase<ContactProperties> {

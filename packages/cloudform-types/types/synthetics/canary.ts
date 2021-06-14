@@ -22,8 +22,6 @@ import {Value, List} from '../dataTypes'
 
 export class VPCConfig {
     VpcId?: Value<string>
-    SubnetIds!: List<Value<string>>
-    SecurityGroupIds!: List<Value<string>>
 
     constructor(properties: VPCConfig) {
         Object.assign(this, properties)
@@ -55,7 +53,6 @@ export class RunConfig {
     TimeoutInSeconds?: Value<number>
     MemoryInMB?: Value<number>
     ActiveTracing?: Value<boolean>
-    EnvironmentVariables?: {[key: string]: Value<string>}
 
     constructor(properties: RunConfig) {
         Object.assign(this, properties)
@@ -64,16 +61,11 @@ export class RunConfig {
 
 export interface CanaryProperties {
     Name: Value<string>
-    Code: Code
     ArtifactS3Location: Value<string>
-    Schedule: Schedule
     ExecutionRoleArn: Value<string>
     RuntimeVersion: Value<string>
     SuccessRetentionPeriod?: Value<number>
     FailureRetentionPeriod?: Value<number>
-    Tags?: List<ResourceTag>
-    VPCConfig?: VPCConfig
-    RunConfig?: RunConfig
     StartCanaryAfterCreation: Value<boolean>
 }
 

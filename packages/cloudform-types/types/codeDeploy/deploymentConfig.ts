@@ -31,7 +31,6 @@ export class MinimumHealthyHosts {
 
 export interface DeploymentConfigProperties {
     DeploymentConfigName?: Value<string>
-    MinimumHealthyHosts?: MinimumHealthyHosts
 }
 
 export default class DeploymentConfig extends ResourceBase<DeploymentConfigProperties> {

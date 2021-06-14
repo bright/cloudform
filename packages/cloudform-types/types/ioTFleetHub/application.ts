@@ -22,7 +22,6 @@ export interface ApplicationProperties {
     ApplicationName: Value<string>
     ApplicationDescription?: Value<string>
     RoleArn: Value<string>
-    Tags?: List<ResourceTag>
 }
 
 export default class Application extends ResourceBase<ApplicationProperties> {

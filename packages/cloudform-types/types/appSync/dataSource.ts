@@ -1,24 +1,39 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RelationalDatabaseConfig {
-    RdsHttpEndpointConfig?: RdsHttpEndpointConfig
     RelationalDatabaseSourceType!: Value<string>
 
     constructor(properties: RelationalDatabaseConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LambdaConfig {
+    LambdaFunctionArn!: Value<string>
+
+    constructor(properties: LambdaConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class HttpConfig {
+    Endpoint!: Value<string>
+
+    constructor(properties: HttpConfig) {
         Object.assign(this, properties)
     }
 }
@@ -36,7 +51,6 @@ export class DynamoDBConfig {
     TableName!: Value<string>
     AwsRegion!: Value<string>
     Versioned?: Value<boolean>
-    DeltaSyncConfig?: DeltaSyncConfig
     UseCallerCredentials?: Value<boolean>
 
     constructor(properties: DynamoDBConfig) {
@@ -45,7 +59,6 @@ export class DynamoDBConfig {
 }
 
 export class AuthorizationConfig {
-    AwsIamConfig?: AwsIamConfig
     AuthorizationType!: Value<string>
 
     constructor(properties: AuthorizationConfig) {
@@ -61,23 +74,6 @@ export class RdsHttpEndpointConfig {
     AwsSecretStoreArn!: Value<string>
 
     constructor(properties: RdsHttpEndpointConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LambdaConfig {
-    LambdaFunctionArn!: Value<string>
-
-    constructor(properties: LambdaConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class HttpConfig {
-    Endpoint!: Value<string>
-    AuthorizationConfig?: AuthorizationConfig
-
-    constructor(properties: HttpConfig) {
         Object.assign(this, properties)
     }
 }
@@ -105,23 +101,18 @@ export interface DataSourceProperties {
     Type: Value<string>
     Description?: Value<string>
     ServiceRoleArn?: Value<string>
-    HttpConfig?: HttpConfig
-    RelationalDatabaseConfig?: RelationalDatabaseConfig
-    LambdaConfig?: LambdaConfig
     ApiId: Value<string>
     Name: Value<string>
-    DynamoDBConfig?: DynamoDBConfig
-    ElasticsearchConfig?: ElasticsearchConfig
 }
 
 export default class DataSource extends ResourceBase<DataSourceProperties> {
     static RelationalDatabaseConfig = RelationalDatabaseConfig
+    static LambdaConfig = LambdaConfig
+    static HttpConfig = HttpConfig
     static AwsIamConfig = AwsIamConfig
     static DynamoDBConfig = DynamoDBConfig
     static AuthorizationConfig = AuthorizationConfig
     static RdsHttpEndpointConfig = RdsHttpEndpointConfig
-    static LambdaConfig = LambdaConfig
-    static HttpConfig = HttpConfig
     static ElasticsearchConfig = ElasticsearchConfig
     static DeltaSyncConfig = DeltaSyncConfig
 

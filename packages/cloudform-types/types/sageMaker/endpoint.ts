@@ -18,7 +18,7 @@ export class Alarm {
 }
 
 export class AutoRollbackConfig {
-    Alarms!: List<Alarm>
+
 
     constructor(properties: AutoRollbackConfig) {
         Object.assign(this, properties)
@@ -27,7 +27,6 @@ export class AutoRollbackConfig {
 
 export class TrafficRoutingConfig {
     Type!: Value<string>
-    CanarySize?: CapacitySize
     WaitIntervalInSeconds?: Value<number>
 
     constructor(properties: TrafficRoutingConfig) {
@@ -36,8 +35,7 @@ export class TrafficRoutingConfig {
 }
 
 export class DeploymentConfig {
-    AutoRollbackConfiguration?: AutoRollbackConfig
-    BlueGreenUpdatePolicy!: BlueGreenUpdatePolicy
+
 
     constructor(properties: DeploymentConfig) {
         Object.assign(this, properties)
@@ -64,7 +62,6 @@ export class VariantProperty {
 export class BlueGreenUpdatePolicy {
     MaximumExecutionTimeoutInSeconds?: Value<number>
     TerminationWaitInSeconds?: Value<number>
-    TrafficRoutingConfiguration!: TrafficRoutingConfig
 
     constructor(properties: BlueGreenUpdatePolicy) {
         Object.assign(this, properties)
@@ -74,10 +71,7 @@ export class BlueGreenUpdatePolicy {
 export interface EndpointProperties {
     RetainAllVariantProperties?: Value<boolean>
     EndpointName?: Value<string>
-    ExcludeRetainedVariantProperties?: List<VariantProperty>
     EndpointConfigName: Value<string>
-    DeploymentConfig?: DeploymentConfig
-    Tags?: List<ResourceTag>
 }
 
 export default class Endpoint extends ResourceBase<EndpointProperties> {

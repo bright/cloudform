@@ -25,16 +25,13 @@ export class EnvironmentVariable {
 }
 
 export class AutoBranchCreationConfig {
-    EnvironmentVariables?: List<EnvironmentVariable>
     EnableAutoBranchCreation?: Value<boolean>
     PullRequestEnvironmentName?: Value<string>
-    AutoBranchCreationPatterns?: List<Value<string>>
     EnablePullRequestPreview?: Value<boolean>
     EnableAutoBuild?: Value<boolean>
     EnablePerformanceMode?: Value<boolean>
     BuildSpec?: Value<string>
     Stage?: Value<string>
-    BasicAuthConfig?: BasicAuthConfig
 
     constructor(properties: AutoBranchCreationConfig) {
         Object.assign(this, properties)
@@ -63,19 +60,14 @@ export class CustomRule {
 }
 
 export interface AppProperties {
-    AutoBranchCreationConfig?: AutoBranchCreationConfig
     OauthToken?: Value<string>
     Description?: Value<string>
     EnableBranchAutoDeletion?: Value<boolean>
     Name: Value<string>
     Repository?: Value<string>
-    EnvironmentVariables?: List<EnvironmentVariable>
     AccessToken?: Value<string>
     BuildSpec?: Value<string>
-    CustomRules?: List<CustomRule>
-    BasicAuthConfig?: BasicAuthConfig
     CustomHeaders?: Value<string>
-    Tags?: List<ResourceTag>
     IAMServiceRole?: Value<string>
 }
 

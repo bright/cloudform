@@ -27,7 +27,7 @@ export class Device {
 }
 
 export class DeviceDefinitionVersion {
-    Devices!: List<Device>
+
 
     constructor(properties: DeviceDefinitionVersion) {
         Object.assign(this, properties)
@@ -35,7 +35,6 @@ export class DeviceDefinitionVersion {
 }
 
 export interface DeviceDefinitionProperties {
-    InitialVersion?: DeviceDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

@@ -35,7 +35,6 @@ export interface QueueProperties {
     QueueName?: Value<string>
     ReceiveMessageWaitTimeSeconds?: Value<number>
     RedrivePolicy?: {[key: string]: any}
-    Tags?: List<ResourceTag>
     VisibilityTimeout?: Value<number>
 }
 

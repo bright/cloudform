@@ -20,7 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class JupyterServerAppSettings {
-    DefaultResourceSpec?: ResourceSpec
+
 
     constructor(properties: JupyterServerAppSettings) {
         Object.assign(this, properties)
@@ -38,8 +38,7 @@ export class ResourceSpec {
 }
 
 export class KernelGatewayAppSettings {
-    CustomImages?: List<CustomImage>
-    DefaultResourceSpec?: ResourceSpec
+
 
     constructor(properties: KernelGatewayAppSettings) {
         Object.assign(this, properties)
@@ -68,10 +67,6 @@ export class SharingSettings {
 
 export class UserSettings {
     ExecutionRole?: Value<string>
-    JupyterServerAppSettings?: JupyterServerAppSettings
-    KernelGatewayAppSettings?: KernelGatewayAppSettings
-    SecurityGroups?: List<Value<string>>
-    SharingSettings?: SharingSettings
 
     constructor(properties: UserSettings) {
         Object.assign(this, properties)
@@ -83,8 +78,6 @@ export interface UserProfileProperties {
     SingleSignOnUserIdentifier?: Value<string>
     SingleSignOnUserValue?: Value<string>
     UserProfileName: Value<string>
-    UserSettings?: UserSettings
-    Tags?: List<ResourceTag>
 }
 
 export default class UserProfile extends ResourceBase<UserProfileProperties> {

@@ -14,7 +14,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class NetworkFrameworkConfiguration {
-    NetworkFabricConfiguration?: NetworkFabricConfiguration
+
 
     constructor(properties: NetworkFrameworkConfiguration) {
         Object.assign(this, properties)
@@ -24,10 +24,8 @@ export class NetworkFrameworkConfiguration {
 export class NetworkConfiguration {
     Description?: Value<string>
     FrameworkVersion!: Value<string>
-    VotingPolicy!: VotingPolicy
     Framework!: Value<string>
     Name!: Value<string>
-    NetworkFrameworkConfiguration?: NetworkFrameworkConfiguration
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -44,7 +42,6 @@ export class NetworkFabricConfiguration {
 
 export class MemberConfiguration {
     Description?: Value<string>
-    MemberFrameworkConfiguration?: MemberFrameworkConfiguration
     Name!: Value<string>
 
     constructor(properties: MemberConfiguration) {
@@ -63,7 +60,7 @@ export class ApprovalThresholdPolicy {
 }
 
 export class MemberFrameworkConfiguration {
-    MemberFabricConfiguration?: MemberFabricConfiguration
+
 
     constructor(properties: MemberFrameworkConfiguration) {
         Object.assign(this, properties)
@@ -71,7 +68,7 @@ export class MemberFrameworkConfiguration {
 }
 
 export class VotingPolicy {
-    ApprovalThresholdPolicy?: ApprovalThresholdPolicy
+
 
     constructor(properties: VotingPolicy) {
         Object.assign(this, properties)
@@ -88,8 +85,6 @@ export class MemberFabricConfiguration {
 }
 
 export interface MemberProperties {
-    MemberConfiguration: MemberConfiguration
-    NetworkConfiguration?: NetworkConfiguration
     NetworkId?: Value<string>
     InvitationId?: Value<string>
 }

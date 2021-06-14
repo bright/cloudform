@@ -62,8 +62,6 @@ export class LogConfig {
 }
 
 export class AdditionalAuthenticationProvider {
-    OpenIDConnectConfig?: OpenIDConnectConfig
-    UserPoolConfig?: CognitoUserPoolConfig
     AuthenticationType!: Value<string>
 
     constructor(properties: AdditionalAuthenticationProvider) {
@@ -72,14 +70,9 @@ export class AdditionalAuthenticationProvider {
 }
 
 export interface GraphQLApiProperties {
-    OpenIDConnectConfig?: OpenIDConnectConfig
     XrayEnabled?: Value<boolean>
-    UserPoolConfig?: UserPoolConfig
-    Tags?: Tags
     Name: Value<string>
     AuthenticationType: Value<string>
-    LogConfig?: LogConfig
-    AdditionalAuthenticationProviders?: AdditionalAuthenticationProviders
 }
 
 export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {

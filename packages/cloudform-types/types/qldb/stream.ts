@@ -29,8 +29,6 @@ export interface StreamProperties {
     RoleArn: Value<string>
     InclusiveStartTime: Value<string>
     ExclusiveEndTime?: Value<string>
-    KinesisConfiguration: KinesisConfiguration
-    Tags?: List<ResourceTag>
 }
 
 export default class Stream extends ResourceBase<StreamProperties> {

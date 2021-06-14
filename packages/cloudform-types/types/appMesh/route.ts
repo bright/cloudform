@@ -40,7 +40,6 @@ export class GrpcRouteMetadataMatchMethod {
     Regex?: Value<string>
     Exact?: Value<string>
     Prefix?: Value<string>
-    Range?: MatchRange
 
     constructor(properties: GrpcRouteMetadataMatchMethod) {
         Object.assign(this, properties)
@@ -52,7 +51,6 @@ export class HeaderMatchMethod {
     Regex?: Value<string>
     Exact?: Value<string>
     Prefix?: Value<string>
-    Range?: MatchRange
 
     constructor(properties: HeaderMatchMethod) {
         Object.assign(this, properties)
@@ -60,11 +58,7 @@ export class HeaderMatchMethod {
 }
 
 export class RouteSpec {
-    HttpRoute?: HttpRoute
     Priority?: Value<number>
-    Http2Route?: HttpRoute
-    GrpcRoute?: GrpcRoute
-    TcpRoute?: TcpRoute
 
     constructor(properties: RouteSpec) {
         Object.assign(this, properties)
@@ -74,7 +68,6 @@ export class RouteSpec {
 export class GrpcRouteMetadata {
     Invert?: Value<boolean>
     Name!: Value<string>
-    Match?: GrpcRouteMetadataMatchMethod
 
     constructor(properties: GrpcRouteMetadata) {
         Object.assign(this, properties)
@@ -83,7 +76,6 @@ export class GrpcRouteMetadata {
 
 export class HttpRouteMatch {
     Scheme?: Value<string>
-    Headers?: List<HttpRouteHeader>
     Prefix!: Value<string>
     Method?: Value<string>
 
@@ -93,7 +85,7 @@ export class HttpRouteMatch {
 }
 
 export class GrpcRouteAction {
-    WeightedTargets!: List<WeightedTarget>
+
 
     constructor(properties: GrpcRouteAction) {
         Object.assign(this, properties)
@@ -102,7 +94,6 @@ export class GrpcRouteAction {
 
 export class GrpcRouteMatch {
     ServiceName?: Value<string>
-    Metadata?: List<GrpcRouteMetadata>
     MethodName?: Value<string>
 
     constructor(properties: GrpcRouteMatch) {
@@ -111,10 +102,7 @@ export class GrpcRouteMatch {
 }
 
 export class HttpRoute {
-    Action!: HttpRouteAction
-    Timeout?: HttpTimeout
-    RetryPolicy?: HttpRetryPolicy
-    Match!: HttpRouteMatch
+
 
     constructor(properties: HttpRoute) {
         Object.assign(this, properties)
@@ -122,7 +110,7 @@ export class HttpRoute {
 }
 
 export class TcpRouteAction {
-    WeightedTargets!: List<WeightedTarget>
+
 
     constructor(properties: TcpRouteAction) {
         Object.assign(this, properties)
@@ -131,10 +119,6 @@ export class TcpRouteAction {
 
 export class GrpcRetryPolicy {
     MaxRetries!: Value<number>
-    PerRetryTimeout!: Duration
-    GrpcRetryEvents?: List<Value<string>>
-    HttpRetryEvents?: List<Value<string>>
-    TcpRetryEvents?: List<Value<string>>
 
     constructor(properties: GrpcRetryPolicy) {
         Object.assign(this, properties)
@@ -142,8 +126,7 @@ export class GrpcRetryPolicy {
 }
 
 export class TcpRoute {
-    Action!: TcpRouteAction
-    Timeout?: TcpTimeout
+
 
     constructor(properties: TcpRoute) {
         Object.assign(this, properties)
@@ -152,9 +135,6 @@ export class TcpRoute {
 
 export class HttpRetryPolicy {
     MaxRetries!: Value<number>
-    PerRetryTimeout!: Duration
-    HttpRetryEvents?: List<Value<string>>
-    TcpRetryEvents?: List<Value<string>>
 
     constructor(properties: HttpRetryPolicy) {
         Object.assign(this, properties)
@@ -162,8 +142,7 @@ export class HttpRetryPolicy {
 }
 
 export class GrpcTimeout {
-    PerRequest?: Duration
-    Idle?: Duration
+
 
     constructor(properties: GrpcTimeout) {
         Object.assign(this, properties)
@@ -171,10 +150,7 @@ export class GrpcTimeout {
 }
 
 export class GrpcRoute {
-    Action!: GrpcRouteAction
-    Timeout?: GrpcTimeout
-    RetryPolicy?: GrpcRetryPolicy
-    Match!: GrpcRouteMatch
+
 
     constructor(properties: GrpcRoute) {
         Object.assign(this, properties)
@@ -182,7 +158,7 @@ export class GrpcRoute {
 }
 
 export class TcpTimeout {
-    Idle?: Duration
+
 
     constructor(properties: TcpTimeout) {
         Object.assign(this, properties)
@@ -190,8 +166,7 @@ export class TcpTimeout {
 }
 
 export class HttpTimeout {
-    PerRequest?: Duration
-    Idle?: Duration
+
 
     constructor(properties: HttpTimeout) {
         Object.assign(this, properties)
@@ -201,7 +176,6 @@ export class HttpTimeout {
 export class HttpRouteHeader {
     Invert?: Value<boolean>
     Name!: Value<string>
-    Match?: HeaderMatchMethod
 
     constructor(properties: HttpRouteHeader) {
         Object.assign(this, properties)
@@ -209,7 +183,7 @@ export class HttpRouteHeader {
 }
 
 export class HttpRouteAction {
-    WeightedTargets!: List<WeightedTarget>
+
 
     constructor(properties: HttpRouteAction) {
         Object.assign(this, properties)
@@ -230,8 +204,6 @@ export interface RouteProperties {
     VirtualRouterName: Value<string>
     MeshOwner?: Value<string>
     RouteName?: Value<string>
-    Spec: RouteSpec
-    Tags?: List<ResourceTag>
 }
 
 export default class Route extends ResourceBase<RouteProperties> {

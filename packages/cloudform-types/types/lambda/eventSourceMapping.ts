@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SelfManagedEventSource {
-    Endpoints?: Endpoints
+
 
     constructor(properties: SelfManagedEventSource) {
         Object.assign(this, properties)
@@ -46,7 +46,7 @@ export class SourceAccessConfiguration {
 }
 
 export class Endpoints {
-    KafkaBootstrapServers?: List<Value<string>>
+
 
     constructor(properties: Endpoints) {
         Object.assign(this, properties)
@@ -54,7 +54,7 @@ export class Endpoints {
 }
 
 export class DestinationConfig {
-    OnFailure?: OnFailure
+
 
     constructor(properties: DestinationConfig) {
         Object.assign(this, properties)
@@ -64,7 +64,6 @@ export class DestinationConfig {
 export interface EventSourceMappingProperties {
     BatchSize?: Value<number>
     BisectBatchOnFunctionError?: Value<boolean>
-    DestinationConfig?: DestinationConfig
     Enabled?: Value<boolean>
     EventSourceArn?: Value<string>
     FunctionName: Value<string>
@@ -73,12 +72,7 @@ export interface EventSourceMappingProperties {
     MaximumRetryAttempts?: Value<number>
     ParallelizationFactor?: Value<number>
     StartingPosition?: Value<string>
-    Topics?: List<Value<string>>
-    Queues?: List<Value<string>>
-    SourceAccessConfigurations?: List<SourceAccessConfiguration>
     TumblingWindowInSeconds?: Value<number>
-    FunctionResponseTypes?: List<Value<string>>
-    SelfManagedEventSource?: SelfManagedEventSource
 }
 
 export default class EventSourceMapping extends ResourceBase<EventSourceMappingProperties> {

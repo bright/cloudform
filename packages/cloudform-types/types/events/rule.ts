@@ -1,35 +1,76 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
+export class BatchRetryStrategy {
+    Attempts?: Value<number>
+
+    constructor(properties: BatchRetryStrategy) {
+        Object.assign(this, properties)
+    }
+}
+
+export class HttpParameters {
+
+
+    constructor(properties: HttpParameters) {
+        Object.assign(this, properties)
+    }
+}
+
+export class BatchArrayProperties {
+    Size?: Value<number>
+
+    constructor(properties: BatchArrayProperties) {
+        Object.assign(this, properties)
+    }
+}
+
+export class BatchParameters {
+    JobDefinition!: Value<string>
+    JobName!: Value<string>
+
+    constructor(properties: BatchParameters) {
+        Object.assign(this, properties)
+    }
+}
+
 export class RunCommandParameters {
-    RunCommandTargets!: List<RunCommandTarget>
+
 
     constructor(properties: RunCommandParameters) {
         Object.assign(this, properties)
     }
 }
 
+export class DeadLetterConfig {
+    Arn?: Value<string>
+
+    constructor(properties: DeadLetterConfig) {
+        Object.assign(this, properties)
+    }
+}
+
 export class NetworkConfiguration {
-    AwsVpcConfiguration?: AwsVpcConfiguration
+
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -38,7 +79,6 @@ export class NetworkConfiguration {
 
 export class RunCommandTarget {
     Key!: Value<string>
-    Values!: List<Value<string>>
 
     constructor(properties: RunCommandTarget) {
         Object.assign(this, properties)
@@ -46,18 +86,9 @@ export class RunCommandTarget {
 }
 
 export class InputTransformer {
-    InputPathsMap?: {[key: string]: Value<string>}
     InputTemplate!: Value<string>
 
     constructor(properties: InputTransformer) {
-        Object.assign(this, properties)
-    }
-}
-
-export class BatchRetryStrategy {
-    Attempts?: Value<number>
-
-    constructor(properties: BatchRetryStrategy) {
         Object.assign(this, properties)
     }
 }
@@ -70,29 +101,21 @@ export class SqsParameters {
     }
 }
 
-export class HttpParameters {
-    HeaderParameters?: {[key: string]: Value<string>}
-    PathParameterValues?: List<Value<string>>
-    QueryStringParameters?: {[key: string]: Value<string>}
+export class RetryPolicy {
+    MaximumEventAgeInSeconds?: Value<number>
+    MaximumRetryAttempts?: Value<number>
 
-    constructor(properties: HttpParameters) {
+    constructor(properties: RetryPolicy) {
         Object.assign(this, properties)
     }
 }
 
 export class Target {
     Arn!: Value<string>
-    BatchParameters?: BatchParameters
-    EcsParameters?: EcsParameters
-    HttpParameters?: HttpParameters
     Id!: Value<string>
     Input?: Value<string>
     InputPath?: Value<string>
-    InputTransformer?: InputTransformer
-    KinesisParameters?: KinesisParameters
     RoleArn?: Value<string>
-    RunCommandParameters?: RunCommandParameters
-    SqsParameters?: SqsParameters
 
     constructor(properties: Target) {
         Object.assign(this, properties)
@@ -107,10 +130,15 @@ export class KinesisParameters {
     }
 }
 
-export class BatchArrayProperties {
-    Size?: Value<number>
+export class RedshiftDataParameters {
+    Database!: Value<string>
+    DbUser?: Value<string>
+    SecretManagerArn?: Value<string>
+    Sql!: Value<string>
+    StatementName?: Value<string>
+    WithEvent?: Value<boolean>
 
-    constructor(properties: BatchArrayProperties) {
+    constructor(properties: RedshiftDataParameters) {
         Object.assign(this, properties)
     }
 }
@@ -118,7 +146,6 @@ export class BatchArrayProperties {
 export class EcsParameters {
     Group?: Value<string>
     LaunchType?: Value<string>
-    NetworkConfiguration?: NetworkConfiguration
     PlatformVersion?: Value<string>
     TaskCount?: Value<number>
     TaskDefinitionArn!: Value<string>
@@ -130,21 +157,8 @@ export class EcsParameters {
 
 export class AwsVpcConfiguration {
     AssignPublicIp?: Value<string>
-    SecurityGroups?: List<Value<string>>
-    Subnets!: List<Value<string>>
 
     constructor(properties: AwsVpcConfiguration) {
-        Object.assign(this, properties)
-    }
-}
-
-export class BatchParameters {
-    ArrayProperties?: BatchArrayProperties
-    JobDefinition!: Value<string>
-    JobName!: Value<string>
-    RetryStrategy?: BatchRetryStrategy
-
-    constructor(properties: BatchParameters) {
         Object.assign(this, properties)
     }
 }
@@ -157,23 +171,25 @@ export interface RuleProperties {
     RoleArn?: Value<string>
     ScheduleExpression?: Value<string>
     State?: Value<string>
-    Targets?: List<Target>
 }
 
 export default class Rule extends ResourceBase<RuleProperties> {
+    static BatchRetryStrategy = BatchRetryStrategy
+    static HttpParameters = HttpParameters
+    static BatchArrayProperties = BatchArrayProperties
+    static BatchParameters = BatchParameters
     static RunCommandParameters = RunCommandParameters
+    static DeadLetterConfig = DeadLetterConfig
     static NetworkConfiguration = NetworkConfiguration
     static RunCommandTarget = RunCommandTarget
     static InputTransformer = InputTransformer
-    static BatchRetryStrategy = BatchRetryStrategy
     static SqsParameters = SqsParameters
-    static HttpParameters = HttpParameters
+    static RetryPolicy = RetryPolicy
     static Target = Target
     static KinesisParameters = KinesisParameters
-    static BatchArrayProperties = BatchArrayProperties
+    static RedshiftDataParameters = RedshiftDataParameters
     static EcsParameters = EcsParameters
     static AwsVpcConfiguration = AwsVpcConfiguration
-    static BatchParameters = BatchParameters
 
     constructor(properties?: RuleProperties) {
         super('AWS::Events::Rule', properties || {})

@@ -27,7 +27,6 @@ export interface VPCPeeringConnectionProperties {
     PeerRegion?: Value<string>
     PeerRoleArn?: Value<string>
     PeerVpcId: Value<string>
-    Tags?: List<ResourceTag>
     VpcId: Value<string>
 }
 

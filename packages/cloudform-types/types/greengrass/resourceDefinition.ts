@@ -16,7 +16,6 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class S3MachineLearningModelResourceData {
-    OwnerSetting?: ResourceDownloadOwnerSetting
     DestinationPath!: Value<string>
     S3Uri!: Value<string>
 
@@ -27,7 +26,6 @@ export class S3MachineLearningModelResourceData {
 
 export class SecretsManagerSecretResourceData {
     ARN!: Value<string>
-    AdditionalStagingLabelsToDownload?: List<Value<string>>
 
     constructor(properties: SecretsManagerSecretResourceData) {
         Object.assign(this, properties)
@@ -44,7 +42,6 @@ export class ResourceDownloadOwnerSetting {
 }
 
 export class SageMakerMachineLearningModelResourceData {
-    OwnerSetting?: ResourceDownloadOwnerSetting
     DestinationPath!: Value<string>
     SageMakerJobArn!: Value<string>
 
@@ -64,7 +61,6 @@ export class GroupOwnerSetting {
 
 export class LocalDeviceResourceData {
     SourcePath!: Value<string>
-    GroupOwnerSetting?: GroupOwnerSetting
 
     constructor(properties: LocalDeviceResourceData) {
         Object.assign(this, properties)
@@ -72,7 +68,7 @@ export class LocalDeviceResourceData {
 }
 
 export class ResourceDefinitionVersion {
-    Resources!: List<ResourceInstance>
+
 
     constructor(properties: ResourceDefinitionVersion) {
         Object.assign(this, properties)
@@ -82,7 +78,6 @@ export class ResourceDefinitionVersion {
 export class LocalVolumeResourceData {
     SourcePath!: Value<string>
     DestinationPath!: Value<string>
-    GroupOwnerSetting?: GroupOwnerSetting
 
     constructor(properties: LocalVolumeResourceData) {
         Object.assign(this, properties)
@@ -90,7 +85,6 @@ export class LocalVolumeResourceData {
 }
 
 export class ResourceInstance {
-    ResourceDataContainer!: ResourceDataContainer
     Id!: Value<string>
     Name!: Value<string>
 
@@ -100,11 +94,7 @@ export class ResourceInstance {
 }
 
 export class ResourceDataContainer {
-    SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData
-    SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData
-    LocalVolumeResourceData?: LocalVolumeResourceData
-    LocalDeviceResourceData?: LocalDeviceResourceData
-    S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData
+
 
     constructor(properties: ResourceDataContainer) {
         Object.assign(this, properties)
@@ -112,7 +102,6 @@ export class ResourceDataContainer {
 }
 
 export interface ResourceDefinitionProperties {
-    InitialVersion?: ResourceDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

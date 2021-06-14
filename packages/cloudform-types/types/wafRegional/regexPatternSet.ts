@@ -18,7 +18,6 @@ import {Value, List} from '../dataTypes'
 
 
 export interface RegexPatternSetProperties {
-    RegexPatternStrings: List<Value<string>>
     Name: Value<string>
 }
 

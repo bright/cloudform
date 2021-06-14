@@ -21,10 +21,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class HadoopJarStepConfig {
-    Args?: List<Value<string>>
     Jar!: Value<string>
     MainClass?: Value<string>
-    StepProperties?: List<KeyValue>
 
     constructor(properties: HadoopJarStepConfig) {
         Object.assign(this, properties)
@@ -42,7 +40,6 @@ export class KeyValue {
 
 export interface StepProperties {
     ActionOnFailure: Value<string>
-    HadoopJarStep: HadoopJarStepConfig
     JobFlowId: Value<string>
     Name: Value<string>
 }

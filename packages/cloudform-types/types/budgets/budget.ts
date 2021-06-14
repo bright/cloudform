@@ -19,13 +19,10 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class BudgetData {
-    BudgetLimit?: Spend
-    TimePeriod?: TimePeriod
     TimeUnit!: Value<string>
     PlannedBudgetLimits?: {[key: string]: any}
     CostFilters?: {[key: string]: any}
     BudgetName?: Value<string>
-    CostTypes?: CostTypes
     BudgetType!: Value<string>
 
     constructor(properties: BudgetData) {
@@ -70,8 +67,7 @@ export class CostTypes {
 }
 
 export class NotificationWithSubscribers {
-    Subscribers!: List<Subscriber>
-    Notification!: Notification
+
 
     constructor(properties: NotificationWithSubscribers) {
         Object.assign(this, properties)
@@ -99,8 +95,7 @@ export class Spend {
 }
 
 export interface BudgetProperties {
-    NotificationsWithSubscribers?: List<NotificationWithSubscribers>
-    Budget: BudgetData
+
 }
 
 export default class Budget extends ResourceBase<BudgetProperties> {

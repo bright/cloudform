@@ -22,8 +22,6 @@ import {Value, List} from '../dataTypes'
 
 export class Configuration {
     Classification?: Value<string>
-    ConfigurationProperties?: {[key: string]: Value<string>}
-    Configurations?: List<Configuration>
 
     constructor(properties: Configuration) {
         Object.assign(this, properties)
@@ -33,8 +31,6 @@ export class Configuration {
 export class InstanceTypeConfig {
     BidPrice?: Value<string>
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
-    Configurations?: List<Configuration>
-    EbsConfiguration?: EbsConfiguration
     InstanceType!: Value<string>
     WeightedCapacity?: Value<number>
 
@@ -55,7 +51,6 @@ export class SpotProvisioningSpecification {
 }
 
 export class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
 
     constructor(properties: EbsConfiguration) {
@@ -82,8 +77,7 @@ export class VolumeSpecification {
 }
 
 export class InstanceFleetProvisioningSpecifications {
-    OnDemandSpecification?: OnDemandProvisioningSpecification
-    SpotSpecification?: SpotProvisioningSpecification
+
 
     constructor(properties: InstanceFleetProvisioningSpecifications) {
         Object.assign(this, properties)
@@ -91,7 +85,6 @@ export class InstanceFleetProvisioningSpecifications {
 }
 
 export class EbsBlockDeviceConfig {
-    VolumeSpecification!: VolumeSpecification
     VolumesPerInstance?: Value<number>
 
     constructor(properties: EbsBlockDeviceConfig) {
@@ -102,8 +95,6 @@ export class EbsBlockDeviceConfig {
 export interface InstanceFleetConfigProperties {
     ClusterId: Value<string>
     InstanceFleetType: Value<string>
-    InstanceTypeConfigs?: List<InstanceTypeConfig>
-    LaunchSpecifications?: InstanceFleetProvisioningSpecifications
     Name?: Value<string>
     TargetOnDemandCapacity?: Value<number>
     TargetSpotCapacity?: Value<number>

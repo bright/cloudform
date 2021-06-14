@@ -18,7 +18,6 @@ import {Value, List} from '../dataTypes'
 
 export class OrganizationAggregationSource {
     AllAwsRegions?: Value<boolean>
-    AwsRegions?: List<Value<string>>
     RoleArn!: Value<string>
 
     constructor(properties: OrganizationAggregationSource) {
@@ -28,8 +27,6 @@ export class OrganizationAggregationSource {
 
 export class AccountAggregationSource {
     AllAwsRegions?: Value<boolean>
-    AwsRegions?: List<Value<string>>
-    AccountIds!: List<Value<string>>
 
     constructor(properties: AccountAggregationSource) {
         Object.assign(this, properties)
@@ -37,10 +34,7 @@ export class AccountAggregationSource {
 }
 
 export interface ConfigurationAggregatorProperties {
-    AccountAggregationSources?: List<AccountAggregationSource>
     ConfigurationAggregatorName?: Value<string>
-    OrganizationAggregationSource?: OrganizationAggregationSource
-    Tags?: List<ResourceTag>
 }
 
 export default class ConfigurationAggregator extends ResourceBase<ConfigurationAggregatorProperties> {

@@ -40,7 +40,6 @@ export class Dimension {
 
 export class Configuration {
     MetricTimeZone?: Value<string>
-    ExcludedTimeRanges?: List<Range>
 
     constructor(properties: Configuration) {
         Object.assign(this, properties)
@@ -50,8 +49,6 @@ export class Configuration {
 export interface AnomalyDetectorProperties {
     MetricName: Value<string>
     Stat: Value<string>
-    Configuration?: Configuration
-    Dimensions?: List<Dimension>
     Namespace: Value<string>
 }
 

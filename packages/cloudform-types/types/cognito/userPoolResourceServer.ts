@@ -28,7 +28,6 @@ export class ResourceServerScopeType {
 export interface UserPoolResourceServerProperties {
     UserPoolId: Value<string>
     Identifier: Value<string>
-    Scopes?: List<ResourceServerScopeType>
     Name: Value<string>
 }
 

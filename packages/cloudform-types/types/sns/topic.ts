@@ -34,8 +34,6 @@ export interface TopicProperties {
     DisplayName?: Value<string>
     FifoTopic?: Value<boolean>
     KmsMasterKeyId?: Value<string>
-    Subscription?: List<Subscription>
-    Tags?: List<ResourceTag>
     TopicName?: Value<string>
 }
 

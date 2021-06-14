@@ -18,17 +18,14 @@ export class SSESpecification {
 }
 
 export interface ClusterProperties {
-    SSESpecification?: SSESpecification
     Description?: Value<string>
     ReplicationFactor: Value<number>
     ParameterGroupName?: Value<string>
-    AvailabilityZones?: List<Value<string>>
     IAMRoleARN: Value<string>
     SubnetGroupName?: Value<string>
     PreferredMaintenanceWindow?: Value<string>
     ClusterEndpointEncryptionType?: Value<string>
     NotificationTopicARN?: Value<string>
-    SecurityGroupIds?: List<Value<string>>
     NodeType: Value<string>
     ClusterName?: Value<string>
     Tags?: {[key: string]: any}

@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class LogDestination {
-    CloudWatchLogsLogGroup?: CloudWatchLogsLogGroup
+
 
     constructor(properties: LogDestination) {
         Object.assign(this, properties)
@@ -40,7 +40,6 @@ export class TagsEntry {
 export class LoggingConfiguration {
     Level?: Value<string>
     IncludeExecutionData?: Value<boolean>
-    Destinations?: List<LogDestination>
 
     constructor(properties: LoggingConfiguration) {
         Object.assign(this, properties)
@@ -78,12 +77,6 @@ export interface StateMachineProperties {
     RoleArn: Value<string>
     StateMachineName?: Value<string>
     StateMachineType?: Value<string>
-    LoggingConfiguration?: LoggingConfiguration
-    TracingConfiguration?: TracingConfiguration
-    DefinitionS3Location?: S3Location
-    DefinitionSubstitutions?: {[key: string]: Value<string>}
-    Definition?: Definition
-    Tags?: List<TagsEntry>
 }
 
 export default class StateMachine extends ResourceBase<StateMachineProperties> {

@@ -28,8 +28,7 @@ export class ResourceValue {
 }
 
 export class RemediationParameterValue {
-    ResourceValue?: ResourceValue
-    StaticValue?: StaticValue
+
 
     constructor(properties: RemediationParameterValue) {
         Object.assign(this, properties)
@@ -46,7 +45,7 @@ export class SsmControls {
 }
 
 export class StaticValue {
-    Values?: List<Value<string>>
+
 
     constructor(properties: StaticValue) {
         Object.assign(this, properties)
@@ -54,7 +53,7 @@ export class StaticValue {
 }
 
 export class ExecutionControls {
-    SsmControls?: SsmControls
+
 
     constructor(properties: ExecutionControls) {
         Object.assign(this, properties)
@@ -63,7 +62,6 @@ export class ExecutionControls {
 
 export interface RemediationConfigurationProperties {
     TargetVersion?: Value<string>
-    ExecutionControls?: ExecutionControls
     Parameters?: {[key: string]: any}
     TargetType: Value<string>
     ConfigRuleName: Value<string>

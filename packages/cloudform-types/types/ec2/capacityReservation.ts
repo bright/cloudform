@@ -20,7 +20,6 @@ import {Value, List} from '../dataTypes'
 
 export class TagSpecification {
     ResourceType?: Value<string>
-    Tags?: List<ResourceTag>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)
@@ -31,7 +30,6 @@ export interface CapacityReservationProperties {
     Tenancy?: Value<string>
     EndDateType?: Value<string>
     InstanceCount: Value<number>
-    TagSpecifications?: List<TagSpecification>
     AvailabilityZone: Value<string>
     InstancePlatform: Value<string>
     InstanceType: Value<string>

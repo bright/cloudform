@@ -24,7 +24,6 @@ export interface FlowVpcInterfaceProperties {
     FlowArn: Value<string>
     Name: Value<string>
     RoleArn: Value<string>
-    SecurityGroupIds: List<Value<string>>
     SubnetId: Value<string>
 }
 

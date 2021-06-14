@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class OwnershipControls {
-    Rules!: List<OwnershipControlsRule>
+
 
     constructor(properties: OwnershipControls) {
         Object.assign(this, properties)
@@ -37,10 +37,6 @@ export class ReplicaModifications {
 }
 
 export class CorsRule {
-    AllowedHeaders?: List<Value<string>>
-    AllowedMethods!: List<Value<string>>
-    AllowedOrigins!: List<Value<string>>
-    ExposedHeaders?: List<Value<string>>
     Id?: Value<string>
     MaxAge?: Value<number>
 
@@ -86,7 +82,6 @@ export class VersioningConfiguration {
 
 export class ReplicationTime {
     Status!: Value<string>
-    Time!: ReplicationTimeValue
 
     constructor(properties: ReplicationTime) {
         Object.assign(this, properties)
@@ -121,7 +116,6 @@ export class SseKmsEncryptedObjects {
 
 export class QueueConfiguration {
     Event!: Value<string>
-    Filter?: NotificationFilter
     Queue!: Value<string>
 
     constructor(properties: QueueConfiguration) {
@@ -131,7 +125,6 @@ export class QueueConfiguration {
 
 export class ObjectLockConfiguration {
     ObjectLockEnabled?: Value<string>
-    Rule?: ObjectLockRule
 
     constructor(properties: ObjectLockConfiguration) {
         Object.assign(this, properties)
@@ -150,8 +143,6 @@ export class IntelligentTieringConfiguration {
     Id!: Value<string>
     Prefix?: Value<string>
     Status!: Value<string>
-    TagFilters?: List<TagFilter>
-    Tierings!: List<Tiering>
 
     constructor(properties: IntelligentTieringConfiguration) {
         Object.assign(this, properties)
@@ -186,13 +177,9 @@ export class PublicAccessBlockConfiguration {
 }
 
 export class ReplicationRule {
-    DeleteMarkerReplication?: DeleteMarkerReplication
-    Destination!: ReplicationDestination
-    Filter?: ReplicationRuleFilter
     Id?: Value<string>
     Prefix?: Value<string>
     Priority?: Value<number>
-    SourceSelectionCriteria?: SourceSelectionCriteria
     Status!: Value<string>
 
     constructor(properties: ReplicationRule) {
@@ -201,8 +188,7 @@ export class ReplicationRule {
 }
 
 export class SourceSelectionCriteria {
-    ReplicaModifications?: ReplicaModifications
-    SseKmsEncryptedObjects?: SseKmsEncryptedObjects
+
 
     constructor(properties: SourceSelectionCriteria) {
         Object.assign(this, properties)
@@ -210,7 +196,7 @@ export class SourceSelectionCriteria {
 }
 
 export class StorageClassAnalysis {
-    DataExport?: DataExport
+
 
     constructor(properties: StorageClassAnalysis) {
         Object.assign(this, properties)
@@ -230,7 +216,7 @@ export class RedirectRule {
 }
 
 export class ObjectLockRule {
-    DefaultRetention?: DefaultRetention
+
 
     constructor(properties: ObjectLockRule) {
         Object.assign(this, properties)
@@ -238,19 +224,13 @@ export class ObjectLockRule {
 }
 
 export class Rule {
-    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload
     ExpirationDate?: Value<string>
     ExpirationInDays?: Value<number>
     ExpiredObjectDeleteMarker?: Value<boolean>
     Id?: Value<string>
     NoncurrentVersionExpirationInDays?: Value<number>
-    NoncurrentVersionTransition?: NoncurrentVersionTransition
-    NoncurrentVersionTransitions?: List<NoncurrentVersionTransition>
     Prefix?: Value<string>
     Status!: Value<string>
-    TagFilters?: List<TagFilter>
-    Transition?: Transition
-    Transitions?: List<Transition>
 
     constructor(properties: Rule) {
         Object.assign(this, properties)
@@ -260,7 +240,6 @@ export class Rule {
 export class MetricsConfiguration {
     Id!: Value<string>
     Prefix?: Value<string>
-    TagFilters?: List<TagFilter>
 
     constructor(properties: MetricsConfiguration) {
         Object.assign(this, properties)
@@ -268,7 +247,6 @@ export class MetricsConfiguration {
 }
 
 export class DataExport {
-    Destination!: Destination
     OutputSchemaVersion!: Value<string>
 
     constructor(properties: DataExport) {
@@ -295,7 +273,6 @@ export class FilterRule {
 
 export class ReplicationRuleAndOperator {
     Prefix?: Value<string>
-    TagFilters?: List<TagFilter>
 
     constructor(properties: ReplicationRuleAndOperator) {
         Object.assign(this, properties)
@@ -303,7 +280,7 @@ export class ReplicationRuleAndOperator {
 }
 
 export class BucketEncryption {
-    ServerSideEncryptionConfiguration!: List<ServerSideEncryptionRule>
+
 
     constructor(properties: BucketEncryption) {
         Object.assign(this, properties)
@@ -311,7 +288,6 @@ export class BucketEncryption {
 }
 
 export class Metrics {
-    EventThreshold?: ReplicationTimeValue
     Status!: Value<string>
 
     constructor(properties: Metrics) {
@@ -329,7 +305,7 @@ export class RoutingRuleCondition {
 }
 
 export class LifecycleConfiguration {
-    Rules!: List<Rule>
+
 
     constructor(properties: LifecycleConfiguration) {
         Object.assign(this, properties)
@@ -337,9 +313,7 @@ export class LifecycleConfiguration {
 }
 
 export class NotificationConfiguration {
-    LambdaConfigurations?: List<LambdaConfiguration>
-    QueueConfigurations?: List<QueueConfiguration>
-    TopicConfigurations?: List<TopicConfiguration>
+
 
     constructor(properties: NotificationConfiguration) {
         Object.assign(this, properties)
@@ -356,7 +330,7 @@ export class RedirectAllRequestsTo {
 }
 
 export class S3KeyFilter {
-    Rules!: List<FilterRule>
+
 
     constructor(properties: S3KeyFilter) {
         Object.assign(this, properties)
@@ -364,11 +338,9 @@ export class S3KeyFilter {
 }
 
 export class InventoryConfiguration {
-    Destination!: Destination
     Enabled!: Value<boolean>
     Id!: Value<string>
     IncludedObjectVersions!: Value<string>
-    OptionalFields?: List<Value<string>>
     Prefix?: Value<string>
     ScheduleFrequency!: Value<string>
 
@@ -379,7 +351,6 @@ export class InventoryConfiguration {
 
 export class ReplicationConfiguration {
     Role!: Value<string>
-    Rules!: List<ReplicationRule>
 
     constructor(properties: ReplicationConfiguration) {
         Object.assign(this, properties)
@@ -387,7 +358,7 @@ export class ReplicationConfiguration {
 }
 
 export class CorsConfiguration {
-    CorsRules!: List<CorsRule>
+
 
     constructor(properties: CorsConfiguration) {
         Object.assign(this, properties)
@@ -395,12 +366,8 @@ export class CorsConfiguration {
 }
 
 export class ReplicationDestination {
-    AccessControlTranslation?: AccessControlTranslation
     Account?: Value<string>
     Bucket!: Value<string>
-    EncryptionConfiguration?: EncryptionConfiguration
-    Metrics?: Metrics
-    ReplicationTime?: ReplicationTime
     StorageClass?: Value<string>
 
     constructor(properties: ReplicationDestination) {
@@ -428,7 +395,7 @@ export class DefaultRetention {
 }
 
 export class NotificationFilter {
-    S3Key!: S3KeyFilter
+
 
     constructor(properties: NotificationFilter) {
         Object.assign(this, properties)
@@ -437,7 +404,6 @@ export class NotificationFilter {
 
 export class LambdaConfiguration {
     Event!: Value<string>
-    Filter?: NotificationFilter
     Function!: Value<string>
 
     constructor(properties: LambdaConfiguration) {
@@ -447,7 +413,6 @@ export class LambdaConfiguration {
 
 export class ServerSideEncryptionRule {
     BucketKeyEnabled?: Value<boolean>
-    ServerSideEncryptionByDefault?: ServerSideEncryptionByDefault
 
     constructor(properties: ServerSideEncryptionRule) {
         Object.assign(this, properties)
@@ -457,8 +422,6 @@ export class ServerSideEncryptionRule {
 export class AnalyticsConfiguration {
     Id!: Value<string>
     Prefix?: Value<string>
-    StorageClassAnalysis!: StorageClassAnalysis
-    TagFilters?: List<TagFilter>
 
     constructor(properties: AnalyticsConfiguration) {
         Object.assign(this, properties)
@@ -475,8 +438,7 @@ export class LoggingConfiguration {
 }
 
 export class RoutingRule {
-    RedirectRule!: RedirectRule
-    RoutingRuleCondition?: RoutingRuleCondition
+
 
     constructor(properties: RoutingRule) {
         Object.assign(this, properties)
@@ -494,8 +456,6 @@ export class EncryptionConfiguration {
 export class WebsiteConfiguration {
     ErrorDocument?: Value<string>
     IndexDocument?: Value<string>
-    RedirectAllRequestsTo?: RedirectAllRequestsTo
-    RoutingRules?: List<RoutingRule>
 
     constructor(properties: WebsiteConfiguration) {
         Object.assign(this, properties)
@@ -504,7 +464,6 @@ export class WebsiteConfiguration {
 
 export class TopicConfiguration {
     Event!: Value<string>
-    Filter?: NotificationFilter
     Topic!: Value<string>
 
     constructor(properties: TopicConfiguration) {
@@ -532,9 +491,7 @@ export class Transition {
 }
 
 export class ReplicationRuleFilter {
-    And?: ReplicationRuleAndOperator
     Prefix?: Value<string>
-    TagFilter?: TagFilter
 
     constructor(properties: ReplicationRuleFilter) {
         Object.assign(this, properties)
@@ -542,26 +499,9 @@ export class ReplicationRuleFilter {
 }
 
 export interface BucketProperties {
-    AccelerateConfiguration?: AccelerateConfiguration
     AccessControl?: Value<string>
-    AnalyticsConfigurations?: List<AnalyticsConfiguration>
-    BucketEncryption?: BucketEncryption
     BucketName?: Value<string>
-    CorsConfiguration?: CorsConfiguration
-    IntelligentTieringConfigurations?: List<IntelligentTieringConfiguration>
-    InventoryConfigurations?: List<InventoryConfiguration>
-    LifecycleConfiguration?: LifecycleConfiguration
-    LoggingConfiguration?: LoggingConfiguration
-    MetricsConfigurations?: List<MetricsConfiguration>
-    NotificationConfiguration?: NotificationConfiguration
-    ObjectLockConfiguration?: ObjectLockConfiguration
     ObjectLockEnabled?: Value<boolean>
-    OwnershipControls?: OwnershipControls
-    PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration
-    ReplicationConfiguration?: ReplicationConfiguration
-    Tags?: List<ResourceTag>
-    VersioningConfiguration?: VersioningConfiguration
-    WebsiteConfiguration?: WebsiteConfiguration
 }
 
 export default class Bucket extends ResourceBase<BucketProperties> {

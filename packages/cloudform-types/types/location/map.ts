@@ -21,7 +21,6 @@ export class MapConfiguration {
 }
 
 export interface MapProperties {
-    Configuration: MapConfiguration
     Description?: Value<string>
     MapName: Value<string>
     PricingPlan: Value<string>

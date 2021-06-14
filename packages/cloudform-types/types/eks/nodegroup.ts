@@ -51,7 +51,6 @@ export class ScalingConfig {
 }
 
 export class RemoteAccess {
-    SourceSecurityGroups?: List<Value<string>>
     Ec2SshKey!: Value<string>
 
     constructor(properties: RemoteAccess) {
@@ -69,24 +68,17 @@ export class UpdateConfig {
 }
 
 export interface NodegroupProperties {
-    ScalingConfig?: ScalingConfig
     Labels?: {[key: string]: any}
-    Taints?: List<Taint>
     ReleaseVersion?: Value<string>
     CapacityType?: Value<string>
     NodegroupName?: Value<string>
-    Subnets: List<Value<string>>
     NodeRole: Value<string>
     AmiType?: Value<string>
     ForceUpdateEnabled?: Value<boolean>
     Version?: Value<string>
-    LaunchTemplate?: LaunchTemplateSpecification
-    RemoteAccess?: RemoteAccess
     DiskSize?: Value<number>
     ClusterName: Value<string>
-    InstanceTypes?: List<Value<string>>
     Tags?: {[key: string]: any}
-    UpdateConfig?: UpdateConfig
 }
 
 export default class Nodegroup extends ResourceBase<NodegroupProperties> {

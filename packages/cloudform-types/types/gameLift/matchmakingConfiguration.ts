@@ -28,7 +28,6 @@ export class GameProperty {
 }
 
 export interface MatchmakingConfigurationProperties {
-    GameProperties?: List<GameProperty>
     GameSessionData?: Value<string>
     Description?: Value<string>
     AcceptanceTimeoutSeconds?: Value<number>
@@ -41,7 +40,6 @@ export interface MatchmakingConfigurationProperties {
     AcceptanceRequired: Value<boolean>
     FlexMatchMode?: Value<string>
     RuleSetName: Value<string>
-    GameSessionQueueArns?: List<Value<string>>
 }
 
 export default class MatchmakingConfiguration extends ResourceBase<MatchmakingConfigurationProperties> {

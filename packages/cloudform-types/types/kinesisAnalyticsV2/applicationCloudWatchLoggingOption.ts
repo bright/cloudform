@@ -24,7 +24,6 @@ export class CloudWatchLoggingOption {
 
 export interface ApplicationCloudWatchLoggingOptionProperties {
     ApplicationName: Value<string>
-    CloudWatchLoggingOption: CloudWatchLoggingOption
 }
 
 export default class ApplicationCloudWatchLoggingOption extends ResourceBase<ApplicationCloudWatchLoggingOptionProperties> {

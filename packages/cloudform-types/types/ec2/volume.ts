@@ -32,7 +32,6 @@ export interface VolumeProperties {
     OutpostArn?: Value<string>
     Size?: Value<number>
     SnapshotId?: Value<string>
-    Tags?: List<ResourceTag>
     Throughput?: Value<number>
     VolumeType?: Value<string>
 }

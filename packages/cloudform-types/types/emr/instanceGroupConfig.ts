@@ -21,8 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class AutoScalingPolicy {
-    Constraints!: ScalingConstraints
-    Rules!: List<ScalingRule>
+
 
     constructor(properties: AutoScalingPolicy) {
         Object.assign(this, properties)
@@ -31,8 +30,6 @@ export class AutoScalingPolicy {
 
 export class Configuration {
     Classification?: Value<string>
-    ConfigurationProperties?: {[key: string]: Value<string>}
-    Configurations?: List<Configuration>
 
     constructor(properties: Configuration) {
         Object.assign(this, properties)
@@ -59,10 +56,8 @@ export class SimpleScalingPolicyConfiguration {
 }
 
 export class ScalingRule {
-    Action!: ScalingAction
     Description?: Value<string>
     Name!: Value<string>
-    Trigger!: ScalingTrigger
 
     constructor(properties: ScalingRule) {
         Object.assign(this, properties)
@@ -71,7 +66,6 @@ export class ScalingRule {
 
 export class CloudWatchAlarmDefinition {
     ComparisonOperator!: Value<string>
-    Dimensions?: List<MetricDimension>
     EvaluationPeriods?: Value<number>
     MetricName!: Value<string>
     Namespace?: Value<string>
@@ -86,7 +80,6 @@ export class CloudWatchAlarmDefinition {
 }
 
 export class EbsBlockDeviceConfig {
-    VolumeSpecification!: VolumeSpecification
     VolumesPerInstance?: Value<number>
 
     constructor(properties: EbsBlockDeviceConfig) {
@@ -96,7 +89,6 @@ export class EbsBlockDeviceConfig {
 
 export class ScalingAction {
     Market?: Value<string>
-    SimpleScalingPolicyConfiguration!: SimpleScalingPolicyConfiguration
 
     constructor(properties: ScalingAction) {
         Object.assign(this, properties)
@@ -104,7 +96,7 @@ export class ScalingAction {
 }
 
 export class ScalingTrigger {
-    CloudWatchAlarmDefinition!: CloudWatchAlarmDefinition
+
 
     constructor(properties: ScalingTrigger) {
         Object.assign(this, properties)
@@ -122,7 +114,6 @@ export class VolumeSpecification {
 }
 
 export class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
 
     constructor(properties: EbsConfiguration) {
@@ -140,10 +131,7 @@ export class ScalingConstraints {
 }
 
 export interface InstanceGroupConfigProperties {
-    AutoScalingPolicy?: AutoScalingPolicy
     BidPrice?: Value<string>
-    Configurations?: List<Configuration>
-    EbsConfiguration?: EbsConfiguration
     InstanceCount: Value<number>
     InstanceRole: Value<string>
     InstanceType: Value<string>

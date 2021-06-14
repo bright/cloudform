@@ -31,7 +31,6 @@ export class FieldToMatch {
 
 export class SizeConstraint {
     ComparisonOperator!: Value<string>
-    FieldToMatch!: FieldToMatch
     Size!: Value<number>
     TextTransformation!: Value<string>
 
@@ -42,7 +41,6 @@ export class SizeConstraint {
 
 export interface SizeConstraintSetProperties {
     Name: Value<string>
-    SizeConstraints: List<SizeConstraint>
 }
 
 export default class SizeConstraintSet extends ResourceBase<SizeConstraintSetProperties> {

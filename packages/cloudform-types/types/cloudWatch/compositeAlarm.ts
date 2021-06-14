@@ -27,9 +27,6 @@ export interface CompositeAlarmProperties {
     AlarmRule: Value<string>
     AlarmDescription?: Value<string>
     ActionsEnabled?: Value<boolean>
-    OKActions?: List<Value<string>>
-    AlarmActions?: List<Value<string>>
-    InsufficientDataActions?: List<Value<string>>
 }
 
 export default class CompositeAlarm extends ResourceBase<CompositeAlarmProperties> {

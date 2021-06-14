@@ -20,7 +20,6 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Targets {
-    Values!: List<Value<string>>
     Key!: Value<string>
 
     constructor(properties: Targets) {
@@ -33,7 +32,6 @@ export interface MaintenanceWindowTargetProperties {
     Description?: Value<string>
     WindowId: Value<string>
     ResourceType: Value<string>
-    Targets: List<Targets>
     Name?: Value<string>
 }
 

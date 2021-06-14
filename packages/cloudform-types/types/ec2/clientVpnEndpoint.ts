@@ -1,21 +1,64 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class ClientConnectOptions {
+    LambdaFunctionArn?: Value<string>
+    Enabled!: Value<boolean>
+
+    constructor(properties: ClientConnectOptions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DirectoryServiceAuthenticationRequest {
+    DirectoryId!: Value<string>
+
+    constructor(properties: DirectoryServiceAuthenticationRequest) {
+        Object.assign(this, properties)
+    }
+}
+
+export class TagSpecification {
+    ResourceType!: Value<string>
+
+    constructor(properties: TagSpecification) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ClientAuthenticationRequest {
+    Type!: Value<string>
+
+    constructor(properties: ClientAuthenticationRequest) {
+        Object.assign(this, properties)
+    }
+}
+
+export class FederatedAuthenticationRequest {
+    SelfServiceSAMLProviderArn?: Value<string>
+    SAMLProviderArn!: Value<string>
+
+    constructor(properties: FederatedAuthenticationRequest) {
+        Object.assign(this, properties)
+    }
+}
 
 export class ConnectionLogOptions {
     CloudwatchLogStream?: Value<string>
@@ -35,64 +78,25 @@ export class CertificateAuthenticationRequest {
     }
 }
 
-export class DirectoryServiceAuthenticationRequest {
-    DirectoryId!: Value<string>
-
-    constructor(properties: DirectoryServiceAuthenticationRequest) {
-        Object.assign(this, properties)
-    }
-}
-
-export class TagSpecification {
-    ResourceType!: Value<string>
-    Tags!: List<ResourceTag>
-
-    constructor(properties: TagSpecification) {
-        Object.assign(this, properties)
-    }
-}
-
-export class ClientAuthenticationRequest {
-    MutualAuthentication?: CertificateAuthenticationRequest
-    Type!: Value<string>
-    FederatedAuthentication?: FederatedAuthenticationRequest
-    ActiveDirectory?: DirectoryServiceAuthenticationRequest
-
-    constructor(properties: ClientAuthenticationRequest) {
-        Object.assign(this, properties)
-    }
-}
-
-export class FederatedAuthenticationRequest {
-    SAMLProviderArn!: Value<string>
-
-    constructor(properties: FederatedAuthenticationRequest) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface ClientVpnEndpointProperties {
     ClientCidrBlock: Value<string>
-    ConnectionLogOptions: ConnectionLogOptions
-    SplitTunnel?: Value<boolean>
     Description?: Value<string>
-    TagSpecifications?: List<TagSpecification>
-    VpcId?: Value<string>
-    AuthenticationOptions: List<ClientAuthenticationRequest>
     ServerCertificateArn: Value<string>
-    DnsServers?: List<Value<string>>
+    SplitTunnel?: Value<boolean>
+    VpcId?: Value<string>
+    SelfServicePortal?: Value<string>
     TransportProtocol?: Value<string>
-    SecurityGroupIds?: List<Value<string>>
     VpnPort?: Value<number>
 }
 
 export default class ClientVpnEndpoint extends ResourceBase<ClientVpnEndpointProperties> {
-    static ConnectionLogOptions = ConnectionLogOptions
-    static CertificateAuthenticationRequest = CertificateAuthenticationRequest
+    static ClientConnectOptions = ClientConnectOptions
     static DirectoryServiceAuthenticationRequest = DirectoryServiceAuthenticationRequest
     static TagSpecification = TagSpecification
     static ClientAuthenticationRequest = ClientAuthenticationRequest
     static FederatedAuthenticationRequest = FederatedAuthenticationRequest
+    static ConnectionLogOptions = ConnectionLogOptions
+    static CertificateAuthenticationRequest = CertificateAuthenticationRequest
 
     constructor(properties: ClientVpnEndpointProperties) {
         super('AWS::EC2::ClientVpnEndpoint', properties)

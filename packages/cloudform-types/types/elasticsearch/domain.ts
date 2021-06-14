@@ -49,7 +49,6 @@ export class ElasticsearchClusterConfig {
     WarmCount?: Value<number>
     WarmEnabled?: Value<boolean>
     WarmType?: Value<string>
-    ZoneAwarenessConfig?: ZoneAwarenessConfig
     ZoneAwarenessEnabled?: Value<boolean>
 
     constructor(properties: ElasticsearchClusterConfig) {
@@ -60,7 +59,6 @@ export class ElasticsearchClusterConfig {
 export class AdvancedSecurityOptionsInput {
     Enabled?: Value<boolean>
     InternalUserDatabaseEnabled?: Value<boolean>
-    MasterUserOptions?: MasterUserOptions
 
     constructor(properties: AdvancedSecurityOptionsInput) {
         Object.assign(this, properties)
@@ -95,8 +93,7 @@ export class CognitoOptions {
 }
 
 export class VPCOptions {
-    SecurityGroupIds?: List<Value<string>>
-    SubnetIds?: List<Value<string>>
+
 
     constructor(properties: VPCOptions) {
         Object.assign(this, properties)
@@ -144,20 +141,8 @@ export class EncryptionAtRestOptions {
 
 export interface DomainProperties {
     AccessPolicies?: {[key: string]: any}
-    AdvancedOptions?: {[key: string]: Value<string>}
-    AdvancedSecurityOptions?: AdvancedSecurityOptionsInput
-    CognitoOptions?: CognitoOptions
-    DomainEndpointOptions?: DomainEndpointOptions
     DomainName?: Value<string>
-    EBSOptions?: EBSOptions
-    ElasticsearchClusterConfig?: ElasticsearchClusterConfig
     ElasticsearchVersion?: Value<string>
-    EncryptionAtRestOptions?: EncryptionAtRestOptions
-    LogPublishingOptions?: {[key: string]: LogPublishingOption}
-    NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions
-    SnapshotOptions?: SnapshotOptions
-    Tags?: List<ResourceTag>
-    VPCOptions?: VPCOptions
 }
 
 export default class Domain extends ResourceBase<DomainProperties> {

@@ -12,8 +12,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class FileFormatConfiguration {
-    ParquetConfiguration?: ParquetConfiguration
-    JsonConfiguration?: JsonConfiguration
+
 
     constructor(properties: FileFormatConfiguration) {
         Object.assign(this, properties)
@@ -48,7 +47,7 @@ export class CustomerManagedS3 {
 }
 
 export class SchemaDefinition {
-    Columns?: List<Column>
+
 
     constructor(properties: SchemaDefinition) {
         Object.assign(this, properties)
@@ -65,7 +64,7 @@ export class Column {
 }
 
 export class ParquetConfiguration {
-    SchemaDefinition?: SchemaDefinition
+
 
     constructor(properties: ParquetConfiguration) {
         Object.assign(this, properties)
@@ -73,8 +72,7 @@ export class ParquetConfiguration {
 }
 
 export class DatastoreStorage {
-    CustomerManagedS3?: CustomerManagedS3
-    ServiceManagedS3?: ServiceManagedS3
+
 
     constructor(properties: DatastoreStorage) {
         Object.assign(this, properties)
@@ -90,11 +88,7 @@ export class JsonConfiguration {
 }
 
 export interface DatastoreProperties {
-    DatastoreStorage?: DatastoreStorage
-    FileFormatConfiguration?: FileFormatConfiguration
     DatastoreName?: Value<string>
-    RetentionPeriod?: RetentionPeriod
-    Tags?: List<ResourceTag>
 }
 
 export default class Datastore extends ResourceBase<DatastoreProperties> {

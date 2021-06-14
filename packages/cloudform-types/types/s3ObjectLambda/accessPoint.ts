@@ -21,9 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class ObjectLambdaConfiguration {
     SupportingAccessPoint!: Value<string>
-    AllowedFeatures?: List<Value<string>>
     CloudWatchMetricsEnabled?: Value<boolean>
-    TransformationConfigurations!: List<TransformationConfiguration>
 
     constructor(properties: ObjectLambdaConfiguration) {
         Object.assign(this, properties)
@@ -31,7 +29,6 @@ export class ObjectLambdaConfiguration {
 }
 
 export class TransformationConfiguration {
-    Actions?: List<Value<string>>
     ContentTransformation?: {[key: string]: any}
 
     constructor(properties: TransformationConfiguration) {
@@ -41,7 +38,6 @@ export class TransformationConfiguration {
 
 export interface AccessPointProperties {
     Name: Value<string>
-    ObjectLambdaConfiguration?: ObjectLambdaConfiguration
 }
 
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {

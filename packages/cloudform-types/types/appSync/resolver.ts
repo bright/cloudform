@@ -23,7 +23,7 @@ export class LambdaConflictHandlerConfig {
 }
 
 export class PipelineConfig {
-    Functions?: List<Value<string>>
+
 
     constructor(properties: PipelineConfig) {
         Object.assign(this, properties)
@@ -33,7 +33,6 @@ export class PipelineConfig {
 export class SyncConfig {
     ConflictHandler?: Value<string>
     ConflictDetection!: Value<string>
-    LambdaConflictHandlerConfig?: LambdaConflictHandlerConfig
 
     constructor(properties: SyncConfig) {
         Object.assign(this, properties)
@@ -41,7 +40,6 @@ export class SyncConfig {
 }
 
 export class CachingConfig {
-    CachingKeys?: List<Value<string>>
     Ttl?: Value<number>
 
     constructor(properties: CachingConfig) {
@@ -52,13 +50,10 @@ export class CachingConfig {
 export interface ResolverProperties {
     ResponseMappingTemplateS3Location?: Value<string>
     TypeName: Value<string>
-    PipelineConfig?: PipelineConfig
     DataSourceName?: Value<string>
     RequestMappingTemplate?: Value<string>
     ResponseMappingTemplate?: Value<string>
     Kind?: Value<string>
-    CachingConfig?: CachingConfig
-    SyncConfig?: SyncConfig
     RequestMappingTemplateS3Location?: Value<string>
     ApiId: Value<string>
     FieldName: Value<string>

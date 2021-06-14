@@ -21,8 +21,6 @@ import {Value, List} from '../dataTypes'
 
 export class DataQualityBaselineConfig {
     BaseliningJobName?: Value<string>
-    ConstraintsResource?: ConstraintsResource
-    StatisticsResource?: StatisticsResource
 
     constructor(properties: DataQualityBaselineConfig) {
         Object.assign(this, properties)
@@ -46,7 +44,7 @@ export class ConstraintsResource {
 }
 
 export class DataQualityJobInput {
-    EndpointInput!: EndpointInput
+
 
     constructor(properties: DataQualityJobInput) {
         Object.assign(this, properties)
@@ -54,7 +52,7 @@ export class DataQualityJobInput {
 }
 
 export class MonitoringResources {
-    ClusterConfig!: ClusterConfig
+
 
     constructor(properties: MonitoringResources) {
         Object.assign(this, properties)
@@ -62,7 +60,7 @@ export class MonitoringResources {
 }
 
 export class MonitoringOutput {
-    S3Output!: S3Output
+
 
     constructor(properties: MonitoringOutput) {
         Object.assign(this, properties)
@@ -71,7 +69,6 @@ export class MonitoringOutput {
 
 export class MonitoringOutputConfig {
     KmsKeyId?: Value<string>
-    MonitoringOutputs!: List<MonitoringOutput>
 
     constructor(properties: MonitoringOutputConfig) {
         Object.assign(this, properties)
@@ -79,12 +76,9 @@ export class MonitoringOutputConfig {
 }
 
 export class DataQualityAppSpecification {
-    ContainerArguments?: List<Value<string>>
-    ContainerEntrypoint?: List<Value<string>>
     ImageUri!: Value<string>
     PostAnalyticsProcessorSourceUri?: Value<string>
     RecordPreprocessorSourceUri?: Value<string>
-    Environment?: Environment
 
     constructor(properties: DataQualityAppSpecification) {
         Object.assign(this, properties)
@@ -103,8 +97,7 @@ export class ClusterConfig {
 }
 
 export class VpcConfig {
-    SecurityGroupIds!: List<Value<string>>
-    Subnets!: List<Value<string>>
+
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -132,7 +125,6 @@ export class StoppingCondition {
 export class NetworkConfig {
     EnableInterContainerTrafficEncryption?: Value<boolean>
     EnableNetworkIsolation?: Value<boolean>
-    VpcConfig?: VpcConfig
 
     constructor(properties: NetworkConfig) {
         Object.assign(this, properties)
@@ -152,15 +144,7 @@ export class EndpointInput {
 
 export interface DataQualityJobDefinitionProperties {
     JobDefinitionName?: Value<string>
-    DataQualityBaselineConfig?: DataQualityBaselineConfig
-    DataQualityAppSpecification: DataQualityAppSpecification
-    DataQualityJobInput: DataQualityJobInput
-    DataQualityJobOutputConfig: MonitoringOutputConfig
-    JobResources: MonitoringResources
-    NetworkConfig?: NetworkConfig
     RoleArn: Value<string>
-    StoppingCondition?: StoppingCondition
-    Tags?: List<ResourceTag>
 }
 
 export default class DataQualityJobDefinition extends ResourceBase<DataQualityJobDefinitionProperties> {

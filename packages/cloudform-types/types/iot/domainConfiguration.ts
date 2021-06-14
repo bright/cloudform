@@ -40,13 +40,10 @@ export class ServerCertificateSummary {
 
 export interface DomainConfigurationProperties {
     DomainConfigurationName?: Value<string>
-    AuthorizerConfig?: AuthorizerConfig
     DomainName?: Value<string>
-    ServerCertificateArns?: List<Value<string>>
     ServiceType?: Value<string>
     ValidationCertificateArn?: Value<string>
     DomainConfigurationStatus?: Value<string>
-    Tags?: List<ResourceTag>
 }
 
 export default class DomainConfiguration extends ResourceBase<DomainConfigurationProperties> {

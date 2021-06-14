@@ -24,7 +24,6 @@ export class CognitoStreams {
 }
 
 export class PushSync {
-    ApplicationArns?: List<Value<string>>
     RoleArn?: Value<string>
 
     constructor(properties: PushSync) {
@@ -43,16 +42,11 @@ export class CognitoIdentityProvider {
 }
 
 export interface IdentityPoolProperties {
-    PushSync?: PushSync
-    CognitoIdentityProviders?: List<CognitoIdentityProvider>
     CognitoEvents?: {[key: string]: any}
     DeveloperProviderName?: Value<string>
-    CognitoStreams?: CognitoStreams
     IdentityPoolName?: Value<string>
     AllowUnauthenticatedIdentities: Value<boolean>
     SupportedLoginProviders?: {[key: string]: any}
-    SamlProviderARNs?: List<Value<string>>
-    OpenIdConnectProviderARNs?: List<Value<string>>
     AllowClassicFlow?: Value<boolean>
 }
 

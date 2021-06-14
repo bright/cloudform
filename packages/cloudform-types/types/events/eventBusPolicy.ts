@@ -31,7 +31,6 @@ export class Condition {
 
 export interface EventBusPolicyProperties {
     EventBusName?: Value<string>
-    Condition?: Condition
     Action?: Value<string>
     StatementId: Value<string>
     Statement?: {[key: string]: any}

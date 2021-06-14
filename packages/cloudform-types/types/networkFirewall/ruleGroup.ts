@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ActionDefinition {
-    PublishMetricAction?: PublishMetricAction
+
 
     constructor(properties: ActionDefinition) {
         Object.assign(this, properties)
@@ -29,8 +29,7 @@ export class ActionDefinition {
 }
 
 export class TCPFlagField {
-    Flags!: List<Value<string>>
-    Masks?: List<Value<string>>
+
 
     constructor(properties: TCPFlagField) {
         Object.assign(this, properties)
@@ -59,8 +58,7 @@ export class Dimension {
 }
 
 export class StatelessRulesAndCustomActions {
-    StatelessRules!: List<StatelessRule>
-    CustomActions?: List<CustomAction>
+
 
     constructor(properties: StatelessRulesAndCustomActions) {
         Object.assign(this, properties)
@@ -69,7 +67,6 @@ export class StatelessRulesAndCustomActions {
 
 export class RuleOption {
     Keyword!: Value<string>
-    Settings?: List<Value<string>>
 
     constructor(properties: RuleOption) {
         Object.assign(this, properties)
@@ -77,8 +74,7 @@ export class RuleOption {
 }
 
 export class RuleDefinition {
-    MatchAttributes!: MatchAttributes
-    Actions!: List<Value<string>>
+
 
     constructor(properties: RuleDefinition) {
         Object.assign(this, properties)
@@ -86,8 +82,7 @@ export class RuleDefinition {
 }
 
 export class RuleGroupInner {
-    RuleVariables?: RuleVariables
-    RulesSource!: RulesSource
+
 
     constructor(properties: RuleGroupInner) {
         Object.assign(this, properties)
@@ -95,8 +90,6 @@ export class RuleGroupInner {
 }
 
 export class RulesSourceList {
-    Targets!: List<Value<string>>
-    TargetTypes!: List<Value<string>>
     GeneratedRulesType!: Value<string>
 
     constructor(properties: RulesSourceList) {
@@ -105,7 +98,6 @@ export class RulesSourceList {
 }
 
 export class StatelessRule {
-    RuleDefinition!: RuleDefinition
     Priority!: Value<number>
 
     constructor(properties: StatelessRule) {
@@ -123,7 +115,7 @@ export class PortRange {
 }
 
 export class IPSet {
-    Definition?: List<Value<string>>
+
 
     constructor(properties: IPSet) {
         Object.assign(this, properties)
@@ -132,7 +124,6 @@ export class IPSet {
 
 export class CustomAction {
     ActionName!: Value<string>
-    ActionDefinition!: ActionDefinition
 
     constructor(properties: CustomAction) {
         Object.assign(this, properties)
@@ -140,7 +131,7 @@ export class CustomAction {
 }
 
 export class PortSet {
-    Definition?: List<Value<string>>
+
 
     constructor(properties: PortSet) {
         Object.assign(this, properties)
@@ -148,12 +139,7 @@ export class PortSet {
 }
 
 export class MatchAttributes {
-    Sources?: List<Address>
-    Destinations?: List<Address>
-    SourcePorts?: List<PortRange>
-    DestinationPorts?: List<PortRange>
-    Protocols?: List<Value<number>>
-    TCPFlags?: List<TCPFlagField>
+
 
     constructor(properties: MatchAttributes) {
         Object.assign(this, properties)
@@ -161,8 +147,7 @@ export class MatchAttributes {
 }
 
 export class RuleVariables {
-    IPSets?: {[key: string]: IPSet}
-    PortSets?: {[key: string]: PortSet}
+
 
     constructor(properties: RuleVariables) {
         Object.assign(this, properties)
@@ -170,7 +155,7 @@ export class RuleVariables {
 }
 
 export class PublishMetricAction {
-    Dimensions!: List<Dimension>
+
 
     constructor(properties: PublishMetricAction) {
         Object.assign(this, properties)
@@ -187,9 +172,6 @@ export class Address {
 
 export class RulesSource {
     RulesString?: Value<string>
-    RulesSourceList?: RulesSourceList
-    StatefulRules?: List<StatefulRule>
-    StatelessRulesAndCustomActions?: StatelessRulesAndCustomActions
 
     constructor(properties: RulesSource) {
         Object.assign(this, properties)
@@ -198,8 +180,6 @@ export class RulesSource {
 
 export class StatefulRule {
     Action!: Value<string>
-    Header!: Header
-    RuleOptions!: List<RuleOption>
 
     constructor(properties: StatefulRule) {
         Object.assign(this, properties)
@@ -208,11 +188,9 @@ export class StatefulRule {
 
 export interface RuleGroupProperties {
     RuleGroupName: Value<string>
-    RuleGroup?: RuleGroup
     Type: Value<string>
     Capacity: Value<number>
     Description?: Value<string>
-    Tags?: List<ResourceTag>
 }
 
 export default class RuleGroup extends ResourceBase<RuleGroupProperties> {

@@ -26,7 +26,6 @@ export class SheetControlsOption {
 }
 
 export class ResourcePermission {
-    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -35,7 +34,7 @@ export class ResourcePermission {
 }
 
 export class DashboardSourceEntity {
-    SourceTemplate?: DashboardSourceTemplate
+
 
     constructor(properties: DashboardSourceEntity) {
         Object.assign(this, properties)
@@ -43,10 +42,7 @@ export class DashboardSourceEntity {
 }
 
 export class Parameters {
-    StringParameters?: List<StringParameter>
-    DecimalParameters?: List<DecimalParameter>
-    IntegerParameters?: List<IntegerParameter>
-    DateTimeParameters?: List<DateTimeParameter>
+
 
     constructor(properties: Parameters) {
         Object.assign(this, properties)
@@ -54,7 +50,6 @@ export class Parameters {
 }
 
 export class DashboardSourceTemplate {
-    DataSetReferences!: List<DataSetReference>
     Arn!: Value<string>
 
     constructor(properties: DashboardSourceTemplate) {
@@ -72,7 +67,6 @@ export class DataSetReference {
 }
 
 export class StringParameter {
-    Values!: List<Value<string>>
     Name!: Value<string>
 
     constructor(properties: StringParameter) {
@@ -81,7 +75,6 @@ export class StringParameter {
 }
 
 export class IntegerParameter {
-    Values!: List<Value<number>>
     Name!: Value<string>
 
     constructor(properties: IntegerParameter) {
@@ -98,9 +91,7 @@ export class ExportToCSVOption {
 }
 
 export class DashboardPublishOptions {
-    SheetControlsOption?: SheetControlsOption
-    ExportToCSVOption?: ExportToCSVOption
-    AdHocFilteringOption?: AdHocFilteringOption
+
 
     constructor(properties: DashboardPublishOptions) {
         Object.assign(this, properties)
@@ -108,7 +99,6 @@ export class DashboardPublishOptions {
 }
 
 export class DecimalParameter {
-    Values!: List<Value<number>>
     Name!: Value<string>
 
     constructor(properties: DecimalParameter) {
@@ -117,7 +107,6 @@ export class DecimalParameter {
 }
 
 export class DateTimeParameter {
-    Values!: List<Value<string>>
     Name!: Value<string>
 
     constructor(properties: DateTimeParameter) {
@@ -136,12 +125,7 @@ export class AdHocFilteringOption {
 export interface DashboardProperties {
     AwsAccountId: Value<string>
     DashboardId: Value<string>
-    DashboardPublishOptions?: DashboardPublishOptions
     Name?: Value<string>
-    Parameters?: Parameters
-    Permissions?: List<ResourcePermission>
-    SourceEntity?: DashboardSourceEntity
-    Tags?: List<ResourceTag>
     ThemeArn?: Value<string>
     VersionDescription?: Value<string>
 }

@@ -32,7 +32,6 @@ export interface VersionProperties {
     CodeSha256?: Value<string>
     Description?: Value<string>
     FunctionName: Value<string>
-    ProvisionedConcurrencyConfig?: ProvisionedConcurrencyConfiguration
 }
 
 export default class Version extends ResourceBase<VersionProperties> {

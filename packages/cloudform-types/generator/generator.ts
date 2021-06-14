@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import {camelCase, forEach, pickBy, map, some, merge} from 'lodash'
+import {camelCase, forEach, pickBy, map, some, merge, filter} from 'lodash'
 import {Response} from 'node-fetch'
 
 const fetch = require('node-fetch')
@@ -30,7 +30,8 @@ interface TypeProperties {
     ItemType?: string
     PrimitiveType?: string
     PrimitiveItemType?: string
-    Required: boolean
+    Required: boolean,
+    UpdateType: string
 }
 
 type TypePropertiesMap = { [key: string]: TypeProperties }
@@ -80,9 +81,15 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
 
 function propertiesEntries(properties: TypePropertiesMap, useNonNullAssertion: boolean = false): string[] {
     const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
-    return map(properties, (property: TypeProperties, propertyName: string) => {
+    return filter(map(properties, (property: TypeProperties, propertyName: string) => {
+        if (property['PrimitiveType'] === undefined) {
+            // @TODO fix this, 
+            // In JSON definit in AWS::DataBrew::Recipe.Action -> Properties -> Parameters
+            // PrimitiveType is undefined
+            return undefined
+        }
         return `${propertyName}${property.Required ? nonOptionalPostfix : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
-    })
+    }), (name): name is string => name !== undefined)
 }
 
 function hasTags(properties: { [key: string]: TypeProperties }): boolean {

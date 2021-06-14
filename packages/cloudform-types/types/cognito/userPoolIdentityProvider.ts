@@ -24,7 +24,6 @@ export interface UserPoolIdentityProviderProperties {
     AttributeMapping?: {[key: string]: any}
     ProviderDetails?: {[key: string]: any}
     ProviderType: Value<string>
-    IdpIdentifiers?: List<Value<string>>
 }
 
 export default class UserPoolIdentityProvider extends ResourceBase<UserPoolIdentityProviderProperties> {

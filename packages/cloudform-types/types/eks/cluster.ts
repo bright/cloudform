@@ -29,8 +29,7 @@ export class Provider {
 }
 
 export class EncryptionConfig {
-    Resources?: List<Value<string>>
-    Provider?: Provider
+
 
     constructor(properties: EncryptionConfig) {
         Object.assign(this, properties)
@@ -46,8 +45,7 @@ export class KubernetesNetworkConfig {
 }
 
 export class ResourcesVpcConfig {
-    SecurityGroupIds?: List<Value<string>>
-    SubnetIds!: List<Value<string>>
+
 
     constructor(properties: ResourcesVpcConfig) {
         Object.assign(this, properties)
@@ -56,10 +54,7 @@ export class ResourcesVpcConfig {
 
 export interface ClusterProperties {
     Version?: Value<string>
-    EncryptionConfig?: List<EncryptionConfig>
     RoleArn: Value<string>
-    ResourcesVpcConfig: ResourcesVpcConfig
-    KubernetesNetworkConfig?: KubernetesNetworkConfig
     Name?: Value<string>
 }
 

@@ -25,7 +25,6 @@ export class NodeConfiguration {
 export interface NodeProperties {
     MemberId: Value<string>
     NetworkId: Value<string>
-    NodeConfiguration: NodeConfiguration
 }
 
 export default class Node extends ResourceBase<NodeProperties> {

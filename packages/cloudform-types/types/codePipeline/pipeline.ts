@@ -55,7 +55,6 @@ export class BlockerDeclaration {
 }
 
 export class ArtifactStoreMap {
-    ArtifactStore!: ArtifactStore
     Region!: Value<string>
 
     constructor(properties: ArtifactStoreMap) {
@@ -73,12 +72,9 @@ export class EncryptionKey {
 }
 
 export class ActionDeclaration {
-    ActionTypeId!: ActionTypeId
     Configuration?: {[key: string]: any}
-    InputArtifacts?: List<InputArtifact>
     Name!: Value<string>
     Namespace?: Value<string>
-    OutputArtifacts?: List<OutputArtifact>
     Region?: Value<string>
     RoleArn?: Value<string>
     RunOrder?: Value<number>
@@ -89,8 +85,6 @@ export class ActionDeclaration {
 }
 
 export class StageDeclaration {
-    Actions!: List<ActionDeclaration>
-    Blockers?: List<BlockerDeclaration>
     Name!: Value<string>
 
     constructor(properties: StageDeclaration) {
@@ -99,7 +93,6 @@ export class StageDeclaration {
 }
 
 export class ArtifactStore {
-    EncryptionKey?: EncryptionKey
     Location!: Value<string>
     Type!: Value<string>
 
@@ -120,14 +113,9 @@ export class ActionTypeId {
 }
 
 export interface PipelineProperties {
-    ArtifactStore?: ArtifactStore
-    ArtifactStores?: List<ArtifactStoreMap>
-    DisableInboundStageTransitions?: List<StageTransition>
     Name?: Value<string>
     RestartExecutionOnUpdate?: Value<boolean>
     RoleArn: Value<string>
-    Stages: List<StageDeclaration>
-    Tags?: List<ResourceTag>
 }
 
 export default class Pipeline extends ResourceBase<PipelineProperties> {

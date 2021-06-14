@@ -17,9 +17,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class AccountTakeoverActionsType {
-    HighAction?: AccountTakeoverActionType
-    LowAction?: AccountTakeoverActionType
-    MediumAction?: AccountTakeoverActionType
+
 
     constructor(properties: AccountTakeoverActionsType) {
         Object.assign(this, properties)
@@ -27,8 +25,7 @@ export class AccountTakeoverActionsType {
 }
 
 export class RiskExceptionConfigurationType {
-    BlockedIPRangeList?: List<Value<string>>
-    SkippedIPRangeList?: List<Value<string>>
+
 
     constructor(properties: RiskExceptionConfigurationType) {
         Object.assign(this, properties)
@@ -45,8 +42,7 @@ export class AccountTakeoverActionType {
 }
 
 export class CompromisedCredentialsRiskConfigurationType {
-    Actions!: CompromisedCredentialsActionsType
-    EventFilter?: List<Value<string>>
+
 
     constructor(properties: CompromisedCredentialsRiskConfigurationType) {
         Object.assign(this, properties)
@@ -72,12 +68,9 @@ export class CompromisedCredentialsActionsType {
 }
 
 export class NotifyConfigurationType {
-    BlockEmail?: NotifyEmailType
     ReplyTo?: Value<string>
     SourceArn!: Value<string>
-    NoActionEmail?: NotifyEmailType
     From?: Value<string>
-    MfaEmail?: NotifyEmailType
 
     constructor(properties: NotifyConfigurationType) {
         Object.assign(this, properties)
@@ -85,8 +78,7 @@ export class NotifyConfigurationType {
 }
 
 export class AccountTakeoverRiskConfigurationType {
-    Actions!: AccountTakeoverActionsType
-    NotifyConfiguration?: NotifyConfigurationType
+
 
     constructor(properties: AccountTakeoverRiskConfigurationType) {
         Object.assign(this, properties)
@@ -94,11 +86,8 @@ export class AccountTakeoverRiskConfigurationType {
 }
 
 export interface UserPoolRiskConfigurationAttachmentProperties {
-    CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType
     UserPoolId: Value<string>
     ClientId: Value<string>
-    AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType
-    RiskExceptionConfiguration?: RiskExceptionConfigurationType
 }
 
 export default class UserPoolRiskConfigurationAttachment extends ResourceBase<UserPoolRiskConfigurationAttachmentProperties> {

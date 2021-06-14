@@ -20,7 +20,6 @@ import {Value, List} from '../dataTypes'
 
 export class MetricToRetain {
     Metric!: Value<string>
-    MetricDimension?: MetricDimension
 
     constructor(properties: MetricToRetain) {
         Object.assign(this, properties)
@@ -46,11 +45,7 @@ export class MetricDimension {
 
 export class MetricValue {
     Count?: Value<string>
-    Cidrs?: List<Value<string>>
-    Ports?: List<Value<number>>
     Number?: Value<number>
-    Numbers?: List<Value<number>>
-    Strings?: List<Value<string>>
 
     constructor(properties: MetricValue) {
         Object.assign(this, properties)
@@ -69,8 +64,6 @@ export class AlertTarget {
 export class Behavior {
     Name!: Value<string>
     Metric?: Value<string>
-    MetricDimension?: MetricDimension
-    Criteria?: BehaviorCriteria
     SuppressAlerts?: Value<boolean>
 
     constructor(properties: Behavior) {
@@ -80,12 +73,9 @@ export class Behavior {
 
 export class BehaviorCriteria {
     ComparisonOperator?: Value<string>
-    Value?: MetricValue
     DurationSeconds?: Value<number>
     ConsecutiveDatapointsToAlarm?: Value<number>
     ConsecutiveDatapointsToClear?: Value<number>
-    StatisticalThreshold?: StatisticalThreshold
-    MlDetectionConfig?: MachineLearningDetectionConfig
 
     constructor(properties: BehaviorCriteria) {
         Object.assign(this, properties)
@@ -103,11 +93,6 @@ export class StatisticalThreshold {
 export interface SecurityProfileProperties {
     SecurityProfileName?: Value<string>
     SecurityProfileDescription?: Value<string>
-    Behaviors?: List<Behavior>
-    AlertTargets?: {[key: string]: AlertTarget}
-    AdditionalMetricsToRetainV2?: List<MetricToRetain>
-    Tags?: List<ResourceTag>
-    TargetArns?: List<Value<string>>
 }
 
 export default class SecurityProfile extends ResourceBase<SecurityProfileProperties> {

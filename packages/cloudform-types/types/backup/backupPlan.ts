@@ -21,7 +21,6 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CopyActionResourceType {
-    Lifecycle?: LifecycleResourceType
     DestinationBackupVaultArn!: Value<string>
 
     constructor(properties: CopyActionResourceType) {
@@ -31,8 +30,6 @@ export class CopyActionResourceType {
 
 export class BackupPlanResourceType {
     BackupPlanName!: Value<string>
-    AdvancedBackupSettings?: List<AdvancedBackupSettingResourceType>
-    BackupPlanRule!: List<BackupRuleResourceType>
 
     constructor(properties: BackupPlanResourceType) {
         Object.assign(this, properties)
@@ -63,9 +60,6 @@ export class BackupRuleResourceType {
     StartWindowMinutes?: Value<number>
     CompletionWindowMinutes?: Value<number>
     ScheduleExpression?: Value<string>
-    RecoveryPointTags?: {[key: string]: Value<string>}
-    CopyActions?: List<CopyActionResourceType>
-    Lifecycle?: LifecycleResourceType
     EnableContinuousBackup?: Value<boolean>
 
     constructor(properties: BackupRuleResourceType) {
@@ -74,8 +68,7 @@ export class BackupRuleResourceType {
 }
 
 export interface BackupPlanProperties {
-    BackupPlan: BackupPlanResourceType
-    BackupPlanTags?: {[key: string]: Value<string>}
+
 }
 
 export default class BackupPlan extends ResourceBase<BackupPlanProperties> {

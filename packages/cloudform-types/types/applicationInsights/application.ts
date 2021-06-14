@@ -20,9 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SubComponentConfigurationDetails {
-    AlarmMetrics?: List<AlarmMetric>
-    Logs?: List<Log>
-    WindowsEvents?: List<WindowsEvent>
+
 
     constructor(properties: SubComponentConfigurationDetails) {
         Object.assign(this, properties)
@@ -34,8 +32,6 @@ export class ComponentMonitoringSetting {
     ComponentARN?: Value<string>
     Tier!: Value<string>
     ComponentConfigurationMode!: Value<string>
-    DefaultOverwriteComponentConfiguration?: ComponentConfiguration
-    CustomComponentConfiguration?: ComponentConfiguration
 
     constructor(properties: ComponentMonitoringSetting) {
         Object.assign(this, properties)
@@ -54,7 +50,6 @@ export class LogPattern {
 
 export class LogPatternSet {
     PatternSetName!: Value<string>
-    LogPatterns!: List<LogPattern>
 
     constructor(properties: LogPatternSet) {
         Object.assign(this, properties)
@@ -73,7 +68,6 @@ export class Alarm {
 export class WindowsEvent {
     LogGroupName!: Value<string>
     EventName!: Value<string>
-    EventLevels!: List<Value<string>>
     PatternSet?: Value<string>
 
     constructor(properties: WindowsEvent) {
@@ -82,8 +76,7 @@ export class WindowsEvent {
 }
 
 export class ComponentConfiguration {
-    ConfigurationDetails?: ConfigurationDetails
-    SubComponentTypeConfigurations?: List<SubComponentTypeConfiguration>
+
 
     constructor(properties: ComponentConfiguration) {
         Object.assign(this, properties)
@@ -92,7 +85,6 @@ export class ComponentConfiguration {
 
 export class CustomComponent {
     ComponentName!: Value<string>
-    ResourceList!: List<Value<string>>
 
     constructor(properties: CustomComponent) {
         Object.assign(this, properties)
@@ -118,11 +110,7 @@ export class AlarmMetric {
 }
 
 export class ConfigurationDetails {
-    AlarmMetrics?: List<AlarmMetric>
-    Logs?: List<Log>
-    WindowsEvents?: List<WindowsEvent>
-    Alarms?: List<Alarm>
-    JMXPrometheusExporter?: JMXPrometheusExporter
+
 
     constructor(properties: ConfigurationDetails) {
         Object.assign(this, properties)
@@ -143,7 +131,6 @@ export class Log {
 
 export class SubComponentTypeConfiguration {
     SubComponentType!: Value<string>
-    SubComponentConfigurationDetails!: SubComponentConfigurationDetails
 
     constructor(properties: SubComponentTypeConfiguration) {
         Object.assign(this, properties)
@@ -155,11 +142,7 @@ export interface ApplicationProperties {
     CWEMonitorEnabled?: Value<boolean>
     OpsCenterEnabled?: Value<boolean>
     OpsItemSNSTopicArn?: Value<string>
-    Tags?: List<ResourceTag>
-    CustomComponents?: List<CustomComponent>
-    LogPatternSets?: List<LogPatternSet>
     AutoConfigurationEnabled?: Value<boolean>
-    ComponentMonitoringSettings?: List<ComponentMonitoringSetting>
 }
 
 export default class Application extends ResourceBase<ApplicationProperties> {

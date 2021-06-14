@@ -40,12 +40,10 @@ export class AccelerationSettings {
 export interface JobTemplateProperties {
     Category?: Value<string>
     Description?: Value<string>
-    AccelerationSettings?: AccelerationSettings
     Priority?: Value<number>
     StatusUpdateInterval?: Value<string>
     SettingsJson: {[key: string]: any}
     Queue?: Value<string>
-    HopDestinations?: List<HopDestination>
     Tags?: {[key: string]: any}
     Name?: Value<string>
 }

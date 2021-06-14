@@ -26,7 +26,6 @@ export class Connector {
 }
 
 export interface ConnectorDefinitionVersionProperties {
-    Connectors: List<Connector>
     ConnectorDefinitionId: Value<string>
 }
 

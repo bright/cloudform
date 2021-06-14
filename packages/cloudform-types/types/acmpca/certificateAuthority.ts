@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RevocationConfiguration {
-    CrlConfiguration?: CrlConfiguration
+
 
     constructor(properties: RevocationConfiguration) {
         Object.assign(this, properties)
@@ -45,8 +45,7 @@ export class KeyUsage {
 }
 
 export class CsrExtensions {
-    KeyUsage?: KeyUsage
-    SubjectInformationAccess?: List<AccessDescription>
+
 
     constructor(properties: CsrExtensions) {
         Object.assign(this, properties)
@@ -54,8 +53,7 @@ export class CsrExtensions {
 }
 
 export class AccessDescription {
-    AccessMethod!: AccessMethod
-    AccessLocation!: GeneralName
+
 
     constructor(properties: AccessDescription) {
         Object.assign(this, properties)
@@ -123,11 +121,8 @@ export class CrlConfiguration {
 }
 
 export class GeneralName {
-    OtherName?: OtherName
     Rfc822Name?: Value<string>
     DnsName?: Value<string>
-    DirectoryName?: Subject
-    EdiPartyName?: EdiPartyName
     UniformResourceIdentifier?: Value<string>
     IpAddress?: Value<string>
     RegisteredId?: Value<string>
@@ -141,10 +136,6 @@ export interface CertificateAuthorityProperties {
     Type: Value<string>
     KeyAlgorithm: Value<string>
     SigningAlgorithm: Value<string>
-    Subject: Subject
-    RevocationConfiguration?: RevocationConfiguration
-    Tags?: List<ResourceTag>
-    CsrExtensions?: CsrExtensions
     KeyStorageSecurityStandard?: Value<string>
 }
 

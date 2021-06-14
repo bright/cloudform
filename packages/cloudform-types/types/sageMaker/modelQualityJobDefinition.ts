@@ -20,8 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ModelQualityJobInput {
-    EndpointInput!: EndpointInput
-    GroundTruthS3Input!: MonitoringGroundTruthS3Input
+
 
     constructor(properties: ModelQualityJobInput) {
         Object.assign(this, properties)
@@ -29,7 +28,7 @@ export class ModelQualityJobInput {
 }
 
 export class MonitoringResources {
-    ClusterConfig!: ClusterConfig
+
 
     constructor(properties: MonitoringResources) {
         Object.assign(this, properties)
@@ -55,7 +54,6 @@ export class EndpointInput {
 export class NetworkConfig {
     EnableInterContainerTrafficEncryption?: Value<boolean>
     EnableNetworkIsolation?: Value<boolean>
-    VpcConfig?: VpcConfig
 
     constructor(properties: NetworkConfig) {
         Object.assign(this, properties)
@@ -63,8 +61,7 @@ export class NetworkConfig {
 }
 
 export class VpcConfig {
-    SecurityGroupIds!: List<Value<string>>
-    Subnets!: List<Value<string>>
+
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -72,12 +69,9 @@ export class VpcConfig {
 }
 
 export class ModelQualityAppSpecification {
-    ContainerArguments?: List<Value<string>>
-    ContainerEntrypoint?: List<Value<string>>
     ImageUri!: Value<string>
     PostAnalyticsProcessorSourceUri?: Value<string>
     RecordPreprocessorSourceUri?: Value<string>
-    Environment?: Environment
     ProblemType!: Value<string>
 
     constructor(properties: ModelQualityAppSpecification) {
@@ -86,7 +80,7 @@ export class ModelQualityAppSpecification {
 }
 
 export class MonitoringOutput {
-    S3Output!: S3Output
+
 
     constructor(properties: MonitoringOutput) {
         Object.assign(this, properties)
@@ -132,7 +126,6 @@ export class MonitoringGroundTruthS3Input {
 
 export class ModelQualityBaselineConfig {
     BaseliningJobName?: Value<string>
-    ConstraintsResource?: ConstraintsResource
 
     constructor(properties: ModelQualityBaselineConfig) {
         Object.assign(this, properties)
@@ -149,7 +142,6 @@ export class StoppingCondition {
 
 export class MonitoringOutputConfig {
     KmsKeyId?: Value<string>
-    MonitoringOutputs!: List<MonitoringOutput>
 
     constructor(properties: MonitoringOutputConfig) {
         Object.assign(this, properties)
@@ -158,15 +150,7 @@ export class MonitoringOutputConfig {
 
 export interface ModelQualityJobDefinitionProperties {
     JobDefinitionName?: Value<string>
-    ModelQualityBaselineConfig?: ModelQualityBaselineConfig
-    ModelQualityAppSpecification: ModelQualityAppSpecification
-    ModelQualityJobInput: ModelQualityJobInput
-    ModelQualityJobOutputConfig: MonitoringOutputConfig
-    JobResources: MonitoringResources
-    NetworkConfig?: NetworkConfig
     RoleArn: Value<string>
-    StoppingCondition?: StoppingCondition
-    Tags?: List<ResourceTag>
 }
 
 export default class ModelQualityJobDefinition extends ResourceBase<ModelQualityJobDefinitionProperties> {

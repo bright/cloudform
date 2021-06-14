@@ -22,10 +22,7 @@ export interface RepositoryProperties {
     DomainName: Value<string>
     DomainOwner?: Value<string>
     Description?: Value<string>
-    ExternalConnections?: List<Value<string>>
-    Upstreams?: List<Value<string>>
     PermissionsPolicyDocument?: {[key: string]: any}
-    Tags?: List<ResourceTag>
 }
 
 export default class Repository extends ResourceBase<RepositoryProperties> {

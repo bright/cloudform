@@ -25,7 +25,6 @@ import {Value, List} from '../dataTypes'
 export interface MountTargetProperties {
     FileSystemId: Value<string>
     IpAddress?: Value<string>
-    SecurityGroups: List<Value<string>>
     SubnetId: Value<string>
 }
 

@@ -64,16 +64,10 @@ export class Source {
 }
 
 export interface AppProperties {
-    AppSource?: Source
-    Attributes?: {[key: string]: Value<string>}
-    DataSources?: List<DataSource>
     Description?: Value<string>
-    Domains?: List<Value<string>>
     EnableSsl?: Value<boolean>
-    Environment?: List<EnvironmentVariable>
     Name: Value<string>
     Shortname?: Value<string>
-    SslConfiguration?: SslConfiguration
     StackId: Value<string>
     Type: Value<string>
 }

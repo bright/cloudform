@@ -30,11 +30,9 @@ export class Content {
 }
 
 export interface LayerVersionProperties {
-    CompatibleRuntimes?: List<Value<string>>
     LicenseInfo?: Value<string>
     Description?: Value<string>
     LayerName?: Value<string>
-    Content: Content
 }
 
 export default class LayerVersion extends ResourceBase<LayerVersionProperties> {

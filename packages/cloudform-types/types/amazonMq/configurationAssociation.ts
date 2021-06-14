@@ -29,7 +29,6 @@ export class ConfigurationId {
 
 export interface ConfigurationAssociationProperties {
     Broker: Value<string>
-    Configuration: ConfigurationId
 }
 
 export default class ConfigurationAssociation extends ResourceBase<ConfigurationAssociationProperties> {

@@ -40,9 +40,7 @@ export interface CloudFormationProductProperties {
     SupportEmail?: Value<string>
     AcceptLanguage?: Value<string>
     SupportUrl?: Value<string>
-    Tags?: List<ResourceTag>
     Name: Value<string>
-    ProvisioningArtifactParameters: List<ProvisioningArtifactProperties>
 }
 
 export default class CloudFormationProduct extends ResourceBase<CloudFormationProductProperties> {

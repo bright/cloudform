@@ -21,9 +21,6 @@ import {Value, List} from '../dataTypes'
 
 export class IamActionDefinition {
     PolicyArn!: Value<string>
-    Roles?: List<Value<string>>
-    Groups?: List<Value<string>>
-    Users?: List<Value<string>>
 
     constructor(properties: IamActionDefinition) {
         Object.assign(this, properties)
@@ -31,9 +28,7 @@ export class IamActionDefinition {
 }
 
 export class Definition {
-    IamActionDefinition?: IamActionDefinition
-    ScpActionDefinition?: ScpActionDefinition
-    SsmActionDefinition?: SsmActionDefinition
+
 
     constructor(properties: Definition) {
         Object.assign(this, properties)
@@ -42,7 +37,6 @@ export class Definition {
 
 export class ScpActionDefinition {
     PolicyId!: Value<string>
-    TargetIds!: List<Value<string>>
 
     constructor(properties: ScpActionDefinition) {
         Object.assign(this, properties)
@@ -52,7 +46,6 @@ export class ScpActionDefinition {
 export class SsmActionDefinition {
     Subtype!: Value<string>
     Region!: Value<string>
-    InstanceIds!: List<Value<string>>
 
     constructor(properties: SsmActionDefinition) {
         Object.assign(this, properties)
@@ -81,11 +74,8 @@ export interface BudgetsActionProperties {
     BudgetName: Value<string>
     NotificationType: Value<string>
     ActionType: Value<string>
-    ActionThreshold: ActionThreshold
     ExecutionRoleArn: Value<string>
     ApprovalModel?: Value<string>
-    Subscribers?: List<Subscriber>
-    Definition: Definition
 }
 
 export default class BudgetsAction extends ResourceBase<BudgetsActionProperties> {

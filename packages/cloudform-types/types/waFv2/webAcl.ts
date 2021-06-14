@@ -1,30 +1,29 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export class RuleAction {
-    Allow?: {[key: string]: any}
-    Block?: {[key: string]: any}
-    Count?: {[key: string]: any}
+export class CustomRequestHandling {
 
-    constructor(properties: RuleAction) {
+
+    constructor(properties: CustomRequestHandling) {
         Object.assign(this, properties)
     }
 }
@@ -32,7 +31,6 @@ export class RuleAction {
 export class ManagedRuleGroupStatement {
     Name!: Value<string>
     VendorName!: Value<string>
-    ExcludedRules?: List<ExcludedRule>
 
     constructor(properties: ManagedRuleGroupStatement) {
         Object.assign(this, properties)
@@ -48,48 +46,26 @@ export class TextTransformation {
     }
 }
 
+export class AllowAction {
+
+
+    constructor(properties: AllowAction) {
+        Object.assign(this, properties)
+    }
+}
+
 export class DefaultAction {
-    Allow?: {[key: string]: any}
-    Block?: {[key: string]: any}
+
 
     constructor(properties: DefaultAction) {
         Object.assign(this, properties)
     }
 }
 
-export class OrStatementTwo {
-    Statements!: List<StatementThree>
-
-    constructor(properties: OrStatementTwo) {
-        Object.assign(this, properties)
-    }
-}
-
 export class XssMatchStatement {
-    FieldToMatch!: FieldToMatch
-    TextTransformations!: List<TextTransformation>
+
 
     constructor(properties: XssMatchStatement) {
-        Object.assign(this, properties)
-    }
-}
-
-export class StatementOne {
-    ByteMatchStatement?: ByteMatchStatement
-    SqliMatchStatement?: SqliMatchStatement
-    XssMatchStatement?: XssMatchStatement
-    SizeConstraintStatement?: SizeConstraintStatement
-    GeoMatchStatement?: GeoMatchStatement
-    RuleGroupReferenceStatement?: RuleGroupReferenceStatement
-    IPSetReferenceStatement?: IPSetReferenceStatement
-    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement
-    ManagedRuleGroupStatement?: ManagedRuleGroupStatement
-    RateBasedStatement?: RateBasedStatementOne
-    AndStatement?: AndStatementOne
-    OrStatement?: OrStatementOne
-    NotStatement?: NotStatementOne
-
-    constructor(properties: StatementOne) {
         Object.assign(this, properties)
     }
 }
@@ -97,39 +73,9 @@ export class StatementOne {
 export class ByteMatchStatement {
     SearchString?: Value<string>
     SearchStringBase64?: Value<string>
-    FieldToMatch!: FieldToMatch
-    TextTransformations!: List<TextTransformation>
     PositionalConstraint!: Value<string>
 
     constructor(properties: ByteMatchStatement) {
-        Object.assign(this, properties)
-    }
-}
-
-export class NotStatementTwo {
-    Statement!: StatementThree
-
-    constructor(properties: NotStatementTwo) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OverrideAction {
-    Count?: {[key: string]: any}
-    None?: {[key: string]: any}
-
-    constructor(properties: OverrideAction) {
-        Object.assign(this, properties)
-    }
-}
-
-export class RateBasedStatementTwo {
-    Limit!: Value<number>
-    AggregateKeyType!: Value<string>
-    ScopeDownStatement?: StatementThree
-    ForwardedIPConfig?: ForwardedIPConfiguration
-
-    constructor(properties: RateBasedStatementTwo) {
         Object.assign(this, properties)
     }
 }
@@ -143,18 +89,33 @@ export class ForwardedIPConfiguration {
     }
 }
 
-export class AndStatementTwo {
-    Statements!: List<StatementThree>
+export class OrStatement {
 
-    constructor(properties: AndStatementTwo) {
+
+    constructor(properties: OrStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Label {
+    Name!: Value<string>
+
+    constructor(properties: Label) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CustomHTTPHeader {
+    Name!: Value<string>
+    Value!: Value<string>
+
+    constructor(properties: CustomHTTPHeader) {
         Object.assign(this, properties)
     }
 }
 
 export class RegexPatternSetReferenceStatement {
     Arn!: Value<string>
-    FieldToMatch!: FieldToMatch
-    TextTransformations!: List<TextTransformation>
 
     constructor(properties: RegexPatternSetReferenceStatement) {
         Object.assign(this, properties)
@@ -171,71 +132,168 @@ export class IPSetForwardedIPConfiguration {
     }
 }
 
-export class Rule {
-    Name!: Value<string>
-    Priority!: Value<number>
-    Statement!: StatementOne
-    Action?: RuleAction
-    OverrideAction?: OverrideAction
-    VisibilityConfig!: VisibilityConfig
+export class CustomResponseBody {
+    ContentType!: Value<string>
+    Content!: Value<string>
 
-    constructor(properties: Rule) {
+    constructor(properties: CustomResponseBody) {
         Object.assign(this, properties)
     }
 }
 
-export class OrStatementOne {
-    Statements!: List<StatementTwo>
+export class Statement {
 
-    constructor(properties: OrStatementOne) {
+
+    constructor(properties: Statement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class BlockAction {
+
+
+    constructor(properties: BlockAction) {
         Object.assign(this, properties)
     }
 }
 
 export class RuleGroupReferenceStatement {
     Arn!: Value<string>
-    ExcludedRules?: List<ExcludedRule>
 
     constructor(properties: RuleGroupReferenceStatement) {
         Object.assign(this, properties)
     }
 }
 
-export class StatementTwo {
-    ByteMatchStatement?: ByteMatchStatement
-    SqliMatchStatement?: SqliMatchStatement
-    XssMatchStatement?: XssMatchStatement
-    SizeConstraintStatement?: SizeConstraintStatement
-    GeoMatchStatement?: GeoMatchStatement
-    RuleGroupReferenceStatement?: RuleGroupReferenceStatement
-    IPSetReferenceStatement?: IPSetReferenceStatement
-    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement
-    ManagedRuleGroupStatement?: ManagedRuleGroupStatement
-    RateBasedStatement?: RateBasedStatementTwo
-    AndStatement?: AndStatementTwo
-    OrStatement?: OrStatementTwo
-    NotStatement?: NotStatementTwo
+export class LabelMatchStatement {
+    Scope!: Value<string>
+    Key!: Value<string>
 
-    constructor(properties: StatementTwo) {
+    constructor(properties: LabelMatchStatement) {
         Object.assign(this, properties)
     }
 }
 
-export class NotStatementOne {
-    Statement!: StatementTwo
+export class JsonMatchPattern {
+    All?: {[key: string]: any}
 
-    constructor(properties: NotStatementOne) {
+    constructor(properties: JsonMatchPattern) {
         Object.assign(this, properties)
     }
 }
 
-export class RateBasedStatementOne {
+export class AndStatement {
+
+
+    constructor(properties: AndStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CountAction {
+
+
+    constructor(properties: CountAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SizeConstraintStatement {
+    ComparisonOperator!: Value<string>
+    Size!: Value<number>
+
+    constructor(properties: SizeConstraintStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class FieldToMatch {
+    SingleHeader?: {[key: string]: any}
+    SingleQueryArgument?: {[key: string]: any}
+    AllQueryArguments?: {[key: string]: any}
+    UriPath?: {[key: string]: any}
+    QueryString?: {[key: string]: any}
+    Body?: {[key: string]: any}
+    Method?: {[key: string]: any}
+
+    constructor(properties: FieldToMatch) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SqliMatchStatement {
+
+
+    constructor(properties: SqliMatchStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class GeoMatchStatement {
+
+
+    constructor(properties: GeoMatchStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RuleAction {
+
+
+    constructor(properties: RuleAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class JsonBody {
+    MatchScope!: Value<string>
+    InvalidFallbackBehavior?: Value<string>
+
+    constructor(properties: JsonBody) {
+        Object.assign(this, properties)
+    }
+}
+
+export class NotStatement {
+
+
+    constructor(properties: NotStatement) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OverrideAction {
+    Count?: {[key: string]: any}
+    None?: {[key: string]: any}
+
+    constructor(properties: OverrideAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Rule {
+    Name!: Value<string>
+    Priority!: Value<number>
+
+    constructor(properties: Rule) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CustomResponse {
+    ResponseCode!: Value<number>
+    CustomResponseBodyKey?: Value<string>
+
+    constructor(properties: CustomResponse) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RateBasedStatement {
     Limit!: Value<number>
     AggregateKeyType!: Value<string>
-    ScopeDownStatement?: StatementTwo
-    ForwardedIPConfig?: ForwardedIPConfiguration
 
-    constructor(properties: RateBasedStatementOne) {
+    constructor(properties: RateBasedStatement) {
         Object.assign(this, properties)
     }
 }
@@ -258,123 +316,56 @@ export class VisibilityConfig {
     }
 }
 
-export class SizeConstraintStatement {
-    FieldToMatch!: FieldToMatch
-    ComparisonOperator!: Value<string>
-    Size!: Value<number>
-    TextTransformations!: List<TextTransformation>
-
-    constructor(properties: SizeConstraintStatement) {
-        Object.assign(this, properties)
-    }
-}
-
-export class FieldToMatch {
-    SingleHeader?: {[key: string]: any}
-    SingleQueryArgument?: {[key: string]: any}
-    AllQueryArguments?: {[key: string]: any}
-    UriPath?: {[key: string]: any}
-    QueryString?: {[key: string]: any}
-    Body?: {[key: string]: any}
-    Method?: {[key: string]: any}
-
-    constructor(properties: FieldToMatch) {
-        Object.assign(this, properties)
-    }
-}
-
-export class SqliMatchStatement {
-    FieldToMatch!: FieldToMatch
-    TextTransformations!: List<TextTransformation>
-
-    constructor(properties: SqliMatchStatement) {
-        Object.assign(this, properties)
-    }
-}
-
-export class GeoMatchStatement {
-    CountryCodes?: List<Value<string>>
-    ForwardedIPConfig?: ForwardedIPConfiguration
-
-    constructor(properties: GeoMatchStatement) {
-        Object.assign(this, properties)
-    }
-}
-
 export class IPSetReferenceStatement {
     Arn!: Value<string>
-    IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration
 
     constructor(properties: IPSetReferenceStatement) {
         Object.assign(this, properties)
     }
 }
 
-export class AndStatementOne {
-    Statements!: List<StatementTwo>
-
-    constructor(properties: AndStatementOne) {
-        Object.assign(this, properties)
-    }
-}
-
-export class StatementThree {
-    ByteMatchStatement?: ByteMatchStatement
-    SqliMatchStatement?: SqliMatchStatement
-    XssMatchStatement?: XssMatchStatement
-    SizeConstraintStatement?: SizeConstraintStatement
-    GeoMatchStatement?: GeoMatchStatement
-    RuleGroupReferenceStatement?: RuleGroupReferenceStatement
-    IPSetReferenceStatement?: IPSetReferenceStatement
-    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement
-    ManagedRuleGroupStatement?: ManagedRuleGroupStatement
-
-    constructor(properties: StatementThree) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface WebACLProperties {
-    DefaultAction: DefaultAction
     Description?: Value<string>
     Name?: Value<string>
     Scope: Value<string>
-    Rules?: List<Rule>
-    VisibilityConfig: VisibilityConfig
-    Tags?: List<ResourceTag>
 }
 
 export default class WebACL extends ResourceBase<WebACLProperties> {
-    static RuleAction = RuleAction
+    static CustomRequestHandling = CustomRequestHandling
     static ManagedRuleGroupStatement = ManagedRuleGroupStatement
     static TextTransformation = TextTransformation
+    static AllowAction = AllowAction
     static DefaultAction = DefaultAction
-    static OrStatementTwo = OrStatementTwo
     static XssMatchStatement = XssMatchStatement
-    static StatementOne = StatementOne
     static ByteMatchStatement = ByteMatchStatement
-    static NotStatementTwo = NotStatementTwo
-    static OverrideAction = OverrideAction
-    static RateBasedStatementTwo = RateBasedStatementTwo
     static ForwardedIPConfiguration = ForwardedIPConfiguration
-    static AndStatementTwo = AndStatementTwo
+    static OrStatement = OrStatement
+    static Label = Label
+    static CustomHTTPHeader = CustomHTTPHeader
     static RegexPatternSetReferenceStatement = RegexPatternSetReferenceStatement
     static IPSetForwardedIPConfiguration = IPSetForwardedIPConfiguration
-    static Rule = Rule
-    static OrStatementOne = OrStatementOne
+    static CustomResponseBody = CustomResponseBody
+    static Statement = Statement
+    static BlockAction = BlockAction
     static RuleGroupReferenceStatement = RuleGroupReferenceStatement
-    static StatementTwo = StatementTwo
-    static NotStatementOne = NotStatementOne
-    static RateBasedStatementOne = RateBasedStatementOne
-    static ExcludedRule = ExcludedRule
-    static VisibilityConfig = VisibilityConfig
+    static LabelMatchStatement = LabelMatchStatement
+    static JsonMatchPattern = JsonMatchPattern
+    static AndStatement = AndStatement
+    static CountAction = CountAction
     static SizeConstraintStatement = SizeConstraintStatement
     static FieldToMatch = FieldToMatch
     static SqliMatchStatement = SqliMatchStatement
     static GeoMatchStatement = GeoMatchStatement
+    static RuleAction = RuleAction
+    static JsonBody = JsonBody
+    static NotStatement = NotStatement
+    static OverrideAction = OverrideAction
+    static Rule = Rule
+    static CustomResponse = CustomResponse
+    static RateBasedStatement = RateBasedStatement
+    static ExcludedRule = ExcludedRule
+    static VisibilityConfig = VisibilityConfig
     static IPSetReferenceStatement = IPSetReferenceStatement
-    static AndStatementOne = AndStatementOne
-    static StatementThree = StatementThree
 
     constructor(properties: WebACLProperties) {
         super('AWS::WAFv2::WebACL', properties)

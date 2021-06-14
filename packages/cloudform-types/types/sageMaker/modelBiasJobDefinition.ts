@@ -42,7 +42,6 @@ export class S3Output {
 
 export class ModelBiasBaselineConfig {
     BaseliningJobName?: Value<string>
-    ConstraintsResource?: ConstraintsResource
 
     constructor(properties: ModelBiasBaselineConfig) {
         Object.assign(this, properties)
@@ -50,8 +49,7 @@ export class ModelBiasBaselineConfig {
 }
 
 export class ModelBiasJobInput {
-    EndpointInput!: EndpointInput
-    GroundTruthS3Input!: MonitoringGroundTruthS3Input
+
 
     constructor(properties: ModelBiasJobInput) {
         Object.assign(this, properties)
@@ -59,7 +57,7 @@ export class ModelBiasJobInput {
 }
 
 export class MonitoringResources {
-    ClusterConfig!: ClusterConfig
+
 
     constructor(properties: MonitoringResources) {
         Object.assign(this, properties)
@@ -69,7 +67,6 @@ export class MonitoringResources {
 export class ModelBiasAppSpecification {
     ImageUri!: Value<string>
     ConfigUri!: Value<string>
-    Environment?: Environment
 
     constructor(properties: ModelBiasAppSpecification) {
         Object.assign(this, properties)
@@ -102,7 +99,6 @@ export class StoppingCondition {
 
 export class MonitoringOutputConfig {
     KmsKeyId?: Value<string>
-    MonitoringOutputs!: List<MonitoringOutput>
 
     constructor(properties: MonitoringOutputConfig) {
         Object.assign(this, properties)
@@ -110,8 +106,7 @@ export class MonitoringOutputConfig {
 }
 
 export class VpcConfig {
-    SecurityGroupIds!: List<Value<string>>
-    Subnets!: List<Value<string>>
+
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -121,7 +116,6 @@ export class VpcConfig {
 export class NetworkConfig {
     EnableInterContainerTrafficEncryption?: Value<boolean>
     EnableNetworkIsolation?: Value<boolean>
-    VpcConfig?: VpcConfig
 
     constructor(properties: NetworkConfig) {
         Object.assign(this, properties)
@@ -146,7 +140,7 @@ export class EndpointInput {
 }
 
 export class MonitoringOutput {
-    S3Output!: S3Output
+
 
     constructor(properties: MonitoringOutput) {
         Object.assign(this, properties)
@@ -155,15 +149,7 @@ export class MonitoringOutput {
 
 export interface ModelBiasJobDefinitionProperties {
     JobDefinitionName?: Value<string>
-    ModelBiasBaselineConfig?: ModelBiasBaselineConfig
-    ModelBiasAppSpecification: ModelBiasAppSpecification
-    ModelBiasJobInput: ModelBiasJobInput
-    ModelBiasJobOutputConfig: MonitoringOutputConfig
-    JobResources: MonitoringResources
-    NetworkConfig?: NetworkConfig
     RoleArn: Value<string>
-    StoppingCondition?: StoppingCondition
-    Tags?: List<ResourceTag>
 }
 
 export default class ModelBiasJobDefinition extends ResourceBase<ModelBiasJobDefinitionProperties> {

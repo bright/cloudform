@@ -19,8 +19,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DataCatalogEncryptionSettingsInner {
-    ConnectionPasswordEncryption?: ConnectionPasswordEncryption
-    EncryptionAtRest?: EncryptionAtRest
+
 
     constructor(properties: DataCatalogEncryptionSettingsInner) {
         Object.assign(this, properties)
@@ -46,7 +45,6 @@ export class ConnectionPasswordEncryption {
 }
 
 export interface DataCatalogEncryptionSettingsProperties {
-    DataCatalogEncryptionSettings: DataCatalogEncryptionSettings
     CatalogId: Value<string>
 }
 

@@ -71,8 +71,7 @@ export class AWSService {
 }
 
 export class Scope {
-    AwsAccounts?: List<AWSAccount>
-    AwsServices?: List<AWSService>
+
 
     constructor(properties: Scope) {
         Object.assign(this, properties)
@@ -81,11 +80,6 @@ export class Scope {
 
 export interface AssessmentProperties {
     FrameworkId?: Value<string>
-    AwsAccount?: AWSAccount
-    Tags?: List<ResourceTag>
-    Roles?: List<Role>
-    Scope?: Scope
-    AssessmentReportsDestination?: AssessmentReportsDestination
     Status?: Value<string>
     Name?: Value<string>
     Description?: Value<string>

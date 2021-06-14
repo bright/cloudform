@@ -44,7 +44,6 @@ export class MonitoringExecutionSummary {
 
 export class MonitoringOutputConfig {
     KmsKeyId?: Value<string>
-    MonitoringOutputs!: List<MonitoringOutput>
 
     constructor(properties: MonitoringOutputConfig) {
         Object.assign(this, properties)
@@ -60,8 +59,7 @@ export class StatisticsResource {
 }
 
 export class VpcConfig {
-    SecurityGroupIds!: List<Value<string>>
-    Subnets!: List<Value<string>>
+
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -80,8 +78,6 @@ export class ClusterConfig {
 }
 
 export class MonitoringAppSpecification {
-    ContainerArguments?: List<Value<string>>
-    ContainerEntrypoint?: List<Value<string>>
     ImageUri!: Value<string>
     PostAnalyticsProcessorSourceUri?: Value<string>
     RecordPreprocessorSourceUri?: Value<string>
@@ -92,15 +88,7 @@ export class MonitoringAppSpecification {
 }
 
 export class MonitoringJobDefinition {
-    BaselineConfig?: BaselineConfig
-    Environment?: Environment
-    MonitoringAppSpecification!: MonitoringAppSpecification
-    MonitoringInputs!: List<MonitoringInput>
-    MonitoringOutputConfig!: MonitoringOutputConfig
-    MonitoringResources!: MonitoringResources
-    NetworkConfig?: NetworkConfig
     RoleArn!: Value<string>
-    StoppingCondition?: StoppingCondition
 
     constructor(properties: MonitoringJobDefinition) {
         Object.assign(this, properties)
@@ -108,8 +96,7 @@ export class MonitoringJobDefinition {
 }
 
 export class BaselineConfig {
-    ConstraintsResource?: ConstraintsResource
-    StatisticsResource?: StatisticsResource
+
 
     constructor(properties: BaselineConfig) {
         Object.assign(this, properties)
@@ -117,7 +104,7 @@ export class BaselineConfig {
 }
 
 export class MonitoringOutput {
-    S3Output!: S3Output
+
 
     constructor(properties: MonitoringOutput) {
         Object.assign(this, properties)
@@ -133,10 +120,8 @@ export class ScheduleConfig {
 }
 
 export class MonitoringScheduleConfig {
-    MonitoringJobDefinition?: MonitoringJobDefinition
     MonitoringJobDefinitionName?: Value<string>
     MonitoringType?: Value<string>
-    ScheduleConfig?: ScheduleConfig
 
     constructor(properties: MonitoringScheduleConfig) {
         Object.assign(this, properties)
@@ -157,7 +142,6 @@ export class EndpointInput {
 export class NetworkConfig {
     EnableInterContainerTrafficEncryption?: Value<boolean>
     EnableNetworkIsolation?: Value<boolean>
-    VpcConfig?: VpcConfig
 
     constructor(properties: NetworkConfig) {
         Object.assign(this, properties)
@@ -175,7 +159,7 @@ export class S3Output {
 }
 
 export class MonitoringResources {
-    ClusterConfig!: ClusterConfig
+
 
     constructor(properties: MonitoringResources) {
         Object.assign(this, properties)
@@ -191,7 +175,7 @@ export class StoppingCondition {
 }
 
 export class MonitoringInput {
-    EndpointInput!: EndpointInput
+
 
     constructor(properties: MonitoringInput) {
         Object.assign(this, properties)
@@ -200,11 +184,8 @@ export class MonitoringInput {
 
 export interface MonitoringScheduleProperties {
     MonitoringScheduleName: Value<string>
-    MonitoringScheduleConfig: MonitoringScheduleConfig
-    Tags?: List<ResourceTag>
     EndpointName?: Value<string>
     FailureReason?: Value<string>
-    LastMonitoringExecutionSummary?: MonitoringExecutionSummary
     MonitoringScheduleStatus?: Value<string>
 }
 

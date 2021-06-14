@@ -32,12 +32,10 @@ export interface FeatureGroupProperties {
     FeatureGroupName: Value<string>
     RecordIdentifierFeatureName: Value<string>
     EventTimeFeatureName: Value<string>
-    FeatureDefinitions: List<FeatureDefinition>
     OnlineStoreConfig?: {[key: string]: any}
     OfflineStoreConfig?: {[key: string]: any}
     RoleArn?: Value<string>
     Description?: Value<string>
-    Tags?: List<ResourceTag>
 }
 
 export default class FeatureGroup extends ResourceBase<FeatureGroupProperties> {

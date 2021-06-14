@@ -29,7 +29,6 @@ export class TagsEntry {
 }
 
 export interface ActivityProperties {
-    Tags?: List<TagsEntry>
     Name: Value<string>
 }
 

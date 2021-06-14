@@ -36,11 +36,9 @@ export interface WorkspaceProperties {
     BundleId: Value<string>
     DirectoryId: Value<string>
     RootVolumeEncryptionEnabled?: Value<boolean>
-    Tags?: List<ResourceTag>
     UserName: Value<string>
     UserVolumeEncryptionEnabled?: Value<boolean>
     VolumeEncryptionKey?: Value<string>
-    WorkspaceProperties?: WorkspaceProperties
 }
 
 export default class Workspace extends ResourceBase<WorkspaceProperties> {

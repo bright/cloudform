@@ -49,11 +49,7 @@ export class RenderingEngine {
 }
 
 export interface SimulationApplicationProperties {
-    RenderingEngine: RenderingEngine
-    SimulationSoftwareSuite: SimulationSoftwareSuite
     CurrentRevisionId?: Value<string>
-    RobotSoftwareSuite: RobotSoftwareSuite
-    Sources: List<SourceConfig>
     Tags?: {[key: string]: any}
     Name?: Value<string>
 }

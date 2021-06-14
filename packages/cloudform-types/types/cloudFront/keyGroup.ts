@@ -22,7 +22,6 @@ import {Value, List} from '../dataTypes'
 
 export class KeyGroupConfig {
     Comment?: Value<string>
-    Items!: List<Value<string>>
     Name!: Value<string>
 
     constructor(properties: KeyGroupConfig) {
@@ -31,7 +30,7 @@ export class KeyGroupConfig {
 }
 
 export interface KeyGroupProperties {
-    KeyGroupConfig: KeyGroupConfig
+
 }
 
 export default class KeyGroup extends ResourceBase<KeyGroupProperties> {

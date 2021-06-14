@@ -44,7 +44,6 @@ export class ExecuteCommandLogConfiguration {
 export class ExecuteCommandConfiguration {
     KmsKeyId?: Value<string>
     Logging?: Value<string>
-    LogConfiguration?: ExecuteCommandLogConfiguration
 
     constructor(properties: ExecuteCommandConfiguration) {
         Object.assign(this, properties)
@@ -52,7 +51,7 @@ export class ExecuteCommandConfiguration {
 }
 
 export class ClusterConfiguration {
-    ExecuteCommandConfiguration?: ExecuteCommandConfiguration
+
 
     constructor(properties: ClusterConfiguration) {
         Object.assign(this, properties)
@@ -70,12 +69,7 @@ export class CapacityProviderStrategyItem {
 }
 
 export interface ClusterProperties {
-    Tags?: List<ResourceTag>
     ClusterName?: Value<string>
-    ClusterSettings?: List<ClusterSettings>
-    Configuration?: ClusterConfiguration
-    CapacityProviders?: List<Value<string>>
-    DefaultCapacityProviderStrategy?: List<CapacityProviderStrategyItem>
 }
 
 export default class Cluster extends ResourceBase<ClusterProperties> {

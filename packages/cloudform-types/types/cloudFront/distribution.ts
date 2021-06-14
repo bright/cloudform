@@ -21,7 +21,6 @@ import {Value, List} from '../dataTypes'
 
 export class Cookies {
     Forward!: Value<string>
-    WhitelistedNames?: List<Value<string>>
 
     constructor(properties: Cookies) {
         Object.assign(this, properties)
@@ -29,24 +28,12 @@ export class Cookies {
 }
 
 export class DistributionConfig {
-    Aliases?: List<Value<string>>
-    CNAMEs?: List<Value<string>>
-    CacheBehaviors?: List<CacheBehavior>
     Comment?: Value<string>
-    CustomErrorResponses?: List<CustomErrorResponse>
-    CustomOrigin?: LegacyCustomOrigin
-    DefaultCacheBehavior?: DefaultCacheBehavior
     DefaultRootObject?: Value<string>
     Enabled!: Value<boolean>
     HttpVersion?: Value<string>
     IPV6Enabled?: Value<boolean>
-    Logging?: Logging
-    OriginGroups?: OriginGroups
-    Origins?: List<Origin>
     PriceClass?: Value<string>
-    Restrictions?: Restrictions
-    S3Origin?: LegacyS3Origin
-    ViewerCertificate?: ViewerCertificate
     WebACLId?: Value<string>
 
     constructor(properties: DistributionConfig) {
@@ -73,9 +60,7 @@ export class OriginCustomHeader {
 }
 
 export class OriginGroup {
-    FailoverCriteria!: OriginGroupFailoverCriteria
     Id!: Value<string>
-    Members!: OriginGroupMembers
 
     constructor(properties: OriginGroup) {
         Object.assign(this, properties)
@@ -88,7 +73,6 @@ export class CustomOriginConfig {
     OriginKeepaliveTimeout?: Value<number>
     OriginProtocolPolicy!: Value<string>
     OriginReadTimeout?: Value<number>
-    OriginSSLProtocols?: List<Value<string>>
 
     constructor(properties: CustomOriginConfig) {
         Object.assign(this, properties)
@@ -96,7 +80,6 @@ export class CustomOriginConfig {
 }
 
 export class OriginGroups {
-    Items?: List<OriginGroup>
     Quantity!: Value<number>
 
     constructor(properties: OriginGroups) {
@@ -105,7 +88,6 @@ export class OriginGroups {
 }
 
 export class OriginGroupMembers {
-    Items!: List<OriginGroupMember>
     Quantity!: Value<number>
 
     constructor(properties: OriginGroupMembers) {
@@ -114,7 +96,6 @@ export class OriginGroupMembers {
 }
 
 export class GeoRestriction {
-    Locations?: List<Value<string>>
     RestrictionType!: Value<string>
 
     constructor(properties: GeoRestriction) {
@@ -164,15 +145,10 @@ export class OriginGroupMember {
 }
 
 export class CacheBehavior {
-    AllowedMethods?: List<Value<string>>
     CachePolicyId?: Value<string>
-    CachedMethods?: List<Value<string>>
     Compress?: Value<boolean>
     DefaultTTL?: Value<number>
     FieldLevelEncryptionId?: Value<string>
-    ForwardedValues?: ForwardedValues
-    FunctionAssociations?: List<FunctionAssociation>
-    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
     MaxTTL?: Value<number>
     MinTTL?: Value<number>
     OriginRequestPolicyId?: Value<string>
@@ -180,8 +156,6 @@ export class CacheBehavior {
     RealtimeLogConfigArn?: Value<string>
     SmoothStreaming?: Value<boolean>
     TargetOriginId!: Value<string>
-    TrustedKeyGroups?: List<Value<string>>
-    TrustedSigners?: List<Value<string>>
     ViewerProtocolPolicy!: Value<string>
 
     constructor(properties: CacheBehavior) {
@@ -194,7 +168,6 @@ export class LegacyCustomOrigin {
     HTTPPort?: Value<number>
     HTTPSPort?: Value<number>
     OriginProtocolPolicy!: Value<string>
-    OriginSSLProtocols!: List<Value<string>>
 
     constructor(properties: LegacyCustomOrigin) {
         Object.assign(this, properties)
@@ -202,23 +175,16 @@ export class LegacyCustomOrigin {
 }
 
 export class DefaultCacheBehavior {
-    AllowedMethods?: List<Value<string>>
     CachePolicyId?: Value<string>
-    CachedMethods?: List<Value<string>>
     Compress?: Value<boolean>
     DefaultTTL?: Value<number>
     FieldLevelEncryptionId?: Value<string>
-    ForwardedValues?: ForwardedValues
-    FunctionAssociations?: List<FunctionAssociation>
-    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
     MaxTTL?: Value<number>
     MinTTL?: Value<number>
     OriginRequestPolicyId?: Value<string>
     RealtimeLogConfigArn?: Value<string>
     SmoothStreaming?: Value<boolean>
     TargetOriginId!: Value<string>
-    TrustedKeyGroups?: List<Value<string>>
-    TrustedSigners?: List<Value<string>>
     ViewerProtocolPolicy!: Value<string>
 
     constructor(properties: DefaultCacheBehavior) {
@@ -227,7 +193,7 @@ export class DefaultCacheBehavior {
 }
 
 export class Restrictions {
-    GeoRestriction!: GeoRestriction
+
 
     constructor(properties: Restrictions) {
         Object.assign(this, properties)
@@ -237,13 +203,9 @@ export class Restrictions {
 export class Origin {
     ConnectionAttempts?: Value<number>
     ConnectionTimeout?: Value<number>
-    CustomOriginConfig?: CustomOriginConfig
     DomainName!: Value<string>
     Id!: Value<string>
-    OriginCustomHeaders?: List<OriginCustomHeader>
     OriginPath?: Value<string>
-    OriginShield?: OriginShield
-    S3OriginConfig?: S3OriginConfig
 
     constructor(properties: Origin) {
         Object.assign(this, properties)
@@ -251,7 +213,6 @@ export class Origin {
 }
 
 export class StatusCodes {
-    Items!: List<Value<number>>
     Quantity!: Value<number>
 
     constructor(properties: StatusCodes) {
@@ -260,7 +221,7 @@ export class StatusCodes {
 }
 
 export class OriginGroupFailoverCriteria {
-    StatusCodes!: StatusCodes
+
 
     constructor(properties: OriginGroupFailoverCriteria) {
         Object.assign(this, properties)
@@ -268,10 +229,7 @@ export class OriginGroupFailoverCriteria {
 }
 
 export class ForwardedValues {
-    Cookies?: Cookies
-    Headers?: List<Value<string>>
     QueryString!: Value<boolean>
-    QueryStringCacheKeys?: List<Value<string>>
 
     constructor(properties: ForwardedValues) {
         Object.assign(this, properties)
@@ -315,8 +273,7 @@ export class FunctionAssociation {
 }
 
 export interface DistributionProperties {
-    DistributionConfig: DistributionConfig
-    Tags?: List<ResourceTag>
+
 }
 
 export default class Distribution extends ResourceBase<DistributionProperties> {

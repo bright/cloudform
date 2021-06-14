@@ -1,18 +1,26 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
+
+export class CustomArtifactConfiguration {
+    ArtifactType!: Value<string>
+
+    constructor(properties: CustomArtifactConfiguration) {
+        Object.assign(this, properties)
+    }
+}
 
 export class S3ContentLocation {
     BucketARN?: Value<string>
@@ -20,6 +28,14 @@ export class S3ContentLocation {
     ObjectVersion?: Value<string>
 
     constructor(properties: S3ContentLocation) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DeployAsApplicationConfiguration {
+
+
+    constructor(properties: DeployAsApplicationConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -33,30 +49,10 @@ export class PropertyGroup {
     }
 }
 
-export class KinesisStreamsInput {
-    ResourceARN!: Value<string>
-
-    constructor(properties: KinesisStreamsInput) {
-        Object.assign(this, properties)
-    }
-}
-
 export class MappingParameters {
-    JSONMappingParameters?: JSONMappingParameters
-    CSVMappingParameters?: CSVMappingParameters
+
 
     constructor(properties: MappingParameters) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CheckpointConfiguration {
-    ConfigurationType!: Value<string>
-    CheckpointInterval?: Value<number>
-    MinPauseBetweenCheckpoints?: Value<number>
-    CheckpointingEnabled?: Value<boolean>
-
-    constructor(properties: CheckpointConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -69,18 +65,8 @@ export class InputParallelism {
     }
 }
 
-export class InputLambdaProcessor {
-    ResourceARN!: Value<string>
-
-    constructor(properties: InputLambdaProcessor) {
-        Object.assign(this, properties)
-    }
-}
-
 export class FlinkApplicationConfiguration {
-    CheckpointConfiguration?: CheckpointConfiguration
-    ParallelismConfiguration?: ParallelismConfiguration
-    MonitoringConfiguration?: MonitoringConfiguration
+
 
     constructor(properties: FlinkApplicationConfiguration) {
         Object.assign(this, properties)
@@ -89,11 +75,6 @@ export class FlinkApplicationConfiguration {
 
 export class Input {
     NamePrefix!: Value<string>
-    InputSchema!: InputSchema
-    KinesisStreamsInput?: KinesisStreamsInput
-    KinesisFirehoseInput?: KinesisFirehoseInput
-    InputProcessingConfiguration?: InputProcessingConfiguration
-    InputParallelism?: InputParallelism
 
     constructor(properties: Input) {
         Object.assign(this, properties)
@@ -118,20 +99,8 @@ export class KinesisFirehoseInput {
 
 export class InputSchema {
     RecordEncoding?: Value<string>
-    RecordColumns!: List<RecordColumn>
-    RecordFormat!: RecordFormat
 
     constructor(properties: InputSchema) {
-        Object.assign(this, properties)
-    }
-}
-
-export class RecordColumn {
-    Mapping?: Value<string>
-    SqlType!: Value<string>
-    Name!: Value<string>
-
-    constructor(properties: RecordColumn) {
         Object.assign(this, properties)
     }
 }
@@ -147,15 +116,6 @@ export class ParallelismConfiguration {
     }
 }
 
-export class CSVMappingParameters {
-    RecordRowDelimiter!: Value<string>
-    RecordColumnDelimiter!: Value<string>
-
-    constructor(properties: CSVMappingParameters) {
-        Object.assign(this, properties)
-    }
-}
-
 export class MonitoringConfiguration {
     ConfigurationType!: Value<string>
     MetricsLevel?: Value<string>
@@ -166,11 +126,125 @@ export class MonitoringConfiguration {
     }
 }
 
+export type CustomArtifactsConfiguration = List<CustomArtifactConfiguration>
+
+export class SqlApplicationConfiguration {
+
+
+    constructor(properties: SqlApplicationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class InputProcessingConfiguration {
+
+
+    constructor(properties: InputProcessingConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ApplicationCodeConfiguration {
+    CodeContentType!: Value<string>
+
+    constructor(properties: ApplicationCodeConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ZeppelinApplicationConfiguration {
+
+
+    constructor(properties: ZeppelinApplicationConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class MavenReference {
+    ArtifactId!: Value<string>
+    Version!: Value<string>
+    GroupId!: Value<string>
+
+    constructor(properties: MavenReference) {
+        Object.assign(this, properties)
+    }
+}
+
+export class KinesisStreamsInput {
+    ResourceARN!: Value<string>
+
+    constructor(properties: KinesisStreamsInput) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CheckpointConfiguration {
+    ConfigurationType!: Value<string>
+    CheckpointInterval?: Value<number>
+    MinPauseBetweenCheckpoints?: Value<number>
+    CheckpointingEnabled?: Value<boolean>
+
+    constructor(properties: CheckpointConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ZeppelinMonitoringConfiguration {
+    LogLevel?: Value<string>
+
+    constructor(properties: ZeppelinMonitoringConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class S3ContentBaseLocation {
+    BucketARN!: Value<string>
+    BasePath!: Value<string>
+
+    constructor(properties: S3ContentBaseLocation) {
+        Object.assign(this, properties)
+    }
+}
+
+export class InputLambdaProcessor {
+    ResourceARN!: Value<string>
+
+    constructor(properties: InputLambdaProcessor) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RecordColumn {
+    Mapping?: Value<string>
+    SqlType!: Value<string>
+    Name!: Value<string>
+
+    constructor(properties: RecordColumn) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CSVMappingParameters {
+    RecordRowDelimiter!: Value<string>
+    RecordColumnDelimiter!: Value<string>
+
+    constructor(properties: CSVMappingParameters) {
+        Object.assign(this, properties)
+    }
+}
+
 export class RecordFormat {
-    MappingParameters?: MappingParameters
     RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
+        Object.assign(this, properties)
+    }
+}
+
+export class GlueDataCatalogConfiguration {
+    DatabaseARN?: Value<string>
+
+    constructor(properties: GlueDataCatalogConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -185,7 +259,6 @@ export class JSONMappingParameters {
 
 export class CodeContent {
     ZipFileContent?: Value<string>
-    S3ContentLocation?: S3ContentLocation
     TextContent?: Value<string>
 
     constructor(properties: CodeContent) {
@@ -193,47 +266,26 @@ export class CodeContent {
     }
 }
 
-export class SqlApplicationConfiguration {
-    Inputs?: List<Input>
-
-    constructor(properties: SqlApplicationConfiguration) {
-        Object.assign(this, properties)
-    }
-}
-
-export class InputProcessingConfiguration {
-    InputLambdaProcessor?: InputLambdaProcessor
-
-    constructor(properties: InputProcessingConfiguration) {
-        Object.assign(this, properties)
-    }
-}
-
 export class ApplicationConfiguration {
-    ApplicationCodeConfiguration?: ApplicationCodeConfiguration
-    EnvironmentProperties?: EnvironmentProperties
-    FlinkApplicationConfiguration?: FlinkApplicationConfiguration
-    SqlApplicationConfiguration?: SqlApplicationConfiguration
-    ApplicationSnapshotConfiguration?: ApplicationSnapshotConfiguration
+
 
     constructor(properties: ApplicationConfiguration) {
         Object.assign(this, properties)
     }
 }
 
-export class ApplicationCodeConfiguration {
-    CodeContentType!: Value<string>
-    CodeContent!: CodeContent
+export class EnvironmentProperties {
 
-    constructor(properties: ApplicationCodeConfiguration) {
+
+    constructor(properties: EnvironmentProperties) {
         Object.assign(this, properties)
     }
 }
 
-export class EnvironmentProperties {
-    PropertyGroups?: List<PropertyGroup>
+export class CatalogConfiguration {
 
-    constructor(properties: EnvironmentProperties) {
+
+    constructor(properties: CatalogConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -241,37 +293,44 @@ export class EnvironmentProperties {
 export interface ApplicationProperties {
     ApplicationName?: Value<string>
     RuntimeEnvironment: Value<string>
-    ApplicationConfiguration?: ApplicationConfiguration
+    ApplicationMode?: Value<string>
     ApplicationDescription?: Value<string>
-    Tags?: List<ResourceTag>
     ServiceExecutionRole: Value<string>
 }
 
 export default class Application extends ResourceBase<ApplicationProperties> {
+    static CustomArtifactConfiguration = CustomArtifactConfiguration
     static S3ContentLocation = S3ContentLocation
+    static DeployAsApplicationConfiguration = DeployAsApplicationConfiguration
     static PropertyGroup = PropertyGroup
-    static KinesisStreamsInput = KinesisStreamsInput
     static MappingParameters = MappingParameters
-    static CheckpointConfiguration = CheckpointConfiguration
     static InputParallelism = InputParallelism
-    static InputLambdaProcessor = InputLambdaProcessor
     static FlinkApplicationConfiguration = FlinkApplicationConfiguration
     static Input = Input
     static ApplicationSnapshotConfiguration = ApplicationSnapshotConfiguration
     static KinesisFirehoseInput = KinesisFirehoseInput
     static InputSchema = InputSchema
-    static RecordColumn = RecordColumn
     static ParallelismConfiguration = ParallelismConfiguration
-    static CSVMappingParameters = CSVMappingParameters
     static MonitoringConfiguration = MonitoringConfiguration
-    static RecordFormat = RecordFormat
-    static JSONMappingParameters = JSONMappingParameters
-    static CodeContent = CodeContent
     static SqlApplicationConfiguration = SqlApplicationConfiguration
     static InputProcessingConfiguration = InputProcessingConfiguration
-    static ApplicationConfiguration = ApplicationConfiguration
     static ApplicationCodeConfiguration = ApplicationCodeConfiguration
+    static ZeppelinApplicationConfiguration = ZeppelinApplicationConfiguration
+    static MavenReference = MavenReference
+    static KinesisStreamsInput = KinesisStreamsInput
+    static CheckpointConfiguration = CheckpointConfiguration
+    static ZeppelinMonitoringConfiguration = ZeppelinMonitoringConfiguration
+    static S3ContentBaseLocation = S3ContentBaseLocation
+    static InputLambdaProcessor = InputLambdaProcessor
+    static RecordColumn = RecordColumn
+    static CSVMappingParameters = CSVMappingParameters
+    static RecordFormat = RecordFormat
+    static GlueDataCatalogConfiguration = GlueDataCatalogConfiguration
+    static JSONMappingParameters = JSONMappingParameters
+    static CodeContent = CodeContent
+    static ApplicationConfiguration = ApplicationConfiguration
     static EnvironmentProperties = EnvironmentProperties
+    static CatalogConfiguration = CatalogConfiguration
 
     constructor(properties: ApplicationProperties) {
         super('AWS::KinesisAnalyticsV2::Application', properties)

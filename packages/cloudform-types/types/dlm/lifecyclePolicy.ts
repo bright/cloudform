@@ -20,6 +20,7 @@ import {Value, List} from '../dataTypes'
 
 export class FastRestoreRule {
     IntervalUnit?: Value<string>
+    AvailabilityZones?: List<Value<string>>
     Count?: Value<number>
     Interval?: Value<number>
 
@@ -30,6 +31,7 @@ export class FastRestoreRule {
 
 export class EventSource {
     Type!: Value<string>
+    Parameters?: EventParameters
 
     constructor(properties: EventSource) {
         Object.assign(this, properties)
@@ -38,6 +40,7 @@ export class EventSource {
 
 export class EventParameters {
     EventType!: Value<string>
+    SnapshotOwner!: List<Value<string>>
     DescriptionRegex?: Value<string>
 
     constructor(properties: EventParameters) {
@@ -46,6 +49,7 @@ export class EventParameters {
 }
 
 export class Action {
+    CrossRegionCopy!: List<CrossRegionCopyAction>
     Name!: Value<string>
 
     constructor(properties: Action) {
@@ -55,6 +59,7 @@ export class Action {
 
 export class CreateRule {
     IntervalUnit?: Value<string>
+    Times?: List<Value<string>>
     CronExpression?: Value<string>
     Interval?: Value<number>
     Location?: Value<string>
@@ -75,7 +80,14 @@ export class RetainRule {
 }
 
 export class PolicyDetails {
+    ResourceTypes?: List<Value<string>>
+    Schedules?: List<Schedule>
     PolicyType?: Value<string>
+    EventSource?: EventSource
+    Parameters?: Parameters
+    Actions?: List<Action>
+    TargetTags?: List<ResourceTag>
+    ResourceLocations?: List<Value<string>>
 
     constructor(properties: PolicyDetails) {
         Object.assign(this, properties)
@@ -101,6 +113,13 @@ export class EncryptionConfiguration {
 }
 
 export class Schedule {
+    ShareRules?: List<ShareRule>
+    TagsToAdd?: List<ResourceTag>
+    CreateRule?: CreateRule
+    VariableTags?: List<ResourceTag>
+    FastRestoreRule?: FastRestoreRule
+    RetainRule?: RetainRule
+    CrossRegionCopyRules?: List<CrossRegionCopyRule>
     Name?: Value<string>
     CopyTags?: Value<boolean>
 
@@ -123,6 +142,7 @@ export class CrossRegionCopyRule {
     Target?: Value<string>
     Encrypted!: Value<boolean>
     CmkArn?: Value<string>
+    RetainRule?: CrossRegionCopyRetainRule
     CopyTags?: Value<boolean>
 
     constructor(properties: CrossRegionCopyRule) {
@@ -132,6 +152,8 @@ export class CrossRegionCopyRule {
 
 export class CrossRegionCopyAction {
     Target!: Value<string>
+    EncryptionConfiguration!: EncryptionConfiguration
+    RetainRule?: CrossRegionCopyRetainRule
 
     constructor(properties: CrossRegionCopyAction) {
         Object.assign(this, properties)
@@ -139,6 +161,7 @@ export class CrossRegionCopyAction {
 }
 
 export class ShareRule {
+    TargetAccounts?: List<Value<string>>
     UnshareIntervalUnit?: Value<string>
     UnshareInterval?: Value<number>
 
@@ -151,6 +174,8 @@ export interface LifecyclePolicyProperties {
     ExecutionRoleArn?: Value<string>
     Description?: Value<string>
     State?: Value<string>
+    PolicyDetails?: PolicyDetails
+    Tags?: List<ResourceTag>
 }
 
 export default class LifecyclePolicy extends ResourceBase<LifecyclePolicyProperties> {

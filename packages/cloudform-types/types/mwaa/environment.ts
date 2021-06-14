@@ -13,7 +13,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class NetworkConfiguration {
-
+    SubnetIds?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -31,7 +32,11 @@ export class ModuleLoggingConfiguration {
 }
 
 export class LoggingConfiguration {
-
+    DagProcessingLogs?: ModuleLoggingConfiguration
+    SchedulerLogs?: ModuleLoggingConfiguration
+    WebserverLogs?: ModuleLoggingConfiguration
+    WorkerLogs?: ModuleLoggingConfiguration
+    TaskLogs?: ModuleLoggingConfiguration
 
     constructor(properties: LoggingConfiguration) {
         Object.assign(this, properties)
@@ -54,7 +59,10 @@ export interface EnvironmentProperties {
     MaxWorkers?: Value<number>
     MinWorkers?: Value<number>
     Schedulers?: Value<number>
+    NetworkConfiguration?: NetworkConfiguration
+    LoggingConfiguration?: LoggingConfiguration
     WeeklyMaintenanceWindowStart?: Value<string>
+    Tags?: TagMap
     WebserverAccessMode?: Value<string>
 }
 

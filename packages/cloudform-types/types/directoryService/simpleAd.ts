@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class VpcSettings {
+    SubnetIds!: List<Value<string>>
     VpcId!: Value<string>
 
     constructor(properties: VpcSettings) {
@@ -36,6 +37,7 @@ export interface SimpleADProperties {
     Password: Value<string>
     ShortName?: Value<string>
     Size: Value<string>
+    VpcSettings: VpcSettings
 }
 
 export default class SimpleAD extends ResourceBase<SimpleADProperties> {

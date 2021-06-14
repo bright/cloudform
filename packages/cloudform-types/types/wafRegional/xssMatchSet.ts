@@ -17,6 +17,7 @@ import {Value, List} from '../dataTypes'
 
 export class XssMatchTuple {
     TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: XssMatchTuple) {
         Object.assign(this, properties)
@@ -33,6 +34,7 @@ export class FieldToMatch {
 }
 
 export interface XssMatchSetProperties {
+    XssMatchTuples?: List<XssMatchTuple>
     Name: Value<string>
 }
 

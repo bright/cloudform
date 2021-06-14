@@ -14,6 +14,7 @@ import {Value, List} from '../dataTypes'
 
 export interface LabelProperties {
     Name: Value<string>
+    Tags?: List<ResourceTag>
     Description?: Value<string>
 }
 

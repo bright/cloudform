@@ -17,6 +17,8 @@ export class Subscriber {
 
 export interface AnomalySubscriptionProperties {
     SubscriptionName: Value<string>
+    MonitorArnList: List<Value<string>>
+    Subscribers: List<Subscriber>
     Threshold: Value<number>
     Frequency: Value<string>
 }

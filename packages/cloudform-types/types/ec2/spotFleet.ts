@@ -56,8 +56,11 @@ export class InstanceNetworkInterfaceSpecification {
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
     DeviceIndex?: Value<number>
+    Groups?: List<Value<string>>
     Ipv6AddressCount?: Value<number>
+    Ipv6Addresses?: List<InstanceIpv6Address>
     NetworkInterfaceId?: Value<string>
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SubnetId?: Value<string>
 
@@ -67,14 +70,21 @@ export class InstanceNetworkInterfaceSpecification {
 }
 
 export class SpotFleetLaunchSpecification {
+    BlockDeviceMappings?: List<BlockDeviceMapping>
     EbsOptimized?: Value<boolean>
+    IamInstanceProfile?: IamInstanceProfileSpecification
     ImageId!: Value<string>
     InstanceType!: Value<string>
     KernelId?: Value<string>
     KeyName?: Value<string>
+    Monitoring?: SpotFleetMonitoring
+    NetworkInterfaces?: List<InstanceNetworkInterfaceSpecification>
+    Placement?: SpotPlacement
     RamdiskId?: Value<string>
+    SecurityGroups?: List<GroupIdentifier>
     SpotPrice?: Value<string>
     SubnetId?: Value<string>
+    TagSpecifications?: List<SpotFleetTagSpecification>
     UserData?: Value<string>
     WeightedCapacity?: Value<number>
 
@@ -84,7 +94,7 @@ export class SpotFleetLaunchSpecification {
 }
 
 export class ClassicLoadBalancersConfig {
-
+    ClassicLoadBalancers!: List<ClassicLoadBalancer>
 
     constructor(properties: ClassicLoadBalancersConfig) {
         Object.assign(this, properties)
@@ -92,7 +102,7 @@ export class ClassicLoadBalancersConfig {
 }
 
 export class SpotMaintenanceStrategies {
-
+    CapacityRebalance?: SpotCapacityRebalance
 
     constructor(properties: SpotMaintenanceStrategies) {
         Object.assign(this, properties)
@@ -101,6 +111,7 @@ export class SpotMaintenanceStrategies {
 
 export class SpotFleetTagSpecification {
     ResourceType?: Value<string>
+    Tags?: List<ResourceTag>
 
     constructor(properties: SpotFleetTagSpecification) {
         Object.assign(this, properties)
@@ -138,7 +149,8 @@ export class EbsBlockDevice {
 }
 
 export class LoadBalancersConfig {
-
+    ClassicLoadBalancersConfig?: ClassicLoadBalancersConfig
+    TargetGroupsConfig?: TargetGroupsConfig
 
     constructor(properties: LoadBalancersConfig) {
         Object.assign(this, properties)
@@ -180,7 +192,8 @@ export class ClassicLoadBalancer {
 }
 
 export class LaunchTemplateConfig {
-
+    LaunchTemplateSpecification?: FleetLaunchTemplateSpecification
+    Overrides?: List<LaunchTemplateOverrides>
 
     constructor(properties: LaunchTemplateConfig) {
         Object.assign(this, properties)
@@ -193,10 +206,14 @@ export class SpotFleetRequestConfigData {
     IamFleetRole!: Value<string>
     InstanceInterruptionBehavior?: Value<string>
     InstancePoolsToUseCount?: Value<number>
+    LaunchSpecifications?: List<SpotFleetLaunchSpecification>
+    LaunchTemplateConfigs?: List<LaunchTemplateConfig>
+    LoadBalancersConfig?: LoadBalancersConfig
     OnDemandAllocationStrategy?: Value<string>
     OnDemandMaxTotalPrice?: Value<string>
     OnDemandTargetCapacity?: Value<number>
     ReplaceUnhealthyInstances?: Value<boolean>
+    SpotMaintenanceStrategies?: SpotMaintenanceStrategies
     SpotMaxTotalPrice?: Value<string>
     SpotPrice?: Value<string>
     TargetCapacity!: Value<number>
@@ -219,7 +236,7 @@ export class InstanceIpv6Address {
 }
 
 export class TargetGroupsConfig {
-
+    TargetGroups!: List<TargetGroup>
 
     constructor(properties: TargetGroupsConfig) {
         Object.assign(this, properties)
@@ -236,6 +253,7 @@ export class GroupIdentifier {
 
 export class BlockDeviceMapping {
     DeviceName!: Value<string>
+    Ebs?: EbsBlockDevice
     NoDevice?: Value<string>
     VirtualName?: Value<string>
 
@@ -245,7 +263,7 @@ export class BlockDeviceMapping {
 }
 
 export interface SpotFleetProperties {
-
+    SpotFleetRequestConfigData: SpotFleetRequestConfigData
 }
 
 export default class SpotFleet extends ResourceBase<SpotFleetProperties> {

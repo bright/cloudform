@@ -23,6 +23,8 @@ export class ServiceAccountCredentials {
 }
 
 export interface DirectoryConfigProperties {
+    OrganizationalUnitDistinguishedNames: List<Value<string>>
+    ServiceAccountCredentials: ServiceAccountCredentials
     DirectoryName: Value<string>
 }
 

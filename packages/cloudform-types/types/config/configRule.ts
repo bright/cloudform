@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class Source {
     Owner!: Value<string>
+    SourceDetails?: List<SourceDetail>
     SourceIdentifier!: Value<string>
 
     constructor(properties: Source) {
@@ -31,6 +32,7 @@ export class Source {
 
 export class Scope {
     ComplianceResourceId?: Value<string>
+    ComplianceResourceTypes?: List<Value<string>>
     TagKey?: Value<string>
     TagValue?: Value<string>
 
@@ -54,6 +56,8 @@ export interface ConfigRuleProperties {
     Description?: Value<string>
     InputParameters?: {[key: string]: any}
     MaximumExecutionFrequency?: Value<string>
+    Scope?: Scope
+    Source: Source
 }
 
 export default class ConfigRule extends ResourceBase<ConfigRuleProperties> {

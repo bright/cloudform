@@ -18,7 +18,22 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DataSourceParameters {
-
+    AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters
+    TeradataParameters?: TeradataParameters
+    RdsParameters?: RdsParameters
+    AthenaParameters?: AthenaParameters
+    SparkParameters?: SparkParameters
+    MariaDbParameters?: MariaDbParameters
+    OracleParameters?: OracleParameters
+    PrestoParameters?: PrestoParameters
+    RedshiftParameters?: RedshiftParameters
+    MySqlParameters?: MySqlParameters
+    SqlServerParameters?: SqlServerParameters
+    SnowflakeParameters?: SnowflakeParameters
+    AmazonElasticsearchParameters?: AmazonElasticsearchParameters
+    PostgreSqlParameters?: PostgreSqlParameters
+    AuroraParameters?: AuroraParameters
+    S3Parameters?: S3Parameters
 
     constructor(properties: DataSourceParameters) {
         Object.assign(this, properties)
@@ -37,6 +52,7 @@ export class AuroraPostgreSqlParameters {
 
 export class DataSourceCredentials {
     CopySourceArn?: Value<string>
+    CredentialPair?: CredentialPair
 
     constructor(properties: DataSourceCredentials) {
         Object.assign(this, properties)
@@ -44,6 +60,7 @@ export class DataSourceCredentials {
 }
 
 export class CredentialPair {
+    AlternateDataSourceParameters?: List<DataSourceParameters>
     Username!: Value<string>
     Password!: Value<string>
 
@@ -71,7 +88,7 @@ export class SslProperties {
 }
 
 export class S3Parameters {
-
+    ManifestFileLocation!: ManifestFileLocation
 
     constructor(properties: S3Parameters) {
         Object.assign(this, properties)
@@ -89,6 +106,7 @@ export class PrestoParameters {
 }
 
 export class ResourcePermission {
+    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -238,10 +256,18 @@ export class SqlServerParameters {
 }
 
 export interface DataSourceProperties {
+    AlternateDataSourceParameters?: List<DataSourceParameters>
     AwsAccountId?: Value<string>
+    Credentials?: DataSourceCredentials
     DataSourceId?: Value<string>
+    DataSourceParameters?: DataSourceParameters
+    ErrorInfo?: DataSourceErrorInfo
     Name?: Value<string>
+    Permissions?: List<ResourcePermission>
+    SslProperties?: SslProperties
+    Tags?: List<ResourceTag>
     Type?: Value<string>
+    VpcConnectionProperties?: VpcConnectionProperties
 }
 
 export default class DataSource extends ResourceBase<DataSourceProperties> {

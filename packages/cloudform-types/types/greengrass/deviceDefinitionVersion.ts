@@ -28,6 +28,7 @@ export class Device {
 
 export interface DeviceDefinitionVersionProperties {
     DeviceDefinitionId: Value<string>
+    Devices: List<Device>
 }
 
 export default class DeviceDefinitionVersion extends ResourceBase<DeviceDefinitionVersionProperties> {

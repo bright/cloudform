@@ -24,6 +24,7 @@ import {Value, List} from '../dataTypes'
 
 export interface VPNGatewayProperties {
     AmazonSideAsn?: Value<number>
+    Tags?: List<ResourceTag>
     Type: Value<string>
 }
 

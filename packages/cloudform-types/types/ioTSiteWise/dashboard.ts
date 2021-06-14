@@ -17,6 +17,7 @@ export interface DashboardProperties {
     DashboardName: Value<string>
     DashboardDescription: Value<string>
     DashboardDefinition: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Dashboard extends ResourceBase<DashboardProperties> {

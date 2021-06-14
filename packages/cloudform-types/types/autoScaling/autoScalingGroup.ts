@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class LaunchTemplateOverrides {
     InstanceType?: Value<string>
+    LaunchTemplateSpecification?: LaunchTemplateSpecification
     WeightedCapacity?: Value<string>
 
     constructor(properties: LaunchTemplateOverrides) {
@@ -31,6 +32,7 @@ export class LaunchTemplateOverrides {
 
 export class MetricsCollection {
     Granularity!: Value<string>
+    Metrics?: List<Value<string>>
 
     constructor(properties: MetricsCollection) {
         Object.assign(this, properties)
@@ -75,7 +77,8 @@ export class LaunchTemplateSpecification {
 }
 
 export class MixedInstancesPolicy {
-
+    InstancesDistribution?: InstancesDistribution
+    LaunchTemplate!: LaunchTemplate
 
     constructor(properties: MixedInstancesPolicy) {
         Object.assign(this, properties)
@@ -83,6 +86,7 @@ export class MixedInstancesPolicy {
 }
 
 export class NotificationConfiguration {
+    NotificationTypes?: List<Value<string>>
     TopicARN!: Value<string>
 
     constructor(properties: NotificationConfiguration) {
@@ -91,7 +95,8 @@ export class NotificationConfiguration {
 }
 
 export class LaunchTemplate {
-
+    LaunchTemplateSpecification!: LaunchTemplateSpecification
+    Overrides?: List<LaunchTemplateOverrides>
 
     constructor(properties: LaunchTemplate) {
         Object.assign(this, properties)
@@ -110,6 +115,7 @@ export class TagProperty {
 
 export interface AutoScalingGroupProperties {
     AutoScalingGroupName?: Value<string>
+    AvailabilityZones?: List<Value<string>>
     CapacityRebalance?: Value<boolean>
     Context?: Value<string>
     Cooldown?: Value<string>
@@ -118,12 +124,22 @@ export interface AutoScalingGroupProperties {
     HealthCheckType?: Value<string>
     InstanceId?: Value<string>
     LaunchConfigurationName?: Value<string>
+    LaunchTemplate?: LaunchTemplateSpecification
+    LifecycleHookSpecificationList?: List<LifecycleHookSpecification>
+    LoadBalancerNames?: List<Value<string>>
     MaxInstanceLifetime?: Value<number>
     MaxSize: Value<string>
+    MetricsCollection?: List<MetricsCollection>
     MinSize: Value<string>
+    MixedInstancesPolicy?: MixedInstancesPolicy
     NewInstancesProtectedFromScaleIn?: Value<boolean>
+    NotificationConfigurations?: List<NotificationConfiguration>
     PlacementGroup?: Value<string>
     ServiceLinkedRoleARN?: Value<string>
+    Tags?: List<TagProperty>
+    TargetGroupARNs?: List<Value<string>>
+    TerminationPolicies?: List<Value<string>>
+    VPCZoneIdentifier?: List<Value<string>>
 }
 
 export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupProperties> {

@@ -23,7 +23,8 @@ export class DomainJoinInfo {
 }
 
 export class VpcConfig {
-
+    SubnetIds?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -40,8 +41,11 @@ export class ComputeCapacity {
 
 export interface FleetProperties {
     Description?: Value<string>
+    ComputeCapacity: ComputeCapacity
+    VpcConfig?: VpcConfig
     FleetType?: Value<string>
     EnableDefaultInternetAccess?: Value<boolean>
+    DomainJoinInfo?: DomainJoinInfo
     Name: Value<string>
     ImageName?: Value<string>
     MaxUserDurationInSeconds?: Value<number>
@@ -51,6 +55,7 @@ export interface FleetProperties {
     StreamView?: Value<string>
     IamRoleArn?: Value<string>
     InstanceType: Value<string>
+    Tags?: List<ResourceTag>
     ImageArn?: Value<string>
 }
 

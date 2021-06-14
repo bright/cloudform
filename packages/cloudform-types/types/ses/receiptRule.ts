@@ -20,7 +20,13 @@ export class BounceAction {
 }
 
 export class Action {
-
+    BounceAction?: BounceAction
+    S3Action?: S3Action
+    StopAction?: StopAction
+    SNSAction?: SNSAction
+    WorkmailAction?: WorkmailAction
+    AddHeaderAction?: AddHeaderAction
+    LambdaAction?: LambdaAction
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -67,6 +73,8 @@ export class WorkmailAction {
 
 export class Rule {
     ScanEnabled?: Value<boolean>
+    Recipients?: List<Value<string>>
+    Actions?: List<Action>
     Enabled?: Value<boolean>
     Name?: Value<string>
     TlsPolicy?: Value<string>
@@ -97,6 +105,7 @@ export class AddHeaderAction {
 
 export interface ReceiptRuleProperties {
     After?: Value<string>
+    Rule: Rule
     RuleSetName: Value<string>
 }
 

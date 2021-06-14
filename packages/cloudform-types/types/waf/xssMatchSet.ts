@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class XssMatchTuple {
+    FieldToMatch!: FieldToMatch
     TextTransformation!: Value<string>
 
     constructor(properties: XssMatchTuple) {
@@ -39,6 +40,7 @@ export class FieldToMatch {
 
 export interface XssMatchSetProperties {
     Name: Value<string>
+    XssMatchTuples: List<XssMatchTuple>
 }
 
 export default class XssMatchSet extends ResourceBase<XssMatchSetProperties> {

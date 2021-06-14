@@ -25,6 +25,8 @@ export interface ScheduledAuditProperties {
     Frequency: Value<string>
     DayOfMonth?: Value<string>
     DayOfWeek?: Value<string>
+    TargetCheckNames: List<Value<string>>
+    Tags?: List<ResourceTag>
 }
 
 export default class ScheduledAudit extends ResourceBase<ScheduledAuditProperties> {

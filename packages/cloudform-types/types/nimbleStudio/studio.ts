@@ -23,6 +23,8 @@ export interface StudioProperties {
     DisplayName: Value<string>
     StudioName: Value<string>
     UserRoleArn: Value<string>
+    StudioEncryptionConfiguration?: StudioEncryptionConfiguration
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class Studio extends ResourceBase<StudioProperties> {

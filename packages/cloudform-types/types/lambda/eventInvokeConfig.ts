@@ -37,7 +37,8 @@ export class OnSuccess {
 }
 
 export class DestinationConfig {
-
+    OnSuccess?: OnSuccess
+    OnFailure?: OnFailure
 
     constructor(properties: DestinationConfig) {
         Object.assign(this, properties)
@@ -47,6 +48,7 @@ export class DestinationConfig {
 export interface EventInvokeConfigProperties {
     FunctionName: Value<string>
     MaximumRetryAttempts?: Value<number>
+    DestinationConfig?: DestinationConfig
     Qualifier: Value<string>
     MaximumEventAgeInSeconds?: Value<number>
 }

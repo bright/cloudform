@@ -34,6 +34,7 @@ export interface ConformancePackProperties {
     DeliveryS3KeyPrefix?: Value<string>
     TemplateBody?: Value<string>
     TemplateS3Uri?: Value<string>
+    ConformancePackInputParameters?: List<ConformancePackInputParameter>
 }
 
 export default class ConformancePack extends ResourceBase<ConformancePackProperties> {

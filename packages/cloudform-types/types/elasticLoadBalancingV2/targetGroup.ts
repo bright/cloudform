@@ -56,11 +56,15 @@ export interface TargetGroupProperties {
     HealthCheckProtocol?: Value<string>
     HealthCheckTimeoutSeconds?: Value<number>
     HealthyThresholdCount?: Value<number>
+    Matcher?: Matcher
     Name?: Value<string>
     Port?: Value<number>
     Protocol?: Value<string>
     ProtocolVersion?: Value<string>
+    Tags?: List<ResourceTag>
+    TargetGroupAttributes?: List<TargetGroupAttribute>
     TargetType?: Value<string>
+    Targets?: List<TargetDescription>
     UnhealthyThresholdCount?: Value<number>
     VpcId?: Value<string>
 }

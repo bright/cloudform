@@ -39,7 +39,8 @@ export class ServiceManagedS3 {
 }
 
 export class ChannelStorage {
-
+    CustomerManagedS3?: CustomerManagedS3
+    ServiceManagedS3?: ServiceManagedS3
 
     constructor(properties: ChannelStorage) {
         Object.assign(this, properties)
@@ -48,6 +49,9 @@ export class ChannelStorage {
 
 export interface ChannelProperties {
     ChannelName?: Value<string>
+    ChannelStorage?: ChannelStorage
+    RetentionPeriod?: RetentionPeriod
+    Tags?: List<ResourceTag>
 }
 
 export default class Channel extends ResourceBase<ChannelProperties> {

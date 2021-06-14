@@ -28,9 +28,11 @@ export class S3Config {
 }
 
 export interface LocationS3Properties {
+    S3Config: S3Config
     S3BucketArn: Value<string>
     Subdirectory?: Value<string>
     S3StorageClass?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class LocationS3 extends ResourceBase<LocationS3Properties> {

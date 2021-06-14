@@ -32,6 +32,8 @@ export class Parameter {
 export interface ClusterParameterGroupProperties {
     Description: Value<string>
     ParameterGroupFamily: Value<string>
+    Parameters?: List<Parameter>
+    Tags?: List<ResourceTag>
 }
 
 export default class ClusterParameterGroup extends ResourceBase<ClusterParameterGroupProperties> {

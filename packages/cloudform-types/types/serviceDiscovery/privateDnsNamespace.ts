@@ -23,6 +23,7 @@ import {Value, List} from '../dataTypes'
 export interface PrivateDnsNamespaceProperties {
     Description?: Value<string>
     Vpc: Value<string>
+    Tags?: List<ResourceTag>
     Name: Value<string>
 }
 

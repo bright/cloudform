@@ -27,6 +27,7 @@ export interface ServerCertificateProperties {
     ServerCertificateName?: Value<string>
     Path?: Value<string>
     PrivateKey?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class ServerCertificate extends ResourceBase<ServerCertificateProperties> {

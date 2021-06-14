@@ -31,6 +31,7 @@ export class Label {
 
 export class Selector {
     Namespace!: Value<string>
+    Labels?: List<Label>
 
     constructor(properties: Selector) {
         Object.assign(this, properties)
@@ -41,6 +42,9 @@ export interface FargateProfileProperties {
     ClusterName: Value<string>
     FargateProfileName?: Value<string>
     PodExecutionRoleArn: Value<string>
+    Subnets?: List<Value<string>>
+    Selectors: List<Selector>
+    Tags?: List<ResourceTag>
 }
 
 export default class FargateProfile extends ResourceBase<FargateProfileProperties> {

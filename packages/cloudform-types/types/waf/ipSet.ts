@@ -30,6 +30,7 @@ export class IPSetDescriptor {
 }
 
 export interface IPSetProperties {
+    IPSetDescriptors?: List<IPSetDescriptor>
     Name: Value<string>
 }
 

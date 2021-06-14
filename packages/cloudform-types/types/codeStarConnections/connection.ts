@@ -25,6 +25,7 @@ export interface ConnectionProperties {
     ConnectionName: Value<string>
     ProviderType?: Value<string>
     HostArn?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Connection extends ResourceBase<ConnectionProperties> {

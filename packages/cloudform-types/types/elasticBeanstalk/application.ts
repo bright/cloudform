@@ -32,6 +32,7 @@ export class MaxAgeRule {
 
 export class ApplicationResourceLifecycleConfig {
     ServiceRole?: Value<string>
+    VersionLifecycleConfig?: ApplicationVersionLifecycleConfig
 
     constructor(properties: ApplicationResourceLifecycleConfig) {
         Object.assign(this, properties)
@@ -39,7 +40,8 @@ export class ApplicationResourceLifecycleConfig {
 }
 
 export class ApplicationVersionLifecycleConfig {
-
+    MaxAgeRule?: MaxAgeRule
+    MaxCountRule?: MaxCountRule
 
     constructor(properties: ApplicationVersionLifecycleConfig) {
         Object.assign(this, properties)
@@ -59,6 +61,7 @@ export class MaxCountRule {
 export interface ApplicationProperties {
     ApplicationName?: Value<string>
     Description?: Value<string>
+    ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig
 }
 
 export default class Application extends ResourceBase<ApplicationProperties> {

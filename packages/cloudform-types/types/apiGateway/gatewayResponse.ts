@@ -23,6 +23,8 @@ import {Value, List} from '../dataTypes'
 
 
 export interface GatewayResponseProperties {
+    ResponseParameters?: {[key: string]: Value<string>}
+    ResponseTemplates?: {[key: string]: Value<string>}
     ResponseType: Value<string>
     RestApiId: Value<string>
     StatusCode?: Value<string>

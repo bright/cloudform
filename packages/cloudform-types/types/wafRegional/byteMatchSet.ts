@@ -20,6 +20,7 @@ export class ByteMatchTuple {
     TargetStringBase64?: Value<string>
     PositionalConstraint!: Value<string>
     TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: ByteMatchTuple) {
         Object.assign(this, properties)
@@ -36,6 +37,7 @@ export class FieldToMatch {
 }
 
 export interface ByteMatchSetProperties {
+    ByteMatchTuples?: List<ByteMatchTuple>
     Name: Value<string>
 }
 

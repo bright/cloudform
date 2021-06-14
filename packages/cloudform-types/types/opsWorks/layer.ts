@@ -44,7 +44,11 @@ export class VolumeConfiguration {
 }
 
 export class Recipes {
-
+    Configure?: List<Value<string>>
+    Deploy?: List<Value<string>>
+    Setup?: List<Value<string>>
+    Shutdown?: List<Value<string>>
+    Undeploy?: List<Value<string>>
 
     constructor(properties: Recipes) {
         Object.assign(this, properties)
@@ -52,7 +56,7 @@ export class Recipes {
 }
 
 export class LifecycleEventConfiguration {
-
+    ShutdownEventConfiguration?: ShutdownEventConfiguration
 
     constructor(properties: LifecycleEventConfiguration) {
         Object.assign(this, properties)
@@ -60,7 +64,9 @@ export class LifecycleEventConfiguration {
 }
 
 export class LoadBasedAutoScaling {
+    DownScaling?: AutoScalingThresholds
     Enable?: Value<boolean>
+    UpScaling?: AutoScalingThresholds
 
     constructor(properties: LoadBasedAutoScaling) {
         Object.assign(this, properties)
@@ -81,17 +87,25 @@ export class AutoScalingThresholds {
 }
 
 export interface LayerProperties {
+    Attributes?: {[key: string]: Value<string>}
     AutoAssignElasticIps: Value<boolean>
     AutoAssignPublicIps: Value<boolean>
     CustomInstanceProfileArn?: Value<string>
     CustomJson?: {[key: string]: any}
+    CustomRecipes?: Recipes
+    CustomSecurityGroupIds?: List<Value<string>>
     EnableAutoHealing: Value<boolean>
     InstallUpdatesOnBoot?: Value<boolean>
+    LifecycleEventConfiguration?: LifecycleEventConfiguration
+    LoadBasedAutoScaling?: LoadBasedAutoScaling
     Name: Value<string>
+    Packages?: List<Value<string>>
     Shortname: Value<string>
     StackId: Value<string>
+    Tags?: List<ResourceTag>
     Type: Value<string>
     UseEbsOptimizedInstances?: Value<boolean>
+    VolumeConfigurations?: List<VolumeConfiguration>
 }
 
 export default class Layer extends ResourceBase<LayerProperties> {

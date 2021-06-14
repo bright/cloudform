@@ -29,7 +29,7 @@ export class ExpiryEventsConfiguration {
 }
 
 export interface AccountProperties {
-
+    ExpiryEventsConfiguration: ExpiryEventsConfiguration
 }
 
 export default class Account extends ResourceBase<AccountProperties> {

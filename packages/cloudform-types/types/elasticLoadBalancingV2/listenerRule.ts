@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SourceIpConfig {
-
+    Values?: List<Value<string>>
 
     constructor(properties: SourceIpConfig) {
         Object.assign(this, properties)
@@ -40,6 +40,7 @@ export class AuthenticateOidcConfig {
     AuthorizationEndpoint!: Value<string>
     SessionCookieName?: Value<string>
     UseExistingClientSecret?: Value<boolean>
+    AuthenticationRequestExtraParams?: {[key: string]: Value<string>}
 
     constructor(properties: AuthenticateOidcConfig) {
         Object.assign(this, properties)
@@ -54,6 +55,7 @@ export class AuthenticateCognitoConfig {
     Scope?: Value<string>
     SessionCookieName?: Value<string>
     UserPoolArn!: Value<string>
+    AuthenticationRequestExtraParams?: {[key: string]: Value<string>}
 
     constructor(properties: AuthenticateCognitoConfig) {
         Object.assign(this, properties)
@@ -70,7 +72,7 @@ export class QueryStringKeyValue {
 }
 
 export class QueryStringConfig {
-
+    Values?: List<QueryStringKeyValue>
 
     constructor(properties: QueryStringConfig) {
         Object.assign(this, properties)
@@ -78,7 +80,7 @@ export class QueryStringConfig {
 }
 
 export class PathPatternConfig {
-
+    Values?: List<Value<string>>
 
     constructor(properties: PathPatternConfig) {
         Object.assign(this, properties)
@@ -87,6 +89,13 @@ export class PathPatternConfig {
 
 export class RuleCondition {
     Field?: Value<string>
+    Values?: List<Value<string>>
+    HttpRequestMethodConfig?: HttpRequestMethodConfig
+    PathPatternConfig?: PathPatternConfig
+    HttpHeaderConfig?: HttpHeaderConfig
+    SourceIpConfig?: SourceIpConfig
+    HostHeaderConfig?: HostHeaderConfig
+    QueryStringConfig?: QueryStringConfig
 
     constructor(properties: RuleCondition) {
         Object.assign(this, properties)
@@ -107,7 +116,7 @@ export class RedirectConfig {
 }
 
 export class HostHeaderConfig {
-
+    Values?: List<Value<string>>
 
     constructor(properties: HostHeaderConfig) {
         Object.assign(this, properties)
@@ -127,7 +136,12 @@ export class FixedResponseConfig {
 export class Action {
     Order?: Value<number>
     TargetGroupArn?: Value<string>
+    FixedResponseConfig?: FixedResponseConfig
+    AuthenticateCognitoConfig?: AuthenticateCognitoConfig
     Type!: Value<string>
+    RedirectConfig?: RedirectConfig
+    ForwardConfig?: ForwardConfig
+    AuthenticateOidcConfig?: AuthenticateOidcConfig
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -135,6 +149,7 @@ export class Action {
 }
 
 export class HttpHeaderConfig {
+    Values?: List<Value<string>>
     HttpHeaderName?: Value<string>
 
     constructor(properties: HttpHeaderConfig) {
@@ -143,7 +158,8 @@ export class HttpHeaderConfig {
 }
 
 export class ForwardConfig {
-
+    TargetGroupStickinessConfig?: TargetGroupStickinessConfig
+    TargetGroups?: List<TargetGroupTuple>
 
     constructor(properties: ForwardConfig) {
         Object.assign(this, properties)
@@ -160,7 +176,7 @@ export class TargetGroupTuple {
 }
 
 export class HttpRequestMethodConfig {
-
+    Values?: List<Value<string>>
 
     constructor(properties: HttpRequestMethodConfig) {
         Object.assign(this, properties)
@@ -178,7 +194,9 @@ export class TargetGroupStickinessConfig {
 
 export interface ListenerRuleProperties {
     ListenerArn: Value<string>
+    Actions: List<Action>
     Priority: Value<number>
+    Conditions: List<RuleCondition>
 }
 
 export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {

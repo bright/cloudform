@@ -44,8 +44,10 @@ export interface ConfigurationTemplateProperties {
     ApplicationName: Value<string>
     Description?: Value<string>
     EnvironmentId?: Value<string>
+    OptionSettings?: List<ConfigurationOptionSetting>
     PlatformArn?: Value<string>
     SolutionStackName?: Value<string>
+    SourceConfiguration?: SourceConfiguration
 }
 
 export default class ConfigurationTemplate extends ResourceBase<ConfigurationTemplateProperties> {

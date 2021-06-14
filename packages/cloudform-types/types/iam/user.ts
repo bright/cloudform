@@ -39,8 +39,13 @@ export class Policy {
 }
 
 export interface UserProperties {
+    Groups?: List<Value<string>>
+    LoginProfile?: LoginProfile
+    ManagedPolicyArns?: List<Value<string>>
     Path?: Value<string>
     PermissionsBoundary?: Value<string>
+    Policies?: List<Policy>
+    Tags?: List<ResourceTag>
     UserName?: Value<string>
 }
 

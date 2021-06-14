@@ -27,6 +27,7 @@ export class Predicate {
 
 export interface RuleProperties {
     MetricName: Value<string>
+    Predicates?: List<Predicate>
     Name: Value<string>
 }
 

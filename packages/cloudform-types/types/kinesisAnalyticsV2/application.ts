@@ -15,6 +15,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CustomArtifactConfiguration {
+    MavenReference?: MavenReference
+    S3ContentLocation?: S3ContentLocation
     ArtifactType!: Value<string>
 
     constructor(properties: CustomArtifactConfiguration) {
@@ -33,7 +35,7 @@ export class S3ContentLocation {
 }
 
 export class DeployAsApplicationConfiguration {
-
+    S3ContentLocation!: S3ContentBaseLocation
 
     constructor(properties: DeployAsApplicationConfiguration) {
         Object.assign(this, properties)
@@ -50,7 +52,8 @@ export class PropertyGroup {
 }
 
 export class MappingParameters {
-
+    JSONMappingParameters?: JSONMappingParameters
+    CSVMappingParameters?: CSVMappingParameters
 
     constructor(properties: MappingParameters) {
         Object.assign(this, properties)
@@ -66,7 +69,9 @@ export class InputParallelism {
 }
 
 export class FlinkApplicationConfiguration {
-
+    CheckpointConfiguration?: CheckpointConfiguration
+    ParallelismConfiguration?: ParallelismConfiguration
+    MonitoringConfiguration?: MonitoringConfiguration
 
     constructor(properties: FlinkApplicationConfiguration) {
         Object.assign(this, properties)
@@ -75,6 +80,11 @@ export class FlinkApplicationConfiguration {
 
 export class Input {
     NamePrefix!: Value<string>
+    InputSchema!: InputSchema
+    KinesisStreamsInput?: KinesisStreamsInput
+    KinesisFirehoseInput?: KinesisFirehoseInput
+    InputProcessingConfiguration?: InputProcessingConfiguration
+    InputParallelism?: InputParallelism
 
     constructor(properties: Input) {
         Object.assign(this, properties)
@@ -99,6 +109,8 @@ export class KinesisFirehoseInput {
 
 export class InputSchema {
     RecordEncoding?: Value<string>
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: InputSchema) {
         Object.assign(this, properties)
@@ -129,7 +141,7 @@ export class MonitoringConfiguration {
 export type CustomArtifactsConfiguration = List<CustomArtifactConfiguration>
 
 export class SqlApplicationConfiguration {
-
+    Inputs?: List<Input>
 
     constructor(properties: SqlApplicationConfiguration) {
         Object.assign(this, properties)
@@ -137,7 +149,7 @@ export class SqlApplicationConfiguration {
 }
 
 export class InputProcessingConfiguration {
-
+    InputLambdaProcessor?: InputLambdaProcessor
 
     constructor(properties: InputProcessingConfiguration) {
         Object.assign(this, properties)
@@ -146,6 +158,7 @@ export class InputProcessingConfiguration {
 
 export class ApplicationCodeConfiguration {
     CodeContentType!: Value<string>
+    CodeContent!: CodeContent
 
     constructor(properties: ApplicationCodeConfiguration) {
         Object.assign(this, properties)
@@ -153,7 +166,10 @@ export class ApplicationCodeConfiguration {
 }
 
 export class ZeppelinApplicationConfiguration {
-
+    CatalogConfiguration?: CatalogConfiguration
+    MonitoringConfiguration?: ZeppelinMonitoringConfiguration
+    DeployAsApplicationConfiguration?: DeployAsApplicationConfiguration
+    CustomArtifactsConfiguration?: CustomArtifactsConfiguration
 
     constructor(properties: ZeppelinApplicationConfiguration) {
         Object.assign(this, properties)
@@ -234,6 +250,7 @@ export class CSVMappingParameters {
 }
 
 export class RecordFormat {
+    MappingParameters?: MappingParameters
     RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
@@ -259,6 +276,7 @@ export class JSONMappingParameters {
 
 export class CodeContent {
     ZipFileContent?: Value<string>
+    S3ContentLocation?: S3ContentLocation
     TextContent?: Value<string>
 
     constructor(properties: CodeContent) {
@@ -267,7 +285,12 @@ export class CodeContent {
 }
 
 export class ApplicationConfiguration {
-
+    ApplicationCodeConfiguration?: ApplicationCodeConfiguration
+    EnvironmentProperties?: EnvironmentProperties
+    FlinkApplicationConfiguration?: FlinkApplicationConfiguration
+    SqlApplicationConfiguration?: SqlApplicationConfiguration
+    ZeppelinApplicationConfiguration?: ZeppelinApplicationConfiguration
+    ApplicationSnapshotConfiguration?: ApplicationSnapshotConfiguration
 
     constructor(properties: ApplicationConfiguration) {
         Object.assign(this, properties)
@@ -275,7 +298,7 @@ export class ApplicationConfiguration {
 }
 
 export class EnvironmentProperties {
-
+    PropertyGroups?: List<PropertyGroup>
 
     constructor(properties: EnvironmentProperties) {
         Object.assign(this, properties)
@@ -283,7 +306,7 @@ export class EnvironmentProperties {
 }
 
 export class CatalogConfiguration {
-
+    GlueDataCatalogConfiguration?: GlueDataCatalogConfiguration
 
     constructor(properties: CatalogConfiguration) {
         Object.assign(this, properties)
@@ -294,7 +317,9 @@ export interface ApplicationProperties {
     ApplicationName?: Value<string>
     RuntimeEnvironment: Value<string>
     ApplicationMode?: Value<string>
+    ApplicationConfiguration?: ApplicationConfiguration
     ApplicationDescription?: Value<string>
+    Tags?: List<ResourceTag>
     ServiceExecutionRole: Value<string>
 }
 

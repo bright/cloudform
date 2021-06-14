@@ -21,9 +21,11 @@ export class MetricDimension {
 
 export class Schedule {
     TimeZone?: Value<string>
+    QuietTime?: QuietTime
     EndTime?: Value<string>
     StartTime?: Value<string>
     Frequency?: Value<string>
+    EventFilter?: CampaignEventFilter
     IsLocalTime?: Value<boolean>
 
     constructor(properties: Schedule) {
@@ -61,6 +63,7 @@ export class Message {
 
 export class CampaignEventFilter {
     FilterType?: Value<string>
+    Dimensions?: EventDimensions
 
     constructor(properties: CampaignEventFilter) {
         Object.assign(this, properties)
@@ -82,6 +85,8 @@ export class CampaignSmsMessage {
 
 export class WriteTreatmentResource {
     TreatmentDescription?: Value<string>
+    MessageConfiguration?: MessageConfiguration
+    Schedule?: Schedule
     SizePercent?: Value<number>
     TreatmentName?: Value<string>
 
@@ -92,6 +97,7 @@ export class WriteTreatmentResource {
 
 export class SetDimension {
     DimensionType?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: SetDimension) {
         Object.assign(this, properties)
@@ -100,6 +106,7 @@ export class SetDimension {
 
 export class EventDimensions {
     Metrics?: {[key: string]: any}
+    EventType?: SetDimension
     Attributes?: {[key: string]: any}
 
     constructor(properties: EventDimensions) {
@@ -120,6 +127,7 @@ export class Limits {
 
 export class AttributeDimension {
     AttributeType?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: AttributeDimension) {
         Object.assign(this, properties)
@@ -127,7 +135,13 @@ export class AttributeDimension {
 }
 
 export class MessageConfiguration {
-
+    APNSMessage?: Message
+    BaiduMessage?: Message
+    DefaultMessage?: Message
+    EmailMessage?: CampaignEmailMessage
+    GCMMessage?: Message
+    SMSMessage?: CampaignSmsMessage
+    ADMMessage?: Message
 
     constructor(properties: MessageConfiguration) {
         Object.assign(this, properties)
@@ -159,11 +173,16 @@ export interface CampaignProperties {
     Description?: Value<string>
     SegmentId: Value<string>
     IsPaused?: Value<boolean>
+    AdditionalTreatments?: List<WriteTreatmentResource>
     Name: Value<string>
     SegmentVersion?: Value<number>
     TreatmentDescription?: Value<string>
+    MessageConfiguration: MessageConfiguration
+    Limits?: Limits
     HoldoutPercent?: Value<number>
+    Schedule: Schedule
     ApplicationId: Value<string>
+    CampaignHook?: CampaignHook
     Tags?: {[key: string]: any}
     TreatmentName?: Value<string>
 }

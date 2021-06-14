@@ -22,6 +22,7 @@ export class DataSourceConfiguration {
 
 export interface PlaceIndexProperties {
     DataSource: Value<string>
+    DataSourceConfiguration?: DataSourceConfiguration
     Description?: Value<string>
     IndexName: Value<string>
     PricingPlan: Value<string>

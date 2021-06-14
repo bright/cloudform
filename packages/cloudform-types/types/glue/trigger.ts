@@ -32,6 +32,7 @@ export class Condition {
 
 export class Predicate {
     Logical?: Value<string>
+    Conditions?: List<Condition>
 
     constructor(properties: Predicate) {
         Object.assign(this, properties)
@@ -39,6 +40,7 @@ export class Predicate {
 }
 
 export class Action {
+    NotificationProperty?: NotificationProperty
     CrawlerName?: Value<string>
     Timeout?: Value<number>
     JobName?: Value<string>
@@ -62,10 +64,12 @@ export interface TriggerProperties {
     Type: Value<string>
     StartOnCreation?: Value<boolean>
     Description?: Value<string>
+    Actions: List<Action>
     WorkflowName?: Value<string>
     Schedule?: Value<string>
     Tags?: {[key: string]: any}
     Name?: Value<string>
+    Predicate?: Predicate
 }
 
 export default class Trigger extends ResourceBase<TriggerProperties> {

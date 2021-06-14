@@ -18,6 +18,7 @@ export interface VariableProperties {
     DataType: Value<string>
     DefaultValue: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     VariableType?: Value<string>
 }
 

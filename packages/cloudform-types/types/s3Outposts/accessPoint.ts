@@ -30,6 +30,7 @@ export class VpcConfiguration {
 export interface AccessPointProperties {
     Bucket: Value<string>
     Name: Value<string>
+    VpcConfiguration: VpcConfiguration
     Policy?: {[key: string]: any}
 }
 

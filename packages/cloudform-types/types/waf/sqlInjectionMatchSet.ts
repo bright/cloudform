@@ -30,6 +30,7 @@ export class FieldToMatch {
 }
 
 export class SqlInjectionMatchTuple {
+    FieldToMatch!: FieldToMatch
     TextTransformation!: Value<string>
 
     constructor(properties: SqlInjectionMatchTuple) {
@@ -39,6 +40,7 @@ export class SqlInjectionMatchTuple {
 
 export interface SqlInjectionMatchSetProperties {
     Name: Value<string>
+    SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>
 }
 
 export default class SqlInjectionMatchSet extends ResourceBase<SqlInjectionMatchSetProperties> {

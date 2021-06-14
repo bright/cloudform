@@ -29,6 +29,7 @@ export class Repository {
 }
 
 export interface EnvironmentEC2Properties {
+    Repositories?: List<Repository>
     OwnerArn?: Value<string>
     Description?: Value<string>
     ConnectionType?: Value<string>
@@ -36,6 +37,7 @@ export interface EnvironmentEC2Properties {
     ImageId?: Value<string>
     SubnetId?: Value<string>
     InstanceType: Value<string>
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

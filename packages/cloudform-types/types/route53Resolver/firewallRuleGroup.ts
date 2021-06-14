@@ -35,6 +35,8 @@ export class FirewallRule {
 
 export interface FirewallRuleGroupProperties {
     Name?: Value<string>
+    FirewallRules?: List<FirewallRule>
+    Tags?: List<ResourceTag>
 }
 
 export default class FirewallRuleGroup extends ResourceBase<FirewallRuleGroupProperties> {

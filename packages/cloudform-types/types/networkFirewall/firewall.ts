@@ -32,10 +32,12 @@ export interface FirewallProperties {
     FirewallName: Value<string>
     FirewallPolicyArn: Value<string>
     VpcId: Value<string>
+    SubnetMappings: List<SubnetMapping>
     DeleteProtection?: Value<boolean>
     SubnetChangeProtection?: Value<boolean>
     FirewallPolicyChangeProtection?: Value<boolean>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Firewall extends ResourceBase<FirewallProperties> {

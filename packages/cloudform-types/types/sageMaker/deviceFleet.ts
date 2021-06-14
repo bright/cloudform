@@ -22,7 +22,9 @@ export class EdgeOutputConfig {
 export interface DeviceFleetProperties {
     Description?: Value<string>
     DeviceFleetName: Value<string>
+    OutputConfig: EdgeOutputConfig
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DeviceFleet extends ResourceBase<DeviceFleetProperties> {

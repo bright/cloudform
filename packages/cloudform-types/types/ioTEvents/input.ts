@@ -23,7 +23,7 @@ export class Attribute {
 }
 
 export class InputDefinition {
-
+    Attributes!: List<Attribute>
 
     constructor(properties: InputDefinition) {
         Object.assign(this, properties)
@@ -31,8 +31,10 @@ export class InputDefinition {
 }
 
 export interface InputProperties {
+    InputDefinition: InputDefinition
     InputDescription?: Value<string>
     InputName?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Input extends ResourceBase<InputProperties> {

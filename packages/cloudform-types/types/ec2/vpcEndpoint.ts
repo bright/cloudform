@@ -25,7 +25,10 @@ import {Value, List} from '../dataTypes'
 export interface VPCEndpointProperties {
     PolicyDocument?: {[key: string]: any}
     PrivateDnsEnabled?: Value<boolean>
+    RouteTableIds?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
     ServiceName: Value<string>
+    SubnetIds?: List<Value<string>>
     VpcEndpointType?: Value<string>
     VpcId: Value<string>
 }

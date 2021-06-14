@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class EndPoint {
+    KinesisStreamConfig!: KinesisStreamConfig
     StreamType!: Value<string>
 
     constructor(properties: EndPoint) {
@@ -38,6 +39,8 @@ export class KinesisStreamConfig {
 }
 
 export interface RealtimeLogConfigProperties {
+    EndPoints: List<EndPoint>
+    Fields: List<Value<string>>
     Name: Value<string>
     SamplingRate: Value<number>
 }

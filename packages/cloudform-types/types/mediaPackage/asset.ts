@@ -27,11 +27,13 @@ export class EgressEndpoint {
 }
 
 export interface AssetProperties {
+    EgressEndpoints?: List<EgressEndpoint>
     Id: Value<string>
     PackagingGroupId: Value<string>
     ResourceId?: Value<string>
     SourceArn: Value<string>
     SourceRoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Asset extends ResourceBase<AssetProperties> {

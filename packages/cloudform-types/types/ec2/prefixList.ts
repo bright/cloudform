@@ -32,6 +32,8 @@ export interface PrefixListProperties {
     PrefixListName: Value<string>
     AddressFamily: Value<string>
     MaxEntries: Value<number>
+    Tags?: List<ResourceTag>
+    Entries?: List<Entry>
 }
 
 export default class PrefixList extends ResourceBase<PrefixListProperties> {

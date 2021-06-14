@@ -55,6 +55,9 @@ export class Ingress {
 export interface SecurityGroupProperties {
     GroupDescription: Value<string>
     GroupName?: Value<string>
+    SecurityGroupEgress?: List<Egress>
+    SecurityGroupIngress?: List<Ingress>
+    Tags?: List<ResourceTag>
     VpcId?: Value<string>
 }
 

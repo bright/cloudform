@@ -21,6 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class EncryptionConfiguration {
+    KMSEncryptionConfig?: KMSEncryptionConfig
     NoEncryptionConfig?: Value<string>
 
     constructor(properties: EncryptionConfiguration) {
@@ -29,7 +30,7 @@ export class EncryptionConfiguration {
 }
 
 export class InputFormatConfiguration {
-
+    Deserializer?: Deserializer
 
     constructor(properties: InputFormatConfiguration) {
         Object.assign(this, properties)
@@ -37,7 +38,7 @@ export class InputFormatConfiguration {
 }
 
 export class HiveJsonSerDe {
-
+    TimestampFormats?: List<Value<string>>
 
     constructor(properties: HiveJsonSerDe) {
         Object.assign(this, properties)
@@ -45,6 +46,7 @@ export class HiveJsonSerDe {
 }
 
 export class Processor {
+    Parameters?: List<ProcessorParameter>
     Type!: Value<string>
 
     constructor(properties: Processor) {
@@ -54,6 +56,9 @@ export class Processor {
 
 export class DataFormatConversionConfiguration {
     Enabled?: Value<boolean>
+    InputFormatConfiguration?: InputFormatConfiguration
+    OutputFormatConfiguration?: OutputFormatConfiguration
+    SchemaConfiguration?: SchemaConfiguration
 
     constructor(properties: DataFormatConversionConfiguration) {
         Object.assign(this, properties)
@@ -83,6 +88,7 @@ export class SplunkRetryOptions {
 
 export class HttpEndpointRequestConfiguration {
     ContentEncoding?: Value<string>
+    CommonAttributes?: List<HttpEndpointCommonAttribute>
 
     constructor(properties: HttpEndpointRequestConfiguration) {
         Object.assign(this, properties)
@@ -100,7 +106,8 @@ export class HttpEndpointConfiguration {
 }
 
 export class Serializer {
-
+    OrcSerDe?: OrcSerDe
+    ParquetSerDe?: ParquetSerDe
 
     constructor(properties: Serializer) {
         Object.assign(this, properties)
@@ -119,6 +126,7 @@ export class CopyCommand {
 
 export class OpenXJsonSerDe {
     CaseInsensitive?: Value<boolean>
+    ColumnToJsonKeyMappings?: {[key: string]: Value<string>}
     ConvertDotsInJsonKeysToUnderscores?: Value<boolean>
 
     constructor(properties: OpenXJsonSerDe) {
@@ -128,6 +136,7 @@ export class OpenXJsonSerDe {
 
 export class OrcSerDe {
     BlockSizeBytes?: Value<number>
+    BloomFilterColumns?: List<Value<string>>
     BloomFilterFalsePositiveProbability?: Value<number>
     Compression?: Value<string>
     DictionaryKeyThreshold?: Value<number>
@@ -152,11 +161,15 @@ export class ElasticsearchBufferingHints {
 }
 
 export class SplunkDestinationConfiguration {
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     HECAcknowledgmentTimeoutInSeconds?: Value<number>
     HECEndpoint!: Value<string>
     HECEndpointType!: Value<string>
     HECToken!: Value<string>
+    ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions?: SplunkRetryOptions
     S3BackupMode?: Value<string>
+    S3Configuration!: S3DestinationConfiguration
 
     constructor(properties: SplunkDestinationConfiguration) {
         Object.assign(this, properties)
@@ -175,6 +188,7 @@ export class CloudWatchLoggingOptions {
 
 export class ProcessingConfiguration {
     Enabled?: Value<boolean>
+    Processors?: List<Processor>
 
     constructor(properties: ProcessingConfiguration) {
         Object.assign(this, properties)
@@ -225,7 +239,7 @@ export class KMSEncryptionConfig {
 }
 
 export class OutputFormatConfiguration {
-
+    Serializer?: Serializer
 
     constructor(properties: OutputFormatConfiguration) {
         Object.assign(this, properties)
@@ -233,13 +247,19 @@ export class OutputFormatConfiguration {
 }
 
 export class ElasticsearchDestinationConfiguration {
+    BufferingHints?: ElasticsearchBufferingHints
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     DomainARN?: Value<string>
     IndexName!: Value<string>
     IndexRotationPeriod?: Value<string>
+    ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions?: ElasticsearchRetryOptions
     RoleARN!: Value<string>
     S3BackupMode?: Value<string>
+    S3Configuration!: S3DestinationConfiguration
     ClusterEndpoint?: Value<string>
     TypeName?: Value<string>
+    VpcConfiguration?: VpcConfiguration
 
     constructor(properties: ElasticsearchDestinationConfiguration) {
         Object.assign(this, properties)
@@ -247,7 +267,8 @@ export class ElasticsearchDestinationConfiguration {
 }
 
 export class Deserializer {
-
+    HiveJsonSerDe?: HiveJsonSerDe
+    OpenXJsonSerDe?: OpenXJsonSerDe
 
     constructor(properties: Deserializer) {
         Object.assign(this, properties)
@@ -294,7 +315,10 @@ export class ParquetSerDe {
 
 export class S3DestinationConfiguration {
     BucketARN!: Value<string>
+    BufferingHints?: BufferingHints
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     CompressionFormat?: Value<string>
+    EncryptionConfiguration?: EncryptionConfiguration
     ErrorOutputPrefix?: Value<string>
     Prefix?: Value<string>
     RoleARN!: Value<string>
@@ -306,6 +330,8 @@ export class S3DestinationConfiguration {
 
 export class VpcConfiguration {
     RoleARN!: Value<string>
+    SubnetIds!: List<Value<string>>
+    SecurityGroupIds!: List<Value<string>>
 
     constructor(properties: VpcConfiguration) {
         Object.assign(this, properties)
@@ -314,10 +340,16 @@ export class VpcConfiguration {
 
 export class ExtendedS3DestinationConfiguration {
     BucketARN!: Value<string>
+    BufferingHints?: BufferingHints
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     CompressionFormat?: Value<string>
+    DataFormatConversionConfiguration?: DataFormatConversionConfiguration
+    EncryptionConfiguration?: EncryptionConfiguration
     ErrorOutputPrefix?: Value<string>
     Prefix?: Value<string>
+    ProcessingConfiguration?: ProcessingConfiguration
     RoleARN!: Value<string>
+    S3BackupConfiguration?: S3DestinationConfiguration
     S3BackupMode?: Value<string>
 
     constructor(properties: ExtendedS3DestinationConfiguration) {
@@ -326,10 +358,16 @@ export class ExtendedS3DestinationConfiguration {
 }
 
 export class RedshiftDestinationConfiguration {
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
     ClusterJDBCURL!: Value<string>
+    CopyCommand!: CopyCommand
     Password!: Value<string>
+    ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions?: RedshiftRetryOptions
     RoleARN!: Value<string>
+    S3BackupConfiguration?: S3DestinationConfiguration
     S3BackupMode?: Value<string>
+    S3Configuration!: S3DestinationConfiguration
     Username!: Value<string>
 
     constructor(properties: RedshiftDestinationConfiguration) {
@@ -348,7 +386,14 @@ export class HttpEndpointCommonAttribute {
 
 export class HttpEndpointDestinationConfiguration {
     RoleARN?: Value<string>
+    EndpointConfiguration!: HttpEndpointConfiguration
+    RequestConfiguration?: HttpEndpointRequestConfiguration
+    BufferingHints?: BufferingHints
+    CloudWatchLoggingOptions?: CloudWatchLoggingOptions
+    ProcessingConfiguration?: ProcessingConfiguration
+    RetryOptions?: RetryOptions
     S3BackupMode?: Value<string>
+    S3Configuration!: S3DestinationConfiguration
 
     constructor(properties: HttpEndpointDestinationConfiguration) {
         Object.assign(this, properties)
@@ -356,8 +401,17 @@ export class HttpEndpointDestinationConfiguration {
 }
 
 export interface DeliveryStreamProperties {
+    DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput
     DeliveryStreamName?: Value<string>
     DeliveryStreamType?: Value<string>
+    ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration
+    ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration
+    KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration
+    RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration
+    S3DestinationConfiguration?: S3DestinationConfiguration
+    SplunkDestinationConfiguration?: SplunkDestinationConfiguration
+    HttpEndpointDestinationConfiguration?: HttpEndpointDestinationConfiguration
+    Tags?: List<ResourceTag>
 }
 
 export default class DeliveryStream extends ResourceBase<DeliveryStreamProperties> {

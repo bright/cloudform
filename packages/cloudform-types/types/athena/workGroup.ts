@@ -24,7 +24,9 @@ export class WorkGroupConfigurationUpdates {
     EnforceWorkGroupConfiguration?: Value<boolean>
     PublishCloudWatchMetricsEnabled?: Value<boolean>
     RequesterPaysEnabled?: Value<boolean>
+    ResultConfigurationUpdates?: ResultConfigurationUpdates
     RemoveBytesScannedCutoffPerQuery?: Value<boolean>
+    EngineVersion?: EngineVersion
 
     constructor(properties: WorkGroupConfigurationUpdates) {
         Object.assign(this, properties)
@@ -32,6 +34,7 @@ export class WorkGroupConfigurationUpdates {
 }
 
 export class ResultConfiguration {
+    EncryptionConfiguration?: EncryptionConfiguration
     OutputLocation?: Value<string>
 
     constructor(properties: ResultConfiguration) {
@@ -40,6 +43,7 @@ export class ResultConfiguration {
 }
 
 export class ResultConfigurationUpdates {
+    EncryptionConfiguration?: EncryptionConfiguration
     OutputLocation?: Value<string>
     RemoveEncryptionConfiguration?: Value<boolean>
     RemoveOutputLocation?: Value<boolean>
@@ -54,6 +58,8 @@ export class WorkGroupConfiguration {
     EnforceWorkGroupConfiguration?: Value<boolean>
     PublishCloudWatchMetricsEnabled?: Value<boolean>
     RequesterPaysEnabled?: Value<boolean>
+    ResultConfiguration?: ResultConfiguration
+    EngineVersion?: EngineVersion
 
     constructor(properties: WorkGroupConfiguration) {
         Object.assign(this, properties)
@@ -81,6 +87,9 @@ export class EngineVersion {
 export interface WorkGroupProperties {
     Name: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
+    WorkGroupConfiguration?: WorkGroupConfiguration
+    WorkGroupConfigurationUpdates?: WorkGroupConfigurationUpdates
     State?: Value<string>
     RecursiveDeleteOption?: Value<boolean>
 }

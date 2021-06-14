@@ -24,6 +24,7 @@ export class InstanceBlockDeviceMapping {
     DeviceName?: Value<string>
     VirtualName?: Value<string>
     NoDevice?: Value<string>
+    Ebs?: EbsInstanceBlockDeviceSpecification
 
     constructor(properties: InstanceBlockDeviceMapping) {
         Object.assign(this, properties)
@@ -56,8 +57,11 @@ export interface ImageRecipeProperties {
     Name: Value<string>
     Description?: Value<string>
     Version: Value<string>
+    Components: List<ComponentConfiguration>
+    BlockDeviceMappings?: List<InstanceBlockDeviceMapping>
     ParentImage: Value<string>
     WorkingDirectory?: Value<string>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class ImageRecipe extends ResourceBase<ImageRecipeProperties> {

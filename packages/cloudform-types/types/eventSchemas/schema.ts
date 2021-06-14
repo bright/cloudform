@@ -25,6 +25,7 @@ export interface SchemaProperties {
     Content: Value<string>
     RegistryName: Value<string>
     SchemaName?: Value<string>
+    Tags?: List<TagsEntry>
 }
 
 export default class Schema extends ResourceBase<SchemaProperties> {

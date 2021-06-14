@@ -29,7 +29,9 @@ export class TrafficMirrorPortRange {
 }
 
 export interface TrafficMirrorFilterRuleProperties {
+    DestinationPortRange?: TrafficMirrorPortRange
     Description?: Value<string>
+    SourcePortRange?: TrafficMirrorPortRange
     RuleAction: Value<string>
     SourceCidrBlock: Value<string>
     RuleNumber: Value<number>

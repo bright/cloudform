@@ -38,7 +38,8 @@ export class ResourceTag {
 }
 
 export class IEMap {
-
+    ACCOUNT?: List<Value<string>>
+    ORGUNIT?: List<Value<string>>
 
     constructor(properties: IEMap) {
         Object.assign(this, properties)
@@ -46,12 +47,17 @@ export class IEMap {
 }
 
 export interface PolicyProperties {
+    ExcludeMap?: IEMap
     ExcludeResourceTags: Value<boolean>
+    IncludeMap?: IEMap
     PolicyName: Value<string>
     RemediationEnabled: Value<boolean>
+    ResourceTags?: List<ResourceTag>
     ResourceType: Value<string>
+    ResourceTypeList?: List<Value<string>>
     SecurityServicePolicyData: {[key: string]: any}
     DeleteAllPolicyResources?: Value<boolean>
+    Tags?: List<PolicyTag>
 }
 
 export default class Policy extends ResourceBase<PolicyProperties> {

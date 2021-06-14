@@ -18,6 +18,7 @@ export class RouteOverrides {
     Target?: Value<string>
     AuthorizerId?: Value<string>
     OperationName?: Value<string>
+    AuthorizationScopes?: List<Value<string>>
     AuthorizationType?: Value<string>
 
     constructor(properties: RouteOverrides) {
@@ -27,9 +28,11 @@ export class RouteOverrides {
 
 export class StageOverrides {
     Description?: Value<string>
+    AccessLogSettings?: AccessLogSettings
     AutoDeploy?: Value<boolean>
     RouteSettings?: {[key: string]: any}
     StageVariables?: {[key: string]: any}
+    DefaultRouteSettings?: RouteSettings
 
     constructor(properties: StageOverrides) {
         Object.assign(this, properties)
@@ -60,7 +63,10 @@ export class IntegrationOverrides {
 }
 
 export interface ApiGatewayManagedOverridesProperties {
+    Integration?: IntegrationOverrides
+    Stage?: StageOverrides
     ApiId: Value<string>
+    Route?: RouteOverrides
 }
 
 export default class ApiGatewayManagedOverrides extends ResourceBase<ApiGatewayManagedOverridesProperties> {

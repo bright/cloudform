@@ -32,6 +32,7 @@ export class DvbSubDestinationSettings {
     FontColor?: Value<string>
     ShadowColor?: Value<string>
     ShadowOpacity?: Value<number>
+    Font?: InputLocation
     ShadowYOffset?: Value<number>
     Alignment?: Value<string>
     XPosition?: Value<number>
@@ -57,7 +58,10 @@ export class Rec709Settings {
 }
 
 export class VideoCodecSettings {
-
+    Mpeg2Settings?: Mpeg2Settings
+    FrameCaptureSettings?: FrameCaptureSettings
+    H264Settings?: H264Settings
+    H265Settings?: H265Settings
 
     constructor(properties: VideoCodecSettings) {
         Object.assign(this, properties)
@@ -65,7 +69,10 @@ export class VideoCodecSettings {
 }
 
 export class HlsSettings {
-
+    StandardHlsSettings?: StandardHlsSettings
+    AudioOnlyHlsSettings?: AudioOnlyHlsSettings
+    Fmp4HlsSettings?: Fmp4HlsSettings
+    FrameCaptureHlsSettings?: FrameCaptureHlsSettings
 
     constructor(properties: HlsSettings) {
         Object.assign(this, properties)
@@ -82,7 +89,7 @@ export class FrameCaptureSettings {
 }
 
 export class MotionGraphicsSettings {
-
+    HtmlMotionGraphicsSettings?: HtmlMotionGraphicsSettings
 
     constructor(properties: MotionGraphicsSettings) {
         Object.assign(this, properties)
@@ -90,7 +97,7 @@ export class MotionGraphicsSettings {
 }
 
 export class FrameCaptureCdnSettings {
-
+    FrameCaptureS3Settings?: FrameCaptureS3Settings
 
     constructor(properties: FrameCaptureCdnSettings) {
         Object.assign(this, properties)
@@ -101,6 +108,7 @@ export class InputLossBehavior {
     InputLossImageColor?: Value<string>
     BlackFrameMsec?: Value<number>
     InputLossImageType?: Value<string>
+    InputLossImageSlate?: InputLocation
     RepeatFrameMsec?: Value<number>
 
     constructor(properties: InputLossBehavior) {
@@ -118,7 +126,11 @@ export class MultiplexProgramChannelDestinationSettings {
 }
 
 export class HlsCdnSettings {
-
+    HlsWebdavSettings?: HlsWebdavSettings
+    HlsS3Settings?: HlsS3Settings
+    HlsAkamaiSettings?: HlsAkamaiSettings
+    HlsBasicPutSettings?: HlsBasicPutSettings
+    HlsMediaStoreSettings?: HlsMediaStoreSettings
 
     constructor(properties: HlsCdnSettings) {
         Object.assign(this, properties)
@@ -127,6 +139,7 @@ export class HlsCdnSettings {
 
 export class HlsOutputSettings {
     NameModifier?: Value<string>
+    HlsSettings?: HlsSettings
     H265PackagingType?: Value<string>
     SegmentModifier?: Value<string>
 
@@ -152,7 +165,7 @@ export class FrameCaptureS3Settings {
 }
 
 export class ArchiveCdnSettings {
-
+    ArchiveS3Settings?: ArchiveS3Settings
 
     constructor(properties: ArchiveCdnSettings) {
         Object.assign(this, properties)
@@ -168,7 +181,7 @@ export class Scte27SourceSettings {
 }
 
 export class AudioTrackSelection {
-
+    Tracks?: List<AudioTrack>
 
     constructor(properties: AudioTrackSelection) {
         Object.assign(this, properties)
@@ -195,7 +208,7 @@ export class VideoSelectorPid {
 }
 
 export class FailoverCondition {
-
+    FailoverConditionSettings?: FailoverConditionSettings
 
     constructor(properties: FailoverCondition) {
         Object.assign(this, properties)
@@ -212,6 +225,7 @@ export class Hdr10Settings {
 }
 
 export class StaticKeySettings {
+    KeyProviderServer?: InputLocation
     StaticKeyValue?: Value<string>
 
     constructor(properties: StaticKeySettings) {
@@ -314,6 +328,7 @@ export class Scte35SpliceInsert {
 
 export class AudioChannelMapping {
     OutputChannel?: Value<number>
+    InputChannelLevels?: List<InputChannelLevel>
 
     constructor(properties: AudioChannelMapping) {
         Object.assign(this, properties)
@@ -329,6 +344,8 @@ export class FeatureActivations {
 }
 
 export class OutputGroup {
+    Outputs?: List<Output>
+    OutputGroupSettings?: OutputGroupSettings
     Name?: Value<string>
 
     constructor(properties: OutputGroup) {
@@ -337,6 +354,9 @@ export class OutputGroup {
 }
 
 export class UdpOutputSettings {
+    Destination?: OutputLocationRef
+    FecOutputSettings?: FecOutputSettings
+    ContainerSettings?: UdpContainerSettings
     BufferMsec?: Value<number>
 
     constructor(properties: UdpOutputSettings) {
@@ -420,6 +440,8 @@ export class H264Settings {
     Softness?: Value<number>
     GopSize?: Value<number>
     AdaptiveQuantization?: Value<string>
+    FilterSettings?: H264FilterSettings
+    ColorSpaceSettings?: H264ColorSpaceSettings
     EntropyEncoding?: Value<string>
     SpatialAq?: Value<string>
     ParDenominator?: Value<number>
@@ -448,7 +470,7 @@ export class H264Settings {
 }
 
 export class H264FilterSettings {
-
+    TemporalFilterSettings?: TemporalFilterSettings
 
     constructor(properties: H264FilterSettings) {
         Object.assign(this, properties)
@@ -456,7 +478,9 @@ export class H264FilterSettings {
 }
 
 export class FailoverConditionSettings {
-
+    AudioSilenceSettings?: AudioSilenceFailoverSettings
+    VideoBlackSettings?: VideoBlackFailoverSettings
+    InputLossSettings?: InputLossFailoverSettings
 
     constructor(properties: FailoverConditionSettings) {
         Object.assign(this, properties)
@@ -478,6 +502,7 @@ export class Mpeg2Settings {
     GopSize?: Value<number>
     AdaptiveQuantization?: Value<string>
     SubgopLength?: Value<string>
+    FilterSettings?: Mpeg2FilterSettings
     GopNumBFrames?: Value<number>
 
     constructor(properties: Mpeg2Settings) {
@@ -486,7 +511,9 @@ export class Mpeg2Settings {
 }
 
 export class AudioSelectorSettings {
-
+    AudioPidSelection?: AudioPidSelection
+    AudioLanguageSelection?: AudioLanguageSelection
+    AudioTrackSelection?: AudioTrackSelection
 
     constructor(properties: AudioSelectorSettings) {
         Object.assign(this, properties)
@@ -494,7 +521,7 @@ export class AudioSelectorSettings {
 }
 
 export class UdpContainerSettings {
-
+    M2tsSettings?: M2tsSettings
 
     constructor(properties: UdpContainerSettings) {
         Object.assign(this, properties)
@@ -511,6 +538,8 @@ export class TimecodeConfig {
 }
 
 export class VideoSelector {
+    ColorSpaceSettings?: VideoSelectorColorSpaceSettings
+    SelectorSettings?: VideoSelectorSettings
     ColorSpace?: Value<string>
     ColorSpaceUsage?: Value<string>
 
@@ -529,13 +558,16 @@ export class DvbTdtSettings {
 
 export class HlsGroupSettings {
     SegmentationMode?: Value<string>
+    Destination?: OutputLocationRef
     CodecSpecification?: Value<string>
     IvSource?: Value<string>
     TimedMetadataId3Frame?: Value<string>
     KeyFormatVersions?: Value<string>
     RedundantManifest?: Value<string>
     OutputSelection?: Value<string>
+    KeyProviderSettings?: KeyProviderSettings
     StreamInfResolution?: Value<string>
+    CaptionLanguageMappings?: List<CaptionLanguageMapping>
     HlsId3SegmentTagging?: Value<string>
     IFrameOnlyPlaylists?: Value<string>
     CaptionLanguageSetting?: Value<string>
@@ -543,6 +575,8 @@ export class HlsGroupSettings {
     ConstantIv?: Value<string>
     DirectoryStructure?: Value<string>
     EncryptionType?: Value<string>
+    AdMarkers?: List<Value<string>>
+    HlsCdnSettings?: HlsCdnSettings
     IndexNSegments?: Value<number>
     DiscontinuityTags?: Value<string>
     InputLossAction?: Value<string>
@@ -583,7 +617,7 @@ export class OutputDestinationSettings {
 }
 
 export class AvailConfiguration {
-
+    AvailSettings?: AvailSettings
 
     constructor(properties: AvailConfiguration) {
         Object.assign(this, properties)
@@ -610,7 +644,9 @@ export class H265Settings {
     FramerateDenominator?: Value<number>
     GopSize?: Value<number>
     AdaptiveQuantization?: Value<string>
+    FilterSettings?: H265FilterSettings
     AlternativeTransferFunction?: Value<string>
+    ColorSpaceSettings?: H265ColorSpaceSettings
     Tier?: Value<string>
     ParDenominator?: Value<number>
     FixedAfd?: Value<string>
@@ -633,7 +669,12 @@ export class H265Settings {
 }
 
 export class AudioCodecSettings {
-
+    Eac3Settings?: Eac3Settings
+    Ac3Settings?: Ac3Settings
+    Mp2Settings?: Mp2Settings
+    PassThroughSettings?: PassThroughSettings
+    WavSettings?: WavSettings
+    AacSettings?: AacSettings
 
     constructor(properties: AudioCodecSettings) {
         Object.assign(this, properties)
@@ -695,7 +736,10 @@ export class FecOutputSettings {
 }
 
 export class OutputDestination {
+    MultiplexSettings?: MultiplexProgramChannelDestinationSettings
     Id?: Value<string>
+    Settings?: List<OutputDestinationSettings>
+    MediaPackageSettings?: List<MediaPackageOutputDestinationSettings>
 
     constructor(properties: OutputDestination) {
         Object.assign(this, properties)
@@ -711,7 +755,7 @@ export class AncillarySourceSettings {
 }
 
 export class Mpeg2FilterSettings {
-
+    TemporalFilterSettings?: TemporalFilterSettings
 
     constructor(properties: Mpeg2FilterSettings) {
         Object.assign(this, properties)
@@ -720,6 +764,7 @@ export class Mpeg2FilterSettings {
 
 export class CaptionSelector {
     LanguageCode?: Value<string>
+    SelectorSettings?: CaptionSelectorSettings
     Name?: Value<string>
 
     constructor(properties: CaptionSelector) {
@@ -737,6 +782,7 @@ export class VideoBlackFailoverSettings {
 }
 
 export class RtmpOutputSettings {
+    Destination?: OutputLocationRef
     CertificateMode?: Value<string>
     NumRetries?: Value<number>
     ConnectionRetryInterval?: Value<number>
@@ -781,6 +827,7 @@ export class M2tsSettings {
     AudioStreamType?: Value<string>
     Klv?: Value<string>
     EbpLookaheadMs?: Value<number>
+    DvbTdtSettings?: DvbTdtSettings
     TimedMetadataBehavior?: Value<string>
     EbpAudioInterval?: Value<string>
     FragmentTime?: Value<number>
@@ -797,6 +844,8 @@ export class M2tsSettings {
     PmtPid?: Value<string>
     Scte27Pids?: Value<string>
     SegmentationMarkers?: Value<string>
+    DvbNitSettings?: DvbNitSettings
+    DvbSdtSettings?: DvbSdtSettings
     EtvSignalPid?: Value<string>
     Arib?: Value<string>
     BufferModel?: Value<string>
@@ -840,6 +889,7 @@ export class GlobalConfiguration {
     OutputLockingMode?: Value<string>
     SupportLowFramerateInputs?: Value<string>
     InitialAudioGain?: Value<number>
+    InputLossBehavior?: InputLossBehavior
 
     constructor(properties: GlobalConfiguration) {
         Object.assign(this, properties)
@@ -857,6 +907,7 @@ export class MediaPackageOutputDestinationSettings {
 export class AudioOnlyHlsSettings {
     SegmentType?: Value<string>
     AudioTrackType?: Value<string>
+    AudioOnlyImage?: InputLocation
     AudioGroupId?: Value<string>
 
     constructor(properties: AudioOnlyHlsSettings) {
@@ -881,6 +932,7 @@ export class Scte27DestinationSettings {
 }
 
 export class AutomaticInputFailoverSettings {
+    FailoverConditions?: List<FailoverCondition>
     InputPreference?: Value<string>
     SecondaryInputId?: Value<string>
     ErrorClearTimeMsec?: Value<number>
@@ -891,7 +943,8 @@ export class AutomaticInputFailoverSettings {
 }
 
 export class FrameCaptureGroupSettings {
-
+    FrameCaptureCdnSettings?: FrameCaptureCdnSettings
+    Destination?: OutputLocationRef
 
     constructor(properties: FrameCaptureGroupSettings) {
         Object.assign(this, properties)
@@ -901,6 +954,7 @@ export class FrameCaptureGroupSettings {
 export class ArchiveOutputSettings {
     Extension?: Value<string>
     NameModifier?: Value<string>
+    ContainerSettings?: ArchiveContainerSettings
 
     constructor(properties: ArchiveOutputSettings) {
         Object.assign(this, properties)
@@ -908,6 +962,8 @@ export class ArchiveOutputSettings {
 }
 
 export class ArchiveGroupSettings {
+    Destination?: OutputLocationRef
+    ArchiveCdnSettings?: ArchiveCdnSettings
     RolloverInterval?: Value<number>
 
     constructor(properties: ArchiveGroupSettings) {
@@ -945,6 +1001,8 @@ export class VideoSelectorProgramId {
 export class InputAttachment {
     InputAttachmentName?: Value<string>
     InputId?: Value<string>
+    AutomaticInputFailoverSettings?: AutomaticInputFailoverSettings
+    InputSettings?: InputSettings
 
     constructor(properties: InputAttachment) {
         Object.assign(this, properties)
@@ -962,6 +1020,7 @@ export class InputChannelLevel {
 
 export class StandardHlsSettings {
     AudioRenditionSets?: Value<string>
+    M3u8Settings?: M3u8Settings
 
     constructor(properties: StandardHlsSettings) {
         Object.assign(this, properties)
@@ -977,7 +1036,8 @@ export class PassThroughSettings {
 }
 
 export class ArchiveContainerSettings {
-
+    RawSettings?: RawSettings
+    M2tsSettings?: M2tsSettings
 
     constructor(properties: ArchiveContainerSettings) {
         Object.assign(this, properties)
@@ -1014,7 +1074,18 @@ export class FrameCaptureOutputSettings {
 }
 
 export class EncoderSettings {
-
+    AudioDescriptions?: List<AudioDescription>
+    VideoDescriptions?: List<VideoDescription>
+    FeatureActivations?: FeatureActivations
+    GlobalConfiguration?: GlobalConfiguration
+    CaptionDescriptions?: List<CaptionDescription>
+    AvailConfiguration?: AvailConfiguration
+    MotionGraphicsConfiguration?: MotionGraphicsConfiguration
+    OutputGroups?: List<OutputGroup>
+    AvailBlanking?: AvailBlanking
+    NielsenConfiguration?: NielsenConfiguration
+    BlackoutSlate?: BlackoutSlate
+    TimecodeConfig?: TimecodeConfig
 
     constructor(properties: EncoderSettings) {
         Object.assign(this, properties)
@@ -1022,7 +1093,8 @@ export class EncoderSettings {
 }
 
 export class AvailSettings {
-
+    Scte35SpliceInsert?: Scte35SpliceInsert
+    Scte35TimeSignalApos?: Scte35TimeSignalApos
 
     constructor(properties: AvailSettings) {
         Object.assign(this, properties)
@@ -1030,7 +1102,9 @@ export class AvailSettings {
 }
 
 export class H264ColorSpaceSettings {
-
+    Rec601Settings?: Rec601Settings
+    Rec709Settings?: Rec709Settings
+    ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings
 
     constructor(properties: H264ColorSpaceSettings) {
         Object.assign(this, properties)
@@ -1038,7 +1112,7 @@ export class H264ColorSpaceSettings {
 }
 
 export class MediaPackageGroupSettings {
-
+    Destination?: OutputLocationRef
 
     constructor(properties: MediaPackageGroupSettings) {
         Object.assign(this, properties)
@@ -1046,7 +1120,7 @@ export class MediaPackageGroupSettings {
 }
 
 export class MultiplexOutputSettings {
-
+    Destination?: OutputLocationRef
 
     constructor(properties: MultiplexOutputSettings) {
         Object.assign(this, properties)
@@ -1054,7 +1128,10 @@ export class MultiplexOutputSettings {
 }
 
 export class H265ColorSpaceSettings {
-
+    Rec601Settings?: Rec601Settings
+    Rec709Settings?: Rec709Settings
+    ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings
+    Hdr10Settings?: Hdr10Settings
 
     constructor(properties: H265ColorSpaceSettings) {
         Object.assign(this, properties)
@@ -1071,6 +1148,7 @@ export class EmbeddedDestinationSettings {
 
 export class AvailBlanking {
     State?: Value<string>
+    AvailBlankingImage?: InputLocation
 
     constructor(properties: AvailBlanking) {
         Object.assign(this, properties)
@@ -1082,8 +1160,12 @@ export class InputSettings {
     FilterStrength?: Value<number>
     InputFilter?: Value<string>
     SourceEndBehavior?: Value<string>
+    VideoSelector?: VideoSelector
     Smpte2038DataPreference?: Value<string>
+    AudioSelectors?: List<AudioSelector>
+    CaptionSelectors?: List<CaptionSelector>
     DenoiseFilter?: Value<string>
+    NetworkInputSettings?: NetworkInputSettings
 
     constructor(properties: InputSettings) {
         Object.assign(this, properties)
@@ -1117,6 +1199,7 @@ export class InputLossFailoverSettings {
 }
 
 export class AudioSelector {
+    SelectorSettings?: AudioSelectorSettings
     Name?: Value<string>
 
     constructor(properties: AudioSelector) {
@@ -1151,7 +1234,13 @@ export class DvbSubSourceSettings {
 }
 
 export class CaptionSelectorSettings {
-
+    DvbSubSourceSettings?: DvbSubSourceSettings
+    Scte27SourceSettings?: Scte27SourceSettings
+    AribSourceSettings?: AribSourceSettings
+    EmbeddedSourceSettings?: EmbeddedSourceSettings
+    Scte20SourceSettings?: Scte20SourceSettings
+    TeletextSourceSettings?: TeletextSourceSettings
+    AncillarySourceSettings?: AncillarySourceSettings
 
     constructor(properties: CaptionSelectorSettings) {
         Object.assign(this, properties)
@@ -1159,7 +1248,8 @@ export class CaptionSelectorSettings {
 }
 
 export class VideoSelectorSettings {
-
+    VideoSelectorProgramId?: VideoSelectorProgramId
+    VideoSelectorPid?: VideoSelectorPid
 
     constructor(properties: VideoSelectorSettings) {
         Object.assign(this, properties)
@@ -1167,7 +1257,9 @@ export class VideoSelectorSettings {
 }
 
 export class VpcOutputSettings {
-
+    PublicAddressAllocationIds?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
+    SubnetIds?: List<Value<string>>
 
     constructor(properties: VpcOutputSettings) {
         Object.assign(this, properties)
@@ -1175,6 +1267,7 @@ export class VpcOutputSettings {
 }
 
 export class TeletextSourceSettings {
+    OutputRectangle?: CaptionRectangle
     PageNumber?: Value<string>
 
     constructor(properties: TeletextSourceSettings) {
@@ -1183,6 +1276,7 @@ export class TeletextSourceSettings {
 }
 
 export class CaptionDescription {
+    DestinationSettings?: CaptionDestinationSettings
     LanguageCode?: Value<string>
     LanguageDescription?: Value<string>
     CaptionSelectorName?: Value<string>
@@ -1194,6 +1288,7 @@ export class CaptionDescription {
 }
 
 export class MotionGraphicsConfiguration {
+    MotionGraphicsSettings?: MotionGraphicsSettings
     MotionGraphicsInsertion?: Value<string>
 
     constructor(properties: MotionGraphicsConfiguration) {
@@ -1202,7 +1297,7 @@ export class MotionGraphicsConfiguration {
 }
 
 export class VideoSelectorColorSpaceSettings {
-
+    Hdr10Settings?: Hdr10Settings
 
     constructor(properties: VideoSelectorColorSpaceSettings) {
         Object.assign(this, properties)
@@ -1210,6 +1305,9 @@ export class VideoSelectorColorSpaceSettings {
 }
 
 export class Output {
+    OutputSettings?: OutputSettings
+    CaptionDescriptionNames?: List<Value<string>>
+    AudioDescriptionNames?: List<Value<string>>
     OutputName?: Value<string>
     VideoDescriptionName?: Value<string>
 
@@ -1220,6 +1318,7 @@ export class Output {
 
 export class NetworkInputSettings {
     ServerValidation?: Value<string>
+    HlsInputSettings?: HlsInputSettings
 
     constructor(properties: NetworkInputSettings) {
         Object.assign(this, properties)
@@ -1227,7 +1326,7 @@ export class NetworkInputSettings {
 }
 
 export class H265FilterSettings {
-
+    TemporalFilterSettings?: TemporalFilterSettings
 
     constructor(properties: H265FilterSettings) {
         Object.assign(this, properties)
@@ -1271,12 +1370,15 @@ export class AudioTrack {
 }
 
 export class AudioDescription {
+    AudioNormalizationSettings?: AudioNormalizationSettings
     LanguageCode?: Value<string>
+    RemixSettings?: RemixSettings
     AudioSelectorName?: Value<string>
     StreamName?: Value<string>
     LanguageCodeControl?: Value<string>
     AudioType?: Value<string>
     AudioTypeControl?: Value<string>
+    CodecSettings?: AudioCodecSettings
     Name?: Value<string>
 
     constructor(properties: AudioDescription) {
@@ -1291,6 +1393,7 @@ export class BurnInDestinationSettings {
     FontColor?: Value<string>
     ShadowColor?: Value<string>
     ShadowOpacity?: Value<number>
+    Font?: InputLocation
     ShadowYOffset?: Value<number>
     Alignment?: Value<string>
     XPosition?: Value<number>
@@ -1310,6 +1413,7 @@ export class BurnInDestinationSettings {
 export class RtmpGroupSettings {
     AuthenticationScheme?: Value<string>
     CacheLength?: Value<number>
+    AdMarkers?: List<Value<string>>
     InputLossAction?: Value<string>
     RestartDelay?: Value<number>
     CaptionData?: Value<string>
@@ -1330,7 +1434,19 @@ export class MsSmoothOutputSettings {
 }
 
 export class CaptionDestinationSettings {
-
+    AribDestinationSettings?: AribDestinationSettings
+    EbuTtDDestinationSettings?: EbuTtDDestinationSettings
+    SmpteTtDestinationSettings?: SmpteTtDestinationSettings
+    EmbeddedPlusScte20DestinationSettings?: EmbeddedPlusScte20DestinationSettings
+    TtmlDestinationSettings?: TtmlDestinationSettings
+    Scte20PlusEmbeddedDestinationSettings?: Scte20PlusEmbeddedDestinationSettings
+    DvbSubDestinationSettings?: DvbSubDestinationSettings
+    TeletextDestinationSettings?: TeletextDestinationSettings
+    BurnInDestinationSettings?: BurnInDestinationSettings
+    WebvttDestinationSettings?: WebvttDestinationSettings
+    EmbeddedDestinationSettings?: EmbeddedDestinationSettings
+    RtmpCaptionInfoDestinationSettings?: RtmpCaptionInfoDestinationSettings
+    Scte27DestinationSettings?: Scte27DestinationSettings
 
     constructor(properties: CaptionDestinationSettings) {
         Object.assign(this, properties)
@@ -1339,6 +1455,7 @@ export class CaptionDestinationSettings {
 
 export class MsSmoothGroupSettings {
     SegmentationMode?: Value<string>
+    Destination?: OutputLocationRef
     EventStopBehavior?: Value<string>
     FilecacheDuration?: Value<number>
     CertificateMode?: Value<string>
@@ -1373,7 +1490,7 @@ export class WavSettings {
 }
 
 export class KeyProviderSettings {
-
+    StaticKeySettings?: StaticKeySettings
 
     constructor(properties: KeyProviderSettings) {
         Object.assign(this, properties)
@@ -1389,7 +1506,14 @@ export class CdiInputSpecification {
 }
 
 export class OutputGroupSettings {
-
+    HlsGroupSettings?: HlsGroupSettings
+    FrameCaptureGroupSettings?: FrameCaptureGroupSettings
+    MultiplexGroupSettings?: MultiplexGroupSettings
+    ArchiveGroupSettings?: ArchiveGroupSettings
+    MediaPackageGroupSettings?: MediaPackageGroupSettings
+    UdpGroupSettings?: UdpGroupSettings
+    MsSmoothGroupSettings?: MsSmoothGroupSettings
+    RtmpGroupSettings?: RtmpGroupSettings
 
     constructor(properties: OutputGroupSettings) {
         Object.assign(this, properties)
@@ -1405,7 +1529,14 @@ export class HtmlMotionGraphicsSettings {
 }
 
 export class OutputSettings {
-
+    MediaPackageOutputSettings?: MediaPackageOutputSettings
+    MsSmoothOutputSettings?: MsSmoothOutputSettings
+    FrameCaptureOutputSettings?: FrameCaptureOutputSettings
+    HlsOutputSettings?: HlsOutputSettings
+    RtmpOutputSettings?: RtmpOutputSettings
+    UdpOutputSettings?: UdpOutputSettings
+    MultiplexOutputSettings?: MultiplexOutputSettings
+    ArchiveOutputSettings?: ArchiveOutputSettings
 
     constructor(properties: OutputSettings) {
         Object.assign(this, properties)
@@ -1426,6 +1557,7 @@ export class VideoDescription {
     Height?: Value<number>
     Sharpness?: Value<number>
     Width?: Value<number>
+    CodecSettings?: VideoCodecSettings
     Name?: Value<string>
 
     constructor(properties: VideoDescription) {
@@ -1437,6 +1569,8 @@ export class BlackoutSlate {
     NetworkEndBlackout?: Value<string>
     State?: Value<string>
     NetworkId?: Value<string>
+    NetworkEndBlackoutImage?: InputLocation
+    BlackoutSlateImage?: InputLocation
 
     constructor(properties: BlackoutSlate) {
         Object.assign(this, properties)
@@ -1515,6 +1649,7 @@ export class FrameCaptureHlsSettings {
 
 export class RemixSettings {
     ChannelsOut?: Value<number>
+    ChannelMappings?: List<AudioChannelMapping>
     ChannelsIn?: Value<number>
 
     constructor(properties: RemixSettings) {
@@ -1546,7 +1681,13 @@ export class HlsAkamaiSettings {
 }
 
 export interface ChannelProperties {
+    InputAttachments?: List<InputAttachment>
+    InputSpecification?: InputSpecification
     ChannelClass?: Value<string>
+    EncoderSettings?: EncoderSettings
+    Destinations?: List<OutputDestination>
+    Vpc?: VpcOutputSettings
+    CdiInputSpecification?: CdiInputSpecification
     LogLevel?: Value<string>
     RoleArn?: Value<string>
     Tags?: {[key: string]: any}

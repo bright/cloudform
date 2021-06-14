@@ -32,6 +32,8 @@ export class ConditionResourceType {
 
 export class BackupSelectionResourceType {
     IamRoleArn!: Value<string>
+    ListOfTags?: List<ConditionResourceType>
+    Resources?: List<Value<string>>
     SelectionName!: Value<string>
 
     constructor(properties: BackupSelectionResourceType) {
@@ -41,6 +43,7 @@ export class BackupSelectionResourceType {
 
 export interface BackupSelectionProperties {
     BackupPlanId: Value<string>
+    BackupSelection: BackupSelectionResourceType
 }
 
 export default class BackupSelection extends ResourceBase<BackupSelectionProperties> {

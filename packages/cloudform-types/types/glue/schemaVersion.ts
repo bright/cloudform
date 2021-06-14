@@ -30,6 +30,7 @@ export class Schema {
 }
 
 export interface SchemaVersionProperties {
+    Schema: Schema
     SchemaDefinition: Value<string>
 }
 

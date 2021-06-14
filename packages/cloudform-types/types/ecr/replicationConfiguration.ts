@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ReplicationConfigurationInner {
-
+    Rules!: List<ReplicationRule>
 
     constructor(properties: ReplicationConfigurationInner) {
         Object.assign(this, properties)
@@ -38,7 +38,7 @@ export class ReplicationDestination {
 }
 
 export class ReplicationRule {
-
+    Destinations!: List<ReplicationDestination>
 
     constructor(properties: ReplicationRule) {
         Object.assign(this, properties)
@@ -46,7 +46,7 @@ export class ReplicationRule {
 }
 
 export interface ReplicationConfigurationProperties {
-
+    ReplicationConfiguration: ReplicationConfiguration
 }
 
 export default class ReplicationConfiguration extends ResourceBase<ReplicationConfigurationProperties> {

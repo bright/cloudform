@@ -25,6 +25,7 @@ export class StepScalingPolicyConfiguration {
     Cooldown?: Value<number>
     MetricAggregationType?: Value<string>
     MinAdjustmentMagnitude?: Value<number>
+    StepAdjustments?: List<StepAdjustment>
 
     constructor(properties: StepScalingPolicyConfiguration) {
         Object.assign(this, properties)
@@ -41,6 +42,7 @@ export class PredefinedMetricSpecification {
 }
 
 export class CustomizedMetricSpecification {
+    Dimensions?: List<MetricDimension>
     MetricName!: Value<string>
     Namespace!: Value<string>
     Statistic!: Value<string>
@@ -71,7 +73,9 @@ export class StepAdjustment {
 }
 
 export class TargetTrackingScalingPolicyConfiguration {
+    CustomizedMetricSpecification?: CustomizedMetricSpecification
     DisableScaleIn?: Value<boolean>
+    PredefinedMetricSpecification?: PredefinedMetricSpecification
     ScaleInCooldown?: Value<number>
     ScaleOutCooldown?: Value<number>
     TargetValue!: Value<number>
@@ -88,6 +92,8 @@ export interface ScalingPolicyProperties {
     ScalableDimension?: Value<string>
     ScalingTargetId?: Value<string>
     ServiceNamespace?: Value<string>
+    StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration
+    TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration
 }
 
 export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {

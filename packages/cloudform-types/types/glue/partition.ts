@@ -20,6 +20,8 @@ import {Value, List} from '../dataTypes'
 
 export class PartitionInput {
     Parameters?: {[key: string]: any}
+    StorageDescriptor?: StorageDescriptor
+    Values!: List<Value<string>>
 
     constructor(properties: PartitionInput) {
         Object.assign(this, properties)
@@ -36,6 +38,7 @@ export class Order {
 }
 
 export class SchemaReference {
+    SchemaId?: SchemaId
     SchemaVersionNumber?: Value<number>
     SchameVersionId?: Value<string>
 
@@ -67,9 +70,15 @@ export class Column {
 export class StorageDescriptor {
     StoredAsSubDirectories?: Value<boolean>
     Parameters?: {[key: string]: any}
+    BucketColumns?: List<Value<string>>
     NumberOfBuckets?: Value<number>
     OutputFormat?: Value<string>
+    Columns?: List<Column>
+    SerdeInfo?: SerdeInfo
+    SortColumns?: List<Order>
     Compressed?: Value<boolean>
+    SchemaReference?: SchemaReference
+    SkewedInfo?: SkewedInfo
     InputFormat?: Value<string>
     Location?: Value<string>
 
@@ -79,6 +88,8 @@ export class StorageDescriptor {
 }
 
 export class SkewedInfo {
+    SkewedColumnNames?: List<Value<string>>
+    SkewedColumnValues?: List<Value<string>>
     SkewedColumnValueLocationMaps?: {[key: string]: any}
 
     constructor(properties: SkewedInfo) {
@@ -100,6 +111,7 @@ export interface PartitionProperties {
     TableName: Value<string>
     DatabaseName: Value<string>
     CatalogId: Value<string>
+    PartitionInput: PartitionInput
 }
 
 export default class Partition extends ResourceBase<PartitionProperties> {

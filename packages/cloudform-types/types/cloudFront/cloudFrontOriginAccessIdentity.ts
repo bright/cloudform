@@ -28,7 +28,7 @@ export class CloudFrontOriginAccessIdentityConfig {
 }
 
 export interface CloudFrontOriginAccessIdentityProperties {
-
+    CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig
 }
 
 export default class CloudFrontOriginAccessIdentity extends ResourceBase<CloudFrontOriginAccessIdentityProperties> {

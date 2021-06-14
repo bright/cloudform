@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 export type PatchStringDate = Value<string>
 
 export class PatchFilter {
+    Values?: List<Value<string>>
     Key?: Value<string>
 
     constructor(properties: PatchFilter) {
@@ -30,7 +31,9 @@ export class PatchFilter {
 }
 
 export class Rule {
+    ApproveUntilDate?: PatchStringDate
     EnableNonSecurity?: Value<boolean>
+    PatchFilterGroup?: PatchFilterGroup
     ApproveAfterDays?: Value<number>
     ComplianceLevel?: Value<string>
 
@@ -40,7 +43,7 @@ export class Rule {
 }
 
 export class PatchFilterGroup {
-
+    PatchFilters?: List<PatchFilter>
 
     constructor(properties: PatchFilterGroup) {
         Object.assign(this, properties)
@@ -48,6 +51,7 @@ export class PatchFilterGroup {
 }
 
 export class PatchSource {
+    Products?: List<Value<string>>
     Configuration?: Value<string>
     Name?: Value<string>
 
@@ -57,7 +61,7 @@ export class PatchSource {
 }
 
 export class RuleGroup {
-
+    PatchRules?: List<Rule>
 
     constructor(properties: RuleGroup) {
         Object.assign(this, properties)
@@ -67,10 +71,17 @@ export class RuleGroup {
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>
     Description?: Value<string>
+    ApprovalRules?: RuleGroup
+    Sources?: List<PatchSource>
     Name: Value<string>
+    RejectedPatches?: List<Value<string>>
+    ApprovedPatches?: List<Value<string>>
     RejectedPatchesAction?: Value<string>
+    PatchGroups?: List<Value<string>>
     ApprovedPatchesComplianceLevel?: Value<string>
     ApprovedPatchesEnableNonSecurity?: Value<boolean>
+    GlobalFilters?: PatchFilterGroup
+    Tags?: List<ResourceTag>
 }
 
 export default class PatchBaseline extends ResourceBase<PatchBaselineProperties> {

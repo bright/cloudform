@@ -27,7 +27,7 @@ export class Core {
 }
 
 export class CoreDefinitionVersion {
-
+    Cores!: List<Core>
 
     constructor(properties: CoreDefinitionVersion) {
         Object.assign(this, properties)
@@ -35,6 +35,7 @@ export class CoreDefinitionVersion {
 }
 
 export interface CoreDefinitionProperties {
+    InitialVersion?: CoreDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

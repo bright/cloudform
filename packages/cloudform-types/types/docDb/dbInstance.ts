@@ -24,6 +24,7 @@ export interface DBInstanceProperties {
     PreferredMaintenanceWindow?: Value<string>
     AutoMinorVersionUpgrade?: Value<boolean>
     DBInstanceIdentifier?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {

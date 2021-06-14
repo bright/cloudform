@@ -25,6 +25,7 @@ export interface StoredQueryProperties {
     QueryName: Value<string>
     QueryDescription?: Value<string>
     QueryExpression: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class StoredQuery extends ResourceBase<StoredQueryProperties> {

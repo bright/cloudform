@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class NetworkConfiguration {
-
+    AwsVpcConfiguration?: AwsVpcConfiguration
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -52,6 +52,8 @@ export class LoadBalancer {
 
 export class AwsVpcConfiguration {
     AssignPublicIp?: Value<string>
+    SecurityGroups?: List<Value<string>>
+    Subnets!: List<Value<string>>
 
     constructor(properties: AwsVpcConfiguration) {
         Object.assign(this, properties)
@@ -71,8 +73,12 @@ export interface TaskSetProperties {
     Cluster: Value<string>
     ExternalId?: Value<string>
     LaunchType?: Value<string>
+    LoadBalancers?: List<LoadBalancer>
+    NetworkConfiguration?: NetworkConfiguration
     PlatformVersion?: Value<string>
+    Scale?: Scale
     Service: Value<string>
+    ServiceRegistries?: List<ServiceRegistry>
     TaskDefinition: Value<string>
 }
 

@@ -31,6 +31,7 @@ export class PlacementTemplate {
 
 export interface ProjectProperties {
     Description?: Value<string>
+    PlacementTemplate: PlacementTemplate
     ProjectName?: Value<string>
 }
 

@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class AwsOrganizationsSource {
+    OrganizationalUnits?: List<Value<string>>
     OrganizationSourceType!: Value<string>
 
     constructor(properties: AwsOrganizationsSource) {
@@ -30,7 +31,9 @@ export class AwsOrganizationsSource {
 
 export class SyncSource {
     IncludeFutureRegions?: Value<boolean>
+    SourceRegions!: List<Value<string>>
     SourceType!: Value<string>
+    AwsOrganizationsSource?: AwsOrganizationsSource
 
     constructor(properties: SyncSource) {
         Object.assign(this, properties)
@@ -50,7 +53,9 @@ export class S3Destination {
 }
 
 export interface ResourceDataSyncProperties {
+    S3Destination?: S3Destination
     KMSKeyArn?: Value<string>
+    SyncSource?: SyncSource
     BucketName?: Value<string>
     BucketRegion?: Value<string>
     SyncFormat?: Value<string>

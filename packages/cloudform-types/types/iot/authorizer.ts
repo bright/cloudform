@@ -27,6 +27,8 @@ export interface AuthorizerProperties {
     SigningDisabled?: Value<boolean>
     Status?: Value<string>
     TokenKeyName?: Value<string>
+    TokenSigningPublicKeys?: {[key: string]: Value<string>}
+    Tags?: List<ResourceTag>
 }
 
 export default class Authorizer extends ResourceBase<AuthorizerProperties> {

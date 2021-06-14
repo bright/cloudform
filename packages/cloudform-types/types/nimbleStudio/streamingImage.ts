@@ -16,6 +16,7 @@ export interface StreamingImageProperties {
     Ec2ImageId: Value<string>
     Name: Value<string>
     Description?: Value<string>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class StreamingImage extends ResourceBase<StreamingImageProperties> {

@@ -41,6 +41,10 @@ export class LambdaOutput {
 }
 
 export class Output {
+    DestinationSchema!: DestinationSchema
+    LambdaOutput?: LambdaOutput
+    KinesisFirehoseOutput?: KinesisFirehoseOutput
+    KinesisStreamsOutput?: KinesisStreamsOutput
     Name?: Value<string>
 
     constructor(properties: Output) {
@@ -58,6 +62,7 @@ export class DestinationSchema {
 
 export interface ApplicationOutputProperties {
     ApplicationName: Value<string>
+    Output: Output
 }
 
 export default class ApplicationOutput extends ResourceBase<ApplicationOutputProperties> {

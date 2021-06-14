@@ -32,6 +32,7 @@ export class SuspendedState {
 
 export class ScheduledAction {
     EndTime?: Value<string>
+    ScalableTargetAction?: ScalableTargetAction
     Schedule!: Value<string>
     ScheduledActionName!: Value<string>
     StartTime?: Value<string>
@@ -56,7 +57,9 @@ export interface ScalableTargetProperties {
     ResourceId: Value<string>
     RoleARN: Value<string>
     ScalableDimension: Value<string>
+    ScheduledActions?: List<ScheduledAction>
     ServiceNamespace: Value<string>
+    SuspendedState?: SuspendedState
 }
 
 export default class ScalableTarget extends ResourceBase<ScalableTargetProperties> {

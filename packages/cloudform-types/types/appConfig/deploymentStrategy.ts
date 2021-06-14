@@ -23,6 +23,7 @@ export interface DeploymentStrategyProperties {
     DeploymentDurationInMinutes: Value<number>
     GrowthFactor: Value<number>
     FinalBakeTimeInMinutes?: Value<number>
+    Tags?: List<Tags>
     Name: Value<string>
 }
 

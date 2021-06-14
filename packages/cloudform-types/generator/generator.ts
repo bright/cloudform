@@ -52,7 +52,7 @@ function adjustedCamelCase(input: string): string {
     return input === 'IoT' ? 'iot' : camelCase(input)
 }
 
-function determineTypeScriptType(property: TypeProperties, propertyName: string, typeSuffix: BasicTypeSuffix): string {
+function determineTypeScriptType(property: TypeProperties, propertyName: string, typeSuffix: BasicTypeSuffix): string | undefined {
     if (property[typeSuffix] === 'List') {
         return `List<${determineTypeScriptType(property, propertyName, 'ItemType')}>`
     }
@@ -66,6 +66,9 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
         return innerTypeName('.' + property[typeSuffix])
     }
 
+    if (property[typeSuffix === 'Type' ? 'PrimitiveType' : 'PrimitiveItemType'] === undefined) {
+        return undefined
+    }
     let primitiveType = property[typeSuffix === 'Type' ? 'PrimitiveType' : 'PrimitiveItemType']!.toLowerCase()
     if (['json', 'map'].includes(primitiveType)) {
         return '{[key: string]: any}'
@@ -82,13 +85,14 @@ function determineTypeScriptType(property: TypeProperties, propertyName: string,
 function propertiesEntries(properties: TypePropertiesMap, useNonNullAssertion: boolean = false): string[] {
     const nonOptionalPostfix = useNonNullAssertion ? '!' : ''
     return filter(map(properties, (property: TypeProperties, propertyName: string) => {
-        if (property['PrimitiveType'] === undefined) {
+        const scriptType = determineTypeScriptType(property, propertyName, 'Type')
+        if (scriptType === undefined) {
             // @TODO fix this, 
             // In JSON definit in AWS::DataBrew::Recipe.Action -> Properties -> Parameters
             // PrimitiveType is undefined
             return undefined
         }
-        return `${propertyName}${property.Required ? nonOptionalPostfix : '?'}: ${determineTypeScriptType(property, propertyName, 'Type')}`
+        return `${propertyName}${property.Required ? nonOptionalPostfix : '?'}: ${scriptType}`
     }), (name): name is string => name !== undefined)
 }
 

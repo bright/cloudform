@@ -18,6 +18,8 @@ export class LoRaWANGateway {
 export interface WirelessGatewayProperties {
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
+    LoRaWAN: LoRaWANGateway
     ThingArn?: Value<string>
     LastUplinkReceivedAt?: Value<string>
 }

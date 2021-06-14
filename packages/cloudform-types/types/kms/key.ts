@@ -30,6 +30,7 @@ export interface KeyProperties {
     KeyUsage?: Value<string>
     KeySpec?: Value<string>
     PendingWindowInDays?: Value<number>
+    Tags?: List<ResourceTag>
     MultiRegion?: Value<boolean>
 }
 

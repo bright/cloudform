@@ -18,7 +18,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DashEncryption {
-
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: DashEncryption) {
         Object.assign(this, properties)
@@ -27,6 +27,7 @@ export class DashEncryption {
 
 export class SpekeKeyProvider {
     RoleArn!: Value<string>
+    SystemIds!: List<Value<string>>
     Url!: Value<string>
 
     constructor(properties: SpekeKeyProvider) {
@@ -35,6 +36,8 @@ export class SpekeKeyProvider {
 }
 
 export class CmafPackage {
+    Encryption?: CmafEncryption
+    HlsManifests!: List<HlsManifest>
     SegmentDurationSeconds?: Value<number>
     IncludeEncoderConfigurationInSegments?: Value<boolean>
 
@@ -44,6 +47,9 @@ export class CmafPackage {
 }
 
 export class DashPackage {
+    DashManifests!: List<DashManifest>
+    Encryption?: DashEncryption
+    PeriodTriggers?: List<Value<string>>
     SegmentDurationSeconds?: Value<number>
     SegmentTemplateFormat?: Value<string>
     IncludeEncoderConfigurationInSegments?: Value<boolean>
@@ -58,6 +64,7 @@ export class DashManifest {
     ManifestName?: Value<string>
     MinBufferTimeSeconds?: Value<number>
     Profile?: Value<string>
+    StreamSelection?: StreamSelection
 
     constructor(properties: DashManifest) {
         Object.assign(this, properties)
@@ -67,6 +74,7 @@ export class DashManifest {
 export class HlsEncryption {
     ConstantInitializationVector?: Value<string>
     EncryptionMethod?: Value<string>
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: HlsEncryption) {
         Object.assign(this, properties)
@@ -75,6 +83,7 @@ export class HlsEncryption {
 
 export class MssManifest {
     ManifestName?: Value<string>
+    StreamSelection?: StreamSelection
 
     constructor(properties: MssManifest) {
         Object.assign(this, properties)
@@ -82,7 +91,7 @@ export class MssManifest {
 }
 
 export class CmafEncryption {
-
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: CmafEncryption) {
         Object.assign(this, properties)
@@ -90,7 +99,7 @@ export class CmafEncryption {
 }
 
 export class MssEncryption {
-
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: MssEncryption) {
         Object.assign(this, properties)
@@ -108,6 +117,8 @@ export class StreamSelection {
 }
 
 export class MssPackage {
+    Encryption?: MssEncryption
+    MssManifests!: List<MssManifest>
     SegmentDurationSeconds?: Value<number>
 
     constructor(properties: MssPackage) {
@@ -116,6 +127,8 @@ export class MssPackage {
 }
 
 export class HlsPackage {
+    Encryption?: HlsEncryption
+    HlsManifests!: List<HlsManifest>
     SegmentDurationSeconds?: Value<number>
     UseAudioRenditionGroup?: Value<boolean>
 
@@ -130,6 +143,7 @@ export class HlsManifest {
     ManifestName?: Value<string>
     ProgramDateTimeIntervalSeconds?: Value<number>
     RepeatExtXKey?: Value<boolean>
+    StreamSelection?: StreamSelection
 
     constructor(properties: HlsManifest) {
         Object.assign(this, properties)
@@ -139,6 +153,11 @@ export class HlsManifest {
 export interface PackagingConfigurationProperties {
     Id: Value<string>
     PackagingGroupId: Value<string>
+    CmafPackage?: CmafPackage
+    DashPackage?: DashPackage
+    HlsPackage?: HlsPackage
+    MssPackage?: MssPackage
+    Tags?: List<ResourceTag>
 }
 
 export default class PackagingConfiguration extends ResourceBase<PackagingConfigurationProperties> {

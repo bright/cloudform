@@ -24,7 +24,9 @@ export interface PermissionSetProperties {
     InstanceArn: Value<string>
     SessionDuration?: Value<string>
     RelayStateType?: Value<string>
+    ManagedPolicies?: List<Value<string>>
     InlinePolicy?: {[key: string]: any}
+    Tags?: List<ResourceTag>
 }
 
 export default class PermissionSet extends ResourceBase<PermissionSetProperties> {

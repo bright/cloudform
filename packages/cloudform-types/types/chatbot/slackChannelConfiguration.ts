@@ -27,6 +27,7 @@ export interface SlackChannelConfigurationProperties {
     SlackChannelId: Value<string>
     ConfigurationName: Value<string>
     IamRoleArn: Value<string>
+    SnsTopicArns?: List<Value<string>>
     LoggingLevel?: Value<string>
 }
 

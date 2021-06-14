@@ -29,6 +29,7 @@ export class KinesisFirehoseDestinationDetails {
 }
 
 export class LogDeliveryConfigurationRequest {
+    DestinationDetails?: DestinationDetails
     DestinationType?: Value<string>
     LogFormat?: Value<string>
     LogType?: Value<string>
@@ -39,7 +40,8 @@ export class LogDeliveryConfigurationRequest {
 }
 
 export class DestinationDetails {
-
+    CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails
+    KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails
 
     constructor(properties: DestinationDetails) {
         Object.assign(this, properties)
@@ -59,18 +61,24 @@ export interface CacheClusterProperties {
     AutoMinorVersionUpgrade?: Value<boolean>
     CacheNodeType: Value<string>
     CacheParameterGroupName?: Value<string>
+    CacheSecurityGroupNames?: List<Value<string>>
     CacheSubnetGroupName?: Value<string>
     ClusterName?: Value<string>
     Engine: Value<string>
     EngineVersion?: Value<string>
+    LogDeliveryConfigurations?: List<LogDeliveryConfigurationRequest>
     NotificationTopicArn?: Value<string>
     NumCacheNodes: Value<number>
     Port?: Value<number>
     PreferredAvailabilityZone?: Value<string>
+    PreferredAvailabilityZones?: List<Value<string>>
     PreferredMaintenanceWindow?: Value<string>
+    SnapshotArns?: List<Value<string>>
     SnapshotName?: Value<string>
     SnapshotRetentionLimit?: Value<number>
     SnapshotWindow?: Value<string>
+    Tags?: List<ResourceTag>
+    VpcSecurityGroupIds?: List<Value<string>>
 }
 
 export default class CacheCluster extends ResourceBase<CacheClusterProperties> {

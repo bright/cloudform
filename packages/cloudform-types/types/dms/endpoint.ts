@@ -179,19 +179,35 @@ export class RedshiftSettings {
 }
 
 export interface EndpointProperties {
+    SybaseSettings?: SybaseSettings
+    OracleSettings?: OracleSettings
+    KafkaSettings?: KafkaSettings
     Port?: Value<number>
+    MySqlSettings?: MySqlSettings
+    S3Settings?: S3Settings
     ResourceIdentifier?: Value<string>
+    KinesisSettings?: KinesisSettings
     SslMode?: Value<string>
+    RedshiftSettings?: RedshiftSettings
     EndpointType: Value<string>
+    Tags?: List<ResourceTag>
     Password?: Value<string>
+    MongoDbSettings?: MongoDbSettings
+    IbmDb2Settings?: IbmDb2Settings
     KmsKeyId?: Value<string>
     DatabaseName?: Value<string>
+    NeptuneSettings?: NeptuneSettings
+    ElasticsearchSettings?: ElasticsearchSettings
     EngineName: Value<string>
+    DocDbSettings?: DocDbSettings
+    DynamoDbSettings?: DynamoDbSettings
     Username?: Value<string>
+    MicrosoftSqlServerSettings?: MicrosoftSqlServerSettings
     ServerName?: Value<string>
     ExtraConnectionAttributes?: Value<string>
     EndpointIdentifier?: Value<string>
     CertificateArn?: Value<string>
+    PostgreSqlSettings?: PostgreSqlSettings
 }
 
 export default class Endpoint extends ResourceBase<EndpointProperties> {

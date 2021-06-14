@@ -31,7 +31,9 @@ export class MailFromAttributes {
 export interface IdentityProperties {
     FeedbackForwardingEnabled?: Value<boolean>
     DkimSigningEnabled?: Value<boolean>
+    Tags?: List<Tags>
     Name: Value<string>
+    MailFromAttributes?: MailFromAttributes
 }
 
 export default class Identity extends ResourceBase<IdentityProperties> {

@@ -23,7 +23,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface InternetGatewayProperties {
-
+    Tags?: List<ResourceTag>
 }
 
 export default class InternetGateway extends ResourceBase<InternetGatewayProperties> {

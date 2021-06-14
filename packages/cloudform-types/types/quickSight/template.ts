@@ -18,6 +18,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ResourcePermission {
+    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -43,7 +44,8 @@ export class DataSetReference {
 }
 
 export class TemplateSourceEntity {
-
+    SourceAnalysis?: TemplateSourceAnalysis
+    SourceTemplate?: TemplateSourceTemplate
 
     constructor(properties: TemplateSourceEntity) {
         Object.assign(this, properties)
@@ -51,6 +53,7 @@ export class TemplateSourceEntity {
 }
 
 export class TemplateSourceAnalysis {
+    DataSetReferences!: List<DataSetReference>
     Arn!: Value<string>
 
     constructor(properties: TemplateSourceAnalysis) {
@@ -61,6 +64,9 @@ export class TemplateSourceAnalysis {
 export interface TemplateProperties {
     AwsAccountId: Value<string>
     Name?: Value<string>
+    Permissions?: List<ResourcePermission>
+    SourceEntity?: TemplateSourceEntity
+    Tags?: List<ResourceTag>
     TemplateId: Value<string>
     VersionDescription?: Value<string>
 }

@@ -21,7 +21,9 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class StackInstances {
-
+    DeploymentTargets!: DeploymentTargets
+    Regions!: List<Value<string>>
+    ParameterOverrides?: List<Parameter>
 
     constructor(properties: StackInstances) {
         Object.assign(this, properties)
@@ -38,7 +40,8 @@ export class AutoDeployment {
 }
 
 export class DeploymentTargets {
-
+    Accounts?: List<Value<string>>
+    OrganizationalUnitIds?: List<Value<string>>
 
     constructor(properties: DeploymentTargets) {
         Object.assign(this, properties)
@@ -50,6 +53,7 @@ export class OperationPreferences {
     FailureTolerancePercentage?: Value<number>
     MaxConcurrentCount?: Value<number>
     MaxConcurrentPercentage?: Value<number>
+    RegionOrder?: List<Value<string>>
     RegionConcurrencyType?: Value<string>
 
     constructor(properties: OperationPreferences) {
@@ -69,9 +73,15 @@ export class Parameter {
 export interface StackSetProperties {
     StackSetName: Value<string>
     AdministrationRoleARN?: Value<string>
+    AutoDeployment?: AutoDeployment
+    Capabilities?: List<Value<string>>
     Description?: Value<string>
     ExecutionRoleName?: Value<string>
+    OperationPreferences?: OperationPreferences
+    StackInstancesGroup?: List<StackInstances>
+    Parameters?: List<Parameter>
     PermissionModel: Value<string>
+    Tags?: List<ResourceTag>
     TemplateBody?: Value<string>
     TemplateURL?: Value<string>
     CallAs?: Value<string>

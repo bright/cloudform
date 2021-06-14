@@ -15,6 +15,7 @@ export class EntityType {
     Inline?: Value<boolean>
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -32,6 +33,7 @@ export class EventVariable {
     DefaultValue?: Value<string>
     VariableType?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -45,6 +47,7 @@ export class Label {
     Inline?: Value<boolean>
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -55,7 +58,11 @@ export class Label {
 
 export interface EventTypeProperties {
     Name: Value<string>
+    Tags?: List<ResourceTag>
     Description?: Value<string>
+    EventVariables: List<EventVariable>
+    Labels: List<Label>
+    EntityTypes: List<EntityType>
 }
 
 export default class EventType extends ResourceBase<EventTypeProperties> {

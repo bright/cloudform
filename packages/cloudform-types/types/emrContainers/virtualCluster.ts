@@ -18,7 +18,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ContainerInfo {
-
+    EksInfo!: EksInfo
 
     constructor(properties: ContainerInfo) {
         Object.assign(this, properties)
@@ -36,6 +36,7 @@ export class EksInfo {
 export class ContainerProvider {
     Type!: Value<string>
     Id!: Value<string>
+    Info!: ContainerInfo
 
     constructor(properties: ContainerProvider) {
         Object.assign(this, properties)
@@ -43,7 +44,9 @@ export class ContainerProvider {
 }
 
 export interface VirtualClusterProperties {
+    ContainerProvider: ContainerProvider
     Name: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class VirtualCluster extends ResourceBase<VirtualClusterProperties> {

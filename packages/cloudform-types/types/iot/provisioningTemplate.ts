@@ -34,6 +34,8 @@ export interface ProvisioningTemplateProperties {
     Enabled?: Value<boolean>
     ProvisioningRoleArn: Value<string>
     TemplateBody: Value<string>
+    PreProvisioningHook?: ProvisioningHook
+    Tags?: List<ResourceTag>
 }
 
 export default class ProvisioningTemplate extends ResourceBase<ProvisioningTemplateProperties> {

@@ -40,6 +40,8 @@ export class FunctionMetadata {
 export interface FunctionProperties {
     AutoPublish?: Value<boolean>
     FunctionCode?: Value<string>
+    FunctionConfig?: FunctionConfig
+    FunctionMetadata?: FunctionMetadata
     Name: Value<string>
 }
 

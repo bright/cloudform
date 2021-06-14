@@ -24,6 +24,7 @@ export class Action {
 }
 
 export class Rule {
+    Action!: Action
     Priority!: Value<number>
     RuleId!: Value<string>
 
@@ -34,6 +35,8 @@ export class Rule {
 
 export interface WebACLProperties {
     MetricName: Value<string>
+    DefaultAction: Action
+    Rules?: List<Rule>
     Name: Value<string>
 }
 

@@ -28,7 +28,9 @@ export interface StackSetConstraintProperties {
     AcceptLanguage?: Value<string>
     PortfolioId: Value<string>
     ProductId: Value<string>
+    RegionList: List<Value<string>>
     AdminRole: Value<string>
+    AccountList: List<Value<string>>
     ExecutionRole: Value<string>
 }
 

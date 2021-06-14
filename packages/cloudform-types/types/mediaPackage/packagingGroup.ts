@@ -36,6 +36,9 @@ export class Authorization {
 
 export interface PackagingGroupProperties {
     Id: Value<string>
+    Authorization?: Authorization
+    Tags?: List<ResourceTag>
+    EgressAccessLogs?: LogConfiguration
 }
 
 export default class PackagingGroup extends ResourceBase<PackagingGroupProperties> {

@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Logging {
-
+    S3Logs?: S3Logs
 
     constructor(properties: Logging) {
         Object.assign(this, properties)
@@ -40,12 +40,16 @@ export class S3Logs {
 export interface InfrastructureConfigurationProperties {
     Name: Value<string>
     Description?: Value<string>
+    InstanceTypes?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
     Logging?: Logging
     SubnetId?: Value<string>
     KeyPair?: Value<string>
     TerminateInstanceOnFailure?: Value<boolean>
     InstanceProfileName: Value<string>
     SnsTopicArn?: Value<string>
+    ResourceTags?: {[key: string]: Value<string>}
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class InfrastructureConfiguration extends ResourceBase<InfrastructureConfigurationProperties> {

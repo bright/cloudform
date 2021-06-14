@@ -49,9 +49,14 @@ export class APNSPushNotificationTemplate {
 }
 
 export interface PushTemplateProperties {
+    GCM?: AndroidPushNotificationTemplate
+    Baidu?: AndroidPushNotificationTemplate
     TemplateName: Value<string>
+    ADM?: AndroidPushNotificationTemplate
+    APNS?: APNSPushNotificationTemplate
     TemplateDescription?: Value<string>
     DefaultSubstitutions?: Value<string>
+    Default?: DefaultPushNotificationTemplate
     Tags?: {[key: string]: any}
 }
 

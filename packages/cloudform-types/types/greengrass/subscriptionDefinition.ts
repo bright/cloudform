@@ -16,7 +16,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SubscriptionDefinitionVersion {
-
+    Subscriptions!: List<Subscription>
 
     constructor(properties: SubscriptionDefinitionVersion) {
         Object.assign(this, properties)
@@ -35,6 +35,7 @@ export class Subscription {
 }
 
 export interface SubscriptionDefinitionProperties {
+    InitialVersion?: SubscriptionDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

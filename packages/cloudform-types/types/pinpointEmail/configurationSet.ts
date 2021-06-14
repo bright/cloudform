@@ -52,6 +52,11 @@ export class DeliveryOptions {
 }
 
 export interface ConfigurationSetProperties {
+    SendingOptions?: SendingOptions
+    TrackingOptions?: TrackingOptions
+    ReputationOptions?: ReputationOptions
+    DeliveryOptions?: DeliveryOptions
+    Tags?: List<Tags>
     Name: Value<string>
 }
 

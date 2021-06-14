@@ -27,6 +27,7 @@ export interface PortfolioProperties {
     Description?: Value<string>
     DisplayName: Value<string>
     AcceptLanguage?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Portfolio extends ResourceBase<PortfolioProperties> {

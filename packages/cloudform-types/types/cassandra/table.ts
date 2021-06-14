@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class BillingMode {
     Mode!: Value<string>
+    ProvisionedThroughput?: ProvisionedThroughput
 
     constructor(properties: BillingMode) {
         Object.assign(this, properties)
@@ -37,6 +38,7 @@ export class Column {
 }
 
 export class ClusteringKeyColumn {
+    Column!: Column
     OrderBy?: Value<string>
 
     constructor(properties: ClusteringKeyColumn) {
@@ -56,7 +58,12 @@ export class ProvisionedThroughput {
 export interface TableProperties {
     KeyspaceName: Value<string>
     TableName?: Value<string>
+    RegularColumns?: List<Column>
+    PartitionKeyColumns: List<Column>
+    ClusteringKeyColumns?: List<ClusteringKeyColumn>
+    BillingMode?: BillingMode
     PointInTimeRecoveryEnabled?: Value<boolean>
+    Tags?: List<ResourceTag>
 }
 
 export default class Table extends ResourceBase<TableProperties> {

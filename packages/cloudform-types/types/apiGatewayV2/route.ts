@@ -33,6 +33,7 @@ export interface RouteProperties {
     AuthorizerId?: Value<string>
     RequestModels?: {[key: string]: any}
     OperationName?: Value<string>
+    AuthorizationScopes?: List<Value<string>>
     ApiKeyRequired?: Value<boolean>
     RouteKey: Value<string>
     AuthorizationType?: Value<string>

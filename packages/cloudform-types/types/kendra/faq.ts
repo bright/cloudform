@@ -23,7 +23,9 @@ export interface FaqProperties {
     Name: Value<string>
     Description?: Value<string>
     FileFormat?: Value<string>
+    S3Path: S3Path
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Faq extends ResourceBase<FaqProperties> {

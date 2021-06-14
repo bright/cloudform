@@ -41,12 +41,15 @@ export class Schedule {
 export interface ImagePipelineProperties {
     Name: Value<string>
     Description?: Value<string>
+    ImageTestsConfiguration?: ImageTestsConfiguration
     Status?: Value<string>
+    Schedule?: Schedule
     ImageRecipeArn?: Value<string>
     ContainerRecipeArn?: Value<string>
     DistributionConfigurationArn?: Value<string>
     InfrastructureConfigurationArn: Value<string>
     EnhancedImageMetadataEnabled?: Value<boolean>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class ImagePipeline extends ResourceBase<ImagePipelineProperties> {

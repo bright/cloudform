@@ -31,6 +31,8 @@ export class InsightsConfiguration {
 export interface GroupProperties {
     FilterExpression?: Value<string>
     GroupName?: Value<string>
+    InsightsConfiguration?: InsightsConfiguration
+    Tags?: List<{[key: string]: any}>
 }
 
 export default class Group extends ResourceBase<GroupProperties> {

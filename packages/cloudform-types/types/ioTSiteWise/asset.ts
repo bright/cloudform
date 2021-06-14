@@ -32,6 +32,9 @@ export class AssetProperty {
 export interface AssetProperties {
     AssetModelId: Value<string>
     AssetName: Value<string>
+    AssetProperties?: List<AssetProperty>
+    AssetHierarchies?: List<AssetHierarchy>
+    Tags?: List<ResourceTag>
 }
 
 export default class Asset extends ResourceBase<AssetProperties> {

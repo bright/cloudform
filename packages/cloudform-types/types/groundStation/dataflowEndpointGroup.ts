@@ -13,6 +13,7 @@ import {Value, List} from '../dataTypes'
 
 export class DataflowEndpoint {
     Name?: Value<string>
+    Address?: SocketAddress
     Mtu?: Value<number>
 
     constructor(properties: DataflowEndpoint) {
@@ -21,6 +22,8 @@ export class DataflowEndpoint {
 }
 
 export class SecurityDetails {
+    SubnetIds?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
     RoleArn?: Value<string>
 
     constructor(properties: SecurityDetails) {
@@ -38,7 +41,8 @@ export class SocketAddress {
 }
 
 export class EndpointDetails {
-
+    SecurityDetails?: SecurityDetails
+    Endpoint?: DataflowEndpoint
 
     constructor(properties: EndpointDetails) {
         Object.assign(this, properties)
@@ -46,7 +50,8 @@ export class EndpointDetails {
 }
 
 export interface DataflowEndpointGroupProperties {
-
+    EndpointDetails: List<EndpointDetails>
+    Tags?: List<ResourceTag>
 }
 
 export default class DataflowEndpointGroup extends ResourceBase<DataflowEndpointGroupProperties> {

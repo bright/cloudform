@@ -21,6 +21,7 @@ export class FunctionConfiguration {
     ExecArgs?: Value<string>
     Timeout?: Value<number>
     EncodingType?: Value<string>
+    Environment?: Environment
     Executable?: Value<string>
 
     constructor(properties: FunctionConfiguration) {
@@ -29,7 +30,7 @@ export class FunctionConfiguration {
 }
 
 export class DefaultConfig {
-
+    Execution!: Execution
 
     constructor(properties: DefaultConfig) {
         Object.assign(this, properties)
@@ -38,6 +39,7 @@ export class DefaultConfig {
 
 export class Execution {
     IsolationMode?: Value<string>
+    RunAs?: RunAs
 
     constructor(properties: Execution) {
         Object.assign(this, properties)
@@ -46,6 +48,8 @@ export class Execution {
 
 export class Environment {
     Variables?: {[key: string]: any}
+    Execution?: Execution
+    ResourceAccessPolicies?: List<ResourceAccessPolicy>
     AccessSysfs?: Value<boolean>
 
     constructor(properties: Environment) {
@@ -54,7 +58,8 @@ export class Environment {
 }
 
 export class FunctionDefinitionVersion {
-
+    DefaultConfig?: DefaultConfig
+    Functions!: List<Function>
 
     constructor(properties: FunctionDefinitionVersion) {
         Object.assign(this, properties)
@@ -72,6 +77,7 @@ export class RunAs {
 
 export class Function {
     FunctionArn!: Value<string>
+    FunctionConfiguration!: FunctionConfiguration
     Id!: Value<string>
 
     constructor(properties: Function) {
@@ -89,6 +95,7 @@ export class ResourceAccessPolicy {
 }
 
 export interface FunctionDefinitionProperties {
+    InitialVersion?: FunctionDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

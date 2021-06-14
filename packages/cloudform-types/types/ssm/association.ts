@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class InstanceAssociationOutputLocation {
-
+    S3Location?: S3OutputLocation
 
     constructor(properties: InstanceAssociationOutputLocation) {
         Object.assign(this, properties)
@@ -30,6 +30,7 @@ export class InstanceAssociationOutputLocation {
 
 export class Target {
     Key!: Value<string>
+    Values!: List<Value<string>>
 
     constructor(properties: Target) {
         Object.assign(this, properties)
@@ -51,7 +52,10 @@ export interface AssociationProperties {
     DocumentVersion?: Value<string>
     InstanceId?: Value<string>
     Name: Value<string>
+    Parameters?: {[key: string]: {[key: string]: any}}
     ScheduleExpression?: Value<string>
+    Targets?: List<Target>
+    OutputLocation?: InstanceAssociationOutputLocation
     AutomationTargetParameterName?: Value<string>
     MaxErrors?: Value<string>
     MaxConcurrency?: Value<string>
@@ -59,6 +63,7 @@ export interface AssociationProperties {
     SyncCompliance?: Value<string>
     WaitForSuccessTimeoutSeconds?: Value<number>
     ApplyOnlyAtCronInterval?: Value<boolean>
+    CalendarNames?: List<Value<string>>
 }
 
 export default class Association extends ResourceBase<AssociationProperties> {

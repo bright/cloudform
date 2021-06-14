@@ -29,7 +29,9 @@ export class BatchRetryStrategy {
 }
 
 export class HttpParameters {
-
+    HeaderParameters?: {[key: string]: Value<string>}
+    PathParameterValues?: List<Value<string>>
+    QueryStringParameters?: {[key: string]: Value<string>}
 
     constructor(properties: HttpParameters) {
         Object.assign(this, properties)
@@ -45,8 +47,10 @@ export class BatchArrayProperties {
 }
 
 export class BatchParameters {
+    ArrayProperties?: BatchArrayProperties
     JobDefinition!: Value<string>
     JobName!: Value<string>
+    RetryStrategy?: BatchRetryStrategy
 
     constructor(properties: BatchParameters) {
         Object.assign(this, properties)
@@ -54,7 +58,7 @@ export class BatchParameters {
 }
 
 export class RunCommandParameters {
-
+    RunCommandTargets!: List<RunCommandTarget>
 
     constructor(properties: RunCommandParameters) {
         Object.assign(this, properties)
@@ -70,7 +74,7 @@ export class DeadLetterConfig {
 }
 
 export class NetworkConfiguration {
-
+    AwsVpcConfiguration?: AwsVpcConfiguration
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -79,6 +83,7 @@ export class NetworkConfiguration {
 
 export class RunCommandTarget {
     Key!: Value<string>
+    Values!: List<Value<string>>
 
     constructor(properties: RunCommandTarget) {
         Object.assign(this, properties)
@@ -86,6 +91,7 @@ export class RunCommandTarget {
 }
 
 export class InputTransformer {
+    InputPathsMap?: {[key: string]: Value<string>}
     InputTemplate!: Value<string>
 
     constructor(properties: InputTransformer) {
@@ -112,10 +118,20 @@ export class RetryPolicy {
 
 export class Target {
     Arn!: Value<string>
+    BatchParameters?: BatchParameters
+    DeadLetterConfig?: DeadLetterConfig
+    EcsParameters?: EcsParameters
+    HttpParameters?: HttpParameters
     Id!: Value<string>
     Input?: Value<string>
     InputPath?: Value<string>
+    InputTransformer?: InputTransformer
+    KinesisParameters?: KinesisParameters
+    RedshiftDataParameters?: RedshiftDataParameters
+    RetryPolicy?: RetryPolicy
     RoleArn?: Value<string>
+    RunCommandParameters?: RunCommandParameters
+    SqsParameters?: SqsParameters
 
     constructor(properties: Target) {
         Object.assign(this, properties)
@@ -146,6 +162,7 @@ export class RedshiftDataParameters {
 export class EcsParameters {
     Group?: Value<string>
     LaunchType?: Value<string>
+    NetworkConfiguration?: NetworkConfiguration
     PlatformVersion?: Value<string>
     TaskCount?: Value<number>
     TaskDefinitionArn!: Value<string>
@@ -157,6 +174,8 @@ export class EcsParameters {
 
 export class AwsVpcConfiguration {
     AssignPublicIp?: Value<string>
+    SecurityGroups?: List<Value<string>>
+    Subnets!: List<Value<string>>
 
     constructor(properties: AwsVpcConfiguration) {
         Object.assign(this, properties)
@@ -171,6 +190,7 @@ export interface RuleProperties {
     RoleArn?: Value<string>
     ScheduleExpression?: Value<string>
     State?: Value<string>
+    Targets?: List<Target>
 }
 
 export default class Rule extends ResourceBase<RuleProperties> {

@@ -26,6 +26,7 @@ export interface NatGatewayProperties {
     AllocationId?: Value<string>
     ConnectivityType?: Value<string>
     SubnetId: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class NatGateway extends ResourceBase<NatGatewayProperties> {

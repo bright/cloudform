@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class FilterExpression {
     Expression!: Value<string>
+    ValuesMap!: List<FilterValue>
 
     constructor(properties: FilterExpression) {
         Object.assign(this, properties)
@@ -29,6 +30,7 @@ export class FilterExpression {
 
 export class PathParameter {
     PathParameterName!: Value<string>
+    DatasetParameter!: DatasetParameter
 
     constructor(properties: PathParameter) {
         Object.assign(this, properties)
@@ -38,6 +40,7 @@ export class PathParameter {
 export class DatabaseInputDefinition {
     GlueConnectionName?: Value<string>
     DatabaseTableName?: Value<string>
+    TempDirectory?: S3Location
 
     constructor(properties: DatabaseInputDefinition) {
         Object.assign(this, properties)
@@ -45,7 +48,9 @@ export class DatabaseInputDefinition {
 }
 
 export class PathOptions {
-
+    FilesLimit?: FilesLimit
+    LastModifiedDateCondition?: FilterExpression
+    Parameters?: List<PathParameter>
 
     constructor(properties: PathOptions) {
         Object.assign(this, properties)
@@ -55,7 +60,9 @@ export class PathOptions {
 export class DatasetParameter {
     Name!: Value<string>
     Type!: Value<string>
+    DatetimeOptions?: DatetimeOptions
     CreateColumn?: Value<boolean>
+    Filter?: FilterExpression
 
     constructor(properties: DatasetParameter) {
         Object.assign(this, properties)
@@ -82,7 +89,9 @@ export class CsvOptions {
 }
 
 export class FormatOptions {
-
+    Json?: JsonOptions
+    Excel?: ExcelOptions
+    Csv?: CsvOptions
 
     constructor(properties: FormatOptions) {
         Object.assign(this, properties)
@@ -90,6 +99,8 @@ export class FormatOptions {
 }
 
 export class ExcelOptions {
+    SheetNames?: List<Value<string>>
+    SheetIndexes?: List<Value<number>>
     HeaderRow?: Value<boolean>
 
     constructor(properties: ExcelOptions) {
@@ -106,7 +117,9 @@ export class JsonOptions {
 }
 
 export class Input {
-
+    S3InputDefinition?: S3Location
+    DataCatalogInputDefinition?: DataCatalogInputDefinition
+    DatabaseInputDefinition?: DatabaseInputDefinition
 
     constructor(properties: Input) {
         Object.assign(this, properties)
@@ -126,6 +139,7 @@ export class DataCatalogInputDefinition {
     CatalogId?: Value<string>
     DatabaseName?: Value<string>
     TableName?: Value<string>
+    TempDirectory?: S3Location
 
     constructor(properties: DataCatalogInputDefinition) {
         Object.assign(this, properties)
@@ -154,6 +168,10 @@ export class S3Location {
 export interface DatasetProperties {
     Name: Value<string>
     Format?: Value<string>
+    FormatOptions?: FormatOptions
+    Input: Input
+    PathOptions?: PathOptions
+    Tags?: List<ResourceTag>
 }
 
 export default class Dataset extends ResourceBase<DatasetProperties> {

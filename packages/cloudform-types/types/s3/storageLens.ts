@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class PrefixLevelStorageMetrics {
     IsEnabled?: Value<boolean>
+    SelectionCriteria?: SelectionCriteria
 
     constructor(properties: PrefixLevelStorageMetrics) {
         Object.assign(this, properties)
@@ -46,7 +47,8 @@ export class ActivityMetrics {
 }
 
 export class BucketLevel {
-
+    ActivityMetrics?: ActivityMetrics
+    PrefixLevel?: PrefixLevel
 
     constructor(properties: BucketLevel) {
         Object.assign(this, properties)
@@ -54,7 +56,8 @@ export class BucketLevel {
 }
 
 export class BucketsAndRegions {
-
+    Buckets?: List<Value<string>>
+    Regions?: List<Value<string>>
 
     constructor(properties: BucketsAndRegions) {
         Object.assign(this, properties)
@@ -62,7 +65,7 @@ export class BucketsAndRegions {
 }
 
 export class DataExport {
-
+    S3BucketDestination!: S3BucketDestination
 
     constructor(properties: DataExport) {
         Object.assign(this, properties)
@@ -78,7 +81,7 @@ export class AwsOrg {
 }
 
 export class PrefixLevel {
-
+    StorageMetrics!: PrefixLevelStorageMetrics
 
     constructor(properties: PrefixLevel) {
         Object.assign(this, properties)
@@ -91,6 +94,7 @@ export class S3BucketDestination {
     AccountId!: Value<string>
     Arn!: Value<string>
     Prefix?: Value<string>
+    Encryption?: Encryption
 
     constructor(properties: S3BucketDestination) {
         Object.assign(this, properties)
@@ -99,6 +103,11 @@ export class S3BucketDestination {
 
 export class StorageLensConfiguration {
     Id!: Value<string>
+    Include?: BucketsAndRegions
+    Exclude?: BucketsAndRegions
+    AwsOrg?: AwsOrg
+    AccountLevel!: AccountLevel
+    DataExport?: DataExport
     IsEnabled!: Value<boolean>
     StorageLensArn?: Value<string>
 
@@ -108,7 +117,8 @@ export class StorageLensConfiguration {
 }
 
 export class AccountLevel {
-
+    ActivityMetrics?: ActivityMetrics
+    BucketLevel!: BucketLevel
 
     constructor(properties: AccountLevel) {
         Object.assign(this, properties)
@@ -116,7 +126,8 @@ export class AccountLevel {
 }
 
 export interface StorageLensProperties {
-
+    StorageLensConfiguration: StorageLensConfiguration
+    Tags?: List<ResourceTag>
 }
 
 export default class StorageLens extends ResourceBase<StorageLensProperties> {

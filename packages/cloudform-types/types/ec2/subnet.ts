@@ -29,6 +29,7 @@ export interface SubnetProperties {
     Ipv6CidrBlock?: Value<string>
     MapPublicIpOnLaunch?: Value<boolean>
     OutpostArn?: Value<string>
+    Tags?: List<ResourceTag>
     VpcId: Value<string>
 }
 

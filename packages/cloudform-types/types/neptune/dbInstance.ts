@@ -25,6 +25,7 @@ export interface DBInstanceProperties {
     DBSubnetGroupName?: Value<string>
     DBInstanceIdentifier?: Value<string>
     DBSnapshotIdentifier?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {

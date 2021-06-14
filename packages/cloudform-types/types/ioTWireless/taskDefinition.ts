@@ -9,6 +9,7 @@ import {Value, List} from '../dataTypes'
 export class UpdateWirelessGatewayTaskCreate {
     UpdateDataSource?: Value<string>
     UpdateDataRole?: Value<string>
+    LoRaWAN?: LoRaWANUpdateGatewayTaskCreate
 
     constructor(properties: UpdateWirelessGatewayTaskCreate) {
         Object.assign(this, properties)
@@ -16,7 +17,8 @@ export class UpdateWirelessGatewayTaskCreate {
 }
 
 export class LoRaWANUpdateGatewayTaskEntry {
-
+    CurrentVersion?: LoRaWANGatewayVersion
+    UpdateVersion?: LoRaWANGatewayVersion
 
     constructor(properties: LoRaWANUpdateGatewayTaskEntry) {
         Object.assign(this, properties)
@@ -36,6 +38,8 @@ export class LoRaWANGatewayVersion {
 export class LoRaWANUpdateGatewayTaskCreate {
     UpdateSignature?: Value<string>
     SigKeyCrc?: Value<number>
+    CurrentVersion?: LoRaWANGatewayVersion
+    UpdateVersion?: LoRaWANGatewayVersion
 
     constructor(properties: LoRaWANUpdateGatewayTaskCreate) {
         Object.assign(this, properties)
@@ -45,7 +49,10 @@ export class LoRaWANUpdateGatewayTaskCreate {
 export interface TaskDefinitionProperties {
     Name?: Value<string>
     AutoCreateTasks: Value<boolean>
+    Update?: UpdateWirelessGatewayTaskCreate
+    LoRaWANUpdateGatewayTaskEntry?: LoRaWANUpdateGatewayTaskEntry
     TaskDefinitionType?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {

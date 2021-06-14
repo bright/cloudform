@@ -39,6 +39,7 @@ export class CapacityAutoScalingSettings {
     MinCapacity!: Value<number>
     MaxCapacity!: Value<number>
     SeedCapacity?: Value<number>
+    TargetTrackingScalingPolicyConfiguration!: TargetTrackingScalingPolicyConfiguration
 
     constructor(properties: CapacityAutoScalingSettings) {
         Object.assign(this, properties)
@@ -47,6 +48,7 @@ export class CapacityAutoScalingSettings {
 
 export class ReadProvisionedThroughputSettings {
     ReadCapacityUnits?: Value<number>
+    ReadCapacityAutoScalingSettings?: CapacityAutoScalingSettings
 
     constructor(properties: ReadProvisionedThroughputSettings) {
         Object.assign(this, properties)
@@ -55,6 +57,8 @@ export class ReadProvisionedThroughputSettings {
 
 export class LocalSecondaryIndex {
     IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
 
     constructor(properties: LocalSecondaryIndex) {
         Object.assign(this, properties)
@@ -74,6 +78,12 @@ export class TargetTrackingScalingPolicyConfiguration {
 
 export class ReplicaSpecification {
     Region!: Value<string>
+    GlobalSecondaryIndexes?: List<ReplicaGlobalSecondaryIndexSpecification>
+    ContributorInsightsSpecification?: ContributorInsightsSpecification
+    PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification
+    SSESpecification?: ReplicaSSESpecification
+    Tags?: List<ResourceTag>
+    ReadProvisionedThroughputSettings?: ReadProvisionedThroughputSettings
 
     constructor(properties: ReplicaSpecification) {
         Object.assign(this, properties)
@@ -82,6 +92,9 @@ export class ReplicaSpecification {
 
 export class GlobalSecondaryIndex {
     IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
+    WriteProvisionedThroughputSettings?: WriteProvisionedThroughputSettings
 
     constructor(properties: GlobalSecondaryIndex) {
         Object.assign(this, properties)
@@ -106,6 +119,7 @@ export class StreamSpecification {
 }
 
 export class Projection {
+    NonKeyAttributes?: List<Value<string>>
     ProjectionType?: Value<string>
 
     constructor(properties: Projection) {
@@ -115,6 +129,8 @@ export class Projection {
 
 export class ReplicaGlobalSecondaryIndexSpecification {
     IndexName!: Value<string>
+    ContributorInsightsSpecification?: ContributorInsightsSpecification
+    ReadProvisionedThroughputSettings?: ReadProvisionedThroughputSettings
 
     constructor(properties: ReplicaGlobalSecondaryIndexSpecification) {
         Object.assign(this, properties)
@@ -140,7 +156,7 @@ export class SSESpecification {
 }
 
 export class WriteProvisionedThroughputSettings {
-
+    WriteCapacityAutoScalingSettings?: CapacityAutoScalingSettings
 
     constructor(properties: WriteProvisionedThroughputSettings) {
         Object.assign(this, properties)
@@ -165,8 +181,17 @@ export class ReplicaSSESpecification {
 }
 
 export interface GlobalTableProperties {
+    AttributeDefinitions: List<AttributeDefinition>
     BillingMode?: Value<string>
+    GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>
+    KeySchema: List<KeySchema>
+    LocalSecondaryIndexes?: List<LocalSecondaryIndex>
+    WriteProvisionedThroughputSettings?: WriteProvisionedThroughputSettings
+    Replicas: List<ReplicaSpecification>
+    SSESpecification?: SSESpecification
+    StreamSpecification?: StreamSpecification
     TableName?: Value<string>
+    TimeToLiveSpecification?: TimeToLiveSpecification
 }
 
 export default class GlobalTable extends ResourceBase<GlobalTableProperties> {

@@ -21,7 +21,7 @@ export class DimensionConfiguration {
 }
 
 export class CloudWatchDestination {
-
+    DimensionConfigurations?: List<DimensionConfiguration>
 
     constructor(properties: CloudWatchDestination) {
         Object.assign(this, properties)
@@ -54,7 +54,12 @@ export class KinesisFirehoseDestination {
 }
 
 export class EventDestination {
+    SnsDestination?: SnsDestination
+    CloudWatchDestination?: CloudWatchDestination
     Enabled?: Value<boolean>
+    MatchingEventTypes!: List<Value<string>>
+    PinpointDestination?: PinpointDestination
+    KinesisFirehoseDestination?: KinesisFirehoseDestination
 
     constructor(properties: EventDestination) {
         Object.assign(this, properties)
@@ -64,6 +69,7 @@ export class EventDestination {
 export interface ConfigurationSetEventDestinationProperties {
     EventDestinationName: Value<string>
     ConfigurationSetName: Value<string>
+    EventDestination?: EventDestination
 }
 
 export default class ConfigurationSetEventDestination extends ResourceBase<ConfigurationSetEventDestinationProperties> {

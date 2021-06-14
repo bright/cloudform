@@ -23,7 +23,10 @@ export class IpAddressRequest {
 }
 
 export interface ResolverEndpointProperties {
+    IpAddresses: List<IpAddressRequest>
     Direction: Value<string>
+    SecurityGroupIds: List<Value<string>>
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

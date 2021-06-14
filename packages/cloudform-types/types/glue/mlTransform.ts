@@ -40,7 +40,7 @@ export class MLUserDataEncryption {
 }
 
 export class InputRecordTables {
-
+    GlueTables?: List<GlueTables>
 
     constructor(properties: InputRecordTables) {
         Object.assign(this, properties)
@@ -59,6 +59,7 @@ export class GlueTables {
 }
 
 export class TransformEncryption {
+    MLUserDataEncryption?: MLUserDataEncryption
     TaskRunSecurityConfigurationName?: Value<string>
 
     constructor(properties: TransformEncryption) {
@@ -68,6 +69,7 @@ export class TransformEncryption {
 
 export class TransformParameters {
     TransformType!: Value<string>
+    FindMatchesParameters?: FindMatchesParameters
 
     constructor(properties: TransformParameters) {
         Object.assign(this, properties)
@@ -77,11 +79,14 @@ export class TransformParameters {
 export interface MLTransformProperties {
     MaxRetries?: Value<number>
     Description?: Value<string>
+    TransformEncryption?: TransformEncryption
     Timeout?: Value<number>
     Name?: Value<string>
     Role: Value<string>
     WorkerType?: Value<string>
     GlueVersion?: Value<string>
+    TransformParameters: TransformParameters
+    InputRecordTables: InputRecordTables
     NumberOfWorkers?: Value<number>
     Tags?: {[key: string]: any}
     MaxCapacity?: Value<number>

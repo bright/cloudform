@@ -29,6 +29,8 @@ export class GitConfig {
 
 export interface CodeRepositoryProperties {
     CodeRepositoryName?: Value<string>
+    GitConfig: GitConfig
+    Tags?: List<ResourceTag>
 }
 
 export default class CodeRepository extends ResourceBase<CodeRepositoryProperties> {

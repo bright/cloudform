@@ -21,6 +21,7 @@ export class ConnectionPoolConfigurationInfoFormat {
     MaxConnectionsPercent?: Value<number>
     MaxIdleConnectionsPercent?: Value<number>
     ConnectionBorrowTimeout?: Value<number>
+    SessionPinningFilters?: List<Value<string>>
     InitQuery?: Value<string>
 
     constructor(properties: ConnectionPoolConfigurationInfoFormat) {
@@ -31,6 +32,9 @@ export class ConnectionPoolConfigurationInfoFormat {
 export interface DBProxyTargetGroupProperties {
     DBProxyName: Value<string>
     TargetGroupName: Value<string>
+    ConnectionPoolConfigurationInfo?: ConnectionPoolConfigurationInfoFormat
+    DBInstanceIdentifiers?: List<Value<string>>
+    DBClusterIdentifiers?: List<Value<string>>
 }
 
 export default class DBProxyTargetGroup extends ResourceBase<DBProxyTargetGroupProperties> {

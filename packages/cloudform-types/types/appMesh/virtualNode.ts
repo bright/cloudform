@@ -26,7 +26,10 @@ export class TlsValidationContextSdsTrust {
 }
 
 export class ClientPolicyTls {
+    Validation!: TlsValidationContext
     Enforce?: Value<boolean>
+    Ports?: List<Value<number>>
+    Certificate?: ClientTlsCertificate
 
     constructor(properties: ClientPolicyTls) {
         Object.assign(this, properties)
@@ -51,7 +54,8 @@ export class AwsCloudMapInstanceAttribute {
 }
 
 export class ListenerTlsValidationContext {
-
+    SubjectAlternativeNames?: SubjectAlternativeNames
+    Trust!: ListenerTlsValidationContextTrust
 
     constructor(properties: ListenerTlsValidationContext) {
         Object.assign(this, properties)
@@ -59,7 +63,7 @@ export class ListenerTlsValidationContext {
 }
 
 export class TcpTimeout {
-
+    Idle?: Duration
 
     constructor(properties: TcpTimeout) {
         Object.assign(this, properties)
@@ -67,7 +71,7 @@ export class TcpTimeout {
 }
 
 export class Backend {
-
+    VirtualService?: VirtualServiceBackend
 
     constructor(properties: Backend) {
         Object.assign(this, properties)
@@ -75,7 +79,10 @@ export class Backend {
 }
 
 export class ListenerTimeout {
-
+    TCP?: TcpTimeout
+    HTTP2?: HttpTimeout
+    HTTP?: HttpTimeout
+    GRPC?: GrpcTimeout
 
     constructor(properties: ListenerTimeout) {
         Object.assign(this, properties)
@@ -92,7 +99,9 @@ export class PortMapping {
 }
 
 export class ListenerTls {
+    Validation?: ListenerTlsValidationContext
     Mode!: Value<string>
+    Certificate!: ListenerTlsCertificate
 
     constructor(properties: ListenerTls) {
         Object.assign(this, properties)
@@ -108,7 +117,7 @@ export class ListenerTlsSdsCertificate {
 }
 
 export class BackendDefaults {
-
+    ClientPolicy?: ClientPolicy
 
     constructor(properties: BackendDefaults) {
         Object.assign(this, properties)
@@ -124,7 +133,8 @@ export class VirtualNodeTcpConnectionPool {
 }
 
 export class HttpTimeout {
-
+    PerRequest?: Duration
+    Idle?: Duration
 
     constructor(properties: HttpTimeout) {
         Object.assign(this, properties)
@@ -148,6 +158,7 @@ export class HealthCheck {
 export class AwsCloudMapServiceDiscovery {
     NamespaceName!: Value<string>
     ServiceName!: Value<string>
+    Attributes?: List<AwsCloudMapInstanceAttribute>
 
     constructor(properties: AwsCloudMapServiceDiscovery) {
         Object.assign(this, properties)
@@ -173,7 +184,8 @@ export class ListenerTlsFileCertificate {
 }
 
 export class TlsValidationContext {
-
+    SubjectAlternativeNames?: SubjectAlternativeNames
+    Trust!: TlsValidationContextTrust
 
     constructor(properties: TlsValidationContext) {
         Object.assign(this, properties)
@@ -181,7 +193,11 @@ export class TlsValidationContext {
 }
 
 export class VirtualNodeSpec {
-
+    Logging?: Logging
+    Backends?: List<Backend>
+    Listeners?: List<Listener>
+    BackendDefaults?: BackendDefaults
+    ServiceDiscovery?: ServiceDiscovery
 
     constructor(properties: VirtualNodeSpec) {
         Object.assign(this, properties)
@@ -189,7 +205,12 @@ export class VirtualNodeSpec {
 }
 
 export class Listener {
-
+    ConnectionPool?: VirtualNodeConnectionPool
+    Timeout?: ListenerTimeout
+    HealthCheck?: HealthCheck
+    TLS?: ListenerTls
+    PortMapping!: PortMapping
+    OutlierDetection?: OutlierDetection
 
     constructor(properties: Listener) {
         Object.assign(this, properties)
@@ -213,7 +234,8 @@ export class TlsValidationContextFileTrust {
 }
 
 export class GrpcTimeout {
-
+    PerRequest?: Duration
+    Idle?: Duration
 
     constructor(properties: GrpcTimeout) {
         Object.assign(this, properties)
@@ -221,7 +243,10 @@ export class GrpcTimeout {
 }
 
 export class VirtualNodeConnectionPool {
-
+    TCP?: VirtualNodeTcpConnectionPool
+    HTTP2?: VirtualNodeHttp2ConnectionPool
+    HTTP?: VirtualNodeHttpConnectionPool
+    GRPC?: VirtualNodeGrpcConnectionPool
 
     constructor(properties: VirtualNodeConnectionPool) {
         Object.assign(this, properties)
@@ -229,7 +254,7 @@ export class VirtualNodeConnectionPool {
 }
 
 export class Logging {
-
+    AccessLog?: AccessLog
 
     constructor(properties: Logging) {
         Object.assign(this, properties)
@@ -237,7 +262,8 @@ export class Logging {
 }
 
 export class ServiceDiscovery {
-
+    DNS?: DnsServiceDiscovery
+    AWSCloudMap?: AwsCloudMapServiceDiscovery
 
     constructor(properties: ServiceDiscovery) {
         Object.assign(this, properties)
@@ -254,7 +280,9 @@ export class Duration {
 }
 
 export class TlsValidationContextTrust {
-
+    SDS?: TlsValidationContextSdsTrust
+    ACM?: TlsValidationContextAcmTrust
+    File?: TlsValidationContextFileTrust
 
     constructor(properties: TlsValidationContextTrust) {
         Object.assign(this, properties)
@@ -278,7 +306,9 @@ export class VirtualNodeHttp2ConnectionPool {
 }
 
 export class ListenerTlsCertificate {
-
+    SDS?: ListenerTlsSdsCertificate
+    ACM?: ListenerTlsAcmCertificate
+    File?: ListenerTlsFileCertificate
 
     constructor(properties: ListenerTlsCertificate) {
         Object.assign(this, properties)
@@ -286,6 +316,7 @@ export class ListenerTlsCertificate {
 }
 
 export class VirtualServiceBackend {
+    ClientPolicy?: ClientPolicy
     VirtualServiceName!: Value<string>
 
     constructor(properties: VirtualServiceBackend) {
@@ -295,7 +326,9 @@ export class VirtualServiceBackend {
 
 export class OutlierDetection {
     MaxEjectionPercent!: Value<number>
+    BaseEjectionDuration!: Duration
     MaxServerErrors!: Value<number>
+    Interval!: Duration
 
     constructor(properties: OutlierDetection) {
         Object.assign(this, properties)
@@ -303,7 +336,7 @@ export class OutlierDetection {
 }
 
 export class TlsValidationContextAcmTrust {
-
+    CertificateAuthorityArns!: List<Value<string>>
 
     constructor(properties: TlsValidationContextAcmTrust) {
         Object.assign(this, properties)
@@ -311,7 +344,7 @@ export class TlsValidationContextAcmTrust {
 }
 
 export class ClientPolicy {
-
+    TLS?: ClientPolicyTls
 
     constructor(properties: ClientPolicy) {
         Object.assign(this, properties)
@@ -319,7 +352,8 @@ export class ClientPolicy {
 }
 
 export class ClientTlsCertificate {
-
+    SDS?: ListenerTlsSdsCertificate
+    File?: ListenerTlsFileCertificate
 
     constructor(properties: ClientTlsCertificate) {
         Object.assign(this, properties)
@@ -327,7 +361,8 @@ export class ClientTlsCertificate {
 }
 
 export class ListenerTlsValidationContextTrust {
-
+    SDS?: TlsValidationContextSdsTrust
+    File?: TlsValidationContextFileTrust
 
     constructor(properties: ListenerTlsValidationContextTrust) {
         Object.assign(this, properties)
@@ -335,7 +370,7 @@ export class ListenerTlsValidationContextTrust {
 }
 
 export class AccessLog {
-
+    File?: FileAccessLog
 
     constructor(properties: AccessLog) {
         Object.assign(this, properties)
@@ -343,7 +378,7 @@ export class AccessLog {
 }
 
 export class SubjectAlternativeNameMatchers {
-
+    Exact?: List<Value<string>>
 
     constructor(properties: SubjectAlternativeNameMatchers) {
         Object.assign(this, properties)
@@ -351,7 +386,7 @@ export class SubjectAlternativeNameMatchers {
 }
 
 export class SubjectAlternativeNames {
-
+    Match!: SubjectAlternativeNameMatchers
 
     constructor(properties: SubjectAlternativeNames) {
         Object.assign(this, properties)
@@ -369,7 +404,9 @@ export class VirtualNodeGrpcConnectionPool {
 export interface VirtualNodeProperties {
     MeshName: Value<string>
     MeshOwner?: Value<string>
+    Spec: VirtualNodeSpec
     VirtualNodeName?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class VirtualNode extends ResourceBase<VirtualNodeProperties> {

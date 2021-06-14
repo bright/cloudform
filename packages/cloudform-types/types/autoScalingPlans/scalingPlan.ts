@@ -26,7 +26,10 @@ export class ScalingInstruction {
     ScalableDimension!: Value<string>
     ScalingPolicyUpdateBehavior?: Value<string>
     MinCapacity!: Value<number>
+    TargetTrackingConfigurations!: List<TargetTrackingConfiguration>
     PredictiveScalingMaxCapacityBuffer?: Value<number>
+    CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification
+    PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification
     ResourceId!: Value<string>
     ScheduledActionBufferTime?: Value<number>
     MaxCapacity!: Value<number>
@@ -58,6 +61,7 @@ export class PredefinedScalingMetricSpecification {
 export class CustomizedScalingMetricSpecification {
     MetricName!: Value<string>
     Statistic!: Value<string>
+    Dimensions?: List<MetricDimension>
     Unit?: Value<string>
     Namespace!: Value<string>
 
@@ -67,6 +71,7 @@ export class CustomizedScalingMetricSpecification {
 }
 
 export class TagFilter {
+    Values?: List<Value<string>>
     Key!: Value<string>
 
     constructor(properties: TagFilter) {
@@ -77,6 +82,7 @@ export class TagFilter {
 export class CustomizedLoadMetricSpecification {
     MetricName!: Value<string>
     Statistic!: Value<string>
+    Dimensions?: List<MetricDimension>
     Unit?: Value<string>
     Namespace!: Value<string>
 
@@ -87,6 +93,7 @@ export class CustomizedLoadMetricSpecification {
 
 export class ApplicationSource {
     CloudFormationStackARN?: Value<string>
+    TagFilters?: List<TagFilter>
 
     constructor(properties: ApplicationSource) {
         Object.assign(this, properties)
@@ -96,9 +103,11 @@ export class ApplicationSource {
 export class TargetTrackingConfiguration {
     ScaleOutCooldown?: Value<number>
     TargetValue!: Value<number>
+    PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification
     DisableScaleIn?: Value<boolean>
     ScaleInCooldown?: Value<number>
     EstimatedInstanceWarmup?: Value<number>
+    CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification
 
     constructor(properties: TargetTrackingConfiguration) {
         Object.assign(this, properties)
@@ -115,7 +124,8 @@ export class PredefinedLoadMetricSpecification {
 }
 
 export interface ScalingPlanProperties {
-
+    ApplicationSource: ApplicationSource
+    ScalingInstructions: List<ScalingInstruction>
 }
 
 export default class ScalingPlan extends ResourceBase<ScalingPlanProperties> {

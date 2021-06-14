@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class CustomAction {
     ActionName!: Value<string>
+    ActionDefinition!: ActionDefinition
 
     constructor(properties: CustomAction) {
         Object.assign(this, properties)
@@ -46,7 +47,7 @@ export class StatefulRuleGroupReference {
 }
 
 export class PublishMetricAction {
-
+    Dimensions!: List<Dimension>
 
     constructor(properties: PublishMetricAction) {
         Object.assign(this, properties)
@@ -54,7 +55,7 @@ export class PublishMetricAction {
 }
 
 export class ActionDefinition {
-
+    PublishMetricAction?: PublishMetricAction
 
     constructor(properties: ActionDefinition) {
         Object.assign(this, properties)
@@ -70,7 +71,11 @@ export class Dimension {
 }
 
 export class FirewallPolicyInner {
-
+    StatelessDefaultActions!: List<Value<string>>
+    StatelessFragmentDefaultActions!: List<Value<string>>
+    StatelessCustomActions?: List<CustomAction>
+    StatelessRuleGroupReferences?: List<StatelessRuleGroupReference>
+    StatefulRuleGroupReferences?: List<StatefulRuleGroupReference>
 
     constructor(properties: FirewallPolicyInner) {
         Object.assign(this, properties)
@@ -79,7 +84,9 @@ export class FirewallPolicyInner {
 
 export interface FirewallPolicyProperties {
     FirewallPolicyName: Value<string>
+    FirewallPolicy: FirewallPolicy
     Description?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class FirewallPolicy extends ResourceBase<FirewallPolicyProperties> {

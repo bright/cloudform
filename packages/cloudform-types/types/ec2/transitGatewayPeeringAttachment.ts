@@ -26,6 +26,7 @@ export interface TransitGatewayPeeringAttachmentProperties {
     PeerTransitGatewayId: Value<string>
     PeerAccountId: Value<string>
     PeerRegion: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class TransitGatewayPeeringAttachment extends ResourceBase<TransitGatewayPeeringAttachmentProperties> {

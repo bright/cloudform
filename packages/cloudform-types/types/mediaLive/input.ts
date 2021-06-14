@@ -41,7 +41,8 @@ export class InputDeviceSettings {
 }
 
 export class InputVpcRequest {
-
+    SecurityGroupIds?: List<Value<string>>
+    SubnetIds?: List<Value<string>>
 
     constructor(properties: InputVpcRequest) {
         Object.assign(this, properties)
@@ -66,6 +67,12 @@ export class MediaConnectFlowRequest {
 
 export interface InputProperties {
     Type?: Value<string>
+    Destinations?: List<InputDestinationRequest>
+    Vpc?: InputVpcRequest
+    MediaConnectFlows?: List<MediaConnectFlowRequest>
+    InputSecurityGroups?: List<Value<string>>
+    InputDevices?: List<InputDeviceSettings>
+    Sources?: List<InputSourceRequest>
     RoleArn?: Value<string>
     Tags?: {[key: string]: any}
     Name?: Value<string>

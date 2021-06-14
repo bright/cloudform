@@ -28,7 +28,7 @@ export class CodeSigningPolicies {
 }
 
 export class AllowedPublishers {
-
+    SigningProfileVersionArns!: List<Value<string>>
 
     constructor(properties: AllowedPublishers) {
         Object.assign(this, properties)
@@ -37,6 +37,8 @@ export class AllowedPublishers {
 
 export interface CodeSigningConfigProperties {
     Description?: Value<string>
+    AllowedPublishers: AllowedPublishers
+    CodeSigningPolicies?: CodeSigningPolicies
 }
 
 export default class CodeSigningConfig extends ResourceBase<CodeSigningConfigProperties> {

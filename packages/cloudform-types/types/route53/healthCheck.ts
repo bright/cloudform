@@ -31,6 +31,7 @@ export class HealthCheckTag {
 
 export interface HealthCheckProperties {
     HealthCheckConfig: {[key: string]: any}
+    HealthCheckTags?: List<HealthCheckTag>
 }
 
 export default class HealthCheck extends ResourceBase<HealthCheckProperties> {

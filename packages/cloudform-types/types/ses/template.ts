@@ -19,7 +19,7 @@ export class TemplateInner {
 }
 
 export interface TemplateProperties {
-
+    Template?: Template
 }
 
 export default class Template extends ResourceBase<TemplateProperties> {

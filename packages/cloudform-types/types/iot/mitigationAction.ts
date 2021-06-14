@@ -20,6 +20,7 @@ import {Value, List} from '../dataTypes'
 
 export class AddThingsToThingGroupParams {
     OverrideDynamicGroups?: Value<boolean>
+    ThingGroupNames!: List<Value<string>>
 
     constructor(properties: AddThingsToThingGroupParams) {
         Object.assign(this, properties)
@@ -60,7 +61,12 @@ export class EnableIoTLoggingParams {
 }
 
 export class ActionParams {
-
+    AddThingsToThingGroupParams?: AddThingsToThingGroupParams
+    EnableIoTLoggingParams?: EnableIoTLoggingParams
+    PublishFindingToSnsParams?: PublishFindingToSnsParams
+    ReplaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams
+    UpdateCACertificateParams?: UpdateCACertificateParams
+    UpdateDeviceCertificateParams?: UpdateDeviceCertificateParams
 
     constructor(properties: ActionParams) {
         Object.assign(this, properties)
@@ -78,6 +84,8 @@ export class PublishFindingToSnsParams {
 export interface MitigationActionProperties {
     ActionName?: Value<string>
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
+    ActionParams: ActionParams
 }
 
 export default class MitigationAction extends ResourceBase<MitigationActionProperties> {

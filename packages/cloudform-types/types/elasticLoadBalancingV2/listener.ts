@@ -21,7 +21,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ForwardConfig {
-
+    TargetGroupStickinessConfig?: TargetGroupStickinessConfig
+    TargetGroups?: List<TargetGroupTuple>
 
     constructor(properties: ForwardConfig) {
         Object.assign(this, properties)
@@ -39,6 +40,7 @@ export class AuthenticateOidcConfig {
     ClientId!: Value<string>
     AuthorizationEndpoint!: Value<string>
     SessionCookieName?: Value<string>
+    AuthenticationRequestExtraParams?: {[key: string]: Value<string>}
 
     constructor(properties: AuthenticateOidcConfig) {
         Object.assign(this, properties)
@@ -70,6 +72,7 @@ export class AuthenticateCognitoConfig {
     Scope?: Value<string>
     SessionCookieName?: Value<string>
     UserPoolArn!: Value<string>
+    AuthenticationRequestExtraParams?: {[key: string]: Value<string>}
 
     constructor(properties: AuthenticateCognitoConfig) {
         Object.assign(this, properties)
@@ -79,7 +82,12 @@ export class AuthenticateCognitoConfig {
 export class Action {
     Order?: Value<number>
     TargetGroupArn?: Value<string>
+    FixedResponseConfig?: FixedResponseConfig
+    AuthenticateCognitoConfig?: AuthenticateCognitoConfig
     Type!: Value<string>
+    RedirectConfig?: RedirectConfig
+    ForwardConfig?: ForwardConfig
+    AuthenticateOidcConfig?: AuthenticateOidcConfig
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -121,8 +129,11 @@ export class TargetGroupTuple {
 export interface ListenerProperties {
     SslPolicy?: Value<string>
     LoadBalancerArn: Value<string>
+    DefaultActions: List<Action>
     Port?: Value<number>
+    Certificates?: List<Certificate>
     Protocol?: Value<string>
+    AlpnPolicy?: List<Value<string>>
 }
 
 export default class Listener extends ResourceBase<ListenerProperties> {

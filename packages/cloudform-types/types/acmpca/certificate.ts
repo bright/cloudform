@@ -21,7 +21,10 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Extensions {
-
+    CertificatePolicies?: List<PolicyInformation>
+    ExtendedKeyUsage?: List<ExtendedKeyUsage>
+    KeyUsage?: KeyUsage
+    SubjectAlternativeNames?: List<GeneralName>
 
     constructor(properties: Extensions) {
         Object.assign(this, properties)
@@ -51,6 +54,7 @@ export class Subject {
 
 export class PolicyInformation {
     CertPolicyId!: Value<string>
+    PolicyQualifiers?: List<PolicyQualifierInfo>
 
     constructor(properties: PolicyInformation) {
         Object.assign(this, properties)
@@ -59,6 +63,7 @@ export class PolicyInformation {
 
 export class PolicyQualifierInfo {
     PolicyQualifierId!: Value<string>
+    Qualifier!: Qualifier
 
     constructor(properties: PolicyQualifierInfo) {
         Object.assign(this, properties)
@@ -74,8 +79,11 @@ export class Qualifier {
 }
 
 export class GeneralName {
+    OtherName?: OtherName
     Rfc822Name?: Value<string>
     DnsName?: Value<string>
+    DirectoryName?: Subject
+    EdiPartyName?: EdiPartyName
     UniformResourceIdentifier?: Value<string>
     IpAddress?: Value<string>
     RegisteredId?: Value<string>
@@ -86,7 +94,8 @@ export class GeneralName {
 }
 
 export class ApiPassthrough {
-
+    Extensions?: Extensions
+    Subject?: Subject
 
     constructor(properties: ApiPassthrough) {
         Object.assign(this, properties)
@@ -146,10 +155,13 @@ export class KeyUsage {
 }
 
 export interface CertificateProperties {
+    ApiPassthrough?: ApiPassthrough
     CertificateAuthorityArn: Value<string>
     CertificateSigningRequest: Value<string>
     SigningAlgorithm: Value<string>
     TemplateArn?: Value<string>
+    Validity: Validity
+    ValidityNotBefore?: Validity
 }
 
 export default class Certificate extends ResourceBase<CertificateProperties> {

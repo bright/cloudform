@@ -21,9 +21,11 @@ import {Value, List} from '../dataTypes'
 
 export class Environment {
     Type!: Value<string>
+    EnvironmentVariables?: List<EnvironmentVariable>
     PrivilegedMode?: Value<boolean>
     ImagePullCredentialsType?: Value<string>
     Image!: Value<string>
+    RegistryCredential?: RegistryCredential
     ComputeType!: Value<string>
     Certificate?: Value<string>
 
@@ -41,7 +43,9 @@ export class GitSubmodulesConfig {
 }
 
 export class VpcConfig {
+    Subnets?: List<Value<string>>
     VpcId?: Value<string>
+    SecurityGroupIds?: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -84,6 +88,7 @@ export class CloudWatchLogsConfig {
 }
 
 export class ProjectCache {
+    Modes?: List<Value<string>>
     Type!: Value<string>
     Location?: Value<string>
 
@@ -96,6 +101,7 @@ export class ProjectBuildBatchConfig {
     CombineArtifacts?: Value<boolean>
     ServiceRole?: Value<string>
     TimeoutInMins?: Value<number>
+    Restrictions?: BatchRestrictions
 
     constructor(properties: ProjectBuildBatchConfig) {
         Object.assign(this, properties)
@@ -105,6 +111,7 @@ export class ProjectBuildBatchConfig {
 export type FilterGroup = List<WebhookFilter>
 
 export class BatchRestrictions {
+    ComputeTypesAllowed?: List<Value<string>>
     MaximumBuildsAllowed?: Value<number>
 
     constructor(properties: BatchRestrictions) {
@@ -113,6 +120,7 @@ export class BatchRestrictions {
 }
 
 export class ProjectTriggers {
+    FilterGroups?: List<FilterGroup>
     BuildType?: Value<string>
     Webhook?: Value<boolean>
 
@@ -124,9 +132,12 @@ export class ProjectTriggers {
 export class Source {
     Type!: Value<string>
     ReportBuildStatus?: Value<boolean>
+    Auth?: SourceAuth
     SourceIdentifier?: Value<string>
     BuildSpec?: Value<string>
     GitCloneDepth?: Value<number>
+    BuildStatusConfig?: BuildStatusConfig
+    GitSubmodulesConfig?: GitSubmodulesConfig
     InsecureSsl?: Value<boolean>
     Location?: Value<string>
 
@@ -145,7 +156,8 @@ export class ProjectSourceVersion {
 }
 
 export class LogsConfig {
-
+    CloudWatchLogs?: CloudWatchLogsConfig
+    S3Logs?: S3LogsConfig
 
     constructor(properties: LogsConfig) {
         Object.assign(this, properties)
@@ -214,14 +226,27 @@ export class EnvironmentVariable {
 
 export interface ProjectProperties {
     Description?: Value<string>
+    VpcConfig?: VpcConfig
+    SecondarySources?: List<Source>
     EncryptionKey?: Value<string>
     SourceVersion?: Value<string>
+    Triggers?: ProjectTriggers
+    SecondaryArtifacts?: List<Artifacts>
+    Source: Source
     Name?: Value<string>
+    Artifacts: Artifacts
     BadgeEnabled?: Value<boolean>
+    LogsConfig?: LogsConfig
     ServiceRole: Value<string>
     QueuedTimeoutInMinutes?: Value<number>
+    FileSystemLocations?: List<ProjectFileSystemLocation>
+    Environment: Environment
+    SecondarySourceVersions?: List<ProjectSourceVersion>
     ConcurrentBuildLimit?: Value<number>
+    BuildBatchConfig?: ProjectBuildBatchConfig
+    Tags?: List<ResourceTag>
     TimeoutInMinutes?: Value<number>
+    Cache?: ProjectCache
 }
 
 export default class Project extends ResourceBase<ProjectProperties> {

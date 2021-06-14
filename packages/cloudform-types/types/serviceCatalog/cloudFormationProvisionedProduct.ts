@@ -30,11 +30,13 @@ export class ProvisioningParameter {
 }
 
 export class ProvisioningPreferences {
+    StackSetAccounts?: List<Value<string>>
     StackSetFailureToleranceCount?: Value<number>
     StackSetFailureTolerancePercentage?: Value<number>
     StackSetMaxConcurrencyCount?: Value<number>
     StackSetMaxConcurrencyPercentage?: Value<number>
     StackSetOperationType?: Value<string>
+    StackSetRegions?: List<Value<string>>
 
     constructor(properties: ProvisioningPreferences) {
         Object.assign(this, properties)
@@ -43,6 +45,7 @@ export class ProvisioningPreferences {
 
 export interface CloudFormationProvisionedProductProperties {
     AcceptLanguage?: Value<string>
+    NotificationArns?: List<Value<string>>
     PathId?: Value<string>
     PathName?: Value<string>
     ProductId?: Value<string>
@@ -50,6 +53,9 @@ export interface CloudFormationProvisionedProductProperties {
     ProvisionedProductName?: Value<string>
     ProvisioningArtifactId?: Value<string>
     ProvisioningArtifactName?: Value<string>
+    ProvisioningParameters?: List<ProvisioningParameter>
+    ProvisioningPreferences?: ProvisioningPreferences
+    Tags?: List<ResourceTag>
 }
 
 export default class CloudFormationProvisionedProduct extends ResourceBase<CloudFormationProvisionedProductProperties> {

@@ -21,7 +21,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class VpcConfig {
-
+    SecurityGroupIds?: List<Value<string>>
+    SubnetIds?: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -66,7 +67,7 @@ export class TracingConfig {
 }
 
 export class Environment {
-
+    Variables?: {[key: string]: Value<string>}
 
     constructor(properties: Environment) {
         Object.assign(this, properties)
@@ -74,6 +75,8 @@ export class Environment {
 }
 
 export class ImageConfig {
+    EntryPoint?: List<Value<string>>
+    Command?: List<Value<string>>
     WorkingDirectory?: Value<string>
 
     constructor(properties: ImageConfig) {
@@ -82,16 +85,25 @@ export class ImageConfig {
 }
 
 export interface FunctionProperties {
+    Code: Code
+    DeadLetterConfig?: DeadLetterConfig
     Description?: Value<string>
+    Environment?: Environment
+    FileSystemConfigs?: List<FileSystemConfig>
     FunctionName?: Value<string>
     Handler?: Value<string>
     KmsKeyArn?: Value<string>
+    Layers?: List<Value<string>>
     MemorySize?: Value<number>
     ReservedConcurrentExecutions?: Value<number>
     Role: Value<string>
     Runtime?: Value<string>
+    Tags?: List<ResourceTag>
     Timeout?: Value<number>
+    TracingConfig?: TracingConfig
+    VpcConfig?: VpcConfig
     CodeSigningConfigArn?: Value<string>
+    ImageConfig?: ImageConfig
     PackageType?: Value<string>
 }
 

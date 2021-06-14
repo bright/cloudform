@@ -42,6 +42,7 @@ export class SelfManagedActiveDirectoryConfiguration {
     UserName?: Value<string>
     DomainName?: Value<string>
     OrganizationalUnitDistinguishedName?: Value<string>
+    DnsIps?: List<Value<string>>
     Password?: Value<string>
 
     constructor(properties: SelfManagedActiveDirectoryConfiguration) {
@@ -50,9 +51,11 @@ export class SelfManagedActiveDirectoryConfiguration {
 }
 
 export class WindowsConfiguration {
+    SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration
     WeeklyMaintenanceStartTime?: Value<string>
     ActiveDirectoryId?: Value<string>
     DeploymentType?: Value<string>
+    Aliases?: List<Value<string>>
     ThroughputCapacity!: Value<number>
     CopyTagsToBackups?: Value<boolean>
     DailyAutomaticBackupStartTime?: Value<string>
@@ -69,7 +72,12 @@ export interface FileSystemProperties {
     KmsKeyId?: Value<string>
     StorageCapacity?: Value<number>
     FileSystemType: Value<string>
+    LustreConfiguration?: LustreConfiguration
     BackupId?: Value<string>
+    SubnetIds: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
+    Tags?: List<ResourceTag>
+    WindowsConfiguration?: WindowsConfiguration
 }
 
 export default class FileSystem extends ResourceBase<FileSystemProperties> {

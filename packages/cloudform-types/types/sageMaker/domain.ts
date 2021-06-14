@@ -20,7 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class JupyterServerAppSettings {
-
+    DefaultResourceSpec?: ResourceSpec
 
     constructor(properties: JupyterServerAppSettings) {
         Object.assign(this, properties)
@@ -29,6 +29,10 @@ export class JupyterServerAppSettings {
 
 export class UserSettings {
     ExecutionRole?: Value<string>
+    JupyterServerAppSettings?: JupyterServerAppSettings
+    KernelGatewayAppSettings?: KernelGatewayAppSettings
+    SecurityGroups?: List<Value<string>>
+    SharingSettings?: SharingSettings
 
     constructor(properties: UserSettings) {
         Object.assign(this, properties)
@@ -56,7 +60,8 @@ export class ResourceSpec {
 }
 
 export class KernelGatewayAppSettings {
-
+    CustomImages?: List<CustomImage>
+    DefaultResourceSpec?: ResourceSpec
 
     constructor(properties: KernelGatewayAppSettings) {
         Object.assign(this, properties)
@@ -76,8 +81,11 @@ export class SharingSettings {
 export interface DomainProperties {
     AppNetworkAccessType?: Value<string>
     AuthMode: Value<string>
+    DefaultUserSettings: UserSettings
     DomainName: Value<string>
     KmsKeyId?: Value<string>
+    SubnetIds: List<Value<string>>
+    Tags?: List<ResourceTag>
     VpcId: Value<string>
 }
 

@@ -23,12 +23,17 @@ import {Value, List} from '../dataTypes'
 export class ComputeResources {
     SpotIamFleetRole?: Value<string>
     MaxvCpus!: Value<number>
+    Ec2Configuration?: List<Ec2ConfigurationObject>
     BidPercentage?: Value<number>
+    SecurityGroupIds?: List<Value<string>>
+    Subnets!: List<Value<string>>
     Type!: Value<string>
     AllocationStrategy?: Value<string>
     MinvCpus?: Value<number>
+    LaunchTemplate?: LaunchTemplateSpecification
     ImageId?: Value<string>
     InstanceRole?: Value<string>
+    InstanceTypes?: List<Value<string>>
     Ec2KeyPair?: Value<string>
     PlacementGroup?: Value<string>
     Tags?: {[key: string]: any}
@@ -62,6 +67,7 @@ export interface ComputeEnvironmentProperties {
     Type: Value<string>
     ServiceRole?: Value<string>
     ComputeEnvironmentName?: Value<string>
+    ComputeResources?: ComputeResources
     State?: Value<string>
     Tags?: {[key: string]: any}
 }

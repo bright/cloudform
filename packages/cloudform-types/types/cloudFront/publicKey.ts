@@ -32,7 +32,7 @@ export class PublicKeyConfig {
 }
 
 export interface PublicKeyProperties {
-
+    PublicKeyConfig: PublicKeyConfig
 }
 
 export default class PublicKey extends ResourceBase<PublicKeyProperties> {

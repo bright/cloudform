@@ -35,6 +35,9 @@ export class TableInput {
     TableType?: Value<string>
     Parameters?: {[key: string]: any}
     ViewExpandedText?: Value<string>
+    StorageDescriptor?: StorageDescriptor
+    TargetTable?: TableIdentifier
+    PartitionKeys?: List<Column>
     Retention?: Value<number>
     Name?: Value<string>
 
@@ -73,6 +76,8 @@ export class Order {
 }
 
 export class SkewedInfo {
+    SkewedColumnNames?: List<Value<string>>
+    SkewedColumnValues?: List<Value<string>>
     SkewedColumnValueLocationMaps?: {[key: string]: any}
 
     constructor(properties: SkewedInfo) {
@@ -83,9 +88,15 @@ export class SkewedInfo {
 export class StorageDescriptor {
     StoredAsSubDirectories?: Value<boolean>
     Parameters?: {[key: string]: any}
+    BucketColumns?: List<Value<string>>
     NumberOfBuckets?: Value<number>
     OutputFormat?: Value<string>
+    Columns?: List<Column>
+    SerdeInfo?: SerdeInfo
+    SortColumns?: List<Order>
     Compressed?: Value<boolean>
+    SchemaReference?: SchemaReference
+    SkewedInfo?: SkewedInfo
     InputFormat?: Value<string>
     Location?: Value<string>
 
@@ -95,6 +106,7 @@ export class StorageDescriptor {
 }
 
 export class SchemaReference {
+    SchemaId?: SchemaId
     SchemaVersionNumber?: Value<number>
     SchameVersionId?: Value<string>
 
@@ -114,6 +126,7 @@ export class TableIdentifier {
 }
 
 export interface TableProperties {
+    TableInput: TableInput
     DatabaseName: Value<string>
     CatalogId: Value<string>
 }

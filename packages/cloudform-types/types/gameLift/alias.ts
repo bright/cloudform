@@ -33,6 +33,7 @@ export class RoutingStrategy {
 export interface AliasProperties {
     Description?: Value<string>
     Name: Value<string>
+    RoutingStrategy: RoutingStrategy
 }
 
 export default class Alias extends ResourceBase<AliasProperties> {

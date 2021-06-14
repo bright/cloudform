@@ -21,6 +21,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class MethodResponse {
+    ResponseModels?: {[key: string]: Value<string>}
+    ResponseParameters?: {[key: string]: Value<boolean>}
     StatusCode!: Value<string>
 
     constructor(properties: MethodResponse) {
@@ -29,13 +31,17 @@ export class MethodResponse {
 }
 
 export class Integration {
+    CacheKeyParameters?: List<Value<string>>
     CacheNamespace?: Value<string>
     ConnectionId?: Value<string>
     ConnectionType?: Value<string>
     ContentHandling?: Value<string>
     Credentials?: Value<string>
     IntegrationHttpMethod?: Value<string>
+    IntegrationResponses?: List<IntegrationResponse>
     PassthroughBehavior?: Value<string>
+    RequestParameters?: {[key: string]: Value<string>}
+    RequestTemplates?: {[key: string]: Value<string>}
     TimeoutInMillis?: Value<number>
     Type?: Value<string>
     Uri?: Value<string>
@@ -47,6 +53,8 @@ export class Integration {
 
 export class IntegrationResponse {
     ContentHandling?: Value<string>
+    ResponseParameters?: {[key: string]: Value<string>}
+    ResponseTemplates?: {[key: string]: Value<string>}
     SelectionPattern?: Value<string>
     StatusCode!: Value<string>
 
@@ -57,10 +65,15 @@ export class IntegrationResponse {
 
 export interface MethodProperties {
     ApiKeyRequired?: Value<boolean>
+    AuthorizationScopes?: List<Value<string>>
     AuthorizationType?: Value<string>
     AuthorizerId?: Value<string>
     HttpMethod: Value<string>
+    Integration?: Integration
+    MethodResponses?: List<MethodResponse>
     OperationName?: Value<string>
+    RequestModels?: {[key: string]: Value<string>}
+    RequestParameters?: {[key: string]: Value<boolean>}
     RequestValidatorId?: Value<string>
     ResourceId: Value<string>
     RestApiId: Value<string>

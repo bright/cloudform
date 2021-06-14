@@ -31,6 +31,7 @@ export class DocumentRequires {
 
 export class AttachmentsSource {
     Key?: Value<string>
+    Values?: List<Value<string>>
     Name?: Value<string>
 
     constructor(properties: AttachmentsSource) {
@@ -40,11 +41,14 @@ export class AttachmentsSource {
 
 export interface DocumentProperties {
     Content: {[key: string]: any}
+    Attachments?: List<AttachmentsSource>
     Name?: Value<string>
     VersionName?: Value<string>
     DocumentType?: Value<string>
     DocumentFormat?: Value<string>
     TargetType?: Value<string>
+    Tags?: List<ResourceTag>
+    Requires?: List<DocumentRequires>
 }
 
 export default class Document extends ResourceBase<DocumentProperties> {

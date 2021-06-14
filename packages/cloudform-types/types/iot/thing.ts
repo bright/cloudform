@@ -21,7 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class AttributePayload {
-
+    Attributes?: {[key: string]: Value<string>}
 
     constructor(properties: AttributePayload) {
         Object.assign(this, properties)
@@ -29,6 +29,7 @@ export class AttributePayload {
 }
 
 export interface ThingProperties {
+    AttributePayload?: AttributePayload
     ThingName?: Value<string>
 }
 

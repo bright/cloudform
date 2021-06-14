@@ -28,6 +28,9 @@ export class LogConfiguration {
 export interface ChannelProperties {
     Id: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
+    EgressAccessLogs?: LogConfiguration
+    IngressAccessLogs?: LogConfiguration
 }
 
 export default class Channel extends ResourceBase<ChannelProperties> {

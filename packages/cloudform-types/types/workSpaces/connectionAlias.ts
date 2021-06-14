@@ -28,6 +28,7 @@ export class ConnectionAliasAssociation {
 
 export interface ConnectionAliasProperties {
     ConnectionString: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class ConnectionAlias extends ResourceBase<ConnectionAliasProperties> {

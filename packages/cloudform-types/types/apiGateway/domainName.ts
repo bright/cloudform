@@ -30,7 +30,7 @@ export class MutualTlsAuthentication {
 }
 
 export class EndpointConfiguration {
-
+    Types?: List<Value<string>>
 
     constructor(properties: EndpointConfiguration) {
         Object.assign(this, properties)
@@ -39,9 +39,12 @@ export class EndpointConfiguration {
 
 export interface DomainNameProperties {
     DomainName?: Value<string>
+    EndpointConfiguration?: EndpointConfiguration
+    MutualTlsAuthentication?: MutualTlsAuthentication
     CertificateArn?: Value<string>
     RegionalCertificateArn?: Value<string>
     SecurityPolicy?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DomainName extends ResourceBase<DomainNameProperties> {

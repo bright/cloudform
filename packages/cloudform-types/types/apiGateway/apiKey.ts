@@ -35,6 +35,8 @@ export interface ApiKeyProperties {
     Enabled?: Value<boolean>
     GenerateDistinctId?: Value<boolean>
     Name?: Value<string>
+    StageKeys?: List<StageKey>
+    Tags?: List<ResourceTag>
     Value?: Value<string>
 }
 

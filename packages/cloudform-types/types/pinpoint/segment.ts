@@ -12,6 +12,7 @@ import {Value, List} from '../dataTypes'
 
 export class AttributeDimension {
     AttributeType?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: AttributeDimension) {
         Object.assign(this, properties)
@@ -30,6 +31,8 @@ export class Recency {
 export class Groups {
     Type?: Value<string>
     SourceType?: Value<string>
+    Dimensions?: List<SegmentDimensions>
+    SourceSegments?: List<SourceSegments>
 
     constructor(properties: Groups) {
         Object.assign(this, properties)
@@ -37,7 +40,8 @@ export class Groups {
 }
 
 export class Location {
-
+    GPSPoint?: GPSPoint
+    Country?: SetDimension
 
     constructor(properties: Location) {
         Object.assign(this, properties)
@@ -45,6 +49,7 @@ export class Location {
 }
 
 export class SegmentGroups {
+    Groups?: List<Groups>
     Include?: Value<string>
 
     constructor(properties: SegmentGroups) {
@@ -62,9 +67,12 @@ export class Coordinates {
 }
 
 export class SegmentDimensions {
+    Demographic?: Demographic
     Metrics?: {[key: string]: any}
     Attributes?: {[key: string]: any}
+    Behavior?: Behavior
     UserAttributes?: {[key: string]: any}
+    Location?: Location
 
     constructor(properties: SegmentDimensions) {
         Object.assign(this, properties)
@@ -82,6 +90,7 @@ export class SourceSegments {
 
 export class GPSPoint {
     RangeInKilometers!: Value<number>
+    Coordinates!: Coordinates
 
     constructor(properties: GPSPoint) {
         Object.assign(this, properties)
@@ -89,7 +98,12 @@ export class GPSPoint {
 }
 
 export class Demographic {
-
+    AppVersion?: SetDimension
+    DeviceType?: SetDimension
+    Platform?: SetDimension
+    Channel?: SetDimension
+    Model?: SetDimension
+    Make?: SetDimension
 
     constructor(properties: Demographic) {
         Object.assign(this, properties)
@@ -98,6 +112,7 @@ export class Demographic {
 
 export class SetDimension {
     DimensionType?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: SetDimension) {
         Object.assign(this, properties)
@@ -105,7 +120,7 @@ export class SetDimension {
 }
 
 export class Behavior {
-
+    Recency?: Recency
 
     constructor(properties: Behavior) {
         Object.assign(this, properties)
@@ -113,6 +128,8 @@ export class Behavior {
 }
 
 export interface SegmentProperties {
+    SegmentGroups?: SegmentGroups
+    Dimensions?: SegmentDimensions
     ApplicationId: Value<string>
     Tags?: {[key: string]: any}
     Name: Value<string>

@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class TagFilter {
     Key?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: TagFilter) {
         Object.assign(this, properties)
@@ -29,7 +30,9 @@ export class TagFilter {
 }
 
 export class Query {
+    ResourceTypeFilters?: List<Value<string>>
     StackIdentifier?: Value<string>
+    TagFilters?: List<TagFilter>
 
     constructor(properties: Query) {
         Object.assign(this, properties)
@@ -38,6 +41,7 @@ export class Query {
 
 export class ConfigurationParameter {
     Name?: Value<string>
+    Values?: List<Value<string>>
 
     constructor(properties: ConfigurationParameter) {
         Object.assign(this, properties)
@@ -46,6 +50,7 @@ export class ConfigurationParameter {
 
 export class ConfigurationItem {
     Type?: Value<string>
+    Parameters?: List<ConfigurationParameter>
 
     constructor(properties: ConfigurationItem) {
         Object.assign(this, properties)
@@ -54,6 +59,7 @@ export class ConfigurationItem {
 
 export class ResourceQuery {
     Type?: Value<string>
+    Query?: Query
 
     constructor(properties: ResourceQuery) {
         Object.assign(this, properties)
@@ -63,6 +69,10 @@ export class ResourceQuery {
 export interface GroupProperties {
     Name: Value<string>
     Description?: Value<string>
+    ResourceQuery?: ResourceQuery
+    Tags?: List<ResourceTag>
+    Configuration?: List<ConfigurationItem>
+    Resources?: List<Value<string>>
 }
 
 export default class Group extends ResourceBase<GroupProperties> {

@@ -47,9 +47,13 @@ export class EncryptionConfiguration {
 }
 
 export interface RepositoryProperties {
+    LifecyclePolicy?: LifecyclePolicy
     RepositoryName?: Value<string>
     RepositoryPolicyText?: {[key: string]: any}
+    Tags?: List<ResourceTag>
     ImageTagMutability?: Value<string>
+    ImageScanningConfiguration?: ImageScanningConfiguration
+    EncryptionConfiguration?: EncryptionConfiguration
 }
 
 export default class Repository extends ResourceBase<RepositoryProperties> {

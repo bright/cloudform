@@ -57,9 +57,13 @@ export class TaskSchedule {
 }
 
 export interface TaskProperties {
+    Excludes?: List<FilterRule>
+    Tags?: List<ResourceTag>
     CloudWatchLogGroupArn?: Value<string>
     DestinationLocationArn: Value<string>
     Name?: Value<string>
+    Options?: Options
+    Schedule?: TaskSchedule
     SourceLocationArn: Value<string>
 }
 

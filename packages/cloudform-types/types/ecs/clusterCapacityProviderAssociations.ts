@@ -31,7 +31,9 @@ export class CapacityProviderStrategy {
 }
 
 export interface ClusterCapacityProviderAssociationsProperties {
+    CapacityProviders: List<Value<string>>
     Cluster: Value<string>
+    DefaultCapacityProviderStrategy: List<CapacityProviderStrategy>
 }
 
 export default class ClusterCapacityProviderAssociations extends ResourceBase<ClusterCapacityProviderAssociationsProperties> {

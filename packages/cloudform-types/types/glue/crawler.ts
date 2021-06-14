@@ -20,6 +20,7 @@ import {Value, List} from '../dataTypes'
 
 export class CatalogTarget {
     DatabaseName?: Value<string>
+    Tables?: List<Value<string>>
 
     constructor(properties: CatalogTarget) {
         Object.assign(this, properties)
@@ -44,7 +45,10 @@ export class SchemaChangePolicy {
 }
 
 export class Targets {
-
+    S3Targets?: List<S3Target>
+    CatalogTargets?: List<CatalogTarget>
+    JdbcTargets?: List<JdbcTarget>
+    DynamoDBTargets?: List<DynamoDBTarget>
 
     constructor(properties: Targets) {
         Object.assign(this, properties)
@@ -54,6 +58,7 @@ export class Targets {
 export class JdbcTarget {
     ConnectionName?: Value<string>
     Path?: Value<string>
+    Exclusions?: List<Value<string>>
 
     constructor(properties: JdbcTarget) {
         Object.assign(this, properties)
@@ -71,6 +76,7 @@ export class DynamoDBTarget {
 export class S3Target {
     ConnectionName?: Value<string>
     Path?: Value<string>
+    Exclusions?: List<Value<string>>
 
     constructor(properties: S3Target) {
         Object.assign(this, properties)
@@ -79,9 +85,13 @@ export class S3Target {
 
 export interface CrawlerProperties {
     Role: Value<string>
+    Classifiers?: List<Value<string>>
     Description?: Value<string>
+    SchemaChangePolicy?: SchemaChangePolicy
     Configuration?: Value<string>
+    Schedule?: Schedule
     DatabaseName?: Value<string>
+    Targets: Targets
     CrawlerSecurityConfiguration?: Value<string>
     TablePrefix?: Value<string>
     Tags?: {[key: string]: any}

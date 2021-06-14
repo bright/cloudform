@@ -30,6 +30,7 @@ export class GroupVersion {
 }
 
 export interface GroupProperties {
+    InitialVersion?: GroupVersion
     RoleArn?: Value<string>
     Tags?: {[key: string]: any}
     Name: Value<string>

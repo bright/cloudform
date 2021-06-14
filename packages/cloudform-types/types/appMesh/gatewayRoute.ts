@@ -19,7 +19,9 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class GatewayRouteSpec {
-
+    HttpRoute?: HttpGatewayRoute
+    Http2Route?: HttpGatewayRoute
+    GrpcRoute?: GrpcGatewayRoute
 
     constructor(properties: GatewayRouteSpec) {
         Object.assign(this, properties)
@@ -27,7 +29,7 @@ export class GatewayRouteSpec {
 }
 
 export class GrpcGatewayRouteAction {
-
+    Target!: GatewayRouteTarget
 
     constructor(properties: GrpcGatewayRouteAction) {
         Object.assign(this, properties)
@@ -35,7 +37,7 @@ export class GrpcGatewayRouteAction {
 }
 
 export class GatewayRouteTarget {
-
+    VirtualService!: GatewayRouteVirtualService
 
     constructor(properties: GatewayRouteTarget) {
         Object.assign(this, properties)
@@ -51,7 +53,8 @@ export class GrpcGatewayRouteMatch {
 }
 
 export class GrpcGatewayRoute {
-
+    Action!: GrpcGatewayRouteAction
+    Match!: GrpcGatewayRouteMatch
 
     constructor(properties: GrpcGatewayRoute) {
         Object.assign(this, properties)
@@ -59,7 +62,7 @@ export class GrpcGatewayRoute {
 }
 
 export class HttpGatewayRouteAction {
-
+    Target!: GatewayRouteTarget
 
     constructor(properties: HttpGatewayRouteAction) {
         Object.assign(this, properties)
@@ -83,7 +86,8 @@ export class HttpGatewayRouteMatch {
 }
 
 export class HttpGatewayRoute {
-
+    Action!: HttpGatewayRouteAction
+    Match!: HttpGatewayRouteMatch
 
     constructor(properties: HttpGatewayRoute) {
         Object.assign(this, properties)
@@ -95,6 +99,8 @@ export interface GatewayRouteProperties {
     VirtualGatewayName: Value<string>
     MeshOwner?: Value<string>
     GatewayRouteName?: Value<string>
+    Spec: GatewayRouteSpec
+    Tags?: List<ResourceTag>
 }
 
 export default class GatewayRoute extends ResourceBase<GatewayRouteProperties> {

@@ -39,8 +39,10 @@ export class VpcInterfaceAttachment {
 
 export interface FlowOutputProperties {
     FlowArn: Value<string>
+    CidrAllowList?: List<Value<string>>
     Description?: Value<string>
     Destination?: Value<string>
+    Encryption?: Encryption
     MaxLatency?: Value<number>
     Name?: Value<string>
     Port?: Value<number>
@@ -48,6 +50,7 @@ export interface FlowOutputProperties {
     RemoteId?: Value<string>
     SmoothingLatency?: Value<number>
     StreamId?: Value<string>
+    VpcInterfaceAttachment?: VpcInterfaceAttachment
 }
 
 export default class FlowOutput extends ResourceBase<FlowOutputProperties> {

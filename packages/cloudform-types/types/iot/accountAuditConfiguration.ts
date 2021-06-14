@@ -27,7 +27,7 @@ export class AuditCheckConfiguration {
 }
 
 export class AuditNotificationTargetConfigurations {
-
+    Sns?: AuditNotificationTarget
 
     constructor(properties: AuditNotificationTargetConfigurations) {
         Object.assign(this, properties)
@@ -45,7 +45,20 @@ export class AuditNotificationTarget {
 }
 
 export class AuditCheckConfigurations {
-
+    AuthenticatedCognitoRoleOverlyPermissiveCheck?: AuditCheckConfiguration
+    CaCertificateExpiringCheck?: AuditCheckConfiguration
+    CaCertificateKeyQualityCheck?: AuditCheckConfiguration
+    ConflictingClientIdsCheck?: AuditCheckConfiguration
+    DeviceCertificateExpiringCheck?: AuditCheckConfiguration
+    DeviceCertificateKeyQualityCheck?: AuditCheckConfiguration
+    DeviceCertificateSharedCheck?: AuditCheckConfiguration
+    IotPolicyOverlyPermissiveCheck?: AuditCheckConfiguration
+    IotRoleAliasAllowsAccessToUnusedServicesCheck?: AuditCheckConfiguration
+    IotRoleAliasOverlyPermissiveCheck?: AuditCheckConfiguration
+    LoggingDisabledCheck?: AuditCheckConfiguration
+    RevokedCaCertificateStillActiveCheck?: AuditCheckConfiguration
+    RevokedDeviceCertificateStillActiveCheck?: AuditCheckConfiguration
+    UnauthenticatedCognitoRoleOverlyPermissiveCheck?: AuditCheckConfiguration
 
     constructor(properties: AuditCheckConfigurations) {
         Object.assign(this, properties)
@@ -54,6 +67,8 @@ export class AuditCheckConfigurations {
 
 export interface AccountAuditConfigurationProperties {
     AccountId: Value<string>
+    AuditCheckConfigurations: AuditCheckConfigurations
+    AuditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations
     RoleArn: Value<string>
 }
 

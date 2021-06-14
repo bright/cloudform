@@ -23,6 +23,7 @@ import {Value, List} from '../dataTypes'
 export class ApiStage {
     ApiId?: Value<string>
     Stage?: Value<string>
+    Throttle?: {[key: string]: ThrottleSettings}
 
     constructor(properties: ApiStage) {
         Object.assign(this, properties)
@@ -49,7 +50,11 @@ export class QuotaSettings {
 }
 
 export interface UsagePlanProperties {
+    ApiStages?: List<ApiStage>
     Description?: Value<string>
+    Quota?: QuotaSettings
+    Tags?: List<ResourceTag>
+    Throttle?: ThrottleSettings
     UsagePlanName?: Value<string>
 }
 

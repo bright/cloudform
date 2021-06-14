@@ -71,7 +71,9 @@ export class SnsAction {
 
 export class HttpAction {
     ConfirmationUrl?: Value<string>
+    Headers?: List<HttpActionHeader>
     Url!: Value<string>
+    Auth?: HttpAuthorization
 
     constructor(properties: HttpAction) {
         Object.assign(this, properties)
@@ -80,6 +82,7 @@ export class HttpAction {
 
 export class PutAssetPropertyValueEntry {
     PropertyAlias?: Value<string>
+    PropertyValues!: List<AssetPropertyValue>
     AssetId?: Value<string>
     EntryId?: Value<string>
     PropertyId?: Value<string>
@@ -139,6 +142,7 @@ export class KafkaAction {
     Topic!: Value<string>
     Key?: Value<string>
     Partition?: Value<string>
+    ClientProperties!: {[key: string]: Value<string>}
 
     constructor(properties: KafkaAction) {
         Object.assign(this, properties)
@@ -149,6 +153,8 @@ export class TimestreamAction {
     RoleArn!: Value<string>
     DatabaseName!: Value<string>
     TableName!: Value<string>
+    Dimensions!: List<TimestreamDimension>
+    Timestamp?: TimestreamTimestamp
 
     constructor(properties: TimestreamAction) {
         Object.assign(this, properties)
@@ -157,6 +163,7 @@ export class TimestreamAction {
 
 export class IotSiteWiseAction {
     RoleArn!: Value<string>
+    PutAssetPropertyValueEntries!: List<PutAssetPropertyValueEntry>
 
     constructor(properties: IotSiteWiseAction) {
         Object.assign(this, properties)
@@ -164,6 +171,7 @@ export class IotSiteWiseAction {
 }
 
 export class DynamoDBv2Action {
+    PutItem?: PutItemInput
     RoleArn?: Value<string>
 
     constructor(properties: DynamoDBv2Action) {
@@ -216,6 +224,8 @@ export class AssetPropertyTimestamp {
 }
 
 export class AssetPropertyValue {
+    Value!: AssetPropertyVariant
+    Timestamp!: AssetPropertyTimestamp
     Quality?: Value<string>
 
     constructor(properties: AssetPropertyValue) {
@@ -246,7 +256,26 @@ export class KinesisAction {
 }
 
 export class Action {
-
+    S3?: S3Action
+    CloudwatchAlarm?: CloudwatchAlarmAction
+    CloudwatchLogs?: CloudwatchLogsAction
+    IotEvents?: IotEventsAction
+    Firehose?: FirehoseAction
+    Republish?: RepublishAction
+    StepFunctions?: StepFunctionsAction
+    DynamoDB?: DynamoDBAction
+    Http?: HttpAction
+    DynamoDBv2?: DynamoDBv2Action
+    CloudwatchMetric?: CloudwatchMetricAction
+    IotSiteWise?: IotSiteWiseAction
+    Elasticsearch?: ElasticsearchAction
+    Sqs?: SqsAction
+    Kinesis?: KinesisAction
+    IotAnalytics?: IotAnalyticsAction
+    Sns?: SnsAction
+    Lambda?: LambdaAction
+    Timestream?: TimestreamAction
+    Kafka?: KafkaAction
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -254,7 +283,7 @@ export class Action {
 }
 
 export class HttpAuthorization {
-
+    Sigv4?: SigV4Authorization
 
     constructor(properties: HttpAuthorization) {
         Object.assign(this, properties)
@@ -292,8 +321,10 @@ export class StepFunctionsAction {
 
 export class TopicRulePayload {
     RuleDisabled?: Value<boolean>
+    ErrorAction?: Action
     Description?: Value<string>
     AwsIotSqlVersion?: Value<string>
+    Actions!: List<Action>
     Sql!: Value<string>
 
     constructor(properties: TopicRulePayload) {
@@ -341,6 +372,8 @@ export class TimestreamTimestamp {
 
 export interface TopicRuleProperties {
     RuleName?: Value<string>
+    TopicRulePayload: TopicRulePayload
+    Tags?: List<ResourceTag>
 }
 
 export default class TopicRule extends ResourceBase<TopicRuleProperties> {

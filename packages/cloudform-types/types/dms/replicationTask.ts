@@ -33,6 +33,7 @@ export interface ReplicationTaskProperties {
     TableMappings: Value<string>
     ReplicationTaskIdentifier?: Value<string>
     SourceEndpointArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class ReplicationTask extends ResourceBase<ReplicationTaskProperties> {

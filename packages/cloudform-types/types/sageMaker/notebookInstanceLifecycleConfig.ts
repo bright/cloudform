@@ -18,7 +18,9 @@ export class NotebookInstanceLifecycleHook {
 }
 
 export interface NotebookInstanceLifecycleConfigProperties {
+    OnStart?: List<NotebookInstanceLifecycleHook>
     NotebookInstanceLifecycleConfigName?: Value<string>
+    OnCreate?: List<NotebookInstanceLifecycleHook>
 }
 
 export default class NotebookInstanceLifecycleConfig extends ResourceBase<NotebookInstanceLifecycleConfigProperties> {

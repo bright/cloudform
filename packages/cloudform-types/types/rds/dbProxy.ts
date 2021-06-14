@@ -39,12 +39,16 @@ export class AuthFormat {
 }
 
 export interface DBProxyProperties {
+    Auth: List<AuthFormat>
     DBProxyName: Value<string>
     DebugLogging?: Value<boolean>
     EngineFamily: Value<string>
     IdleClientTimeout?: Value<number>
     RequireTLS?: Value<boolean>
     RoleArn: Value<string>
+    Tags?: List<TagFormat>
+    VpcSecurityGroupIds?: List<Value<string>>
+    VpcSubnetIds: List<Value<string>>
 }
 
 export default class DBProxy extends ResourceBase<DBProxyProperties> {

@@ -38,8 +38,10 @@ export interface FlowEntitlementProperties {
     FlowArn: Value<string>
     DataTransferSubscriberFeePercent?: Value<number>
     Description: Value<string>
+    Encryption?: Encryption
     EntitlementStatus?: Value<string>
     Name: Value<string>
+    Subscribers: List<Value<string>>
 }
 
 export default class FlowEntitlement extends ResourceBase<FlowEntitlementProperties> {

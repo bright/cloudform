@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export interface PublicDnsNamespaceProperties {
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     Name: Value<string>
 }
 

@@ -50,7 +50,8 @@ export class CapacityReservationOptionsRequest {
 }
 
 export class FleetLaunchTemplateConfigRequest {
-
+    LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest
+    Overrides?: List<FleetLaunchTemplateOverridesRequest>
 
     constructor(properties: FleetLaunchTemplateConfigRequest) {
         Object.assign(this, properties)
@@ -59,6 +60,7 @@ export class FleetLaunchTemplateConfigRequest {
 
 export class TagSpecification {
     ResourceType?: Value<string>
+    Tags?: List<ResourceTag>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)
@@ -85,6 +87,7 @@ export class OnDemandOptionsRequest {
     SingleInstanceType?: Value<boolean>
     MinTargetCapacity?: Value<number>
     MaxTotalPrice?: Value<string>
+    CapacityReservationOptions?: CapacityReservationOptionsRequest
 
     constructor(properties: OnDemandOptionsRequest) {
         Object.assign(this, properties)
@@ -93,6 +96,7 @@ export class OnDemandOptionsRequest {
 
 export class FleetLaunchTemplateOverridesRequest {
     WeightedCapacity?: Value<number>
+    Placement?: Placement
     Priority?: Value<number>
     AvailabilityZone?: Value<string>
     SubnetId?: Value<string>
@@ -120,10 +124,15 @@ export class Placement {
 }
 
 export interface EC2FleetProperties {
+    TargetCapacitySpecification: TargetCapacitySpecificationRequest
+    OnDemandOptions?: OnDemandOptionsRequest
     Type?: Value<string>
     ExcessCapacityTerminationPolicy?: Value<string>
+    TagSpecifications?: List<TagSpecification>
+    SpotOptions?: SpotOptionsRequest
     ValidFrom?: Value<string>
     ReplaceUnhealthyInstances?: Value<boolean>
+    LaunchTemplateConfigs: List<FleetLaunchTemplateConfigRequest>
     TerminateInstancesWithExpiration?: Value<boolean>
     ValidUntil?: Value<string>
 }

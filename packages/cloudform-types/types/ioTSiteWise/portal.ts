@@ -18,6 +18,7 @@ export interface PortalProperties {
     PortalDescription?: Value<string>
     PortalName: Value<string>
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Portal extends ResourceBase<PortalProperties> {

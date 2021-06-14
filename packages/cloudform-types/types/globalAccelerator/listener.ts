@@ -31,6 +31,7 @@ export class PortRange {
 
 export interface ListenerProperties {
     AcceleratorArn: Value<string>
+    PortRanges: List<PortRange>
     Protocol: Value<string>
     ClientAffinity?: Value<string>
 }

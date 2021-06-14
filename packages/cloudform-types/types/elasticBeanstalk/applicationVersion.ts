@@ -32,6 +32,7 @@ export class SourceBundle {
 export interface ApplicationVersionProperties {
     ApplicationName: Value<string>
     Description?: Value<string>
+    SourceBundle: SourceBundle
 }
 
 export default class ApplicationVersion extends ResourceBase<ApplicationVersionProperties> {

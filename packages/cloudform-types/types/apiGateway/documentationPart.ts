@@ -33,6 +33,7 @@ export class Location {
 }
 
 export interface DocumentationPartProperties {
+    Location: Location
     Properties: Value<string>
     RestApiId: Value<string>
 }

@@ -56,7 +56,12 @@ export class Settings {
 
 export interface CustomActionTypeProperties {
     Category: Value<string>
+    ConfigurationProperties?: List<ConfigurationProperties>
+    InputArtifactDetails: ArtifactDetails
+    OutputArtifactDetails: ArtifactDetails
     Provider: Value<string>
+    Settings?: Settings
+    Tags?: List<ResourceTag>
     Version: Value<string>
 }
 

@@ -28,8 +28,10 @@ export class Tags {
 export interface ConfigurationProfileProperties {
     LocationUri: Value<string>
     Description?: Value<string>
+    Validators?: List<Validators>
     RetrievalRoleArn?: Value<string>
     ApplicationId: Value<string>
+    Tags?: List<Tags>
     Name: Value<string>
 }
 

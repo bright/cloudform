@@ -25,6 +25,7 @@ export class OrganizationManagedRuleMetadata {
     Description?: Value<string>
     ResourceIdScope?: Value<string>
     RuleIdentifier!: Value<string>
+    ResourceTypesScope?: List<Value<string>>
     MaximumExecutionFrequency?: Value<string>
     InputParameters?: Value<string>
 
@@ -39,6 +40,8 @@ export class OrganizationCustomRuleMetadata {
     Description?: Value<string>
     ResourceIdScope?: Value<string>
     LambdaFunctionArn!: Value<string>
+    OrganizationConfigRuleTriggerTypes!: List<Value<string>>
+    ResourceTypesScope?: List<Value<string>>
     MaximumExecutionFrequency?: Value<string>
     InputParameters?: Value<string>
 
@@ -48,7 +51,10 @@ export class OrganizationCustomRuleMetadata {
 }
 
 export interface OrganizationConfigRuleProperties {
+    OrganizationManagedRuleMetadata?: OrganizationManagedRuleMetadata
     OrganizationConfigRuleName: Value<string>
+    OrganizationCustomRuleMetadata?: OrganizationCustomRuleMetadata
+    ExcludedAccounts?: List<Value<string>>
 }
 
 export default class OrganizationConfigRule extends ResourceBase<OrganizationConfigRuleProperties> {

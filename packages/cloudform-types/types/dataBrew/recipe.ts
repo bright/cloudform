@@ -20,7 +20,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RecipeStep {
-
+    Action!: Action
+    ConditionExpressions?: List<ConditionExpression>
 
     constructor(properties: RecipeStep) {
         Object.assign(this, properties)
@@ -28,7 +29,8 @@ export class RecipeStep {
 }
 
 export class SecondaryInput {
-
+    S3InputDefinition?: S3Location
+    DataCatalogInputDefinition?: DataCatalogInputDefinition
 
     constructor(properties: SecondaryInput) {
         Object.assign(this, properties)
@@ -111,6 +113,7 @@ export class RecipeParameters {
     SampleSize?: Value<string>
     SampleType?: Value<string>
     SecondInput?: Value<string>
+    SecondaryInputs?: List<SecondaryInput>
     SourceColumn?: Value<string>
     SourceColumn1?: Value<string>
     SourceColumn2?: Value<string>
@@ -124,6 +127,8 @@ export class RecipeParameters {
     StepIndex?: Value<string>
     StopWordsMode?: Value<string>
     Strategy?: Value<string>
+    SheetNames?: List<Value<string>>
+    SheetIndexes?: List<Value<number>>
     TargetColumn?: Value<string>
     TargetColumnNames?: Value<string>
     TargetDateFormat?: Value<string>
@@ -171,6 +176,7 @@ export class DataCatalogInputDefinition {
     CatalogId?: Value<string>
     DatabaseName?: Value<string>
     TableName?: Value<string>
+    TempDirectory?: S3Location
 
     constructor(properties: DataCatalogInputDefinition) {
         Object.assign(this, properties)
@@ -180,6 +186,8 @@ export class DataCatalogInputDefinition {
 export interface RecipeProperties {
     Description?: Value<string>
     Name: Value<string>
+    Steps: List<RecipeStep>
+    Tags?: List<ResourceTag>
 }
 
 export default class Recipe extends ResourceBase<RecipeProperties> {

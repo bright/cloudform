@@ -41,6 +41,7 @@ export class ProcessorFeature {
 export interface DBInstanceProperties {
     AllocatedStorage?: Value<string>
     AllowMajorVersionUpgrade?: Value<boolean>
+    AssociatedRoles?: List<DBInstanceRole>
     AutoMinorVersionUpgrade?: Value<boolean>
     AvailabilityZone?: Value<string>
     BackupRetentionPeriod?: Value<number>
@@ -52,12 +53,14 @@ export interface DBInstanceProperties {
     DBInstanceIdentifier?: Value<string>
     DBName?: Value<string>
     DBParameterGroupName?: Value<string>
+    DBSecurityGroups?: List<Value<string>>
     DBSnapshotIdentifier?: Value<string>
     DBSubnetGroupName?: Value<string>
     DeleteAutomatedBackups?: Value<boolean>
     DeletionProtection?: Value<boolean>
     Domain?: Value<string>
     DomainIAMRoleName?: Value<string>
+    EnableCloudwatchLogsExports?: List<Value<string>>
     EnableIAMDatabaseAuthentication?: Value<boolean>
     EnablePerformanceInsights?: Value<boolean>
     Engine?: Value<string>
@@ -77,14 +80,17 @@ export interface DBInstanceProperties {
     Port?: Value<string>
     PreferredBackupWindow?: Value<string>
     PreferredMaintenanceWindow?: Value<string>
+    ProcessorFeatures?: List<ProcessorFeature>
     PromotionTier?: Value<number>
     PubliclyAccessible?: Value<boolean>
     SourceDBInstanceIdentifier?: Value<string>
     SourceRegion?: Value<string>
     StorageEncrypted?: Value<boolean>
     StorageType?: Value<string>
+    Tags?: List<ResourceTag>
     Timezone?: Value<string>
     UseDefaultProcessorFeatures?: Value<boolean>
+    VPCSecurityGroups?: List<Value<string>>
 }
 
 export default class DBInstance extends ResourceBase<DBInstanceProperties> {

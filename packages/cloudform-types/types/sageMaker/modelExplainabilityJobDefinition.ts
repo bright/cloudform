@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 export class ModelExplainabilityAppSpecification {
     ImageUri!: Value<string>
     ConfigUri!: Value<string>
+    Environment?: Environment
 
     constructor(properties: ModelExplainabilityAppSpecification) {
         Object.assign(this, properties)
@@ -29,7 +30,7 @@ export class ModelExplainabilityAppSpecification {
 }
 
 export class ModelExplainabilityJobInput {
-
+    EndpointInput!: EndpointInput
 
     constructor(properties: ModelExplainabilityJobInput) {
         Object.assign(this, properties)
@@ -76,6 +77,7 @@ export class S3Output {
 export class NetworkConfig {
     EnableInterContainerTrafficEncryption?: Value<boolean>
     EnableNetworkIsolation?: Value<boolean>
+    VpcConfig?: VpcConfig
 
     constructor(properties: NetworkConfig) {
         Object.assign(this, properties)
@@ -84,6 +86,7 @@ export class NetworkConfig {
 
 export class ModelExplainabilityBaselineConfig {
     BaseliningJobName?: Value<string>
+    ConstraintsResource?: ConstraintsResource
 
     constructor(properties: ModelExplainabilityBaselineConfig) {
         Object.assign(this, properties)
@@ -91,7 +94,7 @@ export class ModelExplainabilityBaselineConfig {
 }
 
 export class MonitoringOutput {
-
+    S3Output!: S3Output
 
     constructor(properties: MonitoringOutput) {
         Object.assign(this, properties)
@@ -99,7 +102,7 @@ export class MonitoringOutput {
 }
 
 export class MonitoringResources {
-
+    ClusterConfig!: ClusterConfig
 
     constructor(properties: MonitoringResources) {
         Object.assign(this, properties)
@@ -108,6 +111,7 @@ export class MonitoringResources {
 
 export class MonitoringOutputConfig {
     KmsKeyId?: Value<string>
+    MonitoringOutputs!: List<MonitoringOutput>
 
     constructor(properties: MonitoringOutputConfig) {
         Object.assign(this, properties)
@@ -115,7 +119,8 @@ export class MonitoringOutputConfig {
 }
 
 export class VpcConfig {
-
+    SecurityGroupIds!: List<Value<string>>
+    Subnets!: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -138,7 +143,15 @@ export class EndpointInput {
 
 export interface ModelExplainabilityJobDefinitionProperties {
     JobDefinitionName?: Value<string>
+    ModelExplainabilityBaselineConfig?: ModelExplainabilityBaselineConfig
+    ModelExplainabilityAppSpecification: ModelExplainabilityAppSpecification
+    ModelExplainabilityJobInput: ModelExplainabilityJobInput
+    ModelExplainabilityJobOutputConfig: MonitoringOutputConfig
+    JobResources: MonitoringResources
+    NetworkConfig?: NetworkConfig
     RoleArn: Value<string>
+    StoppingCondition?: StoppingCondition
+    Tags?: List<ResourceTag>
 }
 
 export default class ModelExplainabilityJobDefinition extends ResourceBase<ModelExplainabilityJobDefinitionProperties> {

@@ -29,6 +29,7 @@ export class ConfigSnapshotDeliveryProperties {
 }
 
 export interface DeliveryChannelProperties {
+    ConfigSnapshotDeliveryProperties?: ConfigSnapshotDeliveryProperties
     Name?: Value<string>
     S3BucketName: Value<string>
     S3KeyPrefix?: Value<string>

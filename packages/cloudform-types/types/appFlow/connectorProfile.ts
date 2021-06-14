@@ -39,6 +39,7 @@ export class MarketoConnectorProfileCredentials {
     ClientId!: Value<string>
     ClientSecret!: Value<string>
     AccessToken?: Value<string>
+    ConnectorOAuthRequest?: ConnectorOAuthRequest
 
     constructor(properties: MarketoConnectorProfileCredentials) {
         Object.assign(this, properties)
@@ -67,6 +68,7 @@ export class GoogleAnalyticsConnectorProfileCredentials {
     ClientSecret!: Value<string>
     AccessToken?: Value<string>
     RefreshToken?: Value<string>
+    ConnectorOAuthRequest?: ConnectorOAuthRequest
 
     constructor(properties: GoogleAnalyticsConnectorProfileCredentials) {
         Object.assign(this, properties)
@@ -84,6 +86,7 @@ export class DynatraceConnectorProfileProperties {
 export class SalesforceConnectorProfileCredentials {
     AccessToken?: Value<string>
     RefreshToken?: Value<string>
+    ConnectorOAuthRequest?: ConnectorOAuthRequest
     ClientCredentialsArn?: Value<string>
 
     constructor(properties: SalesforceConnectorProfileCredentials) {
@@ -103,7 +106,21 @@ export class RedshiftConnectorProfileProperties {
 }
 
 export class ConnectorProfileCredentials {
-
+    Amplitude?: AmplitudeConnectorProfileCredentials
+    Datadog?: DatadogConnectorProfileCredentials
+    Dynatrace?: DynatraceConnectorProfileCredentials
+    GoogleAnalytics?: GoogleAnalyticsConnectorProfileCredentials
+    InforNexus?: InforNexusConnectorProfileCredentials
+    Marketo?: MarketoConnectorProfileCredentials
+    Redshift?: RedshiftConnectorProfileCredentials
+    Salesforce?: SalesforceConnectorProfileCredentials
+    ServiceNow?: ServiceNowConnectorProfileCredentials
+    Singular?: SingularConnectorProfileCredentials
+    Slack?: SlackConnectorProfileCredentials
+    Snowflake?: SnowflakeConnectorProfileCredentials
+    Trendmicro?: TrendmicroConnectorProfileCredentials
+    Veeva?: VeevaConnectorProfileCredentials
+    Zendesk?: ZendeskConnectorProfileCredentials
 
     constructor(properties: ConnectorProfileCredentials) {
         Object.assign(this, properties)
@@ -140,6 +157,7 @@ export class ZendeskConnectorProfileCredentials {
     ClientId!: Value<string>
     ClientSecret!: Value<string>
     AccessToken?: Value<string>
+    ConnectorOAuthRequest?: ConnectorOAuthRequest
 
     constructor(properties: ZendeskConnectorProfileCredentials) {
         Object.assign(this, properties)
@@ -170,7 +188,8 @@ export class SalesforceConnectorProfileProperties {
 }
 
 export class ConnectorProfileConfig {
-
+    ConnectorProfileProperties?: ConnectorProfileProperties
+    ConnectorProfileCredentials!: ConnectorProfileCredentials
 
     constructor(properties: ConnectorProfileConfig) {
         Object.assign(this, properties)
@@ -208,6 +227,7 @@ export class SlackConnectorProfileCredentials {
     ClientId!: Value<string>
     ClientSecret!: Value<string>
     AccessToken?: Value<string>
+    ConnectorOAuthRequest?: ConnectorOAuthRequest
 
     constructor(properties: SlackConnectorProfileCredentials) {
         Object.assign(this, properties)
@@ -283,7 +303,17 @@ export class ServiceNowConnectorProfileProperties {
 }
 
 export class ConnectorProfileProperties {
-
+    Datadog?: DatadogConnectorProfileProperties
+    Dynatrace?: DynatraceConnectorProfileProperties
+    InforNexus?: InforNexusConnectorProfileProperties
+    Marketo?: MarketoConnectorProfileProperties
+    Redshift?: RedshiftConnectorProfileProperties
+    Salesforce?: SalesforceConnectorProfileProperties
+    ServiceNow?: ServiceNowConnectorProfileProperties
+    Slack?: SlackConnectorProfileProperties
+    Snowflake?: SnowflakeConnectorProfileProperties
+    Veeva?: VeevaConnectorProfileProperties
+    Zendesk?: ZendeskConnectorProfileProperties
 
     constructor(properties: ConnectorProfileProperties) {
         Object.assign(this, properties)
@@ -295,6 +325,7 @@ export interface ConnectorProfileProperties {
     KMSArn?: Value<string>
     ConnectorType: Value<string>
     ConnectionMode: Value<string>
+    ConnectorProfileConfig?: ConnectorProfileConfig
 }
 
 export default class ConnectorProfile extends ResourceBase<ConnectorProfileProperties> {

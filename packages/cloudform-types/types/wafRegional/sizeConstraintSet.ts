@@ -19,6 +19,7 @@ export class SizeConstraint {
     ComparisonOperator!: Value<string>
     Size!: Value<number>
     TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: SizeConstraint) {
         Object.assign(this, properties)
@@ -35,6 +36,7 @@ export class FieldToMatch {
 }
 
 export interface SizeConstraintSetProperties {
+    SizeConstraints?: List<SizeConstraint>
     Name: Value<string>
 }
 

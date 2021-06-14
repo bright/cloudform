@@ -26,6 +26,7 @@ export interface ImageProperties {
     ImageRoleArn: Value<string>
     ImageDisplayName?: Value<string>
     ImageDescription?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Image extends ResourceBase<ImageProperties> {

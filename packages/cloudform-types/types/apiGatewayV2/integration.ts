@@ -20,7 +20,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ResponseParameterList {
-
+    ResponseParameters?: List<ResponseParameter>
 
     constructor(properties: ResponseParameterList) {
         Object.assign(this, properties)
@@ -58,6 +58,7 @@ export interface IntegrationProperties {
     CredentialsArn?: Value<string>
     RequestTemplates?: {[key: string]: any}
     TimeoutInMillis?: Value<number>
+    TlsConfig?: TlsConfig
     ContentHandlingStrategy?: Value<string>
     IntegrationSubtype?: Value<string>
     ApiId: Value<string>

@@ -21,6 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class LogDeliveryConfigurationRequest {
+    DestinationDetails?: DestinationDetails
     DestinationType?: Value<string>
     LogFormat?: Value<string>
     LogType?: Value<string>
@@ -41,6 +42,7 @@ export class CloudWatchLogsDestinationDetails {
 export class NodeGroupConfiguration {
     NodeGroupId?: Value<string>
     PrimaryAvailabilityZone?: Value<string>
+    ReplicaAvailabilityZones?: List<Value<string>>
     ReplicaCount?: Value<number>
     Slots?: Value<string>
 
@@ -50,7 +52,8 @@ export class NodeGroupConfiguration {
 }
 
 export class DestinationDetails {
-
+    CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails
+    KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails
 
     constructor(properties: DestinationDetails) {
         Object.assign(this, properties)
@@ -72,26 +75,34 @@ export interface ReplicationGroupProperties {
     AutomaticFailoverEnabled?: Value<boolean>
     CacheNodeType?: Value<string>
     CacheParameterGroupName?: Value<string>
+    CacheSecurityGroupNames?: List<Value<string>>
     CacheSubnetGroupName?: Value<string>
     Engine?: Value<string>
     EngineVersion?: Value<string>
     GlobalReplicationGroupId?: Value<string>
     KmsKeyId?: Value<string>
+    LogDeliveryConfigurations?: List<LogDeliveryConfigurationRequest>
     MultiAZEnabled?: Value<boolean>
+    NodeGroupConfiguration?: List<NodeGroupConfiguration>
     NotificationTopicArn?: Value<string>
     NumCacheClusters?: Value<number>
     NumNodeGroups?: Value<number>
     Port?: Value<number>
+    PreferredCacheClusterAZs?: List<Value<string>>
     PreferredMaintenanceWindow?: Value<string>
     PrimaryClusterId?: Value<string>
     ReplicasPerNodeGroup?: Value<number>
     ReplicationGroupDescription: Value<string>
     ReplicationGroupId?: Value<string>
+    SecurityGroupIds?: List<Value<string>>
+    SnapshotArns?: List<Value<string>>
     SnapshotName?: Value<string>
     SnapshotRetentionLimit?: Value<number>
     SnapshotWindow?: Value<string>
     SnapshottingClusterId?: Value<string>
+    Tags?: List<ResourceTag>
     TransitEncryptionEnabled?: Value<boolean>
+    UserGroupIds?: List<Value<string>>
 }
 
 export default class ReplicationGroup extends ResourceBase<ReplicationGroupProperties> {

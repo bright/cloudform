@@ -47,7 +47,9 @@ export class EncryptionAtRest {
 }
 
 export class BrokerLogs {
-
+    S3?: S3
+    Firehose?: Firehose
+    CloudWatchLogs?: CloudWatchLogs
 
     constructor(properties: BrokerLogs) {
         Object.assign(this, properties)
@@ -64,7 +66,8 @@ export class EncryptionInTransit {
 }
 
 export class Prometheus {
-
+    JmxExporter?: JmxExporter
+    NodeExporter?: NodeExporter
 
     constructor(properties: Prometheus) {
         Object.assign(this, properties)
@@ -72,7 +75,7 @@ export class Prometheus {
 }
 
 export class LoggingInfo {
-
+    BrokerLogs!: BrokerLogs
 
     constructor(properties: LoggingInfo) {
         Object.assign(this, properties)
@@ -80,7 +83,8 @@ export class LoggingInfo {
 }
 
 export class EncryptionInfo {
-
+    EncryptionAtRest?: EncryptionAtRest
+    EncryptionInTransit?: EncryptionInTransit
 
     constructor(properties: EncryptionInfo) {
         Object.assign(this, properties)
@@ -96,7 +100,8 @@ export class Iam {
 }
 
 export class Sasl {
-
+    Iam?: Iam
+    Scram?: Scram
 
     constructor(properties: Sasl) {
         Object.assign(this, properties)
@@ -113,6 +118,9 @@ export class ConfigurationInfo {
 }
 
 export class BrokerNodeGroupInfo {
+    SecurityGroups?: List<Value<string>>
+    ClientSubnets!: List<Value<string>>
+    StorageInfo?: StorageInfo
     BrokerAZDistribution?: Value<string>
     InstanceType!: Value<string>
 
@@ -138,7 +146,7 @@ export class JmxExporter {
 }
 
 export class StorageInfo {
-
+    EBSStorageInfo?: EBSStorageInfo
 
     constructor(properties: StorageInfo) {
         Object.assign(this, properties)
@@ -171,7 +179,8 @@ export class Firehose {
 }
 
 export class ClientAuthentication {
-
+    Sasl?: Sasl
+    Tls?: Tls
 
     constructor(properties: ClientAuthentication) {
         Object.assign(this, properties)
@@ -179,7 +188,7 @@ export class ClientAuthentication {
 }
 
 export class Tls {
-
+    CertificateAuthorityArnList?: List<Value<string>>
 
     constructor(properties: Tls) {
         Object.assign(this, properties)
@@ -187,7 +196,7 @@ export class Tls {
 }
 
 export class OpenMonitoring {
-
+    Prometheus!: Prometheus
 
     constructor(properties: OpenMonitoring) {
         Object.assign(this, properties)
@@ -195,11 +204,17 @@ export class OpenMonitoring {
 }
 
 export interface ClusterProperties {
+    BrokerNodeGroupInfo: BrokerNodeGroupInfo
     EnhancedMonitoring?: Value<string>
     KafkaVersion: Value<string>
     NumberOfBrokerNodes: Value<number>
+    EncryptionInfo?: EncryptionInfo
+    OpenMonitoring?: OpenMonitoring
     ClusterName: Value<string>
+    ClientAuthentication?: ClientAuthentication
+    LoggingInfo?: LoggingInfo
     Tags?: {[key: string]: any}
+    ConfigurationInfo?: ConfigurationInfo
 }
 
 export default class Cluster extends ResourceBase<ClusterProperties> {

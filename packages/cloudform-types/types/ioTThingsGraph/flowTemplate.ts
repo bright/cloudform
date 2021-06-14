@@ -20,6 +20,7 @@ export class DefinitionDocument {
 
 export interface FlowTemplateProperties {
     CompatibleNamespaceVersion?: Value<number>
+    Definition: DefinitionDocument
 }
 
 export default class FlowTemplate extends ResourceBase<FlowTemplateProperties> {

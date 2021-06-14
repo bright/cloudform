@@ -28,6 +28,7 @@ export interface NetworkInsightsPathProperties {
     Destination: Value<string>
     Protocol: Value<string>
     DestinationPort?: Value<number>
+    Tags?: List<ResourceTag>
 }
 
 export default class NetworkInsightsPath extends ResourceBase<NetworkInsightsPathProperties> {

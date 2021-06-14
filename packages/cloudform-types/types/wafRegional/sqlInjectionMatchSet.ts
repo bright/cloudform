@@ -26,6 +26,7 @@ export class FieldToMatch {
 
 export class SqlInjectionMatchTuple {
     TextTransformation!: Value<string>
+    FieldToMatch!: FieldToMatch
 
     constructor(properties: SqlInjectionMatchTuple) {
         Object.assign(this, properties)
@@ -33,6 +34,7 @@ export class SqlInjectionMatchTuple {
 }
 
 export interface SqlInjectionMatchSetProperties {
+    SqlInjectionMatchTuples?: List<SqlInjectionMatchTuple>
     Name: Value<string>
 }
 

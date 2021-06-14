@@ -27,6 +27,7 @@ export interface EnvironmentProperties {
     Description?: Value<string>
     KmsKeyId?: Value<string>
     FederationMode?: Value<string>
+    FederationParameters?: FederationParameters
 }
 
 export default class Environment extends ResourceBase<EnvironmentProperties> {

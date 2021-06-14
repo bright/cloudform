@@ -22,7 +22,10 @@ import {Value, List} from '../dataTypes'
 
 export class OriginRequestPolicyConfig {
     Comment?: Value<string>
+    CookiesConfig!: CookiesConfig
+    HeadersConfig!: HeadersConfig
     Name!: Value<string>
+    QueryStringsConfig!: QueryStringsConfig
 
     constructor(properties: OriginRequestPolicyConfig) {
         Object.assign(this, properties)
@@ -31,6 +34,7 @@ export class OriginRequestPolicyConfig {
 
 export class CookiesConfig {
     CookieBehavior!: Value<string>
+    Cookies?: List<Value<string>>
 
     constructor(properties: CookiesConfig) {
         Object.assign(this, properties)
@@ -39,6 +43,7 @@ export class CookiesConfig {
 
 export class QueryStringsConfig {
     QueryStringBehavior!: Value<string>
+    QueryStrings?: List<Value<string>>
 
     constructor(properties: QueryStringsConfig) {
         Object.assign(this, properties)
@@ -47,6 +52,7 @@ export class QueryStringsConfig {
 
 export class HeadersConfig {
     HeaderBehavior!: Value<string>
+    Headers?: List<Value<string>>
 
     constructor(properties: HeadersConfig) {
         Object.assign(this, properties)
@@ -54,7 +60,7 @@ export class HeadersConfig {
 }
 
 export interface OriginRequestPolicyProperties {
-
+    OriginRequestPolicyConfig: OriginRequestPolicyConfig
 }
 
 export default class OriginRequestPolicy extends ResourceBase<OriginRequestPolicyProperties> {

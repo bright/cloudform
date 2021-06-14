@@ -30,6 +30,7 @@ export interface AuthorizerProperties {
     IdentitySource?: Value<string>
     IdentityValidationExpression?: Value<string>
     Name?: Value<string>
+    ProviderARNs?: List<Value<string>>
     RestApiId: Value<string>
     Type: Value<string>
 }

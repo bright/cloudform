@@ -12,6 +12,7 @@ import {Value, List} from '../dataTypes'
 
 export interface SuiteDefinitionProperties {
     SuiteDefinitionConfiguration: {[key: string]: any}
+    Tags?: List<ResourceTag>
 }
 
 export default class SuiteDefinition extends ResourceBase<SuiteDefinitionProperties> {

@@ -33,6 +33,7 @@ export class Predicate {
 export interface RuleProperties {
     MetricName: Value<string>
     Name: Value<string>
+    Predicates?: List<Predicate>
 }
 
 export default class Rule extends ResourceBase<RuleProperties> {

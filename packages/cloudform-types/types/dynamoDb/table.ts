@@ -22,6 +22,8 @@ import {Value, List} from '../dataTypes'
 
 export class LocalSecondaryIndex {
     IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
 
     constructor(properties: LocalSecondaryIndex) {
         Object.assign(this, properties)
@@ -54,7 +56,11 @@ export class AttributeDefinition {
 }
 
 export class GlobalSecondaryIndex {
+    ContributorInsightsSpecification?: ContributorInsightsSpecification
     IndexName!: Value<string>
+    KeySchema!: List<KeySchema>
+    Projection!: Projection
+    ProvisionedThroughput?: ProvisionedThroughput
 
     constructor(properties: GlobalSecondaryIndex) {
         Object.assign(this, properties)
@@ -107,6 +113,7 @@ export class ProvisionedThroughput {
 }
 
 export class Projection {
+    NonKeyAttributes?: List<Value<string>>
     ProjectionType?: Value<string>
 
     constructor(properties: Projection) {
@@ -123,8 +130,20 @@ export class StreamSpecification {
 }
 
 export interface TableProperties {
+    AttributeDefinitions?: List<AttributeDefinition>
     BillingMode?: Value<string>
+    ContributorInsightsSpecification?: ContributorInsightsSpecification
+    GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>
+    KeySchema: List<KeySchema>
+    KinesisStreamSpecification?: KinesisStreamSpecification
+    LocalSecondaryIndexes?: List<LocalSecondaryIndex>
+    PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification
+    ProvisionedThroughput?: ProvisionedThroughput
+    SSESpecification?: SSESpecification
+    StreamSpecification?: StreamSpecification
     TableName?: Value<string>
+    Tags?: List<ResourceTag>
+    TimeToLiveSpecification?: TimeToLiveSpecification
 }
 
 export default class Table extends ResourceBase<TableProperties> {

@@ -28,7 +28,7 @@ export class GatewayCapabilitySummary {
 }
 
 export class GatewayPlatform {
-
+    Greengrass!: Greengrass
 
     constructor(properties: GatewayPlatform) {
         Object.assign(this, properties)
@@ -37,6 +37,9 @@ export class GatewayPlatform {
 
 export interface GatewayProperties {
     GatewayName: Value<string>
+    GatewayPlatform: GatewayPlatform
+    Tags?: List<ResourceTag>
+    GatewayCapabilitySummaries?: List<GatewayCapabilitySummary>
 }
 
 export default class Gateway extends ResourceBase<GatewayProperties> {

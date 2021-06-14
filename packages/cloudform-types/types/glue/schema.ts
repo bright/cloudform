@@ -38,11 +38,14 @@ export class Registry {
 }
 
 export interface SchemaProperties {
+    Registry?: Registry
     Name: Value<string>
     Description?: Value<string>
     DataFormat: Value<string>
     Compatibility: Value<string>
     SchemaDefinition: Value<string>
+    CheckpointVersion?: SchemaVersion
+    Tags?: List<ResourceTag>
 }
 
 export default class Schema extends ResourceBase<SchemaProperties> {

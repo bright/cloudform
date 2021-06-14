@@ -20,7 +20,8 @@ export class DataLakePrincipal {
 export type Admins = List<DataLakePrincipal>
 
 export interface DataLakeSettingsProperties {
-
+    Admins?: Admins
+    TrustedResourceOwners?: List<Value<string>>
 }
 
 export default class DataLakeSettings extends ResourceBase<DataLakeSettingsProperties> {

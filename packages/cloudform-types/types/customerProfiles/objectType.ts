@@ -13,6 +13,7 @@ import {Value, List} from '../dataTypes'
 
 export class KeyMap {
     Name?: Value<string>
+    ObjectTypeKeyList?: List<ObjectTypeKey>
 
     constructor(properties: KeyMap) {
         Object.assign(this, properties)
@@ -21,6 +22,7 @@ export class KeyMap {
 
 export class FieldMap {
     Name?: Value<string>
+    ObjectTypeField?: ObjectTypeField
 
     constructor(properties: FieldMap) {
         Object.assign(this, properties)
@@ -38,7 +40,8 @@ export class ObjectTypeField {
 }
 
 export class ObjectTypeKey {
-
+    FieldNames?: List<Value<string>>
+    StandardIdentifiers?: List<Value<string>>
 
     constructor(properties: ObjectTypeKey) {
         Object.assign(this, properties)
@@ -52,6 +55,9 @@ export interface ObjectTypeProperties {
     Description?: Value<string>
     EncryptionKey?: Value<string>
     ExpirationDays?: Value<number>
+    Fields?: List<FieldMap>
+    Keys?: List<KeyMap>
+    Tags?: List<ResourceTag>
     TemplateId?: Value<string>
 }
 

@@ -25,6 +25,8 @@ export interface GrantProperties {
     GrantName?: Value<string>
     LicenseArn?: Value<string>
     HomeRegion?: Value<string>
+    AllowedOperations?: List<Value<string>>
+    Principals?: List<Value<string>>
     Status?: Value<string>
 }
 

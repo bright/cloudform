@@ -20,6 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ReportExportConfig {
+    S3Destination?: S3ReportExportConfig
     ExportConfigType!: Value<string>
 
     constructor(properties: ReportExportConfig) {
@@ -42,7 +43,9 @@ export class S3ReportExportConfig {
 
 export interface ReportGroupProperties {
     Type: Value<string>
+    ExportConfig: ReportExportConfig
     DeleteReports?: Value<boolean>
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

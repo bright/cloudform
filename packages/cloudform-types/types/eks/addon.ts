@@ -28,6 +28,7 @@ export interface AddonProperties {
     AddonVersion?: Value<string>
     ResolveConflicts?: Value<string>
     ServiceAccountRoleArn?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Addon extends ResourceBase<AddonProperties> {

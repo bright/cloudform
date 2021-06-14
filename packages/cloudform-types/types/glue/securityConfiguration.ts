@@ -19,7 +19,9 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class EncryptionConfiguration {
-
+    S3Encryptions?: S3Encryptions
+    CloudWatchEncryption?: CloudWatchEncryption
+    JobBookmarksEncryption?: JobBookmarksEncryption
 
     constructor(properties: EncryptionConfiguration) {
         Object.assign(this, properties)
@@ -56,6 +58,7 @@ export class CloudWatchEncryption {
 }
 
 export interface SecurityConfigurationProperties {
+    EncryptionConfiguration: EncryptionConfiguration
     Name: Value<string>
 }
 

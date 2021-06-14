@@ -26,6 +26,8 @@ export interface DevEndpointProperties {
     NumberOfNodes?: Value<number>
     Arguments?: {[key: string]: any}
     SubnetId?: Value<string>
+    PublicKeys?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
     RoleArn: Value<string>
     WorkerType?: Value<string>
     EndpointName?: Value<string>

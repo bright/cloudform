@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class PipelineObject {
+    Fields!: List<Field>
     Id!: Value<string>
     Name!: Value<string>
 
@@ -48,6 +49,7 @@ export class PipelineTag {
 }
 
 export class ParameterObject {
+    Attributes!: List<ParameterAttribute>
     Id!: Value<string>
 
     constructor(properties: ParameterObject) {
@@ -78,6 +80,10 @@ export interface PipelineProperties {
     Activate?: Value<boolean>
     Description?: Value<string>
     Name: Value<string>
+    ParameterObjects: List<ParameterObject>
+    ParameterValues?: List<ParameterValue>
+    PipelineObjects?: List<PipelineObject>
+    PipelineTags?: List<PipelineTag>
 }
 
 export default class Pipeline extends ResourceBase<PipelineProperties> {

@@ -14,6 +14,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RecordFormat {
+    MappingParameters?: MappingParameters
     RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
@@ -52,6 +53,8 @@ export class RecordColumn {
 
 export class ReferenceSchema {
     RecordEncoding?: Value<string>
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: ReferenceSchema) {
         Object.assign(this, properties)
@@ -59,7 +62,8 @@ export class ReferenceSchema {
 }
 
 export class MappingParameters {
-
+    JSONMappingParameters?: JSONMappingParameters
+    CSVMappingParameters?: CSVMappingParameters
 
     constructor(properties: MappingParameters) {
         Object.assign(this, properties)
@@ -75,7 +79,9 @@ export class JSONMappingParameters {
 }
 
 export class ReferenceDataSource {
+    ReferenceSchema!: ReferenceSchema
     TableName?: Value<string>
+    S3ReferenceDataSource?: S3ReferenceDataSource
 
     constructor(properties: ReferenceDataSource) {
         Object.assign(this, properties)
@@ -84,6 +90,7 @@ export class ReferenceDataSource {
 
 export interface ApplicationReferenceDataSourceProperties {
     ApplicationName: Value<string>
+    ReferenceDataSource: ReferenceDataSource
 }
 
 export default class ApplicationReferenceDataSource extends ResourceBase<ApplicationReferenceDataSourceProperties> {

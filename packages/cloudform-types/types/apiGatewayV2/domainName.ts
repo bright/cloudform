@@ -40,7 +40,9 @@ export class DomainNameConfiguration {
 }
 
 export interface DomainNameProperties {
+    MutualTlsAuthentication?: MutualTlsAuthentication
     DomainName: Value<string>
+    DomainNameConfigurations?: List<DomainNameConfiguration>
     Tags?: {[key: string]: any}
 }
 

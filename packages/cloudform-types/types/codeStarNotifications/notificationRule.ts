@@ -29,9 +29,11 @@ export class Target {
 }
 
 export interface NotificationRuleProperties {
+    EventTypeIds: List<Value<string>>
     Status?: Value<string>
     DetailType: Value<string>
     Resource: Value<string>
+    Targets: List<Target>
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

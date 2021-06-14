@@ -27,6 +27,7 @@ export interface FirewallRuleGroupAssociationProperties {
     Name?: Value<string>
     Priority: Value<number>
     MutationProtection?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class FirewallRuleGroupAssociation extends ResourceBase<FirewallRuleGroupAssociationProperties> {

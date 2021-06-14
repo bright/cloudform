@@ -31,14 +31,17 @@ export class GeoLocation {
 }
 
 export class RecordSet {
+    AliasTarget?: AliasTarget
     Comment?: Value<string>
     Failover?: Value<string>
+    GeoLocation?: GeoLocation
     HealthCheckId?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
     MultiValueAnswer?: Value<boolean>
     Name!: Value<string>
     Region?: Value<string>
+    ResourceRecords?: List<Value<string>>
     SetIdentifier?: Value<string>
     TTL?: Value<string>
     Type!: Value<string>
@@ -63,6 +66,7 @@ export interface RecordSetGroupProperties {
     Comment?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
+    RecordSets?: List<RecordSet>
 }
 
 export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {

@@ -31,6 +31,7 @@ export class S3Location {
 
 export interface ScriptProperties {
     Version?: Value<string>
+    StorageLocation: S3Location
     Name?: Value<string>
 }
 

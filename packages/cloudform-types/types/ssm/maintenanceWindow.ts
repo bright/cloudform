@@ -30,6 +30,7 @@ export interface MaintenanceWindowProperties {
     Duration: Value<number>
     ScheduleOffset?: Value<number>
     EndDate?: Value<string>
+    Tags?: List<ResourceTag>
     Name: Value<string>
     ScheduleTimezone?: Value<string>
 }

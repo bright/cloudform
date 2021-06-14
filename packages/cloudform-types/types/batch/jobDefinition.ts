@@ -21,6 +21,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Volumes {
+    Host?: VolumesHost
+    EfsVolumeConfiguration?: EfsVolumeConfiguration
     Name?: Value<string>
 
     constructor(properties: Volumes) {
@@ -65,6 +67,7 @@ export class VolumesHost {
 
 export class NodeProperties {
     MainNode!: Value<number>
+    NodeRangeProperties!: List<NodeRangeProperty>
     NumNodes!: Value<number>
 
     constructor(properties: NodeProperties) {
@@ -73,6 +76,7 @@ export class NodeProperties {
 }
 
 export class RetryStrategy {
+    EvaluateOnExit?: List<EvaluateOnExit>
     Attempts?: Value<number>
 
     constructor(properties: RetryStrategy) {
@@ -98,6 +102,7 @@ export class NetworkConfiguration {
 }
 
 export class LogConfiguration {
+    SecretOptions?: List<Secret>
     Options?: {[key: string]: any}
     LogDriver!: Value<string>
 
@@ -108,13 +113,24 @@ export class LogConfiguration {
 
 export class ContainerProperties {
     User?: Value<string>
+    Secrets?: List<Secret>
     Memory?: Value<number>
     Privileged?: Value<boolean>
+    LinuxParameters?: LinuxParameters
+    FargatePlatformConfiguration?: FargatePlatformConfiguration
     JobRoleArn?: Value<string>
     ReadonlyRootFilesystem?: Value<boolean>
     Vcpus?: Value<number>
     Image!: Value<string>
+    ResourceRequirements?: List<ResourceRequirement>
+    LogConfiguration?: LogConfiguration
+    MountPoints?: List<MountPoints>
     ExecutionRoleArn?: Value<string>
+    Volumes?: List<Volumes>
+    Command?: List<Value<string>>
+    Environment?: List<Environment>
+    Ulimits?: List<Ulimit>
+    NetworkConfiguration?: NetworkConfiguration
     InstanceType?: Value<string>
 
     constructor(properties: ContainerProperties) {
@@ -155,7 +171,9 @@ export class Ulimit {
 
 export class LinuxParameters {
     Swappiness?: Value<number>
+    Tmpfs?: List<Tmpfs>
     SharedMemorySize?: Value<number>
+    Devices?: List<Device>
     InitProcessEnabled?: Value<boolean>
     MaxSwap?: Value<number>
 
@@ -183,6 +201,7 @@ export class Timeout {
 export class Tmpfs {
     Size!: Value<number>
     ContainerPath!: Value<string>
+    MountOptions?: List<Value<string>>
 
     constructor(properties: Tmpfs) {
         Object.assign(this, properties)
@@ -190,6 +209,7 @@ export class Tmpfs {
 }
 
 export class NodeRangeProperty {
+    Container?: ContainerProperties
     TargetNodes!: Value<string>
 
     constructor(properties: NodeRangeProperty) {
@@ -199,6 +219,7 @@ export class NodeRangeProperty {
 
 export class EfsVolumeConfiguration {
     TransitEncryption?: Value<string>
+    AuthorizationConfig?: AuthorizationConfig
     FileSystemId!: Value<string>
     RootDirectory?: Value<string>
     TransitEncryptionPort?: Value<number>
@@ -210,6 +231,7 @@ export class EfsVolumeConfiguration {
 
 export class Device {
     HostPath?: Value<string>
+    Permissions?: List<Value<string>>
     ContainerPath?: Value<string>
 
     constructor(properties: Device) {
@@ -220,8 +242,13 @@ export class Device {
 export interface JobDefinitionProperties {
     Type: Value<string>
     Parameters?: {[key: string]: any}
+    NodeProperties?: NodeProperties
+    Timeout?: Timeout
+    ContainerProperties?: ContainerProperties
     JobDefinitionName?: Value<string>
     PropagateTags?: Value<boolean>
+    PlatformCapabilities?: List<Value<string>>
+    RetryStrategy?: RetryStrategy
     Tags?: {[key: string]: any}
 }
 

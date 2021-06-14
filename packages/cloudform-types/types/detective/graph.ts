@@ -22,7 +22,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface GraphProperties {
-
+    Tags?: List<ResourceTag>
 }
 
 export default class Graph extends ResourceBase<GraphProperties> {

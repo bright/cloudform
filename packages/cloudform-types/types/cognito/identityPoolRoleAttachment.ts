@@ -19,6 +19,7 @@ import {Value, List} from '../dataTypes'
 export class RoleMapping {
     Type!: Value<string>
     AmbiguousRoleResolution?: Value<string>
+    RulesConfiguration?: RulesConfigurationType
     IdentityProvider?: Value<string>
 
     constructor(properties: RoleMapping) {
@@ -38,7 +39,7 @@ export class MappingRule {
 }
 
 export class RulesConfigurationType {
-
+    Rules!: List<MappingRule>
 
     constructor(properties: RulesConfigurationType) {
         Object.assign(this, properties)

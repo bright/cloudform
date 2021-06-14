@@ -13,7 +13,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ResourceCollectionFilter {
-
+    CloudFormation?: CloudFormationCollectionFilter
 
     constructor(properties: ResourceCollectionFilter) {
         Object.assign(this, properties)
@@ -21,7 +21,7 @@ export class ResourceCollectionFilter {
 }
 
 export class CloudFormationCollectionFilter {
-
+    StackNames?: List<Value<string>>
 
     constructor(properties: CloudFormationCollectionFilter) {
         Object.assign(this, properties)
@@ -29,7 +29,7 @@ export class CloudFormationCollectionFilter {
 }
 
 export interface ResourceCollectionProperties {
-
+    ResourceCollectionFilter: ResourceCollectionFilter
 }
 
 export default class ResourceCollection extends ResourceBase<ResourceCollectionProperties> {

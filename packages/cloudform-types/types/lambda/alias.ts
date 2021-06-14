@@ -29,7 +29,7 @@ export class ProvisionedConcurrencyConfiguration {
 }
 
 export class AliasRoutingConfiguration {
-
+    AdditionalVersionWeights!: List<VersionWeight>
 
     constructor(properties: AliasRoutingConfiguration) {
         Object.assign(this, properties)
@@ -50,6 +50,8 @@ export interface AliasProperties {
     FunctionName: Value<string>
     FunctionVersion: Value<string>
     Name: Value<string>
+    ProvisionedConcurrencyConfig?: ProvisionedConcurrencyConfiguration
+    RoutingConfig?: AliasRoutingConfiguration
 }
 
 export default class Alias extends ResourceBase<AliasProperties> {

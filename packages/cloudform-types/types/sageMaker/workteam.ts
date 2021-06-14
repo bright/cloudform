@@ -29,7 +29,7 @@ export class CognitoMemberDefinition {
 }
 
 export class MemberDefinition {
-
+    CognitoMemberDefinition!: CognitoMemberDefinition
 
     constructor(properties: MemberDefinition) {
         Object.assign(this, properties)
@@ -38,7 +38,10 @@ export class MemberDefinition {
 
 export interface WorkteamProperties {
     Description?: Value<string>
+    NotificationConfiguration?: NotificationConfiguration
     WorkteamName?: Value<string>
+    MemberDefinitions?: List<MemberDefinition>
+    Tags?: List<ResourceTag>
 }
 
 export default class Workteam extends ResourceBase<WorkteamProperties> {

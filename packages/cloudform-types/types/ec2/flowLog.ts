@@ -31,6 +31,7 @@ export interface FlowLogProperties {
     MaxAggregationInterval?: Value<number>
     ResourceId: Value<string>
     ResourceType: Value<string>
+    Tags?: List<ResourceTag>
     TrafficType: Value<string>
 }
 

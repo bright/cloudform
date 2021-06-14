@@ -24,6 +24,8 @@ export class Distribution {
     Region!: Value<string>
     AmiDistributionConfiguration?: {[key: string]: any}
     ContainerDistributionConfiguration?: {[key: string]: any}
+    LicenseConfigurationArns?: List<Value<string>>
+    LaunchTemplateConfigurations?: List<LaunchTemplateConfiguration>
 
     constructor(properties: Distribution) {
         Object.assign(this, properties)
@@ -43,6 +45,8 @@ export class LaunchTemplateConfiguration {
 export interface DistributionConfigurationProperties {
     Name: Value<string>
     Description?: Value<string>
+    Distributions: List<Distribution>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class DistributionConfiguration extends ResourceBase<DistributionConfigurationProperties> {

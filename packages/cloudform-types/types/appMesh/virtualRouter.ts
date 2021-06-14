@@ -27,7 +27,7 @@ export class PortMapping {
 }
 
 export class VirtualRouterSpec {
-
+    Listeners!: List<VirtualRouterListener>
 
     constructor(properties: VirtualRouterSpec) {
         Object.assign(this, properties)
@@ -35,7 +35,7 @@ export class VirtualRouterSpec {
 }
 
 export class VirtualRouterListener {
-
+    PortMapping!: PortMapping
 
     constructor(properties: VirtualRouterListener) {
         Object.assign(this, properties)
@@ -46,6 +46,8 @@ export interface VirtualRouterProperties {
     MeshName: Value<string>
     VirtualRouterName?: Value<string>
     MeshOwner?: Value<string>
+    Spec: VirtualRouterSpec
+    Tags?: List<ResourceTag>
 }
 
 export default class VirtualRouter extends ResourceBase<VirtualRouterProperties> {

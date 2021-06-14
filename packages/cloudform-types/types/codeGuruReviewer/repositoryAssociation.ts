@@ -20,6 +20,7 @@ export interface RepositoryAssociationProperties {
     Type: Value<string>
     Owner?: Value<string>
     ConnectionArn?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class RepositoryAssociation extends ResourceBase<RepositoryAssociationProperties> {

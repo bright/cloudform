@@ -24,6 +24,7 @@ export interface CustomMetricProperties {
     MetricName?: Value<string>
     DisplayName?: Value<string>
     MetricType: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class CustomMetric extends ResourceBase<CustomMetricProperties> {

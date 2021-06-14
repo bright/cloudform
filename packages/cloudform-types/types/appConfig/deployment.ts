@@ -23,6 +23,7 @@ export interface DeploymentProperties {
     Description?: Value<string>
     ConfigurationVersion: Value<string>
     ApplicationId: Value<string>
+    Tags?: List<Tags>
 }
 
 export default class Deployment extends ResourceBase<DeploymentProperties> {

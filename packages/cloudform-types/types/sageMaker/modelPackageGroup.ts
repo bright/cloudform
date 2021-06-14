@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface ModelPackageGroupProperties {
+    Tags?: List<ResourceTag>
     ModelPackageGroupName: Value<string>
     ModelPackageGroupDescription?: Value<string>
     ModelPackageGroupPolicy?: {[key: string]: any}

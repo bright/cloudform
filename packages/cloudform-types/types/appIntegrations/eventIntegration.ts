@@ -30,6 +30,7 @@ export class EventFilter {
 }
 
 export class EventIntegrationAssociation {
+    ClientAssociationMetadata?: List<Metadata>
     ClientId?: Value<string>
     EventBridgeRuleName?: Value<string>
     EventIntegrationAssociationArn?: Value<string>
@@ -44,6 +45,8 @@ export interface EventIntegrationProperties {
     Description?: Value<string>
     Name: Value<string>
     EventBridgeBus: Value<string>
+    EventFilter: EventFilter
+    Tags?: List<ResourceTag>
 }
 
 export default class EventIntegration extends ResourceBase<EventIntegrationProperties> {

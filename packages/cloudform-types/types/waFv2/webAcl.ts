@@ -21,7 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CustomRequestHandling {
-
+    InsertHeaders!: List<CustomHTTPHeader>
 
     constructor(properties: CustomRequestHandling) {
         Object.assign(this, properties)
@@ -31,6 +31,8 @@ export class CustomRequestHandling {
 export class ManagedRuleGroupStatement {
     Name!: Value<string>
     VendorName!: Value<string>
+    ExcludedRules?: List<ExcludedRule>
+    ScopeDownStatement?: Statement
 
     constructor(properties: ManagedRuleGroupStatement) {
         Object.assign(this, properties)
@@ -47,7 +49,7 @@ export class TextTransformation {
 }
 
 export class AllowAction {
-
+    CustomRequestHandling?: CustomRequestHandling
 
     constructor(properties: AllowAction) {
         Object.assign(this, properties)
@@ -55,7 +57,8 @@ export class AllowAction {
 }
 
 export class DefaultAction {
-
+    Allow?: AllowAction
+    Block?: BlockAction
 
     constructor(properties: DefaultAction) {
         Object.assign(this, properties)
@@ -63,7 +66,8 @@ export class DefaultAction {
 }
 
 export class XssMatchStatement {
-
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: XssMatchStatement) {
         Object.assign(this, properties)
@@ -73,6 +77,8 @@ export class XssMatchStatement {
 export class ByteMatchStatement {
     SearchString?: Value<string>
     SearchStringBase64?: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
     PositionalConstraint!: Value<string>
 
     constructor(properties: ByteMatchStatement) {
@@ -90,7 +96,7 @@ export class ForwardedIPConfiguration {
 }
 
 export class OrStatement {
-
+    Statements!: List<Statement>
 
     constructor(properties: OrStatement) {
         Object.assign(this, properties)
@@ -116,6 +122,8 @@ export class CustomHTTPHeader {
 
 export class RegexPatternSetReferenceStatement {
     Arn!: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: RegexPatternSetReferenceStatement) {
         Object.assign(this, properties)
@@ -142,7 +150,20 @@ export class CustomResponseBody {
 }
 
 export class Statement {
-
+    ByteMatchStatement?: ByteMatchStatement
+    SqliMatchStatement?: SqliMatchStatement
+    XssMatchStatement?: XssMatchStatement
+    SizeConstraintStatement?: SizeConstraintStatement
+    GeoMatchStatement?: GeoMatchStatement
+    RuleGroupReferenceStatement?: RuleGroupReferenceStatement
+    IPSetReferenceStatement?: IPSetReferenceStatement
+    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement
+    ManagedRuleGroupStatement?: ManagedRuleGroupStatement
+    RateBasedStatement?: RateBasedStatement
+    AndStatement?: AndStatement
+    OrStatement?: OrStatement
+    NotStatement?: NotStatement
+    LabelMatchStatement?: LabelMatchStatement
 
     constructor(properties: Statement) {
         Object.assign(this, properties)
@@ -150,7 +171,7 @@ export class Statement {
 }
 
 export class BlockAction {
-
+    CustomResponse?: CustomResponse
 
     constructor(properties: BlockAction) {
         Object.assign(this, properties)
@@ -159,6 +180,7 @@ export class BlockAction {
 
 export class RuleGroupReferenceStatement {
     Arn!: Value<string>
+    ExcludedRules?: List<ExcludedRule>
 
     constructor(properties: RuleGroupReferenceStatement) {
         Object.assign(this, properties)
@@ -176,6 +198,7 @@ export class LabelMatchStatement {
 
 export class JsonMatchPattern {
     All?: {[key: string]: any}
+    IncludedPaths?: List<Value<string>>
 
     constructor(properties: JsonMatchPattern) {
         Object.assign(this, properties)
@@ -183,7 +206,7 @@ export class JsonMatchPattern {
 }
 
 export class AndStatement {
-
+    Statements!: List<Statement>
 
     constructor(properties: AndStatement) {
         Object.assign(this, properties)
@@ -191,7 +214,7 @@ export class AndStatement {
 }
 
 export class CountAction {
-
+    CustomRequestHandling?: CustomRequestHandling
 
     constructor(properties: CountAction) {
         Object.assign(this, properties)
@@ -199,8 +222,10 @@ export class CountAction {
 }
 
 export class SizeConstraintStatement {
+    FieldToMatch!: FieldToMatch
     ComparisonOperator!: Value<string>
     Size!: Value<number>
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: SizeConstraintStatement) {
         Object.assign(this, properties)
@@ -215,6 +240,7 @@ export class FieldToMatch {
     QueryString?: {[key: string]: any}
     Body?: {[key: string]: any}
     Method?: {[key: string]: any}
+    JsonBody?: JsonBody
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)
@@ -222,7 +248,8 @@ export class FieldToMatch {
 }
 
 export class SqliMatchStatement {
-
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: SqliMatchStatement) {
         Object.assign(this, properties)
@@ -230,7 +257,8 @@ export class SqliMatchStatement {
 }
 
 export class GeoMatchStatement {
-
+    CountryCodes?: List<Value<string>>
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: GeoMatchStatement) {
         Object.assign(this, properties)
@@ -238,7 +266,9 @@ export class GeoMatchStatement {
 }
 
 export class RuleAction {
-
+    Allow?: AllowAction
+    Block?: BlockAction
+    Count?: CountAction
 
     constructor(properties: RuleAction) {
         Object.assign(this, properties)
@@ -246,6 +276,7 @@ export class RuleAction {
 }
 
 export class JsonBody {
+    MatchPattern!: JsonMatchPattern
     MatchScope!: Value<string>
     InvalidFallbackBehavior?: Value<string>
 
@@ -255,7 +286,7 @@ export class JsonBody {
 }
 
 export class NotStatement {
-
+    Statement!: Statement
 
     constructor(properties: NotStatement) {
         Object.assign(this, properties)
@@ -274,6 +305,11 @@ export class OverrideAction {
 export class Rule {
     Name!: Value<string>
     Priority!: Value<number>
+    Statement!: Statement
+    Action?: RuleAction
+    OverrideAction?: OverrideAction
+    RuleLabels?: List<Label>
+    VisibilityConfig!: VisibilityConfig
 
     constructor(properties: Rule) {
         Object.assign(this, properties)
@@ -283,6 +319,7 @@ export class Rule {
 export class CustomResponse {
     ResponseCode!: Value<number>
     CustomResponseBodyKey?: Value<string>
+    ResponseHeaders?: List<CustomHTTPHeader>
 
     constructor(properties: CustomResponse) {
         Object.assign(this, properties)
@@ -292,6 +329,8 @@ export class CustomResponse {
 export class RateBasedStatement {
     Limit!: Value<number>
     AggregateKeyType!: Value<string>
+    ScopeDownStatement?: Statement
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: RateBasedStatement) {
         Object.assign(this, properties)
@@ -318,6 +357,7 @@ export class VisibilityConfig {
 
 export class IPSetReferenceStatement {
     Arn!: Value<string>
+    IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration
 
     constructor(properties: IPSetReferenceStatement) {
         Object.assign(this, properties)
@@ -325,9 +365,14 @@ export class IPSetReferenceStatement {
 }
 
 export interface WebACLProperties {
+    DefaultAction: DefaultAction
     Description?: Value<string>
     Name?: Value<string>
     Scope: Value<string>
+    Rules?: List<Rule>
+    VisibilityConfig: VisibilityConfig
+    Tags?: List<ResourceTag>
+    CustomResponseBodies?: {[key: string]: CustomResponseBody}
 }
 
 export default class WebACL extends ResourceBase<WebACLProperties> {

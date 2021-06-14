@@ -22,6 +22,7 @@ export class DatabaseInput {
     LocationUri?: Value<string>
     Description?: Value<string>
     Parameters?: {[key: string]: any}
+    TargetDatabase?: DatabaseIdentifier
     Name?: Value<string>
 
     constructor(properties: DatabaseInput) {
@@ -39,6 +40,7 @@ export class DatabaseIdentifier {
 }
 
 export interface DatabaseProperties {
+    DatabaseInput: DatabaseInput
     CatalogId: Value<string>
 }
 

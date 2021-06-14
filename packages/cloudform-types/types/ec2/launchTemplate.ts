@@ -21,6 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class BlockDeviceMapping {
+    Ebs?: Ebs
     NoDevice?: Value<string>
     VirtualName?: Value<string>
     DeviceName?: Value<string>
@@ -52,6 +53,7 @@ export class ElasticGpuSpecification {
 
 export class TagSpecification {
     ResourceType?: Value<string>
+    Tags?: List<ResourceTag>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)
@@ -82,15 +84,33 @@ export class EnclaveOptions {
 }
 
 export class LaunchTemplateData {
+    SecurityGroups?: List<Value<string>>
+    TagSpecifications?: List<TagSpecification>
     UserData?: Value<string>
+    BlockDeviceMappings?: List<BlockDeviceMapping>
+    IamInstanceProfile?: IamInstanceProfile
     KernelId?: Value<string>
     EbsOptimized?: Value<boolean>
+    ElasticGpuSpecifications?: List<ElasticGpuSpecification>
+    ElasticInferenceAccelerators?: List<LaunchTemplateElasticInferenceAccelerator>
+    Placement?: Placement
+    NetworkInterfaces?: List<NetworkInterface>
+    EnclaveOptions?: EnclaveOptions
     ImageId?: Value<string>
     InstanceType?: Value<string>
+    Monitoring?: Monitoring
+    HibernationOptions?: HibernationOptions
+    MetadataOptions?: MetadataOptions
+    LicenseSpecifications?: List<LicenseSpecification>
     InstanceInitiatedShutdownBehavior?: Value<string>
+    CpuOptions?: CpuOptions
+    SecurityGroupIds?: List<Value<string>>
     KeyName?: Value<string>
     DisableApiTermination?: Value<boolean>
+    InstanceMarketOptions?: InstanceMarketOptions
     RamDiskId?: Value<string>
+    CapacityReservationSpecification?: CapacityReservationSpecification
+    CreditSpecification?: CreditSpecification
 
     constructor(properties: LaunchTemplateData) {
         Object.assign(this, properties)
@@ -109,6 +129,7 @@ export class MetadataOptions {
 
 export class CapacityReservationSpecification {
     CapacityReservationPreference?: Value<string>
+    CapacityReservationTarget?: CapacityReservationTarget
 
     constructor(properties: CapacityReservationSpecification) {
         Object.assign(this, properties)
@@ -168,6 +189,7 @@ export class HibernationOptions {
 }
 
 export class InstanceMarketOptions {
+    SpotOptions?: SpotOptions
     MarketType?: Value<string>
 
     constructor(properties: InstanceMarketOptions) {
@@ -217,15 +239,18 @@ export class Ipv6Add {
 export class NetworkInterface {
     Description?: Value<string>
     PrivateIpAddress?: Value<string>
+    PrivateIpAddresses?: List<PrivateIpAdd>
     SecondaryPrivateIpAddressCount?: Value<number>
     DeviceIndex?: Value<number>
     SubnetId?: Value<string>
+    Ipv6Addresses?: List<Ipv6Add>
     AssociatePublicIpAddress?: Value<boolean>
     NetworkInterfaceId?: Value<string>
     NetworkCardIndex?: Value<number>
     InterfaceType?: Value<string>
     AssociateCarrierIpAddress?: Value<boolean>
     Ipv6AddressCount?: Value<number>
+    Groups?: List<Value<string>>
     DeleteOnTermination?: Value<boolean>
 
     constructor(properties: NetworkInterface) {
@@ -244,6 +269,7 @@ export class LaunchTemplateElasticInferenceAccelerator {
 
 export class LaunchTemplateTagSpecification {
     ResourceType?: Value<string>
+    Tags?: List<ResourceTag>
 
     constructor(properties: LaunchTemplateTagSpecification) {
         Object.assign(this, properties)
@@ -252,6 +278,8 @@ export class LaunchTemplateTagSpecification {
 
 export interface LaunchTemplateProperties {
     LaunchTemplateName?: Value<string>
+    LaunchTemplateData?: LaunchTemplateData
+    TagSpecifications?: List<LaunchTemplateTagSpecification>
 }
 
 export default class LaunchTemplate extends ResourceBase<LaunchTemplateProperties> {

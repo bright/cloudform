@@ -19,7 +19,9 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class VirtualGatewayTlsValidationContextTrust {
-
+    SDS?: VirtualGatewayTlsValidationContextSdsTrust
+    ACM?: VirtualGatewayTlsValidationContextAcmTrust
+    File?: VirtualGatewayTlsValidationContextFileTrust
 
     constructor(properties: VirtualGatewayTlsValidationContextTrust) {
         Object.assign(this, properties)
@@ -51,7 +53,9 @@ export class VirtualGatewayHttp2ConnectionPool {
 }
 
 export class VirtualGatewaySpec {
-
+    Logging?: VirtualGatewayLogging
+    Listeners!: List<VirtualGatewayListener>
+    BackendDefaults?: VirtualGatewayBackendDefaults
 
     constructor(properties: VirtualGatewaySpec) {
         Object.assign(this, properties)
@@ -59,7 +63,8 @@ export class VirtualGatewaySpec {
 }
 
 export class VirtualGatewayTlsValidationContext {
-
+    SubjectAlternativeNames?: SubjectAlternativeNames
+    Trust!: VirtualGatewayTlsValidationContextTrust
 
     constructor(properties: VirtualGatewayTlsValidationContext) {
         Object.assign(this, properties)
@@ -67,7 +72,9 @@ export class VirtualGatewayTlsValidationContext {
 }
 
 export class VirtualGatewayListenerTlsCertificate {
-
+    SDS?: VirtualGatewayListenerTlsSdsCertificate
+    ACM?: VirtualGatewayListenerTlsAcmCertificate
+    File?: VirtualGatewayListenerTlsFileCertificate
 
     constructor(properties: VirtualGatewayListenerTlsCertificate) {
         Object.assign(this, properties)
@@ -83,7 +90,9 @@ export class VirtualGatewayGrpcConnectionPool {
 }
 
 export class VirtualGatewayConnectionPool {
-
+    HTTP2?: VirtualGatewayHttp2ConnectionPool
+    HTTP?: VirtualGatewayHttpConnectionPool
+    GRPC?: VirtualGatewayGrpcConnectionPool
 
     constructor(properties: VirtualGatewayConnectionPool) {
         Object.assign(this, properties)
@@ -91,7 +100,7 @@ export class VirtualGatewayConnectionPool {
 }
 
 export class SubjectAlternativeNames {
-
+    Match!: SubjectAlternativeNameMatchers
 
     constructor(properties: SubjectAlternativeNames) {
         Object.assign(this, properties)
@@ -99,7 +108,8 @@ export class SubjectAlternativeNames {
 }
 
 export class VirtualGatewayClientTlsCertificate {
-
+    SDS?: VirtualGatewayListenerTlsSdsCertificate
+    File?: VirtualGatewayListenerTlsFileCertificate
 
     constructor(properties: VirtualGatewayClientTlsCertificate) {
         Object.assign(this, properties)
@@ -107,7 +117,8 @@ export class VirtualGatewayClientTlsCertificate {
 }
 
 export class VirtualGatewayListenerTlsValidationContext {
-
+    SubjectAlternativeNames?: SubjectAlternativeNames
+    Trust!: VirtualGatewayListenerTlsValidationContextTrust
 
     constructor(properties: VirtualGatewayListenerTlsValidationContext) {
         Object.assign(this, properties)
@@ -124,7 +135,7 @@ export class VirtualGatewayListenerTlsFileCertificate {
 }
 
 export class VirtualGatewayLogging {
-
+    AccessLog?: VirtualGatewayAccessLog
 
     constructor(properties: VirtualGatewayLogging) {
         Object.assign(this, properties)
@@ -132,7 +143,9 @@ export class VirtualGatewayLogging {
 }
 
 export class VirtualGatewayListenerTls {
+    Validation?: VirtualGatewayListenerTlsValidationContext
     Mode!: Value<string>
+    Certificate!: VirtualGatewayListenerTlsCertificate
 
     constructor(properties: VirtualGatewayListenerTls) {
         Object.assign(this, properties)
@@ -140,7 +153,7 @@ export class VirtualGatewayListenerTls {
 }
 
 export class SubjectAlternativeNameMatchers {
-
+    Exact?: List<Value<string>>
 
     constructor(properties: SubjectAlternativeNameMatchers) {
         Object.assign(this, properties)
@@ -148,7 +161,7 @@ export class SubjectAlternativeNameMatchers {
 }
 
 export class VirtualGatewayClientPolicy {
-
+    TLS?: VirtualGatewayClientPolicyTls
 
     constructor(properties: VirtualGatewayClientPolicy) {
         Object.assign(this, properties)
@@ -164,7 +177,10 @@ export class VirtualGatewayTlsValidationContextSdsTrust {
 }
 
 export class VirtualGatewayListener {
-
+    ConnectionPool?: VirtualGatewayConnectionPool
+    HealthCheck?: VirtualGatewayHealthCheckPolicy
+    TLS?: VirtualGatewayListenerTls
+    PortMapping!: VirtualGatewayPortMapping
 
     constructor(properties: VirtualGatewayListener) {
         Object.assign(this, properties)
@@ -181,7 +197,7 @@ export class VirtualGatewayPortMapping {
 }
 
 export class VirtualGatewayBackendDefaults {
-
+    ClientPolicy?: VirtualGatewayClientPolicy
 
     constructor(properties: VirtualGatewayBackendDefaults) {
         Object.assign(this, properties)
@@ -189,7 +205,10 @@ export class VirtualGatewayBackendDefaults {
 }
 
 export class VirtualGatewayClientPolicyTls {
+    Validation!: VirtualGatewayTlsValidationContext
     Enforce?: Value<boolean>
+    Ports?: List<Value<number>>
+    Certificate?: VirtualGatewayClientTlsCertificate
 
     constructor(properties: VirtualGatewayClientPolicyTls) {
         Object.assign(this, properties)
@@ -197,7 +216,7 @@ export class VirtualGatewayClientPolicyTls {
 }
 
 export class VirtualGatewayAccessLog {
-
+    File?: VirtualGatewayFileAccessLog
 
     constructor(properties: VirtualGatewayAccessLog) {
         Object.assign(this, properties)
@@ -236,7 +255,7 @@ export class VirtualGatewayHealthCheckPolicy {
 }
 
 export class VirtualGatewayTlsValidationContextAcmTrust {
-
+    CertificateAuthorityArns!: List<Value<string>>
 
     constructor(properties: VirtualGatewayTlsValidationContextAcmTrust) {
         Object.assign(this, properties)
@@ -244,7 +263,8 @@ export class VirtualGatewayTlsValidationContextAcmTrust {
 }
 
 export class VirtualGatewayListenerTlsValidationContextTrust {
-
+    SDS?: VirtualGatewayTlsValidationContextSdsTrust
+    File?: VirtualGatewayTlsValidationContextFileTrust
 
     constructor(properties: VirtualGatewayListenerTlsValidationContextTrust) {
         Object.assign(this, properties)
@@ -263,6 +283,8 @@ export interface VirtualGatewayProperties {
     VirtualGatewayName?: Value<string>
     MeshName: Value<string>
     MeshOwner?: Value<string>
+    Spec: VirtualGatewaySpec
+    Tags?: List<ResourceTag>
 }
 
 export default class VirtualGateway extends ResourceBase<VirtualGatewayProperties> {

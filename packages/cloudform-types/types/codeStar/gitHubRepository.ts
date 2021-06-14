@@ -20,7 +20,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Code {
-
+    S3!: S3
 
     constructor(properties: Code) {
         Object.assign(this, properties)
@@ -44,6 +44,7 @@ export interface GitHubRepositoryProperties {
     RepositoryAccessToken?: Value<string>
     RepositoryOwner: Value<string>
     IsPrivate?: Value<boolean>
+    Code?: Code
     RepositoryDescription?: Value<string>
 }
 

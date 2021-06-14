@@ -16,6 +16,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ResourceInstance {
+    ResourceDataContainer!: ResourceDataContainer
     Id!: Value<string>
     Name!: Value<string>
 
@@ -26,6 +27,7 @@ export class ResourceInstance {
 
 export class LocalDeviceResourceData {
     SourcePath!: Value<string>
+    GroupOwnerSetting?: GroupOwnerSetting
 
     constructor(properties: LocalDeviceResourceData) {
         Object.assign(this, properties)
@@ -35,6 +37,7 @@ export class LocalDeviceResourceData {
 export class LocalVolumeResourceData {
     SourcePath!: Value<string>
     DestinationPath!: Value<string>
+    GroupOwnerSetting?: GroupOwnerSetting
 
     constructor(properties: LocalVolumeResourceData) {
         Object.assign(this, properties)
@@ -43,6 +46,7 @@ export class LocalVolumeResourceData {
 
 export class SecretsManagerSecretResourceData {
     ARN!: Value<string>
+    AdditionalStagingLabelsToDownload?: List<Value<string>>
 
     constructor(properties: SecretsManagerSecretResourceData) {
         Object.assign(this, properties)
@@ -50,6 +54,7 @@ export class SecretsManagerSecretResourceData {
 }
 
 export class SageMakerMachineLearningModelResourceData {
+    OwnerSetting?: ResourceDownloadOwnerSetting
     DestinationPath!: Value<string>
     SageMakerJobArn!: Value<string>
 
@@ -68,6 +73,7 @@ export class ResourceDownloadOwnerSetting {
 }
 
 export class S3MachineLearningModelResourceData {
+    OwnerSetting?: ResourceDownloadOwnerSetting
     DestinationPath!: Value<string>
     S3Uri!: Value<string>
 
@@ -77,7 +83,11 @@ export class S3MachineLearningModelResourceData {
 }
 
 export class ResourceDataContainer {
-
+    SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData
+    SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData
+    LocalVolumeResourceData?: LocalVolumeResourceData
+    LocalDeviceResourceData?: LocalDeviceResourceData
+    S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData
 
     constructor(properties: ResourceDataContainer) {
         Object.assign(this, properties)
@@ -94,6 +104,7 @@ export class GroupOwnerSetting {
 }
 
 export interface ResourceDefinitionVersionProperties {
+    Resources: List<ResourceInstance>
     ResourceDefinitionId: Value<string>
 }
 

@@ -87,6 +87,8 @@ export class LaunchTemplateSpecification {
 
 export class BlockDeviceMapping {
     DeviceName!: Value<string>
+    Ebs?: Ebs
+    NoDevice?: NoDevice
     VirtualName?: Value<string>
 
     constructor(properties: BlockDeviceMapping) {
@@ -117,9 +119,12 @@ export class NetworkInterface {
     DeleteOnTermination?: Value<boolean>
     Description?: Value<string>
     DeviceIndex!: Value<string>
+    GroupSet?: List<Value<string>>
     Ipv6AddressCount?: Value<number>
+    Ipv6Addresses?: List<InstanceIpv6Address>
     NetworkInterfaceId?: Value<string>
     PrivateIpAddress?: Value<string>
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SubnetId?: Value<string>
 
@@ -138,6 +143,7 @@ export class InstanceIpv6Address {
 
 export class AssociationParameter {
     Key!: Value<string>
+    Value!: List<Value<string>>
 
     constructor(properties: AssociationParameter) {
         Object.assign(this, properties)
@@ -161,6 +167,7 @@ export class LicenseSpecification {
 }
 
 export class SsmAssociation {
+    AssociationParameters?: List<AssociationParameter>
     DocumentName!: Value<string>
 
     constructor(properties: SsmAssociation) {
@@ -181,8 +188,15 @@ export interface InstanceProperties {
     AdditionalInfo?: Value<string>
     Affinity?: Value<string>
     AvailabilityZone?: Value<string>
+    BlockDeviceMappings?: List<BlockDeviceMapping>
+    CpuOptions?: CpuOptions
+    CreditSpecification?: CreditSpecification
     DisableApiTermination?: Value<boolean>
     EbsOptimized?: Value<boolean>
+    ElasticGpuSpecifications?: List<ElasticGpuSpecification>
+    ElasticInferenceAccelerators?: List<ElasticInferenceAccelerator>
+    EnclaveOptions?: EnclaveOptions
+    HibernationOptions?: HibernationOptions
     HostId?: Value<string>
     HostResourceGroupArn?: Value<string>
     IamInstanceProfile?: Value<string>
@@ -190,16 +204,25 @@ export interface InstanceProperties {
     InstanceInitiatedShutdownBehavior?: Value<string>
     InstanceType?: Value<string>
     Ipv6AddressCount?: Value<number>
+    Ipv6Addresses?: List<InstanceIpv6Address>
     KernelId?: Value<string>
     KeyName?: Value<string>
+    LaunchTemplate?: LaunchTemplateSpecification
+    LicenseSpecifications?: List<LicenseSpecification>
     Monitoring?: Value<boolean>
+    NetworkInterfaces?: List<NetworkInterface>
     PlacementGroupName?: Value<string>
     PrivateIpAddress?: Value<string>
     RamdiskId?: Value<string>
+    SecurityGroupIds?: List<Value<string>>
+    SecurityGroups?: List<Value<string>>
     SourceDestCheck?: Value<boolean>
+    SsmAssociations?: List<SsmAssociation>
     SubnetId?: Value<string>
+    Tags?: List<ResourceTag>
     Tenancy?: Value<string>
     UserData?: Value<string>
+    Volumes?: List<Volume>
 }
 
 export default class Instance extends ResourceBase<InstanceProperties> {

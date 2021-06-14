@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class AutoScalingGroupProvider {
     AutoScalingGroupArn!: Value<string>
+    ManagedScaling?: ManagedScaling
     ManagedTerminationProtection?: Value<string>
 
     constructor(properties: AutoScalingGroupProvider) {
@@ -42,7 +43,9 @@ export class ManagedScaling {
 }
 
 export interface CapacityProviderProperties {
+    AutoScalingGroupProvider: AutoScalingGroupProvider
     Name?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class CapacityProvider extends ResourceBase<CapacityProviderProperties> {

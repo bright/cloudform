@@ -13,7 +13,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class NotificationChannelConfig {
-
+    Sns?: SnsChannelConfig
 
     constructor(properties: NotificationChannelConfig) {
         Object.assign(this, properties)
@@ -29,7 +29,7 @@ export class SnsChannelConfig {
 }
 
 export interface NotificationChannelProperties {
-
+    Config: NotificationChannelConfig
 }
 
 export default class NotificationChannel extends ResourceBase<NotificationChannelProperties> {

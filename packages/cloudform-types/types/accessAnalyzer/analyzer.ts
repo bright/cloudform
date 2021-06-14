@@ -21,6 +21,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ArchiveRule {
+    Filter!: List<Filter>
     RuleName!: Value<string>
 
     constructor(properties: ArchiveRule) {
@@ -29,8 +30,11 @@ export class ArchiveRule {
 }
 
 export class Filter {
+    Contains?: List<Value<string>>
+    Eq?: List<Value<string>>
     Exists?: Value<boolean>
     Property!: Value<string>
+    Neq?: List<Value<string>>
 
     constructor(properties: Filter) {
         Object.assign(this, properties)
@@ -39,6 +43,8 @@ export class Filter {
 
 export interface AnalyzerProperties {
     AnalyzerName?: Value<string>
+    ArchiveRules?: List<ArchiveRule>
+    Tags?: List<ResourceTag>
     Type: Value<string>
 }
 

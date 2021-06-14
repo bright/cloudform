@@ -13,6 +13,7 @@ export interface DestinationProperties {
     Expression: Value<string>
     ExpressionType: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     RoleArn: Value<string>
 }
 

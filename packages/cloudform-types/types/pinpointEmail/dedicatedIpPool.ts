@@ -21,6 +21,7 @@ export class Tags {
 
 export interface DedicatedIpPoolProperties {
     PoolName?: Value<string>
+    Tags?: List<Tags>
 }
 
 export default class DedicatedIpPool extends ResourceBase<DedicatedIpPoolProperties> {

@@ -39,12 +39,16 @@ export class PrivateIpAddressSpecification {
 
 export interface NetworkInterfaceProperties {
     Description?: Value<string>
+    GroupSet?: List<Value<string>>
     InterfaceType?: Value<string>
     Ipv6AddressCount?: Value<number>
+    Ipv6Addresses?: List<InstanceIpv6Address>
     PrivateIpAddress?: Value<string>
+    PrivateIpAddresses?: List<PrivateIpAddressSpecification>
     SecondaryPrivateIpAddressCount?: Value<number>
     SourceDestCheck?: Value<boolean>
     SubnetId: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class NetworkInterface extends ResourceBase<NetworkInterfaceProperties> {

@@ -22,10 +22,13 @@ export class SidewalkUpdateAccount {
 }
 
 export interface PartnerAccountProperties {
+    Sidewalk?: SidewalkAccountInfo
     PartnerAccountId?: Value<string>
     PartnerType?: Value<string>
     AccountLinked?: Value<boolean>
+    SidewalkUpdate?: SidewalkUpdateAccount
     Fingerprint?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class PartnerAccount extends ResourceBase<PartnerAccountProperties> {

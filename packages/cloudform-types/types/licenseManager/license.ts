@@ -29,6 +29,8 @@ export class ProvisionalConfiguration {
 
 export class ConsumptionConfiguration {
     RenewType?: Value<string>
+    ProvisionalConfiguration?: ProvisionalConfiguration
+    BorrowConfiguration?: BorrowConfiguration
 
     constructor(properties: ConsumptionConfiguration) {
         Object.assign(this, properties)
@@ -86,10 +88,15 @@ export class ValidityDateFormat {
 
 export interface LicenseProperties {
     ProductSKU?: Value<string>
+    Issuer: IssuerData
     LicenseName: Value<string>
     ProductName: Value<string>
     HomeRegion: Value<string>
+    Validity: ValidityDateFormat
+    Entitlements: List<Entitlement>
     Beneficiary?: Value<string>
+    ConsumptionConfiguration: ConsumptionConfiguration
+    LicenseMetadata?: List<Metadata>
     Status?: Value<string>
 }
 

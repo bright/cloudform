@@ -13,7 +13,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class FileFormatDescriptor {
-
+    CsvFormatDescriptor?: CsvFormatDescriptor
+    JsonFormatDescriptor?: JsonFormatDescriptor
 
     constructor(properties: FileFormatDescriptor) {
         Object.assign(this, properties)
@@ -24,6 +25,7 @@ export class CsvFormatDescriptor {
     FileCompression?: Value<string>
     Charset?: Value<string>
     Delimiter?: Value<string>
+    HeaderList?: List<Value<string>>
     QuoteSymbol?: Value<string>
     ContainsHeader?: Value<boolean>
 
@@ -33,7 +35,8 @@ export class CsvFormatDescriptor {
 }
 
 export class VpcConfiguration {
-
+    SubnetIdList!: List<Value<string>>
+    SecurityGroupIdList!: List<Value<string>>
 
     constructor(properties: VpcConfiguration) {
         Object.assign(this, properties)
@@ -48,6 +51,7 @@ export class RDSSourceConfig {
     DatabaseName!: Value<string>
     TableName!: Value<string>
     RoleArn!: Value<string>
+    VpcConfiguration!: VpcConfiguration
 
     constructor(properties: RDSSourceConfig) {
         Object.assign(this, properties)
@@ -82,7 +86,11 @@ export class AppFlowConfig {
 }
 
 export class MetricSource {
-
+    S3SourceConfig?: S3SourceConfig
+    RDSSourceConfig?: RDSSourceConfig
+    RedshiftSourceConfig?: RedshiftSourceConfig
+    CloudwatchConfig?: CloudwatchConfig
+    AppFlowConfig?: AppFlowConfig
 
     constructor(properties: MetricSource) {
         Object.assign(this, properties)
@@ -97,6 +105,7 @@ export class RedshiftSourceConfig {
     DatabaseName!: Value<string>
     TableName!: Value<string>
     RoleArn!: Value<string>
+    VpcConfiguration!: VpcConfiguration
 
     constructor(properties: RedshiftSourceConfig) {
         Object.assign(this, properties)
@@ -116,7 +125,11 @@ export class Metric {
 export class MetricSet {
     MetricSetName!: Value<string>
     MetricSetDescription?: Value<string>
+    MetricSource!: MetricSource
+    MetricList!: List<Metric>
     Offset?: Value<number>
+    TimestampColumn?: TimestampColumn
+    DimensionList?: List<Value<string>>
     MetricSetFrequency?: Value<string>
     Timezone?: Value<string>
 
@@ -135,6 +148,9 @@ export class CloudwatchConfig {
 
 export class S3SourceConfig {
     RoleArn!: Value<string>
+    TemplatedPathList?: List<Value<string>>
+    HistoricalDataPathList?: List<Value<string>>
+    FileFormatDescriptor!: FileFormatDescriptor
 
     constructor(properties: S3SourceConfig) {
         Object.assign(this, properties)
@@ -145,6 +161,7 @@ export interface AnomalyDetectorProperties {
     AnomalyDetectorName?: Value<string>
     AnomalyDetectorDescription?: Value<string>
     AnomalyDetectorConfig: {[key: string]: any}
+    MetricSetList: List<MetricSet>
     KmsKeyArn?: Value<string>
 }
 

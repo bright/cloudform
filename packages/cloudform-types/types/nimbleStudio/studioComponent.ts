@@ -27,6 +27,7 @@ export class ScriptParameterKeyValue {
 }
 
 export class ActiveDirectoryConfiguration {
+    ComputerAttributes?: List<ActiveDirectoryComputerAttribute>
     DirectoryId?: Value<string>
     OrganizationalUnitDistinguishedName?: Value<string>
 
@@ -45,7 +46,10 @@ export class ActiveDirectoryComputerAttribute {
 }
 
 export class StudioComponentConfiguration {
-
+    ActiveDirectoryConfiguration?: ActiveDirectoryConfiguration
+    ComputeFarmConfiguration?: ComputeFarmConfiguration
+    LicenseServiceConfiguration?: LicenseServiceConfiguration
+    SharedFileSystemConfiguration?: SharedFileSystemConfiguration
 
     constructor(properties: StudioComponentConfiguration) {
         Object.assign(this, properties)
@@ -85,11 +89,16 @@ export class SharedFileSystemConfiguration {
 }
 
 export interface StudioComponentProperties {
+    Configuration?: StudioComponentConfiguration
     Description?: Value<string>
+    InitializationScripts?: List<StudioComponentInitializationScript>
     Name: Value<string>
+    ScriptParameters?: List<ScriptParameterKeyValue>
+    Ec2SecurityGroupIds?: List<Value<string>>
     StudioId: Value<string>
     Subtype?: Value<string>
     Type: Value<string>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class StudioComponent extends ResourceBase<StudioComponentProperties> {

@@ -39,14 +39,24 @@ export class AnalyticsConfiguration {
 }
 
 export interface UserPoolClientProperties {
+    AnalyticsConfiguration?: AnalyticsConfiguration
     GenerateSecret?: Value<boolean>
+    CallbackURLs?: List<Value<string>>
     IdTokenValidity?: Value<number>
+    AllowedOAuthScopes?: List<Value<string>>
+    TokenValidityUnits?: TokenValidityUnits
+    ReadAttributes?: List<Value<string>>
     AllowedOAuthFlowsUserPoolClient?: Value<boolean>
     DefaultRedirectURI?: Value<string>
+    SupportedIdentityProviders?: List<Value<string>>
     ClientName?: Value<string>
     UserPoolId: Value<string>
+    AllowedOAuthFlows?: List<Value<string>>
+    ExplicitAuthFlows?: List<Value<string>>
+    LogoutURLs?: List<Value<string>>
     AccessTokenValidity?: Value<number>
     RefreshTokenValidity?: Value<number>
+    WriteAttributes?: List<Value<string>>
     PreventUserExistenceErrors?: Value<string>
 }
 

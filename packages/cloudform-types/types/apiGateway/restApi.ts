@@ -32,7 +32,8 @@ export class S3Location {
 }
 
 export class EndpointConfiguration {
-
+    Types?: List<Value<string>>
+    VpcEndpointIds?: List<Value<string>>
 
     constructor(properties: EndpointConfiguration) {
         Object.assign(this, properties)
@@ -41,14 +42,19 @@ export class EndpointConfiguration {
 
 export interface RestApiProperties {
     ApiKeySourceType?: Value<string>
+    BinaryMediaTypes?: List<Value<string>>
     Body?: {[key: string]: any}
+    BodyS3Location?: S3Location
     CloneFrom?: Value<string>
     Description?: Value<string>
     DisableExecuteApiEndpoint?: Value<boolean>
+    EndpointConfiguration?: EndpointConfiguration
     FailOnWarnings?: Value<boolean>
     MinimumCompressionSize?: Value<number>
     Name?: Value<string>
+    Parameters?: {[key: string]: Value<string>}
     Policy?: {[key: string]: any}
+    Tags?: List<ResourceTag>
 }
 
 export default class RestApi extends ResourceBase<RestApiProperties> {

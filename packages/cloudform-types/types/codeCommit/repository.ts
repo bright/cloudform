@@ -9,6 +9,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Code {
+    S3!: S3
     BranchName?: Value<string>
 
     constructor(properties: Code) {
@@ -27,6 +28,8 @@ export class S3 {
 }
 
 export class RepositoryTrigger {
+    Events!: List<Value<string>>
+    Branches?: List<Value<string>>
     CustomData?: Value<string>
     DestinationArn!: Value<string>
     Name!: Value<string>
@@ -38,7 +41,10 @@ export class RepositoryTrigger {
 
 export interface RepositoryProperties {
     RepositoryName: Value<string>
+    Triggers?: List<RepositoryTrigger>
+    Code?: Code
     RepositoryDescription?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Repository extends ResourceBase<RepositoryProperties> {

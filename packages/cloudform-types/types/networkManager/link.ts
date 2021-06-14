@@ -32,8 +32,10 @@ export class Bandwidth {
 export interface LinkProperties {
     GlobalNetworkId: Value<string>
     SiteId: Value<string>
+    Bandwidth: Bandwidth
     Provider?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     Type?: Value<string>
 }
 

@@ -30,7 +30,7 @@ export class FindingsFilterListItem {
 }
 
 export class FindingCriteria {
-
+    Criterion?: Criterion
 
     constructor(properties: FindingCriteria) {
         Object.assign(this, properties)
@@ -40,6 +40,7 @@ export class FindingCriteria {
 export interface FindingsFilterProperties {
     Name: Value<string>
     Description?: Value<string>
+    FindingCriteria: FindingCriteria
     Action?: Value<string>
     Position?: Value<number>
 }

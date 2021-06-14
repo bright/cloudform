@@ -34,6 +34,7 @@ export class S3Location {
 export interface BuildProperties {
     Name?: Value<string>
     OperatingSystem?: Value<string>
+    StorageLocation?: S3Location
     Version?: Value<string>
 }
 

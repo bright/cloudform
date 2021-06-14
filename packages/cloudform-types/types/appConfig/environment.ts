@@ -27,7 +27,9 @@ export class Tags {
 
 export interface EnvironmentProperties {
     Description?: Value<string>
+    Monitors?: List<Monitors>
     ApplicationId: Value<string>
+    Tags?: List<Tags>
     Name: Value<string>
 }
 

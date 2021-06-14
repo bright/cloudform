@@ -26,6 +26,8 @@ export interface ResolverRuleProperties {
     ResolverEndpointId?: Value<string>
     DomainName: Value<string>
     RuleType: Value<string>
+    TargetIps?: List<TargetAddress>
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

@@ -42,12 +42,14 @@ export class EndpointConfiguration {
 export interface EndpointGroupProperties {
     ListenerArn: Value<string>
     EndpointGroupRegion: Value<string>
+    EndpointConfigurations?: List<EndpointConfiguration>
     TrafficDialPercentage?: Value<number>
     HealthCheckPort?: Value<number>
     HealthCheckProtocol?: Value<string>
     HealthCheckPath?: Value<string>
     HealthCheckIntervalSeconds?: Value<number>
     ThresholdCount?: Value<number>
+    PortOverrides?: List<PortOverride>
 }
 
 export default class EndpointGroup extends ResourceBase<EndpointGroupProperties> {

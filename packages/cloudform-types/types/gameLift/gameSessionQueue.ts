@@ -36,7 +36,7 @@ export class Destination {
 }
 
 export class FilterConfiguration {
-
+    AllowedLocations?: List<Value<string>>
 
     constructor(properties: FilterConfiguration) {
         Object.assign(this, properties)
@@ -44,7 +44,8 @@ export class FilterConfiguration {
 }
 
 export class PriorityConfiguration {
-
+    PriorityOrder?: List<Value<string>>
+    LocationOrder?: List<Value<string>>
 
     constructor(properties: PriorityConfiguration) {
         Object.assign(this, properties)
@@ -53,9 +54,13 @@ export class PriorityConfiguration {
 
 export interface GameSessionQueueProperties {
     TimeoutInSeconds?: Value<number>
+    PlayerLatencyPolicies?: List<PlayerLatencyPolicy>
+    Destinations?: List<Destination>
     NotificationTarget?: Value<string>
+    FilterConfiguration?: FilterConfiguration
     CustomEventData?: Value<string>
     Name: Value<string>
+    PriorityConfiguration?: PriorityConfiguration
 }
 
 export default class GameSessionQueue extends ResourceBase<GameSessionQueueProperties> {

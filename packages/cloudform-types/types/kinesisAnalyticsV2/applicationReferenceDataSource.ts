@@ -25,6 +25,7 @@ export class RecordColumn {
 }
 
 export class RecordFormat {
+    MappingParameters?: MappingParameters
     RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
@@ -41,7 +42,9 @@ export class JSONMappingParameters {
 }
 
 export class ReferenceDataSource {
+    ReferenceSchema!: ReferenceSchema
     TableName?: Value<string>
+    S3ReferenceDataSource?: S3ReferenceDataSource
 
     constructor(properties: ReferenceDataSource) {
         Object.assign(this, properties)
@@ -49,7 +52,8 @@ export class ReferenceDataSource {
 }
 
 export class MappingParameters {
-
+    JSONMappingParameters?: JSONMappingParameters
+    CSVMappingParameters?: CSVMappingParameters
 
     constructor(properties: MappingParameters) {
         Object.assign(this, properties)
@@ -67,6 +71,8 @@ export class S3ReferenceDataSource {
 
 export class ReferenceSchema {
     RecordEncoding?: Value<string>
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: ReferenceSchema) {
         Object.assign(this, properties)
@@ -84,6 +90,7 @@ export class CSVMappingParameters {
 
 export interface ApplicationReferenceDataSourceProperties {
     ApplicationName: Value<string>
+    ReferenceDataSource: ReferenceDataSource
 }
 
 export default class ApplicationReferenceDataSource extends ResourceBase<ApplicationReferenceDataSourceProperties> {

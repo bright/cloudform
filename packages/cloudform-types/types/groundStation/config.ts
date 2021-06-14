@@ -40,7 +40,7 @@ export class DataflowEndpointConfig {
 }
 
 export class AntennaDownlinkConfig {
-
+    SpectrumConfig?: SpectrumConfig
 
     constructor(properties: AntennaDownlinkConfig) {
         Object.assign(this, properties)
@@ -56,7 +56,9 @@ export class DemodulationConfig {
 }
 
 export class AntennaDownlinkDemodDecodeConfig {
-
+    SpectrumConfig?: SpectrumConfig
+    DemodulationConfig?: DemodulationConfig
+    DecodeConfig?: DecodeConfig
 
     constructor(properties: AntennaDownlinkDemodDecodeConfig) {
         Object.assign(this, properties)
@@ -64,6 +66,7 @@ export class AntennaDownlinkDemodDecodeConfig {
 }
 
 export class UplinkSpectrumConfig {
+    CenterFrequency?: Frequency
     Polarization?: Value<string>
 
     constructor(properties: UplinkSpectrumConfig) {
@@ -81,6 +84,8 @@ export class Frequency {
 }
 
 export class SpectrumConfig {
+    CenterFrequency?: Frequency
+    Bandwidth?: FrequencyBandwidth
     Polarization?: Value<string>
 
     constructor(properties: SpectrumConfig) {
@@ -106,7 +111,13 @@ export class TrackingConfig {
 }
 
 export class ConfigData {
-
+    AntennaDownlinkConfig?: AntennaDownlinkConfig
+    TrackingConfig?: TrackingConfig
+    DataflowEndpointConfig?: DataflowEndpointConfig
+    AntennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig
+    AntennaUplinkConfig?: AntennaUplinkConfig
+    UplinkEchoConfig?: UplinkEchoConfig
+    S3RecordingConfig?: S3RecordingConfig
 
     constructor(properties: ConfigData) {
         Object.assign(this, properties)
@@ -114,6 +125,8 @@ export class ConfigData {
 }
 
 export class AntennaUplinkConfig {
+    SpectrumConfig?: UplinkSpectrumConfig
+    TargetEirp?: Eirp
     TransmitDisabled?: Value<boolean>
 
     constructor(properties: AntennaUplinkConfig) {
@@ -140,6 +153,8 @@ export class Eirp {
 
 export interface ConfigProperties {
     Name: Value<string>
+    Tags?: List<ResourceTag>
+    ConfigData: ConfigData
 }
 
 export default class Config extends ResourceBase<ConfigProperties> {

@@ -14,6 +14,7 @@ import {Value, List} from '../dataTypes'
 
 export class SsmParameter {
     Key!: Value<string>
+    Values!: List<Value<string>>
 
     constructor(properties: SsmParameter) {
         Object.assign(this, properties)
@@ -25,6 +26,7 @@ export class SsmAutomation {
     DocumentName!: Value<string>
     DocumentVersion?: Value<string>
     TargetAccount?: Value<string>
+    Parameters?: List<SsmParameter>
 
     constructor(properties: SsmAutomation) {
         Object.assign(this, properties)
@@ -32,7 +34,7 @@ export class SsmAutomation {
 }
 
 export class Action {
-
+    SsmAutomation?: SsmAutomation
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -48,7 +50,7 @@ export class NotificationTargetItem {
 }
 
 export class ChatChannel {
-
+    ChatbotSns?: List<Value<string>>
 
     constructor(properties: ChatChannel) {
         Object.assign(this, properties)
@@ -58,6 +60,7 @@ export class ChatChannel {
 export class IncidentTemplate {
     DedupeString?: Value<string>
     Impact!: Value<number>
+    NotificationTargets?: List<NotificationTargetItem>
     Summary?: Value<string>
     Title!: Value<string>
 
@@ -69,6 +72,11 @@ export class IncidentTemplate {
 export interface ResponsePlanProperties {
     Name: Value<string>
     DisplayName?: Value<string>
+    ChatChannel?: ChatChannel
+    Engagements?: List<Value<string>>
+    Actions?: List<Action>
+    Tags?: List<ResourceTag>
+    IncidentTemplate: IncidentTemplate
 }
 
 export default class ResponsePlan extends ResourceBase<ResponsePlanProperties> {

@@ -38,6 +38,8 @@ export class PrefixConfig {
 
 export class S3OutputFormatConfig {
     FileType?: Value<string>
+    PrefixConfig?: PrefixConfig
+    AggregationConfig?: AggregationConfig
 
     constructor(properties: S3OutputFormatConfig) {
         Object.assign(this, properties)
@@ -47,6 +49,7 @@ export class S3OutputFormatConfig {
 export class DestinationFlowConfig {
     ConnectorType!: Value<string>
     ConnectorProfileName?: Value<string>
+    DestinationConnectorProperties!: DestinationConnectorProperties
 
     constructor(properties: DestinationFlowConfig) {
         Object.assign(this, properties)
@@ -82,7 +85,14 @@ export class ScheduledTriggerProperties {
 }
 
 export class DestinationConnectorProperties {
-
+    Redshift?: RedshiftDestinationProperties
+    S3?: S3DestinationProperties
+    Salesforce?: SalesforceDestinationProperties
+    Snowflake?: SnowflakeDestinationProperties
+    EventBridge?: EventBridgeDestinationProperties
+    Upsolver?: UpsolverDestinationProperties
+    LookoutMetrics?: LookoutMetricsDestinationProperties
+    Zendesk?: ZendeskDestinationProperties
 
     constructor(properties: DestinationConnectorProperties) {
         Object.assign(this, properties)
@@ -120,6 +130,8 @@ export class ZendeskSourceProperties {
 
 export class SalesforceDestinationProperties {
     Object!: Value<string>
+    ErrorHandlingConfig?: ErrorHandlingConfig
+    IdFieldNames?: List<Value<string>>
     WriteOperationType?: Value<string>
 
     constructor(properties: SalesforceDestinationProperties) {
@@ -166,6 +178,7 @@ export class SingularSourceProperties {
 
 export class EventBridgeDestinationProperties {
     Object!: Value<string>
+    ErrorHandlingConfig?: ErrorHandlingConfig
 
     constructor(properties: EventBridgeDestinationProperties) {
         Object.assign(this, properties)
@@ -192,6 +205,7 @@ export class RedshiftDestinationProperties {
     Object!: Value<string>
     IntermediateBucketName!: Value<string>
     BucketPrefix?: Value<string>
+    ErrorHandlingConfig?: ErrorHandlingConfig
 
     constructor(properties: RedshiftDestinationProperties) {
         Object.assign(this, properties)
@@ -209,6 +223,8 @@ export class LookoutMetricsDestinationProperties {
 export class SourceFlowConfig {
     ConnectorType!: Value<string>
     ConnectorProfileName?: Value<string>
+    SourceConnectorProperties!: SourceConnectorProperties
+    IncrementalPullConfig?: IncrementalPullConfig
 
     constructor(properties: SourceFlowConfig) {
         Object.assign(this, properties)
@@ -217,6 +233,8 @@ export class SourceFlowConfig {
 
 export class UpsolverS3OutputFormatConfig {
     FileType?: Value<string>
+    PrefixConfig!: PrefixConfig
+    AggregationConfig?: AggregationConfig
 
     constructor(properties: UpsolverS3OutputFormatConfig) {
         Object.assign(this, properties)
@@ -226,6 +244,7 @@ export class UpsolverS3OutputFormatConfig {
 export class UpsolverDestinationProperties {
     BucketName!: Value<string>
     BucketPrefix?: Value<string>
+    S3OutputFormatConfig!: UpsolverS3OutputFormatConfig
 
     constructor(properties: UpsolverDestinationProperties) {
         Object.assign(this, properties)
@@ -242,6 +261,8 @@ export class ServiceNowSourceProperties {
 
 export class ZendeskDestinationProperties {
     Object!: Value<string>
+    ErrorHandlingConfig?: ErrorHandlingConfig
+    IdFieldNames?: List<Value<string>>
     WriteOperationType?: Value<string>
 
     constructor(properties: ZendeskDestinationProperties) {
@@ -260,6 +281,7 @@ export class InforNexusSourceProperties {
 export class S3DestinationProperties {
     BucketName!: Value<string>
     BucketPrefix?: Value<string>
+    S3OutputFormatConfig?: S3OutputFormatConfig
 
     constructor(properties: S3DestinationProperties) {
         Object.assign(this, properties)
@@ -267,7 +289,20 @@ export class S3DestinationProperties {
 }
 
 export class SourceConnectorProperties {
-
+    Amplitude?: AmplitudeSourceProperties
+    Datadog?: DatadogSourceProperties
+    Dynatrace?: DynatraceSourceProperties
+    GoogleAnalytics?: GoogleAnalyticsSourceProperties
+    InforNexus?: InforNexusSourceProperties
+    Marketo?: MarketoSourceProperties
+    S3?: S3SourceProperties
+    Salesforce?: SalesforceSourceProperties
+    ServiceNow?: ServiceNowSourceProperties
+    Singular?: SingularSourceProperties
+    Slack?: SlackSourceProperties
+    Trendmicro?: TrendmicroSourceProperties
+    Veeva?: VeevaSourceProperties
+    Zendesk?: ZendeskSourceProperties
 
     constructor(properties: SourceConnectorProperties) {
         Object.assign(this, properties)
@@ -286,6 +321,7 @@ export class SnowflakeDestinationProperties {
     Object!: Value<string>
     IntermediateBucketName!: Value<string>
     BucketPrefix?: Value<string>
+    ErrorHandlingConfig?: ErrorHandlingConfig
 
     constructor(properties: SnowflakeDestinationProperties) {
         Object.assign(this, properties)
@@ -317,8 +353,11 @@ export class DynatraceSourceProperties {
 }
 
 export class Task {
+    SourceFields!: List<Value<string>>
+    ConnectorOperator?: ConnectorOperator
     DestinationField?: Value<string>
     TaskType!: Value<string>
+    TaskProperties?: List<TaskPropertiesObject>
 
     constructor(properties: Task) {
         Object.assign(this, properties)
@@ -336,6 +375,7 @@ export class TaskPropertiesObject {
 
 export class TriggerConfig {
     TriggerType!: Value<string>
+    TriggerProperties?: ScheduledTriggerProperties
 
     constructor(properties: TriggerConfig) {
         Object.assign(this, properties)
@@ -354,6 +394,11 @@ export interface FlowProperties {
     FlowName: Value<string>
     Description?: Value<string>
     KMSArn?: Value<string>
+    TriggerConfig: TriggerConfig
+    SourceFlowConfig: SourceFlowConfig
+    DestinationFlowConfigList: List<DestinationFlowConfig>
+    Tasks: List<Task>
+    Tags?: List<ResourceTag>
 }
 
 export default class Flow extends ResourceBase<FlowProperties> {

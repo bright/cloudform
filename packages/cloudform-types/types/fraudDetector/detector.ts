@@ -15,6 +15,7 @@ export class Label {
     Inline?: Value<boolean>
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -28,6 +29,7 @@ export class EntityType {
     Inline?: Value<boolean>
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -49,6 +51,7 @@ export class Outcome {
     Inline?: Value<boolean>
     Name?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -66,6 +69,7 @@ export class EventVariable {
     DefaultValue?: Value<string>
     VariableType?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -80,8 +84,10 @@ export class Rule {
     DetectorId?: Value<string>
     Expression?: Value<string>
     Language?: Value<string>
+    Outcomes?: List<Outcome>
     Arn?: Value<string>
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
 
@@ -93,7 +99,11 @@ export class Rule {
 export class EventType {
     Name?: Value<string>
     Inline?: Value<boolean>
+    Tags?: List<ResourceTag>
     Description?: Value<string>
+    EventVariables?: List<EventVariable>
+    Labels?: List<Label>
+    EntityTypes?: List<EntityType>
     Arn?: Value<string>
     CreatedTime?: Value<string>
     LastUpdatedTime?: Value<string>
@@ -107,7 +117,11 @@ export interface DetectorProperties {
     DetectorId: Value<string>
     DetectorVersionStatus?: Value<string>
     RuleExecutionMode?: Value<string>
+    Tags?: List<ResourceTag>
     Description?: Value<string>
+    Rules: List<Rule>
+    EventType: EventType
+    AssociatedModels?: List<Model>
 }
 
 export default class Detector extends ResourceBase<DetectorProperties> {

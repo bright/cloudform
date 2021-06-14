@@ -30,6 +30,9 @@ export class StreamSelection {
 export class CmafPackage {
     SegmentDurationSeconds?: Value<number>
     SegmentPrefix?: Value<string>
+    Encryption?: CmafEncryption
+    StreamSelection?: StreamSelection
+    HlsManifests?: List<HlsManifest>
 
     constructor(properties: CmafPackage) {
         Object.assign(this, properties)
@@ -37,7 +40,7 @@ export class CmafPackage {
 }
 
 export class MssEncryption {
-
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: MssEncryption) {
         Object.assign(this, properties)
@@ -60,9 +63,13 @@ export class DashPackage {
     MinUpdatePeriodSeconds?: Value<number>
     MinBufferTimeSeconds?: Value<number>
     SuggestedPresentationDelaySeconds?: Value<number>
+    PeriodTriggers?: List<Value<string>>
     ManifestLayout?: Value<string>
     SegmentTemplateFormat?: Value<string>
+    AdTriggers?: List<Value<string>>
     AdsOnDeliveryRestrictions?: Value<string>
+    Encryption?: DashEncryption
+    StreamSelection?: StreamSelection
     UtcTiming?: Value<string>
     UtcTimingUri?: Value<string>
 
@@ -73,6 +80,7 @@ export class DashPackage {
 
 export class DashEncryption {
     KeyRotationIntervalSeconds?: Value<number>
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: DashEncryption) {
         Object.assign(this, properties)
@@ -88,6 +96,7 @@ export class HlsManifest {
     AdMarkers?: Value<string>
     ProgramDateTimeIntervalSeconds?: Value<number>
     IncludeIframeOnlyStream?: Value<boolean>
+    AdTriggers?: List<Value<string>>
     AdsOnDeliveryRestrictions?: Value<string>
 
     constructor(properties: HlsManifest) {
@@ -97,6 +106,7 @@ export class HlsManifest {
 
 export class SpekeKeyProvider {
     ResourceId!: Value<string>
+    SystemIds!: List<Value<string>>
     Url!: Value<string>
     RoleArn!: Value<string>
     CertificateArn?: Value<string>
@@ -108,6 +118,7 @@ export class SpekeKeyProvider {
 
 export class CmafEncryption {
     KeyRotationIntervalSeconds?: Value<number>
+    SpekeKeyProvider!: SpekeKeyProvider
     ConstantInitializationVector?: Value<string>
 
     constructor(properties: CmafEncryption) {
@@ -120,6 +131,7 @@ export class HlsEncryption {
     ConstantInitializationVector?: Value<string>
     KeyRotationIntervalSeconds?: Value<number>
     RepeatExtXKey?: Value<boolean>
+    SpekeKeyProvider!: SpekeKeyProvider
 
     constructor(properties: HlsEncryption) {
         Object.assign(this, properties)
@@ -129,6 +141,8 @@ export class HlsEncryption {
 export class MssPackage {
     ManifestWindowSeconds?: Value<number>
     SegmentDurationSeconds?: Value<number>
+    Encryption?: MssEncryption
+    StreamSelection?: StreamSelection
 
     constructor(properties: MssPackage) {
         Object.assign(this, properties)
@@ -140,10 +154,13 @@ export class HlsPackage {
     PlaylistWindowSeconds?: Value<number>
     PlaylistType?: Value<string>
     AdMarkers?: Value<string>
+    AdTriggers?: List<Value<string>>
     AdsOnDeliveryRestrictions?: Value<string>
     ProgramDateTimeIntervalSeconds?: Value<number>
     IncludeIframeOnlyStream?: Value<boolean>
     UseAudioRenditionGroup?: Value<boolean>
+    Encryption?: HlsEncryption
+    StreamSelection?: StreamSelection
 
     constructor(properties: HlsPackage) {
         Object.assign(this, properties)
@@ -154,10 +171,17 @@ export interface OriginEndpointProperties {
     Id: Value<string>
     ChannelId: Value<string>
     Description?: Value<string>
+    Whitelist?: List<Value<string>>
     StartoverWindowSeconds?: Value<number>
     TimeDelaySeconds?: Value<number>
     ManifestName?: Value<string>
     Origination?: Value<string>
+    Authorization?: Authorization
+    HlsPackage?: HlsPackage
+    DashPackage?: DashPackage
+    MssPackage?: MssPackage
+    CmafPackage?: CmafPackage
+    Tags?: List<ResourceTag>
 }
 
 export default class OriginEndpoint extends ResourceBase<OriginEndpointProperties> {

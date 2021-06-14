@@ -48,6 +48,7 @@ export class AccessLogSetting {
 
 export class DeploymentCanarySettings {
     PercentTraffic?: Value<number>
+    StageVariableOverrides?: {[key: string]: Value<string>}
     UseStageCache?: Value<boolean>
 
     constructor(properties: DeploymentCanarySettings) {
@@ -56,20 +57,25 @@ export class DeploymentCanarySettings {
 }
 
 export class StageDescription {
+    AccessLogSetting?: AccessLogSetting
     CacheClusterEnabled?: Value<boolean>
     CacheClusterSize?: Value<string>
     CacheDataEncrypted?: Value<boolean>
     CacheTtlInSeconds?: Value<number>
     CachingEnabled?: Value<boolean>
+    CanarySetting?: CanarySetting
     ClientCertificateId?: Value<string>
     DataTraceEnabled?: Value<boolean>
     Description?: Value<string>
     DocumentationVersion?: Value<string>
     LoggingLevel?: Value<string>
+    MethodSettings?: List<MethodSetting>
     MetricsEnabled?: Value<boolean>
+    Tags?: List<ResourceTag>
     ThrottlingBurstLimit?: Value<number>
     ThrottlingRateLimit?: Value<number>
     TracingEnabled?: Value<boolean>
+    Variables?: {[key: string]: Value<string>}
 
     constructor(properties: StageDescription) {
         Object.assign(this, properties)
@@ -78,6 +84,7 @@ export class StageDescription {
 
 export class CanarySetting {
     PercentTraffic?: Value<number>
+    StageVariableOverrides?: {[key: string]: Value<string>}
     UseStageCache?: Value<boolean>
 
     constructor(properties: CanarySetting) {
@@ -86,8 +93,10 @@ export class CanarySetting {
 }
 
 export interface DeploymentProperties {
+    DeploymentCanarySettings?: DeploymentCanarySettings
     Description?: Value<string>
     RestApiId: Value<string>
+    StageDescription?: StageDescription
     StageName?: Value<string>
 }
 

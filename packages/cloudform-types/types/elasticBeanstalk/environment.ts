@@ -47,9 +47,12 @@ export interface EnvironmentProperties {
     Description?: Value<string>
     EnvironmentName?: Value<string>
     OperationsRole?: Value<string>
+    OptionSettings?: List<OptionSetting>
     PlatformArn?: Value<string>
     SolutionStackName?: Value<string>
+    Tags?: List<ResourceTag>
     TemplateName?: Value<string>
+    Tier?: Tier
     VersionLabel?: Value<string>
 }
 

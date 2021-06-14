@@ -51,10 +51,15 @@ export interface ClusterProperties {
     Port?: Value<number>
     PreferredMaintenanceWindow?: Value<string>
     PubliclyAccessible?: Value<boolean>
+    ClusterSecurityGroups?: List<Value<string>>
+    IamRoles?: List<Value<string>>
+    Tags?: List<ResourceTag>
+    VpcSecurityGroupIds?: List<Value<string>>
     SnapshotClusterIdentifier?: Value<string>
     SnapshotIdentifier?: Value<string>
     Endpoint?: {[key: string]: any}
     OwnerAccount?: Value<string>
+    LoggingProperties?: LoggingProperties
 }
 
 export default class Cluster extends ResourceBase<ClusterProperties> {

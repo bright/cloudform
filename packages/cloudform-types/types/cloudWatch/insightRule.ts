@@ -26,6 +26,7 @@ export interface InsightRuleProperties {
     RuleState: Value<string>
     RuleBody: Value<string>
     RuleName: Value<string>
+    Tags?: Tags
 }
 
 export default class InsightRule extends ResourceBase<InsightRuleProperties> {

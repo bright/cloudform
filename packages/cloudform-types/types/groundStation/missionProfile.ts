@@ -25,7 +25,9 @@ export interface MissionProfileProperties {
     ContactPrePassDurationSeconds?: Value<number>
     ContactPostPassDurationSeconds?: Value<number>
     MinimumViableContactDurationSeconds: Value<number>
+    DataflowEdges: List<DataflowEdge>
     TrackingConfigArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class MissionProfile extends ResourceBase<MissionProfileProperties> {

@@ -38,6 +38,7 @@ export class LaunchTemplate {
 
 export class AutoScalingPolicy {
     EstimatedInstanceWarmup?: Value<number>
+    TargetTrackingConfiguration!: TargetTrackingConfiguration
 
     constructor(properties: AutoScalingPolicy) {
         Object.assign(this, properties)
@@ -54,13 +55,18 @@ export class InstanceDefinition {
 }
 
 export interface GameServerGroupProperties {
+    AutoScalingPolicy?: AutoScalingPolicy
     BalancingStrategy?: Value<string>
     DeleteOption?: Value<string>
     GameServerGroupName: Value<string>
     GameServerProtectionPolicy?: Value<string>
+    InstanceDefinitions: List<InstanceDefinition>
+    LaunchTemplate: LaunchTemplate
     MaxSize?: Value<number>
     MinSize?: Value<number>
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
+    VpcSubnets?: List<Value<string>>
 }
 
 export default class GameServerGroup extends ResourceBase<GameServerGroupProperties> {

@@ -32,6 +32,8 @@ export class SourceConfig {
 
 export interface RobotApplicationProperties {
     CurrentRevisionId?: Value<string>
+    RobotSoftwareSuite: RobotSoftwareSuite
+    Sources: List<SourceConfig>
     Tags?: {[key: string]: any}
     Name?: Value<string>
 }

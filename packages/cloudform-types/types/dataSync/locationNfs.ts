@@ -20,7 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class OnPremConfig {
-
+    AgentArns!: List<Value<string>>
 
     constructor(properties: OnPremConfig) {
         Object.assign(this, properties)
@@ -36,8 +36,11 @@ export class MountOptions {
 }
 
 export interface LocationNFSProperties {
+    MountOptions?: MountOptions
+    OnPremConfig: OnPremConfig
     ServerHostname: Value<string>
     Subdirectory: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class LocationNFS extends ResourceBase<LocationNFSProperties> {

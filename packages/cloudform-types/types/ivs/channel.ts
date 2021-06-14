@@ -14,6 +14,7 @@ export interface ChannelProperties {
     Authorized?: Value<boolean>
     LatencyMode?: Value<string>
     Type?: Value<string>
+    Tags?: List<ResourceTag>
     RecordingConfigurationArn?: Value<string>
 }
 

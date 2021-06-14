@@ -8,8 +8,11 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class EventDestination {
+    CloudWatchDestination?: CloudWatchDestination
     Enabled?: Value<boolean>
+    MatchingEventTypes!: List<Value<string>>
     Name?: Value<string>
+    KinesisFirehoseDestination?: KinesisFirehoseDestination
 
     constructor(properties: EventDestination) {
         Object.assign(this, properties)
@@ -36,7 +39,7 @@ export class KinesisFirehoseDestination {
 }
 
 export class CloudWatchDestination {
-
+    DimensionConfigurations?: List<DimensionConfiguration>
 
     constructor(properties: CloudWatchDestination) {
         Object.assign(this, properties)
@@ -45,6 +48,7 @@ export class CloudWatchDestination {
 
 export interface ConfigurationSetEventDestinationProperties {
     ConfigurationSetName: Value<string>
+    EventDestination: EventDestination
 }
 
 export default class ConfigurationSetEventDestination extends ResourceBase<ConfigurationSetEventDestinationProperties> {

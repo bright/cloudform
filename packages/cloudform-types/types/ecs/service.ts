@@ -58,6 +58,7 @@ export class LoadBalancer {
 }
 
 export class DeploymentConfiguration {
+    DeploymentCircuitBreaker?: DeploymentCircuitBreaker
     MaximumPercent?: Value<number>
     MinimumHealthyPercent?: Value<number>
 
@@ -68,6 +69,8 @@ export class DeploymentConfiguration {
 
 export class AwsVpcConfiguration {
     AssignPublicIp?: Value<string>
+    SecurityGroups?: List<Value<string>>
+    Subnets?: List<Value<string>>
 
     constructor(properties: AwsVpcConfiguration) {
         Object.assign(this, properties)
@@ -75,7 +78,7 @@ export class AwsVpcConfiguration {
 }
 
 export class NetworkConfiguration {
-
+    AwsvpcConfiguration?: AwsVpcConfiguration
 
     constructor(properties: NetworkConfiguration) {
         Object.assign(this, properties)
@@ -113,17 +116,26 @@ export class ServiceRegistry {
 }
 
 export interface ServiceProperties {
+    CapacityProviderStrategy?: List<CapacityProviderStrategyItem>
     Cluster?: Value<string>
+    DeploymentConfiguration?: DeploymentConfiguration
+    DeploymentController?: DeploymentController
     DesiredCount?: Value<number>
     EnableECSManagedTags?: Value<boolean>
     EnableExecuteCommand?: Value<boolean>
     HealthCheckGracePeriodSeconds?: Value<number>
     LaunchType?: Value<string>
+    LoadBalancers?: List<LoadBalancer>
+    NetworkConfiguration?: NetworkConfiguration
+    PlacementConstraints?: List<PlacementConstraint>
+    PlacementStrategies?: List<PlacementStrategy>
     PlatformVersion?: Value<string>
     PropagateTags?: Value<string>
     Role?: Value<string>
     SchedulingStrategy?: Value<string>
     ServiceName?: Value<string>
+    ServiceRegistries?: List<ServiceRegistry>
+    Tags?: List<ResourceTag>
     TaskDefinition?: Value<string>
 }
 

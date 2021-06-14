@@ -29,6 +29,7 @@ export class WafAction {
 }
 
 export class ActivatedRule {
+    Action?: WafAction
     Priority!: Value<number>
     RuleId!: Value<string>
 
@@ -38,8 +39,10 @@ export class ActivatedRule {
 }
 
 export interface WebACLProperties {
+    DefaultAction: WafAction
     MetricName: Value<string>
     Name: Value<string>
+    Rules?: List<ActivatedRule>
 }
 
 export default class WebACL extends ResourceBase<WebACLProperties> {

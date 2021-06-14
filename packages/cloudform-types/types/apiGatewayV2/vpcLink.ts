@@ -8,6 +8,8 @@ import {Value, List} from '../dataTypes'
 
 
 export interface VpcLinkProperties {
+    SubnetIds: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

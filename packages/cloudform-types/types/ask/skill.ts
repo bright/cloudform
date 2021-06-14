@@ -31,6 +31,7 @@ export class SkillPackage {
     S3ObjectVersion?: Value<string>
     S3Bucket!: Value<string>
     S3Key!: Value<string>
+    Overrides?: Overrides
 
     constructor(properties: SkillPackage) {
         Object.assign(this, properties)
@@ -48,7 +49,9 @@ export class AuthenticationConfiguration {
 }
 
 export interface SkillProperties {
+    AuthenticationConfiguration: AuthenticationConfiguration
     VendorId: Value<string>
+    SkillPackage: SkillPackage
 }
 
 export default class Skill extends ResourceBase<SkillProperties> {

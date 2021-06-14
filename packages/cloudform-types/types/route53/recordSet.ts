@@ -41,14 +41,17 @@ export class AliasTarget {
 }
 
 export interface RecordSetProperties {
+    AliasTarget?: AliasTarget
     Comment?: Value<string>
     Failover?: Value<string>
+    GeoLocation?: GeoLocation
     HealthCheckId?: Value<string>
     HostedZoneId?: Value<string>
     HostedZoneName?: Value<string>
     MultiValueAnswer?: Value<boolean>
     Name: Value<string>
     Region?: Value<string>
+    ResourceRecords?: List<Value<string>>
     SetIdentifier?: Value<string>
     TTL?: Value<string>
     Type: Value<string>

@@ -32,7 +32,9 @@ export class Location {
 
 export interface DeviceProperties {
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     GlobalNetworkId: Value<string>
+    Location?: Location
     Model?: Value<string>
     SerialNumber?: Value<string>
     SiteId?: Value<string>

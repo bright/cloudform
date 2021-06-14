@@ -20,8 +20,12 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Cors {
+    AllowOrigins?: List<Value<string>>
     AllowCredentials?: Value<boolean>
+    ExposeHeaders?: List<Value<string>>
+    AllowHeaders?: List<Value<string>>
     MaxAge?: Value<number>
+    AllowMethods?: List<Value<string>>
 
     constructor(properties: Cors) {
         Object.assign(this, properties)
@@ -41,6 +45,7 @@ export class BodyS3Location {
 
 export interface ApiProperties {
     RouteSelectionExpression?: Value<string>
+    BodyS3Location?: BodyS3Location
     Description?: Value<string>
     BasePath?: Value<string>
     FailOnWarnings?: Value<boolean>
@@ -49,6 +54,7 @@ export interface ApiProperties {
     Name?: Value<string>
     Target?: Value<string>
     CredentialsArn?: Value<string>
+    CorsConfiguration?: Cors
     Version?: Value<string>
     ProtocolType?: Value<string>
     RouteKey?: Value<string>

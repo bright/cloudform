@@ -29,7 +29,7 @@ export class JobCommand {
 }
 
 export class ConnectionsList {
-
+    Connections?: List<Value<string>>
 
     constructor(properties: ConnectionsList) {
         Object.assign(this, properties)
@@ -53,6 +53,7 @@ export class ExecutionProperty {
 }
 
 export interface JobProperties {
+    Connections?: ConnectionsList
     MaxRetries?: Value<number>
     Description?: Value<string>
     Timeout?: Value<number>
@@ -60,9 +61,12 @@ export interface JobProperties {
     Name?: Value<string>
     Role: Value<string>
     DefaultArguments?: {[key: string]: any}
+    NotificationProperty?: NotificationProperty
     WorkerType?: Value<string>
     LogUri?: Value<string>
+    Command: JobCommand
     GlueVersion?: Value<string>
+    ExecutionProperty?: ExecutionProperty
     SecurityConfiguration?: Value<string>
     NumberOfWorkers?: Value<number>
     Tags?: {[key: string]: any}

@@ -8,7 +8,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DestinationConfiguration {
-
+    S3!: S3DestinationConfiguration
 
     constructor(properties: DestinationConfiguration) {
         Object.assign(this, properties)
@@ -25,6 +25,8 @@ export class S3DestinationConfiguration {
 
 export interface RecordingConfigurationProperties {
     Name?: Value<string>
+    DestinationConfiguration: DestinationConfiguration
+    Tags?: List<ResourceTag>
 }
 
 export default class RecordingConfiguration extends ResourceBase<RecordingConfigurationProperties> {

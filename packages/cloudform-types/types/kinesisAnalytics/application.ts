@@ -24,6 +24,11 @@ export class CSVMappingParameters {
 
 export class Input {
     NamePrefix!: Value<string>
+    InputSchema!: InputSchema
+    KinesisStreamsInput?: KinesisStreamsInput
+    KinesisFirehoseInput?: KinesisFirehoseInput
+    InputProcessingConfiguration?: InputProcessingConfiguration
+    InputParallelism?: InputParallelism
 
     constructor(properties: Input) {
         Object.assign(this, properties)
@@ -76,6 +81,8 @@ export class InputParallelism {
 
 export class InputSchema {
     RecordEncoding?: Value<string>
+    RecordColumns!: List<RecordColumn>
+    RecordFormat!: RecordFormat
 
     constructor(properties: InputSchema) {
         Object.assign(this, properties)
@@ -83,7 +90,8 @@ export class InputSchema {
 }
 
 export class MappingParameters {
-
+    JSONMappingParameters?: JSONMappingParameters
+    CSVMappingParameters?: CSVMappingParameters
 
     constructor(properties: MappingParameters) {
         Object.assign(this, properties)
@@ -91,6 +99,7 @@ export class MappingParameters {
 }
 
 export class RecordFormat {
+    MappingParameters?: MappingParameters
     RecordFormatType!: Value<string>
 
     constructor(properties: RecordFormat) {
@@ -99,7 +108,7 @@ export class RecordFormat {
 }
 
 export class InputProcessingConfiguration {
-
+    InputLambdaProcessor?: InputLambdaProcessor
 
     constructor(properties: InputProcessingConfiguration) {
         Object.assign(this, properties)
@@ -117,6 +126,7 @@ export class InputLambdaProcessor {
 
 export interface ApplicationProperties {
     ApplicationName?: Value<string>
+    Inputs: List<Input>
     ApplicationDescription?: Value<string>
     ApplicationCode?: Value<string>
 }

@@ -17,6 +17,7 @@ import {Value, List} from '../dataTypes'
 
 export class ComponentPlatform {
     Name?: Value<string>
+    Attributes?: {[key: string]: Value<string>}
 
     constructor(properties: ComponentPlatform) {
         Object.assign(this, properties)
@@ -26,6 +27,8 @@ export class ComponentPlatform {
 export class LambdaContainerParams {
     MemorySizeInKB?: Value<number>
     MountROSysfs?: Value<boolean>
+    Volumes?: List<LambdaVolumeMount>
+    Devices?: List<LambdaDeviceMount>
 
     constructor(properties: LambdaContainerParams) {
         Object.assign(this, properties)
@@ -47,6 +50,9 @@ export class LambdaFunctionRecipeSource {
     LambdaArn?: Value<string>
     ComponentName?: Value<string>
     ComponentVersion?: Value<string>
+    ComponentPlatforms?: List<ComponentPlatform>
+    ComponentDependencies?: {[key: string]: ComponentDependencyRequirement}
+    ComponentLambdaParameters?: LambdaExecutionParameters
 
     constructor(properties: LambdaFunctionRecipeSource) {
         Object.assign(this, properties)
@@ -74,6 +80,7 @@ export class LambdaDeviceMount {
 
 export class LambdaLinuxProcessParams {
     IsolationMode?: Value<string>
+    ContainerParams?: LambdaContainerParams
 
     constructor(properties: LambdaLinuxProcessParams) {
         Object.assign(this, properties)
@@ -90,6 +97,7 @@ export class LambdaEventSource {
 }
 
 export class LambdaExecutionParameters {
+    EventSources?: List<LambdaEventSource>
     MaxQueueSize?: Value<number>
     MaxInstancesCount?: Value<number>
     MaxIdleTimeInSeconds?: Value<number>
@@ -97,6 +105,9 @@ export class LambdaExecutionParameters {
     StatusTimeoutInSeconds?: Value<number>
     Pinned?: Value<boolean>
     InputPayloadEncodingType?: Value<string>
+    ExecArgs?: List<Value<string>>
+    EnvironmentVariables?: {[key: string]: Value<string>}
+    LinuxProcessParams?: LambdaLinuxProcessParams
 
     constructor(properties: LambdaExecutionParameters) {
         Object.assign(this, properties)
@@ -105,6 +116,8 @@ export class LambdaExecutionParameters {
 
 export interface ComponentVersionProperties {
     InlineRecipe?: Value<string>
+    LambdaFunction?: LambdaFunctionRecipeSource
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class ComponentVersion extends ResourceBase<ComponentVersionProperties> {

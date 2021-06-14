@@ -22,6 +22,7 @@ export class RegionConfiguration {
 
 export class ReplicationRegion {
     RegionName?: Value<string>
+    RegionConfiguration?: RegionConfiguration
 
     constructor(properties: ReplicationRegion) {
         Object.assign(this, properties)
@@ -29,6 +30,7 @@ export class ReplicationRegion {
 }
 
 export interface ReplicationSetProperties {
+    Regions: List<ReplicationRegion>
     DeletionProtected?: Value<boolean>
 }
 

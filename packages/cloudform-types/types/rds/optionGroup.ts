@@ -30,9 +30,12 @@ export class OptionSetting {
 }
 
 export class OptionConfiguration {
+    DBSecurityGroupMemberships?: List<Value<string>>
     OptionName!: Value<string>
+    OptionSettings?: List<OptionSetting>
     OptionVersion?: Value<string>
     Port?: Value<number>
+    VpcSecurityGroupMemberships?: List<Value<string>>
 
     constructor(properties: OptionConfiguration) {
         Object.assign(this, properties)
@@ -42,7 +45,9 @@ export class OptionConfiguration {
 export interface OptionGroupProperties {
     EngineName: Value<string>
     MajorEngineVersion: Value<string>
+    OptionConfigurations: List<OptionConfiguration>
     OptionGroupDescription: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class OptionGroup extends ResourceBase<OptionGroupProperties> {

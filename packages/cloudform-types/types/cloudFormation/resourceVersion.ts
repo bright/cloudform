@@ -31,6 +31,7 @@ export class LoggingConfig {
 
 export interface ResourceVersionProperties {
     ExecutionRoleArn?: Value<string>
+    LoggingConfig?: LoggingConfig
     SchemaHandlerPackage: Value<string>
     TypeName: Value<string>
 }

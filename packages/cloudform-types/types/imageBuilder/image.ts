@@ -30,11 +30,13 @@ export class ImageTestsConfiguration {
 }
 
 export interface ImageProperties {
+    ImageTestsConfiguration?: ImageTestsConfiguration
     ImageRecipeArn?: Value<string>
     ContainerRecipeArn?: Value<string>
     DistributionConfigurationArn?: Value<string>
     InfrastructureConfigurationArn: Value<string>
     EnhancedImageMetadataEnabled?: Value<boolean>
+    Tags?: {[key: string]: Value<string>}
 }
 
 export default class Image extends ResourceBase<ImageProperties> {

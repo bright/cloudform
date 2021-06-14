@@ -55,7 +55,11 @@ export class VPC {
 }
 
 export interface HostedZoneProperties {
+    HostedZoneConfig?: HostedZoneConfig
+    HostedZoneTags?: List<HostedZoneTag>
     Name: Value<string>
+    QueryLoggingConfig?: QueryLoggingConfig
+    VPCs?: List<VPC>
 }
 
 export default class HostedZone extends ResourceBase<HostedZoneProperties> {

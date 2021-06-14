@@ -14,6 +14,7 @@ export class AssetModelCompositeModel {
     Description?: Value<string>
     Name!: Value<string>
     Type!: Value<string>
+    CompositeModelProperties?: List<AssetModelProperty>
 
     constructor(properties: AssetModelCompositeModel) {
         Object.assign(this, properties)
@@ -21,7 +22,7 @@ export class AssetModelCompositeModel {
 }
 
 export class MetricWindow {
-
+    Tumbling?: TumblingWindow
 
     constructor(properties: MetricWindow) {
         Object.assign(this, properties)
@@ -46,6 +47,7 @@ export class Attribute {
 
 export class ExpressionVariable {
     Name!: Value<string>
+    Value!: VariableValue
 
     constructor(properties: ExpressionVariable) {
         Object.assign(this, properties)
@@ -63,6 +65,7 @@ export class VariableValue {
 
 export class Transform {
     Expression!: Value<string>
+    Variables!: List<ExpressionVariable>
 
     constructor(properties: Transform) {
         Object.assign(this, properties)
@@ -81,6 +84,8 @@ export class AssetModelHierarchy {
 
 export class Metric {
     Expression!: Value<string>
+    Variables!: List<ExpressionVariable>
+    Window!: MetricWindow
 
     constructor(properties: Metric) {
         Object.assign(this, properties)
@@ -93,6 +98,7 @@ export class AssetModelProperty {
     DataType!: Value<string>
     DataTypeSpec?: Value<string>
     Unit?: Value<string>
+    Type!: PropertyType
 
     constructor(properties: AssetModelProperty) {
         Object.assign(this, properties)
@@ -101,6 +107,9 @@ export class AssetModelProperty {
 
 export class PropertyType {
     TypeName!: Value<string>
+    Attribute?: Attribute
+    Transform?: Transform
+    Metric?: Metric
 
     constructor(properties: PropertyType) {
         Object.assign(this, properties)
@@ -110,6 +119,10 @@ export class PropertyType {
 export interface AssetModelProperties {
     AssetModelName: Value<string>
     AssetModelDescription?: Value<string>
+    AssetModelProperties?: List<AssetModelProperty>
+    AssetModelCompositeModels?: List<AssetModelCompositeModel>
+    AssetModelHierarchies?: List<AssetModelHierarchy>
+    Tags?: List<ResourceTag>
 }
 
 export default class AssetModel extends ResourceBase<AssetModelProperties> {

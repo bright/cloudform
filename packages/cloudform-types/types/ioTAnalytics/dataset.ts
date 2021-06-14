@@ -45,7 +45,7 @@ export class OutputFileUriValue {
 }
 
 export class Filter {
-
+    DeltaTime?: DeltaTime
 
     constructor(properties: Filter) {
         Object.assign(this, properties)
@@ -53,6 +53,7 @@ export class Filter {
 }
 
 export class DatasetContentDeliveryRule {
+    Destination!: DatasetContentDeliveryRuleDestination
     EntryName?: Value<string>
 
     constructor(properties: DatasetContentDeliveryRule) {
@@ -62,6 +63,8 @@ export class DatasetContentDeliveryRule {
 
 export class Action {
     ActionName!: Value<string>
+    ContainerAction?: ContainerAction
+    QueryAction?: QueryAction
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -69,7 +72,7 @@ export class Action {
 }
 
 export class LateDataRuleConfiguration {
-
+    DeltaTimeSessionWindowConfiguration?: DeltaTimeSessionWindowConfiguration
 
     constructor(properties: LateDataRuleConfiguration) {
         Object.assign(this, properties)
@@ -77,8 +80,10 @@ export class LateDataRuleConfiguration {
 }
 
 export class ContainerAction {
+    Variables?: List<Variable>
     ExecutionRoleArn!: Value<string>
     Image!: Value<string>
+    ResourceConfiguration!: ResourceConfiguration
 
     constructor(properties: ContainerAction) {
         Object.assign(this, properties)
@@ -86,6 +91,7 @@ export class ContainerAction {
 }
 
 export class LateDataRule {
+    RuleConfiguration!: LateDataRuleConfiguration
     RuleName?: Value<string>
 
     constructor(properties: LateDataRule) {
@@ -94,6 +100,7 @@ export class LateDataRule {
 }
 
 export class QueryAction {
+    Filters?: List<Filter>
     SqlQuery!: Value<string>
 
     constructor(properties: QueryAction) {
@@ -102,7 +109,8 @@ export class QueryAction {
 }
 
 export class DatasetContentDeliveryRuleDestination {
-
+    IotEventsDestinationConfiguration?: IotEventsDestinationConfiguration
+    S3DestinationConfiguration?: S3DestinationConfiguration
 
     constructor(properties: DatasetContentDeliveryRuleDestination) {
         Object.assign(this, properties)
@@ -136,6 +144,7 @@ export class RetentionPeriod {
 }
 
 export class S3DestinationConfiguration {
+    GlueConfiguration?: GlueConfiguration
     Bucket!: Value<string>
     Key!: Value<string>
     RoleArn!: Value<string>
@@ -146,7 +155,9 @@ export class S3DestinationConfiguration {
 }
 
 export class Variable {
+    DatasetContentVersionValue?: DatasetContentVersionValue
     DoubleValue?: Value<number>
+    OutputFileUriValue?: OutputFileUriValue
     VariableName!: Value<string>
     StringValue?: Value<string>
 
@@ -165,7 +176,8 @@ export class DeltaTime {
 }
 
 export class Trigger {
-
+    Schedule?: Schedule
+    TriggeringDataset?: TriggeringDataset
 
     constructor(properties: Trigger) {
         Object.assign(this, properties)
@@ -199,7 +211,14 @@ export class TriggeringDataset {
 }
 
 export interface DatasetProperties {
+    Actions: List<Action>
+    LateDataRules?: List<LateDataRule>
     DatasetName?: Value<string>
+    ContentDeliveryRules?: List<DatasetContentDeliveryRule>
+    Triggers?: List<Trigger>
+    VersioningConfiguration?: VersioningConfiguration
+    RetentionPeriod?: RetentionPeriod
+    Tags?: List<ResourceTag>
 }
 
 export default class Dataset extends ResourceBase<DatasetProperties> {

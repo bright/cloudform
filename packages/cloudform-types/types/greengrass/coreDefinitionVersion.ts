@@ -27,6 +27,7 @@ export class Core {
 }
 
 export interface CoreDefinitionVersionProperties {
+    Cores: List<Core>
     CoreDefinitionId: Value<string>
 }
 

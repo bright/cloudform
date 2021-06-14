@@ -30,6 +30,7 @@ export class FieldToMatch {
 }
 
 export class ByteMatchTuple {
+    FieldToMatch!: FieldToMatch
     PositionalConstraint!: Value<string>
     TargetString?: Value<string>
     TargetStringBase64?: Value<string>
@@ -41,6 +42,7 @@ export class ByteMatchTuple {
 }
 
 export interface ByteMatchSetProperties {
+    ByteMatchTuples?: List<ByteMatchTuple>
     Name: Value<string>
 }
 

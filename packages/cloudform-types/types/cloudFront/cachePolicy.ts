@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class HeadersConfig {
     HeaderBehavior!: Value<string>
+    Headers?: List<Value<string>>
 
     constructor(properties: HeadersConfig) {
         Object.assign(this, properties)
@@ -34,6 +35,7 @@ export class CachePolicyConfig {
     MaxTTL!: Value<number>
     MinTTL!: Value<number>
     Name!: Value<string>
+    ParametersInCacheKeyAndForwardedToOrigin!: ParametersInCacheKeyAndForwardedToOrigin
 
     constructor(properties: CachePolicyConfig) {
         Object.assign(this, properties)
@@ -41,8 +43,11 @@ export class CachePolicyConfig {
 }
 
 export class ParametersInCacheKeyAndForwardedToOrigin {
+    CookiesConfig!: CookiesConfig
     EnableAcceptEncodingBrotli?: Value<boolean>
     EnableAcceptEncodingGzip!: Value<boolean>
+    HeadersConfig!: HeadersConfig
+    QueryStringsConfig!: QueryStringsConfig
 
     constructor(properties: ParametersInCacheKeyAndForwardedToOrigin) {
         Object.assign(this, properties)
@@ -51,6 +56,7 @@ export class ParametersInCacheKeyAndForwardedToOrigin {
 
 export class QueryStringsConfig {
     QueryStringBehavior!: Value<string>
+    QueryStrings?: List<Value<string>>
 
     constructor(properties: QueryStringsConfig) {
         Object.assign(this, properties)
@@ -59,6 +65,7 @@ export class QueryStringsConfig {
 
 export class CookiesConfig {
     CookieBehavior!: Value<string>
+    Cookies?: List<Value<string>>
 
     constructor(properties: CookiesConfig) {
         Object.assign(this, properties)
@@ -66,7 +73,7 @@ export class CookiesConfig {
 }
 
 export interface CachePolicyProperties {
-
+    CachePolicyConfig: CachePolicyConfig
 }
 
 export default class CachePolicy extends ResourceBase<CachePolicyProperties> {

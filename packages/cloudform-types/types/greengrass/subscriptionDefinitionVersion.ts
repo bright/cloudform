@@ -28,6 +28,7 @@ export class Subscription {
 
 export interface SubscriptionDefinitionVersionProperties {
     SubscriptionDefinitionId: Value<string>
+    Subscriptions: List<Subscription>
 }
 
 export default class SubscriptionDefinitionVersion extends ResourceBase<SubscriptionDefinitionVersionProperties> {

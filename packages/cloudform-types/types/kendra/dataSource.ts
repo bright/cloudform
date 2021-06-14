@@ -23,6 +23,7 @@ export class SalesforceStandardObjectConfiguration {
     Name!: Value<string>
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
 
     constructor(properties: SalesforceStandardObjectConfiguration) {
         Object.assign(this, properties)
@@ -32,6 +33,8 @@ export class SalesforceStandardObjectConfiguration {
 export class SalesforceChatterFeedConfiguration {
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
+    IncludeFilterTypes?: List<Value<string>>
 
     constructor(properties: SalesforceChatterFeedConfiguration) {
         Object.assign(this, properties)
@@ -41,7 +44,13 @@ export class SalesforceChatterFeedConfiguration {
 export class SalesforceConfiguration {
     ServerUrl!: Value<string>
     SecretArn!: Value<string>
+    StandardObjectConfigurations?: List<SalesforceStandardObjectConfiguration>
+    KnowledgeArticleConfiguration?: SalesforceKnowledgeArticleConfiguration
+    ChatterFeedConfiguration?: SalesforceChatterFeedConfiguration
     CrawlAttachments?: Value<boolean>
+    StandardObjectAttachmentConfiguration?: SalesforceStandardObjectAttachmentConfiguration
+    IncludeAttachmentFilePatterns?: List<Value<string>>
+    ExcludeAttachmentFilePatterns?: List<Value<string>>
 
     constructor(properties: SalesforceConfiguration) {
         Object.assign(this, properties)
@@ -52,6 +61,8 @@ export class ColumnConfiguration {
     DocumentIdColumnName!: Value<string>
     DocumentDataColumnName!: Value<string>
     DocumentTitleColumnName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
+    ChangeDetectingColumns!: List<Value<string>>
 
     constructor(properties: ColumnConfiguration) {
         Object.assign(this, properties)
@@ -60,8 +71,11 @@ export class ColumnConfiguration {
 
 export class ServiceNowKnowledgeArticleConfiguration {
     CrawlAttachments?: Value<boolean>
+    IncludeAttachmentFilePatterns?: List<Value<string>>
+    ExcludeAttachmentFilePatterns?: List<Value<string>>
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
     FilterQuery?: Value<string>
 
     constructor(properties: ServiceNowKnowledgeArticleConfiguration) {
@@ -72,6 +86,9 @@ export class ServiceNowKnowledgeArticleConfiguration {
 export class ConfluenceSpaceConfiguration {
     CrawlPersonalSpaces?: Value<boolean>
     CrawlArchivedSpaces?: Value<boolean>
+    IncludeSpaces?: List<Value<string>>
+    ExcludeSpaces?: List<Value<string>>
+    SpaceFieldMappings?: List<ConfluenceSpaceToIndexFieldMapping>
 
     constructor(properties: ConfluenceSpaceConfiguration) {
         Object.assign(this, properties)
@@ -80,6 +97,12 @@ export class ConfluenceSpaceConfiguration {
 
 export class GoogleDriveConfiguration {
     SecretArn!: Value<string>
+    InclusionPatterns?: List<Value<string>>
+    ExclusionPatterns?: List<Value<string>>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
+    ExcludeMimeTypes?: List<Value<string>>
+    ExcludeUserAccounts?: List<Value<string>>
+    ExcludeSharedDrives?: List<Value<string>>
 
     constructor(properties: GoogleDriveConfiguration) {
         Object.assign(this, properties)
@@ -100,6 +123,8 @@ export class ServiceNowConfiguration {
     SecretArn!: Value<string>
     ServiceNowBuildVersion!: Value<string>
     AuthenticationType?: Value<string>
+    KnowledgeArticleConfiguration?: ServiceNowKnowledgeArticleConfiguration
+    ServiceCatalogConfiguration?: ServiceNowServiceCatalogConfiguration
 
     constructor(properties: ServiceNowConfiguration) {
         Object.assign(this, properties)
@@ -110,6 +135,13 @@ export class ConfluenceConfiguration {
     ServerUrl!: Value<string>
     SecretArn!: Value<string>
     Version!: Value<string>
+    SpaceConfiguration?: ConfluenceSpaceConfiguration
+    PageConfiguration?: ConfluencePageConfiguration
+    BlogConfiguration?: ConfluenceBlogConfiguration
+    AttachmentConfiguration?: ConfluenceAttachmentConfiguration
+    VpcConfiguration?: DataSourceVpcConfiguration
+    InclusionPatterns?: List<Value<string>>
+    ExclusionPatterns?: List<Value<string>>
 
     constructor(properties: ConfluenceConfiguration) {
         Object.assign(this, properties)
@@ -128,6 +160,11 @@ export class ConfluencePageToIndexFieldMapping {
 
 export class DatabaseConfiguration {
     DatabaseEngineType!: Value<string>
+    ConnectionConfiguration!: ConnectionConfiguration
+    VpcConfiguration?: DataSourceVpcConfiguration
+    ColumnConfiguration!: ColumnConfiguration
+    AclConfiguration?: AclConfiguration
+    SqlConfiguration?: SqlConfiguration
 
     constructor(properties: DatabaseConfiguration) {
         Object.assign(this, properties)
@@ -144,6 +181,11 @@ export class SqlConfiguration {
 
 export class S3DataSourceConfiguration {
     BucketName!: Value<string>
+    InclusionPrefixes?: List<Value<string>>
+    InclusionPatterns?: List<Value<string>>
+    ExclusionPatterns?: List<Value<string>>
+    DocumentsMetadataConfiguration?: DocumentsMetadataConfiguration
+    AccessControlListConfiguration?: AccessControlListConfiguration
 
     constructor(properties: S3DataSourceConfiguration) {
         Object.assign(this, properties)
@@ -151,7 +193,7 @@ export class S3DataSourceConfiguration {
 }
 
 export class ConfluenceBlogConfiguration {
-
+    BlogFieldMappings?: List<ConfluenceBlogToIndexFieldMapping>
 
     constructor(properties: ConfluenceBlogConfiguration) {
         Object.assign(this, properties)
@@ -159,7 +201,7 @@ export class ConfluenceBlogConfiguration {
 }
 
 export class ConfluencePageConfiguration {
-
+    PageFieldMappings?: List<ConfluencePageToIndexFieldMapping>
 
     constructor(properties: ConfluencePageConfiguration) {
         Object.assign(this, properties)
@@ -180,8 +222,11 @@ export class ConnectionConfiguration {
 
 export class ServiceNowServiceCatalogConfiguration {
     CrawlAttachments?: Value<boolean>
+    IncludeAttachmentFilePatterns?: List<Value<string>>
+    ExcludeAttachmentFilePatterns?: List<Value<string>>
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
 
     constructor(properties: ServiceNowServiceCatalogConfiguration) {
         Object.assign(this, properties)
@@ -190,6 +235,7 @@ export class ServiceNowServiceCatalogConfiguration {
 
 export class SalesforceStandardObjectAttachmentConfiguration {
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
 
     constructor(properties: SalesforceStandardObjectAttachmentConfiguration) {
         Object.assign(this, properties)
@@ -200,6 +246,7 @@ export class SalesforceCustomKnowledgeArticleTypeConfiguration {
     Name!: Value<string>
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
 
     constructor(properties: SalesforceCustomKnowledgeArticleTypeConfiguration) {
         Object.assign(this, properties)
@@ -217,7 +264,8 @@ export class ConfluenceBlogToIndexFieldMapping {
 }
 
 export class OneDriveUsers {
-
+    OneDriveUserList?: List<Value<string>>
+    OneDriveUserS3Path?: S3Path
 
     constructor(properties: OneDriveUsers) {
         Object.assign(this, properties)
@@ -235,6 +283,7 @@ export class AclConfiguration {
 export class SalesforceStandardKnowledgeArticleTypeConfiguration {
     DocumentDataFieldName!: Value<string>
     DocumentTitleFieldName?: Value<string>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
 
     constructor(properties: SalesforceStandardKnowledgeArticleTypeConfiguration) {
         Object.assign(this, properties)
@@ -243,6 +292,7 @@ export class SalesforceStandardKnowledgeArticleTypeConfiguration {
 
 export class ConfluenceAttachmentConfiguration {
     CrawlAttachments?: Value<boolean>
+    AttachmentFieldMappings?: List<ConfluenceAttachmentToIndexFieldMapping>
 
     constructor(properties: ConfluenceAttachmentConfiguration) {
         Object.assign(this, properties)
@@ -250,7 +300,8 @@ export class ConfluenceAttachmentConfiguration {
 }
 
 export class DataSourceVpcConfiguration {
-
+    SubnetIds!: List<Value<string>>
+    SecurityGroupIds!: List<Value<string>>
 
     constructor(properties: DataSourceVpcConfiguration) {
         Object.assign(this, properties)
@@ -258,7 +309,9 @@ export class DataSourceVpcConfiguration {
 }
 
 export class SalesforceKnowledgeArticleConfiguration {
-
+    IncludedStates!: List<Value<string>>
+    StandardKnowledgeArticleTypeConfiguration?: SalesforceStandardKnowledgeArticleTypeConfiguration
+    CustomKnowledgeArticleTypeConfigurations?: List<SalesforceCustomKnowledgeArticleTypeConfiguration>
 
     constructor(properties: SalesforceKnowledgeArticleConfiguration) {
         Object.assign(this, properties)
@@ -296,6 +349,10 @@ export class ConfluenceSpaceToIndexFieldMapping {
 export class OneDriveConfiguration {
     TenantDomain!: Value<string>
     SecretArn!: Value<string>
+    OneDriveUsers!: OneDriveUsers
+    InclusionPatterns?: List<Value<string>>
+    ExclusionPatterns?: List<Value<string>>
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
     DisableLocalGroups?: Value<boolean>
 
     constructor(properties: OneDriveConfiguration) {
@@ -304,7 +361,14 @@ export class OneDriveConfiguration {
 }
 
 export class DataSourceConfiguration {
-
+    S3Configuration?: S3DataSourceConfiguration
+    SharePointConfiguration?: SharePointConfiguration
+    SalesforceConfiguration?: SalesforceConfiguration
+    OneDriveConfiguration?: OneDriveConfiguration
+    ServiceNowConfiguration?: ServiceNowConfiguration
+    DatabaseConfiguration?: DatabaseConfiguration
+    ConfluenceConfiguration?: ConfluenceConfiguration
+    GoogleDriveConfiguration?: GoogleDriveConfiguration
 
     constructor(properties: DataSourceConfiguration) {
         Object.assign(this, properties)
@@ -313,9 +377,14 @@ export class DataSourceConfiguration {
 
 export class SharePointConfiguration {
     SharePointVersion!: Value<string>
+    Urls!: List<Value<string>>
     SecretArn!: Value<string>
     CrawlAttachments?: Value<boolean>
     UseChangeLog?: Value<boolean>
+    InclusionPatterns?: List<Value<string>>
+    ExclusionPatterns?: List<Value<string>>
+    VpcConfiguration?: DataSourceVpcConfiguration
+    FieldMappings?: List<DataSourceToIndexFieldMapping>
     DocumentTitleFieldName?: Value<string>
     DisableLocalGroups?: Value<boolean>
 
@@ -336,9 +405,11 @@ export interface DataSourceProperties {
     Name: Value<string>
     IndexId: Value<string>
     Type: Value<string>
+    DataSourceConfiguration?: DataSourceConfiguration
     Description?: Value<string>
     Schedule?: Value<string>
     RoleArn?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DataSource extends ResourceBase<DataSourceProperties> {

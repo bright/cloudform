@@ -45,6 +45,7 @@ export class SpotProvisioningSpecification {
 
 export class BootstrapActionConfig {
     Name!: Value<string>
+    ScriptBootstrapAction!: ScriptBootstrapActionConfig
 
     constructor(properties: BootstrapActionConfig) {
         Object.assign(this, properties)
@@ -53,6 +54,7 @@ export class BootstrapActionConfig {
 
 export class StepConfig {
     ActionOnFailure?: Value<string>
+    HadoopJarStep!: HadoopJarStepConfig
     Name!: Value<string>
 
     constructor(properties: StepConfig) {
@@ -61,6 +63,7 @@ export class StepConfig {
 }
 
 export class EbsBlockDeviceConfig {
+    VolumeSpecification!: VolumeSpecification
     VolumesPerInstance?: Value<number>
 
     constructor(properties: EbsBlockDeviceConfig) {
@@ -69,7 +72,7 @@ export class EbsBlockDeviceConfig {
 }
 
 export class ManagedScalingPolicy {
-
+    ComputeLimits?: ComputeLimits
 
     constructor(properties: ManagedScalingPolicy) {
         Object.assign(this, properties)
@@ -78,6 +81,7 @@ export class ManagedScalingPolicy {
 
 export class CloudWatchAlarmDefinition {
     ComparisonOperator!: Value<string>
+    Dimensions?: List<MetricDimension>
     EvaluationPeriods?: Value<number>
     MetricName!: Value<string>
     Namespace?: Value<string>
@@ -111,7 +115,8 @@ export class VolumeSpecification {
 }
 
 export class InstanceFleetProvisioningSpecifications {
-
+    OnDemandSpecification?: OnDemandProvisioningSpecification
+    SpotSpecification?: SpotProvisioningSpecification
 
     constructor(properties: InstanceFleetProvisioningSpecifications) {
         Object.assign(this, properties)
@@ -119,7 +124,10 @@ export class InstanceFleetProvisioningSpecifications {
 }
 
 export class InstanceGroupConfig {
+    AutoScalingPolicy?: AutoScalingPolicy
     BidPrice?: Value<string>
+    Configurations?: List<Configuration>
+    EbsConfiguration?: EbsConfiguration
     InstanceCount!: Value<number>
     InstanceType!: Value<string>
     Market?: Value<string>
@@ -143,6 +151,8 @@ export class KerberosAttributes {
 }
 
 export class Application {
+    AdditionalInfo?: {[key: string]: Value<string>}
+    Args?: List<Value<string>>
     Name?: Value<string>
     Version?: Value<string>
 
@@ -153,6 +163,8 @@ export class Application {
 
 export class Configuration {
     Classification?: Value<string>
+    ConfigurationProperties?: {[key: string]: Value<string>}
+    Configurations?: List<Configuration>
 
     constructor(properties: Configuration) {
         Object.assign(this, properties)
@@ -160,6 +172,7 @@ export class Configuration {
 }
 
 export class ScriptBootstrapActionConfig {
+    Args?: List<Value<string>>
     Path!: Value<string>
 
     constructor(properties: ScriptBootstrapActionConfig) {
@@ -168,6 +181,7 @@ export class ScriptBootstrapActionConfig {
 }
 
 export class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>
     EbsOptimized?: Value<boolean>
 
     constructor(properties: EbsConfiguration) {
@@ -178,6 +192,8 @@ export class EbsConfiguration {
 export class InstanceTypeConfig {
     BidPrice?: Value<string>
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>
+    Configurations?: List<Configuration>
+    EbsConfiguration?: EbsConfiguration
     InstanceType!: Value<string>
     WeightedCapacity?: Value<number>
 
@@ -204,7 +220,7 @@ export class OnDemandProvisioningSpecification {
 }
 
 export class ScalingTrigger {
-
+    CloudWatchAlarmDefinition!: CloudWatchAlarmDefinition
 
     constructor(properties: ScalingTrigger) {
         Object.assign(this, properties)
@@ -212,6 +228,8 @@ export class ScalingTrigger {
 }
 
 export class InstanceFleetConfig {
+    InstanceTypeConfigs?: List<InstanceTypeConfig>
+    LaunchSpecifications?: InstanceFleetProvisioningSpecifications
     Name?: Value<string>
     TargetOnDemandCapacity?: Value<number>
     TargetSpotCapacity?: Value<number>
@@ -222,12 +240,20 @@ export class InstanceFleetConfig {
 }
 
 export class JobFlowInstancesConfig {
+    AdditionalMasterSecurityGroups?: List<Value<string>>
+    AdditionalSlaveSecurityGroups?: List<Value<string>>
+    CoreInstanceFleet?: InstanceFleetConfig
+    CoreInstanceGroup?: InstanceGroupConfig
     Ec2KeyName?: Value<string>
     Ec2SubnetId?: Value<string>
+    Ec2SubnetIds?: List<Value<string>>
     EmrManagedMasterSecurityGroup?: Value<string>
     EmrManagedSlaveSecurityGroup?: Value<string>
     HadoopVersion?: Value<string>
     KeepJobFlowAliveWhenNoSteps?: Value<boolean>
+    MasterInstanceFleet?: InstanceFleetConfig
+    MasterInstanceGroup?: InstanceGroupConfig
+    Placement?: PlacementType
     ServiceAccessSecurityGroup?: Value<string>
     TerminationProtected?: Value<boolean>
 
@@ -247,6 +273,7 @@ export class ScalingConstraints {
 
 export class ScalingAction {
     Market?: Value<string>
+    SimpleScalingPolicyConfiguration!: SimpleScalingPolicyConfiguration
 
     constructor(properties: ScalingAction) {
         Object.assign(this, properties)
@@ -272,8 +299,10 @@ export class PlacementType {
 }
 
 export class ScalingRule {
+    Action!: ScalingAction
     Description?: Value<string>
     Name!: Value<string>
+    Trigger!: ScalingTrigger
 
     constructor(properties: ScalingRule) {
         Object.assign(this, properties)
@@ -281,7 +310,8 @@ export class ScalingRule {
 }
 
 export class AutoScalingPolicy {
-
+    Constraints!: ScalingConstraints
+    Rules!: List<ScalingRule>
 
     constructor(properties: AutoScalingPolicy) {
         Object.assign(this, properties)
@@ -289,8 +319,10 @@ export class AutoScalingPolicy {
 }
 
 export class HadoopJarStepConfig {
+    Args?: List<Value<string>>
     Jar!: Value<string>
     MainClass?: Value<string>
+    StepProperties?: List<KeyValue>
 
     constructor(properties: HadoopJarStepConfig) {
         Object.assign(this, properties)
@@ -299,18 +331,26 @@ export class HadoopJarStepConfig {
 
 export interface ClusterProperties {
     AdditionalInfo?: {[key: string]: any}
+    Applications?: List<Application>
     AutoScalingRole?: Value<string>
+    BootstrapActions?: List<BootstrapActionConfig>
+    Configurations?: List<Configuration>
     CustomAmiId?: Value<string>
     EbsRootVolumeSize?: Value<number>
+    Instances: JobFlowInstancesConfig
     JobFlowRole: Value<string>
+    KerberosAttributes?: KerberosAttributes
     LogEncryptionKmsKeyId?: Value<string>
     LogUri?: Value<string>
+    ManagedScalingPolicy?: ManagedScalingPolicy
     Name: Value<string>
     ReleaseLabel?: Value<string>
     ScaleDownBehavior?: Value<string>
     SecurityConfiguration?: Value<string>
     ServiceRole: Value<string>
     StepConcurrencyLevel?: Value<number>
+    Steps?: List<StepConfig>
+    Tags?: List<ResourceTag>
     VisibleToAllUsers?: Value<boolean>
 }
 

@@ -31,6 +31,7 @@ export class AccessPointTag {
 
 export class RootDirectory {
     Path?: Value<string>
+    CreationInfo?: CreationInfo
 
     constructor(properties: RootDirectory) {
         Object.assign(this, properties)
@@ -50,6 +51,7 @@ export class CreationInfo {
 export class PosixUser {
     Uid!: Value<string>
     Gid!: Value<string>
+    SecondaryGids?: List<Value<string>>
 
     constructor(properties: PosixUser) {
         Object.assign(this, properties)
@@ -58,7 +60,10 @@ export class PosixUser {
 
 export interface AccessPointProperties {
     ClientToken?: Value<string>
+    AccessPointTags?: List<AccessPointTag>
     FileSystemId: Value<string>
+    PosixUser?: PosixUser
+    RootDirectory?: RootDirectory
 }
 
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {

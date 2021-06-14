@@ -30,7 +30,9 @@ export interface ComponentProperties {
     Platform: Value<string>
     Data?: Value<string>
     KmsKeyId?: Value<string>
+    Tags?: {[key: string]: Value<string>}
     Uri?: Value<string>
+    SupportedOsVersions?: List<Value<string>>
 }
 
 export default class Component extends ResourceBase<ComponentProperties> {

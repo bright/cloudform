@@ -29,7 +29,7 @@ export class TargetGroupInfo {
 }
 
 export class OnPremisesTagSetListObject {
-
+    OnPremisesTagGroup?: List<TagFilter>
 
     constructor(properties: OnPremisesTagSetListObject) {
         Object.assign(this, properties)
@@ -56,7 +56,7 @@ export class EC2TagFilter {
 }
 
 export class OnPremisesTagSet {
-
+    OnPremisesTagSetList?: List<OnPremisesTagSetListObject>
 
     constructor(properties: OnPremisesTagSet) {
         Object.assign(this, properties)
@@ -64,7 +64,8 @@ export class OnPremisesTagSet {
 }
 
 export class LoadBalancerInfo {
-
+    ElbInfoList?: List<ELBInfo>
+    TargetGroupInfoList?: List<TargetGroupInfo>
 
     constructor(properties: LoadBalancerInfo) {
         Object.assign(this, properties)
@@ -72,7 +73,9 @@ export class LoadBalancerInfo {
 }
 
 export class RevisionLocation {
+    GitHubLocation?: GitHubLocation
     RevisionType?: Value<string>
+    S3Location?: S3Location
 
     constructor(properties: RevisionLocation) {
         Object.assign(this, properties)
@@ -80,6 +83,7 @@ export class RevisionLocation {
 }
 
 export class TriggerConfig {
+    TriggerEvents?: List<Value<string>>
     TriggerName?: Value<string>
     TriggerTargetArn?: Value<string>
 
@@ -89,7 +93,7 @@ export class TriggerConfig {
 }
 
 export class EC2TagSet {
-
+    Ec2TagSetList?: List<EC2TagSetListObject>
 
     constructor(properties: EC2TagSet) {
         Object.assign(this, properties)
@@ -97,6 +101,7 @@ export class EC2TagSet {
 }
 
 export class AlarmConfiguration {
+    Alarms?: List<Alarm>
     Enabled?: Value<boolean>
     IgnorePollAlarmFailure?: Value<boolean>
 
@@ -107,6 +112,7 @@ export class AlarmConfiguration {
 
 export class AutoRollbackConfiguration {
     Enabled?: Value<boolean>
+    Events?: List<Value<string>>
 
     constructor(properties: AutoRollbackConfiguration) {
         Object.assign(this, properties)
@@ -163,6 +169,7 @@ export class Alarm {
 export class Deployment {
     Description?: Value<string>
     IgnoreApplicationStopFailures?: Value<boolean>
+    Revision!: RevisionLocation
 
     constructor(properties: Deployment) {
         Object.assign(this, properties)
@@ -170,7 +177,7 @@ export class Deployment {
 }
 
 export class EC2TagSetListObject {
-
+    Ec2TagGroup?: List<EC2TagFilter>
 
     constructor(properties: EC2TagSetListObject) {
         Object.assign(this, properties)
@@ -178,10 +185,21 @@ export class EC2TagSetListObject {
 }
 
 export interface DeploymentGroupProperties {
+    AlarmConfiguration?: AlarmConfiguration
     ApplicationName: Value<string>
+    AutoRollbackConfiguration?: AutoRollbackConfiguration
+    AutoScalingGroups?: List<Value<string>>
+    Deployment?: Deployment
     DeploymentConfigName?: Value<string>
     DeploymentGroupName?: Value<string>
+    DeploymentStyle?: DeploymentStyle
+    Ec2TagFilters?: List<EC2TagFilter>
+    Ec2TagSet?: EC2TagSet
+    LoadBalancerInfo?: LoadBalancerInfo
+    OnPremisesInstanceTagFilters?: List<TagFilter>
+    OnPremisesTagSet?: OnPremisesTagSet
     ServiceRoleArn: Value<string>
+    TriggerConfigurations?: List<TriggerConfig>
 }
 
 export default class DeploymentGroup extends ResourceBase<DeploymentGroupProperties> {

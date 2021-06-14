@@ -34,7 +34,7 @@ export class BorderStyle {
 }
 
 export class TileStyle {
-
+    Border?: BorderStyle
 
     constructor(properties: TileStyle) {
         Object.assign(this, properties)
@@ -42,6 +42,7 @@ export class TileStyle {
 }
 
 export class ResourcePermission {
+    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -67,6 +68,8 @@ export class GutterStyle {
 
 export class DataColorPalette {
     EmptyFillColor?: Value<string>
+    Colors?: List<Value<string>>
+    MinMaxGradient?: List<Value<string>>
 
     constructor(properties: DataColorPalette) {
         Object.assign(this, properties)
@@ -74,7 +77,10 @@ export class DataColorPalette {
 }
 
 export class ThemeConfiguration {
-
+    DataColorPalette?: DataColorPalette
+    UIColorPalette?: UIColorPalette
+    Sheet?: SheetStyle
+    Typography?: Typography
 
     constructor(properties: ThemeConfiguration) {
         Object.assign(this, properties)
@@ -105,7 +111,8 @@ export class UIColorPalette {
 }
 
 export class SheetStyle {
-
+    TileLayout?: TileLayoutStyle
+    Tile?: TileStyle
 
     constructor(properties: SheetStyle) {
         Object.assign(this, properties)
@@ -113,7 +120,8 @@ export class SheetStyle {
 }
 
 export class TileLayoutStyle {
-
+    Gutter?: GutterStyle
+    Margin?: MarginStyle
 
     constructor(properties: TileLayoutStyle) {
         Object.assign(this, properties)
@@ -121,7 +129,7 @@ export class TileLayoutStyle {
 }
 
 export class Typography {
-
+    FontFamilies?: List<Font>
 
     constructor(properties: Typography) {
         Object.assign(this, properties)
@@ -131,7 +139,10 @@ export class Typography {
 export interface ThemeProperties {
     AwsAccountId: Value<string>
     BaseThemeId?: Value<string>
+    Configuration?: ThemeConfiguration
     Name?: Value<string>
+    Permissions?: List<ResourcePermission>
+    Tags?: List<ResourceTag>
     ThemeId: Value<string>
     VersionDescription?: Value<string>
 }

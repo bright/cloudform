@@ -33,6 +33,7 @@ export interface ConfigurationProperties {
     AuthenticationStrategy?: Value<string>
     EngineType: Value<string>
     Data: Value<string>
+    Tags?: List<TagsEntry>
     Name: Value<string>
 }
 

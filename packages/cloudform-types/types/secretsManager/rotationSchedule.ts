@@ -43,7 +43,9 @@ export class HostedRotationLambda {
 
 export interface RotationScheduleProperties {
     SecretId: Value<string>
+    HostedRotationLambda?: HostedRotationLambda
     RotationLambdaARN?: Value<string>
+    RotationRules?: RotationRules
 }
 
 export default class RotationSchedule extends ResourceBase<RotationScheduleProperties> {

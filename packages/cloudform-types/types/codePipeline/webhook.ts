@@ -38,6 +38,8 @@ export class WebhookAuthConfiguration {
 }
 
 export interface WebhookProperties {
+    AuthenticationConfiguration: WebhookAuthConfiguration
+    Filters: List<WebhookFilterRule>
     Authentication: Value<string>
     TargetPipeline: Value<string>
     TargetAction: Value<string>

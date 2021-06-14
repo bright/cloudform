@@ -16,7 +16,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class ConnectorDefinitionVersion {
-
+    Connectors!: List<Connector>
 
     constructor(properties: ConnectorDefinitionVersion) {
         Object.assign(this, properties)
@@ -34,6 +34,7 @@ export class Connector {
 }
 
 export interface ConnectorDefinitionProperties {
+    InitialVersion?: ConnectorDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

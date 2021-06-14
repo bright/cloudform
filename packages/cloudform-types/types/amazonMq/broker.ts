@@ -29,6 +29,7 @@ export class LogList {
 
 export class User {
     Username!: Value<string>
+    Groups?: List<Value<string>>
     ConsoleAccess?: Value<boolean>
     Password!: Value<string>
 
@@ -38,6 +39,7 @@ export class User {
 }
 
 export class LdapServerMetadata {
+    Hosts!: List<Value<string>>
     UserRoleName?: Value<string>
     UserSearchMatching!: Value<string>
     RoleName?: Value<string>
@@ -92,15 +94,24 @@ export class ConfigurationId {
 }
 
 export interface BrokerProperties {
+    SecurityGroups?: List<Value<string>>
     StorageType?: Value<string>
     EngineVersion: Value<string>
+    Configuration?: ConfigurationId
     AuthenticationStrategy?: Value<string>
+    MaintenanceWindowStartTime?: MaintenanceWindow
     HostInstanceType: Value<string>
     AutoMinorVersionUpgrade: Value<boolean>
+    Users: List<User>
+    Logs?: LogList
+    SubnetIds?: List<Value<string>>
     BrokerName: Value<string>
+    LdapServerMetadata?: LdapServerMetadata
     DeploymentMode: Value<string>
     EngineType: Value<string>
     PubliclyAccessible: Value<boolean>
+    EncryptionOptions?: EncryptionOptions
+    Tags?: List<TagsEntry>
 }
 
 export default class Broker extends ResourceBase<BrokerProperties> {

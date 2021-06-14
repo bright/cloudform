@@ -12,6 +12,7 @@ import {Value, List} from '../dataTypes'
 export class ImageConfiguration {
     StartCommand?: Value<string>
     Port?: Value<string>
+    RuntimeEnvironmentVariables?: List<KeyValuePair>
 
     constructor(properties: ImageConfiguration) {
         Object.assign(this, properties)
@@ -72,6 +73,7 @@ export class CodeConfigurationValues {
     BuildCommand?: Value<string>
     StartCommand?: Value<string>
     Port?: Value<string>
+    RuntimeEnvironmentVariables?: List<KeyValuePair>
 
     constructor(properties: CodeConfigurationValues) {
         Object.assign(this, properties)
@@ -89,6 +91,7 @@ export class SourceCodeVersion {
 
 export class ImageRepository {
     ImageIdentifier!: Value<string>
+    ImageConfiguration?: ImageConfiguration
     ImageRepositoryType!: Value<string>
 
     constructor(properties: ImageRepository) {
@@ -97,7 +100,10 @@ export class ImageRepository {
 }
 
 export class SourceConfiguration {
+    CodeRepository?: CodeRepository
+    ImageRepository?: ImageRepository
     AutoDeploymentsEnabled?: Value<boolean>
+    AuthenticationConfiguration?: AuthenticationConfiguration
 
     constructor(properties: SourceConfiguration) {
         Object.assign(this, properties)
@@ -106,6 +112,8 @@ export class SourceConfiguration {
 
 export class CodeRepository {
     RepositoryUrl!: Value<string>
+    SourceCodeVersion!: SourceCodeVersion
+    CodeConfiguration?: CodeConfiguration
 
     constructor(properties: CodeRepository) {
         Object.assign(this, properties)
@@ -114,6 +122,7 @@ export class CodeRepository {
 
 export class CodeConfiguration {
     ConfigurationSource!: Value<string>
+    CodeConfigurationValues?: CodeConfigurationValues
 
     constructor(properties: CodeConfiguration) {
         Object.assign(this, properties)
@@ -122,6 +131,11 @@ export class CodeConfiguration {
 
 export interface ServiceProperties {
     ServiceName?: Value<string>
+    SourceConfiguration: SourceConfiguration
+    InstanceConfiguration?: InstanceConfiguration
+    Tags?: List<ResourceTag>
+    EncryptionConfiguration?: EncryptionConfiguration
+    HealthCheckConfiguration?: HealthCheckConfiguration
     AutoScalingConfigurationArn?: Value<string>
 }
 

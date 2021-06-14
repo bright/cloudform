@@ -34,6 +34,7 @@ export class ResetTimer {
 
 export class IotEvents {
     InputName!: Value<string>
+    Payload?: Payload
 
     constructor(properties: IotEvents) {
         Object.assign(this, properties)
@@ -41,6 +42,7 @@ export class IotEvents {
 }
 
 export class TransitionEvent {
+    Actions?: List<Action>
     Condition!: Value<string>
     EventName!: Value<string>
     NextState!: Value<string>
@@ -55,6 +57,7 @@ export class IotSiteWise {
     EntryId?: Value<string>
     PropertyAlias?: Value<string>
     PropertyId?: Value<string>
+    PropertyValue!: AssetPropertyValue
 
     constructor(properties: IotSiteWise) {
         Object.assign(this, properties)
@@ -66,6 +69,7 @@ export class DynamoDB {
     HashKeyType?: Value<string>
     HashKeyValue!: Value<string>
     Operation?: Value<string>
+    Payload?: Payload
     PayloadField?: Value<string>
     RangeKeyField?: Value<string>
     RangeKeyType?: Value<string>
@@ -79,6 +83,7 @@ export class DynamoDB {
 
 export class Firehose {
     DeliveryStreamName!: Value<string>
+    Payload?: Payload
     Separator?: Value<string>
 
     constructor(properties: Firehose) {
@@ -95,6 +100,9 @@ export class ClearTimer {
 }
 
 export class State {
+    OnEnter?: OnEnter
+    OnExit?: OnExit
+    OnInput?: OnInput
     StateName!: Value<string>
 
     constructor(properties: State) {
@@ -103,6 +111,7 @@ export class State {
 }
 
 export class Event {
+    Actions?: List<Action>
     Condition?: Value<string>
     EventName!: Value<string>
 
@@ -112,6 +121,7 @@ export class Event {
 }
 
 export class Sns {
+    Payload?: Payload
     TargetArn!: Value<string>
 
     constructor(properties: Sns) {
@@ -120,7 +130,7 @@ export class Sns {
 }
 
 export class OnExit {
-
+    Events?: List<Event>
 
     constructor(properties: OnExit) {
         Object.assign(this, properties)
@@ -128,6 +138,7 @@ export class OnExit {
 }
 
 export class Sqs {
+    Payload?: Payload
     QueueUrl!: Value<string>
     UseBase64?: Value<boolean>
 
@@ -138,6 +149,7 @@ export class Sqs {
 
 export class DetectorModelDefinition {
     InitialStateName!: Value<string>
+    States!: List<State>
 
     constructor(properties: DetectorModelDefinition) {
         Object.assign(this, properties)
@@ -146,6 +158,7 @@ export class DetectorModelDefinition {
 
 export class IotTopicPublish {
     MqttTopic!: Value<string>
+    Payload?: Payload
 
     constructor(properties: IotTopicPublish) {
         Object.assign(this, properties)
@@ -153,7 +166,19 @@ export class IotTopicPublish {
 }
 
 export class Action {
-
+    ClearTimer?: ClearTimer
+    DynamoDB?: DynamoDB
+    DynamoDBv2?: DynamoDBv2
+    Firehose?: Firehose
+    IotEvents?: IotEvents
+    IotSiteWise?: IotSiteWise
+    IotTopicPublish?: IotTopicPublish
+    Lambda?: Lambda
+    ResetTimer?: ResetTimer
+    SetTimer?: SetTimer
+    SetVariable?: SetVariable
+    Sns?: Sns
+    Sqs?: Sqs
 
     constructor(properties: Action) {
         Object.assign(this, properties)
@@ -170,6 +195,7 @@ export class AssetPropertyTimestamp {
 }
 
 export class DynamoDBv2 {
+    Payload?: Payload
     TableName!: Value<string>
 
     constructor(properties: DynamoDBv2) {
@@ -178,7 +204,8 @@ export class DynamoDBv2 {
 }
 
 export class OnInput {
-
+    Events?: List<Event>
+    TransitionEvents?: List<TransitionEvent>
 
     constructor(properties: OnInput) {
         Object.assign(this, properties)
@@ -215,7 +242,7 @@ export class Payload {
 }
 
 export class OnEnter {
-
+    Events?: List<Event>
 
     constructor(properties: OnEnter) {
         Object.assign(this, properties)
@@ -224,6 +251,8 @@ export class OnEnter {
 
 export class AssetPropertyValue {
     Quality?: Value<string>
+    Timestamp?: AssetPropertyTimestamp
+    Value!: AssetPropertyVariant
 
     constructor(properties: AssetPropertyValue) {
         Object.assign(this, properties)
@@ -232,6 +261,7 @@ export class AssetPropertyValue {
 
 export class Lambda {
     FunctionArn!: Value<string>
+    Payload?: Payload
 
     constructor(properties: Lambda) {
         Object.assign(this, properties)
@@ -239,11 +269,13 @@ export class Lambda {
 }
 
 export interface DetectorModelProperties {
+    DetectorModelDefinition: DetectorModelDefinition
     DetectorModelDescription?: Value<string>
     DetectorModelName?: Value<string>
     EvaluationMethod?: Value<string>
     Key?: Value<string>
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class DetectorModel extends ResourceBase<DetectorModelProperties> {

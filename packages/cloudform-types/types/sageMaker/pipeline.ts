@@ -27,6 +27,7 @@ export interface PipelineProperties {
     PipelineDescription?: Value<string>
     PipelineDefinition: {[key: string]: any}
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Pipeline extends ResourceBase<PipelineProperties> {

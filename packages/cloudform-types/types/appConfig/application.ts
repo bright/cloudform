@@ -18,6 +18,7 @@ export class Tags {
 
 export interface ApplicationProperties {
     Description?: Value<string>
+    Tags?: List<Tags>
     Name: Value<string>
 }
 

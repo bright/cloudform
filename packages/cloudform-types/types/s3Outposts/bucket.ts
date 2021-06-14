@@ -30,6 +30,7 @@ export class AbortIncompleteMultipartUpload {
 export class Rule {
     Status?: Value<string>
     Id?: Value<string>
+    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload
     ExpirationDate?: Value<string>
     ExpirationInDays?: Value<number>
     Filter?: {[key: string]: any}
@@ -40,7 +41,7 @@ export class Rule {
 }
 
 export class LifecycleConfiguration {
-
+    Rules!: List<Rule>
 
     constructor(properties: LifecycleConfiguration) {
         Object.assign(this, properties)
@@ -50,6 +51,8 @@ export class LifecycleConfiguration {
 export interface BucketProperties {
     BucketName: Value<string>
     OutpostId: Value<string>
+    Tags?: List<ResourceTag>
+    LifecycleConfiguration?: LifecycleConfiguration
 }
 
 export default class Bucket extends ResourceBase<BucketProperties> {

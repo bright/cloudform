@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class JWTConfiguration {
     Issuer?: Value<string>
+    Audience?: List<Value<string>>
 
     constructor(properties: JWTConfiguration) {
         Object.assign(this, properties)
@@ -32,7 +33,9 @@ export interface AuthorizerProperties {
     AuthorizerUri?: Value<string>
     AuthorizerCredentialsArn?: Value<string>
     AuthorizerType: Value<string>
+    JwtConfiguration?: JWTConfiguration
     AuthorizerResultTtlInSeconds?: Value<number>
+    IdentitySource?: List<Value<string>>
     AuthorizerPayloadFormatVersion?: Value<string>
     EnableSimpleResponses?: Value<boolean>
     ApiId: Value<string>

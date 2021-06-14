@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export class FindingCriteria {
     Criterion?: {[key: string]: any}
+    ItemType?: Condition
 
     constructor(properties: FindingCriteria) {
         Object.assign(this, properties)
@@ -30,6 +31,8 @@ export class FindingCriteria {
 export class Condition {
     Lt?: Value<number>
     Gte?: Value<number>
+    Neq?: List<Value<string>>
+    Eq?: List<Value<string>>
     Lte?: Value<number>
 
     constructor(properties: Condition) {
@@ -41,6 +44,7 @@ export interface FilterProperties {
     Action: Value<string>
     Description: Value<string>
     DetectorId: Value<string>
+    FindingCriteria: FindingCriteria
     Rank: Value<number>
     Name: Value<string>
 }

@@ -23,6 +23,7 @@ import {Value, List} from '../dataTypes'
 export class CanarySetting {
     DeploymentId?: Value<string>
     PercentTraffic?: Value<number>
+    StageVariableOverrides?: {[key: string]: Value<string>}
     UseStageCache?: Value<boolean>
 
     constructor(properties: CanarySetting) {
@@ -57,15 +58,20 @@ export class MethodSetting {
 }
 
 export interface StageProperties {
+    AccessLogSetting?: AccessLogSetting
     CacheClusterEnabled?: Value<boolean>
     CacheClusterSize?: Value<string>
+    CanarySetting?: CanarySetting
     ClientCertificateId?: Value<string>
     DeploymentId?: Value<string>
     Description?: Value<string>
     DocumentationVersion?: Value<string>
+    MethodSettings?: List<MethodSetting>
     RestApiId: Value<string>
     StageName?: Value<string>
+    Tags?: List<ResourceTag>
     TracingEnabled?: Value<boolean>
+    Variables?: {[key: string]: Value<string>}
 }
 
 export default class Stage extends ResourceBase<StageProperties> {

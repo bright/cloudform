@@ -72,7 +72,12 @@ export class ElasticIp {
 
 export interface StackProperties {
     AgentVersion?: Value<string>
+    Attributes?: {[key: string]: Value<string>}
+    ChefConfiguration?: ChefConfiguration
+    CloneAppIds?: List<Value<string>>
     ClonePermissions?: Value<boolean>
+    ConfigurationManager?: StackConfigurationManager
+    CustomCookbooksSource?: Source
     CustomJson?: {[key: string]: any}
     DefaultAvailabilityZone?: Value<string>
     DefaultInstanceProfileArn: Value<string>
@@ -81,10 +86,13 @@ export interface StackProperties {
     DefaultSshKeyName?: Value<string>
     DefaultSubnetId?: Value<string>
     EcsClusterArn?: Value<string>
+    ElasticIps?: List<ElasticIp>
     HostnameTheme?: Value<string>
     Name: Value<string>
+    RdsDbInstances?: List<RdsDbInstance>
     ServiceRoleArn: Value<string>
     SourceStackId?: Value<string>
+    Tags?: List<ResourceTag>
     UseCustomCookbooks?: Value<boolean>
     UseOpsworksSecurityGroups?: Value<boolean>
     VpcId?: Value<string>

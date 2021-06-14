@@ -31,6 +31,7 @@ export interface TransitGatewayProperties {
     DnsSupport?: Value<string>
     MulticastSupport?: Value<string>
     AmazonSideAsn?: Value<number>
+    Tags?: List<ResourceTag>
 }
 
 export default class TransitGateway extends ResourceBase<TransitGatewayProperties> {

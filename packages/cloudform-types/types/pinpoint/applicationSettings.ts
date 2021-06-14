@@ -41,7 +41,10 @@ export class QuietTime {
 }
 
 export interface ApplicationSettingsProperties {
+    QuietTime?: QuietTime
+    Limits?: Limits
     ApplicationId: Value<string>
+    CampaignHook?: CampaignHook
     CloudWatchMetricsEnabled?: Value<boolean>
 }
 

@@ -17,6 +17,7 @@ import {Value, List} from '../dataTypes'
 export class SyncConfig {
     ConflictHandler?: Value<string>
     ConflictDetection!: Value<string>
+    LambdaConflictHandlerConfig?: LambdaConflictHandlerConfig
 
     constructor(properties: SyncConfig) {
         Object.assign(this, properties)
@@ -38,6 +39,7 @@ export interface FunctionConfigurationProperties {
     RequestMappingTemplate?: Value<string>
     ResponseMappingTemplate?: Value<string>
     FunctionVersion: Value<string>
+    SyncConfig?: SyncConfig
     RequestMappingTemplateS3Location?: Value<string>
     ApiId: Value<string>
     Name: Value<string>

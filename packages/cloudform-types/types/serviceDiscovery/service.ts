@@ -19,6 +19,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DnsConfig {
+    DnsRecords!: List<DnsRecord>
     RoutingPolicy?: Value<string>
     NamespaceId?: Value<string>
 
@@ -57,7 +58,11 @@ export class DnsRecord {
 export interface ServiceProperties {
     Type?: Value<string>
     Description?: Value<string>
+    HealthCheckCustomConfig?: HealthCheckCustomConfig
+    DnsConfig?: DnsConfig
     NamespaceId?: Value<string>
+    HealthCheckConfig?: HealthCheckConfig
+    Tags?: List<ResourceTag>
     Name?: Value<string>
 }
 

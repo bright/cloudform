@@ -33,6 +33,8 @@ export interface ProjectProperties {
     Name: Value<string>
     RecipeName: Value<string>
     RoleArn: Value<string>
+    Sample?: Sample
+    Tags?: List<ResourceTag>
 }
 
 export default class Project extends ResourceBase<ProjectProperties> {

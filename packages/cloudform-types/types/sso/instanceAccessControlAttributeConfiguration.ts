@@ -18,6 +18,7 @@ import {Value, List} from '../dataTypes'
 
 export class AccessControlAttribute {
     Key!: Value<string>
+    Value!: AccessControlAttributeValue
 
     constructor(properties: AccessControlAttribute) {
         Object.assign(this, properties)
@@ -25,7 +26,7 @@ export class AccessControlAttribute {
 }
 
 export class AccessControlAttributeValue {
-
+    Source!: List<Value<string>>
 
     constructor(properties: AccessControlAttributeValue) {
         Object.assign(this, properties)
@@ -34,6 +35,7 @@ export class AccessControlAttributeValue {
 
 export interface InstanceAccessControlAttributeConfigurationProperties {
     InstanceArn: Value<string>
+    AccessControlAttributes?: List<AccessControlAttribute>
 }
 
 export default class InstanceAccessControlAttributeConfiguration extends ResourceBase<InstanceAccessControlAttributeConfigurationProperties> {

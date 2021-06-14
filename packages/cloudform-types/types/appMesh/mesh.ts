@@ -18,7 +18,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class MeshSpec {
-
+    EgressFilter?: EgressFilter
 
     constructor(properties: MeshSpec) {
         Object.assign(this, properties)
@@ -35,6 +35,8 @@ export class EgressFilter {
 
 export interface MeshProperties {
     MeshName?: Value<string>
+    Spec?: MeshSpec
+    Tags?: List<ResourceTag>
 }
 
 export default class Mesh extends ResourceBase<MeshProperties> {

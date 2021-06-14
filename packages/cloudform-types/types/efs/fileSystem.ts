@@ -47,12 +47,15 @@ export class BackupPolicy {
 
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>
+    FileSystemTags?: List<ElasticFileSystemTag>
     KmsKeyId?: Value<string>
+    LifecyclePolicies?: List<LifecyclePolicy>
     PerformanceMode?: Value<string>
     ProvisionedThroughputInMibps?: Value<number>
     ThroughputMode?: Value<string>
     FileSystemPolicy?: {[key: string]: any}
     BypassPolicyLockoutSafetyCheck?: Value<boolean>
+    BackupPolicy?: BackupPolicy
     AvailabilityZoneName?: Value<string>
 }
 

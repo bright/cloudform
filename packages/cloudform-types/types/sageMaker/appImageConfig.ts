@@ -20,7 +20,8 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class KernelGatewayImageConfig {
-
+    FileSystemConfig?: FileSystemConfig
+    KernelSpecs!: List<KernelSpec>
 
     constructor(properties: KernelGatewayImageConfig) {
         Object.assign(this, properties)
@@ -48,6 +49,8 @@ export class KernelSpec {
 
 export interface AppImageConfigProperties {
     AppImageConfigName: Value<string>
+    KernelGatewayImageConfig?: KernelGatewayImageConfig
+    Tags?: List<ResourceTag>
 }
 
 export default class AppImageConfig extends ResourceBase<AppImageConfigProperties> {

@@ -21,6 +21,7 @@ import {Value, List} from '../dataTypes'
 
 export interface VpcLinkProperties {
     Description?: Value<string>
+    TargetArns: List<Value<string>>
     Name: Value<string>
 }
 

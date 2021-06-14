@@ -31,7 +31,9 @@ export class Policy {
 
 export interface GroupProperties {
     GroupName?: Value<string>
+    ManagedPolicyArns?: List<Value<string>>
     Path?: Value<string>
+    Policies?: List<Policy>
 }
 
 export default class Group extends ResourceBase<GroupProperties> {

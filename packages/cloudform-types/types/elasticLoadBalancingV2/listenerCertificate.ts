@@ -29,6 +29,7 @@ export class Certificate {
 }
 
 export interface ListenerCertificateProperties {
+    Certificates: List<Certificate>
     ListenerArn: Value<string>
 }
 

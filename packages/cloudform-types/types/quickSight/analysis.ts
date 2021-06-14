@@ -18,6 +18,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class DecimalParameter {
+    Values!: List<Value<number>>
     Name!: Value<string>
 
     constructor(properties: DecimalParameter) {
@@ -26,6 +27,7 @@ export class DecimalParameter {
 }
 
 export class ResourcePermission {
+    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -34,6 +36,7 @@ export class ResourcePermission {
 }
 
 export class AnalysisSourceTemplate {
+    DataSetReferences!: List<DataSetReference>
     Arn!: Value<string>
 
     constructor(properties: AnalysisSourceTemplate) {
@@ -51,7 +54,7 @@ export class Sheet {
 }
 
 export class AnalysisSourceEntity {
-
+    SourceTemplate?: AnalysisSourceTemplate
 
     constructor(properties: AnalysisSourceEntity) {
         Object.assign(this, properties)
@@ -68,6 +71,7 @@ export class DataSetReference {
 }
 
 export class DateTimeParameter {
+    Values!: List<Value<string>>
     Name!: Value<string>
 
     constructor(properties: DateTimeParameter) {
@@ -76,6 +80,7 @@ export class DateTimeParameter {
 }
 
 export class IntegerParameter {
+    Values!: List<Value<number>>
     Name!: Value<string>
 
     constructor(properties: IntegerParameter) {
@@ -84,7 +89,10 @@ export class IntegerParameter {
 }
 
 export class Parameters {
-
+    StringParameters?: List<StringParameter>
+    DecimalParameters?: List<DecimalParameter>
+    IntegerParameters?: List<IntegerParameter>
+    DateTimeParameters?: List<DateTimeParameter>
 
     constructor(properties: Parameters) {
         Object.assign(this, properties)
@@ -92,6 +100,7 @@ export class Parameters {
 }
 
 export class StringParameter {
+    Values!: List<Value<string>>
     Name!: Value<string>
 
     constructor(properties: StringParameter) {
@@ -111,7 +120,12 @@ export class AnalysisError {
 export interface AnalysisProperties {
     AnalysisId: Value<string>
     AwsAccountId: Value<string>
+    Errors?: List<AnalysisError>
     Name?: Value<string>
+    Parameters?: Parameters
+    Permissions?: List<ResourcePermission>
+    SourceEntity?: AnalysisSourceEntity
+    Tags?: List<ResourceTag>
     ThemeArn?: Value<string>
 }
 

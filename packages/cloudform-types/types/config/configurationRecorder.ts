@@ -23,6 +23,7 @@ import {Value, List} from '../dataTypes'
 export class RecordingGroup {
     AllSupported?: Value<boolean>
     IncludeGlobalResourceTypes?: Value<boolean>
+    ResourceTypes?: List<Value<string>>
 
     constructor(properties: RecordingGroup) {
         Object.assign(this, properties)
@@ -31,6 +32,7 @@ export class RecordingGroup {
 
 export interface ConfigurationRecorderProperties {
     Name?: Value<string>
+    RecordingGroup?: RecordingGroup
     RoleARN: Value<string>
 }
 

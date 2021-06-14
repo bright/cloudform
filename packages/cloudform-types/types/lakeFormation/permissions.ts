@@ -19,7 +19,7 @@ export class DataLocationResource {
 }
 
 export class ColumnWildcard {
-
+    ExcludedColumnNames?: List<Value<string>>
 
     constructor(properties: ColumnWildcard) {
         Object.assign(this, properties)
@@ -44,7 +44,10 @@ export class TableWildcard {
 }
 
 export class Resource {
-
+    TableResource?: TableResource
+    DatabaseResource?: DatabaseResource
+    DataLocationResource?: DataLocationResource
+    TableWithColumnsResource?: TableWithColumnsResource
 
     constructor(properties: Resource) {
         Object.assign(this, properties)
@@ -62,6 +65,7 @@ export class DataLakePrincipal {
 export class TableResource {
     DatabaseName?: Value<string>
     CatalogId?: Value<string>
+    TableWildcard?: TableWildcard
     Name?: Value<string>
 
     constructor(properties: TableResource) {
@@ -70,9 +74,11 @@ export class TableResource {
 }
 
 export class TableWithColumnsResource {
+    ColumnNames?: List<Value<string>>
     DatabaseName?: Value<string>
     CatalogId?: Value<string>
     Name?: Value<string>
+    ColumnWildcard?: ColumnWildcard
 
     constructor(properties: TableWithColumnsResource) {
         Object.assign(this, properties)
@@ -80,7 +86,10 @@ export class TableWithColumnsResource {
 }
 
 export interface PermissionsProperties {
-
+    DataLakePrincipal: DataLakePrincipal
+    Resource: Resource
+    Permissions?: List<Value<string>>
+    PermissionsWithGrantOption?: List<Value<string>>
 }
 
 export default class Permissions extends ResourceBase<PermissionsProperties> {

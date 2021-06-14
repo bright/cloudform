@@ -28,6 +28,7 @@ export class Predicate {
 export interface RateBasedRuleProperties {
     MetricName: Value<string>
     RateLimit: Value<number>
+    MatchPredicates?: List<Predicate>
     RateKey: Value<string>
     Name: Value<string>
 }

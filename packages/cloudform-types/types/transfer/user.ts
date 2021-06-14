@@ -32,6 +32,7 @@ export type SshPublicKey = Value<string>
 
 export class PosixProfile {
     Uid!: Value<number>
+    SecondaryGids?: List<Value<number>>
     Gid!: Value<number>
 
     constructor(properties: PosixProfile) {
@@ -46,6 +47,10 @@ export interface UserProperties {
     HomeDirectoryType?: Value<string>
     ServerId: Value<string>
     UserName: Value<string>
+    HomeDirectoryMappings?: List<HomeDirectoryMapEntry>
+    PosixProfile?: PosixProfile
+    SshPublicKeys?: List<SshPublicKey>
+    Tags?: List<ResourceTag>
 }
 
 export default class User extends ResourceBase<UserProperties> {

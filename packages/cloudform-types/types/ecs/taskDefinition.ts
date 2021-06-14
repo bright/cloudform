@@ -22,6 +22,8 @@ import {Value, List} from '../dataTypes'
 
 export class LogConfiguration {
     LogDriver!: Value<string>
+    Options?: {[key: string]: Value<string>}
+    SecretOptions?: List<Secret>
 
     constructor(properties: LogConfiguration) {
         Object.assign(this, properties)
@@ -30,6 +32,7 @@ export class LogConfiguration {
 
 export class FirelensConfiguration {
     Type?: Value<string>
+    Options?: {[key: string]: Value<string>}
 
     constructor(properties: FirelensConfiguration) {
         Object.assign(this, properties)
@@ -39,6 +42,7 @@ export class FirelensConfiguration {
 export class Device {
     ContainerPath?: Value<string>
     HostPath?: Value<string>
+    Permissions?: List<Value<string>>
 
     constructor(properties: Device) {
         Object.assign(this, properties)
@@ -86,6 +90,8 @@ export class ResourceRequirement {
 export class DockerVolumeConfiguration {
     Autoprovision?: Value<boolean>
     Driver?: Value<string>
+    DriverOpts?: {[key: string]: Value<string>}
+    Labels?: {[key: string]: Value<string>}
     Scope?: Value<string>
 
     constructor(properties: DockerVolumeConfiguration) {
@@ -113,7 +119,8 @@ export class MountPoint {
 }
 
 export class KernelCapabilities {
-
+    Add?: List<Value<string>>
+    Drop?: List<Value<string>>
 
     constructor(properties: KernelCapabilities) {
         Object.assign(this, properties)
@@ -220,6 +227,9 @@ export class TaskDefinitionPlacementConstraint {
 }
 
 export class Volume {
+    DockerVolumeConfiguration?: DockerVolumeConfiguration
+    EFSVolumeConfiguration?: EFSVolumeConfiguration
+    Host?: HostVolumeProperties
     Name?: Value<string>
 
     constructor(properties: Volume) {
@@ -229,6 +239,7 @@ export class Volume {
 
 export class Tmpfs {
     ContainerPath?: Value<string>
+    MountOptions?: List<Value<string>>
     Size!: Value<number>
 
     constructor(properties: Tmpfs) {
@@ -237,22 +248,45 @@ export class Tmpfs {
 }
 
 export class ContainerDefinition {
+    Command?: List<Value<string>>
     Cpu?: Value<number>
+    DependsOn?: List<ContainerDependency>
     DisableNetworking?: Value<boolean>
+    DnsSearchDomains?: List<Value<string>>
+    DnsServers?: List<Value<string>>
+    DockerLabels?: {[key: string]: Value<string>}
+    DockerSecurityOptions?: List<Value<string>>
+    EntryPoint?: List<Value<string>>
+    Environment?: List<KeyValuePair>
+    EnvironmentFiles?: List<EnvironmentFile>
     Essential?: Value<boolean>
+    ExtraHosts?: List<HostEntry>
+    FirelensConfiguration?: FirelensConfiguration
+    HealthCheck?: HealthCheck
     Hostname?: Value<string>
     Image?: Value<string>
+    Links?: List<Value<string>>
+    LinuxParameters?: LinuxParameters
+    LogConfiguration?: LogConfiguration
     Memory?: Value<number>
     MemoryReservation?: Value<number>
+    MountPoints?: List<MountPoint>
     Name?: Value<string>
+    PortMappings?: List<PortMapping>
     Privileged?: Value<boolean>
     ReadonlyRootFilesystem?: Value<boolean>
+    RepositoryCredentials?: RepositoryCredentials
+    ResourceRequirements?: List<ResourceRequirement>
+    Secrets?: List<Secret>
     StartTimeout?: Value<number>
     StopTimeout?: Value<number>
+    Ulimits?: List<Ulimit>
     User?: Value<string>
+    VolumesFrom?: List<VolumeFrom>
     WorkingDirectory?: Value<string>
     Interactive?: Value<boolean>
     PseudoTerminal?: Value<boolean>
+    SystemControls?: List<SystemControl>
 
     constructor(properties: ContainerDefinition) {
         Object.assign(this, properties)
@@ -269,6 +303,7 @@ export class KeyValuePair {
 }
 
 export class HealthCheck {
+    Command?: List<Value<string>>
     Interval?: Value<number>
     Timeout?: Value<number>
     Retries?: Value<number>
@@ -280,10 +315,13 @@ export class HealthCheck {
 }
 
 export class LinuxParameters {
+    Capabilities?: KernelCapabilities
+    Devices?: List<Device>
     InitProcessEnabled?: Value<boolean>
     MaxSwap?: Value<number>
     SharedMemorySize?: Value<number>
     Swappiness?: Value<number>
+    Tmpfs?: List<Tmpfs>
 
     constructor(properties: LinuxParameters) {
         Object.assign(this, properties)
@@ -292,6 +330,7 @@ export class LinuxParameters {
 
 export class ProxyConfiguration {
     ContainerName!: Value<string>
+    ProxyConfigurationProperties?: List<KeyValuePair>
     Type?: Value<string>
 
     constructor(properties: ProxyConfiguration) {
@@ -301,13 +340,21 @@ export class ProxyConfiguration {
 
 export interface TaskDefinitionProperties {
     Family?: Value<string>
+    ContainerDefinitions?: List<ContainerDefinition>
     Cpu?: Value<string>
     ExecutionRoleArn?: Value<string>
+    EphemeralStorage?: EphemeralStorage
+    InferenceAccelerators?: List<InferenceAccelerator>
     Memory?: Value<string>
     NetworkMode?: Value<string>
+    PlacementConstraints?: List<TaskDefinitionPlacementConstraint>
+    ProxyConfiguration?: ProxyConfiguration
+    RequiresCompatibilities?: List<Value<string>>
     TaskRoleArn?: Value<string>
+    Volumes?: List<Volume>
     PidMode?: Value<string>
     IpcMode?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {

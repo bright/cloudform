@@ -25,6 +25,8 @@ export interface StudioProperties {
     EngineSecurityGroupId: Value<string>
     Name: Value<string>
     ServiceRole: Value<string>
+    SubnetIds: List<Value<string>>
+    Tags?: List<ResourceTag>
     UserRole: Value<string>
     VpcId: Value<string>
     WorkspaceSecurityGroupId: Value<string>

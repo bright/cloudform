@@ -32,9 +32,11 @@ export class VpnTunnelOptionsSpecification {
 export interface VPNConnectionProperties {
     CustomerGatewayId: Value<string>
     StaticRoutesOnly?: Value<boolean>
+    Tags?: List<ResourceTag>
     TransitGatewayId?: Value<string>
     Type: Value<string>
     VpnGatewayId?: Value<string>
+    VpnTunnelOptionsSpecifications?: List<VpnTunnelOptionsSpecification>
 }
 
 export default class VPNConnection extends ResourceBase<VPNConnectionProperties> {

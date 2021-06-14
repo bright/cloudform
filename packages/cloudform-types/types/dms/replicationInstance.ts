@@ -30,10 +30,12 @@ export interface ReplicationInstanceProperties {
     ReplicationSubnetGroupIdentifier?: Value<string>
     AllocatedStorage?: Value<number>
     ResourceIdentifier?: Value<string>
+    VpcSecurityGroupIds?: List<Value<string>>
     AllowMajorVersionUpgrade?: Value<boolean>
     ReplicationInstanceClass: Value<string>
     PubliclyAccessible?: Value<boolean>
     MultiAZ?: Value<boolean>
+    Tags?: List<ResourceTag>
 }
 
 export default class ReplicationInstance extends ResourceBase<ReplicationInstanceProperties> {

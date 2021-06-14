@@ -39,6 +39,7 @@ export class RecoveryOption {
 }
 
 export class AdminCreateUserConfig {
+    InviteMessageTemplate?: InviteMessageTemplate
     UnusedAccountValidityDays?: Value<number>
     AllowAdminCreateUserOnly?: Value<boolean>
 
@@ -88,8 +89,10 @@ export class LambdaConfig {
     PreAuthentication?: Value<string>
     DefineAuthChallenge?: Value<string>
     PreTokenGeneration?: Value<string>
+    CustomSMSSender?: CustomSMSSender
     PostConfirmation?: Value<string>
     CustomMessage?: Value<string>
+    CustomEmailSender?: CustomEmailSender
 
     constructor(properties: LambdaConfig) {
         Object.assign(this, properties)
@@ -122,7 +125,9 @@ export class SchemaAttribute {
     DeveloperOnlyAttribute?: Value<boolean>
     Mutable?: Value<boolean>
     AttributeDataType?: Value<string>
+    StringAttributeConstraints?: StringAttributeConstraints
     Required?: Value<boolean>
+    NumberAttributeConstraints?: NumberAttributeConstraints
     Name?: Value<string>
 
     constructor(properties: SchemaAttribute) {
@@ -149,7 +154,7 @@ export class CustomSMSSender {
 }
 
 export class AccountRecoverySetting {
-
+    RecoveryMechanisms?: List<RecoveryOption>
 
     constructor(properties: AccountRecoverySetting) {
         Object.assign(this, properties)
@@ -165,7 +170,7 @@ export class UserPoolAddOns {
 }
 
 export class Policies {
-
+    PasswordPolicy?: PasswordPolicy
 
     constructor(properties: Policies) {
         Object.assign(this, properties)
@@ -200,12 +205,27 @@ export class UsernameConfiguration {
 
 export interface UserPoolProperties {
     UserPoolTags?: {[key: string]: any}
+    Policies?: Policies
+    VerificationMessageTemplate?: VerificationMessageTemplate
     MfaConfiguration?: Value<string>
+    Schema?: List<SchemaAttribute>
+    AdminCreateUserConfig?: AdminCreateUserConfig
     SmsAuthenticationMessage?: Value<string>
+    UsernameConfiguration?: UsernameConfiguration
     UserPoolName?: Value<string>
     SmsVerificationMessage?: Value<string>
+    UserPoolAddOns?: UserPoolAddOns
+    EmailConfiguration?: EmailConfiguration
+    SmsConfiguration?: SmsConfiguration
+    AliasAttributes?: List<Value<string>>
+    EnabledMfas?: List<Value<string>>
     EmailVerificationSubject?: Value<string>
+    LambdaConfig?: LambdaConfig
+    UsernameAttributes?: List<Value<string>>
+    AutoVerifiedAttributes?: List<Value<string>>
+    DeviceConfiguration?: DeviceConfiguration
     EmailVerificationMessage?: Value<string>
+    AccountRecoverySetting?: AccountRecoverySetting
 }
 
 export default class UserPool extends ResourceBase<UserPoolProperties> {

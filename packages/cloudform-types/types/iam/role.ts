@@ -32,10 +32,13 @@ export class Policy {
 export interface RoleProperties {
     AssumeRolePolicyDocument: {[key: string]: any}
     Description?: Value<string>
+    ManagedPolicyArns?: List<Value<string>>
     MaxSessionDuration?: Value<number>
     Path?: Value<string>
     PermissionsBoundary?: Value<string>
+    Policies?: List<Policy>
     RoleName?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class Role extends ResourceBase<RoleProperties> {

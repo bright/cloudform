@@ -44,12 +44,14 @@ export interface StageProperties {
     ClientCertificateId?: Value<string>
     DeploymentId?: Value<string>
     Description?: Value<string>
+    AccessLogSettings?: AccessLogSettings
     AutoDeploy?: Value<boolean>
     RouteSettings?: {[key: string]: any}
     StageName: Value<string>
     StageVariables?: {[key: string]: any}
     AccessPolicyId?: Value<string>
     ApiId: Value<string>
+    DefaultRouteSettings?: RouteSettings
     Tags?: {[key: string]: any}
 }
 

@@ -21,6 +21,8 @@ import {Value, List} from '../dataTypes'
 export class ConnectionInput {
     Description?: Value<string>
     ConnectionType!: Value<string>
+    MatchCriteria?: List<Value<string>>
+    PhysicalConnectionRequirements?: PhysicalConnectionRequirements
     ConnectionProperties?: {[key: string]: any}
     Name?: Value<string>
 
@@ -31,6 +33,7 @@ export class ConnectionInput {
 
 export class PhysicalConnectionRequirements {
     AvailabilityZone?: Value<string>
+    SecurityGroupIdList?: List<Value<string>>
     SubnetId?: Value<string>
 
     constructor(properties: PhysicalConnectionRequirements) {
@@ -39,6 +42,7 @@ export class PhysicalConnectionRequirements {
 }
 
 export interface ConnectionProperties {
+    ConnectionInput: ConnectionInput
     CatalogId: Value<string>
 }
 

@@ -15,6 +15,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class RelationalDatabaseConfig {
+    RdsHttpEndpointConfig?: RdsHttpEndpointConfig
     RelationalDatabaseSourceType!: Value<string>
 
     constructor(properties: RelationalDatabaseConfig) {
@@ -32,6 +33,7 @@ export class LambdaConfig {
 
 export class HttpConfig {
     Endpoint!: Value<string>
+    AuthorizationConfig?: AuthorizationConfig
 
     constructor(properties: HttpConfig) {
         Object.assign(this, properties)
@@ -51,6 +53,7 @@ export class DynamoDBConfig {
     TableName!: Value<string>
     AwsRegion!: Value<string>
     Versioned?: Value<boolean>
+    DeltaSyncConfig?: DeltaSyncConfig
     UseCallerCredentials?: Value<boolean>
 
     constructor(properties: DynamoDBConfig) {
@@ -59,6 +62,7 @@ export class DynamoDBConfig {
 }
 
 export class AuthorizationConfig {
+    AwsIamConfig?: AwsIamConfig
     AuthorizationType!: Value<string>
 
     constructor(properties: AuthorizationConfig) {
@@ -101,8 +105,13 @@ export interface DataSourceProperties {
     Type: Value<string>
     Description?: Value<string>
     ServiceRoleArn?: Value<string>
+    HttpConfig?: HttpConfig
+    RelationalDatabaseConfig?: RelationalDatabaseConfig
+    LambdaConfig?: LambdaConfig
     ApiId: Value<string>
     Name: Value<string>
+    DynamoDBConfig?: DynamoDBConfig
+    ElasticsearchConfig?: ElasticsearchConfig
 }
 
 export default class DataSource extends ResourceBase<DataSourceProperties> {

@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 export class JsonMatchPattern {
     All?: {[key: string]: any}
+    IncludedPaths?: List<Value<string>>
 
     constructor(properties: JsonMatchPattern) {
         Object.assign(this, properties)
@@ -29,7 +30,8 @@ export class JsonMatchPattern {
 }
 
 export class XssMatchStatement {
-
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: XssMatchStatement) {
         Object.assign(this, properties)
@@ -56,7 +58,18 @@ export class RuleAction {
 }
 
 export class Statement {
-
+    ByteMatchStatement?: ByteMatchStatement
+    SqliMatchStatement?: SqliMatchStatement
+    XssMatchStatement?: XssMatchStatement
+    SizeConstraintStatement?: SizeConstraintStatement
+    GeoMatchStatement?: GeoMatchStatement
+    IPSetReferenceStatement?: IPSetReferenceStatement
+    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement
+    RateBasedStatement?: RateBasedStatement
+    AndStatement?: AndStatement
+    OrStatement?: OrStatement
+    NotStatement?: NotStatement
+    LabelMatchStatement?: LabelMatchStatement
 
     constructor(properties: Statement) {
         Object.assign(this, properties)
@@ -79,6 +92,7 @@ export class FieldToMatch {
     QueryString?: {[key: string]: any}
     Body?: {[key: string]: any}
     Method?: {[key: string]: any}
+    JsonBody?: JsonBody
 
     constructor(properties: FieldToMatch) {
         Object.assign(this, properties)
@@ -87,6 +101,7 @@ export class FieldToMatch {
 
 export class IPSetReferenceStatement {
     Arn!: Value<string>
+    IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration
 
     constructor(properties: IPSetReferenceStatement) {
         Object.assign(this, properties)
@@ -96,6 +111,8 @@ export class IPSetReferenceStatement {
 export class RateBasedStatement {
     Limit!: Value<number>
     AggregateKeyType!: Value<string>
+    ScopeDownStatement?: Statement
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: RateBasedStatement) {
         Object.assign(this, properties)
@@ -113,7 +130,8 @@ export class VisibilityConfig {
 }
 
 export class GeoMatchStatement {
-
+    CountryCodes?: List<Value<string>>
+    ForwardedIPConfig?: ForwardedIPConfiguration
 
     constructor(properties: GeoMatchStatement) {
         Object.assign(this, properties)
@@ -121,7 +139,7 @@ export class GeoMatchStatement {
 }
 
 export class AndStatement {
-
+    Statements!: List<Statement>
 
     constructor(properties: AndStatement) {
         Object.assign(this, properties)
@@ -150,6 +168,8 @@ export class TextTransformation {
 export class ByteMatchStatement {
     SearchString?: Value<string>
     SearchStringBase64?: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
     PositionalConstraint!: Value<string>
 
     constructor(properties: ByteMatchStatement) {
@@ -159,6 +179,8 @@ export class ByteMatchStatement {
 
 export class RegexPatternSetReferenceStatement {
     Arn!: Value<string>
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: RegexPatternSetReferenceStatement) {
         Object.assign(this, properties)
@@ -166,7 +188,7 @@ export class RegexPatternSetReferenceStatement {
 }
 
 export class OrStatement {
-
+    Statements!: List<Statement>
 
     constructor(properties: OrStatement) {
         Object.assign(this, properties)
@@ -176,6 +198,10 @@ export class OrStatement {
 export class Rule {
     Name!: Value<string>
     Priority!: Value<number>
+    Statement!: Statement
+    Action?: RuleAction
+    RuleLabels?: List<Label>
+    VisibilityConfig!: VisibilityConfig
 
     constructor(properties: Rule) {
         Object.assign(this, properties)
@@ -183,6 +209,7 @@ export class Rule {
 }
 
 export class JsonBody {
+    MatchPattern!: JsonMatchPattern
     MatchScope!: Value<string>
     InvalidFallbackBehavior?: Value<string>
 
@@ -209,7 +236,8 @@ export class Label {
 }
 
 export class SqliMatchStatement {
-
+    FieldToMatch!: FieldToMatch
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: SqliMatchStatement) {
         Object.assign(this, properties)
@@ -217,7 +245,7 @@ export class SqliMatchStatement {
 }
 
 export class NotStatement {
-
+    Statement!: Statement
 
     constructor(properties: NotStatement) {
         Object.assign(this, properties)
@@ -234,8 +262,10 @@ export class ForwardedIPConfiguration {
 }
 
 export class SizeConstraintStatement {
+    FieldToMatch!: FieldToMatch
     ComparisonOperator!: Value<string>
     Size!: Value<number>
+    TextTransformations!: List<TextTransformation>
 
     constructor(properties: SizeConstraintStatement) {
         Object.assign(this, properties)
@@ -247,6 +277,10 @@ export interface RuleGroupProperties {
     Description?: Value<string>
     Name?: Value<string>
     Scope: Value<string>
+    Rules?: List<Rule>
+    VisibilityConfig: VisibilityConfig
+    Tags?: List<ResourceTag>
+    CustomResponseBodies?: {[key: string]: CustomResponseBody}
 }
 
 export default class RuleGroup extends ResourceBase<RuleGroupProperties> {

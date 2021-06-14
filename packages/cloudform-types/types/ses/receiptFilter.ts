@@ -8,6 +8,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class Filter {
+    IpFilter!: IpFilter
     Name?: Value<string>
 
     constructor(properties: Filter) {
@@ -25,7 +26,7 @@ export class IpFilter {
 }
 
 export interface ReceiptFilterProperties {
-
+    Filter: Filter
 }
 
 export default class ReceiptFilter extends ResourceBase<ReceiptFilterProperties> {

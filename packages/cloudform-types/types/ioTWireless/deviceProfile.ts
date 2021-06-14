@@ -29,6 +29,8 @@ export class LoRaWANDeviceProfile {
 
 export interface DeviceProfileProperties {
     Name?: Value<string>
+    LoRaWAN?: LoRaWANDeviceProfile
+    Tags?: List<ResourceTag>
 }
 
 export default class DeviceProfile extends ResourceBase<DeviceProfileProperties> {

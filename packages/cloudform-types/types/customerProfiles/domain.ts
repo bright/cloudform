@@ -18,6 +18,7 @@ export interface DomainProperties {
     DeadLetterQueueUrl?: Value<string>
     DefaultEncryptionKey?: Value<string>
     DefaultExpirationDays?: Value<number>
+    Tags?: List<ResourceTag>
 }
 
 export default class Domain extends ResourceBase<DomainProperties> {

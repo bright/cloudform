@@ -29,7 +29,9 @@ export class SignatureValidityPeriod {
 }
 
 export interface SigningProfileProperties {
+    SignatureValidityPeriod?: SignatureValidityPeriod
     PlatformId: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class SigningProfile extends ResourceBase<SigningProfileProperties> {

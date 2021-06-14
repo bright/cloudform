@@ -23,11 +23,14 @@ export class AttributeType {
 }
 
 export interface UserPoolUserProperties {
+    ValidationData?: List<AttributeType>
     UserPoolId: Value<string>
     Username?: Value<string>
     MessageAction?: Value<string>
     ClientMetadata?: {[key: string]: any}
+    DesiredDeliveryMediums?: List<Value<string>>
     ForceAliasCreation?: Value<boolean>
+    UserAttributes?: List<AttributeType>
 }
 
 export default class UserPoolUser extends ResourceBase<UserPoolUserProperties> {

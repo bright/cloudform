@@ -20,6 +20,7 @@ import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class SamplingRuleUpdate {
+    Attributes?: {[key: string]: Value<string>}
     FixedRate?: Value<number>
     Host?: Value<string>
     HTTPMethod?: Value<string>
@@ -40,6 +41,7 @@ export class SamplingRuleUpdate {
 export class SamplingRuleRecord {
     CreatedAt?: Value<string>
     ModifiedAt?: Value<string>
+    SamplingRule?: SamplingRule
 
     constructor(properties: SamplingRuleRecord) {
         Object.assign(this, properties)
@@ -47,6 +49,7 @@ export class SamplingRuleRecord {
 }
 
 export class SamplingRuleInner {
+    Attributes?: {[key: string]: Value<string>}
     FixedRate?: Value<number>
     Host?: Value<string>
     HTTPMethod?: Value<string>
@@ -66,7 +69,11 @@ export class SamplingRuleInner {
 }
 
 export interface SamplingRuleProperties {
+    SamplingRule?: SamplingRule
+    SamplingRuleRecord?: SamplingRuleRecord
+    SamplingRuleUpdate?: SamplingRuleUpdate
     RuleName?: Value<string>
+    Tags?: List<{[key: string]: any}>
 }
 
 export default class SamplingRule extends ResourceBase<SamplingRuleProperties> {

@@ -25,7 +25,8 @@ export class MultiModelConfig {
 }
 
 export class VpcConfig {
-
+    Subnets!: List<Value<string>>
+    SecurityGroupIds!: List<Value<string>>
 
     constructor(properties: VpcConfig) {
         Object.assign(this, properties)
@@ -33,12 +34,14 @@ export class VpcConfig {
 }
 
 export class ContainerDefinition {
+    ImageConfig?: ImageConfig
     ContainerHostname?: Value<string>
     ModelPackageName?: Value<string>
     Mode?: Value<string>
     Environment?: {[key: string]: any}
     ModelDataUrl?: Value<string>
     Image?: Value<string>
+    MultiModelConfig?: MultiModelConfig
 
     constructor(properties: ContainerDefinition) {
         Object.assign(this, properties)
@@ -64,7 +67,12 @@ export class InferenceExecutionConfig {
 export interface ModelProperties {
     ExecutionRoleArn: Value<string>
     EnableNetworkIsolation?: Value<boolean>
+    PrimaryContainer?: ContainerDefinition
     ModelName?: Value<string>
+    VpcConfig?: VpcConfig
+    Containers?: List<ContainerDefinition>
+    InferenceExecutionConfig?: InferenceExecutionConfig
+    Tags?: List<ResourceTag>
 }
 
 export default class Model extends ResourceBase<ModelProperties> {

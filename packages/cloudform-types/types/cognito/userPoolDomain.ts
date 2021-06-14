@@ -26,6 +26,7 @@ export class CustomDomainConfigType {
 
 export interface UserPoolDomainProperties {
     UserPoolId: Value<string>
+    CustomDomainConfig?: CustomDomainConfigType
     Domain: Value<string>
 }
 

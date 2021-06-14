@@ -25,6 +25,7 @@ export class DeviceShadowEnrich {
 
 export class SelectAttributes {
     Next?: Value<string>
+    Attributes?: List<Value<string>>
     Name?: Value<string>
 
     constructor(properties: SelectAttributes) {
@@ -34,6 +35,7 @@ export class SelectAttributes {
 
 export class RemoveAttributes {
     Next?: Value<string>
+    Attributes?: List<Value<string>>
     Name?: Value<string>
 
     constructor(properties: RemoveAttributes) {
@@ -94,7 +96,16 @@ export class Filter {
 }
 
 export class Activity {
-
+    SelectAttributes?: SelectAttributes
+    Datastore?: Datastore
+    Filter?: Filter
+    AddAttributes?: AddAttributes
+    Channel?: Channel
+    DeviceShadowEnrich?: DeviceShadowEnrich
+    Math?: Math
+    Lambda?: Lambda
+    DeviceRegistryEnrich?: DeviceRegistryEnrich
+    RemoveAttributes?: RemoveAttributes
 
     constructor(properties: Activity) {
         Object.assign(this, properties)
@@ -124,6 +135,8 @@ export class AddAttributes {
 
 export interface PipelineProperties {
     PipelineName?: Value<string>
+    Tags?: List<ResourceTag>
+    PipelineActivities: List<Activity>
 }
 
 export default class Pipeline extends ResourceBase<PipelineProperties> {

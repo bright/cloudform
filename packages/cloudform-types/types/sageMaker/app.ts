@@ -33,6 +33,8 @@ export interface AppProperties {
     AppName: Value<string>
     AppType: Value<string>
     DomainId: Value<string>
+    ResourceSpec?: ResourceSpec
+    Tags?: List<ResourceTag>
     UserProfileName: Value<string>
 }
 

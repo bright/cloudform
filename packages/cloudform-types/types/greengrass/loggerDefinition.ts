@@ -28,7 +28,7 @@ export class Logger {
 }
 
 export class LoggerDefinitionVersion {
-
+    Loggers!: List<Logger>
 
     constructor(properties: LoggerDefinitionVersion) {
         Object.assign(this, properties)
@@ -36,6 +36,7 @@ export class LoggerDefinitionVersion {
 }
 
 export interface LoggerDefinitionProperties {
+    InitialVersion?: LoggerDefinitionVersion
     Tags?: {[key: string]: any}
     Name: Value<string>
 }

@@ -22,6 +22,7 @@ export class CsvClassifier {
     QuoteSymbol?: Value<string>
     ContainsHeader?: Value<string>
     Delimiter?: Value<string>
+    Header?: List<Value<string>>
     AllowSingleColumn?: Value<boolean>
     DisableValueTrimming?: Value<boolean>
     Name?: Value<string>
@@ -62,7 +63,10 @@ export class XMLClassifier {
 }
 
 export interface ClassifierProperties {
-
+    XMLClassifier?: XMLClassifier
+    JsonClassifier?: JsonClassifier
+    CsvClassifier?: CsvClassifier
+    GrokClassifier?: GrokClassifier
 }
 
 export default class Classifier extends ResourceBase<ClassifierProperties> {

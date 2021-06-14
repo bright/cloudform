@@ -29,7 +29,7 @@ export class S3Location {
 }
 
 export class OutputFormatOptions {
-
+    Csv?: CsvOutputOptions
 
     constructor(properties: OutputFormatOptions) {
         Object.assign(this, properties)
@@ -56,6 +56,9 @@ export class Recipe {
 export class Output {
     CompressionFormat?: Value<string>
     Format?: Value<string>
+    FormatOptions?: OutputFormatOptions
+    PartitionColumns?: List<Value<string>>
+    Location!: S3Location
     Overwrite?: Value<boolean>
 
     constructor(properties: Output) {
@@ -90,10 +93,14 @@ export interface JobProperties {
     LogSubscription?: Value<string>
     MaxCapacity?: Value<number>
     MaxRetries?: Value<number>
+    Outputs?: List<Output>
+    OutputLocation?: OutputLocation
     ProjectName?: Value<string>
     Recipe?: Recipe
     RoleArn: Value<string>
+    Tags?: List<ResourceTag>
     Timeout?: Value<number>
+    JobSample?: JobSample
 }
 
 export default class Job extends ResourceBase<JobProperties> {

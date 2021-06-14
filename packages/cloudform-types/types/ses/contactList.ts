@@ -28,6 +28,8 @@ export class Topic {
 export interface ContactListProperties {
     ContactListName?: Value<string>
     Description?: Value<string>
+    Topics?: List<Topic>
+    Tags?: List<ResourceTag>
 }
 
 export default class ContactList extends ResourceBase<ContactListProperties> {

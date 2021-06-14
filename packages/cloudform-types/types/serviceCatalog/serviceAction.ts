@@ -33,6 +33,7 @@ export interface ServiceActionProperties {
     AcceptLanguage?: Value<string>
     Name: Value<string>
     DefinitionType: Value<string>
+    Definition: List<DefinitionParameter>
     Description?: Value<string>
 }
 

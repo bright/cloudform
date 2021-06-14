@@ -37,6 +37,7 @@ export class DirectoryServiceAuthenticationRequest {
 
 export class TagSpecification {
     ResourceType!: Value<string>
+    Tags!: List<ResourceTag>
 
     constructor(properties: TagSpecification) {
         Object.assign(this, properties)
@@ -44,7 +45,10 @@ export class TagSpecification {
 }
 
 export class ClientAuthenticationRequest {
+    MutualAuthentication?: CertificateAuthenticationRequest
     Type!: Value<string>
+    FederatedAuthentication?: FederatedAuthenticationRequest
+    ActiveDirectory?: DirectoryServiceAuthenticationRequest
 
     constructor(properties: ClientAuthenticationRequest) {
         Object.assign(this, properties)
@@ -80,8 +84,14 @@ export class CertificateAuthenticationRequest {
 
 export interface ClientVpnEndpointProperties {
     ClientCidrBlock: Value<string>
+    ClientConnectOptions?: ClientConnectOptions
     Description?: Value<string>
+    TagSpecifications?: List<TagSpecification>
+    AuthenticationOptions: List<ClientAuthenticationRequest>
     ServerCertificateArn: Value<string>
+    DnsServers?: List<Value<string>>
+    SecurityGroupIds?: List<Value<string>>
+    ConnectionLogOptions: ConnectionLogOptions
     SplitTunnel?: Value<boolean>
     VpcId?: Value<string>
     SelfServicePortal?: Value<string>

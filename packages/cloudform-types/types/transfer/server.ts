@@ -30,8 +30,11 @@ export class IdentityProviderDetails {
 }
 
 export class EndpointDetails {
+    AddressAllocationIds?: List<Value<string>>
     VpcId?: Value<string>
     VpcEndpointId?: Value<string>
+    SecurityGroupIds?: List<Value<string>>
+    SubnetIds?: List<Value<string>>
 
     constructor(properties: EndpointDetails) {
         Object.assign(this, properties)
@@ -42,10 +45,14 @@ export type Protocol = Value<string>
 
 export interface ServerProperties {
     LoggingRole?: Value<string>
+    Protocols?: List<Protocol>
+    IdentityProviderDetails?: IdentityProviderDetails
     EndpointType?: Value<string>
     SecurityPolicyName?: Value<string>
     Domain?: Value<string>
+    EndpointDetails?: EndpointDetails
     IdentityProviderType?: Value<string>
+    Tags?: List<ResourceTag>
     Certificate?: Value<string>
 }
 

@@ -18,6 +18,8 @@ export class TransitGatewayConnectOptions {
 
 export interface TransitGatewayConnectProperties {
     TransportTransitGatewayAttachmentId: Value<string>
+    Tags?: List<ResourceTag>
+    Options: TransitGatewayConnectOptions
 }
 
 export default class TransitGatewayConnect extends ResourceBase<TransitGatewayConnectProperties> {

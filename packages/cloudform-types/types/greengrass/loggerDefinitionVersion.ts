@@ -29,6 +29,7 @@ export class Logger {
 
 export interface LoggerDefinitionVersionProperties {
     LoggerDefinitionId: Value<string>
+    Loggers: List<Logger>
 }
 
 export default class LoggerDefinitionVersion extends ResourceBase<LoggerDefinitionVersionProperties> {

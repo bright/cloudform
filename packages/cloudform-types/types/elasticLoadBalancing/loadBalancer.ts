@@ -82,6 +82,7 @@ export class Listeners {
     InstancePort!: Value<string>
     InstanceProtocol?: Value<string>
     LoadBalancerPort!: Value<string>
+    PolicyNames?: List<Value<string>>
     Protocol!: Value<string>
     SSLCertificateId?: Value<string>
 
@@ -91,6 +92,9 @@ export class Listeners {
 }
 
 export class Policies {
+    Attributes!: List<{[key: string]: any}>
+    InstancePorts?: List<Value<string>>
+    LoadBalancerPorts?: List<Value<string>>
     PolicyName!: Value<string>
     PolicyType!: Value<string>
 
@@ -100,9 +104,22 @@ export class Policies {
 }
 
 export interface LoadBalancerProperties {
+    AccessLoggingPolicy?: AccessLoggingPolicy
+    AppCookieStickinessPolicy?: List<AppCookieStickinessPolicy>
+    AvailabilityZones?: List<Value<string>>
+    ConnectionDrainingPolicy?: ConnectionDrainingPolicy
+    ConnectionSettings?: ConnectionSettings
     CrossZone?: Value<boolean>
+    HealthCheck?: HealthCheck
+    Instances?: List<Value<string>>
+    LBCookieStickinessPolicy?: List<LBCookieStickinessPolicy>
+    Listeners: List<Listeners>
     LoadBalancerName?: Value<string>
+    Policies?: List<Policies>
     Scheme?: Value<string>
+    SecurityGroups?: List<Value<string>>
+    Subnets?: List<Value<string>>
+    Tags?: List<ResourceTag>
 }
 
 export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {

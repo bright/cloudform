@@ -20,7 +20,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CFNDataSourceConfigurations {
-
+    S3Logs?: CFNS3LogsConfiguration
 
     constructor(properties: CFNDataSourceConfigurations) {
         Object.assign(this, properties)
@@ -37,6 +37,7 @@ export class CFNS3LogsConfiguration {
 
 export interface DetectorProperties {
     FindingPublishingFrequency?: Value<string>
+    DataSources?: CFNDataSourceConfigurations
     Enable: Value<boolean>
 }
 

@@ -25,6 +25,7 @@ export class GeoMatchConstraint {
 }
 
 export interface GeoMatchSetProperties {
+    GeoMatchConstraints?: List<GeoMatchConstraint>
     Name: Value<string>
 }
 

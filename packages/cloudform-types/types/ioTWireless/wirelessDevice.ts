@@ -8,6 +8,7 @@ import {Value, List} from '../dataTypes'
 
 export class AbpV11 {
     DevAddr!: Value<string>
+    SessionKeys!: SessionKeysAbpV11
 
     constructor(properties: AbpV11) {
         Object.assign(this, properties)
@@ -18,6 +19,10 @@ export class LoRaWANDevice {
     DevEui?: Value<string>
     DeviceProfileId?: Value<string>
     ServiceProfileId?: Value<string>
+    OtaaV11?: OtaaV11
+    OtaaV10x?: OtaaV10x
+    AbpV11?: AbpV11
+    AbpV10x?: AbpV10x
 
     constructor(properties: LoRaWANDevice) {
         Object.assign(this, properties)
@@ -37,6 +42,7 @@ export class SessionKeysAbpV11 {
 
 export class AbpV10x {
     DevAddr!: Value<string>
+    SessionKeys!: SessionKeysAbpV10x
 
     constructor(properties: AbpV10x) {
         Object.assign(this, properties)
@@ -76,6 +82,8 @@ export interface WirelessDeviceProperties {
     Name?: Value<string>
     Description?: Value<string>
     DestinationName: Value<string>
+    LoRaWAN?: LoRaWANDevice
+    Tags?: List<ResourceTag>
     ThingArn?: Value<string>
     LastUplinkReceivedAt?: Value<string>
 }

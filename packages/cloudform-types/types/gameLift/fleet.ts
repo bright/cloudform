@@ -40,6 +40,7 @@ export class CertificateConfiguration {
 
 export class LocationConfiguration {
     Location!: Value<string>
+    LocationCapacity?: LocationCapacity
 
     constructor(properties: LocationConfiguration) {
         Object.assign(this, properties)
@@ -79,6 +80,7 @@ export class ResourceCreationLimitPolicy {
 export class RuntimeConfiguration {
     GameSessionActivationTimeoutSeconds?: Value<number>
     MaxConcurrentGameSessionActivations?: Value<number>
+    ServerProcesses?: List<ServerProcess>
 
     constructor(properties: RuntimeConfiguration) {
         Object.assign(this, properties)
@@ -86,19 +88,26 @@ export class RuntimeConfiguration {
 }
 
 export interface FleetProperties {
+    CertificateConfiguration?: CertificateConfiguration
     Description?: Value<string>
     DesiredEC2Instances?: Value<number>
+    EC2InboundPermissions?: List<IpPermission>
     EC2InstanceType?: Value<string>
     FleetType?: Value<string>
     InstanceRoleARN?: Value<string>
+    Locations?: List<LocationConfiguration>
     MaxSize?: Value<number>
+    MetricGroups?: List<Value<string>>
     MinSize?: Value<number>
     Name?: Value<string>
     NewGameSessionProtectionPolicy?: Value<string>
     PeerVpcAwsAccountId?: Value<string>
     PeerVpcId?: Value<string>
+    ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy
     BuildId?: Value<string>
     ScriptId?: Value<string>
+    RuntimeConfiguration?: RuntimeConfiguration
+    LogPaths?: List<Value<string>>
     ServerLaunchParameters?: Value<string>
     ServerLaunchPath?: Value<string>
 }

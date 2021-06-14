@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface ProjectProperties {
+    Tags?: List<ResourceTag>
     ProjectName: Value<string>
     ProjectDescription?: Value<string>
     ServiceCatalogProvisioningDetails: {[key: string]: any}

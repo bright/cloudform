@@ -21,6 +21,7 @@ export interface DomainProperties {
     DomainName: Value<string>
     EncryptionKey?: Value<string>
     PermissionsPolicyDocument?: {[key: string]: any}
+    Tags?: List<ResourceTag>
 }
 
 export default class Domain extends ResourceBase<DomainProperties> {

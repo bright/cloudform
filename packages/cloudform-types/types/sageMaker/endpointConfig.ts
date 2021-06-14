@@ -31,7 +31,8 @@ export class ProductionVariant {
 }
 
 export class CaptureContentTypeHeader {
-
+    JsonContentTypes?: List<Value<string>>
+    CsvContentTypes?: List<Value<string>>
 
     constructor(properties: CaptureContentTypeHeader) {
         Object.assign(this, properties)
@@ -39,9 +40,11 @@ export class CaptureContentTypeHeader {
 }
 
 export class DataCaptureConfig {
+    CaptureOptions!: List<CaptureOption>
     KmsKeyId?: Value<string>
     DestinationS3Uri!: Value<string>
     InitialSamplingPercentage!: Value<number>
+    CaptureContentTypeHeader?: CaptureContentTypeHeader
     EnableCapture?: Value<boolean>
 
     constructor(properties: DataCaptureConfig) {
@@ -50,8 +53,11 @@ export class DataCaptureConfig {
 }
 
 export interface EndpointConfigProperties {
+    DataCaptureConfig?: DataCaptureConfig
+    ProductionVariants: List<ProductionVariant>
     KmsKeyId?: Value<string>
     EndpointConfigName?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {

@@ -20,6 +20,7 @@ import {Value, List} from '../dataTypes'
 
 export interface HttpNamespaceProperties {
     Description?: Value<string>
+    Tags?: List<ResourceTag>
     Name: Value<string>
 }
 

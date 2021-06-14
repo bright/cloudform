@@ -38,7 +38,7 @@ export class UploadSettings {
 }
 
 export class ProjectOperation {
-
+    ProjectedColumns!: List<Value<string>>
 
     constructor(properties: ProjectOperation) {
         Object.assign(this, properties)
@@ -46,7 +46,8 @@ export class ProjectOperation {
 }
 
 export class ColumnLevelPermissionRule {
-
+    ColumnNames?: List<Value<string>>
+    Principals?: List<Value<string>>
 
     constructor(properties: ColumnLevelPermissionRule) {
         Object.assign(this, properties)
@@ -54,7 +55,7 @@ export class ColumnLevelPermissionRule {
 }
 
 export class CreateColumnsOperation {
-
+    Columns!: List<CalculatedColumn>
 
     constructor(properties: CreateColumnsOperation) {
         Object.assign(this, properties)
@@ -62,7 +63,9 @@ export class CreateColumnsOperation {
 }
 
 export class PhysicalTable {
-
+    RelationalTable?: RelationalTable
+    CustomSql?: CustomSql
+    S3Source?: S3Source
 
     constructor(properties: PhysicalTable) {
         Object.assign(this, properties)
@@ -87,7 +90,7 @@ export class RenameColumnOperation {
 }
 
 export class ColumnGroup {
-
+    GeoSpatialColumnGroup?: GeoSpatialColumnGroup
 
     constructor(properties: ColumnGroup) {
         Object.assign(this, properties)
@@ -95,6 +98,7 @@ export class ColumnGroup {
 }
 
 export class GeoSpatialColumnGroup {
+    Columns!: List<Value<string>>
     CountryCode?: Value<string>
     Name!: Value<string>
 
@@ -105,6 +109,7 @@ export class GeoSpatialColumnGroup {
 
 export class RelationalTable {
     DataSourceArn!: Value<string>
+    InputColumns!: List<InputColumn>
     Schema?: Value<string>
     Catalog?: Value<string>
     Name!: Value<string>
@@ -144,6 +149,7 @@ export class FilterOperation {
 export class CustomSql {
     DataSourceArn!: Value<string>
     SqlQuery!: Value<string>
+    Columns!: List<InputColumn>
     Name!: Value<string>
 
     constructor(properties: CustomSql) {
@@ -152,6 +158,7 @@ export class CustomSql {
 }
 
 export class ResourcePermission {
+    Actions!: List<Value<string>>
     Principal!: Value<string>
 
     constructor(properties: ResourcePermission) {
@@ -161,6 +168,7 @@ export class ResourcePermission {
 
 export class FieldFolder {
     Description?: Value<string>
+    Columns?: List<Value<string>>
 
     constructor(properties: FieldFolder) {
         Object.assign(this, properties)
@@ -169,6 +177,8 @@ export class FieldFolder {
 
 export class S3Source {
     DataSourceArn!: Value<string>
+    InputColumns!: List<InputColumn>
+    UploadSettings?: UploadSettings
 
     constructor(properties: S3Source) {
         Object.assign(this, properties)
@@ -177,6 +187,8 @@ export class S3Source {
 
 export class LogicalTable {
     Alias!: Value<string>
+    DataTransforms?: List<TransformOperation>
+    Source!: LogicalTableSource
 
     constructor(properties: LogicalTable) {
         Object.assign(this, properties)
@@ -184,7 +196,12 @@ export class LogicalTable {
 }
 
 export class TransformOperation {
-
+    TagColumnOperation?: TagColumnOperation
+    FilterOperation?: FilterOperation
+    CastColumnTypeOperation?: CastColumnTypeOperation
+    CreateColumnsOperation?: CreateColumnsOperation
+    RenameColumnOperation?: RenameColumnOperation
+    ProjectOperation?: ProjectOperation
 
     constructor(properties: TransformOperation) {
         Object.assign(this, properties)
@@ -194,8 +211,10 @@ export class TransformOperation {
 export class JoinInstruction {
     OnClause!: Value<string>
     Type!: Value<string>
+    LeftJoinKeyProperties?: JoinKeyProperties
     LeftOperand!: Value<string>
     RightOperand!: Value<string>
+    RightJoinKeyProperties?: JoinKeyProperties
 
     constructor(properties: JoinInstruction) {
         Object.assign(this, properties)
@@ -214,6 +233,7 @@ export class OutputColumn {
 
 export class ColumnTag {
     ColumnGeographicRole?: Value<string>
+    ColumnDescription?: ColumnDescription
 
     constructor(properties: ColumnTag) {
         Object.assign(this, properties)
@@ -222,6 +242,7 @@ export class ColumnTag {
 
 export class TagColumnOperation {
     ColumnName!: Value<string>
+    Tags!: List<ColumnTag>
 
     constructor(properties: TagColumnOperation) {
         Object.assign(this, properties)
@@ -259,6 +280,7 @@ export class CastColumnTypeOperation {
 
 export class LogicalTableSource {
     PhysicalTableId?: Value<string>
+    JoinInstruction?: JoinInstruction
 
     constructor(properties: LogicalTableSource) {
         Object.assign(this, properties)
@@ -267,9 +289,18 @@ export class LogicalTableSource {
 
 export interface DataSetProperties {
     AwsAccountId?: Value<string>
+    ColumnGroups?: List<ColumnGroup>
+    ColumnLevelPermissionRules?: List<ColumnLevelPermissionRule>
     DataSetId?: Value<string>
+    FieldFolders?: {[key: string]: FieldFolder}
     ImportMode?: Value<string>
+    LogicalTableMap?: {[key: string]: LogicalTable}
     Name?: Value<string>
+    Permissions?: List<ResourcePermission>
+    PhysicalTableMap?: {[key: string]: PhysicalTable}
+    RowLevelPermissionDataSet?: RowLevelPermissionDataSet
+    Tags?: List<ResourceTag>
+    IngestionWaitPolicy?: IngestionWaitPolicy
 }
 
 export default class DataSet extends ResourceBase<DataSetProperties> {

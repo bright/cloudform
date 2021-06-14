@@ -24,6 +24,7 @@ export class ComputeEnvironmentOrder {
 }
 
 export interface JobQueueProperties {
+    ComputeEnvironmentOrder: List<ComputeEnvironmentOrder>
     Priority: Value<number>
     State?: Value<string>
     JobQueueName?: Value<string>

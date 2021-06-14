@@ -36,6 +36,7 @@ export class Encryption {
 
 export interface FlowSourceProperties {
     FlowArn?: Value<string>
+    Decryption?: Encryption
     Description: Value<string>
     EntitlementArn?: Value<string>
     IngestPort?: Value<number>

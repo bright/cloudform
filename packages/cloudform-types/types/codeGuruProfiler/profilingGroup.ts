@@ -26,6 +26,8 @@ export interface ProfilingGroupProperties {
     ProfilingGroupName: Value<string>
     ComputePlatform?: Value<string>
     AgentPermissions?: {[key: string]: any}
+    AnomalyDetectionNotificationConfiguration?: List<Channel>
+    Tags?: List<ResourceTag>
 }
 
 export default class ProfilingGroup extends ResourceBase<ProfilingGroupProperties> {

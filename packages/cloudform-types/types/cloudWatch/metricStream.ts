@@ -29,10 +29,13 @@ export class MetricStreamFilter {
 }
 
 export interface MetricStreamProperties {
+    ExcludeFilters?: List<MetricStreamFilter>
     FirehoseArn: Value<string>
+    IncludeFilters?: List<MetricStreamFilter>
     Name?: Value<string>
     RoleArn: Value<string>
     OutputFormat: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class MetricStream extends ResourceBase<MetricStreamProperties> {

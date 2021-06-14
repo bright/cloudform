@@ -27,7 +27,8 @@ export class IamRole {
 }
 
 export class AccessPolicyResource {
-
+    Portal?: Portal
+    Project?: Project
 
     constructor(properties: AccessPolicyResource) {
         Object.assign(this, properties)
@@ -59,7 +60,9 @@ export class Portal {
 }
 
 export class AccessPolicyIdentity {
-
+    User?: User
+    IamUser?: IamUser
+    IamRole?: IamRole
 
     constructor(properties: AccessPolicyIdentity) {
         Object.assign(this, properties)
@@ -67,7 +70,9 @@ export class AccessPolicyIdentity {
 }
 
 export interface AccessPolicyProperties {
+    AccessPolicyIdentity: AccessPolicyIdentity
     AccessPolicyPermission: Value<string>
+    AccessPolicyResource: AccessPolicyResource
 }
 
 export default class AccessPolicy extends ResourceBase<AccessPolicyProperties> {

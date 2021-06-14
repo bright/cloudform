@@ -23,6 +23,7 @@ export class InputWhitelistRuleCidr {
 }
 
 export interface InputSecurityGroupProperties {
+    WhitelistRules?: List<InputWhitelistRuleCidr>
     Tags?: {[key: string]: any}
 }
 

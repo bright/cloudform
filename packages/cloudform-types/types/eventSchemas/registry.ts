@@ -23,6 +23,7 @@ export class TagsEntry {
 export interface RegistryProperties {
     Description?: Value<string>
     RegistryName?: Value<string>
+    Tags?: List<TagsEntry>
 }
 
 export default class Registry extends ResourceBase<RegistryProperties> {

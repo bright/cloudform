@@ -18,7 +18,7 @@ import {Value, List} from '../dataTypes'
 
 
 export interface ResourceGroupProperties {
-
+    ResourceGroupTags: List<ResourceTag>
 }
 
 export default class ResourceGroup extends ResourceBase<ResourceGroupProperties> {

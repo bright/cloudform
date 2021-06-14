@@ -25,6 +25,7 @@ export interface TrafficMirrorTargetProperties {
     NetworkLoadBalancerArn?: Value<string>
     Description?: Value<string>
     NetworkInterfaceId?: Value<string>
+    Tags?: List<ResourceTag>
 }
 
 export default class TrafficMirrorTarget extends ResourceBase<TrafficMirrorTargetProperties> {

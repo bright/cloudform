@@ -34,6 +34,7 @@ export class MetricTransformation {
 export interface MetricFilterProperties {
     FilterPattern: Value<string>
     LogGroupName: Value<string>
+    MetricTransformations: List<MetricTransformation>
 }
 
 export default class MetricFilter extends ResourceBase<MetricFilterProperties> {

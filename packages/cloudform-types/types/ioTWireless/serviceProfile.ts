@@ -34,6 +34,8 @@ export class LoRaWANServiceProfile {
 
 export interface ServiceProfileProperties {
     Name?: Value<string>
+    LoRaWAN?: LoRaWANServiceProfile
+    Tags?: List<ResourceTag>
 }
 
 export default class ServiceProfile extends ResourceBase<ServiceProfileProperties> {

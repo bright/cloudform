@@ -22,6 +22,7 @@ import {Value, List} from '../dataTypes'
 export class RegionalConfiguration {
     ReplicationGroupId?: Value<string>
     ReplicationGroupRegion?: Value<string>
+    ReshardingConfigurations?: List<ReshardingConfiguration>
 
     constructor(properties: RegionalConfiguration) {
         Object.assign(this, properties)
@@ -30,6 +31,7 @@ export class RegionalConfiguration {
 
 export class ReshardingConfiguration {
     NodeGroupId?: Value<string>
+    PreferredAvailabilityZones?: List<Value<string>>
 
     constructor(properties: ReshardingConfiguration) {
         Object.assign(this, properties)
@@ -54,6 +56,8 @@ export interface GlobalReplicationGroupProperties {
     CacheParameterGroupName?: Value<string>
     GlobalNodeGroupCount?: Value<number>
     GlobalReplicationGroupDescription?: Value<string>
+    Members: List<GlobalReplicationGroupMember>
+    RegionalConfigurations?: List<RegionalConfiguration>
 }
 
 export default class GlobalReplicationGroup extends ResourceBase<GlobalReplicationGroupProperties> {

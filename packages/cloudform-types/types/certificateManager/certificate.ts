@@ -34,6 +34,9 @@ export interface CertificateProperties {
     CertificateAuthorityArn?: Value<string>
     CertificateTransparencyLoggingPreference?: Value<string>
     DomainName: Value<string>
+    DomainValidationOptions?: List<DomainValidationOption>
+    SubjectAlternativeNames?: List<Value<string>>
+    Tags?: List<ResourceTag>
     ValidationMethod?: Value<string>
 }
 

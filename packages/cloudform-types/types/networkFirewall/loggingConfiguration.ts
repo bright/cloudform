@@ -23,6 +23,7 @@ import {Value, List} from '../dataTypes'
 export class LogDestinationConfig {
     LogType!: Value<string>
     LogDestinationType!: Value<string>
+    LogDestination!: {[key: string]: Value<string>}
 
     constructor(properties: LogDestinationConfig) {
         Object.assign(this, properties)
@@ -30,7 +31,7 @@ export class LogDestinationConfig {
 }
 
 export class LoggingConfigurationInner {
-
+    LogDestinationConfigs!: List<LogDestinationConfig>
 
     constructor(properties: LoggingConfigurationInner) {
         Object.assign(this, properties)
@@ -40,6 +41,7 @@ export class LoggingConfigurationInner {
 export interface LoggingConfigurationProperties {
     FirewallName?: Value<string>
     FirewallArn: Value<string>
+    LoggingConfiguration: LoggingConfiguration
 }
 
 export default class LoggingConfiguration extends ResourceBase<LoggingConfigurationProperties> {

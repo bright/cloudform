@@ -20,6 +20,8 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class VpcDestinationProperties {
+    SubnetIds?: List<Value<string>>
+    SecurityGroups?: List<Value<string>>
     VpcId?: Value<string>
     RoleArn?: Value<string>
 
@@ -38,6 +40,8 @@ export class HttpUrlDestinationSummary {
 
 export interface TopicRuleDestinationProperties {
     Status?: Value<string>
+    HttpUrlProperties?: HttpUrlDestinationSummary
+    VpcProperties?: VpcDestinationProperties
 }
 
 export default class TopicRuleDestination extends ResourceBase<TopicRuleDestinationProperties> {

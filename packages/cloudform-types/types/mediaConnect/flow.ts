@@ -36,6 +36,7 @@ export class Encryption {
 
 export class Source {
     SourceArn?: Value<string>
+    Decryption?: Encryption
     Description?: Value<string>
     EntitlementArn?: Value<string>
     IngestIp?: Value<string>
@@ -65,6 +66,8 @@ export class FailoverConfig {
 export interface FlowProperties {
     Name: Value<string>
     AvailabilityZone?: Value<string>
+    Source: Source
+    SourceFailoverConfig?: FailoverConfig
 }
 
 export default class Flow extends ResourceBase<FlowProperties> {

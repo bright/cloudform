@@ -30,6 +30,7 @@ export class LoggingInfo {
 }
 
 export class Target {
+    Values!: List<Value<string>>
     Key!: Value<string>
 
     constructor(properties: Target) {
@@ -40,6 +41,7 @@ export class Target {
 export class NotificationConfig {
     NotificationArn!: Value<string>
     NotificationType?: Value<string>
+    NotificationEvents?: List<Value<string>>
 
     constructor(properties: NotificationConfig) {
         Object.assign(this, properties)
@@ -56,7 +58,10 @@ export class MaintenanceWindowAutomationParameters {
 }
 
 export class TaskInvocationParameters {
-
+    MaintenanceWindowRunCommandParameters?: MaintenanceWindowRunCommandParameters
+    MaintenanceWindowAutomationParameters?: MaintenanceWindowAutomationParameters
+    MaintenanceWindowStepFunctionsParameters?: MaintenanceWindowStepFunctionsParameters
+    MaintenanceWindowLambdaParameters?: MaintenanceWindowLambdaParameters
 
     constructor(properties: TaskInvocationParameters) {
         Object.assign(this, properties)
@@ -79,6 +84,7 @@ export class MaintenanceWindowRunCommandParameters {
     Parameters?: {[key: string]: any}
     DocumentHashType?: Value<string>
     ServiceRoleArn?: Value<string>
+    NotificationConfig?: NotificationConfig
     OutputS3BucketName?: Value<string>
     DocumentHash?: Value<string>
 
@@ -103,11 +109,14 @@ export interface MaintenanceWindowTaskProperties {
     ServiceRoleArn?: Value<string>
     Priority: Value<number>
     MaxConcurrency?: Value<string>
+    Targets?: List<Target>
     Name?: Value<string>
     TaskArn: Value<string>
+    TaskInvocationParameters?: TaskInvocationParameters
     WindowId: Value<string>
     TaskParameters?: {[key: string]: any}
     TaskType: Value<string>
+    LoggingInfo?: LoggingInfo
 }
 
 export default class MaintenanceWindowTask extends ResourceBase<MaintenanceWindowTaskProperties> {

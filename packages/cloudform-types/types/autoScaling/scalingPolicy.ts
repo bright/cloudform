@@ -21,6 +21,7 @@ import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
 export class CustomizedMetricSpecification {
+    Dimensions?: List<MetricDimension>
     MetricName!: Value<string>
     Namespace!: Value<string>
     Statistic!: Value<string>
@@ -41,7 +42,9 @@ export class MetricDimension {
 }
 
 export class TargetTrackingConfiguration {
+    CustomizedMetricSpecification?: CustomizedMetricSpecification
     DisableScaleIn?: Value<boolean>
+    PredefinedMetricSpecification?: PredefinedMetricSpecification
     TargetValue!: Value<number>
 
     constructor(properties: TargetTrackingConfiguration) {
@@ -77,6 +80,8 @@ export interface ScalingPolicyProperties {
     MinAdjustmentMagnitude?: Value<number>
     PolicyType?: Value<string>
     ScalingAdjustment?: Value<number>
+    StepAdjustments?: List<StepAdjustment>
+    TargetTrackingConfiguration?: TargetTrackingConfiguration
 }
 
 export default class ScalingPolicy extends ResourceBase<ScalingPolicyProperties> {

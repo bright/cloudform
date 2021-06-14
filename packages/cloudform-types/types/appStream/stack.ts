@@ -41,6 +41,7 @@ export class ApplicationSettings {
 }
 
 export class StorageConnector {
+    Domains?: List<Value<string>>
     ResourceIdentifier?: Value<string>
     ConnectorType!: Value<string>
 
@@ -51,11 +52,18 @@ export class StorageConnector {
 
 export interface StackProperties {
     Description?: Value<string>
+    StorageConnectors?: List<StorageConnector>
     DeleteStorageConnectors?: Value<boolean>
+    EmbedHostDomains?: List<Value<string>>
+    UserSettings?: List<UserSetting>
+    AttributesToDelete?: List<Value<string>>
     RedirectURL?: Value<string>
     Name?: Value<string>
     FeedbackURL?: Value<string>
+    ApplicationSettings?: ApplicationSettings
     DisplayName?: Value<string>
+    Tags?: List<ResourceTag>
+    AccessEndpoints?: List<AccessEndpoint>
 }
 
 export default class Stack extends ResourceBase<StackProperties> {

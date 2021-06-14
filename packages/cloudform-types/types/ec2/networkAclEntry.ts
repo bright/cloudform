@@ -41,8 +41,10 @@ export class Icmp {
 export interface NetworkAclEntryProperties {
     CidrBlock?: Value<string>
     Egress?: Value<boolean>
+    Icmp?: Icmp
     Ipv6CidrBlock?: Value<string>
     NetworkAclId: Value<string>
+    PortRange?: PortRange
     Protocol: Value<number>
     RuleAction: Value<string>
     RuleNumber: Value<number>

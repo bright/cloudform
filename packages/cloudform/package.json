@@ -1,6 +1,6 @@
 {
   "name": "cloudform",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
   "main": "packages/cloudform/index.js",
   "repository": {
@@ -20,7 +20,7 @@
     "cloudform": "cli/cloudform.js"
   },
   "dependencies": {
-    "cloudform-types": "^7.0.0",
+    "cloudform-types": "^7.1.0",
     "jsonminify": "^0.4.1",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"

@@ -21,6 +21,7 @@ export interface RestApiProperties {
     BodyS3Location?: S3Location;
     CloneFrom?: Value<string>;
     Description?: Value<string>;
+    DisableExecuteApiEndpoint?: Value<boolean>;
     EndpointConfiguration?: EndpointConfiguration;
     FailOnWarnings?: Value<boolean>;
     MinimumCompressionSize?: Value<number>;

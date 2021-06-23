@@ -9,6 +9,7 @@ export interface ReplicationInstanceProperties {
     AutoMinorVersionUpgrade?: Value<boolean>;
     ReplicationSubnetGroupIdentifier?: Value<string>;
     AllocatedStorage?: Value<number>;
+    ResourceIdentifier?: Value<string>;
     VpcSecurityGroupIds?: List<Value<string>>;
     AllowMajorVersionUpgrade?: Value<boolean>;
     ReplicationInstanceClass: Value<string>;

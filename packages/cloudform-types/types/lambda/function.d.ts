@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class VpcConfig {
-    SecurityGroupIds: List<Value<string>>;
-    SubnetIds: List<Value<string>>;
+    SecurityGroupIds?: List<Value<string>>;
+    SubnetIds?: List<Value<string>>;
     constructor(properties: VpcConfig);
 }
 export declare class DeadLetterConfig {
@@ -19,6 +19,7 @@ export declare class Code {
     S3Key?: Value<string>;
     S3ObjectVersion?: Value<string>;
     ZipFile?: Value<string>;
+    ImageUri?: Value<string>;
     constructor(properties: Code);
 }
 export declare class TracingConfig {
@@ -31,6 +32,12 @@ export declare class Environment {
     };
     constructor(properties: Environment);
 }
+export declare class ImageConfig {
+    EntryPoint?: List<Value<string>>;
+    Command?: List<Value<string>>;
+    WorkingDirectory?: Value<string>;
+    constructor(properties: ImageConfig);
+}
 export interface FunctionProperties {
     Code: Code;
     DeadLetterConfig?: DeadLetterConfig;
@@ -38,17 +45,20 @@ export interface FunctionProperties {
     Environment?: Environment;
     FileSystemConfigs?: List<FileSystemConfig>;
     FunctionName?: Value<string>;
-    Handler: Value<string>;
+    Handler?: Value<string>;
     KmsKeyArn?: Value<string>;
     Layers?: List<Value<string>>;
     MemorySize?: Value<number>;
     ReservedConcurrentExecutions?: Value<number>;
     Role: Value<string>;
-    Runtime: Value<string>;
+    Runtime?: Value<string>;
     Tags?: List<ResourceTag>;
     Timeout?: Value<number>;
     TracingConfig?: TracingConfig;
     VpcConfig?: VpcConfig;
+    CodeSigningConfigArn?: Value<string>;
+    ImageConfig?: ImageConfig;
+    PackageType?: Value<string>;
 }
 export default class Function extends ResourceBase<FunctionProperties> {
     static VpcConfig: typeof VpcConfig;
@@ -57,5 +67,6 @@ export default class Function extends ResourceBase<FunctionProperties> {
     static Code: typeof Code;
     static TracingConfig: typeof TracingConfig;
     static Environment: typeof Environment;
+    static ImageConfig: typeof ImageConfig;
     constructor(properties: FunctionProperties);
 }

@@ -1,5 +1,25 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class KinesisFirehoseDestinationDetails {
+    DeliveryStream?: Value<string>;
+    constructor(properties: KinesisFirehoseDestinationDetails);
+}
+export declare class LogDeliveryConfigurationRequest {
+    DestinationDetails?: DestinationDetails;
+    DestinationType?: Value<string>;
+    LogFormat?: Value<string>;
+    LogType?: Value<string>;
+    constructor(properties: LogDeliveryConfigurationRequest);
+}
+export declare class DestinationDetails {
+    CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails;
+    KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails;
+    constructor(properties: DestinationDetails);
+}
+export declare class CloudWatchLogsDestinationDetails {
+    LogGroup?: Value<string>;
+    constructor(properties: CloudWatchLogsDestinationDetails);
+}
 export interface CacheClusterProperties {
     AZMode?: Value<string>;
     AutoMinorVersionUpgrade?: Value<boolean>;
@@ -10,6 +30,7 @@ export interface CacheClusterProperties {
     ClusterName?: Value<string>;
     Engine: Value<string>;
     EngineVersion?: Value<string>;
+    LogDeliveryConfigurations?: List<LogDeliveryConfigurationRequest>;
     NotificationTopicArn?: Value<string>;
     NumCacheNodes: Value<number>;
     Port?: Value<number>;
@@ -24,5 +45,9 @@ export interface CacheClusterProperties {
     VpcSecurityGroupIds?: List<Value<string>>;
 }
 export default class CacheCluster extends ResourceBase<CacheClusterProperties> {
+    static KinesisFirehoseDestinationDetails: typeof KinesisFirehoseDestinationDetails;
+    static LogDeliveryConfigurationRequest: typeof LogDeliveryConfigurationRequest;
+    static DestinationDetails: typeof DestinationDetails;
+    static CloudWatchLogsDestinationDetails: typeof CloudWatchLogsDestinationDetails;
     constructor(properties: CacheClusterProperties);
 }

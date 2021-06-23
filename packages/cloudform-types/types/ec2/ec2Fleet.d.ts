@@ -2,18 +2,9 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class FleetLaunchTemplateSpecificationRequest {
     LaunchTemplateName?: Value<string>;
-    Version?: Value<string>;
     LaunchTemplateId?: Value<string>;
+    Version?: Value<string>;
     constructor(properties: FleetLaunchTemplateSpecificationRequest);
-}
-export declare class OnDemandOptionsRequest {
-    SingleAvailabilityZone?: Value<boolean>;
-    AllocationStrategy?: Value<string>;
-    SingleInstanceType?: Value<boolean>;
-    MinTargetCapacity?: Value<number>;
-    MaxTotalPrice?: Value<string>;
-    CapacityReservationOptions?: CapacityReservationOptionsRequest;
-    constructor(properties: OnDemandOptionsRequest);
 }
 export declare class TargetCapacitySpecificationRequest {
     DefaultTargetCapacityType?: Value<string>;
@@ -22,30 +13,9 @@ export declare class TargetCapacitySpecificationRequest {
     SpotTargetCapacity?: Value<number>;
     constructor(properties: TargetCapacitySpecificationRequest);
 }
-export declare class FleetLaunchTemplateOverridesRequest {
-    WeightedCapacity?: Value<number>;
-    Placement?: Placement;
-    Priority?: Value<number>;
-    AvailabilityZone?: Value<string>;
-    SubnetId?: Value<string>;
-    InstanceType?: Value<string>;
-    MaxPrice?: Value<string>;
-    constructor(properties: FleetLaunchTemplateOverridesRequest);
-}
 export declare class CapacityReservationOptionsRequest {
     UsageStrategy?: Value<string>;
     constructor(properties: CapacityReservationOptionsRequest);
-}
-export declare class Placement {
-    GroupName?: Value<string>;
-    Tenancy?: Value<string>;
-    SpreadDomain?: Value<string>;
-    PartitionNumber?: Value<number>;
-    AvailabilityZone?: Value<string>;
-    Affinity?: Value<string>;
-    HostId?: Value<string>;
-    HostResourceGroupArn?: Value<string>;
-    constructor(properties: Placement);
 }
 export declare class FleetLaunchTemplateConfigRequest {
     LaunchTemplateSpecification?: FleetLaunchTemplateSpecificationRequest;
@@ -67,6 +37,36 @@ export declare class SpotOptionsRequest {
     InstancePoolsToUseCount?: Value<number>;
     constructor(properties: SpotOptionsRequest);
 }
+export declare class OnDemandOptionsRequest {
+    SingleAvailabilityZone?: Value<boolean>;
+    AllocationStrategy?: Value<string>;
+    SingleInstanceType?: Value<boolean>;
+    MinTargetCapacity?: Value<number>;
+    MaxTotalPrice?: Value<string>;
+    CapacityReservationOptions?: CapacityReservationOptionsRequest;
+    constructor(properties: OnDemandOptionsRequest);
+}
+export declare class FleetLaunchTemplateOverridesRequest {
+    WeightedCapacity?: Value<number>;
+    Placement?: Placement;
+    Priority?: Value<number>;
+    AvailabilityZone?: Value<string>;
+    SubnetId?: Value<string>;
+    InstanceType?: Value<string>;
+    MaxPrice?: Value<string>;
+    constructor(properties: FleetLaunchTemplateOverridesRequest);
+}
+export declare class Placement {
+    GroupName?: Value<string>;
+    Tenancy?: Value<string>;
+    SpreadDomain?: Value<string>;
+    PartitionNumber?: Value<number>;
+    AvailabilityZone?: Value<string>;
+    Affinity?: Value<string>;
+    HostId?: Value<string>;
+    HostResourceGroupArn?: Value<string>;
+    constructor(properties: Placement);
+}
 export interface EC2FleetProperties {
     TargetCapacitySpecification: TargetCapacitySpecificationRequest;
     OnDemandOptions?: OnDemandOptionsRequest;
@@ -82,13 +82,13 @@ export interface EC2FleetProperties {
 }
 export default class EC2Fleet extends ResourceBase<EC2FleetProperties> {
     static FleetLaunchTemplateSpecificationRequest: typeof FleetLaunchTemplateSpecificationRequest;
-    static OnDemandOptionsRequest: typeof OnDemandOptionsRequest;
     static TargetCapacitySpecificationRequest: typeof TargetCapacitySpecificationRequest;
-    static FleetLaunchTemplateOverridesRequest: typeof FleetLaunchTemplateOverridesRequest;
     static CapacityReservationOptionsRequest: typeof CapacityReservationOptionsRequest;
-    static Placement: typeof Placement;
     static FleetLaunchTemplateConfigRequest: typeof FleetLaunchTemplateConfigRequest;
     static TagSpecification: typeof TagSpecification;
     static SpotOptionsRequest: typeof SpotOptionsRequest;
+    static OnDemandOptionsRequest: typeof OnDemandOptionsRequest;
+    static FleetLaunchTemplateOverridesRequest: typeof FleetLaunchTemplateOverridesRequest;
+    static Placement: typeof Placement;
     constructor(properties: EC2FleetProperties);
 }

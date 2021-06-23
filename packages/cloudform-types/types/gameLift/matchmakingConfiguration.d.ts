@@ -17,8 +17,9 @@ export interface MatchmakingConfigurationProperties {
     BackfillMode?: Value<string>;
     RequestTimeoutSeconds: Value<number>;
     AcceptanceRequired: Value<boolean>;
+    FlexMatchMode?: Value<string>;
     RuleSetName: Value<string>;
-    GameSessionQueueArns: List<Value<string>>;
+    GameSessionQueueArns?: List<Value<string>>;
 }
 export default class MatchmakingConfiguration extends ResourceBase<MatchmakingConfigurationProperties> {
     static GameProperty: typeof GameProperty;

@@ -9,41 +9,22 @@ export declare class GlueConfiguration {
     DatabaseName: Value<string>;
     constructor(properties: GlueConfiguration);
 }
+export declare class DeltaTimeSessionWindowConfiguration {
+    TimeoutInMinutes: Value<number>;
+    constructor(properties: DeltaTimeSessionWindowConfiguration);
+}
 export declare class OutputFileUriValue {
     FileName?: Value<string>;
     constructor(properties: OutputFileUriValue);
-}
-export declare class Variable {
-    DatasetContentVersionValue?: DatasetContentVersionValue;
-    DoubleValue?: Value<number>;
-    OutputFileUriValue?: OutputFileUriValue;
-    VariableName: Value<string>;
-    StringValue?: Value<string>;
-    constructor(properties: Variable);
 }
 export declare class Filter {
     DeltaTime?: DeltaTime;
     constructor(properties: Filter);
 }
-export declare class DeltaTime {
-    TimeExpression: Value<string>;
-    OffsetSeconds: Value<number>;
-    constructor(properties: DeltaTime);
-}
 export declare class DatasetContentDeliveryRule {
     Destination: DatasetContentDeliveryRuleDestination;
     EntryName?: Value<string>;
     constructor(properties: DatasetContentDeliveryRule);
-}
-export declare class Trigger {
-    Schedule?: Schedule;
-    TriggeringDataset?: TriggeringDataset;
-    constructor(properties: Trigger);
-}
-export declare class IotEventsDestinationConfiguration {
-    InputName: Value<string>;
-    RoleArn: Value<string>;
-    constructor(properties: IotEventsDestinationConfiguration);
 }
 export declare class Action {
     ActionName: Value<string>;
@@ -51,12 +32,21 @@ export declare class Action {
     QueryAction?: QueryAction;
     constructor(properties: Action);
 }
+export declare class LateDataRuleConfiguration {
+    DeltaTimeSessionWindowConfiguration?: DeltaTimeSessionWindowConfiguration;
+    constructor(properties: LateDataRuleConfiguration);
+}
 export declare class ContainerAction {
     Variables?: List<Variable>;
     ExecutionRoleArn: Value<string>;
     Image: Value<string>;
     ResourceConfiguration: ResourceConfiguration;
     constructor(properties: ContainerAction);
+}
+export declare class LateDataRule {
+    RuleConfiguration: LateDataRuleConfiguration;
+    RuleName?: Value<string>;
+    constructor(properties: LateDataRule);
 }
 export declare class QueryAction {
     Filters?: List<Filter>;
@@ -72,15 +62,6 @@ export declare class VersioningConfiguration {
     MaxVersions?: Value<number>;
     Unlimited?: Value<boolean>;
     constructor(properties: VersioningConfiguration);
-}
-export declare class ResourceConfiguration {
-    VolumeSizeInGB: Value<number>;
-    ComputeType: Value<string>;
-    constructor(properties: ResourceConfiguration);
-}
-export declare class TriggeringDataset {
-    DatasetName: Value<string>;
-    constructor(properties: TriggeringDataset);
 }
 export declare class Schedule {
     ScheduleExpression: Value<string>;
@@ -98,8 +79,41 @@ export declare class S3DestinationConfiguration {
     RoleArn: Value<string>;
     constructor(properties: S3DestinationConfiguration);
 }
+export declare class Variable {
+    DatasetContentVersionValue?: DatasetContentVersionValue;
+    DoubleValue?: Value<number>;
+    OutputFileUriValue?: OutputFileUriValue;
+    VariableName: Value<string>;
+    StringValue?: Value<string>;
+    constructor(properties: Variable);
+}
+export declare class DeltaTime {
+    TimeExpression: Value<string>;
+    OffsetSeconds: Value<number>;
+    constructor(properties: DeltaTime);
+}
+export declare class Trigger {
+    Schedule?: Schedule;
+    TriggeringDataset?: TriggeringDataset;
+    constructor(properties: Trigger);
+}
+export declare class IotEventsDestinationConfiguration {
+    InputName: Value<string>;
+    RoleArn: Value<string>;
+    constructor(properties: IotEventsDestinationConfiguration);
+}
+export declare class ResourceConfiguration {
+    VolumeSizeInGB: Value<number>;
+    ComputeType: Value<string>;
+    constructor(properties: ResourceConfiguration);
+}
+export declare class TriggeringDataset {
+    DatasetName: Value<string>;
+    constructor(properties: TriggeringDataset);
+}
 export interface DatasetProperties {
     Actions: List<Action>;
+    LateDataRules?: List<LateDataRule>;
     DatasetName?: Value<string>;
     ContentDeliveryRules?: List<DatasetContentDeliveryRule>;
     Triggers?: List<Trigger>;
@@ -110,22 +124,25 @@ export interface DatasetProperties {
 export default class Dataset extends ResourceBase<DatasetProperties> {
     static DatasetContentVersionValue: typeof DatasetContentVersionValue;
     static GlueConfiguration: typeof GlueConfiguration;
+    static DeltaTimeSessionWindowConfiguration: typeof DeltaTimeSessionWindowConfiguration;
     static OutputFileUriValue: typeof OutputFileUriValue;
-    static Variable: typeof Variable;
     static Filter: typeof Filter;
-    static DeltaTime: typeof DeltaTime;
     static DatasetContentDeliveryRule: typeof DatasetContentDeliveryRule;
-    static Trigger: typeof Trigger;
-    static IotEventsDestinationConfiguration: typeof IotEventsDestinationConfiguration;
     static Action: typeof Action;
+    static LateDataRuleConfiguration: typeof LateDataRuleConfiguration;
     static ContainerAction: typeof ContainerAction;
+    static LateDataRule: typeof LateDataRule;
     static QueryAction: typeof QueryAction;
     static DatasetContentDeliveryRuleDestination: typeof DatasetContentDeliveryRuleDestination;
     static VersioningConfiguration: typeof VersioningConfiguration;
-    static ResourceConfiguration: typeof ResourceConfiguration;
-    static TriggeringDataset: typeof TriggeringDataset;
     static Schedule: typeof Schedule;
     static RetentionPeriod: typeof RetentionPeriod;
     static S3DestinationConfiguration: typeof S3DestinationConfiguration;
+    static Variable: typeof Variable;
+    static DeltaTime: typeof DeltaTime;
+    static Trigger: typeof Trigger;
+    static IotEventsDestinationConfiguration: typeof IotEventsDestinationConfiguration;
+    static ResourceConfiguration: typeof ResourceConfiguration;
+    static TriggeringDataset: typeof TriggeringDataset;
     constructor(properties: DatasetProperties);
 }

@@ -16,7 +16,8 @@ export interface ImagePipelineProperties {
     ImageTestsConfiguration?: ImageTestsConfiguration;
     Status?: Value<string>;
     Schedule?: Schedule;
-    ImageRecipeArn: Value<string>;
+    ImageRecipeArn?: Value<string>;
+    ContainerRecipeArn?: Value<string>;
     DistributionConfigurationArn?: Value<string>;
     InfrastructureConfigurationArn: Value<string>;
     EnhancedImageMetadataEnabled?: Value<boolean>;

@@ -22,6 +22,7 @@ export interface ApiProperties {
     Description?: Value<string>;
     BasePath?: Value<string>;
     FailOnWarnings?: Value<boolean>;
+    DisableExecuteApiEndpoint?: Value<boolean>;
     DisableSchemaValidation?: Value<boolean>;
     Name?: Value<string>;
     Target?: Value<string>;

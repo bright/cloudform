@@ -13,6 +13,7 @@ export interface ClusterProperties {
     IAMRoleARN: Value<string>;
     SubnetGroupName?: Value<string>;
     PreferredMaintenanceWindow?: Value<string>;
+    ClusterEndpointEncryptionType?: Value<string>;
     NotificationTopicARN?: Value<string>;
     SecurityGroupIds?: List<Value<string>>;
     NodeType: Value<string>;

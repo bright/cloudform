@@ -1,9 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class RuleGroup {
-    PatchRules?: List<Rule>;
-    constructor(properties: RuleGroup);
-}
 export declare type PatchStringDate = Value<string>;
 export declare class PatchFilter {
     Values?: List<Value<string>>;
@@ -28,6 +24,10 @@ export declare class PatchSource {
     Name?: Value<string>;
     constructor(properties: PatchSource);
 }
+export declare class RuleGroup {
+    PatchRules?: List<Rule>;
+    constructor(properties: RuleGroup);
+}
 export interface PatchBaselineProperties {
     OperatingSystem?: Value<string>;
     Description?: Value<string>;
@@ -44,10 +44,10 @@ export interface PatchBaselineProperties {
     Tags?: List<ResourceTag>;
 }
 export default class PatchBaseline extends ResourceBase<PatchBaselineProperties> {
-    static RuleGroup: typeof RuleGroup;
     static PatchFilter: typeof PatchFilter;
     static Rule: typeof Rule;
     static PatchFilterGroup: typeof PatchFilterGroup;
     static PatchSource: typeof PatchSource;
+    static RuleGroup: typeof RuleGroup;
     constructor(properties: PatchBaselineProperties);
 }

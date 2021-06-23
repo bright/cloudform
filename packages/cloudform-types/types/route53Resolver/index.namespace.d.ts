@@ -1,11 +1,29 @@
+import ResolverQueryLoggingConfig_ from './resolverQueryLoggingConfig';
+import FirewallRuleGroupAssociation_ from './firewallRuleGroupAssociation';
+import ResolverQueryLoggingConfigAssociation_ from './resolverQueryLoggingConfigAssociation';
+import ResolverDNSSECConfig_ from './resolverDnssecConfig';
+import FirewallDomainList_ from './firewallDomainList';
 import ResolverRule_ from './resolverRule';
+import FirewallRuleGroup_ from './firewallRuleGroup';
 import ResolverRuleAssociation_ from './resolverRuleAssociation';
 import ResolverEndpoint_ from './resolverEndpoint';
 export declare namespace Route53Resolver {
+    const ResolverQueryLoggingConfig: typeof ResolverQueryLoggingConfig_;
+    const FirewallRuleGroupAssociation: typeof FirewallRuleGroupAssociation_;
+    const ResolverQueryLoggingConfigAssociation: typeof ResolverQueryLoggingConfigAssociation_;
+    const ResolverDNSSECConfig: typeof ResolverDNSSECConfig_;
+    const FirewallDomainList: typeof FirewallDomainList_;
     const ResolverRule: typeof ResolverRule_;
+    const FirewallRuleGroup: typeof FirewallRuleGroup_;
     const ResolverRuleAssociation: typeof ResolverRuleAssociation_;
     const ResolverEndpoint: typeof ResolverEndpoint_;
+    type ResolverQueryLoggingConfig = ResolverQueryLoggingConfig_;
+    type FirewallRuleGroupAssociation = FirewallRuleGroupAssociation_;
+    type ResolverQueryLoggingConfigAssociation = ResolverQueryLoggingConfigAssociation_;
+    type ResolverDNSSECConfig = ResolverDNSSECConfig_;
+    type FirewallDomainList = FirewallDomainList_;
     type ResolverRule = ResolverRule_;
+    type FirewallRuleGroup = FirewallRuleGroup_;
     type ResolverRuleAssociation = ResolverRuleAssociation_;
     type ResolverEndpoint = ResolverEndpoint_;
 }

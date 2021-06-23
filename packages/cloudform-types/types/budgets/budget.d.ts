@@ -15,6 +15,16 @@ export declare class BudgetData {
     BudgetType: Value<string>;
     constructor(properties: BudgetData);
 }
+export declare class Subscriber {
+    SubscriptionType: Value<string>;
+    Address: Value<string>;
+    constructor(properties: Subscriber);
+}
+export declare class TimePeriod {
+    Start?: Value<string>;
+    End?: Value<string>;
+    constructor(properties: TimePeriod);
+}
 export declare class CostTypes {
     IncludeSupport?: Value<boolean>;
     IncludeOtherSubscription?: Value<boolean>;
@@ -34,22 +44,12 @@ export declare class NotificationWithSubscribers {
     Notification: Notification;
     constructor(properties: NotificationWithSubscribers);
 }
-export declare class Subscriber {
-    SubscriptionType: Value<string>;
-    Address: Value<string>;
-    constructor(properties: Subscriber);
-}
 export declare class Notification {
     ComparisonOperator: Value<string>;
     NotificationType: Value<string>;
     Threshold: Value<number>;
     ThresholdType?: Value<string>;
     constructor(properties: Notification);
-}
-export declare class TimePeriod {
-    Start?: Value<string>;
-    End?: Value<string>;
-    constructor(properties: TimePeriod);
 }
 export declare class Spend {
     Amount: Value<number>;
@@ -62,11 +62,11 @@ export interface BudgetProperties {
 }
 export default class Budget extends ResourceBase<BudgetProperties> {
     static BudgetData: typeof BudgetData;
+    static Subscriber: typeof Subscriber;
+    static TimePeriod: typeof TimePeriod;
     static CostTypes: typeof CostTypes;
     static NotificationWithSubscribers: typeof NotificationWithSubscribers;
-    static Subscriber: typeof Subscriber;
     static Notification: typeof Notification;
-    static TimePeriod: typeof TimePeriod;
     static Spend: typeof Spend;
     constructor(properties: BudgetProperties);
 }

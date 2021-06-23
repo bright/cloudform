@@ -5,6 +5,7 @@ import Build_ from './build';
 import MatchmakingRuleSet_ from './matchmakingRuleSet';
 import GameSessionQueue_ from './gameSessionQueue';
 import Script_ from './script';
+import GameServerGroup_ from './gameServerGroup';
 export declare namespace GameLift {
     const Fleet: typeof Fleet_;
     const MatchmakingConfiguration: typeof MatchmakingConfiguration_;
@@ -13,6 +14,7 @@ export declare namespace GameLift {
     const MatchmakingRuleSet: typeof MatchmakingRuleSet_;
     const GameSessionQueue: typeof GameSessionQueue_;
     const Script: typeof Script_;
+    const GameServerGroup: typeof GameServerGroup_;
     type Fleet = Fleet_;
     type MatchmakingConfiguration = MatchmakingConfiguration_;
     type Alias = Alias_;
@@ -20,4 +22,5 @@ export declare namespace GameLift {
     type MatchmakingRuleSet = MatchmakingRuleSet_;
     type GameSessionQueue = GameSessionQueue_;
     type Script = Script_;
+    type GameServerGroup = GameServerGroup_;
 }

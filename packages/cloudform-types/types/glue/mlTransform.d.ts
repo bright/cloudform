@@ -7,10 +7,10 @@ export declare class FindMatchesParameters {
     AccuracyCostTradeoff?: Value<number>;
     constructor(properties: FindMatchesParameters);
 }
-export declare class TransformParameters {
-    TransformType: Value<string>;
-    FindMatchesParameters?: FindMatchesParameters;
-    constructor(properties: TransformParameters);
+export declare class MLUserDataEncryption {
+    MLUserDataEncryptionMode: Value<string>;
+    KmsKeyId?: Value<string>;
+    constructor(properties: MLUserDataEncryption);
 }
 export declare class InputRecordTables {
     GlueTables?: List<GlueTables>;
@@ -23,12 +23,24 @@ export declare class GlueTables {
     CatalogId?: Value<string>;
     constructor(properties: GlueTables);
 }
+export declare class TransformEncryption {
+    MLUserDataEncryption?: MLUserDataEncryption;
+    TaskRunSecurityConfigurationName?: Value<string>;
+    constructor(properties: TransformEncryption);
+}
+export declare class TransformParameters {
+    TransformType: Value<string>;
+    FindMatchesParameters?: FindMatchesParameters;
+    constructor(properties: TransformParameters);
+}
 export interface MLTransformProperties {
-    Role: Value<string>;
     MaxRetries?: Value<number>;
-    WorkerType?: Value<string>;
     Description?: Value<string>;
+    TransformEncryption?: TransformEncryption;
     Timeout?: Value<number>;
+    Name?: Value<string>;
+    Role: Value<string>;
+    WorkerType?: Value<string>;
     GlueVersion?: Value<string>;
     TransformParameters: TransformParameters;
     InputRecordTables: InputRecordTables;
@@ -36,13 +48,14 @@ export interface MLTransformProperties {
     Tags?: {
         [key: string]: any;
     };
-    Name?: Value<string>;
     MaxCapacity?: Value<number>;
 }
 export default class MLTransform extends ResourceBase<MLTransformProperties> {
     static FindMatchesParameters: typeof FindMatchesParameters;
-    static TransformParameters: typeof TransformParameters;
+    static MLUserDataEncryption: typeof MLUserDataEncryption;
     static InputRecordTables: typeof InputRecordTables;
     static GlueTables: typeof GlueTables;
+    static TransformEncryption: typeof TransformEncryption;
+    static TransformParameters: typeof TransformParameters;
     constructor(properties: MLTransformProperties);
 }

@@ -18,6 +18,16 @@ export declare class Action {
     LambdaAction?: LambdaAction;
     constructor(properties: Action);
 }
+export declare class StopAction {
+    Scope: Value<string>;
+    TopicArn?: Value<string>;
+    constructor(properties: StopAction);
+}
+export declare class SNSAction {
+    TopicArn?: Value<string>;
+    Encoding?: Value<string>;
+    constructor(properties: SNSAction);
+}
 export declare class S3Action {
     BucketName: Value<string>;
     KmsKeyArn?: Value<string>;
@@ -29,16 +39,6 @@ export declare class WorkmailAction {
     TopicArn?: Value<string>;
     OrganizationArn: Value<string>;
     constructor(properties: WorkmailAction);
-}
-export declare class StopAction {
-    Scope: Value<string>;
-    TopicArn?: Value<string>;
-    constructor(properties: StopAction);
-}
-export declare class SNSAction {
-    TopicArn?: Value<string>;
-    Encoding?: Value<string>;
-    constructor(properties: SNSAction);
 }
 export declare class Rule {
     ScanEnabled?: Value<boolean>;
@@ -68,10 +68,10 @@ export interface ReceiptRuleProperties {
 export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
     static BounceAction: typeof BounceAction;
     static Action: typeof Action;
-    static S3Action: typeof S3Action;
-    static WorkmailAction: typeof WorkmailAction;
     static StopAction: typeof StopAction;
     static SNSAction: typeof SNSAction;
+    static S3Action: typeof S3Action;
+    static WorkmailAction: typeof WorkmailAction;
     static Rule: typeof Rule;
     static LambdaAction: typeof LambdaAction;
     static AddHeaderAction: typeof AddHeaderAction;

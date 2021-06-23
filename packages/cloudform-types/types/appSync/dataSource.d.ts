@@ -5,6 +5,15 @@ export declare class RelationalDatabaseConfig {
     RelationalDatabaseSourceType: Value<string>;
     constructor(properties: RelationalDatabaseConfig);
 }
+export declare class LambdaConfig {
+    LambdaFunctionArn: Value<string>;
+    constructor(properties: LambdaConfig);
+}
+export declare class HttpConfig {
+    Endpoint: Value<string>;
+    AuthorizationConfig?: AuthorizationConfig;
+    constructor(properties: HttpConfig);
+}
 export declare class AwsIamConfig {
     SigningRegion?: Value<string>;
     SigningServiceName?: Value<string>;
@@ -31,15 +40,6 @@ export declare class RdsHttpEndpointConfig {
     AwsSecretStoreArn: Value<string>;
     constructor(properties: RdsHttpEndpointConfig);
 }
-export declare class LambdaConfig {
-    LambdaFunctionArn: Value<string>;
-    constructor(properties: LambdaConfig);
-}
-export declare class HttpConfig {
-    Endpoint: Value<string>;
-    AuthorizationConfig?: AuthorizationConfig;
-    constructor(properties: HttpConfig);
-}
 export declare class ElasticsearchConfig {
     AwsRegion: Value<string>;
     Endpoint: Value<string>;
@@ -65,12 +65,12 @@ export interface DataSourceProperties {
 }
 export default class DataSource extends ResourceBase<DataSourceProperties> {
     static RelationalDatabaseConfig: typeof RelationalDatabaseConfig;
+    static LambdaConfig: typeof LambdaConfig;
+    static HttpConfig: typeof HttpConfig;
     static AwsIamConfig: typeof AwsIamConfig;
     static DynamoDBConfig: typeof DynamoDBConfig;
     static AuthorizationConfig: typeof AuthorizationConfig;
     static RdsHttpEndpointConfig: typeof RdsHttpEndpointConfig;
-    static LambdaConfig: typeof LambdaConfig;
-    static HttpConfig: typeof HttpConfig;
     static ElasticsearchConfig: typeof ElasticsearchConfig;
     static DeltaSyncConfig: typeof DeltaSyncConfig;
     constructor(properties: DataSourceProperties);

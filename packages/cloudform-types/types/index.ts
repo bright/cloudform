@@ -1,20 +1,20 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.1.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
  */
    
 import XRay from './xRay'
@@ -23,11 +23,11 @@ export {XRay}
 import EC2 from './ec2'
 export {EC2}
 
-import ServiceCatalog from './serviceCatalog'
-export {ServiceCatalog}
-
 import ACMPCA from './acmpca'
 export {ACMPCA}
+
+import ServiceCatalog from './serviceCatalog'
+export {ServiceCatalog}
 
 import GlobalAccelerator from './globalAccelerator'
 export {GlobalAccelerator}
@@ -104,20 +104,20 @@ export {CloudWatch}
 import ECS from './ecs'
 export {ECS}
 
-import NetworkManager from './networkManager'
-export {NetworkManager}
-
 import StepFunctions from './stepFunctions'
 export {StepFunctions}
 
-import KinesisAnalytics from './kinesisAnalytics'
-export {KinesisAnalytics}
+import NetworkManager from './networkManager'
+export {NetworkManager}
 
 import CodeStarConnections from './codeStarConnections'
 export {CodeStarConnections}
 
 import CloudFront from './cloudFront'
 export {CloudFront}
+
+import KinesisAnalytics from './kinesisAnalytics'
+export {KinesisAnalytics}
 
 import CloudFormation from './cloudFormation'
 export {CloudFormation}
@@ -155,11 +155,11 @@ export {EFS}
 import MediaConnect from './mediaConnect'
 export {MediaConnect}
 
-import ApiGateway from './apiGateway'
-export {ApiGateway}
-
 import QuickSight from './quickSight'
 export {QuickSight}
+
+import ApiGateway from './apiGateway'
+export {ApiGateway}
 
 import KMS from './kms'
 export {KMS}
@@ -167,11 +167,11 @@ export {KMS}
 import Redshift from './redshift'
 export {Redshift}
 
-import CustomerProfiles from './customerProfiles'
-export {CustomerProfiles}
-
 import ApplicationInsights from './applicationInsights'
 export {ApplicationInsights}
+
+import CustomerProfiles from './customerProfiles'
+export {CustomerProfiles}
 
 import OpsWorks from './opsWorks'
 export {OpsWorks}
@@ -191,11 +191,11 @@ export {CE}
 import IoT1Click from './ioT1Click'
 export {IoT1Click}
 
-import MediaConvert from './mediaConvert'
-export {MediaConvert}
-
 import IoT from './iot'
 export {IoT}
+
+import MediaConvert from './mediaConvert'
+export {MediaConvert}
 
 import QLDB from './qldb'
 export {QLDB}
@@ -507,8 +507,8 @@ export {CUR}
 export default {
   XRay,
   EC2,
-  ServiceCatalog,
   ACMPCA,
+  ServiceCatalog,
   GlobalAccelerator,
   AccessAnalyzer,
   WAF,
@@ -534,11 +534,11 @@ export default {
   ManagedBlockchain,
   CloudWatch,
   ECS,
-  NetworkManager,
   StepFunctions,
-  KinesisAnalytics,
+  NetworkManager,
   CodeStarConnections,
   CloudFront,
+  KinesisAnalytics,
   CloudFormation,
   Cognito,
   AppStream,
@@ -551,20 +551,20 @@ export default {
   SNS,
   EFS,
   MediaConnect,
-  ApiGateway,
   QuickSight,
+  ApiGateway,
   KMS,
   Redshift,
-  CustomerProfiles,
   ApplicationInsights,
+  CustomerProfiles,
   OpsWorks,
   EKS,
   AppMesh,
   Lambda,
   CE,
   IoT1Click,
-  MediaConvert,
   IoT,
+  MediaConvert,
   QLDB,
   WAFv2,
   Batch,

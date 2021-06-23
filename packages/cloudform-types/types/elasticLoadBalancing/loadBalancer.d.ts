@@ -7,20 +7,6 @@ export declare class AccessLoggingPolicy {
     S3BucketPrefix?: Value<string>;
     constructor(properties: AccessLoggingPolicy);
 }
-export declare class LBCookieStickinessPolicy {
-    CookieExpirationPeriod?: Value<string>;
-    PolicyName?: Value<string>;
-    constructor(properties: LBCookieStickinessPolicy);
-}
-export declare class Listeners {
-    InstancePort: Value<string>;
-    InstanceProtocol?: Value<string>;
-    LoadBalancerPort: Value<string>;
-    PolicyNames?: List<Value<string>>;
-    Protocol: Value<string>;
-    SSLCertificateId?: Value<string>;
-    constructor(properties: Listeners);
-}
 export declare class HealthCheck {
     HealthyThreshold: Value<string>;
     Interval: Value<string>;
@@ -38,6 +24,25 @@ export declare class ConnectionDrainingPolicy {
     Timeout?: Value<number>;
     constructor(properties: ConnectionDrainingPolicy);
 }
+export declare class AppCookieStickinessPolicy {
+    CookieName: Value<string>;
+    PolicyName: Value<string>;
+    constructor(properties: AppCookieStickinessPolicy);
+}
+export declare class LBCookieStickinessPolicy {
+    CookieExpirationPeriod?: Value<string>;
+    PolicyName?: Value<string>;
+    constructor(properties: LBCookieStickinessPolicy);
+}
+export declare class Listeners {
+    InstancePort: Value<string>;
+    InstanceProtocol?: Value<string>;
+    LoadBalancerPort: Value<string>;
+    PolicyNames?: List<Value<string>>;
+    Protocol: Value<string>;
+    SSLCertificateId?: Value<string>;
+    constructor(properties: Listeners);
+}
 export declare class Policies {
     Attributes: List<{
         [key: string]: any;
@@ -47,11 +52,6 @@ export declare class Policies {
     PolicyName: Value<string>;
     PolicyType: Value<string>;
     constructor(properties: Policies);
-}
-export declare class AppCookieStickinessPolicy {
-    CookieName: Value<string>;
-    PolicyName: Value<string>;
-    constructor(properties: AppCookieStickinessPolicy);
 }
 export interface LoadBalancerProperties {
     AccessLoggingPolicy?: AccessLoggingPolicy;
@@ -73,12 +73,12 @@ export interface LoadBalancerProperties {
 }
 export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static AccessLoggingPolicy: typeof AccessLoggingPolicy;
-    static LBCookieStickinessPolicy: typeof LBCookieStickinessPolicy;
-    static Listeners: typeof Listeners;
     static HealthCheck: typeof HealthCheck;
     static ConnectionSettings: typeof ConnectionSettings;
     static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
-    static Policies: typeof Policies;
     static AppCookieStickinessPolicy: typeof AppCookieStickinessPolicy;
+    static LBCookieStickinessPolicy: typeof LBCookieStickinessPolicy;
+    static Listeners: typeof Listeners;
+    static Policies: typeof Policies;
     constructor(properties: LoadBalancerProperties);
 }

@@ -6,17 +6,17 @@ export declare class DataSource {
     Type?: Value<string>;
     constructor(properties: DataSource);
 }
-export declare class EnvironmentVariable {
-    Key: Value<string>;
-    Secure?: Value<boolean>;
-    Value: Value<string>;
-    constructor(properties: EnvironmentVariable);
-}
 export declare class SslConfiguration {
     Certificate?: Value<string>;
     Chain?: Value<string>;
     PrivateKey?: Value<string>;
     constructor(properties: SslConfiguration);
+}
+export declare class EnvironmentVariable {
+    Key: Value<string>;
+    Secure?: Value<boolean>;
+    Value: Value<string>;
+    constructor(properties: EnvironmentVariable);
 }
 export declare class Source {
     Password?: Value<string>;
@@ -45,8 +45,8 @@ export interface AppProperties {
 }
 export default class App extends ResourceBase<AppProperties> {
     static DataSource: typeof DataSource;
-    static EnvironmentVariable: typeof EnvironmentVariable;
     static SslConfiguration: typeof SslConfiguration;
+    static EnvironmentVariable: typeof EnvironmentVariable;
     static Source: typeof Source;
     constructor(properties: AppProperties);
 }

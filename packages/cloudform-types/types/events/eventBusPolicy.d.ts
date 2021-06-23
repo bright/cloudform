@@ -9,9 +9,12 @@ export declare class Condition {
 export interface EventBusPolicyProperties {
     EventBusName?: Value<string>;
     Condition?: Condition;
-    Action: Value<string>;
+    Action?: Value<string>;
     StatementId: Value<string>;
-    Principal: Value<string>;
+    Statement?: {
+        [key: string]: any;
+    };
+    Principal?: Value<string>;
 }
 export default class EventBusPolicy extends ResourceBase<EventBusPolicyProperties> {
     static Condition: typeof Condition;

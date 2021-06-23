@@ -4,22 +4,22 @@ export declare class SendingOptions {
     SendingEnabled?: Value<boolean>;
     constructor(properties: SendingOptions);
 }
+export declare class ReputationOptions {
+    ReputationMetricsEnabled?: Value<boolean>;
+    constructor(properties: ReputationOptions);
+}
+export declare class TrackingOptions {
+    CustomRedirectDomain?: Value<string>;
+    constructor(properties: TrackingOptions);
+}
 export declare class Tags {
     Value?: Value<string>;
     Key?: Value<string>;
     constructor(properties: Tags);
 }
-export declare class ReputationOptions {
-    ReputationMetricsEnabled?: Value<boolean>;
-    constructor(properties: ReputationOptions);
-}
 export declare class DeliveryOptions {
     SendingPoolName?: Value<string>;
     constructor(properties: DeliveryOptions);
-}
-export declare class TrackingOptions {
-    CustomRedirectDomain?: Value<string>;
-    constructor(properties: TrackingOptions);
 }
 export interface ConfigurationSetProperties {
     SendingOptions?: SendingOptions;
@@ -31,9 +31,9 @@ export interface ConfigurationSetProperties {
 }
 export default class ConfigurationSet extends ResourceBase<ConfigurationSetProperties> {
     static SendingOptions: typeof SendingOptions;
-    static Tags: typeof Tags;
     static ReputationOptions: typeof ReputationOptions;
-    static DeliveryOptions: typeof DeliveryOptions;
     static TrackingOptions: typeof TrackingOptions;
+    static Tags: typeof Tags;
+    static DeliveryOptions: typeof DeliveryOptions;
     constructor(properties: ConfigurationSetProperties);
 }

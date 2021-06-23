@@ -1,5 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ReplicaRegion {
+    KmsKeyId?: Value<string>;
+    Region: Value<string>;
+    constructor(properties: ReplicaRegion);
+}
 export declare class GenerateSecretString {
     ExcludeUppercase?: Value<boolean>;
     RequireEachIncludedType?: Value<boolean>;
@@ -18,10 +23,12 @@ export interface SecretProperties {
     KmsKeyId?: Value<string>;
     SecretString?: Value<string>;
     GenerateSecretString?: GenerateSecretString;
+    ReplicaRegions?: List<ReplicaRegion>;
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }
 export default class Secret extends ResourceBase<SecretProperties> {
+    static ReplicaRegion: typeof ReplicaRegion;
     static GenerateSecretString: typeof GenerateSecretString;
     constructor(properties?: SecretProperties);
 }

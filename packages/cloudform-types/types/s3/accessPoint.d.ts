@@ -19,11 +19,6 @@ export interface AccessPointProperties {
     Policy?: {
         [key: string]: any;
     };
-    PolicyStatus?: {
-        [key: string]: any;
-    };
-    NetworkOrigin?: Value<string>;
-    CreationDate?: Value<string>;
 }
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {
     static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;

@@ -1,11 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class SageMakerMachineLearningModelResourceData {
-    OwnerSetting?: ResourceDownloadOwnerSetting;
-    DestinationPath: Value<string>;
-    SageMakerJobArn: Value<string>;
-    constructor(properties: SageMakerMachineLearningModelResourceData);
-}
 export declare class S3MachineLearningModelResourceData {
     OwnerSetting?: ResourceDownloadOwnerSetting;
     DestinationPath: Value<string>;
@@ -21,6 +15,12 @@ export declare class ResourceDownloadOwnerSetting {
     GroupOwner: Value<string>;
     GroupPermission: Value<string>;
     constructor(properties: ResourceDownloadOwnerSetting);
+}
+export declare class SageMakerMachineLearningModelResourceData {
+    OwnerSetting?: ResourceDownloadOwnerSetting;
+    DestinationPath: Value<string>;
+    SageMakerJobArn: Value<string>;
+    constructor(properties: SageMakerMachineLearningModelResourceData);
 }
 export declare class GroupOwnerSetting {
     AutoAddGroupOwner: Value<boolean>;
@@ -64,10 +64,10 @@ export interface ResourceDefinitionProperties {
     Name: Value<string>;
 }
 export default class ResourceDefinition extends ResourceBase<ResourceDefinitionProperties> {
-    static SageMakerMachineLearningModelResourceData: typeof SageMakerMachineLearningModelResourceData;
     static S3MachineLearningModelResourceData: typeof S3MachineLearningModelResourceData;
     static SecretsManagerSecretResourceData: typeof SecretsManagerSecretResourceData;
     static ResourceDownloadOwnerSetting: typeof ResourceDownloadOwnerSetting;
+    static SageMakerMachineLearningModelResourceData: typeof SageMakerMachineLearningModelResourceData;
     static GroupOwnerSetting: typeof GroupOwnerSetting;
     static LocalDeviceResourceData: typeof LocalDeviceResourceData;
     static ResourceDefinitionVersion: typeof ResourceDefinitionVersion;

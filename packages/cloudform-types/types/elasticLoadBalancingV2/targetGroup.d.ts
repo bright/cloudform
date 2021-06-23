@@ -1,19 +1,20 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class TargetDescription {
+    AvailabilityZone?: Value<string>;
+    Id: Value<string>;
+    Port?: Value<number>;
+    constructor(properties: TargetDescription);
+}
 export declare class TargetGroupAttribute {
     Key?: Value<string>;
     Value?: Value<string>;
     constructor(properties: TargetGroupAttribute);
 }
 export declare class Matcher {
-    HttpCode: Value<string>;
+    GrpcCode?: Value<string>;
+    HttpCode?: Value<string>;
     constructor(properties: Matcher);
-}
-export declare class TargetDescription {
-    AvailabilityZone?: Value<string>;
-    Id: Value<string>;
-    Port?: Value<number>;
-    constructor(properties: TargetDescription);
 }
 export interface TargetGroupProperties {
     HealthCheckEnabled?: Value<boolean>;
@@ -27,6 +28,7 @@ export interface TargetGroupProperties {
     Name?: Value<string>;
     Port?: Value<number>;
     Protocol?: Value<string>;
+    ProtocolVersion?: Value<string>;
     Tags?: List<ResourceTag>;
     TargetGroupAttributes?: List<TargetGroupAttribute>;
     TargetType?: Value<string>;
@@ -35,8 +37,8 @@ export interface TargetGroupProperties {
     VpcId?: Value<string>;
 }
 export default class TargetGroup extends ResourceBase<TargetGroupProperties> {
+    static TargetDescription: typeof TargetDescription;
     static TargetGroupAttribute: typeof TargetGroupAttribute;
     static Matcher: typeof Matcher;
-    static TargetDescription: typeof TargetDescription;
     constructor(properties?: TargetGroupProperties);
 }

@@ -1,17 +1,32 @@
+import StackSet_ from './stackSet';
 import Stack_ from './stack';
+import ResourceDefaultVersion_ from './resourceDefaultVersion';
 import CustomResource_ from './customResource';
 import WaitCondition_ from './waitCondition';
+import ResourceVersion_ from './resourceVersion';
 import WaitConditionHandle_ from './waitConditionHandle';
 import Macro_ from './macro';
+import ModuleDefaultVersion_ from './moduleDefaultVersion';
+import ModuleVersion_ from './moduleVersion';
 export declare namespace CloudFormation {
+    const StackSet: typeof StackSet_;
     const Stack: typeof Stack_;
+    const ResourceDefaultVersion: typeof ResourceDefaultVersion_;
     const CustomResource: typeof CustomResource_;
     const WaitCondition: typeof WaitCondition_;
+    const ResourceVersion: typeof ResourceVersion_;
     const WaitConditionHandle: typeof WaitConditionHandle_;
     const Macro: typeof Macro_;
+    const ModuleDefaultVersion: typeof ModuleDefaultVersion_;
+    const ModuleVersion: typeof ModuleVersion_;
+    type StackSet = StackSet_;
     type Stack = Stack_;
+    type ResourceDefaultVersion = ResourceDefaultVersion_;
     type CustomResource = CustomResource_;
     type WaitCondition = WaitCondition_;
+    type ResourceVersion = ResourceVersion_;
     type WaitConditionHandle = WaitConditionHandle_;
     type Macro = Macro_;
+    type ModuleDefaultVersion = ModuleDefaultVersion_;
+    type ModuleVersion = ModuleVersion_;
 }

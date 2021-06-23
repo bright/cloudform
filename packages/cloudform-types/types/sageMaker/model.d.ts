@@ -1,11 +1,16 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class MultiModelConfig {
+    ModelCacheSetting?: Value<string>;
+    constructor(properties: MultiModelConfig);
+}
 export declare class VpcConfig {
     Subnets: List<Value<string>>;
     SecurityGroupIds: List<Value<string>>;
     constructor(properties: VpcConfig);
 }
 export declare class ContainerDefinition {
+    ImageConfig?: ImageConfig;
     ContainerHostname?: Value<string>;
     ModelPackageName?: Value<string>;
     Mode?: Value<string>;
@@ -14,18 +19,32 @@ export declare class ContainerDefinition {
     };
     ModelDataUrl?: Value<string>;
     Image?: Value<string>;
+    MultiModelConfig?: MultiModelConfig;
     constructor(properties: ContainerDefinition);
+}
+export declare class ImageConfig {
+    RepositoryAccessMode: Value<string>;
+    constructor(properties: ImageConfig);
+}
+export declare class InferenceExecutionConfig {
+    Mode: Value<string>;
+    constructor(properties: InferenceExecutionConfig);
 }
 export interface ModelProperties {
     ExecutionRoleArn: Value<string>;
+    EnableNetworkIsolation?: Value<boolean>;
     PrimaryContainer?: ContainerDefinition;
     ModelName?: Value<string>;
     VpcConfig?: VpcConfig;
     Containers?: List<ContainerDefinition>;
+    InferenceExecutionConfig?: InferenceExecutionConfig;
     Tags?: List<ResourceTag>;
 }
 export default class Model extends ResourceBase<ModelProperties> {
+    static MultiModelConfig: typeof MultiModelConfig;
     static VpcConfig: typeof VpcConfig;
     static ContainerDefinition: typeof ContainerDefinition;
+    static ImageConfig: typeof ImageConfig;
+    static InferenceExecutionConfig: typeof InferenceExecutionConfig;
     constructor(properties: ModelProperties);
 }

@@ -11,12 +11,6 @@ export declare class RiskExceptionConfigurationType {
     SkippedIPRangeList?: List<Value<string>>;
     constructor(properties: RiskExceptionConfigurationType);
 }
-export declare class NotifyEmailType {
-    TextBody?: Value<string>;
-    HtmlBody?: Value<string>;
-    Subject: Value<string>;
-    constructor(properties: NotifyEmailType);
-}
 export declare class AccountTakeoverActionType {
     Notify: Value<boolean>;
     EventAction: Value<string>;
@@ -26,6 +20,12 @@ export declare class CompromisedCredentialsRiskConfigurationType {
     Actions: CompromisedCredentialsActionsType;
     EventFilter?: List<Value<string>>;
     constructor(properties: CompromisedCredentialsRiskConfigurationType);
+}
+export declare class NotifyEmailType {
+    TextBody?: Value<string>;
+    HtmlBody?: Value<string>;
+    Subject: Value<string>;
+    constructor(properties: NotifyEmailType);
 }
 export declare class CompromisedCredentialsActionsType {
     EventAction: Value<string>;
@@ -55,9 +55,9 @@ export interface UserPoolRiskConfigurationAttachmentProperties {
 export default class UserPoolRiskConfigurationAttachment extends ResourceBase<UserPoolRiskConfigurationAttachmentProperties> {
     static AccountTakeoverActionsType: typeof AccountTakeoverActionsType;
     static RiskExceptionConfigurationType: typeof RiskExceptionConfigurationType;
-    static NotifyEmailType: typeof NotifyEmailType;
     static AccountTakeoverActionType: typeof AccountTakeoverActionType;
     static CompromisedCredentialsRiskConfigurationType: typeof CompromisedCredentialsRiskConfigurationType;
+    static NotifyEmailType: typeof NotifyEmailType;
     static CompromisedCredentialsActionsType: typeof CompromisedCredentialsActionsType;
     static NotifyConfigurationType: typeof NotifyConfigurationType;
     static AccountTakeoverRiskConfigurationType: typeof AccountTakeoverRiskConfigurationType;

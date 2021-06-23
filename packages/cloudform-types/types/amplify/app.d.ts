@@ -1,22 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class BasicAuthConfig {
-    Username?: Value<string>;
-    EnableBasicAuth?: Value<boolean>;
-    Password?: Value<string>;
-    constructor(properties: BasicAuthConfig);
-}
 export declare class EnvironmentVariable {
     Value: Value<string>;
     Name: Value<string>;
     constructor(properties: EnvironmentVariable);
-}
-export declare class CustomRule {
-    Condition?: Value<string>;
-    Status?: Value<string>;
-    Target: Value<string>;
-    Source: Value<string>;
-    constructor(properties: CustomRule);
 }
 export declare class AutoBranchCreationConfig {
     EnvironmentVariables?: List<EnvironmentVariable>;
@@ -25,10 +12,24 @@ export declare class AutoBranchCreationConfig {
     AutoBranchCreationPatterns?: List<Value<string>>;
     EnablePullRequestPreview?: Value<boolean>;
     EnableAutoBuild?: Value<boolean>;
+    EnablePerformanceMode?: Value<boolean>;
     BuildSpec?: Value<string>;
     Stage?: Value<string>;
     BasicAuthConfig?: BasicAuthConfig;
     constructor(properties: AutoBranchCreationConfig);
+}
+export declare class BasicAuthConfig {
+    Username?: Value<string>;
+    EnableBasicAuth?: Value<boolean>;
+    Password?: Value<string>;
+    constructor(properties: BasicAuthConfig);
+}
+export declare class CustomRule {
+    Condition?: Value<string>;
+    Status?: Value<string>;
+    Target: Value<string>;
+    Source: Value<string>;
+    constructor(properties: CustomRule);
 }
 export interface AppProperties {
     AutoBranchCreationConfig?: AutoBranchCreationConfig;
@@ -42,13 +43,14 @@ export interface AppProperties {
     BuildSpec?: Value<string>;
     CustomRules?: List<CustomRule>;
     BasicAuthConfig?: BasicAuthConfig;
+    CustomHeaders?: Value<string>;
     Tags?: List<ResourceTag>;
     IAMServiceRole?: Value<string>;
 }
 export default class App extends ResourceBase<AppProperties> {
-    static BasicAuthConfig: typeof BasicAuthConfig;
     static EnvironmentVariable: typeof EnvironmentVariable;
-    static CustomRule: typeof CustomRule;
     static AutoBranchCreationConfig: typeof AutoBranchCreationConfig;
+    static BasicAuthConfig: typeof BasicAuthConfig;
+    static CustomRule: typeof CustomRule;
     constructor(properties: AppProperties);
 }

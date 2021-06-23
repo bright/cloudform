@@ -1,5 +1,14 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class OutputArtifact {
+    Name: Value<string>;
+    constructor(properties: OutputArtifact);
+}
+export declare class StageTransition {
+    Reason: Value<string>;
+    StageName: Value<string>;
+    constructor(properties: StageTransition);
+}
 export declare class InputArtifact {
     Name: Value<string>;
     constructor(properties: InputArtifact);
@@ -13,10 +22,6 @@ export declare class ArtifactStoreMap {
     ArtifactStore: ArtifactStore;
     Region: Value<string>;
     constructor(properties: ArtifactStoreMap);
-}
-export declare class OutputArtifact {
-    Name: Value<string>;
-    constructor(properties: OutputArtifact);
 }
 export declare class EncryptionKey {
     Id: Value<string>;
@@ -43,11 +48,6 @@ export declare class StageDeclaration {
     Name: Value<string>;
     constructor(properties: StageDeclaration);
 }
-export declare class StageTransition {
-    Reason: Value<string>;
-    StageName: Value<string>;
-    constructor(properties: StageTransition);
-}
 export declare class ArtifactStore {
     EncryptionKey?: EncryptionKey;
     Location: Value<string>;
@@ -72,14 +72,14 @@ export interface PipelineProperties {
     Tags?: List<ResourceTag>;
 }
 export default class Pipeline extends ResourceBase<PipelineProperties> {
+    static OutputArtifact: typeof OutputArtifact;
+    static StageTransition: typeof StageTransition;
     static InputArtifact: typeof InputArtifact;
     static BlockerDeclaration: typeof BlockerDeclaration;
     static ArtifactStoreMap: typeof ArtifactStoreMap;
-    static OutputArtifact: typeof OutputArtifact;
     static EncryptionKey: typeof EncryptionKey;
     static ActionDeclaration: typeof ActionDeclaration;
     static StageDeclaration: typeof StageDeclaration;
-    static StageTransition: typeof StageTransition;
     static ArtifactStore: typeof ArtifactStore;
     static ActionTypeId: typeof ActionTypeId;
     constructor(properties: PipelineProperties);

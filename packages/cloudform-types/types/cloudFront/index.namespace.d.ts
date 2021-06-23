@@ -1,11 +1,29 @@
+import KeyGroup_ from './keyGroup';
 import StreamingDistribution_ from './streamingDistribution';
+import CachePolicy_ from './cachePolicy';
 import Distribution_ from './distribution';
 import CloudFrontOriginAccessIdentity_ from './cloudFrontOriginAccessIdentity';
+import RealtimeLogConfig_ from './realtimeLogConfig';
+import OriginRequestPolicy_ from './originRequestPolicy';
+import PublicKey_ from './publicKey';
+import Function_ from './function';
 export declare namespace CloudFront {
+    const KeyGroup: typeof KeyGroup_;
     const StreamingDistribution: typeof StreamingDistribution_;
+    const CachePolicy: typeof CachePolicy_;
     const Distribution: typeof Distribution_;
     const CloudFrontOriginAccessIdentity: typeof CloudFrontOriginAccessIdentity_;
+    const RealtimeLogConfig: typeof RealtimeLogConfig_;
+    const OriginRequestPolicy: typeof OriginRequestPolicy_;
+    const PublicKey: typeof PublicKey_;
+    const Function: typeof Function_;
+    type KeyGroup = KeyGroup_;
     type StreamingDistribution = StreamingDistribution_;
+    type CachePolicy = CachePolicy_;
     type Distribution = Distribution_;
     type CloudFrontOriginAccessIdentity = CloudFrontOriginAccessIdentity_;
+    type RealtimeLogConfig = RealtimeLogConfig_;
+    type OriginRequestPolicy = OriginRequestPolicy_;
+    type PublicKey = PublicKey_;
+    type Function = Function_;
 }

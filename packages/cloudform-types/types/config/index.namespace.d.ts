@@ -7,6 +7,7 @@ import OrganizationConfigRule_ from './organizationConfigRule';
 import OrganizationConformancePack_ from './organizationConformancePack';
 import ConfigRule_ from './configRule';
 import ConformancePack_ from './conformancePack';
+import StoredQuery_ from './storedQuery';
 export declare namespace Config {
     const RemediationConfiguration: typeof RemediationConfiguration_;
     const ConfigurationAggregator: typeof ConfigurationAggregator_;
@@ -17,6 +18,7 @@ export declare namespace Config {
     const OrganizationConformancePack: typeof OrganizationConformancePack_;
     const ConfigRule: typeof ConfigRule_;
     const ConformancePack: typeof ConformancePack_;
+    const StoredQuery: typeof StoredQuery_;
     type RemediationConfiguration = RemediationConfiguration_;
     type ConfigurationAggregator = ConfigurationAggregator_;
     type AggregationAuthorization = AggregationAuthorization_;
@@ -26,4 +28,5 @@ export declare namespace Config {
     type OrganizationConformancePack = OrganizationConformancePack_;
     type ConfigRule = ConfigRule_;
     type ConformancePack = ConformancePack_;
+    type StoredQuery = StoredQuery_;
 }

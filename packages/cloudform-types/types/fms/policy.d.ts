@@ -1,5 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class PolicyTag {
+    Key: Value<string>;
+    Value: Value<string>;
+    constructor(properties: PolicyTag);
+}
 export declare class ResourceTag {
     Key: Value<string>;
     Value?: Value<string>;
@@ -9,11 +14,6 @@ export declare class IEMap {
     ACCOUNT?: List<Value<string>>;
     ORGUNIT?: List<Value<string>>;
     constructor(properties: IEMap);
-}
-export declare class PolicyTag {
-    Key: Value<string>;
-    Value: Value<string>;
-    constructor(properties: PolicyTag);
 }
 export interface PolicyProperties {
     ExcludeMap?: IEMap;
@@ -31,8 +31,8 @@ export interface PolicyProperties {
     Tags?: List<PolicyTag>;
 }
 export default class Policy extends ResourceBase<PolicyProperties> {
+    static PolicyTag: typeof PolicyTag;
     static ResourceTag: typeof import("./policy").ResourceTag;
     static IEMap: typeof IEMap;
-    static PolicyTag: typeof PolicyTag;
     constructor(properties: PolicyProperties);
 }

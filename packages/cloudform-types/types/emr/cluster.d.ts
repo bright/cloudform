@@ -1,6 +1,15 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ComputeLimits {
+    MaximumCapacityUnits: Value<number>;
+    MaximumCoreCapacityUnits?: Value<number>;
+    MaximumOnDemandCapacityUnits?: Value<number>;
+    MinimumCapacityUnits: Value<number>;
+    UnitType: Value<string>;
+    constructor(properties: ComputeLimits);
+}
 export declare class SpotProvisioningSpecification {
+    AllocationStrategy?: Value<string>;
     BlockDurationMinutes?: Value<number>;
     TimeoutAction: Value<string>;
     TimeoutDurationMinutes: Value<number>;
@@ -10,6 +19,117 @@ export declare class BootstrapActionConfig {
     Name: Value<string>;
     ScriptBootstrapAction: ScriptBootstrapActionConfig;
     constructor(properties: BootstrapActionConfig);
+}
+export declare class StepConfig {
+    ActionOnFailure?: Value<string>;
+    HadoopJarStep: HadoopJarStepConfig;
+    Name: Value<string>;
+    constructor(properties: StepConfig);
+}
+export declare class EbsBlockDeviceConfig {
+    VolumeSpecification: VolumeSpecification;
+    VolumesPerInstance?: Value<number>;
+    constructor(properties: EbsBlockDeviceConfig);
+}
+export declare class ManagedScalingPolicy {
+    ComputeLimits?: ComputeLimits;
+    constructor(properties: ManagedScalingPolicy);
+}
+export declare class CloudWatchAlarmDefinition {
+    ComparisonOperator: Value<string>;
+    Dimensions?: List<MetricDimension>;
+    EvaluationPeriods?: Value<number>;
+    MetricName: Value<string>;
+    Namespace?: Value<string>;
+    Period: Value<number>;
+    Statistic?: Value<string>;
+    Threshold: Value<number>;
+    Unit?: Value<string>;
+    constructor(properties: CloudWatchAlarmDefinition);
+}
+export declare class KeyValue {
+    Key?: Value<string>;
+    Value?: Value<string>;
+    constructor(properties: KeyValue);
+}
+export declare class VolumeSpecification {
+    Iops?: Value<number>;
+    SizeInGB: Value<number>;
+    VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
+}
+export declare class InstanceFleetProvisioningSpecifications {
+    OnDemandSpecification?: OnDemandProvisioningSpecification;
+    SpotSpecification?: SpotProvisioningSpecification;
+    constructor(properties: InstanceFleetProvisioningSpecifications);
+}
+export declare class InstanceGroupConfig {
+    AutoScalingPolicy?: AutoScalingPolicy;
+    BidPrice?: Value<string>;
+    Configurations?: List<Configuration>;
+    EbsConfiguration?: EbsConfiguration;
+    InstanceCount: Value<number>;
+    InstanceType: Value<string>;
+    Market?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: InstanceGroupConfig);
+}
+export declare class KerberosAttributes {
+    ADDomainJoinPassword?: Value<string>;
+    ADDomainJoinUser?: Value<string>;
+    CrossRealmTrustPrincipalPassword?: Value<string>;
+    KdcAdminPassword: Value<string>;
+    Realm: Value<string>;
+    constructor(properties: KerberosAttributes);
+}
+export declare class Application {
+    AdditionalInfo?: {
+        [key: string]: Value<string>;
+    };
+    Args?: List<Value<string>>;
+    Name?: Value<string>;
+    Version?: Value<string>;
+    constructor(properties: Application);
+}
+export declare class Configuration {
+    Classification?: Value<string>;
+    ConfigurationProperties?: {
+        [key: string]: Value<string>;
+    };
+    Configurations?: List<Configuration>;
+    constructor(properties: Configuration);
+}
+export declare class ScriptBootstrapActionConfig {
+    Args?: List<Value<string>>;
+    Path: Value<string>;
+    constructor(properties: ScriptBootstrapActionConfig);
+}
+export declare class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
+    EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
+}
+export declare class InstanceTypeConfig {
+    BidPrice?: Value<string>;
+    BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
+    Configurations?: List<Configuration>;
+    EbsConfiguration?: EbsConfiguration;
+    InstanceType: Value<string>;
+    WeightedCapacity?: Value<number>;
+    constructor(properties: InstanceTypeConfig);
+}
+export declare class MetricDimension {
+    Key: Value<string>;
+    Value: Value<string>;
+    constructor(properties: MetricDimension);
+}
+export declare class OnDemandProvisioningSpecification {
+    AllocationStrategy: Value<string>;
+    constructor(properties: OnDemandProvisioningSpecification);
+}
+export declare class ScalingTrigger {
+    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
+    constructor(properties: ScalingTrigger);
 }
 export declare class InstanceFleetConfig {
     InstanceTypeConfigs?: List<InstanceTypeConfig>;
@@ -38,55 +158,6 @@ export declare class JobFlowInstancesConfig {
     TerminationProtected?: Value<boolean>;
     constructor(properties: JobFlowInstancesConfig);
 }
-export declare class StepConfig {
-    ActionOnFailure?: Value<string>;
-    HadoopJarStep: HadoopJarStepConfig;
-    Name: Value<string>;
-    constructor(properties: StepConfig);
-}
-export declare class EbsBlockDeviceConfig {
-    VolumeSpecification: VolumeSpecification;
-    VolumesPerInstance?: Value<number>;
-    constructor(properties: EbsBlockDeviceConfig);
-}
-export declare class CloudWatchAlarmDefinition {
-    ComparisonOperator: Value<string>;
-    Dimensions?: List<MetricDimension>;
-    EvaluationPeriods?: Value<number>;
-    MetricName: Value<string>;
-    Namespace?: Value<string>;
-    Period: Value<number>;
-    Statistic?: Value<string>;
-    Threshold: Value<number>;
-    Unit?: Value<string>;
-    constructor(properties: CloudWatchAlarmDefinition);
-}
-export declare class KeyValue {
-    Key?: Value<string>;
-    Value?: Value<string>;
-    constructor(properties: KeyValue);
-}
-export declare class VolumeSpecification {
-    Iops?: Value<number>;
-    SizeInGB: Value<number>;
-    VolumeType: Value<string>;
-    constructor(properties: VolumeSpecification);
-}
-export declare class InstanceFleetProvisioningSpecifications {
-    SpotSpecification: SpotProvisioningSpecification;
-    constructor(properties: InstanceFleetProvisioningSpecifications);
-}
-export declare class InstanceGroupConfig {
-    AutoScalingPolicy?: AutoScalingPolicy;
-    BidPrice?: Value<string>;
-    Configurations?: List<Configuration>;
-    EbsConfiguration?: EbsConfiguration;
-    InstanceCount: Value<number>;
-    InstanceType: Value<string>;
-    Market?: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: InstanceGroupConfig);
-}
 export declare class ScalingConstraints {
     MaxCapacity: Value<number>;
     MinCapacity: Value<number>;
@@ -97,50 +168,15 @@ export declare class ScalingAction {
     SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration;
     constructor(properties: ScalingAction);
 }
-export declare class KerberosAttributes {
-    ADDomainJoinPassword?: Value<string>;
-    ADDomainJoinUser?: Value<string>;
-    CrossRealmTrustPrincipalPassword?: Value<string>;
-    KdcAdminPassword: Value<string>;
-    Realm: Value<string>;
-    constructor(properties: KerberosAttributes);
-}
 export declare class SimpleScalingPolicyConfiguration {
     AdjustmentType?: Value<string>;
     CoolDown?: Value<number>;
     ScalingAdjustment: Value<number>;
     constructor(properties: SimpleScalingPolicyConfiguration);
 }
-export declare class Application {
-    AdditionalInfo?: {
-        [key: string]: Value<string>;
-    };
-    Args?: List<Value<string>>;
-    Name?: Value<string>;
-    Version?: Value<string>;
-    constructor(properties: Application);
-}
 export declare class PlacementType {
     AvailabilityZone: Value<string>;
     constructor(properties: PlacementType);
-}
-export declare class Configuration {
-    Classification?: Value<string>;
-    ConfigurationProperties?: {
-        [key: string]: Value<string>;
-    };
-    Configurations?: List<Configuration>;
-    constructor(properties: Configuration);
-}
-export declare class ScriptBootstrapActionConfig {
-    Args?: List<Value<string>>;
-    Path: Value<string>;
-    constructor(properties: ScriptBootstrapActionConfig);
-}
-export declare class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
-    EbsOptimized?: Value<boolean>;
-    constructor(properties: EbsConfiguration);
 }
 export declare class ScalingRule {
     Action: ScalingAction;
@@ -148,20 +184,6 @@ export declare class ScalingRule {
     Name: Value<string>;
     Trigger: ScalingTrigger;
     constructor(properties: ScalingRule);
-}
-export declare class InstanceTypeConfig {
-    BidPrice?: Value<string>;
-    BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
-    Configurations?: List<Configuration>;
-    EbsConfiguration?: EbsConfiguration;
-    InstanceType: Value<string>;
-    WeightedCapacity?: Value<number>;
-    constructor(properties: InstanceTypeConfig);
-}
-export declare class MetricDimension {
-    Key: Value<string>;
-    Value: Value<string>;
-    constructor(properties: MetricDimension);
 }
 export declare class AutoScalingPolicy {
     Constraints: ScalingConstraints;
@@ -174,10 +196,6 @@ export declare class HadoopJarStepConfig {
     MainClass?: Value<string>;
     StepProperties?: List<KeyValue>;
     constructor(properties: HadoopJarStepConfig);
-}
-export declare class ScalingTrigger {
-    CloudWatchAlarmDefinition: CloudWatchAlarmDefinition;
-    constructor(properties: ScalingTrigger);
 }
 export interface ClusterProperties {
     AdditionalInfo?: {
@@ -192,42 +210,48 @@ export interface ClusterProperties {
     Instances: JobFlowInstancesConfig;
     JobFlowRole: Value<string>;
     KerberosAttributes?: KerberosAttributes;
+    LogEncryptionKmsKeyId?: Value<string>;
     LogUri?: Value<string>;
+    ManagedScalingPolicy?: ManagedScalingPolicy;
     Name: Value<string>;
     ReleaseLabel?: Value<string>;
     ScaleDownBehavior?: Value<string>;
     SecurityConfiguration?: Value<string>;
     ServiceRole: Value<string>;
+    StepConcurrencyLevel?: Value<number>;
     Steps?: List<StepConfig>;
     Tags?: List<ResourceTag>;
     VisibleToAllUsers?: Value<boolean>;
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
+    static ComputeLimits: typeof ComputeLimits;
     static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
     static BootstrapActionConfig: typeof BootstrapActionConfig;
-    static InstanceFleetConfig: typeof InstanceFleetConfig;
-    static JobFlowInstancesConfig: typeof JobFlowInstancesConfig;
     static StepConfig: typeof StepConfig;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
+    static ManagedScalingPolicy: typeof ManagedScalingPolicy;
     static CloudWatchAlarmDefinition: typeof CloudWatchAlarmDefinition;
     static KeyValue: typeof KeyValue;
     static VolumeSpecification: typeof VolumeSpecification;
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static InstanceGroupConfig: typeof InstanceGroupConfig;
-    static ScalingConstraints: typeof ScalingConstraints;
-    static ScalingAction: typeof ScalingAction;
     static KerberosAttributes: typeof KerberosAttributes;
-    static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
     static Application: typeof Application;
-    static PlacementType: typeof PlacementType;
     static Configuration: typeof Configuration;
     static ScriptBootstrapActionConfig: typeof ScriptBootstrapActionConfig;
     static EbsConfiguration: typeof EbsConfiguration;
-    static ScalingRule: typeof ScalingRule;
     static InstanceTypeConfig: typeof InstanceTypeConfig;
     static MetricDimension: typeof MetricDimension;
+    static OnDemandProvisioningSpecification: typeof OnDemandProvisioningSpecification;
+    static ScalingTrigger: typeof ScalingTrigger;
+    static InstanceFleetConfig: typeof InstanceFleetConfig;
+    static JobFlowInstancesConfig: typeof JobFlowInstancesConfig;
+    static ScalingConstraints: typeof ScalingConstraints;
+    static ScalingAction: typeof ScalingAction;
+    static SimpleScalingPolicyConfiguration: typeof SimpleScalingPolicyConfiguration;
+    static PlacementType: typeof PlacementType;
+    static ScalingRule: typeof ScalingRule;
     static AutoScalingPolicy: typeof AutoScalingPolicy;
     static HadoopJarStepConfig: typeof HadoopJarStepConfig;
-    static ScalingTrigger: typeof ScalingTrigger;
     constructor(properties: ClusterProperties);
 }

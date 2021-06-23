@@ -1,10 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class CaptureContentTypeHeader {
-    JsonContentTypes?: List<Value<string>>;
-    CsvContentTypes?: List<Value<string>>;
-    constructor(properties: CaptureContentTypeHeader);
-}
 export declare class CaptureOption {
     CaptureMode: Value<string>;
     constructor(properties: CaptureOption);
@@ -17,6 +12,11 @@ export declare class ProductionVariant {
     AcceleratorType?: Value<string>;
     InitialVariantWeight: Value<number>;
     constructor(properties: ProductionVariant);
+}
+export declare class CaptureContentTypeHeader {
+    JsonContentTypes?: List<Value<string>>;
+    CsvContentTypes?: List<Value<string>>;
+    constructor(properties: CaptureContentTypeHeader);
 }
 export declare class DataCaptureConfig {
     CaptureOptions: List<CaptureOption>;
@@ -35,9 +35,9 @@ export interface EndpointConfigProperties {
     Tags?: List<ResourceTag>;
 }
 export default class EndpointConfig extends ResourceBase<EndpointConfigProperties> {
-    static CaptureContentTypeHeader: typeof CaptureContentTypeHeader;
     static CaptureOption: typeof CaptureOption;
     static ProductionVariant: typeof ProductionVariant;
+    static CaptureContentTypeHeader: typeof CaptureContentTypeHeader;
     static DataCaptureConfig: typeof DataCaptureConfig;
     constructor(properties: EndpointConfigProperties);
 }

@@ -1,5 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
+export declare class Overrides {
+    Manifest?: {
+        [key: string]: any;
+    };
+    constructor(properties: Overrides);
+}
 export declare class SkillPackage {
     S3BucketRole?: Value<string>;
     S3ObjectVersion?: Value<string>;
@@ -14,20 +20,14 @@ export declare class AuthenticationConfiguration {
     ClientId: Value<string>;
     constructor(properties: AuthenticationConfiguration);
 }
-export declare class Overrides {
-    Manifest?: {
-        [key: string]: any;
-    };
-    constructor(properties: Overrides);
-}
 export interface SkillProperties {
     AuthenticationConfiguration: AuthenticationConfiguration;
     VendorId: Value<string>;
     SkillPackage: SkillPackage;
 }
 export default class Skill extends ResourceBase<SkillProperties> {
+    static Overrides: typeof Overrides;
     static SkillPackage: typeof SkillPackage;
     static AuthenticationConfiguration: typeof AuthenticationConfiguration;
-    static Overrides: typeof Overrides;
     constructor(properties: SkillProperties);
 }

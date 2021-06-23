@@ -6,6 +6,12 @@ export declare class HomeDirectoryMapEntry {
     constructor(properties: HomeDirectoryMapEntry);
 }
 export declare type SshPublicKey = Value<string>;
+export declare class PosixProfile {
+    Uid: Value<number>;
+    SecondaryGids?: List<Value<number>>;
+    Gid: Value<number>;
+    constructor(properties: PosixProfile);
+}
 export interface UserProperties {
     Policy?: Value<string>;
     Role: Value<string>;
@@ -14,10 +20,12 @@ export interface UserProperties {
     ServerId: Value<string>;
     UserName: Value<string>;
     HomeDirectoryMappings?: List<HomeDirectoryMapEntry>;
+    PosixProfile?: PosixProfile;
     SshPublicKeys?: List<SshPublicKey>;
     Tags?: List<ResourceTag>;
 }
 export default class User extends ResourceBase<UserProperties> {
     static HomeDirectoryMapEntry: typeof HomeDirectoryMapEntry;
+    static PosixProfile: typeof PosixProfile;
     constructor(properties: UserProperties);
 }

@@ -4,11 +4,6 @@ export declare class HibernationOptions {
     Configured?: Value<boolean>;
     constructor(properties: HibernationOptions);
 }
-export declare class Volume {
-    Device: Value<string>;
-    VolumeId: Value<string>;
-    constructor(properties: Volume);
-}
 export declare class Ebs {
     DeleteOnTermination?: Value<boolean>;
     Encrypted?: Value<boolean>;
@@ -29,6 +24,34 @@ export declare class CreditSpecification {
 export declare class ElasticGpuSpecification {
     Type: Value<string>;
     constructor(properties: ElasticGpuSpecification);
+}
+export declare class CpuOptions {
+    CoreCount?: Value<number>;
+    ThreadsPerCore?: Value<number>;
+    constructor(properties: CpuOptions);
+}
+export declare class LaunchTemplateSpecification {
+    LaunchTemplateId?: Value<string>;
+    LaunchTemplateName?: Value<string>;
+    Version: Value<string>;
+    constructor(properties: LaunchTemplateSpecification);
+}
+export declare class BlockDeviceMapping {
+    DeviceName: Value<string>;
+    Ebs?: Ebs;
+    NoDevice?: NoDevice;
+    VirtualName?: Value<string>;
+    constructor(properties: BlockDeviceMapping);
+}
+export declare class PrivateIpAddressSpecification {
+    Primary: Value<boolean>;
+    PrivateIpAddress: Value<string>;
+    constructor(properties: PrivateIpAddressSpecification);
+}
+export declare class Volume {
+    Device: Value<string>;
+    VolumeId: Value<string>;
+    constructor(properties: Volume);
 }
 export declare class NetworkInterface {
     AssociatePublicIpAddress?: Value<boolean>;
@@ -54,16 +77,9 @@ export declare class AssociationParameter {
     Value: List<Value<string>>;
     constructor(properties: AssociationParameter);
 }
-export declare class CpuOptions {
-    CoreCount?: Value<number>;
-    ThreadsPerCore?: Value<number>;
-    constructor(properties: CpuOptions);
-}
-export declare class LaunchTemplateSpecification {
-    LaunchTemplateId?: Value<string>;
-    LaunchTemplateName?: Value<string>;
-    Version: Value<string>;
-    constructor(properties: LaunchTemplateSpecification);
+export declare class EnclaveOptions {
+    Enabled?: Value<boolean>;
+    constructor(properties: EnclaveOptions);
 }
 export declare class LicenseSpecification {
     LicenseConfigurationArn: Value<string>;
@@ -79,18 +95,6 @@ export declare class ElasticInferenceAccelerator {
     Type: Value<string>;
     constructor(properties: ElasticInferenceAccelerator);
 }
-export declare class BlockDeviceMapping {
-    DeviceName: Value<string>;
-    Ebs?: Ebs;
-    NoDevice?: NoDevice;
-    VirtualName?: Value<string>;
-    constructor(properties: BlockDeviceMapping);
-}
-export declare class PrivateIpAddressSpecification {
-    Primary: Value<boolean>;
-    PrivateIpAddress: Value<string>;
-    constructor(properties: PrivateIpAddressSpecification);
-}
 export interface InstanceProperties {
     AdditionalInfo?: Value<string>;
     Affinity?: Value<string>;
@@ -102,6 +106,7 @@ export interface InstanceProperties {
     EbsOptimized?: Value<boolean>;
     ElasticGpuSpecifications?: List<ElasticGpuSpecification>;
     ElasticInferenceAccelerators?: List<ElasticInferenceAccelerator>;
+    EnclaveOptions?: EnclaveOptions;
     HibernationOptions?: HibernationOptions;
     HostId?: Value<string>;
     HostResourceGroupArn?: Value<string>;
@@ -132,20 +137,21 @@ export interface InstanceProperties {
 }
 export default class Instance extends ResourceBase<InstanceProperties> {
     static HibernationOptions: typeof HibernationOptions;
-    static Volume: typeof Volume;
     static Ebs: typeof Ebs;
     static NoDevice: typeof NoDevice;
     static CreditSpecification: typeof CreditSpecification;
     static ElasticGpuSpecification: typeof ElasticGpuSpecification;
+    static CpuOptions: typeof CpuOptions;
+    static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
+    static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
+    static Volume: typeof Volume;
     static NetworkInterface: typeof NetworkInterface;
     static InstanceIpv6Address: typeof InstanceIpv6Address;
     static AssociationParameter: typeof AssociationParameter;
-    static CpuOptions: typeof CpuOptions;
-    static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
+    static EnclaveOptions: typeof EnclaveOptions;
     static LicenseSpecification: typeof LicenseSpecification;
     static SsmAssociation: typeof SsmAssociation;
     static ElasticInferenceAccelerator: typeof ElasticInferenceAccelerator;
-    static BlockDeviceMapping: typeof BlockDeviceMapping;
-    static PrivateIpAddressSpecification: typeof PrivateIpAddressSpecification;
     constructor(properties?: InstanceProperties);
 }

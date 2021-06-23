@@ -1,14 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class ConnectionLogOptions {
-    CloudwatchLogStream?: Value<string>;
+export declare class ClientConnectOptions {
+    LambdaFunctionArn?: Value<string>;
     Enabled: Value<boolean>;
-    CloudwatchLogGroup?: Value<string>;
-    constructor(properties: ConnectionLogOptions);
-}
-export declare class CertificateAuthenticationRequest {
-    ClientRootCertificateChainArn: Value<string>;
-    constructor(properties: CertificateAuthenticationRequest);
+    constructor(properties: ClientConnectOptions);
 }
 export declare class DirectoryServiceAuthenticationRequest {
     DirectoryId: Value<string>;
@@ -27,29 +22,43 @@ export declare class ClientAuthenticationRequest {
     constructor(properties: ClientAuthenticationRequest);
 }
 export declare class FederatedAuthenticationRequest {
+    SelfServiceSAMLProviderArn?: Value<string>;
     SAMLProviderArn: Value<string>;
     constructor(properties: FederatedAuthenticationRequest);
 }
+export declare class ConnectionLogOptions {
+    CloudwatchLogStream?: Value<string>;
+    Enabled: Value<boolean>;
+    CloudwatchLogGroup?: Value<string>;
+    constructor(properties: ConnectionLogOptions);
+}
+export declare class CertificateAuthenticationRequest {
+    ClientRootCertificateChainArn: Value<string>;
+    constructor(properties: CertificateAuthenticationRequest);
+}
 export interface ClientVpnEndpointProperties {
     ClientCidrBlock: Value<string>;
-    ConnectionLogOptions: ConnectionLogOptions;
-    SplitTunnel?: Value<boolean>;
+    ClientConnectOptions?: ClientConnectOptions;
     Description?: Value<string>;
     TagSpecifications?: List<TagSpecification>;
-    VpcId?: Value<string>;
     AuthenticationOptions: List<ClientAuthenticationRequest>;
     ServerCertificateArn: Value<string>;
     DnsServers?: List<Value<string>>;
-    TransportProtocol?: Value<string>;
     SecurityGroupIds?: List<Value<string>>;
+    ConnectionLogOptions: ConnectionLogOptions;
+    SplitTunnel?: Value<boolean>;
+    VpcId?: Value<string>;
+    SelfServicePortal?: Value<string>;
+    TransportProtocol?: Value<string>;
     VpnPort?: Value<number>;
 }
 export default class ClientVpnEndpoint extends ResourceBase<ClientVpnEndpointProperties> {
-    static ConnectionLogOptions: typeof ConnectionLogOptions;
-    static CertificateAuthenticationRequest: typeof CertificateAuthenticationRequest;
+    static ClientConnectOptions: typeof ClientConnectOptions;
     static DirectoryServiceAuthenticationRequest: typeof DirectoryServiceAuthenticationRequest;
     static TagSpecification: typeof TagSpecification;
     static ClientAuthenticationRequest: typeof ClientAuthenticationRequest;
     static FederatedAuthenticationRequest: typeof FederatedAuthenticationRequest;
+    static ConnectionLogOptions: typeof ConnectionLogOptions;
+    static CertificateAuthenticationRequest: typeof CertificateAuthenticationRequest;
     constructor(properties: ClientVpnEndpointProperties);
 }

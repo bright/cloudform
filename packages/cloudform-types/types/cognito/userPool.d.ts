@@ -14,6 +14,53 @@ export declare class RecoveryOption {
     Name?: Value<string>;
     constructor(properties: RecoveryOption);
 }
+export declare class AdminCreateUserConfig {
+    InviteMessageTemplate?: InviteMessageTemplate;
+    UnusedAccountValidityDays?: Value<number>;
+    AllowAdminCreateUserOnly?: Value<boolean>;
+    constructor(properties: AdminCreateUserConfig);
+}
+export declare class SmsConfiguration {
+    ExternalId?: Value<string>;
+    SnsCallerArn?: Value<string>;
+    constructor(properties: SmsConfiguration);
+}
+export declare class StringAttributeConstraints {
+    MinLength?: Value<string>;
+    MaxLength?: Value<string>;
+    constructor(properties: StringAttributeConstraints);
+}
+export declare class VerificationMessageTemplate {
+    EmailMessageByLink?: Value<string>;
+    EmailMessage?: Value<string>;
+    SmsMessage?: Value<string>;
+    EmailSubject?: Value<string>;
+    DefaultEmailOption?: Value<string>;
+    EmailSubjectByLink?: Value<string>;
+    constructor(properties: VerificationMessageTemplate);
+}
+export declare class LambdaConfig {
+    CreateAuthChallenge?: Value<string>;
+    PreSignUp?: Value<string>;
+    KMSKeyID?: Value<string>;
+    UserMigration?: Value<string>;
+    PostAuthentication?: Value<string>;
+    VerifyAuthChallengeResponse?: Value<string>;
+    PreAuthentication?: Value<string>;
+    DefineAuthChallenge?: Value<string>;
+    PreTokenGeneration?: Value<string>;
+    CustomSMSSender?: CustomSMSSender;
+    PostConfirmation?: Value<string>;
+    CustomMessage?: Value<string>;
+    CustomEmailSender?: CustomEmailSender;
+    constructor(properties: LambdaConfig);
+}
+export declare class InviteMessageTemplate {
+    EmailMessage?: Value<string>;
+    SMSMessage?: Value<string>;
+    EmailSubject?: Value<string>;
+    constructor(properties: InviteMessageTemplate);
+}
 export declare class EmailConfiguration {
     ReplyToEmailAddress?: Value<string>;
     ConfigurationSet?: Value<string>;
@@ -21,12 +68,6 @@ export declare class EmailConfiguration {
     SourceArn?: Value<string>;
     From?: Value<string>;
     constructor(properties: EmailConfiguration);
-}
-export declare class AdminCreateUserConfig {
-    InviteMessageTemplate?: InviteMessageTemplate;
-    UnusedAccountValidityDays?: Value<number>;
-    AllowAdminCreateUserOnly?: Value<boolean>;
-    constructor(properties: AdminCreateUserConfig);
 }
 export declare class SchemaAttribute {
     DeveloperOnlyAttribute?: Value<boolean>;
@@ -43,28 +84,14 @@ export declare class NumberAttributeConstraints {
     MaxValue?: Value<string>;
     constructor(properties: NumberAttributeConstraints);
 }
-export declare class SmsConfiguration {
-    ExternalId?: Value<string>;
-    SnsCallerArn?: Value<string>;
-    constructor(properties: SmsConfiguration);
+export declare class CustomSMSSender {
+    LambdaArn?: Value<string>;
+    LambdaVersion?: Value<string>;
+    constructor(properties: CustomSMSSender);
 }
 export declare class AccountRecoverySetting {
     RecoveryMechanisms?: List<RecoveryOption>;
     constructor(properties: AccountRecoverySetting);
-}
-export declare class StringAttributeConstraints {
-    MinLength?: Value<string>;
-    MaxLength?: Value<string>;
-    constructor(properties: StringAttributeConstraints);
-}
-export declare class VerificationMessageTemplate {
-    EmailMessageByLink?: Value<string>;
-    EmailMessage?: Value<string>;
-    SmsMessage?: Value<string>;
-    EmailSubject?: Value<string>;
-    DefaultEmailOption?: Value<string>;
-    EmailSubjectByLink?: Value<string>;
-    constructor(properties: VerificationMessageTemplate);
 }
 export declare class UserPoolAddOns {
     AdvancedSecurityMode?: Value<string>;
@@ -74,29 +101,15 @@ export declare class Policies {
     PasswordPolicy?: PasswordPolicy;
     constructor(properties: Policies);
 }
-export declare class LambdaConfig {
-    CreateAuthChallenge?: Value<string>;
-    PreAuthentication?: Value<string>;
-    DefineAuthChallenge?: Value<string>;
-    PreSignUp?: Value<string>;
-    PreTokenGeneration?: Value<string>;
-    UserMigration?: Value<string>;
-    PostAuthentication?: Value<string>;
-    PostConfirmation?: Value<string>;
-    CustomMessage?: Value<string>;
-    VerifyAuthChallengeResponse?: Value<string>;
-    constructor(properties: LambdaConfig);
+export declare class CustomEmailSender {
+    LambdaArn?: Value<string>;
+    LambdaVersion?: Value<string>;
+    constructor(properties: CustomEmailSender);
 }
 export declare class DeviceConfiguration {
     DeviceOnlyRememberedOnUserPrompt?: Value<boolean>;
     ChallengeRequiredOnNewDevice?: Value<boolean>;
     constructor(properties: DeviceConfiguration);
-}
-export declare class InviteMessageTemplate {
-    EmailMessage?: Value<string>;
-    SMSMessage?: Value<string>;
-    EmailSubject?: Value<string>;
-    constructor(properties: InviteMessageTemplate);
 }
 export declare class UsernameConfiguration {
     CaseSensitive?: Value<boolean>;
@@ -131,19 +144,21 @@ export interface UserPoolProperties {
 export default class UserPool extends ResourceBase<UserPoolProperties> {
     static PasswordPolicy: typeof PasswordPolicy;
     static RecoveryOption: typeof RecoveryOption;
-    static EmailConfiguration: typeof EmailConfiguration;
     static AdminCreateUserConfig: typeof AdminCreateUserConfig;
-    static SchemaAttribute: typeof SchemaAttribute;
-    static NumberAttributeConstraints: typeof NumberAttributeConstraints;
     static SmsConfiguration: typeof SmsConfiguration;
-    static AccountRecoverySetting: typeof AccountRecoverySetting;
     static StringAttributeConstraints: typeof StringAttributeConstraints;
     static VerificationMessageTemplate: typeof VerificationMessageTemplate;
+    static LambdaConfig: typeof LambdaConfig;
+    static InviteMessageTemplate: typeof InviteMessageTemplate;
+    static EmailConfiguration: typeof EmailConfiguration;
+    static SchemaAttribute: typeof SchemaAttribute;
+    static NumberAttributeConstraints: typeof NumberAttributeConstraints;
+    static CustomSMSSender: typeof CustomSMSSender;
+    static AccountRecoverySetting: typeof AccountRecoverySetting;
     static UserPoolAddOns: typeof UserPoolAddOns;
     static Policies: typeof Policies;
-    static LambdaConfig: typeof LambdaConfig;
+    static CustomEmailSender: typeof CustomEmailSender;
     static DeviceConfiguration: typeof DeviceConfiguration;
-    static InviteMessageTemplate: typeof InviteMessageTemplate;
     static UsernameConfiguration: typeof UsernameConfiguration;
     constructor(properties?: UserPoolProperties);
 }

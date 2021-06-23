@@ -10,12 +10,14 @@ export declare class S3ReportExportConfig {
     Bucket: Value<string>;
     Packaging?: Value<string>;
     EncryptionKey?: Value<string>;
+    BucketOwner?: Value<string>;
     EncryptionDisabled?: Value<boolean>;
     constructor(properties: S3ReportExportConfig);
 }
 export interface ReportGroupProperties {
     Type: Value<string>;
     ExportConfig: ReportExportConfig;
+    DeleteReports?: Value<boolean>;
     Tags?: List<ResourceTag>;
     Name?: Value<string>;
 }

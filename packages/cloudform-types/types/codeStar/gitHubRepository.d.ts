@@ -12,8 +12,9 @@ export declare class S3 {
 }
 export interface GitHubRepositoryProperties {
     EnableIssues?: Value<boolean>;
+    ConnectionArn?: Value<string>;
     RepositoryName: Value<string>;
-    RepositoryAccessToken: Value<string>;
+    RepositoryAccessToken?: Value<string>;
     RepositoryOwner: Value<string>;
     IsPrivate?: Value<boolean>;
     Code?: Code;

@@ -9,6 +9,10 @@ export declare class EncryptionConfig {
     Provider?: Provider;
     constructor(properties: EncryptionConfig);
 }
+export declare class KubernetesNetworkConfig {
+    ServiceIpv4Cidr?: Value<string>;
+    constructor(properties: KubernetesNetworkConfig);
+}
 export declare class ResourcesVpcConfig {
     SecurityGroupIds?: List<Value<string>>;
     SubnetIds: List<Value<string>>;
@@ -19,11 +23,13 @@ export interface ClusterProperties {
     EncryptionConfig?: List<EncryptionConfig>;
     RoleArn: Value<string>;
     ResourcesVpcConfig: ResourcesVpcConfig;
+    KubernetesNetworkConfig?: KubernetesNetworkConfig;
     Name?: Value<string>;
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static Provider: typeof Provider;
     static EncryptionConfig: typeof EncryptionConfig;
+    static KubernetesNetworkConfig: typeof KubernetesNetworkConfig;
     static ResourcesVpcConfig: typeof ResourcesVpcConfig;
     constructor(properties: ClusterProperties);
 }

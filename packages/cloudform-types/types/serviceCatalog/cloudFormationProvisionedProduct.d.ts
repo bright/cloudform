@@ -19,6 +19,7 @@ export interface CloudFormationProvisionedProductProperties {
     AcceptLanguage?: Value<string>;
     NotificationArns?: List<Value<string>>;
     PathId?: Value<string>;
+    PathName?: Value<string>;
     ProductId?: Value<string>;
     ProductName?: Value<string>;
     ProvisionedProductName?: Value<string>;

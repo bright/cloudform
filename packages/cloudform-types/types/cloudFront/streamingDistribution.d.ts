@@ -1,10 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class TrustedSigners {
-    Enabled: Value<boolean>;
-    AwsAccountNumbers?: List<Value<string>>;
-    constructor(properties: TrustedSigners);
-}
 export declare class S3Origin {
     DomainName: Value<string>;
     OriginAccessIdentity: Value<string>;
@@ -26,14 +21,19 @@ export declare class StreamingDistributionConfig {
     TrustedSigners: TrustedSigners;
     constructor(properties: StreamingDistributionConfig);
 }
+export declare class TrustedSigners {
+    Enabled: Value<boolean>;
+    AwsAccountNumbers?: List<Value<string>>;
+    constructor(properties: TrustedSigners);
+}
 export interface StreamingDistributionProperties {
     StreamingDistributionConfig: StreamingDistributionConfig;
     Tags: List<ResourceTag>;
 }
 export default class StreamingDistribution extends ResourceBase<StreamingDistributionProperties> {
-    static TrustedSigners: typeof TrustedSigners;
     static S3Origin: typeof S3Origin;
     static Logging: typeof Logging;
     static StreamingDistributionConfig: typeof StreamingDistributionConfig;
+    static TrustedSigners: typeof TrustedSigners;
     constructor(properties: StreamingDistributionProperties);
 }

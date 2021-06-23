@@ -1,22 +1,12 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class BucketEncryption {
-    ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>;
-    constructor(properties: BucketEncryption);
+export declare class OwnershipControls {
+    Rules: List<OwnershipControlsRule>;
+    constructor(properties: OwnershipControls);
 }
-export declare class Metrics {
-    EventThreshold: ReplicationTimeValue;
+export declare class ReplicaModifications {
     Status: Value<string>;
-    constructor(properties: Metrics);
-}
-export declare class RoutingRuleCondition {
-    HttpErrorCodeReturnedEquals?: Value<string>;
-    KeyPrefixEquals?: Value<string>;
-    constructor(properties: RoutingRuleCondition);
-}
-export declare class LifecycleConfiguration {
-    Rules: List<Rule>;
-    constructor(properties: LifecycleConfiguration);
+    constructor(properties: ReplicaModifications);
 }
 export declare class CorsRule {
     AllowedHeaders?: List<Value<string>>;
@@ -34,6 +24,10 @@ export declare class Destination {
     Prefix?: Value<string>;
     constructor(properties: Destination);
 }
+export declare class OwnershipControlsRule {
+    ObjectOwnership?: Value<string>;
+    constructor(properties: OwnershipControlsRule);
+}
 export declare class AccessControlTranslation {
     Owner: Value<string>;
     constructor(properties: AccessControlTranslation);
@@ -41,12 +35,6 @@ export declare class AccessControlTranslation {
 export declare class VersioningConfiguration {
     Status: Value<string>;
     constructor(properties: VersioningConfiguration);
-}
-export declare class NotificationConfiguration {
-    LambdaConfigurations?: List<LambdaConfiguration>;
-    QueueConfigurations?: List<QueueConfiguration>;
-    TopicConfigurations?: List<TopicConfiguration>;
-    constructor(properties: NotificationConfiguration);
 }
 export declare class ReplicationTime {
     Status: Value<string>;
@@ -57,6 +45,150 @@ export declare class ServerSideEncryptionByDefault {
     KMSMasterKeyID?: Value<string>;
     SSEAlgorithm: Value<string>;
     constructor(properties: ServerSideEncryptionByDefault);
+}
+export declare class Tiering {
+    AccessTier: Value<string>;
+    Days: Value<number>;
+    constructor(properties: Tiering);
+}
+export declare class SseKmsEncryptedObjects {
+    Status: Value<string>;
+    constructor(properties: SseKmsEncryptedObjects);
+}
+export declare class QueueConfiguration {
+    Event: Value<string>;
+    Filter?: NotificationFilter;
+    Queue: Value<string>;
+    constructor(properties: QueueConfiguration);
+}
+export declare class ObjectLockConfiguration {
+    ObjectLockEnabled?: Value<string>;
+    Rule?: ObjectLockRule;
+    constructor(properties: ObjectLockConfiguration);
+}
+export declare class AccelerateConfiguration {
+    AccelerationStatus: Value<string>;
+    constructor(properties: AccelerateConfiguration);
+}
+export declare class IntelligentTieringConfiguration {
+    Id: Value<string>;
+    Prefix?: Value<string>;
+    Status: Value<string>;
+    TagFilters?: List<TagFilter>;
+    Tierings: List<Tiering>;
+    constructor(properties: IntelligentTieringConfiguration);
+}
+export declare class AbortIncompleteMultipartUpload {
+    DaysAfterInitiation: Value<number>;
+    constructor(properties: AbortIncompleteMultipartUpload);
+}
+export declare class DeleteMarkerReplication {
+    Status?: Value<string>;
+    constructor(properties: DeleteMarkerReplication);
+}
+export declare class PublicAccessBlockConfiguration {
+    BlockPublicAcls?: Value<boolean>;
+    BlockPublicPolicy?: Value<boolean>;
+    IgnorePublicAcls?: Value<boolean>;
+    RestrictPublicBuckets?: Value<boolean>;
+    constructor(properties: PublicAccessBlockConfiguration);
+}
+export declare class ReplicationRule {
+    DeleteMarkerReplication?: DeleteMarkerReplication;
+    Destination: ReplicationDestination;
+    Filter?: ReplicationRuleFilter;
+    Id?: Value<string>;
+    Prefix?: Value<string>;
+    Priority?: Value<number>;
+    SourceSelectionCriteria?: SourceSelectionCriteria;
+    Status: Value<string>;
+    constructor(properties: ReplicationRule);
+}
+export declare class SourceSelectionCriteria {
+    ReplicaModifications?: ReplicaModifications;
+    SseKmsEncryptedObjects?: SseKmsEncryptedObjects;
+    constructor(properties: SourceSelectionCriteria);
+}
+export declare class StorageClassAnalysis {
+    DataExport?: DataExport;
+    constructor(properties: StorageClassAnalysis);
+}
+export declare class RedirectRule {
+    HostName?: Value<string>;
+    HttpRedirectCode?: Value<string>;
+    Protocol?: Value<string>;
+    ReplaceKeyPrefixWith?: Value<string>;
+    ReplaceKeyWith?: Value<string>;
+    constructor(properties: RedirectRule);
+}
+export declare class ObjectLockRule {
+    DefaultRetention?: DefaultRetention;
+    constructor(properties: ObjectLockRule);
+}
+export declare class Rule {
+    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
+    ExpirationDate?: Value<string>;
+    ExpirationInDays?: Value<number>;
+    ExpiredObjectDeleteMarker?: Value<boolean>;
+    Id?: Value<string>;
+    NoncurrentVersionExpirationInDays?: Value<number>;
+    NoncurrentVersionTransition?: NoncurrentVersionTransition;
+    NoncurrentVersionTransitions?: List<NoncurrentVersionTransition>;
+    Prefix?: Value<string>;
+    Status: Value<string>;
+    TagFilters?: List<TagFilter>;
+    Transition?: Transition;
+    Transitions?: List<Transition>;
+    constructor(properties: Rule);
+}
+export declare class MetricsConfiguration {
+    Id: Value<string>;
+    Prefix?: Value<string>;
+    TagFilters?: List<TagFilter>;
+    constructor(properties: MetricsConfiguration);
+}
+export declare class DataExport {
+    Destination: Destination;
+    OutputSchemaVersion: Value<string>;
+    constructor(properties: DataExport);
+}
+export declare class ReplicationTimeValue {
+    Minutes: Value<number>;
+    constructor(properties: ReplicationTimeValue);
+}
+export declare class FilterRule {
+    Name: Value<string>;
+    Value: Value<string>;
+    constructor(properties: FilterRule);
+}
+export declare class ReplicationRuleAndOperator {
+    Prefix?: Value<string>;
+    TagFilters?: List<TagFilter>;
+    constructor(properties: ReplicationRuleAndOperator);
+}
+export declare class BucketEncryption {
+    ServerSideEncryptionConfiguration: List<ServerSideEncryptionRule>;
+    constructor(properties: BucketEncryption);
+}
+export declare class Metrics {
+    EventThreshold?: ReplicationTimeValue;
+    Status: Value<string>;
+    constructor(properties: Metrics);
+}
+export declare class RoutingRuleCondition {
+    HttpErrorCodeReturnedEquals?: Value<string>;
+    KeyPrefixEquals?: Value<string>;
+    constructor(properties: RoutingRuleCondition);
+}
+export declare class LifecycleConfiguration {
+    Rules: List<Rule>;
+    constructor(properties: LifecycleConfiguration);
+}
+export declare class NotificationConfiguration {
+    LambdaConfigurations?: List<LambdaConfiguration>;
+    QueueConfigurations?: List<QueueConfiguration>;
+    TopicConfigurations?: List<TopicConfiguration>;
+    constructor(properties: NotificationConfiguration);
 }
 export declare class RedirectAllRequestsTo {
     HostName: Value<string>;
@@ -82,21 +214,6 @@ export declare class ReplicationConfiguration {
     Rules: List<ReplicationRule>;
     constructor(properties: ReplicationConfiguration);
 }
-export declare class SseKmsEncryptedObjects {
-    Status: Value<string>;
-    constructor(properties: SseKmsEncryptedObjects);
-}
-export declare class QueueConfiguration {
-    Event: Value<string>;
-    Filter?: NotificationFilter;
-    Queue: Value<string>;
-    constructor(properties: QueueConfiguration);
-}
-export declare class ObjectLockConfiguration {
-    ObjectLockEnabled?: Value<string>;
-    Rule?: ObjectLockRule;
-    constructor(properties: ObjectLockConfiguration);
-}
 export declare class CorsConfiguration {
     CorsRules: List<CorsRule>;
     constructor(properties: CorsConfiguration);
@@ -111,29 +228,10 @@ export declare class ReplicationDestination {
     StorageClass?: Value<string>;
     constructor(properties: ReplicationDestination);
 }
-export declare class AccelerateConfiguration {
-    AccelerationStatus: Value<string>;
-    constructor(properties: AccelerateConfiguration);
-}
 export declare class NoncurrentVersionTransition {
     StorageClass: Value<string>;
     TransitionInDays: Value<number>;
     constructor(properties: NoncurrentVersionTransition);
-}
-export declare class AbortIncompleteMultipartUpload {
-    DaysAfterInitiation: Value<number>;
-    constructor(properties: AbortIncompleteMultipartUpload);
-}
-export declare class DeleteMarkerReplication {
-    Status?: Value<string>;
-    constructor(properties: DeleteMarkerReplication);
-}
-export declare class PublicAccessBlockConfiguration {
-    BlockPublicAcls?: Value<boolean>;
-    BlockPublicPolicy?: Value<boolean>;
-    IgnorePublicAcls?: Value<boolean>;
-    RestrictPublicBuckets?: Value<boolean>;
-    constructor(properties: PublicAccessBlockConfiguration);
 }
 export declare class DefaultRetention {
     Days?: Value<number>;
@@ -151,18 +249,8 @@ export declare class LambdaConfiguration {
     Function: Value<string>;
     constructor(properties: LambdaConfiguration);
 }
-export declare class ReplicationRule {
-    DeleteMarkerReplication?: DeleteMarkerReplication;
-    Destination: ReplicationDestination;
-    Filter?: ReplicationRuleFilter;
-    Id?: Value<string>;
-    Prefix?: Value<string>;
-    Priority?: Value<number>;
-    SourceSelectionCriteria?: SourceSelectionCriteria;
-    Status: Value<string>;
-    constructor(properties: ReplicationRule);
-}
 export declare class ServerSideEncryptionRule {
+    BucketKeyEnabled?: Value<boolean>;
     ServerSideEncryptionByDefault?: ServerSideEncryptionByDefault;
     constructor(properties: ServerSideEncryptionRule);
 }
@@ -173,18 +261,10 @@ export declare class AnalyticsConfiguration {
     TagFilters?: List<TagFilter>;
     constructor(properties: AnalyticsConfiguration);
 }
-export declare class SourceSelectionCriteria {
-    SseKmsEncryptedObjects: SseKmsEncryptedObjects;
-    constructor(properties: SourceSelectionCriteria);
-}
 export declare class LoggingConfiguration {
     DestinationBucketName?: Value<string>;
     LogFilePrefix?: Value<string>;
     constructor(properties: LoggingConfiguration);
-}
-export declare class StorageClassAnalysis {
-    DataExport?: DataExport;
-    constructor(properties: StorageClassAnalysis);
 }
 export declare class RoutingRule {
     RedirectRule: RedirectRule;
@@ -195,18 +275,6 @@ export declare class EncryptionConfiguration {
     ReplicaKmsKeyID: Value<string>;
     constructor(properties: EncryptionConfiguration);
 }
-export declare class RedirectRule {
-    HostName?: Value<string>;
-    HttpRedirectCode?: Value<string>;
-    Protocol?: Value<string>;
-    ReplaceKeyPrefixWith?: Value<string>;
-    ReplaceKeyWith?: Value<string>;
-    constructor(properties: RedirectRule);
-}
-export declare class ObjectLockRule {
-    DefaultRetention?: DefaultRetention;
-    constructor(properties: ObjectLockRule);
-}
 export declare class WebsiteConfiguration {
     ErrorDocument?: Value<string>;
     IndexDocument?: Value<string>;
@@ -214,32 +282,11 @@ export declare class WebsiteConfiguration {
     RoutingRules?: List<RoutingRule>;
     constructor(properties: WebsiteConfiguration);
 }
-export declare class Rule {
-    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
-    ExpirationDate?: Value<string>;
-    ExpirationInDays?: Value<number>;
-    Id?: Value<string>;
-    NoncurrentVersionExpirationInDays?: Value<number>;
-    NoncurrentVersionTransition?: NoncurrentVersionTransition;
-    NoncurrentVersionTransitions?: List<NoncurrentVersionTransition>;
-    Prefix?: Value<string>;
-    Status: Value<string>;
-    TagFilters?: List<TagFilter>;
-    Transition?: Transition;
-    Transitions?: List<Transition>;
-    constructor(properties: Rule);
-}
 export declare class TopicConfiguration {
     Event: Value<string>;
     Filter?: NotificationFilter;
     Topic: Value<string>;
     constructor(properties: TopicConfiguration);
-}
-export declare class MetricsConfiguration {
-    Id: Value<string>;
-    Prefix?: Value<string>;
-    TagFilters?: List<TagFilter>;
-    constructor(properties: MetricsConfiguration);
 }
 export declare class TagFilter {
     Key: Value<string>;
@@ -252,30 +299,11 @@ export declare class Transition {
     TransitionInDays?: Value<number>;
     constructor(properties: Transition);
 }
-export declare class DataExport {
-    Destination: Destination;
-    OutputSchemaVersion: Value<string>;
-    constructor(properties: DataExport);
-}
-export declare class ReplicationTimeValue {
-    Minutes: Value<number>;
-    constructor(properties: ReplicationTimeValue);
-}
 export declare class ReplicationRuleFilter {
     And?: ReplicationRuleAndOperator;
     Prefix?: Value<string>;
     TagFilter?: TagFilter;
     constructor(properties: ReplicationRuleFilter);
-}
-export declare class FilterRule {
-    Name: Value<string>;
-    Value: Value<string>;
-    constructor(properties: FilterRule);
-}
-export declare class ReplicationRuleAndOperator {
-    Prefix?: Value<string>;
-    TagFilters?: List<TagFilter>;
-    constructor(properties: ReplicationRuleAndOperator);
 }
 export interface BucketProperties {
     AccelerateConfiguration?: AccelerateConfiguration;
@@ -284,6 +312,7 @@ export interface BucketProperties {
     BucketEncryption?: BucketEncryption;
     BucketName?: Value<string>;
     CorsConfiguration?: CorsConfiguration;
+    IntelligentTieringConfigurations?: List<IntelligentTieringConfiguration>;
     InventoryConfigurations?: List<InventoryConfiguration>;
     LifecycleConfiguration?: LifecycleConfiguration;
     LoggingConfiguration?: LoggingConfiguration;
@@ -291,6 +320,7 @@ export interface BucketProperties {
     NotificationConfiguration?: NotificationConfiguration;
     ObjectLockConfiguration?: ObjectLockConfiguration;
     ObjectLockEnabled?: Value<boolean>;
+    OwnershipControls?: OwnershipControls;
     PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
     ReplicationConfiguration?: ReplicationConfiguration;
     Tags?: List<ResourceTag>;
@@ -298,54 +328,59 @@ export interface BucketProperties {
     WebsiteConfiguration?: WebsiteConfiguration;
 }
 export default class Bucket extends ResourceBase<BucketProperties> {
+    static OwnershipControls: typeof OwnershipControls;
+    static ReplicaModifications: typeof ReplicaModifications;
+    static CorsRule: typeof CorsRule;
+    static Destination: typeof Destination;
+    static OwnershipControlsRule: typeof OwnershipControlsRule;
+    static AccessControlTranslation: typeof AccessControlTranslation;
+    static VersioningConfiguration: typeof VersioningConfiguration;
+    static ReplicationTime: typeof ReplicationTime;
+    static ServerSideEncryptionByDefault: typeof ServerSideEncryptionByDefault;
+    static Tiering: typeof Tiering;
+    static SseKmsEncryptedObjects: typeof SseKmsEncryptedObjects;
+    static QueueConfiguration: typeof QueueConfiguration;
+    static ObjectLockConfiguration: typeof ObjectLockConfiguration;
+    static AccelerateConfiguration: typeof AccelerateConfiguration;
+    static IntelligentTieringConfiguration: typeof IntelligentTieringConfiguration;
+    static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
+    static DeleteMarkerReplication: typeof DeleteMarkerReplication;
+    static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;
+    static ReplicationRule: typeof ReplicationRule;
+    static SourceSelectionCriteria: typeof SourceSelectionCriteria;
+    static StorageClassAnalysis: typeof StorageClassAnalysis;
+    static RedirectRule: typeof RedirectRule;
+    static ObjectLockRule: typeof ObjectLockRule;
+    static Rule: typeof Rule;
+    static MetricsConfiguration: typeof MetricsConfiguration;
+    static DataExport: typeof DataExport;
+    static ReplicationTimeValue: typeof ReplicationTimeValue;
+    static FilterRule: typeof FilterRule;
+    static ReplicationRuleAndOperator: typeof ReplicationRuleAndOperator;
     static BucketEncryption: typeof BucketEncryption;
     static Metrics: typeof Metrics;
     static RoutingRuleCondition: typeof RoutingRuleCondition;
     static LifecycleConfiguration: typeof LifecycleConfiguration;
-    static CorsRule: typeof CorsRule;
-    static Destination: typeof Destination;
-    static AccessControlTranslation: typeof AccessControlTranslation;
-    static VersioningConfiguration: typeof VersioningConfiguration;
     static NotificationConfiguration: typeof NotificationConfiguration;
-    static ReplicationTime: typeof ReplicationTime;
-    static ServerSideEncryptionByDefault: typeof ServerSideEncryptionByDefault;
     static RedirectAllRequestsTo: typeof RedirectAllRequestsTo;
     static S3KeyFilter: typeof S3KeyFilter;
     static InventoryConfiguration: typeof InventoryConfiguration;
     static ReplicationConfiguration: typeof ReplicationConfiguration;
-    static SseKmsEncryptedObjects: typeof SseKmsEncryptedObjects;
-    static QueueConfiguration: typeof QueueConfiguration;
-    static ObjectLockConfiguration: typeof ObjectLockConfiguration;
     static CorsConfiguration: typeof CorsConfiguration;
     static ReplicationDestination: typeof ReplicationDestination;
-    static AccelerateConfiguration: typeof AccelerateConfiguration;
     static NoncurrentVersionTransition: typeof NoncurrentVersionTransition;
-    static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
-    static DeleteMarkerReplication: typeof DeleteMarkerReplication;
-    static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;
     static DefaultRetention: typeof DefaultRetention;
     static NotificationFilter: typeof NotificationFilter;
     static LambdaConfiguration: typeof LambdaConfiguration;
-    static ReplicationRule: typeof ReplicationRule;
     static ServerSideEncryptionRule: typeof ServerSideEncryptionRule;
     static AnalyticsConfiguration: typeof AnalyticsConfiguration;
-    static SourceSelectionCriteria: typeof SourceSelectionCriteria;
     static LoggingConfiguration: typeof LoggingConfiguration;
-    static StorageClassAnalysis: typeof StorageClassAnalysis;
     static RoutingRule: typeof RoutingRule;
     static EncryptionConfiguration: typeof EncryptionConfiguration;
-    static RedirectRule: typeof RedirectRule;
-    static ObjectLockRule: typeof ObjectLockRule;
     static WebsiteConfiguration: typeof WebsiteConfiguration;
-    static Rule: typeof Rule;
     static TopicConfiguration: typeof TopicConfiguration;
-    static MetricsConfiguration: typeof MetricsConfiguration;
     static TagFilter: typeof TagFilter;
     static Transition: typeof Transition;
-    static DataExport: typeof DataExport;
-    static ReplicationTimeValue: typeof ReplicationTimeValue;
     static ReplicationRuleFilter: typeof ReplicationRuleFilter;
-    static FilterRule: typeof FilterRule;
-    static ReplicationRuleAndOperator: typeof ReplicationRuleAndOperator;
     constructor(properties?: BucketProperties);
 }

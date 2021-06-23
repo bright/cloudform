@@ -10,12 +10,6 @@ export declare class CsvClassifier {
     Name?: Value<string>;
     constructor(properties: CsvClassifier);
 }
-export declare class XMLClassifier {
-    RowTag: Value<string>;
-    Classification: Value<string>;
-    Name?: Value<string>;
-    constructor(properties: XMLClassifier);
-}
 export declare class GrokClassifier {
     CustomPatterns?: Value<string>;
     GrokPattern: Value<string>;
@@ -28,6 +22,12 @@ export declare class JsonClassifier {
     Name?: Value<string>;
     constructor(properties: JsonClassifier);
 }
+export declare class XMLClassifier {
+    RowTag: Value<string>;
+    Classification: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: XMLClassifier);
+}
 export interface ClassifierProperties {
     XMLClassifier?: XMLClassifier;
     JsonClassifier?: JsonClassifier;
@@ -36,8 +36,8 @@ export interface ClassifierProperties {
 }
 export default class Classifier extends ResourceBase<ClassifierProperties> {
     static CsvClassifier: typeof CsvClassifier;
-    static XMLClassifier: typeof XMLClassifier;
     static GrokClassifier: typeof GrokClassifier;
     static JsonClassifier: typeof JsonClassifier;
+    static XMLClassifier: typeof XMLClassifier;
     constructor(properties?: ClassifierProperties);
 }

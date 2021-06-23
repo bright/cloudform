@@ -1,7 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface NatGatewayProperties {
-    AllocationId: Value<string>;
+    AllocationId?: Value<string>;
+    ConnectivityType?: Value<string>;
     SubnetId: Value<string>;
     Tags?: List<ResourceTag>;
 }

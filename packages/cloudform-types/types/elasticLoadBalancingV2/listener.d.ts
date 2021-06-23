@@ -1,73 +1,73 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class AuthenticateCognitoConfig {
-    AuthenticationRequestExtraParams?: {
-        [key: string]: Value<string>;
-    };
-    OnUnauthenticatedRequest?: Value<string>;
-    Scope?: Value<string>;
-    SessionCookieName?: Value<string>;
-    SessionTimeout?: Value<number>;
-    UserPoolArn: Value<string>;
-    UserPoolClientId: Value<string>;
-    UserPoolDomain: Value<string>;
-    constructor(properties: AuthenticateCognitoConfig);
-}
-export declare class Action {
-    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
-    AuthenticateOidcConfig?: AuthenticateOidcConfig;
-    FixedResponseConfig?: FixedResponseConfig;
-    ForwardConfig?: ForwardConfig;
-    Order?: Value<number>;
-    RedirectConfig?: RedirectConfig;
-    TargetGroupArn?: Value<string>;
-    Type: Value<string>;
-    constructor(properties: Action);
-}
 export declare class ForwardConfig {
     TargetGroupStickinessConfig?: TargetGroupStickinessConfig;
     TargetGroups?: List<TargetGroupTuple>;
     constructor(properties: ForwardConfig);
 }
 export declare class AuthenticateOidcConfig {
+    OnUnauthenticatedRequest?: Value<string>;
+    TokenEndpoint: Value<string>;
+    SessionTimeout?: Value<string>;
+    Scope?: Value<string>;
+    Issuer: Value<string>;
+    ClientSecret: Value<string>;
+    UserInfoEndpoint: Value<string>;
+    ClientId: Value<string>;
+    AuthorizationEndpoint: Value<string>;
+    SessionCookieName?: Value<string>;
     AuthenticationRequestExtraParams?: {
         [key: string]: Value<string>;
     };
-    AuthorizationEndpoint: Value<string>;
-    ClientId: Value<string>;
-    ClientSecret: Value<string>;
-    Issuer: Value<string>;
-    OnUnauthenticatedRequest?: Value<string>;
-    Scope?: Value<string>;
-    SessionCookieName?: Value<string>;
-    SessionTimeout?: Value<number>;
-    TokenEndpoint: Value<string>;
-    UserInfoEndpoint: Value<string>;
     constructor(properties: AuthenticateOidcConfig);
-}
-export declare class RedirectConfig {
-    Host?: Value<string>;
-    Path?: Value<string>;
-    Port?: Value<string>;
-    Protocol?: Value<string>;
-    Query?: Value<string>;
-    StatusCode: Value<string>;
-    constructor(properties: RedirectConfig);
-}
-export declare class FixedResponseConfig {
-    ContentType?: Value<string>;
-    MessageBody?: Value<string>;
-    StatusCode: Value<string>;
-    constructor(properties: FixedResponseConfig);
 }
 export declare class Certificate {
     CertificateArn?: Value<string>;
     constructor(properties: Certificate);
 }
 export declare class TargetGroupStickinessConfig {
-    DurationSeconds?: Value<number>;
     Enabled?: Value<boolean>;
+    DurationSeconds?: Value<number>;
     constructor(properties: TargetGroupStickinessConfig);
+}
+export declare class AuthenticateCognitoConfig {
+    OnUnauthenticatedRequest?: Value<string>;
+    UserPoolClientId: Value<string>;
+    UserPoolDomain: Value<string>;
+    SessionTimeout?: Value<string>;
+    Scope?: Value<string>;
+    SessionCookieName?: Value<string>;
+    UserPoolArn: Value<string>;
+    AuthenticationRequestExtraParams?: {
+        [key: string]: Value<string>;
+    };
+    constructor(properties: AuthenticateCognitoConfig);
+}
+export declare class Action {
+    Order?: Value<number>;
+    TargetGroupArn?: Value<string>;
+    FixedResponseConfig?: FixedResponseConfig;
+    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
+    Type: Value<string>;
+    RedirectConfig?: RedirectConfig;
+    ForwardConfig?: ForwardConfig;
+    AuthenticateOidcConfig?: AuthenticateOidcConfig;
+    constructor(properties: Action);
+}
+export declare class RedirectConfig {
+    Path?: Value<string>;
+    Query?: Value<string>;
+    Port?: Value<string>;
+    Host?: Value<string>;
+    Protocol?: Value<string>;
+    StatusCode: Value<string>;
+    constructor(properties: RedirectConfig);
+}
+export declare class FixedResponseConfig {
+    ContentType?: Value<string>;
+    StatusCode: Value<string>;
+    MessageBody?: Value<string>;
+    constructor(properties: FixedResponseConfig);
 }
 export declare class TargetGroupTuple {
     TargetGroupArn?: Value<string>;
@@ -75,23 +75,23 @@ export declare class TargetGroupTuple {
     constructor(properties: TargetGroupTuple);
 }
 export interface ListenerProperties {
-    AlpnPolicy?: List<Value<string>>;
-    Certificates?: List<Certificate>;
-    DefaultActions: List<Action>;
-    LoadBalancerArn: Value<string>;
-    Port: Value<number>;
-    Protocol: Value<string>;
     SslPolicy?: Value<string>;
+    LoadBalancerArn: Value<string>;
+    DefaultActions: List<Action>;
+    Port?: Value<number>;
+    Certificates?: List<Certificate>;
+    Protocol?: Value<string>;
+    AlpnPolicy?: List<Value<string>>;
 }
 export default class Listener extends ResourceBase<ListenerProperties> {
-    static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
-    static Action: typeof Action;
     static ForwardConfig: typeof ForwardConfig;
     static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
-    static RedirectConfig: typeof RedirectConfig;
-    static FixedResponseConfig: typeof FixedResponseConfig;
     static Certificate: typeof Certificate;
     static TargetGroupStickinessConfig: typeof TargetGroupStickinessConfig;
+    static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
+    static Action: typeof Action;
+    static RedirectConfig: typeof RedirectConfig;
+    static FixedResponseConfig: typeof FixedResponseConfig;
     static TargetGroupTuple: typeof TargetGroupTuple;
     constructor(properties: ListenerProperties);
 }

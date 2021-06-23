@@ -1,5 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class PortOverride {
+    ListenerPort: Value<number>;
+    EndpointPort: Value<number>;
+    constructor(properties: PortOverride);
+}
 export declare class EndpointConfiguration {
     EndpointId: Value<string>;
     Weight?: Value<number>;
@@ -16,8 +21,10 @@ export interface EndpointGroupProperties {
     HealthCheckPath?: Value<string>;
     HealthCheckIntervalSeconds?: Value<number>;
     ThresholdCount?: Value<number>;
+    PortOverrides?: List<PortOverride>;
 }
 export default class EndpointGroup extends ResourceBase<EndpointGroupProperties> {
+    static PortOverride: typeof PortOverride;
     static EndpointConfiguration: typeof EndpointConfiguration;
     constructor(properties: EndpointGroupProperties);
 }

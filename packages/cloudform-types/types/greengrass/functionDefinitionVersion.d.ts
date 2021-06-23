@@ -15,6 +15,16 @@ export declare class Execution {
     RunAs?: RunAs;
     constructor(properties: Execution);
 }
+export declare class DefaultConfig {
+    Execution: Execution;
+    constructor(properties: DefaultConfig);
+}
+export declare class Function {
+    FunctionArn: Value<string>;
+    FunctionConfiguration: FunctionConfiguration;
+    Id: Value<string>;
+    constructor(properties: Function);
+}
 export declare class RunAs {
     Uid?: Value<number>;
     Gid?: Value<number>;
@@ -29,16 +39,6 @@ export declare class Environment {
     AccessSysfs?: Value<boolean>;
     constructor(properties: Environment);
 }
-export declare class DefaultConfig {
-    Execution: Execution;
-    constructor(properties: DefaultConfig);
-}
-export declare class Function {
-    FunctionArn: Value<string>;
-    FunctionConfiguration: FunctionConfiguration;
-    Id: Value<string>;
-    constructor(properties: Function);
-}
 export declare class ResourceAccessPolicy {
     ResourceId: Value<string>;
     Permission?: Value<string>;
@@ -52,10 +52,10 @@ export interface FunctionDefinitionVersionProperties {
 export default class FunctionDefinitionVersion extends ResourceBase<FunctionDefinitionVersionProperties> {
     static FunctionConfiguration: typeof FunctionConfiguration;
     static Execution: typeof Execution;
-    static RunAs: typeof RunAs;
-    static Environment: typeof Environment;
     static DefaultConfig: typeof DefaultConfig;
     static Function: typeof Function;
+    static RunAs: typeof RunAs;
+    static Environment: typeof Environment;
     static ResourceAccessPolicy: typeof ResourceAccessPolicy;
     constructor(properties: FunctionDefinitionVersionProperties);
 }

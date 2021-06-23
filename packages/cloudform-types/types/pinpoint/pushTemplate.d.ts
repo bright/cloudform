@@ -1,5 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
+export declare class DefaultPushNotificationTemplate {
+    Action?: Value<string>;
+    Title?: Value<string>;
+    Sound?: Value<string>;
+    Body?: Value<string>;
+    Url?: Value<string>;
+    constructor(properties: DefaultPushNotificationTemplate);
+}
 export declare class AndroidPushNotificationTemplate {
     Action?: Value<string>;
     ImageUrl?: Value<string>;
@@ -10,14 +18,6 @@ export declare class AndroidPushNotificationTemplate {
     Body?: Value<string>;
     Url?: Value<string>;
     constructor(properties: AndroidPushNotificationTemplate);
-}
-export declare class DefaultPushNotificationTemplate {
-    Action?: Value<string>;
-    Title?: Value<string>;
-    Sound?: Value<string>;
-    Body?: Value<string>;
-    Url?: Value<string>;
-    constructor(properties: DefaultPushNotificationTemplate);
 }
 export declare class APNSPushNotificationTemplate {
     Action?: Value<string>;
@@ -42,8 +42,8 @@ export interface PushTemplateProperties {
     };
 }
 export default class PushTemplate extends ResourceBase<PushTemplateProperties> {
-    static AndroidPushNotificationTemplate: typeof AndroidPushNotificationTemplate;
     static DefaultPushNotificationTemplate: typeof DefaultPushNotificationTemplate;
+    static AndroidPushNotificationTemplate: typeof AndroidPushNotificationTemplate;
     static APNSPushNotificationTemplate: typeof APNSPushNotificationTemplate;
     constructor(properties: PushTemplateProperties);
 }

@@ -2,8 +2,10 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface QueueProperties {
     ContentBasedDeduplication?: Value<boolean>;
+    DeduplicationScope?: Value<string>;
     DelaySeconds?: Value<number>;
     FifoQueue?: Value<boolean>;
+    FifoThroughputLimit?: Value<string>;
     KmsDataKeyReusePeriodSeconds?: Value<number>;
     KmsMasterKeyId?: Value<string>;
     MaximumMessageSize?: Value<number>;

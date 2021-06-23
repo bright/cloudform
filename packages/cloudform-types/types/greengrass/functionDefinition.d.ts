@@ -1,10 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Execution {
-    IsolationMode?: Value<string>;
-    RunAs?: RunAs;
-    constructor(properties: Execution);
-}
 export declare class FunctionConfiguration {
     MemorySize?: Value<number>;
     Pinned?: Value<boolean>;
@@ -14,6 +9,15 @@ export declare class FunctionConfiguration {
     Environment?: Environment;
     Executable?: Value<string>;
     constructor(properties: FunctionConfiguration);
+}
+export declare class DefaultConfig {
+    Execution: Execution;
+    constructor(properties: DefaultConfig);
+}
+export declare class Execution {
+    IsolationMode?: Value<string>;
+    RunAs?: RunAs;
+    constructor(properties: Execution);
 }
 export declare class Environment {
     Variables?: {
@@ -34,10 +38,6 @@ export declare class RunAs {
     Gid?: Value<number>;
     constructor(properties: RunAs);
 }
-export declare class DefaultConfig {
-    Execution: Execution;
-    constructor(properties: DefaultConfig);
-}
 export declare class Function {
     FunctionArn: Value<string>;
     FunctionConfiguration: FunctionConfiguration;
@@ -57,12 +57,12 @@ export interface FunctionDefinitionProperties {
     Name: Value<string>;
 }
 export default class FunctionDefinition extends ResourceBase<FunctionDefinitionProperties> {
-    static Execution: typeof Execution;
     static FunctionConfiguration: typeof FunctionConfiguration;
+    static DefaultConfig: typeof DefaultConfig;
+    static Execution: typeof Execution;
     static Environment: typeof Environment;
     static FunctionDefinitionVersion: typeof FunctionDefinitionVersion;
     static RunAs: typeof RunAs;
-    static DefaultConfig: typeof DefaultConfig;
     static Function: typeof Function;
     static ResourceAccessPolicy: typeof ResourceAccessPolicy;
     constructor(properties: FunctionDefinitionProperties);

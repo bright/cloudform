@@ -1,7 +1,9 @@
 import Route_ from './route';
+import ApiGatewayManagedOverrides_ from './apiGatewayManagedOverrides';
 import Stage_ from './stage';
 import Api_ from './api';
 import RouteResponse_ from './routeResponse';
+import VpcLink_ from './vpcLink';
 import DomainName_ from './domainName';
 import Integration_ from './integration';
 import Deployment_ from './deployment';
@@ -9,13 +11,13 @@ import Model_ from './model';
 import Authorizer_ from './authorizer';
 import IntegrationResponse_ from './integrationResponse';
 import ApiMapping_ from './apiMapping';
-import ApiGatewayManagedOverrides_ from './apiGatewayManagedOverrides';
-import VpcLink_ from './vpcLink';
 export declare namespace ApiGatewayV2 {
     const Route: typeof Route_;
+    const ApiGatewayManagedOverrides: typeof ApiGatewayManagedOverrides_;
     const Stage: typeof Stage_;
     const Api: typeof Api_;
     const RouteResponse: typeof RouteResponse_;
+    const VpcLink: typeof VpcLink_;
     const DomainName: typeof DomainName_;
     const Integration: typeof Integration_;
     const Deployment: typeof Deployment_;
@@ -23,12 +25,12 @@ export declare namespace ApiGatewayV2 {
     const Authorizer: typeof Authorizer_;
     const IntegrationResponse: typeof IntegrationResponse_;
     const ApiMapping: typeof ApiMapping_;
-    const ApiGatewayManagedOverrides: typeof ApiGatewayManagedOverrides_;
-    const VpcLink: typeof VpcLink_;
     type Route = Route_;
+    type ApiGatewayManagedOverrides = ApiGatewayManagedOverrides_;
     type Stage = Stage_;
     type Api = Api_;
     type RouteResponse = RouteResponse_;
+    type VpcLink = VpcLink_;
     type DomainName = DomainName_;
     type Integration = Integration_;
     type Deployment = Deployment_;
@@ -36,6 +38,4 @@ export declare namespace ApiGatewayV2 {
     type Authorizer = Authorizer_;
     type IntegrationResponse = IntegrationResponse_;
     type ApiMapping = ApiMapping_;
-    type ApiGatewayManagedOverrides = ApiGatewayManagedOverrides_;
-    type VpcLink = VpcLink_;
 }

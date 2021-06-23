@@ -1,9 +1,53 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class S3 {
+    Bucket?: Value<string>;
+    Enabled: Value<boolean>;
+    Prefix?: Value<string>;
+    constructor(properties: S3);
+}
+export declare class CloudWatchLogs {
+    LogGroup?: Value<string>;
+    Enabled: Value<boolean>;
+    constructor(properties: CloudWatchLogs);
+}
+export declare class EncryptionAtRest {
+    DataVolumeKMSKeyId: Value<string>;
+    constructor(properties: EncryptionAtRest);
+}
+export declare class BrokerLogs {
+    S3?: S3;
+    Firehose?: Firehose;
+    CloudWatchLogs?: CloudWatchLogs;
+    constructor(properties: BrokerLogs);
+}
+export declare class EncryptionInTransit {
+    ClientBroker?: Value<string>;
+    InCluster?: Value<boolean>;
+    constructor(properties: EncryptionInTransit);
+}
+export declare class Prometheus {
+    JmxExporter?: JmxExporter;
+    NodeExporter?: NodeExporter;
+    constructor(properties: Prometheus);
+}
+export declare class LoggingInfo {
+    BrokerLogs: BrokerLogs;
+    constructor(properties: LoggingInfo);
+}
 export declare class EncryptionInfo {
     EncryptionAtRest?: EncryptionAtRest;
     EncryptionInTransit?: EncryptionInTransit;
     constructor(properties: EncryptionInfo);
+}
+export declare class Iam {
+    Enabled: Value<boolean>;
+    constructor(properties: Iam);
+}
+export declare class Sasl {
+    Iam?: Iam;
+    Scram?: Scram;
+    constructor(properties: Sasl);
 }
 export declare class ConfigurationInfo {
     Revision: Value<number>;
@@ -18,16 +62,9 @@ export declare class BrokerNodeGroupInfo {
     InstanceType: Value<string>;
     constructor(properties: BrokerNodeGroupInfo);
 }
-export declare class S3 {
-    Bucket?: Value<string>;
+export declare class Scram {
     Enabled: Value<boolean>;
-    Prefix?: Value<string>;
-    constructor(properties: S3);
-}
-export declare class CloudWatchLogs {
-    LogGroup?: Value<string>;
-    Enabled: Value<boolean>;
-    constructor(properties: CloudWatchLogs);
+    constructor(properties: Scram);
 }
 export declare class JmxExporter {
     EnabledInBroker: Value<boolean>;
@@ -36,16 +73,6 @@ export declare class JmxExporter {
 export declare class StorageInfo {
     EBSStorageInfo?: EBSStorageInfo;
     constructor(properties: StorageInfo);
-}
-export declare class EncryptionAtRest {
-    DataVolumeKMSKeyId: Value<string>;
-    constructor(properties: EncryptionAtRest);
-}
-export declare class BrokerLogs {
-    S3?: S3;
-    Firehose?: Firehose;
-    CloudWatchLogs?: CloudWatchLogs;
-    constructor(properties: BrokerLogs);
 }
 export declare class NodeExporter {
     EnabledInBroker: Value<boolean>;
@@ -60,19 +87,10 @@ export declare class Firehose {
     Enabled: Value<boolean>;
     constructor(properties: Firehose);
 }
-export declare class EncryptionInTransit {
-    ClientBroker?: Value<string>;
-    InCluster?: Value<boolean>;
-    constructor(properties: EncryptionInTransit);
-}
 export declare class ClientAuthentication {
+    Sasl?: Sasl;
     Tls?: Tls;
     constructor(properties: ClientAuthentication);
-}
-export declare class Prometheus {
-    JmxExporter?: JmxExporter;
-    NodeExporter?: NodeExporter;
-    constructor(properties: Prometheus);
 }
 export declare class Tls {
     CertificateAuthorityArnList?: List<Value<string>>;
@@ -81,10 +99,6 @@ export declare class Tls {
 export declare class OpenMonitoring {
     Prometheus: Prometheus;
     constructor(properties: OpenMonitoring);
-}
-export declare class LoggingInfo {
-    BrokerLogs: BrokerLogs;
-    constructor(properties: LoggingInfo);
 }
 export interface ClusterProperties {
     BrokerNodeGroupInfo: BrokerNodeGroupInfo;
@@ -102,23 +116,26 @@ export interface ClusterProperties {
     ConfigurationInfo?: ConfigurationInfo;
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
-    static EncryptionInfo: typeof EncryptionInfo;
-    static ConfigurationInfo: typeof ConfigurationInfo;
-    static BrokerNodeGroupInfo: typeof BrokerNodeGroupInfo;
     static S3: typeof S3;
     static CloudWatchLogs: typeof CloudWatchLogs;
-    static JmxExporter: typeof JmxExporter;
-    static StorageInfo: typeof StorageInfo;
     static EncryptionAtRest: typeof EncryptionAtRest;
     static BrokerLogs: typeof BrokerLogs;
+    static EncryptionInTransit: typeof EncryptionInTransit;
+    static Prometheus: typeof Prometheus;
+    static LoggingInfo: typeof LoggingInfo;
+    static EncryptionInfo: typeof EncryptionInfo;
+    static Iam: typeof Iam;
+    static Sasl: typeof Sasl;
+    static ConfigurationInfo: typeof ConfigurationInfo;
+    static BrokerNodeGroupInfo: typeof BrokerNodeGroupInfo;
+    static Scram: typeof Scram;
+    static JmxExporter: typeof JmxExporter;
+    static StorageInfo: typeof StorageInfo;
     static NodeExporter: typeof NodeExporter;
     static EBSStorageInfo: typeof EBSStorageInfo;
     static Firehose: typeof Firehose;
-    static EncryptionInTransit: typeof EncryptionInTransit;
     static ClientAuthentication: typeof ClientAuthentication;
-    static Prometheus: typeof Prometheus;
     static Tls: typeof Tls;
     static OpenMonitoring: typeof OpenMonitoring;
-    static LoggingInfo: typeof LoggingInfo;
     constructor(properties: ClusterProperties);
 }

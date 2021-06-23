@@ -2,8 +2,23 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LaunchTemplateOverrides {
     InstanceType?: Value<string>;
+    LaunchTemplateSpecification?: LaunchTemplateSpecification;
     WeightedCapacity?: Value<string>;
     constructor(properties: LaunchTemplateOverrides);
+}
+export declare class MetricsCollection {
+    Granularity: Value<string>;
+    Metrics?: List<Value<string>>;
+    constructor(properties: MetricsCollection);
+}
+export declare class InstancesDistribution {
+    OnDemandAllocationStrategy?: Value<string>;
+    OnDemandBaseCapacity?: Value<number>;
+    OnDemandPercentageAboveBaseCapacity?: Value<number>;
+    SpotAllocationStrategy?: Value<string>;
+    SpotInstancePools?: Value<number>;
+    SpotMaxPrice?: Value<string>;
+    constructor(properties: InstancesDistribution);
 }
 export declare class LifecycleHookSpecification {
     DefaultResult?: Value<string>;
@@ -31,20 +46,6 @@ export declare class NotificationConfiguration {
     TopicARN: Value<string>;
     constructor(properties: NotificationConfiguration);
 }
-export declare class MetricsCollection {
-    Granularity: Value<string>;
-    Metrics?: List<Value<string>>;
-    constructor(properties: MetricsCollection);
-}
-export declare class InstancesDistribution {
-    OnDemandAllocationStrategy?: Value<string>;
-    OnDemandBaseCapacity?: Value<number>;
-    OnDemandPercentageAboveBaseCapacity?: Value<number>;
-    SpotAllocationStrategy?: Value<string>;
-    SpotInstancePools?: Value<number>;
-    SpotMaxPrice?: Value<string>;
-    constructor(properties: InstancesDistribution);
-}
 export declare class LaunchTemplate {
     LaunchTemplateSpecification: LaunchTemplateSpecification;
     Overrides?: List<LaunchTemplateOverrides>;
@@ -59,6 +60,8 @@ export declare class TagProperty {
 export interface AutoScalingGroupProperties {
     AutoScalingGroupName?: Value<string>;
     AvailabilityZones?: List<Value<string>>;
+    CapacityRebalance?: Value<boolean>;
+    Context?: Value<string>;
     Cooldown?: Value<string>;
     DesiredCapacity?: Value<string>;
     HealthCheckGracePeriod?: Value<number>;
@@ -84,12 +87,12 @@ export interface AutoScalingGroupProperties {
 }
 export default class AutoScalingGroup extends ResourceBase<AutoScalingGroupProperties> {
     static LaunchTemplateOverrides: typeof LaunchTemplateOverrides;
+    static MetricsCollection: typeof MetricsCollection;
+    static InstancesDistribution: typeof InstancesDistribution;
     static LifecycleHookSpecification: typeof LifecycleHookSpecification;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
     static MixedInstancesPolicy: typeof MixedInstancesPolicy;
     static NotificationConfiguration: typeof NotificationConfiguration;
-    static MetricsCollection: typeof MetricsCollection;
-    static InstancesDistribution: typeof InstancesDistribution;
     static LaunchTemplate: typeof LaunchTemplate;
     static TagProperty: typeof TagProperty;
     constructor(properties: AutoScalingGroupProperties);

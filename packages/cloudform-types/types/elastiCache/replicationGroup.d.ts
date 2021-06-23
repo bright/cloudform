@@ -1,5 +1,16 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class LogDeliveryConfigurationRequest {
+    DestinationDetails?: DestinationDetails;
+    DestinationType?: Value<string>;
+    LogFormat?: Value<string>;
+    LogType?: Value<string>;
+    constructor(properties: LogDeliveryConfigurationRequest);
+}
+export declare class CloudWatchLogsDestinationDetails {
+    LogGroup?: Value<string>;
+    constructor(properties: CloudWatchLogsDestinationDetails);
+}
 export declare class NodeGroupConfiguration {
     NodeGroupId?: Value<string>;
     PrimaryAvailabilityZone?: Value<string>;
@@ -7,6 +18,15 @@ export declare class NodeGroupConfiguration {
     ReplicaCount?: Value<number>;
     Slots?: Value<string>;
     constructor(properties: NodeGroupConfiguration);
+}
+export declare class DestinationDetails {
+    CloudWatchLogsDetails?: CloudWatchLogsDestinationDetails;
+    KinesisFirehoseDetails?: KinesisFirehoseDestinationDetails;
+    constructor(properties: DestinationDetails);
+}
+export declare class KinesisFirehoseDestinationDetails {
+    DeliveryStream?: Value<string>;
+    constructor(properties: KinesisFirehoseDestinationDetails);
 }
 export interface ReplicationGroupProperties {
     AtRestEncryptionEnabled?: Value<boolean>;
@@ -19,7 +39,9 @@ export interface ReplicationGroupProperties {
     CacheSubnetGroupName?: Value<string>;
     Engine?: Value<string>;
     EngineVersion?: Value<string>;
+    GlobalReplicationGroupId?: Value<string>;
     KmsKeyId?: Value<string>;
+    LogDeliveryConfigurations?: List<LogDeliveryConfigurationRequest>;
     MultiAZEnabled?: Value<boolean>;
     NodeGroupConfiguration?: List<NodeGroupConfiguration>;
     NotificationTopicArn?: Value<string>;
@@ -40,8 +62,13 @@ export interface ReplicationGroupProperties {
     SnapshottingClusterId?: Value<string>;
     Tags?: List<ResourceTag>;
     TransitEncryptionEnabled?: Value<boolean>;
+    UserGroupIds?: List<Value<string>>;
 }
 export default class ReplicationGroup extends ResourceBase<ReplicationGroupProperties> {
+    static LogDeliveryConfigurationRequest: typeof LogDeliveryConfigurationRequest;
+    static CloudWatchLogsDestinationDetails: typeof CloudWatchLogsDestinationDetails;
     static NodeGroupConfiguration: typeof NodeGroupConfiguration;
+    static DestinationDetails: typeof DestinationDetails;
+    static KinesisFirehoseDestinationDetails: typeof KinesisFirehoseDestinationDetails;
     constructor(properties: ReplicationGroupProperties);
 }

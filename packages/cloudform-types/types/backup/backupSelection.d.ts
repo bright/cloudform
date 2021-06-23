@@ -1,24 +1,24 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class BackupSelectionResourceType {
-    ListOfTags?: List<ConditionResourceType>;
-    SelectionName: Value<string>;
-    IamRoleArn: Value<string>;
-    Resources?: List<Value<string>>;
-    constructor(properties: BackupSelectionResourceType);
-}
 export declare class ConditionResourceType {
-    ConditionValue: Value<string>;
     ConditionKey: Value<string>;
+    ConditionValue: Value<string>;
     ConditionType: Value<string>;
     constructor(properties: ConditionResourceType);
 }
+export declare class BackupSelectionResourceType {
+    IamRoleArn: Value<string>;
+    ListOfTags?: List<ConditionResourceType>;
+    Resources?: List<Value<string>>;
+    SelectionName: Value<string>;
+    constructor(properties: BackupSelectionResourceType);
+}
 export interface BackupSelectionProperties {
-    BackupSelection: BackupSelectionResourceType;
     BackupPlanId: Value<string>;
+    BackupSelection: BackupSelectionResourceType;
 }
 export default class BackupSelection extends ResourceBase<BackupSelectionProperties> {
-    static BackupSelectionResourceType: typeof BackupSelectionResourceType;
     static ConditionResourceType: typeof ConditionResourceType;
+    static BackupSelectionResourceType: typeof BackupSelectionResourceType;
     constructor(properties: BackupSelectionProperties);
 }

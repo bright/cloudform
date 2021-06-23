@@ -1,4 +1,5 @@
 import DBSubnetGroup_ from './dbSubnetGroup';
+import GlobalCluster_ from './globalCluster';
 import DBInstance_ from './dbInstance';
 import DBSecurityGroup_ from './dbSecurityGroup';
 import DBClusterParameterGroup_ from './dbClusterParameterGroup';
@@ -9,8 +10,10 @@ import DBParameterGroup_ from './dbParameterGroup';
 import EventSubscription_ from './eventSubscription';
 import DBProxy_ from './dbProxy';
 import DBProxyTargetGroup_ from './dbProxyTargetGroup';
+import DBProxyEndpoint_ from './dbProxyEndpoint';
 export declare namespace RDS {
     const DBSubnetGroup: typeof DBSubnetGroup_;
+    const GlobalCluster: typeof GlobalCluster_;
     const DBInstance: typeof DBInstance_;
     const DBSecurityGroup: typeof DBSecurityGroup_;
     const DBClusterParameterGroup: typeof DBClusterParameterGroup_;
@@ -21,7 +24,9 @@ export declare namespace RDS {
     const EventSubscription: typeof EventSubscription_;
     const DBProxy: typeof DBProxy_;
     const DBProxyTargetGroup: typeof DBProxyTargetGroup_;
+    const DBProxyEndpoint: typeof DBProxyEndpoint_;
     type DBSubnetGroup = DBSubnetGroup_;
+    type GlobalCluster = GlobalCluster_;
     type DBInstance = DBInstance_;
     type DBSecurityGroup = DBSecurityGroup_;
     type DBClusterParameterGroup = DBClusterParameterGroup_;
@@ -32,4 +37,5 @@ export declare namespace RDS {
     type EventSubscription = EventSubscription_;
     type DBProxy = DBProxy_;
     type DBProxyTargetGroup = DBProxyTargetGroup_;
+    type DBProxyEndpoint = DBProxyEndpoint_;
 }

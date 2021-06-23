@@ -16,15 +16,6 @@ export declare class S3ReferenceDataSource {
     ReferenceRoleARN: Value<string>;
     constructor(properties: S3ReferenceDataSource);
 }
-export declare class MappingParameters {
-    JSONMappingParameters?: JSONMappingParameters;
-    CSVMappingParameters?: CSVMappingParameters;
-    constructor(properties: MappingParameters);
-}
-export declare class JSONMappingParameters {
-    RecordRowPath: Value<string>;
-    constructor(properties: JSONMappingParameters);
-}
 export declare class RecordColumn {
     Mapping?: Value<string>;
     SqlType: Value<string>;
@@ -36,6 +27,15 @@ export declare class ReferenceSchema {
     RecordColumns: List<RecordColumn>;
     RecordFormat: RecordFormat;
     constructor(properties: ReferenceSchema);
+}
+export declare class MappingParameters {
+    JSONMappingParameters?: JSONMappingParameters;
+    CSVMappingParameters?: CSVMappingParameters;
+    constructor(properties: MappingParameters);
+}
+export declare class JSONMappingParameters {
+    RecordRowPath: Value<string>;
+    constructor(properties: JSONMappingParameters);
 }
 export declare class ReferenceDataSource {
     ReferenceSchema: ReferenceSchema;
@@ -51,10 +51,10 @@ export default class ApplicationReferenceDataSource extends ResourceBase<Applica
     static RecordFormat: typeof RecordFormat;
     static CSVMappingParameters: typeof CSVMappingParameters;
     static S3ReferenceDataSource: typeof S3ReferenceDataSource;
-    static MappingParameters: typeof MappingParameters;
-    static JSONMappingParameters: typeof JSONMappingParameters;
     static RecordColumn: typeof RecordColumn;
     static ReferenceSchema: typeof ReferenceSchema;
+    static MappingParameters: typeof MappingParameters;
+    static JSONMappingParameters: typeof JSONMappingParameters;
     static ReferenceDataSource: typeof ReferenceDataSource;
     constructor(properties: ApplicationReferenceDataSourceProperties);
 }

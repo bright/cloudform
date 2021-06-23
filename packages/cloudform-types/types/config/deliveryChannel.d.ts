@@ -9,6 +9,7 @@ export interface DeliveryChannelProperties {
     Name?: Value<string>;
     S3BucketName: Value<string>;
     S3KeyPrefix?: Value<string>;
+    S3KmsKeyArn?: Value<string>;
     SnsTopicARN?: Value<string>;
 }
 export default class DeliveryChannel extends ResourceBase<DeliveryChannelProperties> {

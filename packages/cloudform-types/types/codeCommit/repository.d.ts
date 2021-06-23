@@ -2,6 +2,7 @@ import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Code {
     S3: S3;
+    BranchName?: Value<string>;
     constructor(properties: Code);
 }
 export declare class S3 {

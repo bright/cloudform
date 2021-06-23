@@ -6,35 +6,38 @@ export declare class LoggingProperties {
     constructor(properties: LoggingProperties);
 }
 export interface ClusterProperties {
+    ClusterIdentifier?: Value<string>;
+    MasterUsername: Value<string>;
+    MasterUserPassword: Value<string>;
+    NodeType: Value<string>;
     AllowVersionUpgrade?: Value<boolean>;
     AutomatedSnapshotRetentionPeriod?: Value<number>;
     AvailabilityZone?: Value<string>;
-    ClusterIdentifier?: Value<string>;
     ClusterParameterGroupName?: Value<string>;
-    ClusterSecurityGroups?: List<Value<string>>;
-    ClusterSubnetGroupName?: Value<string>;
     ClusterType: Value<string>;
     ClusterVersion?: Value<string>;
+    ClusterSubnetGroupName?: Value<string>;
     DBName: Value<string>;
     ElasticIp?: Value<string>;
     Encrypted?: Value<boolean>;
     HsmClientCertificateIdentifier?: Value<string>;
     HsmConfigurationIdentifier?: Value<string>;
-    IamRoles?: List<Value<string>>;
     KmsKeyId?: Value<string>;
-    LoggingProperties?: LoggingProperties;
-    MasterUserPassword: Value<string>;
-    MasterUsername: Value<string>;
-    NodeType: Value<string>;
     NumberOfNodes?: Value<number>;
-    OwnerAccount?: Value<string>;
     Port?: Value<number>;
     PreferredMaintenanceWindow?: Value<string>;
     PubliclyAccessible?: Value<boolean>;
-    SnapshotClusterIdentifier?: Value<string>;
-    SnapshotIdentifier?: Value<string>;
+    ClusterSecurityGroups?: List<Value<string>>;
+    IamRoles?: List<Value<string>>;
     Tags?: List<ResourceTag>;
     VpcSecurityGroupIds?: List<Value<string>>;
+    SnapshotClusterIdentifier?: Value<string>;
+    SnapshotIdentifier?: Value<string>;
+    Endpoint?: {
+        [key: string]: any;
+    };
+    OwnerAccount?: Value<string>;
+    LoggingProperties?: LoggingProperties;
 }
 export default class Cluster extends ResourceBase<ClusterProperties> {
     static LoggingProperties: typeof LoggingProperties;

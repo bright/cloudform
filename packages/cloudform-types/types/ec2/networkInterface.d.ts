@@ -14,7 +14,7 @@ export interface NetworkInterfaceProperties {
     GroupSet?: List<Value<string>>;
     InterfaceType?: Value<string>;
     Ipv6AddressCount?: Value<number>;
-    Ipv6Addresses?: InstanceIpv6Address;
+    Ipv6Addresses?: List<InstanceIpv6Address>;
     PrivateIpAddress?: Value<string>;
     PrivateIpAddresses?: List<PrivateIpAddressSpecification>;
     SecondaryPrivateIpAddressCount?: Value<number>;

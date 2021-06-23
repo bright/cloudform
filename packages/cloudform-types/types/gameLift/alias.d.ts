@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export declare class RoutingStrategy {
-    FleetId?: Value<string>;
     Message?: Value<string>;
+    FleetId?: Value<string>;
     Type: Value<string>;
     constructor(properties: RoutingStrategy);
 }

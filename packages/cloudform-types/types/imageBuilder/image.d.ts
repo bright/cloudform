@@ -7,7 +7,8 @@ export declare class ImageTestsConfiguration {
 }
 export interface ImageProperties {
     ImageTestsConfiguration?: ImageTestsConfiguration;
-    ImageRecipeArn: Value<string>;
+    ImageRecipeArn?: Value<string>;
+    ContainerRecipeArn?: Value<string>;
     DistributionConfigurationArn?: Value<string>;
     InfrastructureConfigurationArn: Value<string>;
     EnhancedImageMetadataEnabled?: Value<boolean>;

@@ -16,16 +16,17 @@ export declare class DomainJoinInfo {
     constructor(properties: DomainJoinInfo);
 }
 export interface ImageBuilderProperties {
-    ImageName?: Value<string>;
     Description?: Value<string>;
     VpcConfig?: VpcConfig;
     EnableDefaultInternetAccess?: Value<boolean>;
-    DisplayName?: Value<string>;
     DomainJoinInfo?: DomainJoinInfo;
     AppstreamAgentVersion?: Value<string>;
+    Name: Value<string>;
+    ImageName?: Value<string>;
+    DisplayName?: Value<string>;
+    IamRoleArn?: Value<string>;
     InstanceType: Value<string>;
     Tags?: List<ResourceTag>;
-    Name: Value<string>;
     ImageArn?: Value<string>;
     AccessEndpoints?: List<AccessEndpoint>;
 }

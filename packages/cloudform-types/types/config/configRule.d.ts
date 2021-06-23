@@ -1,17 +1,17 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class Source {
+    Owner: Value<string>;
+    SourceDetails?: List<SourceDetail>;
+    SourceIdentifier: Value<string>;
+    constructor(properties: Source);
+}
 export declare class Scope {
     ComplianceResourceId?: Value<string>;
     ComplianceResourceTypes?: List<Value<string>>;
     TagKey?: Value<string>;
     TagValue?: Value<string>;
     constructor(properties: Scope);
-}
-export declare class Source {
-    Owner: Value<string>;
-    SourceDetails?: List<SourceDetail>;
-    SourceIdentifier: Value<string>;
-    constructor(properties: Source);
 }
 export declare class SourceDetail {
     EventSource: Value<string>;
@@ -30,8 +30,8 @@ export interface ConfigRuleProperties {
     Source: Source;
 }
 export default class ConfigRule extends ResourceBase<ConfigRuleProperties> {
-    static Scope: typeof Scope;
     static Source: typeof Source;
+    static Scope: typeof Scope;
     static SourceDetail: typeof SourceDetail;
     constructor(properties: ConfigRuleProperties);
 }

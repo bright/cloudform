@@ -8,6 +8,7 @@ export declare class TagsEntry {
 export interface ConfigurationProperties {
     EngineVersion: Value<string>;
     Description?: Value<string>;
+    AuthenticationStrategy?: Value<string>;
     EngineType: Value<string>;
     Data: Value<string>;
     Tags?: List<TagsEntry>;

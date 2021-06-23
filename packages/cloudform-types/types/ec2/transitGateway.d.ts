@@ -7,6 +7,7 @@ export interface TransitGatewayProperties {
     DefaultRouteTableAssociation?: Value<string>;
     VpnEcmpSupport?: Value<string>;
     DnsSupport?: Value<string>;
+    MulticastSupport?: Value<string>;
     AmazonSideAsn?: Value<number>;
     Tags?: List<ResourceTag>;
 }

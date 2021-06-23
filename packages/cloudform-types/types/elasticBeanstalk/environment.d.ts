@@ -18,6 +18,7 @@ export interface EnvironmentProperties {
     CNAMEPrefix?: Value<string>;
     Description?: Value<string>;
     EnvironmentName?: Value<string>;
+    OperationsRole?: Value<string>;
     OptionSettings?: List<OptionSetting>;
     PlatformArn?: Value<string>;
     SolutionStackName?: Value<string>;

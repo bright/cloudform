@@ -7,6 +7,7 @@ export declare class DataLakePrincipal {
 export declare type Admins = List<DataLakePrincipal>;
 export interface DataLakeSettingsProperties {
     Admins?: Admins;
+    TrustedResourceOwners?: List<Value<string>>;
 }
 export default class DataLakeSettings extends ResourceBase<DataLakeSettingsProperties> {
     static DataLakePrincipal: typeof DataLakePrincipal;

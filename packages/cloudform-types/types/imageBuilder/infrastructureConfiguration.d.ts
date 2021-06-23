@@ -1,13 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class Logging {
+    S3Logs?: S3Logs;
+    constructor(properties: Logging);
+}
 export declare class S3Logs {
     S3BucketName?: Value<string>;
     S3KeyPrefix?: Value<string>;
     constructor(properties: S3Logs);
-}
-export declare class Logging {
-    S3Logs?: S3Logs;
-    constructor(properties: Logging);
 }
 export interface InfrastructureConfigurationProperties {
     Name: Value<string>;
@@ -28,7 +28,7 @@ export interface InfrastructureConfigurationProperties {
     };
 }
 export default class InfrastructureConfiguration extends ResourceBase<InfrastructureConfigurationProperties> {
-    static S3Logs: typeof S3Logs;
     static Logging: typeof Logging;
+    static S3Logs: typeof S3Logs;
     constructor(properties: InfrastructureConfigurationProperties);
 }

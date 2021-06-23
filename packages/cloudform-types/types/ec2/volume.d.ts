@@ -11,6 +11,7 @@ export interface VolumeProperties {
     Size?: Value<number>;
     SnapshotId?: Value<string>;
     Tags?: List<ResourceTag>;
+    Throughput?: Value<number>;
     VolumeType?: Value<string>;
 }
 export default class Volume extends ResourceBase<VolumeProperties> {

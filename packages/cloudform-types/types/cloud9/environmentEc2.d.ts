@@ -11,6 +11,7 @@ export interface EnvironmentEC2Properties {
     Description?: Value<string>;
     ConnectionType?: Value<string>;
     AutomaticStopTimeMinutes?: Value<number>;
+    ImageId?: Value<string>;
     SubnetId?: Value<string>;
     InstanceType: Value<string>;
     Tags?: List<ResourceTag>;

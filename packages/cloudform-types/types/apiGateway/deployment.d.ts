@@ -1,13 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class DeploymentCanarySettings {
-    PercentTraffic?: Value<number>;
-    StageVariableOverrides?: {
-        [key: string]: Value<string>;
-    };
-    UseStageCache?: Value<boolean>;
-    constructor(properties: DeploymentCanarySettings);
-}
 export declare class MethodSetting {
     CacheDataEncrypted?: Value<boolean>;
     CacheTtlInSeconds?: Value<number>;
@@ -20,6 +12,19 @@ export declare class MethodSetting {
     ThrottlingBurstLimit?: Value<number>;
     ThrottlingRateLimit?: Value<number>;
     constructor(properties: MethodSetting);
+}
+export declare class AccessLogSetting {
+    DestinationArn?: Value<string>;
+    Format?: Value<string>;
+    constructor(properties: AccessLogSetting);
+}
+export declare class DeploymentCanarySettings {
+    PercentTraffic?: Value<number>;
+    StageVariableOverrides?: {
+        [key: string]: Value<string>;
+    };
+    UseStageCache?: Value<boolean>;
+    constructor(properties: DeploymentCanarySettings);
 }
 export declare class StageDescription {
     AccessLogSetting?: AccessLogSetting;
@@ -53,11 +58,6 @@ export declare class CanarySetting {
     UseStageCache?: Value<boolean>;
     constructor(properties: CanarySetting);
 }
-export declare class AccessLogSetting {
-    DestinationArn?: Value<string>;
-    Format?: Value<string>;
-    constructor(properties: AccessLogSetting);
-}
 export interface DeploymentProperties {
     DeploymentCanarySettings?: DeploymentCanarySettings;
     Description?: Value<string>;
@@ -66,10 +66,10 @@ export interface DeploymentProperties {
     StageName?: Value<string>;
 }
 export default class Deployment extends ResourceBase<DeploymentProperties> {
-    static DeploymentCanarySettings: typeof DeploymentCanarySettings;
     static MethodSetting: typeof MethodSetting;
+    static AccessLogSetting: typeof AccessLogSetting;
+    static DeploymentCanarySettings: typeof DeploymentCanarySettings;
     static StageDescription: typeof StageDescription;
     static CanarySetting: typeof CanarySetting;
-    static AccessLogSetting: typeof AccessLogSetting;
     constructor(properties: DeploymentProperties);
 }

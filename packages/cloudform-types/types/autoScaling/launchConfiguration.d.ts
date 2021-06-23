@@ -7,11 +7,18 @@ export declare class BlockDeviceMapping {
     VirtualName?: Value<string>;
     constructor(properties: BlockDeviceMapping);
 }
+export declare class MetadataOptions {
+    HttpEndpoint?: Value<string>;
+    HttpPutResponseHopLimit?: Value<number>;
+    HttpTokens?: Value<string>;
+    constructor(properties: MetadataOptions);
+}
 export declare class BlockDevice {
     DeleteOnTermination?: Value<boolean>;
     Encrypted?: Value<boolean>;
     Iops?: Value<number>;
     SnapshotId?: Value<string>;
+    Throughput?: Value<number>;
     VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
     constructor(properties: BlockDevice);
@@ -30,6 +37,7 @@ export interface LaunchConfigurationProperties {
     KernelId?: Value<string>;
     KeyName?: Value<string>;
     LaunchConfigurationName?: Value<string>;
+    MetadataOptions?: MetadataOptions;
     PlacementTenancy?: Value<string>;
     RamDiskId?: Value<string>;
     SecurityGroups?: List<Value<string>>;
@@ -38,6 +46,7 @@ export interface LaunchConfigurationProperties {
 }
 export default class LaunchConfiguration extends ResourceBase<LaunchConfigurationProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
+    static MetadataOptions: typeof MetadataOptions;
     static BlockDevice: typeof BlockDevice;
     constructor(properties: LaunchConfigurationProperties);
 }

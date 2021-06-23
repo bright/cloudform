@@ -14,6 +14,7 @@ export interface SubscriptionProperties {
         [key: string]: any;
     };
     Region?: Value<string>;
+    SubscriptionRoleArn?: Value<string>;
     TopicArn: Value<string>;
 }
 export default class Subscription extends ResourceBase<SubscriptionProperties> {

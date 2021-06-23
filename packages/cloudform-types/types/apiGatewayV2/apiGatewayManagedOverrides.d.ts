@@ -1,5 +1,18 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class AccessLogSettings {
+    Format?: Value<string>;
+    DestinationArn?: Value<string>;
+    constructor(properties: AccessLogSettings);
+}
+export declare class RouteOverrides {
+    Target?: Value<string>;
+    AuthorizerId?: Value<string>;
+    OperationName?: Value<string>;
+    AuthorizationScopes?: List<Value<string>>;
+    AuthorizationType?: Value<string>;
+    constructor(properties: RouteOverrides);
+}
 export declare class StageOverrides {
     Description?: Value<string>;
     AccessLogSettings?: AccessLogSettings;
@@ -28,19 +41,6 @@ export declare class IntegrationOverrides {
     IntegrationMethod?: Value<string>;
     constructor(properties: IntegrationOverrides);
 }
-export declare class AccessLogSettings {
-    Format?: Value<string>;
-    DestinationArn?: Value<string>;
-    constructor(properties: AccessLogSettings);
-}
-export declare class RouteOverrides {
-    Target?: Value<string>;
-    AuthorizerId?: Value<string>;
-    OperationName?: Value<string>;
-    AuthorizationScopes?: List<Value<string>>;
-    AuthorizationType?: Value<string>;
-    constructor(properties: RouteOverrides);
-}
 export interface ApiGatewayManagedOverridesProperties {
     Integration?: IntegrationOverrides;
     Stage?: StageOverrides;
@@ -48,10 +48,10 @@ export interface ApiGatewayManagedOverridesProperties {
     Route?: RouteOverrides;
 }
 export default class ApiGatewayManagedOverrides extends ResourceBase<ApiGatewayManagedOverridesProperties> {
+    static AccessLogSettings: typeof AccessLogSettings;
+    static RouteOverrides: typeof RouteOverrides;
     static StageOverrides: typeof StageOverrides;
     static RouteSettings: typeof RouteSettings;
     static IntegrationOverrides: typeof IntegrationOverrides;
-    static AccessLogSettings: typeof AccessLogSettings;
-    static RouteOverrides: typeof RouteOverrides;
     constructor(properties: ApiGatewayManagedOverridesProperties);
 }

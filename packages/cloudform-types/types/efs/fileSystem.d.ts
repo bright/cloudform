@@ -1,9 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class BackupPolicy {
-    Status: Value<string>;
-    constructor(properties: BackupPolicy);
-}
 export declare class ElasticFileSystemTag {
     Key: Value<string>;
     Value: Value<string>;
@@ -12,6 +8,10 @@ export declare class ElasticFileSystemTag {
 export declare class LifecyclePolicy {
     TransitionToIA: Value<string>;
     constructor(properties: LifecyclePolicy);
+}
+export declare class BackupPolicy {
+    Status: Value<string>;
+    constructor(properties: BackupPolicy);
 }
 export interface FileSystemProperties {
     Encrypted?: Value<boolean>;
@@ -24,11 +24,13 @@ export interface FileSystemProperties {
     FileSystemPolicy?: {
         [key: string]: any;
     };
+    BypassPolicyLockoutSafetyCheck?: Value<boolean>;
     BackupPolicy?: BackupPolicy;
+    AvailabilityZoneName?: Value<string>;
 }
 export default class FileSystem extends ResourceBase<FileSystemProperties> {
-    static BackupPolicy: typeof BackupPolicy;
     static ElasticFileSystemTag: typeof ElasticFileSystemTag;
     static LifecyclePolicy: typeof LifecyclePolicy;
+    static BackupPolicy: typeof BackupPolicy;
     constructor(properties?: FileSystemProperties);
 }

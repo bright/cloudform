@@ -1,5 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class MetricPolicy {
+    ContainerLevelMetrics: Value<string>;
+    MetricPolicyRules?: List<MetricPolicyRule>;
+    constructor(properties: MetricPolicy);
+}
 export declare class MetricPolicyRule {
     ObjectGroup: Value<string>;
     ObjectGroupName: Value<string>;
@@ -13,11 +18,6 @@ export declare class CorsRule {
     AllowedHeaders?: List<Value<string>>;
     constructor(properties: CorsRule);
 }
-export declare class MetricPolicy {
-    ContainerLevelMetrics: Value<string>;
-    MetricPolicyRules?: List<MetricPolicyRule>;
-    constructor(properties: MetricPolicy);
-}
 export interface ContainerProperties {
     Policy?: Value<string>;
     MetricPolicy?: MetricPolicy;
@@ -28,8 +28,8 @@ export interface ContainerProperties {
     Tags?: List<ResourceTag>;
 }
 export default class Container extends ResourceBase<ContainerProperties> {
+    static MetricPolicy: typeof MetricPolicy;
     static MetricPolicyRule: typeof MetricPolicyRule;
     static CorsRule: typeof CorsRule;
-    static MetricPolicy: typeof MetricPolicy;
     constructor(properties: ContainerProperties);
 }

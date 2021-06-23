@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Targets {
-    Values?: List<Value<string>>;
+    Values: List<Value<string>>;
     Key: Value<string>;
     constructor(properties: Targets);
 }

@@ -8,6 +8,7 @@ export interface ScheduledActionProperties {
     MinSize?: Value<number>;
     Recurrence?: Value<string>;
     StartTime?: Value<string>;
+    TimeZone?: Value<string>;
 }
 export default class ScheduledAction extends ResourceBase<ScheduledActionProperties> {
     constructor(properties: ScheduledActionProperties);

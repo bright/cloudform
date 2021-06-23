@@ -9,7 +9,7 @@ export interface OrganizationConformancePackProperties {
     OrganizationConformancePackName: Value<string>;
     TemplateS3Uri?: Value<string>;
     TemplateBody?: Value<string>;
-    DeliveryS3Bucket: Value<string>;
+    DeliveryS3Bucket?: Value<string>;
     DeliveryS3KeyPrefix?: Value<string>;
     ConformancePackInputParameters?: List<ConformancePackInputParameter>;
     ExcludedAccounts?: List<Value<string>>;

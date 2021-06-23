@@ -1,5 +1,5 @@
-import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { ResourceBase, ResourceTag } from '../resource';
+import { Value, List } from '../dataTypes';
 export declare class GitConfig {
     SecretArn?: Value<string>;
     Branch?: Value<string>;
@@ -9,6 +9,7 @@ export declare class GitConfig {
 export interface CodeRepositoryProperties {
     CodeRepositoryName?: Value<string>;
     GitConfig: GitConfig;
+    Tags?: List<ResourceTag>;
 }
 export default class CodeRepository extends ResourceBase<CodeRepositoryProperties> {
     static GitConfig: typeof GitConfig;

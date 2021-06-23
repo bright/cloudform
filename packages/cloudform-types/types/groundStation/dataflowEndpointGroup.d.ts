@@ -1,10 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class EndpointDetails {
-    SecurityDetails?: SecurityDetails;
-    Endpoint?: DataflowEndpoint;
-    constructor(properties: EndpointDetails);
-}
 export declare class DataflowEndpoint {
     Name?: Value<string>;
     Address?: SocketAddress;
@@ -22,14 +17,19 @@ export declare class SocketAddress {
     Port?: Value<number>;
     constructor(properties: SocketAddress);
 }
+export declare class EndpointDetails {
+    SecurityDetails?: SecurityDetails;
+    Endpoint?: DataflowEndpoint;
+    constructor(properties: EndpointDetails);
+}
 export interface DataflowEndpointGroupProperties {
     EndpointDetails: List<EndpointDetails>;
     Tags?: List<ResourceTag>;
 }
 export default class DataflowEndpointGroup extends ResourceBase<DataflowEndpointGroupProperties> {
-    static EndpointDetails: typeof EndpointDetails;
     static DataflowEndpoint: typeof DataflowEndpoint;
     static SecurityDetails: typeof SecurityDetails;
     static SocketAddress: typeof SocketAddress;
+    static EndpointDetails: typeof EndpointDetails;
     constructor(properties: DataflowEndpointGroupProperties);
 }

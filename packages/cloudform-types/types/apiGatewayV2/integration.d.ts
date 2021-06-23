@@ -1,13 +1,25 @@
 import { ResourceBase } from '../resource';
-import { Value } from '../dataTypes';
+import { Value, List } from '../dataTypes';
+export declare class ResponseParameterList {
+    ResponseParameters?: List<ResponseParameter>;
+    constructor(properties: ResponseParameterList);
+}
 export declare class TlsConfig {
     ServerNameToVerify?: Value<string>;
     constructor(properties: TlsConfig);
+}
+export declare class ResponseParameter {
+    Destination: Value<string>;
+    Source: Value<string>;
+    constructor(properties: ResponseParameter);
 }
 export interface IntegrationProperties {
     Description?: Value<string>;
     TemplateSelectionExpression?: Value<string>;
     ConnectionType?: Value<string>;
+    ResponseParameters?: {
+        [key: string]: any;
+    };
     IntegrationMethod?: Value<string>;
     PassthroughBehavior?: Value<string>;
     RequestParameters?: {
@@ -23,10 +35,13 @@ export interface IntegrationProperties {
     TimeoutInMillis?: Value<number>;
     TlsConfig?: TlsConfig;
     ContentHandlingStrategy?: Value<string>;
+    IntegrationSubtype?: Value<string>;
     ApiId: Value<string>;
     IntegrationType: Value<string>;
 }
 export default class Integration extends ResourceBase<IntegrationProperties> {
+    static ResponseParameterList: typeof ResponseParameterList;
     static TlsConfig: typeof TlsConfig;
+    static ResponseParameter: typeof ResponseParameter;
     constructor(properties: IntegrationProperties);
 }

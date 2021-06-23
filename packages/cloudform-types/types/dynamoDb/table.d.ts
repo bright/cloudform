@@ -10,6 +10,32 @@ export declare class PointInTimeRecoverySpecification {
     PointInTimeRecoveryEnabled?: Value<boolean>;
     constructor(properties: PointInTimeRecoverySpecification);
 }
+export declare class KinesisStreamSpecification {
+    StreamArn: Value<string>;
+    constructor(properties: KinesisStreamSpecification);
+}
+export declare class AttributeDefinition {
+    AttributeName: Value<string>;
+    AttributeType: Value<string>;
+    constructor(properties: AttributeDefinition);
+}
+export declare class GlobalSecondaryIndex {
+    ContributorInsightsSpecification?: ContributorInsightsSpecification;
+    IndexName: Value<string>;
+    KeySchema: List<KeySchema>;
+    Projection: Projection;
+    ProvisionedThroughput?: ProvisionedThroughput;
+    constructor(properties: GlobalSecondaryIndex);
+}
+export declare class ContributorInsightsSpecification {
+    Enabled: Value<boolean>;
+    constructor(properties: ContributorInsightsSpecification);
+}
+export declare class KeySchema {
+    AttributeName: Value<string>;
+    KeyType: Value<string>;
+    constructor(properties: KeySchema);
+}
 export declare class SSESpecification {
     KMSMasterKeyId?: Value<string>;
     SSEEnabled: Value<boolean>;
@@ -21,27 +47,10 @@ export declare class TimeToLiveSpecification {
     Enabled: Value<boolean>;
     constructor(properties: TimeToLiveSpecification);
 }
-export declare class AttributeDefinition {
-    AttributeName: Value<string>;
-    AttributeType: Value<string>;
-    constructor(properties: AttributeDefinition);
-}
 export declare class ProvisionedThroughput {
     ReadCapacityUnits: Value<number>;
     WriteCapacityUnits: Value<number>;
     constructor(properties: ProvisionedThroughput);
-}
-export declare class GlobalSecondaryIndex {
-    IndexName: Value<string>;
-    KeySchema: List<KeySchema>;
-    Projection: Projection;
-    ProvisionedThroughput?: ProvisionedThroughput;
-    constructor(properties: GlobalSecondaryIndex);
-}
-export declare class KeySchema {
-    AttributeName: Value<string>;
-    KeyType: Value<string>;
-    constructor(properties: KeySchema);
 }
 export declare class Projection {
     NonKeyAttributes?: List<Value<string>>;
@@ -55,8 +64,10 @@ export declare class StreamSpecification {
 export interface TableProperties {
     AttributeDefinitions?: List<AttributeDefinition>;
     BillingMode?: Value<string>;
+    ContributorInsightsSpecification?: ContributorInsightsSpecification;
     GlobalSecondaryIndexes?: List<GlobalSecondaryIndex>;
     KeySchema: List<KeySchema>;
+    KinesisStreamSpecification?: KinesisStreamSpecification;
     LocalSecondaryIndexes?: List<LocalSecondaryIndex>;
     PointInTimeRecoverySpecification?: PointInTimeRecoverySpecification;
     ProvisionedThroughput?: ProvisionedThroughput;
@@ -69,12 +80,14 @@ export interface TableProperties {
 export default class Table extends ResourceBase<TableProperties> {
     static LocalSecondaryIndex: typeof LocalSecondaryIndex;
     static PointInTimeRecoverySpecification: typeof PointInTimeRecoverySpecification;
+    static KinesisStreamSpecification: typeof KinesisStreamSpecification;
+    static AttributeDefinition: typeof AttributeDefinition;
+    static GlobalSecondaryIndex: typeof GlobalSecondaryIndex;
+    static ContributorInsightsSpecification: typeof ContributorInsightsSpecification;
+    static KeySchema: typeof KeySchema;
     static SSESpecification: typeof SSESpecification;
     static TimeToLiveSpecification: typeof TimeToLiveSpecification;
-    static AttributeDefinition: typeof AttributeDefinition;
     static ProvisionedThroughput: typeof ProvisionedThroughput;
-    static GlobalSecondaryIndex: typeof GlobalSecondaryIndex;
-    static KeySchema: typeof KeySchema;
     static Projection: typeof Projection;
     static StreamSpecification: typeof StreamSpecification;
     constructor(properties: TableProperties);

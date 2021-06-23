@@ -1,8 +1,8 @@
 "use strict";
 /* Generated from:
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 16.2.0
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const resource_1 = require("../resource");
@@ -18,18 +18,6 @@ class Action {
     }
 }
 exports.Action = Action;
-class S3Action {
-    constructor(properties) {
-        Object.assign(this, properties);
-    }
-}
-exports.S3Action = S3Action;
-class WorkmailAction {
-    constructor(properties) {
-        Object.assign(this, properties);
-    }
-}
-exports.WorkmailAction = WorkmailAction;
 class StopAction {
     constructor(properties) {
         Object.assign(this, properties);
@@ -42,6 +30,18 @@ class SNSAction {
     }
 }
 exports.SNSAction = SNSAction;
+class S3Action {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.S3Action = S3Action;
+class WorkmailAction {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.WorkmailAction = WorkmailAction;
 class Rule {
     constructor(properties) {
         Object.assign(this, properties);
@@ -68,10 +68,10 @@ class ReceiptRule extends resource_1.ResourceBase {
 exports.default = ReceiptRule;
 ReceiptRule.BounceAction = BounceAction;
 ReceiptRule.Action = Action;
-ReceiptRule.S3Action = S3Action;
-ReceiptRule.WorkmailAction = WorkmailAction;
 ReceiptRule.StopAction = StopAction;
 ReceiptRule.SNSAction = SNSAction;
+ReceiptRule.S3Action = S3Action;
+ReceiptRule.WorkmailAction = WorkmailAction;
 ReceiptRule.Rule = Rule;
 ReceiptRule.LambdaAction = LambdaAction;
 ReceiptRule.AddHeaderAction = AddHeaderAction;

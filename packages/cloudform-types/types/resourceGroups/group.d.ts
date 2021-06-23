@@ -11,6 +11,16 @@ export declare class Query {
     TagFilters?: List<TagFilter>;
     constructor(properties: Query);
 }
+export declare class ConfigurationParameter {
+    Name?: Value<string>;
+    Values?: List<Value<string>>;
+    constructor(properties: ConfigurationParameter);
+}
+export declare class ConfigurationItem {
+    Type?: Value<string>;
+    Parameters?: List<ConfigurationParameter>;
+    constructor(properties: ConfigurationItem);
+}
 export declare class ResourceQuery {
     Type?: Value<string>;
     Query?: Query;
@@ -21,10 +31,14 @@ export interface GroupProperties {
     Description?: Value<string>;
     ResourceQuery?: ResourceQuery;
     Tags?: List<ResourceTag>;
+    Configuration?: List<ConfigurationItem>;
+    Resources?: List<Value<string>>;
 }
 export default class Group extends ResourceBase<GroupProperties> {
     static TagFilter: typeof TagFilter;
     static Query: typeof Query;
+    static ConfigurationParameter: typeof ConfigurationParameter;
+    static ConfigurationItem: typeof ConfigurationItem;
     static ResourceQuery: typeof ResourceQuery;
     constructor(properties: GroupProperties);
 }

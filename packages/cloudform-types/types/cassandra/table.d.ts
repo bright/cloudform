@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class BillingMode {
     Mode: Value<string>;
@@ -27,6 +27,8 @@ export interface TableProperties {
     PartitionKeyColumns: List<Column>;
     ClusteringKeyColumns?: List<ClusteringKeyColumn>;
     BillingMode?: BillingMode;
+    PointInTimeRecoveryEnabled?: Value<boolean>;
+    Tags?: List<ResourceTag>;
 }
 export default class Table extends ResourceBase<TableProperties> {
     static BillingMode: typeof BillingMode;

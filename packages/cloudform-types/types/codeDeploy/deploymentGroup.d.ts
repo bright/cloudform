@@ -1,31 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class S3Location {
-    Bucket: Value<string>;
-    BundleType?: Value<string>;
-    ETag?: Value<string>;
-    Key: Value<string>;
-    Version?: Value<string>;
-    constructor(properties: S3Location);
-}
-export declare class TagFilter {
-    Key?: Value<string>;
-    Type?: Value<string>;
-    Value?: Value<string>;
-    constructor(properties: TagFilter);
-}
-export declare class GitHubLocation {
-    CommitId: Value<string>;
-    Repository: Value<string>;
-    constructor(properties: GitHubLocation);
-}
 export declare class TargetGroupInfo {
     Name?: Value<string>;
     constructor(properties: TargetGroupInfo);
-}
-export declare class ELBInfo {
-    Name?: Value<string>;
-    constructor(properties: ELBInfo);
 }
 export declare class OnPremisesTagSetListObject {
     OnPremisesTagGroup?: List<TagFilter>;
@@ -36,10 +13,6 @@ export declare class DeploymentStyle {
     DeploymentType?: Value<string>;
     constructor(properties: DeploymentStyle);
 }
-export declare class Alarm {
-    Name?: Value<string>;
-    constructor(properties: Alarm);
-}
 export declare class EC2TagFilter {
     Key?: Value<string>;
     Type?: Value<string>;
@@ -49,12 +22,6 @@ export declare class EC2TagFilter {
 export declare class OnPremisesTagSet {
     OnPremisesTagSetList?: List<OnPremisesTagSetListObject>;
     constructor(properties: OnPremisesTagSet);
-}
-export declare class Deployment {
-    Description?: Value<string>;
-    IgnoreApplicationStopFailures?: Value<boolean>;
-    Revision: RevisionLocation;
-    constructor(properties: Deployment);
 }
 export declare class LoadBalancerInfo {
     ElbInfoList?: List<ELBInfo>;
@@ -88,6 +55,39 @@ export declare class AutoRollbackConfiguration {
     Events?: List<Value<string>>;
     constructor(properties: AutoRollbackConfiguration);
 }
+export declare class S3Location {
+    Bucket: Value<string>;
+    BundleType?: Value<string>;
+    ETag?: Value<string>;
+    Key: Value<string>;
+    Version?: Value<string>;
+    constructor(properties: S3Location);
+}
+export declare class TagFilter {
+    Key?: Value<string>;
+    Type?: Value<string>;
+    Value?: Value<string>;
+    constructor(properties: TagFilter);
+}
+export declare class GitHubLocation {
+    CommitId: Value<string>;
+    Repository: Value<string>;
+    constructor(properties: GitHubLocation);
+}
+export declare class ELBInfo {
+    Name?: Value<string>;
+    constructor(properties: ELBInfo);
+}
+export declare class Alarm {
+    Name?: Value<string>;
+    constructor(properties: Alarm);
+}
+export declare class Deployment {
+    Description?: Value<string>;
+    IgnoreApplicationStopFailures?: Value<boolean>;
+    Revision: RevisionLocation;
+    constructor(properties: Deployment);
+}
 export declare class EC2TagSetListObject {
     Ec2TagGroup?: List<EC2TagFilter>;
     constructor(properties: EC2TagSetListObject);
@@ -110,23 +110,23 @@ export interface DeploymentGroupProperties {
     TriggerConfigurations?: List<TriggerConfig>;
 }
 export default class DeploymentGroup extends ResourceBase<DeploymentGroupProperties> {
-    static S3Location: typeof S3Location;
-    static TagFilter: typeof TagFilter;
-    static GitHubLocation: typeof GitHubLocation;
     static TargetGroupInfo: typeof TargetGroupInfo;
-    static ELBInfo: typeof ELBInfo;
     static OnPremisesTagSetListObject: typeof OnPremisesTagSetListObject;
     static DeploymentStyle: typeof DeploymentStyle;
-    static Alarm: typeof Alarm;
     static EC2TagFilter: typeof EC2TagFilter;
     static OnPremisesTagSet: typeof OnPremisesTagSet;
-    static Deployment: typeof Deployment;
     static LoadBalancerInfo: typeof LoadBalancerInfo;
     static RevisionLocation: typeof RevisionLocation;
     static TriggerConfig: typeof TriggerConfig;
     static EC2TagSet: typeof EC2TagSet;
     static AlarmConfiguration: typeof AlarmConfiguration;
     static AutoRollbackConfiguration: typeof AutoRollbackConfiguration;
+    static S3Location: typeof S3Location;
+    static TagFilter: typeof TagFilter;
+    static GitHubLocation: typeof GitHubLocation;
+    static ELBInfo: typeof ELBInfo;
+    static Alarm: typeof Alarm;
+    static Deployment: typeof Deployment;
     static EC2TagSetListObject: typeof EC2TagSetListObject;
     constructor(properties: DeploymentGroupProperties);
 }

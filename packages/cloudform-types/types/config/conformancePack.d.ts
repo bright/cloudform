@@ -7,7 +7,7 @@ export declare class ConformancePackInputParameter {
 }
 export interface ConformancePackProperties {
     ConformancePackName: Value<string>;
-    DeliveryS3Bucket: Value<string>;
+    DeliveryS3Bucket?: Value<string>;
     DeliveryS3KeyPrefix?: Value<string>;
     TemplateBody?: Value<string>;
     TemplateS3Uri?: Value<string>;

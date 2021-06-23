@@ -7,20 +7,8 @@ export declare class WorkGroupConfigurationUpdates {
     RequesterPaysEnabled?: Value<boolean>;
     ResultConfigurationUpdates?: ResultConfigurationUpdates;
     RemoveBytesScannedCutoffPerQuery?: Value<boolean>;
+    EngineVersion?: EngineVersion;
     constructor(properties: WorkGroupConfigurationUpdates);
-}
-export declare class WorkGroupConfiguration {
-    BytesScannedCutoffPerQuery?: Value<number>;
-    EnforceWorkGroupConfiguration?: Value<boolean>;
-    PublishCloudWatchMetricsEnabled?: Value<boolean>;
-    RequesterPaysEnabled?: Value<boolean>;
-    ResultConfiguration?: ResultConfiguration;
-    constructor(properties: WorkGroupConfiguration);
-}
-export declare class EncryptionConfiguration {
-    EncryptionOption: Value<string>;
-    KmsKey?: Value<string>;
-    constructor(properties: EncryptionConfiguration);
 }
 export declare class ResultConfiguration {
     EncryptionConfiguration?: EncryptionConfiguration;
@@ -34,14 +22,29 @@ export declare class ResultConfigurationUpdates {
     RemoveOutputLocation?: Value<boolean>;
     constructor(properties: ResultConfigurationUpdates);
 }
-export declare class Tags {
-    Tags?: List<ResourceTag>;
-    constructor(properties: Tags);
+export declare class WorkGroupConfiguration {
+    BytesScannedCutoffPerQuery?: Value<number>;
+    EnforceWorkGroupConfiguration?: Value<boolean>;
+    PublishCloudWatchMetricsEnabled?: Value<boolean>;
+    RequesterPaysEnabled?: Value<boolean>;
+    ResultConfiguration?: ResultConfiguration;
+    EngineVersion?: EngineVersion;
+    constructor(properties: WorkGroupConfiguration);
+}
+export declare class EncryptionConfiguration {
+    EncryptionOption: Value<string>;
+    KmsKey?: Value<string>;
+    constructor(properties: EncryptionConfiguration);
+}
+export declare class EngineVersion {
+    SelectedEngineVersion?: Value<string>;
+    EffectiveEngineVersion?: Value<string>;
+    constructor(properties: EngineVersion);
 }
 export interface WorkGroupProperties {
     Name: Value<string>;
     Description?: Value<string>;
-    Tags?: Tags;
+    Tags?: List<ResourceTag>;
     WorkGroupConfiguration?: WorkGroupConfiguration;
     WorkGroupConfigurationUpdates?: WorkGroupConfigurationUpdates;
     State?: Value<string>;
@@ -49,10 +52,10 @@ export interface WorkGroupProperties {
 }
 export default class WorkGroup extends ResourceBase<WorkGroupProperties> {
     static WorkGroupConfigurationUpdates: typeof WorkGroupConfigurationUpdates;
-    static WorkGroupConfiguration: typeof WorkGroupConfiguration;
-    static EncryptionConfiguration: typeof EncryptionConfiguration;
     static ResultConfiguration: typeof ResultConfiguration;
     static ResultConfigurationUpdates: typeof ResultConfigurationUpdates;
-    static Tags: typeof Tags;
+    static WorkGroupConfiguration: typeof WorkGroupConfiguration;
+    static EncryptionConfiguration: typeof EncryptionConfiguration;
+    static EngineVersion: typeof EngineVersion;
     constructor(properties: WorkGroupProperties);
 }

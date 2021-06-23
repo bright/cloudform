@@ -1,10 +1,16 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class DBClusterRole {
+    RoleArn: Value<string>;
+    FeatureName?: Value<string>;
+    constructor(properties: DBClusterRole);
+}
 export interface DBClusterProperties {
     StorageEncrypted?: Value<boolean>;
     RestoreToTime?: Value<string>;
     EngineVersion?: Value<string>;
     KmsKeyId?: Value<string>;
+    AssociatedRoles?: List<DBClusterRole>;
     AvailabilityZones?: List<Value<string>>;
     SnapshotIdentifier?: Value<string>;
     Port?: Value<number>;
@@ -24,5 +30,6 @@ export interface DBClusterProperties {
     EnableCloudwatchLogsExports?: List<Value<string>>;
 }
 export default class DBCluster extends ResourceBase<DBClusterProperties> {
+    static DBClusterRole: typeof DBClusterRole;
     constructor(properties?: DBClusterProperties);
 }

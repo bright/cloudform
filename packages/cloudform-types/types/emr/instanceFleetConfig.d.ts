@@ -1,22 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class SpotProvisioningSpecification {
-    BlockDurationMinutes?: Value<number>;
-    TimeoutAction: Value<string>;
-    TimeoutDurationMinutes: Value<number>;
-    constructor(properties: SpotProvisioningSpecification);
-}
-export declare class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
-    EbsOptimized?: Value<boolean>;
-    constructor(properties: EbsConfiguration);
-}
-export declare class VolumeSpecification {
-    Iops?: Value<number>;
-    SizeInGB: Value<number>;
-    VolumeType: Value<string>;
-    constructor(properties: VolumeSpecification);
-}
 export declare class Configuration {
     Classification?: Value<string>;
     ConfigurationProperties?: {
@@ -34,8 +17,31 @@ export declare class InstanceTypeConfig {
     WeightedCapacity?: Value<number>;
     constructor(properties: InstanceTypeConfig);
 }
+export declare class SpotProvisioningSpecification {
+    AllocationStrategy?: Value<string>;
+    BlockDurationMinutes?: Value<number>;
+    TimeoutAction: Value<string>;
+    TimeoutDurationMinutes: Value<number>;
+    constructor(properties: SpotProvisioningSpecification);
+}
+export declare class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
+    EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
+}
+export declare class OnDemandProvisioningSpecification {
+    AllocationStrategy: Value<string>;
+    constructor(properties: OnDemandProvisioningSpecification);
+}
+export declare class VolumeSpecification {
+    Iops?: Value<number>;
+    SizeInGB: Value<number>;
+    VolumeType: Value<string>;
+    constructor(properties: VolumeSpecification);
+}
 export declare class InstanceFleetProvisioningSpecifications {
-    SpotSpecification: SpotProvisioningSpecification;
+    OnDemandSpecification?: OnDemandProvisioningSpecification;
+    SpotSpecification?: SpotProvisioningSpecification;
     constructor(properties: InstanceFleetProvisioningSpecifications);
 }
 export declare class EbsBlockDeviceConfig {
@@ -53,11 +59,12 @@ export interface InstanceFleetConfigProperties {
     TargetSpotCapacity?: Value<number>;
 }
 export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfigProperties> {
-    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
-    static EbsConfiguration: typeof EbsConfiguration;
-    static VolumeSpecification: typeof VolumeSpecification;
     static Configuration: typeof Configuration;
     static InstanceTypeConfig: typeof InstanceTypeConfig;
+    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
+    static EbsConfiguration: typeof EbsConfiguration;
+    static OnDemandProvisioningSpecification: typeof OnDemandProvisioningSpecification;
+    static VolumeSpecification: typeof VolumeSpecification;
     static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
     constructor(properties: InstanceFleetConfigProperties);

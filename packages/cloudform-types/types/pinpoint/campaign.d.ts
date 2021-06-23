@@ -5,6 +5,58 @@ export declare class MetricDimension {
     Value?: Value<number>;
     constructor(properties: MetricDimension);
 }
+export declare class Schedule {
+    TimeZone?: Value<string>;
+    QuietTime?: QuietTime;
+    EndTime?: Value<string>;
+    StartTime?: Value<string>;
+    Frequency?: Value<string>;
+    EventFilter?: CampaignEventFilter;
+    IsLocalTime?: Value<boolean>;
+    constructor(properties: Schedule);
+}
+export declare class QuietTime {
+    Start: Value<string>;
+    End: Value<string>;
+    constructor(properties: QuietTime);
+}
+export declare class Message {
+    JsonBody?: Value<string>;
+    Action?: Value<string>;
+    MediaUrl?: Value<string>;
+    TimeToLive?: Value<number>;
+    ImageSmallIconUrl?: Value<string>;
+    ImageUrl?: Value<string>;
+    Title?: Value<string>;
+    ImageIconUrl?: Value<string>;
+    SilentPush?: Value<boolean>;
+    Body?: Value<string>;
+    RawContent?: Value<string>;
+    Url?: Value<string>;
+    constructor(properties: Message);
+}
+export declare class CampaignEventFilter {
+    FilterType?: Value<string>;
+    Dimensions?: EventDimensions;
+    constructor(properties: CampaignEventFilter);
+}
+export declare class CampaignSmsMessage {
+    EntityId?: Value<string>;
+    OriginationNumber?: Value<string>;
+    SenderId?: Value<string>;
+    Body?: Value<string>;
+    MessageType?: Value<string>;
+    TemplateId?: Value<string>;
+    constructor(properties: CampaignSmsMessage);
+}
+export declare class WriteTreatmentResource {
+    TreatmentDescription?: Value<string>;
+    MessageConfiguration?: MessageConfiguration;
+    Schedule?: Schedule;
+    SizePercent?: Value<number>;
+    TreatmentName?: Value<string>;
+    constructor(properties: WriteTreatmentResource);
+}
 export declare class SetDimension {
     DimensionType?: Value<string>;
     Values?: List<Value<string>>;
@@ -19,16 +71,6 @@ export declare class EventDimensions {
         [key: string]: any;
     };
     constructor(properties: EventDimensions);
-}
-export declare class Schedule {
-    TimeZone?: Value<string>;
-    QuietTime?: QuietTime;
-    EndTime?: Value<string>;
-    StartTime?: Value<string>;
-    Frequency?: Value<string>;
-    EventFilter?: CampaignEventFilter;
-    IsLocalTime?: Value<boolean>;
-    constructor(properties: Schedule);
 }
 export declare class Limits {
     Daily?: Value<number>;
@@ -52,42 +94,11 @@ export declare class MessageConfiguration {
     ADMMessage?: Message;
     constructor(properties: MessageConfiguration);
 }
-export declare class QuietTime {
-    Start: Value<string>;
-    End: Value<string>;
-    constructor(properties: QuietTime);
-}
 export declare class CampaignHook {
     Mode?: Value<string>;
     WebUrl?: Value<string>;
     LambdaFunctionName?: Value<string>;
     constructor(properties: CampaignHook);
-}
-export declare class Message {
-    JsonBody?: Value<string>;
-    Action?: Value<string>;
-    MediaUrl?: Value<string>;
-    TimeToLive?: Value<number>;
-    ImageSmallIconUrl?: Value<string>;
-    ImageUrl?: Value<string>;
-    Title?: Value<string>;
-    ImageIconUrl?: Value<string>;
-    SilentPush?: Value<boolean>;
-    Body?: Value<string>;
-    RawContent?: Value<string>;
-    Url?: Value<string>;
-    constructor(properties: Message);
-}
-export declare class CampaignEventFilter {
-    FilterType?: Value<string>;
-    Dimensions?: EventDimensions;
-    constructor(properties: CampaignEventFilter);
-}
-export declare class CampaignSmsMessage {
-    SenderId?: Value<string>;
-    Body?: Value<string>;
-    MessageType?: Value<string>;
-    constructor(properties: CampaignSmsMessage);
 }
 export declare class CampaignEmailMessage {
     FromAddress?: Value<string>;
@@ -95,14 +106,6 @@ export declare class CampaignEmailMessage {
     Title?: Value<string>;
     Body?: Value<string>;
     constructor(properties: CampaignEmailMessage);
-}
-export declare class WriteTreatmentResource {
-    TreatmentDescription?: Value<string>;
-    MessageConfiguration?: MessageConfiguration;
-    Schedule?: Schedule;
-    SizePercent?: Value<number>;
-    TreatmentName?: Value<string>;
-    constructor(properties: WriteTreatmentResource);
 }
 export interface CampaignProperties {
     Description?: Value<string>;
@@ -125,18 +128,18 @@ export interface CampaignProperties {
 }
 export default class Campaign extends ResourceBase<CampaignProperties> {
     static MetricDimension: typeof MetricDimension;
-    static SetDimension: typeof SetDimension;
-    static EventDimensions: typeof EventDimensions;
     static Schedule: typeof Schedule;
-    static Limits: typeof Limits;
-    static AttributeDimension: typeof AttributeDimension;
-    static MessageConfiguration: typeof MessageConfiguration;
     static QuietTime: typeof QuietTime;
-    static CampaignHook: typeof CampaignHook;
     static Message: typeof Message;
     static CampaignEventFilter: typeof CampaignEventFilter;
     static CampaignSmsMessage: typeof CampaignSmsMessage;
-    static CampaignEmailMessage: typeof CampaignEmailMessage;
     static WriteTreatmentResource: typeof WriteTreatmentResource;
+    static SetDimension: typeof SetDimension;
+    static EventDimensions: typeof EventDimensions;
+    static Limits: typeof Limits;
+    static AttributeDimension: typeof AttributeDimension;
+    static MessageConfiguration: typeof MessageConfiguration;
+    static CampaignHook: typeof CampaignHook;
+    static CampaignEmailMessage: typeof CampaignEmailMessage;
     constructor(properties: CampaignProperties);
 }

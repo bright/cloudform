@@ -1,5 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
+export declare class MaxAgeRule {
+    DeleteSourceFromS3?: Value<boolean>;
+    Enabled?: Value<boolean>;
+    MaxAgeInDays?: Value<number>;
+    constructor(properties: MaxAgeRule);
+}
 export declare class ApplicationResourceLifecycleConfig {
     ServiceRole?: Value<string>;
     VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
@@ -9,12 +15,6 @@ export declare class ApplicationVersionLifecycleConfig {
     MaxAgeRule?: MaxAgeRule;
     MaxCountRule?: MaxCountRule;
     constructor(properties: ApplicationVersionLifecycleConfig);
-}
-export declare class MaxAgeRule {
-    DeleteSourceFromS3?: Value<boolean>;
-    Enabled?: Value<boolean>;
-    MaxAgeInDays?: Value<number>;
-    constructor(properties: MaxAgeRule);
 }
 export declare class MaxCountRule {
     DeleteSourceFromS3?: Value<boolean>;
@@ -28,9 +28,9 @@ export interface ApplicationProperties {
     ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
 }
 export default class Application extends ResourceBase<ApplicationProperties> {
+    static MaxAgeRule: typeof MaxAgeRule;
     static ApplicationResourceLifecycleConfig: typeof ApplicationResourceLifecycleConfig;
     static ApplicationVersionLifecycleConfig: typeof ApplicationVersionLifecycleConfig;
-    static MaxAgeRule: typeof MaxAgeRule;
     static MaxCountRule: typeof MaxCountRule;
     constructor(properties?: ApplicationProperties);
 }

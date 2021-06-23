@@ -28,6 +28,7 @@ export interface DBClusterProperties {
     Engine: Value<string>;
     EngineMode?: Value<string>;
     EngineVersion?: Value<string>;
+    GlobalClusterIdentifier?: Value<string>;
     KmsKeyId?: Value<string>;
     MasterUserPassword?: Value<string>;
     MasterUsername?: Value<string>;

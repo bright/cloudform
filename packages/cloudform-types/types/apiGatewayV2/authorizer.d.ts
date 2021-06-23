@@ -12,7 +12,9 @@ export interface AuthorizerProperties {
     AuthorizerType: Value<string>;
     JwtConfiguration?: JWTConfiguration;
     AuthorizerResultTtlInSeconds?: Value<number>;
-    IdentitySource: List<Value<string>>;
+    IdentitySource?: List<Value<string>>;
+    AuthorizerPayloadFormatVersion?: Value<string>;
+    EnableSimpleResponses?: Value<boolean>;
     ApiId: Value<string>;
     Name: Value<string>;
 }

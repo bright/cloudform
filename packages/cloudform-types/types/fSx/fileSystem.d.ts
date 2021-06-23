@@ -1,8 +1,11 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LustreConfiguration {
+    DataCompressionType?: Value<string>;
+    DriveCacheType?: Value<string>;
     ImportPath?: Value<string>;
     WeeklyMaintenanceStartTime?: Value<string>;
+    AutoImportPolicy?: Value<string>;
     ImportedFileChunkSize?: Value<number>;
     DeploymentType?: Value<string>;
     DailyAutomaticBackupStartTime?: Value<string>;
@@ -10,7 +13,6 @@ export declare class LustreConfiguration {
     ExportPath?: Value<string>;
     PerUnitStorageThroughput?: Value<number>;
     AutomaticBackupRetentionDays?: Value<number>;
-    AutoImportPolicy?: Value<string>;
     constructor(properties: LustreConfiguration);
 }
 export declare class SelfManagedActiveDirectoryConfiguration {
@@ -27,7 +29,8 @@ export declare class WindowsConfiguration {
     WeeklyMaintenanceStartTime?: Value<string>;
     ActiveDirectoryId?: Value<string>;
     DeploymentType?: Value<string>;
-    ThroughputCapacity?: Value<number>;
+    Aliases?: List<Value<string>>;
+    ThroughputCapacity: Value<number>;
     CopyTagsToBackups?: Value<boolean>;
     DailyAutomaticBackupStartTime?: Value<string>;
     AutomaticBackupRetentionDays?: Value<number>;

@@ -14,12 +14,12 @@ export declare class AccountAggregationSource {
 }
 export interface ConfigurationAggregatorProperties {
     AccountAggregationSources?: List<AccountAggregationSource>;
-    ConfigurationAggregatorName: Value<string>;
+    ConfigurationAggregatorName?: Value<string>;
     OrganizationAggregationSource?: OrganizationAggregationSource;
     Tags?: List<ResourceTag>;
 }
 export default class ConfigurationAggregator extends ResourceBase<ConfigurationAggregatorProperties> {
     static OrganizationAggregationSource: typeof OrganizationAggregationSource;
     static AccountAggregationSource: typeof AccountAggregationSource;
-    constructor(properties: ConfigurationAggregatorProperties);
+    constructor(properties?: ConfigurationAggregatorProperties);
 }

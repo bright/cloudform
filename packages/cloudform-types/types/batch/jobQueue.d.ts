@@ -10,6 +10,9 @@ export interface JobQueueProperties {
     Priority: Value<number>;
     State?: Value<string>;
     JobQueueName?: Value<string>;
+    Tags?: {
+        [key: string]: any;
+    };
 }
 export default class JobQueue extends ResourceBase<JobQueueProperties> {
     static ComputeEnvironmentOrder: typeof ComputeEnvironmentOrder;

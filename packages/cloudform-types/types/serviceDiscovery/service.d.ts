@@ -1,19 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class HealthCheckCustomConfig {
-    FailureThreshold?: Value<number>;
-    constructor(properties: HealthCheckCustomConfig);
-}
 export declare class DnsConfig {
     DnsRecords: List<DnsRecord>;
     RoutingPolicy?: Value<string>;
     NamespaceId?: Value<string>;
     constructor(properties: DnsConfig);
-}
-export declare class DnsRecord {
-    Type: Value<string>;
-    TTL: Value<number>;
-    constructor(properties: DnsRecord);
 }
 export declare class HealthCheckConfig {
     Type: Value<string>;
@@ -21,7 +12,17 @@ export declare class HealthCheckConfig {
     FailureThreshold?: Value<number>;
     constructor(properties: HealthCheckConfig);
 }
+export declare class HealthCheckCustomConfig {
+    FailureThreshold?: Value<number>;
+    constructor(properties: HealthCheckCustomConfig);
+}
+export declare class DnsRecord {
+    Type: Value<string>;
+    TTL: Value<number>;
+    constructor(properties: DnsRecord);
+}
 export interface ServiceProperties {
+    Type?: Value<string>;
     Description?: Value<string>;
     HealthCheckCustomConfig?: HealthCheckCustomConfig;
     DnsConfig?: DnsConfig;
@@ -31,9 +32,9 @@ export interface ServiceProperties {
     Name?: Value<string>;
 }
 export default class Service extends ResourceBase<ServiceProperties> {
-    static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;
     static DnsConfig: typeof DnsConfig;
-    static DnsRecord: typeof DnsRecord;
     static HealthCheckConfig: typeof HealthCheckConfig;
+    static HealthCheckCustomConfig: typeof HealthCheckCustomConfig;
+    static DnsRecord: typeof DnsRecord;
     constructor(properties?: ServiceProperties);
 }

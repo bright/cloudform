@@ -1,5 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class GeoLocation {
+    ContinentCode?: Value<string>;
+    CountryCode?: Value<string>;
+    SubdivisionCode?: Value<string>;
+    constructor(properties: GeoLocation);
+}
 export declare class RecordSet {
     AliasTarget?: AliasTarget;
     Comment?: Value<string>;
@@ -24,12 +30,6 @@ export declare class AliasTarget {
     HostedZoneId: Value<string>;
     constructor(properties: AliasTarget);
 }
-export declare class GeoLocation {
-    ContinentCode?: Value<string>;
-    CountryCode?: Value<string>;
-    SubdivisionCode?: Value<string>;
-    constructor(properties: GeoLocation);
-}
 export interface RecordSetGroupProperties {
     Comment?: Value<string>;
     HostedZoneId?: Value<string>;
@@ -37,8 +37,8 @@ export interface RecordSetGroupProperties {
     RecordSets?: List<RecordSet>;
 }
 export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {
+    static GeoLocation: typeof GeoLocation;
     static RecordSet: typeof RecordSet;
     static AliasTarget: typeof AliasTarget;
-    static GeoLocation: typeof GeoLocation;
     constructor(properties?: RecordSetGroupProperties);
 }

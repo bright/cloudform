@@ -1,21 +1,14 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class RuleAction {
-    Allow?: {
-        [key: string]: any;
-    };
-    Block?: {
-        [key: string]: any;
-    };
-    Count?: {
-        [key: string]: any;
-    };
-    constructor(properties: RuleAction);
+export declare class CustomRequestHandling {
+    InsertHeaders: List<CustomHTTPHeader>;
+    constructor(properties: CustomRequestHandling);
 }
 export declare class ManagedRuleGroupStatement {
     Name: Value<string>;
     VendorName: Value<string>;
     ExcludedRules?: List<ExcludedRule>;
+    ScopeDownStatement?: Statement;
     constructor(properties: ManagedRuleGroupStatement);
 }
 export declare class TextTransformation {
@@ -23,39 +16,19 @@ export declare class TextTransformation {
     Type: Value<string>;
     constructor(properties: TextTransformation);
 }
-export declare class DefaultAction {
-    Allow?: {
-        [key: string]: any;
-    };
-    Block?: {
-        [key: string]: any;
-    };
-    constructor(properties: DefaultAction);
+export declare class AllowAction {
+    CustomRequestHandling?: CustomRequestHandling;
+    constructor(properties: AllowAction);
 }
-export declare class OrStatementTwo {
-    Statements: List<StatementThree>;
-    constructor(properties: OrStatementTwo);
+export declare class DefaultAction {
+    Allow?: AllowAction;
+    Block?: BlockAction;
+    constructor(properties: DefaultAction);
 }
 export declare class XssMatchStatement {
     FieldToMatch: FieldToMatch;
     TextTransformations: List<TextTransformation>;
     constructor(properties: XssMatchStatement);
-}
-export declare class StatementOne {
-    ByteMatchStatement?: ByteMatchStatement;
-    SqliMatchStatement?: SqliMatchStatement;
-    XssMatchStatement?: XssMatchStatement;
-    SizeConstraintStatement?: SizeConstraintStatement;
-    GeoMatchStatement?: GeoMatchStatement;
-    RuleGroupReferenceStatement?: RuleGroupReferenceStatement;
-    IPSetReferenceStatement?: IPSetReferenceStatement;
-    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement;
-    ManagedRuleGroupStatement?: ManagedRuleGroupStatement;
-    RateBasedStatement?: RateBasedStatementOne;
-    AndStatement?: AndStatementOne;
-    OrStatement?: OrStatementOne;
-    NotStatement?: NotStatementOne;
-    constructor(properties: StatementOne);
 }
 export declare class ByteMatchStatement {
     SearchString?: Value<string>;
@@ -65,34 +38,23 @@ export declare class ByteMatchStatement {
     PositionalConstraint: Value<string>;
     constructor(properties: ByteMatchStatement);
 }
-export declare class NotStatementTwo {
-    Statement: StatementThree;
-    constructor(properties: NotStatementTwo);
-}
-export declare class OverrideAction {
-    Count?: {
-        [key: string]: any;
-    };
-    None?: {
-        [key: string]: any;
-    };
-    constructor(properties: OverrideAction);
-}
-export declare class RateBasedStatementTwo {
-    Limit: Value<number>;
-    AggregateKeyType: Value<string>;
-    ScopeDownStatement?: StatementThree;
-    ForwardedIPConfig?: ForwardedIPConfiguration;
-    constructor(properties: RateBasedStatementTwo);
-}
 export declare class ForwardedIPConfiguration {
     HeaderName: Value<string>;
     FallbackBehavior: Value<string>;
     constructor(properties: ForwardedIPConfiguration);
 }
-export declare class AndStatementTwo {
-    Statements: List<StatementThree>;
-    constructor(properties: AndStatementTwo);
+export declare class OrStatement {
+    Statements: List<Statement>;
+    constructor(properties: OrStatement);
+}
+export declare class Label {
+    Name: Value<string>;
+    constructor(properties: Label);
+}
+export declare class CustomHTTPHeader {
+    Name: Value<string>;
+    Value: Value<string>;
+    constructor(properties: CustomHTTPHeader);
 }
 export declare class RegexPatternSetReferenceStatement {
     Arn: Value<string>;
@@ -106,25 +68,12 @@ export declare class IPSetForwardedIPConfiguration {
     Position: Value<string>;
     constructor(properties: IPSetForwardedIPConfiguration);
 }
-export declare class Rule {
-    Name: Value<string>;
-    Priority: Value<number>;
-    Statement: StatementOne;
-    Action?: RuleAction;
-    OverrideAction?: OverrideAction;
-    VisibilityConfig: VisibilityConfig;
-    constructor(properties: Rule);
+export declare class CustomResponseBody {
+    ContentType: Value<string>;
+    Content: Value<string>;
+    constructor(properties: CustomResponseBody);
 }
-export declare class OrStatementOne {
-    Statements: List<StatementTwo>;
-    constructor(properties: OrStatementOne);
-}
-export declare class RuleGroupReferenceStatement {
-    Arn: Value<string>;
-    ExcludedRules?: List<ExcludedRule>;
-    constructor(properties: RuleGroupReferenceStatement);
-}
-export declare class StatementTwo {
+export declare class Statement {
     ByteMatchStatement?: ByteMatchStatement;
     SqliMatchStatement?: SqliMatchStatement;
     XssMatchStatement?: XssMatchStatement;
@@ -134,32 +83,41 @@ export declare class StatementTwo {
     IPSetReferenceStatement?: IPSetReferenceStatement;
     RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement;
     ManagedRuleGroupStatement?: ManagedRuleGroupStatement;
-    RateBasedStatement?: RateBasedStatementTwo;
-    AndStatement?: AndStatementTwo;
-    OrStatement?: OrStatementTwo;
-    NotStatement?: NotStatementTwo;
-    constructor(properties: StatementTwo);
+    RateBasedStatement?: RateBasedStatement;
+    AndStatement?: AndStatement;
+    OrStatement?: OrStatement;
+    NotStatement?: NotStatement;
+    LabelMatchStatement?: LabelMatchStatement;
+    constructor(properties: Statement);
 }
-export declare class NotStatementOne {
-    Statement: StatementTwo;
-    constructor(properties: NotStatementOne);
+export declare class BlockAction {
+    CustomResponse?: CustomResponse;
+    constructor(properties: BlockAction);
 }
-export declare class RateBasedStatementOne {
-    Limit: Value<number>;
-    AggregateKeyType: Value<string>;
-    ScopeDownStatement?: StatementTwo;
-    ForwardedIPConfig?: ForwardedIPConfiguration;
-    constructor(properties: RateBasedStatementOne);
+export declare class RuleGroupReferenceStatement {
+    Arn: Value<string>;
+    ExcludedRules?: List<ExcludedRule>;
+    constructor(properties: RuleGroupReferenceStatement);
 }
-export declare class ExcludedRule {
-    Name: Value<string>;
-    constructor(properties: ExcludedRule);
+export declare class LabelMatchStatement {
+    Scope: Value<string>;
+    Key: Value<string>;
+    constructor(properties: LabelMatchStatement);
 }
-export declare class VisibilityConfig {
-    SampledRequestsEnabled: Value<boolean>;
-    CloudWatchMetricsEnabled: Value<boolean>;
-    MetricName: Value<string>;
-    constructor(properties: VisibilityConfig);
+export declare class JsonMatchPattern {
+    All?: {
+        [key: string]: any;
+    };
+    IncludedPaths?: List<Value<string>>;
+    constructor(properties: JsonMatchPattern);
+}
+export declare class AndStatement {
+    Statements: List<Statement>;
+    constructor(properties: AndStatement);
+}
+export declare class CountAction {
+    CustomRequestHandling?: CustomRequestHandling;
+    constructor(properties: CountAction);
 }
 export declare class SizeConstraintStatement {
     FieldToMatch: FieldToMatch;
@@ -190,6 +148,7 @@ export declare class FieldToMatch {
     Method?: {
         [key: string]: any;
     };
+    JsonBody?: JsonBody;
     constructor(properties: FieldToMatch);
 }
 export declare class SqliMatchStatement {
@@ -202,26 +161,68 @@ export declare class GeoMatchStatement {
     ForwardedIPConfig?: ForwardedIPConfiguration;
     constructor(properties: GeoMatchStatement);
 }
+export declare class RuleAction {
+    Allow?: AllowAction;
+    Block?: BlockAction;
+    Count?: CountAction;
+    constructor(properties: RuleAction);
+}
+export declare class JsonBody {
+    MatchPattern: JsonMatchPattern;
+    MatchScope: Value<string>;
+    InvalidFallbackBehavior?: Value<string>;
+    constructor(properties: JsonBody);
+}
+export declare class NotStatement {
+    Statement: Statement;
+    constructor(properties: NotStatement);
+}
+export declare class OverrideAction {
+    Count?: {
+        [key: string]: any;
+    };
+    None?: {
+        [key: string]: any;
+    };
+    constructor(properties: OverrideAction);
+}
+export declare class Rule {
+    Name: Value<string>;
+    Priority: Value<number>;
+    Statement: Statement;
+    Action?: RuleAction;
+    OverrideAction?: OverrideAction;
+    RuleLabels?: List<Label>;
+    VisibilityConfig: VisibilityConfig;
+    constructor(properties: Rule);
+}
+export declare class CustomResponse {
+    ResponseCode: Value<number>;
+    CustomResponseBodyKey?: Value<string>;
+    ResponseHeaders?: List<CustomHTTPHeader>;
+    constructor(properties: CustomResponse);
+}
+export declare class RateBasedStatement {
+    Limit: Value<number>;
+    AggregateKeyType: Value<string>;
+    ScopeDownStatement?: Statement;
+    ForwardedIPConfig?: ForwardedIPConfiguration;
+    constructor(properties: RateBasedStatement);
+}
+export declare class ExcludedRule {
+    Name: Value<string>;
+    constructor(properties: ExcludedRule);
+}
+export declare class VisibilityConfig {
+    SampledRequestsEnabled: Value<boolean>;
+    CloudWatchMetricsEnabled: Value<boolean>;
+    MetricName: Value<string>;
+    constructor(properties: VisibilityConfig);
+}
 export declare class IPSetReferenceStatement {
     Arn: Value<string>;
     IPSetForwardedIPConfig?: IPSetForwardedIPConfiguration;
     constructor(properties: IPSetReferenceStatement);
-}
-export declare class AndStatementOne {
-    Statements: List<StatementTwo>;
-    constructor(properties: AndStatementOne);
-}
-export declare class StatementThree {
-    ByteMatchStatement?: ByteMatchStatement;
-    SqliMatchStatement?: SqliMatchStatement;
-    XssMatchStatement?: XssMatchStatement;
-    SizeConstraintStatement?: SizeConstraintStatement;
-    GeoMatchStatement?: GeoMatchStatement;
-    RuleGroupReferenceStatement?: RuleGroupReferenceStatement;
-    IPSetReferenceStatement?: IPSetReferenceStatement;
-    RegexPatternSetReferenceStatement?: RegexPatternSetReferenceStatement;
-    ManagedRuleGroupStatement?: ManagedRuleGroupStatement;
-    constructor(properties: StatementThree);
 }
 export interface WebACLProperties {
     DefaultAction: DefaultAction;
@@ -231,37 +232,45 @@ export interface WebACLProperties {
     Rules?: List<Rule>;
     VisibilityConfig: VisibilityConfig;
     Tags?: List<ResourceTag>;
+    CustomResponseBodies?: {
+        [key: string]: CustomResponseBody;
+    };
 }
 export default class WebACL extends ResourceBase<WebACLProperties> {
-    static RuleAction: typeof RuleAction;
+    static CustomRequestHandling: typeof CustomRequestHandling;
     static ManagedRuleGroupStatement: typeof ManagedRuleGroupStatement;
     static TextTransformation: typeof TextTransformation;
+    static AllowAction: typeof AllowAction;
     static DefaultAction: typeof DefaultAction;
-    static OrStatementTwo: typeof OrStatementTwo;
     static XssMatchStatement: typeof XssMatchStatement;
-    static StatementOne: typeof StatementOne;
     static ByteMatchStatement: typeof ByteMatchStatement;
-    static NotStatementTwo: typeof NotStatementTwo;
-    static OverrideAction: typeof OverrideAction;
-    static RateBasedStatementTwo: typeof RateBasedStatementTwo;
     static ForwardedIPConfiguration: typeof ForwardedIPConfiguration;
-    static AndStatementTwo: typeof AndStatementTwo;
+    static OrStatement: typeof OrStatement;
+    static Label: typeof Label;
+    static CustomHTTPHeader: typeof CustomHTTPHeader;
     static RegexPatternSetReferenceStatement: typeof RegexPatternSetReferenceStatement;
     static IPSetForwardedIPConfiguration: typeof IPSetForwardedIPConfiguration;
-    static Rule: typeof Rule;
-    static OrStatementOne: typeof OrStatementOne;
+    static CustomResponseBody: typeof CustomResponseBody;
+    static Statement: typeof Statement;
+    static BlockAction: typeof BlockAction;
     static RuleGroupReferenceStatement: typeof RuleGroupReferenceStatement;
-    static StatementTwo: typeof StatementTwo;
-    static NotStatementOne: typeof NotStatementOne;
-    static RateBasedStatementOne: typeof RateBasedStatementOne;
-    static ExcludedRule: typeof ExcludedRule;
-    static VisibilityConfig: typeof VisibilityConfig;
+    static LabelMatchStatement: typeof LabelMatchStatement;
+    static JsonMatchPattern: typeof JsonMatchPattern;
+    static AndStatement: typeof AndStatement;
+    static CountAction: typeof CountAction;
     static SizeConstraintStatement: typeof SizeConstraintStatement;
     static FieldToMatch: typeof FieldToMatch;
     static SqliMatchStatement: typeof SqliMatchStatement;
     static GeoMatchStatement: typeof GeoMatchStatement;
+    static RuleAction: typeof RuleAction;
+    static JsonBody: typeof JsonBody;
+    static NotStatement: typeof NotStatement;
+    static OverrideAction: typeof OverrideAction;
+    static Rule: typeof Rule;
+    static CustomResponse: typeof CustomResponse;
+    static RateBasedStatement: typeof RateBasedStatement;
+    static ExcludedRule: typeof ExcludedRule;
+    static VisibilityConfig: typeof VisibilityConfig;
     static IPSetReferenceStatement: typeof IPSetReferenceStatement;
-    static AndStatementOne: typeof AndStatementOne;
-    static StatementThree: typeof StatementThree;
     constructor(properties: WebACLProperties);
 }

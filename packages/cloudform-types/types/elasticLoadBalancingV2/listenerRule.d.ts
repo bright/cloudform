@@ -5,55 +5,39 @@ export declare class SourceIpConfig {
     constructor(properties: SourceIpConfig);
 }
 export declare class AuthenticateOidcConfig {
+    OnUnauthenticatedRequest?: Value<string>;
+    TokenEndpoint: Value<string>;
+    SessionTimeout?: Value<number>;
+    Scope?: Value<string>;
+    Issuer: Value<string>;
+    ClientSecret: Value<string>;
+    UserInfoEndpoint: Value<string>;
+    ClientId: Value<string>;
+    AuthorizationEndpoint: Value<string>;
+    SessionCookieName?: Value<string>;
+    UseExistingClientSecret?: Value<boolean>;
     AuthenticationRequestExtraParams?: {
         [key: string]: Value<string>;
     };
-    AuthorizationEndpoint: Value<string>;
-    ClientId: Value<string>;
-    ClientSecret: Value<string>;
-    Issuer: Value<string>;
-    OnUnauthenticatedRequest?: Value<string>;
-    Scope?: Value<string>;
-    SessionCookieName?: Value<string>;
-    SessionTimeout?: Value<number>;
-    TokenEndpoint: Value<string>;
-    UserInfoEndpoint: Value<string>;
     constructor(properties: AuthenticateOidcConfig);
 }
 export declare class AuthenticateCognitoConfig {
+    OnUnauthenticatedRequest?: Value<string>;
+    UserPoolClientId: Value<string>;
+    UserPoolDomain: Value<string>;
+    SessionTimeout?: Value<number>;
+    Scope?: Value<string>;
+    SessionCookieName?: Value<string>;
+    UserPoolArn: Value<string>;
     AuthenticationRequestExtraParams?: {
         [key: string]: Value<string>;
     };
-    OnUnauthenticatedRequest?: Value<string>;
-    Scope?: Value<string>;
-    SessionCookieName?: Value<string>;
-    SessionTimeout?: Value<number>;
-    UserPoolArn: Value<string>;
-    UserPoolClientId: Value<string>;
-    UserPoolDomain: Value<string>;
     constructor(properties: AuthenticateCognitoConfig);
 }
-export declare class FixedResponseConfig {
-    ContentType?: Value<string>;
-    MessageBody?: Value<string>;
-    StatusCode: Value<string>;
-    constructor(properties: FixedResponseConfig);
-}
 export declare class QueryStringKeyValue {
-    Key?: Value<string>;
     Value?: Value<string>;
+    Key?: Value<string>;
     constructor(properties: QueryStringKeyValue);
-}
-export declare class Action {
-    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
-    AuthenticateOidcConfig?: AuthenticateOidcConfig;
-    FixedResponseConfig?: FixedResponseConfig;
-    ForwardConfig?: ForwardConfig;
-    Order?: Value<number>;
-    RedirectConfig?: RedirectConfig;
-    TargetGroupArn?: Value<string>;
-    Type: Value<string>;
-    constructor(properties: Action);
 }
 export declare class QueryStringConfig {
     Values?: List<QueryStringKeyValue>;
@@ -63,9 +47,50 @@ export declare class PathPatternConfig {
     Values?: List<Value<string>>;
     constructor(properties: PathPatternConfig);
 }
-export declare class HttpHeaderConfig {
-    HttpHeaderName?: Value<string>;
+export declare class RuleCondition {
+    Field?: Value<string>;
     Values?: List<Value<string>>;
+    HttpRequestMethodConfig?: HttpRequestMethodConfig;
+    PathPatternConfig?: PathPatternConfig;
+    HttpHeaderConfig?: HttpHeaderConfig;
+    SourceIpConfig?: SourceIpConfig;
+    HostHeaderConfig?: HostHeaderConfig;
+    QueryStringConfig?: QueryStringConfig;
+    constructor(properties: RuleCondition);
+}
+export declare class RedirectConfig {
+    Path?: Value<string>;
+    Query?: Value<string>;
+    Port?: Value<string>;
+    Host?: Value<string>;
+    Protocol?: Value<string>;
+    StatusCode: Value<string>;
+    constructor(properties: RedirectConfig);
+}
+export declare class HostHeaderConfig {
+    Values?: List<Value<string>>;
+    constructor(properties: HostHeaderConfig);
+}
+export declare class FixedResponseConfig {
+    ContentType?: Value<string>;
+    StatusCode: Value<string>;
+    MessageBody?: Value<string>;
+    constructor(properties: FixedResponseConfig);
+}
+export declare class Action {
+    Order?: Value<number>;
+    TargetGroupArn?: Value<string>;
+    FixedResponseConfig?: FixedResponseConfig;
+    AuthenticateCognitoConfig?: AuthenticateCognitoConfig;
+    Type: Value<string>;
+    RedirectConfig?: RedirectConfig;
+    ForwardConfig?: ForwardConfig;
+    AuthenticateOidcConfig?: AuthenticateOidcConfig;
+    constructor(properties: Action);
+}
+export declare class HttpHeaderConfig {
+    Values?: List<Value<string>>;
+    HttpHeaderName?: Value<string>;
     constructor(properties: HttpHeaderConfig);
 }
 export declare class ForwardConfig {
@@ -82,57 +107,33 @@ export declare class HttpRequestMethodConfig {
     Values?: List<Value<string>>;
     constructor(properties: HttpRequestMethodConfig);
 }
-export declare class RuleCondition {
-    Field?: Value<string>;
-    HostHeaderConfig?: HostHeaderConfig;
-    HttpHeaderConfig?: HttpHeaderConfig;
-    HttpRequestMethodConfig?: HttpRequestMethodConfig;
-    PathPatternConfig?: PathPatternConfig;
-    QueryStringConfig?: QueryStringConfig;
-    SourceIpConfig?: SourceIpConfig;
-    Values?: List<Value<string>>;
-    constructor(properties: RuleCondition);
-}
-export declare class RedirectConfig {
-    Host?: Value<string>;
-    Path?: Value<string>;
-    Port?: Value<string>;
-    Protocol?: Value<string>;
-    Query?: Value<string>;
-    StatusCode: Value<string>;
-    constructor(properties: RedirectConfig);
-}
 export declare class TargetGroupStickinessConfig {
-    DurationSeconds?: Value<number>;
     Enabled?: Value<boolean>;
+    DurationSeconds?: Value<number>;
     constructor(properties: TargetGroupStickinessConfig);
 }
-export declare class HostHeaderConfig {
-    Values?: List<Value<string>>;
-    constructor(properties: HostHeaderConfig);
-}
 export interface ListenerRuleProperties {
-    Actions: List<Action>;
-    Conditions: List<RuleCondition>;
     ListenerArn: Value<string>;
+    Actions: List<Action>;
     Priority: Value<number>;
+    Conditions: List<RuleCondition>;
 }
 export default class ListenerRule extends ResourceBase<ListenerRuleProperties> {
     static SourceIpConfig: typeof SourceIpConfig;
     static AuthenticateOidcConfig: typeof AuthenticateOidcConfig;
     static AuthenticateCognitoConfig: typeof AuthenticateCognitoConfig;
-    static FixedResponseConfig: typeof FixedResponseConfig;
     static QueryStringKeyValue: typeof QueryStringKeyValue;
-    static Action: typeof Action;
     static QueryStringConfig: typeof QueryStringConfig;
     static PathPatternConfig: typeof PathPatternConfig;
+    static RuleCondition: typeof RuleCondition;
+    static RedirectConfig: typeof RedirectConfig;
+    static HostHeaderConfig: typeof HostHeaderConfig;
+    static FixedResponseConfig: typeof FixedResponseConfig;
+    static Action: typeof Action;
     static HttpHeaderConfig: typeof HttpHeaderConfig;
     static ForwardConfig: typeof ForwardConfig;
     static TargetGroupTuple: typeof TargetGroupTuple;
     static HttpRequestMethodConfig: typeof HttpRequestMethodConfig;
-    static RuleCondition: typeof RuleCondition;
-    static RedirectConfig: typeof RedirectConfig;
     static TargetGroupStickinessConfig: typeof TargetGroupStickinessConfig;
-    static HostHeaderConfig: typeof HostHeaderConfig;
     constructor(properties: ListenerRuleProperties);
 }

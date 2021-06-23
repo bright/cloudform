@@ -7,6 +7,7 @@ export declare class LoadBalancerAttribute {
 }
 export declare class SubnetMapping {
     AllocationId?: Value<string>;
+    IPv6Address?: Value<string>;
     PrivateIPv4Address?: Value<string>;
     SubnetId: Value<string>;
     constructor(properties: SubnetMapping);

@@ -5,16 +5,16 @@ export declare class AccessPointTag {
     Value?: Value<string>;
     constructor(properties: AccessPointTag);
 }
+export declare class RootDirectory {
+    Path?: Value<string>;
+    CreationInfo?: CreationInfo;
+    constructor(properties: RootDirectory);
+}
 export declare class CreationInfo {
     OwnerUid: Value<string>;
     OwnerGid: Value<string>;
     Permissions: Value<string>;
     constructor(properties: CreationInfo);
-}
-export declare class RootDirectory {
-    Path?: Value<string>;
-    CreationInfo?: CreationInfo;
-    constructor(properties: RootDirectory);
 }
 export declare class PosixUser {
     Uid: Value<string>;
@@ -31,8 +31,8 @@ export interface AccessPointProperties {
 }
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {
     static AccessPointTag: typeof AccessPointTag;
-    static CreationInfo: typeof CreationInfo;
     static RootDirectory: typeof RootDirectory;
+    static CreationInfo: typeof CreationInfo;
     static PosixUser: typeof PosixUser;
     constructor(properties: AccessPointProperties);
 }

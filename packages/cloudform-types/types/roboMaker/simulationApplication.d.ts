@@ -1,10 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class RenderingEngine {
-    Version: Value<string>;
-    Name: Value<string>;
-    constructor(properties: RenderingEngine);
-}
 export declare class SimulationSoftwareSuite {
     Version: Value<string>;
     Name: Value<string>;
@@ -21,6 +16,11 @@ export declare class SourceConfig {
     S3Key: Value<string>;
     constructor(properties: SourceConfig);
 }
+export declare class RenderingEngine {
+    Version: Value<string>;
+    Name: Value<string>;
+    constructor(properties: RenderingEngine);
+}
 export interface SimulationApplicationProperties {
     RenderingEngine: RenderingEngine;
     SimulationSoftwareSuite: SimulationSoftwareSuite;
@@ -33,9 +33,9 @@ export interface SimulationApplicationProperties {
     Name?: Value<string>;
 }
 export default class SimulationApplication extends ResourceBase<SimulationApplicationProperties> {
-    static RenderingEngine: typeof RenderingEngine;
     static SimulationSoftwareSuite: typeof SimulationSoftwareSuite;
     static RobotSoftwareSuite: typeof RobotSoftwareSuite;
     static SourceConfig: typeof SourceConfig;
+    static RenderingEngine: typeof RenderingEngine;
     constructor(properties: SimulationApplicationProperties);
 }

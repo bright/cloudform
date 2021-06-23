@@ -1,9 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class VirtualServiceSpec {
-    Provider?: VirtualServiceProvider;
-    constructor(properties: VirtualServiceSpec);
-}
 export declare class VirtualRouterServiceProvider {
     VirtualRouterName: Value<string>;
     constructor(properties: VirtualRouterServiceProvider);
@@ -17,6 +13,10 @@ export declare class VirtualServiceProvider {
     VirtualRouter?: VirtualRouterServiceProvider;
     constructor(properties: VirtualServiceProvider);
 }
+export declare class VirtualServiceSpec {
+    Provider?: VirtualServiceProvider;
+    constructor(properties: VirtualServiceSpec);
+}
 export interface VirtualServiceProperties {
     MeshName: Value<string>;
     MeshOwner?: Value<string>;
@@ -25,9 +25,9 @@ export interface VirtualServiceProperties {
     Tags?: List<ResourceTag>;
 }
 export default class VirtualService extends ResourceBase<VirtualServiceProperties> {
-    static VirtualServiceSpec: typeof VirtualServiceSpec;
     static VirtualRouterServiceProvider: typeof VirtualRouterServiceProvider;
     static VirtualNodeServiceProvider: typeof VirtualNodeServiceProvider;
     static VirtualServiceProvider: typeof VirtualServiceProvider;
+    static VirtualServiceSpec: typeof VirtualServiceSpec;
     constructor(properties: VirtualServiceProperties);
 }

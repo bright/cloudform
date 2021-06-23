@@ -26,6 +26,7 @@ export interface StageProperties {
     StageVariables?: {
         [key: string]: any;
     };
+    AccessPolicyId?: Value<string>;
     ApiId: Value<string>;
     DefaultRouteSettings?: RouteSettings;
     Tags?: {

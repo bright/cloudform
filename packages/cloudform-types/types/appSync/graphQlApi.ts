@@ -66,7 +66,7 @@ export class LambdaAuthorizerConfig {
     AuthorizerResultTtlInSeconds?: Value<number>
     IdentityValidationExpression?: Value<string>
 
-    constructor(properties: LogConfig) {
+    constructor(properties: LambdaAuthorizerConfig) {
         Object.assign(this, properties)
     }
 }

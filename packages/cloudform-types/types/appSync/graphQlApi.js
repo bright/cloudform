@@ -38,6 +38,12 @@ class LogConfig {
     }
 }
 exports.LogConfig = LogConfig;
+class LambdaAuthorizerConfig {
+    constructor(properties) {
+        Object.assign(this, properties);
+    }
+}
+exports.LambdaAuthorizerConfig = LambdaAuthorizerConfig;
 class AdditionalAuthenticationProvider {
     constructor(properties) {
         Object.assign(this, properties);

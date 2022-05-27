@@ -48,17 +48,17 @@ const resolvedTemplatePath = path.resolve(options.templatePath)
 child_process_1.exec('npm bin', (err, npmBin) => {
     if (err) {
         console.error(err);
-        return;
+        process.exit(err.code);
     }
     const tsNodePath = path.join(npmBin.trim(), 'ts-node');
     child_process_1.exec(`${tsNodePath} -e "import t from '${resolvedTemplatePath}'; console.log(t)"`, { maxBuffer: 1024 * 1024 * 5 }, (err, template, stderr) => {
         if (err) {
             console.error(err);
-            return;
+            process.exit(err.code);
         }
         if (stderr) {
             console.error(stderr);
-            return;
+            process.exit(1);
         }
         if (options.shouldMinify) {
             console.log(jsonminify(template));

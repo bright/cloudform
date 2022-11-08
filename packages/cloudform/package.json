@@ -2,7 +2,6 @@
   "name": "cloudform",
   "version": "7.4.0",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
-  "main": "packages/cloudform/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bright/cloudform.git"

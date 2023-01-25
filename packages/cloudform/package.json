@@ -1,6 +1,6 @@
 {
   "name": "cloudform",
-  "version": "7.4.0",
+  "version": "7.4.1",
   "description": "TypeScript-based imperative way to define AWS CloudFormation templates",
   "repository": {
     "type": "git",

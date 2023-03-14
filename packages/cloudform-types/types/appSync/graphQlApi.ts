@@ -61,9 +61,20 @@ export class LogConfig {
     }
 }
 
+export class LambdaAuthorizerConfig {
+    AuthorizerUri?: Value<string>
+    AuthorizerResultTtlInSeconds?: Value<number>
+    IdentityValidationExpression?: Value<string>
+
+    constructor(properties: LambdaAuthorizerConfig) {
+        Object.assign(this, properties)
+    }
+}
+
 export class AdditionalAuthenticationProvider {
     OpenIDConnectConfig?: OpenIDConnectConfig
     UserPoolConfig?: CognitoUserPoolConfig
+    LambdaAuthorizerConfig?: LambdaAuthorizerConfig
     AuthenticationType!: Value<string>
 
     constructor(properties: AdditionalAuthenticationProvider) {
@@ -75,6 +86,7 @@ export interface GraphQLApiProperties {
     OpenIDConnectConfig?: OpenIDConnectConfig
     XrayEnabled?: Value<boolean>
     UserPoolConfig?: UserPoolConfig
+    LambdaAuthorizerConfig?: LambdaAuthorizerConfig
     Tags?: Tags
     Name: Value<string>
     AuthenticationType: Value<string>
@@ -87,6 +99,7 @@ export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
     static CognitoUserPoolConfig = CognitoUserPoolConfig
     static UserPoolConfig = UserPoolConfig
     static LogConfig = LogConfig
+    static LambdaAuthorizerConfig = LambdaAuthorizerConfig
     static AdditionalAuthenticationProvider = AdditionalAuthenticationProvider
 
     constructor(properties: GraphQLApiProperties) {

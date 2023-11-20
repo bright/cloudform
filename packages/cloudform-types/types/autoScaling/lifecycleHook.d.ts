@@ -1,12 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface LifecycleHookProperties {
-    AutoScalingGroupName: Value<string>;
-    DefaultResult?: Value<string>;
-    HeartbeatTimeout?: Value<number>;
     LifecycleHookName?: Value<string>;
     LifecycleTransition: Value<string>;
+    AutoScalingGroupName: Value<string>;
+    HeartbeatTimeout?: Value<number>;
     NotificationMetadata?: Value<string>;
+    DefaultResult?: Value<string>;
     NotificationTargetARN?: Value<string>;
     RoleARN?: Value<string>;
 }

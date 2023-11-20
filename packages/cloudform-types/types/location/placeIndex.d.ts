@@ -5,11 +5,11 @@ export declare class DataSourceConfiguration {
     constructor(properties: DataSourceConfiguration);
 }
 export interface PlaceIndexProperties {
-    DataSource: Value<string>;
-    DataSourceConfiguration?: DataSourceConfiguration;
-    Description?: Value<string>;
     IndexName: Value<string>;
-    PricingPlan: Value<string>;
+    Description?: Value<string>;
+    PricingPlan?: Value<string>;
+    DataSourceConfiguration?: DataSourceConfiguration;
+    DataSource: Value<string>;
 }
 export default class PlaceIndex extends ResourceBase<PlaceIndexProperties> {
     static DataSourceConfiguration: typeof DataSourceConfiguration;

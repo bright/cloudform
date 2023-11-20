@@ -1,56 +1,24 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
-
-export class Environment {
-    Type!: Value<string>
-    EnvironmentVariables?: List<EnvironmentVariable>
-    PrivilegedMode?: Value<boolean>
-    ImagePullCredentialsType?: Value<string>
-    Image!: Value<string>
-    RegistryCredential?: RegistryCredential
-    ComputeType!: Value<string>
-    Certificate?: Value<string>
-
-    constructor(properties: Environment) {
-        Object.assign(this, properties)
-    }
-}
-
-export class GitSubmodulesConfig {
-    FetchSubmodules!: Value<boolean>
-
-    constructor(properties: GitSubmodulesConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class VpcConfig {
-    Subnets?: List<Value<string>>
-    VpcId?: Value<string>
-    SecurityGroupIds?: List<Value<string>>
-
-    constructor(properties: VpcConfig) {
-        Object.assign(this, properties)
-    }
-}
 
 export class Artifacts {
     Path?: Value<string>
@@ -68,11 +36,20 @@ export class Artifacts {
     }
 }
 
-export class RegistryCredential {
-    Credential!: Value<string>
-    CredentialProvider!: Value<string>
+export class BatchRestrictions {
+    ComputeTypesAllowed?: List<Value<string>>
+    MaximumBuildsAllowed?: Value<number>
 
-    constructor(properties: RegistryCredential) {
+    constructor(properties: BatchRestrictions) {
+        Object.assign(this, properties)
+    }
+}
+
+export class BuildStatusConfig {
+    Context?: Value<string>
+    TargetUrl?: Value<string>
+
+    constructor(properties: BuildStatusConfig) {
         Object.assign(this, properties)
     }
 }
@@ -87,6 +64,62 @@ export class CloudWatchLogsConfig {
     }
 }
 
+export class Environment {
+    Type?: Value<string>
+    EnvironmentVariables?: List<EnvironmentVariable>
+    PrivilegedMode?: Value<boolean>
+    ImagePullCredentialsType?: Value<string>
+    Image!: Value<string>
+    RegistryCredential?: RegistryCredential
+    ComputeType?: Value<string>
+    Certificate?: Value<string>
+
+    constructor(properties: Environment) {
+        Object.assign(this, properties)
+    }
+}
+
+export class EnvironmentVariable {
+    Type?: Value<string>
+    Value!: Value<string>
+    Name!: Value<string>
+
+    constructor(properties: EnvironmentVariable) {
+        Object.assign(this, properties)
+    }
+}
+
+export type FilterGroup = List<WebhookFilter>
+
+export class GitSubmodulesConfig {
+    FetchSubmodules!: Value<boolean>
+
+    constructor(properties: GitSubmodulesConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LogsConfig {
+    CloudWatchLogs?: CloudWatchLogsConfig
+    S3Logs?: S3LogsConfig
+
+    constructor(properties: LogsConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ProjectBuildBatchConfig {
+    CombineArtifacts?: Value<boolean>
+    ServiceRole?: Value<string>
+    BatchReportMode?: Value<string>
+    TimeoutInMins?: Value<number>
+    Restrictions?: BatchRestrictions
+
+    constructor(properties: ProjectBuildBatchConfig) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ProjectCache {
     Modes?: List<Value<string>>
     Type!: Value<string>
@@ -97,24 +130,31 @@ export class ProjectCache {
     }
 }
 
-export class ProjectBuildBatchConfig {
-    CombineArtifacts?: Value<boolean>
-    ServiceRole?: Value<string>
-    TimeoutInMins?: Value<number>
-    Restrictions?: BatchRestrictions
+export class ProjectFileSystemLocation {
+    MountPoint!: Value<string>
+    Type!: Value<string>
+    Identifier!: Value<string>
+    MountOptions?: Value<string>
+    Location!: Value<string>
 
-    constructor(properties: ProjectBuildBatchConfig) {
+    constructor(properties: ProjectFileSystemLocation) {
         Object.assign(this, properties)
     }
 }
 
-export type FilterGroup = List<WebhookFilter>
+export class ProjectFleet {
+    FleetArn?: Value<string>
 
-export class BatchRestrictions {
-    ComputeTypesAllowed?: List<Value<string>>
-    MaximumBuildsAllowed?: Value<number>
+    constructor(properties: ProjectFleet) {
+        Object.assign(this, properties)
+    }
+}
 
-    constructor(properties: BatchRestrictions) {
+export class ProjectSourceVersion {
+    SourceIdentifier!: Value<string>
+    SourceVersion?: Value<string>
+
+    constructor(properties: ProjectSourceVersion) {
         Object.assign(this, properties)
     }
 }
@@ -125,6 +165,25 @@ export class ProjectTriggers {
     Webhook?: Value<boolean>
 
     constructor(properties: ProjectTriggers) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RegistryCredential {
+    Credential!: Value<string>
+    CredentialProvider!: Value<string>
+
+    constructor(properties: RegistryCredential) {
+        Object.assign(this, properties)
+    }
+}
+
+export class S3LogsConfig {
+    Status!: Value<string>
+    EncryptionDisabled?: Value<boolean>
+    Location?: Value<string>
+
+    constructor(properties: S3LogsConfig) {
         Object.assign(this, properties)
     }
 }
@@ -146,24 +205,6 @@ export class Source {
     }
 }
 
-export class ProjectSourceVersion {
-    SourceIdentifier!: Value<string>
-    SourceVersion?: Value<string>
-
-    constructor(properties: ProjectSourceVersion) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LogsConfig {
-    CloudWatchLogs?: CloudWatchLogsConfig
-    S3Logs?: S3LogsConfig
-
-    constructor(properties: LogsConfig) {
-        Object.assign(this, properties)
-    }
-}
-
 export class SourceAuth {
     Type!: Value<string>
     Resource?: Value<string>
@@ -173,24 +214,12 @@ export class SourceAuth {
     }
 }
 
-export class ProjectFileSystemLocation {
-    MountPoint!: Value<string>
-    Type!: Value<string>
-    Identifier!: Value<string>
-    MountOptions?: Value<string>
-    Location!: Value<string>
+export class VpcConfig {
+    Subnets?: List<Value<string>>
+    VpcId?: Value<string>
+    SecurityGroupIds?: List<Value<string>>
 
-    constructor(properties: ProjectFileSystemLocation) {
-        Object.assign(this, properties)
-    }
-}
-
-export class S3LogsConfig {
-    Status!: Value<string>
-    EncryptionDisabled?: Value<boolean>
-    Location?: Value<string>
-
-    constructor(properties: S3LogsConfig) {
+    constructor(properties: VpcConfig) {
         Object.assign(this, properties)
     }
 }
@@ -205,27 +234,9 @@ export class WebhookFilter {
     }
 }
 
-export class BuildStatusConfig {
-    Context?: Value<string>
-    TargetUrl?: Value<string>
-
-    constructor(properties: BuildStatusConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class EnvironmentVariable {
-    Type?: Value<string>
-    Value!: Value<string>
-    Name!: Value<string>
-
-    constructor(properties: EnvironmentVariable) {
-        Object.assign(this, properties)
-    }
-}
-
 export interface ProjectProperties {
     Description?: Value<string>
+    ResourceAccessRole?: Value<string>
     VpcConfig?: VpcConfig
     SecondarySources?: List<Source>
     EncryptionKey?: Value<string>
@@ -243,6 +254,7 @@ export interface ProjectProperties {
     Environment: Environment
     SecondarySourceVersions?: List<ProjectSourceVersion>
     ConcurrentBuildLimit?: Value<number>
+    Visibility?: Value<string>
     BuildBatchConfig?: ProjectBuildBatchConfig
     Tags?: List<ResourceTag>
     TimeoutInMinutes?: Value<number>
@@ -250,25 +262,26 @@ export interface ProjectProperties {
 }
 
 export default class Project extends ResourceBase<ProjectProperties> {
-    static Environment = Environment
-    static GitSubmodulesConfig = GitSubmodulesConfig
-    static VpcConfig = VpcConfig
     static Artifacts = Artifacts
-    static RegistryCredential = RegistryCredential
-    static CloudWatchLogsConfig = CloudWatchLogsConfig
-    static ProjectCache = ProjectCache
-    static ProjectBuildBatchConfig = ProjectBuildBatchConfig
     static BatchRestrictions = BatchRestrictions
-    static ProjectTriggers = ProjectTriggers
-    static Source = Source
-    static ProjectSourceVersion = ProjectSourceVersion
-    static LogsConfig = LogsConfig
-    static SourceAuth = SourceAuth
-    static ProjectFileSystemLocation = ProjectFileSystemLocation
-    static S3LogsConfig = S3LogsConfig
-    static WebhookFilter = WebhookFilter
     static BuildStatusConfig = BuildStatusConfig
+    static CloudWatchLogsConfig = CloudWatchLogsConfig
+    static Environment = Environment
     static EnvironmentVariable = EnvironmentVariable
+    static GitSubmodulesConfig = GitSubmodulesConfig
+    static LogsConfig = LogsConfig
+    static ProjectBuildBatchConfig = ProjectBuildBatchConfig
+    static ProjectCache = ProjectCache
+    static ProjectFileSystemLocation = ProjectFileSystemLocation
+    static ProjectFleet = ProjectFleet
+    static ProjectSourceVersion = ProjectSourceVersion
+    static ProjectTriggers = ProjectTriggers
+    static RegistryCredential = RegistryCredential
+    static S3LogsConfig = S3LogsConfig
+    static Source = Source
+    static SourceAuth = SourceAuth
+    static VpcConfig = VpcConfig
+    static WebhookFilter = WebhookFilter
 
     constructor(properties: ProjectProperties) {
         super('AWS::CodeBuild::Project', properties)

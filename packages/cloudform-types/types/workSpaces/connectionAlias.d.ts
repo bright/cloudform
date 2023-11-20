@@ -1,10 +1,10 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ConnectionAliasAssociation {
-    AssociationStatus?: Value<string>;
     AssociatedAccountId?: Value<string>;
     ResourceId?: Value<string>;
     ConnectionIdentifier?: Value<string>;
+    AssociationStatus?: Value<string>;
     constructor(properties: ConnectionAliasAssociation);
 }
 export interface ConnectionAliasProperties {

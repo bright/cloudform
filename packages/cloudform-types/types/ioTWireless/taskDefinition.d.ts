@@ -1,41 +1,41 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class UpdateWirelessGatewayTaskCreate {
-    UpdateDataSource?: Value<string>;
-    UpdateDataRole?: Value<string>;
-    LoRaWAN?: LoRaWANUpdateGatewayTaskCreate;
-    constructor(properties: UpdateWirelessGatewayTaskCreate);
-}
-export declare class LoRaWANUpdateGatewayTaskEntry {
-    CurrentVersion?: LoRaWANGatewayVersion;
-    UpdateVersion?: LoRaWANGatewayVersion;
-    constructor(properties: LoRaWANUpdateGatewayTaskEntry);
-}
 export declare class LoRaWANGatewayVersion {
-    PackageVersion?: Value<string>;
-    Model?: Value<string>;
     Station?: Value<string>;
+    Model?: Value<string>;
+    PackageVersion?: Value<string>;
     constructor(properties: LoRaWANGatewayVersion);
 }
 export declare class LoRaWANUpdateGatewayTaskCreate {
     UpdateSignature?: Value<string>;
     SigKeyCrc?: Value<number>;
-    CurrentVersion?: LoRaWANGatewayVersion;
     UpdateVersion?: LoRaWANGatewayVersion;
+    CurrentVersion?: LoRaWANGatewayVersion;
     constructor(properties: LoRaWANUpdateGatewayTaskCreate);
 }
+export declare class LoRaWANUpdateGatewayTaskEntry {
+    UpdateVersion?: LoRaWANGatewayVersion;
+    CurrentVersion?: LoRaWANGatewayVersion;
+    constructor(properties: LoRaWANUpdateGatewayTaskEntry);
+}
+export declare class UpdateWirelessGatewayTaskCreate {
+    LoRaWAN?: LoRaWANUpdateGatewayTaskCreate;
+    UpdateDataSource?: Value<string>;
+    UpdateDataRole?: Value<string>;
+    constructor(properties: UpdateWirelessGatewayTaskCreate);
+}
 export interface TaskDefinitionProperties {
-    Name?: Value<string>;
     AutoCreateTasks: Value<boolean>;
-    Update?: UpdateWirelessGatewayTaskCreate;
     LoRaWANUpdateGatewayTaskEntry?: LoRaWANUpdateGatewayTaskEntry;
+    Update?: UpdateWirelessGatewayTaskCreate;
     TaskDefinitionType?: Value<string>;
     Tags?: List<ResourceTag>;
+    Name?: Value<string>;
 }
 export default class TaskDefinition extends ResourceBase<TaskDefinitionProperties> {
-    static UpdateWirelessGatewayTaskCreate: typeof UpdateWirelessGatewayTaskCreate;
-    static LoRaWANUpdateGatewayTaskEntry: typeof LoRaWANUpdateGatewayTaskEntry;
     static LoRaWANGatewayVersion: typeof LoRaWANGatewayVersion;
     static LoRaWANUpdateGatewayTaskCreate: typeof LoRaWANUpdateGatewayTaskCreate;
+    static LoRaWANUpdateGatewayTaskEntry: typeof LoRaWANUpdateGatewayTaskEntry;
+    static UpdateWirelessGatewayTaskCreate: typeof UpdateWirelessGatewayTaskCreate;
     constructor(properties: TaskDefinitionProperties);
 }

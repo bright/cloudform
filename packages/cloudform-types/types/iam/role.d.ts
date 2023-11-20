@@ -1,24 +1,24 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Policy {
+    PolicyName: Value<string>;
     PolicyDocument: {
         [key: string]: any;
     };
-    PolicyName: Value<string>;
     constructor(properties: Policy);
 }
 export interface RoleProperties {
+    Path?: Value<string>;
+    ManagedPolicyArns?: List<Value<string>>;
+    MaxSessionDuration?: Value<number>;
+    RoleName?: Value<string>;
+    Description?: Value<string>;
+    Policies?: List<Policy>;
     AssumeRolePolicyDocument: {
         [key: string]: any;
     };
-    Description?: Value<string>;
-    ManagedPolicyArns?: List<Value<string>>;
-    MaxSessionDuration?: Value<number>;
-    Path?: Value<string>;
-    PermissionsBoundary?: Value<string>;
-    Policies?: List<Policy>;
-    RoleName?: Value<string>;
     Tags?: List<ResourceTag>;
+    PermissionsBoundary?: Value<string>;
 }
 export default class Role extends ResourceBase<RoleProperties> {
     static Policy: typeof Policy;

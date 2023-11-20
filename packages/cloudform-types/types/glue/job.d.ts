@@ -1,22 +1,23 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ConnectionsList {
+    Connections?: List<Value<string>>;
+    constructor(properties: ConnectionsList);
+}
+export declare class ExecutionProperty {
+    MaxConcurrentRuns?: Value<number>;
+    constructor(properties: ExecutionProperty);
+}
 export declare class JobCommand {
+    Runtime?: Value<string>;
     PythonVersion?: Value<string>;
     ScriptLocation?: Value<string>;
     Name?: Value<string>;
     constructor(properties: JobCommand);
 }
-export declare class ConnectionsList {
-    Connections?: List<Value<string>>;
-    constructor(properties: ConnectionsList);
-}
 export declare class NotificationProperty {
     NotifyDelayAfter?: Value<number>;
     constructor(properties: NotificationProperty);
-}
-export declare class ExecutionProperty {
-    MaxConcurrentRuns?: Value<number>;
-    constructor(properties: ExecutionProperty);
 }
 export interface JobProperties {
     Connections?: ConnectionsList;
@@ -31,6 +32,7 @@ export interface JobProperties {
     };
     NotificationProperty?: NotificationProperty;
     WorkerType?: Value<string>;
+    ExecutionClass?: Value<string>;
     LogUri?: Value<string>;
     Command: JobCommand;
     GlueVersion?: Value<string>;
@@ -41,11 +43,14 @@ export interface JobProperties {
         [key: string]: any;
     };
     MaxCapacity?: Value<number>;
+    NonOverridableArguments?: {
+        [key: string]: any;
+    };
 }
 export default class Job extends ResourceBase<JobProperties> {
-    static JobCommand: typeof JobCommand;
     static ConnectionsList: typeof ConnectionsList;
-    static NotificationProperty: typeof NotificationProperty;
     static ExecutionProperty: typeof ExecutionProperty;
+    static JobCommand: typeof JobCommand;
+    static NotificationProperty: typeof NotificationProperty;
     constructor(properties: JobProperties);
 }

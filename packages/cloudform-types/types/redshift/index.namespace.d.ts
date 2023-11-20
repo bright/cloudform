@@ -1,17 +1,29 @@
 import Cluster_ from './cluster';
 import ClusterParameterGroup_ from './clusterParameterGroup';
-import ClusterSubnetGroup_ from './clusterSubnetGroup';
 import ClusterSecurityGroup_ from './clusterSecurityGroup';
 import ClusterSecurityGroupIngress_ from './clusterSecurityGroupIngress';
+import ClusterSubnetGroup_ from './clusterSubnetGroup';
+import EndpointAccess_ from './endpointAccess';
+import EndpointAuthorization_ from './endpointAuthorization';
+import EventSubscription_ from './eventSubscription';
+import ScheduledAction_ from './scheduledAction';
 export declare namespace Redshift {
     const Cluster: typeof Cluster_;
     const ClusterParameterGroup: typeof ClusterParameterGroup_;
-    const ClusterSubnetGroup: typeof ClusterSubnetGroup_;
     const ClusterSecurityGroup: typeof ClusterSecurityGroup_;
     const ClusterSecurityGroupIngress: typeof ClusterSecurityGroupIngress_;
+    const ClusterSubnetGroup: typeof ClusterSubnetGroup_;
+    const EndpointAccess: typeof EndpointAccess_;
+    const EndpointAuthorization: typeof EndpointAuthorization_;
+    const EventSubscription: typeof EventSubscription_;
+    const ScheduledAction: typeof ScheduledAction_;
     type Cluster = Cluster_;
     type ClusterParameterGroup = ClusterParameterGroup_;
-    type ClusterSubnetGroup = ClusterSubnetGroup_;
     type ClusterSecurityGroup = ClusterSecurityGroup_;
     type ClusterSecurityGroupIngress = ClusterSecurityGroupIngress_;
+    type ClusterSubnetGroup = ClusterSubnetGroup_;
+    type EndpointAccess = EndpointAccess_;
+    type EndpointAuthorization = EndpointAuthorization_;
+    type EventSubscription = EventSubscription_;
+    type ScheduledAction = ScheduledAction_;
 }

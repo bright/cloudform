@@ -1,28 +1,50 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
+export class BackupSelectionResourceType {
+    ListOfTags?: List<ConditionResourceType>
+    NotResources?: List<Value<string>>
+    SelectionName!: Value<string>
+    IamRoleArn!: Value<string>
+    Resources?: List<Value<string>>
+    Conditions?: Conditions
+
+    constructor(properties: BackupSelectionResourceType) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ConditionParameter {
+    ConditionValue?: Value<string>
+    ConditionKey?: Value<string>
+
+    constructor(properties: ConditionParameter) {
+        Object.assign(this, properties)
+    }
+}
+
 export class ConditionResourceType {
-    ConditionKey!: Value<string>
     ConditionValue!: Value<string>
+    ConditionKey!: Value<string>
     ConditionType!: Value<string>
 
     constructor(properties: ConditionResourceType) {
@@ -30,25 +52,27 @@ export class ConditionResourceType {
     }
 }
 
-export class BackupSelectionResourceType {
-    IamRoleArn!: Value<string>
-    ListOfTags?: List<ConditionResourceType>
-    Resources?: List<Value<string>>
-    SelectionName!: Value<string>
+export class Conditions {
+    StringEquals?: List<ConditionParameter>
+    StringNotLike?: List<ConditionParameter>
+    StringLike?: List<ConditionParameter>
+    StringNotEquals?: List<ConditionParameter>
 
-    constructor(properties: BackupSelectionResourceType) {
+    constructor(properties: Conditions) {
         Object.assign(this, properties)
     }
 }
 
 export interface BackupSelectionProperties {
-    BackupPlanId: Value<string>
     BackupSelection: BackupSelectionResourceType
+    BackupPlanId: Value<string>
 }
 
 export default class BackupSelection extends ResourceBase<BackupSelectionProperties> {
-    static ConditionResourceType = ConditionResourceType
     static BackupSelectionResourceType = BackupSelectionResourceType
+    static ConditionParameter = ConditionParameter
+    static ConditionResourceType = ConditionResourceType
+    static Conditions = Conditions
 
     constructor(properties: BackupSelectionProperties) {
         super('AWS::Backup::BackupSelection', properties)

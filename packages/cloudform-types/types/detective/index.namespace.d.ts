@@ -1,8 +1,11 @@
-import MemberInvitation_ from './memberInvitation';
 import Graph_ from './graph';
+import MemberInvitation_ from './memberInvitation';
+import OrganizationAdmin_ from './organizationAdmin';
 export declare namespace Detective {
-    const MemberInvitation: typeof MemberInvitation_;
     const Graph: typeof Graph_;
-    type MemberInvitation = MemberInvitation_;
+    const MemberInvitation: typeof MemberInvitation_;
+    const OrganizationAdmin: typeof OrganizationAdmin_;
     type Graph = Graph_;
+    type MemberInvitation = MemberInvitation_;
+    type OrganizationAdmin = OrganizationAdmin_;
 }

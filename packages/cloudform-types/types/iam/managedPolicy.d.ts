@@ -1,10 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface ManagedPolicyProperties {
-    Description?: Value<string>;
-    Groups?: List<Value<string>>;
     ManagedPolicyName?: Value<string>;
     Path?: Value<string>;
+    Description?: Value<string>;
+    Groups?: List<Value<string>>;
     PolicyDocument: {
         [key: string]: any;
     };

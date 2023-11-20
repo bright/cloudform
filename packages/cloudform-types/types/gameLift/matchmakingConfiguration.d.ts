@@ -1,4 +1,4 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class GameProperty {
     Value: Value<string>;
@@ -20,6 +20,7 @@ export interface MatchmakingConfigurationProperties {
     FlexMatchMode?: Value<string>;
     RuleSetName: Value<string>;
     GameSessionQueueArns?: List<Value<string>>;
+    Tags?: List<ResourceTag>;
 }
 export default class MatchmakingConfiguration extends ResourceBase<MatchmakingConfigurationProperties> {
     static GameProperty: typeof GameProperty;

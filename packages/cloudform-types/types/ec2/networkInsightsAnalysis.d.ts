@@ -1,66 +1,30 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class AnalysisAclRule {
-    Cidr?: Value<string>;
-    Egress?: Value<boolean>;
-    PortRange?: PortRange;
-    Protocol?: Value<string>;
-    RuleAction?: Value<string>;
-    RuleNumber?: Value<number>;
-    constructor(properties: AnalysisAclRule);
+export declare class AdditionalDetail {
+    ServiceName?: Value<string>;
+    AdditionalDetailType?: Value<string>;
+    LoadBalancers?: List<AnalysisComponent>;
+    Component?: AnalysisComponent;
+    constructor(properties: AdditionalDetail);
 }
 export declare class AlternatePathHint {
-    ComponentId?: Value<string>;
     ComponentArn?: Value<string>;
+    ComponentId?: Value<string>;
     constructor(properties: AlternatePathHint);
 }
-export declare class Explanation {
-    Acl?: AnalysisComponent;
-    AclRule?: AnalysisAclRule;
-    Address?: Value<string>;
-    Addresses?: List<Value<string>>;
-    AttachedTo?: AnalysisComponent;
-    AvailabilityZones?: List<Value<string>>;
-    Cidrs?: List<Value<string>>;
-    Component?: AnalysisComponent;
-    CustomerGateway?: AnalysisComponent;
-    Destination?: AnalysisComponent;
-    DestinationVpc?: AnalysisComponent;
-    Direction?: Value<string>;
-    ExplanationCode?: Value<string>;
-    IngressRouteTable?: AnalysisComponent;
-    InternetGateway?: AnalysisComponent;
-    LoadBalancerArn?: Value<string>;
-    ClassicLoadBalancerListener?: AnalysisLoadBalancerListener;
-    LoadBalancerListenerPort?: Value<number>;
-    LoadBalancerTarget?: AnalysisLoadBalancerTarget;
-    LoadBalancerTargetGroup?: AnalysisComponent;
-    LoadBalancerTargetGroups?: List<AnalysisComponent>;
-    LoadBalancerTargetPort?: Value<number>;
-    ElasticLoadBalancerListener?: AnalysisComponent;
-    MissingComponent?: Value<string>;
-    NatGateway?: AnalysisComponent;
-    NetworkInterface?: AnalysisComponent;
-    PacketField?: Value<string>;
-    VpcPeeringConnection?: AnalysisComponent;
-    Port?: Value<number>;
-    PortRanges?: List<PortRange>;
-    PrefixList?: AnalysisComponent;
-    Protocols?: List<Value<string>>;
-    RouteTableRoute?: AnalysisRouteTableRoute;
-    RouteTable?: AnalysisComponent;
-    SecurityGroup?: AnalysisComponent;
-    SecurityGroupRule?: AnalysisSecurityGroupRule;
-    SecurityGroups?: List<AnalysisComponent>;
-    SourceVpc?: AnalysisComponent;
-    State?: Value<string>;
-    Subnet?: AnalysisComponent;
-    SubnetRouteTable?: AnalysisComponent;
-    Vpc?: AnalysisComponent;
-    vpcEndpoint?: AnalysisComponent;
-    VpnConnection?: AnalysisComponent;
-    VpnGateway?: AnalysisComponent;
-    constructor(properties: Explanation);
+export declare class AnalysisAclRule {
+    PortRange?: PortRange;
+    Cidr?: Value<string>;
+    RuleAction?: Value<string>;
+    Egress?: Value<boolean>;
+    RuleNumber?: Value<number>;
+    Protocol?: Value<string>;
+    constructor(properties: AnalysisAclRule);
+}
+export declare class AnalysisComponent {
+    Id?: Value<string>;
+    Arn?: Value<string>;
+    constructor(properties: AnalysisComponent);
 }
 export declare class AnalysisLoadBalancerListener {
     InstancePort?: Value<number>;
@@ -69,81 +33,150 @@ export declare class AnalysisLoadBalancerListener {
 }
 export declare class AnalysisLoadBalancerTarget {
     Address?: Value<string>;
-    AvailabilityZone?: Value<string>;
     Instance?: AnalysisComponent;
     Port?: Value<number>;
+    AvailabilityZone?: Value<string>;
     constructor(properties: AnalysisLoadBalancerTarget);
 }
-export declare class AnalysisRouteTableRoute {
-    destinationCidr?: Value<string>;
-    destinationPrefixListId?: Value<string>;
-    egressOnlyInternetGatewayId?: Value<string>;
-    gatewayId?: Value<string>;
-    instanceId?: Value<string>;
-    NatGatewayId?: Value<string>;
-    NetworkInterfaceId?: Value<string>;
-    Origin?: Value<string>;
-    TransitGatewayId?: Value<string>;
-    VpcPeeringConnectionId?: Value<string>;
-    constructor(properties: AnalysisRouteTableRoute);
-}
 export declare class AnalysisPacketHeader {
-    DestinationAddresses?: List<Value<string>>;
     DestinationPortRanges?: List<PortRange>;
+    SourcePortRanges?: List<PortRange>;
+    DestinationAddresses?: List<Value<string>>;
     Protocol?: Value<string>;
     SourceAddresses?: List<Value<string>>;
-    SourcePortRanges?: List<PortRange>;
     constructor(properties: AnalysisPacketHeader);
 }
-export declare class PathComponent {
-    SequenceNumber?: Value<number>;
-    AclRule?: AnalysisAclRule;
-    Component?: AnalysisComponent;
-    DestinationVpc?: AnalysisComponent;
-    OutboundHeader?: AnalysisPacketHeader;
-    InboundHeader?: AnalysisPacketHeader;
-    RouteTableRoute?: AnalysisRouteTableRoute;
-    SecurityGroupRule?: AnalysisSecurityGroupRule;
-    SourceVpc?: AnalysisComponent;
-    Subnet?: AnalysisComponent;
-    Vpc?: AnalysisComponent;
-    constructor(properties: PathComponent);
+export declare class AnalysisRouteTableRoute {
+    Origin?: Value<string>;
+    destinationPrefixListId?: Value<string>;
+    TransitGatewayId?: Value<string>;
+    VpcPeeringConnectionId?: Value<string>;
+    instanceId?: Value<string>;
+    State?: Value<string>;
+    egressOnlyInternetGatewayId?: Value<string>;
+    destinationCidr?: Value<string>;
+    NetworkInterfaceId?: Value<string>;
+    NatGatewayId?: Value<string>;
+    gatewayId?: Value<string>;
+    constructor(properties: AnalysisRouteTableRoute);
 }
-export declare class AnalysisComponent {
-    Id?: Value<string>;
-    Arn?: Value<string>;
-    constructor(properties: AnalysisComponent);
+export declare class AnalysisSecurityGroupRule {
+    PortRange?: PortRange;
+    Cidr?: Value<string>;
+    PrefixListId?: Value<string>;
+    SecurityGroupId?: Value<string>;
+    Protocol?: Value<string>;
+    Direction?: Value<string>;
+    constructor(properties: AnalysisSecurityGroupRule);
+}
+export declare class Explanation {
+    VpnGateway?: AnalysisComponent;
+    PacketField?: Value<string>;
+    TransitGatewayAttachment?: AnalysisComponent;
+    Protocols?: List<Value<string>>;
+    IngressRouteTable?: AnalysisComponent;
+    ClassicLoadBalancerListener?: AnalysisLoadBalancerListener;
+    VpcPeeringConnection?: AnalysisComponent;
+    Address?: Value<string>;
+    Port?: Value<number>;
+    Addresses?: List<Value<string>>;
+    ElasticLoadBalancerListener?: AnalysisComponent;
+    TransitGatewayRouteTable?: AnalysisComponent;
+    ExplanationCode?: Value<string>;
+    InternetGateway?: AnalysisComponent;
+    SourceVpc?: AnalysisComponent;
+    AttachedTo?: AnalysisComponent;
+    PrefixList?: AnalysisComponent;
+    TransitGatewayRouteTableRoute?: TransitGatewayRouteTableRoute;
+    ComponentRegion?: Value<string>;
+    LoadBalancerTargetGroup?: AnalysisComponent;
+    NetworkInterface?: AnalysisComponent;
+    CustomerGateway?: AnalysisComponent;
+    DestinationVpc?: AnalysisComponent;
+    SecurityGroup?: AnalysisComponent;
+    TransitGateway?: AnalysisComponent;
+    RouteTable?: AnalysisComponent;
+    State?: Value<string>;
+    LoadBalancerListenerPort?: Value<number>;
+    vpcEndpoint?: AnalysisComponent;
+    Subnet?: AnalysisComponent;
+    Cidrs?: List<Value<string>>;
+    Destination?: AnalysisComponent;
+    SecurityGroups?: List<AnalysisComponent>;
+    ComponentAccount?: Value<string>;
+    VpnConnection?: AnalysisComponent;
+    Vpc?: AnalysisComponent;
+    NatGateway?: AnalysisComponent;
+    Direction?: Value<string>;
+    LoadBalancerTargetPort?: Value<number>;
+    LoadBalancerTarget?: AnalysisLoadBalancerTarget;
+    LoadBalancerTargetGroups?: List<AnalysisComponent>;
+    Component?: AnalysisComponent;
+    MissingComponent?: Value<string>;
+    RouteTableRoute?: AnalysisRouteTableRoute;
+    AvailabilityZones?: List<Value<string>>;
+    PortRanges?: List<PortRange>;
+    Acl?: AnalysisComponent;
+    SecurityGroupRule?: AnalysisSecurityGroupRule;
+    SubnetRouteTable?: AnalysisComponent;
+    LoadBalancerArn?: Value<string>;
+    AclRule?: AnalysisAclRule;
+    constructor(properties: Explanation);
+}
+export declare class PathComponent {
+    AdditionalDetails?: List<AdditionalDetail>;
+    InboundHeader?: AnalysisPacketHeader;
+    Vpc?: AnalysisComponent;
+    DestinationVpc?: AnalysisComponent;
+    SecurityGroupRule?: AnalysisSecurityGroupRule;
+    TransitGateway?: AnalysisComponent;
+    ElasticLoadBalancerListener?: AnalysisComponent;
+    Explanations?: List<Explanation>;
+    ServiceName?: Value<string>;
+    SequenceNumber?: Value<number>;
+    SourceVpc?: AnalysisComponent;
+    OutboundHeader?: AnalysisPacketHeader;
+    AclRule?: AnalysisAclRule;
+    TransitGatewayRouteTableRoute?: TransitGatewayRouteTableRoute;
+    Component?: AnalysisComponent;
+    Subnet?: AnalysisComponent;
+    RouteTableRoute?: AnalysisRouteTableRoute;
+    constructor(properties: PathComponent);
 }
 export declare class PortRange {
     From?: Value<number>;
     To?: Value<number>;
     constructor(properties: PortRange);
 }
-export declare class AnalysisSecurityGroupRule {
-    Cidr?: Value<string>;
-    Direction?: Value<string>;
-    SecurityGroupId?: Value<string>;
-    PortRange?: PortRange;
+export declare class TransitGatewayRouteTableRoute {
     PrefixListId?: Value<string>;
-    Protocol?: Value<string>;
-    constructor(properties: AnalysisSecurityGroupRule);
+    ResourceId?: Value<string>;
+    State?: Value<string>;
+    ResourceType?: Value<string>;
+    RouteOrigin?: Value<string>;
+    DestinationCidr?: Value<string>;
+    AttachmentId?: Value<string>;
+    constructor(properties: TransitGatewayRouteTableRoute);
 }
 export interface NetworkInsightsAnalysisProperties {
     NetworkInsightsPathId: Value<string>;
     FilterInArns?: List<Value<string>>;
+    AdditionalAccounts?: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }
 export default class NetworkInsightsAnalysis extends ResourceBase<NetworkInsightsAnalysisProperties> {
-    static AnalysisAclRule: typeof AnalysisAclRule;
+    static AdditionalDetail: typeof AdditionalDetail;
     static AlternatePathHint: typeof AlternatePathHint;
-    static Explanation: typeof Explanation;
+    static AnalysisAclRule: typeof AnalysisAclRule;
+    static AnalysisComponent: typeof AnalysisComponent;
     static AnalysisLoadBalancerListener: typeof AnalysisLoadBalancerListener;
     static AnalysisLoadBalancerTarget: typeof AnalysisLoadBalancerTarget;
-    static AnalysisRouteTableRoute: typeof AnalysisRouteTableRoute;
     static AnalysisPacketHeader: typeof AnalysisPacketHeader;
-    static PathComponent: typeof PathComponent;
-    static AnalysisComponent: typeof AnalysisComponent;
-    static PortRange: typeof PortRange;
+    static AnalysisRouteTableRoute: typeof AnalysisRouteTableRoute;
     static AnalysisSecurityGroupRule: typeof AnalysisSecurityGroupRule;
+    static Explanation: typeof Explanation;
+    static PathComponent: typeof PathComponent;
+    static PortRange: typeof PortRange;
+    static TransitGatewayRouteTableRoute: typeof TransitGatewayRouteTableRoute;
     constructor(properties: NetworkInsightsAnalysisProperties);
 }

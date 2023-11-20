@@ -5,7 +5,7 @@ export interface RobotProperties {
     Architecture: Value<string>;
     GreengrassGroupId: Value<string>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Name?: Value<string>;
 }

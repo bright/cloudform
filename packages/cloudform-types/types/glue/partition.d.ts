@@ -1,5 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class Column {
+    Comment?: Value<string>;
+    Type?: Value<string>;
+    Name: Value<string>;
+    constructor(properties: Column);
+}
+export declare class Order {
+    Column: Value<string>;
+    SortOrder?: Value<number>;
+    constructor(properties: Order);
+}
 export declare class PartitionInput {
     Parameters?: {
         [key: string]: any;
@@ -8,15 +19,16 @@ export declare class PartitionInput {
     Values: List<Value<string>>;
     constructor(properties: PartitionInput);
 }
-export declare class Order {
-    Column: Value<string>;
-    SortOrder?: Value<number>;
-    constructor(properties: Order);
+export declare class SchemaId {
+    RegistryName?: Value<string>;
+    SchemaName?: Value<string>;
+    SchemaArn?: Value<string>;
+    constructor(properties: SchemaId);
 }
 export declare class SchemaReference {
+    SchemaVersionId?: Value<string>;
     SchemaId?: SchemaId;
     SchemaVersionNumber?: Value<number>;
-    SchameVersionId?: Value<string>;
     constructor(properties: SchemaReference);
 }
 export declare class SerdeInfo {
@@ -27,11 +39,13 @@ export declare class SerdeInfo {
     Name?: Value<string>;
     constructor(properties: SerdeInfo);
 }
-export declare class Column {
-    Comment?: Value<string>;
-    Type?: Value<string>;
-    Name: Value<string>;
-    constructor(properties: Column);
+export declare class SkewedInfo {
+    SkewedColumnNames?: List<Value<string>>;
+    SkewedColumnValues?: List<Value<string>>;
+    SkewedColumnValueLocationMaps?: {
+        [key: string]: any;
+    };
+    constructor(properties: SkewedInfo);
 }
 export declare class StorageDescriptor {
     StoredAsSubDirectories?: Value<boolean>;
@@ -51,20 +65,6 @@ export declare class StorageDescriptor {
     Location?: Value<string>;
     constructor(properties: StorageDescriptor);
 }
-export declare class SkewedInfo {
-    SkewedColumnNames?: List<Value<string>>;
-    SkewedColumnValues?: List<Value<string>>;
-    SkewedColumnValueLocationMaps?: {
-        [key: string]: any;
-    };
-    constructor(properties: SkewedInfo);
-}
-export declare class SchemaId {
-    RegistryName?: Value<string>;
-    SchemaName?: Value<string>;
-    SchemaArn?: Value<string>;
-    constructor(properties: SchemaId);
-}
 export interface PartitionProperties {
     TableName: Value<string>;
     DatabaseName: Value<string>;
@@ -72,13 +72,13 @@ export interface PartitionProperties {
     PartitionInput: PartitionInput;
 }
 export default class Partition extends ResourceBase<PartitionProperties> {
-    static PartitionInput: typeof PartitionInput;
+    static Column: typeof Column;
     static Order: typeof Order;
+    static PartitionInput: typeof PartitionInput;
+    static SchemaId: typeof SchemaId;
     static SchemaReference: typeof SchemaReference;
     static SerdeInfo: typeof SerdeInfo;
-    static Column: typeof Column;
-    static StorageDescriptor: typeof StorageDescriptor;
     static SkewedInfo: typeof SkewedInfo;
-    static SchemaId: typeof SchemaId;
+    static StorageDescriptor: typeof StorageDescriptor;
     constructor(properties: PartitionProperties);
 }

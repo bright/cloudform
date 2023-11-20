@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface SubnetGroupProperties {
-    CacheSubnetGroupName?: Value<string>;
     Description: Value<string>;
+    CacheSubnetGroupName?: Value<string>;
     SubnetIds: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }

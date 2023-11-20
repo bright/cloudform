@@ -1,29 +1,36 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ComponentConfiguration {
+    Parameters?: List<ComponentParameter>;
     ComponentArn?: Value<string>;
     constructor(properties: ComponentConfiguration);
 }
+export declare class ComponentParameter {
+    Value: List<Value<string>>;
+    Name: Value<string>;
+    constructor(properties: ComponentParameter);
+}
 export declare class EbsInstanceBlockDeviceSpecification {
-    Encrypted?: Value<boolean>;
-    DeleteOnTermination?: Value<boolean>;
-    Iops?: Value<number>;
-    KmsKeyId?: Value<string>;
     SnapshotId?: Value<string>;
-    VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
+    KmsKeyId?: Value<string>;
+    Encrypted?: Value<boolean>;
+    Throughput?: Value<number>;
+    Iops?: Value<number>;
+    VolumeSize?: Value<number>;
+    DeleteOnTermination?: Value<boolean>;
     constructor(properties: EbsInstanceBlockDeviceSpecification);
 }
 export declare class InstanceBlockDeviceMapping {
-    DeviceName?: Value<string>;
-    VirtualName?: Value<string>;
-    NoDevice?: Value<string>;
     Ebs?: EbsInstanceBlockDeviceSpecification;
+    NoDevice?: Value<string>;
+    VirtualName?: Value<string>;
+    DeviceName?: Value<string>;
     constructor(properties: InstanceBlockDeviceMapping);
 }
 export declare class InstanceConfiguration {
-    Image?: Value<string>;
     BlockDeviceMappings?: List<InstanceBlockDeviceMapping>;
+    Image?: Value<string>;
     constructor(properties: InstanceConfiguration);
 }
 export declare class TargetContainerRepository {
@@ -32,26 +39,27 @@ export declare class TargetContainerRepository {
     constructor(properties: TargetContainerRepository);
 }
 export interface ContainerRecipeProperties {
-    Name: Value<string>;
-    Description?: Value<string>;
-    Version: Value<string>;
-    Components: List<ComponentConfiguration>;
-    InstanceConfiguration?: InstanceConfiguration;
-    DockerfileTemplateData?: Value<string>;
-    DockerfileTemplateUri?: Value<string>;
-    PlatformOverride?: Value<string>;
-    ContainerType: Value<string>;
-    ImageOsVersionOverride?: Value<string>;
-    TargetRepository: TargetContainerRepository;
-    KmsKeyId?: Value<string>;
-    ParentImage: Value<string>;
     WorkingDirectory?: Value<string>;
+    ParentImage: Value<string>;
+    Description?: Value<string>;
+    KmsKeyId?: Value<string>;
+    InstanceConfiguration?: InstanceConfiguration;
+    ContainerType: Value<string>;
+    Name: Value<string>;
+    DockerfileTemplateData?: Value<string>;
+    Components: List<ComponentConfiguration>;
+    TargetRepository: TargetContainerRepository;
+    Version: Value<string>;
+    PlatformOverride?: Value<string>;
+    ImageOsVersionOverride?: Value<string>;
     Tags?: {
         [key: string]: Value<string>;
     };
+    DockerfileTemplateUri?: Value<string>;
 }
 export default class ContainerRecipe extends ResourceBase<ContainerRecipeProperties> {
     static ComponentConfiguration: typeof ComponentConfiguration;
+    static ComponentParameter: typeof ComponentParameter;
     static EbsInstanceBlockDeviceSpecification: typeof EbsInstanceBlockDeviceSpecification;
     static InstanceBlockDeviceMapping: typeof InstanceBlockDeviceMapping;
     static InstanceConfiguration: typeof InstanceConfiguration;

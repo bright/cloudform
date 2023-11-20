@@ -1,0 +1,35 @@
+import Alarm_ from './alarm';
+import Bucket_ from './bucket';
+import Certificate_ from './certificate';
+import Container_ from './container';
+import Database_ from './database';
+import Disk_ from './disk';
+import Instance_ from './instance';
+import LoadBalancer_ from './loadBalancer';
+import LoadBalancerTlsCertificate_ from './loadBalancerTlsCertificate';
+import StaticIp_ from './staticIp';
+import Distribution_ from './distribution';
+export declare namespace Lightsail {
+    const Alarm: typeof Alarm_;
+    const Bucket: typeof Bucket_;
+    const Certificate: typeof Certificate_;
+    const Container: typeof Container_;
+    const Database: typeof Database_;
+    const Disk: typeof Disk_;
+    const Instance: typeof Instance_;
+    const LoadBalancer: typeof LoadBalancer_;
+    const LoadBalancerTlsCertificate: typeof LoadBalancerTlsCertificate_;
+    const StaticIp: typeof StaticIp_;
+    const Distribution: typeof Distribution_;
+    type Alarm = Alarm_;
+    type Bucket = Bucket_;
+    type Certificate = Certificate_;
+    type Container = Container_;
+    type Database = Database_;
+    type Disk = Disk_;
+    type Instance = Instance_;
+    type LoadBalancer = LoadBalancer_;
+    type LoadBalancerTlsCertificate = LoadBalancerTlsCertificate_;
+    type StaticIp = StaticIp_;
+    type Distribution = Distribution_;
+}

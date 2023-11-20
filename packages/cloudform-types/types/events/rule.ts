@@ -1,39 +1,31 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
-import {ResourceBase} from '../resource'
+import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export class BatchRetryStrategy {
-    Attempts?: Value<number>
+export class AwsVpcConfiguration {
+    SecurityGroups?: List<Value<string>>
+    Subnets!: List<Value<string>>
+    AssignPublicIp?: Value<string>
 
-    constructor(properties: BatchRetryStrategy) {
-        Object.assign(this, properties)
-    }
-}
-
-export class HttpParameters {
-    HeaderParameters?: {[key: string]: Value<string>}
-    PathParameterValues?: List<Value<string>>
-    QueryStringParameters?: {[key: string]: Value<string>}
-
-    constructor(properties: HttpParameters) {
+    constructor(properties: AwsVpcConfiguration) {
         Object.assign(this, properties)
     }
 }
@@ -48,19 +40,29 @@ export class BatchArrayProperties {
 
 export class BatchParameters {
     ArrayProperties?: BatchArrayProperties
-    JobDefinition!: Value<string>
     JobName!: Value<string>
     RetryStrategy?: BatchRetryStrategy
+    JobDefinition!: Value<string>
 
     constructor(properties: BatchParameters) {
         Object.assign(this, properties)
     }
 }
 
-export class RunCommandParameters {
-    RunCommandTargets!: List<RunCommandTarget>
+export class BatchRetryStrategy {
+    Attempts?: Value<number>
 
-    constructor(properties: RunCommandParameters) {
+    constructor(properties: BatchRetryStrategy) {
+        Object.assign(this, properties)
+    }
+}
+
+export class CapacityProviderStrategyItem {
+    CapacityProvider!: Value<string>
+    Base?: Value<number>
+    Weight?: Value<number>
+
+    constructor(properties: CapacityProviderStrategyItem) {
         Object.assign(this, properties)
     }
 }
@@ -73,19 +75,33 @@ export class DeadLetterConfig {
     }
 }
 
-export class NetworkConfiguration {
-    AwsVpcConfiguration?: AwsVpcConfiguration
+export class EcsParameters {
+    PlatformVersion?: Value<string>
+    Group?: Value<string>
+    EnableECSManagedTags?: Value<boolean>
+    EnableExecuteCommand?: Value<boolean>
+    PlacementConstraints?: List<PlacementConstraint>
+    PropagateTags?: Value<string>
+    TaskCount?: Value<number>
+    PlacementStrategies?: List<PlacementStrategy>
+    CapacityProviderStrategy?: List<CapacityProviderStrategyItem>
+    LaunchType?: Value<string>
+    ReferenceId?: Value<string>
+    TagList?: List<ResourceTag>
+    NetworkConfiguration?: NetworkConfiguration
+    TaskDefinitionArn!: Value<string>
 
-    constructor(properties: NetworkConfiguration) {
+    constructor(properties: EcsParameters) {
         Object.assign(this, properties)
     }
 }
 
-export class RunCommandTarget {
-    Key!: Value<string>
-    Values!: List<Value<string>>
+export class HttpParameters {
+    PathParameterValues?: List<Value<string>>
+    HeaderParameters?: {[key: string]: Value<string>}
+    QueryStringParameters?: {[key: string]: Value<string>}
 
-    constructor(properties: RunCommandTarget) {
+    constructor(properties: HttpParameters) {
         Object.assign(this, properties)
     }
 }
@@ -99,45 +115,6 @@ export class InputTransformer {
     }
 }
 
-export class SqsParameters {
-    MessageGroupId!: Value<string>
-
-    constructor(properties: SqsParameters) {
-        Object.assign(this, properties)
-    }
-}
-
-export class RetryPolicy {
-    MaximumEventAgeInSeconds?: Value<number>
-    MaximumRetryAttempts?: Value<number>
-
-    constructor(properties: RetryPolicy) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Target {
-    Arn!: Value<string>
-    BatchParameters?: BatchParameters
-    DeadLetterConfig?: DeadLetterConfig
-    EcsParameters?: EcsParameters
-    HttpParameters?: HttpParameters
-    Id!: Value<string>
-    Input?: Value<string>
-    InputPath?: Value<string>
-    InputTransformer?: InputTransformer
-    KinesisParameters?: KinesisParameters
-    RedshiftDataParameters?: RedshiftDataParameters
-    RetryPolicy?: RetryPolicy
-    RoleArn?: Value<string>
-    RunCommandParameters?: RunCommandParameters
-    SqsParameters?: SqsParameters
-
-    constructor(properties: Target) {
-        Object.assign(this, properties)
-    }
-}
-
 export class KinesisParameters {
     PartitionKeyPath!: Value<string>
 
@@ -146,12 +123,39 @@ export class KinesisParameters {
     }
 }
 
+export class NetworkConfiguration {
+    AwsVpcConfiguration?: AwsVpcConfiguration
+
+    constructor(properties: NetworkConfiguration) {
+        Object.assign(this, properties)
+    }
+}
+
+export class PlacementConstraint {
+    Type?: Value<string>
+    Expression?: Value<string>
+
+    constructor(properties: PlacementConstraint) {
+        Object.assign(this, properties)
+    }
+}
+
+export class PlacementStrategy {
+    Field?: Value<string>
+    Type?: Value<string>
+
+    constructor(properties: PlacementStrategy) {
+        Object.assign(this, properties)
+    }
+}
+
 export class RedshiftDataParameters {
-    Database!: Value<string>
-    DbUser?: Value<string>
-    SecretManagerArn?: Value<string>
-    Sql!: Value<string>
     StatementName?: Value<string>
+    Sqls?: List<Value<string>>
+    Database!: Value<string>
+    SecretManagerArn?: Value<string>
+    DbUser?: Value<string>
+    Sql?: Value<string>
     WithEvent?: Value<boolean>
 
     constructor(properties: RedshiftDataParameters) {
@@ -159,57 +163,113 @@ export class RedshiftDataParameters {
     }
 }
 
-export class EcsParameters {
-    Group?: Value<string>
-    LaunchType?: Value<string>
-    NetworkConfiguration?: NetworkConfiguration
-    PlatformVersion?: Value<string>
-    TaskCount?: Value<number>
-    TaskDefinitionArn!: Value<string>
+export class RetryPolicy {
+    MaximumRetryAttempts?: Value<number>
+    MaximumEventAgeInSeconds?: Value<number>
 
-    constructor(properties: EcsParameters) {
+    constructor(properties: RetryPolicy) {
         Object.assign(this, properties)
     }
 }
 
-export class AwsVpcConfiguration {
-    AssignPublicIp?: Value<string>
-    SecurityGroups?: List<Value<string>>
-    Subnets!: List<Value<string>>
+export class RunCommandParameters {
+    RunCommandTargets!: List<RunCommandTarget>
 
-    constructor(properties: AwsVpcConfiguration) {
+    constructor(properties: RunCommandParameters) {
+        Object.assign(this, properties)
+    }
+}
+
+export class RunCommandTarget {
+    Values!: List<Value<string>>
+    Key!: Value<string>
+
+    constructor(properties: RunCommandTarget) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SageMakerPipelineParameter {
+    Value!: Value<string>
+    Name!: Value<string>
+
+    constructor(properties: SageMakerPipelineParameter) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SageMakerPipelineParameters {
+    PipelineParameterList?: List<SageMakerPipelineParameter>
+
+    constructor(properties: SageMakerPipelineParameters) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SqsParameters {
+    MessageGroupId!: Value<string>
+
+    constructor(properties: SqsParameters) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Target {
+    InputPath?: Value<string>
+    HttpParameters?: HttpParameters
+    DeadLetterConfig?: DeadLetterConfig
+    RunCommandParameters?: RunCommandParameters
+    InputTransformer?: InputTransformer
+    KinesisParameters?: KinesisParameters
+    RoleArn?: Value<string>
+    RedshiftDataParameters?: RedshiftDataParameters
+    Input?: Value<string>
+    SqsParameters?: SqsParameters
+    EcsParameters?: EcsParameters
+    BatchParameters?: BatchParameters
+    Id!: Value<string>
+    Arn!: Value<string>
+    SageMakerPipelineParameters?: SageMakerPipelineParameters
+    RetryPolicy?: RetryPolicy
+
+    constructor(properties: Target) {
         Object.assign(this, properties)
     }
 }
 
 export interface RuleProperties {
-    Description?: Value<string>
     EventBusName?: Value<string>
     EventPattern?: {[key: string]: any}
-    Name?: Value<string>
-    RoleArn?: Value<string>
     ScheduleExpression?: Value<string>
+    Description?: Value<string>
     State?: Value<string>
     Targets?: List<Target>
+    RoleArn?: Value<string>
+    Name?: Value<string>
 }
 
 export default class Rule extends ResourceBase<RuleProperties> {
-    static BatchRetryStrategy = BatchRetryStrategy
-    static HttpParameters = HttpParameters
+    static AwsVpcConfiguration = AwsVpcConfiguration
     static BatchArrayProperties = BatchArrayProperties
     static BatchParameters = BatchParameters
-    static RunCommandParameters = RunCommandParameters
+    static BatchRetryStrategy = BatchRetryStrategy
+    static CapacityProviderStrategyItem = CapacityProviderStrategyItem
     static DeadLetterConfig = DeadLetterConfig
-    static NetworkConfiguration = NetworkConfiguration
-    static RunCommandTarget = RunCommandTarget
-    static InputTransformer = InputTransformer
-    static SqsParameters = SqsParameters
-    static RetryPolicy = RetryPolicy
-    static Target = Target
-    static KinesisParameters = KinesisParameters
-    static RedshiftDataParameters = RedshiftDataParameters
     static EcsParameters = EcsParameters
-    static AwsVpcConfiguration = AwsVpcConfiguration
+    static HttpParameters = HttpParameters
+    static InputTransformer = InputTransformer
+    static KinesisParameters = KinesisParameters
+    static NetworkConfiguration = NetworkConfiguration
+    static PlacementConstraint = PlacementConstraint
+    static PlacementStrategy = PlacementStrategy
+    static RedshiftDataParameters = RedshiftDataParameters
+    static RetryPolicy = RetryPolicy
+    static RunCommandParameters = RunCommandParameters
+    static RunCommandTarget = RunCommandTarget
+    static SageMakerPipelineParameter = SageMakerPipelineParameter
+    static SageMakerPipelineParameters = SageMakerPipelineParameters
+    static SqsParameters = SqsParameters
+    static Target = Target
 
     constructor(properties?: RuleProperties) {
         super('AWS::Events::Rule', properties || {})

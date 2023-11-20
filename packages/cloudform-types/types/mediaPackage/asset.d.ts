@@ -6,13 +6,13 @@ export declare class EgressEndpoint {
     constructor(properties: EgressEndpoint);
 }
 export interface AssetProperties {
-    EgressEndpoints?: List<EgressEndpoint>;
+    SourceArn: Value<string>;
+    ResourceId?: Value<string>;
     Id: Value<string>;
     PackagingGroupId: Value<string>;
-    ResourceId?: Value<string>;
-    SourceArn: Value<string>;
-    SourceRoleArn: Value<string>;
+    EgressEndpoints?: List<EgressEndpoint>;
     Tags?: List<ResourceTag>;
+    SourceRoleArn: Value<string>;
 }
 export default class Asset extends ResourceBase<AssetProperties> {
     static EgressEndpoint: typeof EgressEndpoint;

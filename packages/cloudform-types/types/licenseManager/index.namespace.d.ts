@@ -1,8 +1,8 @@
-import License_ from './license';
 import Grant_ from './grant';
+import License_ from './license';
 export declare namespace LicenseManager {
-    const License: typeof License_;
     const Grant: typeof Grant_;
-    type License = License_;
+    const License: typeof License_;
     type Grant = Grant_;
+    type License = License_;
 }

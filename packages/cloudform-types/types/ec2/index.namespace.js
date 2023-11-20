@@ -1,167 +1,208 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const routeTable_1 = require("./routeTable");
-const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
-const transitGateway_1 = require("./transitGateway");
+exports.EC2 = void 0;
 const capacityReservation_1 = require("./capacityReservation");
-const vpcEndpointServicePermissions_1 = require("./vpcEndpointServicePermissions");
-const transitGatewayRouteTableAssociation_1 = require("./transitGatewayRouteTableAssociation");
-const volume_1 = require("./volume");
-const eip_1 = require("./eip");
-const localGatewayRoute_1 = require("./localGatewayRoute");
-const flowLog_1 = require("./flowLog");
-const securityGroupEgress_1 = require("./securityGroupEgress");
-const transitGatewayAttachment_1 = require("./transitGatewayAttachment");
-const subnet_1 = require("./subnet");
-const transitGatewayMulticastDomainAssociation_1 = require("./transitGatewayMulticastDomainAssociation");
+const capacityReservationFleet_1 = require("./capacityReservationFleet");
 const carrierGateway_1 = require("./carrierGateway");
-const instance_1 = require("./instance");
-const dhcpOptions_1 = require("./dhcpOptions");
-const egressOnlyInternetGateway_1 = require("./egressOnlyInternetGateway");
-const networkInterfaceAttachment_1 = require("./networkInterfaceAttachment");
-const customerGateway_1 = require("./customerGateway");
-const networkInsightsPath_1 = require("./networkInsightsPath");
-const eipAssociation_1 = require("./eipAssociation");
-const vpnGateway_1 = require("./vpnGateway");
-const vpnConnection_1 = require("./vpnConnection");
-const transitGatewayRouteTable_1 = require("./transitGatewayRouteTable");
-const vpcEndpointService_1 = require("./vpcEndpointService");
-const clientVpnRoute_1 = require("./clientVpnRoute");
-const placementGroup_1 = require("./placementGroup");
-const gatewayRouteTableAssociation_1 = require("./gatewayRouteTableAssociation");
-const networkAclEntry_1 = require("./networkAclEntry");
-const internetGateway_1 = require("./internetGateway");
-const launchTemplate_1 = require("./launchTemplate");
-const spotFleet_1 = require("./spotFleet");
-const vpnConnectionRoute_1 = require("./vpnConnectionRoute");
-const networkInterfacePermission_1 = require("./networkInterfacePermission");
-const trafficMirrorFilter_1 = require("./trafficMirrorFilter");
-const securityGroupIngress_1 = require("./securityGroupIngress");
-const transitGatewayMulticastGroupMember_1 = require("./transitGatewayMulticastGroupMember");
-const clientVpnEndpoint_1 = require("./clientVpnEndpoint");
-const subnetRouteTableAssociation_1 = require("./subnetRouteTableAssociation");
-const route_1 = require("./route");
-const localGatewayRouteTableVpcAssociation_1 = require("./localGatewayRouteTableVpcAssociation");
-const transitGatewayRouteTablePropagation_1 = require("./transitGatewayRouteTablePropagation");
-const networkInterface_1 = require("./networkInterface");
-const transitGatewayMulticastGroupSource_1 = require("./transitGatewayMulticastGroupSource");
 const clientVpnAuthorizationRule_1 = require("./clientVpnAuthorizationRule");
-const subnetNetworkAclAssociation_1 = require("./subnetNetworkAclAssociation");
-const trafficMirrorSession_1 = require("./trafficMirrorSession");
-const subnetCidrBlock_1 = require("./subnetCidrBlock");
-const natGateway_1 = require("./natGateway");
-const securityGroup_1 = require("./securityGroup");
-const trafficMirrorFilterRule_1 = require("./trafficMirrorFilterRule");
-const prefixList_1 = require("./prefixList");
-const vpc_1 = require("./vpc");
-const transitGatewayRoute_1 = require("./transitGatewayRoute");
-const networkAcl_1 = require("./networkAcl");
-const vpnGatewayRoutePropagation_1 = require("./vpnGatewayRoutePropagation");
+const clientVpnEndpoint_1 = require("./clientVpnEndpoint");
+const clientVpnRoute_1 = require("./clientVpnRoute");
 const clientVpnTargetNetworkAssociation_1 = require("./clientVpnTargetNetworkAssociation");
-const transitGatewayMulticastDomain_1 = require("./transitGatewayMulticastDomain");
-const transitGatewayPeeringAttachment_1 = require("./transitGatewayPeeringAttachment");
-const volumeAttachment_1 = require("./volumeAttachment");
-const networkInsightsAnalysis_1 = require("./networkInsightsAnalysis");
-const host_1 = require("./host");
-const vpcEndpoint_1 = require("./vpcEndpoint");
-const vpcGatewayAttachment_1 = require("./vpcGatewayAttachment");
-const vpcCidrBlock_1 = require("./vpcCidrBlock");
+const customerGateway_1 = require("./customerGateway");
+const dhcpOptions_1 = require("./dhcpOptions");
 const ec2Fleet_1 = require("./ec2Fleet");
-const vpcdhcpOptionsAssociation_1 = require("./vpcdhcpOptionsAssociation");
+const eip_1 = require("./eip");
+const eipAssociation_1 = require("./eipAssociation");
+const egressOnlyInternetGateway_1 = require("./egressOnlyInternetGateway");
 const enclaveCertificateIamRoleAssociation_1 = require("./enclaveCertificateIamRoleAssociation");
+const flowLog_1 = require("./flowLog");
+const gatewayRouteTableAssociation_1 = require("./gatewayRouteTableAssociation");
+const host_1 = require("./host");
+const ipam_1 = require("./ipam");
+const ipamAllocation_1 = require("./ipamAllocation");
+const ipamPool_1 = require("./ipamPool");
+const ipamPoolCidr_1 = require("./ipamPoolCidr");
+const ipamResourceDiscovery_1 = require("./ipamResourceDiscovery");
+const ipamResourceDiscoveryAssociation_1 = require("./ipamResourceDiscoveryAssociation");
+const ipamScope_1 = require("./ipamScope");
+const instance_1 = require("./instance");
+const instanceConnectEndpoint_1 = require("./instanceConnectEndpoint");
+const internetGateway_1 = require("./internetGateway");
+const keyPair_1 = require("./keyPair");
+const launchTemplate_1 = require("./launchTemplate");
+const localGatewayRoute_1 = require("./localGatewayRoute");
+const localGatewayRouteTable_1 = require("./localGatewayRouteTable");
+const localGatewayRouteTableVpcAssociation_1 = require("./localGatewayRouteTableVpcAssociation");
+const localGatewayRouteTableVirtualInterfaceGroupAssociation_1 = require("./localGatewayRouteTableVirtualInterfaceGroupAssociation");
+const natGateway_1 = require("./natGateway");
+const networkAcl_1 = require("./networkAcl");
+const networkAclEntry_1 = require("./networkAclEntry");
+const networkInsightsAccessScope_1 = require("./networkInsightsAccessScope");
+const networkInsightsAccessScopeAnalysis_1 = require("./networkInsightsAccessScopeAnalysis");
+const networkInsightsAnalysis_1 = require("./networkInsightsAnalysis");
+const networkInsightsPath_1 = require("./networkInsightsPath");
+const networkInterface_1 = require("./networkInterface");
+const networkInterfaceAttachment_1 = require("./networkInterfaceAttachment");
+const networkInterfacePermission_1 = require("./networkInterfacePermission");
+const networkPerformanceMetricSubscription_1 = require("./networkPerformanceMetricSubscription");
+const placementGroup_1 = require("./placementGroup");
+const prefixList_1 = require("./prefixList");
+const route_1 = require("./route");
+const routeTable_1 = require("./routeTable");
+const securityGroup_1 = require("./securityGroup");
+const securityGroupEgress_1 = require("./securityGroupEgress");
+const securityGroupIngress_1 = require("./securityGroupIngress");
+const spotFleet_1 = require("./spotFleet");
+const subnet_1 = require("./subnet");
+const subnetCidrBlock_1 = require("./subnetCidrBlock");
+const subnetNetworkAclAssociation_1 = require("./subnetNetworkAclAssociation");
+const subnetRouteTableAssociation_1 = require("./subnetRouteTableAssociation");
+const trafficMirrorFilter_1 = require("./trafficMirrorFilter");
+const trafficMirrorFilterRule_1 = require("./trafficMirrorFilterRule");
+const trafficMirrorSession_1 = require("./trafficMirrorSession");
 const trafficMirrorTarget_1 = require("./trafficMirrorTarget");
-const vpcEndpointConnectionNotification_1 = require("./vpcEndpointConnectionNotification");
+const transitGateway_1 = require("./transitGateway");
+const transitGatewayAttachment_1 = require("./transitGatewayAttachment");
 const transitGatewayConnect_1 = require("./transitGatewayConnect");
+const transitGatewayMulticastDomain_1 = require("./transitGatewayMulticastDomain");
+const transitGatewayMulticastDomainAssociation_1 = require("./transitGatewayMulticastDomainAssociation");
+const transitGatewayMulticastGroupMember_1 = require("./transitGatewayMulticastGroupMember");
+const transitGatewayMulticastGroupSource_1 = require("./transitGatewayMulticastGroupSource");
+const transitGatewayPeeringAttachment_1 = require("./transitGatewayPeeringAttachment");
+const transitGatewayRoute_1 = require("./transitGatewayRoute");
+const transitGatewayRouteTable_1 = require("./transitGatewayRouteTable");
+const transitGatewayRouteTableAssociation_1 = require("./transitGatewayRouteTableAssociation");
+const transitGatewayRouteTablePropagation_1 = require("./transitGatewayRouteTablePropagation");
+const transitGatewayVpcAttachment_1 = require("./transitGatewayVpcAttachment");
+const vpc_1 = require("./vpc");
+const vpcCidrBlock_1 = require("./vpcCidrBlock");
+const vpcdhcpOptionsAssociation_1 = require("./vpcdhcpOptionsAssociation");
+const vpcEndpoint_1 = require("./vpcEndpoint");
+const vpcEndpointConnectionNotification_1 = require("./vpcEndpointConnectionNotification");
+const vpcEndpointService_1 = require("./vpcEndpointService");
+const vpcEndpointServicePermissions_1 = require("./vpcEndpointServicePermissions");
+const vpcGatewayAttachment_1 = require("./vpcGatewayAttachment");
+const vpcPeeringConnection_1 = require("./vpcPeeringConnection");
+const vpnConnection_1 = require("./vpnConnection");
+const vpnConnectionRoute_1 = require("./vpnConnectionRoute");
+const vpnGateway_1 = require("./vpnGateway");
+const vpnGatewayRoutePropagation_1 = require("./vpnGatewayRoutePropagation");
+const verifiedAccessEndpoint_1 = require("./verifiedAccessEndpoint");
+const verifiedAccessGroup_1 = require("./verifiedAccessGroup");
+const verifiedAccessInstance_1 = require("./verifiedAccessInstance");
+const verifiedAccessTrustProvider_1 = require("./verifiedAccessTrustProvider");
+const volume_1 = require("./volume");
+const volumeAttachment_1 = require("./volumeAttachment");
 var EC2;
 (function (EC2) {
-    EC2.RouteTable = routeTable_1.default;
-    EC2.VPCPeeringConnection = vpcPeeringConnection_1.default;
-    EC2.TransitGateway = transitGateway_1.default;
     EC2.CapacityReservation = capacityReservation_1.default;
-    EC2.VPCEndpointServicePermissions = vpcEndpointServicePermissions_1.default;
-    EC2.TransitGatewayRouteTableAssociation = transitGatewayRouteTableAssociation_1.default;
-    EC2.Volume = volume_1.default;
-    EC2.EIP = eip_1.default;
-    EC2.LocalGatewayRoute = localGatewayRoute_1.default;
-    EC2.FlowLog = flowLog_1.default;
-    EC2.SecurityGroupEgress = securityGroupEgress_1.default;
-    EC2.TransitGatewayAttachment = transitGatewayAttachment_1.default;
-    EC2.Subnet = subnet_1.default;
-    EC2.TransitGatewayMulticastDomainAssociation = transitGatewayMulticastDomainAssociation_1.default;
+    EC2.CapacityReservationFleet = capacityReservationFleet_1.default;
     EC2.CarrierGateway = carrierGateway_1.default;
-    EC2.Instance = instance_1.default;
-    EC2.DHCPOptions = dhcpOptions_1.default;
-    EC2.EgressOnlyInternetGateway = egressOnlyInternetGateway_1.default;
-    EC2.NetworkInterfaceAttachment = networkInterfaceAttachment_1.default;
-    EC2.CustomerGateway = customerGateway_1.default;
-    EC2.NetworkInsightsPath = networkInsightsPath_1.default;
-    EC2.EIPAssociation = eipAssociation_1.default;
-    EC2.VPNGateway = vpnGateway_1.default;
-    EC2.VPNConnection = vpnConnection_1.default;
-    EC2.TransitGatewayRouteTable = transitGatewayRouteTable_1.default;
-    EC2.VPCEndpointService = vpcEndpointService_1.default;
-    EC2.ClientVpnRoute = clientVpnRoute_1.default;
-    EC2.PlacementGroup = placementGroup_1.default;
-    EC2.GatewayRouteTableAssociation = gatewayRouteTableAssociation_1.default;
-    EC2.NetworkAclEntry = networkAclEntry_1.default;
-    EC2.InternetGateway = internetGateway_1.default;
-    EC2.LaunchTemplate = launchTemplate_1.default;
-    EC2.SpotFleet = spotFleet_1.default;
-    EC2.VPNConnectionRoute = vpnConnectionRoute_1.default;
-    EC2.NetworkInterfacePermission = networkInterfacePermission_1.default;
-    EC2.TrafficMirrorFilter = trafficMirrorFilter_1.default;
-    EC2.SecurityGroupIngress = securityGroupIngress_1.default;
-    EC2.TransitGatewayMulticastGroupMember = transitGatewayMulticastGroupMember_1.default;
-    EC2.ClientVpnEndpoint = clientVpnEndpoint_1.default;
-    EC2.SubnetRouteTableAssociation = subnetRouteTableAssociation_1.default;
-    EC2.Route = route_1.default;
-    EC2.LocalGatewayRouteTableVPCAssociation = localGatewayRouteTableVpcAssociation_1.default;
-    EC2.TransitGatewayRouteTablePropagation = transitGatewayRouteTablePropagation_1.default;
-    EC2.NetworkInterface = networkInterface_1.default;
-    EC2.TransitGatewayMulticastGroupSource = transitGatewayMulticastGroupSource_1.default;
     EC2.ClientVpnAuthorizationRule = clientVpnAuthorizationRule_1.default;
-    EC2.SubnetNetworkAclAssociation = subnetNetworkAclAssociation_1.default;
-    EC2.TrafficMirrorSession = trafficMirrorSession_1.default;
-    EC2.SubnetCidrBlock = subnetCidrBlock_1.default;
-    EC2.NatGateway = natGateway_1.default;
-    EC2.SecurityGroup = securityGroup_1.default;
-    EC2.TrafficMirrorFilterRule = trafficMirrorFilterRule_1.default;
-    EC2.PrefixList = prefixList_1.default;
-    EC2.VPC = vpc_1.default;
-    EC2.TransitGatewayRoute = transitGatewayRoute_1.default;
-    EC2.NetworkAcl = networkAcl_1.default;
-    EC2.VPNGatewayRoutePropagation = vpnGatewayRoutePropagation_1.default;
+    EC2.ClientVpnEndpoint = clientVpnEndpoint_1.default;
+    EC2.ClientVpnRoute = clientVpnRoute_1.default;
     EC2.ClientVpnTargetNetworkAssociation = clientVpnTargetNetworkAssociation_1.default;
-    EC2.TransitGatewayMulticastDomain = transitGatewayMulticastDomain_1.default;
-    EC2.TransitGatewayPeeringAttachment = transitGatewayPeeringAttachment_1.default;
-    EC2.VolumeAttachment = volumeAttachment_1.default;
-    EC2.NetworkInsightsAnalysis = networkInsightsAnalysis_1.default;
-    EC2.Host = host_1.default;
-    EC2.VPCEndpoint = vpcEndpoint_1.default;
-    EC2.VPCGatewayAttachment = vpcGatewayAttachment_1.default;
-    EC2.VPCCidrBlock = vpcCidrBlock_1.default;
+    EC2.CustomerGateway = customerGateway_1.default;
+    EC2.DHCPOptions = dhcpOptions_1.default;
     EC2.EC2Fleet = ec2Fleet_1.default;
-    EC2.VPCDHCPOptionsAssociation = vpcdhcpOptionsAssociation_1.default;
+    EC2.EIP = eip_1.default;
+    EC2.EIPAssociation = eipAssociation_1.default;
+    EC2.EgressOnlyInternetGateway = egressOnlyInternetGateway_1.default;
     EC2.EnclaveCertificateIamRoleAssociation = enclaveCertificateIamRoleAssociation_1.default;
+    EC2.FlowLog = flowLog_1.default;
+    EC2.GatewayRouteTableAssociation = gatewayRouteTableAssociation_1.default;
+    EC2.Host = host_1.default;
+    EC2.IPAM = ipam_1.default;
+    EC2.IPAMAllocation = ipamAllocation_1.default;
+    EC2.IPAMPool = ipamPool_1.default;
+    EC2.IPAMPoolCidr = ipamPoolCidr_1.default;
+    EC2.IPAMResourceDiscovery = ipamResourceDiscovery_1.default;
+    EC2.IPAMResourceDiscoveryAssociation = ipamResourceDiscoveryAssociation_1.default;
+    EC2.IPAMScope = ipamScope_1.default;
+    EC2.Instance = instance_1.default;
+    EC2.InstanceConnectEndpoint = instanceConnectEndpoint_1.default;
+    EC2.InternetGateway = internetGateway_1.default;
+    EC2.KeyPair = keyPair_1.default;
+    EC2.LaunchTemplate = launchTemplate_1.default;
+    EC2.LocalGatewayRoute = localGatewayRoute_1.default;
+    EC2.LocalGatewayRouteTable = localGatewayRouteTable_1.default;
+    EC2.LocalGatewayRouteTableVPCAssociation = localGatewayRouteTableVpcAssociation_1.default;
+    EC2.LocalGatewayRouteTableVirtualInterfaceGroupAssociation = localGatewayRouteTableVirtualInterfaceGroupAssociation_1.default;
+    EC2.NatGateway = natGateway_1.default;
+    EC2.NetworkAcl = networkAcl_1.default;
+    EC2.NetworkAclEntry = networkAclEntry_1.default;
+    EC2.NetworkInsightsAccessScope = networkInsightsAccessScope_1.default;
+    EC2.NetworkInsightsAccessScopeAnalysis = networkInsightsAccessScopeAnalysis_1.default;
+    EC2.NetworkInsightsAnalysis = networkInsightsAnalysis_1.default;
+    EC2.NetworkInsightsPath = networkInsightsPath_1.default;
+    EC2.NetworkInterface = networkInterface_1.default;
+    EC2.NetworkInterfaceAttachment = networkInterfaceAttachment_1.default;
+    EC2.NetworkInterfacePermission = networkInterfacePermission_1.default;
+    EC2.NetworkPerformanceMetricSubscription = networkPerformanceMetricSubscription_1.default;
+    EC2.PlacementGroup = placementGroup_1.default;
+    EC2.PrefixList = prefixList_1.default;
+    EC2.Route = route_1.default;
+    EC2.RouteTable = routeTable_1.default;
+    EC2.SecurityGroup = securityGroup_1.default;
+    EC2.SecurityGroupEgress = securityGroupEgress_1.default;
+    EC2.SecurityGroupIngress = securityGroupIngress_1.default;
+    EC2.SpotFleet = spotFleet_1.default;
+    EC2.Subnet = subnet_1.default;
+    EC2.SubnetCidrBlock = subnetCidrBlock_1.default;
+    EC2.SubnetNetworkAclAssociation = subnetNetworkAclAssociation_1.default;
+    EC2.SubnetRouteTableAssociation = subnetRouteTableAssociation_1.default;
+    EC2.TrafficMirrorFilter = trafficMirrorFilter_1.default;
+    EC2.TrafficMirrorFilterRule = trafficMirrorFilterRule_1.default;
+    EC2.TrafficMirrorSession = trafficMirrorSession_1.default;
     EC2.TrafficMirrorTarget = trafficMirrorTarget_1.default;
-    EC2.VPCEndpointConnectionNotification = vpcEndpointConnectionNotification_1.default;
+    EC2.TransitGateway = transitGateway_1.default;
+    EC2.TransitGatewayAttachment = transitGatewayAttachment_1.default;
     EC2.TransitGatewayConnect = transitGatewayConnect_1.default;
+    EC2.TransitGatewayMulticastDomain = transitGatewayMulticastDomain_1.default;
+    EC2.TransitGatewayMulticastDomainAssociation = transitGatewayMulticastDomainAssociation_1.default;
+    EC2.TransitGatewayMulticastGroupMember = transitGatewayMulticastGroupMember_1.default;
+    EC2.TransitGatewayMulticastGroupSource = transitGatewayMulticastGroupSource_1.default;
+    EC2.TransitGatewayPeeringAttachment = transitGatewayPeeringAttachment_1.default;
+    EC2.TransitGatewayRoute = transitGatewayRoute_1.default;
+    EC2.TransitGatewayRouteTable = transitGatewayRouteTable_1.default;
+    EC2.TransitGatewayRouteTableAssociation = transitGatewayRouteTableAssociation_1.default;
+    EC2.TransitGatewayRouteTablePropagation = transitGatewayRouteTablePropagation_1.default;
+    EC2.TransitGatewayVpcAttachment = transitGatewayVpcAttachment_1.default;
+    EC2.VPC = vpc_1.default;
+    EC2.VPCCidrBlock = vpcCidrBlock_1.default;
+    EC2.VPCDHCPOptionsAssociation = vpcdhcpOptionsAssociation_1.default;
+    EC2.VPCEndpoint = vpcEndpoint_1.default;
+    EC2.VPCEndpointConnectionNotification = vpcEndpointConnectionNotification_1.default;
+    EC2.VPCEndpointService = vpcEndpointService_1.default;
+    EC2.VPCEndpointServicePermissions = vpcEndpointServicePermissions_1.default;
+    EC2.VPCGatewayAttachment = vpcGatewayAttachment_1.default;
+    EC2.VPCPeeringConnection = vpcPeeringConnection_1.default;
+    EC2.VPNConnection = vpnConnection_1.default;
+    EC2.VPNConnectionRoute = vpnConnectionRoute_1.default;
+    EC2.VPNGateway = vpnGateway_1.default;
+    EC2.VPNGatewayRoutePropagation = vpnGatewayRoutePropagation_1.default;
+    EC2.VerifiedAccessEndpoint = verifiedAccessEndpoint_1.default;
+    EC2.VerifiedAccessGroup = verifiedAccessGroup_1.default;
+    EC2.VerifiedAccessInstance = verifiedAccessInstance_1.default;
+    EC2.VerifiedAccessTrustProvider = verifiedAccessTrustProvider_1.default;
+    EC2.Volume = volume_1.default;
+    EC2.VolumeAttachment = volumeAttachment_1.default;
 })(EC2 = exports.EC2 || (exports.EC2 = {}));

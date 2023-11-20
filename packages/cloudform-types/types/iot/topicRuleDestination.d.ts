@@ -1,15 +1,15 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class VpcDestinationProperties {
-    SubnetIds?: List<Value<string>>;
-    SecurityGroups?: List<Value<string>>;
-    VpcId?: Value<string>;
-    RoleArn?: Value<string>;
-    constructor(properties: VpcDestinationProperties);
-}
 export declare class HttpUrlDestinationSummary {
     ConfirmationUrl?: Value<string>;
     constructor(properties: HttpUrlDestinationSummary);
+}
+export declare class VpcDestinationProperties {
+    SecurityGroups?: List<Value<string>>;
+    VpcId?: Value<string>;
+    SubnetIds?: List<Value<string>>;
+    RoleArn?: Value<string>;
+    constructor(properties: VpcDestinationProperties);
 }
 export interface TopicRuleDestinationProperties {
     Status?: Value<string>;
@@ -17,7 +17,7 @@ export interface TopicRuleDestinationProperties {
     VpcProperties?: VpcDestinationProperties;
 }
 export default class TopicRuleDestination extends ResourceBase<TopicRuleDestinationProperties> {
-    static VpcDestinationProperties: typeof VpcDestinationProperties;
     static HttpUrlDestinationSummary: typeof HttpUrlDestinationSummary;
+    static VpcDestinationProperties: typeof VpcDestinationProperties;
     constructor(properties?: TopicRuleDestinationProperties);
 }

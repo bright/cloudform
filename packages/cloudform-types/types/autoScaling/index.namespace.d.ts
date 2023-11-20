@@ -1,20 +1,20 @@
-import LaunchConfiguration_ from './launchConfiguration';
-import ScalingPolicy_ from './scalingPolicy';
-import LifecycleHook_ from './lifecycleHook';
-import WarmPool_ from './warmPool';
 import AutoScalingGroup_ from './autoScalingGroup';
+import LaunchConfiguration_ from './launchConfiguration';
+import LifecycleHook_ from './lifecycleHook';
+import ScalingPolicy_ from './scalingPolicy';
 import ScheduledAction_ from './scheduledAction';
+import WarmPool_ from './warmPool';
 export declare namespace AutoScaling {
-    const LaunchConfiguration: typeof LaunchConfiguration_;
-    const ScalingPolicy: typeof ScalingPolicy_;
-    const LifecycleHook: typeof LifecycleHook_;
-    const WarmPool: typeof WarmPool_;
     const AutoScalingGroup: typeof AutoScalingGroup_;
+    const LaunchConfiguration: typeof LaunchConfiguration_;
+    const LifecycleHook: typeof LifecycleHook_;
+    const ScalingPolicy: typeof ScalingPolicy_;
     const ScheduledAction: typeof ScheduledAction_;
-    type LaunchConfiguration = LaunchConfiguration_;
-    type ScalingPolicy = ScalingPolicy_;
-    type LifecycleHook = LifecycleHook_;
-    type WarmPool = WarmPool_;
+    const WarmPool: typeof WarmPool_;
     type AutoScalingGroup = AutoScalingGroup_;
+    type LaunchConfiguration = LaunchConfiguration_;
+    type LifecycleHook = LifecycleHook_;
+    type ScalingPolicy = ScalingPolicy_;
     type ScheduledAction = ScheduledAction_;
+    type WarmPool = WarmPool_;
 }

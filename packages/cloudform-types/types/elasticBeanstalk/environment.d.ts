@@ -1,31 +1,31 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class OptionSetting {
-    Namespace: Value<string>;
-    OptionName: Value<string>;
     ResourceName?: Value<string>;
     Value?: Value<string>;
+    Namespace: Value<string>;
+    OptionName: Value<string>;
     constructor(properties: OptionSetting);
 }
 export declare class Tier {
-    Name?: Value<string>;
     Type?: Value<string>;
     Version?: Value<string>;
+    Name?: Value<string>;
     constructor(properties: Tier);
 }
 export interface EnvironmentProperties {
+    PlatformArn?: Value<string>;
     ApplicationName: Value<string>;
-    CNAMEPrefix?: Value<string>;
     Description?: Value<string>;
     EnvironmentName?: Value<string>;
     OperationsRole?: Value<string>;
-    OptionSettings?: List<OptionSetting>;
-    PlatformArn?: Value<string>;
-    SolutionStackName?: Value<string>;
-    Tags?: List<ResourceTag>;
-    TemplateName?: Value<string>;
     Tier?: Tier;
+    OptionSettings?: List<OptionSetting>;
     VersionLabel?: Value<string>;
+    TemplateName?: Value<string>;
+    SolutionStackName?: Value<string>;
+    CNAMEPrefix?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Environment extends ResourceBase<EnvironmentProperties> {
     static OptionSetting: typeof OptionSetting;

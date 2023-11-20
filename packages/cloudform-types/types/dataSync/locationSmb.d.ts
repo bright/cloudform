@@ -5,14 +5,14 @@ export declare class MountOptions {
     constructor(properties: MountOptions);
 }
 export interface LocationSMBProperties {
-    AgentArns: List<Value<string>>;
+    User: Value<string>;
+    Subdirectory?: Value<string>;
+    ServerHostname?: Value<string>;
     Domain?: Value<string>;
     MountOptions?: MountOptions;
-    Password: Value<string>;
-    ServerHostname: Value<string>;
-    Subdirectory: Value<string>;
-    User: Value<string>;
+    AgentArns: List<Value<string>>;
     Tags?: List<ResourceTag>;
+    Password?: Value<string>;
 }
 export default class LocationSMB extends ResourceBase<LocationSMBProperties> {
     static MountOptions: typeof MountOptions;

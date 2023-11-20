@@ -7,6 +7,14 @@ export declare class BlockDeviceMapping {
     VirtualName?: Value<string>;
     constructor(properties: BlockDeviceMapping);
 }
+export declare class EbsBlockDevice {
+    DeleteOnTermination?: Value<boolean>;
+    Iops?: Value<number>;
+    SnapshotId?: Value<string>;
+    VolumeSize?: Value<number>;
+    VolumeType?: Value<string>;
+    constructor(properties: EbsBlockDevice);
+}
 export declare class TimeBasedAutoScaling {
     Friday?: {
         [key: string]: Value<string>;
@@ -30,14 +38,6 @@ export declare class TimeBasedAutoScaling {
         [key: string]: Value<string>;
     };
     constructor(properties: TimeBasedAutoScaling);
-}
-export declare class EbsBlockDevice {
-    DeleteOnTermination?: Value<boolean>;
-    Iops?: Value<number>;
-    SnapshotId?: Value<string>;
-    VolumeSize?: Value<number>;
-    VolumeType?: Value<string>;
-    constructor(properties: EbsBlockDevice);
 }
 export interface InstanceProperties {
     AgentVersion?: Value<string>;
@@ -64,7 +64,7 @@ export interface InstanceProperties {
 }
 export default class Instance extends ResourceBase<InstanceProperties> {
     static BlockDeviceMapping: typeof BlockDeviceMapping;
-    static TimeBasedAutoScaling: typeof TimeBasedAutoScaling;
     static EbsBlockDevice: typeof EbsBlockDevice;
+    static TimeBasedAutoScaling: typeof TimeBasedAutoScaling;
     constructor(properties: InstanceProperties);
 }

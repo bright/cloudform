@@ -1,19 +1,19 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class VpcSettings {
-    SubnetIds: List<Value<string>>;
     VpcId: Value<string>;
+    SubnetIds: List<Value<string>>;
     constructor(properties: VpcSettings);
 }
 export interface SimpleADProperties {
-    CreateAlias?: Value<boolean>;
     Description?: Value<string>;
-    EnableSso?: Value<boolean>;
-    Name: Value<string>;
-    Password: Value<string>;
-    ShortName?: Value<string>;
-    Size: Value<string>;
     VpcSettings: VpcSettings;
+    Size: Value<string>;
+    CreateAlias?: Value<boolean>;
+    EnableSso?: Value<boolean>;
+    ShortName?: Value<string>;
+    Name: Value<string>;
+    Password?: Value<string>;
 }
 export default class SimpleAD extends ResourceBase<SimpleADProperties> {
     static VpcSettings: typeof VpcSettings;

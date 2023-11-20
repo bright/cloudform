@@ -1,27 +1,27 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class Registry {
+    Arn?: Value<string>;
+    Name?: Value<string>;
+    constructor(properties: Registry);
+}
 export declare class SchemaVersion {
     IsLatest?: Value<boolean>;
     VersionNumber?: Value<number>;
     constructor(properties: SchemaVersion);
 }
-export declare class Registry {
-    Name?: Value<string>;
-    Arn?: Value<string>;
-    constructor(properties: Registry);
-}
 export interface SchemaProperties {
-    Registry?: Registry;
-    Name: Value<string>;
+    SchemaDefinition: Value<string>;
     Description?: Value<string>;
     DataFormat: Value<string>;
+    Registry?: Registry;
     Compatibility: Value<string>;
-    SchemaDefinition: Value<string>;
-    CheckpointVersion?: SchemaVersion;
     Tags?: List<ResourceTag>;
+    Name: Value<string>;
+    CheckpointVersion?: SchemaVersion;
 }
 export default class Schema extends ResourceBase<SchemaProperties> {
-    static SchemaVersion: typeof SchemaVersion;
     static Registry: typeof Registry;
+    static SchemaVersion: typeof SchemaVersion;
     constructor(properties: SchemaProperties);
 }

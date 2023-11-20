@@ -9,7 +9,7 @@ export interface ParameterProperties {
     Value: Value<string>;
     DataType?: Value<string>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Name?: Value<string>;
 }

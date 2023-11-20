@@ -6,18 +6,18 @@ export declare class ArchiveRule {
     constructor(properties: ArchiveRule);
 }
 export declare class Filter {
-    Contains?: List<Value<string>>;
-    Eq?: List<Value<string>>;
     Exists?: Value<boolean>;
-    Property: Value<string>;
+    Contains?: List<Value<string>>;
     Neq?: List<Value<string>>;
+    Eq?: List<Value<string>>;
+    Property: Value<string>;
     constructor(properties: Filter);
 }
 export interface AnalyzerProperties {
-    AnalyzerName?: Value<string>;
     ArchiveRules?: List<ArchiveRule>;
-    Tags?: List<ResourceTag>;
     Type: Value<string>;
+    AnalyzerName?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Analyzer extends ResourceBase<AnalyzerProperties> {
     static ArchiveRule: typeof ArchiveRule;

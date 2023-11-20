@@ -11,7 +11,7 @@ export interface UserPoolUserProperties {
     Username?: Value<string>;
     MessageAction?: Value<string>;
     ClientMetadata?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     DesiredDeliveryMediums?: List<Value<string>>;
     ForceAliasCreation?: Value<boolean>;

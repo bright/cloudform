@@ -1,23 +1,18 @@
 /* Generated from: 
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
-
-export class BounceAction {
-    Sender!: Value<string>
-    SmtpReplyCode!: Value<string>
-    Message!: Value<string>
-    TopicArn?: Value<string>
-    StatusCode?: Value<string>
-
-    constructor(properties: BounceAction) {
-        Object.assign(this, properties)
-    }
-}
 
 export class Action {
     BounceAction?: BounceAction
@@ -33,40 +28,33 @@ export class Action {
     }
 }
 
-export class StopAction {
-    Scope!: Value<string>
-    TopicArn?: Value<string>
+export class AddHeaderAction {
+    HeaderValue!: Value<string>
+    HeaderName!: Value<string>
 
-    constructor(properties: StopAction) {
+    constructor(properties: AddHeaderAction) {
         Object.assign(this, properties)
     }
 }
 
-export class SNSAction {
+export class BounceAction {
+    Sender!: Value<string>
+    SmtpReplyCode!: Value<string>
+    Message!: Value<string>
     TopicArn?: Value<string>
-    Encoding?: Value<string>
+    StatusCode?: Value<string>
 
-    constructor(properties: SNSAction) {
+    constructor(properties: BounceAction) {
         Object.assign(this, properties)
     }
 }
 
-export class S3Action {
-    BucketName!: Value<string>
-    KmsKeyArn?: Value<string>
+export class LambdaAction {
+    FunctionArn!: Value<string>
     TopicArn?: Value<string>
-    ObjectKeyPrefix?: Value<string>
+    InvocationType?: Value<string>
 
-    constructor(properties: S3Action) {
-        Object.assign(this, properties)
-    }
-}
-
-export class WorkmailAction {
-    TopicArn?: Value<string>
-    OrganizationArn!: Value<string>
-
-    constructor(properties: WorkmailAction) {
+    constructor(properties: LambdaAction) {
         Object.assign(this, properties)
     }
 }
@@ -84,21 +72,40 @@ export class Rule {
     }
 }
 
-export class LambdaAction {
-    FunctionArn!: Value<string>
+export class S3Action {
+    BucketName!: Value<string>
+    KmsKeyArn?: Value<string>
     TopicArn?: Value<string>
-    InvocationType?: Value<string>
+    ObjectKeyPrefix?: Value<string>
 
-    constructor(properties: LambdaAction) {
+    constructor(properties: S3Action) {
         Object.assign(this, properties)
     }
 }
 
-export class AddHeaderAction {
-    HeaderValue!: Value<string>
-    HeaderName!: Value<string>
+export class SNSAction {
+    TopicArn?: Value<string>
+    Encoding?: Value<string>
 
-    constructor(properties: AddHeaderAction) {
+    constructor(properties: SNSAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class StopAction {
+    Scope!: Value<string>
+    TopicArn?: Value<string>
+
+    constructor(properties: StopAction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class WorkmailAction {
+    TopicArn?: Value<string>
+    OrganizationArn!: Value<string>
+
+    constructor(properties: WorkmailAction) {
         Object.assign(this, properties)
     }
 }
@@ -110,15 +117,15 @@ export interface ReceiptRuleProperties {
 }
 
 export default class ReceiptRule extends ResourceBase<ReceiptRuleProperties> {
-    static BounceAction = BounceAction
     static Action = Action
-    static StopAction = StopAction
-    static SNSAction = SNSAction
-    static S3Action = S3Action
-    static WorkmailAction = WorkmailAction
-    static Rule = Rule
-    static LambdaAction = LambdaAction
     static AddHeaderAction = AddHeaderAction
+    static BounceAction = BounceAction
+    static LambdaAction = LambdaAction
+    static Rule = Rule
+    static S3Action = S3Action
+    static SNSAction = SNSAction
+    static StopAction = StopAction
+    static WorkmailAction = WorkmailAction
 
     constructor(properties: ReceiptRuleProperties) {
         super('AWS::SES::ReceiptRule', properties)

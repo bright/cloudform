@@ -5,11 +5,6 @@ export declare class AccessEndpoint {
     VpceId: Value<string>;
     constructor(properties: AccessEndpoint);
 }
-export declare class UserSetting {
-    Action: Value<string>;
-    Permission: Value<string>;
-    constructor(properties: UserSetting);
-}
 export declare class ApplicationSettings {
     SettingsGroup?: Value<string>;
     Enabled: Value<boolean>;
@@ -21,6 +16,16 @@ export declare class StorageConnector {
     ConnectorType: Value<string>;
     constructor(properties: StorageConnector);
 }
+export declare class StreamingExperienceSettings {
+    PreferredProtocol?: Value<string>;
+    constructor(properties: StreamingExperienceSettings);
+}
+export declare class UserSetting {
+    Action: Value<string>;
+    MaximumLength?: Value<number>;
+    Permission: Value<string>;
+    constructor(properties: UserSetting);
+}
 export interface StackProperties {
     Description?: Value<string>;
     StorageConnectors?: List<StorageConnector>;
@@ -29,6 +34,7 @@ export interface StackProperties {
     UserSettings?: List<UserSetting>;
     AttributesToDelete?: List<Value<string>>;
     RedirectURL?: Value<string>;
+    StreamingExperienceSettings?: StreamingExperienceSettings;
     Name?: Value<string>;
     FeedbackURL?: Value<string>;
     ApplicationSettings?: ApplicationSettings;
@@ -38,8 +44,9 @@ export interface StackProperties {
 }
 export default class Stack extends ResourceBase<StackProperties> {
     static AccessEndpoint: typeof AccessEndpoint;
-    static UserSetting: typeof UserSetting;
     static ApplicationSettings: typeof ApplicationSettings;
     static StorageConnector: typeof StorageConnector;
+    static StreamingExperienceSettings: typeof StreamingExperienceSettings;
+    static UserSetting: typeof UserSetting;
     constructor(properties?: StackProperties);
 }

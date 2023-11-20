@@ -1,8 +1,11 @@
-import Flow_ from './flow';
+import Connector_ from './connector';
 import ConnectorProfile_ from './connectorProfile';
+import Flow_ from './flow';
 export declare namespace AppFlow {
-    const Flow: typeof Flow_;
+    const Connector: typeof Connector_;
     const ConnectorProfile: typeof ConnectorProfile_;
-    type Flow = Flow_;
+    const Flow: typeof Flow_;
+    type Connector = Connector_;
     type ConnectorProfile = ConnectorProfile_;
+    type Flow = Flow_;
 }

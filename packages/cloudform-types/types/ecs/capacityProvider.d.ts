@@ -1,23 +1,23 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class AutoScalingGroupProvider {
-    AutoScalingGroupArn: Value<string>;
     ManagedScaling?: ManagedScaling;
+    AutoScalingGroupArn: Value<string>;
     ManagedTerminationProtection?: Value<string>;
     constructor(properties: AutoScalingGroupProvider);
 }
 export declare class ManagedScaling {
-    MinimumScalingStepSize?: Value<number>;
-    MaximumScalingStepSize?: Value<number>;
     Status?: Value<string>;
-    TargetCapacity?: Value<number>;
+    MinimumScalingStepSize?: Value<number>;
     InstanceWarmupPeriod?: Value<number>;
+    TargetCapacity?: Value<number>;
+    MaximumScalingStepSize?: Value<number>;
     constructor(properties: ManagedScaling);
 }
 export interface CapacityProviderProperties {
     AutoScalingGroupProvider: AutoScalingGroupProvider;
-    Name?: Value<string>;
     Tags?: List<ResourceTag>;
+    Name?: Value<string>;
 }
 export default class CapacityProvider extends ResourceBase<CapacityProviderProperties> {
     static AutoScalingGroupProvider: typeof AutoScalingGroupProvider;

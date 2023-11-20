@@ -5,13 +5,13 @@ export declare class HomeDirectoryMapEntry {
     Target: Value<string>;
     constructor(properties: HomeDirectoryMapEntry);
 }
-export declare type SshPublicKey = Value<string>;
 export declare class PosixProfile {
     Uid: Value<number>;
     SecondaryGids?: List<Value<number>>;
     Gid: Value<number>;
     constructor(properties: PosixProfile);
 }
+export declare type SshPublicKey = Value<string>;
 export interface UserProperties {
     Policy?: Value<string>;
     Role: Value<string>;

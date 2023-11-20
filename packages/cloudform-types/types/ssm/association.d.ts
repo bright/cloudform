@@ -4,42 +4,41 @@ export declare class InstanceAssociationOutputLocation {
     S3Location?: S3OutputLocation;
     constructor(properties: InstanceAssociationOutputLocation);
 }
-export declare class Target {
-    Key: Value<string>;
-    Values: List<Value<string>>;
-    constructor(properties: Target);
-}
 export declare class S3OutputLocation {
+    OutputS3KeyPrefix?: Value<string>;
     OutputS3Region?: Value<string>;
     OutputS3BucketName?: Value<string>;
-    OutputS3KeyPrefix?: Value<string>;
     constructor(properties: S3OutputLocation);
+}
+export declare class Target {
+    Values: List<Value<string>>;
+    Key: Value<string>;
+    constructor(properties: Target);
 }
 export interface AssociationProperties {
     AssociationName?: Value<string>;
-    DocumentVersion?: Value<string>;
-    InstanceId?: Value<string>;
-    Name: Value<string>;
-    Parameters?: {
-        [key: string]: {
-            [key: string]: any;
-        };
-    };
+    CalendarNames?: List<Value<string>>;
     ScheduleExpression?: Value<string>;
-    Targets?: List<Target>;
-    OutputLocation?: InstanceAssociationOutputLocation;
-    AutomationTargetParameterName?: Value<string>;
     MaxErrors?: Value<string>;
+    Parameters?: {
+        [key: string]: any;
+    };
+    InstanceId?: Value<string>;
+    WaitForSuccessTimeoutSeconds?: Value<number>;
     MaxConcurrency?: Value<string>;
     ComplianceSeverity?: Value<string>;
+    Targets?: List<Target>;
     SyncCompliance?: Value<string>;
-    WaitForSuccessTimeoutSeconds?: Value<number>;
+    OutputLocation?: InstanceAssociationOutputLocation;
+    ScheduleOffset?: Value<number>;
+    Name: Value<string>;
     ApplyOnlyAtCronInterval?: Value<boolean>;
-    CalendarNames?: List<Value<string>>;
+    DocumentVersion?: Value<string>;
+    AutomationTargetParameterName?: Value<string>;
 }
 export default class Association extends ResourceBase<AssociationProperties> {
     static InstanceAssociationOutputLocation: typeof InstanceAssociationOutputLocation;
-    static Target: typeof Target;
     static S3OutputLocation: typeof S3OutputLocation;
+    static Target: typeof Target;
     constructor(properties: AssociationProperties);
 }

@@ -6,8 +6,8 @@ export declare class PortRange {
     constructor(properties: PortRange);
 }
 export interface ListenerProperties {
-    AcceleratorArn: Value<string>;
     PortRanges: List<PortRange>;
+    AcceleratorArn: Value<string>;
     Protocol: Value<string>;
     ClientAffinity?: Value<string>;
 }

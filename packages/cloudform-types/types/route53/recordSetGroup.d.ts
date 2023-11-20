@@ -1,5 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class AliasTarget {
+    DNSName: Value<string>;
+    EvaluateTargetHealth?: Value<boolean>;
+    HostedZoneId: Value<string>;
+    constructor(properties: AliasTarget);
+}
+export declare class CidrRoutingConfig {
+    CollectionId: Value<string>;
+    LocationName: Value<string>;
+    constructor(properties: CidrRoutingConfig);
+}
 export declare class GeoLocation {
     ContinentCode?: Value<string>;
     CountryCode?: Value<string>;
@@ -8,7 +19,7 @@ export declare class GeoLocation {
 }
 export declare class RecordSet {
     AliasTarget?: AliasTarget;
-    Comment?: Value<string>;
+    CidrRoutingConfig?: CidrRoutingConfig;
     Failover?: Value<string>;
     GeoLocation?: GeoLocation;
     HealthCheckId?: Value<string>;
@@ -24,12 +35,6 @@ export declare class RecordSet {
     Weight?: Value<number>;
     constructor(properties: RecordSet);
 }
-export declare class AliasTarget {
-    DNSName: Value<string>;
-    EvaluateTargetHealth?: Value<boolean>;
-    HostedZoneId: Value<string>;
-    constructor(properties: AliasTarget);
-}
 export interface RecordSetGroupProperties {
     Comment?: Value<string>;
     HostedZoneId?: Value<string>;
@@ -37,8 +42,9 @@ export interface RecordSetGroupProperties {
     RecordSets?: List<RecordSet>;
 }
 export default class RecordSetGroup extends ResourceBase<RecordSetGroupProperties> {
+    static AliasTarget: typeof AliasTarget;
+    static CidrRoutingConfig: typeof CidrRoutingConfig;
     static GeoLocation: typeof GeoLocation;
     static RecordSet: typeof RecordSet;
-    static AliasTarget: typeof AliasTarget;
     constructor(properties?: RecordSetGroupProperties);
 }

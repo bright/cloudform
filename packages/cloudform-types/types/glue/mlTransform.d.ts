@@ -7,21 +7,21 @@ export declare class FindMatchesParameters {
     AccuracyCostTradeoff?: Value<number>;
     constructor(properties: FindMatchesParameters);
 }
-export declare class MLUserDataEncryption {
-    MLUserDataEncryptionMode: Value<string>;
-    KmsKeyId?: Value<string>;
-    constructor(properties: MLUserDataEncryption);
-}
-export declare class InputRecordTables {
-    GlueTables?: List<GlueTables>;
-    constructor(properties: InputRecordTables);
-}
 export declare class GlueTables {
     ConnectionName?: Value<string>;
     TableName: Value<string>;
     DatabaseName: Value<string>;
     CatalogId?: Value<string>;
     constructor(properties: GlueTables);
+}
+export declare class InputRecordTables {
+    GlueTables?: List<GlueTables>;
+    constructor(properties: InputRecordTables);
+}
+export declare class MLUserDataEncryption {
+    MLUserDataEncryptionMode: Value<string>;
+    KmsKeyId?: Value<string>;
+    constructor(properties: MLUserDataEncryption);
 }
 export declare class TransformEncryption {
     MLUserDataEncryption?: MLUserDataEncryption;
@@ -52,9 +52,9 @@ export interface MLTransformProperties {
 }
 export default class MLTransform extends ResourceBase<MLTransformProperties> {
     static FindMatchesParameters: typeof FindMatchesParameters;
-    static MLUserDataEncryption: typeof MLUserDataEncryption;
-    static InputRecordTables: typeof InputRecordTables;
     static GlueTables: typeof GlueTables;
+    static InputRecordTables: typeof InputRecordTables;
+    static MLUserDataEncryption: typeof MLUserDataEncryption;
     static TransformEncryption: typeof TransformEncryption;
     static TransformParameters: typeof TransformParameters;
     constructor(properties: MLTransformProperties);

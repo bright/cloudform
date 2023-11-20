@@ -1,16 +1,16 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface AuthorizerProperties {
-    AuthType?: Value<string>;
-    AuthorizerCredentials?: Value<string>;
-    AuthorizerResultTtlInSeconds?: Value<number>;
-    AuthorizerUri?: Value<string>;
-    IdentitySource?: Value<string>;
-    IdentityValidationExpression?: Value<string>;
-    Name?: Value<string>;
     ProviderARNs?: List<Value<string>>;
-    RestApiId: Value<string>;
+    AuthorizerCredentials?: Value<string>;
+    IdentityValidationExpression?: Value<string>;
     Type: Value<string>;
+    AuthorizerUri?: Value<string>;
+    AuthorizerResultTtlInSeconds?: Value<number>;
+    RestApiId: Value<string>;
+    IdentitySource?: Value<string>;
+    AuthType?: Value<string>;
+    Name: Value<string>;
 }
 export default class Authorizer extends ResourceBase<AuthorizerProperties> {
     constructor(properties: AuthorizerProperties);

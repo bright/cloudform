@@ -1,14 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Tags {
-    Value?: Value<string>;
-    Key?: Value<string>;
-    constructor(properties: Tags);
-}
 export declare class MailFromAttributes {
     MailFromDomain?: Value<string>;
     BehaviorOnMxFailure?: Value<string>;
     constructor(properties: MailFromAttributes);
+}
+export declare class Tags {
+    Value?: Value<string>;
+    Key?: Value<string>;
+    constructor(properties: Tags);
 }
 export interface IdentityProperties {
     FeedbackForwardingEnabled?: Value<boolean>;
@@ -18,7 +18,7 @@ export interface IdentityProperties {
     MailFromAttributes?: MailFromAttributes;
 }
 export default class Identity extends ResourceBase<IdentityProperties> {
-    static Tags: typeof Tags;
     static MailFromAttributes: typeof MailFromAttributes;
+    static Tags: typeof Tags;
     constructor(properties: IdentityProperties);
 }

@@ -1,33 +1,59 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class EventSelector {
-    DataResources?: List<DataResource>;
-    IncludeManagementEvents?: Value<boolean>;
-    ReadWriteType?: Value<string>;
-    constructor(properties: EventSelector);
+export declare class AdvancedEventSelector {
+    FieldSelectors: List<AdvancedFieldSelector>;
+    Name?: Value<string>;
+    constructor(properties: AdvancedEventSelector);
+}
+export declare class AdvancedFieldSelector {
+    Field: Value<string>;
+    Equals?: List<Value<string>>;
+    NotStartsWith?: List<Value<string>>;
+    NotEndsWith?: List<Value<string>>;
+    StartsWith?: List<Value<string>>;
+    EndsWith?: List<Value<string>>;
+    NotEquals?: List<Value<string>>;
+    constructor(properties: AdvancedFieldSelector);
 }
 export declare class DataResource {
     Type: Value<string>;
     Values?: List<Value<string>>;
     constructor(properties: DataResource);
 }
+export declare class EventSelector {
+    IncludeManagementEvents?: Value<boolean>;
+    ReadWriteType?: Value<string>;
+    ExcludeManagementEventSources?: List<Value<string>>;
+    DataResources?: List<DataResource>;
+    constructor(properties: EventSelector);
+}
+export declare class InsightSelector {
+    InsightType?: Value<string>;
+    constructor(properties: InsightSelector);
+}
 export interface TrailProperties {
-    CloudWatchLogsLogGroupArn?: Value<string>;
-    CloudWatchLogsRoleArn?: Value<string>;
-    EnableLogFileValidation?: Value<boolean>;
-    EventSelectors?: List<EventSelector>;
     IncludeGlobalServiceEvents?: Value<boolean>;
-    IsLogging: Value<boolean>;
-    IsMultiRegionTrail?: Value<boolean>;
+    EventSelectors?: List<EventSelector>;
     KMSKeyId?: Value<string>;
-    S3BucketName: Value<string>;
+    CloudWatchLogsRoleArn?: Value<string>;
     S3KeyPrefix?: Value<string>;
-    SnsTopicName?: Value<string>;
-    Tags?: List<ResourceTag>;
+    AdvancedEventSelectors?: List<AdvancedEventSelector>;
     TrailName?: Value<string>;
+    IsOrganizationTrail?: Value<boolean>;
+    InsightSelectors?: List<InsightSelector>;
+    CloudWatchLogsLogGroupArn?: Value<string>;
+    SnsTopicName?: Value<string>;
+    IsMultiRegionTrail?: Value<boolean>;
+    S3BucketName: Value<string>;
+    EnableLogFileValidation?: Value<boolean>;
+    Tags?: List<ResourceTag>;
+    IsLogging: Value<boolean>;
 }
 export default class Trail extends ResourceBase<TrailProperties> {
-    static EventSelector: typeof EventSelector;
+    static AdvancedEventSelector: typeof AdvancedEventSelector;
+    static AdvancedFieldSelector: typeof AdvancedFieldSelector;
     static DataResource: typeof DataResource;
+    static EventSelector: typeof EventSelector;
+    static InsightSelector: typeof InsightSelector;
     constructor(properties: TrailProperties);
 }

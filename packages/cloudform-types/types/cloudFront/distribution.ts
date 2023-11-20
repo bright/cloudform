@@ -1,143 +1,65 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
+export class CacheBehavior {
+    Compress?: Value<boolean>
+    FunctionAssociations?: List<FunctionAssociation>
+    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
+    TargetOriginId!: Value<string>
+    ViewerProtocolPolicy!: Value<string>
+    ResponseHeadersPolicyId?: Value<string>
+    RealtimeLogConfigArn?: Value<string>
+    TrustedSigners?: List<Value<string>>
+    DefaultTTL?: Value<number>
+    FieldLevelEncryptionId?: Value<string>
+    TrustedKeyGroups?: List<Value<string>>
+    AllowedMethods?: List<Value<string>>
+    PathPattern!: Value<string>
+    CachedMethods?: List<Value<string>>
+    SmoothStreaming?: Value<boolean>
+    ForwardedValues?: ForwardedValues
+    OriginRequestPolicyId?: Value<string>
+    MinTTL?: Value<number>
+    CachePolicyId?: Value<string>
+    MaxTTL?: Value<number>
+
+    constructor(properties: CacheBehavior) {
+        Object.assign(this, properties)
+    }
+}
+
 export class Cookies {
-    Forward!: Value<string>
     WhitelistedNames?: List<Value<string>>
+    Forward!: Value<string>
 
     constructor(properties: Cookies) {
         Object.assign(this, properties)
     }
 }
 
-export class DistributionConfig {
-    Aliases?: List<Value<string>>
-    CNAMEs?: List<Value<string>>
-    CacheBehaviors?: List<CacheBehavior>
-    Comment?: Value<string>
-    CustomErrorResponses?: List<CustomErrorResponse>
-    CustomOrigin?: LegacyCustomOrigin
-    DefaultCacheBehavior?: DefaultCacheBehavior
-    DefaultRootObject?: Value<string>
-    Enabled!: Value<boolean>
-    HttpVersion?: Value<string>
-    IPV6Enabled?: Value<boolean>
-    Logging?: Logging
-    OriginGroups?: OriginGroups
-    Origins?: List<Origin>
-    PriceClass?: Value<string>
-    Restrictions?: Restrictions
-    S3Origin?: LegacyS3Origin
-    ViewerCertificate?: ViewerCertificate
-    WebACLId?: Value<string>
-
-    constructor(properties: DistributionConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LegacyS3Origin {
-    DNSName!: Value<string>
-    OriginAccessIdentity?: Value<string>
-
-    constructor(properties: LegacyS3Origin) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginCustomHeader {
-    HeaderName!: Value<string>
-    HeaderValue!: Value<string>
-
-    constructor(properties: OriginCustomHeader) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginGroup {
-    FailoverCriteria!: OriginGroupFailoverCriteria
-    Id!: Value<string>
-    Members!: OriginGroupMembers
-
-    constructor(properties: OriginGroup) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CustomOriginConfig {
-    HTTPPort?: Value<number>
-    HTTPSPort?: Value<number>
-    OriginKeepaliveTimeout?: Value<number>
-    OriginProtocolPolicy!: Value<string>
-    OriginReadTimeout?: Value<number>
-    OriginSSLProtocols?: List<Value<string>>
-
-    constructor(properties: CustomOriginConfig) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginGroups {
-    Items?: List<OriginGroup>
-    Quantity!: Value<number>
-
-    constructor(properties: OriginGroups) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginGroupMembers {
-    Items!: List<OriginGroupMember>
-    Quantity!: Value<number>
-
-    constructor(properties: OriginGroupMembers) {
-        Object.assign(this, properties)
-    }
-}
-
-export class GeoRestriction {
-    Locations?: List<Value<string>>
-    RestrictionType!: Value<string>
-
-    constructor(properties: GeoRestriction) {
-        Object.assign(this, properties)
-    }
-}
-
-export class ViewerCertificate {
-    AcmCertificateArn?: Value<string>
-    CloudFrontDefaultCertificate?: Value<boolean>
-    IamCertificateId?: Value<string>
-    MinimumProtocolVersion?: Value<string>
-    SslSupportMethod?: Value<string>
-
-    constructor(properties: ViewerCertificate) {
-        Object.assign(this, properties)
-    }
-}
-
 export class CustomErrorResponse {
+    ResponseCode?: Value<number>
     ErrorCachingMinTTL?: Value<number>
     ErrorCode!: Value<number>
-    ResponseCode?: Value<number>
     ResponsePagePath?: Value<string>
 
     constructor(properties: CustomErrorResponse) {
@@ -145,124 +67,69 @@ export class CustomErrorResponse {
     }
 }
 
-export class LambdaFunctionAssociation {
-    EventType?: Value<string>
-    IncludeBody?: Value<boolean>
-    LambdaFunctionARN?: Value<string>
-
-    constructor(properties: LambdaFunctionAssociation) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginGroupMember {
-    OriginId!: Value<string>
-
-    constructor(properties: OriginGroupMember) {
-        Object.assign(this, properties)
-    }
-}
-
-export class CacheBehavior {
-    AllowedMethods?: List<Value<string>>
-    CachePolicyId?: Value<string>
-    CachedMethods?: List<Value<string>>
-    Compress?: Value<boolean>
-    DefaultTTL?: Value<number>
-    FieldLevelEncryptionId?: Value<string>
-    ForwardedValues?: ForwardedValues
-    FunctionAssociations?: List<FunctionAssociation>
-    LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
-    MaxTTL?: Value<number>
-    MinTTL?: Value<number>
-    OriginRequestPolicyId?: Value<string>
-    PathPattern!: Value<string>
-    RealtimeLogConfigArn?: Value<string>
-    SmoothStreaming?: Value<boolean>
-    TargetOriginId!: Value<string>
-    TrustedKeyGroups?: List<Value<string>>
-    TrustedSigners?: List<Value<string>>
-    ViewerProtocolPolicy!: Value<string>
-
-    constructor(properties: CacheBehavior) {
-        Object.assign(this, properties)
-    }
-}
-
-export class LegacyCustomOrigin {
-    DNSName!: Value<string>
-    HTTPPort?: Value<number>
+export class CustomOriginConfig {
+    OriginReadTimeout?: Value<number>
     HTTPSPort?: Value<number>
+    OriginKeepaliveTimeout?: Value<number>
+    OriginSSLProtocols?: List<Value<string>>
+    HTTPPort?: Value<number>
     OriginProtocolPolicy!: Value<string>
-    OriginSSLProtocols!: List<Value<string>>
 
-    constructor(properties: LegacyCustomOrigin) {
+    constructor(properties: CustomOriginConfig) {
         Object.assign(this, properties)
     }
 }
 
 export class DefaultCacheBehavior {
-    AllowedMethods?: List<Value<string>>
-    CachePolicyId?: Value<string>
-    CachedMethods?: List<Value<string>>
     Compress?: Value<boolean>
-    DefaultTTL?: Value<number>
-    FieldLevelEncryptionId?: Value<string>
-    ForwardedValues?: ForwardedValues
     FunctionAssociations?: List<FunctionAssociation>
     LambdaFunctionAssociations?: List<LambdaFunctionAssociation>
-    MaxTTL?: Value<number>
-    MinTTL?: Value<number>
-    OriginRequestPolicyId?: Value<string>
-    RealtimeLogConfigArn?: Value<string>
-    SmoothStreaming?: Value<boolean>
     TargetOriginId!: Value<string>
-    TrustedKeyGroups?: List<Value<string>>
-    TrustedSigners?: List<Value<string>>
     ViewerProtocolPolicy!: Value<string>
+    ResponseHeadersPolicyId?: Value<string>
+    RealtimeLogConfigArn?: Value<string>
+    TrustedSigners?: List<Value<string>>
+    DefaultTTL?: Value<number>
+    FieldLevelEncryptionId?: Value<string>
+    TrustedKeyGroups?: List<Value<string>>
+    AllowedMethods?: List<Value<string>>
+    CachedMethods?: List<Value<string>>
+    SmoothStreaming?: Value<boolean>
+    ForwardedValues?: ForwardedValues
+    OriginRequestPolicyId?: Value<string>
+    MinTTL?: Value<number>
+    CachePolicyId?: Value<string>
+    MaxTTL?: Value<number>
 
     constructor(properties: DefaultCacheBehavior) {
         Object.assign(this, properties)
     }
 }
 
-export class Restrictions {
-    GeoRestriction!: GeoRestriction
+export class DistributionConfig {
+    Logging?: Logging
+    Comment?: Value<string>
+    DefaultRootObject?: Value<string>
+    Origins?: List<Origin>
+    ViewerCertificate?: ViewerCertificate
+    PriceClass?: Value<string>
+    CustomOrigin?: LegacyCustomOrigin
+    S3Origin?: LegacyS3Origin
+    DefaultCacheBehavior!: DefaultCacheBehavior
+    Staging?: Value<boolean>
+    CustomErrorResponses?: List<CustomErrorResponse>
+    ContinuousDeploymentPolicyId?: Value<string>
+    OriginGroups?: OriginGroups
+    Enabled!: Value<boolean>
+    Aliases?: List<Value<string>>
+    IPV6Enabled?: Value<boolean>
+    CNAMEs?: List<Value<string>>
+    WebACLId?: Value<string>
+    HttpVersion?: Value<string>
+    Restrictions?: Restrictions
+    CacheBehaviors?: List<CacheBehavior>
 
-    constructor(properties: Restrictions) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Origin {
-    ConnectionAttempts?: Value<number>
-    ConnectionTimeout?: Value<number>
-    CustomOriginConfig?: CustomOriginConfig
-    DomainName!: Value<string>
-    Id!: Value<string>
-    OriginCustomHeaders?: List<OriginCustomHeader>
-    OriginPath?: Value<string>
-    OriginShield?: OriginShield
-    S3OriginConfig?: S3OriginConfig
-
-    constructor(properties: Origin) {
-        Object.assign(this, properties)
-    }
-}
-
-export class StatusCodes {
-    Items!: List<Value<number>>
-    Quantity!: Value<number>
-
-    constructor(properties: StatusCodes) {
-        Object.assign(this, properties)
-    }
-}
-
-export class OriginGroupFailoverCriteria {
-    StatusCodes!: StatusCodes
-
-    constructor(properties: OriginGroupFailoverCriteria) {
+    constructor(properties: DistributionConfig) {
         Object.assign(this, properties)
     }
 }
@@ -278,11 +145,148 @@ export class ForwardedValues {
     }
 }
 
+export class FunctionAssociation {
+    FunctionARN?: Value<string>
+    EventType?: Value<string>
+
+    constructor(properties: FunctionAssociation) {
+        Object.assign(this, properties)
+    }
+}
+
+export class GeoRestriction {
+    Locations?: List<Value<string>>
+    RestrictionType!: Value<string>
+
+    constructor(properties: GeoRestriction) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LambdaFunctionAssociation {
+    IncludeBody?: Value<boolean>
+    EventType?: Value<string>
+    LambdaFunctionARN?: Value<string>
+
+    constructor(properties: LambdaFunctionAssociation) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LegacyCustomOrigin {
+    HTTPSPort?: Value<number>
+    OriginSSLProtocols!: List<Value<string>>
+    DNSName!: Value<string>
+    HTTPPort?: Value<number>
+    OriginProtocolPolicy!: Value<string>
+
+    constructor(properties: LegacyCustomOrigin) {
+        Object.assign(this, properties)
+    }
+}
+
+export class LegacyS3Origin {
+    OriginAccessIdentity?: Value<string>
+    DNSName!: Value<string>
+
+    constructor(properties: LegacyS3Origin) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Logging {
+    IncludeCookies?: Value<boolean>
+    Bucket!: Value<string>
+    Prefix?: Value<string>
+
+    constructor(properties: Logging) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Origin {
+    ConnectionTimeout?: Value<number>
+    OriginAccessControlId?: Value<string>
+    ConnectionAttempts?: Value<number>
+    OriginCustomHeaders?: List<OriginCustomHeader>
+    DomainName!: Value<string>
+    OriginShield?: OriginShield
+    S3OriginConfig?: S3OriginConfig
+    OriginPath?: Value<string>
+    Id!: Value<string>
+    CustomOriginConfig?: CustomOriginConfig
+
+    constructor(properties: Origin) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginCustomHeader {
+    HeaderValue!: Value<string>
+    HeaderName!: Value<string>
+
+    constructor(properties: OriginCustomHeader) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginGroup {
+    Id!: Value<string>
+    FailoverCriteria!: OriginGroupFailoverCriteria
+    Members!: OriginGroupMembers
+
+    constructor(properties: OriginGroup) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginGroupFailoverCriteria {
+    StatusCodes!: StatusCodes
+
+    constructor(properties: OriginGroupFailoverCriteria) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginGroupMember {
+    OriginId!: Value<string>
+
+    constructor(properties: OriginGroupMember) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginGroupMembers {
+    Quantity!: Value<number>
+    Items!: List<OriginGroupMember>
+
+    constructor(properties: OriginGroupMembers) {
+        Object.assign(this, properties)
+    }
+}
+
+export class OriginGroups {
+    Quantity!: Value<number>
+    Items?: List<OriginGroup>
+
+    constructor(properties: OriginGroups) {
+        Object.assign(this, properties)
+    }
+}
+
 export class OriginShield {
-    Enabled?: Value<boolean>
     OriginShieldRegion?: Value<string>
+    Enabled?: Value<boolean>
 
     constructor(properties: OriginShield) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Restrictions {
+    GeoRestriction!: GeoRestriction
+
+    constructor(properties: Restrictions) {
         Object.assign(this, properties)
     }
 }
@@ -295,21 +299,23 @@ export class S3OriginConfig {
     }
 }
 
-export class Logging {
-    Bucket!: Value<string>
-    IncludeCookies?: Value<boolean>
-    Prefix?: Value<string>
+export class StatusCodes {
+    Quantity!: Value<number>
+    Items!: List<Value<number>>
 
-    constructor(properties: Logging) {
+    constructor(properties: StatusCodes) {
         Object.assign(this, properties)
     }
 }
 
-export class FunctionAssociation {
-    EventType?: Value<string>
-    FunctionARN?: Value<string>
+export class ViewerCertificate {
+    IamCertificateId?: Value<string>
+    SslSupportMethod?: Value<string>
+    MinimumProtocolVersion?: Value<string>
+    CloudFrontDefaultCertificate?: Value<boolean>
+    AcmCertificateArn?: Value<string>
 
-    constructor(properties: FunctionAssociation) {
+    constructor(properties: ViewerCertificate) {
         Object.assign(this, properties)
     }
 }
@@ -320,31 +326,31 @@ export interface DistributionProperties {
 }
 
 export default class Distribution extends ResourceBase<DistributionProperties> {
+    static CacheBehavior = CacheBehavior
     static Cookies = Cookies
+    static CustomErrorResponse = CustomErrorResponse
+    static CustomOriginConfig = CustomOriginConfig
+    static DefaultCacheBehavior = DefaultCacheBehavior
     static DistributionConfig = DistributionConfig
+    static ForwardedValues = ForwardedValues
+    static FunctionAssociation = FunctionAssociation
+    static GeoRestriction = GeoRestriction
+    static LambdaFunctionAssociation = LambdaFunctionAssociation
+    static LegacyCustomOrigin = LegacyCustomOrigin
     static LegacyS3Origin = LegacyS3Origin
+    static Logging = Logging
+    static Origin = Origin
     static OriginCustomHeader = OriginCustomHeader
     static OriginGroup = OriginGroup
-    static CustomOriginConfig = CustomOriginConfig
-    static OriginGroups = OriginGroups
-    static OriginGroupMembers = OriginGroupMembers
-    static GeoRestriction = GeoRestriction
-    static ViewerCertificate = ViewerCertificate
-    static CustomErrorResponse = CustomErrorResponse
-    static LambdaFunctionAssociation = LambdaFunctionAssociation
-    static OriginGroupMember = OriginGroupMember
-    static CacheBehavior = CacheBehavior
-    static LegacyCustomOrigin = LegacyCustomOrigin
-    static DefaultCacheBehavior = DefaultCacheBehavior
-    static Restrictions = Restrictions
-    static Origin = Origin
-    static StatusCodes = StatusCodes
     static OriginGroupFailoverCriteria = OriginGroupFailoverCriteria
-    static ForwardedValues = ForwardedValues
+    static OriginGroupMember = OriginGroupMember
+    static OriginGroupMembers = OriginGroupMembers
+    static OriginGroups = OriginGroups
     static OriginShield = OriginShield
+    static Restrictions = Restrictions
     static S3OriginConfig = S3OriginConfig
-    static Logging = Logging
-    static FunctionAssociation = FunctionAssociation
+    static StatusCodes = StatusCodes
+    static ViewerCertificate = ViewerCertificate
 
     constructor(properties: DistributionProperties) {
         super('AWS::CloudFront::Distribution', properties)

@@ -1,11 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class CsvClassifier {
+    ContainsCustomDatatype?: List<Value<string>>;
     QuoteSymbol?: Value<string>;
     ContainsHeader?: Value<string>;
     Delimiter?: Value<string>;
     Header?: List<Value<string>>;
     AllowSingleColumn?: Value<boolean>;
+    CustomDatatypeConfigured?: Value<boolean>;
     DisableValueTrimming?: Value<boolean>;
     Name?: Value<string>;
     constructor(properties: CsvClassifier);

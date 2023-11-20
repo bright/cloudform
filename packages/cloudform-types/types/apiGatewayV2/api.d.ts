@@ -1,5 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class BodyS3Location {
+    Etag?: Value<string>;
+    Bucket?: Value<string>;
+    Version?: Value<string>;
+    Key?: Value<string>;
+    constructor(properties: BodyS3Location);
+}
 export declare class Cors {
     AllowOrigins?: List<Value<string>>;
     AllowCredentials?: Value<boolean>;
@@ -8,13 +15,6 @@ export declare class Cors {
     MaxAge?: Value<number>;
     AllowMethods?: List<Value<string>>;
     constructor(properties: Cors);
-}
-export declare class BodyS3Location {
-    Etag?: Value<string>;
-    Bucket?: Value<string>;
-    Version?: Value<string>;
-    Key?: Value<string>;
-    constructor(properties: BodyS3Location);
 }
 export interface ApiProperties {
     RouteSelectionExpression?: Value<string>;
@@ -35,12 +35,12 @@ export interface ApiProperties {
         [key: string]: any;
     };
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     ApiKeySelectionExpression?: Value<string>;
 }
 export default class Api extends ResourceBase<ApiProperties> {
-    static Cors: typeof Cors;
     static BodyS3Location: typeof BodyS3Location;
+    static Cors: typeof Cors;
     constructor(properties?: ApiProperties);
 }

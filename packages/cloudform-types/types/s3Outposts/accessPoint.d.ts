@@ -5,12 +5,12 @@ export declare class VpcConfiguration {
     constructor(properties: VpcConfiguration);
 }
 export interface AccessPointProperties {
-    Bucket: Value<string>;
-    Name: Value<string>;
-    VpcConfiguration: VpcConfiguration;
     Policy?: {
         [key: string]: any;
     };
+    Bucket: Value<string>;
+    VpcConfiguration: VpcConfiguration;
+    Name: Value<string>;
 }
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {
     static VpcConfiguration: typeof VpcConfiguration;

@@ -1,12 +1,13 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export declare class DefaultPushNotificationTemplate {
+export declare class APNSPushNotificationTemplate {
     Action?: Value<string>;
+    MediaUrl?: Value<string>;
     Title?: Value<string>;
     Sound?: Value<string>;
     Body?: Value<string>;
     Url?: Value<string>;
-    constructor(properties: DefaultPushNotificationTemplate);
+    constructor(properties: APNSPushNotificationTemplate);
 }
 export declare class AndroidPushNotificationTemplate {
     Action?: Value<string>;
@@ -19,14 +20,13 @@ export declare class AndroidPushNotificationTemplate {
     Url?: Value<string>;
     constructor(properties: AndroidPushNotificationTemplate);
 }
-export declare class APNSPushNotificationTemplate {
+export declare class DefaultPushNotificationTemplate {
     Action?: Value<string>;
-    MediaUrl?: Value<string>;
     Title?: Value<string>;
     Sound?: Value<string>;
     Body?: Value<string>;
     Url?: Value<string>;
-    constructor(properties: APNSPushNotificationTemplate);
+    constructor(properties: DefaultPushNotificationTemplate);
 }
 export interface PushTemplateProperties {
     GCM?: AndroidPushNotificationTemplate;
@@ -42,8 +42,8 @@ export interface PushTemplateProperties {
     };
 }
 export default class PushTemplate extends ResourceBase<PushTemplateProperties> {
-    static DefaultPushNotificationTemplate: typeof DefaultPushNotificationTemplate;
-    static AndroidPushNotificationTemplate: typeof AndroidPushNotificationTemplate;
     static APNSPushNotificationTemplate: typeof APNSPushNotificationTemplate;
+    static AndroidPushNotificationTemplate: typeof AndroidPushNotificationTemplate;
+    static DefaultPushNotificationTemplate: typeof DefaultPushNotificationTemplate;
     constructor(properties: PushTemplateProperties);
 }

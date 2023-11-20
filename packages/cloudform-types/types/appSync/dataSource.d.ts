@@ -1,23 +1,20 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export declare class RelationalDatabaseConfig {
-    RdsHttpEndpointConfig?: RdsHttpEndpointConfig;
-    RelationalDatabaseSourceType: Value<string>;
-    constructor(properties: RelationalDatabaseConfig);
-}
-export declare class LambdaConfig {
-    LambdaFunctionArn: Value<string>;
-    constructor(properties: LambdaConfig);
-}
-export declare class HttpConfig {
-    Endpoint: Value<string>;
-    AuthorizationConfig?: AuthorizationConfig;
-    constructor(properties: HttpConfig);
+export declare class AuthorizationConfig {
+    AwsIamConfig?: AwsIamConfig;
+    AuthorizationType: Value<string>;
+    constructor(properties: AuthorizationConfig);
 }
 export declare class AwsIamConfig {
     SigningRegion?: Value<string>;
     SigningServiceName?: Value<string>;
     constructor(properties: AwsIamConfig);
+}
+export declare class DeltaSyncConfig {
+    BaseTableTTL: Value<string>;
+    DeltaSyncTableTTL: Value<string>;
+    DeltaSyncTableName: Value<string>;
+    constructor(properties: DeltaSyncConfig);
 }
 export declare class DynamoDBConfig {
     TableName: Value<string>;
@@ -27,10 +24,28 @@ export declare class DynamoDBConfig {
     UseCallerCredentials?: Value<boolean>;
     constructor(properties: DynamoDBConfig);
 }
-export declare class AuthorizationConfig {
-    AwsIamConfig?: AwsIamConfig;
-    AuthorizationType: Value<string>;
-    constructor(properties: AuthorizationConfig);
+export declare class ElasticsearchConfig {
+    AwsRegion: Value<string>;
+    Endpoint: Value<string>;
+    constructor(properties: ElasticsearchConfig);
+}
+export declare class EventBridgeConfig {
+    EventBusArn: Value<string>;
+    constructor(properties: EventBridgeConfig);
+}
+export declare class HttpConfig {
+    Endpoint: Value<string>;
+    AuthorizationConfig?: AuthorizationConfig;
+    constructor(properties: HttpConfig);
+}
+export declare class LambdaConfig {
+    LambdaFunctionArn: Value<string>;
+    constructor(properties: LambdaConfig);
+}
+export declare class OpenSearchServiceConfig {
+    AwsRegion: Value<string>;
+    Endpoint: Value<string>;
+    constructor(properties: OpenSearchServiceConfig);
 }
 export declare class RdsHttpEndpointConfig {
     AwsRegion: Value<string>;
@@ -40,21 +55,17 @@ export declare class RdsHttpEndpointConfig {
     AwsSecretStoreArn: Value<string>;
     constructor(properties: RdsHttpEndpointConfig);
 }
-export declare class ElasticsearchConfig {
-    AwsRegion: Value<string>;
-    Endpoint: Value<string>;
-    constructor(properties: ElasticsearchConfig);
-}
-export declare class DeltaSyncConfig {
-    BaseTableTTL: Value<string>;
-    DeltaSyncTableTTL: Value<string>;
-    DeltaSyncTableName: Value<string>;
-    constructor(properties: DeltaSyncConfig);
+export declare class RelationalDatabaseConfig {
+    RdsHttpEndpointConfig?: RdsHttpEndpointConfig;
+    RelationalDatabaseSourceType: Value<string>;
+    constructor(properties: RelationalDatabaseConfig);
 }
 export interface DataSourceProperties {
     Type: Value<string>;
+    OpenSearchServiceConfig?: OpenSearchServiceConfig;
     Description?: Value<string>;
     ServiceRoleArn?: Value<string>;
+    EventBridgeConfig?: EventBridgeConfig;
     HttpConfig?: HttpConfig;
     RelationalDatabaseConfig?: RelationalDatabaseConfig;
     LambdaConfig?: LambdaConfig;
@@ -64,14 +75,16 @@ export interface DataSourceProperties {
     ElasticsearchConfig?: ElasticsearchConfig;
 }
 export default class DataSource extends ResourceBase<DataSourceProperties> {
-    static RelationalDatabaseConfig: typeof RelationalDatabaseConfig;
-    static LambdaConfig: typeof LambdaConfig;
-    static HttpConfig: typeof HttpConfig;
-    static AwsIamConfig: typeof AwsIamConfig;
-    static DynamoDBConfig: typeof DynamoDBConfig;
     static AuthorizationConfig: typeof AuthorizationConfig;
-    static RdsHttpEndpointConfig: typeof RdsHttpEndpointConfig;
-    static ElasticsearchConfig: typeof ElasticsearchConfig;
+    static AwsIamConfig: typeof AwsIamConfig;
     static DeltaSyncConfig: typeof DeltaSyncConfig;
+    static DynamoDBConfig: typeof DynamoDBConfig;
+    static ElasticsearchConfig: typeof ElasticsearchConfig;
+    static EventBridgeConfig: typeof EventBridgeConfig;
+    static HttpConfig: typeof HttpConfig;
+    static LambdaConfig: typeof LambdaConfig;
+    static OpenSearchServiceConfig: typeof OpenSearchServiceConfig;
+    static RdsHttpEndpointConfig: typeof RdsHttpEndpointConfig;
+    static RelationalDatabaseConfig: typeof RelationalDatabaseConfig;
     constructor(properties: DataSourceProperties);
 }

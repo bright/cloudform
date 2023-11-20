@@ -7,7 +7,7 @@ export declare class ParameterConstraints {
 export interface RouteResponseProperties {
     RouteResponseKey: Value<string>;
     ResponseParameters?: {
-        [key: string]: any;
+        [key: string]: ParameterConstraints;
     };
     RouteId: Value<string>;
     ModelSelectionExpression?: Value<string>;

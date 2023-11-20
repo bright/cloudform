@@ -1,11 +1,11 @@
-import MountTarget_ from './mountTarget';
-import FileSystem_ from './fileSystem';
 import AccessPoint_ from './accessPoint';
+import FileSystem_ from './fileSystem';
+import MountTarget_ from './mountTarget';
 export declare namespace EFS {
-    const MountTarget: typeof MountTarget_;
-    const FileSystem: typeof FileSystem_;
     const AccessPoint: typeof AccessPoint_;
-    type MountTarget = MountTarget_;
-    type FileSystem = FileSystem_;
+    const FileSystem: typeof FileSystem_;
+    const MountTarget: typeof MountTarget_;
     type AccessPoint = AccessPoint_;
+    type FileSystem = FileSystem_;
+    type MountTarget = MountTarget_;
 }

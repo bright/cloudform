@@ -1,9 +1,9 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class DeviceInner {
+    IotThingName?: Value<string>;
     Description?: Value<string>;
     DeviceName: Value<string>;
-    IotThingName?: Value<string>;
     constructor(properties: DeviceInner);
 }
 export interface DeviceProperties {

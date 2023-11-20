@@ -1,5 +1,11 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class CognitoIdentityProvider {
+    ServerSideTokenCheck?: Value<boolean>;
+    ProviderName?: Value<string>;
+    ClientId?: Value<string>;
+    constructor(properties: CognitoIdentityProvider);
+}
 export declare class CognitoStreams {
     StreamingStatus?: Value<string>;
     StreamName?: Value<string>;
@@ -10,12 +16,6 @@ export declare class PushSync {
     ApplicationArns?: List<Value<string>>;
     RoleArn?: Value<string>;
     constructor(properties: PushSync);
-}
-export declare class CognitoIdentityProvider {
-    ServerSideTokenCheck?: Value<boolean>;
-    ProviderName?: Value<string>;
-    ClientId?: Value<string>;
-    constructor(properties: CognitoIdentityProvider);
 }
 export interface IdentityPoolProperties {
     PushSync?: PushSync;
@@ -35,8 +35,8 @@ export interface IdentityPoolProperties {
     AllowClassicFlow?: Value<boolean>;
 }
 export default class IdentityPool extends ResourceBase<IdentityPoolProperties> {
+    static CognitoIdentityProvider: typeof CognitoIdentityProvider;
     static CognitoStreams: typeof CognitoStreams;
     static PushSync: typeof PushSync;
-    static CognitoIdentityProvider: typeof CognitoIdentityProvider;
     constructor(properties: IdentityPoolProperties);
 }

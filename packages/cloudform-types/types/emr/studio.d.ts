@@ -1,17 +1,19 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface StudioProperties {
-    AuthMode: Value<string>;
-    DefaultS3Location: Value<string>;
+    WorkspaceSecurityGroupId: Value<string>;
     Description?: Value<string>;
-    EngineSecurityGroupId: Value<string>;
+    DefaultS3Location: Value<string>;
+    SubnetIds: List<Value<string>>;
+    IdpAuthUrl?: Value<string>;
     Name: Value<string>;
     ServiceRole: Value<string>;
-    SubnetIds: List<Value<string>>;
-    Tags?: List<ResourceTag>;
-    UserRole: Value<string>;
     VpcId: Value<string>;
-    WorkspaceSecurityGroupId: Value<string>;
+    EngineSecurityGroupId: Value<string>;
+    UserRole?: Value<string>;
+    IdpRelayStateParameterName?: Value<string>;
+    AuthMode: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Studio extends ResourceBase<StudioProperties> {
     constructor(properties: StudioProperties);

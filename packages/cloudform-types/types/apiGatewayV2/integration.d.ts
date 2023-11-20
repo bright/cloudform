@@ -1,5 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ResponseParameter {
+    Destination: Value<string>;
+    Source: Value<string>;
+    constructor(properties: ResponseParameter);
+}
 export declare class ResponseParameterList {
     ResponseParameters?: List<ResponseParameter>;
     constructor(properties: ResponseParameterList);
@@ -7,11 +12,6 @@ export declare class ResponseParameterList {
 export declare class TlsConfig {
     ServerNameToVerify?: Value<string>;
     constructor(properties: TlsConfig);
-}
-export declare class ResponseParameter {
-    Destination: Value<string>;
-    Source: Value<string>;
-    constructor(properties: ResponseParameter);
 }
 export interface IntegrationProperties {
     Description?: Value<string>;
@@ -40,8 +40,8 @@ export interface IntegrationProperties {
     IntegrationType: Value<string>;
 }
 export default class Integration extends ResourceBase<IntegrationProperties> {
+    static ResponseParameter: typeof ResponseParameter;
     static ResponseParameterList: typeof ResponseParameterList;
     static TlsConfig: typeof TlsConfig;
-    static ResponseParameter: typeof ResponseParameter;
     constructor(properties: IntegrationProperties);
 }

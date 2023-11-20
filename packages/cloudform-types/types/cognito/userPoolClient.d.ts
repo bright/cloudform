@@ -1,11 +1,5 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class TokenValidityUnits {
-    IdToken?: Value<string>;
-    RefreshToken?: Value<string>;
-    AccessToken?: Value<string>;
-    constructor(properties: TokenValidityUnits);
-}
 export declare class AnalyticsConfiguration {
     ApplicationArn?: Value<string>;
     UserDataShared?: Value<boolean>;
@@ -14,11 +8,19 @@ export declare class AnalyticsConfiguration {
     RoleArn?: Value<string>;
     constructor(properties: AnalyticsConfiguration);
 }
+export declare class TokenValidityUnits {
+    IdToken?: Value<string>;
+    RefreshToken?: Value<string>;
+    AccessToken?: Value<string>;
+    constructor(properties: TokenValidityUnits);
+}
 export interface UserPoolClientProperties {
     AnalyticsConfiguration?: AnalyticsConfiguration;
     GenerateSecret?: Value<boolean>;
     CallbackURLs?: List<Value<string>>;
+    EnablePropagateAdditionalUserContextData?: Value<boolean>;
     IdTokenValidity?: Value<number>;
+    AuthSessionValidity?: Value<number>;
     AllowedOAuthScopes?: List<Value<string>>;
     TokenValidityUnits?: TokenValidityUnits;
     ReadAttributes?: List<Value<string>>;
@@ -37,7 +39,7 @@ export interface UserPoolClientProperties {
     EnableTokenRevocation?: Value<boolean>;
 }
 export default class UserPoolClient extends ResourceBase<UserPoolClientProperties> {
-    static TokenValidityUnits: typeof TokenValidityUnits;
     static AnalyticsConfiguration: typeof AnalyticsConfiguration;
+    static TokenValidityUnits: typeof TokenValidityUnits;
     constructor(properties: UserPoolClientProperties);
 }

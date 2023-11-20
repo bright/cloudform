@@ -6,15 +6,15 @@ export declare class EndPoint {
     constructor(properties: EndPoint);
 }
 export declare class KinesisStreamConfig {
-    RoleArn: Value<string>;
     StreamArn: Value<string>;
+    RoleArn: Value<string>;
     constructor(properties: KinesisStreamConfig);
 }
 export interface RealtimeLogConfigProperties {
-    EndPoints: List<EndPoint>;
     Fields: List<Value<string>>;
-    Name: Value<string>;
+    EndPoints: List<EndPoint>;
     SamplingRate: Value<number>;
+    Name: Value<string>;
 }
 export default class RealtimeLogConfig extends ResourceBase<RealtimeLogConfigProperties> {
     static EndPoint: typeof EndPoint;

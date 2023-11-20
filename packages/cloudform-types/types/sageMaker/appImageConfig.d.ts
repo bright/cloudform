@@ -1,15 +1,15 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class KernelGatewayImageConfig {
-    FileSystemConfig?: FileSystemConfig;
-    KernelSpecs: List<KernelSpec>;
-    constructor(properties: KernelGatewayImageConfig);
-}
 export declare class FileSystemConfig {
+    MountPath?: Value<string>;
     DefaultGid?: Value<number>;
     DefaultUid?: Value<number>;
-    MountPath?: Value<string>;
     constructor(properties: FileSystemConfig);
+}
+export declare class KernelGatewayImageConfig {
+    KernelSpecs: List<KernelSpec>;
+    FileSystemConfig?: FileSystemConfig;
+    constructor(properties: KernelGatewayImageConfig);
 }
 export declare class KernelSpec {
     DisplayName?: Value<string>;
@@ -17,13 +17,13 @@ export declare class KernelSpec {
     constructor(properties: KernelSpec);
 }
 export interface AppImageConfigProperties {
-    AppImageConfigName: Value<string>;
     KernelGatewayImageConfig?: KernelGatewayImageConfig;
+    AppImageConfigName: Value<string>;
     Tags?: List<ResourceTag>;
 }
 export default class AppImageConfig extends ResourceBase<AppImageConfigProperties> {
-    static KernelGatewayImageConfig: typeof KernelGatewayImageConfig;
     static FileSystemConfig: typeof FileSystemConfig;
+    static KernelGatewayImageConfig: typeof KernelGatewayImageConfig;
     static KernelSpec: typeof KernelSpec;
     constructor(properties: AppImageConfigProperties);
 }

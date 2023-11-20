@@ -5,10 +5,10 @@ export declare class MapConfiguration {
     constructor(properties: MapConfiguration);
 }
 export interface MapProperties {
-    Configuration: MapConfiguration;
-    Description?: Value<string>;
     MapName: Value<string>;
-    PricingPlan: Value<string>;
+    Description?: Value<string>;
+    Configuration: MapConfiguration;
+    PricingPlan?: Value<string>;
 }
 export default class Map extends ResourceBase<MapProperties> {
     static MapConfiguration: typeof MapConfiguration;

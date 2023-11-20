@@ -1,8 +1,8 @@
-import ScalingPolicy_ from './scalingPolicy';
 import ScalableTarget_ from './scalableTarget';
+import ScalingPolicy_ from './scalingPolicy';
 export declare namespace ApplicationAutoScaling {
-    const ScalingPolicy: typeof ScalingPolicy_;
     const ScalableTarget: typeof ScalableTarget_;
-    type ScalingPolicy = ScalingPolicy_;
+    const ScalingPolicy: typeof ScalingPolicy_;
     type ScalableTarget = ScalableTarget_;
+    type ScalingPolicy = ScalingPolicy_;
 }

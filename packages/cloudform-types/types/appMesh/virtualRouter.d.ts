@@ -5,13 +5,13 @@ export declare class PortMapping {
     Protocol: Value<string>;
     constructor(properties: PortMapping);
 }
-export declare class VirtualRouterSpec {
-    Listeners: List<VirtualRouterListener>;
-    constructor(properties: VirtualRouterSpec);
-}
 export declare class VirtualRouterListener {
     PortMapping: PortMapping;
     constructor(properties: VirtualRouterListener);
+}
+export declare class VirtualRouterSpec {
+    Listeners: List<VirtualRouterListener>;
+    constructor(properties: VirtualRouterSpec);
 }
 export interface VirtualRouterProperties {
     MeshName: Value<string>;
@@ -22,7 +22,7 @@ export interface VirtualRouterProperties {
 }
 export default class VirtualRouter extends ResourceBase<VirtualRouterProperties> {
     static PortMapping: typeof PortMapping;
-    static VirtualRouterSpec: typeof VirtualRouterSpec;
     static VirtualRouterListener: typeof VirtualRouterListener;
+    static VirtualRouterSpec: typeof VirtualRouterSpec;
     constructor(properties: VirtualRouterProperties);
 }

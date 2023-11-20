@@ -1,75 +1,75 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class MethodSetting {
-    CacheDataEncrypted?: Value<boolean>;
-    CacheTtlInSeconds?: Value<number>;
-    CachingEnabled?: Value<boolean>;
-    DataTraceEnabled?: Value<boolean>;
-    HttpMethod?: Value<string>;
-    LoggingLevel?: Value<string>;
-    MetricsEnabled?: Value<boolean>;
-    ResourcePath?: Value<string>;
-    ThrottlingBurstLimit?: Value<number>;
-    ThrottlingRateLimit?: Value<number>;
-    constructor(properties: MethodSetting);
-}
 export declare class AccessLogSetting {
-    DestinationArn?: Value<string>;
     Format?: Value<string>;
+    DestinationArn?: Value<string>;
     constructor(properties: AccessLogSetting);
 }
-export declare class DeploymentCanarySettings {
-    PercentTraffic?: Value<number>;
-    StageVariableOverrides?: {
-        [key: string]: Value<string>;
-    };
-    UseStageCache?: Value<boolean>;
-    constructor(properties: DeploymentCanarySettings);
-}
-export declare class StageDescription {
-    AccessLogSetting?: AccessLogSetting;
-    CacheClusterEnabled?: Value<boolean>;
-    CacheClusterSize?: Value<string>;
-    CacheDataEncrypted?: Value<boolean>;
-    CacheTtlInSeconds?: Value<number>;
-    CachingEnabled?: Value<boolean>;
-    CanarySetting?: CanarySetting;
-    ClientCertificateId?: Value<string>;
-    DataTraceEnabled?: Value<boolean>;
-    Description?: Value<string>;
-    DocumentationVersion?: Value<string>;
-    LoggingLevel?: Value<string>;
-    MethodSettings?: List<MethodSetting>;
-    MetricsEnabled?: Value<boolean>;
-    Tags?: List<ResourceTag>;
-    ThrottlingBurstLimit?: Value<number>;
-    ThrottlingRateLimit?: Value<number>;
-    TracingEnabled?: Value<boolean>;
-    Variables?: {
-        [key: string]: Value<string>;
-    };
-    constructor(properties: StageDescription);
-}
 export declare class CanarySetting {
-    PercentTraffic?: Value<number>;
     StageVariableOverrides?: {
         [key: string]: Value<string>;
     };
+    PercentTraffic?: Value<number>;
     UseStageCache?: Value<boolean>;
     constructor(properties: CanarySetting);
 }
-export interface DeploymentProperties {
-    DeploymentCanarySettings?: DeploymentCanarySettings;
+export declare class DeploymentCanarySettings {
+    StageVariableOverrides?: {
+        [key: string]: Value<string>;
+    };
+    PercentTraffic?: Value<number>;
+    UseStageCache?: Value<boolean>;
+    constructor(properties: DeploymentCanarySettings);
+}
+export declare class MethodSetting {
+    CacheTtlInSeconds?: Value<number>;
+    LoggingLevel?: Value<string>;
+    ResourcePath?: Value<string>;
+    CacheDataEncrypted?: Value<boolean>;
+    DataTraceEnabled?: Value<boolean>;
+    ThrottlingBurstLimit?: Value<number>;
+    CachingEnabled?: Value<boolean>;
+    MetricsEnabled?: Value<boolean>;
+    HttpMethod?: Value<string>;
+    ThrottlingRateLimit?: Value<number>;
+    constructor(properties: MethodSetting);
+}
+export declare class StageDescription {
+    CacheTtlInSeconds?: Value<number>;
     Description?: Value<string>;
-    RestApiId: Value<string>;
+    LoggingLevel?: Value<string>;
+    CanarySetting?: CanarySetting;
+    ThrottlingRateLimit?: Value<number>;
+    ClientCertificateId?: Value<string>;
+    Variables?: {
+        [key: string]: Value<string>;
+    };
+    DocumentationVersion?: Value<string>;
+    CacheDataEncrypted?: Value<boolean>;
+    DataTraceEnabled?: Value<boolean>;
+    ThrottlingBurstLimit?: Value<number>;
+    CachingEnabled?: Value<boolean>;
+    TracingEnabled?: Value<boolean>;
+    MethodSettings?: List<MethodSetting>;
+    AccessLogSetting?: AccessLogSetting;
+    CacheClusterSize?: Value<string>;
+    MetricsEnabled?: Value<boolean>;
+    Tags?: List<ResourceTag>;
+    CacheClusterEnabled?: Value<boolean>;
+    constructor(properties: StageDescription);
+}
+export interface DeploymentProperties {
+    Description?: Value<string>;
     StageDescription?: StageDescription;
     StageName?: Value<string>;
+    RestApiId: Value<string>;
+    DeploymentCanarySettings?: DeploymentCanarySettings;
 }
 export default class Deployment extends ResourceBase<DeploymentProperties> {
-    static MethodSetting: typeof MethodSetting;
     static AccessLogSetting: typeof AccessLogSetting;
-    static DeploymentCanarySettings: typeof DeploymentCanarySettings;
-    static StageDescription: typeof StageDescription;
     static CanarySetting: typeof CanarySetting;
+    static DeploymentCanarySettings: typeof DeploymentCanarySettings;
+    static MethodSetting: typeof MethodSetting;
+    static StageDescription: typeof StageDescription;
     constructor(properties: DeploymentProperties);
 }

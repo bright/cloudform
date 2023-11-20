@@ -8,6 +8,7 @@ export interface SubscriptionProperties {
     FilterPolicy?: {
         [key: string]: any;
     };
+    FilterPolicyScope?: Value<string>;
     Protocol: Value<string>;
     RawMessageDelivery?: Value<boolean>;
     RedrivePolicy?: {

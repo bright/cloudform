@@ -1,20 +1,23 @@
-import Connection_ from './connection';
-import EventBusPolicy_ from './eventBusPolicy';
 import ApiDestination_ from './apiDestination';
-import Rule_ from './rule';
 import Archive_ from './archive';
+import Connection_ from './connection';
+import Endpoint_ from './endpoint';
 import EventBus_ from './eventBus';
+import EventBusPolicy_ from './eventBusPolicy';
+import Rule_ from './rule';
 export declare namespace Events {
-    const Connection: typeof Connection_;
-    const EventBusPolicy: typeof EventBusPolicy_;
     const ApiDestination: typeof ApiDestination_;
-    const Rule: typeof Rule_;
     const Archive: typeof Archive_;
+    const Connection: typeof Connection_;
+    const Endpoint: typeof Endpoint_;
     const EventBus: typeof EventBus_;
-    type Connection = Connection_;
-    type EventBusPolicy = EventBusPolicy_;
+    const EventBusPolicy: typeof EventBusPolicy_;
+    const Rule: typeof Rule_;
     type ApiDestination = ApiDestination_;
-    type Rule = Rule_;
     type Archive = Archive_;
+    type Connection = Connection_;
+    type Endpoint = Endpoint_;
     type EventBus = EventBus_;
+    type EventBusPolicy = EventBusPolicy_;
+    type Rule = Rule_;
 }

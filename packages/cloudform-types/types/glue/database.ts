@@ -1,28 +1,50 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
+export class DataLakePrincipal {
+    DataLakePrincipalIdentifier?: Value<string>
+
+    constructor(properties: DataLakePrincipal) {
+        Object.assign(this, properties)
+    }
+}
+
+export class DatabaseIdentifier {
+    DatabaseName?: Value<string>
+    Region?: Value<string>
+    CatalogId?: Value<string>
+
+    constructor(properties: DatabaseIdentifier) {
+        Object.assign(this, properties)
+    }
+}
+
 export class DatabaseInput {
     LocationUri?: Value<string>
+    CreateTableDefaultPermissions?: List<PrincipalPrivileges>
     Description?: Value<string>
     Parameters?: {[key: string]: any}
     TargetDatabase?: DatabaseIdentifier
+    FederatedDatabase?: FederatedDatabase
     Name?: Value<string>
 
     constructor(properties: DatabaseInput) {
@@ -30,11 +52,20 @@ export class DatabaseInput {
     }
 }
 
-export class DatabaseIdentifier {
-    DatabaseName?: Value<string>
-    CatalogId?: Value<string>
+export class FederatedDatabase {
+    ConnectionName?: Value<string>
+    Identifier?: Value<string>
 
-    constructor(properties: DatabaseIdentifier) {
+    constructor(properties: FederatedDatabase) {
+        Object.assign(this, properties)
+    }
+}
+
+export class PrincipalPrivileges {
+    Permissions?: List<Value<string>>
+    Principal?: DataLakePrincipal
+
+    constructor(properties: PrincipalPrivileges) {
         Object.assign(this, properties)
     }
 }
@@ -45,8 +76,11 @@ export interface DatabaseProperties {
 }
 
 export default class Database extends ResourceBase<DatabaseProperties> {
-    static DatabaseInput = DatabaseInput
+    static DataLakePrincipal = DataLakePrincipal
     static DatabaseIdentifier = DatabaseIdentifier
+    static DatabaseInput = DatabaseInput
+    static FederatedDatabase = FederatedDatabase
+    static PrincipalPrivileges = PrincipalPrivileges
 
     constructor(properties: DatabaseProperties) {
         super('AWS::Glue::Database', properties)

@@ -12,6 +12,7 @@ export interface LayerVersionProperties {
     Description?: Value<string>;
     LayerName?: Value<string>;
     Content: Content;
+    CompatibleArchitectures?: List<Value<string>>;
 }
 export default class LayerVersion extends ResourceBase<LayerVersionProperties> {
     static Content: typeof Content;

@@ -9,6 +9,7 @@ export interface DeploymentProperties {
     DeploymentStrategyId: Value<string>;
     ConfigurationProfileId: Value<string>;
     EnvironmentId: Value<string>;
+    KmsKeyIdentifier?: Value<string>;
     Description?: Value<string>;
     ConfigurationVersion: Value<string>;
     ApplicationId: Value<string>;

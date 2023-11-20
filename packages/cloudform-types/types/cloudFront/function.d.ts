@@ -10,10 +10,10 @@ export declare class FunctionMetadata {
     constructor(properties: FunctionMetadata);
 }
 export interface FunctionProperties {
-    AutoPublish?: Value<boolean>;
-    FunctionCode?: Value<string>;
-    FunctionConfig?: FunctionConfig;
+    FunctionConfig: FunctionConfig;
     FunctionMetadata?: FunctionMetadata;
+    AutoPublish?: Value<boolean>;
+    FunctionCode: Value<string>;
     Name: Value<string>;
 }
 export default class Function extends ResourceBase<FunctionProperties> {

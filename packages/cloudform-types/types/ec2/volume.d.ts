@@ -1,18 +1,18 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface VolumeProperties {
-    AutoEnableIO?: Value<boolean>;
-    AvailabilityZone: Value<string>;
-    Encrypted?: Value<boolean>;
-    Iops?: Value<number>;
-    KmsKeyId?: Value<string>;
     MultiAttachEnabled?: Value<boolean>;
-    OutpostArn?: Value<string>;
-    Size?: Value<number>;
     SnapshotId?: Value<string>;
-    Tags?: List<ResourceTag>;
-    Throughput?: Value<number>;
     VolumeType?: Value<string>;
+    KmsKeyId?: Value<string>;
+    Encrypted?: Value<boolean>;
+    Size?: Value<number>;
+    AutoEnableIO?: Value<boolean>;
+    OutpostArn?: Value<string>;
+    AvailabilityZone: Value<string>;
+    Throughput?: Value<number>;
+    Iops?: Value<number>;
+    Tags?: List<ResourceTag>;
 }
 export default class Volume extends ResourceBase<VolumeProperties> {
     constructor(properties: VolumeProperties);

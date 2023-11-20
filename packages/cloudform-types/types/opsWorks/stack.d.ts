@@ -1,9 +1,14 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class StackConfigurationManager {
+export declare class ChefConfiguration {
+    BerkshelfVersion?: Value<string>;
+    ManageBerkshelf?: Value<boolean>;
+    constructor(properties: ChefConfiguration);
+}
+export declare class ElasticIp {
+    Ip: Value<string>;
     Name?: Value<string>;
-    Version?: Value<string>;
-    constructor(properties: StackConfigurationManager);
+    constructor(properties: ElasticIp);
 }
 export declare class RdsDbInstance {
     DbPassword: Value<string>;
@@ -20,15 +25,10 @@ export declare class Source {
     Username?: Value<string>;
     constructor(properties: Source);
 }
-export declare class ChefConfiguration {
-    BerkshelfVersion?: Value<string>;
-    ManageBerkshelf?: Value<boolean>;
-    constructor(properties: ChefConfiguration);
-}
-export declare class ElasticIp {
-    Ip: Value<string>;
+export declare class StackConfigurationManager {
     Name?: Value<string>;
-    constructor(properties: ElasticIp);
+    Version?: Value<string>;
+    constructor(properties: StackConfigurationManager);
 }
 export interface StackProperties {
     AgentVersion?: Value<string>;
@@ -62,10 +62,10 @@ export interface StackProperties {
     VpcId?: Value<string>;
 }
 export default class Stack extends ResourceBase<StackProperties> {
-    static StackConfigurationManager: typeof StackConfigurationManager;
-    static RdsDbInstance: typeof RdsDbInstance;
-    static Source: typeof Source;
     static ChefConfiguration: typeof ChefConfiguration;
     static ElasticIp: typeof ElasticIp;
+    static RdsDbInstance: typeof RdsDbInstance;
+    static Source: typeof Source;
+    static StackConfigurationManager: typeof StackConfigurationManager;
     constructor(properties: StackProperties);
 }

@@ -1,14 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class AccelerationSettings {
+    Mode: Value<string>;
+    constructor(properties: AccelerationSettings);
+}
 export declare class HopDestination {
     WaitMinutes?: Value<number>;
     Priority?: Value<number>;
     Queue?: Value<string>;
     constructor(properties: HopDestination);
-}
-export declare class AccelerationSettings {
-    Mode: Value<string>;
-    constructor(properties: AccelerationSettings);
 }
 export interface JobTemplateProperties {
     Category?: Value<string>;
@@ -27,7 +27,7 @@ export interface JobTemplateProperties {
     Name?: Value<string>;
 }
 export default class JobTemplate extends ResourceBase<JobTemplateProperties> {
-    static HopDestination: typeof HopDestination;
     static AccelerationSettings: typeof AccelerationSettings;
+    static HopDestination: typeof HopDestination;
     constructor(properties: JobTemplateProperties);
 }

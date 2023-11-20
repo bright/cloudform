@@ -1,17 +1,18 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LoRaWANGateway {
-    GatewayEui: Value<string>;
     RfRegion: Value<string>;
+    GatewayEui: Value<string>;
     constructor(properties: LoRaWANGateway);
 }
 export interface WirelessGatewayProperties {
-    Name?: Value<string>;
+    LastUplinkReceivedAt?: Value<string>;
     Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     LoRaWAN: LoRaWANGateway;
     ThingArn?: Value<string>;
-    LastUplinkReceivedAt?: Value<string>;
+    ThingName?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
 }
 export default class WirelessGateway extends ResourceBase<WirelessGatewayProperties> {
     static LoRaWANGateway: typeof LoRaWANGateway;

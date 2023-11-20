@@ -1,24 +1,73 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class SubComponentConfigurationDetails {
-    AlarmMetrics?: List<AlarmMetric>;
-    Logs?: List<Log>;
-    WindowsEvents?: List<WindowsEvent>;
-    constructor(properties: SubComponentConfigurationDetails);
+export declare class Alarm {
+    AlarmName: Value<string>;
+    Severity?: Value<string>;
+    constructor(properties: Alarm);
+}
+export declare class AlarmMetric {
+    AlarmMetricName: Value<string>;
+    constructor(properties: AlarmMetric);
+}
+export declare class ComponentConfiguration {
+    SubComponentTypeConfigurations?: List<SubComponentTypeConfiguration>;
+    ConfigurationDetails?: ConfigurationDetails;
+    constructor(properties: ComponentConfiguration);
 }
 export declare class ComponentMonitoringSetting {
-    ComponentName?: Value<string>;
-    ComponentARN?: Value<string>;
+    CustomComponentConfiguration?: ComponentConfiguration;
     Tier: Value<string>;
     ComponentConfigurationMode: Value<string>;
     DefaultOverwriteComponentConfiguration?: ComponentConfiguration;
-    CustomComponentConfiguration?: ComponentConfiguration;
+    ComponentName?: Value<string>;
+    ComponentARN?: Value<string>;
     constructor(properties: ComponentMonitoringSetting);
 }
+export declare class ConfigurationDetails {
+    WindowsEvents?: List<WindowsEvent>;
+    AlarmMetrics?: List<AlarmMetric>;
+    Alarms?: List<Alarm>;
+    HAClusterPrometheusExporter?: HAClusterPrometheusExporter;
+    HANAPrometheusExporter?: HANAPrometheusExporter;
+    Logs?: List<Log>;
+    JMXPrometheusExporter?: JMXPrometheusExporter;
+    constructor(properties: ConfigurationDetails);
+}
+export declare class CustomComponent {
+    ResourceList: List<Value<string>>;
+    ComponentName: Value<string>;
+    constructor(properties: CustomComponent);
+}
+export declare class HAClusterPrometheusExporter {
+    PrometheusPort?: Value<string>;
+    constructor(properties: HAClusterPrometheusExporter);
+}
+export declare class HANAPrometheusExporter {
+    HANAPort: Value<string>;
+    PrometheusPort?: Value<string>;
+    HANASecretName: Value<string>;
+    HANASID: Value<string>;
+    AgreeToInstallHANADBClient: Value<boolean>;
+    constructor(properties: HANAPrometheusExporter);
+}
+export declare class JMXPrometheusExporter {
+    PrometheusPort?: Value<string>;
+    JMXURL?: Value<string>;
+    HostPort?: Value<string>;
+    constructor(properties: JMXPrometheusExporter);
+}
+export declare class Log {
+    LogType: Value<string>;
+    Encoding?: Value<string>;
+    LogGroupName?: Value<string>;
+    LogPath?: Value<string>;
+    PatternSet?: Value<string>;
+    constructor(properties: Log);
+}
 export declare class LogPattern {
-    PatternName: Value<string>;
     Pattern: Value<string>;
     Rank: Value<number>;
+    PatternName: Value<string>;
     constructor(properties: LogPattern);
 }
 export declare class LogPatternSet {
@@ -26,83 +75,51 @@ export declare class LogPatternSet {
     LogPatterns: List<LogPattern>;
     constructor(properties: LogPatternSet);
 }
-export declare class Alarm {
-    AlarmName: Value<string>;
-    Severity?: Value<string>;
-    constructor(properties: Alarm);
-}
-export declare class WindowsEvent {
-    LogGroupName: Value<string>;
-    EventName: Value<string>;
-    EventLevels: List<Value<string>>;
-    PatternSet?: Value<string>;
-    constructor(properties: WindowsEvent);
-}
-export declare class ComponentConfiguration {
-    ConfigurationDetails?: ConfigurationDetails;
-    SubComponentTypeConfigurations?: List<SubComponentTypeConfiguration>;
-    constructor(properties: ComponentConfiguration);
-}
-export declare class CustomComponent {
-    ComponentName: Value<string>;
-    ResourceList: List<Value<string>>;
-    constructor(properties: CustomComponent);
-}
-export declare class JMXPrometheusExporter {
-    JMXURL?: Value<string>;
-    HostPort?: Value<string>;
-    PrometheusPort?: Value<string>;
-    constructor(properties: JMXPrometheusExporter);
-}
-export declare class AlarmMetric {
-    AlarmMetricName: Value<string>;
-    constructor(properties: AlarmMetric);
-}
-export declare class ConfigurationDetails {
+export declare class SubComponentConfigurationDetails {
+    WindowsEvents?: List<WindowsEvent>;
     AlarmMetrics?: List<AlarmMetric>;
     Logs?: List<Log>;
-    WindowsEvents?: List<WindowsEvent>;
-    Alarms?: List<Alarm>;
-    JMXPrometheusExporter?: JMXPrometheusExporter;
-    constructor(properties: ConfigurationDetails);
-}
-export declare class Log {
-    LogGroupName?: Value<string>;
-    LogPath?: Value<string>;
-    LogType: Value<string>;
-    Encoding?: Value<string>;
-    PatternSet?: Value<string>;
-    constructor(properties: Log);
+    constructor(properties: SubComponentConfigurationDetails);
 }
 export declare class SubComponentTypeConfiguration {
     SubComponentType: Value<string>;
     SubComponentConfigurationDetails: SubComponentConfigurationDetails;
     constructor(properties: SubComponentTypeConfiguration);
 }
+export declare class WindowsEvent {
+    EventLevels: List<Value<string>>;
+    LogGroupName: Value<string>;
+    EventName: Value<string>;
+    PatternSet?: Value<string>;
+    constructor(properties: WindowsEvent);
+}
 export interface ApplicationProperties {
-    ResourceGroupName: Value<string>;
-    CWEMonitorEnabled?: Value<boolean>;
-    OpsCenterEnabled?: Value<boolean>;
+    AutoConfigurationEnabled?: Value<boolean>;
     OpsItemSNSTopicArn?: Value<string>;
-    Tags?: List<ResourceTag>;
+    OpsCenterEnabled?: Value<boolean>;
     CustomComponents?: List<CustomComponent>;
     LogPatternSets?: List<LogPatternSet>;
-    AutoConfigurationEnabled?: Value<boolean>;
+    GroupingType?: Value<string>;
     ComponentMonitoringSettings?: List<ComponentMonitoringSetting>;
+    CWEMonitorEnabled?: Value<boolean>;
+    Tags?: List<ResourceTag>;
+    ResourceGroupName: Value<string>;
 }
 export default class Application extends ResourceBase<ApplicationProperties> {
-    static SubComponentConfigurationDetails: typeof SubComponentConfigurationDetails;
+    static Alarm: typeof Alarm;
+    static AlarmMetric: typeof AlarmMetric;
+    static ComponentConfiguration: typeof ComponentConfiguration;
     static ComponentMonitoringSetting: typeof ComponentMonitoringSetting;
+    static ConfigurationDetails: typeof ConfigurationDetails;
+    static CustomComponent: typeof CustomComponent;
+    static HAClusterPrometheusExporter: typeof HAClusterPrometheusExporter;
+    static HANAPrometheusExporter: typeof HANAPrometheusExporter;
+    static JMXPrometheusExporter: typeof JMXPrometheusExporter;
+    static Log: typeof Log;
     static LogPattern: typeof LogPattern;
     static LogPatternSet: typeof LogPatternSet;
-    static Alarm: typeof Alarm;
-    static WindowsEvent: typeof WindowsEvent;
-    static ComponentConfiguration: typeof ComponentConfiguration;
-    static CustomComponent: typeof CustomComponent;
-    static JMXPrometheusExporter: typeof JMXPrometheusExporter;
-    static AlarmMetric: typeof AlarmMetric;
-    static ConfigurationDetails: typeof ConfigurationDetails;
-    static Log: typeof Log;
+    static SubComponentConfigurationDetails: typeof SubComponentConfigurationDetails;
     static SubComponentTypeConfiguration: typeof SubComponentTypeConfiguration;
+    static WindowsEvent: typeof WindowsEvent;
     constructor(properties: ApplicationProperties);
 }

@@ -1,41 +1,61 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class InstanceBlockDeviceMapping {
-    DeviceName?: Value<string>;
-    VirtualName?: Value<string>;
-    NoDevice?: Value<string>;
-    Ebs?: EbsInstanceBlockDeviceSpecification;
-    constructor(properties: InstanceBlockDeviceMapping);
+export declare class AdditionalInstanceConfiguration {
+    UserDataOverride?: Value<string>;
+    SystemsManagerAgent?: SystemsManagerAgent;
+    constructor(properties: AdditionalInstanceConfiguration);
 }
 export declare class ComponentConfiguration {
+    Parameters?: List<ComponentParameter>;
     ComponentArn?: Value<string>;
     constructor(properties: ComponentConfiguration);
 }
+export declare class ComponentParameter {
+    Value: List<Value<string>>;
+    Name: Value<string>;
+    constructor(properties: ComponentParameter);
+}
 export declare class EbsInstanceBlockDeviceSpecification {
-    Encrypted?: Value<boolean>;
-    DeleteOnTermination?: Value<boolean>;
-    Iops?: Value<number>;
-    KmsKeyId?: Value<string>;
     SnapshotId?: Value<string>;
-    VolumeSize?: Value<number>;
     VolumeType?: Value<string>;
+    KmsKeyId?: Value<string>;
+    Encrypted?: Value<boolean>;
+    Throughput?: Value<number>;
+    Iops?: Value<number>;
+    VolumeSize?: Value<number>;
+    DeleteOnTermination?: Value<boolean>;
     constructor(properties: EbsInstanceBlockDeviceSpecification);
 }
+export declare class InstanceBlockDeviceMapping {
+    Ebs?: EbsInstanceBlockDeviceSpecification;
+    NoDevice?: Value<string>;
+    VirtualName?: Value<string>;
+    DeviceName?: Value<string>;
+    constructor(properties: InstanceBlockDeviceMapping);
+}
+export declare class SystemsManagerAgent {
+    UninstallAfterBuild?: Value<boolean>;
+    constructor(properties: SystemsManagerAgent);
+}
 export interface ImageRecipeProperties {
-    Name: Value<string>;
+    Components: List<ComponentConfiguration>;
+    WorkingDirectory?: Value<string>;
+    ParentImage: Value<string>;
     Description?: Value<string>;
     Version: Value<string>;
-    Components: List<ComponentConfiguration>;
     BlockDeviceMappings?: List<InstanceBlockDeviceMapping>;
-    ParentImage: Value<string>;
-    WorkingDirectory?: Value<string>;
+    AdditionalInstanceConfiguration?: AdditionalInstanceConfiguration;
     Tags?: {
         [key: string]: Value<string>;
     };
+    Name: Value<string>;
 }
 export default class ImageRecipe extends ResourceBase<ImageRecipeProperties> {
-    static InstanceBlockDeviceMapping: typeof InstanceBlockDeviceMapping;
+    static AdditionalInstanceConfiguration: typeof AdditionalInstanceConfiguration;
     static ComponentConfiguration: typeof ComponentConfiguration;
+    static ComponentParameter: typeof ComponentParameter;
     static EbsInstanceBlockDeviceSpecification: typeof EbsInstanceBlockDeviceSpecification;
+    static InstanceBlockDeviceMapping: typeof InstanceBlockDeviceMapping;
+    static SystemsManagerAgent: typeof SystemsManagerAgent;
     constructor(properties: ImageRecipeProperties);
 }

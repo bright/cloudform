@@ -1,17 +1,29 @@
-import FlowSource_ from './flowSource';
-import FlowVpcInterface_ from './flowVpcInterface';
+import Bridge_ from './bridge';
+import BridgeOutput_ from './bridgeOutput';
+import BridgeSource_ from './bridgeSource';
+import Flow_ from './flow';
 import FlowEntitlement_ from './flowEntitlement';
 import FlowOutput_ from './flowOutput';
-import Flow_ from './flow';
+import FlowSource_ from './flowSource';
+import FlowVpcInterface_ from './flowVpcInterface';
+import Gateway_ from './gateway';
 export declare namespace MediaConnect {
-    const FlowSource: typeof FlowSource_;
-    const FlowVpcInterface: typeof FlowVpcInterface_;
+    const Bridge: typeof Bridge_;
+    const BridgeOutput: typeof BridgeOutput_;
+    const BridgeSource: typeof BridgeSource_;
+    const Flow: typeof Flow_;
     const FlowEntitlement: typeof FlowEntitlement_;
     const FlowOutput: typeof FlowOutput_;
-    const Flow: typeof Flow_;
-    type FlowSource = FlowSource_;
-    type FlowVpcInterface = FlowVpcInterface_;
+    const FlowSource: typeof FlowSource_;
+    const FlowVpcInterface: typeof FlowVpcInterface_;
+    const Gateway: typeof Gateway_;
+    type Bridge = Bridge_;
+    type BridgeOutput = BridgeOutput_;
+    type BridgeSource = BridgeSource_;
+    type Flow = Flow_;
     type FlowEntitlement = FlowEntitlement_;
     type FlowOutput = FlowOutput_;
-    type Flow = Flow_;
+    type FlowSource = FlowSource_;
+    type FlowVpcInterface = FlowVpcInterface_;
+    type Gateway = Gateway_;
 }

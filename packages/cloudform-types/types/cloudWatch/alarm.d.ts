@@ -1,59 +1,60 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class MetricStat {
-    Metric: Metric;
-    Period: Value<number>;
-    Stat: Value<string>;
-    Unit?: Value<string>;
-    constructor(properties: MetricStat);
-}
-export declare class MetricDataQuery {
-    Expression?: Value<string>;
-    Id: Value<string>;
-    Label?: Value<string>;
-    MetricStat?: MetricStat;
-    Period?: Value<number>;
-    ReturnData?: Value<boolean>;
-    constructor(properties: MetricDataQuery);
-}
 export declare class Dimension {
-    Name: Value<string>;
     Value: Value<string>;
+    Name: Value<string>;
     constructor(properties: Dimension);
 }
 export declare class Metric {
-    Dimensions?: List<Dimension>;
     MetricName?: Value<string>;
+    Dimensions?: List<Dimension>;
     Namespace?: Value<string>;
     constructor(properties: Metric);
 }
+export declare class MetricDataQuery {
+    AccountId?: Value<string>;
+    ReturnData?: Value<boolean>;
+    Expression?: Value<string>;
+    Label?: Value<string>;
+    MetricStat?: MetricStat;
+    Period?: Value<number>;
+    Id: Value<string>;
+    constructor(properties: MetricDataQuery);
+}
+export declare class MetricStat {
+    Stat: Value<string>;
+    Period: Value<number>;
+    Metric: Metric;
+    Unit?: Value<string>;
+    constructor(properties: MetricStat);
+}
 export interface AlarmProperties {
-    ActionsEnabled?: Value<boolean>;
-    AlarmActions?: List<Value<string>>;
-    AlarmDescription?: Value<string>;
-    AlarmName?: Value<string>;
-    ComparisonOperator: Value<string>;
-    DatapointsToAlarm?: Value<number>;
-    Dimensions?: List<Dimension>;
+    ThresholdMetricId?: Value<string>;
     EvaluateLowSampleCountPercentile?: Value<string>;
-    EvaluationPeriods: Value<number>;
     ExtendedStatistic?: Value<string>;
-    InsufficientDataActions?: List<Value<string>>;
-    MetricName?: Value<string>;
-    Metrics?: List<MetricDataQuery>;
+    ComparisonOperator: Value<string>;
+    TreatMissingData?: Value<string>;
+    Dimensions?: List<Dimension>;
+    Period?: Value<number>;
+    EvaluationPeriods: Value<number>;
+    Unit?: Value<string>;
     Namespace?: Value<string>;
     OKActions?: List<Value<string>>;
-    Period?: Value<number>;
+    AlarmActions?: List<Value<string>>;
+    MetricName?: Value<string>;
+    ActionsEnabled?: Value<boolean>;
+    Metrics?: List<MetricDataQuery>;
+    AlarmDescription?: Value<string>;
+    AlarmName?: Value<string>;
     Statistic?: Value<string>;
+    InsufficientDataActions?: List<Value<string>>;
+    DatapointsToAlarm?: Value<number>;
     Threshold?: Value<number>;
-    ThresholdMetricId?: Value<string>;
-    TreatMissingData?: Value<string>;
-    Unit?: Value<string>;
 }
 export default class Alarm extends ResourceBase<AlarmProperties> {
-    static MetricStat: typeof MetricStat;
-    static MetricDataQuery: typeof MetricDataQuery;
     static Dimension: typeof Dimension;
     static Metric: typeof Metric;
+    static MetricDataQuery: typeof MetricDataQuery;
+    static MetricStat: typeof MetricStat;
     constructor(properties: AlarmProperties);
 }

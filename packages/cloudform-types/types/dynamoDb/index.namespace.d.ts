@@ -1,8 +1,8 @@
-import Table_ from './table';
 import GlobalTable_ from './globalTable';
+import Table_ from './table';
 export declare namespace DynamoDB {
-    const Table: typeof Table_;
     const GlobalTable: typeof GlobalTable_;
-    type Table = Table_;
+    const Table: typeof Table_;
     type GlobalTable = GlobalTable_;
+    type Table = Table_;
 }

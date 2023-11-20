@@ -1,8 +1,11 @@
-import Input_ from './input';
+import AlarmModel_ from './alarmModel';
 import DetectorModel_ from './detectorModel';
+import Input_ from './input';
 export declare namespace IoTEvents {
-    const Input: typeof Input_;
+    const AlarmModel: typeof AlarmModel_;
     const DetectorModel: typeof DetectorModel_;
-    type Input = Input_;
+    const Input: typeof Input_;
+    type AlarmModel = AlarmModel_;
     type DetectorModel = DetectorModel_;
+    type Input = Input_;
 }

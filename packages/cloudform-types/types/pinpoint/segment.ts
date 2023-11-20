@@ -1,10 +1,15 @@
 /* Generated from: 
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
@@ -19,11 +24,41 @@ export class AttributeDimension {
     }
 }
 
-export class Recency {
-    Duration!: Value<string>
-    RecencyType!: Value<string>
+export class Behavior {
+    Recency?: Recency
 
-    constructor(properties: Recency) {
+    constructor(properties: Behavior) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Coordinates {
+    Latitude!: Value<number>
+    Longitude!: Value<number>
+
+    constructor(properties: Coordinates) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Demographic {
+    AppVersion?: SetDimension
+    DeviceType?: SetDimension
+    Platform?: SetDimension
+    Channel?: SetDimension
+    Model?: SetDimension
+    Make?: SetDimension
+
+    constructor(properties: Demographic) {
+        Object.assign(this, properties)
+    }
+}
+
+export class GPSPoint {
+    RangeInKilometers!: Value<number>
+    Coordinates!: Coordinates
+
+    constructor(properties: GPSPoint) {
         Object.assign(this, properties)
     }
 }
@@ -48,20 +83,11 @@ export class Location {
     }
 }
 
-export class SegmentGroups {
-    Groups?: List<Groups>
-    Include?: Value<string>
+export class Recency {
+    Duration!: Value<string>
+    RecencyType!: Value<string>
 
-    constructor(properties: SegmentGroups) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Coordinates {
-    Latitude!: Value<number>
-    Longitude!: Value<number>
-
-    constructor(properties: Coordinates) {
+    constructor(properties: Recency) {
         Object.assign(this, properties)
     }
 }
@@ -79,33 +105,11 @@ export class SegmentDimensions {
     }
 }
 
-export class SourceSegments {
-    Version?: Value<number>
-    Id!: Value<string>
+export class SegmentGroups {
+    Groups?: List<Groups>
+    Include?: Value<string>
 
-    constructor(properties: SourceSegments) {
-        Object.assign(this, properties)
-    }
-}
-
-export class GPSPoint {
-    RangeInKilometers!: Value<number>
-    Coordinates!: Coordinates
-
-    constructor(properties: GPSPoint) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Demographic {
-    AppVersion?: SetDimension
-    DeviceType?: SetDimension
-    Platform?: SetDimension
-    Channel?: SetDimension
-    Model?: SetDimension
-    Make?: SetDimension
-
-    constructor(properties: Demographic) {
+    constructor(properties: SegmentGroups) {
         Object.assign(this, properties)
     }
 }
@@ -119,10 +123,11 @@ export class SetDimension {
     }
 }
 
-export class Behavior {
-    Recency?: Recency
+export class SourceSegments {
+    Version?: Value<number>
+    Id!: Value<string>
 
-    constructor(properties: Behavior) {
+    constructor(properties: SourceSegments) {
         Object.assign(this, properties)
     }
 }
@@ -137,17 +142,17 @@ export interface SegmentProperties {
 
 export default class Segment extends ResourceBase<SegmentProperties> {
     static AttributeDimension = AttributeDimension
-    static Recency = Recency
+    static Behavior = Behavior
+    static Coordinates = Coordinates
+    static Demographic = Demographic
+    static GPSPoint = GPSPoint
     static Groups = Groups
     static Location = Location
-    static SegmentGroups = SegmentGroups
-    static Coordinates = Coordinates
+    static Recency = Recency
     static SegmentDimensions = SegmentDimensions
-    static SourceSegments = SourceSegments
-    static GPSPoint = GPSPoint
-    static Demographic = Demographic
+    static SegmentGroups = SegmentGroups
     static SetDimension = SetDimension
-    static Behavior = Behavior
+    static SourceSegments = SourceSegments
 
     constructor(properties: SegmentProperties) {
         super('AWS::Pinpoint::Segment', properties)

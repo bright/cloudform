@@ -1,16 +1,16 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Topic {
-    TopicName: Value<string>;
-    DisplayName: Value<string>;
     Description?: Value<string>;
+    DisplayName: Value<string>;
     DefaultSubscriptionStatus: Value<string>;
+    TopicName: Value<string>;
     constructor(properties: Topic);
 }
 export interface ContactListProperties {
-    ContactListName?: Value<string>;
     Description?: Value<string>;
     Topics?: List<Topic>;
+    ContactListName?: Value<string>;
     Tags?: List<ResourceTag>;
 }
 export default class ContactList extends ResourceBase<ContactListProperties> {

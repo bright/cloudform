@@ -1,38 +1,38 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class AccessPointTag {
-    Key?: Value<string>;
     Value?: Value<string>;
+    Key?: Value<string>;
     constructor(properties: AccessPointTag);
+}
+export declare class CreationInfo {
+    OwnerGid: Value<string>;
+    OwnerUid: Value<string>;
+    Permissions: Value<string>;
+    constructor(properties: CreationInfo);
+}
+export declare class PosixUser {
+    Uid: Value<string>;
+    SecondaryGids?: List<Value<string>>;
+    Gid: Value<string>;
+    constructor(properties: PosixUser);
 }
 export declare class RootDirectory {
     Path?: Value<string>;
     CreationInfo?: CreationInfo;
     constructor(properties: RootDirectory);
 }
-export declare class CreationInfo {
-    OwnerUid: Value<string>;
-    OwnerGid: Value<string>;
-    Permissions: Value<string>;
-    constructor(properties: CreationInfo);
-}
-export declare class PosixUser {
-    Uid: Value<string>;
-    Gid: Value<string>;
-    SecondaryGids?: List<Value<string>>;
-    constructor(properties: PosixUser);
-}
 export interface AccessPointProperties {
+    FileSystemId: Value<string>;
+    RootDirectory?: RootDirectory;
     ClientToken?: Value<string>;
     AccessPointTags?: List<AccessPointTag>;
-    FileSystemId: Value<string>;
     PosixUser?: PosixUser;
-    RootDirectory?: RootDirectory;
 }
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {
     static AccessPointTag: typeof AccessPointTag;
-    static RootDirectory: typeof RootDirectory;
     static CreationInfo: typeof CreationInfo;
     static PosixUser: typeof PosixUser;
+    static RootDirectory: typeof RootDirectory;
     constructor(properties: AccessPointProperties);
 }

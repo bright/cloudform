@@ -5,10 +5,28 @@ export declare class AttributeDimension {
     Values?: List<Value<string>>;
     constructor(properties: AttributeDimension);
 }
-export declare class Recency {
-    Duration: Value<string>;
-    RecencyType: Value<string>;
-    constructor(properties: Recency);
+export declare class Behavior {
+    Recency?: Recency;
+    constructor(properties: Behavior);
+}
+export declare class Coordinates {
+    Latitude: Value<number>;
+    Longitude: Value<number>;
+    constructor(properties: Coordinates);
+}
+export declare class Demographic {
+    AppVersion?: SetDimension;
+    DeviceType?: SetDimension;
+    Platform?: SetDimension;
+    Channel?: SetDimension;
+    Model?: SetDimension;
+    Make?: SetDimension;
+    constructor(properties: Demographic);
+}
+export declare class GPSPoint {
+    RangeInKilometers: Value<number>;
+    Coordinates: Coordinates;
+    constructor(properties: GPSPoint);
 }
 export declare class Groups {
     Type?: Value<string>;
@@ -22,15 +40,10 @@ export declare class Location {
     Country?: SetDimension;
     constructor(properties: Location);
 }
-export declare class SegmentGroups {
-    Groups?: List<Groups>;
-    Include?: Value<string>;
-    constructor(properties: SegmentGroups);
-}
-export declare class Coordinates {
-    Latitude: Value<number>;
-    Longitude: Value<number>;
-    constructor(properties: Coordinates);
+export declare class Recency {
+    Duration: Value<string>;
+    RecencyType: Value<string>;
+    constructor(properties: Recency);
 }
 export declare class SegmentDimensions {
     Demographic?: Demographic;
@@ -47,33 +60,20 @@ export declare class SegmentDimensions {
     Location?: Location;
     constructor(properties: SegmentDimensions);
 }
-export declare class SourceSegments {
-    Version?: Value<number>;
-    Id: Value<string>;
-    constructor(properties: SourceSegments);
-}
-export declare class GPSPoint {
-    RangeInKilometers: Value<number>;
-    Coordinates: Coordinates;
-    constructor(properties: GPSPoint);
-}
-export declare class Demographic {
-    AppVersion?: SetDimension;
-    DeviceType?: SetDimension;
-    Platform?: SetDimension;
-    Channel?: SetDimension;
-    Model?: SetDimension;
-    Make?: SetDimension;
-    constructor(properties: Demographic);
+export declare class SegmentGroups {
+    Groups?: List<Groups>;
+    Include?: Value<string>;
+    constructor(properties: SegmentGroups);
 }
 export declare class SetDimension {
     DimensionType?: Value<string>;
     Values?: List<Value<string>>;
     constructor(properties: SetDimension);
 }
-export declare class Behavior {
-    Recency?: Recency;
-    constructor(properties: Behavior);
+export declare class SourceSegments {
+    Version?: Value<number>;
+    Id: Value<string>;
+    constructor(properties: SourceSegments);
 }
 export interface SegmentProperties {
     SegmentGroups?: SegmentGroups;
@@ -86,16 +86,16 @@ export interface SegmentProperties {
 }
 export default class Segment extends ResourceBase<SegmentProperties> {
     static AttributeDimension: typeof AttributeDimension;
-    static Recency: typeof Recency;
+    static Behavior: typeof Behavior;
+    static Coordinates: typeof Coordinates;
+    static Demographic: typeof Demographic;
+    static GPSPoint: typeof GPSPoint;
     static Groups: typeof Groups;
     static Location: typeof Location;
-    static SegmentGroups: typeof SegmentGroups;
-    static Coordinates: typeof Coordinates;
+    static Recency: typeof Recency;
     static SegmentDimensions: typeof SegmentDimensions;
-    static SourceSegments: typeof SourceSegments;
-    static GPSPoint: typeof GPSPoint;
-    static Demographic: typeof Demographic;
+    static SegmentGroups: typeof SegmentGroups;
     static SetDimension: typeof SetDimension;
-    static Behavior: typeof Behavior;
+    static SourceSegments: typeof SourceSegments;
     constructor(properties: SegmentProperties);
 }

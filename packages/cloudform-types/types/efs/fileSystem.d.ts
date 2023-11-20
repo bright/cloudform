@@ -1,36 +1,51 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class ElasticFileSystemTag {
-    Key: Value<string>;
-    Value: Value<string>;
-    constructor(properties: ElasticFileSystemTag);
-}
-export declare class LifecyclePolicy {
-    TransitionToIA: Value<string>;
-    constructor(properties: LifecyclePolicy);
-}
 export declare class BackupPolicy {
     Status: Value<string>;
     constructor(properties: BackupPolicy);
 }
-export interface FileSystemProperties {
-    Encrypted?: Value<boolean>;
-    FileSystemTags?: List<ElasticFileSystemTag>;
+export declare class ElasticFileSystemTag {
+    Value: Value<string>;
+    Key: Value<string>;
+    constructor(properties: ElasticFileSystemTag);
+}
+export declare class LifecyclePolicy {
+    TransitionToIA?: Value<string>;
+    TransitionToPrimaryStorageClass?: Value<string>;
+    constructor(properties: LifecyclePolicy);
+}
+export declare class ReplicationConfiguration {
+    Destinations?: List<ReplicationDestination>;
+    constructor(properties: ReplicationConfiguration);
+}
+export declare class ReplicationDestination {
     KmsKeyId?: Value<string>;
-    LifecyclePolicies?: List<LifecyclePolicy>;
+    AvailabilityZoneName?: Value<string>;
+    FileSystemId?: Value<string>;
+    Region?: Value<string>;
+    constructor(properties: ReplicationDestination);
+}
+export interface FileSystemProperties {
+    KmsKeyId?: Value<string>;
     PerformanceMode?: Value<string>;
+    Encrypted?: Value<boolean>;
+    BypassPolicyLockoutSafetyCheck?: Value<boolean>;
+    FileSystemTags?: List<ElasticFileSystemTag>;
     ProvisionedThroughputInMibps?: Value<number>;
-    ThroughputMode?: Value<string>;
     FileSystemPolicy?: {
         [key: string]: any;
     };
-    BypassPolicyLockoutSafetyCheck?: Value<boolean>;
-    BackupPolicy?: BackupPolicy;
     AvailabilityZoneName?: Value<string>;
+    LifecyclePolicies?: List<LifecyclePolicy>;
+    ThroughputMode?: Value<string>;
+    ReplicationConfiguration?: ReplicationConfiguration;
+    BackupPolicy?: BackupPolicy;
 }
 export default class FileSystem extends ResourceBase<FileSystemProperties> {
+    static BackupPolicy: typeof BackupPolicy;
     static ElasticFileSystemTag: typeof ElasticFileSystemTag;
     static LifecyclePolicy: typeof LifecyclePolicy;
-    static BackupPolicy: typeof BackupPolicy;
+    static ReplicationConfiguration: typeof ReplicationConfiguration;
+    static ReplicationDestination: typeof ReplicationDestination;
     constructor(properties?: FileSystemProperties);
 }

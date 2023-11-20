@@ -1,10 +1,10 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export declare class PublicAccessBlockConfiguration {
+    RestrictPublicBuckets?: Value<boolean>;
+    BlockPublicPolicy?: Value<boolean>;
     BlockPublicAcls?: Value<boolean>;
     IgnorePublicAcls?: Value<boolean>;
-    BlockPublicPolicy?: Value<boolean>;
-    RestrictPublicBuckets?: Value<boolean>;
     constructor(properties: PublicAccessBlockConfiguration);
 }
 export declare class VpcConfiguration {
@@ -12,13 +12,14 @@ export declare class VpcConfiguration {
     constructor(properties: VpcConfiguration);
 }
 export interface AccessPointProperties {
-    Name?: Value<string>;
-    Bucket: Value<string>;
-    VpcConfiguration?: VpcConfiguration;
-    PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
     Policy?: {
         [key: string]: any;
     };
+    PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
+    Bucket: Value<string>;
+    BucketAccountId?: Value<string>;
+    VpcConfiguration?: VpcConfiguration;
+    Name?: Value<string>;
 }
 export default class AccessPoint extends ResourceBase<AccessPointProperties> {
     static PublicAccessBlockConfiguration: typeof PublicAccessBlockConfiguration;

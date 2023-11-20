@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class SignatureValidityPeriod {
-    Value?: Value<number>;
     Type?: Value<string>;
+    Value?: Value<number>;
     constructor(properties: SignatureValidityPeriod);
 }
 export interface SigningProfileProperties {

@@ -2,7 +2,7 @@ import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface FleetProperties {
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Name?: Value<string>;
 }

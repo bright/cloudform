@@ -4,30 +4,47 @@ export declare class AbortIncompleteMultipartUpload {
     DaysAfterInitiation: Value<number>;
     constructor(properties: AbortIncompleteMultipartUpload);
 }
-export declare class Rule {
-    Status?: Value<string>;
-    Id?: Value<string>;
-    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
-    ExpirationDate?: Value<string>;
-    ExpirationInDays?: Value<number>;
-    Filter?: {
-        [key: string]: any;
-    };
-    constructor(properties: Rule);
+export declare class Filter {
+    AndOperator?: FilterAndOperator;
+    Prefix?: Value<string>;
+    Tag?: FilterTag;
+    constructor(properties: Filter);
+}
+export declare class FilterAndOperator {
+    Prefix?: Value<string>;
+    Tags: List<FilterTag>;
+    constructor(properties: FilterAndOperator);
+}
+export declare class FilterTag {
+    Value: Value<string>;
+    Key: Value<string>;
+    constructor(properties: FilterTag);
 }
 export declare class LifecycleConfiguration {
     Rules: List<Rule>;
     constructor(properties: LifecycleConfiguration);
 }
+export declare class Rule {
+    Status: Value<string>;
+    ExpirationDate?: Value<string>;
+    Filter?: Filter;
+    ExpirationInDays?: Value<number>;
+    Id?: Value<string>;
+    AbortIncompleteMultipartUpload?: AbortIncompleteMultipartUpload;
+    constructor(properties: Rule);
+}
 export interface BucketProperties {
-    BucketName: Value<string>;
     OutpostId: Value<string>;
-    Tags?: List<ResourceTag>;
+    BucketName: Value<string>;
     LifecycleConfiguration?: LifecycleConfiguration;
+    Tags?: List<ResourceTag>;
 }
 export default class Bucket extends ResourceBase<BucketProperties> {
     static AbortIncompleteMultipartUpload: typeof AbortIncompleteMultipartUpload;
-    static Rule: typeof Rule;
+    static Filter: typeof Filter;
+    static FilterAndOperator: typeof FilterAndOperator;
+    static FilterTag: typeof FilterTag;
     static LifecycleConfiguration: typeof LifecycleConfiguration;
+    static Rule: typeof Rule;
     constructor(properties: BucketProperties);
 }

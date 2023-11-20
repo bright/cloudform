@@ -1,8 +1,8 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export interface VirtualMFADeviceProperties {
-    VirtualMfaDeviceName?: Value<string>;
     Path?: Value<string>;
+    VirtualMfaDeviceName?: Value<string>;
     Users: List<Value<string>>;
     Tags?: List<ResourceTag>;
 }

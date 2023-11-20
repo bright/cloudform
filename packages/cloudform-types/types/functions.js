@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Or = exports.Not = exports.If = exports.Equals = exports.And = exports.Ref = exports.Sub = exports.Split = exports.Select = exports.Join = exports.ImportValue = exports.GetAZs = exports.GetAtt = exports.FindInMap = exports.Base64 = void 0;
 const dataTypes_1 = require("./dataTypes");
 function Base64(value) {
     return new dataTypes_1.IntrinsicFunction('Fn::Base64', value);

@@ -1,41 +1,42 @@
 "use strict";
 /* Generated from:
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-3 (https://d2zq80gdmjim8k.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ElastiCache = void 0;
+const cacheCluster_1 = require("./cacheCluster");
+const globalReplicationGroup_1 = require("./globalReplicationGroup");
+const parameterGroup_1 = require("./parameterGroup");
+const replicationGroup_1 = require("./replicationGroup");
+const securityGroup_1 = require("./securityGroup");
+const securityGroupIngress_1 = require("./securityGroupIngress");
+const subnetGroup_1 = require("./subnetGroup");
 const user_1 = require("./user");
 const userGroup_1 = require("./userGroup");
-const securityGroup_1 = require("./securityGroup");
-const subnetGroup_1 = require("./subnetGroup");
-const securityGroupIngress_1 = require("./securityGroupIngress");
-const replicationGroup_1 = require("./replicationGroup");
-const parameterGroup_1 = require("./parameterGroup");
-const globalReplicationGroup_1 = require("./globalReplicationGroup");
-const cacheCluster_1 = require("./cacheCluster");
 var ElastiCache;
 (function (ElastiCache) {
+    ElastiCache.CacheCluster = cacheCluster_1.default;
+    ElastiCache.GlobalReplicationGroup = globalReplicationGroup_1.default;
+    ElastiCache.ParameterGroup = parameterGroup_1.default;
+    ElastiCache.ReplicationGroup = replicationGroup_1.default;
+    ElastiCache.SecurityGroup = securityGroup_1.default;
+    ElastiCache.SecurityGroupIngress = securityGroupIngress_1.default;
+    ElastiCache.SubnetGroup = subnetGroup_1.default;
     ElastiCache.User = user_1.default;
     ElastiCache.UserGroup = userGroup_1.default;
-    ElastiCache.SecurityGroup = securityGroup_1.default;
-    ElastiCache.SubnetGroup = subnetGroup_1.default;
-    ElastiCache.SecurityGroupIngress = securityGroupIngress_1.default;
-    ElastiCache.ReplicationGroup = replicationGroup_1.default;
-    ElastiCache.ParameterGroup = parameterGroup_1.default;
-    ElastiCache.GlobalReplicationGroup = globalReplicationGroup_1.default;
-    ElastiCache.CacheCluster = cacheCluster_1.default;
 })(ElastiCache = exports.ElastiCache || (exports.ElastiCache = {}));

@@ -1,21 +1,15 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Taint {
-    Value?: Value<string>;
-    Effect?: Value<string>;
-    Key?: Value<string>;
-    constructor(properties: Taint);
-}
 export declare class LaunchTemplateSpecification {
     Version?: Value<string>;
     Id?: Value<string>;
     Name?: Value<string>;
     constructor(properties: LaunchTemplateSpecification);
 }
-export declare class UpdateConfig {
-    MaxUnavailablePercentage?: Value<number>;
-    MaxUnavailable?: Value<number>;
-    constructor(properties: UpdateConfig);
+export declare class RemoteAccess {
+    SourceSecurityGroups?: List<Value<string>>;
+    Ec2SshKey: Value<string>;
+    constructor(properties: RemoteAccess);
 }
 export declare class ScalingConfig {
     MinSize?: Value<number>;
@@ -23,23 +17,29 @@ export declare class ScalingConfig {
     MaxSize?: Value<number>;
     constructor(properties: ScalingConfig);
 }
-export declare class RemoteAccess {
-    SourceSecurityGroups?: List<Value<string>>;
-    Ec2SshKey: Value<string>;
-    constructor(properties: RemoteAccess);
+export declare class Taint {
+    Value?: Value<string>;
+    Effect?: Value<string>;
+    Key?: Value<string>;
+    constructor(properties: Taint);
+}
+export declare class UpdateConfig {
+    MaxUnavailablePercentage?: Value<number>;
+    MaxUnavailable?: Value<number>;
+    constructor(properties: UpdateConfig);
 }
 export interface NodegroupProperties {
     UpdateConfig?: UpdateConfig;
     ScalingConfig?: ScalingConfig;
     Labels?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Taints?: List<Taint>;
-    ReleaseVersion?: Value<string>;
     CapacityType?: Value<string>;
+    ReleaseVersion?: Value<string>;
     NodegroupName?: Value<string>;
-    Subnets: List<Value<string>>;
     NodeRole: Value<string>;
+    Subnets: List<Value<string>>;
     AmiType?: Value<string>;
     ForceUpdateEnabled?: Value<boolean>;
     Version?: Value<string>;
@@ -49,14 +49,14 @@ export interface NodegroupProperties {
     ClusterName: Value<string>;
     InstanceTypes?: List<Value<string>>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
 }
 export default class Nodegroup extends ResourceBase<NodegroupProperties> {
-    static Taint: typeof Taint;
     static LaunchTemplateSpecification: typeof LaunchTemplateSpecification;
-    static UpdateConfig: typeof UpdateConfig;
-    static ScalingConfig: typeof ScalingConfig;
     static RemoteAccess: typeof RemoteAccess;
+    static ScalingConfig: typeof ScalingConfig;
+    static Taint: typeof Taint;
+    static UpdateConfig: typeof UpdateConfig;
     constructor(properties: NodegroupProperties);
 }

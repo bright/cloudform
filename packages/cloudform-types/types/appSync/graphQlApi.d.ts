@@ -1,12 +1,11 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare type Tags = List<ResourceTag>;
-export declare class OpenIDConnectConfig {
-    Issuer?: Value<string>;
-    ClientId?: Value<string>;
-    AuthTTL?: Value<number>;
-    IatTTL?: Value<number>;
-    constructor(properties: OpenIDConnectConfig);
+export declare class AdditionalAuthenticationProvider {
+    OpenIDConnectConfig?: OpenIDConnectConfig;
+    LambdaAuthorizerConfig?: LambdaAuthorizerConfig;
+    UserPoolConfig?: CognitoUserPoolConfig;
+    AuthenticationType: Value<string>;
+    constructor(properties: AdditionalAuthenticationProvider);
 }
 export declare class CognitoUserPoolConfig {
     AppIdClientRegex?: Value<string>;
@@ -14,13 +13,11 @@ export declare class CognitoUserPoolConfig {
     AwsRegion?: Value<string>;
     constructor(properties: CognitoUserPoolConfig);
 }
-export declare type AdditionalAuthenticationProviders = List<AdditionalAuthenticationProvider>;
-export declare class UserPoolConfig {
-    AppIdClientRegex?: Value<string>;
-    UserPoolId?: Value<string>;
-    AwsRegion?: Value<string>;
-    DefaultAction?: Value<string>;
-    constructor(properties: UserPoolConfig);
+export declare class LambdaAuthorizerConfig {
+    IdentityValidationExpression?: Value<string>;
+    AuthorizerUri?: Value<string>;
+    AuthorizerResultTtlInSeconds?: Value<number>;
+    constructor(properties: LambdaAuthorizerConfig);
 }
 export declare class LogConfig {
     CloudWatchLogsRoleArn?: Value<string>;
@@ -28,27 +25,41 @@ export declare class LogConfig {
     FieldLogLevel?: Value<string>;
     constructor(properties: LogConfig);
 }
-export declare class AdditionalAuthenticationProvider {
-    OpenIDConnectConfig?: OpenIDConnectConfig;
-    UserPoolConfig?: CognitoUserPoolConfig;
-    AuthenticationType: Value<string>;
-    constructor(properties: AdditionalAuthenticationProvider);
+export declare class OpenIDConnectConfig {
+    Issuer?: Value<string>;
+    ClientId?: Value<string>;
+    AuthTTL?: Value<number>;
+    IatTTL?: Value<number>;
+    constructor(properties: OpenIDConnectConfig);
+}
+export declare class UserPoolConfig {
+    AppIdClientRegex?: Value<string>;
+    UserPoolId?: Value<string>;
+    AwsRegion?: Value<string>;
+    DefaultAction?: Value<string>;
+    constructor(properties: UserPoolConfig);
 }
 export interface GraphQLApiProperties {
     OpenIDConnectConfig?: OpenIDConnectConfig;
-    XrayEnabled?: Value<boolean>;
-    UserPoolConfig?: UserPoolConfig;
-    Tags?: Tags;
+    MergedApiExecutionRoleArn?: Value<string>;
+    OwnerContact?: Value<string>;
     Name: Value<string>;
+    AdditionalAuthenticationProviders?: List<AdditionalAuthenticationProvider>;
+    ApiType?: Value<string>;
+    LambdaAuthorizerConfig?: LambdaAuthorizerConfig;
+    XrayEnabled?: Value<boolean>;
+    Visibility?: Value<string>;
+    UserPoolConfig?: UserPoolConfig;
+    Tags?: List<ResourceTag>;
     AuthenticationType: Value<string>;
     LogConfig?: LogConfig;
-    AdditionalAuthenticationProviders?: AdditionalAuthenticationProviders;
 }
 export default class GraphQLApi extends ResourceBase<GraphQLApiProperties> {
-    static OpenIDConnectConfig: typeof OpenIDConnectConfig;
-    static CognitoUserPoolConfig: typeof CognitoUserPoolConfig;
-    static UserPoolConfig: typeof UserPoolConfig;
-    static LogConfig: typeof LogConfig;
     static AdditionalAuthenticationProvider: typeof AdditionalAuthenticationProvider;
+    static CognitoUserPoolConfig: typeof CognitoUserPoolConfig;
+    static LambdaAuthorizerConfig: typeof LambdaAuthorizerConfig;
+    static LogConfig: typeof LogConfig;
+    static OpenIDConnectConfig: typeof OpenIDConnectConfig;
+    static UserPoolConfig: typeof UserPoolConfig;
     constructor(properties: GraphQLApiProperties);
 }

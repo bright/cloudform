@@ -1,66 +1,37 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase, ResourceTag} from '../resource'
 import {Value, List} from '../dataTypes'
 
-export class Task {
-    ConnectorOperator?: ConnectorOperator
-    SourceFields!: List<Value<string>>
-    DestinationField?: Value<string>
-    TaskType!: Value<string>
-    TaskProperties?: List<TaskPropertiesMap>
+export class ConnectorOperator {
+    S3?: Value<string>
+    ServiceNow?: Value<string>
+    Zendesk?: Value<string>
+    Marketo?: Value<string>
+    Salesforce?: Value<string>
 
-    constructor(properties: Task) {
-        Object.assign(this, properties)
-    }
-}
-
-export class TriggerProperties {
-    Scheduled?: ScheduledTriggerProperties
-
-    constructor(properties: TriggerProperties) {
-        Object.assign(this, properties)
-    }
-}
-
-export class ScheduledTriggerProperties {
-    ScheduleExpression!: Value<string>
-    DataPullMode?: Value<string>
-    ScheduleStartTime?: Value<number>
-    ScheduleEndTime?: Value<number>
-    Timezone?: Value<string>
-    ScheduleOffset?: Value<number>
-    FirstExecutionFrom?: Value<number>
-
-    constructor(properties: ScheduledTriggerProperties) {
-        Object.assign(this, properties)
-    }
-}
-
-export class S3SourceProperties {
-    BucketName!: Value<string>
-    BucketPrefix?: Value<string>
-
-    constructor(properties: S3SourceProperties) {
+    constructor(properties: ConnectorOperator) {
         Object.assign(this, properties)
     }
 }
 
 export class FlowDefinition {
-    FlowName!: Value<string>
     Description?: Value<string>
-    KmsArn!: Value<string>
     Tasks!: List<Task>
+    FlowName!: Value<string>
     TriggerConfig!: TriggerConfig
     SourceFlowConfig!: SourceFlowConfig
+    KmsArn!: Value<string>
 
     constructor(properties: FlowDefinition) {
         Object.assign(this, properties)
@@ -83,43 +54,44 @@ export class MarketoSourceProperties {
     }
 }
 
-export class TaskPropertiesMap {
-    OperatorPropertyKey!: Value<string>
-    Property!: Value<string>
+export class ObjectTypeMapping {
+    Value!: Value<string>
+    Key!: Value<string>
 
-    constructor(properties: TaskPropertiesMap) {
+    constructor(properties: ObjectTypeMapping) {
         Object.assign(this, properties)
     }
 }
 
-export class ConnectorOperator {
-    Marketo?: Value<string>
-    S3?: Value<string>
-    Salesforce?: Value<string>
-    ServiceNow?: Value<string>
-    Zendesk?: Value<string>
+export class S3SourceProperties {
+    BucketName!: Value<string>
+    BucketPrefix?: Value<string>
 
-    constructor(properties: ConnectorOperator) {
+    constructor(properties: S3SourceProperties) {
         Object.assign(this, properties)
     }
 }
 
-export class ZendeskSourceProperties {
+export class SalesforceSourceProperties {
+    IncludeDeletedRecords?: Value<boolean>
     Object!: Value<string>
+    EnableDynamicFieldUpdate?: Value<boolean>
 
-    constructor(properties: ZendeskSourceProperties) {
+    constructor(properties: SalesforceSourceProperties) {
         Object.assign(this, properties)
     }
 }
 
-export class SourceConnectorProperties {
-    Marketo?: MarketoSourceProperties
-    S3?: S3SourceProperties
-    Salesforce?: SalesforceSourceProperties
-    ServiceNow?: ServiceNowSourceProperties
-    Zendesk?: ZendeskSourceProperties
+export class ScheduledTriggerProperties {
+    ScheduleEndTime?: Value<number>
+    Timezone?: Value<string>
+    ScheduleExpression!: Value<string>
+    FirstExecutionFrom?: Value<number>
+    ScheduleStartTime?: Value<number>
+    DataPullMode?: Value<string>
+    ScheduleOffset?: Value<number>
 
-    constructor(properties: SourceConnectorProperties) {
+    constructor(properties: ScheduledTriggerProperties) {
         Object.assign(this, properties)
     }
 }
@@ -132,12 +104,46 @@ export class ServiceNowSourceProperties {
     }
 }
 
-export class SalesforceSourceProperties {
-    Object!: Value<string>
-    EnableDynamicFieldUpdate?: Value<boolean>
-    IncludeDeletedRecords?: Value<boolean>
+export class SourceConnectorProperties {
+    S3?: S3SourceProperties
+    ServiceNow?: ServiceNowSourceProperties
+    Zendesk?: ZendeskSourceProperties
+    Marketo?: MarketoSourceProperties
+    Salesforce?: SalesforceSourceProperties
 
-    constructor(properties: SalesforceSourceProperties) {
+    constructor(properties: SourceConnectorProperties) {
+        Object.assign(this, properties)
+    }
+}
+
+export class SourceFlowConfig {
+    ConnectorProfileName?: Value<string>
+    SourceConnectorProperties!: SourceConnectorProperties
+    ConnectorType!: Value<string>
+    IncrementalPullConfig?: IncrementalPullConfig
+
+    constructor(properties: SourceFlowConfig) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Task {
+    SourceFields!: List<Value<string>>
+    DestinationField?: Value<string>
+    ConnectorOperator?: ConnectorOperator
+    TaskType!: Value<string>
+    TaskProperties?: List<TaskPropertiesMap>
+
+    constructor(properties: Task) {
+        Object.assign(this, properties)
+    }
+}
+
+export class TaskPropertiesMap {
+    OperatorPropertyKey!: Value<string>
+    Property!: Value<string>
+
+    constructor(properties: TaskPropertiesMap) {
         Object.assign(this, properties)
     }
 }
@@ -151,41 +157,48 @@ export class TriggerConfig {
     }
 }
 
-export class SourceFlowConfig {
-    ConnectorType!: Value<string>
-    ConnectorProfileName?: Value<string>
-    IncrementalPullConfig?: IncrementalPullConfig
-    SourceConnectorProperties!: SourceConnectorProperties
+export class TriggerProperties {
+    Scheduled?: ScheduledTriggerProperties
 
-    constructor(properties: SourceFlowConfig) {
+    constructor(properties: TriggerProperties) {
+        Object.assign(this, properties)
+    }
+}
+
+export class ZendeskSourceProperties {
+    Object!: Value<string>
+
+    constructor(properties: ZendeskSourceProperties) {
         Object.assign(this, properties)
     }
 }
 
 export interface IntegrationProperties {
+    ObjectTypeNames?: List<ObjectTypeMapping>
     DomainName: Value<string>
+    ObjectTypeName?: Value<string>
     Uri?: Value<string>
     FlowDefinition?: FlowDefinition
-    ObjectTypeName: Value<string>
     Tags?: List<ResourceTag>
 }
 
 export default class Integration extends ResourceBase<IntegrationProperties> {
-    static Task = Task
-    static TriggerProperties = TriggerProperties
-    static ScheduledTriggerProperties = ScheduledTriggerProperties
-    static S3SourceProperties = S3SourceProperties
+    static ConnectorOperator = ConnectorOperator
     static FlowDefinition = FlowDefinition
     static IncrementalPullConfig = IncrementalPullConfig
     static MarketoSourceProperties = MarketoSourceProperties
-    static TaskPropertiesMap = TaskPropertiesMap
-    static ConnectorOperator = ConnectorOperator
-    static ZendeskSourceProperties = ZendeskSourceProperties
-    static SourceConnectorProperties = SourceConnectorProperties
-    static ServiceNowSourceProperties = ServiceNowSourceProperties
+    static ObjectTypeMapping = ObjectTypeMapping
+    static S3SourceProperties = S3SourceProperties
     static SalesforceSourceProperties = SalesforceSourceProperties
-    static TriggerConfig = TriggerConfig
+    static ScheduledTriggerProperties = ScheduledTriggerProperties
+    static ServiceNowSourceProperties = ServiceNowSourceProperties
+    static SourceConnectorProperties = SourceConnectorProperties
     static SourceFlowConfig = SourceFlowConfig
+    static Task = Task
+    static TaskPropertiesMap = TaskPropertiesMap
+    static TriggerConfig = TriggerConfig
+    static TriggerProperties = TriggerProperties
+    static ZendeskSourceProperties = ZendeskSourceProperties
 
     constructor(properties: IntegrationProperties) {
         super('AWS::CustomerProfiles::Integration', properties)

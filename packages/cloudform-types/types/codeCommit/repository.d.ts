@@ -5,12 +5,6 @@ export declare class Code {
     BranchName?: Value<string>;
     constructor(properties: Code);
 }
-export declare class S3 {
-    ObjectVersion?: Value<string>;
-    Bucket: Value<string>;
-    Key: Value<string>;
-    constructor(properties: S3);
-}
 export declare class RepositoryTrigger {
     Events: List<Value<string>>;
     Branches?: List<Value<string>>;
@@ -18,6 +12,12 @@ export declare class RepositoryTrigger {
     DestinationArn: Value<string>;
     Name: Value<string>;
     constructor(properties: RepositoryTrigger);
+}
+export declare class S3 {
+    ObjectVersion?: Value<string>;
+    Bucket: Value<string>;
+    Key: Value<string>;
+    constructor(properties: S3);
 }
 export interface RepositoryProperties {
     RepositoryName: Value<string>;
@@ -28,7 +28,7 @@ export interface RepositoryProperties {
 }
 export default class Repository extends ResourceBase<RepositoryProperties> {
     static Code: typeof Code;
-    static S3: typeof S3;
     static RepositoryTrigger: typeof RepositoryTrigger;
+    static S3: typeof S3;
     constructor(properties: RepositoryProperties);
 }

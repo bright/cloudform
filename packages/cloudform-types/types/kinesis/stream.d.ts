@@ -5,14 +5,20 @@ export declare class StreamEncryption {
     KeyId: Value<string>;
     constructor(properties: StreamEncryption);
 }
+export declare class StreamModeDetails {
+    StreamMode: Value<string>;
+    constructor(properties: StreamModeDetails);
+}
 export interface StreamProperties {
-    Name?: Value<string>;
-    RetentionPeriodHours?: Value<number>;
-    ShardCount: Value<number>;
+    StreamModeDetails?: StreamModeDetails;
     StreamEncryption?: StreamEncryption;
+    RetentionPeriodHours?: Value<number>;
     Tags?: List<ResourceTag>;
+    Name?: Value<string>;
+    ShardCount?: Value<number>;
 }
 export default class Stream extends ResourceBase<StreamProperties> {
     static StreamEncryption: typeof StreamEncryption;
-    constructor(properties: StreamProperties);
+    static StreamModeDetails: typeof StreamModeDetails;
+    constructor(properties?: StreamProperties);
 }

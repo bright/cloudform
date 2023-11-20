@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Tags {
-    Value?: Value<string>;
-    Key?: Value<string>;
+    Value: Value<string>;
+    Key: Value<string>;
     constructor(properties: Tags);
 }
 export interface ApplicationProperties {

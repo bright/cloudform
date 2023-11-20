@@ -1,8 +1,8 @@
-import Stream_ from './stream';
 import Ledger_ from './ledger';
+import Stream_ from './stream';
 export declare namespace QLDB {
-    const Stream: typeof Stream_;
     const Ledger: typeof Ledger_;
-    type Stream = Stream_;
+    const Stream: typeof Stream_;
     type Ledger = Ledger_;
+    type Stream = Stream_;
 }

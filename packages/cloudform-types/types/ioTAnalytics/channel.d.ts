@@ -1,5 +1,12 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
+export declare class ChannelStorage {
+    CustomerManagedS3?: CustomerManagedS3;
+    ServiceManagedS3?: {
+        [key: string]: any;
+    };
+    constructor(properties: ChannelStorage);
+}
 export declare class CustomerManagedS3 {
     Bucket: Value<string>;
     RoleArn: Value<string>;
@@ -11,14 +18,6 @@ export declare class RetentionPeriod {
     Unlimited?: Value<boolean>;
     constructor(properties: RetentionPeriod);
 }
-export declare class ServiceManagedS3 {
-    constructor(properties: ServiceManagedS3);
-}
-export declare class ChannelStorage {
-    CustomerManagedS3?: CustomerManagedS3;
-    ServiceManagedS3?: ServiceManagedS3;
-    constructor(properties: ChannelStorage);
-}
 export interface ChannelProperties {
     ChannelName?: Value<string>;
     ChannelStorage?: ChannelStorage;
@@ -26,9 +25,8 @@ export interface ChannelProperties {
     Tags?: List<ResourceTag>;
 }
 export default class Channel extends ResourceBase<ChannelProperties> {
+    static ChannelStorage: typeof ChannelStorage;
     static CustomerManagedS3: typeof CustomerManagedS3;
     static RetentionPeriod: typeof RetentionPeriod;
-    static ServiceManagedS3: typeof ServiceManagedS3;
-    static ChannelStorage: typeof ChannelStorage;
     constructor(properties?: ChannelProperties);
 }

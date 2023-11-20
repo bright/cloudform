@@ -1,33 +1,33 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ProvisioningParameter {
-    Key: Value<string>;
     Value: Value<string>;
+    Key: Value<string>;
     constructor(properties: ProvisioningParameter);
 }
 export declare class ProvisioningPreferences {
     StackSetAccounts?: List<Value<string>>;
     StackSetFailureToleranceCount?: Value<number>;
-    StackSetFailureTolerancePercentage?: Value<number>;
-    StackSetMaxConcurrencyCount?: Value<number>;
     StackSetMaxConcurrencyPercentage?: Value<number>;
-    StackSetOperationType?: Value<string>;
+    StackSetMaxConcurrencyCount?: Value<number>;
     StackSetRegions?: List<Value<string>>;
+    StackSetOperationType?: Value<string>;
+    StackSetFailureTolerancePercentage?: Value<number>;
     constructor(properties: ProvisioningPreferences);
 }
 export interface CloudFormationProvisionedProductProperties {
-    AcceptLanguage?: Value<string>;
-    NotificationArns?: List<Value<string>>;
     PathId?: Value<string>;
-    PathName?: Value<string>;
-    ProductId?: Value<string>;
-    ProductName?: Value<string>;
-    ProvisionedProductName?: Value<string>;
-    ProvisioningArtifactId?: Value<string>;
-    ProvisioningArtifactName?: Value<string>;
     ProvisioningParameters?: List<ProvisioningParameter>;
     ProvisioningPreferences?: ProvisioningPreferences;
+    ProductName?: Value<string>;
+    ProvisioningArtifactName?: Value<string>;
+    NotificationArns?: List<Value<string>>;
+    AcceptLanguage?: Value<string>;
+    ProductId?: Value<string>;
+    PathName?: Value<string>;
     Tags?: List<ResourceTag>;
+    ProvisionedProductName?: Value<string>;
+    ProvisioningArtifactId?: Value<string>;
 }
 export default class CloudFormationProvisionedProduct extends ResourceBase<CloudFormationProvisionedProductProperties> {
     static ProvisioningParameter: typeof ProvisioningParameter;

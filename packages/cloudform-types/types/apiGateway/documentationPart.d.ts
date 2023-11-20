@@ -1,17 +1,17 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export declare class Location {
-    Method?: Value<string>;
-    Name?: Value<string>;
     Path?: Value<string>;
-    StatusCode?: Value<string>;
     Type?: Value<string>;
+    Method?: Value<string>;
+    StatusCode?: Value<string>;
+    Name?: Value<string>;
     constructor(properties: Location);
 }
 export interface DocumentationPartProperties {
-    Location: Location;
-    Properties: Value<string>;
     RestApiId: Value<string>;
+    Properties: Value<string>;
+    Location: Location;
 }
 export default class DocumentationPart extends ResourceBase<DocumentationPartProperties> {
     static Location: typeof Location;

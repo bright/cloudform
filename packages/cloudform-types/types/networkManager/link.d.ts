@@ -6,13 +6,13 @@ export declare class Bandwidth {
     constructor(properties: Bandwidth);
 }
 export interface LinkProperties {
-    GlobalNetworkId: Value<string>;
     SiteId: Value<string>;
-    Bandwidth: Bandwidth;
-    Provider?: Value<string>;
-    Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     Type?: Value<string>;
+    GlobalNetworkId: Value<string>;
+    Description?: Value<string>;
+    Bandwidth: Bandwidth;
+    Tags?: List<ResourceTag>;
+    Provider?: Value<string>;
 }
 export default class Link extends ResourceBase<LinkProperties> {
     static Bandwidth: typeof Bandwidth;

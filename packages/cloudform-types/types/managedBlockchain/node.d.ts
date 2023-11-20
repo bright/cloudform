@@ -6,7 +6,7 @@ export declare class NodeConfiguration {
     constructor(properties: NodeConfiguration);
 }
 export interface NodeProperties {
-    MemberId: Value<string>;
+    MemberId?: Value<string>;
     NetworkId: Value<string>;
     NodeConfiguration: NodeConfiguration;
 }

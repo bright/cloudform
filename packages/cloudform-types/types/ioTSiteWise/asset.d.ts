@@ -8,15 +8,17 @@ export declare class AssetHierarchy {
 export declare class AssetProperty {
     LogicalId: Value<string>;
     Alias?: Value<string>;
+    Unit?: Value<string>;
     NotificationState?: Value<string>;
     constructor(properties: AssetProperty);
 }
 export interface AssetProperties {
     AssetModelId: Value<string>;
-    AssetName: Value<string>;
+    AssetDescription?: Value<string>;
     AssetProperties?: List<AssetProperty>;
-    AssetHierarchies?: List<AssetHierarchy>;
+    AssetName: Value<string>;
     Tags?: List<ResourceTag>;
+    AssetHierarchies?: List<AssetHierarchy>;
 }
 export default class Asset extends ResourceBase<AssetProperties> {
     static AssetHierarchy: typeof AssetHierarchy;

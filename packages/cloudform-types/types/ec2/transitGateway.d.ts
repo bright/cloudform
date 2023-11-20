@@ -3,7 +3,10 @@ import { Value, List } from '../dataTypes';
 export interface TransitGatewayProperties {
     DefaultRouteTablePropagation?: Value<string>;
     Description?: Value<string>;
+    TransitGatewayCidrBlocks?: List<Value<string>>;
+    AssociationDefaultRouteTableId?: Value<string>;
     AutoAcceptSharedAttachments?: Value<string>;
+    PropagationDefaultRouteTableId?: Value<string>;
     DefaultRouteTableAssociation?: Value<string>;
     VpnEcmpSupport?: Value<string>;
     DnsSupport?: Value<string>;

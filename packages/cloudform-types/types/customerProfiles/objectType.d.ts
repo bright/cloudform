@@ -1,19 +1,19 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class KeyMap {
-    Name?: Value<string>;
-    ObjectTypeKeyList?: List<ObjectTypeKey>;
-    constructor(properties: KeyMap);
-}
 export declare class FieldMap {
     Name?: Value<string>;
     ObjectTypeField?: ObjectTypeField;
     constructor(properties: FieldMap);
 }
+export declare class KeyMap {
+    ObjectTypeKeyList?: List<ObjectTypeKey>;
+    Name?: Value<string>;
+    constructor(properties: KeyMap);
+}
 export declare class ObjectTypeField {
-    Source?: Value<string>;
     Target?: Value<string>;
     ContentType?: Value<string>;
+    Source?: Value<string>;
     constructor(properties: ObjectTypeField);
 }
 export declare class ObjectTypeKey {
@@ -22,20 +22,21 @@ export declare class ObjectTypeKey {
     constructor(properties: ObjectTypeKey);
 }
 export interface ObjectTypeProperties {
-    DomainName: Value<string>;
-    ObjectTypeName?: Value<string>;
-    AllowProfileCreation?: Value<boolean>;
     Description?: Value<string>;
-    EncryptionKey?: Value<string>;
-    ExpirationDays?: Value<number>;
     Fields?: List<FieldMap>;
+    DomainName: Value<string>;
+    AllowProfileCreation?: Value<boolean>;
+    ObjectTypeName?: Value<string>;
     Keys?: List<KeyMap>;
+    SourceLastUpdatedTimestampFormat?: Value<string>;
+    EncryptionKey?: Value<string>;
     Tags?: List<ResourceTag>;
     TemplateId?: Value<string>;
+    ExpirationDays?: Value<number>;
 }
 export default class ObjectType extends ResourceBase<ObjectTypeProperties> {
-    static KeyMap: typeof KeyMap;
     static FieldMap: typeof FieldMap;
+    static KeyMap: typeof KeyMap;
     static ObjectTypeField: typeof ObjectTypeField;
     static ObjectTypeKey: typeof ObjectTypeKey;
     constructor(properties: ObjectTypeProperties);

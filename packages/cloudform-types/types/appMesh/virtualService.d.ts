@@ -1,12 +1,12 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class VirtualRouterServiceProvider {
-    VirtualRouterName: Value<string>;
-    constructor(properties: VirtualRouterServiceProvider);
-}
 export declare class VirtualNodeServiceProvider {
     VirtualNodeName: Value<string>;
     constructor(properties: VirtualNodeServiceProvider);
+}
+export declare class VirtualRouterServiceProvider {
+    VirtualRouterName: Value<string>;
+    constructor(properties: VirtualRouterServiceProvider);
 }
 export declare class VirtualServiceProvider {
     VirtualNode?: VirtualNodeServiceProvider;
@@ -25,8 +25,8 @@ export interface VirtualServiceProperties {
     Tags?: List<ResourceTag>;
 }
 export default class VirtualService extends ResourceBase<VirtualServiceProperties> {
-    static VirtualRouterServiceProvider: typeof VirtualRouterServiceProvider;
     static VirtualNodeServiceProvider: typeof VirtualNodeServiceProvider;
+    static VirtualRouterServiceProvider: typeof VirtualRouterServiceProvider;
     static VirtualServiceProvider: typeof VirtualServiceProvider;
     static VirtualServiceSpec: typeof VirtualServiceSpec;
     constructor(properties: VirtualServiceProperties);

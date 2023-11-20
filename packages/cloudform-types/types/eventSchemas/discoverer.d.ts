@@ -6,6 +6,7 @@ export declare class TagsEntry {
     constructor(properties: TagsEntry);
 }
 export interface DiscovererProperties {
+    CrossAccount?: Value<boolean>;
     Description?: Value<string>;
     SourceArn: Value<string>;
     Tags?: List<TagsEntry>;

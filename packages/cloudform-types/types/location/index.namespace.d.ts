@@ -1,20 +1,20 @@
-import Tracker_ from './tracker';
-import Map_ from './map';
 import GeofenceCollection_ from './geofenceCollection';
-import TrackerConsumer_ from './trackerConsumer';
-import RouteCalculator_ from './routeCalculator';
+import Map_ from './map';
 import PlaceIndex_ from './placeIndex';
+import RouteCalculator_ from './routeCalculator';
+import Tracker_ from './tracker';
+import TrackerConsumer_ from './trackerConsumer';
 export declare namespace Location {
-    const Tracker: typeof Tracker_;
-    const Map: typeof Map_;
     const GeofenceCollection: typeof GeofenceCollection_;
-    const TrackerConsumer: typeof TrackerConsumer_;
-    const RouteCalculator: typeof RouteCalculator_;
+    const Map: typeof Map_;
     const PlaceIndex: typeof PlaceIndex_;
-    type Tracker = Tracker_;
-    type Map = Map_;
+    const RouteCalculator: typeof RouteCalculator_;
+    const Tracker: typeof Tracker_;
+    const TrackerConsumer: typeof TrackerConsumer_;
     type GeofenceCollection = GeofenceCollection_;
-    type TrackerConsumer = TrackerConsumer_;
-    type RouteCalculator = RouteCalculator_;
+    type Map = Map_;
     type PlaceIndex = PlaceIndex_;
+    type RouteCalculator = RouteCalculator_;
+    type Tracker = Tracker_;
+    type TrackerConsumer = TrackerConsumer_;
 }

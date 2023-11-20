@@ -8,15 +8,17 @@ export declare class TagSpecification {
 export interface CapacityReservationProperties {
     Tenancy?: Value<string>;
     EndDateType?: Value<string>;
-    InstanceCount: Value<number>;
     TagSpecifications?: List<TagSpecification>;
     AvailabilityZone: Value<string>;
+    EndDate?: Value<string>;
+    EbsOptimized?: Value<boolean>;
+    OutPostArn?: Value<string>;
+    InstanceCount: Value<number>;
+    PlacementGroupArn?: Value<string>;
     InstancePlatform: Value<string>;
     InstanceType: Value<string>;
     EphemeralStorage?: Value<boolean>;
     InstanceMatchCriteria?: Value<string>;
-    EndDate?: Value<string>;
-    EbsOptimized?: Value<boolean>;
 }
 export default class CapacityReservation extends ResourceBase<CapacityReservationProperties> {
     static TagSpecification: typeof TagSpecification;

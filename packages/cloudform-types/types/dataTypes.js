@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ConditionIntrinsicFunction = exports.IntrinsicFunction = void 0;
 var DataType;
 (function (DataType) {
     DataType["String"] = "String";

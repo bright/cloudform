@@ -7,12 +7,12 @@ export declare class S3Path {
 }
 export interface FaqProperties {
     IndexId: Value<string>;
-    Name: Value<string>;
     Description?: Value<string>;
-    FileFormat?: Value<string>;
     S3Path: S3Path;
+    FileFormat?: Value<string>;
     RoleArn: Value<string>;
     Tags?: List<ResourceTag>;
+    Name: Value<string>;
 }
 export default class Faq extends ResourceBase<FaqProperties> {
     static S3Path: typeof S3Path;

@@ -1,8 +1,8 @@
-import Workspace_ from './workspace';
 import ConnectionAlias_ from './connectionAlias';
+import Workspace_ from './workspace';
 export declare namespace WorkSpaces {
-    const Workspace: typeof Workspace_;
     const ConnectionAlias: typeof ConnectionAlias_;
-    type Workspace = Workspace_;
+    const Workspace: typeof Workspace_;
     type ConnectionAlias = ConnectionAlias_;
+    type Workspace = Workspace_;
 }

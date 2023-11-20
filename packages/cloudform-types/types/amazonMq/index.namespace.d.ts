@@ -1,11 +1,11 @@
-import ConfigurationAssociation_ from './configurationAssociation';
-import Configuration_ from './configuration';
 import Broker_ from './broker';
+import Configuration_ from './configuration';
+import ConfigurationAssociation_ from './configurationAssociation';
 export declare namespace AmazonMQ {
-    const ConfigurationAssociation: typeof ConfigurationAssociation_;
-    const Configuration: typeof Configuration_;
     const Broker: typeof Broker_;
-    type ConfigurationAssociation = ConfigurationAssociation_;
-    type Configuration = Configuration_;
+    const Configuration: typeof Configuration_;
+    const ConfigurationAssociation: typeof ConfigurationAssociation_;
     type Broker = Broker_;
+    type Configuration = Configuration_;
+    type ConfigurationAssociation = ConfigurationAssociation_;
 }

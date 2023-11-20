@@ -1,7 +1,7 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class RobotSoftwareSuite {
-    Version: Value<string>;
+    Version?: Value<string>;
     Name: Value<string>;
     constructor(properties: RobotSoftwareSuite);
 }
@@ -13,10 +13,11 @@ export declare class SourceConfig {
 }
 export interface RobotApplicationProperties {
     CurrentRevisionId?: Value<string>;
+    Environment?: Value<string>;
     RobotSoftwareSuite: RobotSoftwareSuite;
-    Sources: List<SourceConfig>;
+    Sources?: List<SourceConfig>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Name?: Value<string>;
 }

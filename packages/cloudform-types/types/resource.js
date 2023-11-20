@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ResourceTag = exports.ResourceBase = exports.DeletionPolicy = void 0;
 var DeletionPolicy;
 (function (DeletionPolicy) {
     DeletionPolicy["Delete"] = "Delete";

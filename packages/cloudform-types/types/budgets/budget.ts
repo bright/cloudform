@@ -1,26 +1,37 @@
 /* Generated from: 
- * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0,
- * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 39.2.0
+ * ap-northeast-1 (https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-northeast-2 (https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-south-1 (https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-1 (https://doigdx0kgq9el.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ap-southeast-2 (https://d2stg8d246z9di.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * ca-central-1 (https://d2s8ygphhesbe7.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-central-1 (https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-1 (https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-2 (https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * eu-west-3 (https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * sa-east-1 (https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-1 (https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-east-2 (https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-1 (https://d68hl49wbnanq.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0,
+ * us-west-2 (https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json), version 148.0.0
  */
    
 import {ResourceBase} from '../resource'
 import {Value, List} from '../dataTypes'
 
+export class AutoAdjustData {
+    AutoAdjustType!: Value<string>
+    HistoricalOptions?: HistoricalOptions
+
+    constructor(properties: AutoAdjustData) {
+        Object.assign(this, properties)
+    }
+}
+
 export class BudgetData {
     BudgetLimit?: Spend
     TimePeriod?: TimePeriod
+    AutoAdjustData?: AutoAdjustData
     TimeUnit!: Value<string>
     PlannedBudgetLimits?: {[key: string]: any}
     CostFilters?: {[key: string]: any}
@@ -29,24 +40,6 @@ export class BudgetData {
     BudgetType!: Value<string>
 
     constructor(properties: BudgetData) {
-        Object.assign(this, properties)
-    }
-}
-
-export class Subscriber {
-    SubscriptionType!: Value<string>
-    Address!: Value<string>
-
-    constructor(properties: Subscriber) {
-        Object.assign(this, properties)
-    }
-}
-
-export class TimePeriod {
-    Start?: Value<string>
-    End?: Value<string>
-
-    constructor(properties: TimePeriod) {
         Object.assign(this, properties)
     }
 }
@@ -69,11 +62,10 @@ export class CostTypes {
     }
 }
 
-export class NotificationWithSubscribers {
-    Subscribers!: List<Subscriber>
-    Notification!: Notification
+export class HistoricalOptions {
+    BudgetAdjustmentPeriod!: Value<number>
 
-    constructor(properties: NotificationWithSubscribers) {
+    constructor(properties: HistoricalOptions) {
         Object.assign(this, properties)
     }
 }
@@ -89,11 +81,38 @@ export class Notification {
     }
 }
 
+export class NotificationWithSubscribers {
+    Subscribers!: List<Subscriber>
+    Notification!: Notification
+
+    constructor(properties: NotificationWithSubscribers) {
+        Object.assign(this, properties)
+    }
+}
+
 export class Spend {
     Amount!: Value<number>
     Unit!: Value<string>
 
     constructor(properties: Spend) {
+        Object.assign(this, properties)
+    }
+}
+
+export class Subscriber {
+    SubscriptionType!: Value<string>
+    Address!: Value<string>
+
+    constructor(properties: Subscriber) {
+        Object.assign(this, properties)
+    }
+}
+
+export class TimePeriod {
+    Start?: Value<string>
+    End?: Value<string>
+
+    constructor(properties: TimePeriod) {
         Object.assign(this, properties)
     }
 }
@@ -104,13 +123,15 @@ export interface BudgetProperties {
 }
 
 export default class Budget extends ResourceBase<BudgetProperties> {
+    static AutoAdjustData = AutoAdjustData
     static BudgetData = BudgetData
+    static CostTypes = CostTypes
+    static HistoricalOptions = HistoricalOptions
+    static Notification = Notification
+    static NotificationWithSubscribers = NotificationWithSubscribers
+    static Spend = Spend
     static Subscriber = Subscriber
     static TimePeriod = TimePeriod
-    static CostTypes = CostTypes
-    static NotificationWithSubscribers = NotificationWithSubscribers
-    static Notification = Notification
-    static Spend = Spend
 
     constructor(properties: BudgetProperties) {
         super('AWS::Budgets::Budget', properties)

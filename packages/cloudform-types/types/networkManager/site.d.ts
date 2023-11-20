@@ -8,8 +8,8 @@ export declare class Location {
 }
 export interface SiteProperties {
     Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     GlobalNetworkId: Value<string>;
+    Tags?: List<ResourceTag>;
     Location?: Location;
 }
 export default class Site extends ResourceBase<SiteProperties> {

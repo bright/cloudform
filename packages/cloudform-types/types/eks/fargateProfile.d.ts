@@ -1,20 +1,20 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Label {
-    Key: Value<string>;
     Value: Value<string>;
+    Key: Value<string>;
     constructor(properties: Label);
 }
 export declare class Selector {
-    Namespace: Value<string>;
     Labels?: List<Label>;
+    Namespace: Value<string>;
     constructor(properties: Selector);
 }
 export interface FargateProfileProperties {
-    ClusterName: Value<string>;
-    FargateProfileName?: Value<string>;
-    PodExecutionRoleArn: Value<string>;
     Subnets?: List<Value<string>>;
+    FargateProfileName?: Value<string>;
+    ClusterName: Value<string>;
+    PodExecutionRoleArn: Value<string>;
     Selectors: List<Selector>;
     Tags?: List<ResourceTag>;
 }

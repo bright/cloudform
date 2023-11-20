@@ -1,19 +1,19 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class FirewallRule {
-    FirewallDomainListId: Value<string>;
-    Priority: Value<number>;
     Action: Value<string>;
-    BlockResponse?: Value<string>;
+    Priority: Value<number>;
     BlockOverrideDomain?: Value<string>;
-    BlockOverrideDnsType?: Value<string>;
+    FirewallDomainListId: Value<string>;
+    BlockResponse?: Value<string>;
     BlockOverrideTtl?: Value<number>;
+    BlockOverrideDnsType?: Value<string>;
     constructor(properties: FirewallRule);
 }
 export interface FirewallRuleGroupProperties {
-    Name?: Value<string>;
     FirewallRules?: List<FirewallRule>;
     Tags?: List<ResourceTag>;
+    Name?: Value<string>;
 }
 export default class FirewallRuleGroup extends ResourceBase<FirewallRuleGroupProperties> {
     static FirewallRule: typeof FirewallRule;

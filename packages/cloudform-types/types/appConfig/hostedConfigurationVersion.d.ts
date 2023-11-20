@@ -6,6 +6,7 @@ export interface HostedConfigurationVersionProperties {
     ContentType: Value<string>;
     LatestVersionNumber?: Value<number>;
     Content: Value<string>;
+    VersionLabel?: Value<string>;
     ApplicationId: Value<string>;
 }
 export default class HostedConfigurationVersion extends ResourceBase<HostedConfigurationVersionProperties> {

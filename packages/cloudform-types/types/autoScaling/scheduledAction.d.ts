@@ -1,14 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface ScheduledActionProperties {
-    AutoScalingGroupName: Value<string>;
-    DesiredCapacity?: Value<number>;
-    EndTime?: Value<string>;
-    MaxSize?: Value<number>;
     MinSize?: Value<number>;
     Recurrence?: Value<string>;
-    StartTime?: Value<string>;
     TimeZone?: Value<string>;
+    EndTime?: Value<string>;
+    AutoScalingGroupName: Value<string>;
+    StartTime?: Value<string>;
+    DesiredCapacity?: Value<number>;
+    MaxSize?: Value<number>;
 }
 export default class ScheduledAction extends ResourceBase<ScheduledActionProperties> {
     constructor(properties: ScheduledActionProperties);

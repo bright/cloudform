@@ -9,6 +9,7 @@ export interface WorkflowProperties {
         [key: string]: any;
     };
     Name?: Value<string>;
+    MaxConcurrentRuns?: Value<number>;
 }
 export default class Workflow extends ResourceBase<WorkflowProperties> {
     constructor(properties?: WorkflowProperties);

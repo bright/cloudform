@@ -1,18 +1,18 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class ArtifactDetails {
-    MaximumCount: Value<number>;
     MinimumCount: Value<number>;
+    MaximumCount: Value<number>;
     constructor(properties: ArtifactDetails);
 }
 export declare class ConfigurationProperties {
-    Description?: Value<string>;
-    Key: Value<boolean>;
-    Name: Value<string>;
-    Queryable?: Value<boolean>;
-    Required: Value<boolean>;
     Secret: Value<boolean>;
     Type?: Value<string>;
+    Description?: Value<string>;
+    Required: Value<boolean>;
+    Queryable?: Value<boolean>;
+    Key: Value<boolean>;
+    Name: Value<string>;
     constructor(properties: ConfigurationProperties);
 }
 export declare class Settings {
@@ -24,13 +24,13 @@ export declare class Settings {
 }
 export interface CustomActionTypeProperties {
     Category: Value<string>;
-    ConfigurationProperties?: List<ConfigurationProperties>;
     InputArtifactDetails: ArtifactDetails;
+    Version: Value<string>;
     OutputArtifactDetails: ArtifactDetails;
-    Provider: Value<string>;
+    ConfigurationProperties?: List<ConfigurationProperties>;
     Settings?: Settings;
     Tags?: List<ResourceTag>;
-    Version: Value<string>;
+    Provider: Value<string>;
 }
 export default class CustomActionType extends ResourceBase<CustomActionTypeProperties> {
     static ArtifactDetails: typeof ArtifactDetails;

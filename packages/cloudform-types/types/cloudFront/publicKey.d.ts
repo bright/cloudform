@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export declare class PublicKeyConfig {
-    CallerReference: Value<string>;
     Comment?: Value<string>;
+    CallerReference: Value<string>;
     EncodedKey: Value<string>;
     Name: Value<string>;
     constructor(properties: PublicKeyConfig);

@@ -1,12 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface GlobalClusterProperties {
-    Engine?: Value<string>;
+    StorageEncrypted?: Value<boolean>;
     EngineVersion?: Value<string>;
+    SourceDBClusterIdentifier?: Value<string>;
     DeletionProtection?: Value<boolean>;
     GlobalClusterIdentifier?: Value<string>;
-    SourceDBClusterIdentifier?: Value<string>;
-    StorageEncrypted?: Value<boolean>;
+    Engine?: Value<string>;
 }
 export default class GlobalCluster extends ResourceBase<GlobalClusterProperties> {
     constructor(properties?: GlobalClusterProperties);

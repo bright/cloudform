@@ -9,9 +9,10 @@ export interface JobQueueProperties {
     ComputeEnvironmentOrder: List<ComputeEnvironmentOrder>;
     Priority: Value<number>;
     State?: Value<string>;
+    SchedulingPolicyArn?: Value<string>;
     JobQueueName?: Value<string>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
 }
 export default class JobQueue extends ResourceBase<JobQueueProperties> {

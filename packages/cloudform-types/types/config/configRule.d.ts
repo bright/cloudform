@@ -1,17 +1,32 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Source {
-    Owner: Value<string>;
-    SourceDetails?: List<SourceDetail>;
-    SourceIdentifier: Value<string>;
-    constructor(properties: Source);
+export declare class Compliance {
+    Type?: Value<string>;
+    constructor(properties: Compliance);
+}
+export declare class CustomPolicyDetails {
+    EnableDebugLogDelivery?: Value<boolean>;
+    PolicyText?: Value<string>;
+    PolicyRuntime?: Value<string>;
+    constructor(properties: CustomPolicyDetails);
+}
+export declare class EvaluationModeConfiguration {
+    Mode?: Value<string>;
+    constructor(properties: EvaluationModeConfiguration);
 }
 export declare class Scope {
     ComplianceResourceId?: Value<string>;
-    ComplianceResourceTypes?: List<Value<string>>;
     TagKey?: Value<string>;
+    ComplianceResourceTypes?: List<Value<string>>;
     TagValue?: Value<string>;
     constructor(properties: Scope);
+}
+export declare class Source {
+    Owner: Value<string>;
+    CustomPolicyDetails?: CustomPolicyDetails;
+    SourceIdentifier?: Value<string>;
+    SourceDetails?: List<SourceDetail>;
+    constructor(properties: Source);
 }
 export declare class SourceDetail {
     EventSource: Value<string>;
@@ -20,18 +35,23 @@ export declare class SourceDetail {
     constructor(properties: SourceDetail);
 }
 export interface ConfigRuleProperties {
-    ConfigRuleName?: Value<string>;
+    EvaluationModes?: List<EvaluationModeConfiguration>;
     Description?: Value<string>;
+    Scope?: Scope;
+    Compliance?: Compliance;
+    ConfigRuleName?: Value<string>;
+    MaximumExecutionFrequency?: Value<string>;
+    Source: Source;
     InputParameters?: {
         [key: string]: any;
     };
-    MaximumExecutionFrequency?: Value<string>;
-    Scope?: Scope;
-    Source: Source;
 }
 export default class ConfigRule extends ResourceBase<ConfigRuleProperties> {
-    static Source: typeof Source;
+    static Compliance: typeof Compliance;
+    static CustomPolicyDetails: typeof CustomPolicyDetails;
+    static EvaluationModeConfiguration: typeof EvaluationModeConfiguration;
     static Scope: typeof Scope;
+    static Source: typeof Source;
     static SourceDetail: typeof SourceDetail;
     constructor(properties: ConfigRuleProperties);
 }

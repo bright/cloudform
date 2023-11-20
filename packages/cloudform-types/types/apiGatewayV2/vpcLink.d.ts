@@ -4,7 +4,7 @@ export interface VpcLinkProperties {
     SubnetIds: List<Value<string>>;
     SecurityGroupIds?: List<Value<string>>;
     Tags?: {
-        [key: string]: any;
+        [key: string]: Value<string>;
     };
     Name: Value<string>;
 }

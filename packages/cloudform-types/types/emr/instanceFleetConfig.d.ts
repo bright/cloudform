@@ -8,14 +8,34 @@ export declare class Configuration {
     Configurations?: List<Configuration>;
     constructor(properties: Configuration);
 }
+export declare class EbsBlockDeviceConfig {
+    VolumeSpecification: VolumeSpecification;
+    VolumesPerInstance?: Value<number>;
+    constructor(properties: EbsBlockDeviceConfig);
+}
+export declare class EbsConfiguration {
+    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
+    EbsOptimized?: Value<boolean>;
+    constructor(properties: EbsConfiguration);
+}
+export declare class InstanceFleetProvisioningSpecifications {
+    OnDemandSpecification?: OnDemandProvisioningSpecification;
+    SpotSpecification?: SpotProvisioningSpecification;
+    constructor(properties: InstanceFleetProvisioningSpecifications);
+}
 export declare class InstanceTypeConfig {
     BidPrice?: Value<string>;
     BidPriceAsPercentageOfOnDemandPrice?: Value<number>;
     Configurations?: List<Configuration>;
+    CustomAmiId?: Value<string>;
     EbsConfiguration?: EbsConfiguration;
     InstanceType: Value<string>;
     WeightedCapacity?: Value<number>;
     constructor(properties: InstanceTypeConfig);
+}
+export declare class OnDemandProvisioningSpecification {
+    AllocationStrategy: Value<string>;
+    constructor(properties: OnDemandProvisioningSpecification);
 }
 export declare class SpotProvisioningSpecification {
     AllocationStrategy?: Value<string>;
@@ -24,30 +44,12 @@ export declare class SpotProvisioningSpecification {
     TimeoutDurationMinutes: Value<number>;
     constructor(properties: SpotProvisioningSpecification);
 }
-export declare class EbsConfiguration {
-    EbsBlockDeviceConfigs?: List<EbsBlockDeviceConfig>;
-    EbsOptimized?: Value<boolean>;
-    constructor(properties: EbsConfiguration);
-}
-export declare class OnDemandProvisioningSpecification {
-    AllocationStrategy: Value<string>;
-    constructor(properties: OnDemandProvisioningSpecification);
-}
 export declare class VolumeSpecification {
     Iops?: Value<number>;
     SizeInGB: Value<number>;
+    Throughput?: Value<number>;
     VolumeType: Value<string>;
     constructor(properties: VolumeSpecification);
-}
-export declare class InstanceFleetProvisioningSpecifications {
-    OnDemandSpecification?: OnDemandProvisioningSpecification;
-    SpotSpecification?: SpotProvisioningSpecification;
-    constructor(properties: InstanceFleetProvisioningSpecifications);
-}
-export declare class EbsBlockDeviceConfig {
-    VolumeSpecification: VolumeSpecification;
-    VolumesPerInstance?: Value<number>;
-    constructor(properties: EbsBlockDeviceConfig);
 }
 export interface InstanceFleetConfigProperties {
     ClusterId: Value<string>;
@@ -60,12 +62,12 @@ export interface InstanceFleetConfigProperties {
 }
 export default class InstanceFleetConfig extends ResourceBase<InstanceFleetConfigProperties> {
     static Configuration: typeof Configuration;
-    static InstanceTypeConfig: typeof InstanceTypeConfig;
-    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
-    static EbsConfiguration: typeof EbsConfiguration;
-    static OnDemandProvisioningSpecification: typeof OnDemandProvisioningSpecification;
-    static VolumeSpecification: typeof VolumeSpecification;
-    static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
     static EbsBlockDeviceConfig: typeof EbsBlockDeviceConfig;
+    static EbsConfiguration: typeof EbsConfiguration;
+    static InstanceFleetProvisioningSpecifications: typeof InstanceFleetProvisioningSpecifications;
+    static InstanceTypeConfig: typeof InstanceTypeConfig;
+    static OnDemandProvisioningSpecification: typeof OnDemandProvisioningSpecification;
+    static SpotProvisioningSpecification: typeof SpotProvisioningSpecification;
+    static VolumeSpecification: typeof VolumeSpecification;
     constructor(properties: InstanceFleetConfigProperties);
 }

@@ -1,97 +1,97 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class Label {
-    Arn?: Value<string>;
-    Inline?: Value<boolean>;
-    Name?: Value<string>;
-    Description?: Value<string>;
-    Tags?: List<ResourceTag>;
-    CreatedTime?: Value<string>;
-    LastUpdatedTime?: Value<string>;
-    constructor(properties: Label);
-}
 export declare class EntityType {
-    Arn?: Value<string>;
-    Inline?: Value<boolean>;
-    Name?: Value<string>;
     Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     CreatedTime?: Value<string>;
     LastUpdatedTime?: Value<string>;
+    Inline?: Value<boolean>;
+    Arn?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
     constructor(properties: EntityType);
+}
+export declare class EventType {
+    EntityTypes?: List<EntityType>;
+    Description?: Value<string>;
+    CreatedTime?: Value<string>;
+    LastUpdatedTime?: Value<string>;
+    Labels?: List<Label>;
+    Inline?: Value<boolean>;
+    EventVariables?: List<EventVariable>;
+    Arn?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
+    constructor(properties: EventType);
+}
+export declare class EventVariable {
+    DefaultValue?: Value<string>;
+    Description?: Value<string>;
+    CreatedTime?: Value<string>;
+    VariableType?: Value<string>;
+    DataType?: Value<string>;
+    LastUpdatedTime?: Value<string>;
+    Inline?: Value<boolean>;
+    Arn?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
+    DataSource?: Value<string>;
+    constructor(properties: EventVariable);
+}
+export declare class Label {
+    Description?: Value<string>;
+    CreatedTime?: Value<string>;
+    LastUpdatedTime?: Value<string>;
+    Inline?: Value<boolean>;
+    Arn?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
+    constructor(properties: Label);
 }
 export declare class Model {
     Arn?: Value<string>;
     constructor(properties: Model);
 }
 export declare class Outcome {
-    Arn?: Value<string>;
-    Inline?: Value<boolean>;
-    Name?: Value<string>;
     Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     CreatedTime?: Value<string>;
     LastUpdatedTime?: Value<string>;
+    Inline?: Value<boolean>;
+    Arn?: Value<string>;
+    Tags?: List<ResourceTag>;
+    Name?: Value<string>;
     constructor(properties: Outcome);
 }
-export declare class EventVariable {
-    Arn?: Value<string>;
-    Inline?: Value<boolean>;
-    Name?: Value<string>;
-    DataSource?: Value<string>;
-    DataType?: Value<string>;
-    DefaultValue?: Value<string>;
-    VariableType?: Value<string>;
-    Description?: Value<string>;
-    Tags?: List<ResourceTag>;
-    CreatedTime?: Value<string>;
-    LastUpdatedTime?: Value<string>;
-    constructor(properties: EventVariable);
-}
 export declare class Rule {
-    RuleId?: Value<string>;
-    RuleVersion?: Value<string>;
-    DetectorId?: Value<string>;
-    Expression?: Value<string>;
-    Language?: Value<string>;
-    Outcomes?: List<Outcome>;
-    Arn?: Value<string>;
     Description?: Value<string>;
-    Tags?: List<ResourceTag>;
     CreatedTime?: Value<string>;
+    Language?: Value<string>;
+    Expression?: Value<string>;
+    RuleId?: Value<string>;
+    DetectorId?: Value<string>;
+    RuleVersion?: Value<string>;
     LastUpdatedTime?: Value<string>;
+    Arn?: Value<string>;
+    Outcomes?: List<Outcome>;
+    Tags?: List<ResourceTag>;
     constructor(properties: Rule);
 }
-export declare class EventType {
-    Name?: Value<string>;
-    Inline?: Value<boolean>;
-    Tags?: List<ResourceTag>;
-    Description?: Value<string>;
-    EventVariables?: List<EventVariable>;
-    Labels?: List<Label>;
-    EntityTypes?: List<EntityType>;
-    Arn?: Value<string>;
-    CreatedTime?: Value<string>;
-    LastUpdatedTime?: Value<string>;
-    constructor(properties: EventType);
-}
 export interface DetectorProperties {
-    DetectorId: Value<string>;
-    DetectorVersionStatus?: Value<string>;
-    RuleExecutionMode?: Value<string>;
-    Tags?: List<ResourceTag>;
     Description?: Value<string>;
-    Rules: List<Rule>;
+    DetectorVersionStatus?: Value<string>;
     EventType: EventType;
+    DetectorId: Value<string>;
     AssociatedModels?: List<Model>;
+    RuleExecutionMode?: Value<string>;
+    Rules: List<Rule>;
+    Tags?: List<ResourceTag>;
 }
 export default class Detector extends ResourceBase<DetectorProperties> {
-    static Label: typeof Label;
     static EntityType: typeof EntityType;
+    static EventType: typeof EventType;
+    static EventVariable: typeof EventVariable;
+    static Label: typeof Label;
     static Model: typeof Model;
     static Outcome: typeof Outcome;
-    static EventVariable: typeof EventVariable;
     static Rule: typeof Rule;
-    static EventType: typeof EventType;
     constructor(properties: DetectorProperties);
 }

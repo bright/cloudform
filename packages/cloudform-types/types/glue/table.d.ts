@@ -6,21 +6,32 @@ export declare class Column {
     Name: Value<string>;
     constructor(properties: Column);
 }
-export declare class TableInput {
-    Owner?: Value<string>;
-    ViewOriginalText?: Value<string>;
-    Description?: Value<string>;
-    TableType?: Value<string>;
-    Parameters?: {
-        [key: string]: any;
-    };
-    ViewExpandedText?: Value<string>;
-    StorageDescriptor?: StorageDescriptor;
-    TargetTable?: TableIdentifier;
-    PartitionKeys?: List<Column>;
-    Retention?: Value<number>;
-    Name?: Value<string>;
-    constructor(properties: TableInput);
+export declare class IcebergInput {
+    MetadataOperation?: MetadataOperation;
+    Version?: Value<string>;
+    constructor(properties: IcebergInput);
+}
+export declare type MetadataOperation = Value<string>;
+export declare class OpenTableFormatInput {
+    IcebergInput?: IcebergInput;
+    constructor(properties: OpenTableFormatInput);
+}
+export declare class Order {
+    Column: Value<string>;
+    SortOrder: Value<number>;
+    constructor(properties: Order);
+}
+export declare class SchemaId {
+    RegistryName?: Value<string>;
+    SchemaName?: Value<string>;
+    SchemaArn?: Value<string>;
+    constructor(properties: SchemaId);
+}
+export declare class SchemaReference {
+    SchemaVersionId?: Value<string>;
+    SchemaId?: SchemaId;
+    SchemaVersionNumber?: Value<number>;
+    constructor(properties: SchemaReference);
 }
 export declare class SerdeInfo {
     Parameters?: {
@@ -29,17 +40,6 @@ export declare class SerdeInfo {
     SerializationLibrary?: Value<string>;
     Name?: Value<string>;
     constructor(properties: SerdeInfo);
-}
-export declare class SchemaId {
-    RegistryName?: Value<string>;
-    SchemaName?: Value<string>;
-    SchemaArn?: Value<string>;
-    constructor(properties: SchemaId);
-}
-export declare class Order {
-    Column: Value<string>;
-    SortOrder: Value<number>;
-    constructor(properties: Order);
 }
 export declare class SkewedInfo {
     SkewedColumnNames?: List<Value<string>>;
@@ -67,32 +67,46 @@ export declare class StorageDescriptor {
     Location?: Value<string>;
     constructor(properties: StorageDescriptor);
 }
-export declare class SchemaReference {
-    SchemaId?: SchemaId;
-    SchemaVersionNumber?: Value<number>;
-    SchameVersionId?: Value<string>;
-    constructor(properties: SchemaReference);
-}
 export declare class TableIdentifier {
     DatabaseName?: Value<string>;
+    Region?: Value<string>;
     CatalogId?: Value<string>;
     Name?: Value<string>;
     constructor(properties: TableIdentifier);
 }
+export declare class TableInput {
+    Owner?: Value<string>;
+    ViewOriginalText?: Value<string>;
+    Description?: Value<string>;
+    TableType?: Value<string>;
+    Parameters?: {
+        [key: string]: any;
+    };
+    ViewExpandedText?: Value<string>;
+    StorageDescriptor?: StorageDescriptor;
+    TargetTable?: TableIdentifier;
+    PartitionKeys?: List<Column>;
+    Retention?: Value<number>;
+    Name?: Value<string>;
+    constructor(properties: TableInput);
+}
 export interface TableProperties {
     TableInput: TableInput;
+    OpenTableFormatInput?: OpenTableFormatInput;
     DatabaseName: Value<string>;
     CatalogId: Value<string>;
 }
 export default class Table extends ResourceBase<TableProperties> {
     static Column: typeof Column;
-    static TableInput: typeof TableInput;
-    static SerdeInfo: typeof SerdeInfo;
-    static SchemaId: typeof SchemaId;
+    static IcebergInput: typeof IcebergInput;
+    static OpenTableFormatInput: typeof OpenTableFormatInput;
     static Order: typeof Order;
+    static SchemaId: typeof SchemaId;
+    static SchemaReference: typeof SchemaReference;
+    static SerdeInfo: typeof SerdeInfo;
     static SkewedInfo: typeof SkewedInfo;
     static StorageDescriptor: typeof StorageDescriptor;
-    static SchemaReference: typeof SchemaReference;
     static TableIdentifier: typeof TableIdentifier;
+    static TableInput: typeof TableInput;
     constructor(properties: TableProperties);
 }

@@ -1,16 +1,14 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class LogList {
-    Audit?: Value<boolean>;
-    General?: Value<boolean>;
-    constructor(properties: LogList);
+export declare class ConfigurationId {
+    Revision: Value<number>;
+    Id: Value<string>;
+    constructor(properties: ConfigurationId);
 }
-export declare class User {
-    Username: Value<string>;
-    Groups?: List<Value<string>>;
-    ConsoleAccess?: Value<boolean>;
-    Password: Value<string>;
-    constructor(properties: User);
+export declare class EncryptionOptions {
+    KmsKeyId?: Value<string>;
+    UseAwsOwnedKey: Value<boolean>;
+    constructor(properties: EncryptionOptions);
 }
 export declare class LdapServerMetadata {
     Hosts: List<Value<string>>;
@@ -26,10 +24,10 @@ export declare class LdapServerMetadata {
     RoleSearchSubtree?: Value<boolean>;
     constructor(properties: LdapServerMetadata);
 }
-export declare class EncryptionOptions {
-    KmsKeyId?: Value<string>;
-    UseAwsOwnedKey: Value<boolean>;
-    constructor(properties: EncryptionOptions);
+export declare class LogList {
+    Audit?: Value<boolean>;
+    General?: Value<boolean>;
+    constructor(properties: LogList);
 }
 export declare class MaintenanceWindow {
     DayOfWeek: Value<string>;
@@ -42,13 +40,16 @@ export declare class TagsEntry {
     Key: Value<string>;
     constructor(properties: TagsEntry);
 }
-export declare class ConfigurationId {
-    Revision: Value<number>;
-    Id: Value<string>;
-    constructor(properties: ConfigurationId);
+export declare class User {
+    Username: Value<string>;
+    Groups?: List<Value<string>>;
+    ConsoleAccess?: Value<boolean>;
+    Password: Value<string>;
+    constructor(properties: User);
 }
 export interface BrokerProperties {
     SecurityGroups?: List<Value<string>>;
+    DataReplicationPrimaryBrokerArn?: Value<string>;
     StorageType?: Value<string>;
     EngineVersion: Value<string>;
     Configuration?: ConfigurationId;
@@ -59,6 +60,7 @@ export interface BrokerProperties {
     Users: List<User>;
     Logs?: LogList;
     SubnetIds?: List<Value<string>>;
+    DataReplicationMode?: Value<string>;
     BrokerName: Value<string>;
     LdapServerMetadata?: LdapServerMetadata;
     DeploymentMode: Value<string>;
@@ -68,12 +70,12 @@ export interface BrokerProperties {
     Tags?: List<TagsEntry>;
 }
 export default class Broker extends ResourceBase<BrokerProperties> {
-    static LogList: typeof LogList;
-    static User: typeof User;
-    static LdapServerMetadata: typeof LdapServerMetadata;
+    static ConfigurationId: typeof ConfigurationId;
     static EncryptionOptions: typeof EncryptionOptions;
+    static LdapServerMetadata: typeof LdapServerMetadata;
+    static LogList: typeof LogList;
     static MaintenanceWindow: typeof MaintenanceWindow;
     static TagsEntry: typeof TagsEntry;
-    static ConfigurationId: typeof ConfigurationId;
+    static User: typeof User;
     constructor(properties: BrokerProperties);
 }

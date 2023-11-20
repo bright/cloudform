@@ -1,8 +1,8 @@
 import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class AccessControlAttribute {
-    Key: Value<string>;
     Value: AccessControlAttributeValue;
+    Key: Value<string>;
     constructor(properties: AccessControlAttribute);
 }
 export declare class AccessControlAttributeValue {

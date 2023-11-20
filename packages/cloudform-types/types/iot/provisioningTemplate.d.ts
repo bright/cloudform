@@ -6,12 +6,13 @@ export declare class ProvisioningHook {
     constructor(properties: ProvisioningHook);
 }
 export interface ProvisioningTemplateProperties {
-    TemplateName?: Value<string>;
-    Description?: Value<string>;
-    Enabled?: Value<boolean>;
     ProvisioningRoleArn: Value<string>;
-    TemplateBody: Value<string>;
+    Description?: Value<string>;
     PreProvisioningHook?: ProvisioningHook;
+    TemplateName?: Value<string>;
+    Enabled?: Value<boolean>;
+    TemplateBody: Value<string>;
+    TemplateType?: Value<string>;
     Tags?: List<ResourceTag>;
 }
 export default class ProvisioningTemplate extends ResourceBase<ProvisioningTemplateProperties> {

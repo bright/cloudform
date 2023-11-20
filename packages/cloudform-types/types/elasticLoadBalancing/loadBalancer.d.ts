@@ -7,6 +7,20 @@ export declare class AccessLoggingPolicy {
     S3BucketPrefix?: Value<string>;
     constructor(properties: AccessLoggingPolicy);
 }
+export declare class AppCookieStickinessPolicy {
+    CookieName: Value<string>;
+    PolicyName: Value<string>;
+    constructor(properties: AppCookieStickinessPolicy);
+}
+export declare class ConnectionDrainingPolicy {
+    Enabled: Value<boolean>;
+    Timeout?: Value<number>;
+    constructor(properties: ConnectionDrainingPolicy);
+}
+export declare class ConnectionSettings {
+    IdleTimeout: Value<number>;
+    constructor(properties: ConnectionSettings);
+}
 export declare class HealthCheck {
     HealthyThreshold: Value<string>;
     Interval: Value<string>;
@@ -14,20 +28,6 @@ export declare class HealthCheck {
     Timeout: Value<string>;
     UnhealthyThreshold: Value<string>;
     constructor(properties: HealthCheck);
-}
-export declare class ConnectionSettings {
-    IdleTimeout: Value<number>;
-    constructor(properties: ConnectionSettings);
-}
-export declare class ConnectionDrainingPolicy {
-    Enabled: Value<boolean>;
-    Timeout?: Value<number>;
-    constructor(properties: ConnectionDrainingPolicy);
-}
-export declare class AppCookieStickinessPolicy {
-    CookieName: Value<string>;
-    PolicyName: Value<string>;
-    constructor(properties: AppCookieStickinessPolicy);
 }
 export declare class LBCookieStickinessPolicy {
     CookieExpirationPeriod?: Value<string>;
@@ -73,10 +73,10 @@ export interface LoadBalancerProperties {
 }
 export default class LoadBalancer extends ResourceBase<LoadBalancerProperties> {
     static AccessLoggingPolicy: typeof AccessLoggingPolicy;
-    static HealthCheck: typeof HealthCheck;
-    static ConnectionSettings: typeof ConnectionSettings;
-    static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
     static AppCookieStickinessPolicy: typeof AppCookieStickinessPolicy;
+    static ConnectionDrainingPolicy: typeof ConnectionDrainingPolicy;
+    static ConnectionSettings: typeof ConnectionSettings;
+    static HealthCheck: typeof HealthCheck;
     static LBCookieStickinessPolicy: typeof LBCookieStickinessPolicy;
     static Listeners: typeof Listeners;
     static Policies: typeof Policies;

@@ -1,26 +1,26 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LoginProfile {
-    Password: Value<string>;
     PasswordResetRequired?: Value<boolean>;
+    Password: Value<string>;
     constructor(properties: LoginProfile);
 }
 export declare class Policy {
+    PolicyName: Value<string>;
     PolicyDocument: {
         [key: string]: any;
     };
-    PolicyName: Value<string>;
     constructor(properties: Policy);
 }
 export interface UserProperties {
+    Path?: Value<string>;
+    ManagedPolicyArns?: List<Value<string>>;
+    Policies?: List<Policy>;
+    UserName?: Value<string>;
     Groups?: List<Value<string>>;
     LoginProfile?: LoginProfile;
-    ManagedPolicyArns?: List<Value<string>>;
-    Path?: Value<string>;
-    PermissionsBoundary?: Value<string>;
-    Policies?: List<Policy>;
     Tags?: List<ResourceTag>;
-    UserName?: Value<string>;
+    PermissionsBoundary?: Value<string>;
 }
 export default class User extends ResourceBase<UserProperties> {
     static LoginProfile: typeof LoginProfile;

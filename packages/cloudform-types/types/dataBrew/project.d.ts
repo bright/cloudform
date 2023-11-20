@@ -1,17 +1,17 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class Sample {
-    Size?: Value<number>;
     Type: Value<string>;
+    Size?: Value<number>;
     constructor(properties: Sample);
 }
 export interface ProjectProperties {
-    DatasetName: Value<string>;
-    Name: Value<string>;
     RecipeName: Value<string>;
-    RoleArn: Value<string>;
+    DatasetName: Value<string>;
     Sample?: Sample;
+    RoleArn: Value<string>;
     Tags?: List<ResourceTag>;
+    Name: Value<string>;
 }
 export default class Project extends ResourceBase<ProjectProperties> {
     static Sample: typeof Sample;

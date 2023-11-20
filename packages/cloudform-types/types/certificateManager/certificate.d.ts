@@ -11,6 +11,7 @@ export interface CertificateProperties {
     CertificateTransparencyLoggingPreference?: Value<string>;
     DomainName: Value<string>;
     DomainValidationOptions?: List<DomainValidationOption>;
+    KeyAlgorithm?: Value<string>;
     SubjectAlternativeNames?: List<Value<string>>;
     Tags?: List<ResourceTag>;
     ValidationMethod?: Value<string>;

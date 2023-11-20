@@ -5,9 +5,9 @@ export declare class TransitGatewayConnectOptions {
     constructor(properties: TransitGatewayConnectOptions);
 }
 export interface TransitGatewayConnectProperties {
+    Options: TransitGatewayConnectOptions;
     TransportTransitGatewayAttachmentId: Value<string>;
     Tags?: List<ResourceTag>;
-    Options: TransitGatewayConnectOptions;
 }
 export default class TransitGatewayConnect extends ResourceBase<TransitGatewayConnectProperties> {
     static TransitGatewayConnectOptions: typeof TransitGatewayConnectOptions;

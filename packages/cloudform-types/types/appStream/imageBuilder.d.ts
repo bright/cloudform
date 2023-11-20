@@ -1,10 +1,5 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class VpcConfig {
-    SecurityGroupIds?: List<Value<string>>;
-    SubnetIds?: List<Value<string>>;
-    constructor(properties: VpcConfig);
-}
 export declare class AccessEndpoint {
     EndpointType: Value<string>;
     VpceId: Value<string>;
@@ -14,6 +9,11 @@ export declare class DomainJoinInfo {
     OrganizationalUnitDistinguishedName?: Value<string>;
     DirectoryName?: Value<string>;
     constructor(properties: DomainJoinInfo);
+}
+export declare class VpcConfig {
+    SecurityGroupIds?: List<Value<string>>;
+    SubnetIds?: List<Value<string>>;
+    constructor(properties: VpcConfig);
 }
 export interface ImageBuilderProperties {
     Description?: Value<string>;
@@ -31,8 +31,8 @@ export interface ImageBuilderProperties {
     AccessEndpoints?: List<AccessEndpoint>;
 }
 export default class ImageBuilder extends ResourceBase<ImageBuilderProperties> {
-    static VpcConfig: typeof VpcConfig;
     static AccessEndpoint: typeof AccessEndpoint;
     static DomainJoinInfo: typeof DomainJoinInfo;
+    static VpcConfig: typeof VpcConfig;
     constructor(properties: ImageBuilderProperties);
 }

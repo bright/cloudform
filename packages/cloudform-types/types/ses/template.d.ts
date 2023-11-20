@@ -4,7 +4,7 @@ export declare class TemplateInner {
     HtmlPart?: Value<string>;
     TextPart?: Value<string>;
     TemplateName?: Value<string>;
-    SubjectPart?: Value<string>;
+    SubjectPart: Value<string>;
     constructor(properties: TemplateInner);
 }
 export interface TemplateProperties {

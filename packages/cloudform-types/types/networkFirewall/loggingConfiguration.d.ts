@@ -2,10 +2,10 @@ import { ResourceBase } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class LogDestinationConfig {
     LogType: Value<string>;
-    LogDestinationType: Value<string>;
     LogDestination: {
         [key: string]: Value<string>;
     };
+    LogDestinationType: Value<string>;
     constructor(properties: LogDestinationConfig);
 }
 export declare class LoggingConfigurationInner {

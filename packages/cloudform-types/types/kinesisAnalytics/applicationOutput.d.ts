@@ -1,5 +1,9 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
+export declare class DestinationSchema {
+    RecordFormatType?: Value<string>;
+    constructor(properties: DestinationSchema);
+}
 export declare class KinesisFirehoseOutput {
     ResourceARN: Value<string>;
     RoleARN: Value<string>;
@@ -23,19 +27,15 @@ export declare class Output {
     Name?: Value<string>;
     constructor(properties: Output);
 }
-export declare class DestinationSchema {
-    RecordFormatType?: Value<string>;
-    constructor(properties: DestinationSchema);
-}
 export interface ApplicationOutputProperties {
     ApplicationName: Value<string>;
     Output: Output;
 }
 export default class ApplicationOutput extends ResourceBase<ApplicationOutputProperties> {
+    static DestinationSchema: typeof DestinationSchema;
     static KinesisFirehoseOutput: typeof KinesisFirehoseOutput;
     static KinesisStreamsOutput: typeof KinesisStreamsOutput;
     static LambdaOutput: typeof LambdaOutput;
     static Output: typeof Output;
-    static DestinationSchema: typeof DestinationSchema;
     constructor(properties: ApplicationOutputProperties);
 }

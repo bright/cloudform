@@ -1,8 +1,8 @@
-import SigningProfile_ from './signingProfile';
 import ProfilePermission_ from './profilePermission';
+import SigningProfile_ from './signingProfile';
 export declare namespace Signer {
-    const SigningProfile: typeof SigningProfile_;
     const ProfilePermission: typeof ProfilePermission_;
-    type SigningProfile = SigningProfile_;
+    const SigningProfile: typeof SigningProfile_;
     type ProfilePermission = ProfilePermission_;
+    type SigningProfile = SigningProfile_;
 }

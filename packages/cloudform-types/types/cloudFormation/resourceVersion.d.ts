@@ -7,9 +7,9 @@ export declare class LoggingConfig {
 }
 export interface ResourceVersionProperties {
     ExecutionRoleArn?: Value<string>;
+    TypeName: Value<string>;
     LoggingConfig?: LoggingConfig;
     SchemaHandlerPackage: Value<string>;
-    TypeName: Value<string>;
 }
 export default class ResourceVersion extends ResourceBase<ResourceVersionProperties> {
     static LoggingConfig: typeof LoggingConfig;

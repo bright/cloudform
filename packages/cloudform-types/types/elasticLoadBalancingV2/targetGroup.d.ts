@@ -1,44 +1,45 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
-export declare class TargetDescription {
-    AvailabilityZone?: Value<string>;
-    Id: Value<string>;
-    Port?: Value<number>;
-    constructor(properties: TargetDescription);
-}
-export declare class TargetGroupAttribute {
-    Key?: Value<string>;
-    Value?: Value<string>;
-    constructor(properties: TargetGroupAttribute);
-}
 export declare class Matcher {
     GrpcCode?: Value<string>;
     HttpCode?: Value<string>;
     constructor(properties: Matcher);
 }
-export interface TargetGroupProperties {
-    HealthCheckEnabled?: Value<boolean>;
-    HealthCheckIntervalSeconds?: Value<number>;
-    HealthCheckPath?: Value<string>;
-    HealthCheckPort?: Value<string>;
-    HealthCheckProtocol?: Value<string>;
-    HealthCheckTimeoutSeconds?: Value<number>;
-    HealthyThresholdCount?: Value<number>;
-    Matcher?: Matcher;
-    Name?: Value<string>;
+export declare class TargetDescription {
     Port?: Value<number>;
-    Protocol?: Value<string>;
+    AvailabilityZone?: Value<string>;
+    Id: Value<string>;
+    constructor(properties: TargetDescription);
+}
+export declare class TargetGroupAttribute {
+    Value?: Value<string>;
+    Key?: Value<string>;
+    constructor(properties: TargetGroupAttribute);
+}
+export interface TargetGroupProperties {
+    IpAddressType?: Value<string>;
+    HealthCheckIntervalSeconds?: Value<number>;
+    Matcher?: Matcher;
+    HealthCheckPath?: Value<string>;
+    Port?: Value<number>;
+    Targets?: List<TargetDescription>;
+    HealthCheckEnabled?: Value<boolean>;
     ProtocolVersion?: Value<string>;
-    Tags?: List<ResourceTag>;
+    UnhealthyThresholdCount?: Value<number>;
+    HealthCheckTimeoutSeconds?: Value<number>;
+    Name?: Value<string>;
+    VpcId?: Value<string>;
+    HealthyThresholdCount?: Value<number>;
+    HealthCheckProtocol?: Value<string>;
     TargetGroupAttributes?: List<TargetGroupAttribute>;
     TargetType?: Value<string>;
-    Targets?: List<TargetDescription>;
-    UnhealthyThresholdCount?: Value<number>;
-    VpcId?: Value<string>;
+    HealthCheckPort?: Value<string>;
+    Protocol?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class TargetGroup extends ResourceBase<TargetGroupProperties> {
+    static Matcher: typeof Matcher;
     static TargetDescription: typeof TargetDescription;
     static TargetGroupAttribute: typeof TargetGroupAttribute;
-    static Matcher: typeof Matcher;
     constructor(properties?: TargetGroupProperties);
 }

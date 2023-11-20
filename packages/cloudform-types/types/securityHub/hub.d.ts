@@ -1,5 +1,9 @@
 import { ResourceBase } from '../resource';
+import { Value } from '../dataTypes';
 export interface HubProperties {
+    ControlFindingGenerator?: Value<string>;
+    EnableDefaultStandards?: Value<boolean>;
+    AutoEnableControls?: Value<boolean>;
     Tags?: {
         [key: string]: any;
     };

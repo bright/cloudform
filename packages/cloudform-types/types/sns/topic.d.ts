@@ -6,12 +6,20 @@ export declare class Subscription {
     constructor(properties: Subscription);
 }
 export interface TopicProperties {
-    ContentBasedDeduplication?: Value<boolean>;
+    SignatureVersion?: Value<string>;
+    KmsMasterKeyId?: Value<string>;
+    TracingConfig?: Value<string>;
     DisplayName?: Value<string>;
     FifoTopic?: Value<boolean>;
-    KmsMasterKeyId?: Value<string>;
+    ContentBasedDeduplication?: Value<boolean>;
     Subscription?: List<Subscription>;
     Tags?: List<ResourceTag>;
+    DataProtectionPolicy?: {
+        [key: string]: any;
+    };
+    ArchivePolicy?: {
+        [key: string]: any;
+    };
     TopicName?: Value<string>;
 }
 export default class Topic extends ResourceBase<TopicProperties> {

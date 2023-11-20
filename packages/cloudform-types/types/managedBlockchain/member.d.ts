@@ -1,8 +1,25 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
-export declare class NetworkFrameworkConfiguration {
-    NetworkFabricConfiguration?: NetworkFabricConfiguration;
-    constructor(properties: NetworkFrameworkConfiguration);
+export declare class ApprovalThresholdPolicy {
+    ThresholdComparator?: Value<string>;
+    ThresholdPercentage?: Value<number>;
+    ProposalDurationInHours?: Value<number>;
+    constructor(properties: ApprovalThresholdPolicy);
+}
+export declare class MemberConfiguration {
+    Description?: Value<string>;
+    MemberFrameworkConfiguration?: MemberFrameworkConfiguration;
+    Name: Value<string>;
+    constructor(properties: MemberConfiguration);
+}
+export declare class MemberFabricConfiguration {
+    AdminUsername: Value<string>;
+    AdminPassword: Value<string>;
+    constructor(properties: MemberFabricConfiguration);
+}
+export declare class MemberFrameworkConfiguration {
+    MemberFabricConfiguration?: MemberFabricConfiguration;
+    constructor(properties: MemberFrameworkConfiguration);
 }
 export declare class NetworkConfiguration {
     Description?: Value<string>;
@@ -17,30 +34,13 @@ export declare class NetworkFabricConfiguration {
     Edition: Value<string>;
     constructor(properties: NetworkFabricConfiguration);
 }
-export declare class MemberConfiguration {
-    Description?: Value<string>;
-    MemberFrameworkConfiguration?: MemberFrameworkConfiguration;
-    Name: Value<string>;
-    constructor(properties: MemberConfiguration);
-}
-export declare class ApprovalThresholdPolicy {
-    ThresholdComparator?: Value<string>;
-    ThresholdPercentage?: Value<number>;
-    ProposalDurationInHours?: Value<number>;
-    constructor(properties: ApprovalThresholdPolicy);
-}
-export declare class MemberFrameworkConfiguration {
-    MemberFabricConfiguration?: MemberFabricConfiguration;
-    constructor(properties: MemberFrameworkConfiguration);
+export declare class NetworkFrameworkConfiguration {
+    NetworkFabricConfiguration?: NetworkFabricConfiguration;
+    constructor(properties: NetworkFrameworkConfiguration);
 }
 export declare class VotingPolicy {
     ApprovalThresholdPolicy?: ApprovalThresholdPolicy;
     constructor(properties: VotingPolicy);
-}
-export declare class MemberFabricConfiguration {
-    AdminUsername: Value<string>;
-    AdminPassword: Value<string>;
-    constructor(properties: MemberFabricConfiguration);
 }
 export interface MemberProperties {
     MemberConfiguration: MemberConfiguration;
@@ -49,13 +49,13 @@ export interface MemberProperties {
     InvitationId?: Value<string>;
 }
 export default class Member extends ResourceBase<MemberProperties> {
-    static NetworkFrameworkConfiguration: typeof NetworkFrameworkConfiguration;
+    static ApprovalThresholdPolicy: typeof ApprovalThresholdPolicy;
+    static MemberConfiguration: typeof MemberConfiguration;
+    static MemberFabricConfiguration: typeof MemberFabricConfiguration;
+    static MemberFrameworkConfiguration: typeof MemberFrameworkConfiguration;
     static NetworkConfiguration: typeof NetworkConfiguration;
     static NetworkFabricConfiguration: typeof NetworkFabricConfiguration;
-    static MemberConfiguration: typeof MemberConfiguration;
-    static ApprovalThresholdPolicy: typeof ApprovalThresholdPolicy;
-    static MemberFrameworkConfiguration: typeof MemberFrameworkConfiguration;
+    static NetworkFrameworkConfiguration: typeof NetworkFrameworkConfiguration;
     static VotingPolicy: typeof VotingPolicy;
-    static MemberFabricConfiguration: typeof MemberFabricConfiguration;
     constructor(properties: MemberProperties);
 }

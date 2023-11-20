@@ -10,8 +10,8 @@ export declare class InputDefinition {
 }
 export interface InputProperties {
     InputDefinition: InputDefinition;
-    InputDescription?: Value<string>;
     InputName?: Value<string>;
+    InputDescription?: Value<string>;
     Tags?: List<ResourceTag>;
 }
 export default class Input extends ResourceBase<InputProperties> {

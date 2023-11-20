@@ -1,8 +1,8 @@
-import BudgetsAction_ from './budgetsAction';
 import Budget_ from './budget';
+import BudgetsAction_ from './budgetsAction';
 export declare namespace Budgets {
-    const BudgetsAction: typeof BudgetsAction_;
     const Budget: typeof Budget_;
-    type BudgetsAction = BudgetsAction_;
+    const BudgetsAction: typeof BudgetsAction_;
     type Budget = Budget_;
+    type BudgetsAction = BudgetsAction_;
 }

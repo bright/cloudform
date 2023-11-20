@@ -1,19 +1,17 @@
-import { ResourceBase } from '../resource';
+import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class InsightsConfiguration {
-    InsightsEnabled?: Value<boolean>;
     NotificationsEnabled?: Value<boolean>;
+    InsightsEnabled?: Value<boolean>;
     constructor(properties: InsightsConfiguration);
 }
 export interface GroupProperties {
-    FilterExpression?: Value<string>;
-    GroupName?: Value<string>;
+    GroupName: Value<string>;
     InsightsConfiguration?: InsightsConfiguration;
-    Tags?: List<{
-        [key: string]: any;
-    }>;
+    FilterExpression?: Value<string>;
+    Tags?: List<ResourceTag>;
 }
 export default class Group extends ResourceBase<GroupProperties> {
     static InsightsConfiguration: typeof InsightsConfiguration;
-    constructor(properties?: GroupProperties);
+    constructor(properties: GroupProperties);
 }

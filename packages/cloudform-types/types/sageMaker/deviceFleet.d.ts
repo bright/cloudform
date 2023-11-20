@@ -1,13 +1,13 @@
 import { ResourceBase, ResourceTag } from '../resource';
 import { Value, List } from '../dataTypes';
 export declare class EdgeOutputConfig {
-    S3OutputLocation: Value<string>;
     KmsKeyId?: Value<string>;
+    S3OutputLocation: Value<string>;
     constructor(properties: EdgeOutputConfig);
 }
 export interface DeviceFleetProperties {
-    Description?: Value<string>;
     DeviceFleetName: Value<string>;
+    Description?: Value<string>;
     OutputConfig: EdgeOutputConfig;
     RoleArn: Value<string>;
     Tags?: List<ResourceTag>;

@@ -1,12 +1,12 @@
 import { ResourceBase } from '../resource';
 import { Value } from '../dataTypes';
 export interface ArchiveProperties {
-    ArchiveName?: Value<string>;
-    SourceArn: Value<string>;
-    Description?: Value<string>;
     EventPattern?: {
         [key: string]: any;
     };
+    Description?: Value<string>;
+    SourceArn: Value<string>;
+    ArchiveName?: Value<string>;
     RetentionDays?: Value<number>;
 }
 export default class Archive extends ResourceBase<ArchiveProperties> {
